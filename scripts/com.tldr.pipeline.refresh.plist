@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.tldr.pipeline.refresh</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/stovifo/tldr-pipeline/scripts/cron-refresh.sh</string>
+    </array>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/stovifo/tldr-pipeline</string>
+
+    <!-- Every 6 hours (21600 seconds). launchd will run the job on schedule
+         and also catch up if the Mac was asleep when a tick was missed. -->
+    <key>StartInterval</key>
+    <integer>21600</integer>
+
+    <!-- Also run at boot in case the box rebooted between scheduled ticks. -->
+    <key>RunAtLoad</key>
+    <true/>
+
+    <!-- launchd-level logs (the wrapper writes its own under data/logs/) -->
+    <key>StandardOutPath</key>
+    <string>/Users/stovifo/tldr-pipeline/data/logs/launchd.stdout.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/stovifo/tldr-pipeline/data/logs/launchd.stderr.log</string>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/Users/stovifo/.local/bin</string>
+        <key>HOME</key>
+        <string>/Users/stovifo</string>
+    </dict>
+
+    <!-- If a tick is already running when the next fires, skip the new one. -->
+    <key>AbandonProcessGroup</key>
+    <false/>
+</dict>
+</plist>

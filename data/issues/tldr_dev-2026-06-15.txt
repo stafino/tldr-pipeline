@@ -1,0 +1,59 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR Dev 2026-06-15
+
+🧑‍💻
+Articles & Tutorials
+
+Detecting API anomalies behind a 200 OK — with statistics, not AI (3 minute read)
+
+The author built an uptime monitor that catches "it's up, but it's wrong" failures that return 200 OK, like an endpoint serving a cached error page, a JSON API returning errors with a success status, or a payload that silently shrank from 14 KB to 800 bytes. The system keeps one statistical baseline per endpoint to flag latency and response-size anomalies, deliberately skipping machine learning because plain statistics are cheaper, deterministic, and explainable when something fires.
+
+Running DOS on Behringers DDX3216 with a DIY x86-Bios from Scratch (1 minute read)
+
+The author replaced the proprietary firmware on Behringer's DDX3216 digital mixer by writing an x86 BIOS from scratch, enabling the board's embedded processor to boot DOS. The post covers reverse-engineering the hardware, implementing the BIOS interrupt routines and memory initialization needed to bring up the chipset, and the debugging required to get a stock DOS to run on the repurposed console.
+
+🧠
+Opinions & Advice
+
+Formal methods and the future of programming (1 minute read)
+
+Jane Street details how it applies formal methods across its codebase, using techniques like type-driven design, property-based testing, and verification tools to catch bugs that conventional testing misses. The series argues that lightweight formal methods are now practical for everyday production code rather than confined to academia or safety-critical systems, with OCaml's type system doing much of the heavy lifting.
+
+Every Frame Perfect (1 minute read)
+
+The author argues that smooth, jank-free interfaces are an achievable engineering standard rather than a luxury, and that most modern apps drop frames not because hardware is slow but because developers stop measuring once something looks "good enough." He makes the case for treating the frame budget as a hard constraint, profiling animations and scrolling against it, and rejecting the assumption that faster machines excuse sloppy rendering.
+
+🚀
+Launches & Tools
+
+Linux 7.1 (1 minute read)
+
+Linus Torvalds released Linux 7.1, the latest mainline kernel, following the standard two-week stabilization period after the final release candidate. As with past major-number bumps, the jump carries no special significance beyond keeping minor version numbers from growing unwieldy, with the bulk of the changes landing as routine driver updates, filesystem fixes, and incremental subsystem improvements.
+
+Phoenix LiveView 1.2 (1 minute read)
+
+Phoenix LiveView 1.2 introduces colocated hooks and colocated JS, which let developers write client-side JavaScript directly inside HEEx templates instead of maintaining separate hook files, with the JS extracted at compile time and bundled by the asset pipeline. The release also adds a new portal API for rendering content outside the current DOM tree, useful for modals and tooltips, and ships compatibility fixes for the latest Phoenix and Elixir versions.
+
+🎁
+Miscellaneous
+
+Arch Linux Now Believes Malware Incident Under Control: More Than 1,500 Packages (1 minute read)
+
+Arch Linux says its AUR malware incident is now contained after more than 1,500 packages were found carrying malicious code injected through compromised maintainer accounts. The affected packages have been flagged and removed, and the team is urging users who installed anything from the AUR during the window to audit their systems for the injected payloads.
+
+Arch Linux locks down AUR signups amid wave of malicious commits (1 minute read)
+
+Arch Linux froze new account signups on the Arch User Repository after attackers flooded it with malicious commits that poisoned package updates. The community-maintained AUR ships build scripts rather than vetted binaries, so the lockdown buys maintainers time to clean compromised packages and review the backlog before reopening registration to contributors.
+
+⚡
+Quick Links
+
+Boosting MoE Training Throughput with Advanced Fusion Kernels (1 minute read)
+
+NVIDIA's fused kernels cut MoE training overhead by combining grouped GEMM, activation, and routing operations into single GPU passes.
+
+What’s !important #13: @function, alpha(), CSS Wordle, and More (1 minute read)
+
+Roundup of recent CSS features including @function, the alpha() color function, Grid Lanes, lesser-known dialog behaviors, and a CSS-built Wordle.

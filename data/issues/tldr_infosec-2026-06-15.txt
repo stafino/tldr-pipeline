@@ -1,0 +1,48 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR InfoSec 2026-06-15
+
+🔓
+Attacks & Vulnerabilities
+
+LiteLLM Vulnerability Chain Lets Low-Privilege Users Take Over AI Gateway Servers (1 minute read)
+
+Researchers at Obsidian Security disclosed a chain of three vulnerabilities in LiteLLM, the open-source AI gateway brokering calls to over 100 model providers, that lets a default low-privilege account escalate to full admin and achieve remote code execution on the proxy server. A server takeover exposes every stored provider API key, so operators should patch immediately, audit account privileges, and rotate all credentials held by the gateway.
+
+Palo Alto Warns of Active Exploitation of PAN-OS GlobalProtect VPN Flaw (1 minute read)
+
+Palo Alto Networks confirmed active exploitation of CVE-2026-0257 (CVSS 7.8), an authentication-bypass flaw in the portal and gateway components of PAN-OS, by an unknown threat actor gaining unauthorized access to GlobalProtect portals. Organizations running affected PAN-OS versions on internet-facing GlobalProtect should patch immediately, audit portal access logs for unauthorized sessions, and rotate credentials on appliances that may already be compromised.
+
+🧠
+Strategies & Tactics
+
+Cloud CISO Perspectives: The 4 lessons that guided AI Threat Defense (2 minute read)
+
+Google Cloud's new CISO Chris Betz outlined four lessons from building AI Threat Defense, the company's system for applying AI to defensive operations. The takeaways center on using AI to accelerate analyst triage and detection at scale, while keeping human judgment in the loop for high-stakes decisions. Betz frames the effort as pushing AI toward concrete defender advantages rather than treating it solely as an attacker capability.
+
+Implementing workload identity with HashiCorp Vault and SPIFFE (1 minute read)
+
+HashiCorp published a guide to using Vault as a SPIFFE identity issuer and broker for workload identity and authorization. Vault issues SPIFFE-format SVIDs and brokers trust between workloads, while SPIRE handles node and workload attestation at the edge. The walkthrough clarifies where each component fits, letting teams replace long-lived secrets and static credentials with short-lived, attested identities across heterogeneous environments.
+
+🎁
+Miscellaneous
+
+The FCC Wants to Eliminate Burner Phones (1 minute read)
+
+The FCC proposed a rule requiring US telecoms to collect and store personal data on nearly all phone customers, including a government-issued ID number and physical address, effectively eliminating burner phones whose accounts aren't tied to an identity. The agency frames the mandate as an anti-scam measure, but privacy advocates warn it builds a centralized trove of identity data with significant surveillance and cybersecurity knock-on risks.
+
+Curl will not accept vulnerability reports during July 2026 (1 minute read)
+
+Curl maintainer Daniel Stenberg announced the project will not accept vulnerability reports during July 2026, pausing its bug bounty program for the month to give maintainers a break from the volume of low-quality, often AI-generated submissions. Reports submitted during the window will be rejected and must be resubmitted in August, when normal triage and bounty payouts resume.
+
+⚡
+Quick Links
+
+XP-era Windows spotted haunting London's driverless railway (1 minute read)
+
+Windows XP-era systems are still running on London's driverless Docklands Light Railway, exposing aging unsupported software in critical transit infrastructure.
+
+Google Chrome is closing the loopholes that let old ad blockers keep working (1 minute read)
+
+Chrome 150 and 151, arriving in late June and July, will remove the last workarounds for running Manifest V2 ad blockers like uBlock Origin.

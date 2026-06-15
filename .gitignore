@@ -4,14 +4,18 @@ __pycache__/
 .pytest_cache/
 .ruff_cache/
 .DS_Store
+# Intermediate pipeline artifacts: too big to track, fast to regenerate
 data/raw/*.jsonl
 data/deduped/*.jsonl
-data/scored/*.jsonl
-data/blurbs/*.jsonl
 data/scored/.cache/
 data/blurbs/.cache/
-data/issues/
 data/decisions/
+data/logs/
+
+# Track these so a deployed Streamlit can read pre-generated data:
+# data/scored/<date>.jsonl
+# data/blurbs/<date>.jsonl
+# data/issues/<nl>-<date>.txt
 data/embeddings_cache/
 .env
 uv.lock

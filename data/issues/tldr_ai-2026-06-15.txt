@@ -1,0 +1,59 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR AI 2026-06-15
+
+🚀
+Headlines & Launches
+
+Apple Foundation Models (1 minute read)
+
+Anthropic released Claude for Foundation Models, a Swift package that exposes Claude as a server-side language model inside Apple's Foundation Models framework. It conforms Claude to the framework's LanguageModel protocol, so developers use the same LanguageModelSession API for streaming, structured output, and tool calling, and can swap between Claude and Apple's on-device model per request on iOS, macOS, visionOS, and watchOS 27 betas.
+
+Meta reportedly moves to unwind $2B Manus deal after Beijing’s demand (1 minute read)
+
+Meta reportedly began unwinding its $2B acquisition of Manus after Beijing ordered the deal reversed. The directive reflects China's tightening control over outbound deals involving domestic AI startups, forcing Meta to dismantle a transaction it had positioned as a major expansion of its AI talent and capabilities.
+
+🧠
+Deep Dives & Analysis
+
+Import AI 461: "Alignment is not on track"; FrontierCode; and synthetic research interns (1 minute read)
+
+The latest issue of Jack Clark's Import AI leads with the argument that AI alignment is not on track, contending that capability gains are outpacing the safety techniques meant to keep advanced systems controllable. It also covers FrontierCode, a benchmark for evaluating models on difficult coding tasks, and early experiments with synthetic research interns, AI agents tasked with running portions of the research process autonomously.
+
+Anthropic’s Safety Superpower (1 minute read)
+
+Anthropic's conviction in its own safety commitment functions as a strategic asset, giving the company license to aggressively favor its business interests. The author argues this self-belief lets Anthropic justify commercially favorable moves and even challenge the U.S. government, framing decisions that serve its position as extensions of its safety mission.
+
+⚒️
+Engineering & Research
+
+Making Claude a Chemist (1 minute read)
+
+Anthropic shared research on adapting Claude for chemistry tasks, evaluating how well the model handles work like reaction prediction, synthesis planning, and spectral interpretation. The post details where Claude matches specialized chemistry tools and where it still falls short, and outlines the evaluations and domain-specific testing used to measure its performance on real chemical reasoning problems.
+
+Boosting MoE Training Throughput with Advanced Fusion Kernels (1 minute read)
+
+NVIDIA's engineering blog details advanced fusion kernels that increase training throughput for mixture-of-experts (MoE) models by combining multiple operations into single GPU kernels to cut memory traffic and launch overhead. The post covers fused kernels for routing, grouped GEMMs, and activation functions, showing measurable speedups for the expert layers that dominate MoE compute.
+
+🎁
+Miscellaneous
+
+Anthropic shuts down Fable, Mythos models following Trump admin directive (1 minute read)
+
+Anthropic shut down its Fable and Mythos models after a Trump administration directive citing national security concerns. The Commerce Department warned that a "jailbreak" of Fable 5 could expose capabilities deemed a threat, prompting the company to pull the models from public access.
+
+LiteLLM Vulnerability Chain Lets Low-Privilege Users Take Over AI Gateway Servers (1 minute read)
+
+Obsidian Security disclosed a vulnerability chain in LiteLLM that lets a default low-privilege account escalate to full admin and execute code on the server by combining three flaws. Because LiteLLM is a widely deployed open-source gateway brokering calls to more than 100 model providers, a takeover exposes every provider API key and secret the proxy holds.
+
+⚡
+Quick Links
+
+As AI agents become employees, NewCore emerges with $66M to give them identities (1 minute read)
+
+NewCore launched with $66M to manage identities for AI agents, arguing agent identity will define enterprise security.
+
+Rio de Janeiro's city government model Rio3.5 beats Qwen3.7 in recent benchmarks (1 minute read)
+
+Rio de Janeiro's city government released Rio3.5, a model that outperforms Qwen3.7 on recent benchmarks.
