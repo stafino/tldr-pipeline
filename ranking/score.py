@@ -4,6 +4,7 @@ import hashlib
 import json
 import logging
 import os
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 from common.llm import complete
@@ -20,6 +21,10 @@ RANKING_MODEL = os.environ.get("RANKING_MODEL", "claude-sonnet-4-6")
 # Minimum per-newsletter score to keep an assignment. Stories with no
 # assignment above this threshold are dropped.
 MIN_ASSIGNMENT_SCORE = int(os.environ.get("MIN_ASSIGNMENT_SCORE", "55"))
+
+# Parallel LLM calls. The CLI backend is subprocess-bound and slow per call;
+# parallelism cuts wall time roughly linearly until rate limits or CPU saturate.
+RANKING_CONCURRENCY = int(os.environ.get("RANKING_CONCURRENCY", "6"))
 
 SYSTEM_TEMPLATE = """You are an editorial scorer for the TLDR family of daily newsletters. For each candidate story you decide (a) which TLDR newsletters it belongs in, (b) which section of each newsletter, (c) how strong a fit it is (0-100 per assignment), and (d) overall metadata. Always return JSON matching the exact schema requested. No prose outside JSON.
 
@@ -118,30 +123,49 @@ def rank_stories(stories: list[Story], use_cache: bool = True) -> list[ScoredSto
     )
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
 
-    scored: list[ScoredStory] = []
-    for story in stories:
+    def _score_one(story: Story) -> dict | None:
         cache_path = _cache_key(story, family_version)
         if use_cache and cache_path.exists():
-            data = json.loads(cache_path.read_text())
-        else:
-            user = USER_TEMPLATE.format(
-                title=story.title,
-                source=story.source,
-                source_type=story.source_type,
-                source_topics=", ".join(story.source_topics) or "(none)",
-                url=story.url,
-                snippet=(story.raw_text or "")[:500],
-                newsletter_ids=", ".join(nls.keys()),
-            )
             try:
-                raw = complete(system, user, model=RANKING_MODEL, max_tokens=600)
-                data = _parse_json_response(raw)
-            except Exception as e:
-                log.warning("Ranking failed for %s: %r", story.url, e)
-                continue
-            cache_path.write_text(json.dumps(data))
+                return json.loads(cache_path.read_text())
+            except Exception:
+                pass  # corrupt cache; refetch
+        user = USER_TEMPLATE.format(
+            title=story.title,
+            source=story.source,
+            source_type=story.source_type,
+            source_topics=", ".join(story.source_topics) or "(none)",
+            url=story.url,
+            snippet=(story.raw_text or "")[:500],
+            newsletter_ids=", ".join(nls.keys()),
+        )
+        try:
+            raw = complete(system, user, model=RANKING_MODEL, max_tokens=600)
+            data = _parse_json_response(raw)
+        except Exception as e:
+            log.warning("Ranking failed for %s: %r", story.url, e)
+            return None
+        cache_path.write_text(json.dumps(data))
+        return data
 
-        # Validate and filter assignments.
+    raw_results: dict[str, dict] = {}
+    completed = 0
+    with ThreadPoolExecutor(max_workers=RANKING_CONCURRENCY) as pool:
+        futures = {pool.submit(_score_one, s): s for s in stories}
+        for fut in as_completed(futures):
+            story = futures[fut]
+            data = fut.result()
+            completed += 1
+            if completed % 10 == 0 or completed == len(stories):
+                log.info("ranking progress: %d/%d", completed, len(stories))
+            if data is not None:
+                raw_results[story.url] = data
+
+    scored: list[ScoredStory] = []
+    for story in stories:
+        data = raw_results.get(story.url)
+        if data is None:
+            continue
         raw_assignments = data.get("assignments", []) or []
         clean: list[Assignment] = []
         for a in raw_assignments:
@@ -154,7 +178,6 @@ def rank_stories(stories: list[Story], use_cache: bool = True) -> list[ScoredSto
             if nid not in valid_sections:
                 continue
             if sec not in valid_sections[nid]:
-                # Fall back to the newsletter's Quick Links if it has one.
                 quick = next(
                     (s.id for s in nls[nid].sections if s.id.endswith("quick_links") or s.id == "quick"),
                     None,

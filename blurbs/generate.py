@@ -198,17 +198,33 @@ def generate_blurb(
     return result
 
 
+BLURB_CONCURRENCY = int(os.environ.get("BLURB_CONCURRENCY", "5"))
+
+
 def generate_for_newsletter(
     scored: list[ScoredStory], newsletter_id: str, use_cache: bool = True
 ) -> list[GeneratedBlurb]:
     """Generate blurbs for the top-N-per-section assigned to one newsletter."""
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+
     from ranking.score import top_per_section
 
     by_sec = top_per_section(scored, newsletter_id)
+    targets: list[ScoredStory] = []
+    for stories in by_sec.values():
+        targets.extend(stories)
+
     out: list[GeneratedBlurb] = []
-    for section_id, stories in by_sec.items():
-        for s in stories:
-            b = generate_blurb(s, newsletter_id, use_cache=use_cache)
+    with ThreadPoolExecutor(max_workers=BLURB_CONCURRENCY) as pool:
+        futures = {
+            pool.submit(generate_blurb, s, newsletter_id, use_cache): s for s in targets
+        }
+        for fut in as_completed(futures):
+            try:
+                b = fut.result()
+            except Exception as e:
+                log.warning("blurb worker error: %r", e)
+                continue
             if b is not None:
                 out.append(b)
     return out

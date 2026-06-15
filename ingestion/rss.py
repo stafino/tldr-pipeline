@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import logging
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timezone
 
 import feedparser
 
@@ -10,20 +10,34 @@ from common.story import Story
 log = logging.getLogger(__name__)
 
 
-def pull_rss(name: str, url: str, lookback_hours: int = 36, topics: list[str] | None = None) -> list[Story]:
-    """Pull recent entries from a single RSS feed. Returns empty list on failure."""
+def pull_rss(
+    name: str,
+    url: str,
+    published_after: datetime,
+    published_before: datetime,
+    topics: list[str] | None = None,
+) -> list[Story]:
+    """Pull entries from a single RSS feed published within [after, before).
+
+    Entries without a parseable publication date are dropped (rather than
+    silently defaulted to 'now') — this matters for feeds like Paul Graham's
+    that emit the full archive without dates.
+    """
     try:
         parsed = feedparser.parse(url)
     except Exception as e:
         log.warning("RSS pull failed for %s: %s", name, e)
         return []
 
-    cutoff = datetime.now(timezone.utc) - timedelta(hours=lookback_hours)
     stories: list[Story] = []
+    skipped_undated = 0
 
     for entry in parsed.entries:
         published = _entry_datetime(entry)
-        if published and published < cutoff:
+        if published is None:
+            skipped_undated += 1
+            continue
+        if not (published_after <= published < published_before):
             continue
 
         title = (entry.get("title") or "").strip()
@@ -31,20 +45,20 @@ def pull_rss(name: str, url: str, lookback_hours: int = 36, topics: list[str] | 
         if not title or not link:
             continue
 
-        raw_text = _entry_text(entry)
         stories.append(
             Story(
                 title=title,
                 url=link,
                 source=name,
                 source_type="rss",
-                published_at=(published or datetime.now(timezone.utc)).isoformat(),
-                raw_text=raw_text[:4000],
+                published_at=published.isoformat(),
+                raw_text=_entry_text(entry)[:4000],
                 source_topics=list(topics or []),
             )
         )
 
-    log.info("RSS %s: %d stories", name, len(stories))
+    extra = f" ({skipped_undated} undated dropped)" if skipped_undated else ""
+    log.info("RSS %s: %d stories%s", name, len(stories), extra)
     return stories
 
 
@@ -76,14 +90,17 @@ def _strip_html(s: str) -> str:
     return BeautifulSoup(s, "lxml").get_text(" ", strip=True)
 
 
-def pull_all_rss(sources: list[dict], lookback_hours: int = 36) -> list[Story]:
+def pull_all_rss(
+    sources: list[dict], published_after: datetime, published_before: datetime
+) -> list[Story]:
     out: list[Story] = []
     for s in sources:
         out.extend(
             pull_rss(
                 s["name"],
                 s["url"],
-                lookback_hours=lookback_hours,
+                published_after=published_after,
+                published_before=published_before,
                 topics=s.get("topics"),
             )
         )

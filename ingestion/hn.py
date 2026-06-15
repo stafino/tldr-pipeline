@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import logging
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timezone
 
 import requests
 
@@ -12,8 +12,6 @@ log = logging.getLogger(__name__)
 HN_TOP = "https://hacker-news.firebaseio.com/v0/topstories.json"
 HN_ITEM = "https://hacker-news.firebaseio.com/v0/item/{id}.json"
 
-# Coarse topic-tagging by title keywords. The ranking model handles the real
-# newsletter assignment; this just helps the ranker by hinting at obvious cases.
 TOPIC_KEYWORDS = {
     "ai": ("ai ", "llm", "gpt", "openai", "anthropic", "claude", "gemini", "deepmind",
            "transformer", "diffusion", "agent", "rag", "embedding", "neural",
@@ -43,19 +41,18 @@ def _topics_for(title: str) -> list[str]:
     return [topic for topic, kws in TOPIC_KEYWORDS.items() if any(k in lower for k in kws)]
 
 
-def pull_hn(min_score: int = 75, lookback_hours: int = 24, limit: int = 300) -> list[Story]:
-    """Pull top HN stories in the trailing window, tagged with coarse topics.
-
-    The AI-keyword filter has been dropped: too narrow. The ranking model decides
-    whether each story fits a newsletter at all.
-    """
+def pull_hn(
+    published_after: datetime,
+    published_before: datetime,
+    min_score: int = 75,
+    limit: int = 300,
+) -> list[Story]:
     try:
         top_ids = requests.get(HN_TOP, timeout=10).json()[:limit]
     except Exception as e:
         log.warning("HN top fetch failed: %s", e)
         return []
 
-    cutoff = datetime.now(timezone.utc) - timedelta(hours=lookback_hours)
     stories: list[Story] = []
 
     for sid in top_ids:
@@ -72,7 +69,7 @@ def pull_hn(min_score: int = 75, lookback_hours: int = 24, limit: int = 300) -> 
         if not ts:
             continue
         published = datetime.fromtimestamp(ts, tz=timezone.utc)
-        if published < cutoff:
+        if not (published_after <= published < published_before):
             continue
 
         title = (item.get("title") or "").strip()
@@ -81,8 +78,6 @@ def pull_hn(min_score: int = 75, lookback_hours: int = 24, limit: int = 300) -> 
             continue
 
         topics = _topics_for(title)
-        # If we can't tag it, default to the broadest "tech" tag so TLDR (main)
-        # still considers it.
         if not topics:
             topics = ["tech"]
 
@@ -98,5 +93,5 @@ def pull_hn(min_score: int = 75, lookback_hours: int = 24, limit: int = 300) -> 
             )
         )
 
-    log.info("HN: %d stories above score=%d", len(stories), min_score)
+    log.info("HN: %d stories above score=%d in window", len(stories), min_score)
     return stories

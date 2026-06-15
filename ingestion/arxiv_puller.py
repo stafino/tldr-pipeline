@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import logging
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timezone
 
 import arxiv
 
@@ -9,7 +9,6 @@ from common.story import Story
 
 log = logging.getLogger(__name__)
 
-# Map arxiv categories → topic tags the ranking model uses.
 ARXIV_TOPICS = {
     "cs.AI": ["ai"],
     "cs.LG": ["ai", "ml"],
@@ -23,11 +22,10 @@ ARXIV_TOPICS = {
 
 def pull_arxiv(
     categories: list[str],
+    published_after: datetime,
+    published_before: datetime,
     max_results_per_category: int = 30,
-    lookback_hours: int = 48,
 ) -> list[Story]:
-    """Pull recent arXiv submissions from a list of categories."""
-    cutoff = datetime.now(timezone.utc) - timedelta(hours=lookback_hours)
     client = arxiv.Client(page_size=max_results_per_category, delay_seconds=3.0, num_retries=2)
     stories: list[Story] = []
 
@@ -50,7 +48,7 @@ def pull_arxiv(
             published = r.published
             if published.tzinfo is None:
                 published = published.replace(tzinfo=timezone.utc)
-            if published < cutoff:
+            if not (published_after <= published < published_before):
                 continue
 
             stories.append(
