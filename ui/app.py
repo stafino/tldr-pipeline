@@ -67,14 +67,23 @@ st.markdown(
     [data-testid="stHeader"] { display: none; }
     [data-testid="stToolbar"] { display: none; }
 
-    /* Inter across the whole app */
-    html, body, .stApp, .stMarkdown, .stMarkdown *, .stApp *,
-    button, [data-testid="stButton"] button,
-    [data-baseweb] *, .stSelectbox *, .stTextInput *, .stTextArea *, .stDownloadButton * {
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif !important;
+    /* Inter — applied via inheritance so icon fonts (Material Icons used by
+       Streamlit's expander chevron, selectbox arrows, etc.) keep working. */
+    html, body, .stApp {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
     }
-    /* mono where it adds clarity (numbers, code, the issue preview) */
-    .num, .chip, code, pre, .preview, .why { font-family: ui-monospace, SFMono-Regular, Menlo, monospace !important; }
+    /* explicit elements that don't inherit form-family by default */
+    button, input, textarea, select,
+    .stMarkdown, .stMarkdown p, .stMarkdown div, .stMarkdown span,
+    .stMarkdown li, .stMarkdown a, .stMarkdown h1, .stMarkdown h2,
+    .stMarkdown h3, .stMarkdown h4, .stMarkdown h5, .stMarkdown h6,
+    [data-testid="stMarkdownContainer"] {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    }
+    /* mono where it adds clarity */
+    .num, .chip, code, pre, .preview, .formula, .score-tag {
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace !important;
+    }
 
     /* ─── Top bar ─── */
     .brand { font-size: 14px; font-weight: 600; letter-spacing: -0.01em; color: var(--text); margin: 0; }
@@ -160,94 +169,112 @@ st.markdown(
     .chip.warn { background: var(--warn-soft); color: #fcd34d; border-color: #d97706; }
     .chip.accent { background: var(--accent-soft); color: #c7d2fe; border-color: var(--accent); }
 
-    /* ─── Detail pane ─── */
+    /* ─── Detail pane — clear hierarchy ─── */
     .detail-empty {
         color: var(--text-mute); font-size: 12px; padding: 24px 0;
         border: 1px dashed var(--border); border-radius: 6px;
         text-align: center;
     }
-    .detail { padding: 4px 6px; }
-    .detail h2.title {
-        font-size: 24px !important;
+
+    /* H1 — story title */
+    .d-title {
+        font-size: 26px;
         font-weight: 700;
-        line-height: 1.25;
-        margin: 0 0 14px !important;
-        color: var(--text) !important;
-        letter-spacing: -0.015em;
+        line-height: 1.2;
+        margin: 0 0 14px;
+        color: var(--text);
+        letter-spacing: -0.018em;
+        font-family: 'Inter', -apple-system, sans-serif;
     }
-    .detail .meta-line {
-        font-size: 13px;
-        color: var(--text-dim);
-        margin-bottom: 28px;
+    /* H2 — subtitle (source · score · newsletter), flex with real gaps */
+    .d-meta {
         display: flex;
         align-items: center;
-        gap: 12px;
+        gap: 10px;
         flex-wrap: wrap;
+        margin: 0 0 32px;
+        font-size: 13px;
+        color: var(--text-dim);
+        font-family: 'Inter', sans-serif;
     }
-    .detail .meta-line a {
+    .d-meta a.src-link {
         color: var(--accent);
         text-decoration: none;
         font-weight: 500;
-        font-family: 'Inter', sans-serif !important;
+        font-size: 13px;
     }
-    .detail .meta-line a:hover { text-decoration: underline; }
-    .detail .meta-line .sep { color: var(--text-mute); }
-    .detail .meta-line .score-tag {
+    .d-meta a.src-link:hover { text-decoration: underline; }
+    .d-meta .badge {
+        font-size: 11.5px;
+        padding: 3px 8px;
+        border-radius: 4px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        color: var(--text-dim);
+        font-family: 'Inter', sans-serif;
+    }
+    .d-meta .badge.score-badge {
         color: var(--text);
         font-weight: 600;
-        font-family: ui-monospace, SFMono-Regular, Menlo, monospace !important;
-        font-size: 12px;
-        padding: 2px 8px;
-        background: var(--surface);
-        border-radius: 4px;
-        border: 1px solid var(--border);
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
     }
-    .detail .meta-line .nl-tag {
+    /* H3 — section labels (proper subsubtitle, NOT tiny caption) */
+    .d-label {
+        font-size: 11.5px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        color: var(--text-mute);
+        text-transform: uppercase;
+        margin: 28px 0 10px;
+        font-family: 'Inter', sans-serif;
+    }
+    /* Body — section content (regular Inter, smaller than nothing else but the label) */
+    .d-body {
+        font-size: 14px;
         color: var(--text-dim);
-        font-size: 12px;
-        padding: 2px 8px;
-        background: var(--surface);
-        border-radius: 4px;
-        border: 1px solid var(--border);
+        line-height: 1.6;
+        margin: 0;
+        font-family: 'Inter', sans-serif;
     }
-    .detail .label {
-        font-size: 10px; letter-spacing: 0.1em; color: var(--text-mute);
-        text-transform: uppercase; margin: 22px 0 8px; font-weight: 600;
-    }
-    .detail .why { font-size: 12.5px; color: var(--text-dim); line-height: 1.55; margin: 0; }
-    .detail .wc { font-size: 11px; color: var(--text-mute); margin: 6px 0 14px; }
-    .detail .wc.ok { color: var(--ok); }
-    .detail .wc.bad { color: var(--warn); }
+    .d-body b { color: var(--text); font-weight: 600; }
 
-    /* ─── Blurb editor — transparent, looks like newsletter prose ─── */
-    .detail .stTextArea > div { background: transparent !important; }
-    .detail .stTextArea textarea {
+    /* Word count line */
+    .d-wc { font-size: 12px; color: var(--text-mute); margin: 8px 0 18px; font-family: 'Inter', sans-serif; }
+    .d-wc.ok { color: var(--ok); }
+    .d-wc.bad { color: var(--warn); }
+
+    /* Cross-assignment chips in detail */
+    .d-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+    .d-chips a { text-decoration: none; }
+
+    /* ─── Blurb editor — fully transparent, reads like newsletter prose ─── */
+    [data-testid="stTextArea"], [data-testid="stTextArea"] > div,
+    [data-testid="stTextArea"] [data-baseweb], [data-testid="stTextArea"] [data-baseweb] > div {
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+    [data-testid="stTextArea"] textarea {
         background: transparent !important;
         color: var(--text) !important;
         border: none !important;
         border-left: 2px solid var(--border) !important;
         border-radius: 0 !important;
-        padding: 0 0 0 14px !important;
+        padding: 2px 0 2px 16px !important;
         font-size: 15.5px !important;
         line-height: 1.6 !important;
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif !important;
+        font-family: 'Inter', -apple-system, sans-serif !important;
         font-weight: 400 !important;
         resize: vertical !important;
         min-height: 140px;
         box-shadow: none !important;
         outline: none !important;
     }
-    .detail .stTextArea textarea:hover { border-left-color: var(--text-mute) !important; }
-    .detail .stTextArea textarea:focus {
+    [data-testid="stTextArea"] textarea:hover { border-left-color: var(--text-mute) !important; }
+    [data-testid="stTextArea"] textarea:focus {
         border-left-color: var(--accent) !important;
         background: transparent !important;
         outline: none !important;
-        box-shadow: none !important;
-    }
-    /* The rest of the textarea wrapper — kill borders Streamlit might add */
-    .detail .stTextArea, .detail .stTextArea > div, .detail .stTextArea > div > div {
-        background: transparent !important;
-        border: none !important;
         box-shadow: none !important;
     }
 
@@ -677,7 +704,6 @@ with det_col:
             unsafe_allow_html=True,
         )
     else:
-        st.markdown('<div class="detail">', unsafe_allow_html=True)
         nl = nls[selected_nl_for_detail]
         sec_obj = nl.section(selected_assignment.section_id)
         blurb = blurbs.get((selected_scored.story.url, selected_nl_for_detail), {})
@@ -686,23 +712,22 @@ with det_col:
         from urllib.parse import urlparse
         domain = urlparse(selected_scored.story.url).netloc.lstrip("www.") or selected_scored.story.source
 
-        # Large title
         title_safe = selected_scored.story.title.replace("<", "&lt;").replace(">", "&gt;")
-        st.markdown(f'<h2 class="title">{title_safe}</h2>', unsafe_allow_html=True)
-
-        # Source (hyperlinked) + score + section badge
         section_label = sec_obj.name if sec_obj else selected_assignment.section_id
+
+        # Title + meta line as one HTML blob so the flex meta layout actually applies.
         st.markdown(
-            f'<div class="meta-line">'
-            f'<a href="{selected_scored.story.url}" target="_blank" rel="noopener">{domain} ↗</a>'
-            f'<span class="score-tag">score {int(round(selected_assignment.score))}</span>'
-            f'<span class="nl-tag">{nl.brand_name} · {section_label}</span>'
-            f'</div>',
+            f'<h1 class="d-title">{title_safe}</h1>'
+            f'<div class="d-meta">'
+            f'<a class="src-link" href="{selected_scored.story.url}" target="_blank" rel="noopener">{domain} ↗</a>'
+            f'<span class="badge score-badge">score {int(round(selected_assignment.score))}</span>'
+            f'<span class="badge">{nl.brand_name} · {section_label}</span>'
+            f'</div>'
+            f'<div class="d-label">newsletter summary</div>',
             unsafe_allow_html=True,
         )
 
-        # Summary heading
-        st.markdown('<div class="label">newsletter summary</div>', unsafe_allow_html=True)
+        # Editable blurb (transparent textarea)
         initial_blurb = (decision.edited_blurb if decision and decision.edited_blurb else blurb.get("blurb", ""))
         editor_key = f"edit_{selected_scored.story.url}_{selected_nl_for_detail}"
         edited = st.text_area(
@@ -713,10 +738,10 @@ with det_col:
             label_visibility="collapsed",
         )
 
-        # Word count vs target
+        # Word count line
         wc = len(edited.split())
         in_range = sec_obj and (sec_obj.min_words <= wc <= sec_obj.max_words)
-        wc_class = "wc ok" if in_range else ("wc bad" if sec_obj else "wc")
+        wc_class = "d-wc ok" if in_range else ("d-wc bad" if sec_obj else "d-wc")
         target = f"{sec_obj.min_words}–{sec_obj.max_words}" if sec_obj else "—"
         check = "✓" if in_range else "⚠"
         st.markdown(
@@ -765,10 +790,12 @@ with det_col:
             )
             dec.save(selected_date, ss.decisions)
 
-        # Cross-assignments
+        # Cross-assignments + why-it-matters in one HTML blob so styles apply consistently.
+        bottom_parts: list[str] = []
+
         if len(selected_scored.assignments) > 1:
-            st.markdown('<div class="label">also in</div>', unsafe_allow_html=True)
-            cross_html = []
+            bottom_parts.append('<div class="d-label">also in</div>')
+            bottom_parts.append('<div class="d-chips">')
             for a in selected_scored.assignments:
                 if a.newsletter == selected_nl_for_detail:
                     continue
@@ -779,18 +806,25 @@ with det_col:
                     cls, gly = "no", "✗"
                 else:
                     cls, gly = "", "●"
-                cross_html.append(
-                    f'<a href="?nl={a.newsletter}&story={urllib.parse.quote(selected_scored.story.url)}&nl_detail={a.newsletter}" '
-                    f'target="_self" style="text-decoration:none;">'
-                    f'<span class="chip {cls}">{a.newsletter.replace("tldr_", "")} {gly} ({int(round(a.score))})</span>'
+                href = (
+                    f"?nl={urllib.parse.quote(a.newsletter)}"
+                    f"&story={urllib.parse.quote(selected_scored.story.url)}"
+                    f"&nl_detail={urllib.parse.quote(a.newsletter)}"
+                )
+                bottom_parts.append(
+                    f'<a href="{href}" target="_self">'
+                    f'<span class="chip {cls}">{a.newsletter.replace("tldr_", "")} {gly} {int(round(a.score))}</span>'
                     f'</a>'
                 )
-            st.markdown("".join(cross_html), unsafe_allow_html=True)
+            bottom_parts.append('</div>')
 
-        # Reasoning
         if selected_scored.reasoning:
-            st.markdown('<div class="label">why it matters</div>', unsafe_allow_html=True)
-            st.markdown(f'<p class="why">{selected_scored.reasoning}</p>', unsafe_allow_html=True)
+            reasoning_safe = selected_scored.reasoning.replace("<", "&lt;").replace(">", "&gt;")
+            bottom_parts.append('<div class="d-label">why it matters</div>')
+            bottom_parts.append(f'<p class="d-body">{reasoning_safe}</p>')
+
+        if bottom_parts:
+            st.markdown("".join(bottom_parts), unsafe_allow_html=True)
 
         st.markdown('</div>', unsafe_allow_html=True)
 
