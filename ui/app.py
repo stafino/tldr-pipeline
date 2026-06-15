@@ -59,17 +59,20 @@ st.markdown(
         --no-soft: #7f1d1d;
     }
 
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
     .block-container { padding: 1.0rem 1.25rem 5rem; max-width: 1600px; }
     [data-testid="stHeader"] { display: none; }
     [data-testid="stToolbar"] { display: none; }
 
-    /* default sans for prose */
-    html, body, .stApp, .stMarkdown, .stMarkdown p, .stMarkdown li, .stMarkdown span,
-    button, [data-testid="stButton"] button {
-        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", Inter, system-ui, sans-serif;
+    /* Inter across the whole app */
+    html, body, .stApp, .stMarkdown, .stMarkdown *, .stApp *,
+    button, [data-testid="stButton"] button,
+    [data-baseweb] *, .stSelectbox *, .stTextInput *, .stTextArea *, .stDownloadButton * {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif !important;
     }
-    /* mono where it adds clarity */
-    .num, .chip, code, pre, .preview, .src, .why { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    /* mono where it adds clarity (numbers, code, the issue preview) */
+    .num, .chip, code, pre, .preview, .why { font-family: ui-monospace, SFMono-Regular, Menlo, monospace !important; }
 
     /* ─── Top bar ─── */
     .brand { font-size: 14px; font-weight: 600; letter-spacing: -0.01em; color: var(--text); margin: 0; }
@@ -159,30 +162,90 @@ st.markdown(
         border: 1px dashed var(--border); border-radius: 6px;
         text-align: center;
     }
-    .detail { padding: 0 4px; }
-    .detail h2 { font-size: 15px; font-weight: 600; margin: 0 0 6px; color: var(--text); line-height: 1.35; }
-    .detail .src { font-size: 11px; color: var(--text-dim); margin-bottom: 12px; }
-    .detail .src a { color: var(--accent); text-decoration: none; }
-    .detail .src a:hover { text-decoration: underline; }
+    .detail { padding: 4px 6px; }
+    .detail h2.title {
+        font-size: 24px !important;
+        font-weight: 700;
+        line-height: 1.25;
+        margin: 0 0 14px !important;
+        color: var(--text) !important;
+        letter-spacing: -0.015em;
+    }
+    .detail .meta-line {
+        font-size: 13px;
+        color: var(--text-dim);
+        margin-bottom: 28px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+    .detail .meta-line a {
+        color: var(--accent);
+        text-decoration: none;
+        font-weight: 500;
+        font-family: 'Inter', sans-serif !important;
+    }
+    .detail .meta-line a:hover { text-decoration: underline; }
+    .detail .meta-line .sep { color: var(--text-mute); }
+    .detail .meta-line .score-tag {
+        color: var(--text);
+        font-weight: 600;
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace !important;
+        font-size: 12px;
+        padding: 2px 8px;
+        background: var(--surface);
+        border-radius: 4px;
+        border: 1px solid var(--border);
+    }
+    .detail .meta-line .nl-tag {
+        color: var(--text-dim);
+        font-size: 12px;
+        padding: 2px 8px;
+        background: var(--surface);
+        border-radius: 4px;
+        border: 1px solid var(--border);
+    }
     .detail .label {
         font-size: 10px; letter-spacing: 0.1em; color: var(--text-mute);
-        text-transform: uppercase; margin: 14px 0 6px;
+        text-transform: uppercase; margin: 22px 0 8px; font-weight: 600;
     }
-    .detail .why { font-size: 12px; color: var(--text-dim); line-height: 1.5; margin: 0; }
-    .detail .wc { font-size: 11px; color: var(--text-mute); margin-top: 4px; }
+    .detail .why { font-size: 12.5px; color: var(--text-dim); line-height: 1.55; margin: 0; }
+    .detail .wc { font-size: 11px; color: var(--text-mute); margin: 6px 0 14px; }
     .detail .wc.ok { color: var(--ok); }
     .detail .wc.bad { color: var(--warn); }
 
-    /* override textarea */
-    .stTextArea textarea {
-        background: var(--surface) !important;
+    /* ─── Blurb editor — transparent, looks like newsletter prose ─── */
+    .detail .stTextArea > div { background: transparent !important; }
+    .detail .stTextArea textarea {
+        background: transparent !important;
         color: var(--text) !important;
-        border: 1px solid var(--border) !important;
-        border-radius: 4px !important;
-        font-size: 13px !important;
-        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", Inter, system-ui, sans-serif !important;
+        border: none !important;
+        border-left: 2px solid var(--border) !important;
+        border-radius: 0 !important;
+        padding: 0 0 0 14px !important;
+        font-size: 15.5px !important;
+        line-height: 1.6 !important;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif !important;
+        font-weight: 400 !important;
+        resize: vertical !important;
+        min-height: 140px;
+        box-shadow: none !important;
+        outline: none !important;
     }
-    .stTextArea textarea:focus { border-color: var(--accent) !important; outline: none !important; }
+    .detail .stTextArea textarea:hover { border-left-color: var(--text-mute) !important; }
+    .detail .stTextArea textarea:focus {
+        border-left-color: var(--accent) !important;
+        background: transparent !important;
+        outline: none !important;
+        box-shadow: none !important;
+    }
+    /* The rest of the textarea wrapper — kill borders Streamlit might add */
+    .detail .stTextArea, .detail .stTextArea > div, .detail .stTextArea > div > div {
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
 
     /* ─── Buttons ─── */
     .stButton button {
@@ -590,23 +653,32 @@ with det_col:
         blurb = blurbs.get((selected_scored.story.url, selected_nl_for_detail), {})
         decision = ss.decisions.get((selected_scored.story.url, selected_nl_for_detail))
 
-        st.markdown(f'<h2>{selected_scored.story.title}</h2>', unsafe_allow_html=True)
+        from urllib.parse import urlparse
+        domain = urlparse(selected_scored.story.url).netloc.lstrip("www.") or selected_scored.story.source
+
+        # Large title
+        title_safe = selected_scored.story.title.replace("<", "&lt;").replace(">", "&gt;")
+        st.markdown(f'<h2 class="title">{title_safe}</h2>', unsafe_allow_html=True)
+
+        # Source (hyperlinked) + score + section badge
+        section_label = sec_obj.name if sec_obj else selected_assignment.section_id
         st.markdown(
-            f'<div class="src">{selected_scored.story.source} · '
-            f'<a href="{selected_scored.story.url}" target="_blank">open ↗</a> · '
-            f'{nl.brand_name} → {sec_obj.name if sec_obj else selected_assignment.section_id} · '
-            f'score {int(round(selected_assignment.score))}</div>',
+            f'<div class="meta-line">'
+            f'<a href="{selected_scored.story.url}" target="_blank" rel="noopener">{domain} ↗</a>'
+            f'<span class="score-tag">score {int(round(selected_assignment.score))}</span>'
+            f'<span class="nl-tag">{nl.brand_name} · {section_label}</span>'
+            f'</div>',
             unsafe_allow_html=True,
         )
 
-        # Blurb editor
-        st.markdown(f'<div class="label">blurb · {nl.voice_skill}</div>', unsafe_allow_html=True)
+        # Summary heading
+        st.markdown('<div class="label">newsletter summary</div>', unsafe_allow_html=True)
         initial_blurb = (decision.edited_blurb if decision and decision.edited_blurb else blurb.get("blurb", ""))
         editor_key = f"edit_{selected_scored.story.url}_{selected_nl_for_detail}"
         edited = st.text_area(
             "blurb",
             value=initial_blurb,
-            height=200,
+            height=180,
             key=editor_key,
             label_visibility="collapsed",
         )
