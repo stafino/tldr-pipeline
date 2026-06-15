@@ -51,26 +51,58 @@ Per-newsletter section schemas (target counts per section, word-count constraint
 # install uv if missing
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
-# install deps
-uv sync
-
 # configure
 cp .env.example .env
-# edit .env: set LLM_BACKEND and either ANTHROPIC_API_KEY or none (for cli)
+# edit .env: set LLM_BACKEND and either ANTHROPIC_API_KEY or leave it (for cli)
 
-# run the full pipeline for today, defaulting to Founders
-make refresh
-
-# or target the AI newsletter
-make refresh NEWSLETTER=tldr_ai
-
-# launch the review UI (preview + download issue draft)
-make run
+# run everything for today + open the review UI
+./tldr
 ```
 
-The first run downloads the sentence-transformer model (~80MB) for dedup embeddings.
+The first invocation runs `uv sync` (downloads deps + arm64 Python via uv's managed runtime) and then the sentence-transformer model (~80MB) on first dedup.
 
-## Per-step commands
+### Run `tldr` as a bare command anywhere in the repo
+
+Add this to `~/.zshrc` (or `.bashrc`):
+
+```zsh
+# tldr-pipeline launcher
+tldr() {
+  local dir="$PWD"
+  while [[ "$dir" != "/" ]]; do
+    if [[ -x "$dir/tldr" && -f "$dir/pyproject.toml" ]]; then
+      "$dir/tldr" "$@"
+      return $?
+    fi
+    dir="$(dirname "$dir")"
+  done
+  echo "tldr: not inside a tldr-pipeline repo." >&2
+  return 1
+}
+```
+
+Then plain `tldr`, `tldr ui`, `tldr status`, etc. work from anywhere inside the repo tree.
+
+### `tldr` subcommands
+
+| Command | What it does |
+|---|---|
+| `tldr` | Full pipeline + launch UI |
+| `tldr refresh` | Pipeline only (no UI) |
+| `tldr ui` | Launch the Streamlit review UI |
+| `tldr ingest` / `dedup` / `rank` / `blurbs` / `format` | Single step |
+| `tldr backtest <start> <end>` | Run the backtest comparison |
+| `tldr status` | Show counts for today's pipeline |
+| `tldr open` | Open today's rendered issue in `$EDITOR` |
+| `tldr help` | This list |
+
+All commands accept `DATE=YYYY-MM-DD` and `NEWSLETTER=tldr_founders|tldr_ai` as env overrides:
+
+```bash
+DATE=2026-06-14 NEWSLETTER=tldr_ai tldr refresh
+```
+
+## Per-step commands (via Make)
 
 ```bash
 make ingest  DATE=2026-06-14                       # pull from RSS, arXiv, HN
@@ -79,6 +111,8 @@ make rank    DATE=2026-06-14 NEWSLETTER=tldr_ai    # score + classify into secti
 make blurbs  DATE=2026-06-14 NEWSLETTER=tldr_ai    # generate blurbs for top-10 per section
 make format  DATE=2026-06-14 NEWSLETTER=tldr_ai    # render exact-TLDR-format issue draft
 ```
+
+(Or use the equivalent `./tldr <step>` subcommands.)
 
 ## Output format
 

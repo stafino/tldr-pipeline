@@ -22,6 +22,12 @@ dependencies = [
 [project.optional-dependencies]
 dev = ["pytest>=8.0.0", "ruff>=0.6.0"]
 
+[tool.uv]
+# Always use uv's managed Python (downloaded once into ~/.local/share/uv/python)
+# instead of whatever system Python is first on PATH. Avoids picking up an
+# Intel Homebrew python on Apple Silicon, which then can't install torch.
+python-preference = "managed"
+
 [tool.ruff]
 line-length = 100
 target-version = "py311"

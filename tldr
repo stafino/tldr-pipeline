@@ -1,0 +1,127 @@
+#!/usr/bin/env bash
+#
+# tldr — one-shot driver for the tldr-pipeline.
+#
+# Usage:
+#   tldr                  → full pipeline (ingest → dedup → rank → blurbs → format) then open UI
+#   tldr refresh          → full pipeline only, no UI
+#   tldr ui               → open the Streamlit review UI
+#   tldr ingest|dedup|rank|blurbs|format
+#                         → run a single step
+#   tldr backtest         → run the backtest script
+#   tldr open             → open the latest rendered issue draft in $EDITOR
+#   tldr status           → counts for today's pipeline (raw / deduped / scored / blurbed)
+#   tldr help             → this message
+#
+# Environment overrides:
+#   DATE=2026-06-14       → run for a specific date (default: today)
+#   NEWSLETTER=tldr_ai    → switch newsletter schema (default: tldr_founders)
+
+set -euo pipefail
+
+REPO_ROOT="$(cd "$(dirname "$0")" && pwd)"
+cd "$REPO_ROOT"
+
+DATE="${DATE:-$(date +%Y-%m-%d)}"
+NEWSLETTER="${NEWSLETTER:-tldr_founders}"
+
+err()  { printf '\033[31m%s\033[0m\n' "$*" >&2; }
+log()  { printf '\033[36m▸ %s\033[0m\n' "$*"; }
+ok()   { printf '\033[32m✓ %s\033[0m\n' "$*"; }
+
+if ! command -v uv >/dev/null 2>&1; then
+  err "uv is not installed. Install it with:"
+  err "  curl -LsSf https://astral.sh/uv/install.sh | sh"
+  exit 1
+fi
+
+if [[ ! -d ".venv" ]]; then
+  log "first run — installing dependencies with uv sync"
+  uv sync
+fi
+
+run_step() {
+  local step="$1"; shift
+  log "$step  date=$DATE  newsletter=$NEWSLETTER"
+  uv run "$@"
+}
+
+cmd_ingest()  { run_step "ingest" python -m ingestion.run --date "$DATE"; }
+cmd_dedup()   { run_step "dedup"  python -m dedup.run --date "$DATE"; }
+cmd_rank()    { run_step "rank"   python -m ranking.run --date "$DATE" --newsletter "$NEWSLETTER"; }
+cmd_blurbs()  { run_step "blurbs" python -m blurbs.run --date "$DATE" --newsletter "$NEWSLETTER"; }
+cmd_format()  { run_step "format" python -m formatters.tldr --date "$DATE" --newsletter "$NEWSLETTER"; }
+
+cmd_refresh() {
+  cmd_ingest
+  cmd_dedup
+  cmd_rank
+  cmd_blurbs
+  cmd_format
+  ok "done — issue draft at data/issues/${NEWSLETTER}-${DATE}.txt"
+}
+
+cmd_ui() {
+  log "launching Streamlit UI at http://localhost:8501"
+  exec uv run streamlit run ui/app.py
+}
+
+cmd_backtest() {
+  local start="${1:-}"; local end="${2:-}"
+  if [[ -z "$start" || -z "$end" ]]; then
+    err "usage: tldr backtest <start> <end>  (e.g. tldr backtest 2026-06-01 2026-06-12)"
+    exit 1
+  fi
+  uv run python scripts/backtest.py --start "$start" --end "$end"
+}
+
+cmd_open() {
+  local f="data/issues/${NEWSLETTER}-${DATE}.txt"
+  if [[ ! -f "$f" ]]; then
+    err "no rendered issue at $f. Run 'tldr format' (or 'tldr refresh') first."
+    exit 1
+  fi
+  "${EDITOR:-cat}" "$f"
+}
+
+_count_lines() {
+  [[ -f "$1" ]] && wc -l <"$1" | tr -d ' ' || echo 0
+}
+
+cmd_status() {
+  echo "date=$DATE newsletter=$NEWSLETTER"
+  printf "  %-10s %s\n" "raw"      "$(_count_lines "data/raw/${DATE}.jsonl")"
+  printf "  %-10s %s\n" "deduped"  "$(_count_lines "data/deduped/${DATE}.jsonl")"
+  printf "  %-10s %s\n" "scored"   "$(_count_lines "data/scored/${DATE}.jsonl")"
+  printf "  %-10s %s\n" "blurbed"  "$(_count_lines "data/blurbs/${DATE}.jsonl")"
+}
+
+cmd_help() {
+  sed -n '2,20p' "$0" | sed 's/^# \{0,1\}//'
+}
+
+main() {
+  local sub="${1:-default}"
+  case "$sub" in
+    default)             cmd_refresh && cmd_ui ;;
+    refresh|all)         cmd_refresh ;;
+    ui|web|streamlit)    cmd_ui ;;
+    ingest)              cmd_ingest ;;
+    dedup)               cmd_dedup ;;
+    rank)                cmd_rank ;;
+    blurbs)              cmd_blurbs ;;
+    format|render)       cmd_format ;;
+    backtest)            shift; cmd_backtest "$@" ;;
+    open|edit)           cmd_open ;;
+    status)              cmd_status ;;
+    help|-h|--help)      cmd_help ;;
+    *)
+      err "unknown subcommand: $sub"
+      echo
+      cmd_help
+      exit 1
+      ;;
+  esac
+}
+
+main "$@"
