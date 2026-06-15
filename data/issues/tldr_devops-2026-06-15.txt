@@ -17,13 +17,13 @@ Researchers at Obsidian Security disclosed a chain of three vulnerabilities in L
 🚀
 Opinions & Tutorials
 
-Detecting API anomalies behind a 200 OK — with statistics, not AI (3 minute read)
-
-The author built a monitor that catches API failures hiding behind a 200 OK, like endpoints serving cached error pages, JSON bodies with status-200 errors, responses that quietly got 10× slower, or payloads that shrank when a backend returned empty results. Rather than reach for ML, they keep one statistical baseline per endpoint, arguing plain statistics are cheaper, deterministic, and explainable about why an alert fired, where an opaque model is not.
-
 AI demands more engineering discipline. Not less (xpost) (1 minute read)
 
 Charity Majors argues that AI-assisted development raises the bar for engineering discipline rather than lowering it, drawing a parallel to the shift from hand-maintained server pets to immutable infrastructure. The piece contends that generating more code faster makes review, testing, observability, and ownership boundaries more important, since teams now ship volume they did not personally write and must still operate in production.
+
+21 years and counting of 'eight fallacies of distributed computing' (2025) (1 minute read)
+
+The author revisits Peter Deutsch's eight fallacies of distributed computing and argues they remain accurate 21 years on, walking through how each false assumption (the network is reliable, latency is zero, bandwidth is infinite) still surfaces in modern outages. The piece maps the fallacies onto current cloud and microservice architectures, making the case that no amount of abstraction has retired the underlying physics that SREs debug in production.
 
 ⚒️
 Launches & Tools

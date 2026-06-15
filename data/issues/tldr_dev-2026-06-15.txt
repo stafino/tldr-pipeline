@@ -6,13 +6,13 @@ TLDR Dev 2026-06-15
 🧑‍💻
 Articles & Tutorials
 
-Detecting API anomalies behind a 200 OK — with statistics, not AI (3 minute read)
-
-The author built an uptime monitor that catches "it's up, but it's wrong" failures that return 200 OK, like an endpoint serving a cached error page, a JSON API returning errors with a success status, or a payload that silently shrank from 14 KB to 800 bytes. The system keeps one statistical baseline per endpoint to flag latency and response-size anomalies, deliberately skipping machine learning because plain statistics are cheaper, deterministic, and explainable when something fires.
-
 Running DOS on Behringers DDX3216 with a DIY x86-Bios from Scratch (1 minute read)
 
 The author replaced the proprietary firmware on Behringer's DDX3216 digital mixer by writing an x86 BIOS from scratch, enabling the board's embedded processor to boot DOS. The post covers reverse-engineering the hardware, implementing the BIOS interrupt routines and memory initialization needed to bring up the chipset, and the debugging required to get a stock DOS to run on the repurposed console.
+
+AI coding at home without going broke (1 minute read)
+
+The author walks through building a local AI coding setup that avoids the recurring cost of frontier API subscriptions, covering hardware choices, open-weight model selection, and the tooling needed to wire them into an editor workflow. The post weighs the trade-offs between local inference and hosted models, noting where self-hosting holds up for everyday coding tasks and where it still falls short of paid frontier offerings.
 
 🧠
 Opinions & Advice
