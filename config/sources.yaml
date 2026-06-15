@@ -1,0 +1,72 @@
+# Sources the ingestion layer pulls from. Tuned to match the kinds of links
+# TLDR AI actually cites. Add or comment out lines to taste.
+
+rss:
+  # Frontier-lab official posts
+  - name: openai_blog
+    url: https://openai.com/news/rss.xml
+    quality: high
+    notes: Official OpenAI announcements and research posts.
+
+  - name: anthropic_news
+    url: https://www.anthropic.com/news/rss.xml
+    quality: high
+    notes: Official Anthropic posts. Low frequency, high signal.
+
+  - name: deepmind_blog
+    url: https://deepmind.google/blog/rss.xml
+    quality: high
+    notes: Google DeepMind research and product posts.
+
+  - name: google_research
+    url: https://research.google/blog/rss/
+    quality: high
+    notes: Google Research blog.
+
+  - name: meta_ai
+    url: https://ai.meta.com/blog/rss/
+    quality: high
+    notes: Meta AI research blog.
+
+  - name: huggingface_blog
+    url: https://huggingface.co/blog/feed.xml
+    quality: medium
+    notes: Open-source ML practitioner posts and model launches.
+
+  - name: simonwillison
+    url: https://simonwillison.net/atom.xml
+    quality: high
+    notes: Editorial commentary that TLDR cites often in Deep Dives.
+
+  - name: import_ai
+    url: https://importai.substack.com/feed
+    quality: high
+    notes: Jack Clark's weekly AI policy/research roundup.
+
+  - name: latent_space
+    url: https://www.latent.space/feed
+    quality: medium
+    notes: Engineer-oriented AI podcast and essays.
+
+  - name: aqnichol
+    url: https://blog.aqnichol.com/feed.xml
+    quality: medium
+    notes: Deep technical posts. Cited in TLDR deep dives.
+
+  - name: langchain_blog
+    url: https://blog.langchain.com/rss/
+    quality: medium
+    notes: Agent-tooling launches and patterns.
+
+arxiv:
+  # arXiv categories to scan daily. The puller filters to last 24h by default.
+  categories:
+    - cs.AI
+    - cs.LG
+    - cs.CL
+  max_results_per_category: 50
+
+hackernews:
+  # We pull top stories with a score floor over the trailing 24h.
+  min_score: 100
+  lookback_hours: 24

@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.DS_Store
+data/raw/*.jsonl
+data/deduped/*.jsonl
+data/scored/*.jsonl
+data/blurbs/*.jsonl
+data/embeddings_cache/
+.env
+uv.lock
+.streamlit/secrets.toml
