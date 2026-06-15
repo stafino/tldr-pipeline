@@ -5,6 +5,7 @@ import logging
 from datetime import date
 from pathlib import Path
 
+from common.newsletters import default_newsletter_id
 from common.story import Story, read_jsonl, write_jsonl
 from ranking.score import rank_stories
 
@@ -17,16 +18,16 @@ def main() -> None:
     ap.add_argument("--date", default=date.today().isoformat())
     ap.add_argument("--in-dir", default="data/deduped")
     ap.add_argument("--out-dir", default="data/scored")
-    ap.add_argument("--newsletter", default="tldr_ai")
-    ap.add_argument("--top", type=int, default=30)
+    ap.add_argument("--newsletter", default=default_newsletter_id())
     ap.add_argument("--no-cache", action="store_true")
     args = ap.parse_args()
 
     raw = read_jsonl(Path(args.in_dir) / f"{args.date}.jsonl")
     stories = [Story.from_dict(d) for d in raw]
     scored = rank_stories(stories, newsletter=args.newsletter, use_cache=not args.no_cache)
-    write_jsonl(Path(args.out_dir) / f"{args.date}.jsonl", scored[: args.top])
-    log.info("Wrote %d scored stories", min(len(scored), args.top))
+    # Write the full scored list so the formatter can slice per section.
+    write_jsonl(Path(args.out_dir) / f"{args.date}.jsonl", scored)
+    log.info("Wrote %d scored stories", len(scored))
 
 
 if __name__ == "__main__":

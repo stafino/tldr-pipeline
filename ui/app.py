@@ -1,13 +1,14 @@
 from __future__ import annotations
 
 import json
-from datetime import date, timedelta
 from pathlib import Path
 
 import pandas as pd
 import streamlit as st
 
+from common.newsletters import default_newsletter_id, load_newsletters
 from common.story import ScoredStory, read_jsonl
+from formatters.tldr import render as render_tldr
 
 SCORED_DIR = Path("data/scored")
 BLURBS_DIR = Path("data/blurbs")
@@ -22,14 +23,14 @@ st.markdown(
     .block-container { padding-top: 1.5rem; max-width: 1400px; }
     .stDataFrame, .stTable { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; }
     h1, h2, h3 { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
-    code { font-size: 12px; }
+    code, .stTextArea textarea { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; }
     </style>
     """,
     unsafe_allow_html=True,
 )
 
 st.title("tldr pipeline")
-st.caption("Daily candidate ranking. Pick a date, pick stories, export.")
+st.caption("Daily candidate ranking by section. Pick a date, review, export issue draft.")
 
 
 def _available_dates() -> list[str]:
@@ -41,20 +42,19 @@ def _available_dates() -> list[str]:
     return sorted(dates, reverse=True)
 
 
-def _load_day(d: str) -> tuple[list[ScoredStory], dict[str, dict]]:
-    scored_raw = read_jsonl(SCORED_DIR / f"{d}.jsonl")
-    scored = [ScoredStory.from_dict(s) for s in scored_raw]
-    blurbs_map: dict[str, dict] = {}
-    blurbs_path = BLURBS_DIR / f"{d}.jsonl"
-    if blurbs_path.exists():
-        with blurbs_path.open() as f:
-            for line in f:
-                line = line.strip()
-                if not line:
-                    continue
-                b = json.loads(line)
-                blurbs_map[b["story_url"]] = b
-    return scored, blurbs_map
+def _load_blurbs(d: str) -> dict[str, dict]:
+    p = BLURBS_DIR / f"{d}.jsonl"
+    if not p.exists():
+        return {}
+    out: dict[str, dict] = {}
+    with p.open() as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            b = json.loads(line)
+            out[b["story_url"]] = b
+    return out
 
 
 def _counts_for_day(d: str) -> dict[str, int]:
@@ -73,96 +73,100 @@ if not dates:
     )
     st.stop()
 
-col1, col2 = st.columns([1, 4])
+newsletters = load_newsletters()
+default_nl = default_newsletter_id()
+nl_ids = list(newsletters.keys())
+
+col1, col2, col3 = st.columns([1, 1, 3])
 with col1:
-    selected = st.selectbox("date", dates, index=0)
+    selected_date = st.selectbox("date", dates, index=0)
 with col2:
-    counts = _counts_for_day(selected)
+    selected_nl = st.selectbox(
+        "newsletter", nl_ids, index=nl_ids.index(default_nl) if default_nl in nl_ids else 0
+    )
+with col3:
+    counts = _counts_for_day(selected_date)
     st.markdown(
-        f"**raw**: {counts['raw']} &nbsp;&nbsp; **deduped**: {counts['deduped']} &nbsp;&nbsp; **scored**: {counts['scored']} &nbsp;&nbsp; **blurbed**: {counts['blurbed']}"
+        f"**raw**: {counts['raw']} &nbsp;&nbsp; **deduped**: {counts['deduped']} &nbsp;&nbsp; "
+        f"**scored**: {counts['scored']} &nbsp;&nbsp; **blurbed**: {counts['blurbed']}"
     )
 
-scored, blurbs_map = _load_day(selected)
+nl = newsletters[selected_nl]
+scored_raw = read_jsonl(SCORED_DIR / f"{selected_date}.jsonl")
+scored = [ScoredStory.from_dict(d) for d in scored_raw if d.get("newsletter", selected_nl) == selected_nl]
 
 if not scored:
-    st.info("No scored stories for this date.")
+    st.info(
+        f"No stories scored under newsletter '{selected_nl}' for {selected_date}. "
+        f"Run `make rank DATE={selected_date} --newsletter {selected_nl}` first."
+    )
     st.stop()
 
-rows = []
-for rank, s in enumerate(scored, start=1):
-    blurb = blurbs_map.get(s.story.url, {})
-    rows.append(
-        {
-            "select": False,
-            "rank": rank,
-            "score": int(round(s.score)),
-            "title": s.story.title,
-            "url": s.story.url,
-            "source": s.story.source,
-            "type": s.story.source_type,
-            "blurb": blurb.get("blurb", ""),
-            "needs_review": blurb.get("needs_review", False),
-            "reasoning": s.reasoning,
-            "technical": s.is_technical,
-            "novel": s.is_novel,
-            "mainstream": s.is_mainstream_relevant,
-            "related_n": len(s.story.related_sources),
-            "related": "\n".join(s.story.related_sources),
-        }
-    )
+blurbs_by_url = _load_blurbs(selected_date)
 
-df = pd.DataFrame(rows)
+# Group and slice top-N per section.
+by_section: dict[str, list[ScoredStory]] = {s.id: [] for s in nl.sections}
+for s in scored:
+    if s.section_id in by_section:
+        by_section[s.section_id].append(s)
+for sec in nl.sections:
+    by_section[sec.id] = by_section[sec.id][: sec.target_count]
 
-edited = st.data_editor(
-    df,
-    use_container_width=True,
-    hide_index=True,
-    height=620,
-    column_config={
-        "select": st.column_config.CheckboxColumn("✓", width="small"),
-        "rank": st.column_config.NumberColumn("#", width="small"),
-        "score": st.column_config.NumberColumn("score", width="small"),
-        "title": st.column_config.TextColumn("title", width="large"),
-        "url": st.column_config.LinkColumn("url", width="medium"),
-        "source": st.column_config.TextColumn("source", width="small"),
-        "type": st.column_config.TextColumn("type", width="small"),
-        "blurb": st.column_config.TextColumn("blurb", width="large"),
-        "needs_review": st.column_config.CheckboxColumn("flag", width="small"),
-        "reasoning": st.column_config.TextColumn("why", width="medium"),
-        "technical": st.column_config.CheckboxColumn("tech", width="small"),
-        "novel": st.column_config.CheckboxColumn("nov", width="small"),
-        "mainstream": st.column_config.CheckboxColumn("ms", width="small"),
-        "related_n": st.column_config.NumberColumn("rel", width="small"),
-        "related": st.column_config.TextColumn("related urls", width="medium"),
-    },
-    disabled=[
-        "rank", "score", "title", "url", "source", "type", "reasoning",
-        "technical", "novel", "mainstream", "related_n", "related", "needs_review",
-    ],
-    key="story_table",
-)
+# Render each section as its own table.
+tabs = st.tabs([f"{sec.emoji} {sec.name} ({len(by_section[sec.id])})" for sec in nl.sections])
+for tab, sec in zip(tabs, nl.sections):
+    with tab:
+        rows = []
+        for rank, s in enumerate(by_section[sec.id], start=1):
+            b = blurbs_by_url.get(s.story.url, {})
+            rows.append(
+                {
+                    "#": rank,
+                    "score": int(round(s.score)),
+                    "title": s.story.title,
+                    "url": s.story.url,
+                    "min": int(b.get("minute_read", 0)),
+                    "wc": int(b.get("word_count", 0)),
+                    "flag": bool(b.get("needs_review", False)),
+                    "blurb": b.get("blurb", ""),
+                    "source": s.story.source,
+                    "why": s.reasoning,
+                }
+            )
+        if not rows:
+            st.info(f"No stories classified into {sec.name}.")
+            continue
+        df = pd.DataFrame(rows)
+        st.dataframe(
+            df,
+            use_container_width=True,
+            hide_index=True,
+            height=min(70 + 110 * len(rows), 700),
+            column_config={
+                "#": st.column_config.NumberColumn(width="small"),
+                "score": st.column_config.NumberColumn(width="small"),
+                "title": st.column_config.TextColumn(width="large"),
+                "url": st.column_config.LinkColumn(width="medium"),
+                "min": st.column_config.NumberColumn("min read", width="small"),
+                "wc": st.column_config.NumberColumn("words", width="small"),
+                "flag": st.column_config.CheckboxColumn("flag", width="small"),
+                "blurb": st.column_config.TextColumn(width="large"),
+                "source": st.column_config.TextColumn(width="small"),
+                "why": st.column_config.TextColumn("why", width="medium"),
+            },
+        )
 
 st.divider()
+st.subheader("Issue draft (TLDR format)")
 
-selected_rows = edited[edited["select"]]
-st.markdown(f"**{len(selected_rows)} selected**")
+issue_text = render_tldr(scored, blurbs_by_url, selected_nl, selected_date)
+st.text_area("preview", value=issue_text, height=480, label_visibility="collapsed")
 
-if len(selected_rows) > 0:
-    sections = ["Headlines & Launches", "Deep Dives & Analysis", "Engineering & Research", "Miscellaneous", "Quick Links"]
-    chosen_section = st.selectbox("export under section", sections, index=0)
-
-    issue_md = [f"## {chosen_section}\n"]
-    for _, row in selected_rows.iterrows():
-        title = row["title"]
-        url = row["url"]
-        blurb = row["blurb"] or "(blurb not generated)"
-        issue_md.append(f"### {title}\n\n{blurb}\n\n[Read more]({url})\n")
-    issue_text = "\n".join(issue_md)
-
-    st.text_area("issue draft (copy to clipboard)", value=issue_text, height=300)
+cdl1, cdl2 = st.columns([1, 5])
+with cdl1:
     st.download_button(
-        "download .md",
+        "download .txt",
         data=issue_text,
-        file_name=f"tldr-{selected}.md",
-        mime="text/markdown",
+        file_name=f"{selected_nl}-{selected_date}.txt",
+        mime="text/plain",
     )

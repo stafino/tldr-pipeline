@@ -1,0 +1,104 @@
+# Per-newsletter section schemas. The ranking model classifies each story into
+# one of these sections; the blurb generator uses min/max word counts per section;
+# the formatter emits sections in the order listed.
+
+tldr_founders:
+  brand_name: "TLDR Founders"
+  voice_skill: tldr_founders_voice
+  sections:
+    - id: headlines
+      name: "Headlines & Trends"
+      emoji: "📈"
+      min_words: 60
+      max_words: 110
+      target_count: 10
+      description: >
+        Industry-level news, market shifts, macro trends. The piece tells a
+        founder something about where the field is moving.
+    - id: strategies
+      name: "Strategies & Tactics"
+      emoji: "🧠"
+      min_words: 60
+      max_words: 110
+      target_count: 10
+      description: >
+        How-to and playbook content for founders and operators. Pricing,
+        hiring, GTM, fundraising, sales motion, org design.
+    - id: tools
+      name: "Tools & Resources"
+      emoji: "⚒️"
+      min_words: 40
+      max_words: 100
+      target_count: 10
+      description: >
+        Product launches, new APIs, releases of tools founders can pick up
+        and use. Concrete and shippable.
+    - id: misc
+      name: "Miscellaneous"
+      emoji: "🎁"
+      min_words: 50
+      max_words: 100
+      target_count: 10
+      description: >
+        Sharper essays, opinion pieces, lessons learned. Less newsy than
+        Headlines, more reflective. Often a single strong argument.
+    - id: quick
+      name: "Quick Links"
+      emoji: "⚡"
+      min_words: 8
+      max_words: 25
+      target_count: 10
+      description: >
+        Worth reading but not enough substance for a full section slot.
+        One-sentence blurb max.
+
+tldr_ai:
+  brand_name: "TLDR AI"
+  voice_skill: tldr_voice
+  sections:
+    - id: headlines
+      name: "Headlines & Launches"
+      emoji: "🚀"
+      min_words: 40
+      max_words: 75
+      target_count: 10
+      description: >
+        Frontier-lab announcements, model releases, major product ships,
+        funding rounds, M&A.
+    - id: deep_dives
+      name: "Deep Dives & Analysis"
+      emoji: "🧠"
+      min_words: 40
+      max_words: 90
+      target_count: 10
+      description: >
+        Think-pieces, technical posts that argue a position, deep
+        explanations of a phenomenon, economic/strategic analysis.
+    - id: engineering
+      name: "Engineering & Research"
+      emoji: "⚒️"
+      min_words: 40
+      max_words: 80
+      target_count: 10
+      description: >
+        Developer tools, frameworks, APIs, research papers, new techniques,
+        infra releases.
+    - id: misc
+      name: "Miscellaneous"
+      emoji: "🎁"
+      min_words: 40
+      max_words: 80
+      target_count: 10
+      description: >
+        Industry, geopolitics, policy, hiring, anything not fitting above.
+    - id: quick
+      name: "Quick Links"
+      emoji: "⚡"
+      min_words: 8
+      max_words: 25
+      target_count: 10
+      description: >
+        Brief mentions. One-sentence blurb max.
+
+# Default newsletter to use across the pipeline if --newsletter is not passed.
+default: tldr_founders

@@ -1,6 +1,7 @@
-.PHONY: install run refresh rank blurbs backtest fmt test clean
+.PHONY: install run refresh rank blurbs format backtest fmt test clean
 
 DATE ?= $(shell date +%Y-%m-%d)
+NEWSLETTER ?= tldr_founders
 
 install:
 	uv sync
@@ -8,8 +9,9 @@ install:
 refresh:
 	uv run python -m ingestion.run --date $(DATE)
 	uv run python -m dedup.run --date $(DATE)
-	uv run python -m ranking.run --date $(DATE)
-	uv run python -m blurbs.run --date $(DATE)
+	uv run python -m ranking.run --date $(DATE) --newsletter $(NEWSLETTER)
+	uv run python -m blurbs.run --date $(DATE) --newsletter $(NEWSLETTER)
+	uv run python -m formatters.tldr --date $(DATE) --newsletter $(NEWSLETTER)
 
 ingest:
 	uv run python -m ingestion.run --date $(DATE)
@@ -18,10 +20,13 @@ dedup:
 	uv run python -m dedup.run --date $(DATE)
 
 rank:
-	uv run python -m ranking.run --date $(DATE)
+	uv run python -m ranking.run --date $(DATE) --newsletter $(NEWSLETTER)
 
 blurbs:
-	uv run python -m blurbs.run --date $(DATE)
+	uv run python -m blurbs.run --date $(DATE) --newsletter $(NEWSLETTER)
+
+format:
+	uv run python -m formatters.tldr --date $(DATE) --newsletter $(NEWSLETTER)
 
 run:
 	uv run streamlit run ui/app.py

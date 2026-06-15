@@ -6,34 +6,32 @@ import re
 from dataclasses import dataclass
 from pathlib import Path
 
-from anthropic import Anthropic
-from tenacity import retry, stop_after_attempt, wait_exponential
-
+from common.llm import complete
+from common.newsletters import Newsletter, Section, get_newsletter
 from common.story import ScoredStory
 
 log = logging.getLogger(__name__)
 
-VOICE_PATH = Path(".claude/skills/tldr_voice.md")
 BLURB_MODEL = os.environ.get("BLURB_MODEL", "claude-opus-4-7")
 
-MIN_WORDS = 40
-MAX_WORDS = 65
+SYSTEM_TEMPLATE = """You write blurbs for {brand_name}, a daily newsletter. You match the voice canon exactly.
 
-SYSTEM_TEMPLATE = """You write blurbs for {newsletter}, an AI/tech newsletter for engineers and researchers.
-
-VOICE CANON (treat as ground truth, match exactly):
+VOICE CANON (treat as ground truth):
 
 {voice}
 
-HARD RULES:
-- Output exactly 2 sentences, {min_words}-{max_words} words total.
-- Lead with the substance, not the framing. No "this changes everything", no curiosity-gaps, no breathless adjectives.
-- No em dashes. No emoji. No exclamation marks.
-- Plain past or present tense, declarative.
-- If the story is a paper or technical post, describe what was actually done; if it's a launch, describe the capability and who shipped it.
-- Output ONLY the blurb text. No headlines, no source attribution, no preamble."""
+CURRENT SECTION: {section_name}
+SECTION DESCRIPTION: {section_description}
 
-USER_TEMPLATE = """Write a 2-sentence blurb in {newsletter} voice for this story.
+HARD RULES FOR THIS SECTION:
+- Word count: {min_words}-{max_words} words. Hard limit, no exceptions.
+- {sentence_guidance}
+- Lead with the substance. No "this changes everything", no curiosity-gaps, no breathless adjectives.
+- No emoji. No exclamation marks. No rhetorical questions.
+- No em dashes as drama markers (use periods).
+- Output ONLY the blurb text. No headline, no source attribution, no preamble, no markdown."""
+
+USER_TEMPLATE = """Write a blurb in {brand_name} voice for the "{section_name}" section.
 
 Title: {title}
 Source: {source}
@@ -45,93 +43,123 @@ Context: {snippet}"""
 class GeneratedBlurb:
     story_url: str
     title: str
+    section_id: str
     blurb: str
     word_count: int
+    minute_read: int
     needs_review: bool
 
 
-def _load_voice() -> str:
-    if not VOICE_PATH.exists():
-        log.warning("Voice file missing at %s; using inline fallback", VOICE_PATH)
-        return "Lead with the substance. Two declarative sentences. 40-65 words."
-    return VOICE_PATH.read_text()
+def _load_voice(skill_id: str) -> str:
+    p = Path(f".claude/skills/{skill_id}.md")
+    if not p.exists():
+        log.warning("Voice skill %s missing at %s; falling back to short stub", skill_id, p)
+        return "Lead with the substance. Match the newsletter's existing voice. Two or three declarative sentences."
+    return p.read_text()
 
 
 def _word_count(s: str) -> int:
     return len(re.findall(r"\b[\w']+\b", s))
 
 
-@retry(stop=stop_after_attempt(3), wait=wait_exponential(min=1, max=10))
-def _call_model(client: Anthropic, system: str, user: str, max_tokens: int = 250) -> str:
-    resp = client.messages.create(
-        model=BLURB_MODEL,
-        max_tokens=max_tokens,
-        system=system,
-        messages=[{"role": "user", "content": user}],
-    )
-    return "".join(b.text for b in resp.content if getattr(b, "type", "") == "text").strip()
+def _sentence_guidance(section: Section) -> str:
+    if section.id == "quick":
+        return "Output exactly ONE sentence."
+    if section.max_words >= 90:
+        return "Output 2-3 declarative sentences."
+    return "Output exactly 2 declarative sentences."
 
 
-def generate_blurb(scored: ScoredStory, newsletter: str = "tldr_ai") -> GeneratedBlurb:
-    voice = _load_voice()
+def _estimate_minute_read(raw_text: str, fallback: int = 5) -> int:
+    """Rough TLDR-style minute-read estimate. 250 wpm reading speed."""
+    if not raw_text:
+        return fallback
+    wc = _word_count(raw_text)
+    minutes = max(1, round(wc / 250))
+    return min(minutes, 20)
+
+
+def generate_blurb(
+    scored: ScoredStory, newsletter: str = "tldr_founders"
+) -> GeneratedBlurb:
+    nl = get_newsletter(newsletter)
+    section = nl.section(scored.section_id) or nl.sections[-1]
+    voice = _load_voice(nl.voice_skill)
+
     system = SYSTEM_TEMPLATE.format(
-        newsletter=newsletter, voice=voice, min_words=MIN_WORDS, max_words=MAX_WORDS
+        brand_name=nl.brand_name,
+        voice=voice,
+        section_name=section.name,
+        section_description=section.description,
+        min_words=section.min_words,
+        max_words=section.max_words,
+        sentence_guidance=_sentence_guidance(section),
     )
     user = USER_TEMPLATE.format(
-        newsletter=newsletter,
+        brand_name=nl.brand_name,
+        section_name=section.name,
         title=scored.story.title,
         source=scored.story.source,
         url=scored.story.url,
-        snippet=(scored.story.raw_text or "")[:800],
+        snippet=(scored.story.raw_text or "")[:1000],
     )
 
-    client = Anthropic()
     attempts: list[tuple[str, int]] = []
-
     for attempt in range(2):
         try:
-            text = _call_model(client, system, user)
+            text = complete(system, user, model=BLURB_MODEL, max_tokens=400)
         except Exception as e:
             log.warning("Blurb generation failed for %s: %s", scored.story.url, e)
             continue
         text = text.strip().strip('"').strip("'")
+        # Strip a "Blurb:" or section-name prefix if the model added one.
+        text = re.sub(r"^(blurb|summary|here(?:'s| is) the blurb)\s*:?\s*", "", text, flags=re.I)
         wc = _word_count(text)
         attempts.append((text, wc))
-        if MIN_WORDS <= wc <= MAX_WORDS:
+        if section.min_words <= wc <= section.max_words:
             return GeneratedBlurb(
                 story_url=scored.story.url,
                 title=scored.story.title,
+                section_id=section.id,
                 blurb=text,
                 word_count=wc,
+                minute_read=_estimate_minute_read(scored.story.raw_text),
                 needs_review=False,
             )
         user = (
-            f"That was {wc} words; the constraint is {MIN_WORDS}-{MAX_WORDS}. Try again.\n\n" + user
-        )
+            f"That was {wc} words; the constraint is {section.min_words}-{section.max_words}. "
+            "Rewrite within the constraint.\n\n"
+        ) + user
 
     if not attempts:
         return GeneratedBlurb(
             story_url=scored.story.url,
             title=scored.story.title,
+            section_id=section.id,
             blurb="",
             word_count=0,
+            minute_read=_estimate_minute_read(scored.story.raw_text),
             needs_review=True,
         )
 
-    best = min(attempts, key=lambda a: abs(a[1] - (MIN_WORDS + MAX_WORDS) // 2))
+    target_mid = (section.min_words + section.max_words) // 2
+    best = min(attempts, key=lambda a: abs(a[1] - target_mid))
     return GeneratedBlurb(
         story_url=scored.story.url,
         title=scored.story.title,
+        section_id=section.id,
         blurb=best[0],
         word_count=best[1],
+        minute_read=_estimate_minute_read(scored.story.raw_text),
         needs_review=True,
     )
 
 
-def generate_all(
-    scored_stories: list[ScoredStory], newsletter: str = "tldr_ai"
+def generate_for_sections(
+    by_section: dict[str, list[ScoredStory]], newsletter: str = "tldr_founders"
 ) -> list[GeneratedBlurb]:
     out: list[GeneratedBlurb] = []
-    for s in scored_stories:
-        out.append(generate_blurb(s, newsletter=newsletter))
+    for _section_id, scored_list in by_section.items():
+        for s in scored_list:
+            out.append(generate_blurb(s, newsletter=newsletter))
     return out

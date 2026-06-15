@@ -40,6 +40,8 @@ class ScoredStory:
     is_technical: bool
     is_novel: bool
     is_mainstream_relevant: bool
+    section_id: str = ""  # which newsletter section this belongs in
+    newsletter: str = ""
 
     def to_dict(self) -> dict:
         return {
@@ -49,6 +51,8 @@ class ScoredStory:
             "is_technical": self.is_technical,
             "is_novel": self.is_novel,
             "is_mainstream_relevant": self.is_mainstream_relevant,
+            "section_id": self.section_id,
+            "newsletter": self.newsletter,
         }
 
     @classmethod
@@ -60,6 +64,8 @@ class ScoredStory:
             is_technical=bool(d.get("is_technical", False)),
             is_novel=bool(d.get("is_novel", False)),
             is_mainstream_relevant=bool(d.get("is_mainstream_relevant", False)),
+            section_id=d.get("section_id", ""),
+            newsletter=d.get("newsletter", ""),
         )
 
 
