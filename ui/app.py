@@ -1,17 +1,16 @@
-"""TLDR pipeline curator UI.
+"""TLDR pipeline curator UI — dark theme, link-based navigation.
 
-Three-pane layout inspired by Linear's Triage:
-- left rail: newsletters with decided/total counts and a Cross-assignments queue
-- middle: section-grouped story list for the selected newsletter, sticky headers
+Three-pane layout (Linear Triage style):
+- left rail: clickable newsletters + Cross-assignments queue
+- middle: section-grouped story list, each row is a clickable link
 - right: selected story detail with inline blurb editor + approve/reject
-
-State persists to data/decisions/<date>.jsonl.
 """
 
 from __future__ import annotations
 
 import json
 import sys
+import urllib.parse
 from pathlib import Path
 
 _REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -31,89 +30,190 @@ BLURBS_DIR = Path("data/blurbs")
 RAW_DIR = Path("data/raw")
 DEDUP_DIR = Path("data/deduped")
 
-CROSS_KEY = "__cross__"  # pseudo-newsletter id in the left rail
+CROSS_KEY = "__cross__"
 
 st.set_page_config(page_title="tldr pipeline", layout="wide", initial_sidebar_state="collapsed")
 
-# ── Styling. Monochrome with a single accent. Mono only where it adds clarity.
+# ─────────────────────────────────────────────────────────────────────────────
+# Color tokens (CSS variables) — change here once, every component picks it up.
+# ─────────────────────────────────────────────────────────────────────────────
 st.markdown(
     """
     <style>
-    /* Layout */
-    .block-container { padding: 1.25rem 1.5rem 4rem; max-width: 1500px; }
+    :root {
+        --bg: #0a0a0a;
+        --surface: #171717;
+        --surface-hi: #1f1f1f;
+        --border: #2a2a2a;
+        --border-strong: #404040;
+        --text: #fafafa;
+        --text-dim: #a3a3a3;
+        --text-mute: #737373;
+        --accent: #3b82f6;
+        --accent-soft: #1e3a8a;
+        --ok: #10b981;
+        --ok-soft: #064e3b;
+        --warn: #f59e0b;
+        --warn-soft: #78350f;
+        --no: #ef4444;
+        --no-soft: #7f1d1d;
+    }
+
+    .block-container { padding: 1.0rem 1.25rem 5rem; max-width: 1600px; }
     [data-testid="stHeader"] { display: none; }
-    /* Reset default monospace globally — let titles render in sans */
-    body, .stMarkdown, .stMarkdown p, .stMarkdown li, .stMarkdown span,
-    button, [data-testid="stButton"] button { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", Inter, system-ui, sans-serif; }
-    /* Mono only for ranks, scores, words, chips, code */
-    .num, .chip, code, pre, .preview { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    [data-testid="stToolbar"] { display: none; }
 
-    /* Custom shell */
-    h1.brand { font-size: 16px; font-weight: 600; margin: 0; letter-spacing: -0.01em; }
-    .topbar { display: flex; align-items: center; gap: 18px; padding: 4px 0 12px; border-bottom: 1px solid #e5e7eb; }
-    .pill { font-size: 11px; color: #6b7280; }
-    .pill b { color: #111827; font-weight: 600; }
+    /* default sans for prose */
+    html, body, .stApp, .stMarkdown, .stMarkdown p, .stMarkdown li, .stMarkdown span,
+    button, [data-testid="stButton"] button {
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", Inter, system-ui, sans-serif;
+    }
+    /* mono where it adds clarity */
+    .num, .chip, code, pre, .preview, .src, .why { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
 
-    /* Rail */
-    .rail { padding: 8px 0; font-size: 13px; }
-    .rail .head { font-size: 10px; letter-spacing: 0.08em; color: #9ca3af; text-transform: uppercase; margin: 8px 0 4px; }
-    .rail a { display: flex; justify-content: space-between; padding: 4px 8px; border-radius: 4px; text-decoration: none; color: #111827; line-height: 1.4; }
-    .rail a:hover { background: #f3f4f6; }
-    .rail a.active { background: #eaf1fb; color: #1f4f8b; font-weight: 600; }
-    .rail .count { color: #6b7280; font-size: 11px; }
-    .rail a.active .count { color: #1f4f8b; }
-    .rail .star { color: #b45309; }
+    /* ─── Top bar ─── */
+    .brand { font-size: 14px; font-weight: 600; letter-spacing: -0.01em; color: var(--text); margin: 0; }
+    .pill { font-size: 11px; color: var(--text-dim); }
+    .pill b { color: var(--text); font-weight: 600; }
+    .topbar-sep { height: 1px; background: var(--border); margin: 8px 0 4px; }
 
-    /* Section header in middle pane */
-    .sec { display: flex; align-items: baseline; gap: 8px; padding: 14px 4px 6px; border-bottom: 1px solid #e5e7eb; position: sticky; top: 0; background: white; z-index: 1; }
-    .sec h3 { font-size: 13px; font-weight: 600; margin: 0; }
-    .sec .meta { font-size: 11px; color: #6b7280; margin-left: auto; }
+    /* override the date selectbox to dark */
+    [data-baseweb="select"] > div { background: var(--surface) !important; border-color: var(--border) !important; color: var(--text) !important; font-size: 12px !important; }
+    .stTextInput input { background: var(--surface) !important; border-color: var(--border) !important; color: var(--text) !important; font-size: 12px !important; }
 
-    /* Story row */
-    .row { display: grid; grid-template-columns: 28px 36px 1fr auto; gap: 8px; align-items: baseline; padding: 6px 4px; border-bottom: 1px solid #f3f4f6; cursor: pointer; }
-    .row:hover { background: #f9fafb; }
-    .row.sel { background: #f0f6ff; }
-    .row .rank { color: #9ca3af; font-size: 11px; text-align: right; }
-    .row .score { font-size: 11px; color: #111827; font-weight: 600; }
-    .row .title { font-size: 13px; line-height: 1.35; color: #111827; }
-    .row .ftr { font-size: 10.5px; color: #6b7280; margin-top: 2px; }
-    .row .stat { font-size: 14px; color: #9ca3af; }
-    .row .stat.ok { color: #047857; }
-    .row .stat.no { color: #b91c1c; }
-    .row .stat.warn { color: #b45309; }
+    /* ─── Rail ─── */
+    .rail { padding: 4px 0; font-size: 13px; }
+    .rail .head { font-size: 10px; letter-spacing: 0.1em; color: var(--text-mute); text-transform: uppercase; margin: 12px 0 6px; }
+    .rail a {
+        display: flex; justify-content: space-between; align-items: baseline;
+        padding: 6px 10px; border-radius: 5px; text-decoration: none;
+        color: var(--text-dim); line-height: 1.3; margin-bottom: 1px;
+        border: 1px solid transparent;
+    }
+    .rail a:hover { background: var(--surface); color: var(--text); }
+    .rail a.active { background: var(--accent-soft); color: var(--text); border-color: var(--accent); }
+    .rail a .lbl { font-weight: 500; }
+    .rail a.active .lbl { font-weight: 600; }
+    .rail a .ct { color: var(--text-mute); font-size: 11px; }
+    .rail a.active .ct { color: #c7d2fe; }
+    .rail .star { color: #fbbf24; margin-right: 4px; }
 
-    /* Chips */
-    .chip { display: inline-block; padding: 1px 6px; margin-right: 4px; border-radius: 3px; background: #f1f5f9; color: #475569; font-size: 10.5px; }
-    .chip.ok { background: #ecfdf5; color: #065f46; }
-    .chip.no { background: #fef2f2; color: #991b1b; }
-    .chip.warn { background: #fffbeb; color: #92400e; }
+    /* ─── Section headers (sticky) ─── */
+    .sec {
+        display: flex; align-items: center; gap: 10px;
+        padding: 16px 4px 8px;
+        border-bottom: 1px solid var(--border);
+        position: sticky; top: 0;
+        background: var(--bg);
+        z-index: 2;
+    }
+    .sec .em { font-size: 16px; }
+    .sec h3 { font-size: 12px; font-weight: 600; margin: 0; color: var(--text); letter-spacing: 0.02em; text-transform: uppercase; }
+    .sec .meta { font-size: 11px; color: var(--text-mute); margin-left: auto; }
 
-    /* Detail pane */
-    .detail h2 { font-size: 14px; font-weight: 600; margin: 0 0 4px; }
-    .detail .src { font-size: 11px; color: #6b7280; margin-bottom: 8px; }
-    .detail .label { font-size: 10px; letter-spacing: 0.08em; color: #9ca3af; text-transform: uppercase; margin: 10px 0 4px; }
-    .detail .why { font-size: 12px; color: #4b5563; line-height: 1.4; }
-    .detail .wc { font-size: 11px; color: #6b7280; margin-top: 4px; }
-    .detail .wc.bad { color: #b45309; }
+    /* ─── Story rows ─── */
+    .row-link { display: block; text-decoration: none; color: inherit; }
+    .row {
+        display: grid; grid-template-columns: 32px 36px 1fr auto; gap: 12px;
+        align-items: center; padding: 8px 8px; border-bottom: 1px solid var(--border);
+        cursor: pointer;
+    }
+    .row:hover { background: var(--surface); }
+    .row.sel { background: var(--accent-soft); border-color: var(--accent); }
+    .row .rank { color: var(--text-mute); font-size: 11px; text-align: right; }
+    .row .score { font-size: 12px; color: var(--text); font-weight: 700; }
+    .row .title { font-size: 13.5px; line-height: 1.4; color: var(--text); }
+    .row .ftr { font-size: 10.5px; color: var(--text-mute); margin-top: 3px; }
+    .row .stat { font-size: 16px; line-height: 1; }
+    .row .stat.ok { color: var(--ok); }
+    .row .stat.no { color: var(--no); }
+    .row .stat.warn { color: var(--warn); }
+    .row .stat.pending { color: var(--text-mute); }
 
-    /* Preview */
-    .preview { white-space: pre-wrap; font-size: 11.5px; line-height: 1.45; background: #fafafa; padding: 12px; border: 1px solid #eee; border-radius: 4px; max-height: 420px; overflow-y: auto; }
+    /* ─── Chips ─── */
+    .chip {
+        display: inline-block; padding: 1px 7px; margin-right: 5px;
+        border-radius: 3px; font-size: 10.5px;
+        background: var(--surface-hi); color: var(--text-dim);
+        border: 1px solid var(--border);
+    }
+    .chip.ok { background: var(--ok-soft); color: #6ee7b7; border-color: #047857; }
+    .chip.no { background: var(--no-soft); color: #fca5a5; border-color: #b91c1c; }
+    .chip.warn { background: var(--warn-soft); color: #fcd34d; border-color: #d97706; }
+    .chip.accent { background: var(--accent-soft); color: #c7d2fe; border-color: var(--accent); }
 
-    /* Buttons */
-    [data-testid="stButton"] button { border-radius: 4px; padding: 4px 10px; font-size: 12px; font-weight: 500; border: 1px solid #d1d5db; background: white; color: #111827; }
-    [data-testid="stButton"] button:hover { background: #f9fafb; border-color: #9ca3af; }
-    [data-testid="baseButton-secondary"] { background: white; }
-    .approve button { color: #047857; border-color: #a7f3d0; }
-    .approve button:hover { background: #ecfdf5; }
-    .reject button { color: #b91c1c; border-color: #fecaca; }
-    .reject button:hover { background: #fef2f2; }
+    /* ─── Detail pane ─── */
+    .detail-empty {
+        color: var(--text-mute); font-size: 12px; padding: 24px 0;
+        border: 1px dashed var(--border); border-radius: 6px;
+        text-align: center;
+    }
+    .detail { padding: 0 4px; }
+    .detail h2 { font-size: 15px; font-weight: 600; margin: 0 0 6px; color: var(--text); line-height: 1.35; }
+    .detail .src { font-size: 11px; color: var(--text-dim); margin-bottom: 12px; }
+    .detail .src a { color: var(--accent); text-decoration: none; }
+    .detail .src a:hover { text-decoration: underline; }
+    .detail .label {
+        font-size: 10px; letter-spacing: 0.1em; color: var(--text-mute);
+        text-transform: uppercase; margin: 14px 0 6px;
+    }
+    .detail .why { font-size: 12px; color: var(--text-dim); line-height: 1.5; margin: 0; }
+    .detail .wc { font-size: 11px; color: var(--text-mute); margin-top: 4px; }
+    .detail .wc.ok { color: var(--ok); }
+    .detail .wc.bad { color: var(--warn); }
+
+    /* override textarea */
+    .stTextArea textarea {
+        background: var(--surface) !important;
+        color: var(--text) !important;
+        border: 1px solid var(--border) !important;
+        border-radius: 4px !important;
+        font-size: 13px !important;
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", Inter, system-ui, sans-serif !important;
+    }
+    .stTextArea textarea:focus { border-color: var(--accent) !important; outline: none !important; }
+
+    /* ─── Buttons ─── */
+    .stButton button {
+        border-radius: 4px; padding: 6px 12px; font-size: 12px; font-weight: 500;
+        background: var(--surface); color: var(--text); border: 1px solid var(--border);
+        transition: all 0.1s ease;
+    }
+    .stButton button:hover { background: var(--surface-hi); border-color: var(--border-strong); color: var(--text); }
+    .approve .stButton button { color: #6ee7b7; border-color: #065f46; background: var(--ok-soft); }
+    .approve .stButton button:hover { background: #065f46; color: #fafafa; border-color: #047857; }
+    .reject .stButton button { color: #fca5a5; border-color: #991b1b; background: var(--no-soft); }
+    .reject .stButton button:hover { background: #991b1b; color: #fafafa; border-color: #b91c1c; }
+    .download .stButton button, .stDownloadButton button { color: var(--text); border-color: var(--border); background: var(--surface); }
+
+    /* ─── Issue preview ─── */
+    .preview {
+        white-space: pre-wrap; font-size: 11.5px; line-height: 1.5;
+        background: var(--surface); padding: 14px; border: 1px solid var(--border); border-radius: 4px;
+        max-height: 480px; overflow-y: auto;
+        color: var(--text-dim);
+    }
+    .preview-empty {
+        padding: 24px; color: var(--text-mute); font-size: 12px;
+        background: var(--surface); border: 1px dashed var(--border); border-radius: 4px;
+        text-align: center;
+    }
+
+    .stExpander { background: transparent !important; border: 1px solid var(--border) !important; border-radius: 4px !important; }
+    .stExpander summary { color: var(--text-dim) !important; font-size: 12px !important; }
+
+    /* Hide Streamlit footer */
+    footer { display: none !important; }
+    [data-testid="stDecoration"] { display: none !important; }
     </style>
     """,
     unsafe_allow_html=True,
 )
 
 
-# ── Helpers
+# ─────────────────────────────────────────────────────────────────────────────
+# Helpers
+# ─────────────────────────────────────────────────────────────────────────────
 def _available_dates() -> list[str]:
     dates: set[str] = set()
     for d in (SCORED_DIR, BLURBS_DIR):
@@ -124,7 +224,6 @@ def _available_dates() -> list[str]:
 
 
 def _load_blurbs(date: str) -> dict[tuple[str, str], dict]:
-    """Map (story_url, newsletter) → blurb dict."""
     out: dict[tuple[str, str], dict] = {}
     p = BLURBS_DIR / f"{date}.jsonl"
     if not p.exists():
@@ -144,63 +243,76 @@ def _counts_pipeline(date: str) -> dict[str, int]:
         "raw": len(read_jsonl(RAW_DIR / f"{date}.jsonl")),
         "deduped": len(read_jsonl(DEDUP_DIR / f"{date}.jsonl")),
         "scored": len(read_jsonl(SCORED_DIR / f"{date}.jsonl")),
-        "blurbed": sum(1 for _ in BLURBS_DIR.glob(f"{date}.jsonl")) and len(read_jsonl(BLURBS_DIR / f"{date}.jsonl")) or 0,
+        "blurbed": len(read_jsonl(BLURBS_DIR / f"{date}.jsonl")) if (BLURBS_DIR / f"{date}.jsonl").exists() else 0,
     }
 
 
-def _row_status(decision: dec.Decision | None, blurb: dict, section_min: int, section_max: int) -> str:
-    """Status glyph class for the row: ok | no | warn | pending."""
-    if decision is None or decision.status == dec.PENDING:
-        if blurb.get("needs_review"):
-            return "warn"
-        wc = int(blurb.get("word_count", 0))
-        if wc and not (section_min <= wc <= section_max):
-            return "warn"
-        return ""
-    if decision.status == dec.APPROVED:
-        return "ok"
-    if decision.status == dec.REJECTED:
-        return "no"
-    return ""
+def _row_status(decision: dec.Decision | None, blurb: dict, section_min: int, section_max: int) -> tuple[str, str]:
+    """Return (css_class, glyph)."""
+    if decision and decision.status == dec.APPROVED:
+        return "ok", "✓"
+    if decision and decision.status == dec.REJECTED:
+        return "no", "✗"
+    if blurb.get("needs_review"):
+        return "warn", "⚠"
+    wc = int(blurb.get("word_count", 0))
+    if wc and not (section_min <= wc <= section_max):
+        return "warn", "⚠"
+    return "pending", "●"
 
 
-def _status_glyph(status_class: str) -> str:
-    return {"ok": "✓", "no": "✗", "warn": "⚠", "": "●"}.get(status_class, "●")
+def _link(href_params: dict[str, str], inner_html: str, css_class: str = "row-link") -> str:
+    qs = "&".join(f"{k}={urllib.parse.quote(v)}" for k, v in href_params.items())
+    return f'<a href="?{qs}" target="_self" class="{css_class}">{inner_html}</a>'
 
 
-# ── Session bootstrap
+# ─────────────────────────────────────────────────────────────────────────────
+# Session bootstrap & query-param parsing
+# ─────────────────────────────────────────────────────────────────────────────
 ss = st.session_state
+qp = st.query_params
+
+# Restore selected newsletter & story from query params if present (allows
+# clickable links instead of fat Streamlit buttons).
+if "nl" in qp:
+    ss.selected_nl = qp["nl"]
+if "story" in qp:
+    ss.selected_url = qp["story"]
+    ss.selected_nl_for_detail = qp.get("nl_detail", ss.get("selected_nl"))
+
 if "selected_url" not in ss:
     ss.selected_url = None
 if "selected_nl" not in ss:
     ss.selected_nl = None
+if "selected_nl_for_detail" not in ss:
+    ss.selected_nl_for_detail = None
 if "decisions" not in ss:
     ss.decisions = {}
 if "loaded_date" not in ss:
     ss.loaded_date = None
 
 
-# ── Load data for selected date
+# ─────────────────────────────────────────────────────────────────────────────
+# Top bar
+# ─────────────────────────────────────────────────────────────────────────────
 dates = _available_dates()
 if not dates:
     st.markdown('<h1 class="brand">tldr pipeline</h1>', unsafe_allow_html=True)
     st.write("")
     st.markdown(
-        "No scored runs yet. Run `tldr refresh` to populate today, or `DATE=2026-06-12 tldr refresh` for a specific date."
+        '<p style="color:#a3a3a3;font-size:13px;">No scored runs yet. Run <code>tldr refresh</code> to populate today.</p>',
+        unsafe_allow_html=True,
     )
     st.stop()
 
-# Top bar
 nls = load_newsletters()
 nl_ids = list(nls.keys())
 
-c1, c2, c3, c4 = st.columns([2, 4, 3, 2])
-with c1:
+tb1, tb2, tb3, tb4 = st.columns([2, 3, 4, 3])
+with tb1:
     st.markdown('<h1 class="brand">tldr pipeline</h1>', unsafe_allow_html=True)
-with c2:
+with tb2:
     selected_date = st.selectbox("date", dates, index=0, label_visibility="collapsed")
-with c4:
-    st.text_input("⌘K search", key="search", placeholder="search…", label_visibility="collapsed")
 
 # Reload decisions when date changes
 if ss.loaded_date != selected_date:
@@ -209,22 +321,37 @@ if ss.loaded_date != selected_date:
 
 counts = _counts_pipeline(selected_date)
 
-# Pipeline pills
-with c3:
+with tb3:
     st.markdown(
-        f'<div class="pill">raw <b>{counts["raw"]}</b> · dedup <b>{counts["deduped"]}</b> · '
-        f'scored <b>{counts["scored"]}</b> · blurbed <b>{counts["blurbed"]}</b></div>',
+        f'<div class="pill" style="padding-top:6px;">'
+        f'raw <b>{counts["raw"]}</b> · '
+        f'dedup <b>{counts["deduped"]}</b> · '
+        f'scored <b>{counts["scored"]}</b> · '
+        f'blurbed <b>{counts["blurbed"]}</b>'
+        f'</div>',
         unsafe_allow_html=True,
     )
 
+with tb4:
+    st.text_input("search", placeholder="search…", label_visibility="collapsed", key="search")
+
+st.markdown('<div class="topbar-sep"></div>', unsafe_allow_html=True)
+
+
+# ─────────────────────────────────────────────────────────────────────────────
 # Load scored + blurbs
+# ─────────────────────────────────────────────────────────────────────────────
 scored_all = [ScoredStory.from_dict(d) for d in read_jsonl(SCORED_DIR / f"{selected_date}.jsonl")]
 blurbs = _load_blurbs(selected_date)
 
-# Compute per-newsletter assignment counts and decision counts
+# Apply search filter
+search_q = (ss.get("search") or "").strip().lower()
+if search_q:
+    scored_all = [s for s in scored_all if search_q in s.story.title.lower()]
+
 nl_totals: dict[str, int] = {nid: 0 for nid in nl_ids}
-nl_decisions: dict[str, dict[str, int]] = {nid: {dec.APPROVED: 0, dec.REJECTED: 0, dec.PENDING: 0} for nid in nl_ids}
-cross_set: set[str] = set()  # story urls landing in 2+ newsletters
+nl_decided: dict[str, int] = {nid: 0 for nid in nl_ids}
+cross_set: set[str] = set()
 for s in scored_all:
     if len(s.assignments) > 1:
         cross_set.add(s.story.url)
@@ -232,12 +359,11 @@ for s in scored_all:
         if a.newsletter in nl_totals:
             nl_totals[a.newsletter] += 1
             d = ss.decisions.get((s.story.url, a.newsletter))
-            status = d.status if d else dec.PENDING
-            nl_decisions[a.newsletter][status] = nl_decisions[a.newsletter].get(status, 0) + 1
+            if d and d.is_decided():
+                nl_decided[a.newsletter] += 1
 
-# Auto-select first newsletter on first load
-if ss.selected_nl is None:
-    # Prefer a newsletter with any assignments
+# Auto-select first newsletter on first load (prefer one with assignments)
+if ss.selected_nl is None or ss.selected_nl not in nl_ids + [CROSS_KEY]:
     for nid in nl_ids:
         if nl_totals[nid] > 0:
             ss.selected_nl = nid
@@ -245,146 +371,139 @@ if ss.selected_nl is None:
     else:
         ss.selected_nl = default_newsletter_id()
 
-# Allow newsletter selection via query param too (?nl=tldr_ai)
-qp = st.query_params
-if "nl" in qp and qp["nl"] in nl_ids + [CROSS_KEY]:
-    ss.selected_nl = qp["nl"]
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Three-pane layout
+# ─────────────────────────────────────────────────────────────────────────────
+rail_col, mid_col, det_col = st.columns([1.0, 3.0, 2.0], gap="medium")
 
 
-# ── Three-pane layout
-rail_col, mid_col, det_col = st.columns([1.2, 3, 2])
-
-
-# ── LEFT RAIL
+# ─── LEFT RAIL ───
 with rail_col:
-    def _rail_button(nid: str, label: str, total: int, decided: int, star: bool = False) -> None:
-        cls = "active" if ss.selected_nl == nid else ""
-        star_html = '<span class="star">★ </span>' if star else ""
-        count_html = (
-            f'<span class="count">{decided}/{total}</span>' if total else '<span class="count">0</span>'
-        )
-        # Use a real button so the click integrates with Streamlit state.
-        key = f"rail_{nid}"
-        if st.button(label, key=key, use_container_width=True):
-            ss.selected_nl = nid
-            ss.selected_url = None
-            st.query_params["nl"] = nid
-            st.rerun()
-        # The button is rendered above; the markup adds the count line beneath it.
-        st.markdown(
-            f'<div style="font-size:10px;color:#9ca3af;margin:-6px 0 6px 8px;">{star_html}{count_html}</div>',
-            unsafe_allow_html=True,
-        )
+    rail_html = ['<div class="rail">', '<div class="head">queue</div>']
 
-    st.markdown('<div class="rail">', unsafe_allow_html=True)
-    st.markdown('<div class="head">queue</div>', unsafe_allow_html=True)
-
-    cross_total = len(cross_set)
     cross_decided = sum(
-        1
-        for url in cross_set
+        1 for url in cross_set
         if all(
             ss.decisions.get((url, a.newsletter), dec.Decision(url, a.newsletter)).is_decided()
             for s in scored_all if s.story.url == url for a in s.assignments
         )
     )
-    _rail_button(CROSS_KEY, "Cross-assignments", cross_total, cross_decided, star=True)
+    cross_active = " active" if ss.selected_nl == CROSS_KEY else ""
+    rail_html.append(
+        _link(
+            {"nl": CROSS_KEY},
+            f'<span class="lbl"><span class="star">★</span>Cross-assigned</span>'
+            f'<span class="ct">{cross_decided}/{len(cross_set)}</span>',
+            css_class=f"rail-link",
+        ).replace('class="rail-link"', f'class="rail-link{cross_active}"')
+    )
 
-    st.markdown('<div class="head">newsletters</div>', unsafe_allow_html=True)
+    rail_html.append('<div class="head">newsletters</div>')
     for nid in nl_ids:
         nl = nls[nid]
         total = nl_totals[nid]
-        decided = nl_decisions[nid][dec.APPROVED] + nl_decisions[nid][dec.REJECTED]
-        label = nl.brand_name.replace("TLDR ", "").replace("TLDR", "main")
-        _rail_button(nid, label, total, decided)
-
-    st.markdown("</div>", unsafe_allow_html=True)
-
-
-# ── MIDDLE PANE — story list for selected newsletter (or cross-assignments view)
-def _render_row(scored: ScoredStory, assignment: Assignment, rank: int, section_min: int, section_max: int) -> None:
-    """Render a single story row + handle click → set selected."""
-    blurb = blurbs.get((scored.story.url, assignment.newsletter), {})
-    decision = ss.decisions.get((scored.story.url, assignment.newsletter))
-    status_cls = _row_status(decision, blurb, section_min, section_max)
-    glyph = _status_glyph(status_cls)
-
-    # Chips for cross-assignments
-    chips = []
-    for a in scored.assignments:
-        if a.newsletter == assignment.newsletter:
-            continue
-        nick = a.newsletter.replace("tldr_", "")
-        d = ss.decisions.get((scored.story.url, a.newsletter))
-        cls = "ok" if d and d.status == dec.APPROVED else ("no" if d and d.status == dec.REJECTED else "")
-        chips.append(f'<span class="chip {cls}">{nick}</span>')
-    chips_html = "".join(chips)
-
-    wc = int(blurb.get("word_count", 0))
-    wc_text = f"{wc}w" if wc else "—"
-    flag = "⚠" if blurb.get("needs_review") else ""
-
-    is_selected = (ss.selected_url == scored.story.url and ss.selected_nl == assignment.newsletter)
-    sel_cls = " sel" if is_selected else ""
-
-    container = st.container()
-    with container:
-        # Use a button to capture click — render HTML for layout, button is the click target.
-        st.markdown(
-            f'<div class="row{sel_cls}">'
-            f'<span class="num rank">{rank}</span>'
-            f'<span class="num score">{int(round(assignment.score))}</span>'
-            f'<div><div class="title">{scored.story.title}</div>'
-            f'<div class="ftr">{chips_html}<span class="num">{wc_text}</span> {flag}</div></div>'
-            f'<span class="num stat {status_cls}">{glyph}</span>'
-            f'</div>',
-            unsafe_allow_html=True,
+        decided = nl_decided[nid]
+        label = nl.brand_name.replace("TLDR ", "").replace("TLDR", "Main")
+        active = " active" if ss.selected_nl == nid else ""
+        count_color = "ct"
+        rail_html.append(
+            _link(
+                {"nl": nid},
+                f'<span class="lbl">{label}</span><span class="{count_color}">{decided}/{total}</span>',
+                css_class=f"rail-link{active}",
+            )
         )
-        # Invisible-ish select button. Streamlit doesn't natively let us put a click-handler
-        # on an HTML div, so we render a small "select" button below the row.
-        if st.button("select", key=f"sel_{assignment.newsletter}_{scored.story.url}_{rank}", help="open this story in the detail pane"):
-            ss.selected_url = scored.story.url
-            ss.selected_nl_for_detail = assignment.newsletter
-            st.rerun()
+
+    rail_html.append("</div>")
+    st.markdown("".join(rail_html), unsafe_allow_html=True)
 
 
+# ─── MIDDLE PANE ───
 with mid_col:
     if ss.selected_nl == CROSS_KEY:
-        st.markdown('<div class="sec"><h3>Cross-assignments</h3><span class="meta">stories landing in 2+ newsletters</span></div>', unsafe_allow_html=True)
-        cross_stories = [s for s in scored_all if s.story.url in cross_set]
-        cross_stories.sort(key=lambda s: s.score, reverse=True)
+        cross_stories = sorted(
+            [s for s in scored_all if s.story.url in cross_set],
+            key=lambda s: s.score, reverse=True
+        )
+        st.markdown(
+            f'<div class="sec"><span class="em">★</span><h3>Cross-assignments</h3>'
+            f'<span class="meta">{len(cross_stories)} stories in 2+ newsletters</span></div>',
+            unsafe_allow_html=True,
+        )
         if not cross_stories:
-            st.markdown('<p style="color:#6b7280;font-size:12px;margin-top:12px;">No cross-assignments today.</p>', unsafe_allow_html=True)
+            st.markdown('<p style="color:var(--text-mute);font-size:12px;margin-top:16px;">No cross-assignments today.</p>', unsafe_allow_html=True)
         else:
             for rank, s in enumerate(cross_stories, start=1):
-                # Show the highest-scoring assignment for the row
                 primary = s.primary
                 if primary is None:
                     continue
-                sec = nls[primary.newsletter].section(primary.section_id)
-                section_min = sec.min_words if sec else 40
-                section_max = sec.max_words if sec else 80
-                _render_row(s, primary, rank, section_min, section_max)
+                sec_obj = nls[primary.newsletter].section(primary.section_id)
+                section_min = sec_obj.min_words if sec_obj else 40
+                section_max = sec_obj.max_words if sec_obj else 80
+
+                blurb = blurbs.get((s.story.url, primary.newsletter), {})
+                decision = ss.decisions.get((s.story.url, primary.newsletter))
+                status_cls, glyph = _row_status(decision, blurb, section_min, section_max)
+                is_sel = (ss.selected_url == s.story.url and ss.selected_nl_for_detail == primary.newsletter)
+
+                chips_html = ""
+                for a in s.assignments:
+                    nick = a.newsletter.replace("tldr_", "")
+                    d = ss.decisions.get((s.story.url, a.newsletter))
+                    if d and d.status == dec.APPROVED:
+                        cls = "ok"
+                    elif d and d.status == dec.REJECTED:
+                        cls = "no"
+                    elif a.newsletter == primary.newsletter:
+                        cls = "accent"
+                    else:
+                        cls = ""
+                    chips_html += f'<span class="chip {cls}">{nick}</span>'
+
+                wc = int(blurb.get("word_count", 0))
+                wc_text = f"{wc}w" if wc else "—"
+                sel_cls = " sel" if is_sel else ""
+
+                inner = (
+                    f'<div class="row{sel_cls}">'
+                    f'<span class="num rank">{rank}</span>'
+                    f'<span class="num score">{int(round(primary.score))}</span>'
+                    f'<div><div class="title">{s.story.title}</div>'
+                    f'<div class="ftr">{chips_html}<span class="num">{wc_text}</span></div></div>'
+                    f'<span class="num stat {status_cls}">{glyph}</span>'
+                    f'</div>'
+                )
+                st.markdown(
+                    _link(
+                        {"nl": CROSS_KEY, "story": s.story.url, "nl_detail": primary.newsletter},
+                        inner,
+                    ),
+                    unsafe_allow_html=True,
+                )
+
     else:
         nl = nls[ss.selected_nl]
+        by_section = top_per_section(scored_all, nl.id)
+        total_for_nl = sum(len(stories) for stories in by_section.values())
+
         st.markdown(
-            f'<div class="sec"><h3>{nl.brand_name}</h3><span class="meta">{nl_decisions[nl.id][dec.APPROVED] + nl_decisions[nl.id][dec.REJECTED]}/{nl_totals[nl.id]} decided</span></div>',
+            f'<div class="sec"><h3>{nl.brand_name}</h3>'
+            f'<span class="meta">{nl_decided[nl.id]}/{total_for_nl} decided</span></div>',
             unsafe_allow_html=True,
         )
 
-        by_section = top_per_section(scored_all, nl.id)
-
-        for sec in nl.sections:
-            stories = by_section[sec.id]
+        for sec_obj in nl.sections:
+            stories = by_section[sec_obj.id]
             if not stories:
                 continue
-            decided_in_sec = 0
-            for s in stories:
-                d = ss.decisions.get((s.story.url, nl.id))
-                if d and d.is_decided():
-                    decided_in_sec += 1
+            decided_in_sec = sum(
+                1 for s in stories
+                if (d := ss.decisions.get((s.story.url, nl.id))) and d.is_decided()
+            )
             st.markdown(
-                f'<div class="sec"><h3>{sec.emoji} {sec.name}</h3>'
+                f'<div class="sec"><span class="em">{sec_obj.emoji}</span>'
+                f'<h3>{sec_obj.name}</h3>'
                 f'<span class="meta">{decided_in_sec}/{len(stories)}</span></div>',
                 unsafe_allow_html=True,
             )
@@ -392,18 +511,55 @@ with mid_col:
                 a = s.for_newsletter(nl.id)
                 if a is None:
                     continue
-                _render_row(s, a, rank, sec.min_words, sec.max_words)
+                blurb = blurbs.get((s.story.url, nl.id), {})
+                decision = ss.decisions.get((s.story.url, nl.id))
+                status_cls, glyph = _row_status(decision, blurb, sec_obj.min_words, sec_obj.max_words)
+
+                chips_html = ""
+                for other in s.assignments:
+                    if other.newsletter == nl.id:
+                        continue
+                    nick = other.newsletter.replace("tldr_", "")
+                    d = ss.decisions.get((s.story.url, other.newsletter))
+                    if d and d.status == dec.APPROVED:
+                        cls = "ok"
+                    elif d and d.status == dec.REJECTED:
+                        cls = "no"
+                    else:
+                        cls = ""
+                    chips_html += f'<span class="chip {cls}">{nick}</span>'
+
+                wc = int(blurb.get("word_count", 0))
+                wc_text = f"{wc}w" if wc else "—"
+                is_sel = (ss.selected_url == s.story.url and ss.selected_nl_for_detail == nl.id)
+                sel_cls = " sel" if is_sel else ""
+
+                inner = (
+                    f'<div class="row{sel_cls}">'
+                    f'<span class="num rank">{rank}</span>'
+                    f'<span class="num score">{int(round(a.score))}</span>'
+                    f'<div><div class="title">{s.story.title}</div>'
+                    f'<div class="ftr">{chips_html}<span class="num">{wc_text}</span></div></div>'
+                    f'<span class="num stat {status_cls}">{glyph}</span>'
+                    f'</div>'
+                )
+                st.markdown(
+                    _link(
+                        {"nl": nl.id, "story": s.story.url, "nl_detail": nl.id},
+                        inner,
+                    ),
+                    unsafe_allow_html=True,
+                )
 
 
-# ── RIGHT PANE — selected story detail + blurb editor
+# ─── RIGHT PANE — Detail / Editor ───
 with det_col:
-    st.markdown('<div class="detail">', unsafe_allow_html=True)
     selected_url = ss.selected_url
-    selected_nl_for_detail = ss.get("selected_nl_for_detail") or ss.selected_nl
+    selected_nl_for_detail = ss.selected_nl_for_detail
 
     selected_scored: ScoredStory | None = None
     selected_assignment: Assignment | None = None
-    if selected_url and selected_nl_for_detail and selected_nl_for_detail != CROSS_KEY:
+    if selected_url and selected_nl_for_detail and selected_nl_for_detail in nl_ids:
         for s in scored_all:
             if s.story.url == selected_url:
                 selected_scored = s
@@ -411,10 +567,14 @@ with det_col:
                 break
 
     if selected_scored is None or selected_assignment is None:
-        st.markdown('<p style="color:#6b7280;font-size:12px;">Click "select" on a row to load story details.</p>', unsafe_allow_html=True)
+        st.markdown(
+            '<div class="detail-empty">click a story row to load it here</div>',
+            unsafe_allow_html=True,
+        )
     else:
+        st.markdown('<div class="detail">', unsafe_allow_html=True)
         nl = nls[selected_nl_for_detail]
-        sec = nl.section(selected_assignment.section_id)
+        sec_obj = nl.section(selected_assignment.section_id)
         blurb = blurbs.get((selected_scored.story.url, selected_nl_for_detail), {})
         decision = ss.decisions.get((selected_scored.story.url, selected_nl_for_detail))
 
@@ -422,7 +582,7 @@ with det_col:
         st.markdown(
             f'<div class="src">{selected_scored.story.source} · '
             f'<a href="{selected_scored.story.url}" target="_blank">open ↗</a> · '
-            f'{nl.brand_name} → {sec.name if sec else selected_assignment.section_id} · '
+            f'{nl.brand_name} → {sec_obj.name if sec_obj else selected_assignment.section_id} · '
             f'score {int(round(selected_assignment.score))}</div>',
             unsafe_allow_html=True,
         )
@@ -434,66 +594,59 @@ with det_col:
         edited = st.text_area(
             "blurb",
             value=initial_blurb,
-            height=180,
+            height=200,
             key=editor_key,
             label_visibility="collapsed",
         )
 
+        # Word count vs target
         wc = len(edited.split())
-        wc_bad = sec and not (sec.min_words <= wc <= sec.max_words)
-        wc_class = "wc bad" if wc_bad else "wc"
-        target = f"{sec.min_words}-{sec.max_words}" if sec else "—"
+        in_range = sec_obj and (sec_obj.min_words <= wc <= sec_obj.max_words)
+        wc_class = "wc ok" if in_range else ("wc bad" if sec_obj else "wc")
+        target = f"{sec_obj.min_words}–{sec_obj.max_words}" if sec_obj else "—"
+        check = "✓" if in_range else "⚠"
         st.markdown(
-            f'<div class="{wc_class}">{wc} words · target {target} · '
+            f'<div class="{wc_class}">{wc} words {check} · target {target} · '
             f'{int(blurb.get("minute_read", 5))} min read</div>',
             unsafe_allow_html=True,
         )
 
-        # Action row
-        b1, b2, b3, b4 = st.columns([1, 1, 1, 2])
-        with b1:
+        # Action buttons
+        ab1, ab2, ab3 = st.columns([1, 1, 1])
+        with ab1:
             st.markdown('<div class="approve">', unsafe_allow_html=True)
-            if st.button("✓ approve", key="act_approve"):
+            if st.button("✓ approve", key="act_approve", use_container_width=True):
                 dec.upsert(
-                    ss.decisions,
-                    selected_scored.story.url,
-                    selected_nl_for_detail,
+                    ss.decisions, selected_scored.story.url, selected_nl_for_detail,
                     status=dec.APPROVED,
                     edited_blurb=edited if edited != blurb.get("blurb", "") else "",
                 )
                 dec.save(selected_date, ss.decisions)
                 st.rerun()
             st.markdown('</div>', unsafe_allow_html=True)
-        with b2:
+        with ab2:
             st.markdown('<div class="reject">', unsafe_allow_html=True)
-            if st.button("✗ reject", key="act_reject"):
+            if st.button("✗ reject", key="act_reject", use_container_width=True):
                 dec.upsert(
-                    ss.decisions,
-                    selected_scored.story.url,
-                    selected_nl_for_detail,
+                    ss.decisions, selected_scored.story.url, selected_nl_for_detail,
                     status=dec.REJECTED,
                 )
                 dec.save(selected_date, ss.decisions)
                 st.rerun()
             st.markdown('</div>', unsafe_allow_html=True)
-        with b3:
-            if st.button("↺ reset", key="act_reset"):
+        with ab3:
+            if st.button("↺ reset", key="act_reset", use_container_width=True):
                 dec.upsert(
-                    ss.decisions,
-                    selected_scored.story.url,
-                    selected_nl_for_detail,
-                    status=dec.PENDING,
-                    edited_blurb="",
+                    ss.decisions, selected_scored.story.url, selected_nl_for_detail,
+                    status=dec.PENDING, edited_blurb="",
                 )
                 dec.save(selected_date, ss.decisions)
                 st.rerun()
 
-        # Auto-save edits when the textarea changes and the user hasn't clicked approve.
+        # Auto-save edits
         if edited and edited != initial_blurb and edited != blurb.get("blurb", ""):
             dec.upsert(
-                ss.decisions,
-                selected_scored.story.url,
-                selected_nl_for_detail,
+                ss.decisions, selected_scored.story.url, selected_nl_for_detail,
                 edited_blurb=edited,
             )
             dec.save(selected_date, ss.decisions)
@@ -507,16 +660,16 @@ with det_col:
                     continue
                 d2 = ss.decisions.get((selected_scored.story.url, a.newsletter))
                 if d2 and d2.status == dec.APPROVED:
-                    cls = "ok"
-                    glyph = "✓"
+                    cls, gly = "ok", "✓"
                 elif d2 and d2.status == dec.REJECTED:
-                    cls = "no"
-                    glyph = "✗"
+                    cls, gly = "no", "✗"
                 else:
-                    cls = ""
-                    glyph = "●"
+                    cls, gly = "", "●"
                 cross_html.append(
-                    f'<span class="chip {cls}">{a.newsletter.replace("tldr_", "")} {glyph}</span>'
+                    f'<a href="?nl={a.newsletter}&story={urllib.parse.quote(selected_scored.story.url)}&nl_detail={a.newsletter}" '
+                    f'target="_self" style="text-decoration:none;">'
+                    f'<span class="chip {cls}">{a.newsletter.replace("tldr_", "")} {gly} ({int(round(a.score))})</span>'
+                    f'</a>'
                 )
             st.markdown("".join(cross_html), unsafe_allow_html=True)
 
@@ -525,20 +678,20 @@ with det_col:
             st.markdown('<div class="label">why (model)</div>', unsafe_allow_html=True)
             st.markdown(f'<p class="why">{selected_scored.reasoning}</p>', unsafe_allow_html=True)
 
-    st.markdown('</div>', unsafe_allow_html=True)
+        st.markdown('</div>', unsafe_allow_html=True)
 
 
-# ── BOTTOM — issue preview & exports
+# ─────────────────────────────────────────────────────────────────────────────
+# Bottom: issue preview + exports
+# ─────────────────────────────────────────────────────────────────────────────
 st.markdown("<br>", unsafe_allow_html=True)
 
-with st.expander("issue preview", expanded=True):
-    # Render with edited blurbs and only approved-or-pending stories included.
+with st.expander("issue preview · tldr exact format", expanded=False):
     preview_nl = ss.selected_nl if ss.selected_nl and ss.selected_nl != CROSS_KEY else default_newsletter_id()
-    nl = nls.get(preview_nl)
-    if nl is None:
-        st.markdown("(select a newsletter)")
+    nl_obj = nls.get(preview_nl)
+    if nl_obj is None:
+        st.markdown('<div class="preview-empty">select a newsletter</div>', unsafe_allow_html=True)
     else:
-        # Build a merged blurb map honoring decisions
         merged: dict[str, dict] = {}
         for s in scored_all:
             a = s.for_newsletter(preview_nl)
@@ -554,19 +707,23 @@ with st.expander("issue preview", expanded=True):
                 merged[s.story.url] = base
 
         issue_text = render_tldr(scored_all, merged, preview_nl, selected_date)
-        st.markdown(f'<div class="preview">{issue_text}</div>', unsafe_allow_html=True)
+        if merged:
+            st.markdown(f'<div class="preview">{issue_text}</div>', unsafe_allow_html=True)
+        else:
+            st.markdown(f'<div class="preview-empty">no blurbs generated for {nl_obj.brand_name} yet</div>', unsafe_allow_html=True)
 
-        exp1, exp2 = st.columns([1, 1])
-        with exp1:
+        ex1, ex2, _ = st.columns([1, 1, 4])
+        with ex1:
+            st.markdown('<div class="download">', unsafe_allow_html=True)
             st.download_button(
-                "download this issue",
+                "↓ this issue",
                 data=issue_text,
                 file_name=f"{preview_nl}-{selected_date}.txt",
                 mime="text/plain",
                 use_container_width=True,
             )
-        with exp2:
-            # Build a family bundle — only newsletters that have at least one merged blurb.
+            st.markdown('</div>', unsafe_allow_html=True)
+        with ex2:
             bundle_parts: list[str] = [f"TLDR family bundle — {selected_date}\n"]
             for nid in nl_ids:
                 m: dict[str, dict] = {}
@@ -587,10 +744,12 @@ with st.expander("issue preview", expanded=True):
                 bundle_parts.append(f"\n{'='*60}\n{nls[nid].brand_name}\n{'='*60}\n")
                 bundle_parts.append(render_tldr(scored_all, m, nid, selected_date))
             bundle_text = "\n".join(bundle_parts)
+            st.markdown('<div class="download">', unsafe_allow_html=True)
             st.download_button(
-                "download family bundle",
+                "↓ family bundle",
                 data=bundle_text,
                 file_name=f"tldr-family-{selected_date}.txt",
                 mime="text/plain",
                 use_container_width=True,
             )
+            st.markdown('</div>', unsafe_allow_html=True)
