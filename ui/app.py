@@ -278,18 +278,51 @@ st.markdown(
         box-shadow: none !important;
     }
 
-    /* ─── Buttons ─── */
+    /* ─── Buttons (default) ─── */
     .stButton button {
-        border-radius: 4px; padding: 6px 12px; font-size: 12px; font-weight: 500;
+        border-radius: 4px; padding: 8px 12px; font-size: 12px; font-weight: 500;
         background: var(--surface); color: var(--text); border: 1px solid var(--border);
         transition: all 0.1s ease;
+        height: 38px;
     }
     .stButton button:hover { background: var(--surface-hi); border-color: var(--border-strong); color: var(--text); }
-    .approve .stButton button { color: #6ee7b7; border-color: #065f46; background: var(--ok-soft); }
-    .approve .stButton button:hover { background: #065f46; color: #fafafa; border-color: #047857; }
-    .reject .stButton button { color: #fca5a5; border-color: #991b1b; background: var(--no-soft); }
-    .reject .stButton button:hover { background: #991b1b; color: #fafafa; border-color: #b91c1c; }
-    .download .stButton button, .stDownloadButton button { color: var(--text); border-color: var(--border); background: var(--surface); }
+    .stDownloadButton button { color: var(--text); border-color: var(--border); background: var(--surface); height: 38px; padding: 8px 12px; font-size: 12px; font-weight: 500; border-radius: 4px; }
+    .stDownloadButton button:hover { background: var(--surface-hi); border-color: var(--border-strong); }
+
+    /* ─── Action row (approve / reject / reset) ─── */
+    /* The sentinel .action-row-anchor div sits immediately before the row of
+       three columns. We colour the buttons via column position inside the
+       horizontal block that follows the sentinel. */
+    .action-row-anchor + div [data-testid="column"]:nth-of-type(1) .stButton button {
+        background: var(--ok-soft); color: #6ee7b7; border-color: #065f46;
+    }
+    .action-row-anchor + div [data-testid="column"]:nth-of-type(1) .stButton button:hover {
+        background: #065f46; color: #fafafa; border-color: #047857;
+    }
+    .action-row-anchor + div [data-testid="column"]:nth-of-type(2) .stButton button {
+        background: var(--no-soft); color: #fca5a5; border-color: #991b1b;
+    }
+    .action-row-anchor + div [data-testid="column"]:nth-of-type(2) .stButton button:hover {
+        background: #991b1b; color: #fafafa; border-color: #b91c1c;
+    }
+    /* Streamlit also nests stHorizontalBlock; cover that selector variant too */
+    .action-row-anchor + [data-testid="stHorizontalBlock"] [data-testid="column"]:nth-of-type(1) .stButton button {
+        background: var(--ok-soft); color: #6ee7b7; border-color: #065f46;
+    }
+    .action-row-anchor + [data-testid="stHorizontalBlock"] [data-testid="column"]:nth-of-type(1) .stButton button:hover {
+        background: #065f46; color: #fafafa; border-color: #047857;
+    }
+    .action-row-anchor + [data-testid="stHorizontalBlock"] [data-testid="column"]:nth-of-type(2) .stButton button {
+        background: var(--no-soft); color: #fca5a5; border-color: #991b1b;
+    }
+    .action-row-anchor + [data-testid="stHorizontalBlock"] [data-testid="column"]:nth-of-type(2) .stButton button:hover {
+        background: #991b1b; color: #fafafa; border-color: #b91c1c;
+    }
+    /* Ensure every column's button area has zero top-margin so they baseline-align. */
+    .action-row-anchor + div [data-testid="column"] .stButton,
+    .action-row-anchor + [data-testid="stHorizontalBlock"] [data-testid="column"] .stButton {
+        margin-top: 0 !important;
+    }
 
     /* ─── Issue preview ─── */
     .preview {
@@ -750,10 +783,10 @@ with det_col:
             unsafe_allow_html=True,
         )
 
-        # Action buttons
-        ab1, ab2, ab3 = st.columns([1, 1, 1])
+        # Action buttons — wrapped in a sentinel div so column-position CSS works.
+        st.markdown('<div class="action-row-anchor"></div>', unsafe_allow_html=True)
+        ab1, ab2, ab3 = st.columns([1, 1, 1], gap="small")
         with ab1:
-            st.markdown('<div class="approve">', unsafe_allow_html=True)
             if st.button("✓ approve", key="act_approve", use_container_width=True):
                 dec.upsert(
                     ss.decisions, selected_scored.story.url, selected_nl_for_detail,
@@ -762,9 +795,7 @@ with det_col:
                 )
                 dec.save(selected_date, ss.decisions)
                 st.rerun()
-            st.markdown('</div>', unsafe_allow_html=True)
         with ab2:
-            st.markdown('<div class="reject">', unsafe_allow_html=True)
             if st.button("✗ reject", key="act_reject", use_container_width=True):
                 dec.upsert(
                     ss.decisions, selected_scored.story.url, selected_nl_for_detail,
@@ -772,7 +803,6 @@ with det_col:
                 )
                 dec.save(selected_date, ss.decisions)
                 st.rerun()
-            st.markdown('</div>', unsafe_allow_html=True)
         with ab3:
             if st.button("↺ reset", key="act_reset", use_container_width=True):
                 dec.upsert(
