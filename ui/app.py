@@ -11,6 +11,8 @@ from __future__ import annotations
 import json
 import sys
 import urllib.parse
+from datetime import date as _date
+from datetime import datetime
 from pathlib import Path
 
 _REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -136,7 +138,9 @@ st.markdown(
     a.row .score { flex: 0 0 32px; color: var(--text); font-size: 12px; font-weight: 700; padding-top: 1px; }
     a.row .main { flex: 1 1 auto; min-width: 0; }
     a.row .title { font-size: 13.5px; color: var(--text); margin: 0; word-wrap: break-word; overflow-wrap: break-word; }
-    a.row .ftr { font-size: 10.5px; color: var(--text-mute); margin-top: 4px; display: flex; flex-wrap: wrap; align-items: center; gap: 4px; }
+    a.row .ftr { font-size: 10.5px; color: var(--text-mute); margin-top: 4px; display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+    a.row .date-tag { color: var(--text-mute); font-size: 10.5px; }
+    a.row .date-tag::after { content: " · "; color: var(--border-strong); margin-left: 2px; }
     a.row .stat { flex: 0 0 24px; text-align: center; font-size: 14px; line-height: 1; padding-top: 2px; }
     a.row .stat.ok { color: var(--ok); }
     a.row .stat.no { color: var(--no); }
@@ -321,6 +325,28 @@ def _counts_pipeline(date: str) -> dict[str, int]:
     }
 
 
+def _short_date(iso: str, target_date: str) -> str:
+    """Format ISO timestamp relative to the target date."""
+    if not iso:
+        return ""
+    try:
+        dt = datetime.fromisoformat(iso.replace("Z", "+00:00"))
+    except Exception:
+        return ""
+    try:
+        target = datetime.fromisoformat(target_date).date()
+    except Exception:
+        target = _date.today()
+    delta_days = (target - dt.date()).days
+    if delta_days == 0:
+        return "today"
+    if delta_days == 1:
+        return "1d ago"
+    if 1 < delta_days < 14:
+        return f"{delta_days}d ago"
+    return dt.strftime("%b %-d") if hasattr(dt, "strftime") else dt.date().isoformat()
+
+
 def _row_status(decision: dec.Decision | None, blurb: dict, section_min: int, section_max: int) -> tuple[str, str]:
     """Return (css_class, glyph)."""
     if decision and decision.status == dec.APPROVED:
@@ -503,6 +529,7 @@ def _build_row_html(
     rail_nl: str,             # what's selected in the rail (for the back-link)
     chips_html: str,
     wc_text: str,
+    date_text: str,
     status_cls: str,
     glyph: str,
     is_sel: bool,
@@ -511,13 +538,14 @@ def _build_row_html(
     qs = "&".join(f"{k}={urllib.parse.quote(v)}" for k, v in qs_params.items())
     sel_cls = " sel" if is_sel else ""
     title_safe = title.replace("<", "&lt;").replace(">", "&gt;")
+    date_html = f'<span class="num date-tag">{date_text}</span>' if date_text else ""
     return (
         f'<a class="row{sel_cls}" href="?{qs}" target="_self">'
         f'<span class="num rank">{rank}</span>'
         f'<span class="num score">{int(round(score))}</span>'
         f'<span class="main">'
         f'<span class="title">{title_safe}</span>'
-        f'<span class="ftr">{chips_html}<span class="num">{wc_text}</span></span>'
+        f'<span class="ftr">{date_html}{chips_html}<span class="num">{wc_text}</span></span>'
         f'</span>'
         f'<span class="stat {status_cls}">{glyph}</span>'
         f'</a>'
@@ -572,10 +600,11 @@ with mid_col:
                 chips_html = _chips_for(s, ss.decisions, primary_nl=primary.newsletter)
                 wc = int(blurb.get("word_count", 0))
                 wc_text = f"{wc}w" if wc else "—"
+                date_text = _short_date(s.story.published_at, selected_date)
                 parts.append(_build_row_html(
                     rank=rank, score=primary.score, title=s.story.title,
                     story_url=s.story.url, target_nl=primary.newsletter, rail_nl=CROSS_KEY,
-                    chips_html=chips_html, wc_text=wc_text,
+                    chips_html=chips_html, wc_text=wc_text, date_text=date_text,
                     status_cls=status_cls, glyph=glyph, is_sel=is_sel,
                 ))
 
@@ -615,11 +644,12 @@ with mid_col:
                     chips_html = _chips_for(s, ss.decisions, exclude_nl=nl.id)
                     wc = int(blurb.get("word_count", 0))
                     wc_text = f"{wc}w" if wc else "—"
+                    date_text = _short_date(s.story.published_at, selected_date)
                     is_sel = (ss.selected_url == s.story.url and ss.selected_nl_for_detail == nl.id)
                     parts.append(_build_row_html(
                         rank=rank, score=a.score, title=s.story.title,
                         story_url=s.story.url, target_nl=nl.id, rail_nl=nl.id,
-                        chips_html=chips_html, wc_text=wc_text,
+                        chips_html=chips_html, wc_text=wc_text, date_text=date_text,
                         status_cls=status_cls, glyph=glyph, is_sel=is_sel,
                     ))
 
@@ -759,81 +789,122 @@ with det_col:
 
         # Reasoning
         if selected_scored.reasoning:
-            st.markdown('<div class="label">why (model)</div>', unsafe_allow_html=True)
+            st.markdown('<div class="label">why it matters</div>', unsafe_allow_html=True)
             st.markdown(f'<p class="why">{selected_scored.reasoning}</p>', unsafe_allow_html=True)
 
         st.markdown('</div>', unsafe_allow_html=True)
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# Bottom: issue preview + exports
+# Bottom: download buttons + scoring-methodology expander
 # ─────────────────────────────────────────────────────────────────────────────
 st.markdown("<br>", unsafe_allow_html=True)
 
-with st.expander("issue preview · tldr exact format", expanded=False):
-    preview_nl = ss.selected_nl if ss.selected_nl and ss.selected_nl != CROSS_KEY else default_newsletter_id()
-    nl_obj = nls.get(preview_nl)
-    if nl_obj is None:
-        st.markdown('<div class="preview-empty">select a newsletter</div>', unsafe_allow_html=True)
-    else:
-        merged: dict[str, dict] = {}
-        for s in scored_all:
-            a = s.for_newsletter(preview_nl)
-            if not a:
-                continue
-            d = ss.decisions.get((s.story.url, preview_nl))
-            if d and d.status == dec.REJECTED:
-                continue
-            base = blurbs.get((s.story.url, preview_nl), {}).copy()
-            if d and d.edited_blurb:
-                base["blurb"] = d.edited_blurb
-            if base:
-                merged[s.story.url] = base
+# Compute exports (kept available even though the preview expander is gone)
+preview_nl_id = ss.selected_nl if ss.selected_nl and ss.selected_nl != CROSS_KEY else default_newsletter_id()
+preview_nl_obj = nls.get(preview_nl_id)
 
-        issue_text = render_tldr(scored_all, merged, preview_nl, selected_date)
-        if merged:
-            st.markdown(f'<div class="preview">{issue_text}</div>', unsafe_allow_html=True)
-        else:
-            st.markdown(f'<div class="preview-empty">no blurbs generated for {nl_obj.brand_name} yet</div>', unsafe_allow_html=True)
 
-        ex1, ex2, _ = st.columns([1, 1, 4])
-        with ex1:
-            st.markdown('<div class="download">', unsafe_allow_html=True)
-            st.download_button(
-                "↓ this issue",
-                data=issue_text,
-                file_name=f"{preview_nl}-{selected_date}.txt",
-                mime="text/plain",
-                use_container_width=True,
-            )
-            st.markdown('</div>', unsafe_allow_html=True)
-        with ex2:
-            bundle_parts: list[str] = [f"TLDR family bundle — {selected_date}\n"]
-            for nid in nl_ids:
-                m: dict[str, dict] = {}
-                for s in scored_all:
-                    a = s.for_newsletter(nid)
-                    if not a:
-                        continue
-                    d2 = ss.decisions.get((s.story.url, nid))
-                    if d2 and d2.status == dec.REJECTED:
-                        continue
-                    base = blurbs.get((s.story.url, nid), {}).copy()
-                    if d2 and d2.edited_blurb:
-                        base["blurb"] = d2.edited_blurb
-                    if base:
-                        m[s.story.url] = base
-                if not m:
-                    continue
-                bundle_parts.append(f"\n{'='*60}\n{nls[nid].brand_name}\n{'='*60}\n")
-                bundle_parts.append(render_tldr(scored_all, m, nid, selected_date))
-            bundle_text = "\n".join(bundle_parts)
-            st.markdown('<div class="download">', unsafe_allow_html=True)
-            st.download_button(
-                "↓ family bundle",
-                data=bundle_text,
-                file_name=f"tldr-family-{selected_date}.txt",
-                mime="text/plain",
-                use_container_width=True,
-            )
-            st.markdown('</div>', unsafe_allow_html=True)
+def _merged_blurbs_for(nid: str) -> dict[str, dict]:
+    out: dict[str, dict] = {}
+    for s in scored_all:
+        a = s.for_newsletter(nid)
+        if not a:
+            continue
+        d = ss.decisions.get((s.story.url, nid))
+        if d and d.status == dec.REJECTED:
+            continue
+        base = blurbs.get((s.story.url, nid), {}).copy()
+        if d and d.edited_blurb:
+            base["blurb"] = d.edited_blurb
+        if base:
+            out[s.story.url] = base
+    return out
+
+
+# Issue text for the currently selected newsletter
+if preview_nl_obj is not None:
+    issue_text = render_tldr(scored_all, _merged_blurbs_for(preview_nl_id), preview_nl_id, selected_date)
+else:
+    issue_text = ""
+
+# Family bundle
+bundle_parts: list[str] = [f"TLDR family bundle — {selected_date}\n"]
+for nid in nl_ids:
+    merged = _merged_blurbs_for(nid)
+    if not merged:
+        continue
+    bundle_parts.append(f"\n{'='*60}\n{nls[nid].brand_name}\n{'='*60}\n")
+    bundle_parts.append(render_tldr(scored_all, merged, nid, selected_date))
+bundle_text = "\n".join(bundle_parts)
+
+ex1, ex2, _ = st.columns([1, 1, 4])
+with ex1:
+    st.markdown('<div class="download">', unsafe_allow_html=True)
+    st.download_button(
+        f"↓ {preview_nl_id.replace('tldr_','')} issue",
+        data=issue_text,
+        file_name=f"{preview_nl_id}-{selected_date}.txt",
+        mime="text/plain",
+        use_container_width=True,
+        disabled=not issue_text,
+    )
+    st.markdown('</div>', unsafe_allow_html=True)
+with ex2:
+    st.markdown('<div class="download">', unsafe_allow_html=True)
+    st.download_button(
+        "↓ family bundle (all newsletters)",
+        data=bundle_text,
+        file_name=f"tldr-family-{selected_date}.txt",
+        mime="text/plain",
+        use_container_width=True,
+    )
+    st.markdown('</div>', unsafe_allow_html=True)
+
+st.markdown("<br>", unsafe_allow_html=True)
+
+with st.expander("how is the score calculated?", expanded=False):
+    st.markdown(
+        """
+        <div class="score-doc">
+        <p>Every candidate story is scored <b>0–100</b> against five editorial
+        dimensions. The model assigns sub-scores per dimension and combines them
+        with the weights below:</p>
+
+        <div class="formula">
+          score = 0.30·<b>technical</b> + 0.25·<b>novelty</b> + 0.20·<b>implications</b> + 0.15·<b>credibility</b> + 0.10·<b>mainstream</b>
+        </div>
+
+        <table class="rubric">
+          <tr><th>Dimension</th><th>Weight</th><th>What it measures</th></tr>
+          <tr><td>Technical substance</td><td>30%</td><td>Reproducible detail, real numbers, named approach. A paper with code beats a capability claim.</td></tr>
+          <tr><td>Novelty</td><td>25%</td><td>How different from what TLDR readers have already seen this week.</td></tr>
+          <tr><td>Broader implications</td><td>20%</td><td>If true / if shipped, how much it changes what a serious reader should do or believe.</td></tr>
+          <tr><td>Source credibility</td><td>15%</td><td>First-party blog &gt; trusted secondary (Simon Willison, Import AI) &gt; general tech press &gt; aggregator.</td></tr>
+          <tr><td>Mainstream relevance</td><td>10%</td><td>Will this matter to a non-specialist? Lowest weight because TLDR readers are mostly already deep.</td></tr>
+        </table>
+
+        <p class="cap"><b>Disqualifiers</b> cap the score at 25: AI-generated thinkpieces, pure hype, content-marketing with no critical distance, sponsored posts, stories already covered in the last 14 days.</p>
+
+        <p class="cap"><b>Newsletter fit</b> is scored separately per newsletter. A story only appears in a newsletter's queue if its per-newsletter score is ≥55 (configurable via <code>MIN_ASSIGNMENT_SCORE</code>).</p>
+
+        <p class="cap">Tie-breakers prefer the original source over aggregators, technical depth over breadth, named authors with track records, fresher stories, and reproducible artifacts.</p>
+        </div>
+
+        <style>
+        .score-doc { font-size: 13px; color: var(--text-dim); line-height: 1.55; }
+        .score-doc p { margin: 0 0 12px; }
+        .score-doc b { color: var(--text); font-weight: 600; }
+        .score-doc .formula { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px; padding: 14px 16px; background: var(--surface); border-left: 2px solid var(--accent); margin: 14px 0 18px; color: var(--text); }
+        .score-doc .formula b { color: var(--accent); font-weight: 600; }
+        .score-doc table.rubric { width: 100%; border-collapse: collapse; margin: 8px 0 18px; font-size: 12.5px; }
+        .score-doc table.rubric th { text-align: left; padding: 8px 10px; color: var(--text-mute); font-weight: 600; text-transform: uppercase; font-size: 10px; letter-spacing: 0.08em; border-bottom: 1px solid var(--border-strong); }
+        .score-doc table.rubric td { padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+        .score-doc table.rubric td:nth-child(2) { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--text); font-weight: 600; white-space: nowrap; width: 60px; }
+        .score-doc table.rubric td:first-child { color: var(--text); font-weight: 500; white-space: nowrap; }
+        .score-doc .cap { font-size: 12px; color: var(--text-mute); }
+        .score-doc code { background: var(--surface); padding: 1px 5px; border-radius: 3px; font-size: 11.5px; }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )

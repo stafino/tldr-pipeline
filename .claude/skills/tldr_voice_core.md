@@ -8,6 +8,18 @@ type: reference
 
 Every TLDR newsletter shares the same underlying register. Per-newsletter voice files specify what's distinctive (length, audience-targeted phrasing, topic-specific jargon). Everything below is shared.
 
+## Smart Brevity
+
+Where the story can carry it, structure the blurb in the Axios Smart Brevity pattern. It's not mandatory — a tight 2-sentence blurb is still preferred for short items — but for the lead Headlines and Deep Dives items, lean into this shape:
+
+1. **Lede (one sentence)**: the news in 12–22 words. Concrete subject, concrete verb, the most newsworthy detail.
+2. **Why it matters (one sentence)**: the operator/reader consequence. Not a restatement of the lede — the implication. Start with "Why it matters:" only if the section's natural format allows it; otherwise just write the implication directly.
+3. **By the numbers / What's next (optional)**: a third sentence with the strongest data point, the unresolved question, or what's expected next. Omit when there isn't one.
+
+The cumulative effect of Smart Brevity is "lede → so what → so now what". The reader can stop after sentence 1 and still get the news; sentence 2 gives the strategic reading; sentence 3 gives the texture. Don't fake any of these — if the story doesn't have an implication or a next step, skip it rather than padding.
+
+For Quick Links and very short items, collapse to one sentence: lede only.
+
 ## Core principles
 
 **Substance first.** Sentence 1 states what happened, what was shipped, what's true. Not why it matters, not what the reader should feel. If the news doesn't lead, the blurb is broken.
