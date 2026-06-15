@@ -1,104 +1,539 @@
-# Per-newsletter section schemas. The ranking model classifies each story into
-# one of these sections; the blurb generator uses min/max word counts per section;
-# the formatter emits sections in the order listed.
+# All TLDR newsletter section schemas, derived from real issue scrapes.
+# Each section: id (snake_case), name (exact match), emoji, min/max blurb word
+# counts, target_count (how many stories per section per day), topic_tags
+# (used by the ranking model to bias scoring), description.
 
-tldr_founders:
-  brand_name: "TLDR Founders"
-  voice_skill: tldr_founders_voice
+default: tldr_tech
+
+tldr_tech:
+  brand_name: "TLDR"
+  voice_skill: tldr_tech_voice
+  topics: [tech, ai, programming, data, infosec, it, fintech, startups, design]
   sections:
-    - id: headlines
-      name: "Headlines & Trends"
-      emoji: "📈"
-      min_words: 60
-      max_words: 110
-      target_count: 10
-      description: >
-        Industry-level news, market shifts, macro trends. The piece tells a
-        founder something about where the field is moving.
-    - id: strategies
-      name: "Strategies & Tactics"
-      emoji: "🧠"
-      min_words: 60
-      max_words: 110
-      target_count: 10
-      description: >
-        How-to and playbook content for founders and operators. Pricing,
-        hiring, GTM, fundraising, sales motion, org design.
-    - id: tools
-      name: "Tools & Resources"
-      emoji: "⚒️"
+    - id: big_tech_startups
+      name: "Big Tech & Startups"
+      emoji: "📱"
       min_words: 40
-      max_words: 100
-      target_count: 10
-      description: >
-        Product launches, new APIs, releases of tools founders can pick up
-        and use. Concrete and shippable.
-    - id: misc
+      max_words: 80
+      target_count: 5
+      description: Major moves from FAANG, frontier labs, and funded startups. Acquisitions, layoffs, leadership shifts, big releases.
+    - id: science_futuristic
+      name: "Science & Futuristic Technology"
+      emoji: "🚀"
+      min_words: 40
+      max_words: 80
+      target_count: 4
+      description: Hardware breakthroughs, robotics, biotech, space, energy, frontier physics. Anything outside pure software.
+    - id: programming_design_data
+      name: "Programming, Design & Data Science"
+      emoji: "💻"
+      min_words: 40
+      max_words: 80
+      target_count: 5
+      description: Cross-cutting engineering and craft posts that aren't in a single specialty newsletter.
+    - id: miscellaneous
       name: "Miscellaneous"
       emoji: "🎁"
-      min_words: 50
-      max_words: 100
-      target_count: 10
-      description: >
-        Sharper essays, opinion pieces, lessons learned. Less newsy than
-        Headlines, more reflective. Often a single strong argument.
-    - id: quick
+      min_words: 40
+      max_words: 80
+      target_count: 3
+      description: Smart essays, industry analysis, lessons, observations that don't fit a topic bucket.
+    - id: quick_links
       name: "Quick Links"
       emoji: "⚡"
       min_words: 8
       max_words: 25
-      target_count: 10
-      description: >
-        Worth reading but not enough substance for a full section slot.
-        One-sentence blurb max.
+      target_count: 5
+      description: One-sentence pointers to worthwhile reads.
 
 tldr_ai:
   brand_name: "TLDR AI"
   voice_skill: tldr_voice
+  topics: [ai, ml, llm, research]
   sections:
     - id: headlines
       name: "Headlines & Launches"
       emoji: "🚀"
       min_words: 40
       max_words: 75
-      target_count: 10
-      description: >
-        Frontier-lab announcements, model releases, major product ships,
-        funding rounds, M&A.
+      target_count: 5
+      description: Frontier-lab announcements, model releases, major product ships, AI-related funding rounds, M&A.
     - id: deep_dives
       name: "Deep Dives & Analysis"
       emoji: "🧠"
       min_words: 40
       max_words: 90
-      target_count: 10
-      description: >
-        Think-pieces, technical posts that argue a position, deep
-        explanations of a phenomenon, economic/strategic analysis.
+      target_count: 5
+      description: Think-pieces, technical posts that argue a position, deep explanations of a phenomenon, economic/strategic analysis.
     - id: engineering
       name: "Engineering & Research"
       emoji: "⚒️"
       min_words: 40
       max_words: 80
-      target_count: 10
-      description: >
-        Developer tools, frameworks, APIs, research papers, new techniques,
-        infra releases.
-    - id: misc
+      target_count: 5
+      description: Developer tools, frameworks, APIs, research papers, new techniques, infra releases.
+    - id: miscellaneous
       name: "Miscellaneous"
       emoji: "🎁"
       min_words: 40
       max_words: 80
-      target_count: 10
-      description: >
-        Industry, geopolitics, policy, hiring, anything not fitting above.
-    - id: quick
+      target_count: 3
+      description: Industry, geopolitics, policy, hiring, anything not fitting above.
+    - id: quick_links
       name: "Quick Links"
       emoji: "⚡"
       min_words: 8
       max_words: 25
-      target_count: 10
-      description: >
-        Brief mentions. One-sentence blurb max.
+      target_count: 5
+      description: Brief mentions. One sentence.
 
-# Default newsletter to use across the pipeline if --newsletter is not passed.
-default: tldr_founders
+tldr_founders:
+  brand_name: "TLDR Founders"
+  voice_skill: tldr_founders_voice
+  topics: [founders, startups, vc, gtm, sales, pricing, fundraising, business]
+  sections:
+    - id: headlines
+      name: "Headlines & Trends"
+      emoji: "📈"
+      min_words: 60
+      max_words: 110
+      target_count: 5
+      description: Industry-level news, market shifts, macro trends. Tells a founder where the field is moving.
+    - id: strategies
+      name: "Strategies & Tactics"
+      emoji: "🧠"
+      min_words: 60
+      max_words: 110
+      target_count: 5
+      description: How-to and playbook content for founders and operators. Pricing, hiring, GTM, fundraising, sales, org design.
+    - id: tools
+      name: "Tools & Resources"
+      emoji: "⚒️"
+      min_words: 40
+      max_words: 100
+      target_count: 5
+      description: Product launches, new APIs, releases of tools founders can pick up and use.
+    - id: miscellaneous
+      name: "Miscellaneous"
+      emoji: "🎁"
+      min_words: 50
+      max_words: 100
+      target_count: 3
+      description: Sharper essays, opinion pieces, lessons. Less newsy than Headlines, more reflective.
+    - id: quick_links
+      name: "Quick Links"
+      emoji: "⚡"
+      min_words: 8
+      max_words: 25
+      target_count: 5
+      description: One-sentence pointers.
+
+tldr_dev:
+  brand_name: "TLDR Dev"
+  voice_skill: tldr_dev_voice
+  topics: [programming, languages, frameworks, web, mobile, backend, devtools, career]
+  sections:
+    - id: articles_tutorials
+      name: "Articles & Tutorials"
+      emoji: "🧑‍💻"
+      min_words: 40
+      max_words: 80
+      target_count: 5
+      description: Deep technical write-ups, hands-on tutorials, post-mortems, how a particular system was built.
+    - id: opinions_advice
+      name: "Opinions & Advice"
+      emoji: "🧠"
+      min_words: 40
+      max_words: 80
+      target_count: 4
+      description: Engineering culture, career, debates about practice (microservices, monorepos, AI assistants).
+    - id: launches_tools
+      name: "Launches & Tools"
+      emoji: "🚀"
+      min_words: 40
+      max_words: 80
+      target_count: 5
+      description: New libraries, dev tools, CLIs, frameworks, language releases, IDE features.
+    - id: miscellaneous
+      name: "Miscellaneous"
+      emoji: "🎁"
+      min_words: 40
+      max_words: 80
+      target_count: 3
+      description: Industry news affecting developers — layoffs, acquisitions, big-tech shifts.
+    - id: quick_links
+      name: "Quick Links"
+      emoji: "⚡"
+      min_words: 8
+      max_words: 25
+      target_count: 5
+      description: One-sentence pointers.
+
+tldr_data:
+  brand_name: "TLDR Data"
+  voice_skill: tldr_data_voice
+  topics: [data, ml, analytics, warehouse, etl, pipeline, snowflake, dbt, duckdb]
+  sections:
+    - id: news_trends
+      name: "News & Trends"
+      emoji: "📊"
+      min_words: 40
+      max_words: 80
+      target_count: 5
+      description: Data ecosystem news, company moves (Snowflake, Databricks, Fivetran), product strategy.
+    - id: deep_dives
+      name: "Deep Dives & Analysis"
+      emoji: "🧠"
+      min_words: 40
+      max_words: 90
+      target_count: 4
+      description: Data architecture think-pieces, modeling debates, real engineering stories from data teams.
+    - id: launches_tools
+      name: "Launches & Tools"
+      emoji: "🚀"
+      min_words: 40
+      max_words: 80
+      target_count: 5
+      description: New data tools, library releases, dbt packages, dashboard tools.
+    - id: miscellaneous
+      name: "Miscellaneous"
+      emoji: "🎁"
+      min_words: 40
+      max_words: 80
+      target_count: 3
+      description: Career, hiring trends, salary surveys, anything data-team-adjacent.
+    - id: quick_links
+      name: "Quick Links"
+      emoji: "⚡"
+      min_words: 8
+      max_words: 25
+      target_count: 5
+      description: One-sentence pointers.
+
+tldr_design:
+  brand_name: "TLDR Design"
+  voice_skill: tldr_design_voice
+  topics: [design, ux, ui, figma, typography, branding, css]
+  sections:
+    - id: news_trends
+      name: "News & Trends"
+      emoji: "📱"
+      min_words: 40
+      max_words: 80
+      target_count: 5
+      description: Design industry news, big rebrands, design-lab moves, tool acquisitions.
+    - id: opinions_tutorials
+      name: "Opinions & Tutorials"
+      emoji: "🚀"
+      min_words: 40
+      max_words: 80
+      target_count: 4
+      description: Process essays, craft pieces, hands-on tutorials for designers.
+    - id: launches_tools
+      name: "Launches & Tools"
+      emoji: "💻"
+      min_words: 40
+      max_words: 80
+      target_count: 5
+      description: New design tools, Figma plugin releases, font releases, libraries.
+    - id: miscellaneous
+      name: "Miscellaneous"
+      emoji: "🎁"
+      min_words: 40
+      max_words: 80
+      target_count: 3
+      description: Design-business news, agency moves, hiring.
+    - id: quick_links
+      name: "Quick Links"
+      emoji: "⚡"
+      min_words: 8
+      max_words: 25
+      target_count: 5
+      description: One-sentence pointers.
+
+tldr_infosec:
+  brand_name: "TLDR InfoSec"
+  voice_skill: tldr_infosec_voice
+  topics: [security, infosec, vulnerabilities, ransomware, breach, cve, cloud_security]
+  sections:
+    - id: attacks_vulns
+      name: "Attacks & Vulnerabilities"
+      emoji: "🔓"
+      min_words: 40
+      max_words: 80
+      target_count: 6
+      description: Disclosed CVEs, active campaigns, breach reports, ransomware incidents.
+    - id: strategies
+      name: "Strategies & Tactics"
+      emoji: "🧠"
+      min_words: 40
+      max_words: 90
+      target_count: 4
+      description: Defensive playbooks, threat intelligence, security org/program writeups.
+    - id: launches_tools
+      name: "Launches & Tools"
+      emoji: "🧑‍💻"
+      min_words: 40
+      max_words: 80
+      target_count: 4
+      description: New security tools, library releases, scanner updates.
+    - id: miscellaneous
+      name: "Miscellaneous"
+      emoji: "🎁"
+      min_words: 40
+      max_words: 80
+      target_count: 3
+      description: Industry news, M&A, government actions, regulation.
+    - id: quick_links
+      name: "Quick Links"
+      emoji: "⚡"
+      min_words: 8
+      max_words: 25
+      target_count: 5
+      description: One-sentence pointers.
+
+tldr_it:
+  brand_name: "TLDR IT"
+  voice_skill: tldr_it_voice
+  topics: [enterprise, it, microsoft, oracle, sap, cio, identity]
+  sections:
+    - id: news_trends
+      name: "News & Trends"
+      emoji: "🚀"
+      min_words: 40
+      max_words: 80
+      target_count: 5
+      description: Enterprise IT news, big-vendor moves (Microsoft, Oracle, IBM, ServiceNow).
+    - id: analysis
+      name: "Analysis & Opinions"
+      emoji: "🧠"
+      min_words: 40
+      max_words: 90
+      target_count: 4
+      description: IT leadership essays, vendor strategy critiques, enterprise buying analysis.
+    - id: launches_partnerships
+      name: "Launches & Partnerships"
+      emoji: "🤝"
+      min_words: 40
+      max_words: 80
+      target_count: 4
+      description: Enterprise product launches, partnership announcements, integrations.
+    - id: miscellaneous
+      name: "Miscellaneous"
+      emoji: "🎁"
+      min_words: 40
+      max_words: 80
+      target_count: 3
+      description: Hiring, certifications, enterprise career.
+    - id: quick_links
+      name: "Quick Links"
+      emoji: "⚡"
+      min_words: 8
+      max_words: 25
+      target_count: 5
+      description: One-sentence pointers.
+
+tldr_devops:
+  brand_name: "TLDR DevOps"
+  voice_skill: tldr_devops_voice
+  topics: [devops, sre, kubernetes, observability, ci_cd, terraform, platform_engineering]
+  sections:
+    - id: news_trends
+      name: "News & Trends"
+      emoji: "📱"
+      min_words: 40
+      max_words: 80
+      target_count: 5
+      description: Platform/SRE news, kubernetes ecosystem moves, CNCF announcements.
+    - id: opinions_tutorials
+      name: "Opinions & Tutorials"
+      emoji: "🚀"
+      min_words: 40
+      max_words: 90
+      target_count: 5
+      description: SRE practice essays, deep tutorials, incident retros, platform-team architecture posts.
+    - id: launches_tools
+      name: "Launches & Tools"
+      emoji: "⚒️"
+      min_words: 40
+      max_words: 80
+      target_count: 4
+      description: New DevOps tools, monitoring product launches, CI/CD updates.
+    - id: miscellaneous
+      name: "Miscellaneous"
+      emoji: "🎁"
+      min_words: 40
+      max_words: 80
+      target_count: 3
+      description: Incident transparency posts, hiring, certifications.
+    - id: quick_links
+      name: "Quick Links"
+      emoji: "⚡"
+      min_words: 8
+      max_words: 25
+      target_count: 5
+      description: One-sentence pointers.
+
+tldr_marketing:
+  brand_name: "TLDR Marketing"
+  voice_skill: tldr_marketing_voice
+  topics: [marketing, growth, seo, paid, content, brand, demand_gen]
+  sections:
+    - id: news_trends
+      name: "News & Trends"
+      emoji: "🤳"
+      min_words: 40
+      max_words: 80
+      target_count: 5
+      description: Platform news (Google, Meta ad changes), AI-search shifts, big-brand moves.
+    - id: strategies
+      name: "Strategies & Tactics"
+      emoji: "🚀"
+      min_words: 40
+      max_words: 100
+      target_count: 5
+      description: Growth playbooks, demand-gen analysis, campaign post-mortems, channel benchmarks.
+    - id: resources_tools
+      name: "Resources & Tools"
+      emoji: "🧑‍💻"
+      min_words: 40
+      max_words: 80
+      target_count: 4
+      description: New marketing tools, dashboards, templates, AI marketing products.
+    - id: miscellaneous
+      name: "Miscellaneous"
+      emoji: "🎁"
+      min_words: 40
+      max_words: 80
+      target_count: 3
+      description: Industry hiring, agency moves, brand-strategy essays.
+    - id: quick_links
+      name: "Quick Links"
+      emoji: "⚡"
+      min_words: 8
+      max_words: 25
+      target_count: 5
+      description: One-sentence pointers.
+
+tldr_product:
+  brand_name: "TLDR Product"
+  voice_skill: tldr_product_voice
+  topics: [product, pm, roadmap, discovery, growth, analytics, user_research]
+  sections:
+    - id: news_trends
+      name: "News & Trends"
+      emoji: "📱"
+      min_words: 40
+      max_words: 80
+      target_count: 5
+      description: PM/product platform news, big-tech product strategy shifts.
+    - id: opinions_tutorials
+      name: "Opinions & Tutorials"
+      emoji: "🚀"
+      min_words: 40
+      max_words: 100
+      target_count: 5
+      description: Product craft essays, discovery frameworks, roadmap-process debates.
+    - id: resources_tools
+      name: "Resources & Tools"
+      emoji: "👨‍💻"
+      min_words: 40
+      max_words: 80
+      target_count: 4
+      description: New PM tools, analytics products, discovery templates.
+    - id: miscellaneous
+      name: "Miscellaneous"
+      emoji: "🎁"
+      min_words: 40
+      max_words: 80
+      target_count: 3
+      description: Hiring, salary, career-transition essays for PMs.
+    - id: quick_links
+      name: "Quick Links"
+      emoji: "⚡"
+      min_words: 8
+      max_words: 25
+      target_count: 5
+      description: One-sentence pointers.
+
+tldr_crypto:
+  brand_name: "TLDR Crypto"
+  voice_skill: tldr_crypto_voice
+  topics: [crypto, blockchain, defi, ethereum, bitcoin, web3, l2, stablecoin]
+  sections:
+    - id: markets_business
+      name: "Markets & Business"
+      emoji: "📈"
+      min_words: 40
+      max_words: 80
+      target_count: 5
+      description: Token price moves, fundraising, exchange news, ETF flows, regulatory actions.
+    - id: innovation_launches
+      name: "Innovation & Launches"
+      emoji: "🚀"
+      min_words: 40
+      max_words: 80
+      target_count: 4
+      description: Protocol launches, L2 upgrades, new chains, DeFi product releases.
+    - id: guides_resources
+      name: "Guides & Resources"
+      emoji: "💡"
+      min_words: 40
+      max_words: 90
+      target_count: 4
+      description: Tutorials, post-mortems, deep dives into a protocol mechanism.
+    - id: miscellaneous
+      name: "Miscellaneous"
+      emoji: "🦄"
+      min_words: 40
+      max_words: 80
+      target_count: 3
+      description: Hiring, exec moves, conferences, lighter culture stories.
+    - id: quick_links
+      name: "Quick Links"
+      emoji: "⚡"
+      min_words: 8
+      max_words: 25
+      target_count: 5
+      description: One-sentence pointers.
+
+tldr_fintech:
+  brand_name: "TLDR Fintech"
+  voice_skill: tldr_fintech_voice
+  topics: [fintech, banking, payments, stablecoin, embedded_finance, neobank, lending]
+  sections:
+    - id: innovations
+      name: "Innovations"
+      emoji: "⚙️"
+      min_words: 40
+      max_words: 80
+      target_count: 5
+      description: New fintech product launches, infrastructure moves, payment-rail innovations.
+    - id: trends
+      name: "Trends"
+      emoji: "📈"
+      min_words: 40
+      max_words: 80
+      target_count: 5
+      description: Banking-as-a-service moves, regulatory shifts, market trends, big-bank strategy.
+    - id: deep_dives
+      name: "Deep Dives & Analysis"
+      emoji: "🧠"
+      min_words: 40
+      max_words: 90
+      target_count: 4
+      description: Long-form essays on fintech business models, banking infrastructure, payment economics.
+    - id: miscellaneous
+      name: "Miscellaneous"
+      emoji: "🎁"
+      min_words: 40
+      max_words: 80
+      target_count: 3
+      description: Industry hiring, M&A, conference coverage.
+    - id: quick_links
+      name: "Quick Links"
+      emoji: "⚡"
+      min_words: 8
+      max_words: 25
+      target_count: 5
+      description: One-sentence pointers.

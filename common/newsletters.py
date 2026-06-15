@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from functools import lru_cache
 from pathlib import Path
 
@@ -21,6 +21,10 @@ class Section:
     def header(self) -> str:
         return f"{self.emoji}\n{self.name}"
 
+    @property
+    def is_quick_links(self) -> bool:
+        return self.id.endswith("quick_links") or self.id == "quick"
+
 
 @dataclass
 class Newsletter:
@@ -28,6 +32,7 @@ class Newsletter:
     brand_name: str
     voice_skill: str
     sections: list[Section]
+    topics: list[str] = field(default_factory=list)
 
     @property
     def section_ids(self) -> list[str]:
@@ -39,6 +44,10 @@ class Newsletter:
                 return s
         return None
 
+    @property
+    def quick_links_section(self) -> Section | None:
+        return next((s for s in self.sections if s.is_quick_links), None)
+
 
 @lru_cache(maxsize=4)
 def load_newsletters(path: str = "config/newsletters.yaml") -> dict[str, Newsletter]:
@@ -46,6 +55,8 @@ def load_newsletters(path: str = "config/newsletters.yaml") -> dict[str, Newslet
     out: dict[str, Newsletter] = {}
     for nid, nl in data.items():
         if nid == "default":
+            continue
+        if not isinstance(nl, dict):
             continue
         sections = [
             Section(
@@ -64,13 +75,14 @@ def load_newsletters(path: str = "config/newsletters.yaml") -> dict[str, Newslet
             brand_name=nl["brand_name"],
             voice_skill=nl["voice_skill"],
             sections=sections,
+            topics=list(nl.get("topics", [])),
         )
     return out
 
 
 def default_newsletter_id(path: str = "config/newsletters.yaml") -> str:
     data = yaml.safe_load(Path(path).read_text())
-    return data.get("default", "tldr_founders")
+    return data.get("default", "tldr_tech")
 
 
 def get_newsletter(nid: str, path: str = "config/newsletters.yaml") -> Newsletter:

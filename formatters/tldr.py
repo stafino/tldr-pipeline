@@ -1,27 +1,5 @@
-"""Render a day's scored + blurbed stories in the exact TLDR newsletter format.
-
-Layout:
-
-    Sign Up | Advertise | View Online
-    TLDR
-
-    <Brand Name> <YYYY-MM-DD>
-
-    <emoji>
-    <Section Name>
-
-    <Title> (<N> minute read)
-
-    <Blurb>
-
-    <Title> (<N> minute read)
-
-    <Blurb>
-
-    [...]
-
-The format matches the body shape of real TLDR issues. Sponsor blocks and
-referral footers are omitted; the curator-facing output is the editorial body.
+"""Render a day's scored + blurbed stories in the exact TLDR newsletter format,
+one issue per newsletter.
 """
 
 from __future__ import annotations
@@ -31,8 +9,9 @@ from dataclasses import dataclass
 from datetime import date
 from pathlib import Path
 
-from common.newsletters import Newsletter, get_newsletter
+from common.newsletters import Newsletter, get_newsletter, load_newsletters
 from common.story import ScoredStory, read_jsonl
+from ranking.score import top_per_section
 
 
 @dataclass
@@ -44,7 +23,8 @@ class _Item:
     needs_review: bool
 
 
-def _load_blurbs(path: Path) -> dict[str, dict]:
+def _load_blurbs(path: Path, newsletter_id: str) -> dict[str, dict]:
+    """Map story_url → blurb dict, filtered to one newsletter."""
     if not path.exists():
         return {}
     out: dict[str, dict] = {}
@@ -54,18 +34,10 @@ def _load_blurbs(path: Path) -> dict[str, dict]:
             if not line:
                 continue
             d = json.loads(line)
+            if d.get("newsletter") != newsletter_id:
+                continue
             out[d["story_url"]] = d
     return out
-
-
-def _group_by_section(scored: list[ScoredStory], nl: Newsletter) -> dict[str, list[ScoredStory]]:
-    groups: dict[str, list[ScoredStory]] = {s.id: [] for s in nl.sections}
-    for s in scored:
-        if s.section_id in groups:
-            groups[s.section_id].append(s)
-    for sec in nl.sections:
-        groups[sec.id] = groups[sec.id][: sec.target_count]
-    return groups
 
 
 def render(
@@ -75,7 +47,7 @@ def render(
     day: str,
 ) -> str:
     nl = get_newsletter(newsletter_id)
-    by_section = _group_by_section(scored, nl)
+    by_section = top_per_section(scored, newsletter_id)
 
     lines: list[str] = []
     lines.append("Sign Up | Advertise | View Online")
@@ -120,28 +92,47 @@ def render(
 
 def render_from_disk(day: str, newsletter_id: str) -> str:
     scored = [ScoredStory.from_dict(d) for d in read_jsonl(Path("data/scored") / f"{day}.jsonl")]
-    blurbs = _load_blurbs(Path("data/blurbs") / f"{day}.jsonl")
+    blurbs = _load_blurbs(Path("data/blurbs") / f"{day}.jsonl", newsletter_id)
     return render(scored, blurbs, newsletter_id, day)
+
+
+def render_all(day: str, out_dir: Path) -> dict[str, Path]:
+    """Render every newsletter to data/issues/<nl>-<date>.txt; return paths."""
+    out_dir.mkdir(parents=True, exist_ok=True)
+    nls = load_newsletters()
+    paths: dict[str, Path] = {}
+    for nid in nls.keys():
+        text = render_from_disk(day, nid)
+        path = out_dir / f"{nid}-{day}.txt"
+        path.write_text(text)
+        paths[nid] = path
+    return paths
 
 
 def main() -> None:
     import argparse
 
-    from common.newsletters import default_newsletter_id
-
     ap = argparse.ArgumentParser()
     ap.add_argument("--date", default=date.today().isoformat())
-    ap.add_argument("--newsletter", default=default_newsletter_id())
-    ap.add_argument("--out", default=None)
+    ap.add_argument(
+        "--newsletter", default="all",
+        help="A specific newsletter id, or 'all' for every newsletter (default).",
+    )
+    ap.add_argument("--out-dir", default="data/issues")
     args = ap.parse_args()
 
-    text = render_from_disk(args.date, args.newsletter)
-
-    out_path = Path(args.out) if args.out else Path("data/issues") / f"{args.newsletter}-{args.date}.txt"
-    out_path.parent.mkdir(parents=True, exist_ok=True)
-    out_path.write_text(text)
-    print(text)
-    print(f"\n(saved to {out_path})")
+    out_dir = Path(args.out_dir)
+    if args.newsletter == "all":
+        paths = render_all(args.date, out_dir)
+        for nid, p in paths.items():
+            print(f"{nid}: {p}")
+    else:
+        text = render_from_disk(args.date, args.newsletter)
+        p = out_dir / f"{args.newsletter}-{args.date}.txt"
+        out_dir.mkdir(parents=True, exist_ok=True)
+        p.write_text(text)
+        print(text)
+        print(f"\n(saved to {p})")
 
 
 if __name__ == "__main__":

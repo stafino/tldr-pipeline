@@ -1,21 +1,28 @@
 #!/usr/bin/env bash
 #
-# tldr — one-shot driver for the tldr-pipeline.
+# tldr — one-shot driver for the tldr-pipeline. Multi-newsletter aware.
 #
 # Usage:
-#   tldr                  → full pipeline (ingest → dedup → rank → blurbs → format) then open UI
+#   tldr                  → full pipeline (ingest → dedup → rank → blurbs ALL → format ALL) then open UI
 #   tldr refresh          → full pipeline only, no UI
 #   tldr ui               → open the Streamlit review UI
-#   tldr ingest|dedup|rank|blurbs|format
-#                         → run a single step
-#   tldr backtest         → run the backtest script
-#   tldr open             → open the latest rendered issue draft in $EDITOR
+#   tldr ingest|dedup|rank
+#                         → run a single step (newsletter-agnostic)
+#   tldr blurbs [<nl_id>]
+#                         → generate blurbs for all newsletters (default) or one
+#   tldr format [<nl_id>]
+#                         → render the formatted issue for all (default) or one
+#   tldr backtest <start> <end> [<nl_id>]
+#                         → backtest against real TLDR archive(s)
+#   tldr open [<nl_id>]   → open today's rendered issue ($EDITOR)
 #   tldr status           → counts for today's pipeline (raw / deduped / scored / blurbed)
+#   tldr list             → list newsletters
 #   tldr help             → this message
 #
 # Environment overrides:
 #   DATE=2026-06-14       → run for a specific date (default: today)
-#   NEWSLETTER=tldr_ai    → switch newsletter schema (default: tldr_founders)
+#   LLM_BACKEND=cli|api   → override LLM backend
+#   MIN_ASSIGNMENT_SCORE=55  → minimum per-newsletter score to keep an assignment
 
 set -euo pipefail
 
@@ -23,7 +30,6 @@ REPO_ROOT="$(cd "$(dirname "$0")" && pwd)"
 cd "$REPO_ROOT"
 
 DATE="${DATE:-$(date +%Y-%m-%d)}"
-NEWSLETTER="${NEWSLETTER:-tldr_founders}"
 
 err()  { printf '\033[31m%s\033[0m\n' "$*" >&2; }
 log()  { printf '\033[36m▸ %s\033[0m\n' "$*"; }
@@ -40,25 +46,29 @@ if [[ ! -d ".venv" ]]; then
   uv sync
 fi
 
-run_step() {
-  local step="$1"; shift
-  log "$step  date=$DATE  newsletter=$NEWSLETTER"
-  uv run "$@"
+cmd_ingest() { log "ingest  date=$DATE"; uv run python -m ingestion.run --date "$DATE"; }
+cmd_dedup()  { log "dedup   date=$DATE"; uv run python -m dedup.run --date "$DATE"; }
+cmd_rank()   { log "rank    date=$DATE (multi-newsletter)"; uv run python -m ranking.run --date "$DATE"; }
+
+cmd_blurbs() {
+  local nl="${1:-all}"
+  log "blurbs  date=$DATE  newsletter=$nl"
+  uv run python -m blurbs.run --date "$DATE" --newsletter "$nl"
 }
 
-cmd_ingest()  { run_step "ingest" python -m ingestion.run --date "$DATE"; }
-cmd_dedup()   { run_step "dedup"  python -m dedup.run --date "$DATE"; }
-cmd_rank()    { run_step "rank"   python -m ranking.run --date "$DATE" --newsletter "$NEWSLETTER"; }
-cmd_blurbs()  { run_step "blurbs" python -m blurbs.run --date "$DATE" --newsletter "$NEWSLETTER"; }
-cmd_format()  { run_step "format" python -m formatters.tldr --date "$DATE" --newsletter "$NEWSLETTER"; }
+cmd_format() {
+  local nl="${1:-all}"
+  log "format  date=$DATE  newsletter=$nl"
+  uv run python -m formatters.tldr --date "$DATE" --newsletter "$nl"
+}
 
 cmd_refresh() {
   cmd_ingest
   cmd_dedup
   cmd_rank
-  cmd_blurbs
-  cmd_format
-  ok "done — issue draft at data/issues/${NEWSLETTER}-${DATE}.txt"
+  cmd_blurbs "all"
+  cmd_format "all"
+  ok "done — issues at data/issues/*-${DATE}.txt"
 }
 
 cmd_ui() {
@@ -67,18 +77,19 @@ cmd_ui() {
 }
 
 cmd_backtest() {
-  local start="${1:-}"; local end="${2:-}"
+  local start="${1:-}"; local end="${2:-}"; local nl="${3:-all}"
   if [[ -z "$start" || -z "$end" ]]; then
-    err "usage: tldr backtest <start> <end>  (e.g. tldr backtest 2026-06-01 2026-06-12)"
+    err "usage: tldr backtest <start> <end> [<nl_id>]"
     exit 1
   fi
-  uv run python scripts/backtest.py --start "$start" --end "$end"
+  uv run python scripts/backtest.py --start "$start" --end "$end" --newsletter "$nl"
 }
 
 cmd_open() {
-  local f="data/issues/${NEWSLETTER}-${DATE}.txt"
+  local nl="${1:-tldr_tech}"
+  local f="data/issues/${nl}-${DATE}.txt"
   if [[ ! -f "$f" ]]; then
-    err "no rendered issue at $f. Run 'tldr format' (or 'tldr refresh') first."
+    err "no rendered issue at $f. Run 'tldr format $nl' first."
     exit 1
   fi
   "${EDITOR:-cat}" "$f"
@@ -89,15 +100,26 @@ _count_lines() {
 }
 
 cmd_status() {
-  echo "date=$DATE newsletter=$NEWSLETTER"
+  echo "date=$DATE"
   printf "  %-10s %s\n" "raw"      "$(_count_lines "data/raw/${DATE}.jsonl")"
   printf "  %-10s %s\n" "deduped"  "$(_count_lines "data/deduped/${DATE}.jsonl")"
   printf "  %-10s %s\n" "scored"   "$(_count_lines "data/scored/${DATE}.jsonl")"
   printf "  %-10s %s\n" "blurbed"  "$(_count_lines "data/blurbs/${DATE}.jsonl")"
+  echo "issues rendered:"
+  ls -1 "data/issues/" 2>/dev/null | grep -- "-${DATE}.txt" | sed 's/^/  /'
+}
+
+cmd_list() {
+  uv run python -c "
+from common.newsletters import load_newsletters
+for nid, nl in load_newsletters().items():
+    secs = ', '.join(s.name for s in nl.sections)
+    print(f'{nid:<18} {nl.brand_name:<20} sections: {secs}')
+"
 }
 
 cmd_help() {
-  sed -n '2,20p' "$0" | sed 's/^# \{0,1\}//'
+  sed -n '2,22p' "$0" | sed 's/^# \{0,1\}//'
 }
 
 main() {
@@ -109,11 +131,12 @@ main() {
     ingest)              cmd_ingest ;;
     dedup)               cmd_dedup ;;
     rank)                cmd_rank ;;
-    blurbs)              cmd_blurbs ;;
-    format|render)       cmd_format ;;
+    blurbs)              shift; cmd_blurbs "${1:-all}" ;;
+    format|render)       shift; cmd_format "${1:-all}" ;;
     backtest)            shift; cmd_backtest "$@" ;;
-    open|edit)           cmd_open ;;
+    open|edit)           shift; cmd_open "${1:-tldr_tech}" ;;
     status)              cmd_status ;;
+    list|ls)             cmd_list ;;
     help|-h|--help)      cmd_help ;;
     *)
       err "unknown subcommand: $sub"

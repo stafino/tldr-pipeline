@@ -1,72 +1,149 @@
-# Sources the ingestion layer pulls from. Tuned to match the kinds of links
-# TLDR AI actually cites. Add or comment out lines to taste.
+# Sources the ingestion layer pulls from. Each RSS feed has `topics:` tags
+# that the ranking model uses to bias newsletter assignment. Sources without
+# tags are pulled but treated as generic.
 
 rss:
-  # Frontier-lab official posts
-  - name: openai_blog
-    url: https://openai.com/news/rss.xml
-    quality: high
-    notes: Official OpenAI announcements and research posts.
+  # ─── AI / ML / LLM ──────────────────────────────────────────────────────
+  - { name: openai_blog,        url: https://openai.com/news/rss.xml,                                         topics: [ai] }
+  - { name: anthropic_news,     url: https://www.anthropic.com/news/rss.xml,                                  topics: [ai] }
+  - { name: deepmind_blog,      url: https://deepmind.google/blog/rss.xml,                                    topics: [ai] }
+  - { name: google_research,    url: https://research.google/blog/rss/,                                       topics: [ai, data] }
+  - { name: meta_ai,            url: https://ai.meta.com/blog/rss/,                                           topics: [ai] }
+  - { name: huggingface_blog,   url: https://huggingface.co/blog/feed.xml,                                    topics: [ai, ml] }
+  - { name: simonwillison,      url: https://simonwillison.net/atom.xml,                                      topics: [ai, programming] }
+  - { name: import_ai,          url: https://importai.substack.com/feed,                                      topics: [ai] }
+  - { name: latent_space,       url: https://www.latent.space/feed,                                           topics: [ai, programming] }
+  - { name: aqnichol,           url: https://blog.aqnichol.com/feed.xml,                                      topics: [ai] }
+  - { name: langchain_blog,     url: https://blog.langchain.com/rss/,                                         topics: [ai, programming] }
+  - { name: ai_snake_oil,       url: https://www.aisnakeoil.com/feed,                                         topics: [ai] }
+  - { name: marginalia_ai,      url: https://thomwolf.io/blog/feed.xml,                                       topics: [ai, ml] }
+  - { name: nvidia_dev_blog,    url: https://developer.nvidia.com/blog/feed,                                  topics: [ai, ml] }
+  - { name: oneuseful_ethan,    url: https://www.oneusefulthing.org/feed,                                     topics: [ai, founders] }
+  - { name: dwarkesh,           url: https://www.dwarkesh.com/feed,                                           topics: [ai, founders] }
+  - { name: every,              url: https://every.to/feed.xml,                                               topics: [ai, founders, product] }
 
-  - name: anthropic_news
-    url: https://www.anthropic.com/news/rss.xml
-    quality: high
-    notes: Official Anthropic posts. Low frequency, high signal.
+  # ─── Founders / Startups / VC / Business ────────────────────────────────
+  - { name: stratechery,        url: https://stratechery.com/feed/,                                           topics: [founders, tech, ai] }
+  - { name: tomtunguz,          url: https://tomtunguz.com/feed.xml,                                          topics: [founders, vc] }
+  - { name: sacra,              url: https://sacra.com/research/rss/,                                         topics: [founders, vc] }
+  - { name: paulgraham,         url: http://www.aaronsw.com/2002/feeds/pgessays.rss,                          topics: [founders] }
+  - { name: nfx,                url: https://www.nfx.com/feed,                                                topics: [founders, vc] }
+  - { name: andrewchen,         url: https://andrewchen.com/feed/,                                            topics: [founders, growth] }
+  - { name: firstround_review,  url: https://review.firstround.com/feed/,                                     topics: [founders, gtm, hiring] }
+  - { name: a16z_blog,          url: https://a16z.com/feed/,                                                  topics: [founders, vc, ai] }
+  - { name: sequoia,            url: https://www.sequoiacap.com/feed/,                                        topics: [founders, vc] }
+  - { name: bessemer,           url: https://www.bvp.com/atlas/feed,                                          topics: [founders, vc] }
+  - { name: openviewpartners,   url: https://openviewpartners.com/blog/feed/,                                 topics: [founders, gtm] }
+  - { name: only_ceos,          url: https://www.theceomagazine.com/feed/,                                    topics: [founders] }
+  - { name: working_in_public,  url: https://nadia.xyz/posts/index.xml,                                       topics: [founders, programming] }
 
-  - name: deepmind_blog
-    url: https://deepmind.google/blog/rss.xml
-    quality: high
-    notes: Google DeepMind research and product posts.
+  # ─── Crypto / Web3 ──────────────────────────────────────────────────────
+  - { name: a16z_crypto,        url: https://a16zcrypto.com/feed/,                                            topics: [crypto] }
+  - { name: theblock,           url: https://www.theblock.co/rss.xml,                                         topics: [crypto, fintech] }
+  - { name: bankless,           url: https://newsletter.banklesshq.com/feed,                                  topics: [crypto] }
+  - { name: messari,            url: https://messari.io/rss,                                                  topics: [crypto] }
+  - { name: defiant,            url: https://thedefiant.io/feed,                                              topics: [crypto] }
+  - { name: paradigm,           url: https://www.paradigm.xyz/feed.xml,                                       topics: [crypto] }
+  - { name: variant_fund,       url: https://variant.fund/rss/,                                               topics: [crypto] }
+  - { name: vitalik,            url: https://vitalik.eth.limo/feed.xml,                                       topics: [crypto] }
 
-  - name: google_research
-    url: https://research.google/blog/rss/
-    quality: high
-    notes: Google Research blog.
+  # ─── Design / UX / UI ───────────────────────────────────────────────────
+  - { name: smashing_magazine,  url: https://www.smashingmagazine.com/feed/,                                  topics: [design, programming] }
+  - { name: css_tricks,         url: https://css-tricks.com/feed/,                                            topics: [design, programming] }
+  - { name: uxcollective,       url: https://uxdesign.cc/feed,                                                topics: [design] }
+  - { name: nielsen_norman,     url: https://www.nngroup.com/feed/articles/,                                  topics: [design] }
+  - { name: figma_blog,         url: https://www.figma.com/blog/feed.xml,                                     topics: [design] }
+  - { name: airbnb_design,      url: https://airbnb.design/feed/,                                             topics: [design] }
+  - { name: julie_zhuo,         url: https://lookingglass.substack.com/feed,                                  topics: [design, product] }
 
-  - name: meta_ai
-    url: https://ai.meta.com/blog/rss/
-    quality: high
-    notes: Meta AI research blog.
+  # ─── Infosec / Security ─────────────────────────────────────────────────
+  - { name: krebs_security,     url: https://krebsonsecurity.com/feed/,                                       topics: [infosec] }
+  - { name: schneier,           url: https://www.schneier.com/feed/atom/,                                     topics: [infosec] }
+  - { name: hacker_news_sec,    url: https://feeds.feedburner.com/TheHackersNews,                             topics: [infosec] }
+  - { name: dark_reading,       url: https://www.darkreading.com/rss.xml,                                     topics: [infosec] }
+  - { name: bleeping_computer,  url: https://www.bleepingcomputer.com/feed/,                                  topics: [infosec, it] }
+  - { name: troy_hunt,          url: https://www.troyhunt.com/rss/,                                           topics: [infosec] }
+  - { name: googleprojectzero,  url: https://googleprojectzero.blogspot.com/feeds/posts/default,              topics: [infosec] }
 
-  - name: huggingface_blog
-    url: https://huggingface.co/blog/feed.xml
-    quality: medium
-    notes: Open-source ML practitioner posts and model launches.
+  # ─── Enterprise IT ──────────────────────────────────────────────────────
+  - { name: cio_dive,           url: https://www.ciodive.com/feeds/news/,                                     topics: [it, fintech] }
+  - { name: theregister,        url: https://www.theregister.com/headlines.atom,                              topics: [it, infosec, ai] }
+  - { name: infoworld,          url: https://www.infoworld.com/feed,                                          topics: [it, programming] }
+  - { name: microsoft_blog,     url: https://www.microsoft.com/en-us/microsoft-365/blog/feed/,                topics: [it] }
 
-  - name: simonwillison
-    url: https://simonwillison.net/atom.xml
-    quality: high
-    notes: Editorial commentary that TLDR cites often in Deep Dives.
+  # ─── DevOps / SRE / Platform ────────────────────────────────────────────
+  - { name: aws_blog,           url: https://aws.amazon.com/blogs/aws/feed/,                                  topics: [devops, it, ai] }
+  - { name: gcp_blog,           url: https://cloudblog.withgoogle.com/rss/,                                   topics: [devops, ai, it] }
+  - { name: kubernetes_blog,    url: https://kubernetes.io/feed.xml,                                          topics: [devops] }
+  - { name: cncf_blog,          url: https://www.cncf.io/feed/,                                               topics: [devops] }
+  - { name: hashicorp_blog,     url: https://www.hashicorp.com/blog/feed.xml,                                 topics: [devops] }
+  - { name: datadog_blog,       url: https://www.datadoghq.com/blog/feed.xml,                                 topics: [devops] }
+  - { name: charity_majors,     url: https://charity.wtf/feed/,                                               topics: [devops, programming] }
 
-  - name: import_ai
-    url: https://importai.substack.com/feed
-    quality: high
-    notes: Jack Clark's weekly AI policy/research roundup.
+  # ─── Marketing / Growth ─────────────────────────────────────────────────
+  - { name: demandcurve,        url: https://www.demandcurve.com/blog/rss.xml,                                topics: [marketing, founders] }
+  - { name: andrewchen_growth,  url: https://andrewchen.com/feed/,                                            topics: [marketing, growth, founders] }
+  - { name: growth_unhinged,    url: https://www.growthunhinged.com/feed,                                     topics: [marketing, gtm] }
+  - { name: lennys_marketing,   url: https://www.lennysnewsletter.com/feed,                                   topics: [marketing, product, founders, gtm] }
+  - { name: marketing_brew,     url: https://www.morningbrew.com/marketing/feed,                              topics: [marketing] }
+  - { name: hub_spot,           url: https://blog.hubspot.com/marketing/rss.xml,                              topics: [marketing] }
 
-  - name: latent_space
-    url: https://www.latent.space/feed
-    quality: medium
-    notes: Engineer-oriented AI podcast and essays.
+  # ─── Product ────────────────────────────────────────────────────────────
+  - { name: mind_the_product,   url: https://www.mindtheproduct.com/feed/,                                    topics: [product] }
+  - { name: producttalk,        url: https://www.producttalk.org/feed/,                                       topics: [product] }
+  - { name: reforge,            url: https://www.reforge.com/blog/rss.xml,                                    topics: [product, growth, marketing] }
+  - { name: leah_tharin,        url: https://www.leahtharin.com/feed,                                         topics: [product, growth] }
+  - { name: silicon_valley_pm,  url: https://www.svpg.com/feed/,                                              topics: [product] }
 
-  - name: aqnichol
-    url: https://blog.aqnichol.com/feed.xml
-    quality: medium
-    notes: Deep technical posts. Cited in TLDR deep dives.
+  # ─── Developer / Programming ────────────────────────────────────────────
+  - { name: github_blog,        url: https://github.blog/feed/,                                               topics: [programming, ai] }
+  - { name: dev_to,             url: https://dev.to/feed,                                                     topics: [programming] }
+  - { name: shopify_eng,        url: https://shopify.engineering/blog.atom,                                   topics: [programming] }
+  - { name: stripe_blog,        url: https://stripe.com/blog/feed.rss,                                        topics: [programming, fintech, founders] }
+  - { name: martin_fowler,      url: https://martinfowler.com/feed.atom,                                      topics: [programming, devops] }
+  - { name: julia_evans,        url: https://jvns.ca/atom.xml,                                                topics: [programming] }
 
-  - name: langchain_blog
-    url: https://blog.langchain.com/rss/
-    quality: medium
-    notes: Agent-tooling launches and patterns.
+  # ─── Data Engineering / Analytics ──────────────────────────────────────
+  - { name: benn_substack,      url: https://benn.substack.com/feed,                                          topics: [data] }
+  - { name: locally_optimistic, url: https://locallyoptimistic.com/feed.xml,                                  topics: [data] }
+  - { name: motherduck_blog,    url: https://motherduck.com/blog/rss/,                                        topics: [data] }
+  - { name: dbt_blog,           url: https://www.getdbt.com/blog/rss.xml,                                     topics: [data] }
+  - { name: snowflake_blog,     url: https://www.snowflake.com/blog/feed/,                                    topics: [data] }
+  - { name: databricks_blog,    url: https://www.databricks.com/blog/feed.xml,                                topics: [data, ai] }
+  - { name: airbyte_blog,       url: https://airbyte.com/blog/rss.xml,                                        topics: [data] }
+  - { name: select_star,        url: https://selectstar.com/blog/rss,                                         topics: [data] }
+
+  # ─── Fintech ────────────────────────────────────────────────────────────
+  - { name: sifted,             url: https://sifted.eu/feed,                                                  topics: [fintech, founders] }
+  - { name: fintech_takes,      url: https://fintechtakes.com/feed/,                                          topics: [fintech] }
+  - { name: net_interest,       url: https://www.netinterest.co/feed,                                         topics: [fintech] }
+  - { name: rex_salisbury,      url: https://www.cambriancapital.com/feed,                                    topics: [fintech, vc] }
+  - { name: a_wealth_of_cs,     url: https://awealthofcommonsense.com/feed/,                                  topics: [fintech] }
+
+  # ─── General Tech / Industry ────────────────────────────────────────────
+  - { name: techcrunch,         url: https://techcrunch.com/feed/,                                            topics: [tech, founders, ai] }
+  - { name: the_verge,          url: https://www.theverge.com/rss/index.xml,                                  topics: [tech] }
+  - { name: ars_technica,       url: https://feeds.arstechnica.com/arstechnica/index,                         topics: [tech, infosec] }
+  - { name: hackaday,           url: https://hackaday.com/feed/,                                              topics: [tech] }
+  - { name: ieee_spectrum,      url: https://spectrum.ieee.org/feeds/feed.rss,                                topics: [tech] }
+  - { name: morningbrew,        url: https://www.morningbrew.com/feed,                                        topics: [tech, founders] }
+  - { name: techmeme,           url: https://www.techmeme.com/feed.xml,                                       topics: [tech, ai, founders] }
 
 arxiv:
-  # arXiv categories to scan daily. The puller filters to last 24h by default.
   categories:
     - cs.AI
     - cs.LG
     - cs.CL
-  max_results_per_category: 50
+    - cs.CR   # cryptography & security
+    - cs.SE   # software engineering
+    - cs.DB   # databases
+    - cs.HC   # human-computer interaction (design)
+  max_results_per_category: 30
+  lookback_hours: 48
 
 hackernews:
-  # We pull top stories with a score floor over the trailing 24h.
-  min_score: 100
+  min_score: 75
   lookback_hours: 24
+  # We tag every HN story with all topics since the AI relevance filter in
+  # ingestion/hn.py only catches AI; for broader coverage, the ranking model
+  # decides which newsletter a story fits.

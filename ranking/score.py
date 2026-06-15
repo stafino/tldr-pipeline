@@ -7,8 +7,8 @@ import os
 from pathlib import Path
 
 from common.llm import complete
-from common.newsletters import Newsletter, get_newsletter
-from common.story import ScoredStory, Story
+from common.newsletters import Newsletter, load_newsletters
+from common.story import Assignment, ScoredStory, Story
 
 log = logging.getLogger(__name__)
 
@@ -17,29 +17,44 @@ CACHE_DIR = Path("data/scored/.cache")
 
 RANKING_MODEL = os.environ.get("RANKING_MODEL", "claude-sonnet-4-6")
 
-SYSTEM_TEMPLATE = """You are an editorial scorer for {brand_name}. For each candidate story you apply the rubric below to (a) score 0-100 and (b) classify the story into one of the newsletter's sections. Always return JSON matching the exact schema requested. No prose outside JSON. If you wrap the JSON in fences, use ```json fences only.
+# Minimum per-newsletter score to keep an assignment. Stories with no
+# assignment above this threshold are dropped.
+MIN_ASSIGNMENT_SCORE = int(os.environ.get("MIN_ASSIGNMENT_SCORE", "55"))
 
-RUBRIC:
+SYSTEM_TEMPLATE = """You are an editorial scorer for the TLDR family of daily newsletters. For each candidate story you decide (a) which TLDR newsletters it belongs in, (b) which section of each newsletter, (c) how strong a fit it is (0-100 per assignment), and (d) overall metadata. Always return JSON matching the exact schema requested. No prose outside JSON.
+
+GLOBAL RUBRIC (apply to every newsletter):
+
 {rubric}
 
-SECTIONS for {brand_name} (pick one section_id per story):
-{sections}"""
+TLDR FAMILY (assign the story to all newsletters where its score would be {min_score} or above; you can also return [] if it fits none):
 
-USER_TEMPLATE = """Score this candidate story for {brand_name}:
+{family}
+
+IMPORTANT:
+- Always pick a section_id from the listed sections for that newsletter — never invent one.
+- A story can land in 0, 1, 2, or 3 newsletters. Be selective; don't force-fit.
+- Quick Links is the catch-all when a story is interesting but not strong enough for a primary section.
+- If a story is pure hype, content marketing, off-topic, or duplicate-y, return assignments: []."""
+
+USER_TEMPLATE = """Score this candidate story:
 
 Title: {title}
 Source: {source} ({source_type})
+Source topics: {source_topics}
 URL: {url}
 Snippet: {snippet}
 
 Return a JSON object with exactly these keys:
 {{
-  "score": <integer 0-100>,
-  "section_id": "<one of: {section_ids}>",
   "reasoning": "<one sentence, under 200 chars>",
   "is_technical": <bool>,
   "is_novel": <bool>,
-  "is_mainstream_relevant": <bool>
+  "is_mainstream_relevant": <bool>,
+  "assignments": [
+    {{"newsletter": "<one of: {newsletter_ids}>", "section_id": "<a section_id for that newsletter>", "score": <integer 0-100>}}
+    // up to 3 assignments; empty list if the story fits nothing
+  ]
 }}"""
 
 
@@ -50,15 +65,23 @@ def _load_rubric() -> str:
     return RUBRIC_PATH.read_text()
 
 
-def _format_sections(nl: Newsletter) -> str:
-    lines = []
-    for s in nl.sections:
-        lines.append(f"  - {s.id}: {s.name}. {s.description}")
-    return "\n".join(lines)
+def _format_family(nls: dict[str, Newsletter]) -> str:
+    blocks = []
+    for nid, nl in nls.items():
+        section_lines = "\n".join(
+            f"      - {s.id}: {s.name} — {s.description}" for s in nl.sections
+        )
+        topics = ", ".join(nl.topics) if nl.topics else "(general)"
+        blocks.append(
+            f"  • {nid} ({nl.brand_name})\n"
+            f"    topics: {topics}\n"
+            f"    sections:\n{section_lines}"
+        )
+    return "\n\n".join(blocks)
 
 
-def _cache_key(story: Story, newsletter: str) -> Path:
-    h = hashlib.sha1(f"{newsletter}|{story.url}|{story.title}".encode()).hexdigest()
+def _cache_key(story: Story, family_version: str) -> Path:
+    h = hashlib.sha1(f"{family_version}|{story.url}|{story.title}".encode()).hexdigest()
     return CACHE_DIR / f"{h}.json"
 
 
@@ -68,7 +91,6 @@ def _parse_json_response(text: str) -> dict:
         text = text.strip("`").strip()
         if text.lower().startswith("json"):
             text = text[4:].strip()
-    # Be lenient: find the first { and last } if there's other text.
     start = text.find("{")
     end = text.rfind("}")
     if start >= 0 and end > start:
@@ -76,77 +98,122 @@ def _parse_json_response(text: str) -> dict:
     return json.loads(text)
 
 
-def rank_stories(
-    stories: list[Story], newsletter: str = "tldr_founders", use_cache: bool = True
-) -> list[ScoredStory]:
+def rank_stories(stories: list[Story], use_cache: bool = True) -> list[ScoredStory]:
     if not stories:
         return []
 
-    nl = get_newsletter(newsletter)
+    nls = load_newsletters()
     rubric = _load_rubric()
+
+    # Versioning the cache key by the set of newsletter IDs ensures that adding
+    # or removing a newsletter invalidates the cache automatically.
+    family_version = "v2:" + ",".join(sorted(nls.keys()))
+
+    valid_sections: dict[str, set[str]] = {
+        nid: set(nl.section_ids) for nid, nl in nls.items()
+    }
+
     system = SYSTEM_TEMPLATE.format(
-        brand_name=nl.brand_name, rubric=rubric, sections=_format_sections(nl)
+        rubric=rubric, family=_format_family(nls), min_score=MIN_ASSIGNMENT_SCORE
     )
-    valid_section_ids = set(nl.section_ids)
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
 
     scored: list[ScoredStory] = []
     for story in stories:
-        cache_path = _cache_key(story, newsletter)
+        cache_path = _cache_key(story, family_version)
         if use_cache and cache_path.exists():
             data = json.loads(cache_path.read_text())
         else:
             user = USER_TEMPLATE.format(
-                brand_name=nl.brand_name,
                 title=story.title,
                 source=story.source,
                 source_type=story.source_type,
+                source_topics=", ".join(story.source_topics) or "(none)",
                 url=story.url,
                 snippet=(story.raw_text or "")[:500],
-                section_ids=", ".join(nl.section_ids),
+                newsletter_ids=", ".join(nls.keys()),
             )
             try:
-                raw = complete(system, user, model=RANKING_MODEL, max_tokens=400)
+                raw = complete(system, user, model=RANKING_MODEL, max_tokens=600)
                 data = _parse_json_response(raw)
             except Exception as e:
                 log.warning("Ranking failed for %s: %r", story.url, e)
                 continue
             cache_path.write_text(json.dumps(data))
 
-        section_id = data.get("section_id", "")
-        if section_id not in valid_section_ids:
-            # Bucket unknown classification into the last section ("quick" by convention).
-            section_id = nl.sections[-1].id
-
-        try:
-            scored.append(
-                ScoredStory(
-                    story=story,
-                    score=float(data.get("score", 0)),
-                    reasoning=str(data.get("reasoning", "")),
-                    is_technical=bool(data.get("is_technical", False)),
-                    is_novel=bool(data.get("is_novel", False)),
-                    is_mainstream_relevant=bool(data.get("is_mainstream_relevant", False)),
-                    section_id=section_id,
-                    newsletter=newsletter,
+        # Validate and filter assignments.
+        raw_assignments = data.get("assignments", []) or []
+        clean: list[Assignment] = []
+        for a in raw_assignments:
+            nid = a.get("newsletter")
+            sec = a.get("section_id")
+            try:
+                sc = float(a.get("score", 0))
+            except (TypeError, ValueError):
+                continue
+            if nid not in valid_sections:
+                continue
+            if sec not in valid_sections[nid]:
+                # Fall back to the newsletter's Quick Links if it has one.
+                quick = next(
+                    (s.id for s in nls[nid].sections if s.id.endswith("quick_links") or s.id == "quick"),
+                    None,
                 )
+                if quick is None:
+                    continue
+                sec = quick
+            if sc < MIN_ASSIGNMENT_SCORE:
+                continue
+            clean.append(Assignment(newsletter=nid, section_id=sec, score=sc))
+
+        if not clean:
+            continue
+
+        max_score = max(a.score for a in clean)
+        scored.append(
+            ScoredStory(
+                story=story,
+                score=max_score,
+                reasoning=str(data.get("reasoning", "")),
+                is_technical=bool(data.get("is_technical", False)),
+                is_novel=bool(data.get("is_novel", False)),
+                is_mainstream_relevant=bool(data.get("is_mainstream_relevant", False)),
+                assignments=clean,
             )
-        except Exception as e:
-            log.warning("Parse failed for %s: %s", story.url, e)
+        )
 
     scored.sort(key=lambda s: s.score, reverse=True)
+    log.info("Ranking kept %d/%d stories (>= %d on at least one newsletter)", len(scored), len(stories), MIN_ASSIGNMENT_SCORE)
     return scored
 
 
-def top_per_section(
-    scored: list[ScoredStory], newsletter: str = "tldr_founders"
-) -> dict[str, list[ScoredStory]]:
-    """Return {section_id: [top N stories]} respecting each section's target_count."""
-    nl = get_newsletter(newsletter)
-    by_section: dict[str, list[ScoredStory]] = {s.id: [] for s in nl.sections}
+def by_newsletter(scored: list[ScoredStory]) -> dict[str, list[ScoredStory]]:
+    """Group scored stories by newsletter (a story can appear under multiple)."""
+    out: dict[str, list[ScoredStory]] = {}
     for s in scored:
-        if s.section_id in by_section:
-            by_section[s.section_id].append(s)
+        for a in s.assignments:
+            out.setdefault(a.newsletter, []).append(s)
+    # Sort each newsletter by its own score for that story.
+    for nid, lst in out.items():
+        lst.sort(key=lambda s: s.for_newsletter(nid).score, reverse=True)
+    return out
+
+
+def top_per_section(scored: list[ScoredStory], newsletter_id: str) -> dict[str, list[ScoredStory]]:
+    """Group + cap stories per section for a single newsletter."""
+    nls = load_newsletters()
+    nl = nls[newsletter_id]
+    groups: dict[str, list[ScoredStory]] = {s.id: [] for s in nl.sections}
+    for s in scored:
+        a = s.for_newsletter(newsletter_id)
+        if not a:
+            continue
+        if a.section_id in groups:
+            groups[a.section_id].append(s)
+    # Sort within each section by per-newsletter score.
     for sec in nl.sections:
-        by_section[sec.id] = by_section[sec.id][: sec.target_count]
-    return by_section
+        groups[sec.id].sort(
+            key=lambda s: s.for_newsletter(newsletter_id).score, reverse=True
+        )
+        groups[sec.id] = groups[sec.id][: sec.target_count]
+    return groups

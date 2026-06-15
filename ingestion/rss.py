@@ -10,11 +10,11 @@ from common.story import Story
 log = logging.getLogger(__name__)
 
 
-def pull_rss(name: str, url: str, lookback_hours: int = 36) -> list[Story]:
+def pull_rss(name: str, url: str, lookback_hours: int = 36, topics: list[str] | None = None) -> list[Story]:
     """Pull recent entries from a single RSS feed. Returns empty list on failure."""
     try:
         parsed = feedparser.parse(url)
-    except Exception as e:  # network / parse errors
+    except Exception as e:
         log.warning("RSS pull failed for %s: %s", name, e)
         return []
 
@@ -40,6 +40,7 @@ def pull_rss(name: str, url: str, lookback_hours: int = 36) -> list[Story]:
                 source_type="rss",
                 published_at=(published or datetime.now(timezone.utc)).isoformat(),
                 raw_text=raw_text[:4000],
+                source_topics=list(topics or []),
             )
         )
 
@@ -78,5 +79,12 @@ def _strip_html(s: str) -> str:
 def pull_all_rss(sources: list[dict], lookback_hours: int = 36) -> list[Story]:
     out: list[Story] = []
     for s in sources:
-        out.extend(pull_rss(s["name"], s["url"], lookback_hours=lookback_hours))
+        out.extend(
+            pull_rss(
+                s["name"],
+                s["url"],
+                lookback_hours=lookback_hours,
+                topics=s.get("topics"),
+            )
+        )
     return out
