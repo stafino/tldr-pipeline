@@ -48,11 +48,16 @@ class LLMBackend(ABC):
 
 class APIBackend(LLMBackend):
     def __init__(self):
+        if not os.environ.get("ANTHROPIC_API_KEY"):
+            raise RuntimeError(
+                "LLM_BACKEND=api but ANTHROPIC_API_KEY is not set. "
+                "Either set it in .env or switch to LLM_BACKEND=cli (no key needed)."
+            )
         from anthropic import Anthropic
 
         self.client = Anthropic()
 
-    @retry(stop=stop_after_attempt(3), wait=wait_exponential(min=1, max=10))
+    @retry(stop=stop_after_attempt(3), wait=wait_exponential(min=1, max=10), reraise=True)
     def complete(self, system: str, user: str, model: str, max_tokens: int = 1024) -> str:
         resp = self.client.messages.create(
             model=model,
@@ -76,14 +81,17 @@ class CLIBackend(LLMBackend):
             )
         self.claude_bin = result.stdout.strip()
 
-    @retry(stop=stop_after_attempt(2), wait=wait_exponential(min=2, max=15))
+    @retry(stop=stop_after_attempt(2), wait=wait_exponential(min=2, max=15), reraise=True)
     def complete(self, system: str, user: str, model: str, max_tokens: int = 1024) -> str:
         # max_tokens is not directly settable via CLI; we encode the constraint in the prompt instead.
-        # --bare skips hooks/CLAUDE.md/plugin sync so the call is isolated.
+        # NOTE: do NOT pass --bare here. --bare disables OAuth and forces an API key,
+        # which defeats the purpose of the CLI backend (which exists to use the
+        # subscription, not an API key). --disable-slash-commands keeps the call
+        # clean without nuking auth.
         cmd = [
             self.claude_bin,
             "-p",
-            "--bare",
+            "--disable-slash-commands",
             "--model",
             _cli_model_alias(model),
             "--system-prompt",

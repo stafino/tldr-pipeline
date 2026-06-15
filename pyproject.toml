@@ -5,6 +5,7 @@ description = "AI-assisted curation pipeline for tech newsletters, modeled on TL
 requires-python = ">=3.11"
 dependencies = [
     "anthropic>=0.40.0",
+    "python-dotenv>=1.0.1",
     "feedparser>=6.0.11",
     "arxiv>=2.1.3",
     "requests>=2.32.0",

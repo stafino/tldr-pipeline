@@ -109,7 +109,7 @@ def rank_stories(
                 raw = complete(system, user, model=RANKING_MODEL, max_tokens=400)
                 data = _parse_json_response(raw)
             except Exception as e:
-                log.warning("Ranking failed for %s: %s", story.url, e)
+                log.warning("Ranking failed for %s: %r", story.url, e)
                 continue
             cache_path.write_text(json.dumps(data))
 
