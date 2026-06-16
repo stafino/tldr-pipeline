@@ -386,7 +386,9 @@ def _counts_pipeline(date: str) -> dict[str, int]:
 
 
 def _short_date(iso: str, target_date: str) -> str:
-    """Format ISO timestamp relative to the target date."""
+    """Absolute publication date, formatted as 'Jun 14' (current year) or
+    'Jun 14, 2025' if older than the current year. Year inferred from the
+    parsed timestamp."""
     if not iso:
         return ""
     try:
@@ -395,16 +397,12 @@ def _short_date(iso: str, target_date: str) -> str:
         return ""
     try:
         target = datetime.fromisoformat(target_date).date()
+        target_year = target.year
     except Exception:
-        target = _date.today()
-    delta_days = (target - dt.date()).days
-    if delta_days == 0:
-        return "today"
-    if delta_days == 1:
-        return "1d ago"
-    if 1 < delta_days < 14:
-        return f"{delta_days}d ago"
-    return dt.strftime("%b %-d") if hasattr(dt, "strftime") else dt.date().isoformat()
+        target_year = _date.today().year
+    if dt.year == target_year:
+        return dt.strftime("%b %-d")
+    return dt.strftime("%b %-d, %Y")
 
 
 def _row_status(decision: dec.Decision | None, blurb: dict, section_min: int, section_max: int) -> tuple[str, str]:
@@ -588,7 +586,6 @@ def _build_row_html(
     target_nl: str,           # which newsletter the row's primary assignment is to
     rail_nl: str,             # what's selected in the rail (for the back-link)
     chips_html: str,
-    wc_text: str,
     date_text: str,
     status_cls: str,
     glyph: str,
@@ -605,7 +602,7 @@ def _build_row_html(
         f'<span class="num score">{int(round(score))}</span>'
         f'<span class="main">'
         f'<span class="title">{title_safe}</span>'
-        f'<span class="ftr">{date_html}{chips_html}<span class="num">{wc_text}</span></span>'
+        f'<span class="ftr">{date_html}{chips_html}</span>'
         f'</span>'
         f'<span class="stat {status_cls}">{glyph}</span>'
         f'</a>'
@@ -658,13 +655,11 @@ with mid_col:
                 status_cls, glyph = _row_status(decision, blurb, section_min, section_max)
                 is_sel = (ss.selected_url == s.story.url and ss.selected_nl_for_detail == primary.newsletter)
                 chips_html = _chips_for(s, ss.decisions, primary_nl=primary.newsletter)
-                wc = int(blurb.get("word_count", 0))
-                wc_text = f"{wc}w" if wc else "—"
                 date_text = _short_date(s.story.published_at, selected_date)
                 parts.append(_build_row_html(
                     rank=rank, score=primary.score, title=s.story.title,
                     story_url=s.story.url, target_nl=primary.newsletter, rail_nl=CROSS_KEY,
-                    chips_html=chips_html, wc_text=wc_text, date_text=date_text,
+                    chips_html=chips_html, date_text=date_text,
                     status_cls=status_cls, glyph=glyph, is_sel=is_sel,
                 ))
 
@@ -702,14 +697,12 @@ with mid_col:
                     decision = ss.decisions.get((s.story.url, nl.id))
                     status_cls, glyph = _row_status(decision, blurb, sec_obj.min_words, sec_obj.max_words)
                     chips_html = _chips_for(s, ss.decisions, exclude_nl=nl.id)
-                    wc = int(blurb.get("word_count", 0))
-                    wc_text = f"{wc}w" if wc else "—"
                     date_text = _short_date(s.story.published_at, selected_date)
                     is_sel = (ss.selected_url == s.story.url and ss.selected_nl_for_detail == nl.id)
                     parts.append(_build_row_html(
                         rank=rank, score=a.score, title=s.story.title,
                         story_url=s.story.url, target_nl=nl.id, rail_nl=nl.id,
-                        chips_html=chips_html, wc_text=wc_text, date_text=date_text,
+                        chips_html=chips_html, date_text=date_text,
                         status_cls=status_cls, glyph=glyph, is_sel=is_sel,
                     ))
 
