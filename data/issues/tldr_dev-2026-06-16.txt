@@ -18,6 +18,10 @@ Organizational Cohesion in Microservice Architectures: A Multi-Project Empirical
 
 This paper introduces organizational cohesion, a measure of how closely developer contributions align with microservice boundaries, operationalized as Pairwise Team Cohesion (PTC) by adapting the Sensitive Class Cohesion Metric. The authors validate it through a longitudinal study of Netflix's Spinnaker platform and six other open-source microservice systems, finding systematic divergences between service decomposition and the team structures that actually maintain those services.
 
+Correlated randomness in Slay the Spire 2 (5 minute read)
+
+(blurb not generated)
+
 The time the x86 emulator team found code so bad they fixed it during emulation (1 minute read)
 
 Raymond Chen recounts how Windows' x86-on-ARM emulation team hit application code so pathologically inefficient that the just-in-time translator effectively rewrote it on the fly, producing emulated output that ran better than the original native instructions. The post uses the case to explain how binary translation can recognize and collapse redundant instruction patterns, turning a quirk of bad code into a window onto how the emulator's optimizer actually works.
@@ -54,6 +58,10 @@ How TimescaleDB compresses time-series data (1 minute read)
 
 The post breaks down TimescaleDB's Hypercore engine, which converts row-based chunks into a columnar format by packing up to 1,000 rows into a single compressed batch and applying per-type schemes like delta-of-delta, Gorilla, and dictionary encoding. It covers how segment-by and order-by configuration shapes the compression ratio and query performance, with the trade-off that updates to compressed data are slower than on uncompressed chunks.
 
+Can You Tell When an LLM API Swaps in a Cheaper Model? (3 minute read)
+
+A developer tested whether you can detect an LLM API silently swapping in a cheaper or more aggressively quantized model, finding that grading output quality backfires because a smaller model produces simpler, lower-perplexity text. The method that works is teacher-forced log-probability scoring of a fixed token sequence, but the per-check signal is weak enough that it only separates an impostor after averaging roughly 10 to 15 challenges.
+
 Your ePub Is fine (1 minute read)
 
 **The author traces why a spec-compliant ePub gets rejected by Kobo e-readers, pinning the failure on Adobe's aging Reader Mobile SDK rather than the file itself.** The post walks through validating the ePub against the standard, reproducing Kobo's parse error, and showing how the embedded Adobe XML parser chokes on markup that EPUBCheck and other readers accept without complaint.
@@ -74,36 +82,32 @@ Neuro-Symbolic Software Verification: Hyper-charging Local Language Models with 
 
 VerIbmc is a neuro-symbolic pipeline that pairs deterministic symbolic invariant synthesis with locally deployable open-weight models and the ESBMC verifier, targeting loop invariant generation without sending source code to proprietary cloud APIs. The authors evaluate five open-weight models from 7B to 120B parameters across five benchmark families, comparing Chain-of-Thought and Tree-of-Thought prompting in an iterative refinement loop driven by structured verifier feedback.
 
-Boot Naked Linux (1 minute read)
+How to Make AI Agents Follow Your Design System (5 minute read)
 
-The author boots a minimal Linux system with nothing but a kernel and a single statically linked program running as PID 1, skipping the usual initramfs, init system, and userspace entirely. The walkthrough covers compiling the program against the raw syscall interface, pointing the kernel at it via the init= boot parameter, and testing the result under QEMU before running on real hardware.
-
-The Ghosts of Polymarket: When Off-Chain Matches Meet On-Chain Reverts (1 minute read)
-
-Researchers analyzed Polymarket's hybrid architecture, which matches orders off-chain but settles on-chain, exposing a consistency gap they call Ghost Fills, where matched orders fail at settlement. Their GHOSTHUNTER tool reconstructed 1,952,440 reverted transactions and attributed them to four attack vectors—nonce bump, balance drain, allowance revoke, and proxy trap—realized across 35 variants that invalidate orders before finalization.
-
-Graphical-Probabilistic Modeling of Generative Flows in LLM-Native Software Systems (1 minute read)
-
-This paper proposes Generation Networks, a graphical probabilistic modeling framework for documenting the stochastic, prompt-dependent generative flows in LLM-native software systems. The authors argue that current practice relies on low-level prompting and context-engineering heuristics that lack the modularity and abstraction needed for design-level reasoning, and offer the framework as a foundation for stating and analyzing properties of LLM-based designs.
-
-C^2: Cache-Conscious Succinct Tries with Adaptive Unary Path Compression (1 minute read)
-
-C² introduces two optimizations for succinct tries: a cache-friendly bitvector layout that cuts cache misses during trie navigation, and adaptive unary path compression that eliminates space wasted on redundant single-child chains. Applied to FST, CoCo-trie, and Marisa across six datasets, the layout change improves query performance by 1.12x to 1.58x while the path compression yields a 1.3x smaller memory footprint on average.
+(blurb not generated)
 
 🧠
 Opinions & Advice
 
-Formal methods and the future of programming (1 minute read)
+Formal methods and the future of programming (5 minute read)
 
-Jane Street details how it applies formal methods across its codebase, using techniques like type-driven design, property-based testing, and verification tools to catch bugs that conventional testing misses. The series argues that lightweight formal methods are now practical for everyday production code rather than confined to academia or safety-critical systems, with OCaml's type system doing much of the heavy lifting.
+(blurb not generated)
 
 How memory safety CVEs differ between Rust and C/C++ (1 minute read)
 
 The author analyzes memory safety CVE data and argues that Rust's guarantees shift the nature of vulnerabilities rather than just reducing their count, since unsafe blocks and logic errors still produce memory bugs that look different from C/C++ classics. The post contends that Rust's compiler eliminates most use-after-free and buffer-overflow patterns up front, concentrating remaining issues in a smaller, auditable surface where reviewers can focus their attention.
 
+AI GPUs probably live longer than three years (5 minute read)
+
+(blurb not generated)
+
 21 years and counting of 'eight fallacies of distributed computing' (2025) (1 minute read)
 
 The post revisits Peter Deutsch's eight fallacies of distributed computing and argues they remain accurate 21 years on, with engineers still building as if the network is reliable, latency is zero, and bandwidth is infinite. The author maps each fallacy to modern failure modes in microservices and cloud systems, noting that newer abstractions hide the network without removing its costs.
+
+Agentic Code Review (5 minute read)
+
+(blurb not generated)
 
 AI demands more engineering discipline. Not less (xpost) (1 minute read)
 
@@ -117,20 +121,32 @@ Don't trust large context windows (1 minute read)
 
 The author argues that large context windows degrade model performance well before hitting their advertised token limits, with recall and reasoning falling off as the prompt fills. The practical advice is to treat context as a scarce budget, aggressively prune irrelevant tokens, and split work across focused calls rather than dumping everything into one oversized window.
 
+Understanding the rationale behind a rule when trying to circumvent it (5 minute read)
+
+(blurb not generated)
+
 🚀
 Launches & Tools
 
-Linux 7.1 (1 minute read)
+Linux 7.1 (5 minute read)
 
-Linus Torvalds released Linux 7.1, the latest mainline kernel, following the standard two-week stabilization period after the final release candidate. As with past major-number bumps, the jump carries no special significance beyond keeping minor version numbers from growing unwieldy, with the bulk of the changes landing as routine driver updates, filesystem fixes, and incremental subsystem improvements.
+(blurb not generated)
 
-Phoenix LiveView 1.2 (1 minute read)
+Phoenix LiveView 1.2 (5 minute read)
 
-Phoenix LiveView 1.2 introduces colocated hooks and colocated JS, which let developers write client-side JavaScript directly inside HEEx templates instead of maintaining separate hook files, with the JS extracted at compile time and bundled by the asset pipeline. The release also adds a new portal API for rendering content outside the current DOM tree, useful for modals and tooltips, and ships compatibility fixes for the latest Phoenix and Elixir versions.
+(blurb not generated)
 
 Java's Project Valhalla finally lands a preview in JDK 28 (1 minute read)
 
 Java's Project Valhalla lands its first preview in JDK 28, introducing value classes that drop object identity to let the JVM flatten data inline and cut memory overhead. Architect Brian Goetz cautioned that the feature will likely remain in preview through the next LTS release, so production use is still some way off.
+
+Linux 7.1 arrives with an NTFS overhaul and major hardware performance boosts (5 minute read)
+
+(blurb not generated)
+
+Linux kernel 7.1 sends Intel 486 support to silicon heaven (5 minute read)
+
+(blurb not generated)
 
 Apple Foundation Models (1 minute read)
 
@@ -151,10 +167,6 @@ Kage crawls any website and packages it into a single self-contained binary that
 Free SQL→ER diagram tool, runs in the browser, nothing uploaded (1 minute read)
 
 This browser-based tool converts SQL schema definitions into entity-relationship diagrams entirely client-side, with no server upload or account required. The parsing and rendering run locally, so database schemas never leave the machine, and the tool is free to use for visualizing table structures and foreign-key relationships.
-
-GitHub releases an open dataset for multilingual developer content (1 minute read)
-
-GitHub released the GitHub Multilingual Repositories Dataset, a CC0-1.0 collection that helps researchers and developers find public repos containing non-English natural-language content across READMEs, issues, and pull request threads. The dataset fulfills a 2025 commitment GitHub made under Microsoft's European Digital Commitments and is hosted on GitHub itself.
 
 Caddy compatibility for zeroserve: 3x throughput and 70% lower latency (1 minute read)
 
@@ -191,9 +203,13 @@ Mindbeam released Litespark-Inference, an open-source library that runs ternary 
 🎁
 Miscellaneous
 
-Arch Linux locks down AUR signups amid wave of malicious commits (1 minute read)
+Attackers hijacked over 1,500 Arch Linux packages to steal developers’ secrets, no hacking required (1 minute read)
 
-Arch Linux froze new account signups on the Arch User Repository after attackers flooded it with malicious commits that poisoned package updates. The community-maintained AUR ships build scripts rather than vetted binaries, so the lockdown buys maintainers time to clean compromised packages and review the backlog before reopening registration to contributors.
+Attackers hijacked more than 1,500 packages in the Arch User Repository, adopting orphaned packages and rewriting their build scripts to pull in a credential-stealing npm package that ran a hidden binary at compile time. The campaign, dubbed "Atomic Arch," targeted developers specifically, harvesting GitHub and npm tokens, SSH keys, Docker logins, Slack and Vault credentials, and shipping them out over Tor while Arch's official repositories stayed untouched.
+
+Arch Linux locks down AUR signups amid wave of malicious commits (5 minute read)
+
+(blurb not generated)
 
 Atomic Arch Supply Chain Attack Hits 1,500 AUR Packages (1 minute read)
 
@@ -235,9 +251,9 @@ Improving Arm64 support in CNCF projects with OCI credits (1 minute read)
 
 The CNCF is funding Arm64 build and test support across its hosted projects using donated Oracle Cloud Infrastructure credits, addressing a gap as Arm instances surpass 50% of new AWS launches and 33% on Azure. The credits give maintainers access to native Arm64 CI runners, removing the cost and emulation overhead that has slowed multi-architecture support in cloud-native tooling.
 
-Tech Coalition ‘Athena’ Targets OSS Vulnerabilities Ahead of Disclosure (1 minute read)
+SpaceX purchases Cursor, a Claude Code and OpenAI Codex competitor [U] (5 minute read)
 
-More than two dozen organizations launched Athena, a shared platform that triages, fixes, and hardens open-source vulnerabilities before public disclosure. The coalition aims to close the window between a flaw's discovery and an available patch, the period when attackers exploit unfixed code in widely used dependencies.
+(blurb not generated)
 
 Hetzner Price Adjustment (1 minute read)
 
@@ -249,6 +265,10 @@ Quick Links
 TokenPilot: Cache-Efficient Context Management for LLM Agents (1 minute read)
 
 TokenPilot manages LLM agent context to stay cache-friendly, cutting inference costs 61% and 56% on two benchmarks without breaking prompt prefix continuity.
+
+Apple reveals why macOS might block your Terminal prompt (5 minute read)
+
+(blurb not generated)
 
 Dynamic Malicious Skills in Agentic AI (1 minute read)
 
@@ -262,13 +282,13 @@ Looking Is Not Picking: An Attention-Segment Account of Tool-Selection Failures 
 
 LLM agents attend to the correct tool 80% of the time yet still mis-call it, locating failures in the decision readout, not the harness.
 
-Boosting MoE Training Throughput with Advanced Fusion Kernels (1 minute read)
+Boosting MoE Training Throughput with Advanced Fusion Kernels (5 minute read)
 
-NVIDIA's fused kernels cut MoE training overhead by combining grouped GEMM, activation, and routing operations into single GPU passes.
+(blurb not generated)
 
-What’s !important #13: @function, alpha(), CSS Wordle, and More (1 minute read)
+What’s !important #13: @function, alpha(), CSS Wordle, and More (5 minute read)
 
-Roundup of recent CSS features including @function, the alpha() color function, Grid Lanes, lesser-known dialog behaviors, and a CSS-built Wordle.
+(blurb not generated)
 
 Understanding Automated Web GUI Testing: An Empirical Study Across Exploration Strategies and State Abstractions (1 minute read)
 
@@ -277,6 +297,10 @@ An empirical study comparing model-based, RL-based, and LLM-based web GUI testin
 Q-READY: Predictive Feasibility Assessment for Hybrid Quantum-Classical Applications (1 minute read)
 
 Q-READY uses model-based systems engineering to predict whether a hybrid quantum-classical solution is feasible before costly implementation.
+
+I admire Fabrice Bellard. He is almost certainly a better overall programmer (5 minute read)
+
+(blurb not generated)
 
 Directory-Aware Query and Maintenance in Vector Databases (1 minute read)
 
@@ -297,6 +321,10 @@ A 3D visual analytics tool for auditing ML model provenance found compliance ris
 Honda Civics and Installing Software With Android Test Keys (1 minute read)
 
 Reviving aging Honda Civic infotainment systems by sideloading software using Android test keys to bypass signature checks.
+
+A Brief History of Unix Commands On Windows: CoreUtils (Again) (5 minute read)
+
+(blurb not generated)
 
 Show HN: machine0 – Persistent NixOS VMs You Control from the CLI (1 minute read)
 

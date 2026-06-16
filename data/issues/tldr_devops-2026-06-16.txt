@@ -6,13 +6,17 @@ TLDR DevOps 2026-06-16
 📱
 News & Trends
 
-Improving Arm64 support in CNCF projects with OCI credits (1 minute read)
+Improving Arm64 support in CNCF projects with OCI credits (5 minute read)
 
-The CNCF detailed how it's using Oracle Cloud Infrastructure credits to expand Arm64 build and test coverage across its projects, addressing a gap as Arm instances now make up over 50% of new AWS launches and a third on Azure. The credits give maintainers native Arm64 CI runners, removing the emulation overhead and cross-compilation toil that previously slowed multi-arch release pipelines.
+(blurb not generated)
 
-LiteLLM Vulnerability Chain Lets Low-Privilege Users Take Over AI Gateway Servers (1 minute read)
+LiteLLM Vulnerability Chain Lets Low-Privilege Users Take Over AI Gateway Servers (5 minute read)
 
-Researchers at Obsidian Security disclosed a chain of three vulnerabilities in LiteLLM that lets a default low-privilege account escalate to full admin and execute code on the proxy server. Because LiteLLM brokers calls to more than 100 model providers behind one OpenAI-compatible interface, a takeover exposes every provider API key it holds, making the gateway a single point of failure worth patching immediately.
+(blurb not generated)
+
+Linux 7.1 arrives with an NTFS overhaul and major hardware performance boosts (5 minute read)
+
+(blurb not generated)
 
 Red Hat gives Ubuntu a bootc up the backside at Canonical shindig (1 minute read)
 
@@ -22,9 +26,17 @@ Arch Linux locks down AUR signups amid wave of malicious commits (1 minute read)
 
 Arch Linux froze new Arch User Repository signups after attackers flooded the community-maintained repo with poisoned package updates, an attack vector that runs build scripts directly on user machines. The freeze blocks fresh accounts from submitting PKGBUILDs while maintainers triage the malicious commits, trading off contributor onboarding for blast-radius containment on a repo that ships unvetted code to Arch desktops.
 
+Cisco patches SD-WAN flaw amid evidence of active exploitation (5 minute read)
+
+(blurb not generated)
+
 Hetzner Price Adjustment (1 minute read)
 
 Hetzner raised prices across its cloud servers, dedicated hardware, and storage products, citing higher energy, hardware, and infrastructure costs as the drivers behind the adjustment. The increase narrows the cost gap that has made Hetzner a default budget alternative to AWS and GCP for teams running their own k8s and CI fleets, and the 574-comment HN thread reflects how sensitive that pricing has been to infra-team build-versus-rent math.
+
+Linux kernel 7.1 sends Intel 486 support to silicon heaven (5 minute read)
+
+(blurb not generated)
 
 HPE offers VMware refugees a year off the meter (1 minute read)
 
@@ -33,6 +45,10 @@ HPE is offering VMware customers a free VM Essentials license for one year plus 
 Fire burns Google Cloud India’s network, which remains slow a week later (1 minute read)
 
 A fire damaged Google Cloud's India networking infrastructure, leaving the region with degraded throughput and elevated latency a week after the incident. The slow recovery underscores the operational risk of single-region dependency, as teams running latency-sensitive workloads in India face sustained P99 spikes with no firm restoration timeline from Google.
+
+Marvell details vision of optically-interconnected data centers spanning across thousands of kilometers — new interconnects sampling later this year would allow CSPs to pool resources based on workload (5 minute read)
+
+(blurb not generated)
 
 Flatpak-NG sounds like bad news for systemd refuseniks (1 minute read)
 
@@ -45,9 +61,9 @@ From data residency to digital sovereignty: Architectural patterns for  cloud na
 
 (blurb not generated)
 
-AI demands more engineering discipline. Not less (xpost) (1 minute read)
+AI demands more engineering discipline. Not less (xpost) (5 minute read)
 
-Charity Majors argues that AI-assisted development raises the bar for engineering discipline rather than lowering it, drawing a parallel to the shift from hand-maintained server pets to immutable infrastructure. The piece contends that generating more code faster makes review, testing, observability, and ownership boundaries more important, since teams now ship volume they did not personally write and must still operate in production.
+(blurb not generated)
 
 What job interviews taught me about Kubernetes (1 minute read)
 
@@ -57,9 +73,9 @@ Organizational Cohesion in Microservice Architectures: A Multi-Project Empirical
 
 This paper introduces organizational cohesion, a way to measure how closely developer contributions track microservice boundaries, and proposes Pairwise Team Cohesion (PTC) as the metric. Building on the SCOM class-cohesion metric, the authors apply PTC in a longitudinal study of Netflix's Spinnaker and replicate it across six other open-source microservice systems, finding systematic gaps between service boundaries and the teams actually working on them.
 
-21 years and counting of 'eight fallacies of distributed computing' (2025) (1 minute read)
+21 years and counting of 'eight fallacies of distributed computing' (2025) (5 minute read)
 
-The author revisits Peter Deutsch's eight fallacies of distributed computing and argues they remain accurate 21 years on, walking through how each false assumption (the network is reliable, latency is zero, bandwidth is infinite) still surfaces in modern outages. The piece maps the fallacies onto current cloud and microservice architectures, making the case that no amount of abstraction has retired the underlying physics that SREs debug in production.
+(blurb not generated)
 
 Spotlight on SIG Storage (3 minute read)
 
@@ -72,17 +88,21 @@ HashiCorp published a guide to using Vault as a SPIFFE identity issuer and broke
 ⚒️
 Launches & Tools
 
-Linux 7.1 (1 minute read)
+Linux 7.1 (5 minute read)
 
-Linus Torvalds announced the Linux 7.1 kernel on the LKML, closing the merge window with the release now tagged stable and available from kernel.org. The cycle continues the steady cadence of incremental driver, filesystem, and scheduler updates that platform teams fold into their base images, with distro and managed-node rollouts to follow over the coming weeks.
+(blurb not generated)
 
 AWS WAF adds AI traffic monetization capability to help content owners charge AI bots for content access (1 minute read)
 
 AWS WAF added AI traffic monetization, a Bot Control capability that lets content providers and publishers price, meter, and collect payment from AI bots and agents hitting their content and APIs. Owners set a price, accept payment through third-party providers, and grant scoped access directly at the edge, turning unwanted crawler traffic into a revenue stream without standing up separate gateway infrastructure.
 
-Caddy compatibility for zeroserve: 3x throughput and 70% lower latency (1 minute read)
+Caddy compatibility for zeroserve: 3x throughput and 70% lower latency (5 minute read)
 
-zeroserve shipped a Caddy compatibility layer that reads existing Caddyfile configs, letting teams swap in the reverse proxy without rewriting their setup. The project reports 3x higher throughput and 70% lower P99 latency than Caddy in its benchmarks, with the migration path aimed at drop-in replacement for existing deployments.
+(blurb not generated)
+
+Lumi Loglake enables fast searches of unstructured log data (5 minute read)
+
+(blurb not generated)
 
 1Password debuts Credential Broker to release secrets only when needed (5 minute read)
 
@@ -91,6 +111,10 @@ zeroserve shipped a Caddy compatibility layer that reads existing Caddyfile conf
 ⚡
 Quick Links
 
-Deploying Gemma 12B to AWS EC2 with NVIDIA L4 and Antigravity CLI (5 minute read)
+AMD takes over MEXT for memory tiering tech that enables flash to appear as DRAM to applications — tech to 'address growing memory constraints' in the data center (5 minute read)
+
+(blurb not generated)
+
+Building a Microsoft Teams Bot with Private Networking in Azure (5 minute read)
 
 (blurb not generated)

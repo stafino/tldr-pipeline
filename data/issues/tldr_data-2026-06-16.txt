@@ -6,6 +6,10 @@ TLDR Data 2026-06-16
 📊
 News & Trends
 
+What’s new with Unity Catalog at Data + AI Summit 2026 (5 minute read)
+
+(blurb not generated)
+
 Databricks declares the end of pipelines with a unified platform for operational and analytical data (1 minute read)
 
 Databricks announced a unified architecture at its Data + AI Summit aimed at collapsing the long-standing split between transactional databases and analytical systems, alongside a real-time analytics engine the company says eliminates separate serving infrastructure. The pitch targets the ETL tax of moving data between OLTP and OLAP layers, though the practical question for data teams is whether one platform can match purpose-built engines on cost and latency.
@@ -22,10 +26,6 @@ Unifying Data and Governance in the Agentic Era: What’s New with Azure Databri
 
 At Data + AI Summit 2026, Databricks detailed a set of Azure Databricks updates centered on unifying data and governance through Unity Catalog as agentic workloads move into production. The push positions Unity Catalog as the single permission and lineage layer spanning tables, models, and AI agents, addressing the governance gap teams hit when agents start reading and writing across the Azure data estate.
 
-Lakeflow: A new era of agentic data engineering (1 minute read)
-
-Databricks announced Lakeflow, its unified data engineering platform that bundles ingestion, transformation, and orchestration with a new layer of AI agents that can build and debug pipelines from natural-language prompts. The pitch is that agentic tooling collapses the connector-plus-dbt-plus-Airflow stack into one managed surface, betting data teams will trade tool flexibility for less glue code and faster pipeline authoring inside the lakehouse.
-
 Databricks Releases General AI Agents for Businesses (1 minute read)
 
 Databricks released general-purpose AI agents that can handle open-ended business tasks like research and analysis, extending the company beyond its core data and analytics platform into AI applications. The move puts Databricks in more direct competition with OpenAI and other foundation-model vendors as it tries to monetize the enterprise data already sitting in its lakehouse.
@@ -33,10 +33,6 @@ Databricks released general-purpose AI agents that can handle open-ended busines
 Databricks pitches LTAP as a new foundation for agentic applications (2 minute read)
 
 At its Data + AI Summit, Databricks introduced Lake Transactional and Analytical Processing (LTAP), an architecture that unifies operational and analytical data on a single storage layer rather than splitting them across separate OLTP and OLAP systems. Databricks frames the longstanding divide as a liability for AI agents, which need live operational data and historical context at once to reason and act in real time.
-
-Universal semantic layers: critical infrastructure or the next data fabric? (3 minute read)
-
-Gartner predicts universal semantic layers will be treated as critical infrastructure alongside data platforms and security by 2030, citing 44% of data leaders who have already deployed one and 48% more planning to by 2027. The skeptical read is that data fabric, data mesh, and active metadata rode the same hype cycle before being absorbed into adjacent products or quietly dropped, though a semantic layer is a more concrete capability than any of those.
 
 🧠
 Deep Dives & Analysis
@@ -112,37 +108,41 @@ This paper introduces cross-silo person-level differential privacy (XSP-DP), a P
 🚀
 Launches & Tools
 
+Agent Bricks: Data + AI Summit 2026 (5 minute read)
+
+(blurb not generated)
+
 Announcing Lakebase Search: agent-native retrieval built into Lakebase Postgres (1 minute read)
 
 Databricks launched Lakebase Search, adding hybrid vector and full-text retrieval directly inside Lakebase Postgres so agents can query operational data without a separate vector store. Keeping retrieval in the transactional database removes the sync pipelines and dual-system overhead that teams typically maintain to feed embeddings into a standalone vector index.
+
+AI governance at Data + AI Summit 2026: What’s new with Unity AI Gateway (5 minute read)
+
+(blurb not generated)
 
 Introducing Genie One, Genie Agents, and Genie Ontology (1 minute read)
 
 Databricks released Genie One, a unified conversational analytics interface, alongside Genie Agents for multi-step autonomous analysis and Genie Ontology, a semantic layer that grounds queries in defined business metrics and entity relationships. The ontology is the key piece for data teams, encoding the metric definitions and join logic that text-to-SQL tools usually guess at, which should cut the hallucinated joins and inconsistent numbers that have kept Genie out of production reporting.
 
-Introducing Lakehouse//RT: Real-Time Performance on a Unified Lakehouse (1 minute read)
+Accelerate search queries with full-text search indexes on Databricks (1 minute read)
 
-Databricks introduced Lakehouse//RT, a real-time performance layer that brings low-latency query serving to the same Iceberg and Delta tables already sitting in the lakehouse, without copying data into a separate OLTP system. The pitch is to collapse the streaming-plus-warehouse split that data teams maintain for dashboards and operational analytics, keeping object storage as the source of truth while serving sub-second reads from one engine.
+Databricks added full-text search indexes that accelerate keyword and substring queries on large tables, letting teams filter hundreds of gigabytes to terabytes without full scans. The indexes integrate directly into Delta tables, so search-heavy workloads like log analysis and document lookup run on the lakehouse instead of requiring a separate search engine like Elasticsearch.
 
 Introducing Genie ZeroOps: Put your data and AI operations on autopilot (1 minute read)
 
 Databricks released Genie ZeroOps, an automation layer that monitors data pipelines and AI operations to detect, diagnose, and remediate failures without manual intervention. The pitch is moving teams off reactive maintenance work like broken pipelines and stale tables, with the system handling routine triage so engineers spend less time on operational firefighting.
 
-Accelerate search queries with full-text search indexes on Databricks (1 minute read)
+Free SQL→ER diagram tool, runs in the browser, nothing uploaded (5 minute read)
 
-Databricks added full-text search indexes that accelerate keyword and substring queries on large tables, letting teams filter hundreds of gigabytes to terabytes without full scans. The indexes integrate directly into Delta tables, so search-heavy workloads like log analysis and document lookup run on the lakehouse instead of requiring a separate search engine like Elasticsearch.
+(blurb not generated)
 
-Free SQL→ER diagram tool, runs in the browser, nothing uploaded (1 minute read)
+What’s new in data agents: Supercharging your AI workflows (5 minute read)
 
-A free browser-based tool converts SQL schema definitions into entity-relationship diagrams, with all parsing done client-side so nothing is uploaded to a server. The local-only approach lets data teams diagram production schemas without sending DDL to a third party, and the tool reads standard CREATE TABLE statements to map tables, columns, and foreign-key relationships.
+(blurb not generated)
 
-GitHub releases an open dataset for multilingual developer content (1 minute read)
+Milvus invents Vector Lakebase (5 minute read)
 
-GitHub released the Multilingual Repositories Dataset, a CC0-1.0 licensed collection that helps researchers and developers locate public repos carrying non-English natural-language content in READMEs, issues, and pull request threads. The dataset, published on GitHub, fulfills a 2025 commitment made under Microsoft's European Digital Commitments and gives data teams a ready corpus for studying cross-language coordination patterns in open source.
-
-What’s new in data agents: Supercharging your AI workflows (2 minute read)
-
-Google introduced new data agents across its Agentic Data Cloud, including agents in Conversational Analytics for business analysts and tooling for data scientists and engineers to build agents that ground reasoning in live enterprise data. The pitch is a deterministic, template-driven developer framework with unified governance, aiming for near-100% query accuracy by giving agents context across both operational and analytical systems.
+(blurb not generated)
 
 Dynestyx: A Probabilistic Programming Library for Dynamical Systems (1 minute read)
 

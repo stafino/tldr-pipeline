@@ -6,21 +6,41 @@ TLDR InfoSec 2026-06-16
 🔓
 Attacks & Vulnerabilities
 
-LiteLLM Vulnerability Chain Lets Low-Privilege Users Take Over AI Gateway Servers (1 minute read)
+Cybercriminals mask malicious communications through Microsoft Teams relays (5 minute read)
 
-Researchers at Obsidian Security disclosed a chain of three vulnerabilities in LiteLLM, the open-source AI gateway brokering calls to over 100 model providers, that lets a default low-privilege account escalate to full admin and achieve remote code execution on the proxy server. A server takeover exposes every stored provider API key, so operators should patch immediately, audit account privileges, and rotate all credentials held by the gateway.
+(blurb not generated)
+
+GhostTree Attack Abused Recursive Windows Junctions to Hide Malware (5 minute read)
+
+(blurb not generated)
+
+LiteLLM Vulnerability Chain Lets Low-Privilege Users Take Over AI Gateway Servers (5 minute read)
+
+(blurb not generated)
+
+Crooks found a new way to collaborate using Teams – by hiding command-and-control traffic (5 minute read)
+
+(blurb not generated)
 
 Critical Copilot vulnerability allowed hackers to seal 2FA code from users (1 minute read)
 
 A critical vulnerability in Microsoft Copilot, dubbed SearchLeak, let attackers exfiltrate users' 2FA codes by injecting prompts that coerced the LLM into leaking content it had access to during a session. The flaw reflects a recurring failure mode in LLM security, where untrusted input and privileged data share the same context, and patching individual exploits does not address the underlying prompt-injection exposure.
 
+SimpleHelp RMM flaw could give attackers full access to managed endpoints (CVE-2026-48558) (5 minute read)
+
+(blurb not generated)
+
+New Rokarolla Android Malware Steals PINs, SMS Codes, and Crypto Wallet Funds (5 minute read)
+
+(blurb not generated)
+
 Attackers Exploit Three Fortinet FortiSandbox Flaws, One Patched Last Week (1 minute read)
 
 Defused Cyber reports active exploitation of three Fortinet FortiSandbox vulnerabilities (CVE-2026-39813, CVE-2026-39808, and CVE-2026-25089) over the past 24 hours, including a critical path traversal flaw in the JRPC API (CVE-2026-39813, CVSS 9.1) that Fortinet patched only last week. Operators running FortiSandbox appliances should apply the latest fixes immediately and hunt for path-traversal indicators against the JRPC API, treating exposed instances as potentially already compromised.
 
-Palo Alto Warns of Active Exploitation of PAN-OS GlobalProtect VPN Flaw (1 minute read)
+Palo Alto Warns of Active Exploitation of PAN-OS GlobalProtect VPN Flaw (5 minute read)
 
-Palo Alto Networks confirmed active exploitation of CVE-2026-0257 (CVSS 7.8), an authentication-bypass flaw in the portal and gateway components of PAN-OS, by an unknown threat actor gaining unauthorized access to GlobalProtect portals. Organizations running affected PAN-OS versions on internet-facing GlobalProtect should patch immediately, audit portal access logs for unauthorized sessions, and rotate credentials on appliances that may already be compromised.
+(blurb not generated)
 
 Public and Private Medical Community Targeted by China-Nexus Threat Actor Pursuing Artificial Intelligence, Cyber, Medical, and National Defense Research (2 minute read)
 
@@ -65,46 +85,6 @@ Anthropic's Mythos model discovered more than 2,000 previously unknown vulnerabi
 Your "Pro" LLM Subscription May Actually Be "Free": Exposing Fingerprint Spoofing Risks in LLM Inference Services (1 minute read)
 
 Researchers introduced fingerprint spoofing, a threat in which a malicious LLM API provider serves a cheaper, weaker model that has been parameter-efficiently fine-tuned to mimic a premium one, evading the black-box fingerprinting users rely on to verify they get the advertised model. Their GhostPrint framework combines surrogate modeling, reward-ranked fine-tuning, and knowledge distillation to defeat fingerprinting under realistic query-budget and classifier constraints in both static and continual settings.
-
-CISA Flags LiteSpeed cPanel Plugin Flaw Exploited for Root Privilege Escalation (1 minute read)
-
-CISA added CVE-2026-54420 (CVSS 8.5), a privilege-escalation flaw in the LiteSpeed cPanel Plugin, to its Known Exploited Vulnerabilities catalog after confirming active exploitation for root access on affected hosts. FCEB agencies must remediate by June 18, 2026; operators running the plugin should patch immediately and audit for signs of root-level compromise on shared hosting environments.
-
-Council of Europe hacked in ShinyHunters' PeopleSoft heist (1 minute read)
-
-The ShinyHunters extortion group breached the Council of Europe by exploiting Oracle PeopleSoft, exfiltrating data in a campaign that also claimed the University of Nottingham and roughly 100 other unnamed organizations. Defenders running internet-facing PeopleSoft should treat the deployments as targeted, apply Oracle's latest patches, and audit access logs for unauthorized data exports tied to the group's activity.
-
-Users cry foul after AMD stripped memory crypto from its consumer CPUs (1 minute read)
-
-AMD silently removed Transparent Secure Memory Encryption (TSME) from its consumer Ryzen CPUs, leaving DRAM contents unencrypted and exposing systems to cold-boot and physical memory-extraction attacks that the feature was meant to mitigate. The change was undocumented and appears deliberate, so defenders relying on at-rest memory encryption for laptops or kiosks should verify TSME support per SKU rather than assume parity with prior generations.
-
-The Proxy Knows Too Much: Sealing LLM API Routers with Attested TEEs (1 minute read)
-
-This paper introduces AEGIS, an attested API router that treats LLM proxies as application-layer men-in-the-middle, since terminating the client's TLS session leaves the router holding the full interaction in plaintext to rewrite tool calls, swap in typosquatted packages, or exfiltrate secrets. AEGIS confines plaintext to a hardware enclave the client verifies before releasing data, so the untrusted host can neither read nor alter traffic.
-
-China-Nexus Actor Spies on US Researchers Undetected for a Year (1 minute read)
-
-Google discovered and disrupted a year-long espionage campaign by a China-nexus actor that compromised RedCAP credentials to infiltrate US research institutions and exfiltrate sensitive data undetected. Affected organizations should rotate RedCAP credentials, hunt for persistence across the trailing 12 months, and review access logs for anomalous exfiltration to research repositories.
-
-MIPSBLEED: Uncovering Microarchitectural Timing Leaks in Pervasive Embedded Processors (1 minute read)
-
-MIPSBLEED demonstrates practical cross-core timing attacks on SMT-enabled MIPS processors used in routers, industrial controllers, and IoT devices, leaking data from the L1 data cache, L1 instruction cache, and execution engine without privileged access. The researchers chained the channels into a single-trace key recovery against a real elliptic curve cryptography toolkit, putting any embedded MIPS deployment running SMT and crypto workloads at risk.
-
-A backdoor in a LinkedIn job offer (1 minute read)
-
-A developer documented receiving a fake LinkedIn recruiter offer that funneled them into a take-home coding challenge whose repo hid an obfuscated backdoor in a config file, designed to exfiltrate credentials and environment data when the project was run. The lure matches the DPRK-linked Contagious Interview campaign targeting engineers, so treat unsolicited coding assignments as untrusted code and run them only in isolated, network-restricted sandboxes.
-
-Invisible Manipulation Channels in AI-Assisted Financial Advisory: Implications for Market Integrity and Regulatory Design (1 minute read)
-
-This paper identifies an "invisible manipulation channel" at the sampling layer of LLM inference that lets adversaries systematically bias AI-generated credit ratings and investment advice while passing output-based audits, including statistical watermarking. The authors show the manipulated and normal output distributions can be made arbitrarily close in KL divergence, so any output-based detector needs impractically large sample sizes to catch it reliably.
-
-Dynamic Malicious Skills in Agentic AI (1 minute read)
-
-This paper demonstrates "dynamic malicious skills," an attack in which instructions embedded in natural-language skill documentation such as SKILL.md induce an agent to inject malicious logic into an otherwise benign skill at runtime, validated against OpenHands and Claude Code with non-trivial success rates. The authors propose an OS-level defense using kernel-enforced read-only mounts to block runtime skill modification while preserving benign skill functionality.
-
-Fake Microsoft Alerts Used to Deploy North Korean NarwhalRAT Malware (1 minute read)
-
-ScarCruft (APT37), a North Korean state-sponsored group, is running a spear-phishing campaign that impersonates Microsoft Account security alerts to trick recipients into deploying NarwhalRAT. The lures play on account-compromise fear to drive execution, so defenders should flag inbound mail spoofing Microsoft security notifications and hunt for NarwhalRAT delivery artifacts on endpoints.
 
 🧠
 Strategies & Tactics
@@ -165,9 +145,9 @@ Phantoms and Disclosures: a Causal Framework for Auditing Synthetic Data (1 minu
 
 This paper introduces an empirical auditing framework for detecting when synthetic data leaks private records from its training corpus. It distinguishes "true disclosures," where the system reproduces a user's actual data, from "phantom disclosures," where matching records appear incidentally, by partitioning inputs into training and holdout sets and applying statistical hypothesis testing against zero-learning or differential-privacy baselines. The method requires no model access and no canary insertion, making it usable for auditing third-party synthetic datasets.
 
-Cloud CISO Perspectives: The 4 lessons that guided AI Threat Defense (2 minute read)
+Cloud CISO Perspectives: The 4 lessons that guided AI Threat Defense (5 minute read)
 
-Google Cloud's new CISO Chris Betz outlined four lessons from building AI Threat Defense, the company's system for applying AI to defensive operations. The takeaways center on using AI to accelerate analyst triage and detection at scale, while keeping human judgment in the loop for high-stakes decisions. Betz frames the effort as pushing AI toward concrete defender advantages rather than treating it solely as an attacker capability.
+(blurb not generated)
 
 The Art of Mixology: Mixup-based Obfuscation for Privacy-Preserving Split Learning in Large Language Models (1 minute read)
 
@@ -177,9 +157,13 @@ Robust and Automated Reconfiguration of Byzantine Wide-Area Replication (1 minut
 
 This paper identifies three vulnerabilities in latency-based reconfiguration of Byzantine fault-tolerant state-machine replication, where replicas dynamically assign leaders and tune voting weights based on monitored network latency. Byzantine nodes can falsify latency reports to skew these decisions. The authors propose Beware, a framework that filters fabricated reports, computes robust weight distributions, and uses machine learning to converge on Byzantine-resilient configurations.
 
-Implementing workload identity with HashiCorp Vault and SPIFFE (1 minute read)
+AI Agent Skill Managers Are a Supply-Chain Surface Most of Them Don't Guard (5 minute read)
 
-HashiCorp published a guide to using Vault as a SPIFFE identity issuer and broker for workload identity and authorization. Vault issues SPIFFE-format SVIDs and brokers trust between workloads, while SPIRE handles node and workload attestation at the edge. The walkthrough clarifies where each component fits, letting teams replace long-lived secrets and static credentials with short-lived, attested identities across heterogeneous environments.
+(blurb not generated)
+
+Implementing workload identity with HashiCorp Vault and SPIFFE (5 minute read)
+
+(blurb not generated)
 
 🧑‍💻
 Launches & Tools
@@ -208,10 +192,6 @@ Binary Decompilation LLM with Feedback-Driven Multi-Turn Refinement (1 minute re
 
 AutoDecompiler is a decompilation-specialized LLM trained with reinforcement learning that reframes binary decompilation as iterative multi-turn refinement, revising its output based on compilation, execution, and input/output testing feedback rather than generating a single pass. The approach targets a common failure mode in LLM decompilation, where generated code compiles and reads cleanly yet diverges from the original binary's behavior, misleading downstream vulnerability discovery and malware analysis.
 
-Tech Coalition ‘Athena’ Targets OSS Vulnerabilities Ahead of Disclosure (1 minute read)
-
-A coalition of over two dozen organizations launched Athena, a shared platform to triage, fix, and secure open-source software vulnerabilities before public disclosure. The system coordinates pre-disclosure remediation across member companies, aiming to close the window between when a flaw is found and when patches and exploits reach the wider ecosystem.
-
 1Password debuts Credential Broker to release secrets only when needed (1 minute read)
 
 1Password released Credential Broker, which issues credentials, tokens, and federated access from its vaults to trusted requesters only at the moment of use rather than leaving secrets embedded in apps, code, and pipelines. The just-in-time model shrinks the standing-credential attack surface and is aimed at machine and pipeline identities, where long-lived secrets scattered across systems are a common path to lateral movement.
@@ -223,14 +203,6 @@ AppViewX launched Agent Identity Security, a product that discovers, governs, an
 RiskIQ founders launch Ent Security with $100M to rethink endpoint defense (1 minute read)
 
 RiskIQ founders Elias Manousos and Brandon Dixon launched Ent Security with $100M to build intent-aware workspace defense that reads what users and AI agents intend before risky actions complete. Incorporated as Athena Formation Inc., the startup positions itself as a new endpoint layer focused on blocking malicious intent rather than known signatures or post-execution detection.
-
-AppViewX extends machine identity security to ai agents and post-quantum environments (1 minute read)
-
-AppViewX launched Agent Identity Security, a product that discovers, governs, and monitors AI agent identities across the enterprise from a single control plane alongside existing machine and PKI identities. Built on the company's machine-identity and PKI platform, it targets the converging risks of agentic AI sprawl and post-quantum migration, giving CISOs unified visibility over both human-deployed agents and certificate-based machine identities.
-
-SoftBank announces an OpenAI-powered "patching service" to secure Japan's top 3,000 companies behind crucial infrastructure from cyberattacks (Yuri Kageyama/Associated Press) (1 minute read)
-
-SoftBank and OpenAI launched a managed "patching service" using OpenAI models to detect and remediate vulnerabilities across Japan's roughly 3,000 critical-infrastructure operators. The companies framed it as AI-assisted patch identification and deployment for utilities, finance, and transport, though they have not detailed how the models prioritize fixes, handle false positives, or fit into existing change-management workflows.
 
 Exclusive: Daylight gives managed detection and response customers searchable telemetry without a SIEM (1 minute read)
 
@@ -248,16 +220,28 @@ Teleport adds LLM Proxy and Delegated Identity to secure AI agent actions and ac
 
 Teleport added two capabilities to the public beta of Beams, its Agentic Identity Framework: LLM Proxy, which applies identity and access controls to the instructions an agent receives, and Delegated Identity, which governs and audits what resources an agent can reach. The features target the two points in an agentic workflow that currently lack auditability—what an agent is told to do and what it is permitted to access.
 
+Tailscale Aperture targets shadow AI with new controls for IT teams (5 minute read)
+
+(blurb not generated)
+
 🎁
 Miscellaneous
+
+UK to require ID or face scan before you can make social media accounts (5 minute read)
+
+(blurb not generated)
 
 Flock Cameras Are Being Used for Stalking (1 minute read)
 
 Investigations have uncovered more than a dozen cases nationwide where police officers used the Flock automated license-plate reader network to track and stalk individuals without legal justification. The incidents highlight the weak access controls and audit gaps in mass-surveillance camera systems, which retain location data on ordinary drivers and offer few technical safeguards against insider abuse.
 
-The FCC Wants to Eliminate Burner Phones (1 minute read)
+The FCC Wants to Eliminate Burner Phones (5 minute read)
 
-The FCC proposed a rule requiring US telecoms to collect and store personal data on nearly all phone customers, including a government-issued ID number and physical address, effectively eliminating burner phones whose accounts aren't tied to an identity. The agency frames the mandate as an anti-scam measure, but privacy advocates warn it builds a centralized trove of identity data with significant surveillance and cybersecurity knock-on risks.
+(blurb not generated)
+
+FTC warns of record $3.5 billion losses to imposter scams in 2025 (5 minute read)
+
+(blurb not generated)
 
 DOJ seizes CFAKE, SOCFAKE deepfake nude sites under TAKE IT DOWN Act (1 minute read)
 
@@ -271,17 +255,13 @@ MPX: A Unified Systolic Array for Matrix and Polynomial Multiplication (1 minute
 
 This paper introduces MPX, a dual-mode systolic array that runs both matrix multiplication and direct polynomial multiplication on one hardware fabric, targeting the NTT kernels central to fully homomorphic encryption and post-quantum cryptography. The authors report that adding the polynomial mode costs only 20% extra chip area with negligible power overhead during matrix workloads, offering a path to accelerate FHE and PQC by reusing existing AI hardware.
 
-Curl will not accept vulnerability reports during July 2026 (1 minute read)
+Curl will not accept vulnerability reports during July 2026 (5 minute read)
 
-Curl maintainer Daniel Stenberg announced the project will not accept vulnerability reports during July 2026, pausing its bug bounty program for the month to give maintainers a break from the volume of low-quality, often AI-generated submissions. Reports submitted during the window will be rejected and must be resubmitted in August, when normal triage and bounty payouts resume.
+(blurb not generated)
 
 Cybersecurity vets protest ‘dangerous’ US government ban on Anthropic’s most powerful models (1 minute read)
 
 Dozens of cybersecurity experts urged the White House to lift export-control restrictions on Anthropic's most capable models, Fable and Mythos, arguing the order weakens defenders' ability to secure their software and products. The group called the ban "dangerous," contending that limiting access to frontier models cedes an advantage to attackers who face no such constraints.
-
-1Password acquires Apono to govern what AI agents can do once they’re inside (1 minute read)
-
-1Password acquired Apono, an Israeli startup whose platform decides in real time what every human, machine, and AI agent can access inside a company's systems. The deal extends 1Password's identity-security stack toward agentic access governance, giving security teams real-time, least-privilege controls over what autonomous agents can touch once they're authenticated; terms were not disclosed.
 
 Cybersecurity experts don’t think Anthropic’s Fable 5 presents a unique threat (1 minute read)
 
@@ -295,15 +275,11 @@ French Security Service to Replace Palantir With Local Firm (1 minute read)
 
 France's domestic intelligence agency DGSI will replace Palantir's data analysis tools with software from French firm Chapsvision, ending its reliance on the US company. The move reflects a broader European push toward digital sovereignty and away from American tech vendors, particularly for sensitive intelligence and defense workloads.
 
-SailPoint plans to buy Entro to pour non-human identities into its “Agentic Fabric” (5 minute read)
+The team that built Microsoft’s Security Copilot just raised $100M to stop attacks before they happen (5 minute read)
 
 (blurb not generated)
 
-SoftBank and OpenAI launch “Patching as a Service” to defend Japan’s critical infrastructure (1 minute read)
-
-SoftBank and OpenAI announced "Patching as a Service," a security product built on OpenAI's models to defend the companies behind Japan's critical infrastructure against a rising volume of cyberattacks. The launch marks SoftBank's move into cyber defense, with founder Masayoshi Son framing Japan's exposure as a national emergency amid an escalating threat landscape.
-
-France’s intelligence service is dropping Palantir for a homegrown rival (5 minute read)
+Google Chrome update will close the door on ad blockers (5 minute read)
 
 (blurb not generated)
 
@@ -323,33 +299,13 @@ ChapsVision to replace Palantir in major contract with French intelligence agenc
 
 (blurb not generated)
 
-As AI agents become employees, NewCore emerges with $66M to give them identities (1 minute read)
-
-NewCore emerged from stealth with $66M to issue and manage identities for AI agents, arguing enterprises will soon govern more non-human actors than human employees. The pitch targets a real gap, as agents increasingly hold credentials and act autonomously while most IAM stacks still treat them as service accounts or borrowed human logins.
-
-France plans €655M in AI investments through 2030 and a Mistral-powered chatbot for state services; its security service will replace Palantir with Chapsvision (Benoit Berthelot/Bloomberg) (5 minute read)
-
-(blurb not generated)
-
 FBI: Fraudsters use couriers to steal money in crypto scams (1 minute read)
 
 The FBI warned that operators behind cryptocurrency investment scams, also known as pig butchering or romance baiting, are now dispatching in-person couriers to collect cash and precious metals directly from victims. The shift adds a physical-handoff layer to laundering proceeds, complicating attribution and giving defenders and fraud teams a new indicator to flag when warning customers about social-engineering-driven investment fraud.
 
-EU Cybersecurity Act 2.0: When good regulation goes bad (5 minute read)
-
-(blurb not generated)
-
 FEnc$^2$: Unifying Data Packing for Efficient Private Inference via Convolution and Architecture-Aware Fragment Encoding (1 minute read)
 
 This paper introduces FEnc2, a fragment-based ciphertext packing framework for CKKS homomorphic-encryption private CNN inference, addressing the slot waste and excessive rotations of existing strategies that preserve either spatial locality or feature grouping but not both. It combines convolution-aware encoding to pick optimal fragment sizes and architecture-aware ciphertext compression, cutting rotation complexity and ciphertext counts in privacy-preserving machine learning.
-
-EU sovereignty push gives tech buyers a new alphabet soup to swallow (1 minute read)
-
-The European Commission is advancing its digital sovereignty agenda to enforce cloud autonomy and promote open source adoption across the bloc, pressing ahead despite pushback from the US. Security and procurement teams face a growing thicket of sovereignty frameworks and certification schemes to evaluate, adding compliance overhead to vendor selection and cloud architecture decisions.
-
-SailPoint acquires AI agent security startup Entro for reported $200M (5 minute read)
-
-(blurb not generated)
 
 ⚡
 Quick Links
@@ -361,6 +317,10 @@ A quantum kernel ML framework classifies malware families at scale, using LDA pr
 Banned Book Library in a Wi-Fi Smart Light Bulb (1 minute read)
 
 A researcher hid a library of banned books inside the flash memory of a Wi-Fi smart light bulb.
+
+Okta expands Google Cloud partnership to secure AI agents and the browser (5 minute read)
+
+(blurb not generated)
 
 Chrome is removing the last workaround keeping Manifest V2 ad blockers alive (5 minute read)
 
