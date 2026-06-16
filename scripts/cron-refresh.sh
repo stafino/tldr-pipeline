@@ -7,7 +7,8 @@
 #
 # Logs to data/logs/cron-YYYYMMDD-HHMM.log; older logs are rotated.
 
-set -uo pipefail   # NB: no -e — we want to continue past stage failures
+set -o pipefail   # NB: no -e (continue past failures) and no -u (assoc-array
+                  # indexing under set -u is brittle on some bash builds)
 
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$REPO_ROOT"
