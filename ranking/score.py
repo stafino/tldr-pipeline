@@ -14,6 +14,7 @@ from common.story import Assignment, ScoredStory, Story
 log = logging.getLogger(__name__)
 
 RUBRIC_PATH = Path(".claude/skills/curation_rubric.md")
+RUBRIC_OVERRIDES_DIR = Path(".claude/skills/rubric_overrides")
 CACHE_DIR = Path("data/scored/.cache")
 
 RANKING_MODEL = os.environ.get("RANKING_MODEL", "claude-sonnet-4-6")
@@ -42,6 +43,24 @@ purely a positive signal.
 
 {source_preferences}
 
+FRESHNESS PRIOR:
+
+TLDR is a daily newsletter — fresh news wins. Apply this freshness
+adjustment to the score:
+  - < 12 hours old: +5 (breaking)
+  - 12-24 hours old: +3 (very fresh)
+  - 24-48 hours old: 0 (neutral — typical)
+  - 48-72 hours old: -3 (stale for daily)
+  - > 72 hours old: -8 (likely already covered)
+The hours_old field is provided per story.
+
+ALREADY-COVERED FLAG:
+
+If a story has already_covered_by listing newsletter IDs, TLDR already
+published this exact URL in the last 14 days. Don't recommend it again
+unless it's a major update — apply a -25 score adjustment to the
+already-covered newsletter(s) so it falls out of the top pool.
+
 TLDR FAMILY (assign the story to all newsletters where its score would be {min_score} or above; you can also return [] if it fits none):
 
 {family}
@@ -58,6 +77,8 @@ Title: {title}
 Source: {source} ({source_type})
 Source topics: {source_topics}
 URL: {url}
+Published: {published_at} (hours_old: {hours_old})
+already_covered_by: {already_covered_by}
 Snippet: {snippet}
 
 Return a JSON object with exactly these keys:
@@ -78,6 +99,20 @@ def _load_rubric() -> str:
         log.warning("Rubric file missing at %s; using inline fallback", RUBRIC_PATH)
         return "Score 0-100 by technical substance, novelty, broader implications, and source credibility."
     return RUBRIC_PATH.read_text()
+
+
+def _load_rubric_overrides() -> str:
+    """Concatenate every per-newsletter rubric override file into a single
+    block the ranker can read. These tune scoring nuance per newsletter
+    (e.g., TLDR AI weights frontier-lab releases higher; TLDR Marketing
+    weights named-channel-benchmark stories higher)."""
+    if not RUBRIC_OVERRIDES_DIR.exists():
+        return ""
+    blocks: list[str] = ["## PER-NEWSLETTER SCORING OVERRIDES\n"]
+    for f in sorted(RUBRIC_OVERRIDES_DIR.glob("*.md")):
+        blocks.append(f.read_text().strip())
+        blocks.append("")
+    return "\n".join(blocks)
 
 
 def _format_family(nls: dict[str, Newsletter]) -> str:
@@ -119,6 +154,9 @@ def rank_stories(stories: list[Story], use_cache: bool = True) -> list[ScoredSto
 
     nls = load_newsletters()
     rubric = _load_rubric()
+    rubric_overrides = _load_rubric_overrides()
+    if rubric_overrides:
+        rubric = rubric + "\n\n" + rubric_overrides
 
     # Versioning the cache key by the set of newsletter IDs ensures that adding
     # or removing a newsletter invalidates the cache automatically.
@@ -142,6 +180,11 @@ def rank_stories(stories: list[Story], use_cache: bool = True) -> list[ScoredSto
         "(No learned preferences yet — they populate after the first backtest cycle.)"
     )
 
+    # Build a "TLDR already published this URL in the last 14 days" set.
+    from common.already_covered import _canonical_url, build_covered_set
+    from datetime import date as _date
+    covered = build_covered_set(_date.today(), lookback_days=14)
+
     system = SYSTEM_TEMPLATE.format(
         rubric=rubric, family=_format_family(nls),
         min_score=MIN_ASSIGNMENT_SCORE,
@@ -161,6 +204,21 @@ def rank_stories(stories: list[Story], use_cache: bool = True) -> list[ScoredSto
                     return json.loads(cache_path.read_text())
                 except Exception:
                     pass  # corrupt cache; refetch
+            # Compute hours_old from published_at for the freshness prior
+            hours_old = 999
+            try:
+                from datetime import datetime, timezone
+                pub = datetime.fromisoformat(story.published_at.replace("Z", "+00:00"))
+                now = datetime.now(timezone.utc)
+                hours_old = int((now - pub).total_seconds() / 3600)
+            except Exception:
+                pass
+
+            # Already-covered check
+            cu = _canonical_url(story.url)
+            covered_nls = covered.get(cu, [])
+            already_covered_by = ", ".join(covered_nls) if covered_nls else "(none)"
+
             user = (
                 USER_TEMPLATE
                 .replace("{title}", str(story.title))
@@ -168,6 +226,9 @@ def rank_stories(stories: list[Story], use_cache: bool = True) -> list[ScoredSto
                 .replace("{source_type}", str(story.source_type))
                 .replace("{source_topics}", ", ".join(story.source_topics) or "(none)")
                 .replace("{url}", str(story.url))
+                .replace("{published_at}", str(story.published_at))
+                .replace("{hours_old}", str(hours_old))
+                .replace("{already_covered_by}", already_covered_by)
                 .replace("{snippet}", (story.raw_text or "")[:500])
                 .replace("{newsletter_ids}", ", ".join(nls.keys()))
             )
