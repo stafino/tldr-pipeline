@@ -185,7 +185,9 @@ def rank_stories(stories: list[Story], use_cache: bool = True) -> list[ScoredSto
 
     # Versioning the cache key by the set of newsletter IDs ensures that adding
     # or removing a newsletter invalidates the cache automatically.
-    family_version = "v2:" + ",".join(sorted(nls.keys()))
+    # v3 = added explainability fields (components, boosts) + HN engagement signal
+    # + freshness + already-covered + per-newsletter rubric overrides.
+    family_version = "v3:" + ",".join(sorted(nls.keys()))
 
     valid_sections: dict[str, set[str]] = {
         nid: set(nl.section_ids) for nid, nl in nls.items()

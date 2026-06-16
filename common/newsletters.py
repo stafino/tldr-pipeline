@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from functools import lru_cache
 from pathlib import Path
 
 import yaml
@@ -49,7 +48,6 @@ class Newsletter:
         return next((s for s in self.sections if s.is_quick_links), None)
 
 
-@lru_cache(maxsize=4)
 def load_newsletters(path: str = "config/newsletters.yaml") -> dict[str, Newsletter]:
     data = yaml.safe_load(Path(path).read_text())
     out: dict[str, Newsletter] = {}
