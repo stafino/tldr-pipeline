@@ -361,18 +361,46 @@ def _available_dates() -> list[str]:
     return sorted(dates, reverse=True)
 
 
-def _load_blurbs(date: str) -> dict[tuple[str, str], dict]:
-    out: dict[tuple[str, str], dict] = {}
+def _mtime(p: Path) -> float:
+    """File mtime as a cache-key. Returns 0 if the file doesn't exist."""
+    try:
+        return p.stat().st_mtime
+    except FileNotFoundError:
+        return 0.0
+
+
+@st.cache_data(show_spinner=False)
+def _load_scored_cached(date: str, _mtime_key: float) -> list[dict]:
+    """JSONL → list of dicts. Cached by file mtime so updates invalidate
+    automatically and clicks don't re-parse 300+ entries from disk."""
+    return read_jsonl(SCORED_DIR / f"{date}.jsonl")
+
+
+@st.cache_data(show_spinner=False)
+def _load_blurbs_cached(date: str, _mtime_key: float) -> dict[str, dict]:
+    """Cached blurbs loader. Returns a dict keyed by 'url||newsletter' string
+    because tuple keys aren't hashable through st.cache_data's pickle layer."""
     p = BLURBS_DIR / f"{date}.jsonl"
     if not p.exists():
-        return out
+        return {}
+    out: dict[str, dict] = {}
     with p.open() as f:
         for line in f:
             line = line.strip()
             if not line:
                 continue
             b = json.loads(line)
-            out[(b["story_url"], b["newsletter"])] = b
+            out[f"{b['story_url']}||{b['newsletter']}"] = b
+    return out
+
+
+def _load_blurbs(date: str) -> dict[tuple[str, str], dict]:
+    """Public API: returns the tuple-keyed dict the rest of the app expects."""
+    raw = _load_blurbs_cached(date, _mtime(BLURBS_DIR / f"{date}.jsonl"))
+    out: dict[tuple[str, str], dict] = {}
+    for k, v in raw.items():
+        url, nl = k.split("||", 1)
+        out[(url, nl)] = v
     return out
 
 
@@ -499,7 +527,10 @@ st.markdown('<div class="topbar-sep"></div>', unsafe_allow_html=True)
 # ─────────────────────────────────────────────────────────────────────────────
 # Load scored + blurbs
 # ─────────────────────────────────────────────────────────────────────────────
-scored_all = [ScoredStory.from_dict(d) for d in read_jsonl(SCORED_DIR / f"{selected_date}.jsonl")]
+scored_all = [
+    ScoredStory.from_dict(d)
+    for d in _load_scored_cached(selected_date, _mtime(SCORED_DIR / f"{selected_date}.jsonl"))
+]
 blurbs = _load_blurbs(selected_date)
 
 # Apply search filter
