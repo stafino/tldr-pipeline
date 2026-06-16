@@ -132,6 +132,8 @@ def generate_blurb(
         )
 
     voice = _load_voice(nl.voice_skill)
+    # SYSTEM_TEMPLATE only contains controlled fields (newsletter metadata + the
+    # voice canon we wrote), so str.format is safe.
     system = SYSTEM_TEMPLATE.format(
         brand_name=nl.brand_name,
         voice=voice,
@@ -141,13 +143,17 @@ def generate_blurb(
         max_words=section.max_words,
         sentence_guidance=_sentence_guidance(section),
     )
-    user = USER_TEMPLATE.format(
-        brand_name=nl.brand_name,
-        section_name=section.name,
-        title=scored.story.title,
-        source=scored.story.source,
-        url=scored.story.url,
-        snippet=(scored.story.raw_text or "")[:1000],
+    # USER_TEMPLATE substitutes the story snippet, which may contain literal
+    # `{anything}` chars from RSS content (code samples, JSON, math). str.format
+    # would raise KeyError. Use .replace() so untrusted strings can't break it.
+    user = (
+        USER_TEMPLATE
+        .replace("{brand_name}", str(nl.brand_name))
+        .replace("{section_name}", str(section.name))
+        .replace("{title}", str(scored.story.title))
+        .replace("{source}", str(scored.story.source))
+        .replace("{url}", str(scored.story.url))
+        .replace("{snippet}", (scored.story.raw_text or "")[:1000])
     )
 
     attempts: list[tuple[str, int]] = []

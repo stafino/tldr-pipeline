@@ -124,40 +124,61 @@ def rank_stories(stories: list[Story], use_cache: bool = True) -> list[ScoredSto
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
 
     def _score_one(story: Story) -> dict | None:
-        cache_path = _cache_key(story, family_version)
-        if use_cache and cache_path.exists():
-            try:
-                return json.loads(cache_path.read_text())
-            except Exception:
-                pass  # corrupt cache; refetch
-        user = USER_TEMPLATE.format(
-            title=story.title,
-            source=story.source,
-            source_type=story.source_type,
-            source_topics=", ".join(story.source_topics) or "(none)",
-            url=story.url,
-            snippet=(story.raw_text or "")[:500],
-            newsletter_ids=", ".join(nls.keys()),
-        )
+        # Whole body is wrapped: a malformed cache file, a snippet containing
+        # curly braces (which would break str.format), a hashlib edge case, or
+        # any I/O failure must NEVER take down the whole pool. Return None and
+        # log; the outer loop drops the story.
         try:
-            raw = complete(system, user, model=RANKING_MODEL, max_tokens=600)
-            data = _parse_json_response(raw)
+            cache_path = _cache_key(story, family_version)
+            if use_cache and cache_path.exists():
+                try:
+                    return json.loads(cache_path.read_text())
+                except Exception:
+                    pass  # corrupt cache; refetch
+            user = (
+                USER_TEMPLATE
+                .replace("{title}", str(story.title))
+                .replace("{source}", str(story.source))
+                .replace("{source_type}", str(story.source_type))
+                .replace("{source_topics}", ", ".join(story.source_topics) or "(none)")
+                .replace("{url}", str(story.url))
+                .replace("{snippet}", (story.raw_text or "")[:500])
+                .replace("{newsletter_ids}", ", ".join(nls.keys()))
+            )
+            try:
+                raw = complete(system, user, model=RANKING_MODEL, max_tokens=600)
+                data = _parse_json_response(raw)
+            except Exception as e:
+                log.warning("Ranking failed for %s: %r", story.url, e)
+                return None
+            try:
+                cache_path.write_text(json.dumps(data))
+            except Exception as e:
+                log.warning("Cache write failed for %s: %r", story.url, e)
+            return data
         except Exception as e:
-            log.warning("Ranking failed for %s: %r", story.url, e)
+            log.warning("Unhandled in _score_one for %s: %r", getattr(story, "url", "?"), e)
             return None
-        cache_path.write_text(json.dumps(data))
-        return data
 
     raw_results: dict[str, dict] = {}
     completed = 0
+    failed = 0
     with ThreadPoolExecutor(max_workers=RANKING_CONCURRENCY) as pool:
         futures = {pool.submit(_score_one, s): s for s in stories}
         for fut in as_completed(futures):
             story = futures[fut]
-            data = fut.result()
+            try:
+                data = fut.result()
+            except Exception as e:
+                # Belt-and-braces: _score_one already wraps everything, but if
+                # something gets through (e.g. cancellation), don't crash the loop.
+                log.warning("Future raised for %s: %r", getattr(story, "url", "?"), e)
+                data = None
             completed += 1
+            if data is None:
+                failed += 1
             if completed % 10 == 0 or completed == len(stories):
-                log.info("ranking progress: %d/%d", completed, len(stories))
+                log.info("ranking progress: %d/%d (%d failed)", completed, len(stories), failed)
             if data is not None:
                 raw_results[story.url] = data
 

@@ -34,6 +34,10 @@
         <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/Users/stovifo/.local/bin</string>
         <key>HOME</key>
         <string>/Users/stovifo</string>
+        <!-- Force unbuffered Python output so tracebacks flush completely
+             before the process exits, instead of being cut off mid-line. -->
+        <key>PYTHONUNBUFFERED</key>
+        <string>1</string>
     </dict>
 
     <!-- If a tick is already running when the next fires, skip the new one. -->
