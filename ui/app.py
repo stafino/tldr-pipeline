@@ -391,6 +391,55 @@ st.markdown(
     footer { display: none !important; }
     [data-testid="stDecoration"] { display: none !important; }
 
+    /* ─── Edition view ─── */
+    .ed-hero {
+        background: linear-gradient(135deg, var(--surface) 0%, #1a2030 100%);
+        border: 1px solid var(--border-strong);
+        border-radius: 8px;
+        padding: 18px 22px;
+        margin: 6px 0 22px;
+    }
+    .ed-hero h2 { font-size: 16px; font-weight: 600; color: var(--text); margin: 0 0 6px; }
+    .ed-cap { font-size: 14px; color: var(--text-dim); }
+    .ed-cap-status { color: var(--text-mute); font-size: 12px; margin-left: 6px; }
+    .ed-empty {
+        padding: 36px 24px; background: var(--surface); border: 1px dashed var(--border);
+        border-radius: 6px; text-align: center; color: var(--text-mute); font-size: 13px;
+    }
+    .ed-sec {
+        display: flex; align-items: center; gap: 10px;
+        margin: 22px 0 8px; padding: 0 0 8px;
+        border-bottom: 1px solid var(--border-strong);
+    }
+    .ed-sec h3 {
+        font-size: 12px !important; font-weight: 700; margin: 0 !important;
+        color: var(--text) !important; letter-spacing: 0.06em; text-transform: uppercase;
+    }
+    .ed-sec .em { font-size: 16px; }
+    .ed-sec-meta { font-size: 11px; color: var(--text-mute); margin-left: auto; }
+
+    .ed-story {
+        padding: 12px 0 16px; border-bottom: 1px solid var(--border);
+    }
+    .ed-story:last-child { border-bottom: none; }
+    .ed-story-head {
+        display: flex; align-items: baseline; gap: 10px; margin-bottom: 6px;
+    }
+    .ed-rank {
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        color: var(--text-mute); font-size: 11px; flex: 0 0 22px;
+    }
+    a.ed-title {
+        flex: 1 1 auto; font-size: 15px; color: var(--text); font-weight: 600;
+        text-decoration: none; line-height: 1.35;
+    }
+    a.ed-title:hover { color: var(--accent); }
+    .ed-meta { font-size: 11px; color: var(--text-mute); white-space: nowrap; }
+    p.ed-blurb {
+        font-size: 14px; color: var(--text-dim); line-height: 1.55; margin: 4px 0 0 32px;
+        font-family: 'Inter', sans-serif;
+    }
+
     /* ─── Top-bar tab nav (Curate / Backtest) ─── */
     .view-tabs { display: flex; gap: 4px; align-items: center; margin: 0; padding: 0; }
     .view-tabs a {
@@ -590,9 +639,9 @@ def _link(href_params: dict[str, str], inner_html: str, css_class: str = "row-li
 ss = st.session_state
 qp = st.query_params
 
-# Top-level view: curate (default) or backtest. Persists in URL for direct linking.
+# Top-level view: curate (default), edition, or backtest. Persists in URL.
 current_view = qp.get("view", "curate")
-if current_view not in ("curate", "backtest"):
+if current_view not in ("curate", "edition", "backtest"):
     current_view = "curate"
 
 # Restore selected newsletter & story from query params if present (allows
@@ -637,10 +686,12 @@ with brand_col:
     st.markdown('<h1 class="brand">tldr pipeline</h1>', unsafe_allow_html=True)
 with tabs_col:
     curate_active = " active" if current_view == "curate" else ""
+    edition_active = " active" if current_view == "edition" else ""
     backtest_active = " active" if current_view == "backtest" else ""
     st.markdown(
         f'<div class="view-tabs">'
         f'<a href="?view=curate" target="_self" class="{curate_active.strip()}">Curate</a>'
+        f'<a href="?view=edition" target="_self" class="{edition_active.strip()}">Edition</a>'
         f'<a href="?view=backtest" target="_self" class="{backtest_active.strip()}">Backtest</a>'
         f'</div>',
         unsafe_allow_html=True,
@@ -846,6 +897,141 @@ if current_view == "backtest":
         )
 
     st.stop()  # do NOT render the curate view
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# EDITION view — what's actually going in the issue
+# Shows ONLY curator-approved stories per newsletter, capped at each
+# newsletter's edition_size. Section-grouped, with per-section issue counter.
+# ─────────────────────────────────────────────────────────────────────────────
+if current_view == "edition":
+    e_col1, e_col2, e_col3 = st.columns([1, 1, 5])
+    with e_col1:
+        ed_date = st.selectbox("date", dates, index=0, key="ed_date", label_visibility="collapsed")
+    with e_col2:
+        ed_nl = st.selectbox(
+            "newsletter", nl_ids, key="ed_nl",
+            format_func=lambda x: nls[x].brand_name,
+            label_visibility="collapsed",
+        )
+    # Load this date's decisions if not yet loaded
+    if ss.loaded_date != ed_date:
+        ss.decisions = dec.load(ed_date)
+        ss.loaded_date = ed_date
+
+    nl = nls[ed_nl]
+    edition_size = nl.edition_size
+
+    # Load scored data for the chosen date
+    ed_scored_raw = read_jsonl(SCORED_DIR / f"{ed_date}.jsonl")
+    ed_scored = [ScoredStory.from_dict(d) for d in ed_scored_raw]
+    blurbs_e = _load_blurbs(ed_date)
+
+    # Approved stories per section, sorted by score
+    by_sec_edition: dict[str, list[ScoredStory]] = {s.id: [] for s in nl.sections}
+    for s in ed_scored:
+        a = s.for_newsletter(ed_nl)
+        if not a:
+            continue
+        decision = ss.decisions.get((s.story.url, ed_nl))
+        if decision and decision.status == dec.APPROVED:
+            if a.section_id in by_sec_edition:
+                by_sec_edition[a.section_id].append(s)
+    for sid in by_sec_edition:
+        by_sec_edition[sid].sort(
+            key=lambda s: s.for_newsletter(ed_nl).score, reverse=True
+        )
+
+    n_approved = sum(len(s) for s in by_sec_edition.values())
+
+    # Header with capacity progress
+    capacity_color = "var(--ok)" if n_approved <= edition_size else "var(--warn)"
+    capacity_text = "ready to publish" if n_approved == edition_size else (
+        "needs more" if n_approved < edition_size else "over capacity"
+    )
+
+    st.markdown(
+        f'<div class="ed-hero">'
+        f'<h2>{nl.brand_name} · {ed_date}</h2>'
+        f'<div class="ed-progress-row">'
+        f'<div class="ed-cap"><span style="color:{capacity_color};font-weight:600;">{n_approved}/{edition_size}</span>'
+        f' stories approved <span class="ed-cap-status">· {capacity_text}</span></div>'
+        f'</div></div>',
+        unsafe_allow_html=True,
+    )
+
+    if n_approved == 0:
+        st.markdown(
+            '<div class="ed-empty">'
+            'No stories approved yet for this issue. Go to <a href="?view=curate" target="_self" style="color:var(--accent);">Curate</a> '
+            'to review candidates and approve the ones you want in the edition.'
+            '</div>',
+            unsafe_allow_html=True,
+        )
+    else:
+        # Render each section
+        for sec in nl.sections:
+            stories = by_sec_edition[sec.id]
+            if not stories:
+                continue
+            st.markdown(
+                f'<div class="ed-sec"><span class="em">{sec.emoji}</span>'
+                f'<h3>{sec.name}</h3>'
+                f'<span class="ed-sec-meta">{len(stories)} approved</span></div>',
+                unsafe_allow_html=True,
+            )
+            for rank, s in enumerate(stories, start=1):
+                a = s.for_newsletter(ed_nl)
+                blurb = blurbs_e.get((s.story.url, ed_nl), {})
+                blurb_text = blurb.get("blurb", "(blurb not generated yet)")
+                minute_read = int(blurb.get("minute_read", 5))
+                from urllib.parse import urlparse as _up
+                domain = _up(s.story.url).netloc.lstrip("www.") or s.story.source
+                title_safe = s.story.title.replace("<", "&lt;").replace(">", "&gt;")
+                blurb_safe = blurb_text.replace("<", "&lt;").replace(">", "&gt;")
+                st.markdown(
+                    f'<div class="ed-story">'
+                    f'<div class="ed-story-head">'
+                    f'<span class="ed-rank">{rank}</span>'
+                    f'<a class="ed-title" href="{s.story.url}" target="_blank">{title_safe}</a>'
+                    f'<span class="ed-meta">{minute_read} min read · {domain}</span>'
+                    f'</div>'
+                    f'<p class="ed-blurb">{blurb_safe}</p>'
+                    f'</div>',
+                    unsafe_allow_html=True,
+                )
+
+        # Generate Issue actions
+        st.markdown('<br>', unsafe_allow_html=True)
+        # Build the merged-blurbs map (respecting any curator edits + rejected filter)
+        merged_e: dict[str, dict] = {}
+        for s in ed_scored:
+            a = s.for_newsletter(ed_nl)
+            if not a:
+                continue
+            d = ss.decisions.get((s.story.url, ed_nl))
+            if not (d and d.status == dec.APPROVED):
+                continue
+            base = blurbs_e.get((s.story.url, ed_nl), {}).copy()
+            if d.edited_blurb:
+                base["blurb"] = d.edited_blurb
+            if base:
+                merged_e[s.story.url] = base
+        # Render issue using only the approved set
+        issue_text = render_tldr(ed_scored, merged_e, ed_nl, ed_date)
+        gc1, gc2, _ = st.columns([1, 1, 4])
+        with gc1:
+            st.download_button(
+                "⬇ download issue .txt",
+                data=issue_text,
+                file_name=f"{ed_nl}-{ed_date}.txt",
+                mime="text/plain",
+                use_container_width=True,
+            )
+        with gc2:
+            st.code(issue_text[:200] + "...", language=None)
+
+    st.stop()
 
 
 # ─────────────────────────────────────────────────────────────────────────────

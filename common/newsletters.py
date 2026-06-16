@@ -32,6 +32,9 @@ class Newsletter:
     voice_skill: str
     sections: list[Section]
     topics: list[str] = field(default_factory=list)
+    # How many stories the actual published TLDR issue contains for this
+    # newsletter. The "Edition" view caps approved stories at this number.
+    edition_size: int = 12
 
     @property
     def section_ids(self) -> list[str]:
@@ -74,6 +77,7 @@ def load_newsletters(path: str = "config/newsletters.yaml") -> dict[str, Newslet
             voice_skill=nl["voice_skill"],
             sections=sections,
             topics=list(nl.get("topics", [])),
+            edition_size=int(nl.get("edition_size", 12)),
         )
     return out
 
