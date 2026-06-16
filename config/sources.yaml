@@ -122,11 +122,19 @@ rss:
   # ─── General Tech / Industry ────────────────────────────────────────────
   - { name: techcrunch,         url: https://techcrunch.com/feed/,                                            topics: [tech, founders, ai] }
   - { name: the_verge,          url: https://www.theverge.com/rss/index.xml,                                  topics: [tech] }
-  - { name: ars_technica,       url: https://feeds.arstechnica.com/arstechnica/index,                         topics: [tech, infosec] }
+  - { name: ars_technica,       url: https://feeds.arstechnica.com/arstechnica/index,                         topics: [tech, infosec, space] }
   - { name: hackaday,           url: https://hackaday.com/feed/,                                              topics: [tech] }
   - { name: ieee_spectrum,      url: https://spectrum.ieee.org/feeds/feed.rss,                                topics: [tech] }
   - { name: morningbrew,        url: https://www.morningbrew.com/feed,                                        topics: [tech, founders] }
   - { name: techmeme,           url: https://www.techmeme.com/feed.xml,                                       topics: [tech, ai, founders] }
+
+  # ─── Space / Hard tech (operationally deep — SpaceX, energy, manufacturing) ─
+  - { name: payload_space,      url: https://payloadspace.com/feed/,                                          topics: [space, founders, tech] }
+  - { name: spacenews,          url: https://spacenews.com/feed/,                                             topics: [space, tech] }
+  - { name: casey_handmer,      url: https://caseyhandmer.wordpress.com/feed/,                                topics: [space, founders, tech] }
+  - { name: construction_physics, url: https://www.construction-physics.com/feed,                             topics: [founders, tech, space] }
+  - { name: doomberg,           url: https://doomberg.substack.com/feed,                                      topics: [founders, fintech, space] }
+  - { name: pmarchive,          url: https://pmarca.substack.com/feed,                                        topics: [founders, tech, ai, space] }
 
 arxiv:
   categories:
