@@ -128,6 +128,57 @@ rss:
   - { name: morningbrew,        url: https://www.morningbrew.com/feed,                                        topics: [tech, founders] }
   - { name: techmeme,           url: https://www.techmeme.com/feed.xml,                                       topics: [tech, ai, founders] }
 
+  # ─── Added from TLDR source audit (the top domains TLDR actually cites) ────
+  # Major financial / business news — cited heavily across all newsletters
+  - { name: bloomberg_tech,     url: https://feeds.bloomberg.com/technology/news.rss,                          topics: [tech, founders, fintech] }
+  - { name: bloomberg_markets,  url: https://feeds.bloomberg.com/markets/news.rss,                             topics: [founders, fintech, crypto] }
+  - { name: cnbc_tech,          url: https://www.cnbc.com/id/19854910/device/rss/rss.html,                     topics: [tech, founders] }
+  - { name: cnbc_business,      url: https://www.cnbc.com/id/10001147/device/rss/rss.html,                     topics: [founders, fintech, tech] }
+  - { name: wsj_tech,           url: https://feeds.content.dowjones.io/public/rss/RSSWSJD,                     topics: [tech, founders] }
+  - { name: nyt_tech,           url: https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml,              topics: [tech, founders, ai] }
+  - { name: reuters_tech,       url: "https://www.reuters.com/arc/outboundfeeds/category/technology/?outputType=xml", topics: [tech, founders] }
+  - { name: venturebeat,        url: https://venturebeat.com/feed/,                                            topics: [tech, ai, founders] }
+  - { name: siliconangle,       url: https://siliconangle.com/feed/,                                           topics: [tech, it, ai] }
+  - { name: thenextweb,         url: https://thenextweb.com/feed,                                              topics: [tech, founders] }
+  - { name: digitaltrends,      url: https://www.digitaltrends.com/feed/,                                      topics: [tech] }
+  - { name: blog_google,        url: https://blog.google/rss/,                                                 topics: [tech, ai] }
+
+  # Crypto / fintech
+  - { name: coindesk,           url: https://www.coindesk.com/arc/outboundfeeds/rss/,                          topics: [crypto, fintech] }
+  - { name: finextra,           url: https://www.finextra.com/feeds/rss.aspx,                                  topics: [fintech] }
+
+  # Infosec specialty
+  - { name: securityweek,       url: https://www.securityweek.com/feed/,                                       topics: [infosec] }
+  - { name: thehackernews,      url: https://thehackernews.com/feeds/posts/default,                            topics: [infosec] }
+  - { name: cyberscoop,         url: https://cyberscoop.com/feed/,                                             topics: [infosec, it] }
+  - { name: helpnetsecurity,    url: https://www.helpnetsecurity.com/feed/,                                    topics: [infosec] }
+
+  # IT / enterprise
+  - { name: itpro,              url: https://www.itpro.com/rss,                                                topics: [it, infosec] }
+  - { name: cio_full,           url: https://www.cio.com/feed/,                                                topics: [it, founders] }
+
+  # Marketing specialty (the most under-covered topic)
+  - { name: searchengineland,   url: https://searchengineland.com/feed,                                        topics: [marketing] }
+  - { name: martech,            url: https://martech.org/feed/,                                                topics: [marketing] }
+  - { name: marketingland,      url: https://marketingland.com/feed,                                           topics: [marketing] }
+  - { name: neilpatel,          url: https://neilpatel.com/feed/,                                              topics: [marketing] }
+  - { name: foundationinc,      url: https://foundationinc.co/feed/,                                           topics: [marketing] }
+  - { name: animalz,            url: https://www.animalz.co/blog/feed/,                                        topics: [marketing] }
+  - { name: ahrefs_blog,        url: https://ahrefs.com/blog/feed/,                                            topics: [marketing] }
+  - { name: backlinko,          url: https://backlinko.com/feed,                                               topics: [marketing] }
+
+  # Design specialty
+  - { name: creativebloq,       url: https://www.creativebloq.com/rss.xml,                                     topics: [design] }
+  - { name: creativeboom,       url: https://www.creativeboom.com/feed/,                                       topics: [design] }
+  - { name: dezeen,             url: https://www.dezeen.com/feed/,                                             topics: [design] }
+
+  # Founders / VC specialty — discovered in TLDR Founders source audit
+  - { name: mironov,            url: https://www.mironov.com/feed/,                                            topics: [founders, product] }
+  - { name: elenaverna,         url: https://www.elenaverna.com/feed,                                          topics: [founders, growth, marketing] }
+  - { name: speedrun_sub,       url: https://speedrun.substack.com/feed,                                       topics: [founders] }
+  - { name: not_boring,         url: https://www.notboring.co/feed,                                            topics: [founders, fintech, crypto] }
+  - { name: contrary_research,  url: https://research.contrary.com/feed,                                       topics: [founders, vc] }
+
   # ─── Space / Hard tech (operationally deep — SpaceX, energy, manufacturing) ─
   - { name: payload_space,      url: https://payloadspace.com/feed/,                                          topics: [space, founders, tech] }
   - { name: spacenews,          url: https://spacenews.com/feed/,                                             topics: [space, tech] }

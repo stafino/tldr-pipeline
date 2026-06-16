@@ -26,8 +26,11 @@ log = logging.getLogger(__name__)
 
 BACKTEST_DIR = Path("data/backtest")
 ARCHIVE_URL = "https://tldr.tech/{slug}/{d}"
-USER_AGENT = "tldr-pipeline-backtest/0.2 (+contact@example.com)"
-SIM_THRESHOLD = 0.72  # cosine sim — title-level, deliberately permissive
+USER_AGENT = "tldr-pipeline-backtest/0.3 (+contact@example.com)"
+
+# Title-cosine threshold. Lowered from 0.72 → 0.62 now that URL-overlap acts as
+# a strong cross-check — fewer false positives, more true matches caught.
+SIM_THRESHOLD = 0.62
 
 SLUG_MAP = {
     "tldr_tech": "tech",
@@ -107,9 +110,36 @@ def _clean_title(text: str) -> str:
     return MINUTE_READ_RE.sub("", text).strip()
 
 
-def fetch_tldr_titles(newsletter_id: str, date: str) -> list[str]:
-    """Scrape the published headlines from tldr.tech/<slug>/<date>.
+def _canonical_url(url: str) -> str:
+    """Strip tracking params + normalize for cross-source comparison.
+    Example:
+      https://www.example.com/post?utm_source=tldr&utm_campaign=x → example.com/post
+    """
+    if not url:
+        return ""
+    try:
+        from urllib.parse import urlparse, urlunparse
+        p = urlparse(url)
+        # Strip query string entirely (utm_*, ref=, etc.) — TLDR appends ?utm_source=tldrai
+        host = p.netloc.lower()
+        if host.startswith("www."):
+            host = host[4:]
+        # Re-build without scheme/query/fragment
+        return f"{host}{p.path}".rstrip("/")
+    except Exception:
+        return url.lower().rstrip("/")
 
+
+def fetch_tldr_titles(newsletter_id: str, date: str) -> list[str]:
+    """Backward-compat wrapper returning just titles. New code should use
+    fetch_tldr_stories() which returns (title, url) pairs."""
+    return [t for t, _ in fetch_tldr_stories(newsletter_id, date)]
+
+
+def fetch_tldr_stories(newsletter_id: str, date: str) -> list[tuple[str, str]]:
+    """Scrape the published headlines AND source URLs from tldr.tech/<slug>/<date>.
+
+    Returns list of (title, source_url) tuples. URL may be "" if not found.
     Returns an empty list if the page doesn't exist OR if it returned the
     newsletter's landing page (when the day's issue isn't published yet).
     """
@@ -127,14 +157,11 @@ def fetch_tldr_titles(newsletter_id: str, date: str) -> list[str]:
         return []
 
     soup = BeautifulSoup(r.text, "lxml")
-    titles: list[str] = []
+    out: list[tuple[str, str]] = []
     for tag in soup.find_all(["h3", "h2"]):
         text = tag.get_text(" ", strip=True)
         if not text:
             continue
-        # Only accept entries that look like real TLDR story headlines
-        # (those carry the "(N minute read)" annotation in the rendered HTML).
-        # Sponsor entries match the format too — skip them.
         if SPONSOR_RE.search(text):
             continue
         if not MINUTE_READ_RE.search(text):
@@ -142,16 +169,28 @@ def fetch_tldr_titles(newsletter_id: str, date: str) -> list[str]:
         cleaned = _clean_title(text)
         if len(cleaned) < 6:
             continue
-        titles.append(cleaned)
+        # TLDR wraps each <h3> heading in a parent <a> that links to the
+        # source URL. Find the closest parent <a> with an href.
+        link = tag.find_parent("a", href=True)
+        if not link:
+            # Fallbacks for the rare cases where the heading isn't wrapped:
+            # check inside, then next/previous sibling anchors.
+            link = tag.find("a", href=True)
+        src_url = ""
+        if link:
+            href = link.get("href", "")
+            if href.startswith("http") and "tldr.tech" not in href:
+                src_url = href.split("?")[0]  # strip TLDR's utm trailer
+        out.append((cleaned, src_url))
 
-    # De-dupe preserving order
+    # De-dupe by title preserving order
     seen: set[str] = set()
-    out: list[str] = []
-    for t in titles:
+    deduped: list[tuple[str, str]] = []
+    for t, u in out:
         if t not in seen:
             seen.add(t)
-            out.append(t)
-    return out
+            deduped.append((t, u))
+    return deduped
 
 
 # ────────────────────────────────────────────────────────────────────────────
@@ -170,25 +209,55 @@ def _embed(texts: list[str]) -> np.ndarray:
 
 
 def compute_matches(
-    tldr_titles: list[str], predicted_titles: list[str]
+    tldr_titles: list[str],
+    predicted_titles: list[str],
+    tldr_urls: list[str] | None = None,
+    predicted_urls: list[str] | None = None,
 ) -> tuple[list[int | None], list[float | None], list[bool]]:
-    """For each prediction, find the best-matching TLDR title (if sim >= threshold).
+    """For each prediction, find the best-matching TLDR story.
+
+    A match is recorded when ANY of these is true:
+      - URL match: canonical(pred_url) == canonical(tldr_url) (similarity = 1.0)
+      - Title cosine similarity >= SIM_THRESHOLD (default 0.62)
+
     Returns (matched_tldr_idx_per_pred, similarity_per_pred, tldr_matched).
     """
     n_pred = len(predicted_titles)
     if not tldr_titles or not predicted_titles:
         return [None] * n_pred, [None] * n_pred, [False] * len(tldr_titles)
 
-    embs = _embed(tldr_titles + predicted_titles)
     n_tldr = len(tldr_titles)
+    tldr_urls = tldr_urls or [""] * n_tldr
+    predicted_urls = predicted_urls or [""] * n_pred
+
+    # Canonicalize URLs once
+    tldr_url_canon = [_canonical_url(u) for u in tldr_urls]
+    pred_url_canon = [_canonical_url(u) for u in predicted_urls]
+    # Build lookup: canonical_url → tldr_index
+    url_to_tldr_idx: dict[str, int] = {}
+    for i, u in enumerate(tldr_url_canon):
+        if u and u not in url_to_tldr_idx:
+            url_to_tldr_idx[u] = i
+
+    # Title embeddings — used when URL match doesn't fire
+    embs = _embed(tldr_titles + predicted_titles)
     tldr_e = embs[:n_tldr]
     pred_e = embs[n_tldr:]
-    sims = pred_e @ tldr_e.T  # shape: (n_pred, n_tldr)
+    sims = pred_e @ tldr_e.T  # (n_pred, n_tldr)
 
     matched_idx: list[int | None] = []
     matched_sim: list[float | None] = []
     tldr_hit = [False] * n_tldr
+
     for i in range(n_pred):
+        # 1) URL match (highest confidence)
+        url_match = url_to_tldr_idx.get(pred_url_canon[i])
+        if url_match is not None:
+            matched_idx.append(url_match)
+            matched_sim.append(1.0)
+            tldr_hit[url_match] = True
+            continue
+        # 2) Title cosine match
         j = int(np.argmax(sims[i]))
         s = float(sims[i][j])
         if s >= SIM_THRESHOLD:
@@ -227,7 +296,9 @@ def _predicted_titles_and_urls(
 
 
 def compute_backtest(newsletter_id: str, date: str) -> BacktestResult:
-    tldr_titles = fetch_tldr_titles(newsletter_id, date)
+    tldr_pairs = fetch_tldr_stories(newsletter_id, date)
+    tldr_titles = [t for t, _ in tldr_pairs]
+    tldr_urls = [u for _, u in tldr_pairs]
     preds, _ = _predicted_titles_and_urls(newsletter_id, date)
 
     if not tldr_titles:
@@ -248,7 +319,10 @@ def compute_backtest(newsletter_id: str, date: str) -> BacktestResult:
         )
 
     predicted_titles = [p[1] for p in preds]
-    matched_idx, matched_sim, tldr_hit = compute_matches(tldr_titles, predicted_titles)
+    predicted_urls = [p[2] for p in preds]
+    matched_idx, matched_sim, tldr_hit = compute_matches(
+        tldr_titles, predicted_titles, tldr_urls=tldr_urls, predicted_urls=predicted_urls,
+    )
 
     predictions = [
         PredictionMatch(
