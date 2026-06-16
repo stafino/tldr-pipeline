@@ -1,9 +1,35 @@
 {
   "date": "2026-06-16",
   "newsletter": "tldr_it",
-  "fetched_at": "2026-06-16T11:47:27.908275+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-06-16T12:44:06.003424+00:00",
+  "tldr_titles": [
+    "AI hallucinations are already affecting IT operations",
+    "Palo Alto Warns GlobalProtect VPN Flaw Is Being Actively Exploited",
+    "Ivanti Sentry flaw is actively exploited in the wild",
+    "Enterprises are still struggling to operationalize AI agents",
+    "Stop Monitoring AI Systems Like Web Services",
+    "Introducing the MDN MCP server",
+    "Open-source CI/CD abuse detector flags malicious workflow changes",
+    "Wi-Fi Flies Higher As Edge AI Build-Out Takes Root",
+    "Senior engineers are spending more time cleaning up AI-generated code",
+    "AI Agent Governance Gap Is Becoming An IT Problem",
+    "DDoSing Software Delivery Pipelines",
+    "Omada launches Agent Governance"
+  ],
+  "tldr_matched": [
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -26,8 +52,8 @@
       "score": 65.0,
       "title": "Palo Alto Warns of Active Exploitation of PAN-OS GlobalProtect VPN Flaw",
       "url": "https://thehackernews.com/2026/06/palo-alto-warns-of-active-exploitation.html",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 1,
+      "similarity": 0.893993079662323
     },
     {
       "rank": 4,
@@ -278,7 +304,19 @@
       "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false
+  "recall_at": {
+    "10": 0.08333333333333333,
+    "25": 0.08333333333333333,
+    "50": 0.08333333333333333,
+    "100": 0.08333333333333333,
+    "34": 0.08333333333333333
+  },
+  "hits_at": {
+    "10": 1,
+    "25": 1,
+    "50": 1,
+    "100": 1,
+    "34": 1
+  },
+  "available": true
 }

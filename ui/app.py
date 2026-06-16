@@ -1,7 +1,7 @@
 """TLDR pipeline curator UI — dark theme, link-based navigation.
 
 Three-pane layout (Linear Triage style):
-- left rail: clickable newsletters + Cross-assignments queue
+- left rail: clickable newsletters + Backlog (universal queue filtered by date)
 - middle: section-grouped story list, each row is a clickable link
 - right: selected story detail with inline blurb editor + approve/reject
 """
@@ -855,11 +855,10 @@ if search_q:
 nl_shown: dict[str, int] = {nid: 0 for nid in nl_ids}
 nl_candidates: dict[str, int] = {nid: 0 for nid in nl_ids}
 nl_decided: dict[str, int] = {nid: 0 for nid in nl_ids}
-cross_set: set[str] = set()
+# Backlog: EVERY scored story (used by the universal queue in the rail).
+backlog_urls: set[str] = {s.story.url for s in scored_all}
 
 for s in scored_all:
-    if len(s.assignments) > 1:
-        cross_set.add(s.story.url)
     for a in s.assignments:
         if a.newsletter in nl_candidates:
             nl_candidates[a.newsletter] += 1
@@ -894,10 +893,11 @@ rail_col, mid_col, det_col = st.columns([1.0, 3.0, 2.0], gap="medium")
 with rail_col:
     rail_html = ['<div class="rail">', '<div class="head">queue</div>']
 
-    cross_decided = sum(
-        1 for url in cross_set
-        if all(
-            ss.decisions.get((url, a.newsletter), dec.Decision(url, a.newsletter)).is_decided()
+    # Backlog: count of all scored stories that have any decision yet (across any newsletter)
+    backlog_decided = sum(
+        1 for url in backlog_urls
+        if any(
+            (d := ss.decisions.get((url, a.newsletter))) and d.is_decided()
             for s in scored_all if s.story.url == url for a in s.assignments
         )
     )
@@ -905,8 +905,8 @@ with rail_col:
     rail_html.append(
         _link(
             {"nl": CROSS_KEY},
-            f'<span class="lbl"><span class="star">★</span>Cross-assigned</span>'
-            f'<span class="ct">{cross_decided}/{len(cross_set)}</span>',
+            f'<span class="lbl"><span class="star">★</span>Backlog</span>'
+            f'<span class="ct">{backlog_decided}/{len(backlog_urls)}</span>',
             css_class=f"rail-link",
         ).replace('class="rail-link"', f'class="rail-link{cross_active}"')
     )
@@ -989,18 +989,31 @@ with mid_col:
     parts: list[str] = ['<div class="stories-pane">']
 
     if ss.selected_nl == CROSS_KEY:
-        cross_stories = sorted(
-            [s for s in scored_all if s.story.url in cross_set],
-            key=lambda s: s.score, reverse=True
-        )
+        # Backlog: every scored story, filtered to those PUBLISHED on the
+        # selected date (the top-bar date picker becomes the filter here).
+        target_iso = selected_date  # YYYY-MM-DD
+        backlog_stories = []
+        for s in scored_all:
+            pub = (s.story.published_at or "")[:10]
+            if pub == target_iso:
+                backlog_stories.append(s)
+        backlog_stories.sort(key=lambda s: s.score, reverse=True)
+
         parts.append(
-            f'<div class="sec-head-top"><h2>★ Cross-assignments</h2>'
-            f'<span class="meta">{len(cross_stories)} stories in 2+ newsletters</span></div>'
+            f'<div class="sec-head-top"><h2>★ Backlog</h2>'
+            f'<span class="meta">{len(backlog_stories)} stories published on {selected_date} '
+            f'(of {len(scored_all)} scored)</span></div>'
         )
-        if not cross_stories:
-            parts.append('<div class="empty">No cross-assignments today.</div>')
+        if not backlog_stories:
+            parts.append(
+                f'<div class="empty">No stories were <b>published</b> on {selected_date}. '
+                f'Try a different date from the picker above — the backlog filters by '
+                f'each story\'s actual publish date, not the scrape date.</div>'
+            )
         else:
-            for rank, s in enumerate(cross_stories, start=1):
+            for rank, s in enumerate(backlog_stories, start=1):
+                # In Backlog view, pick the highest-scoring assignment as the
+                # detail-pane target. Falls back to any if no assignments at all.
                 primary = s.primary
                 if primary is None:
                     continue
@@ -1011,6 +1024,8 @@ with mid_col:
                 decision = ss.decisions.get((s.story.url, primary.newsletter))
                 status_cls, glyph = _row_status(decision, blurb, section_min, section_max)
                 is_sel = (ss.selected_url == s.story.url and ss.selected_nl_for_detail == primary.newsletter)
+                # In Backlog, show ALL newsletter chips (no exclusion) so curators
+                # can see at a glance where each story is assigned.
                 chips_html = _chips_for(s, ss.decisions, primary_nl=primary.newsletter)
                 date_text = _short_date(s.story.published_at, selected_date)
                 parts.append(_build_row_html(
@@ -1170,7 +1185,7 @@ with det_col:
             )
             dec.save(selected_date, ss.decisions)
 
-        # Cross-assignments + why-it-matters in one HTML blob so styles apply consistently.
+        # Also-in chips + why-it-matters in one HTML blob so styles apply consistently.
         bottom_parts: list[str] = []
 
         if len(selected_scored.assignments) > 1:

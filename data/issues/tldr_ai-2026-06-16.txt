@@ -160,33 +160,33 @@ Making Claude a Chemist (1 minute read)
 
 Anthropic shared research on adapting Claude for chemistry tasks, evaluating how well the model handles work like reaction prediction, synthesis planning, and spectral interpretation. The post details where Claude matches specialized chemistry tools and where it still falls short, and outlines the evaluations and domain-specific testing used to measure its performance on real chemical reasoning problems.
 
-Scalable Circuit Learning for Interpreting Large Language Models (5 minute read)
+Scalable Circuit Learning for Interpreting Large Language Models (1 minute read)
 
-(blurb not generated)
+CircuitLasso is a scalable circuit-learning method that uses sparse linear regression to recover sparse circuits over sparse autoencoder features, matching the structural accuracy of state-of-the-art intervention-based methods at a fraction of the computational cost. The approach uncovers how human-interpretable semantic features propagate through a model and influence its predictions, addressing the high dimensionality that makes existing intervention-based circuit learning computationally prohibitive.
 
-KVEraser: Learning to Steer KV Cache for Efficient Localized Context Erasing (5 minute read)
+KVEraser: Learning to Steer KV Cache for Efficient Localized Context Erasing (1 minute read)
 
-(blurb not generated)
+KVEraser is a learned KV-cache editing method that removes a span from a processed context by replacing only the erased interval's KV states with learned steering states, while reusing the rest of the cache unchanged. The approach avoids exact erasing's need to recompute every token after the deleted span, making cost depend on erased-span length rather than suffix length for cases like stale retrieved facts or prompt injections caught after prefill.
 
-Looking Is Not Picking: An Attention-Segment Account of Tool-Selection Failures in LLM Agents (5 minute read)
+Looking Is Not Picking: An Attention-Segment Account of Tool-Selection Failures in LLM Agents (1 minute read)
 
-(blurb not generated)
+This paper shows that LLM agents which mis-call tools usually attend to the correct tool definition, contradicting the "crowded harness" or "lost-in-the-middle" explanation. On real BFCL failures the model attends most to the right tool 80% of the time, and readout-side interventions such as attention-logit bias or residual-stream steering recover 59-91% of failures, versus under 23% from reordering or duplicating the prompt.
 
-Configuration Smells in AGENTS.md Files: Common Mistakes in Configuring Coding Agents (5 minute read)
+Configuration Smells in AGENTS.md Files: Common Mistakes in Configuring Coding Agents (1 minute read)
 
-(blurb not generated)
+This paper presents the first catalog of configuration smells for coding-agent files like AGENTS.md and CLAUDE.md, identifying six recurring problems through grey literature review and repository mining, along with automated heuristics to detect them. An analysis of 100 popular open-source repositories found the smells widespread, with Lint Leakage the most common, affecting 62% of the files.
 
-Boosting MoE Training Throughput with Advanced Fusion Kernels (5 minute read)
+Boosting MoE Training Throughput with Advanced Fusion Kernels (1 minute read)
 
-(blurb not generated)
+NVIDIA's engineering blog details advanced fusion kernels that increase training throughput for mixture-of-experts (MoE) models by combining multiple operations into single GPU kernels to cut memory traffic and launch overhead. The post covers fused kernels for routing, grouped GEMMs, and activation functions, showing measurable speedups for the expert layers that dominate MoE compute.
 
-Exact Posterior Score Estimation for Solving Linear Inverse Problems (5 minute read)
+Exact Posterior Score Estimation for Solving Linear Inverse Problems (1 minute read)
 
-(blurb not generated)
+This paper derives the exact posterior score in closed form for linear Gaussian inverse problems, showing that posterior sampling reduces to denoising at an operator-dependent shifted pivot under anisotropic noise. The authors turn this identity into Exact Posterior Score (EPS), a training objective that preserves the input/output structure of standard denoiser pretraining and can be trained from scratch or fine-tuned from an existing model.
 
-Your Privacy My Cloak: Backdoor Attacks on Differentially Private Federated Learning (5 minute read)
+Your Privacy My Cloak: Backdoor Attacks on Differentially Private Federated Learning (1 minute read)
 
-(blurb not generated)
+This paper challenges the assumption that differential privacy makes federated learning more robust against backdoor attacks, showing instead that DP compliance masks the statistical signals defenses rely on to filter malicious updates. The authors introduce RING, a backdoor-agnostic perturbation layer in which compromised clients collaboratively craft adversarial updates that reconstruct a strong backdoor signal during aggregation while evading anomaly detection.
 
 Follow the Latent Roadmap: Navigating Revocable Decoding for Diffusion LLMs with Anchor Tokens (5 minute read)
 
