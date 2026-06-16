@@ -507,23 +507,35 @@ search_q = (ss.get("search") or "").strip().lower()
 if search_q:
     scored_all = [s for s in scored_all if search_q in s.story.title.lower()]
 
-nl_totals: dict[str, int] = {nid: 0 for nid in nl_ids}
+# nl_shown = the count of stories actually displayed for each newsletter
+# (capped by per-section target_count). nl_candidates = total stories that
+# scored above MIN_ASSIGNMENT_SCORE for that newsletter (informational).
+nl_shown: dict[str, int] = {nid: 0 for nid in nl_ids}
+nl_candidates: dict[str, int] = {nid: 0 for nid in nl_ids}
 nl_decided: dict[str, int] = {nid: 0 for nid in nl_ids}
 cross_set: set[str] = set()
+
 for s in scored_all:
     if len(s.assignments) > 1:
         cross_set.add(s.story.url)
     for a in s.assignments:
-        if a.newsletter in nl_totals:
-            nl_totals[a.newsletter] += 1
-            d = ss.decisions.get((s.story.url, a.newsletter))
+        if a.newsletter in nl_candidates:
+            nl_candidates[a.newsletter] += 1
+
+# Compute "shown" counts per newsletter by replaying top_per_section.
+for nid in nl_ids:
+    by_sec = top_per_section(scored_all, nid)
+    for sec_id, stories in by_sec.items():
+        nl_shown[nid] += len(stories)
+        for s in stories:
+            d = ss.decisions.get((s.story.url, nid))
             if d and d.is_decided():
-                nl_decided[a.newsletter] += 1
+                nl_decided[nid] += 1
 
 # Auto-select first newsletter on first load (prefer one with assignments)
 if ss.selected_nl is None or ss.selected_nl not in nl_ids + [CROSS_KEY]:
     for nid in nl_ids:
-        if nl_totals[nid] > 0:
+        if nl_shown[nid] > 0:
             ss.selected_nl = nid
             break
     else:
@@ -560,7 +572,7 @@ with rail_col:
     rail_html.append('<div class="head">newsletters</div>')
     for nid in nl_ids:
         nl = nls[nid]
-        total = nl_totals[nid]
+        total = nl_shown[nid]
         decided = nl_decided[nid]
         label = nl.brand_name.replace("TLDR ", "").replace("TLDR", "Main")
         active = " active" if ss.selected_nl == nid else ""
