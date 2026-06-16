@@ -63,6 +63,10 @@ run_stage "format" ./tldr format all
 # (and the last few days) and store the comparison vs our predictions so the
 # UI can render the recall dashboard without re-scraping at view time.
 run_stage "backtest" ./tldr backtest_cache
+# Learn from the backtest gap: update per-newsletter source-weight
+# preferences so the next ranking run biases toward sources TLDR
+# actually picks from.
+run_stage "learn_weights" uv run python scripts/learn_source_weights.py
 
 # Commit + push whatever data actually landed, even if some stages failed.
 # That way the deployed Streamlit at least gets fresh raw/scored data even
@@ -85,7 +89,7 @@ ls -1t data/logs/cron-*.log 2>/dev/null | tail -n +31 | xargs -r rm -f
 
 echo
 echo "── SUMMARY ──────────────────────────────────"
-for stage in ingest dedup rank blurbs format backtest; do
+for stage in ingest dedup rank blurbs format backtest learn_weights; do
   printf "  %-8s %s\n" "$stage" "${STATUS[$stage]:-skipped}"
 done
 echo "▸ refresh complete: $(date)"

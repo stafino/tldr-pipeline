@@ -32,6 +32,16 @@ GLOBAL RUBRIC (apply to every newsletter):
 
 {rubric}
 
+LEARNED SOURCE PREFERENCES (per newsletter):
+
+The pipeline tracks which source domains TLDR has historically picked
+from. Use these as a soft prior when scoring — stories from a favored
+source for a given newsletter deserve a modest score boost (+3 to +8).
+Stories from unknown / low-preference domains aren't penalized; this is
+purely a positive signal.
+
+{source_preferences}
+
 TLDR FAMILY (assign the story to all newsletters where its score would be {min_score} or above; you can also return [] if it fits none):
 
 {family}
@@ -118,8 +128,24 @@ def rank_stories(stories: list[Story], use_cache: bool = True) -> list[ScoredSto
         nid: set(nl.section_ids) for nid, nl in nls.items()
     }
 
+    # Inject learned source-weight preferences per newsletter (if any exist).
+    # The first run has empty weights — the file is populated after the first
+    # backtest cycle and compounds from there.
+    from common.source_weights import format_for_prompt
+
+    source_pref_lines: list[str] = []
+    for nid in nls.keys():
+        block = format_for_prompt(nid, k=10)
+        if block:
+            source_pref_lines.append(block)
+    source_preferences = "\n\n".join(source_pref_lines) if source_pref_lines else (
+        "(No learned preferences yet — they populate after the first backtest cycle.)"
+    )
+
     system = SYSTEM_TEMPLATE.format(
-        rubric=rubric, family=_format_family(nls), min_score=MIN_ASSIGNMENT_SCORE
+        rubric=rubric, family=_format_family(nls),
+        min_score=MIN_ASSIGNMENT_SCORE,
+        source_preferences=source_preferences,
     )
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
 

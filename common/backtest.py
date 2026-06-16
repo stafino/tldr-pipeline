@@ -17,6 +17,7 @@ from pathlib import Path
 import numpy as np
 import requests
 from bs4 import BeautifulSoup
+from urllib.parse import urlparse
 
 from common.newsletters import load_newsletters
 from common.story import ScoredStory, read_jsonl
@@ -70,10 +71,11 @@ class BacktestResult:
     recall_at: dict[int, float] = field(default_factory=dict)   # K → recall
     hits_at: dict[int, int] = field(default_factory=dict)
     available: bool = True                  # False if TLDR's archive page didn't exist
+    tldr_urls: list[str] = field(default_factory=list)     # source URLs aligned with tldr_titles
+    tldr_domains: list[str] = field(default_factory=list)  # canonical domains, used by source-weight learner
 
     def to_dict(self) -> dict:
         d = asdict(self)
-        # asdict converts int keys to str; keep them as str for JSON anyway
         d["recall_at"] = {str(k): v for k, v in self.recall_at.items()}
         d["hits_at"] = {str(k): v for k, v in self.hits_at.items()}
         return d
@@ -90,6 +92,8 @@ class BacktestResult:
             recall_at={int(k): float(v) for k, v in d.get("recall_at", {}).items()},
             hits_at={int(k): int(v) for k, v in d.get("hits_at", {}).items()},
             available=d.get("available", True),
+            tldr_urls=d.get("tldr_urls", []),
+            tldr_domains=d.get("tldr_domains", []),
         )
 
 
@@ -316,6 +320,8 @@ def compute_backtest(newsletter_id: str, date: str) -> BacktestResult:
             recall_at={},
             hits_at={},
             available=False,
+            tldr_urls=[],
+            tldr_domains=[],
         )
 
     predicted_titles = [p[1] for p in preds]
@@ -348,6 +354,13 @@ def compute_backtest(newsletter_id: str, date: str) -> BacktestResult:
         hits_at[k] = hits
         recall_at[k] = hits / n_tldr if n_tldr else 0.0
 
+    tldr_domains = [
+        (urlparse(u).netloc.lower().lstrip("www.") if u else "")
+        for u in tldr_urls
+    ]
+    # Strip the www. prefix consistently
+    tldr_domains = [d[4:] if d.startswith("www.") else d for d in tldr_domains]
+
     return BacktestResult(
         date=date,
         newsletter=newsletter_id,
@@ -358,6 +371,8 @@ def compute_backtest(newsletter_id: str, date: str) -> BacktestResult:
         recall_at=recall_at,
         hits_at=hits_at,
         available=True,
+        tldr_urls=tldr_urls,
+        tldr_domains=tldr_domains,
     )
 
 
