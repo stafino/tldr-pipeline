@@ -63,6 +63,10 @@ class ScoredStory:
     is_novel: bool
     is_mainstream_relevant: bool
     assignments: list[Assignment] = field(default_factory=list)
+    components: dict[str, int] = field(default_factory=dict)  # technical/novelty/implications/credibility/mainstream
+    boosts: dict[str, int] = field(default_factory=dict)      # freshness/source_weight/engagement/already_covered
+    hn_points: int = 0
+    hn_comments: int = 0
 
     @property
     def primary(self) -> Assignment | None:
@@ -89,6 +93,10 @@ class ScoredStory:
             "is_novel": self.is_novel,
             "is_mainstream_relevant": self.is_mainstream_relevant,
             "assignments": [a.to_dict() for a in self.assignments],
+            "components": dict(self.components),
+            "boosts": dict(self.boosts),
+            "hn_points": self.hn_points,
+            "hn_comments": self.hn_comments,
         }
 
     @classmethod
@@ -111,6 +119,10 @@ class ScoredStory:
             is_novel=bool(d.get("is_novel", False)),
             is_mainstream_relevant=bool(d.get("is_mainstream_relevant", False)),
             assignments=assignments,
+            components={k: int(v) for k, v in d.get("components", {}).items()},
+            boosts={k: int(v) for k, v in d.get("boosts", {}).items()},
+            hn_points=int(d.get("hn_points", 0)),
+            hn_comments=int(d.get("hn_comments", 0)),
         )
 
 

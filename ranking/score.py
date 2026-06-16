@@ -61,6 +61,17 @@ published this exact URL in the last 14 days. Don't recommend it again
 unless it's a major update — apply a -25 score adjustment to the
 already-covered newsletter(s) so it falls out of the top pool.
 
+ENGAGEMENT SIGNAL:
+
+The engagement_signal field shows the story's Hacker News traction:
+points, comment count, age. This is a noisy but real reader-attention
+signal. Apply this adjustment:
+  - HN >= 200 points: +5 (strong reader signal)
+  - HN >= 100 points: +3
+  - HN >= 50 points: +1
+  - HN < 50 or no signal: 0
+Don't penalize — many high-quality stories never trend on HN.
+
 TLDR FAMILY (assign the story to all newsletters where its score would be {min_score} or above; you can also return [] if it fits none):
 
 {family}
@@ -79,6 +90,7 @@ Source topics: {source_topics}
 URL: {url}
 Published: {published_at} (hours_old: {hours_old})
 already_covered_by: {already_covered_by}
+engagement_signal: {engagement_signal}
 Snippet: {snippet}
 
 Return a JSON object with exactly these keys:
@@ -87,6 +99,19 @@ Return a JSON object with exactly these keys:
   "is_technical": <bool>,
   "is_novel": <bool>,
   "is_mainstream_relevant": <bool>,
+  "components": {{
+    "technical": <integer 0-100>,
+    "novelty": <integer 0-100>,
+    "implications": <integer 0-100>,
+    "credibility": <integer 0-100>,
+    "mainstream": <integer 0-100>
+  }},
+  "boosts": {{
+    "freshness": <int>,
+    "source_weight": <int>,
+    "engagement": <int>,
+    "already_covered": <int>
+  }},
   "assignments": [
     {{"newsletter": "<one of: {newsletter_ids}>", "section_id": "<a section_id for that newsletter>", "score": <integer 0-100>}}
     // up to 3 assignments; empty list if the story fits nothing
@@ -185,6 +210,14 @@ def rank_stories(stories: list[Story], use_cache: bool = True) -> list[ScoredSto
     from datetime import date as _date
     covered = build_covered_set(_date.today(), lookback_days=14)
 
+    # Fetch HN engagement signal for every story (cached for 6h).
+    from common.engagement import batch_fetch as fetch_engagement
+    log.info("Fetching engagement signal for %d stories (HN/Algolia)...", len(stories))
+    eng_signals = fetch_engagement([s.url for s in stories], concurrency=8)
+    log.info("Engagement signals: %d found, %d empty",
+             sum(1 for s in eng_signals.values() if s.found),
+             sum(1 for s in eng_signals.values() if not s.found))
+
     system = SYSTEM_TEMPLATE.format(
         rubric=rubric, family=_format_family(nls),
         min_score=MIN_ASSIGNMENT_SCORE,
@@ -218,6 +251,8 @@ def rank_stories(stories: list[Story], use_cache: bool = True) -> list[ScoredSto
             cu = _canonical_url(story.url)
             covered_nls = covered.get(cu, [])
             already_covered_by = ", ".join(covered_nls) if covered_nls else "(none)"
+            engagement_signal = eng_signals.get(story.url, type("X", (), {"summary": lambda: "no HN signal"})())
+            eng_text = engagement_signal.summary() if hasattr(engagement_signal, "summary") else "no HN signal"
 
             user = (
                 USER_TEMPLATE
@@ -229,6 +264,7 @@ def rank_stories(stories: list[Story], use_cache: bool = True) -> list[ScoredSto
                 .replace("{published_at}", str(story.published_at))
                 .replace("{hours_old}", str(hours_old))
                 .replace("{already_covered_by}", already_covered_by)
+                .replace("{engagement_signal}", eng_text)
                 .replace("{snippet}", (story.raw_text or "")[:500])
                 .replace("{newsletter_ids}", ", ".join(nls.keys()))
             )
@@ -301,6 +337,12 @@ def rank_stories(stories: list[Story], use_cache: bool = True) -> list[ScoredSto
             continue
 
         max_score = max(a.score for a in clean)
+        # Pull the explainability fields from the model's response
+        comp = data.get("components", {}) or {}
+        boosts = data.get("boosts", {}) or {}
+        eng = eng_signals.get(story.url)
+        hn_pts = eng.hn_points if eng else 0
+        hn_cmts = eng.hn_comments if eng else 0
         scored.append(
             ScoredStory(
                 story=story,
@@ -310,6 +352,10 @@ def rank_stories(stories: list[Story], use_cache: bool = True) -> list[ScoredSto
                 is_novel=bool(data.get("is_novel", False)),
                 is_mainstream_relevant=bool(data.get("is_mainstream_relevant", False)),
                 assignments=clean,
+                components={k: int(v) for k, v in comp.items() if isinstance(v, (int, float))},
+                boosts={k: int(v) for k, v in boosts.items() if isinstance(v, (int, float))},
+                hn_points=hn_pts,
+                hn_comments=hn_cmts,
             )
         )
 

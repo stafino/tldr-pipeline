@@ -143,6 +143,24 @@ def generate_blurb(
         max_words=section.max_words,
         sentence_guidance=_sentence_guidance(section),
     )
+
+    # Fetch the full article body for richer context. The RSS snippet is often
+    # truncated to 200-400 chars; full body gives the LLM something substantive
+    # to summarize from. Cached forever per URL.
+    from common.article_fetch import fetch_body
+    article_body = ""
+    try:
+        article_body = fetch_body(scored.story.url, max_chars=2500)
+    except Exception as e:
+        log.debug("Body fetch failed for %s: %r", scored.story.url, e)
+    # Combine the RSS snippet (if it exists) and the article body; prefer body
+    # when long enough to be informative.
+    if len(article_body) > 500:
+        context = article_body
+    else:
+        context = (scored.story.raw_text or "") + ("\n\n" + article_body if article_body else "")
+    context = context[:2500]
+
     # USER_TEMPLATE substitutes the story snippet, which may contain literal
     # `{anything}` chars from RSS content (code samples, JSON, math). str.format
     # would raise KeyError. Use .replace() so untrusted strings can't break it.
@@ -153,7 +171,7 @@ def generate_blurb(
         .replace("{title}", str(scored.story.title))
         .replace("{source}", str(scored.story.source))
         .replace("{url}", str(scored.story.url))
-        .replace("{snippet}", (scored.story.raw_text or "")[:1000])
+        .replace("{snippet}", context)
     )
 
     attempts: list[tuple[str, int]] = []
@@ -210,15 +228,35 @@ BLURB_CONCURRENCY = int(os.environ.get("BLURB_CONCURRENCY", "5"))
 def generate_for_newsletter(
     scored: list[ScoredStory], newsletter_id: str, use_cache: bool = True
 ) -> list[GeneratedBlurb]:
-    """Generate blurbs for the top-N-per-section assigned to one newsletter."""
-    from concurrent.futures import ThreadPoolExecutor, as_completed
+    """Generate blurbs for the top-N-per-section assigned to one newsletter.
 
+    Skips stories we've already blurbed for this newsletter in the last
+    14 days (read from data/blurbs/*.jsonl) — avoids the "same story
+    blurbed twice" failure mode where slight ranking shuffles cause
+    re-runs to generate redundant blurbs.
+    """
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+    from datetime import date as _date
+
+    from common.past_blurbs import _canonical_url as canon, build_past_blurbed_set
     from ranking.score import top_per_section
 
     by_sec = top_per_section(scored, newsletter_id)
+    past = build_past_blurbed_set(_date.today(), lookback_days=14)
+
     targets: list[ScoredStory] = []
+    skipped_seen = 0
     for stories in by_sec.values():
-        targets.extend(stories)
+        for s in stories:
+            key = (newsletter_id, canon(s.story.url))
+            if key in past:
+                skipped_seen += 1
+                continue
+            targets.append(s)
+
+    if skipped_seen:
+        log.info("Skipped %d already-blurbed stories for %s (last 14 days)",
+                 skipped_seen, newsletter_id)
 
     out: list[GeneratedBlurb] = []
     with ThreadPoolExecutor(max_workers=BLURB_CONCURRENCY) as pool:

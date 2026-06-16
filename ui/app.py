@@ -248,6 +248,52 @@ st.markdown(
     .d-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
     .d-chips a { text-decoration: none; }
 
+    /* Score-breakdown table */
+    table.score-breakdown {
+        width: 100%;
+        font-size: 12px;
+        margin: 10px 0 12px;
+        border-collapse: collapse;
+        font-family: 'Inter', sans-serif;
+    }
+    table.score-breakdown tr.comp-section td {
+        padding: 10px 0 5px;
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        color: var(--text-mute);
+        text-transform: uppercase;
+        font-weight: 600;
+        border-bottom: 1px solid var(--border-strong);
+    }
+    table.score-breakdown td {
+        padding: 5px 8px;
+        border-bottom: 1px solid var(--border);
+        vertical-align: middle;
+    }
+    table.score-breakdown td.comp-name { color: var(--text-dim); }
+    table.score-breakdown td.comp-val {
+        text-align: right;
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        font-weight: 600;
+        width: 50px;
+    }
+    table.score-breakdown td.comp-val.hi { color: var(--ok); }
+    table.score-breakdown td.comp-val.mid { color: var(--warn); }
+    table.score-breakdown td.comp-val.lo { color: var(--text-mute); }
+    table.score-breakdown td.comp-extra {
+        text-align: right;
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        font-size: 11px;
+        color: var(--text-mute);
+        width: 80px;
+    }
+    table.score-breakdown tr:last-child td {
+        font-weight: 700;
+        color: var(--text);
+        border-bottom: none;
+        padding-top: 10px;
+    }
+
     /* ─── Blurb editor — fully transparent, reads like newsletter prose ─── */
     [data-testid="stTextArea"], [data-testid="stTextArea"] > div,
     [data-testid="stTextArea"] [data-baseweb], [data-testid="stTextArea"] [data-baseweb] > div {
@@ -1217,6 +1263,58 @@ with det_col:
             reasoning_safe = selected_scored.reasoning.replace("<", "&lt;").replace(">", "&gt;")
             bottom_parts.append('<div class="d-label">why it matters</div>')
             bottom_parts.append(f'<p class="d-body">{reasoning_safe}</p>')
+
+        # Score breakdown — explainability panel showing how the score was built
+        comp = selected_scored.components or {}
+        boosts = selected_scored.boosts or {}
+        if comp or boosts or selected_scored.hn_points:
+            bottom_parts.append('<div class="d-label">why this score?</div>')
+            bottom_parts.append('<table class="score-breakdown">')
+
+            def _row(name: str, value, extra: str = "") -> str:
+                vcls = ""
+                vstr = str(value)
+                try:
+                    n = int(value)
+                    if n >= 80: vcls = "hi"
+                    elif n >= 60: vcls = "mid"
+                    else: vcls = "lo"
+                    vstr = str(n)
+                except (ValueError, TypeError):
+                    pass
+                return f'<tr><td class="comp-name">{name}</td><td class="comp-val {vcls}">{vstr}</td><td class="comp-extra">{extra}</td></tr>'
+
+            if comp:
+                bottom_parts.append('<tr class="comp-section"><td colspan="3">RUBRIC COMPONENTS</td></tr>')
+                bottom_parts.append(_row("Technical substance", comp.get("technical", "-"), "30%"))
+                bottom_parts.append(_row("Novelty", comp.get("novelty", "-"), "25%"))
+                bottom_parts.append(_row("Implications", comp.get("implications", "-"), "20%"))
+                bottom_parts.append(_row("Source credibility", comp.get("credibility", "-"), "15%"))
+                bottom_parts.append(_row("Mainstream relevance", comp.get("mainstream", "-"), "10%"))
+            if boosts:
+                bottom_parts.append('<tr class="comp-section"><td colspan="3">SCORE BOOSTS</td></tr>')
+                fr = boosts.get("freshness")
+                if fr is not None:
+                    sign = "+" if fr >= 0 else ""
+                    bottom_parts.append(_row("Freshness", "", f"{sign}{fr}"))
+                sw = boosts.get("source_weight")
+                if sw is not None:
+                    sign = "+" if sw >= 0 else ""
+                    bottom_parts.append(_row("Learned source pref.", "", f"{sign}{sw}"))
+                eg = boosts.get("engagement")
+                if eg is not None:
+                    sign = "+" if eg >= 0 else ""
+                    bottom_parts.append(_row("HN engagement", "", f"{sign}{eg}"))
+                ac = boosts.get("already_covered")
+                if ac is not None:
+                    sign = "+" if ac >= 0 else ""
+                    bottom_parts.append(_row("Already covered", "", f"{sign}{ac}"))
+            if selected_scored.hn_points or selected_scored.hn_comments:
+                bottom_parts.append('<tr class="comp-section"><td colspan="3">EXTERNAL SIGNAL</td></tr>')
+                bottom_parts.append(_row("HN points", selected_scored.hn_points, ""))
+                bottom_parts.append(_row("HN comments", selected_scored.hn_comments, ""))
+            bottom_parts.append(_row("FINAL SCORE", int(round(selected_scored.score)), ""))
+            bottom_parts.append('</table>')
 
         if bottom_parts:
             st.markdown("".join(bottom_parts), unsafe_allow_html=True)

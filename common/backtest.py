@@ -217,12 +217,13 @@ def compute_matches(
     predicted_titles: list[str],
     tldr_urls: list[str] | None = None,
     predicted_urls: list[str] | None = None,
+    predicted_titles_rewritten: list[str] | None = None,
 ) -> tuple[list[int | None], list[float | None], list[bool]]:
     """For each prediction, find the best-matching TLDR story.
 
     A match is recorded when ANY of these is true:
       - URL match: canonical(pred_url) == canonical(tldr_url) (similarity = 1.0)
-      - Title cosine similarity >= SIM_THRESHOLD (default 0.62)
+      - Cosine similarity of ORIGINAL or TLDR-style REWRITTEN title >= SIM_THRESHOLD
 
     Returns (matched_tldr_idx_per_pred, similarity_per_pred, tldr_matched).
     """
@@ -237,17 +238,29 @@ def compute_matches(
     # Canonicalize URLs once
     tldr_url_canon = [_canonical_url(u) for u in tldr_urls]
     pred_url_canon = [_canonical_url(u) for u in predicted_urls]
-    # Build lookup: canonical_url → tldr_index
     url_to_tldr_idx: dict[str, int] = {}
     for i, u in enumerate(tldr_url_canon):
         if u and u not in url_to_tldr_idx:
             url_to_tldr_idx[u] = i
 
-    # Title embeddings — used when URL match doesn't fire
-    embs = _embed(tldr_titles + predicted_titles)
+    # Title embeddings — embed both original and rewritten variants so we
+    # can take the best similarity score per prediction.
+    has_rewrites = bool(predicted_titles_rewritten) and len(predicted_titles_rewritten) == n_pred
+    if has_rewrites:
+        all_titles = tldr_titles + predicted_titles + predicted_titles_rewritten
+    else:
+        all_titles = tldr_titles + predicted_titles
+    embs = _embed(all_titles)
     tldr_e = embs[:n_tldr]
-    pred_e = embs[n_tldr:]
-    sims = pred_e @ tldr_e.T  # (n_pred, n_tldr)
+    pred_e = embs[n_tldr:n_tldr + n_pred]
+    sims_orig = pred_e @ tldr_e.T  # (n_pred, n_tldr)
+    if has_rewrites:
+        pred_rw_e = embs[n_tldr + n_pred:]
+        sims_rw = pred_rw_e @ tldr_e.T
+        # Per-(pred, tldr) take max of original vs rewritten similarity
+        sims = np.maximum(sims_orig, sims_rw)
+    else:
+        sims = sims_orig
 
     matched_idx: list[int | None] = []
     matched_sim: list[float | None] = []
@@ -261,7 +274,7 @@ def compute_matches(
             matched_sim.append(1.0)
             tldr_hit[url_match] = True
             continue
-        # 2) Title cosine match
+        # 2) Title cosine match (best of original + rewritten)
         j = int(np.argmax(sims[i]))
         s = float(sims[i][j])
         if s >= SIM_THRESHOLD:
@@ -326,8 +339,27 @@ def compute_backtest(newsletter_id: str, date: str) -> BacktestResult:
 
     predicted_titles = [p[1] for p in preds]
     predicted_urls = [p[2] for p in preds]
+
+    # Title rewriting for honest backtest measurement: rewrite each prediction
+    # in TLDR-style and match both the original and the rewritten against
+    # TLDR's published titles. Catches the Fox/Roku case where the same story
+    # has very different rewritten headlines.
+    predicted_titles_rewritten: list[str] = []
+    try:
+        from common.title_rewrite import batch_rewrite
+        rewrites = batch_rewrite(
+            [(t, u, newsletter_id) for t, u in zip(predicted_titles, predicted_urls)],
+            concurrency=5,
+        )
+        predicted_titles_rewritten = [rewrites.get(u, t) for t, u in zip(predicted_titles, predicted_urls)]
+    except Exception as e:
+        log.warning("Title rewriting failed for %s/%s, falling back to originals: %r",
+                    newsletter_id, date, e)
+        predicted_titles_rewritten = list(predicted_titles)
+
     matched_idx, matched_sim, tldr_hit = compute_matches(
         tldr_titles, predicted_titles, tldr_urls=tldr_urls, predicted_urls=predicted_urls,
+        predicted_titles_rewritten=predicted_titles_rewritten,
     )
 
     predictions = [
