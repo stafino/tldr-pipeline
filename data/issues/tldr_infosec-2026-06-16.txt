@@ -1,0 +1,59 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR InfoSec 2026-06-16
+
+🔓
+Attacks & Vulnerabilities
+
+LiteLLM Vulnerability Chain Lets Low-Privilege Users Take Over AI Gateway Servers (1 minute read)
+
+Researchers at Obsidian Security disclosed a chain of three vulnerabilities in LiteLLM, the open-source AI gateway brokering calls to over 100 model providers, that lets a default low-privilege account escalate to full admin and achieve remote code execution on the proxy server. A server takeover exposes every stored provider API key, so operators should patch immediately, audit account privileges, and rotate all credentials held by the gateway.
+
+Palo Alto Warns of Active Exploitation of PAN-OS GlobalProtect VPN Flaw (1 minute read)
+
+Palo Alto Networks confirmed active exploitation of CVE-2026-0257 (CVSS 7.8), an authentication-bypass flaw in the portal and gateway components of PAN-OS, by an unknown threat actor gaining unauthorized access to GlobalProtect portals. Organizations running affected PAN-OS versions on internet-facing GlobalProtect should patch immediately, audit portal access logs for unauthorized sessions, and rotate credentials on appliances that may already be compromised.
+
+🧠
+Strategies & Tactics
+
+Transferable Self-Evolving Playbooks for Agentic Security Auditing (1 minute read)
+
+EvoHunt automates audit playbook creation for LLM security agents, replacing human-curated prompts and heuristics with a closed evolution loop: an audit agent runs the playbook, an evaluator scores findings against ground truth, and a reviser commits updates. The authors show evolved playbooks transfer the audit procedure to weaker agents, raising their vulnerability-discovery capability without retraining the underlying model. For defenders, this points toward scalable agentic auditing where procedural knowledge, not just model strength, drives results.
+
+Di5Guise: 5G Privacy with vSIM (1 minute read)
+
+This paper introduces Di5Guise, a 5G privacy architecture that decouples device identity from subscriber identity to stop network-level correlation attacks. Current eSIMs bind every provisioned subscriber profile to a fixed device profile (secret key, certificate, and eUICC ID), letting an operator-level adversary tie rotating identities back to one device and reconstruct a full pattern of life. Its vSIM design breaks that binding at the root, so identity rotation and traffic obfuscation actually hold.
+
+🧑‍💻
+Launches & Tools
+
+Snyk VulnBench JS 1.0: Can LLMs Find the Same Bugs Twice? (1 minute read)
+
+This paper introduces VulnBench JS 1.0, a benchmark that ran 300 repeated scans to measure how repeatable agentic LLM security review is on identical JavaScript code, prompts, and harness. Reference-matched findings were stable (134 of 158 appeared in all five repetitions), but unmatched extra findings varied heavily, with 80 of 161 surfacing in just one of five runs, suggesting agentic SAST should complement, not replace, deterministic static analysis.
+
+obliv-clang: Real-World Oblivious Programming in C++ (1 minute read)
+
+This paper introduces obliv-clang, a compilation-time tool that checks the obliviousness of C++ programs to defend against timing and access-pattern side-channel attacks on confidential data in trusted execution environments. It supports rich C++ features including arbitrarily nested pointers, formally proves the soundness of its checking rules, and aims to integrate with existing industry codebases while keeping compilation overhead and runtime performance costs low.
+
+🎁
+Miscellaneous
+
+The FCC Wants to Eliminate Burner Phones (1 minute read)
+
+The FCC proposed a rule requiring US telecoms to collect and store personal data on nearly all phone customers, including a government-issued ID number and physical address, effectively eliminating burner phones whose accounts aren't tied to an identity. The agency frames the mandate as an anti-scam measure, but privacy advocates warn it builds a centralized trove of identity data with significant surveillance and cybersecurity knock-on risks.
+
+DOJ seizes CFAKE, SOCFAKE deepfake nude sites under TAKE IT DOWN Act (1 minute read)
+
+The DOJ seized the CFAKE.com and SOCFAKE.com domains, which allegedly hosted nonconsensual AI-generated nude images and videos of women, in what appears to be the first publicly announced domain seizure under the TAKE IT DOWN Act. The action signals that the DOJ will use the new law to pursue infrastructure behind deepfake abuse sites, setting an enforcement precedent for operators hosting nonconsensual synthetic imagery.
+
+⚡
+Quick Links
+
+Scalable Malware Family Classification Using Quantum Kernel Based Machine Learning (1 minute read)
+
+A quantum kernel ML framework classifies malware families at scale, using LDA projection and fidelity-based quantum circuits for accuracy.
+
+Banned Book Library in a Wi-Fi Smart Light Bulb (1 minute read)
+
+A researcher hid a library of banned books inside the flash memory of a Wi-Fi smart light bulb.

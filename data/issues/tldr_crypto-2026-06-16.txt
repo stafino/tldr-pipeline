@@ -1,0 +1,55 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR Crypto 2026-06-16
+
+📈
+Markets & Business
+
+Kraken launches crypto perps trading in the US on Kraken Pro (1 minute read)
+
+Kraken launched perpetual futures trading for US customers on Kraken Pro, offering crypto perps through the CFTC-regulated infrastructure it gained by acquiring Bitnomial, a licensed exchange, clearinghouse, and brokerage, in May. The move gives Kraken a domestic, fully regulated venue for leveraged derivatives, a product US traders previously accessed mainly through offshore platforms.
+
+Kraken and Coinbase Bring Perps Onshore as US Derivatives Markets Shift (1 minute read)
+
+Kraken and Coinbase each launched perpetual futures products on Monday, with Kraken going live on CFTC-regulated crypto perps through Bitnomial and Coinbase rolling out four thematic equity-index perpetuals on US soil. The moves bring a market structure that has lived offshore onto regulated American venues, opening domestic access to leveraged derivatives that previously drove traders to platforms like Binance and Bybit.
+
+🚀
+Innovation & Launches
+
+Sui Processes $65 Billion in Stablecoin Transfers in Five Days After Zeroing Out Fees (1 minute read)
+
+Sui processed nearly $65B in stablecoin transfers in the five days since June 10, when it removed gas fees on stablecoin transactions to position the Layer 1 as a fee-free settlement rail. The gasless design targets institutional and agentic payment flows, where per-transaction costs otherwise compound across high-volume automated transfers.
+
+did:crdt: Coordination-Free Decentralised Identifiers via Signed CRDTs (1 minute read)
+
+This paper introduces did:crdt, a Decentralised Identifier method that updates DID documents without any ledger, sequencer, or global ordering, composing each document from signed Conflict-Free Replicated Data Types that merge deterministically on concurrent edits. The design eliminates the fees, latency, and consensus requirements of blockchain-anchored and Sidetree methods, needing only causal delivery of signed deltas to keep replicas convergent.
+
+💡
+Guides & Resources
+
+The Ghosts of Polymarket: When Off-Chain Matches Meet On-Chain Reverts (1 minute read)
+
+This paper analyzes "Ghost Fills" on Polymarket, the consistency gap created by its hybrid architecture that matches orders off-chain but settles them on-chain. The authors built GHOSTHUNTER to reconstruct failed settlements from on-chain traces, examining 1,952,440 reverted match-order transactions where attackers exploited the time gap to invalidate already-matched orders before finalization. They identify four attack vectors—nonce bump, balance drain, allowance revoke, and proxy trap—realized across 35 evolving variants.
+
+Robust and Automated Reconfiguration of Byzantine Wide-Area Replication (1 minute read)
+
+This paper identifies three vulnerabilities in latency-based reconfiguration of BFT consensus, where replicas dynamically assign leaders and tune voting weights based on network monitoring. The authors propose Beware, a framework that filters falsified latency reports, computes robust weight distributions, and uses machine learning to converge on Byzantine-resilient configurations. The work matters for blockchain validator sets that optimize throughput through adaptive configuration, since unguarded tuning hands adversarial nodes a new attack surface.
+
+🦄
+Miscellaneous
+
+Aztec Connect Drained of $2.1M Through Deprecated Contract Three Years After Shutdown (1 minute read)
+
+An attacker exploited a proof-verification flaw in Aztec Connect's deprecated RollupProcessorV3 contract to withdraw roughly $2.1M, including 909 ETH, from a privacy bridge that Aztec Labs shut down three years ago. Aztec no longer controls the abandoned contract and could not intervene, underscoring the lingering risk of leaving immutable code deployed on-chain after a protocol winds down.
+
+Bitcoin Policy UK CEO calls Michael Saylor’s STRC investment promotion ‘dishonest’ (1 minute read)
+
+Bitcoin Policy UK CEO Susie Ward called Michael Saylor's promotion of Strategy's STRC preferred stock "dishonest," saying his video on the instrument's yield implied the investment carried no risk. The criticism targets how Strategy markets STRC to retail buyers, a vehicle Saylor has used to fund the company's continued bitcoin accumulation.
+
+⚡
+Quick Links
+
+Beyond the Smile: A Hybrid Convolutional VAE for Crypto Volatility Surfaces (1 minute read)
+
+A convolutional VAE reconstructs BTC and ETH implied-volatility surfaces, cutting completion error eightfold versus a quadratic smile re-fit at 50% masking.

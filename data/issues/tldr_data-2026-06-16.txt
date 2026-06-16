@@ -1,0 +1,26 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR Data 2026-06-16
+
+🧠
+Deep Dives & Analysis
+
+Directory-Aware Query and Maintenance in Vector Databases (1 minute read)
+
+Vector databases store metadata as flat scalar attributes, forcing directory-scoped retrieval over code repos, enterprise docs, and agent memories into expensive application-layer workarounds. This paper treats directory hierarchy as a first-class capability, formalizing two operators: Directory-Semantic Query for scoped retrieval and Directory-Semantic Maintenance for structural updates. It compares query-time and ingestion-time path expansion against a Trie-based Hierarchical Index, showing that flattening the hierarchy makes recursive scope resolution costly while the trie keeps both queries and updates consistent.
+
+When Does q-error Predict Plan Regret? Three Regimes of Cardinality-Estimation Error (1 minute read)
+
+This paper challenges the field's reliance on q-error as a proxy for query-plan quality, offering a measurement-driven account of when it holds. The authors identify three regimes: for small estimation errors, a true-point condition number predicts plan regret and beats q-error; for the large errors where learned estimators actually operate, an estimator-independent ACS-infinity measure flags regret-prone queries (Spearman rho ~0.54 on STATS-CEB) while q-error is nearly useless at the query level (rho ~0.05).
+
+🚀
+Launches & Tools
+
+Free SQL→ER diagram tool, runs in the browser, nothing uploaded (1 minute read)
+
+A free browser-based tool converts SQL schema definitions into entity-relationship diagrams, with all parsing done client-side so nothing is uploaded to a server. The local-only approach lets data teams diagram production schemas without sending DDL to a third party, and the tool reads standard CREATE TABLE statements to map tables, columns, and foreign-key relationships.
+
+What’s new in data agents: Supercharging your AI workflows (2 minute read)
+
+Google introduced new data agents across its Agentic Data Cloud, including agents in Conversational Analytics for business analysts and tooling for data scientists and engineers to build agents that ground reasoning in live enterprise data. The pitch is a deterministic, template-driven developer framework with unified governance, aiming for near-100% query accuracy by giving agents context across both operational and analytical systems.

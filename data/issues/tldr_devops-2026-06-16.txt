@@ -1,0 +1,37 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR DevOps 2026-06-16
+
+📱
+News & Trends
+
+Improving Arm64 support in CNCF projects with OCI credits (1 minute read)
+
+The CNCF detailed how it's using Oracle Cloud Infrastructure credits to expand Arm64 build and test coverage across its projects, addressing a gap as Arm instances now make up over 50% of new AWS launches and a third on Azure. The credits give maintainers native Arm64 CI runners, removing the emulation overhead and cross-compilation toil that previously slowed multi-arch release pipelines.
+
+LiteLLM Vulnerability Chain Lets Low-Privilege Users Take Over AI Gateway Servers (1 minute read)
+
+Researchers at Obsidian Security disclosed a chain of three vulnerabilities in LiteLLM that lets a default low-privilege account escalate to full admin and execute code on the proxy server. Because LiteLLM brokers calls to more than 100 model providers behind one OpenAI-compatible interface, a takeover exposes every provider API key it holds, making the gateway a single point of failure worth patching immediately.
+
+🚀
+Opinions & Tutorials
+
+AI demands more engineering discipline. Not less (xpost) (1 minute read)
+
+Charity Majors argues that AI-assisted development raises the bar for engineering discipline rather than lowering it, drawing a parallel to the shift from hand-maintained server pets to immutable infrastructure. The piece contends that generating more code faster makes review, testing, observability, and ownership boundaries more important, since teams now ship volume they did not personally write and must still operate in production.
+
+What job interviews taught me about Kubernetes (1 minute read)
+
+The author uses Kubernetes interview questions as a lens for the internals practitioners gloss over in daily operations, walking through how the scheduler, kubelet, and control loops actually behave under questioning. The piece argues that interview prep exposes the gap between running kubectl commands and understanding why a pod is stuck pending or a node goes NotReady. Useful as a self-audit for platform engineers who operate clusters without having traced the reconciliation path end to end.
+
+⚒️
+Launches & Tools
+
+Linux 7.1 (1 minute read)
+
+Linus Torvalds announced the Linux 7.1 kernel on the LKML, closing the merge window with the release now tagged stable and available from kernel.org. The cycle continues the steady cadence of incremental driver, filesystem, and scheduler updates that platform teams fold into their base images, with distro and managed-node rollouts to follow over the coming weeks.
+
+AWS WAF adds AI traffic monetization capability to help content owners charge AI bots for content access (1 minute read)
+
+AWS WAF added AI traffic monetization, a Bot Control capability that lets content providers and publishers price, meter, and collect payment from AI bots and agents hitting their content and APIs. Owners set a price, accept payment through third-party providers, and grant scoped access directly at the edge, turning unwanted crawler traffic into a revenue stream without standing up separate gateway infrastructure.

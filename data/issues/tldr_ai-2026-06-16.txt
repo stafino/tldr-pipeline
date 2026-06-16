@@ -1,0 +1,59 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR AI 2026-06-16
+
+🚀
+Headlines & Launches
+
+Apple Foundation Models (1 minute read)
+
+Anthropic released Claude for Foundation Models, a Swift package that exposes Claude as a server-side language model inside Apple's Foundation Models framework. It conforms Claude to the framework's LanguageModel protocol, so developers use the same LanguageModelSession API for streaming, structured output, and tool calling, and can swap between Claude and Apple's on-device model per request on iOS, macOS, visionOS, and watchOS 27 betas.
+
+Sources: DeepSeek closed a $7.4B round at a $50B valuation under an unusual structure requiring investors to put capital into an LP run by CEO Liang Wenfeng (The Information) (1 minute read)
+
+DeepSeek closed a $7.4B round at a $50B valuation, its first outside funding, under a structure that requires investors to route capital through a limited partnership controlled by CEO Liang Wenfeng. The arrangement, which raised more than 50 billion yuan, keeps Liang in direct control of how the new capital is deployed across the Chinese AI lab.
+
+🧠
+Deep Dives & Analysis
+
+Import AI 461: "Alignment is not on track"; FrontierCode; and synthetic research interns (1 minute read)
+
+The latest issue of Jack Clark's Import AI leads with the argument that AI alignment is not on track, contending that capability gains are outpacing the safety techniques meant to keep advanced systems controllable. It also covers FrontierCode, a benchmark for evaluating models on difficult coding tasks, and early experiments with synthetic research interns, AI agents tasked with running portions of the research process autonomously.
+
+Anthropic’s Safety Superpower (1 minute read)
+
+Anthropic's conviction in its own safety commitment functions as a strategic asset, giving the company license to aggressively favor its business interests. The author argues this self-belief lets Anthropic justify commercially favorable moves and even challenge the U.S. government, framing decisions that serve its position as extensions of its safety mission.
+
+⚒️
+Engineering & Research
+
+Agent trajectories as programs: fingerprinting and programming coding-agent behavior (1 minute read)
+
+This paper introduces a method for fingerprinting coding agents by their procedural behavior rather than their benchmark scores, using a compressive vocabulary induction technique that captures how an agent solves problems. Across ten agents, a probe attributes an unseen trajectory to the correct agent with 85.7% accuracy, and an analysis of SWE-Bench finds that behavior is most similar between models from comparable release periods.
+
+Dynamic Malicious Skills in Agentic AI (1 minute read)
+
+This paper demonstrates dynamic malicious skills, an attack where instructions embedded in natural-language skill documentation like SKILL.md induce an agent to inject malicious logic into an otherwise benign skill at runtime. Tested against OpenHands and Claude Code, the attack succeeded at non-trivial rates, and the authors propose a defense using OS kernel-enforced read-only mounts that blocks the modifications while preserving benign skill functionality.
+
+🎁
+Miscellaneous
+
+LiteLLM Vulnerability Chain Lets Low-Privilege Users Take Over AI Gateway Servers (1 minute read)
+
+Obsidian Security disclosed a vulnerability chain in LiteLLM that lets a default low-privilege account escalate to full admin and execute code on the server by combining three flaws. Because LiteLLM is a widely deployed open-source gateway brokering calls to more than 100 model providers, a takeover exposes every provider API key and secret the proxy holds.
+
+Sources: Trump officials weighed Anthropic export controls weeks before forcing its models offline, after a dispute over Mythos access for a China-linked firm (Washington Post) (1 minute read)
+
+Trump administration officials weighed export controls on Anthropic for weeks before forcing its AI models offline, following a dispute over a China-linked firm's access to Anthropic's Mythos. The Washington Post reported the controls were considered after the company restricted that firm's access, escalating tensions between the lab and the administration over how AI models reach foreign entities.
+
+⚡
+Quick Links
+
+Process-Oriented Evaluation of AI-Assisted Scientific Writing (1 minute read)
+
+This paper analyzes 869 keystroke-level edit logs and finds AI-generated abstracts gain sentence-level agency but lag human-authored ones on global coherence.
+
+Claude Corps (1 minute read)
+
+Anthropic launched Claude Corps, a program pairing its engineers with organizations to build and deploy Claude-powered tools.

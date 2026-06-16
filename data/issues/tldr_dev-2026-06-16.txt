@@ -1,0 +1,59 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR Dev 2026-06-16
+
+🧑‍💻
+Articles & Tutorials
+
+Banned Book Library in a Wi-Fi Smart Light Bulb (1 minute read)
+
+A developer flashed a Wi-Fi smart bulb's ESP8266 microcontroller to host a hidden library of banned books served over a local web page. The post walks through dumping the stock firmware, repurposing the chip's flash storage to hold the text, and serving it via a captive portal that anyone nearby can connect to without internet access.
+
+Configuration Smells in AGENTS.md Files: Common Mistakes in Configuring Coding Agents (1 minute read)
+
+This paper presents the first catalog of "configuration smells" in AGENTS.md and CLAUDE.md files, the instruction files that steer coding agents on architecture, conventions, and testing. After mining repositories and reviewing 100 popular open-source projects, the authors define six smells with automated detection heuristics, finding Lint Leakage (linter rules duplicated into agent instructions) the most common at 62% of files.
+
+🧠
+Opinions & Advice
+
+Formal methods and the future of programming (1 minute read)
+
+Jane Street details how it applies formal methods across its codebase, using techniques like type-driven design, property-based testing, and verification tools to catch bugs that conventional testing misses. The series argues that lightweight formal methods are now practical for everyday production code rather than confined to academia or safety-critical systems, with OCaml's type system doing much of the heavy lifting.
+
+How memory safety CVEs differ between Rust and C/C++ (1 minute read)
+
+The author analyzes memory safety CVE data and argues that Rust's guarantees shift the nature of vulnerabilities rather than just reducing their count, since unsafe blocks and logic errors still produce memory bugs that look different from C/C++ classics. The post contends that Rust's compiler eliminates most use-after-free and buffer-overflow patterns up front, concentrating remaining issues in a smaller, auditable surface where reviewers can focus their attention.
+
+🚀
+Launches & Tools
+
+Linux 7.1 (1 minute read)
+
+Linus Torvalds released Linux 7.1, the latest mainline kernel, following the standard two-week stabilization period after the final release candidate. As with past major-number bumps, the jump carries no special significance beyond keeping minor version numbers from growing unwieldy, with the bulk of the changes landing as routine driver updates, filesystem fixes, and incremental subsystem improvements.
+
+Phoenix LiveView 1.2 (1 minute read)
+
+Phoenix LiveView 1.2 introduces colocated hooks and colocated JS, which let developers write client-side JavaScript directly inside HEEx templates instead of maintaining separate hook files, with the JS extracted at compile time and bundled by the asset pipeline. The release also adds a new portal API for rendering content outside the current DOM tree, useful for modals and tooltips, and ships compatibility fixes for the latest Phoenix and Elixir versions.
+
+🎁
+Miscellaneous
+
+Arch Linux locks down AUR signups amid wave of malicious commits (1 minute read)
+
+Arch Linux froze new account signups on the Arch User Repository after attackers flooded it with malicious commits that poisoned package updates. The community-maintained AUR ships build scripts rather than vetted binaries, so the lockdown buys maintainers time to clean compromised packages and review the backlog before reopening registration to contributors.
+
+North Korean Hackers Are Turning Developer Tools Into Malware Delivery Channels (1 minute read)
+
+Proofpoint flagged two phishing campaigns from the North Korean threat cluster Contagious Interview, which lures developers with fake recruiter outreach and code review requests before delivering malware through trusted dev tooling. The activity overlaps with the group also tracked as Famous Chollima and Void Dokkaebi, signaling that job-application and code-review workflows are now active attack surfaces engineers should treat with the same suspicion as unsolicited email attachments.
+
+⚡
+Quick Links
+
+TokenPilot: Cache-Efficient Context Management for LLM Agents (1 minute read)
+
+TokenPilot manages LLM agent context to stay cache-friendly, cutting inference costs 61% and 56% on two benchmarks without breaking prompt prefix continuity.
+
+Dynamic Malicious Skills in Agentic AI (1 minute read)
+
+Malicious instructions hidden in SKILL.md docs can make agents like Claude Code inject harmful logic at runtime; kernel read-only mounts block it.
