@@ -129,8 +129,8 @@ st.markdown(
     .sec-head-top h2 { font-size: 13px !important; font-weight: 700; margin: 0 !important; color: var(--text) !important; letter-spacing: 0.02em; }
     .sec-head-top .meta { font-size: 11px; color: var(--text-mute); margin-left: auto; }
 
-    /* ─── Story rows (flexbox; min-width:0 on title is critical to allow wrap) ─── */
-    .row {
+    /* ─── Story rows (anchor links; flexbox with min-width:0 on title) ─── */
+    a.row {
         display: flex !important;
         align-items: flex-start;
         gap: 12px;
@@ -141,60 +141,22 @@ st.markdown(
         cursor: pointer;
         line-height: 1.4;
     }
-    .row:hover { background: var(--surface); }
-    .row.sel { background: var(--accent-soft); border-left: 2px solid var(--accent); padding-left: 6px; }
-    .row .rank { flex: 0 0 22px; text-align: right; color: var(--text-mute); font-size: 11px; padding-top: 1px; }
-    .row .score { flex: 0 0 32px; color: var(--text); font-size: 12px; font-weight: 700; padding-top: 1px; }
-    .row .main { flex: 1 1 auto; min-width: 0; }
-    .row .title { font-size: 13.5px; color: var(--text); margin: 0; word-wrap: break-word; overflow-wrap: break-word; }
-    .row .ftr { font-size: 10.5px; color: var(--text-mute); margin-top: 4px; display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
-    .row .date-tag { color: var(--text-mute); font-size: 10.5px; }
-    .row .date-tag::after { content: " · "; color: var(--border-strong); margin-left: 2px; }
-    .row .stat { flex: 0 0 24px; text-align: center; font-size: 14px; line-height: 1; padding-top: 2px; }
-    .row .stat.ok { color: var(--ok); }
-    .row .stat.no { color: var(--no); }
-    .row .stat.warn { color: var(--warn); }
-    .row .stat.pending { color: var(--text-mute); }
+    a.row:hover { background: var(--surface); }
+    a.row.sel { background: var(--accent-soft); border-left: 2px solid var(--accent); padding-left: 6px; }
+    a.row .rank { flex: 0 0 22px; text-align: right; color: var(--text-mute); font-size: 11px; padding-top: 1px; }
+    a.row .score { flex: 0 0 32px; color: var(--text); font-size: 12px; font-weight: 700; padding-top: 1px; }
+    a.row .main { flex: 1 1 auto; min-width: 0; }
+    a.row .title { font-size: 13.5px; color: var(--text); margin: 0; word-wrap: break-word; overflow-wrap: break-word; }
+    a.row .ftr { font-size: 10.5px; color: var(--text-mute); margin-top: 4px; display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+    a.row .date-tag { color: var(--text-mute); font-size: 10.5px; }
+    a.row .date-tag::after { content: " · "; color: var(--border-strong); margin-left: 2px; }
+    a.row .stat { flex: 0 0 24px; text-align: center; font-size: 14px; line-height: 1; padding-top: 2px; }
+    a.row .stat.ok { color: var(--ok); }
+    a.row .stat.no { color: var(--no); }
+    a.row .stat.warn { color: var(--warn); }
+    a.row .stat.pending { color: var(--text-mute); }
     .empty { padding: 20px 4px; color: var(--text-mute); font-size: 12px; }
 
-    /* ─── Click capture pattern ───
-       Each row is followed by a Streamlit button. We pull the button up via
-       negative margin so it covers the row, then make it transparent.
-       Click anywhere on the row → button fires → on_click callback updates
-       session_state → fragment rerun. No URL change, no page reload, no flash.
-
-       Selector uses :has() to find the markdown wrapper containing .row-shell
-       (modern browsers support this — Chrome 105+, Safari 15.4+, FF 121+). */
-    .row-shell { position: relative; z-index: 1; padding-bottom: 0; }
-    .stElementContainer:has(.row-shell) {
-        margin-bottom: 0 !important;
-    }
-    .stElementContainer:has(.row-shell) + .stElementContainer:has(button) {
-        margin-top: -49px !important;
-        position: relative;
-        z-index: 2;
-        height: 49px;
-        pointer-events: auto;
-    }
-    .stElementContainer:has(.row-shell) + .stElementContainer:has(button) button {
-        background: transparent !important;
-        border: none !important;
-        box-shadow: none !important;
-        height: 49px !important;
-        min-height: 49px !important;
-        width: 100% !important;
-        cursor: pointer;
-        padding: 0 !important;
-        opacity: 0;
-    }
-    .stElementContainer:has(.row-shell) + .stElementContainer:has(button) button:hover {
-        opacity: 0;            /* keep button invisible; hover effect lives on .row:hover */
-    }
-    /* Fallback for browsers without :has() — older Safari/Chromium. */
-    @supports not selector(:has(*)) {
-        .row-shell + div { margin-top: -49px !important; height: 49px; }
-        .row-shell + div button { opacity: 0; height: 49px; width: 100%; background: transparent; border: none; cursor: pointer; }
-    }
 
     /* ─── Chips ─── */
     .chip {
@@ -673,15 +635,16 @@ def _build_row_html(
     glyph: str,
     is_sel: bool,
 ) -> str:
-    """Render a row as a <div>. Click handling is done by a transparent
-    st.button overlaid on top via the .row-shell CSS pattern, not URL navigation.
-    Switching from <a href=?…> to widget-based selection means clicks no longer
-    trigger a full URL-driven page reload — just a fragment rerun."""
+    """Row is an anchor link with query params. Click → Streamlit reads
+    query_params on rerun and updates the detail pane. Cached data loaders
+    make the rerun feel ~5x faster than before but it's still a rerun."""
+    qs_params = {"nl": rail_nl, "story": story_url, "nl_detail": target_nl}
+    qs = "&".join(f"{k}={urllib.parse.quote(v)}" for k, v in qs_params.items())
     sel_cls = " sel" if is_sel else ""
     title_safe = title.replace("<", "&lt;").replace(">", "&gt;")
     date_html = f'<span class="num date-tag">{date_text}</span>' if date_text else ""
     return (
-        f'<div class="row{sel_cls}">'
+        f'<a class="row{sel_cls}" href="?{qs}" target="_self">'
         f'<span class="num rank">{rank}</span>'
         f'<span class="num score">{int(round(score))}</span>'
         f'<span class="main">'
@@ -689,7 +652,7 @@ def _build_row_html(
         f'<span class="ftr">{date_html}{chips_html}</span>'
         f'</span>'
         f'<span class="stat {status_cls}">{glyph}</span>'
-        f'</div>'
+        f'</a>'
     )
 
 
@@ -712,114 +675,86 @@ def _chips_for(scored_story: ScoredStory, decisions, exclude_nl: str | None = No
     return "".join(chips)
 
 
-def _select_story(url: str, nl_for_detail: str) -> None:
-    """Callback fired by per-row buttons. Updates session state only — no URL nav."""
-    ss.selected_url = url
-    ss.selected_nl_for_detail = nl_for_detail
+with mid_col:
+    parts: list[str] = ['<div class="stories-pane">']
 
-
-def _render_one_row(s: ScoredStory, rank: int, *, nl_id: str, sec_obj=None) -> None:
-    """Render one (row + invisible button) pair. The button captures clicks
-    without a URL change, so the page doesn't refresh."""
-    if nl_id == CROSS_KEY:
-        primary = s.primary
-        if primary is None:
-            return
-        target_nl_for_detail = primary.newsletter
-        sec_obj_real = nls[primary.newsletter].section(primary.section_id)
-        section_min = sec_obj_real.min_words if sec_obj_real else 40
-        section_max = sec_obj_real.max_words if sec_obj_real else 80
-        score_for_display = primary.score
-        chips_html = _chips_for(s, ss.decisions, primary_nl=primary.newsletter)
-    else:
-        a = s.for_newsletter(nl_id)
-        if a is None:
-            return
-        target_nl_for_detail = nl_id
-        section_min = sec_obj.min_words if sec_obj else 40
-        section_max = sec_obj.max_words if sec_obj else 80
-        score_for_display = a.score
-        chips_html = _chips_for(s, ss.decisions, exclude_nl=nl_id)
-
-    blurb = blurbs.get((s.story.url, target_nl_for_detail), {})
-    decision = ss.decisions.get((s.story.url, target_nl_for_detail))
-    status_cls, glyph = _row_status(decision, blurb, section_min, section_max)
-    is_sel = (ss.selected_url == s.story.url and ss.selected_nl_for_detail == target_nl_for_detail)
-    date_text = _short_date(s.story.published_at, selected_date)
-
-    # Visible row (rendered as inert div now)
-    row_html = _build_row_html(
-        rank=rank, score=score_for_display, title=s.story.title,
-        story_url=s.story.url, target_nl=target_nl_for_detail, rail_nl=nl_id,
-        chips_html=chips_html, date_text=date_text,
-        status_cls=status_cls, glyph=glyph, is_sel=is_sel,
-    )
-    st.markdown(f'<div class="row-shell">{row_html}</div>', unsafe_allow_html=True)
-    # Invisible click capture button — overlaid via CSS to cover the row above
-    btn_key = f"row_{target_nl_for_detail}_{rank}_{hash(s.story.url) & 0xFFFFFF}"
-    st.button(
-        " ", key=btn_key,
-        on_click=_select_story,
-        args=(s.story.url, target_nl_for_detail),
-        use_container_width=True,
-        help=None,
-    )
-
-
-@st.fragment
-def _render_middle_pane() -> None:
-    """Wrapped in a fragment so per-row button clicks only rerun this block —
-    the rail and top bar stay put, the page doesn't flash."""
     if ss.selected_nl == CROSS_KEY:
         cross_stories = sorted(
             [s for s in scored_all if s.story.url in cross_set],
             key=lambda s: s.score, reverse=True
         )
-        st.markdown(
+        parts.append(
             f'<div class="sec-head-top"><h2>★ Cross-assignments</h2>'
-            f'<span class="meta">{len(cross_stories)} stories in 2+ newsletters</span></div>',
-            unsafe_allow_html=True,
+            f'<span class="meta">{len(cross_stories)} stories in 2+ newsletters</span></div>'
         )
         if not cross_stories:
-            st.markdown('<div class="empty">No cross-assignments today.</div>', unsafe_allow_html=True)
-            return
-        for rank, s in enumerate(cross_stories, start=1):
-            _render_one_row(s, rank, nl_id=CROSS_KEY)
+            parts.append('<div class="empty">No cross-assignments today.</div>')
+        else:
+            for rank, s in enumerate(cross_stories, start=1):
+                primary = s.primary
+                if primary is None:
+                    continue
+                sec_obj = nls[primary.newsletter].section(primary.section_id)
+                section_min = sec_obj.min_words if sec_obj else 40
+                section_max = sec_obj.max_words if sec_obj else 80
+                blurb = blurbs.get((s.story.url, primary.newsletter), {})
+                decision = ss.decisions.get((s.story.url, primary.newsletter))
+                status_cls, glyph = _row_status(decision, blurb, section_min, section_max)
+                is_sel = (ss.selected_url == s.story.url and ss.selected_nl_for_detail == primary.newsletter)
+                chips_html = _chips_for(s, ss.decisions, primary_nl=primary.newsletter)
+                date_text = _short_date(s.story.published_at, selected_date)
+                parts.append(_build_row_html(
+                    rank=rank, score=primary.score, title=s.story.title,
+                    story_url=s.story.url, target_nl=primary.newsletter, rail_nl=CROSS_KEY,
+                    chips_html=chips_html, date_text=date_text,
+                    status_cls=status_cls, glyph=glyph, is_sel=is_sel,
+                ))
+
     else:
         nl = nls[ss.selected_nl]
         by_section = top_per_section(scored_all, nl.id)
         total_for_nl = sum(len(stories) for stories in by_section.values())
-        st.markdown(
+        parts.append(
             f'<div class="sec-head-top"><h2>{nl.brand_name}</h2>'
-            f'<span class="meta">{nl_decided[nl.id]}/{total_for_nl} decided · {selected_date}</span></div>',
-            unsafe_allow_html=True,
+            f'<span class="meta">{nl_decided[nl.id]}/{total_for_nl} decided · '
+            f'{selected_date}</span></div>'
         )
+
         if total_for_nl == 0:
-            st.markdown(
-                f'<div class="empty">No stories assigned to {nl.brand_name} for {selected_date}.</div>',
-                unsafe_allow_html=True,
-            )
-            return
-        for sec_obj in nl.sections:
-            stories = by_section[sec_obj.id]
-            if not stories:
-                continue
-            decided_in_sec = sum(
-                1 for s in stories
-                if (d := ss.decisions.get((s.story.url, nl.id))) and d.is_decided()
-            )
-            st.markdown(
-                f'<div class="sec"><span class="em">{sec_obj.emoji}</span>'
-                f'<h3>{sec_obj.name}</h3>'
-                f'<span class="meta">{decided_in_sec}/{len(stories)}</span></div>',
-                unsafe_allow_html=True,
-            )
-            for rank, s in enumerate(stories, start=1):
-                _render_one_row(s, rank, nl_id=nl.id, sec_obj=sec_obj)
+            parts.append(f'<div class="empty">No stories assigned to {nl.brand_name} for {selected_date}.</div>')
+        else:
+            for sec_obj in nl.sections:
+                stories = by_section[sec_obj.id]
+                if not stories:
+                    continue
+                decided_in_sec = sum(
+                    1 for s in stories
+                    if (d := ss.decisions.get((s.story.url, nl.id))) and d.is_decided()
+                )
+                parts.append(
+                    f'<div class="sec"><span class="em">{sec_obj.emoji}</span>'
+                    f'<h3>{sec_obj.name}</h3>'
+                    f'<span class="meta">{decided_in_sec}/{len(stories)}</span></div>'
+                )
+                for rank, s in enumerate(stories, start=1):
+                    a = s.for_newsletter(nl.id)
+                    if a is None:
+                        continue
+                    blurb = blurbs.get((s.story.url, nl.id), {})
+                    decision = ss.decisions.get((s.story.url, nl.id))
+                    status_cls, glyph = _row_status(decision, blurb, sec_obj.min_words, sec_obj.max_words)
+                    chips_html = _chips_for(s, ss.decisions, exclude_nl=nl.id)
+                    date_text = _short_date(s.story.published_at, selected_date)
+                    is_sel = (ss.selected_url == s.story.url and ss.selected_nl_for_detail == nl.id)
+                    parts.append(_build_row_html(
+                        rank=rank, score=a.score, title=s.story.title,
+                        story_url=s.story.url, target_nl=nl.id, rail_nl=nl.id,
+                        chips_html=chips_html, date_text=date_text,
+                        status_cls=status_cls, glyph=glyph, is_sel=is_sel,
+                    ))
 
-
-with mid_col:
-    _render_middle_pane()
+    parts.append("</div>")
+    st.markdown("".join(parts), unsafe_allow_html=True)
 
 
 # ─── RIGHT PANE — Detail / Editor ───
