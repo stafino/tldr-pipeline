@@ -344,6 +344,91 @@ st.markdown(
     /* Hide Streamlit footer */
     footer { display: none !important; }
     [data-testid="stDecoration"] { display: none !important; }
+
+    /* ─── Top-bar tab nav (Curate / Backtest) ─── */
+    .view-tabs { display: flex; gap: 4px; align-items: center; margin: 0; padding: 0; }
+    .view-tabs a {
+        display: inline-block; padding: 6px 14px; border-radius: 5px;
+        font-size: 13px; font-weight: 500; color: var(--text-dim);
+        text-decoration: none; border: 1px solid transparent;
+    }
+    .view-tabs a:hover { background: var(--surface); color: var(--text); }
+    .view-tabs a.active {
+        background: var(--accent-soft); color: var(--text);
+        border-color: var(--accent); font-weight: 600;
+    }
+
+    /* ─── Backtest dashboard ─── */
+    .bt-hero {
+        background: linear-gradient(135deg, var(--surface) 0%, #1a2030 100%);
+        border: 1px solid var(--border-strong);
+        border-radius: 8px;
+        padding: 22px 26px;
+        margin: 6px 0 22px;
+    }
+    .bt-hero h2 { font-size: 14px; font-weight: 600; color: var(--text-dim);
+        text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 6px; }
+    .bt-hero .lede { font-size: 22px; font-weight: 600; color: var(--text); margin: 0 0 12px; letter-spacing: -0.01em; }
+    .bt-hero .stat-row { display: flex; gap: 32px; flex-wrap: wrap; }
+    .bt-hero .stat .num { font-size: 28px; font-weight: 700; color: var(--accent); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .bt-hero .stat .label { font-size: 11px; color: var(--text-mute); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 2px; }
+
+    table.bt-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 8px 0 24px; }
+    table.bt-table th {
+        text-align: left; padding: 10px 12px; color: var(--text-mute);
+        font-weight: 600; text-transform: uppercase; font-size: 10px;
+        letter-spacing: 0.08em; border-bottom: 1px solid var(--border-strong);
+    }
+    table.bt-table td {
+        padding: 10px 12px; border-bottom: 1px solid var(--border);
+        vertical-align: middle;
+    }
+    table.bt-table td.name { color: var(--text); font-weight: 500; }
+    table.bt-table td.recall {
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        font-weight: 600; text-align: right;
+    }
+    table.bt-table td.recall.hi { color: var(--ok); }
+    table.bt-table td.recall.mid { color: var(--warn); }
+    table.bt-table td.recall.lo { color: var(--text-mute); }
+    table.bt-table td.spark {
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        color: var(--accent); letter-spacing: 1px;
+    }
+    table.bt-table td.na { color: var(--text-mute); font-style: italic; }
+    table.bt-table tr:hover { background: var(--surface); }
+
+    .bt-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 8px; }
+    .bt-compare .col-head {
+        font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em;
+        color: var(--text-mute); font-weight: 600; margin-bottom: 10px;
+        padding-bottom: 8px; border-bottom: 1px solid var(--border-strong);
+    }
+    .bt-item {
+        padding: 9px 0; border-bottom: 1px solid var(--border);
+        font-size: 13px; line-height: 1.4; display: flex; gap: 10px; align-items: baseline;
+    }
+    .bt-item .idx {
+        flex: 0 0 22px; text-align: right; color: var(--text-mute);
+        font-size: 11px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+    .bt-item .marker {
+        flex: 0 0 18px; font-size: 14px; line-height: 1;
+    }
+    .bt-item .marker.hit { color: var(--ok); }
+    .bt-item .marker.miss { color: var(--no); }
+    .bt-item .title { flex: 1 1 auto; color: var(--text); min-width: 0; word-wrap: break-word; }
+    .bt-item.matched { background: rgba(16, 185, 129, 0.06); margin: 0 -8px; padding: 9px 8px; border-radius: 4px; }
+    .bt-item.matched + .bt-item:not(.matched) { margin-top: 0; }
+    .bt-item .score {
+        flex: 0 0 28px; text-align: right;
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        font-size: 11px; color: var(--text);
+    }
+    .bt-empty {
+        padding: 40px 20px; text-align: center; color: var(--text-mute);
+        font-size: 13px; border: 1px dashed var(--border); border-radius: 6px;
+    }
     </style>
     """,
     unsafe_allow_html=True,
@@ -459,6 +544,11 @@ def _link(href_params: dict[str, str], inner_html: str, css_class: str = "row-li
 ss = st.session_state
 qp = st.query_params
 
+# Top-level view: curate (default) or backtest. Persists in URL for direct linking.
+current_view = qp.get("view", "curate")
+if current_view not in ("curate", "backtest"):
+    current_view = "curate"
+
 # Restore selected newsletter & story from query params if present (allows
 # clickable links instead of fat Streamlit buttons).
 if "nl" in qp:
@@ -495,9 +585,210 @@ if not dates:
 nls = load_newsletters()
 nl_ids = list(nls.keys())
 
+# Brand + tab nav row
+brand_col, tabs_col, _ = st.columns([2, 4, 6])
+with brand_col:
+    st.markdown('<h1 class="brand">tldr pipeline</h1>', unsafe_allow_html=True)
+with tabs_col:
+    curate_active = " active" if current_view == "curate" else ""
+    backtest_active = " active" if current_view == "backtest" else ""
+    st.markdown(
+        f'<div class="view-tabs">'
+        f'<a href="?view=curate" target="_self" class="{curate_active.strip()}">Curate</a>'
+        f'<a href="?view=backtest" target="_self" class="{backtest_active.strip()}">Backtest</a>'
+        f'</div>',
+        unsafe_allow_html=True,
+    )
+
+# ─────────────────────────────────────────────────────────────────────────────
+# BACKTEST view — early return
+# ─────────────────────────────────────────────────────────────────────────────
+if current_view == "backtest":
+    from common import backtest as bt
+
+    backtest_dates = bt.all_cached_dates()
+    if not backtest_dates:
+        st.markdown('<br>', unsafe_allow_html=True)
+        st.markdown(
+            '<div class="bt-empty">No backtest data yet. The next cron run will populate it. '
+            'You can force one now with: <code>tldr backtest_cache</code></div>',
+            unsafe_allow_html=True,
+        )
+        st.stop()
+
+    # Hero: aggregate recall@10 across all newsletters, latest day with predictions.
+    # We skip days where we have a TLDR archive but zero predictions on our side
+    # (pre-cron-launch dates), because they're 0/N by definition and just drag the
+    # number down for free.
+    latest_date = backtest_dates[0]
+    latest_results = [bt.load_cached(nid, latest_date) for nid in nl_ids]
+    latest_results = [r for r in latest_results if r is not None and r.available and r.predictions]
+
+    total_tldr = sum(len(r.tldr_titles) for r in latest_results)
+    total_hits_10 = sum(r.hits_at.get(10, 0) for r in latest_results)
+    total_hits_20 = sum(r.hits_at.get(20, 0) for r in latest_results)
+    total_hits_30 = sum(r.hits_at.get(30, 0) for r in latest_results)
+    recall_10 = (total_hits_10 / total_tldr * 100) if total_tldr else 0
+    recall_20 = (total_hits_20 / total_tldr * 100) if total_tldr else 0
+    recall_30 = (total_hits_30 / total_tldr * 100) if total_tldr else 0
+
+    hero = (
+        f'<div class="bt-hero">'
+        f'<h2>How well we match TLDR</h2>'
+        f'<p class="lede">{latest_date} · {len(latest_results)} newsletters compared · {total_tldr} stories TLDR actually published</p>'
+        f'<div class="stat-row">'
+        f'<div class="stat"><div class="num">{recall_10:.0f}%</div><div class="label">recall @ top 10</div></div>'
+        f'<div class="stat"><div class="num">{recall_20:.0f}%</div><div class="label">recall @ top 20</div></div>'
+        f'<div class="stat"><div class="num">{recall_30:.0f}%</div><div class="label">recall @ top 30</div></div>'
+        f'<div class="stat"><div class="num" style="color:var(--text);">{total_hits_10}/{total_tldr}</div><div class="label">our top-10 hits / their picks</div></div>'
+        f'</div></div>'
+        f'<p style="color:var(--text-mute);font-size:12px;margin:-12px 0 22px;line-height:1.5;">'
+        f'<b style="color:var(--text-dim);">Recall</b> = "of the stories TLDR actually published, how many did we surface in our top N?" '
+        f'Matches via title-embedding similarity ≥ 0.72 (so "OpenAI Acquires Ona" matches "OpenAI buys long-agent startup Ona"). '
+        f'Low numbers point to source coverage gaps — TLDR sources heavily from X, LinkedIn, and inside-baseball Substacks we haven\'t wired up yet.'
+        f'</p>'
+    )
+    st.markdown(hero, unsafe_allow_html=True)
+
+    # Per-newsletter table with 7-day sparkline
+    SPARK_CHARS = "▁▂▃▄▅▆▇█"
+    def _spark(values: list[float]) -> str:
+        if not values:
+            return ""
+        out = []
+        for v in values:
+            idx = max(0, min(len(SPARK_CHARS) - 1, int(v * len(SPARK_CHARS))))
+            out.append(SPARK_CHARS[idx])
+        return "".join(out)
+
+    rows_html = []
+    for nid in nl_ids:
+        history = bt.load_all_for(nid, last_n_days=7)
+        # Filter to days we actually have predictions for — otherwise the
+        # "TLDR title denominator" gets counted but our hits are 0 by definition.
+        history = [r for r in history if r.predictions]
+        if not history:
+            rows_html.append(
+                f'<tr><td class="name">{nls[nid].brand_name}</td>'
+                f'<td colspan="4" class="na">no comparable issue yet (TLDR not published, or pipeline didn\'t run that day)</td></tr>'
+            )
+            continue
+        # Aggregate recall over the loaded history
+        agg_hits = {k: sum(r.hits_at.get(k, 0) for r in history) for k in (10, 20, 30)}
+        agg_tldr = sum(len(r.tldr_titles) for r in history)
+        if agg_tldr == 0:
+            continue
+        r10 = agg_hits[10] / agg_tldr
+        r20 = agg_hits[20] / agg_tldr
+        r30 = agg_hits[30] / agg_tldr
+        spark = _spark([r.recall_at.get(10, 0) for r in history])
+
+        def _cls(v: float) -> str:
+            if v >= 0.5: return "recall hi"
+            if v >= 0.25: return "recall mid"
+            return "recall lo"
+
+        rows_html.append(
+            f'<tr>'
+            f'<td class="name">{nls[nid].brand_name}</td>'
+            f'<td class="{_cls(r10)}">{r10*100:.0f}%</td>'
+            f'<td class="{_cls(r20)}">{r20*100:.0f}%</td>'
+            f'<td class="{_cls(r30)}">{r30*100:.0f}%</td>'
+            f'<td class="spark">{spark}</td>'
+            f'</tr>'
+        )
+
+    st.markdown(
+        '<table class="bt-table">'
+        '<thead><tr><th>Newsletter</th><th style="text-align:right;">R@10</th>'
+        '<th style="text-align:right;">R@20</th><th style="text-align:right;">R@30</th>'
+        '<th>Last 7 days (R@10)</th></tr></thead>'
+        f'<tbody>{"".join(rows_html)}</tbody></table>',
+        unsafe_allow_html=True,
+    )
+
+    # Detailed compare: pick a (date, newsletter) to inspect
+    st.markdown('<h3 style="font-size:14px;font-weight:600;color:var(--text);margin:24px 0 12px;">'
+                'Today vs published — side by side</h3>', unsafe_allow_html=True)
+
+    bt_cols = st.columns([1, 1, 4])
+    with bt_cols[0]:
+        bt_date = st.selectbox("date", backtest_dates, index=0, key="bt_date", label_visibility="collapsed")
+    with bt_cols[1]:
+        bt_nl = st.selectbox(
+            "newsletter", nl_ids,
+            format_func=lambda x: nls[x].brand_name,
+            key="bt_nl", label_visibility="collapsed",
+        )
+
+    detail = bt.load_cached(bt_nl, bt_date)
+    if detail is None or not detail.available:
+        st.markdown(
+            f'<div class="bt-empty">No published TLDR {nls[bt_nl].brand_name} issue for {bt_date} '
+            '(or the archive page returned 404).</div>',
+            unsafe_allow_html=True,
+        )
+    elif not detail.predictions:
+        st.markdown(
+            '<div class="bt-empty">We have no predictions for this date — '
+            'the pipeline didn\'t run, or no stories scored above the threshold.</div>',
+            unsafe_allow_html=True,
+        )
+    else:
+        # Build left column: TLDR's published stories with hit/miss marker
+        left_items = []
+        for i, t in enumerate(detail.tldr_titles):
+            hit = detail.tldr_matched[i] if i < len(detail.tldr_matched) else False
+            marker = '<span class="marker hit">✓</span>' if hit else '<span class="marker miss">✗</span>'
+            left_items.append(
+                f'<div class="bt-item{" matched" if hit else ""}">'
+                f'<span class="idx">{i+1}</span>{marker}'
+                f'<span class="title">{t}</span>'
+                f'</div>'
+            )
+
+        # Right column: our top predictions with score and match indicator
+        right_items = []
+        for p in detail.predictions:
+            matched = p.matched_tldr_idx is not None
+            marker = '<span class="marker hit">✓</span>' if matched else '<span class="marker miss">·</span>'
+            right_items.append(
+                f'<div class="bt-item{" matched" if matched else ""}">'
+                f'<span class="idx">{p.rank}</span>{marker}'
+                f'<span class="title">{p.title}</span>'
+                f'<span class="score">{int(round(p.score))}</span>'
+                f'</div>'
+            )
+
+        st.markdown(
+            f'<div class="bt-compare">'
+            f'<div><div class="col-head">TLDR {nls[bt_nl].brand_name.replace("TLDR ", "").replace("TLDR", "")} actually published ({len(detail.tldr_titles)})</div>'
+            f'{"".join(left_items)}</div>'
+            f'<div><div class="col-head">Our top {len(detail.predictions)} predictions</div>'
+            f'{"".join(right_items)}</div>'
+            f'</div>',
+            unsafe_allow_html=True,
+        )
+
+        st.markdown(
+            f'<p style="color:var(--text-mute);font-size:11px;margin-top:14px;">'
+            f'Hits at @{10} / @{20} / @{30}: '
+            f'<b style="color:var(--text);font-family:ui-monospace,monospace;">{detail.hits_at.get(10,0)} · {detail.hits_at.get(20,0)} · {detail.hits_at.get(30,0)}</b> '
+            f'of {len(detail.tldr_titles)} TLDR titles · '
+            f'similarity threshold 0.72 · cached {detail.fetched_at[:19]}'
+            f'</p>',
+            unsafe_allow_html=True,
+        )
+
+    st.stop()  # do NOT render the curate view
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# CURATE view (default) — original three-pane layout below
+# ─────────────────────────────────────────────────────────────────────────────
 tb1, tb2, tb3, tb4 = st.columns([2, 3, 4, 3])
 with tb1:
-    st.markdown('<h1 class="brand">tldr pipeline</h1>', unsafe_allow_html=True)
+    st.markdown('<div style="height:1px;"></div>', unsafe_allow_html=True)
 with tb2:
     selected_date = st.selectbox("date", dates, index=0, label_visibility="collapsed")
 

@@ -85,6 +85,14 @@ cmd_backtest() {
   uv run python scripts/backtest.py --start "$start" --end "$end" --newsletter "$nl"
 }
 
+cmd_backtest_cache() {
+  # Update the backtest cache for the last 7 days (covers today + 6 prior).
+  local today; today="$(date +%Y-%m-%d)"
+  local start; start="$(date -v-6d +%Y-%m-%d 2>/dev/null || date -d '6 days ago' +%Y-%m-%d)"
+  log "backtest cache: $start → $today"
+  uv run python scripts/run_backtest_cache.py --start "$start" --end "$today"
+}
+
 cmd_open() {
   local nl="${1:-tldr_tech}"
   local f="data/issues/${nl}-${DATE}.txt"
@@ -134,6 +142,7 @@ main() {
     blurbs)              shift; cmd_blurbs "${1:-all}" ;;
     format|render)       shift; cmd_format "${1:-all}" ;;
     backtest)            shift; cmd_backtest "$@" ;;
+    backtest_cache|cache_backtest)  cmd_backtest_cache ;;
     open|edit)           shift; cmd_open "${1:-tldr_tech}" ;;
     status)              cmd_status ;;
     list|ls)             cmd_list ;;

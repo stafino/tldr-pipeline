@@ -59,6 +59,10 @@ run_stage "dedup"  ./tldr dedup
 run_stage "rank"   ./tldr rank
 run_stage "blurbs" ./tldr blurbs all
 run_stage "format" ./tldr format all
+# Backtest cache: scrape TLDR's actual published issue for the target date
+# (and the last few days) and store the comparison vs our predictions so the
+# UI can render the recall dashboard without re-scraping at view time.
+run_stage "backtest" ./tldr backtest_cache
 
 # Commit + push whatever data actually landed, even if some stages failed.
 # That way the deployed Streamlit at least gets fresh raw/scored data even
@@ -81,7 +85,7 @@ ls -1t data/logs/cron-*.log 2>/dev/null | tail -n +31 | xargs -r rm -f
 
 echo
 echo "── SUMMARY ──────────────────────────────────"
-for stage in ingest dedup rank blurbs format; do
+for stage in ingest dedup rank blurbs format backtest; do
   printf "  %-8s %s\n" "$stage" "${STATUS[$stage]:-skipped}"
 done
 echo "▸ refresh complete: $(date)"
