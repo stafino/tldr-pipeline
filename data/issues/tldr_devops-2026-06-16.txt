@@ -30,10 +30,6 @@ HPE offers VMware refugees a year off the meter (1 minute read)
 
 HPE is offering VMware customers a free VM Essentials license for one year plus discounted Zerto disaster-recovery licensing to lure them off Broadcom's platform amid widespread frustration over post-acquisition price hikes. The promotion targets teams already evaluating a migration, betting that subscription sticker shock and bundling changes since Broadcom's takeover have left enough operators willing to absorb the toil of re-platforming their virtualization stack.
 
-Sources: Microsoft is adding AWS capacity to GitHub after AI-driven growth strained infrastructure and triggered a series of reliability issues (Ashley Stewart/Business Insider) (1 minute read)
-
-Microsoft is adding AWS capacity to GitHub after AI-driven growth strained its infrastructure and triggered a series of reliability incidents, according to Business Insider sources. The move puts GitHub workloads on Microsoft's biggest cloud rival, a sign that Copilot and Actions demand has outpaced what Azure alone could provision to keep the platform's SLOs intact.
-
 Fire burns Google Cloud India’s network, which remains slow a week later (1 minute read)
 
 A fire damaged Google Cloud's India networking infrastructure, leaving the region with degraded throughput and elevated latency a week after the incident. The slow recovery underscores the operational risk of single-region dependency, as teams running latency-sensitive workloads in India face sustained P99 spikes with no firm restoration timeline from Google.
@@ -44,6 +40,10 @@ The next major rework of Flatpak, dubbed Flatpak-NG, is leaning toward a hard de
 
 🚀
 Opinions & Tutorials
+
+From data residency to digital sovereignty: Architectural patterns for  cloud native platforms (5 minute read)
+
+(blurb not generated)
 
 AI demands more engineering discipline. Not less (xpost) (1 minute read)
 
@@ -69,10 +69,6 @@ Implementing workload identity with HashiCorp Vault and SPIFFE (1 minute read)
 
 HashiCorp published a guide to using Vault as a SPIFFE identity issuer and broker, issuing SVIDs to workloads so services authenticate by verified identity rather than long-lived secrets. The post draws a clear boundary for where SPIRE belongs, with Vault handling issuance and authorization brokering while SPIRE manages node and workload attestation. The payoff is fewer static credentials to rotate and a consistent identity layer across clusters.
 
-Deploy any Docker app to a $5 VPS with automatic HTTPS, CI/CD, and backups (2 minute read)
-
-This tutorial walks through running any Dockerized app on a $5 VPS with Traefik terminating TLS via automatic Let's Encrypt certs, push-to-deploy from GitHub, and nightly encrypted backups. The architecture is deliberately minimal: one server, one app, one database, simple enough to read top to bottom. The pitch is that managed platforms cost more for setup convenience than compute, and this copyable config closes that gap for side projects and early products.
-
 ⚒️
 Launches & Tools
 
@@ -87,3 +83,14 @@ AWS WAF added AI traffic monetization, a Bot Control capability that lets conten
 Caddy compatibility for zeroserve: 3x throughput and 70% lower latency (1 minute read)
 
 zeroserve shipped a Caddy compatibility layer that reads existing Caddyfile configs, letting teams swap in the reverse proxy without rewriting their setup. The project reports 3x higher throughput and 70% lower P99 latency than Caddy in its benchmarks, with the migration path aimed at drop-in replacement for existing deployments.
+
+1Password debuts Credential Broker to release secrets only when needed (5 minute read)
+
+(blurb not generated)
+
+⚡
+Quick Links
+
+Deploying Gemma 12B to AWS EC2 with NVIDIA L4 and Antigravity CLI (5 minute read)
+
+(blurb not generated)

@@ -30,17 +30,13 @@ LLM-as-Code Agentic Programming for Agent Harness (1 minute read)
 
 This paper argues that token explosion, control-flow hallucination, and unreliable completion in LLM agents are architectural consequences of making a probabilistic model orchestrate deterministic looping, branching, and sequencing. The authors propose Agentic Programming, where the program owns all control flow and the LLM is invoked as an adaptive component only for reasoning or generation, with each call's context built from the execution history's call tree as a DAG.
 
+Building Reliable Agentic AI Systems (1 minute read)
+
+Thoughtcombines from keyword search to research assistant for Bayer pharma researchers.Bayer engineers built a system that lets pharmaceutical researchers query decades of study data buried in PDF reports, evolving from keyword-based search into an LLM research assistant that answers complex questions and drafts regulatory documents. The writeup details the architecture choices that made it reliable, including how the team handled retrieval over dense scientific documents and constrained the model to keep outputs grounded and auditable.
+
 I indexed 669 GB of my GoPro videos using my M1 Max computer and local ML models (1 minute read)
 
 A developer indexed 669 GB of personal GoPro footage entirely on an M1 Max using local ML models, building a searchable archive without sending video to any cloud service. The pipeline extracts frames, runs them through on-device vision models to generate embeddings and captions, and stores the results so clips can be retrieved by natural-language queries.
-
-One Agent Per Repo: An Orchestration Pattern for Multi-Repo AI Coding (3 minute read)
-
-The post proposes assigning each repository its own specialized AI agent with repo-specific prompts and tool access, then using a single orchestrator to route work and merge answers across a multi-repo workspace. The design hinges on context isolation as the core constraint, includes copy-pasteable Claude Code subagent starters, and catalogs the failure modes, such as agents blending conventions or forgetting read-only boundaries, that break a single agent handed a dozen repos at once.
-
-Deploy any Docker app to a $5 VPS with automatic HTTPS, CI/CD, and backups (2 minute read)
-
-This walkthrough deploys any Dockerized app to a $5 VPS using Traefik as the edge router, terminating TLS with automatic Let's Encrypt certificates and redirecting HTTP to HTTPS. The setup adds push-to-deploy from GitHub and nightly encrypted backups, running one app and one database per box to stay cheap and simple enough to read top to bottom.
 
 Agent trajectories as programs: fingerprinting and programming coding-agent behavior (1 minute read)
 
@@ -66,33 +62,33 @@ From Third-Party to First-Party: Measuring and Protecting Against Modern Web Tra
 
 A large-scale measurement of top sites found that over 54% now deploy first-party or server-side tracking, which relocates tracking logic into the browser's first-party context or the website's backend to evade traditional client-side detection. The authors build a provider-independent detection methodology and cluster scripts by similarity into a network graph, showing the tracking ecosystem persists even as it dodges conventional privacy tools.
 
-Selection Without Signal, Recovery Through Expression: A Measurement Study of Post-Hoc Falsification Operators for Frozen Small Code Models (5 minute read)
+Selection Without Signal, Recovery Through Expression: A Measurement Study of Post-Hoc Falsification Operators for Frozen Small Code Models (1 minute read)
 
-(blurb not generated)
+This paper tests whether post-hoc operators that select, verify, or repair the outputs of frozen sub-1.5B code models can beat plain Best-of-N sampling, evaluating 26 semantic operators under a leakage-free, matched-compute protocol. None improved held-out accuracy over Best-of-N, blocked by a coverage wall on hard tasks and a capability scissors that leaves too few discriminable errors among visible-test passers.
 
-No Resource, No Benchmarks, No Problem? Evaluating and Improving LLMs for Code Generation in No-Resource Languages (5 minute read)
+No Resource, No Benchmarks, No Problem? Evaluating and Improving LLMs for Code Generation in No-Resource Languages (1 minute read)
 
-(blurb not generated)
+This paper introduces three new benchmarks for evaluating LLM code generation in no-resource languages, the proprietary or domain-specific languages that companies build in-house and that models have effectively never seen in training. The authors test and improve generation for these languages, targeting the gap left by tools like GitHub Copilot that only support high-resource ecosystems such as Python and Java.
 
-Neuro-Symbolic Software Verification: Hyper-charging Local Language Models with Symbolic Reasoning at Scale (5 minute read)
+Neuro-Symbolic Software Verification: Hyper-charging Local Language Models with Symbolic Reasoning at Scale (1 minute read)
 
-(blurb not generated)
+VerIbmc is a neuro-symbolic pipeline that pairs deterministic symbolic invariant synthesis with locally deployable open-weight models and the ESBMC verifier, targeting loop invariant generation without sending source code to proprietary cloud APIs. The authors evaluate five open-weight models from 7B to 120B parameters across five benchmark families, comparing Chain-of-Thought and Tree-of-Thought prompting in an iterative refinement loop driven by structured verifier feedback.
 
-Boot Naked Linux (5 minute read)
+Boot Naked Linux (1 minute read)
 
-(blurb not generated)
+The author boots a minimal Linux system with nothing but a kernel and a single statically linked program running as PID 1, skipping the usual initramfs, init system, and userspace entirely. The walkthrough covers compiling the program against the raw syscall interface, pointing the kernel at it via the init= boot parameter, and testing the result under QEMU before running on real hardware.
 
-The Ghosts of Polymarket: When Off-Chain Matches Meet On-Chain Reverts (5 minute read)
+The Ghosts of Polymarket: When Off-Chain Matches Meet On-Chain Reverts (1 minute read)
 
-(blurb not generated)
+Researchers analyzed Polymarket's hybrid architecture, which matches orders off-chain but settles on-chain, exposing a consistency gap they call Ghost Fills, where matched orders fail at settlement. Their GHOSTHUNTER tool reconstructed 1,952,440 reverted transactions and attributed them to four attack vectors—nonce bump, balance drain, allowance revoke, and proxy trap—realized across 35 variants that invalidate orders before finalization.
 
-Graphical-Probabilistic Modeling of Generative Flows in LLM-Native Software Systems (5 minute read)
+Graphical-Probabilistic Modeling of Generative Flows in LLM-Native Software Systems (1 minute read)
 
-(blurb not generated)
+This paper proposes Generation Networks, a graphical probabilistic modeling framework for documenting the stochastic, prompt-dependent generative flows in LLM-native software systems. The authors argue that current practice relies on low-level prompting and context-engineering heuristics that lack the modularity and abstraction needed for design-level reasoning, and offer the framework as a foundation for stating and analyzing properties of LLM-based designs.
 
-C^2: Cache-Conscious Succinct Tries with Adaptive Unary Path Compression (5 minute read)
+C^2: Cache-Conscious Succinct Tries with Adaptive Unary Path Compression (1 minute read)
 
-(blurb not generated)
+C² introduces two optimizations for succinct tries: a cache-friendly bitvector layout that cuts cache misses during trie navigation, and adaptive unary path compression that eliminates space wasted on redundant single-child chains. Applied to FST, CoCo-trie, and Marisa across six datasets, the layout change improves query performance by 1.12x to 1.58x while the path compression yields a 1.3x smaller memory footprint on average.
 
 🧠
 Opinions & Advice
@@ -156,6 +152,10 @@ Free SQL→ER diagram tool, runs in the browser, nothing uploaded (1 minute read
 
 This browser-based tool converts SQL schema definitions into entity-relationship diagrams entirely client-side, with no server upload or account required. The parsing and rendering run locally, so database schemas never leave the machine, and the tool is free to use for visualizing table structures and foreign-key relationships.
 
+GitHub releases an open dataset for multilingual developer content (1 minute read)
+
+GitHub released the GitHub Multilingual Repositories Dataset, a CC0-1.0 collection that helps researchers and developers find public repos containing non-English natural-language content across READMEs, issues, and pull request threads. The dataset fulfills a 2025 commitment GitHub made under Microsoft's European Digital Commitments and is hosted on GitHub itself.
+
 Caddy compatibility for zeroserve: 3x throughput and 70% lower latency (1 minute read)
 
 zeroserve added a compatibility layer for Caddy configs, letting users run existing Caddyfiles on its server while reporting 3x higher throughput and 70% lower latency in the author's benchmarks. The post details the drop-in migration path and where behavior diverges from Caddy, with the main trade-off being incomplete coverage of Caddy's plugin ecosystem.
@@ -167,6 +167,10 @@ Open-SWE-Traces is a dataset of 207,489 agentic coding trajectories spanning nin
 Openrouter Fusion API (1 minute read)
 
 OpenRouter released Fusion, a single API endpoint that dynamically routes each request across multiple frontier models rather than pinning calls to one provider. The model is exposed under the standard OpenRouter chat completions interface, so existing integrations can swap to it without code changes while OpenRouter handles model selection and failover behind the slug.
+
+Announcing Lakebase Search: agent-native retrieval built into Lakebase Postgres (1 minute read)
+
+Databricks released Lakebase Search, hybrid vector and full-text retrieval built directly into Lakebase Postgres for agent applications. The feature lets developers run semantic and keyword queries against operational data without bolting on a separate vector store, keeping retrieval, transactions, and governance inside one Postgres-compatible engine.
 
 obliv-clang: Real-World Oblivious Programming in C++ (1 minute read)
 
@@ -180,12 +184,20 @@ Accelerating researchers and developers building multilingual AI with a new open
 
 GitHub published a new repository-level dataset under CC0-1.0 that maps multilingual developer content across READMEs, issues, and pull requests. The release gives researchers and developers a public-domain corpus for training and evaluating multilingual AI models on real-world software discussions rather than English-only sources.
 
+Exclusive: Mindbeam touts dramatic performance improvements in CPU-based AI inference (1 minute read)
+
+Mindbeam released Litespark-Inference, an open-source library that runs ternary large language models efficiently on standard consumer CPUs. The framework aims to cut reliance on expensive GPUs for some inference workloads, with the two-year-old startup claiming significant throughput gains over GPU-based setups on commodity processors.
+
 🎁
 Miscellaneous
 
 Arch Linux locks down AUR signups amid wave of malicious commits (1 minute read)
 
 Arch Linux froze new account signups on the Arch User Repository after attackers flooded it with malicious commits that poisoned package updates. The community-maintained AUR ships build scripts rather than vetted binaries, so the lockdown buys maintainers time to clean compromised packages and review the backlog before reopening registration to contributors.
+
+Atomic Arch Supply Chain Attack Hits 1,500 AUR Packages (1 minute read)
+
+Attackers compromised roughly 1,500 packages in the Arch User Repository, embedding the Atomic infostealer in builds pulled by Arch Linux users. The project halted new account registrations to stem the flood of malicious uploads, a reminder that user-submitted package repos like AUR ship without the vetting of official channels.
 
 North Korean Hackers Are Turning Developer Tools Into Malware Delivery Channels (1 minute read)
 
@@ -195,13 +207,21 @@ A backdoor in a LinkedIn job offer (1 minute read)
 
 A developer recounts catching obfuscated malware planted in a take-home coding assignment sent as part of a LinkedIn job offer, a tactic linked to North Korean threat actors targeting engineers through fake recruiting. The backdoor hid in a minified dependency that fetched and executed remote payloads on run, a reminder to sandbox any interview project before installing its packages or running its code.
 
-Sources: Microsoft is adding AWS capacity to GitHub after AI-driven growth strained infrastructure and triggered a series of reliability issues (Ashley Stewart/Business Insider) (1 minute read)
+Software supply chains are heading for a transparency test (1 minute read)
 
-Microsoft is adding AWS capacity to GitHub after AI-driven growth strained its infrastructure and triggered a series of reliability incidents, according to Business Insider. The move sends Microsoft to its biggest cloud rival, Amazon, rather than relying solely on Azure, signaling that GitHub's Copilot-fueled load has outpaced what its parent's own data centers can absorb.
+The EU Cyber Resilience Act takes effect in December 2027 and will require manufacturers to create, maintain, and supply SBOMs, turning software bill-of-materials generation from best practice into a legal obligation. ENISA's SBOM Adoption State of Play 2026 report shows organizations already shifting development workflows, adding SBOM tooling, and automating dependency tracking to prepare, with adoption skewing toward larger firms.
+
+Chrome is removing the last workaround keeping Manifest V2 ad blockers alive (1 minute read)
+
+Chrome 150, shipping June 30, removes the final developer flag that let Manifest V2 extensions like uBlock Origin keep running in the browser. The change completes Google's multi-year migration to Manifest V3, whose declarativeNetRequest API caps filter rules and blocks the dynamic request interception that powerful ad and tracker blockers depend on.
 
 Flatpak-NG sounds like bad news for systemd refuseniks (1 minute read)
 
 The next iteration of Flatpak, dubbed Flatpak-NG, is being reworked around systemd components, which could break compatibility for distributions that use alternative init systems. The change would push systemd-free distros like Devuan, Artix, and Void Linux further from the mainstream Linux app-packaging ecosystem, narrowing the options for users who deliberately avoid systemd.
+
+Undo lands $37M to give AI agents the runtime context to fix bugs (1 minute read)
+
+Undo Ltd., a U.K.-based debugging company founded in 2005, raised $37 million to bring its execution-recording technology to engineers fixing AI-generated code. The product records a program's full execution history so it can be replayed later, giving AI agents the runtime context to trace bugs rather than guess from static source.
 
 Popular WordPress Plugin Scripts Tampered to Plant Hidden Backdoors on Sites (1 minute read)
 
@@ -214,6 +234,10 @@ Curl maintainer Daniel Stenberg announced the project will reject all vulnerabil
 Improving Arm64 support in CNCF projects with OCI credits (1 minute read)
 
 The CNCF is funding Arm64 build and test support across its hosted projects using donated Oracle Cloud Infrastructure credits, addressing a gap as Arm instances surpass 50% of new AWS launches and 33% on Azure. The credits give maintainers access to native Arm64 CI runners, removing the cost and emulation overhead that has slowed multi-architecture support in cloud-native tooling.
+
+Tech Coalition ‘Athena’ Targets OSS Vulnerabilities Ahead of Disclosure (1 minute read)
+
+More than two dozen organizations launched Athena, a shared platform that triages, fixes, and hardens open-source vulnerabilities before public disclosure. The coalition aims to close the window between a flaw's discovery and an available patch, the period when attackers exploit unfixed code in widely used dependencies.
 
 Hetzner Price Adjustment (1 minute read)
 
@@ -269,6 +293,10 @@ A developer built a C++ ray tracer from scratch by hand, no AI assistance, with 
 AI Supply Chain Galaxy: 3D Visual Analytics for License Compliance (1 minute read)
 
 A 3D visual analytics tool for auditing ML model provenance found compliance risks in 55% of 908,449 Hugging Face models.
+
+Honda Civics and Installing Software With Android Test Keys (1 minute read)
+
+Reviving aging Honda Civic infotainment systems by sideloading software using Android test keys to bypass signature checks.
 
 Show HN: machine0 – Persistent NixOS VMs You Control from the CLI (1 minute read)
 
