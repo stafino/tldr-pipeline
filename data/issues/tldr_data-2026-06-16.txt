@@ -14,6 +14,66 @@ When Does q-error Predict Plan Regret? Three Regimes of Cardinality-Estimation E
 
 This paper challenges the field's reliance on q-error as a proxy for query-plan quality, offering a measurement-driven account of when it holds. The authors identify three regimes: for small estimation errors, a true-point condition number predicts plan regret and beats q-error; for the large errors where learned estimators actually operate, an estimator-independent ACS-infinity measure flags regret-prone queries (Spearman rho ~0.54 on STATS-CEB) while q-error is nearly useless at the query level (rho ~0.05).
 
+How TimescaleDB compresses time-series data (1 minute read)
+
+TimescaleDB's Hypercore engine compresses time-series data by grouping rows into columnar segments, applying type-specific encodings like delta-of-delta for timestamps and Gorilla for floats, then storing each compressed batch as a single row. The result is 90%+ storage reduction while still allowing updates and queries against older data, since compressed and uncompressed chunks coexist in the same hypertable. The write-up walks through how the columnar layout and per-column algorithms make analytical scans cheaper without forcing teams off Postgres.
+
+Filtered ANN as a Phase Transition: When Selectivity-Estimation Error Causes Plan Regret (1 minute read)
+
+This paper models filtered approximate-nearest-neighbor queries as an argmax over a landscape where pre-filter, post-filter, and in-filter strategies each win in distinct phases, separated by boundaries set by predicate selectivity. The authors show selectivity-estimation error only costs recall near those boundaries, in a wedge whose width tracks the estimation error and whose height tracks the local cliff. The takeaway for query planners: invest estimation accuracy near the critical s ~ k/K and percolation thresholds, not everywhere.
+
+Decoupling Inference from State Updates in Low-Latency Feature Engines via Probabilistic Thinning (1 minute read)
+
+This paper decouples model inference from state persistence in streaming feature pipelines using probabilistic thinning: every event is scored, but only informative ones trigger durable read-modify-write updates. High-frequency state writes are usually the dominant source of latency, contention, and warehouse cost in feature engines. The authors control the persistence path using only approximate statistics from disk-backed key-value stores, with no in-memory control plane or cross-worker coordination, and prove common time-based aggregations stay unbiased.
+
+Phantoms and Disclosures: a Causal Framework for Auditing Synthetic Data (1 minute read)
+
+This paper presents an auditing framework for detecting when synthetic data leaks private information from its training corpus. The key contribution is a causal distinction between "true disclosures," where the system directly reproduces a user's record, and "phantom disclosures," where it incidentally generates matching data by chance. By splitting inputs into training and holdout sets and running statistical hypothesis tests against zero-learning or differential privacy baselines, the method audits disclosure risk with no model access and no canary insertion required.
+
+Understanding the Behaviors of Environment-aware Information Retrieval (1 minute read)
+
+This paper presents the first systematic study of how LLMs can learn, via reinforcement learning, to tailor query formulation to the specific retriever they are working with. The authors find retrievers have distinct optimal query styles, descriptive versus question-like, so a strategy tuned for one retriever fails on another. For data teams running RAG pipelines, this argues against a single fixed query-rewriting prompt and for retriever-aware formulation, with gains from retriever-specific human guidance and larger models.
+
+Medical Heuristic Learning: An LLM-Driven Framework for Interpretable and Auditable Clinical Decision Rules (1 minute read)
+
+This paper proposes Medical Heuristic Learning (MHL), a framework that uses an LLM workflow instead of gradient updates to generate clinical decision rules from tabular medical data. Rather than training neural network weights, MHL combines statistical probes, medical knowledge probes, rule synthesis, and code-level iterative refinement to produce deterministic, executable decision logic. The goal is auditable predictions that hold up against the small samples, class imbalance, and shifting diagnostic criteria common in healthcare, where black-box accuracy alone blocks deployment.
+
+HAMON: Passive Optical Sequence Mixing for Long-Horizon Forecasting (1 minute read)
+
+HAMON replaces the learned digital sequence-mixing layer in time-series forecasting with a passive diffractive optical core, encoding history onto an optical aperture and using cascaded trainable phase masks to shape the forecast directly in the output field. The bet is that long-horizon forecasting operators are often low-complexity and approximately linear, so they don't need dense transformer-style superposition. At inference, prediction is a single passive optical propagation pass with no digital mixing, and the authors report it beating the strongest digital baselines on ETTm2.
+
+From Tokens to Policy: Causal and Interpretable Heterogeneous Treatment Effects Identification (1 minute read)
+
+This paper reframes heterogeneous treatment effect identification as a Markov-blanket discovery problem, arguing that richer multi-modal pre-treatment data plus scalable learned representations make a causal, oracle-grade reading of who responds to an intervention achievable. The authors introduce NEXIS, an iterative search with provable consistent selection of latent interaction drivers, and apply it to two anti-poverty programs in Africa. The pitch for data teams is moving past the usual expressivity-versus-interpretability trade-off without smuggling in spurious effects from unmeasured confounders.
+
+C^2: Cache-Conscious Succinct Tries with Adaptive Unary Path Compression (1 minute read)
+
+C^2 is a pair of optimizations that retrofit cache-conscious layouts and unary-path compression onto succinct tries, the compact string dictionaries used for low-memory lookups. Applied to three state-of-the-art implementations (FST, CoCo-trie, and Marisa), the cache-friendly bit-vector layout cut query latency by up to 1.58x, while compressing redundant unary paths shrank the memory footprint 1.3x on average across six datasets. The gains come without changing the underlying trie semantics, so existing dictionary workloads inherit them directly.
+
+RAID: Semantic Graph Diffusion for True Cold-Start and Cross-Lingual Forecasting (1 minute read)
+
+RAID targets the true cold-start forecasting problem, where a new item has zero prior observations and history-based foundation models break down. Instead of learning from past values, it maps textual metadata into a shared multilingual embedding space, builds an inductive retrieval graph that extends to unseen items, and refines a neighbor-aggregated base forecast with a gated diffusion module. Under a strict cold-start protocol, the authors report better accuracy and interval coverage than strong foundation models, plus an order-of-magnitude drop in inference latency.
+
+MAGE-RAG: Multigranular Adaptive Graph Evidence for Agentic Multimodal RAG in Long-Document QA (1 minute read)
+
+MAGE-RAG proposes a graph-based retrieval framework for multimodal question answering over long PDFs, replacing fixed Top-k chunk retrieval with an adaptive evidence graph. Built offline, the graph links page nodes and element nodes through containment, reading order, layout adjacency, and section hierarchy, then a query-time controller iteratively activates and expands only the relevant subgraph. The aim is to break the static trade-off among evidence coverage, retrieval noise, and inference cost that text-chunk and full-page retrieval both impose.
+
+Filtered Conformal Ellipsoids for Graph-Native Time Series (1 minute read)
+
+This paper proposes filtered conformal ellipsoids for building joint prediction sets over multivariate time series. A frozen state-space filter emits a one-step predictive mean and covariance to fix each ellipsoid's shape, while split-conformal calibration sets the scalar radius from Mahalanobis scores, yielding distribution-free coverage without leaning on Gaussian tail assumptions. The contribution is the dependence analysis: the authors prove contraction in an observable predictive-law quotient, giving coverage guarantees even when recurrent filters fail to contract in their raw hidden state.
+
+Beyond the Blood Draw: Explainable Machine Learning for Non-Invasive Dysglycemia Risk Screening (1 minute read)
+
+A LightGBM model trained on NHANES 2017–2023 data (n=14,352) screened dysglycemia risk using only non-invasive inputs, hitting AUC 0.820 and beating the Finnish Diabetes Risk Score (0.745) and the ADA Risk Test (0.783). SHAP analysis flagged age, race/ethnicity, and waist-to-height ratio as the top predictors, with performance holding across demographic subgroups (AUC 0.735–0.832). The result shows lab-free, explainable screening can outperform established clinical scores before any blood draw.
+
+Improved Join Order Optimization for Database Queries using Hybrid Quantum-Classical Approaches for QUBO Problems (5 minute read)
+
+(blurb not generated)
+
+Cross-Silo De-Anonymization Under Local Differential Privacy: Threat Model, Phase Transition, and Coordination Necessity (5 minute read)
+
+(blurb not generated)
+
 🚀
 Launches & Tools
 
@@ -24,3 +84,11 @@ A free browser-based tool converts SQL schema definitions into entity-relationsh
 What’s new in data agents: Supercharging your AI workflows (2 minute read)
 
 Google introduced new data agents across its Agentic Data Cloud, including agents in Conversational Analytics for business analysts and tooling for data scientists and engineers to build agents that ground reasoning in live enterprise data. The pitch is a deterministic, template-driven developer framework with unified governance, aiming for near-100% query accuracy by giving agents context across both operational and analytical systems.
+
+Dynestyx: A Probabilistic Programming Library for Dynamical Systems (1 minute read)
+
+Dynestyx is a new probabilistic programming library that gives state-space models first-class support, letting users specify arbitrary priors for discrete- or continuous-time dynamical systems and run inference over mixed-effect data through one unified interface. It packages state-of-the-art state and parameter estimation with principled uncertainty quantification, closing a gap where SSMs have been awkward to express in existing PPLs.
+
+Accelerating researchers and developers building multilingual AI with a new open dataset (1 minute read)
+
+GitHub published a repository-level dataset under CC0-1.0 that maps multilingual developer content across READMEs, issues, and pull requests, giving teams a discovery layer for non-English code documentation. The release targets researchers and developers training multilingual AI, surfacing where natural-language signals live inside repositories rather than treating code corpora as English-only.

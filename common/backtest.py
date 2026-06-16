@@ -204,8 +204,12 @@ def compute_matches(
 def _predicted_titles_and_urls(
     newsletter_id: str, date: str
 ) -> tuple[list[tuple[float, str, str]], int]:
-    """Return [(score, title, url), ...] for our top-30 predictions for this
-    (newsletter, date), plus the total count of stories scored for that day."""
+    """Return [(score, title, url), ...] for ALL the predictions we'd display
+    for this (newsletter, date). The set comes from top_per_section, which
+    respects each section's target_count — so the size scales with the
+    newsletters.yaml config (currently 25 × 5 sections = up to 125 per newsletter).
+
+    Returns also the total count of stories scored that day (for context)."""
     p = Path("data/scored") / f"{date}.jsonl"
     if not p.exists():
         return [], 0
@@ -219,7 +223,7 @@ def _predicted_titles_and_urls(
             if a:
                 out.append((a.score, s.story.title, s.story.url))
     out.sort(key=lambda x: x[0], reverse=True)
-    return out[:30], total
+    return out, total
 
 
 def compute_backtest(newsletter_id: str, date: str) -> BacktestResult:
@@ -255,13 +259,16 @@ def compute_backtest(newsletter_id: str, date: str) -> BacktestResult:
         for i in range(len(preds))
     ]
 
-    # Recall@K: of TLDR's published titles, how many are matched by anything in our top-K?
+    # Recall@K: of TLDR's published titles, how many are matched by anything
+    # in our top-K predictions? Wider K set so the dashboard shows both
+    # display-tier (10, 25, 50) and full-ranker-signal (100, all) tiers.
     recall_at: dict[int, float] = {}
     hits_at: dict[int, int] = {}
     n_tldr = len(tldr_titles)
-    for k in (10, 20, 30):
-        kk = min(k, len(predicted_titles))
-        # Recompute hits considering only the top-k predictions
+    n_pred = len(predicted_titles)
+    k_targets = (10, 25, 50, 100, n_pred)
+    for k in k_targets:
+        kk = min(k, n_pred)
         top_k_idx = [matched_idx[i] for i in range(kk) if matched_idx[i] is not None]
         hits = len(set(top_k_idx))
         hits_at[k] = hits

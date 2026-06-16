@@ -14,6 +14,86 @@ Configuration Smells in AGENTS.md Files: Common Mistakes in Configuring Coding A
 
 This paper presents the first catalog of "configuration smells" in AGENTS.md and CLAUDE.md files, the instruction files that steer coding agents on architecture, conventions, and testing. After mining repositories and reviewing 100 popular open-source projects, the authors define six smells with automated detection heuristics, finding Lint Leakage (linter rules duplicated into agent instructions) the most common at 62% of files.
 
+Organizational Cohesion in Microservice Architectures: A Multi-Project Empirical Study (1 minute read)
+
+This paper introduces organizational cohesion, a measure of how closely developer contributions align with microservice boundaries, operationalized as Pairwise Team Cohesion (PTC) by adapting the Sensitive Class Cohesion Metric. The authors validate it through a longitudinal study of Netflix's Spinnaker platform and six other open-source microservice systems, finding systematic divergences between service decomposition and the team structures that actually maintain those services.
+
+The time the x86 emulator team found code so bad they fixed it during emulation (1 minute read)
+
+Raymond Chen recounts how Windows' x86-on-ARM emulation team hit application code so pathologically inefficient that the just-in-time translator effectively rewrote it on the fly, producing emulated output that ran better than the original native instructions. The post uses the case to explain how binary translation can recognize and collapse redundant instruction patterns, turning a quirk of bad code into a window onto how the emulator's optimizer actually works.
+
+Game Engine White Papers: Commander Keen (1 minute read)
+
+This post dissects how Commander Keen pulled off smooth side-scrolling on 1990 PC hardware that was never designed for it, using John Carmack's adaptive tile refresh to redraw only the screen cells that changed between frames. The write-up reconstructs the EGA memory tricks, off-screen page buffering, and tile bookkeeping that let the engine hit console-grade scrolling where competitors settled for full-screen redraws.
+
+LLM-as-Code Agentic Programming for Agent Harness (1 minute read)
+
+This paper argues that token explosion, control-flow hallucination, and unreliable completion in LLM agents are architectural consequences of making a probabilistic model orchestrate deterministic looping, branching, and sequencing. The authors propose Agentic Programming, where the program owns all control flow and the LLM is invoked as an adaptive component only for reasoning or generation, with each call's context built from the execution history's call tree as a DAG.
+
+I indexed 669 GB of my GoPro videos using my M1 Max computer and local ML models (1 minute read)
+
+A developer indexed 669 GB of personal GoPro footage entirely on an M1 Max using local ML models, building a searchable archive without sending video to any cloud service. The pipeline extracts frames, runs them through on-device vision models to generate embeddings and captions, and stores the results so clips can be retrieved by natural-language queries.
+
+One Agent Per Repo: An Orchestration Pattern for Multi-Repo AI Coding (3 minute read)
+
+The post proposes assigning each repository its own specialized AI agent with repo-specific prompts and tool access, then using a single orchestrator to route work and merge answers across a multi-repo workspace. The design hinges on context isolation as the core constraint, includes copy-pasteable Claude Code subagent starters, and catalogs the failure modes, such as agents blending conventions or forgetting read-only boundaries, that break a single agent handed a dozen repos at once.
+
+Deploy any Docker app to a $5 VPS with automatic HTTPS, CI/CD, and backups (2 minute read)
+
+This walkthrough deploys any Dockerized app to a $5 VPS using Traefik as the edge router, terminating TLS with automatic Let's Encrypt certificates and redirecting HTTP to HTTPS. The setup adds push-to-deploy from GitHub and nightly encrypted backups, running one app and one database per box to stay cheap and simple enough to read top to bottom.
+
+Agent trajectories as programs: fingerprinting and programming coding-agent behavior (1 minute read)
+
+This paper introduces methods for fingerprinting coding agents by their procedural behavior rather than benchmark scores, using a compressive vocabulary-induction technique to represent how an agent solves problems. Across ten agents on SWE-Bench, a probe over these procedural signatures attributes an unseen trajectory to the correct agent with 85.7% accuracy, and behavior clusters most tightly among models from similar release periods.
+
+SPARK: Security Knowledge Priming and Representation-Guided Knowledge Activation for LLM-based Secure Code Generation (1 minute read)
+
+SPARK is an inference-time security harness that improves LLM secure code generation by retrieving relevant CWE entries and appending a short structured cue to the prompt, activating latent security knowledge without any retraining. The authors argue pretraining corpora already contain rich security material and that the real bottleneck is activation, positioning SPARK against heavier defenses like fine-tuning or external knowledge retrieval that add compute overhead and data bias.
+
+Snyk VulnBench JS 1.0: Can LLMs Find the Same Bugs Twice? (1 minute read)
+
+This benchmark ran 300 repeated agentic LLM security scans on identical JavaScript, prompts, and harness, finding that reference-matched vulnerabilities were highly repeatable (134 of 158 appeared in all five runs) while unmatched extra findings were not, with 80 of 161 surfacing in only one of five repetitions. The authors argue LLM review and Snyk's deterministic SAST are complementary: models reliably catch high-signal exploit shapes, while static analysis is better at systematically enumerating repeated data-flow sinks.
+
+How TimescaleDB compresses time-series data (1 minute read)
+
+The post breaks down TimescaleDB's Hypercore engine, which converts row-based chunks into a columnar format by packing up to 1,000 rows into a single compressed batch and applying per-type schemes like delta-of-delta, Gorilla, and dictionary encoding. It covers how segment-by and order-by configuration shapes the compression ratio and query performance, with the trade-off that updates to compressed data are slower than on uncompressed chunks.
+
+Your ePub Is fine (1 minute read)
+
+**The author traces why a spec-compliant ePub gets rejected by Kobo e-readers, pinning the failure on Adobe's aging Reader Mobile SDK rather than the file itself.** The post walks through validating the ePub against the standard, reproducing Kobo's parse error, and showing how the embedded Adobe XML parser chokes on markup that EPUBCheck and other readers accept without complaint.
+
+From Third-Party to First-Party: Measuring and Protecting Against Modern Web Tracking Mechanisms (1 minute read)
+
+A large-scale measurement of top sites found that over 54% now deploy first-party or server-side tracking, which relocates tracking logic into the browser's first-party context or the website's backend to evade traditional client-side detection. The authors build a provider-independent detection methodology and cluster scripts by similarity into a network graph, showing the tracking ecosystem persists even as it dodges conventional privacy tools.
+
+Selection Without Signal, Recovery Through Expression: A Measurement Study of Post-Hoc Falsification Operators for Frozen Small Code Models (5 minute read)
+
+(blurb not generated)
+
+No Resource, No Benchmarks, No Problem? Evaluating and Improving LLMs for Code Generation in No-Resource Languages (5 minute read)
+
+(blurb not generated)
+
+Neuro-Symbolic Software Verification: Hyper-charging Local Language Models with Symbolic Reasoning at Scale (5 minute read)
+
+(blurb not generated)
+
+Boot Naked Linux (5 minute read)
+
+(blurb not generated)
+
+The Ghosts of Polymarket: When Off-Chain Matches Meet On-Chain Reverts (5 minute read)
+
+(blurb not generated)
+
+Graphical-Probabilistic Modeling of Generative Flows in LLM-Native Software Systems (5 minute read)
+
+(blurb not generated)
+
+C^2: Cache-Conscious Succinct Tries with Adaptive Unary Path Compression (5 minute read)
+
+(blurb not generated)
+
 🧠
 Opinions & Advice
 
@@ -24,6 +104,22 @@ Jane Street details how it applies formal methods across its codebase, using tec
 How memory safety CVEs differ between Rust and C/C++ (1 minute read)
 
 The author analyzes memory safety CVE data and argues that Rust's guarantees shift the nature of vulnerabilities rather than just reducing their count, since unsafe blocks and logic errors still produce memory bugs that look different from C/C++ classics. The post contends that Rust's compiler eliminates most use-after-free and buffer-overflow patterns up front, concentrating remaining issues in a smaller, auditable surface where reviewers can focus their attention.
+
+21 years and counting of 'eight fallacies of distributed computing' (2025) (1 minute read)
+
+The post revisits Peter Deutsch's eight fallacies of distributed computing and argues they remain accurate 21 years on, with engineers still building as if the network is reliable, latency is zero, and bandwidth is infinite. The author maps each fallacy to modern failure modes in microservices and cloud systems, noting that newer abstractions hide the network without removing its costs.
+
+AI demands more engineering discipline. Not less (xpost) (1 minute read)
+
+Charity Majors argues that AI coding tools raise the bar for engineering discipline rather than lowering it, comparing the moment to the shift from hand-tended server pets to immutable infrastructure. She contends that faster code generation makes practices like testing, observability, and tight feedback loops more essential, since the cost of shipping unreviewed or poorly understood changes scales with how quickly you can produce them.
+
+What job interviews taught me about Kubernetes (1 minute read)
+
+The author argues that interviewing engineers about Kubernetes exposed how often teams adopt it without grasping the fundamentals it abstracts away, treating cluster orchestration as a checkbox rather than a tool matched to a real scaling problem. The takeaway is that the people who reason best about Kubernetes can explain what it does at the level of scheduling, networking, and failure handling, not just recite kubectl commands or YAML they copied from a manifest.
+
+Don't trust large context windows (1 minute read)
+
+The author argues that large context windows degrade model performance well before hitting their advertised token limits, with recall and reasoning falling off as the prompt fills. The practical advice is to treat context as a scarce budget, aggressively prune irrelevant tokens, and split work across focused calls rather than dumping everything into one oversized window.
 
 🚀
 Launches & Tools
@@ -36,6 +132,54 @@ Phoenix LiveView 1.2 (1 minute read)
 
 Phoenix LiveView 1.2 introduces colocated hooks and colocated JS, which let developers write client-side JavaScript directly inside HEEx templates instead of maintaining separate hook files, with the JS extracted at compile time and bundled by the asset pipeline. The release also adds a new portal API for rendering content outside the current DOM tree, useful for modals and tooltips, and ships compatibility fixes for the latest Phoenix and Elixir versions.
 
+Java's Project Valhalla finally lands a preview in JDK 28 (1 minute read)
+
+Java's Project Valhalla lands its first preview in JDK 28, introducing value classes that drop object identity to let the JVM flatten data inline and cut memory overhead. Architect Brian Goetz cautioned that the feature will likely remain in preview through the next LTS release, so production use is still some way off.
+
+Apple Foundation Models (1 minute read)
+
+Anthropic released Claude for Foundation Models, a Swift package that conforms Claude to the `LanguageModel` protocol in Apple's Foundation Models framework, so apps drive it through the same `LanguageModelSession` API used for Apple's on-device model. Requests go straight to the Claude API rather than through Apple, and developers swap between on-device and server-side models per session to add larger context, frontier reasoning, or server tools like web search and code execution.
+
+Iroh 1.0 (1 minute read)
+
+Iroh 1.0 is a Rust library for building direct peer-to-peer connections, using QUIC with NAT hole-punching and falling back to relay servers when a direct path can't be established. The 1.0 release marks a stable API and on-wire protocol, with the relay fallback meaning connections still succeed even when both peers sit behind restrictive NATs.
+
+Typst 0.15.0 (1 minute read)
+
+Typst released version 0.15.0 of its markup-based typesetting system, a faster, scriptable alternative to LaTeX that compiles documents incrementally and ships a built-in scripting language for layout, math, and figures. The release continues to target academic and technical writing with markdown-like source syntax, sub-second recompiles on edits, and a package ecosystem that replaces the sprawl of LaTeX distributions.
+
+Show HN: Kage – Shadow any website to a single binary for offline viewing (1 minute read)
+
+Kage crawls any website and packages it into a single self-contained binary that serves the full site offline with no external dependencies. The Go tool captures HTML, CSS, JS, and assets into one executable you can run anywhere, useful for archiving docs, demoing sites without a network, or shipping a frozen snapshot.
+
+Free SQL→ER diagram tool, runs in the browser, nothing uploaded (1 minute read)
+
+This browser-based tool converts SQL schema definitions into entity-relationship diagrams entirely client-side, with no server upload or account required. The parsing and rendering run locally, so database schemas never leave the machine, and the tool is free to use for visualizing table structures and foreign-key relationships.
+
+Caddy compatibility for zeroserve: 3x throughput and 70% lower latency (1 minute read)
+
+zeroserve added a compatibility layer for Caddy configs, letting users run existing Caddyfiles on its server while reporting 3x higher throughput and 70% lower latency in the author's benchmarks. The post details the drop-in migration path and where behavior diverges from Caddy, with the main trade-off being incomplete coverage of Caddy's plugin ecosystem.
+
+Open-SWE-Traces: Advancing Dual-Mode Multilingual Distillation for Software Engineering Agents (1 minute read)
+
+Open-SWE-Traces is a dataset of 207,489 agentic coding trajectories spanning nine languages, sourced from 20,000 real-world PRs via OpenHands and SWE-agent and synthesized with both explicit-reasoning and non-thinking traces. Fine-tuning the Qwen3-30B-A3B series on the data yields resolve rates of 61.7% on SWE-bench Verified, 57.1% on SWE-bench Multilingual, and 36.8% on SWE-bench Pro.
+
+Openrouter Fusion API (1 minute read)
+
+OpenRouter released Fusion, a single API endpoint that dynamically routes each request across multiple frontier models rather than pinning calls to one provider. The model is exposed under the standard OpenRouter chat completions interface, so existing integrations can swap to it without code changes while OpenRouter handles model selection and failover behind the slug.
+
+obliv-clang: Real-World Oblivious Programming in C++ (1 minute read)
+
+obliv-clang is a compile-time checker that verifies the obliviousness of C++ programs, ensuring execution time and data access patterns leak no secrets to timing and access-pattern side-channel attacks. It supports rich C++ features including arbitrarily nested pointers to work with existing industry codebases, ships formally proven soundness rules, and produces high-performance binaries with minimal compilation overhead.
+
+Binary Decompilation LLM with Feedback-Driven Multi-Turn Refinement (1 minute read)
+
+AutoDecompiler is a decompilation-specialized LLM trained with reinforcement learning that treats binary decompilation as iterative refinement rather than one-shot generation, revising its output across multiple turns based on compilation, execution, and input/output testing feedback. The approach targets a known failure mode where single-turn methods produce code that compiles and reads cleanly yet diverges from the original binary's behavior, misleading downstream security analysis like vulnerability discovery and malware inspection.
+
+Accelerating researchers and developers building multilingual AI with a new open dataset (1 minute read)
+
+GitHub published a new repository-level dataset under CC0-1.0 that maps multilingual developer content across READMEs, issues, and pull requests. The release gives researchers and developers a public-domain corpus for training and evaluating multilingual AI models on real-world software discussions rather than English-only sources.
+
 🎁
 Miscellaneous
 
@@ -47,6 +191,34 @@ North Korean Hackers Are Turning Developer Tools Into Malware Delivery Channels 
 
 Proofpoint flagged two phishing campaigns from the North Korean threat cluster Contagious Interview, which lures developers with fake recruiter outreach and code review requests before delivering malware through trusted dev tooling. The activity overlaps with the group also tracked as Famous Chollima and Void Dokkaebi, signaling that job-application and code-review workflows are now active attack surfaces engineers should treat with the same suspicion as unsolicited email attachments.
 
+A backdoor in a LinkedIn job offer (1 minute read)
+
+A developer recounts catching obfuscated malware planted in a take-home coding assignment sent as part of a LinkedIn job offer, a tactic linked to North Korean threat actors targeting engineers through fake recruiting. The backdoor hid in a minified dependency that fetched and executed remote payloads on run, a reminder to sandbox any interview project before installing its packages or running its code.
+
+Sources: Microsoft is adding AWS capacity to GitHub after AI-driven growth strained infrastructure and triggered a series of reliability issues (Ashley Stewart/Business Insider) (1 minute read)
+
+Microsoft is adding AWS capacity to GitHub after AI-driven growth strained its infrastructure and triggered a series of reliability incidents, according to Business Insider. The move sends Microsoft to its biggest cloud rival, Amazon, rather than relying solely on Azure, signaling that GitHub's Copilot-fueled load has outpaced what its parent's own data centers can absorb.
+
+Flatpak-NG sounds like bad news for systemd refuseniks (1 minute read)
+
+The next iteration of Flatpak, dubbed Flatpak-NG, is being reworked around systemd components, which could break compatibility for distributions that use alternative init systems. The change would push systemd-free distros like Devuan, Artix, and Void Linux further from the mainstream Linux app-packaging ecosystem, narrowing the options for users who deliberately avoid systemd.
+
+Popular WordPress Plugin Scripts Tampered to Plant Hidden Backdoors on Sites (1 minute read)
+
+Attackers tampered with trusted JavaScript files distributed by the popular WordPress plugins PushEngage, OptinMonster, and TrustPulse, turning them into a vector for site compromise. The injected code triggers only when a logged-in administrator loads the file, silently creating an attacker-controlled admin account and installing a hidden plugin that opens a persistent backdoor while leaving ordinary visitors untouched.
+
+Curl will not accept vulnerability reports during July 2026 (1 minute read)
+
+Curl maintainer Daniel Stenberg announced the project will reject all vulnerability reports during July 2026, giving its small team a month of uninterrupted recovery from a steady stream of low-quality, often AI-generated submissions. Reporters who find a genuine flaw must hold it until August, a trade-off Stenberg frames as necessary to prevent burnout across the volunteer-run security process.
+
+Improving Arm64 support in CNCF projects with OCI credits (1 minute read)
+
+The CNCF is funding Arm64 build and test support across its hosted projects using donated Oracle Cloud Infrastructure credits, addressing a gap as Arm instances surpass 50% of new AWS launches and 33% on Azure. The credits give maintainers access to native Arm64 CI runners, removing the cost and emulation overhead that has slowed multi-architecture support in cloud-native tooling.
+
+Hetzner Price Adjustment (1 minute read)
+
+Hetzner published a price adjustment for its cloud servers, raising monthly rates across its instance lineup and citing rising energy, hardware, and infrastructure costs. The change drew sharp discussion among developers who run side projects and production workloads on Hetzner specifically to avoid hyperscaler pricing, with many weighing whether the gap to AWS, GCP, and Azure still justifies staying.
+
 ⚡
 Quick Links
 
@@ -57,3 +229,51 @@ TokenPilot manages LLM agent context to stay cache-friendly, cutting inference c
 Dynamic Malicious Skills in Agentic AI (1 minute read)
 
 Malicious instructions hidden in SKILL.md docs can make agents like Claude Code inject harmful logic at runtime; kernel read-only mounts block it.
+
+Transferable Self-Evolving Playbooks for Agentic Security Auditing (1 minute read)
+
+EvoHunt automates security audit playbook creation through a three-agent evolution loop, letting evolved playbooks transfer audit procedures to weaker LLM agents.
+
+Looking Is Not Picking: An Attention-Segment Account of Tool-Selection Failures in LLM Agents (1 minute read)
+
+LLM agents attend to the correct tool 80% of the time yet still mis-call it, locating failures in the decision readout, not the harness.
+
+Boosting MoE Training Throughput with Advanced Fusion Kernels (1 minute read)
+
+NVIDIA's fused kernels cut MoE training overhead by combining grouped GEMM, activation, and routing operations into single GPU passes.
+
+What’s !important #13: @function, alpha(), CSS Wordle, and More (1 minute read)
+
+Roundup of recent CSS features including @function, the alpha() color function, Grid Lanes, lesser-known dialog behaviors, and a CSS-built Wordle.
+
+Understanding Automated Web GUI Testing: An Empirical Study Across Exploration Strategies and State Abstractions (1 minute read)
+
+An empirical study comparing model-based, RL-based, and LLM-based web GUI testing strategies across six state abstractions for coverage and failure revelation.
+
+Q-READY: Predictive Feasibility Assessment for Hybrid Quantum-Classical Applications (1 minute read)
+
+Q-READY uses model-based systems engineering to predict whether a hybrid quantum-classical solution is feasible before costly implementation.
+
+Directory-Aware Query and Maintenance in Vector Databases (1 minute read)
+
+This paper adds native directory semantics to vector databases via a Trie-based hierarchical index, beating flat-metadata expansion for scoped retrieval and updates.
+
+did:crdt: Coordination-Free Decentralised Identifiers via Signed CRDTs (1 minute read)
+
+did:crdt updates W3C DID documents without ledgers or global ordering by composing each field from signed, deterministically-merging CRDTs.
+
+Show HN: I wrote a C++ ray tracer from scratch without AI (1 minute read)
+
+A developer built a C++ ray tracer from scratch by hand, no AI assistance, with the full source on GitHub.
+
+AI Supply Chain Galaxy: 3D Visual Analytics for License Compliance (1 minute read)
+
+A 3D visual analytics tool for auditing ML model provenance found compliance risks in 55% of 908,449 Hugging Face models.
+
+Show HN: machine0 – Persistent NixOS VMs You Control from the CLI (1 minute read)
+
+machine0 spins up persistent NixOS VMs you manage entirely from the CLI.
+
+Even more batteries included with Emacs (1 minute read)
+
+Emacs continues absorbing external tools into built-in features, covering completion, project management, and tree-sitter support without third-party packages.

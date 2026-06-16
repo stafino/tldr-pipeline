@@ -626,11 +626,17 @@ if current_view == "backtest":
 
     total_tldr = sum(len(r.tldr_titles) for r in latest_results)
     total_hits_10 = sum(r.hits_at.get(10, 0) for r in latest_results)
-    total_hits_20 = sum(r.hits_at.get(20, 0) for r in latest_results)
-    total_hits_30 = sum(r.hits_at.get(30, 0) for r in latest_results)
+    total_hits_25 = sum(r.hits_at.get(25, 0) for r in latest_results)
+    total_hits_50 = sum(r.hits_at.get(50, 0) for r in latest_results)
+    # "Any" tier: largest K we have, which is whatever the cache stored as the
+    # all-predictions bucket. The compute_backtest function stores n_pred as the
+    # last key — find the biggest K available across these results.
+    max_k = max((max(r.hits_at.keys()) for r in latest_results if r.hits_at), default=0)
+    total_hits_all = sum(r.hits_at.get(max_k, 0) for r in latest_results) if max_k else 0
     recall_10 = (total_hits_10 / total_tldr * 100) if total_tldr else 0
-    recall_20 = (total_hits_20 / total_tldr * 100) if total_tldr else 0
-    recall_30 = (total_hits_30 / total_tldr * 100) if total_tldr else 0
+    recall_25 = (total_hits_25 / total_tldr * 100) if total_tldr else 0
+    recall_50 = (total_hits_50 / total_tldr * 100) if total_tldr else 0
+    recall_all = (total_hits_all / total_tldr * 100) if total_tldr else 0
 
     hero = (
         f'<div class="bt-hero">'
@@ -638,9 +644,9 @@ if current_view == "backtest":
         f'<p class="lede">{latest_date} · {len(latest_results)} newsletters compared · {total_tldr} stories TLDR actually published</p>'
         f'<div class="stat-row">'
         f'<div class="stat"><div class="num">{recall_10:.0f}%</div><div class="label">recall @ top 10</div></div>'
-        f'<div class="stat"><div class="num">{recall_20:.0f}%</div><div class="label">recall @ top 20</div></div>'
-        f'<div class="stat"><div class="num">{recall_30:.0f}%</div><div class="label">recall @ top 30</div></div>'
-        f'<div class="stat"><div class="num" style="color:var(--text);">{total_hits_10}/{total_tldr}</div><div class="label">our top-10 hits / their picks</div></div>'
+        f'<div class="stat"><div class="num">{recall_25:.0f}%</div><div class="label">recall @ top 25</div></div>'
+        f'<div class="stat"><div class="num">{recall_50:.0f}%</div><div class="label">recall @ top 50</div></div>'
+        f'<div class="stat"><div class="num" style="color:var(--text);">{recall_all:.0f}%</div><div class="label">recall @ any (full pool)</div></div>'
         f'</div></div>'
         f'<p style="color:var(--text-mute);font-size:12px;margin:-12px 0 22px;line-height:1.5;">'
         f'<b style="color:var(--text-dim);">Recall</b> = "of the stories TLDR actually published, how many did we surface in our top N?" '
@@ -674,13 +680,19 @@ if current_view == "backtest":
             )
             continue
         # Aggregate recall over the loaded history
-        agg_hits = {k: sum(r.hits_at.get(k, 0) for r in history) for k in (10, 20, 30)}
+        agg_hits = {k: sum(r.hits_at.get(k, 0) for r in history) for k in (10, 25, 50)}
+        # "all" tier uses each history entry's own largest K (varies by day)
+        agg_hits_all = sum(
+            r.hits_at.get(max(r.hits_at.keys()), 0) if r.hits_at else 0
+            for r in history
+        )
         agg_tldr = sum(len(r.tldr_titles) for r in history)
         if agg_tldr == 0:
             continue
         r10 = agg_hits[10] / agg_tldr
-        r20 = agg_hits[20] / agg_tldr
-        r30 = agg_hits[30] / agg_tldr
+        r25 = agg_hits[25] / agg_tldr
+        r50 = agg_hits[50] / agg_tldr
+        r_all = agg_hits_all / agg_tldr
         spark = _spark([r.recall_at.get(10, 0) for r in history])
 
         def _cls(v: float) -> str:
@@ -692,8 +704,9 @@ if current_view == "backtest":
             f'<tr>'
             f'<td class="name">{nls[nid].brand_name}</td>'
             f'<td class="{_cls(r10)}">{r10*100:.0f}%</td>'
-            f'<td class="{_cls(r20)}">{r20*100:.0f}%</td>'
-            f'<td class="{_cls(r30)}">{r30*100:.0f}%</td>'
+            f'<td class="{_cls(r25)}">{r25*100:.0f}%</td>'
+            f'<td class="{_cls(r50)}">{r50*100:.0f}%</td>'
+            f'<td class="{_cls(r_all)}">{r_all*100:.0f}%</td>'
             f'<td class="spark">{spark}</td>'
             f'</tr>'
         )
@@ -701,7 +714,8 @@ if current_view == "backtest":
     st.markdown(
         '<table class="bt-table">'
         '<thead><tr><th>Newsletter</th><th style="text-align:right;">R@10</th>'
-        '<th style="text-align:right;">R@20</th><th style="text-align:right;">R@30</th>'
+        '<th style="text-align:right;">R@25</th><th style="text-align:right;">R@50</th>'
+        '<th style="text-align:right;">R@all</th>'
         '<th>Last 7 days (R@10)</th></tr></thead>'
         f'<tbody>{"".join(rows_html)}</tbody></table>',
         unsafe_allow_html=True,
@@ -770,11 +784,16 @@ if current_view == "backtest":
             unsafe_allow_html=True,
         )
 
+        max_k_d = max(detail.hits_at.keys()) if detail.hits_at else 0
+        all_hits = detail.hits_at.get(max_k_d, 0)
         st.markdown(
             f'<p style="color:var(--text-mute);font-size:11px;margin-top:14px;">'
-            f'Hits at @{10} / @{20} / @{30}: '
-            f'<b style="color:var(--text);font-family:ui-monospace,monospace;">{detail.hits_at.get(10,0)} · {detail.hits_at.get(20,0)} · {detail.hits_at.get(30,0)}</b> '
+            f'Hits at @10 / @25 / @50 / @any: '
+            f'<b style="color:var(--text);font-family:ui-monospace,monospace;">'
+            f'{detail.hits_at.get(10,0)} · {detail.hits_at.get(25,0)} · '
+            f'{detail.hits_at.get(50,0)} · {all_hits}</b> '
             f'of {len(detail.tldr_titles)} TLDR titles · '
+            f'pool size {len(detail.predictions)} predictions · '
             f'similarity threshold 0.72 · cached {detail.fetched_at[:19]}'
             f'</p>',
             unsafe_allow_html=True,

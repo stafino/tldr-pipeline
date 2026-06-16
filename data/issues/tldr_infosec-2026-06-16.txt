@@ -14,6 +14,98 @@ Palo Alto Warns of Active Exploitation of PAN-OS GlobalProtect VPN Flaw (1 minut
 
 Palo Alto Networks confirmed active exploitation of CVE-2026-0257 (CVSS 7.8), an authentication-bypass flaw in the portal and gateway components of PAN-OS, by an unknown threat actor gaining unauthorized access to GlobalProtect portals. Organizations running affected PAN-OS versions on internet-facing GlobalProtect should patch immediately, audit portal access logs for unauthorized sessions, and rotate credentials on appliances that may already be compromised.
 
+Public and Private Medical Community Targeted by China-Nexus Threat Actor Pursuing Artificial Intelligence, Cyber, Medical, and National Defense Research (2 minute read)
+
+Google Threat Intelligence Group attributed a campaign to UNC6508, a PRC-nexus actor that spent over a year inside North American academic, medical, and military research institutions, compromising external web apps, deploying bespoke malware, and abusing enterprise admin tools for covert exfiltration. Collection targets spanned AI, uncrewed vehicle systems, offensive cyber programs, Indo-Pacific command operations, and medical research; GTIG disrupted the infrastructure and notified affected organizations with Mandiant.
+
+Chinese Hackers Abused Google Workspace Rules to Steal Research and Defense Emails (1 minute read)
+
+A China-linked espionage group lived inside North American medical, academic, and military research networks for over a year, deploying a backdoor on REDCap servers to harvest login credentials and exfiltrate sensitive research and defense email. Rather than using malware to pull data out, the attackers rewrote victims' own Google Workspace mail-forwarding rules to silently copy every message to attacker-controlled inboxes, evading endpoint detection.
+
+One-Click Microsoft 365 Copilot Flaw Could Have Let Attackers Steal Emails, Files, and MFA Codes (1 minute read)
+
+Researchers at Varonis Threat Labs chained three bugs into a one-click exfiltration path, dubbed SearchLeak, that let an attacker pull emails, calendar entries, and indexed files from Microsoft 365 Copilot Enterprise Search. Because the malicious link resolved to a legitimate microsoft.com domain, conventional anti-phishing and URL filtering missed it, and the attack could also harvest MFA codes before Microsoft remediated the flaw.
+
+Popular WordPress Plugin Scripts Tampered to Plant Hidden Backdoors on Sites (1 minute read)
+
+Attackers tampered with trusted JavaScript files served by the PushEngage, OptinMonster, and TrustPulse WordPress plugins, turning them into a supply-chain backdoor that activates only when a logged-in administrator loads the script. The injected code silently creates an attacker-controlled admin account and installs a hidden plugin for persistent access, so affected sites should audit admin users, remove rogue plugins, and rotate credentials.
+
+Cisco fixes SD-WAN vManage flaw exploited in zero-day attacks (1 minute read)
+
+Cisco patched a privilege-escalation flaw in Catalyst SD-WAN Manager (vManage), tracked as CVE-2026-20262, that was exploited as a zero-day to escalate to root. Organizations running affected vManage instances should apply the fixed release immediately and audit appliances for signs of root-level compromise predating the patch.
+
+Cisco SD-WAN make-me-root bug under attack (1 minute read)
+
+Cisco is warning that a privilege-escalation flaw in Catalyst SD-WAN Manager is being exploited as a zero-day, letting an authenticated attacker elevate to root on the management appliance. It is the second SD-WAN Manager bug used in active attacks this month, so teams running the controller should apply Cisco's fix immediately and audit the appliance for signs of root-level compromise.
+
+Arch Linux locks down AUR signups amid wave of malicious commits (1 minute read)
+
+Arch Linux froze new Arch User Repository (AUR) account signups after attackers flooded the community repo with poisoned package updates pushed through freshly created accounts. AUR packages are unvetted build scripts that execute on user systems, so admins who installed or updated AUR packages during the campaign should audit recently pulled PKGBUILDs and rebuild from known-good sources.
+
+Your "Pro" LLM Subscription May Actually Be "Free": Exposing Fingerprint Spoofing Risks in LLM Inference Services (1 minute read)
+
+Researchers introduced fingerprint spoofing, a threat in which a malicious LLM API provider serves a cheaper, weaker model that has been parameter-efficiently fine-tuned to mimic a premium one, evading the black-box fingerprinting users rely on to verify they get the advertised model. Their GhostPrint framework combines surrogate modeling, reward-ranked fine-tuning, and knowledge distillation to defeat fingerprinting under realistic query-budget and classifier constraints in both static and continual settings.
+
+CISA Flags LiteSpeed cPanel Plugin Flaw Exploited for Root Privilege Escalation (1 minute read)
+
+CISA added CVE-2026-54420 (CVSS 8.5), a privilege-escalation flaw in the LiteSpeed cPanel Plugin, to its Known Exploited Vulnerabilities catalog after confirming active exploitation for root access on affected hosts. FCEB agencies must remediate by June 18, 2026; operators running the plugin should patch immediately and audit for signs of root-level compromise on shared hosting environments.
+
+FBI disrupts massive AI-powered phishing service using a million URLs (1 minute read)
+
+The FBI, working with Google and Black Lotus Labs, dismantled Outsider Enterprise, a Chinese phishing-as-a-service operation that used AI to generate over a million URLs across thousands of sites to harvest credit card data and credentials. Defenders should pull the published IOCs into blocklists and monitor for credential-stuffing and card-fraud activity tied to data already exfiltrated before the takedown.
+
+Council of Europe hacked in ShinyHunters' PeopleSoft heist (1 minute read)
+
+The ShinyHunters extortion group breached the Council of Europe by exploiting Oracle PeopleSoft, exfiltrating data in a campaign that also claimed the University of Nottingham and roughly 100 other unnamed organizations. Defenders running internet-facing PeopleSoft should treat the deployments as targeted, apply Oracle's latest patches, and audit access logs for unauthorized data exports tied to the group's activity.
+
+Users cry foul after AMD stripped memory crypto from its consumer CPUs (1 minute read)
+
+AMD silently removed Transparent Secure Memory Encryption (TSME) from its consumer Ryzen CPUs, leaving DRAM contents unencrypted and exposing systems to cold-boot and physical memory-extraction attacks that the feature was meant to mitigate. The change was undocumented and appears deliberate, so defenders relying on at-rest memory encryption for laptops or kiosks should verify TSME support per SKU rather than assume parity with prior generations.
+
+The Proxy Knows Too Much: Sealing LLM API Routers with Attested TEEs (1 minute read)
+
+This paper introduces AEGIS, an attested API router that treats LLM proxies as application-layer men-in-the-middle, since terminating the client's TLS session leaves the router holding the full interaction in plaintext to rewrite tool calls, swap in typosquatted packages, or exfiltrate secrets. AEGIS confines plaintext to a hardware enclave the client verifies before releasing data, so the untrusted host can neither read nor alter traffic.
+
+MIPSBLEED: Uncovering Microarchitectural Timing Leaks in Pervasive Embedded Processors (5 minute read)
+
+(blurb not generated)
+
+A backdoor in a LinkedIn job offer (5 minute read)
+
+(blurb not generated)
+
+Invisible Manipulation Channels in AI-Assisted Financial Advisory: Implications for Market Integrity and Regulatory Design (5 minute read)
+
+(blurb not generated)
+
+Dynamic Malicious Skills in Agentic AI (5 minute read)
+
+(blurb not generated)
+
+Fake Microsoft Alerts Used to Deploy North Korean NarwhalRAT Malware (5 minute read)
+
+(blurb not generated)
+
+Cisco Releases Security Updates for Actively Exploited SD-WAN Manager Flaw (5 minute read)
+
+(blurb not generated)
+
+Copilot 'SearchLeak' Attack Allows 1-Click Data Theft (5 minute read)
+
+(blurb not generated)
+
+Chinese hackers breach REDCap servers, steal medical research (5 minute read)
+
+(blurb not generated)
+
+PRC-linked spies hid inside medical and military networks for more than a year, snooping through Gmail and stealing data (5 minute read)
+
+(blurb not generated)
+
+OptinMonster WordPress plugin hacked in CDN supply-chain attack (5 minute read)
+
+(blurb not generated)
+
 🧠
 Strategies & Tactics
 
@@ -24,6 +116,70 @@ EvoHunt automates audit playbook creation for LLM security agents, replacing hum
 Di5Guise: 5G Privacy with vSIM (1 minute read)
 
 This paper introduces Di5Guise, a 5G privacy architecture that decouples device identity from subscriber identity to stop network-level correlation attacks. Current eSIMs bind every provisioned subscriber profile to a fixed device profile (secret key, certificate, and eUICC ID), letting an operator-level adversary tie rotating identities back to one device and reconstruct a full pattern of life. Its vSIM design breaks that binding at the root, so identity rotation and traffic obfuscation actually hold.
+
+From Third-Party to First-Party: Measuring and Protecting Against Modern Web Tracking Mechanisms (1 minute read)
+
+A new study measuring top sites found that over 54% now deploy first-party tracking (FPT) or server-side tracking (SST), relocating tracking logic into the browser's first-party context or the site's backend to evade client-side detection. The authors introduce a provider-independent detection method and use script-similarity clustering to map the ecosystem, giving defenders and privacy tooling a way to spot tracking that traditional blocklists and client-side tools now miss.
+
+SoK: Taxonomizing the Low-Level Attack Surface of Modern Web Browsers (1 minute read)
+
+This paper systematizes the low-level attack surface of modern web browsers, mapping where memory-corruption flaws arise across input classes and components to expose regions underexplored by current fuzzing and testing. The authors structure the surface along input types and browser components, then chart how memory-corruption bugs cluster within that taxonomy. For AppSec and red teams, it offers a defense-oriented map of which browser subsystems warrant deeper security testing rather than continued effort on already-saturated targets.
+
+Measurement Study of Post-Quantum Readiness of Internet: 2026 (1 minute read)
+
+A measurement study of 32,011 domains found that 49.3% now support hybrid post-quantum key exchange such as MLKEM768 with X25519, but 15.70% still negotiate only TLS 1.2, concentrated in banking and government. The authors show post-quantum adoption is uneven across sectors, leaving the most sensitive infrastructure least prepared for harvest-now-decrypt-later attacks. Defenders in lagging sectors should prioritize TLS 1.3 migration and enable hybrid key exchange before classical ECC and RSA become quantum-breakable.
+
+How memory safety CVEs differ between Rust and C/C++ (1 minute read)
+
+This analysis compares memory-safety CVEs across Rust and C/C++ codebases, finding that Rust's safety guarantees push most remaining memory bugs into `unsafe` blocks or upstream C dependencies rather than safe Rust itself. For security teams weighing a migration, the operational takeaway is to focus auditing effort on `unsafe` boundaries and FFI surfaces, where Rust's compiler protections no longer apply, rather than treating the language as eliminating memory-corruption risk outright.
+
+SPARK: Security Knowledge Priming and Representation-Guided Knowledge Activation for LLM-based Secure Code Generation (1 minute read)
+
+SPARK is an inference-time security harness that reduces LLM-generated code vulnerabilities without retraining, arguing the security knowledge is already latent in pretraining and only needs activation. It retrieves relevant CWE entries per coding task and appends a short structured cue to the prompt, surfacing the model's existing safety representations. The approach sidesteps the compute overhead and data bias of fine-tuning or heavy retrieval-augmented defenses.
+
+The Anatomy of Scam Scenarios: Large-Scale Characterization and Conversation-Aware Detection (1 minute read)
+
+This paper analyzes 102,054 real-world scam conversations to build a hierarchical taxonomy of 18 fine-grained scam scenarios grouped into 6 high-level tactics, characterizing the psychological techniques each scenario systematically deploys. The authors then use this scenario-level mapping to build a conversation-aware detection model for financial-institution customer interactions, flagging active scams mid-conversation so banks can warn and intervene before funds move.
+
+SkillVetBench: LLM-as-Judge for Multi-Dimensional Security Risk Evaluation in Open-Source LLM Agent Skills (1 minute read)
+
+SkillVetBench is a public Hugging Face leaderboard that uses an LLM-as-Judge to vet community-contributed LLM agent skills, targeting instruction-layer and multi-agent risks that code-level scanners structurally miss, such as prompt-injection hijacks, encoded data exfiltration, and harm chained across pipelines. It scores each skill with SARS, a five-dimensional agentic-risk metric, and integrates full CVSS v4.0 vector decomposition plus a side-by-side view of the LLM verdict against the official marketplace rating.
+
+Understanding Scam Trends and Rail Paths from Reddit Self-Disclosure Narratives (1 minute read)
+
+Researchers built an open-source dataset of 21,304 Reddit self-disclosure posts from scam subreddits (2023–2025) to track how scam characteristics and rail paths shift year over year. They heuristic-annotated posts by rail (identity, communication, platform, payment) and used an LLM-assisted method, validated against human annotation, to label 1,800 explicit scam chains. The result gives defenders a temporal view of multi-stage scam lifecycles rather than isolated fraud signals.
+
+DoubtProbe: Black-Box Jailbreak Defense via Structural Verification and Semantic Auditing (1 minute read)
+
+DoubtProbe is a black-box jailbreak defense that reframes detection as consistency checking under controlled transformation, on the observation that most jailbreaks reorganize a harmful goal rather than remove it. A structural branch reconstructs the request from a normalized representation while a semantic branch audits intent, flagging inputs whose meaning shifts across transformation. The approach targets evolving prompt packaging and structure manipulation that known-attack coverage and prompt-level judgment tend to miss.
+
+A data-driven security quantification framework for IoT-based systems (1 minute read)
+
+This paper introduces a data-driven framework for quantifying cybersecurity risk in safety-critical IoT systems, replacing subjective expert scoring in Attack Tree Analysis with empirical vulnerability data. The authors model system architecture in SysML, derive attack trees from it, and assign exploitation probabilities to Basic Attack Steps from real-world vulnerability datasets. The approach aims to make IoT risk quantification more reproducible across heterogeneous architectures, where probabilistic exploitability data is typically scarce.
+
+A Formal Resilience Framework for Cyber-Physical Embodied Systems under Device-Level Cyberattacks (1 minute read)
+
+This paper proposes a formal dependability framework for embodied cyber-physical systems that folds IDS telemetry into resilience-evaluation predicates, letting defenders assess tolerance to disruption and degradation rather than relying on sensor and actuator drift detection alone. Traditional fault-tolerance models miss the subtle, strategic disruptions cyberattacks cause, which is critical when devices must preserve physical integrity. The authors' approach enables structured reasoning about how attacks affect task execution and supports proactive response before structural damage occurs.
+
+Phantoms and Disclosures: a Causal Framework for Auditing Synthetic Data (1 minute read)
+
+This paper introduces an empirical auditing framework for detecting when synthetic data leaks private records from its training corpus. It distinguishes "true disclosures," where the system reproduces a user's actual data, from "phantom disclosures," where matching records appear incidentally, by partitioning inputs into training and holdout sets and applying statistical hypothesis testing against zero-learning or differential-privacy baselines. The method requires no model access and no canary insertion, making it usable for auditing third-party synthetic datasets.
+
+Cloud CISO Perspectives: The 4 lessons that guided AI Threat Defense (2 minute read)
+
+Google Cloud's new CISO Chris Betz outlined four lessons from building AI Threat Defense, the company's system for applying AI to defensive operations. The takeaways center on using AI to accelerate analyst triage and detection at scale, while keeping human judgment in the loop for high-stakes decisions. Betz frames the effort as pushing AI toward concrete defender advantages rather than treating it solely as an attacker capability.
+
+The Art of Mixology: Mixup-based Obfuscation for Privacy-Preserving Split Learning in Large Language Models (5 minute read)
+
+(blurb not generated)
+
+Robust and Automated Reconfiguration of Byzantine Wide-Area Replication (5 minute read)
+
+(blurb not generated)
+
+Implementing workload identity with HashiCorp Vault and SPIFFE (5 minute read)
+
+(blurb not generated)
 
 🧑‍💻
 Launches & Tools
@@ -36,6 +192,22 @@ obliv-clang: Real-World Oblivious Programming in C++ (1 minute read)
 
 This paper introduces obliv-clang, a compilation-time tool that checks the obliviousness of C++ programs to defend against timing and access-pattern side-channel attacks on confidential data in trusted execution environments. It supports rich C++ features including arbitrarily nested pointers, formally proves the soundness of its checking rules, and aims to integrate with existing industry codebases while keeping compilation overhead and runtime performance costs low.
 
+MASCOT-Android: A Curated Dataset and Automated Collection Pipeline for Android Malware Source Code Specimens (1 minute read)
+
+MASCOT-Android is a curated dataset of Android malware source code paired with an automated framework that scrapes GitHub for new specimens, using repository documentation as the primary collection signal. A LinearSVC classifier trained on character-level TF-IDF features from README files alone distinguishes malware from benign repos at 96.28% accuracy and a 1.06% false-positive rate, with tunable confidence thresholds to balance coverage against FPR.
+
+AWS WAF adds AI traffic monetization capability to help content owners charge AI bots for content access (1 minute read)
+
+AWS WAF added AI traffic monetization, a Bot Control capability that lets content owners price, meter, and collect payment from AI bots and agents accessing their content and APIs. Publishers can set a per-access price, accept payment through third-party providers, and grant scoped access at the edge, giving defenders a billing-backed alternative to outright blocking AI crawlers.
+
+did:crdt: Coordination-Free Decentralised Identifiers via Signed CRDTs (1 minute read)
+
+did:crdt is a new W3C DID Core-compatible method that updates DID documents without any ledger, sequencer, or global ordering, composing each document from per-field signed CRDTs that merge deterministically under concurrent edits. By the CALM Theorem the state-merge path is confluent and the signed-delta path needs only causal delivery, eliminating the fees, latency, and coordination that blockchain-anchored and Sidetree methods impose.
+
+Binary Decompilation LLM with Feedback-Driven Multi-Turn Refinement (1 minute read)
+
+AutoDecompiler is a decompilation-specialized LLM trained with reinforcement learning that reframes binary decompilation as iterative multi-turn refinement, revising its output based on compilation, execution, and input/output testing feedback rather than generating a single pass. The approach targets a common failure mode in LLM decompilation, where generated code compiles and reads cleanly yet diverges from the original binary's behavior, misleading downstream vulnerability discovery and malware analysis.
+
 🎁
 Miscellaneous
 
@@ -47,6 +219,62 @@ DOJ seizes CFAKE, SOCFAKE deepfake nude sites under TAKE IT DOWN Act (1 minute r
 
 The DOJ seized the CFAKE.com and SOCFAKE.com domains, which allegedly hosted nonconsensual AI-generated nude images and videos of women, in what appears to be the first publicly announced domain seizure under the TAKE IT DOWN Act. The action signals that the DOJ will use the new law to pursue infrastructure behind deepfake abuse sites, setting an enforcement precedent for operators hosting nonconsensual synthetic imagery.
 
+MPX: A Unified Systolic Array for Matrix and Polynomial Multiplication (1 minute read)
+
+This paper introduces MPX, a dual-mode systolic array that runs both matrix multiplication and direct polynomial multiplication on one hardware fabric, targeting the NTT kernels central to fully homomorphic encryption and post-quantum cryptography. The authors report that adding the polynomial mode costs only 20% extra chip area with negligible power overhead during matrix workloads, offering a path to accelerate FHE and PQC by reusing existing AI hardware.
+
+Curl will not accept vulnerability reports during July 2026 (1 minute read)
+
+Curl maintainer Daniel Stenberg announced the project will not accept vulnerability reports during July 2026, pausing its bug bounty program for the month to give maintainers a break from the volume of low-quality, often AI-generated submissions. Reports submitted during the window will be rejected and must be resubmitted in August, when normal triage and bounty payouts resume.
+
+Cybersecurity vets protest ‘dangerous’ US government ban on Anthropic’s most powerful models (1 minute read)
+
+Dozens of cybersecurity experts urged the White House to lift export-control restrictions on Anthropic's most capable models, Fable and Mythos, arguing the order weakens defenders' ability to secure their software and products. The group called the ban "dangerous," contending that limiting access to frontier models cedes an advantage to attackers who face no such constraints.
+
+Most CISOs Report Pressure to Bury Bad Security News (1 minute read)
+
+Most CISOs report being pressured by executive leadership to keep negative security findings or incidents from public view, according to new Dark Reading reporting on disclosure practices. The pressure stems from business priorities that conflict with timely transparency, raising legal exposure under SEC incident-disclosure rules and undermining the CISO's ability to report risk accurately to the board.
+
+Feds freaked over Fable 5 after simple 'fix this code' prompt, not jailbreak, says researcher (1 minute read)
+
+A security researcher claims federal alarm over the Fable 5 model traced back to a benign "fix this code" prompt rather than the jailbreak that officials described. The researcher, who says they were the only person to read the underlying paper, argues the government mischaracterized routine model behavior as a threat, raising questions about how AI capability claims are vetted before they drive policy.
+
+As AI agents become employees, NewCore emerges with $66M to give them identities (1 minute read)
+
+NewCore emerged from stealth with $66M to issue and manage identities for AI agents, arguing enterprises will soon govern more non-human actors than human employees. The pitch targets a real gap, as agents increasingly hold credentials and act autonomously while most IAM stacks still treat them as service accounts or borrowed human logins.
+
+FBI: Fraudsters use couriers to steal money in crypto scams (1 minute read)
+
+The FBI warned that operators behind cryptocurrency investment scams, also known as pig butchering or romance baiting, are now dispatching in-person couriers to collect cash and precious metals directly from victims. The shift adds a physical-handoff layer to laundering proceeds, complicating attribution and giving defenders and fraud teams a new indicator to flag when warning customers about social-engineering-driven investment fraud.
+
+FEnc$^2$: Unifying Data Packing for Efficient Private Inference via Convolution and Architecture-Aware Fragment Encoding (1 minute read)
+
+This paper introduces FEnc2, a fragment-based ciphertext packing framework for CKKS homomorphic-encryption private CNN inference, addressing the slot waste and excessive rotations of existing strategies that preserve either spatial locality or feature grouping but not both. It combines convolution-aware encoding to pick optimal fragment sizes and architecture-aware ciphertext compression, cutting rotation complexity and ciphertext counts in privacy-preserving machine learning.
+
+EU sovereignty push gives tech buyers a new alphabet soup to swallow (1 minute read)
+
+The European Commission is advancing its digital sovereignty agenda to enforce cloud autonomy and promote open source adoption across the bloc, pressing ahead despite pushback from the US. Security and procurement teams face a growing thicket of sovereignty frameworks and certification schemes to evaluate, adding compliance overhead to vendor selection and cloud architecture decisions.
+
+The US government’s Anthropic models ban was never about an AI jailbreak (1 minute read)
+
+The Trump administration forced Anthropic to pull its latest cybersecurity models, a move TechCrunch reports was driven by political retaliation rather than any technical safety failure or jailbreak. The episode signals that frontier AI labs are not exempt from U.S. government interference, with model availability now subject to pressure that has nothing to do with security posture.
+
+Feds snooze as US datacenter law set to lapse with no replacement in site (1 minute read)
+
+The Federal Data Center Enhancement Act of 2023, which sets baseline security and sustainability standards for US government datacenters, is set to expire with no replacement legislation in progress. The lapse would remove federal requirements for datacenter physical security and resilience at a time of rapid AI-driven buildout, leaving agencies to self-govern facility standards without a statutory floor.
+
+US Cracks Down on Anthropic AI Models Amid Abuse Concerns (1 minute read)
+
+Anthropic abruptly suspended all access to its Fable 5 and Mythos 5 models after a US export control directive barred foreign nationals from using the technology over abuse concerns. The move strands international customers mid-deployment and signals tightening federal control over frontier model access, a precedent that could extend to other labs facing similar export scrutiny.
+
+DARPA to explore ways to rapidly rebuild satellite networks if attacked (1 minute read)
+
+DARPA launched a program to develop concepts for rapidly reconstituting satellite networks after an attack, aiming to restore critical services within hours to weeks rather than months. The effort reflects growing concern over the vulnerability of space-based infrastructure to anti-satellite weapons and electronic warfare, as military and civilian systems increasingly depend on orbital assets for communications, navigation, and surveillance.
+
+Anthropic reserves right to check ID for Claude subs (5 minute read)
+
+(blurb not generated)
+
 ⚡
 Quick Links
 
@@ -57,3 +285,7 @@ A quantum kernel ML framework classifies malware families at scale, using LDA pr
 Banned Book Library in a Wi-Fi Smart Light Bulb (1 minute read)
 
 A researcher hid a library of banned books inside the flash memory of a Wi-Fi smart light bulb.
+
+Google Chrome is closing the loopholes that let old ad blockers keep working (1 minute read)
+
+Chrome 150 and 151, arriving in late June and July, will remove the last workarounds for running Manifest V2 ad blockers like uBlock Origin.
