@@ -74,13 +74,13 @@ export default function EditionStories({
 
   const [copyState, setCopyState] = useState<'idle' | 'copied' | 'error'>('idle');
 
-  async function exportToEmail() {
-    // One click: copy the rich HTML (+ plain-text fallback) to the
-    // clipboard, then open mailto: with the subject pre-filled. The
-    // user lands in the compose window and presses ⌘V to drop the
-    // formatted body in. mailto: can't carry HTML directly — every mail
-    // client strips it — so the clipboard handoff is what makes the
-    // titles render as real hyperlinks.
+  async function copyBody() {
+    // Copies the rich HTML (+ plain-text fallback) to the clipboard.
+    // Pasting (⌘V) into Gmail/Apple Mail picks up the formatted version
+    // with real hyperlinks; pasting into a plain-text field gets the
+    // text-only version. mailto: can't carry HTML — every mail client
+    // strips it — so the clipboard handoff is what makes the titles
+    // render as real links.
     try {
       if (
         typeof window !== 'undefined' &&
@@ -97,10 +97,16 @@ export default function EditionStories({
       }
       setCopyState('copied');
       setTimeout(() => setCopyState('idle'), 3000);
+      return true;
     } catch {
       setCopyState('error');
       setTimeout(() => setCopyState('idle'), 3000);
+      return false;
     }
+  }
+
+  async function exportToEmail() {
+    await copyBody();
     const subject = `${newsletterBrand} ${date}`;
     window.location.href = `mailto:?subject=${encodeURIComponent(subject)}`;
   }
@@ -178,9 +184,15 @@ export default function EditionStories({
             >
               ✉ export to email
             </button>
+            <button
+              onClick={copyBody}
+              className="px-4 py-2 rounded-md bg-surface border border-border text-text text-[12px] font-medium hover:bg-surface-hi"
+            >
+              ⧉ copy body
+            </button>
             {copyState === 'copied' && (
               <span className="text-[12px] text-ok">
-                copied to clipboard — paste (⌘V) into the compose window
+                copied — paste (⌘V) into your email
               </span>
             )}
             {copyState === 'error' && (
