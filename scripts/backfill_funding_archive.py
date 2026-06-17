@@ -26,6 +26,7 @@ from dataclasses import asdict
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
+import feedparser
 import requests
 from bs4 import BeautifulSoup
 
@@ -98,6 +99,55 @@ def tc_walk_dates(start: date, end: date) -> list[tuple[str, str, date]]:
             day_added += 1
         log.info("tc %s: %d articles", d, day_added)
         d += timedelta(days=1)
+    return out
+
+
+# ─── source: EU funding RSS feeds (last ~N days of items) ──────────────────
+
+EU_FEEDS = [
+    ("tech_eu", "https://tech.eu/feed"),
+    ("silicon_canals", "https://siliconcanals.com/feed/"),
+    ("maddyness", "https://www.maddyness.com/feed/"),
+    ("maddyness_uk", "https://www.maddyness.com/uk/feed/"),
+    ("uktech_news", "https://www.uktech.news/feed/"),
+    ("sifted_titles", "https://sifted.eu/feed"),
+    ("eu_startups", "https://www.eu-startups.com/feed/"),
+]
+
+
+def eu_walk_rss(oldest_allowed: date) -> list[tuple[str, str, date, str]]:
+    """Return (url, title, published_date, source_name) from EU funding feeds.
+
+    RSS only carries the publisher's most recent items (typically 10–50),
+    so we can't go back arbitrarily far — but the current window catches
+    every fresh EU round that hit the wire in the last few days.
+    """
+    out: list[tuple[str, str, date, str]] = []
+    seen: set[str] = set()
+    for source_name, feed_url in EU_FEEDS:
+        try:
+            f = feedparser.parse(feed_url, request_headers=HEADERS)
+        except Exception as e:
+            log.warning("eu %s parse error: %r", source_name, e)
+            continue
+        added = 0
+        for e in f.entries:
+            link = (e.get("link") or "").split("?")[0].rstrip("/")
+            if not link or link in seen:
+                continue
+            seen.add(link)
+            title = (e.get("title") or "").strip()
+            if not title:
+                continue
+            pub = e.get("published_parsed") or e.get("updated_parsed")
+            if not pub:
+                continue
+            d = date(pub.tm_year, pub.tm_mon, pub.tm_mday)
+            if d < oldest_allowed:
+                continue
+            out.append((link, title, d, source_name))
+            added += 1
+        log.info("eu %s: %d items in window", source_name, added)
     return out
 
 
@@ -189,9 +239,17 @@ def main() -> None:
     oldest = today - timedelta(days=args.days)
     log.info("backfill window: %s → %s", oldest, today)
 
-    # 1. Walk daily archives
-    raw_articles = tc_walk_dates(oldest, today)
-    log.info("collected %d total articles from TC daily archives", len(raw_articles))
+    # 1. Walk daily archives (TC) + EU RSS feeds
+    tc_articles = tc_walk_dates(oldest, today)
+    log.info("collected %d articles from TC daily archives", len(tc_articles))
+    eu_articles = eu_walk_rss(oldest)
+    log.info("collected %d articles from EU funding feeds", len(eu_articles))
+
+    # Normalize to (url, title, date, source) tuples
+    raw_articles: list[tuple[str, str, date, str]] = [
+        (u, t, d, "techcrunch") for u, t, d in tc_articles
+    ] + eu_articles
+    log.info("combined %d articles from all sources", len(raw_articles))
 
     # 2. Title pre-filter — drop anything that doesn't look like a round
     candidates = [a for a in raw_articles if TITLE_KEYWORDS.search(a[1])]
@@ -199,11 +257,13 @@ def main() -> None:
 
     # 3. Fetch article body + LLM-classify. We need the body because
     #    headlines alone rarely state "HQ'd in $COUNTRY" — without it the
-    #    LLM defaults to region=OTHER and we drop everything.
+    #    LLM defaults to region=OTHER and we drop everything. Sifted body
+    #    is paywalled so fetch will return empty for those; the LLM can
+    #    still classify many of them from headline + RSS-style title.
     rounds: list = []
-    for url, title, d in candidates:
+    for url, title, d, source in candidates:
         body = fetch_body(url)
-        story = build_synthetic(url, title, d, source="techcrunch_venture", body=body)
+        story = build_synthetic(url, title, d, source=source, body=body)
         # Drop any stale cache entry — earlier runs might have classified this
         # URL as OTHER from headline-only context. Force the LLM to re-extract
         # now that we're feeding it the body.

@@ -270,6 +270,19 @@ rss:
   - { name: strictlyvc          , url: https://strictlyvc.com/feed/, topics: [founders, vc] }
   - { name: saastr              , url: https://www.saastr.com/feed/, topics: [founders, gtm, vc] }
 
+  # ─── EU-focused (added 2026-06-17 for funding coverage) ────────────────
+  # All probed live, all returned valid RSS. Cron will start surfacing
+  # EU rounds from these starting next refresh.
+  - { name: tech_eu             , url: https://tech.eu/feed, topics: [founders, vc, tech] }
+  - { name: silicon_canals      , url: https://siliconcanals.com/feed/, topics: [founders, vc, tech] }
+  - { name: maddyness           , url: https://www.maddyness.com/feed/, topics: [founders, vc, tech] }
+  - { name: maddyness_uk        , url: https://www.maddyness.com/uk/feed/, topics: [founders, vc, tech] }
+  - { name: uktech_news         , url: https://www.uktech.news/feed/, topics: [founders, vc, tech] }
+  - { name: sifted_titles       , url: https://sifted.eu/feed, topics: [founders, fintech] }
+  # ↑ Sifted re-enabled for headline ingestion only — article body is
+  # paywalled. Blurb step may skip these; the funding extractor reads
+  # the headline + RSS description and is fine without body.
+
 arxiv:
   categories:
     - cs.AI
