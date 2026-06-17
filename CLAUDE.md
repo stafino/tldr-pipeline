@@ -86,6 +86,12 @@ repo checked out next to `web/`.
   cheap and idempotent.
 - Every story assigned to a newsletter must end up with a blurb. The
   generator now blurbs ALL assignments (not just top-N per section).
+- Edition export buttons live in `web/components/EditionStories.tsx`.
+  Four outputs are generated client-side from the approved-set: rich
+  email HTML (heavy inline styles for direct rendering), semantic
+  editor HTML (clean h1/h2/p for Substack/Beehiiv paste), `.eml` draft
+  (multipart/alternative, opens as Apple Mail draft), and a plain-text
+  fallback. No backend mail sending.
 
 ## Don't do unprompted
 
