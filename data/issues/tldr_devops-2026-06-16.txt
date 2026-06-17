@@ -6,58 +6,58 @@ TLDR DevOps 2026-06-16
 📱
 News & Trends
 
+Linux 7.1 (5 minute read)
+
+(blurb not generated)
+
+Introducing Brazos: Bringing liquid cooling to air-cooled data centers (2 minute read)
+
+Google released Brazos, a generally available, rack-mounted closed-loop liquid-to-air cooling system that lets operators run high-density chips above 1000 W TDP inside existing air-cooled data centers without retrofitting facility water loops. Each three-unit module supports a 60 kW thermal load per ORv3 rack, installs one rack at a time, and is now licensed to manufacturing suppliers for broader industry production.
+
 Improving Arm64 support in CNCF projects with OCI credits (5 minute read)
 
 (blurb not generated)
 
-LiteLLM Vulnerability Chain Lets Low-Privilege Users Take Over AI Gateway Servers (5 minute read)
+Linux 7.1 arrives with an NTFS overhaul and major hardware performance boosts (1 minute read)
+
+Linus Torvalds released Linux 7.1, a stable kernel headlined by a new NTFS driver, Intel FRED support for Panther Lake CPUs, faster Intel Arc Battlemage graphics, and a backlog of use-after-free, memory-leak, and buffer-overflow fixes across i2c, zram, gpio, USB, and networking subsystems. Distros will pick it up at their own pace, with Fedora landing it soon and Debian likely lagging, as the merge window for 7.2 opens.
+
+AWS Weekly Roundup: AWS FinOps Agent in preview, Gemma 4 on Bedrock, Kiro Pro Max, and more (June 15, 2026) (1 minute read)
+
+AWS opened its FinOps Agent for preview at the New York Summit, alongside Gemma 4 on Bedrock and a new Kiro Pro Max tier, with a full keynote livestream set for June 17. The FinOps Agent is the operationally relevant launch, promising automated cost analysis and rightsizing recommendations that platform teams currently stitch together from Cost Explorer exports and homegrown tooling.
+
+Hetzner Price Adjustment (5 minute read)
 
 (blurb not generated)
 
-Linux 7.1 arrives with an NTFS overhaul and major hardware performance boosts (5 minute read)
+Cisco SD-WAN make-me-root bug under attack (1 minute read)
+
+Cisco confirmed that attackers are actively exploiting a privilege-escalation flaw in its SD-WAN Manager (formerly vManage), allowing a low-privileged user to gain root on the appliance that controls an org's entire wide-area network fabric. With exploitation already in the wild, the patch is effectively emergency-grade for platform teams, since a compromised SD-WAN controller hands attackers a foothold across every connected branch and data-center edge.
+
+Non-x86 servers now nearly half the market, IDC says (1 minute read)
+
+Non-x86 servers now account for nearly half of all server shipments, according to IDC, driven by AI system demand and constrained supply of DRAM and NAND. The shift reflects GPU-heavy AI buildouts and Arm-based designs eating into x86's lead, leaving infrastructure teams to plan capacity around tighter memory availability and pricier nodes.
+
+Fire burns Google Cloud India’s network, which remains slow a week later (5 minute read)
 
 (blurb not generated)
 
-Red Hat gives Ubuntu a bootc up the backside at Canonical shindig (1 minute read)
+Software supply chains are heading for a transparency test (1 minute read)
 
-At Canonical's own event, Red Hat pitched managing Ubuntu and other distros as bootable containers using bootc, letting teams build, version, and roll out OS images with the same OCI tooling and registries they already use for application workloads. The approach collapses the gap between OS and app lifecycle management, treating the host like any other container image rather than a separately patched fleet of mutable servers.
-
-Arch Linux locks down AUR signups amid wave of malicious commits (1 minute read)
-
-Arch Linux froze new Arch User Repository signups after attackers flooded the community-maintained repo with poisoned package updates, an attack vector that runs build scripts directly on user machines. The freeze blocks fresh accounts from submitting PKGBUILDs while maintainers triage the malicious commits, trading off contributor onboarding for blast-radius containment on a repo that ships unvetted code to Arch desktops.
-
-Cisco patches SD-WAN flaw amid evidence of active exploitation (5 minute read)
-
-(blurb not generated)
-
-Hetzner Price Adjustment (1 minute read)
-
-Hetzner raised prices across its cloud servers, dedicated hardware, and storage products, citing higher energy, hardware, and infrastructure costs as the drivers behind the adjustment. The increase narrows the cost gap that has made Hetzner a default budget alternative to AWS and GCP for teams running their own k8s and CI fleets, and the 574-comment HN thread reflects how sensitive that pricing has been to infra-team build-versus-rent math.
-
-Linux kernel 7.1 sends Intel 486 support to silicon heaven (5 minute read)
-
-(blurb not generated)
-
-HPE offers VMware refugees a year off the meter (1 minute read)
-
-HPE is offering VMware customers a free VM Essentials license for one year plus discounted Zerto disaster-recovery licensing to lure them off Broadcom's platform amid widespread frustration over post-acquisition price hikes. The promotion targets teams already evaluating a migration, betting that subscription sticker shock and bundling changes since Broadcom's takeover have left enough operators willing to absorb the toil of re-platforming their virtualization stack.
-
-Fire burns Google Cloud India’s network, which remains slow a week later (1 minute read)
-
-A fire damaged Google Cloud's India networking infrastructure, leaving the region with degraded throughput and elevated latency a week after the incident. The slow recovery underscores the operational risk of single-region dependency, as teams running latency-sensitive workloads in India face sustained P99 spikes with no firm restoration timeline from Google.
-
-Marvell details vision of optically-interconnected data centers spanning across thousands of kilometers — new interconnects sampling later this year would allow CSPs to pool resources based on workload (5 minute read)
-
-(blurb not generated)
-
-Flatpak-NG sounds like bad news for systemd refuseniks (1 minute read)
-
-The next major rework of Flatpak, dubbed Flatpak-NG, is leaning toward a hard dependency on systemd for sandboxing and service management, which would break packaging support on distros running alternative init systems like OpenRC, runit, or s6. Teams maintaining non-systemd environments would lose access to a primary Linux app-distribution channel, narrowing the practical options for shipping desktop software outside the systemd mainstream.
+ENISA's SBOM Adoption State of Play 2026 reports most organizations have already started building SBOM processes ahead of the EU Cyber Resilience Act, which makes Software Bills of Materials mandatory for products with digital elements when it applies in December 2027. Build-time generation leads at 39% of respondents, though many still struggle to obtain SBOMs from commercial software suppliers, leaving third-party risk assessments incomplete.
 
 🚀
 Opinions & Tutorials
 
-From data residency to digital sovereignty: Architectural patterns for  cloud native platforms (5 minute read)
+From data residency to digital sovereignty: Architectural patterns for  cloud native platforms (1 minute read)
+
+Digital sovereignty has shifted from policy debate to a platform engineering problem, driven by the EU Data Act, NIS-2, DORA, and the UK's 2025 Data Use and Access Act. This CNCF post argues that picking a Frankfurt region isn't enough: sovereignty depends on control-plane design, who holds encryption keys and etcd, and admin access boundaries. It walks through Kubernetes patterns for jurisdictional containment, operational autonomy, and portability across providers.
+
+What job interviews taught me about Kubernetes (5 minute read)
+
+(blurb not generated)
+
+Implementing workload identity with HashiCorp Vault and SPIFFE (5 minute read)
 
 (blurb not generated)
 
@@ -65,56 +65,13 @@ AI demands more engineering discipline. Not less (xpost) (5 minute read)
 
 (blurb not generated)
 
-What job interviews taught me about Kubernetes (1 minute read)
-
-The author uses Kubernetes interview questions as a lens for the internals practitioners gloss over in daily operations, walking through how the scheduler, kubelet, and control loops actually behave under questioning. The piece argues that interview prep exposes the gap between running kubectl commands and understanding why a pod is stuck pending or a node goes NotReady. Useful as a self-audit for platform engineers who operate clusters without having traced the reconciliation path end to end.
-
-Organizational Cohesion in Microservice Architectures: A Multi-Project Empirical Study (1 minute read)
-
-This paper introduces organizational cohesion, a way to measure how closely developer contributions track microservice boundaries, and proposes Pairwise Team Cohesion (PTC) as the metric. Building on the SCOM class-cohesion metric, the authors apply PTC in a longitudinal study of Netflix's Spinnaker and replicate it across six other open-source microservice systems, finding systematic gaps between service boundaries and the teams actually working on them.
-
-21 years and counting of 'eight fallacies of distributed computing' (2025) (5 minute read)
-
-(blurb not generated)
-
-Spotlight on SIG Storage (3 minute read)
-
-The Kubernetes blog's SIG Spotlight series profiles SIG Storage, the group behind persistent volumes, the CSI interface, and the storage primitives connecting workloads to the systems underneath them. Co-chair Xing Yang walks through recent-release features and where Kubernetes storage is heading as AI workloads, with their heavy demands on throughput and capacity, become the default.
-
-Implementing workload identity with HashiCorp Vault and SPIFFE (1 minute read)
-
-HashiCorp published a guide to using Vault as a SPIFFE identity issuer and broker, issuing SVIDs to workloads so services authenticate by verified identity rather than long-lived secrets. The post draws a clear boundary for where SPIRE belongs, with Vault handling issuance and authorization brokering while SPIRE manages node and workload attestation. The payoff is fewer static credentials to rotate and a consistent identity layer across clusters.
-
 ⚒️
 Launches & Tools
 
-Linux 7.1 (5 minute read)
+AWS WAF adds AI traffic monetization capability to help content owners charge AI bots for content access (5 minute read)
 
 (blurb not generated)
-
-AWS WAF adds AI traffic monetization capability to help content owners charge AI bots for content access (1 minute read)
-
-AWS WAF added AI traffic monetization, a Bot Control capability that lets content providers and publishers price, meter, and collect payment from AI bots and agents hitting their content and APIs. Owners set a price, accept payment through third-party providers, and grant scoped access directly at the edge, turning unwanted crawler traffic into a revenue stream without standing up separate gateway infrastructure.
 
 Caddy compatibility for zeroserve: 3x throughput and 70% lower latency (5 minute read)
-
-(blurb not generated)
-
-Lumi Loglake enables fast searches of unstructured log data (5 minute read)
-
-(blurb not generated)
-
-1Password debuts Credential Broker to release secrets only when needed (5 minute read)
-
-(blurb not generated)
-
-⚡
-Quick Links
-
-AMD takes over MEXT for memory tiering tech that enables flash to appear as DRAM to applications — tech to 'address growing memory constraints' in the data center (5 minute read)
-
-(blurb not generated)
-
-Building a Microsoft Teams Bot with Private Networking in Azure (5 minute read)
 
 (blurb not generated)

@@ -6,124 +6,104 @@ TLDR Dev 2026-06-16
 🧑‍💻
 Articles & Tutorials
 
-Banned Book Library in a Wi-Fi Smart Light Bulb (1 minute read)
-
-A developer flashed a Wi-Fi smart bulb's ESP8266 microcontroller to host a hidden library of banned books served over a local web page. The post walks through dumping the stock firmware, repurposing the chip's flash storage to hold the text, and serving it via a captive portal that anyone nearby can connect to without internet access.
-
-Configuration Smells in AGENTS.md Files: Common Mistakes in Configuring Coding Agents (1 minute read)
-
-This paper presents the first catalog of "configuration smells" in AGENTS.md and CLAUDE.md files, the instruction files that steer coding agents on architecture, conventions, and testing. After mining repositories and reviewing 100 popular open-source projects, the authors define six smells with automated detection heuristics, finding Lint Leakage (linter rules duplicated into agent instructions) the most common at 62% of files.
-
-Organizational Cohesion in Microservice Architectures: A Multi-Project Empirical Study (1 minute read)
-
-This paper introduces organizational cohesion, a measure of how closely developer contributions align with microservice boundaries, operationalized as Pairwise Team Cohesion (PTC) by adapting the Sensitive Class Cohesion Metric. The authors validate it through a longitudinal study of Netflix's Spinnaker platform and six other open-source microservice systems, finding systematic divergences between service decomposition and the team structures that actually maintain those services.
-
-Correlated randomness in Slay the Spire 2 (5 minute read)
+Building Reliable Agentic AI Systems (5 minute read)
 
 (blurb not generated)
 
-The time the x86 emulator team found code so bad they fixed it during emulation (1 minute read)
+The time the x86 emulator team found code so bad they fixed it during emulation (5 minute read)
 
-Raymond Chen recounts how Windows' x86-on-ARM emulation team hit application code so pathologically inefficient that the just-in-time translator effectively rewrote it on the fly, producing emulated output that ran better than the original native instructions. The post uses the case to explain how binary translation can recognize and collapse redundant instruction patterns, turning a quirk of bad code into a window onto how the emulator's optimizer actually works.
+(blurb not generated)
 
-Game Engine White Papers: Commander Keen (1 minute read)
+How memory safety CVEs differ between Rust and C/C++ (5 minute read)
 
-This post dissects how Commander Keen pulled off smooth side-scrolling on 1990 PC hardware that was never designed for it, using John Carmack's adaptive tile refresh to redraw only the screen cells that changed between frames. The write-up reconstructs the EGA memory tricks, off-screen page buffering, and tile bookkeeping that let the engine hit console-grade scrolling where competitors settled for full-screen redraws.
+(blurb not generated)
 
-LLM-as-Code Agentic Programming for Agent Harness (1 minute read)
+Correlated randomness in Slay the Spire 2 (1 minute read)
 
-This paper argues that token explosion, control-flow hallucination, and unreliable completion in LLM agents are architectural consequences of making a probabilistic model orchestrate deterministic looping, branching, and sequencing. The authors propose Agentic Programming, where the program owns all control flow and the LLM is invoked as an adaptive component only for reasoning or generation, with each call's context built from the execution history's call tree as a DAG.
+The author shows that Slay the Spire 2's separate pseudorandom number generators are correlated, so observing one early RNG output leaks information that predicts the others, producing oddities like a 54% chance that Neow's Bones yields the Debt curse. The root cause is initializing each generator from the same seed plus a per-purpose hash, which leaves their first outputs statistically linked rather than independent.
 
-Building Reliable Agentic AI Systems (1 minute read)
+Banned book library in a wi-fi smart light bulb (5 minute read)
 
-Thoughtcombines from keyword search to research assistant for Bayer pharma researchers.Bayer engineers built a system that lets pharmaceutical researchers query decades of study data buried in PDF reports, evolving from keyword-based search into an LLM research assistant that answers complex questions and drafts regulatory documents. The writeup details the architecture choices that made it reliable, including how the team handled retrieval over dense scientific documents and constrained the model to keep outputs grounded and auditable.
+(blurb not generated)
 
-I indexed 669 GB of my GoPro videos using my M1 Max computer and local ML models (1 minute read)
+Caddy compatibility for zeroserve: 3x throughput and 70% lower latency (5 minute read)
 
-A developer indexed 669 GB of personal GoPro footage entirely on an M1 Max using local ML models, building a searchable archive without sending video to any cloud service. The pipeline extracts frames, runs them through on-device vision models to generate embeddings and captions, and stores the results so clips can be retrieved by natural-language queries.
+(blurb not generated)
 
-Agent trajectories as programs: fingerprinting and programming coding-agent behavior (1 minute read)
+Even more batteries included with Emacs (5 minute read)
 
-This paper introduces methods for fingerprinting coding agents by their procedural behavior rather than benchmark scores, using a compressive vocabulary-induction technique to represent how an agent solves problems. Across ten agents on SWE-Bench, a probe over these procedural signatures attributes an unseen trajectory to the correct agent with 85.7% accuracy, and behavior clusters most tightly among models from similar release periods.
+(blurb not generated)
 
-SPARK: Security Knowledge Priming and Representation-Guided Knowledge Activation for LLM-based Secure Code Generation (1 minute read)
+I indexed 669 GB of my GoPro videos using my M1 Max computer and local ML models (5 minute read)
 
-SPARK is an inference-time security harness that improves LLM secure code generation by retrieving relevant CWE entries and appending a short structured cue to the prompt, activating latent security knowledge without any retraining. The authors argue pretraining corpora already contain rich security material and that the real bottleneck is activation, positioning SPARK against heavier defenses like fine-tuning or external knowledge retrieval that add compute overhead and data bias.
+(blurb not generated)
 
-Snyk VulnBench JS 1.0: Can LLMs Find the Same Bugs Twice? (1 minute read)
+Boot Naked Linux (1 minute read)
 
-This benchmark ran 300 repeated agentic LLM security scans on identical JavaScript, prompts, and harness, finding that reference-matched vulnerabilities were highly repeatable (134 of 158 appeared in all five runs) while unmatched extra findings were not, with 80 of 161 surfacing in only one of five repetitions. The authors argue LLM review and Snyk's deterministic SAST are complementary: models reliably catch high-signal exploit shapes, while static analysis is better at systematically enumerating repeated data-flow sinks.
+The author boots a minimal Linux system with nothing but a kernel and a single statically linked program running as PID 1, skipping the usual initramfs, init system, and userspace entirely. The walkthrough covers compiling the program against the raw syscall interface, pointing the kernel at it via the init= boot parameter, and testing the result under QEMU before running on real hardware.
 
-How TimescaleDB compresses time-series data (1 minute read)
+LLM-as-Code Agentic Programming for Agent Harness (5 minute read)
 
-The post breaks down TimescaleDB's Hypercore engine, which converts row-based chunks into a columnar format by packing up to 1,000 rows into a single compressed batch and applying per-type schemes like delta-of-delta, Gorilla, and dictionary encoding. It covers how segment-by and order-by configuration shapes the compression ratio and query performance, with the trade-off that updates to compressed data are slower than on uncompressed chunks.
+(blurb not generated)
 
-Can You Tell When an LLM API Swaps in a Cheaper Model? (3 minute read)
+Configuration Smells in AGENTS.md Files: Common Mistakes in Configuring Coding Agents (5 minute read)
 
-A developer tested whether you can detect an LLM API silently swapping in a cheaper or more aggressively quantized model, finding that grading output quality backfires because a smaller model produces simpler, lower-perplexity text. The method that works is teacher-forced log-probability scoring of a fixed token sequence, but the per-check signal is weak enough that it only separates an impostor after averaging roughly 10 to 15 challenges.
+(blurb not generated)
 
-Your ePub Is fine (1 minute read)
+Honda Civics and Installing Software With Android Test Keys (5 minute read)
 
-**The author traces why a spec-compliant ePub gets rejected by Kobo e-readers, pinning the failure on Adobe's aging Reader Mobile SDK rather than the file itself.** The post walks through validating the ePub against the standard, reproducing Kobo's parse error, and showing how the embedded Adobe XML parser chokes on markup that EPUBCheck and other readers accept without complaint.
+(blurb not generated)
 
-From Third-Party to First-Party: Measuring and Protecting Against Modern Web Tracking Mechanisms (1 minute read)
+Game Engine White Papers: Commander Keen (5 minute read)
 
-A large-scale measurement of top sites found that over 54% now deploy first-party or server-side tracking, which relocates tracking logic into the browser's first-party context or the website's backend to evade traditional client-side detection. The authors build a provider-independent detection methodology and cluster scripts by similarity into a network graph, showing the tracking ecosystem persists even as it dodges conventional privacy tools.
+(blurb not generated)
 
-Selection Without Signal, Recovery Through Expression: A Measurement Study of Post-Hoc Falsification Operators for Frozen Small Code Models (1 minute read)
+How to Optimize Transformer-Based Models for Low-Precision Training (1 minute read)
 
-This paper tests whether post-hoc operators that select, verify, or repair the outputs of frozen sub-1.5B code models can beat plain Best-of-N sampling, evaluating 26 semantic operators under a leakage-free, matched-compute protocol. None improved held-out accuracy over Best-of-N, blocked by a coverage wall on hard tasks and a capability scissors that leaves too few discriminable errors among visible-test passers.
+This NVIDIA guide shows how to translate a transformer config and batch size into the exact M×K×N GEMM shapes a model executes, then microbenchmark those shapes across BF16, FP8, and NVFP4 to predict where low precision actually pays off. Using a 5B-parameter CodonFM RNA model as the example, it leans on Transformer Engine for quantization and kernel dispatch so teams can estimate speedups on Hopper and Blackwell before committing to an expensive training run.
 
-No Resource, No Benchmarks, No Problem? Evaluating and Improving LLMs for Code Generation in No-Resource Languages (1 minute read)
+Making Claude a Chemist (1 minute read)
 
-This paper introduces three new benchmarks for evaluating LLM code generation in no-resource languages, the proprietary or domain-specific languages that companies build in-house and that models have effectively never seen in training. The authors test and improve generation for these languages, targeting the gap left by tools like GitHub Copilot that only support high-resource ecosystems such as Python and Java.
+Anthropic chemist David Kamber tested how Claude reads NMR spectra, a chemist's most common analytical input, as part of a broader effort to make the model fluent across chemistry's representations. The post details the translation problem the work targets: chemists constantly reconcile hand-drawn structures, instrument readouts, and database notations against a registry of over 290 million substances that grows by roughly 15,000 entries a day.
 
-Neuro-Symbolic Software Verification: Hyper-charging Local Language Models with Symbolic Reasoning at Scale (1 minute read)
+From Third-Party to First-Party: Measuring and Protecting Against Modern Web Tracking Mechanisms (5 minute read)
 
-VerIbmc is a neuro-symbolic pipeline that pairs deterministic symbolic invariant synthesis with locally deployable open-weight models and the ESBMC verifier, targeting loop invariant generation without sending source code to proprietary cloud APIs. The authors evaluate five open-weight models from 7B to 120B parameters across five benchmark families, comparing Chain-of-Thought and Tree-of-Thought prompting in an iterative refinement loop driven by structured verifier feedback.
+(blurb not generated)
 
-How to Make AI Agents Follow Your Design System (5 minute read)
+Measurement Study of Post-Quantum Readiness of Internet: 2026 (1 minute read)
+
+A large-scale scan of 32,011 domains finds that while 49.3% now support hybrid post-quantum key exchange like ML-KEM768 with X25519, 50.7% still rely on classical key exchange and 0% deploy hybrid post-quantum certificates. The authors argue this leaves the authentication layer exposed to certificate forgery and Harvest-Now-Decrypt-Later attacks, with banking and government sectors lagging on TLS 1.2 at 15.70% of domains.
+
+Snyk VulnBench JS 1.0: Can LLMs Find the Same Bugs Twice? (5 minute read)
+
+(blurb not generated)
+
+did:crdt: Coordination-Free Decentralised Identifiers via Signed CRDTs (5 minute read)
+
+(blurb not generated)
+
+Q-READY: Predictive Feasibility Assessment for Hybrid Quantum-Classical Applications (5 minute read)
 
 (blurb not generated)
 
 🧠
 Opinions & Advice
 
-Formal methods and the future of programming (5 minute read)
+Ask HN: Has anyone replaced Claude/GPT with a local model for daily coding? (5 minute read)
 
 (blurb not generated)
 
-How memory safety CVEs differ between Rust and C/C++ (1 minute read)
+Why is Meta destroying its engineering organization? (1 minute read)
 
-The author analyzes memory safety CVE data and argues that Rust's guarantees shift the nature of vulnerabilities rather than just reducing their count, since unsafe blocks and logic errors still produce memory bugs that look different from C/C++ classics. The post contends that Rust's compiler eliminates most use-after-free and buffer-overflow patterns up front, concentrating remaining issues in a smaller, auditable surface where reviewers can focus their attention.
+Gergely Orosz argues that Meta has dismantled its two-decade high-performance engineering culture in just a few weeks, recasting software engineering from a profit center into a disdained cost center through AI-mandated workflows and pressure on core engineers. He ties the shift to leadership treating infra teams as expendable, citing a recent high-profile outage and internal disarray as early evidence the demolition is already backfiring.
 
-AI GPUs probably live longer than three years (5 minute read)
+Understanding the rationale behind a rule when trying to circumvent it (1 minute read)
 
-(blurb not generated)
+Microsoft's "Old New Thing" argues that following a rule's letter without grasping its intent reproduces the exact failure the rule exists to prevent. The example is a driver whose process/thread callback correctly queues slow work to a System Worker Thread, then blocks waiting for it to finish, hanging the system because the real constraint was "return fast," not "delegate the work.
 
-21 years and counting of 'eight fallacies of distributed computing' (2025) (1 minute read)
+Agentic Code Review (1 minute read)
 
-The post revisits Peter Deutsch's eight fallacies of distributed computing and argues they remain accurate 21 years on, with engineers still building as if the network is reliable, latency is zero, and bandwidth is infinite. The author maps each fallacy to modern failure modes in microservices and cloud systems, noting that newer abstractions hide the network without removing its costs.
-
-Agentic Code Review (5 minute read)
-
-(blurb not generated)
-
-AI demands more engineering discipline. Not less (xpost) (1 minute read)
-
-Charity Majors argues that AI coding tools raise the bar for engineering discipline rather than lowering it, comparing the moment to the shift from hand-tended server pets to immutable infrastructure. She contends that faster code generation makes practices like testing, observability, and tight feedback loops more essential, since the cost of shipping unreviewed or poorly understood changes scales with how quickly you can produce them.
-
-What job interviews taught me about Kubernetes (1 minute read)
-
-The author argues that interviewing engineers about Kubernetes exposed how often teams adopt it without grasping the fundamentals it abstracts away, treating cluster orchestration as a checkbox rather than a tool matched to a real scaling problem. The takeaway is that the people who reason best about Kubernetes can explain what it does at the level of scheduling, networking, and failure handling, not just recite kubectl commands or YAML they copied from a manifest.
-
-Don't trust large context windows (1 minute read)
-
-The author argues that large context windows degrade model performance well before hitting their advertised token limits, with recall and reasoning falling off as the prompt fills. The practical advice is to treat context as a scarce budget, aggressively prune irrelevant tokens, and split work across focused calls rather than dumping everything into one oversized window.
-
-Understanding the rationale behind a rule when trying to circumvent it (5 minute read)
-
-(blurb not generated)
+Code review has become the most leveraged skill in software because coding agents now produce solid code faster than any human can read it, shifting the bottleneck from writing to deciding whether to trust a change. The author argues the right review approach depends entirely on context, and points the same agents at incoming PR queues to triage diffs, turning the tools generating the extra code into the means of keeping up with it.
 
 🚀
 Launches & Tools
@@ -132,204 +112,164 @@ Linux 7.1 (5 minute read)
 
 (blurb not generated)
 
+Apple Foundation Models (5 minute read)
+
+(blurb not generated)
+
+Java's Project Valhalla finally lands a preview in JDK 28 (5 minute read)
+
+(blurb not generated)
+
+Iroh 1.0 (5 minute read)
+
+(blurb not generated)
+
 Phoenix LiveView 1.2 (5 minute read)
 
 (blurb not generated)
 
-Java's Project Valhalla finally lands a preview in JDK 28 (1 minute read)
-
-Java's Project Valhalla lands its first preview in JDK 28, introducing value classes that drop object identity to let the JVM flatten data inline and cut memory overhead. Architect Brian Goetz cautioned that the feature will likely remain in preview through the next LTS release, so production use is still some way off.
-
-Linux 7.1 arrives with an NTFS overhaul and major hardware performance boosts (5 minute read)
+Typst 0.15.0 (5 minute read)
 
 (blurb not generated)
 
-Linux kernel 7.1 sends Intel 486 support to silicon heaven (5 minute read)
+Linux 7.1 arrives with an NTFS overhaul and major hardware performance boosts (1 minute read)
+
+Linus Torvalds released Linux 7.1, a stable kernel headlined by a new NTFS driver, Intel FRED support for faster Panther Lake CPUs, quicker Intel Arc Battlemage graphics, and improved support for older AMD Radeon GPUs. The release also bundles USB heap-overflow fixes plus use-after-free, memory-leak, and refcount corrections across i2c, zram, gpio, and net, with the Linux 7.2 merge window now open.
+
+Firefox 152 understands “Sssh!” (1 minute read)
+
+Firefox 152 adds a Quick Action that silences every audio-playing tab across all windows when users type "mute," "sssh," or "hush" into the address bar. The release also ships experimental JPEG XL support, multi-tab sending and URL copying to other devices, a redesigned Settings layout, and roughly 40 security fixes.
+
+Google launches Android 17 and Wear OS 7, first on Pixel devices, with support for the latest AI models, a bubble bar UI, and live updates on Wear OS (Sarah Perez/TechCrunch) (1 minute read)
+
+Google released Android 17 and Wear OS 7, debuting first on Pixel devices, with support for the latest on-device AI models, a new bubble bar UI for multitasking, and live updates that surface ongoing activity on the watch face. Developers get earlier access to the platform APIs and design changes, with broader OEM rollout expected to follow the Pixel launch.
+
+Google Flight Simulator (1 minute read)
+
+Google added an experimental flight simulator to the web version of Google Earth, letting users fly over streamed 3D buildings and high-resolution imagery using keyboard controls. The mode runs in-browser only, uses simplified physics aimed at casual exploration rather than aerodynamic training, and pauses with an instant restart when the aircraft hits terrain.
+
+Openrouter Fusion API (5 minute read)
 
 (blurb not generated)
 
-Apple Foundation Models (1 minute read)
+ICYMI: OpenAI released CDP support for browser use on Codex (1 minute read)
 
-Anthropic released Claude for Foundation Models, a Swift package that conforms Claude to the `LanguageModel` protocol in Apple's Foundation Models framework, so apps drive it through the same `LanguageModelSession` API used for Apple's on-device model. Requests go straight to the Claude API rather than through Apple, and developers swap between on-device and server-side models per session to add larger context, frontier reasoning, or server tools like web search and code execution.
+OpenAI added Chrome DevTools Protocol access to Codex, letting the agent profile JavaScript performance, read console output, network traffic, and rendered state, and rewrite a page's DOM directly from its embedded browser or Chrome. The opt-in developer mode is gated behind a Settings toggle, excluded from the EEA, UK, and Switzerland at launch, and still runs slowly and undertrained on the tooling, often needing several prompting attempts.
 
-Iroh 1.0 (1 minute read)
+Stanford's DeLM cuts multi-agent task costs 50% — without a central orchestrator (2 minute read)
 
-Iroh 1.0 is a Rust library for building direct peer-to-peer connections, using QUIC with NAT hole-punching and falling back to relay servers when a direct path can't be established. The 1.0 release marks a stable API and on-wire protocol, with the relay fallback meaning connections still succeed even when both peers sit behind restrictive NATs.
+Stanford researchers released DeLM, a decentralized multi-agent framework that drops the central orchestrator in favor of a shared knowledge base where agents coordinate directly off one another's verified progress. The approach cuts task costs by roughly 50% by removing the merge-filter-rebroadcast bottleneck, letting agents build on prior findings and recover detailed evidence only when needed.
 
-Typst 0.15.0 (1 minute read)
+Wear OS 7 helps your smartwatch keep up with you (1 minute read)
 
-Typst released version 0.15.0 of its markup-based typesetting system, a faster, scriptable alternative to LaTeX that compiles documents incrementally and ships a built-in scripting language for layout, math, and figures. The release continues to target academic and technical writing with markdown-like source syntax, sub-second recompiles on edits, and a package ecosystem that replaces the sprawl of LaTeX distributions.
+Wear OS 7 is rolling out to eligible Pixel Watch devices, adding Android Live Updates on the wrist, cross-device media and earbud controls, and system-level power optimizations that deliver up to 10% better battery life over Wear OS 6. Select devices get Gemini Intelligence later this year, including natural-language widget creation via Create My Widget and multi-step app automation that runs tasks directly from the watch.
 
-Show HN: Kage – Shadow any website to a single binary for offline viewing (1 minute read)
+Google launches 'bubble' multi-tasking and foldable gaming mode with Android 17 (1 minute read)
 
-Kage crawls any website and packages it into a single self-contained binary that serves the full site offline with no external dependencies. The Go tool captures HTML, CSS, JS, and assets into one executable you can run anywhere, useful for archiving docs, demoing sites without a network, or shipping a frozen snapshot.
+Android 17 is rolling out to Pixel devices today, adding Bubbles, which turns any app into a floating window via long-press so you can view two apps over a third, plus a foldable gaming mode with a 50/50 game-and-gamepad layout and native controller remapping. The release also ships Screen Reactions for simultaneous selfie-and-screen recording, temporary per-app location grants, and a biometric remote lock in Find Hub.
 
-Free SQL→ER diagram tool, runs in the browser, nothing uploaded (1 minute read)
+Show HN: Kage – Shadow any website to a single binary for offline viewing (5 minute read)
 
-This browser-based tool converts SQL schema definitions into entity-relationship diagrams entirely client-side, with no server upload or account required. The parsing and rendering run locally, so database schemas never leave the machine, and the tool is free to use for visualizing table structures and foreign-key relationships.
+(blurb not generated)
 
-Caddy compatibility for zeroserve: 3x throughput and 70% lower latency (1 minute read)
+Accelerate search queries with full-text search indexes on Databricks (1 minute read)
 
-zeroserve added a compatibility layer for Caddy configs, letting users run existing Caddyfiles on its server while reporting 3x higher throughput and 70% lower latency in the author's benchmarks. The post details the drop-in migration path and where behavior diverges from Caddy, with the main trade-off being incomplete coverage of Caddy's plugin ecosystem.
+Databricks added full-text search indexes in Beta on Databricks Runtime 18.2, accelerating substring and keyword queries on open-format tables by 100x or more without changing table layouts. Created with a single SQL statement and stored separately from the base table, the index maps tokens to matching rows so the query engine skips most files automatically, replacing workarounds like duplicate tables or external systems such as Elasticsearch and Splunk.
 
-Open-SWE-Traces: Advancing Dual-Mode Multilingual Distillation for Software Engineering Agents (1 minute read)
+Accelerating researchers and developers building multilingual AI with a new open dataset (5 minute read)
 
-Open-SWE-Traces is a dataset of 207,489 agentic coding trajectories spanning nine languages, sourced from 20,000 real-world PRs via OpenHands and SWE-agent and synthesized with both explicit-reasoning and non-thinking traces. Fine-tuning the Qwen3-30B-A3B series on the data yields resolve rates of 61.7% on SWE-bench Verified, 57.1% on SWE-bench Multilingual, and 36.8% on SWE-bench Pro.
+(blurb not generated)
 
-Openrouter Fusion API (1 minute read)
+Linux kernel 7.1 sends Intel 486 support to silicon heaven (1 minute read)
 
-OpenRouter released Fusion, a single API endpoint that dynamically routes each request across multiple frontier models rather than pinning calls to one provider. The model is exposed under the standard OpenRouter chat completions interface, so existing integrations can swap to it without code changes while OpenRouter handles model selection and failover behind the slug.
+The Linux kernel 7.1 release drops support for Intel's 80486 and early 586 processors, removing decades-old workarounds for CPUs that lack the CMPXCHG8B and TSC instructions modern x86 code assumes. The cleanup deletes legacy emulation paths from the kernel's boot and locking code, simplifying maintenance for the 32-bit x86 architecture that remains in embedded and retro-computing use.
 
-Announcing Lakebase Search: agent-native retrieval built into Lakebase Postgres (1 minute read)
+Open-SWE-Traces: Advancing Dual-Mode Multilingual Distillation for Software Engineering Agents (5 minute read)
 
-Databricks released Lakebase Search, hybrid vector and full-text retrieval built directly into Lakebase Postgres for agent applications. The feature lets developers run semantic and keyword queries against operational data without bolting on a separate vector store, keeping retrieval, transactions, and governance inside one Postgres-compatible engine.
-
-obliv-clang: Real-World Oblivious Programming in C++ (1 minute read)
-
-obliv-clang is a compile-time checker that verifies the obliviousness of C++ programs, ensuring execution time and data access patterns leak no secrets to timing and access-pattern side-channel attacks. It supports rich C++ features including arbitrarily nested pointers to work with existing industry codebases, ships formally proven soundness rules, and produces high-performance binaries with minimal compilation overhead.
-
-Binary Decompilation LLM with Feedback-Driven Multi-Turn Refinement (1 minute read)
-
-AutoDecompiler is a decompilation-specialized LLM trained with reinforcement learning that treats binary decompilation as iterative refinement rather than one-shot generation, revising its output across multiple turns based on compilation, execution, and input/output testing feedback. The approach targets a known failure mode where single-turn methods produce code that compiles and reads cleanly yet diverges from the original binary's behavior, misleading downstream security analysis like vulnerability discovery and malware inspection.
-
-Accelerating researchers and developers building multilingual AI with a new open dataset (1 minute read)
-
-GitHub published a new repository-level dataset under CC0-1.0 that maps multilingual developer content across READMEs, issues, and pull requests. The release gives researchers and developers a public-domain corpus for training and evaluating multilingual AI models on real-world software discussions rather than English-only sources.
-
-Exclusive: Mindbeam touts dramatic performance improvements in CPU-based AI inference (1 minute read)
-
-Mindbeam released Litespark-Inference, an open-source library that runs ternary large language models efficiently on standard consumer CPUs. The framework aims to cut reliance on expensive GPUs for some inference workloads, with the two-year-old startup claiming significant throughput gains over GPU-based setups on commodity processors.
+(blurb not generated)
 
 🎁
 Miscellaneous
 
-Attackers hijacked over 1,500 Arch Linux packages to steal developers’ secrets, no hacking required (1 minute read)
+Atomic Arch Supply Chain Attack Hits 1,500 AUR Packages (5 minute read)
 
-Attackers hijacked more than 1,500 packages in the Arch User Repository, adopting orphaned packages and rewriting their build scripts to pull in a credential-stealing npm package that ran a hidden binary at compile time. The campaign, dubbed "Atomic Arch," targeted developers specifically, harvesting GitHub and npm tokens, SSH keys, Docker logins, Slack and Vault credentials, and shipping them out over Tor while Arch's official repositories stayed untouched.
+(blurb not generated)
+
+Attackers hijacked over 1,500 Arch Linux packages to steal developers’ secrets, no hacking required (5 minute read)
+
+(blurb not generated)
 
 Arch Linux locks down AUR signups amid wave of malicious commits (5 minute read)
 
 (blurb not generated)
 
-Atomic Arch Supply Chain Attack Hits 1,500 AUR Packages (1 minute read)
+Android 17 arrives on Pixel phones today (1 minute read)
 
-Attackers compromised roughly 1,500 packages in the Arch User Repository, embedding the Atomic infostealer in builds pulled by Arch Linux users. The project halted new account registrations to stem the flood of malicious uploads, a reminder that user-submitted package repos like AUR ship without the vetting of official channels.
+Google began rolling out Android 17 to compatible Pixel phones today, with other manufacturers expected to ship the update through 2026. The release adds Bubbles for floating app windows with a dedicated bubble bar on foldables and tablets, native controller remapping across all Android phones, foldable gaming controls, and Pixel-exclusive additions including AirDrop support via Quick Share on the 8A and 9A.
 
-North Korean Hackers Are Turning Developer Tools Into Malware Delivery Channels (1 minute read)
-
-Proofpoint flagged two phishing campaigns from the North Korean threat cluster Contagious Interview, which lures developers with fake recruiter outreach and code review requests before delivering malware through trusted dev tooling. The activity overlaps with the group also tracked as Famous Chollima and Void Dokkaebi, signaling that job-application and code-review workflows are now active attack surfaces engineers should treat with the same suspicion as unsolicited email attachments.
-
-A backdoor in a LinkedIn job offer (1 minute read)
-
-A developer recounts catching obfuscated malware planted in a take-home coding assignment sent as part of a LinkedIn job offer, a tactic linked to North Korean threat actors targeting engineers through fake recruiting. The backdoor hid in a minified dependency that fetched and executed remote payloads on run, a reminder to sandbox any interview project before installing its packages or running its code.
-
-Software supply chains are heading for a transparency test (1 minute read)
-
-The EU Cyber Resilience Act takes effect in December 2027 and will require manufacturers to create, maintain, and supply SBOMs, turning software bill-of-materials generation from best practice into a legal obligation. ENISA's SBOM Adoption State of Play 2026 report shows organizations already shifting development workflows, adding SBOM tooling, and automating dependency tracking to prepare, with adoption skewing toward larger firms.
-
-Chrome is removing the last workaround keeping Manifest V2 ad blockers alive (1 minute read)
-
-Chrome 150, shipping June 30, removes the final developer flag that let Manifest V2 extensions like uBlock Origin keep running in the browser. The change completes Google's multi-year migration to Manifest V3, whose declarativeNetRequest API caps filter rules and blocks the dynamic request interception that powerful ad and tracker blockers depend on.
-
-Flatpak-NG sounds like bad news for systemd refuseniks (1 minute read)
-
-The next iteration of Flatpak, dubbed Flatpak-NG, is being reworked around systemd components, which could break compatibility for distributions that use alternative init systems. The change would push systemd-free distros like Devuan, Artix, and Void Linux further from the mainstream Linux app-packaging ecosystem, narrowing the options for users who deliberately avoid systemd.
-
-Undo lands $37M to give AI agents the runtime context to fix bugs (1 minute read)
-
-Undo Ltd., a U.K.-based debugging company founded in 2005, raised $37 million to bring its execution-recording technology to engineers fixing AI-generated code. The product records a program's full execution history so it can be replayed later, giving AI agents the runtime context to trace bugs rather than guess from static source.
-
-Popular WordPress Plugin Scripts Tampered to Plant Hidden Backdoors on Sites (1 minute read)
-
-Attackers tampered with trusted JavaScript files distributed by the popular WordPress plugins PushEngage, OptinMonster, and TrustPulse, turning them into a vector for site compromise. The injected code triggers only when a logged-in administrator loads the file, silently creating an attacker-controlled admin account and installing a hidden plugin that opens a persistent backdoor while leaving ordinary visitors untouched.
-
-Curl will not accept vulnerability reports during July 2026 (1 minute read)
-
-Curl maintainer Daniel Stenberg announced the project will reject all vulnerability reports during July 2026, giving its small team a month of uninterrupted recovery from a steady stream of low-quality, often AI-generated submissions. Reporters who find a genuine flaw must hold it until August, a trade-off Stenberg frames as necessary to prevent burnout across the volunteer-run security process.
-
-Improving Arm64 support in CNCF projects with OCI credits (1 minute read)
-
-The CNCF is funding Arm64 build and test support across its hosted projects using donated Oracle Cloud Infrastructure credits, addressing a gap as Arm instances surpass 50% of new AWS launches and 33% on Azure. The credits give maintainers access to native Arm64 CI runners, removing the cost and emulation overhead that has slowed multi-architecture support in cloud-native tooling.
-
-SpaceX purchases Cursor, a Claude Code and OpenAI Codex competitor [U] (5 minute read)
+Chrome is removing the last workaround keeping Manifest V2 ad blockers alive (5 minute read)
 
 (blurb not generated)
 
-Hetzner Price Adjustment (1 minute read)
+Curl will not accept vulnerability reports during July 2026 (5 minute read)
 
-Hetzner published a price adjustment for its cloud servers, raising monthly rates across its instance lineup and citing rising energy, hardware, and infrastructure costs. The change drew sharp discussion among developers who run side projects and production workloads on Hetzner specifically to avoid hyperscaler pricing, with many weighing whether the gap to AWS, GCP, and Azure still justifies staying.
+(blurb not generated)
+
+Hetzner Price Adjustment (5 minute read)
+
+(blurb not generated)
+
+North Korean Hackers Are Turning Developer Tools Into Malware Delivery Channels (5 minute read)
+
+(blurb not generated)
+
+Google Chrome update will close the door on ad blockers (1 minute read)
+
+Google is removing the final Manifest V2 workaround in Chrome 150, expected June 30, fully ending support for MV2 extensions including ad blockers like uBlock Origin. The change deletes the `ExtensionManifestV2Disabled` flag as dead code, with remaining MV2 flags slated for Chrome 151 in July, and Chromium-based browsers like Edge and Opera expected to follow.
+
+SpaceX purchases Cursor, a Claude Code and OpenAI Codex competitor [U] (1 minute read)
+
+SpaceX acquired Cursor in a $60 billion deal, a week after the company went public and roughly two months after an initial $10 billion partnership granting Cursor access to xAI's Colossus infrastructure. The acquisition pulls a leading agentic coding tool, and a direct competitor to Anthropic's Claude Code and OpenAI's Codex, into SpaceX's expanding AI portfolio alongside xAI.
 
 ⚡
 Quick Links
 
-TokenPilot: Cache-Efficient Context Management for LLM Agents (1 minute read)
+Android 17 starts hitting Pixel phones and watches today (1 minute read)
 
-TokenPilot manages LLM agent context to stay cache-friendly, cutting inference costs 61% and 56% on two benchmarks without breaking prompt prefix continuity.
+Android 17 begins rolling out to Pixel phones and watches, adding a Bubbles system that opens any app as a floating window.
 
-Apple reveals why macOS might block your Terminal prompt (5 minute read)
-
-(blurb not generated)
-
-Dynamic Malicious Skills in Agentic AI (1 minute read)
-
-Malicious instructions hidden in SKILL.md docs can make agents like Claude Code inject harmful logic at runtime; kernel read-only mounts block it.
-
-Transferable Self-Evolving Playbooks for Agentic Security Auditing (1 minute read)
-
-EvoHunt automates security audit playbook creation through a three-agent evolution loop, letting evolved playbooks transfer audit procedures to weaker LLM agents.
-
-Looking Is Not Picking: An Attention-Segment Account of Tool-Selection Failures in LLM Agents (1 minute read)
-
-LLM agents attend to the correct tool 80% of the time yet still mis-call it, locating failures in the decision readout, not the harness.
-
-Boosting MoE Training Throughput with Advanced Fusion Kernels (5 minute read)
+Your ePub Is fine (5 minute read)
 
 (blurb not generated)
 
-What’s !important #13: @function, alpha(), CSS Wordle, and More (5 minute read)
+The Proxy Knows Too Much: Sealing LLM API Routers with Attested TEEs (1 minute read)
+
+AEGIS runs LLM API routers inside attested hardware enclaves, blocking malicious proxies from rewriting tool calls or exfiltrating plaintext, at roughly 6ms overhead.
+
+Directory-Aware Query and Maintenance in Vector Databases (5 minute read)
 
 (blurb not generated)
 
-Understanding Automated Web GUI Testing: An Empirical Study Across Exploration Strategies and State Abstractions (1 minute read)
+I admire Fabrice Bellard. He is almost certainly a better overall programmer (1 minute read)
 
-An empirical study comparing model-based, RL-based, and LLM-based web GUI testing strategies across six state abstractions for coverage and failure revelation.
+John Carmack praised Fabrice Bellard, the prolific French engineer behind FFmpeg, QEMU, and QuickJS, as almost certainly a better overall programmer than himself.
 
-Q-READY: Predictive Feasibility Assessment for Hybrid Quantum-Classical Applications (1 minute read)
-
-Q-READY uses model-based systems engineering to predict whether a hybrid quantum-classical solution is feasible before costly implementation.
-
-I admire Fabrice Bellard. He is almost certainly a better overall programmer (5 minute read)
+Improving Arm64 support in CNCF projects with OCI credits (5 minute read)
 
 (blurb not generated)
 
-Directory-Aware Query and Maintenance in Vector Databases (1 minute read)
-
-This paper adds native directory semantics to vector databases via a Trie-based hierarchical index, beating flat-metadata expansion for scoped retrieval and updates.
-
-did:crdt: Coordination-Free Decentralised Identifiers via Signed CRDTs (1 minute read)
-
-did:crdt updates W3C DID documents without ledgers or global ordering by composing each field from signed, deterministically-merging CRDTs.
-
-Show HN: I wrote a C++ ray tracer from scratch without AI (1 minute read)
-
-A developer built a C++ ray tracer from scratch by hand, no AI assistance, with the full source on GitHub.
-
-AI Supply Chain Galaxy: 3D Visual Analytics for License Compliance (1 minute read)
-
-A 3D visual analytics tool for auditing ML model provenance found compliance risks in 55% of 908,449 Hugging Face models.
-
-Honda Civics and Installing Software With Android Test Keys (1 minute read)
-
-Reviving aging Honda Civic infotainment systems by sideloading software using Android test keys to bypass signature checks.
-
-A Brief History of Unix Commands On Windows: CoreUtils (Again) (5 minute read)
+Flatpak-NG sounds like bad news for systemd refuseniks (5 minute read)
 
 (blurb not generated)
 
-Show HN: machine0 – Persistent NixOS VMs You Control from the CLI (1 minute read)
+Researchers recycle old phones and cluster them into ‘computing platforms’ that operate as a low-cost data center — says processors on modern smartphones deliver higher single-core performance than comparable multicore servers (1 minute read)
 
-machine0 spins up persistent NixOS VMs you manage entirely from the CLI.
+UCSD and Google stripped retired Pixel phones to bare motherboards, ran Linux and Kubernetes, and clustered 25–50 into a server-class node.
 
-Even more batteries included with Emacs (1 minute read)
+Cancelled Xbox 360 version of GoldenEye 007 gets recompiled for PC — ‘No emulator, the game runs as a real native executable,’ insists dev (1 minute read)
 
-Emacs continues absorbing external tools into built-in features, covering completion, project management, and tree-sitter support without third-party packages.
+GoldEye Recomp v1.0 statically recompiles the cancelled Xbox 360 GoldenEye 007 into a native C++ Windows executable, no emulator required.
+
+Apple reveals why macOS might block your Terminal prompt (1 minute read)
+
+macOS 26.4 blocks Terminal pastes for infrequent users when commands are copied from websites, chats, or email to curb malware.

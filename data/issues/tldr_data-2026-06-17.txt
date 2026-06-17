@@ -1,0 +1,160 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR Data 2026-06-17
+
+📊
+News & Trends
+
+What’s new with Unity Catalog at Data + AI Summit 2026 (5 minute read)
+
+(blurb not generated)
+
+Agent Bricks: Data + AI Summit 2026 (5 minute read)
+
+(blurb not generated)
+
+Databricks sales growth tops 80%, but margin are shrinking from swarm of AI agents (1 minute read)
+
+Databricks reported annualized revenue up over 80% year-over-year to $6.9 billion, surpassing rival Snowflake's roughly $5.6 billion and pushing its private valuation to $134 billion. Margins are compressing as customers run more AI agents through Genie and Agent Bricks, since each agent generates far more queries and forces Databricks to spend more on underlying frontier models under its consumption-based pricing.
+
+Databricks says it solved the decades-old data pipeline problem that's been slowing AI agents (2 minute read)
+
+At the Data + AI Summit, Databricks announced Lakehouse//RT, which delivers millisecond query latency directly on governed Delta and Iceberg tables, and LTAP, which writes Postgres-native transactional data straight into Delta and Iceberg format. The pitch is collapsing the real-time serving tier and the operational-to-analytical ETL pipeline that HTAP vendors failed to unify, betting on storage-layer convergence to give AI agents a simpler stack they can act on faster.
+
+Databricks Sales Double for Product Rivaling Snowflake (1 minute read)
+
+Databricks said its data warehousing business more than doubled over the past year to a $1.5B annual run rate, putting its SQL product in direct competition with Snowflake and Google BigQuery. The growth shows the lakehouse vendor narrowing the gap on the warehouse-native workloads that have long been Snowflake's core, as both companies converge on Iceberg-backed storage and overlapping compute.
+
+Databricks unveils CustomerLake, its agentic CDP (5 minute read)
+
+(blurb not generated)
+
+Databricks declares the end of pipelines with a unified platform for operational and analytical data (1 minute read)
+
+Databricks announced a unified architecture at its Data + AI Summit aimed at collapsing the long-standing split between transactional databases and analytical systems, alongside a real-time analytics engine the company says eliminates separate serving infrastructure. The pitch targets the ETL tax of moving data between OLTP and OLAP layers, though the practical question for data teams is whether one platform can match purpose-built engines on cost and latency.
+
+Databricks agrees to acquire Panther Labs, its third cybersecurity acquisition; Panther was valued at $1.4B when it raised a $120M Series B in 2021 (Jeffrey Dastin/Reuters) (5 minute read)
+
+(blurb not generated)
+
+Introducing new Explores and Merge Queries in Looker (5 minute read)
+
+(blurb not generated)
+
+Databricks Releases General AI Agents for Businesses (1 minute read)
+
+Databricks released general-purpose AI agents that can handle open-ended business tasks like research and analysis, extending the company beyond its core data and analytics platform into AI applications. The move puts Databricks in more direct competition with OpenAI and other foundation-model vendors as it tries to monetize the enterprise data already sitting in its lakehouse.
+
+Databricks acquires cyberattack detection startup Panther (1 minute read)
+
+Databricks announced plans to acquire Panther Labs, a security startup whose AI platform detects cyberattacks by filtering telemetry noise and running customer-written detections directly on cloud data platforms, including Databricks. The deal extends Databricks into security analytics, letting enterprises run breach detection against logs already sitting in the lakehouse rather than moving them into a separate SIEM.
+
+Databricks pitches LTAP as a new foundation for agentic applications (2 minute read)
+
+At its Data + AI Summit, Databricks introduced Lake Transactional and Analytical Processing (LTAP), an architecture that unifies operational and analytical data on a single storage layer rather than splitting them across separate OLTP and OLAP systems. Databricks frames the longstanding divide as a liability for AI agents, which need live operational data and historical context at once to reason and act in real time.
+
+What’s new in data agents: Supercharging your AI workflows (5 minute read)
+
+(blurb not generated)
+
+🧠
+Deep Dives & Analysis
+
+Building the agentic data stack: A practical dbt guide for the AI era (1 minute read)
+
+dbt Labs argues that AI agents are now building most enterprise databases on foundations made for humans, leaving a trust gap that shows up as accuracy loss once pilots meet real users. Their fix is four governed dbt layers working together: model contracts and data tests to catch breaking changes an agent never thought to check, plus the Semantic Layer, which lifted LLM question-answering accuracy to about 83% in early experiments by grounding queries in governed MetricFlow definitions.
+
+Context engineering is the new analytics engineering skill: a practical guide for dbt users (1 minute read)
+
+Analytics engineers are already doing context engineering, this dbt piece argues, they just call it writing metric definitions, model descriptions, and schema contracts. The core claim: an AI agent's reliability on your data is almost entirely a function of how well-structured that context is, and agents querying a governed dbt Semantic Layer return consistent, defensible answers where ones hitting raw tables guess and hallucinate. The takeaway is that making implicit business logic explicit and machine-readable is now a frontline skill, not just documentation hygiene.
+
+Directory-Aware Query and Maintenance in Vector Databases (1 minute read)
+
+Vector databases store metadata as flat scalar attributes, forcing directory-scoped retrieval over code repos, enterprise docs, and agent memories into expensive application-layer workarounds. This paper treats directory hierarchy as a first-class capability, formalizing two operators: Directory-Semantic Query for scoped retrieval and Directory-Semantic Maintenance for structural updates. It compares query-time and ingestion-time path expansion against a Trie-based Hierarchical Index, showing that flattening the hierarchy makes recursive scope resolution costly while the trie keeps both queries and updates consistent.
+
+Filtered ANN as a Phase Transition: When Selectivity-Estimation Error Causes Plan Regret (1 minute read)
+
+This paper models filtered approximate-nearest-neighbor queries as an argmax over a landscape where pre-filter, post-filter, and in-filter strategies each win in distinct phases, separated by boundaries set by predicate selectivity. The authors show selectivity-estimation error only costs recall near those boundaries, in a wedge whose width tracks the estimation error and whose height tracks the local cliff. The takeaway for query planners: invest estimation accuracy near the critical s ~ k/K and percolation thresholds, not everywhere.
+
+Start fresh, don't lift and shift: a dbt migration guide (1 minute read)
+
+dbt migrations often fail by reproducing the old workflow in new syntax: stored procedures mapped 1:1 to models, tables named after source systems instead of business entities, and no staging layer or ref() lineage. The author argues this lift-and-shift pattern passes the migration checklist but surfaces as contradictory reports and broken data trust six months later. The fix is treating migration as a rewrite of the data model, not a port of the SQL.
+
+The analytics engineer in 2026: system designer, governance owner, AI context provider (1 minute read)
+
+dbt argues the analytics engineer's job has shifted from writing models to designing the system around them, as AI now handles scaffolding, first-draft docs, and boilerplate tests for the 72% of analytics engineers who code with AI assistance. The remaining work is the judgment AI can't do: defining metric grain, drawing domain boundaries, and structuring the semantic layer so downstream AI queries stay consistent. Governance outputs like contracts, tests, and column-level lineage become the role's measured deliverable.
+
+How dbt makes agentic data pipelines trustworthy: the transformation layer's role in autonomous data systems (1 minute read)
+
+dbt argues that the missing piece in every agentic data pipeline diagram is the governed transformation layer that defines what "correct" even means. A self-healing agent knows syntax and patterns, not that revenue excludes refunds or that a customer is active only after a login in the past 30 days. dbt encodes those business rules in models, tests, contracts, and semantic layer metrics, so agents execute human-defined semantics at speed rather than improvising them. Without that layer, autonomy just propagates wrong answers faster.
+
+The trust-speed paradox: Governing AI-accelerated data work (1 minute read)
+
+The 2026 State of Analytics Engineering report finds data trust is now the top priority for 83% of teams, up from 66% a year ago, even as 72% use AI-assisted coding and only 24% use AI-assisted observability. The author calls this the trust-speed paradox: AI accelerates data production without matching investment in the tests, contracts, and validation that govern it. The fix is the existing dbt workflow applied before AI runs on top, since AI amplifies whatever practices a team already has.
+
+Decoupling Inference from State Updates in Low-Latency Feature Engines via Probabilistic Thinning (1 minute read)
+
+This paper decouples model inference from state persistence in streaming feature pipelines using probabilistic thinning: every event is scored, but only informative ones trigger durable read-modify-write updates. High-frequency state writes are usually the dominant source of latency, contention, and warehouse cost in feature engines. The authors control the persistence path using only approximate statistics from disk-backed key-value stores, with no in-memory control plane or cross-worker coordination, and prove common time-based aggregations stay unbiased.
+
+Phantoms and Disclosures: a Causal Framework for Auditing Synthetic Data (1 minute read)
+
+This paper presents an auditing framework for detecting when synthetic data leaks private information from its training corpus. The key contribution is a causal distinction between "true disclosures," where the system directly reproduces a user's record, and "phantom disclosures," where it incidentally generates matching data by chance. By splitting inputs into training and holdout sets and running statistical hypothesis tests against zero-learning or differential privacy baselines, the method audits disclosure risk with no model access and no canary insertion required.
+
+Build Your Own Transaction Foundation Model for Financial Intelligence (1 minute read)
+
+NVIDIA published an end-to-end developer example for building a transaction foundation model, a transformer pretrained on raw transaction sequences instead of hand-engineered features and rule sets. The walkthrough covers GPU-accelerated processing with cuDF, custom tokenization, decoder pretraining in NeMo AutoModel, and embedding extraction, then feeds those embeddings into a downstream fraud classifier for a near-50% lift in average precision over an XGBoost baseline on the IBM TabFormer dataset. It mirrors what Stripe, Nubank, Visa, and Mastercard are already running in production.
+
+How TimescaleDB compresses time-series data (1 minute read)
+
+TimescaleDB's Hypercore engine compresses time-series data by grouping rows into columnar segments, applying type-specific encodings like delta-of-delta for timestamps and Gorilla for floats, then storing each compressed batch as a single row. The result is 90%+ storage reduction while still allowing updates and queries against older data, since compressed and uncompressed chunks coexist in the same hypertable. The write-up walks through how the columnar layout and per-column algorithms make analytical scans cheaper without forcing teams off Postgres.
+
+HAMON: Passive Optical Sequence Mixing for Long-Horizon Forecasting (1 minute read)
+
+HAMON replaces the learned digital sequence-mixing layer in time-series forecasting with a passive diffractive optical core, encoding history onto an optical aperture and using cascaded trainable phase masks to shape the forecast directly in the output field. The bet is that long-horizon forecasting operators are often low-complexity and approximately linear, so they don't need dense transformer-style superposition. At inference, prediction is a single passive optical propagation pass with no digital mixing, and the authors report it beating the strongest digital baselines on ETTm2.
+
+🚀
+Launches & Tools
+
+Amazon S3 annotations: attach rich, queryable context directly to your objects (1 minute read)
+
+Amazon S3 added annotations, letting you attach up to 1,000 named, queryable annotations per object (1 MB each, 1 GB total) in JSON, XML, YAML, or plain text, editable without rewriting the object. Enabling S3 Metadata flows annotations into managed annotation tables queryable from Amazon Athena, giving teams a way to keep evolving context like transcripts or AI summaries alongside petabyte-scale data without separate metadata databases.
+
+Introducing OpenSharing: the Next Evolution of Delta Sharing for the Agentic Era (5 minute read)
+
+(blurb not generated)
+
+Accelerate search queries with full-text search indexes on Databricks (1 minute read)
+
+Databricks added full-text search indexes that accelerate keyword and substring queries on large tables, letting teams filter hundreds of gigabytes to terabytes without full scans. The indexes integrate directly into Delta tables, so search-heavy workloads like log analysis and document lookup run on the lakehouse instead of requiring a separate search engine like Elasticsearch.
+
+Announcing Apps on Databricks Marketplace (5 minute read)
+
+(blurb not generated)
+
+Introducing OpenSharing SecureConnect (5 minute read)
+
+(blurb not generated)
+
+AI governance at Data + AI Summit 2026: What’s new with Unity AI Gateway (5 minute read)
+
+(blurb not generated)
+
+Enabling Governed Vibe Coding for Enterprise Apps on Databricks (1 minute read)
+
+Databricks introduced three capabilities for Databricks Apps to govern enterprise vibe coding: App Spaces, Genie App Builder, and Serverless Micro Apps. App Spaces lets admins set data access, API scopes, and security policies once at the space level so every app inherits them, while Genie App Builder turns a plain-language description or screenshot into a working internal app.
+
+Milvus invents Vector Lakebase (5 minute read)
+
+(blurb not generated)
+
+Accelerating researchers and developers building multilingual AI with a new open dataset (1 minute read)
+
+GitHub published a repository-level dataset under CC0-1.0 that maps multilingual developer content across READMEs, issues, and pull requests, giving teams a discovery layer for non-English code documentation. The release targets researchers and developers training multilingual AI, surfacing where natural-language signals live inside repositories rather than treating code corpora as English-only.
+
+⚡
+Quick Links
+
+C^2: Cache-Conscious Succinct Tries with Adaptive Unary Path Compression (1 minute read)
+
+C^2 redesigns succinct tries with a cache-friendly layout and unary-path compression, cutting memory 1.3x and speeding queries up to 1.58x.

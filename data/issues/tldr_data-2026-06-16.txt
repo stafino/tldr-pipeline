@@ -6,133 +6,43 @@ TLDR Data 2026-06-16
 📊
 News & Trends
 
-What’s new with Unity Catalog at Data + AI Summit 2026 (5 minute read)
+What’s new with Unity Catalog at Data + AI Summit 2026 (1 minute read)
+
+Databricks expanded Unity Catalog at Data + AI Summit 2026 with the Unity AI Gateway, which extends governance from data and AI assets to runtime interactions across models, agents, MCP servers, and tools. Other additions include a Glossary and Domains for shared business context, cross-cloud and cross-region addressability, and a Governance Hub command center, with more than 14,000 organizations now governing data and AI on the platform.
+
+Agent Bricks: Data + AI Summit 2026 (1 minute read)
+
+Databricks expanded Agent Bricks into a full developer agent platform at Data + AI Summit 2026, after the original product hit 100k+ agents built and over 1 quadrillion tokens processed per year across customers like AstraZeneca, 7-Eleven, and Block. The pitch is that the agent loop is only 1% of the work, so Databricks now handles deployment, security, evaluation, memory, and token capacity across any model or harness, with newly added support for Kimi and a SpaceX partnership for Grok.
+
+Databricks Sales Double for Product Rivaling Snowflake (5 minute read)
 
 (blurb not generated)
 
-Databricks declares the end of pipelines with a unified platform for operational and analytical data (1 minute read)
+Databricks unveils CustomerLake, its agentic CDP (1 minute read)
 
-Databricks announced a unified architecture at its Data + AI Summit aimed at collapsing the long-standing split between transactional databases and analytical systems, alongside a real-time analytics engine the company says eliminates separate serving infrastructure. The pitch targets the ETL tax of moving data between OLTP and OLAP layers, though the practical question for data teams is whether one platform can match purpose-built engines on cost and latency.
+Databricks announced CustomerLake, an agentic CDP that runs natively on its lakehouse and is governed by Unity Catalog, consolidating identity resolution, audience building, campaign automation, and activation into one platform. The pitch is collapsing the gap between insight and action so the same models that generate customer context drive activation directly, rather than piping data out to disconnected martech tools, with Databricks claiming personalized experiences delivered 1 billion times a day.
 
-Databricks Sales Double for Product That Competes With Snowflake (1 minute read)
-
-Databricks said its data warehousing business more than doubled over the past year to a $1.5B annual run rate, putting its SQL product in direct competition with Snowflake and Google BigQuery. The growth shows the lakehouse vendor narrowing the gap on the warehouse-native workloads that have long been Snowflake's core, as both companies converge on Iceberg-backed storage and overlapping compute.
-
-Introducing CustomerLake: The Agentic CDP embedded in Databricks (1 minute read)
-
-Databricks announced CustomerLake at Data + AI Summit, an agentic customer data platform built directly on the lakehouse so customer profiles, segmentation, and activation run on warehouse data without a separate CDP copy. The move pushes Databricks further up the stack into Segment and Salesforce territory, betting that keeping customer data in Iceberg and Delta tables beats syncing it out to a standalone tool.
-
-Unifying Data and Governance in the Agentic Era: What’s New with Azure Databricks (1 minute read)
-
-At Data + AI Summit 2026, Databricks detailed a set of Azure Databricks updates centered on unifying data and governance through Unity Catalog as agentic workloads move into production. The push positions Unity Catalog as the single permission and lineage layer spanning tables, models, and AI agents, addressing the governance gap teams hit when agents start reading and writing across the Azure data estate.
-
-Databricks Releases General AI Agents for Businesses (1 minute read)
-
-Databricks released general-purpose AI agents that can handle open-ended business tasks like research and analysis, extending the company beyond its core data and analytics platform into AI applications. The move puts Databricks in more direct competition with OpenAI and other foundation-model vendors as it tries to monetize the enterprise data already sitting in its lakehouse.
-
-Databricks pitches LTAP as a new foundation for agentic applications (2 minute read)
-
-At its Data + AI Summit, Databricks introduced Lake Transactional and Analytical Processing (LTAP), an architecture that unifies operational and analytical data on a single storage layer rather than splitting them across separate OLTP and OLAP systems. Databricks frames the longstanding divide as a liability for AI agents, which need live operational data and historical context at once to reason and act in real time.
-
-🧠
-Deep Dives & Analysis
-
-Directory-Aware Query and Maintenance in Vector Databases (1 minute read)
-
-Vector databases store metadata as flat scalar attributes, forcing directory-scoped retrieval over code repos, enterprise docs, and agent memories into expensive application-layer workarounds. This paper treats directory hierarchy as a first-class capability, formalizing two operators: Directory-Semantic Query for scoped retrieval and Directory-Semantic Maintenance for structural updates. It compares query-time and ingestion-time path expansion against a Trie-based Hierarchical Index, showing that flattening the hierarchy makes recursive scope resolution costly while the trie keeps both queries and updates consistent.
-
-When Does q-error Predict Plan Regret? Three Regimes of Cardinality-Estimation Error (1 minute read)
-
-This paper challenges the field's reliance on q-error as a proxy for query-plan quality, offering a measurement-driven account of when it holds. The authors identify three regimes: for small estimation errors, a true-point condition number predicts plan regret and beats q-error; for the large errors where learned estimators actually operate, an estimator-independent ACS-infinity measure flags regret-prone queries (Spearman rho ~0.54 on STATS-CEB) while q-error is nearly useless at the query level (rho ~0.05).
-
-How TimescaleDB compresses time-series data (1 minute read)
-
-TimescaleDB's Hypercore engine compresses time-series data by grouping rows into columnar segments, applying type-specific encodings like delta-of-delta for timestamps and Gorilla for floats, then storing each compressed batch as a single row. The result is 90%+ storage reduction while still allowing updates and queries against older data, since compressed and uncompressed chunks coexist in the same hypertable. The write-up walks through how the columnar layout and per-column algorithms make analytical scans cheaper without forcing teams off Postgres.
-
-Filtered ANN as a Phase Transition: When Selectivity-Estimation Error Causes Plan Regret (1 minute read)
-
-This paper models filtered approximate-nearest-neighbor queries as an argmax over a landscape where pre-filter, post-filter, and in-filter strategies each win in distinct phases, separated by boundaries set by predicate selectivity. The authors show selectivity-estimation error only costs recall near those boundaries, in a wedge whose width tracks the estimation error and whose height tracks the local cliff. The takeaway for query planners: invest estimation accuracy near the critical s ~ k/K and percolation thresholds, not everywhere.
-
-Decoupling Inference from State Updates in Low-Latency Feature Engines via Probabilistic Thinning (1 minute read)
-
-This paper decouples model inference from state persistence in streaming feature pipelines using probabilistic thinning: every event is scored, but only informative ones trigger durable read-modify-write updates. High-frequency state writes are usually the dominant source of latency, contention, and warehouse cost in feature engines. The authors control the persistence path using only approximate statistics from disk-backed key-value stores, with no in-memory control plane or cross-worker coordination, and prove common time-based aggregations stay unbiased.
-
-Phantoms and Disclosures: a Causal Framework for Auditing Synthetic Data (1 minute read)
-
-This paper presents an auditing framework for detecting when synthetic data leaks private information from its training corpus. The key contribution is a causal distinction between "true disclosures," where the system directly reproduces a user's record, and "phantom disclosures," where it incidentally generates matching data by chance. By splitting inputs into training and holdout sets and running statistical hypothesis tests against zero-learning or differential privacy baselines, the method audits disclosure risk with no model access and no canary insertion required.
-
-Understanding the Behaviors of Environment-aware Information Retrieval (1 minute read)
-
-This paper presents the first systematic study of how LLMs can learn, via reinforcement learning, to tailor query formulation to the specific retriever they are working with. The authors find retrievers have distinct optimal query styles, descriptive versus question-like, so a strategy tuned for one retriever fails on another. For data teams running RAG pipelines, this argues against a single fixed query-rewriting prompt and for retriever-aware formulation, with gains from retriever-specific human guidance and larger models.
-
-Medical Heuristic Learning: An LLM-Driven Framework for Interpretable and Auditable Clinical Decision Rules (1 minute read)
-
-This paper proposes Medical Heuristic Learning (MHL), a framework that uses an LLM workflow instead of gradient updates to generate clinical decision rules from tabular medical data. Rather than training neural network weights, MHL combines statistical probes, medical knowledge probes, rule synthesis, and code-level iterative refinement to produce deterministic, executable decision logic. The goal is auditable predictions that hold up against the small samples, class imbalance, and shifting diagnostic criteria common in healthcare, where black-box accuracy alone blocks deployment.
-
-HAMON: Passive Optical Sequence Mixing for Long-Horizon Forecasting (1 minute read)
-
-HAMON replaces the learned digital sequence-mixing layer in time-series forecasting with a passive diffractive optical core, encoding history onto an optical aperture and using cascaded trainable phase masks to shape the forecast directly in the output field. The bet is that long-horizon forecasting operators are often low-complexity and approximately linear, so they don't need dense transformer-style superposition. At inference, prediction is a single passive optical propagation pass with no digital mixing, and the authors report it beating the strongest digital baselines on ETTm2.
-
-From Tokens to Policy: Causal and Interpretable Heterogeneous Treatment Effects Identification (1 minute read)
-
-This paper reframes heterogeneous treatment effect identification as a Markov-blanket discovery problem, arguing that richer multi-modal pre-treatment data plus scalable learned representations make a causal, oracle-grade reading of who responds to an intervention achievable. The authors introduce NEXIS, an iterative search with provable consistent selection of latent interaction drivers, and apply it to two anti-poverty programs in Africa. The pitch for data teams is moving past the usual expressivity-versus-interpretability trade-off without smuggling in spurious effects from unmeasured confounders.
-
-C^2: Cache-Conscious Succinct Tries with Adaptive Unary Path Compression (1 minute read)
-
-C^2 is a pair of optimizations that retrofit cache-conscious layouts and unary-path compression onto succinct tries, the compact string dictionaries used for low-memory lookups. Applied to three state-of-the-art implementations (FST, CoCo-trie, and Marisa), the cache-friendly bit-vector layout cut query latency by up to 1.58x, while compressing redundant unary paths shrank the memory footprint 1.3x on average across six datasets. The gains come without changing the underlying trie semantics, so existing dictionary workloads inherit them directly.
-
-RAID: Semantic Graph Diffusion for True Cold-Start and Cross-Lingual Forecasting (1 minute read)
-
-RAID targets the true cold-start forecasting problem, where a new item has zero prior observations and history-based foundation models break down. Instead of learning from past values, it maps textual metadata into a shared multilingual embedding space, builds an inductive retrieval graph that extends to unseen items, and refines a neighbor-aggregated base forecast with a gated diffusion module. Under a strict cold-start protocol, the authors report better accuracy and interval coverage than strong foundation models, plus an order-of-magnitude drop in inference latency.
-
-MAGE-RAG: Multigranular Adaptive Graph Evidence for Agentic Multimodal RAG in Long-Document QA (1 minute read)
-
-MAGE-RAG proposes a graph-based retrieval framework for multimodal question answering over long PDFs, replacing fixed Top-k chunk retrieval with an adaptive evidence graph. Built offline, the graph links page nodes and element nodes through containment, reading order, layout adjacency, and section hierarchy, then a query-time controller iteratively activates and expands only the relevant subgraph. The aim is to break the static trade-off among evidence coverage, retrieval noise, and inference cost that text-chunk and full-page retrieval both impose.
-
-Filtered Conformal Ellipsoids for Graph-Native Time Series (1 minute read)
-
-This paper proposes filtered conformal ellipsoids for building joint prediction sets over multivariate time series. A frozen state-space filter emits a one-step predictive mean and covariance to fix each ellipsoid's shape, while split-conformal calibration sets the scalar radius from Mahalanobis scores, yielding distribution-free coverage without leaning on Gaussian tail assumptions. The contribution is the dependence analysis: the authors prove contraction in an observable predictive-law quotient, giving coverage guarantees even when recurrent filters fail to contract in their raw hidden state.
-
-Beyond the Blood Draw: Explainable Machine Learning for Non-Invasive Dysglycemia Risk Screening (1 minute read)
-
-A LightGBM model trained on NHANES 2017–2023 data (n=14,352) screened dysglycemia risk using only non-invasive inputs, hitting AUC 0.820 and beating the Finnish Diabetes Risk Score (0.745) and the ADA Risk Test (0.783). SHAP analysis flagged age, race/ethnicity, and waist-to-height ratio as the top predictors, with performance holding across demographic subgroups (AUC 0.735–0.832). The result shows lab-free, explainable screening can outperform established clinical scores before any blood draw.
-
-Improved Join Order Optimization for Database Queries using Hybrid Quantum-Classical Approaches for QUBO Problems (1 minute read)
-
-This paper proposes a hybrid quantum-classical method for optimizing SQL join orders by encoding the problem as a QUBO, then shrinking it through Cartesian-product elimination and search-space splitting to cut the binary variables and constraints. Tested on real ErgastF1 queries across D-Wave's annealer, QAOA, VQE, and simulated annealing, the approach produced consistent optimal join orders. The practical takeaway is narrow: quantum join optimization still depends on aggressive classical preprocessing to fit current hardware limits.
-
-Cross-Silo De-Anonymization Under Local Differential Privacy: Threat Model, Phase Transition, and Coordination Necessity (1 minute read)
-
-This paper introduces cross-silo person-level differential privacy (XSP-DP), a Pufferfish-style notion whose adjacency relation covers all of a person's records across every silo at once. The authors prove de-anonymization undergoes a phase transition at k* = Θ(log n / ε²): below it any estimator fails by a Fano bound, above it maximum likelihood succeeds. The takeaway for data teams is that per-silo DP guarantees compose worse than worst-case bounds suggest once an adversary correlates records across silos.
-
-🚀
-Launches & Tools
-
-Agent Bricks: Data + AI Summit 2026 (5 minute read)
+Unifying Data and Governance in the Agentic Era: What’s New with Azure Databricks (5 minute read)
 
 (blurb not generated)
 
-Announcing Lakebase Search: agent-native retrieval built into Lakebase Postgres (1 minute read)
-
-Databricks launched Lakebase Search, adding hybrid vector and full-text retrieval directly inside Lakebase Postgres so agents can query operational data without a separate vector store. Keeping retrieval in the transactional database removes the sync pipelines and dual-system overhead that teams typically maintain to feed embeddings into a standalone vector index.
-
-AI governance at Data + AI Summit 2026: What’s new with Unity AI Gateway (5 minute read)
+Databricks declares the end of pipelines with a unified platform for operational and analytical data (5 minute read)
 
 (blurb not generated)
 
-Introducing Genie One, Genie Agents, and Genie Ontology (1 minute read)
+Databricks agrees to acquire Panther Labs, its third cybersecurity acquisition; Panther was valued at $1.4B when it raised a $120M Series B in 2021 (Jeffrey Dastin/Reuters) (1 minute read)
 
-Databricks released Genie One, a unified conversational analytics interface, alongside Genie Agents for multi-step autonomous analysis and Genie Ontology, a semantic layer that grounds queries in defined business metrics and entity relationships. The ontology is the key piece for data teams, encoding the metric definitions and join logic that text-to-SQL tools usually guess at, which should cut the hallucinated joins and inconsistent numbers that have kept Genie out of production reporting.
+Databricks agreed to acquire Panther Labs, a security information and event management (SIEM) vendor last valued at $1.4B during its $120M Series B in 2021, marking its third cybersecurity acquisition. The deal extends Databricks beyond analytics into security operations, pitching its lakehouse as the store-and-query layer for log data that traditional SIEM tools handle at high cost.
 
-Accelerate search queries with full-text search indexes on Databricks (1 minute read)
+Introducing new Explores and Merge Queries in Looker (2 minute read)
 
-Databricks added full-text search indexes that accelerate keyword and substring queries on large tables, letting teams filter hundreds of gigabytes to terabytes without full scans. The indexes integrate directly into Delta tables, so search-heavy workloads like log analysis and document lookup run on the lakehouse instead of requiring a separate search engine like Elasticsearch.
+Google added a suite of Gemini-powered AI assistants to Looker Explore, including an Insight Assistant that builds queries from natural language via the Conversational Analytics API and an Expression Assistant that writes custom calculations without requiring Looker Expression syntax. The update also ships AI-generated Explore summaries, auto-generated Quick Starts to remove the empty-canvas cold start, and a modernized UI with a resizable field picker and column-level contextual menus.
 
-Introducing Genie ZeroOps: Put your data and AI operations on autopilot (1 minute read)
+Databricks Releases General AI Agents for Businesses (5 minute read)
 
-Databricks released Genie ZeroOps, an automation layer that monitors data pipelines and AI operations to detect, diagnose, and remediate failures without manual intervention. The pitch is moving teams off reactive maintenance work like broken pipelines and stale tables, with the system handling routine triage so engineers spend less time on operational firefighting.
+(blurb not generated)
 
-Free SQL→ER diagram tool, runs in the browser, nothing uploaded (5 minute read)
+Databricks pitches LTAP as a new foundation for agentic applications (5 minute read)
 
 (blurb not generated)
 
@@ -140,21 +50,79 @@ What’s new in data agents: Supercharging your AI workflows (5 minute read)
 
 (blurb not generated)
 
-Milvus invents Vector Lakebase (5 minute read)
+🧠
+Deep Dives & Analysis
+
+Directory-Aware Query and Maintenance in Vector Databases (5 minute read)
 
 (blurb not generated)
 
-Dynestyx: A Probabilistic Programming Library for Dynamical Systems (1 minute read)
+Filtered ANN as a Phase Transition: When Selectivity-Estimation Error Causes Plan Regret (5 minute read)
 
-Dynestyx is a new probabilistic programming library that gives state-space models first-class support, letting users specify arbitrary priors for discrete- or continuous-time dynamical systems and run inference over mixed-effect data through one unified interface. It packages state-of-the-art state and parameter estimation with principled uncertainty quantification, closing a gap where SSMs have been awkward to express in existing PPLs.
+(blurb not generated)
 
-Accelerating researchers and developers building multilingual AI with a new open dataset (1 minute read)
+When Does q-error Predict Plan Regret? Three Regimes of Cardinality-Estimation Error (5 minute read)
 
-GitHub published a repository-level dataset under CC0-1.0 that maps multilingual developer content across READMEs, issues, and pull requests, giving teams a discovery layer for non-English code documentation. The release targets researchers and developers training multilingual AI, surfacing where natural-language signals live inside repositories rather than treating code corpora as English-only.
+(blurb not generated)
+
+Decoupling Inference from State Updates in Low-Latency Feature Engines via Probabilistic Thinning (5 minute read)
+
+(blurb not generated)
+
+Phantoms and Disclosures: a Causal Framework for Auditing Synthetic Data (5 minute read)
+
+(blurb not generated)
+
+How TimescaleDB compresses time-series data (5 minute read)
+
+(blurb not generated)
+
+HAMON: Passive Optical Sequence Mixing for Long-Horizon Forecasting (5 minute read)
+
+(blurb not generated)
+
+🚀
+Launches & Tools
+
+Introducing OpenSharing: the Next Evolution of Delta Sharing for the Agentic Era (1 minute read)
+
+Databricks released OpenSharing, an open-source protocol that extends Delta Sharing beyond tables and files to models, agents, and AI skills across any cloud, vendor, or format, with native support for Delta Lake, Iceberg, and Parquet. The move builds on Delta Sharing's 28,000+ recipients and pushes zero-copy sharing into the agentic stack, letting Iceberg recipients and on-prem systems exchange semantic context and autonomous agents without vendor-locked formats.
+
+Accelerate search queries with full-text search indexes on Databricks (5 minute read)
+
+(blurb not generated)
+
+Introducing Genie One, Genie Agents, and Genie Ontology (5 minute read)
+
+(blurb not generated)
+
+Announcing Apps on Databricks Marketplace (1 minute read)
+
+Databricks launched Apps on Databricks Marketplace in Public Preview, letting customers discover, install, and run third-party data and AI applications natively inside their Unity Catalog-governed workspaces with no data egress. Instead of moving data to an external tool, the app deploys to the data, and providers get a no-egress distribution channel to monetize proprietary apps across thousands of Databricks enterprises.
+
+Introducing OpenSharing SecureConnect (1 minute read)
+
+Databricks released OpenSharing SecureConnect, a managed proxy that routes storage access for Delta Sharing recipients so providers allowlist Databricks endpoints once instead of configuring firewall rules per recipient. Data stays in the provider's own bucket with live sharing from the source, and providers can optionally use Network Connectivity Configuration for private link connectivity between the proxy and their storage.
+
+AI governance at Data + AI Summit 2026: What’s new with Unity AI Gateway (1 minute read)
+
+Databricks expanded Unity AI Gateway at Data + AI Summit 2026, extending Unity Catalog governance to models, agents, MCP services, and skills with runtime guardrails, unified tracing, and cross-provider cost controls including spend visibility, hard spend caps, and intelligent routing. The pitch is one governance layer for a multi-model, multi-agent estate, where teams cap token spend, attribute costs per agent, and monitor coding-agent activity without stitching together separate tools per provider.
+
+Milvus invents Vector Lakebase (5 minute read)
+
+Zilliz launched Vector Lakebase, extending Milvus from real-time vector search into a unified S3-based foundation that runs production queries, discovery sessions, and multi-petabyte training pipelines against the same vectors without copies or migration. It stores data on Vortex, an open-source columnar format that claims roughly 100x faster random access and 10-20x faster scans than Parquet, with tiered serving for production and on-demand compute for batch analytics.
+
+Free SQL→ER diagram tool, runs in the browser, nothing uploaded (5 minute read)
+
+(blurb not generated)
+
+Accelerating researchers and developers building multilingual AI with a new open dataset (5 minute read)
+
+(blurb not generated)
 
 ⚡
 Quick Links
 
-SQL Server may be too lucrative for Microsoft to ditch, but too legacy to love (1 minute read)
+C^2: Cache-Conscious Succinct Tries with Adaptive Unary Path Compression (5 minute read)
 
-Analysts say SQL Server's billions in revenue keep Microsoft invested, even as Azure, Postgres, and AI dominate its roadmap focus.
+(blurb not generated)

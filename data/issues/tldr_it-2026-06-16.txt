@@ -6,246 +6,203 @@ TLDR IT 2026-06-16
 🚀
 News & Trends
 
-Cisco patches SD-WAN flaw amid evidence of active exploitation (5 minute read)
+Cisco patches SD-WAN flaw amid evidence of active exploitation (2 minute read)
+
+Cisco patched CVE-2026-20262 in Catalyst SD-WAN Manager (formerly vManage) after detecting limited active exploitation, a flaw that lets an authenticated attacker with write access overwrite arbitrary files and escalate to root across all deployment types. Because the Manager is the centralized control plane for distributed SD-WAN environments, a root compromise risks network-wide impact on branch connectivity and traffic segmentation, and Cisco offers no workarounds beyond upgrading.
+
+AI found 2,000 vulnerabilities in 7 weeks. We’ve patched almost none of them (3 minute read)
+
+Anthropic's frontier model Mythos discovered more than 2,000 previously unknown vulnerabilities across every major operating system in seven weeks, autonomously developing working exploits for flaws that had survived decades of human review. The piece argues that machine-speed discovery breaks the patching window and the shared-intelligence consortium model enterprise defenders rely on, turning identity infrastructure like KYC workflows and biometric certificates into an expanding attack surface.
+
+Critical Copilot vulnerability allowed hackers to steal 2FA code from users (1 minute read)
+
+Microsoft patched a max-critical vulnerability in M365 Copilot that let attackers exfiltrate 2FA codes and other sensitive email data through prompt injection hidden in third-party content. Security firm Varonis chained a Parameter-to-Prompt Injection with markup workarounds to clear Copilot's guardrails, underscoring that enterprises deploying AI assistants over email and documents inherit an unpatched class of data-exfiltration risk.
+
+Cisco SD-WAN make-me-root bug under attack (1 minute read)
+
+Cisco confirmed a critical authentication-bypass flaw in Catalyst SD-WAN Manager is being actively exploited as a zero-day, the second such bug in the product this month, allowing attackers to gain root access on unpatched appliances. IT teams running on-premises SD-WAN Manager should apply the emergency patches immediately, as the back-to-back exploits signal that the management plane is now an active target.
+
+“단일 AI 모델=새로운 단일 장애 지점”…앤트로픽 접근 차단이 던진 경고 (3 minute read)
+
+Anthropic disabled access to its most capable models, Fable 5 and Mythos 5, for all customers after a US export-control directive citing national-security concerns blocked foreign nationals from using them. The abrupt cutoff leaves CIOs who wired core workflows, coding assistants, and cyber-defense tools to a single US model facing a new single point of failure, and strengthens the case European buyers are making for AI sovereignty and multi-vendor fallback.
+
+Anthropic locks enterprises out of Fable and Mythos following government order (3 minute read)
+
+Anthropic disabled Fable 5 and Mythos 5 for all customers after the US government issued an export control directive barring foreign nationals from accessing the models, citing a jailbreak concern Anthropic says is widely replicable in rival systems like GPT-5.5. The abrupt cutoff hands enterprise CIOs a sovereignty problem, since nationality-based access rules can't be enforced through standard login credentials and expose critical workloads built on US frontier models to government-ordered shutoff.
+
+Cybercriminals mask malicious communications through Microsoft Teams relays (1 minute read)
+
+Symantec reported that the DragonForce ransomware group used custom malware called Backdoor.Turn to tunnel command-and-control traffic through legitimate Microsoft Teams TURN relay infrastructure, the first known abuse of that infrastructure in the wild, keeping attackers on a U.S. company's network for one to two months. Because the malware routes a QUIC session via genuine Microsoft relays after obtaining an anonymous Teams visitor token, defenders watching network traffic see only outbound connections to legitimate Microsoft servers.
+
+Non-x86 servers now nearly half the market, IDC says (1 minute read)
+
+Non-x86 servers now account for nearly half the global server market, IDC reported, driven by AI system demand and shortages of DRAM and NAND that are reshaping vendor supply chains. The shift favors Arm-based and accelerator-heavy designs over traditional Intel and AMD x86 boxes, pushing IT buyers to weigh non-x86 platforms in procurement decisions they once treated as x86-default.
+
+Salesforce buys Fin for $3.6bn (1 minute read)
+
+Salesforce agreed to acquire Fin, the customer-service AI agent maker formerly known as Intercom, for $3.6B, with the deal expected to close in Q4 pending regulatory clearance. The purchase folds Fin's multichannel agent and claimed 76% resolution rate into Agentforce, which Salesforce says hit a $1.2B annual run rate last quarter, deepening its push to replace human service roles with AI.
+
+SimpleHelp RMM flaw could give attackers full access to managed endpoints (CVE-2026-48558) (1 minute read)
+
+A critical authentication-bypass flaw (CVE-2026-48558) in SimpleHelp's RMM tool lets unauthenticated attackers forge a Technician account on OIDC-configured servers, bypass MFA, and remote into managed endpoints to run scripts. Horizon3.ai found nearly 14,000 SimpleHelp servers exposed online with roughly 7.2% running the vulnerable OIDC method, and fixes are available in v5.5.16 and v6.0 RC 2.
+
+Nvidia PCs don’t need cloud for AI (3 minute read)
+
+Nvidia introduced RTX Spark at Computex 2026, a platform for thin Windows laptops and compact desktops that pairs an Arm CPU, Blackwell RTX graphics, and up to 128GB of unified memory to run agents and fine-tuned language models locally. The unified-memory design targets serious on-device inference, positioning local AI as an alternative to cloud services like ChatGPT and Gemini and reshaping how enterprises weigh endpoint hardware against hosted-AI spend.
+
+Anthropic’s new privacy policy offers US consumers a way around the Fable ban (2 minute read)
+
+Anthropic updated its privacy policy, effective July 8, to let it collect government ID and biometric verification data, giving it a path to confirm US citizenship after Washington ordered it to cut foreign-national access to its Fable 5 and Mythos 5 models. The provision could restore consumer access for verified US users, but enterprise buyers, the most likely customers for the top-tier models, get no clear remedy.
+
+Salesforce to buy AI customer service platform Fin for $3.6 billion to boost agentic offerings (5 minute read)
 
 (blurb not generated)
 
-Non-x86 servers now nearly half the market, IDC says (5 minute read)
+SimpleHelp bug lets hackers create rogue remote support accounts (1 minute read)
 
-(blurb not generated)
+A vulnerability in SimpleHelp's remote management software lets unauthenticated attackers create privileged technician accounts on servers configured for OpenID Connect (OIDC) authentication. IT teams running SimpleHelp for endpoint support should patch immediately, as rogue admin accounts give attackers a foothold to push remote sessions and software across every managed device in the fleet.
 
-Salesforce to buy AI customer service platform Fin for $3.6 billion to boost agentic offerings (1 minute read)
+Google exposes China espionage group that’s been lurking in networks undetected since 2023 (1 minute read)
 
-Salesforce agreed to acquire AI customer service platform Fin, formerly Intercom, for about $3.6B to extend its Agentforce lineup, with the deal expected to close in Q4 of fiscal 2027. Fin brings an AI agent that resolves chat, email, WhatsApp, SMS, phone, and Slack queries on its proprietary Apex model, giving Salesforce more agentic deployment options as it defends its SaaS stack against AI-native rivals.
+Google Threat Intelligence Group disclosed UNC6508, a previously unknown Chinese state-sponsored espionage group that breached US and Canadian government, academic, medical, and military health targets undetected since September 2023 by exploiting externally facing REDCap servers and deploying a custom backdoor called INFINITERED. Google assesses the known victims represent a fraction of a larger campaign, underscoring the exposure enterprises carry in widely deployed research software like REDCap that remains an unpatched entry point across the medical sector.
 
-Salesforce buys Fin for $3.6bn (5 minute read)
+Qualcomm said to be circling AI chip biz Tenstorrent in $10B RISC-V power play (1 minute read)
 
-(blurb not generated)
+Qualcomm is reportedly in talks to acquire AI chip startup Tenstorrent for roughly $10B, a move that would bring Jim Keller's RISC-V-based AI accelerators and CPU IP in-house. The deal would give Qualcomm a credible RISC-V foundation to challenge Nvidia and Arm in the data center, while reducing its reliance on Arm licensing amid the two companies' ongoing legal disputes.
 
-Anthropic locks enterprises out of Fable and Mythos following government order (5 minute read)
+Cybersecurity experts blast US government for restricting Anthropic’s AI models (1 minute read)
 
-(blurb not generated)
+Security researchers and CISOs criticized a recent US export-control ban restricting access to Anthropic's AI models, calling the move "dangerous." Critics argue the restrictions hamper defenders who rely on frontier models for threat detection and security workflows, while doing little to slow adversaries with alternative access to comparable capabilities.
 
-Crooks found a new way to collaborate using Teams – by hiding command-and-control traffic (5 minute read)
+Salesforce to acquire customer service automation startup Fin for $3.6B (1 minute read)
 
-(blurb not generated)
+Salesforce announced plans to acquire customer service automation startup Fin, formerly Intercom, for about $3.6B to strengthen its Agentforce AI suite. Fin resolves more than 2 million support incidents per week across roughly 12,000 customers and runs on Apex, its in-house model that the company claims edges out Claude Sonnet 4.6 on resolution rate and response speed.
 
-One-Click Microsoft 365 Copilot Flaw Could Have Let Attackers Steal Emails, Files, and MFA Codes (5 minute read)
+GhostTree Attack Abused Recursive Windows Junctions to Hide Malware (1 minute read)
 
-(blurb not generated)
+Researchers disclosed GhostTree, a technique that abuses recursive NTFS junctions to point a directory back at its own parent, generating effectively infinite file paths that can hang recursive scanners, including EDR tools, before they reach malware hidden in the same folder. Creating the junctions requires only write access and no admin privileges, so endpoint security teams relying on directory-traversal scanning face a detection-evasion gap until vendors add reparse-point loop handling.
 
-Salesforce reels in customer support AI specialist Fin for $3.6B (5 minute read)
+Ransomware gang abuses Microsoft Teams relays to hide malicious traffic (1 minute read)
 
-(blurb not generated)
-
-Microsoft sued over performance of Azure business (5 minute read)
-
-(blurb not generated)
-
-Windows 11 KB5094126 BSODing, freezing, forcing BitLocker lockout, breaks OneDrive, and more (5 minute read)
-
-(blurb not generated)
-
-Cybercriminals mask malicious communications through Microsoft Teams relays (5 minute read)
-
-(blurb not generated)
-
-Palo Alto Warns of Active Exploitation of PAN-OS GlobalProtect VPN Flaw (1 minute read)
-
-Palo Alto Networks confirmed active exploitation of CVE-2026-0257, an authentication bypass flaw (CVSS 7.8) in the PAN-OS portal and gateway components, by an unknown threat actor gaining unauthorized access to GlobalProtect portals. Enterprises running GlobalProtect should patch immediately, as the bug lets attackers bypass authentication on internet-facing VPN infrastructure that typically fronts the corporate network.
-
-Chinese Hackers Abused Google Workspace Rules to Steal Research and Defense Emails (1 minute read)
-
-A China-linked espionage group spent more than a year inside North American medical, academic, and military research networks, planting a credential-stealing backdoor on victims' REDCap servers and then rewiring their own Google Workspace mail rules to auto-forward sensitive research and defense email. The exfiltration technique abused trusted, native Workspace functionality, meaning IT teams that monitor for malware or external tooling would see legitimate mail-routing rules rather than an obvious breach.
-
-Cisco fixes SD-WAN vManage flaw exploited in zero-day attacks (1 minute read)
-
-Cisco released security updates patching CVE-2026-20262, a Catalyst SD-WAN Manager (vManage) vulnerability that attackers exploited as a zero-day to escalate to root privileges. IT teams running on-premises vManage controllers should apply the fix immediately, as root-level compromise of the SD-WAN management plane exposes the entire branch network fabric and any policies pushed through it.
-
-EU sovereignty push gives tech buyers a new alphabet soup to swallow (1 minute read)
-
-The European Commission is advancing its tech-sovereignty agenda with new rules to enforce cloud autonomy and promote open source, pressing ahead despite objections from the US. Enterprise buyers face a fresh layer of sovereignty certifications and procurement criteria to evaluate, adding compliance overhead while reshaping how US hyperscalers like AWS, Microsoft, and Google can serve European workloads.
-
-Council of Europe hacked in ShinyHunters' PeopleSoft heist (1 minute read)
-
-The ShinyHunters extortion group breached the Council of Europe by exploiting a vulnerability in Oracle's PeopleSoft HR software, adding the intergovernmental body to a victim list that includes Nottingham University and roughly 100 other unnamed organizations. The campaign puts pressure on enterprises running on-premises PeopleSoft deployments to patch and audit access, as attackers continue to target the legacy ERP suite for bulk personnel-data theft.
-
-Microsoft faces down sueball, capacity problems in series of challenges (5 minute read)
-
-(blurb not generated)
-
-US clampdown on Anthropic models sends EU sovereignty surge into overdrive (1 minute read)
-
-US export curbs on Anthropic's Claude models have triggered renewed urgency in Brussels around digital sovereignty, with EU officials citing the access restrictions as proof that Europe needs homegrown AI infrastructure. The pressure benefits regional providers like Mistral and sovereign-cloud efforts from SAP and Deutsche Telekom, while raising procurement risk for enterprises that standardized on US-hosted frontier models.
-
-GhostTree Attack Abused Recursive Windows Junctions to Hide Malware (5 minute read)
-
-(blurb not generated)
-
-Attackers Exploit Three Fortinet FortiSandbox Flaws, One Patched Last Week (5 minute read)
-
-(blurb not generated)
+DragonForce ransomware deployed Backdoor.Turn, a Go-based RAT that researchers at Symantec call the first known malware to hide command-and-control traffic inside Microsoft Teams TURN relay infrastructure, making malicious communications appear as trusted Teams traffic. Observed in a December 2025 attack on a major US services company, the technique also paired BYOVD driver exploits with Teams abuse, complicating detection for defenders who whitelist conferencing infrastructure.
 
 🧠
 Analysis & Opinions
 
-France's digital sovereignty push is struggling to escape the Microsoft gravity well (1 minute read)
-
-France's digital sovereignty effort is hitting a wall on the application layer, where a Nextcloud rollout has migrated storage off Microsoft but failed to move users off Office. The lesson for IT leaders is that swapping infrastructure is the easy part; replacing entrenched productivity software means fighting user habit, file-format lock-in, and feature parity gaps that open-source alternatives still struggle to close.
-
-SQL Server may be too lucrative for Microsoft to ditch, but too legacy to love (5 minute read)
+France's digital sovereignty push is struggling to escape the Microsoft gravity well (5 minute read)
 
 (blurb not generated)
 
-“단일 AI 모델=새로운 단일 장애 지점”…앤트로픽 접근 차단이 던진 경고 (5 minute read)
+From data residency to digital sovereignty: Architectural patterns for  cloud native platforms (1 minute read)
+
+Digital sovereignty has shifted from policy debate to a platform engineering requirement, driven by the EU Data Act, NIS-2, DORA, and the UK's Data Use and Access Act 2025. The author argues that picking a Frankfurt region no longer satisfies auditors, who now scrutinize control-plane location, key ownership, admin access, and workload portability. For Kubernetes platform teams, that pushes sovereignty decisions down to control-plane architecture rather than data residency alone.
+
+Measurement Study of Post-Quantum Readiness of Internet: 2026 (5 minute read)
 
 (blurb not generated)
 
-Measurement Study of Post-Quantum Readiness of Internet: 2026 (1 minute read)
+There's no such thing as an agentic CPU (1 minute read)
 
-A measurement study of 32,011 domains finds that 49.3% now support hybrid post-quantum key exchange like MLKEM768 with X25519, but 15.70% still run TLS 1.2, concentrated in banking and government. The gap matters for IT leaders mapping crypto-agility timelines, since the laggards sit in exactly the regulated sectors most exposed to "harvest now, decrypt later" attacks and most expensive to remediate.
+The author argues that AI agents are just another general-purpose workload, with no specialized "agentic CPU" required to run them. The case against the marketing push for agent-optimized silicon is that agents reduce to the same compute, memory, and I/O patterns datacenters already handle, so IT buyers should resist vendor pitches for dedicated hardware tiers and treat agent infrastructure as standard capacity planning.
 
-From data residency to digital sovereignty: Architectural patterns for  cloud native platforms (5 minute read)
-
-(blurb not generated)
-
-Cloud strategies have become more complicated than ever (5 minute read)
+A modest proposal: Reformat everything to make documents more palatable to AI (5 minute read)
 
 (blurb not generated)
 
-Most CISOs Report Pressure to Bury Bad Security News (5 minute read)
+SQL Server may be too lucrative for Microsoft to ditch, but too legacy to love (1 minute read)
 
-(blurb not generated)
-
-AI 에이전트는 늘어나는데 통제는 없다…CIO 덮친 거버넌스 공백 (5 minute read)
-
-(blurb not generated)
-
-Cloud CISO Perspectives: The 4 lessons that guided AI Threat Defense (5 minute read)
-
-(blurb not generated)
-
-ERP users may soon get ahead by going headless, says Rimini Street boss (5 minute read)
-
-(blurb not generated)
-
-A modest proposal: Reformat everything to make documents more palatable to AI (1 minute read)
-
-The author argues that enterprises should restructure documents into AI-friendly formats rather than expecting models to wrestle with the messy layouts humans produce, floating a standardized "DocLang" as the fix. The implication for IT leaders is a familiar trade-off: cleaner machine ingestion and better RAG accuracy on one side, a fresh content-conversion mandate and yet another format standard to govern on the other.
+The author argues Microsoft is caught between SQL Server's steady licensing revenue and its waning strategic relevance as the company pushes customers toward Fabric and Azure-native cloud databases. SQL Server still anchors countless enterprise estates and generates reliable on-prem income, but Microsoft's roadmap energy now sits elsewhere, leaving IT buyers to weigh continued investment in a platform their vendor is unlikely to either kill or modernize aggressively.
 
 🤝
 Launches & Partnerships
 
-Introducing the OpenAI Partner Network (5 minute read)
+Introducing Brazos: Bringing liquid cooling to air-cooled data centers (2 minute read)
 
-(blurb not generated)
+Google made Brazos generally available, a rack-mounted, closed-loop liquid-to-air cooling system that lets operators deploy high-density AI and HPC chips exceeding 1000 W TDP inside existing air-cooled data centers. By isolating the IT liquid loop from facility water, each three-unit setup supports a 60 kW thermal load per OCP ORv3 rack and installs one rack at a time, avoiding costly chilled-water retrofits.
 
-Okta expands Google Cloud partnership to secure AI agents and the browser (5 minute read)
+Copilot Cowork is now generally available (1 minute read)
 
-(blurb not generated)
+Microsoft made Copilot Cowork generally available worldwide, an agent that executes long-running, multi-tool tasks end-to-end inside the Microsoft 365 trust boundary and returns completed results rather than drafts. The release adds model choice, plugin extensibility, and consumption-based billing, and arrives with more than half the Fortune 500 already using it after a three-month Frontier preview.
 
-HP debuts AI-powered collaboration lineup at InfoComm 2026 (5 minute read)
+AWS WAF adds AI traffic monetization capability to help content owners charge AI bots for content access (1 minute read)
 
-(blurb not generated)
+AWS WAF added an AI traffic monetization capability to Bot Control, letting publishers set per-request pricing by content path, bot category, or verification tier and collect stablecoin payments through Coinbase's x402 Facilitator without touching origin infrastructure or writing code. The move gives content owners a native way to charge AI crawlers that now exceed 50% of traffic for many sites, with Stripe and Machine Payments Protocol support coming next.
 
-New discoverable space setting in Google Chat (5 minute read)
+New discoverable space setting in Google Chat (1 minute read)
 
-(blurb not generated)
+Google Chat added a third space access type called "Discoverable," which lets spaces appear in organization-wide browsing while keeping conversation history private until an owner or manager approves a join request. The setting targets employee resource groups, internal committees, and project teams that need an organization-facing presence with membership vetting, and it is available now to all Workspace customers, with API and mobile support arriving within a month.
 
-Carrier Link for Google Voice (5 minute read)
+AI note-taking is now available in Google Voice (2 minute read)
 
-(blurb not generated)
+Google Voice now includes AI note-taking that delivers post-call transcriptions and notes only to the individual who initiated each capture, with an audio disclosure announcing the recording and admin-customizable consent language. The feature is off by default for existing customers and enableable at the domain, OU, or group level for Workspace accounts on Voice Standard or Voice Premier add-ons and Voice Standard standalone plans.
 
-Salesforce to acquire customer service automation startup Fin for $3.6B (5 minute read)
+AWS Weekly Roundup: AWS FinOps Agent in preview, Gemma 4 on Bedrock, Kiro Pro Max, and more (June 15, 2026) (1 minute read)
 
-(blurb not generated)
+The AWS FinOps Agent entered preview at AWS Summit NYC, joining Gemma 4 on Amazon Bedrock and a new Kiro Pro Max tier among this week's launches. Enterprise teams standardized on Bedrock get the new model and an autonomous cost-management agent without separate procurement, ahead of the June 17 keynote covering developer tools, AI infrastructure, and security.
 
-Microsoft announces 12th-gen Surface Pro with Snapdragon X2 processors (5 minute read)
+HPE Boosts Networking Gear for AI Clients, Adds Siemens Energy (1 minute read)
 
-(blurb not generated)
+HPE introduced new networking gear for AI data centers, building on the Juniper Networks portfolio it acquired to capture more enterprise demand for AI infrastructure, and added Siemens Energy as a customer. The launch sharpens HPE's competition with Cisco and Arista for the high-margin AI networking layer, giving enterprise buyers a Juniper-integrated alternative within an existing HPE compute and storage relationship.
 
-What’s new with Unity Catalog at Data + AI Summit 2026 (5 minute read)
+Carrier Link for Google Voice (1 minute read)
 
-(blurb not generated)
+Google launched Carrier Link for Google Voice, letting Workspace admins connect local carrier phone numbers through certified SIP Link partners who provision licenses and numbers for assignment to users, desk phones, auto-attendants, and ring groups. The feature requires a SIP Link Standard or Premier subscription and rolls out gradually through June 30, giving enterprises a partner-managed path to keep existing carrier contracts while standardizing telephony on Google Voice.
 
-Tailscale Aperture targets shadow AI with new controls for IT teams (5 minute read)
+Unifying Data and Governance in the Agentic Era: What’s New with Azure Databricks (1 minute read)
 
-(blurb not generated)
+Azure Databricks introduced a wave of Data + AI Summit 2026 launches centered on Lakebase, a fully-managed serverless Postgres database with copy-on-write branching that lets developers spin up full-fidelity branches of production databases in seconds and point GitHub Copilot agent mode at them. The release also adds the Lakehouse//RT analytical engine for sub-second queries and a new LTAP architecture that unifies analytical, streaming, and transactional data into one copy on the lakehouse.
 
-Introducing Genie One, Genie Agents, and Genie Ontology (5 minute read)
+RiskIQ founders launch Ent Security with $100M to rethink endpoint defense (1 minute read)
 
-(blurb not generated)
+RiskIQ founders Elias Manousos and Brandon Dixon launched Ent Security with $100M to build intent-aware endpoint defense that evaluates human and AI-agent behavior at the moment of use and intervenes before risky actions complete. Positioned between traditional EDR/XDR and AI-agent governance, the platform runs as a lightweight on-device agent and is already deployed in Global 2000 firms across hospitality, financial services, and defense.
 
-Microsoft upgrades Surface Pro and Surface Laptop with Qualcomm Snapdragon X2 chips; Pro starts at $1,499 and Laptop at $1,599, both $100 higher than last-gen (Antonio G. Di Benedetto/The Verge) (5 minute read)
+Introducing new Explores and Merge Queries in Looker (2 minute read)
 
-(blurb not generated)
+Google added AI assistants and a modernized interface to Looker Explore, using Gemini models and the Conversational Analytics API to let users build queries, custom calculations, and visualizations through natural language. The update also introduces resizable field pickers, contextual column menus for switching granularities and applying filters, and AI-generated Explore summaries, lowering the LookML and Lexp expertise required for self-service analytics across enterprise teams.
 
-Microsoft unveils new Surface Laptop with improved trackpad, Snapdragon X2, and more (5 minute read)
+Microsoft announces 12th-gen Surface Pro with Snapdragon X2 processors (1 minute read)
 
-(blurb not generated)
+Microsoft released the 12th-gen Surface Pro with Qualcomm's Snapdragon X2 processors, available in 10-core X2 Plus or 12-core X2 Elite configurations with up to 64GB RAM, an 80 TOPS NPU for on-device AI, and 15.5 hours of battery life. The entry price jumped from $999 to $1,499, raising per-seat costs for IT fleets standardizing on Copilot+ hardware, though Microsoft is bundling a free keyboard through June 30.
 
-The Microsoft Surface Laptop 8 and Surface Pro 12 now come with Snapdragon X2 chips (5 minute read)
+Microsoft upgrades Surface Pro and Surface Laptop with Qualcomm Snapdragon X2 chips; Pro starts at $1,499 and Laptop at $1,599, both $100 higher than last-gen (Antonio G. Di Benedetto/The Verge) (1 minute read)
 
-(blurb not generated)
+Microsoft refreshed the Surface Pro and Surface Laptop with Qualcomm's Snapdragon X2 chips, pricing the Pro from $1,499 and the Laptop from $1,599, each $100 above the prior generation. The Arm-based update deepens Microsoft's Qualcomm partnership and pushes Copilot+ PC hardware further from Intel, leaving IT buyers to weigh the price bump against x86 app-compatibility tradeoffs in fleet refreshes.
 
-Databricks declares the end of pipelines with a unified platform for operational and analytical data (5 minute read)
+HPE AI Factory adds features to improve your experience with agents (1 minute read)
 
-(blurb not generated)
+HPE and Nvidia expanded HPE AI Factory with the Nvidia Agent Toolkit, adding Nemotron open models, NemoClaw, and the OpenShell secure runtime alongside new ProLiant DL394 Gen12 servers with Nvidia Vera CPUs for agentic workloads. HPE Private Cloud AI also gains Zerto-based rogue-agent rollback, secure local agent registration under centralized governance, and Alletra Storage MP X1000, which HPE says lifts token throughput by up to 20%.
 
-1Password acquires just-in-time access provider Apono (5 minute read)
-
-(blurb not generated)
-
-NewCore launches security-first identities for AI agents after closing $66M seed funding round (5 minute read)
-
-(blurb not generated)
-
-What’s new in data agents: Supercharging your AI workflows (2 minute read)
-
-Google added new data agents across its Agentic Data Cloud, including agents in Conversational Analytics for business analysts and tooling for data scientists, engineers, and database teams to ground reasoning in real-time enterprise data. The release targets the accuracy and access-control gaps that block generic AI platforms from enterprise databases, pairing template-driven development with unified governance across operational and analytical systems.
-
-AppViewX targets ungoverned AI agents with new identity security product (5 minute read)
-
-(blurb not generated)
-
-Beyond Identity launches Ceros AI agent security platform (5 minute read)
-
-(blurb not generated)
-
-Microsoft’s new Surface Pro 12 is its best 2-in-1 PC yet, but also its most expensive (1 minute read)
-
-Microsoft announced the Surface Pro 12, a 13-inch 2-in-1 built on Qualcomm's Snapdragon X2 chips with up to 53% faster graphics and 15.5 hours of battery life. The base configuration now starts at $1,499 with 16GB of RAM and 256GB of storage, a $500 jump over the 11th Edition driven partly by industry-wide LPDDR5x cost increases.
-
-🎁
-Miscellaneous
-
-Cybersecurity experts don’t think Anthropic’s Fable 5 presents a unique threat (5 minute read)
+Microsoft’s new Surface Pro 12 is its best 2-in-1 PC yet, but also its most expensive (5 minute read)
 
 (blurb not generated)
 
 ⚡
 Quick Links
 
-Midsize companies expect AI gains, but integration woes curb progress (5 minute read)
+Teleport adds LLM Proxy and Delegated Identity to secure AI agent actions and access (1 minute read)
 
-(blurb not generated)
+Teleport added LLM Proxy and Delegated Identity to its Beams beta, bringing identity, audit logging, and least-privilege access control to AI agents.
 
-Microsoft finally fixes the Windows 11 Widgets and makes them far less distracting (5 minute read)
+FBI dismantles Chinese phishing service that coached buyers to generate scam sites using AI —$88 cybercrime product linked to $1.9 billion in losses, 3.87 million stolen cards (1 minute read)
 
-(blurb not generated)
+The FBI, Google, and Lumen dismantled Outsider Enterprise, an $88/week phishing kit tied to $1.9B in losses and 3.87 million stolen cards.
 
-Exclusive: Daylight gives managed detection and response customers searchable telemetry without a SIEM (5 minute read)
+HPE offers VMware refugees a year off the meter (1 minute read)
 
-(blurb not generated)
+HPE is offering VMware customers a year of free VM Essentials licensing to lure migrations off Broadcom's pricing.
 
-How to Use AI to Redact PII in Large Document Sets (5 minute read)
+HPE expands Private Cloud AI factory portfolio to support next-gen autonomous agents (1 minute read)
 
-(blurb not generated)
+HPE expanded its Private Cloud AI portfolio with Nvidia Vera-powered ProLiant servers and the Agent Toolkit for on-premises agentic deployments in regulated industries.
 
-Microsoft is reportedly testing Copilot+ AI features with discrete GPUs instead of NPUs — a feature available on Windows App SDK with a Windows Insider Experimental Channel build and Developer Mode turned on (5 minute read)
+Beyond Identity launches Ceros AI agent security platform (1 minute read)
 
-(blurb not generated)
+Beyond Identity launched Ceros, an identity-and-access platform that secures AI agents with device-bound passkeys, session logging, and tool-access controls.
 
-BT launches 'Mission Boost' to enhance critical network connectivity (5 minute read)
+HPE unveils a raft of new networking products for AI workloads at Discover 2026 (1 minute read)
 
-(blurb not generated)
+HPE announced new Juniper QFX5140 and QFX5252 switches and expanded Mist self-driving network features for AI workloads at Discover 2026.
+
+Tailscale Aperture targets shadow AI with new controls for IT teams (1 minute read)
+
+Tailscale added new controls to its Aperture platform to help IT teams discover and govern shadow AI without locking into a single LLM vendor.
