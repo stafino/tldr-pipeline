@@ -111,6 +111,40 @@ export default function EditionStories({
     window.location.href = `mailto:?subject=${encodeURIComponent(subject)}`;
   }
 
+  function downloadEml() {
+    // A full RFC 822 message with multipart/alternative (plain + HTML).
+    // Double-click the file → default mail client opens it as a draft
+    // with the HTML body intact. Bypasses clipboard normalization
+    // entirely, so spacing stays 1:1 with what we generated.
+    const subject = `${newsletterBrand} ${date}`;
+    const boundary = `=_lede_${Math.floor((Number(date.replace(/-/g, '')) || 0))}_${newsletterId}`;
+    const eml = [
+      `MIME-Version: 1.0`,
+      `Subject: ${subject}`,
+      `Content-Type: multipart/alternative; boundary="${boundary}"`,
+      ``,
+      `--${boundary}`,
+      `Content-Type: text/plain; charset=UTF-8`,
+      `Content-Transfer-Encoding: 8bit`,
+      ``,
+      issueText,
+      `--${boundary}`,
+      `Content-Type: text/html; charset=UTF-8`,
+      `Content-Transfer-Encoding: 8bit`,
+      ``,
+      `<!doctype html><html><body>${issueHtml}</body></html>`,
+      `--${boundary}--`,
+      ``,
+    ].join('\r\n');
+    const blob = new Blob([eml], { type: 'message/rfc822' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `${newsletterId}-${date}.eml`;
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+
   return (
     <div className="px-5 py-5 max-w-[1100px]">
       <div
@@ -189,6 +223,13 @@ export default function EditionStories({
               className="px-4 py-2 rounded-md bg-surface border border-border text-text text-[12px] font-medium hover:bg-surface-hi"
             >
               ⧉ copy body
+            </button>
+            <button
+              onClick={downloadEml}
+              className="px-4 py-2 rounded-md bg-surface border border-border text-text text-[12px] font-medium hover:bg-surface-hi"
+              title="Double-click the file to open as a real email draft — spacing stays intact"
+            >
+              ⬇ download .eml (1:1)
             </button>
             {copyState === 'copied' && (
               <span className="text-[12px] text-ok">
