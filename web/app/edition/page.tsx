@@ -9,6 +9,7 @@ import {
 import { canonicalDomain } from '@/lib/utils';
 import Nav from '@/components/Nav';
 import DatePicker from '@/components/DatePicker';
+import InlineNewsletterPicker from '@/components/InlineNewsletterPicker';
 import EditionStories from '@/components/EditionStories';
 
 export const dynamic = 'force-dynamic';
@@ -57,20 +58,11 @@ export default function EditionPage({
       <Nav />
       <div className="flex gap-3 px-5 py-3 border-b border-border items-center">
         <DatePicker dates={dates} value={selectedDate} allowAll={false} />
-        <label className="inline-flex items-center gap-2 text-[11px] text-text-mute uppercase tracking-[0.06em] font-semibold">
-          <span>Newsletter</span>
-          <select
-            defaultValue={selectedNl}
-            onChange={(e) => (window.location.search = `?nl=${e.target.value}&date=${selectedDate}`)}
-            className="bg-surface border border-border text-text text-[12px] rounded px-2 py-1 outline-none normal-case font-normal tracking-normal"
-          >
-            {nlIds.map((id) => (
-              <option key={id} value={id}>
-                {newsletters[id].brand_name}
-              </option>
-            ))}
-          </select>
-        </label>
+        <InlineNewsletterPicker
+          ids={nlIds}
+          brandNames={Object.fromEntries(nlIds.map((id) => [id, newsletters[id].brand_name]))}
+          value={selectedNl}
+        />
         {nl && (
           <div className="text-[10px] text-text-mute">
             edition cap: {nl.edition_size} stories · {nl.sections.length} sections
