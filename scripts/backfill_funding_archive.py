@@ -105,6 +105,7 @@ def tc_walk_dates(start: date, end: date) -> list[tuple[str, str, date]]:
 # ─── source: EU funding RSS feeds (last ~N days of items) ──────────────────
 
 EU_FEEDS = [
+    # EU regional press
     ("tech_eu", "https://tech.eu/feed"),
     ("silicon_canals", "https://siliconcanals.com/feed/"),
     ("maddyness", "https://www.maddyness.com/feed/"),
@@ -112,6 +113,19 @@ EU_FEEDS = [
     ("uktech_news", "https://www.uktech.news/feed/"),
     ("sifted_titles", "https://sifted.eu/feed"),
     ("eu_startups", "https://www.eu-startups.com/feed/"),
+    # Added 2026-06-17 — broader EU databases + dedicated funding feeds
+    ("crunchbase_news", "https://news.crunchbase.com/feed/"),
+    ("techfundingnews", "https://techfundingnews.com/feed/"),
+    ("uktech_funding", "https://www.uktech.news/funding/feed/"),
+    ("startups_co_uk", "https://startups.co.uk/news/feed/"),
+    ("businesscloud_uk", "https://businesscloud.co.uk/feed/"),
+    ("vc_cafe", "https://www.vccafe.com/feed/"),
+    ("the_recursive", "https://therecursive.com/feed/"),
+    ("startupbusiness_it", "https://www.startupbusiness.it/feed"),
+    ("deutsche_startups", "https://www.deutsche-startups.de/feed/"),
+    ("gruenderszene", "https://www.gruenderszene.de/feed"),
+    ("frenchweb", "https://www.frenchweb.fr/feed"),
+    ("startupdaily_au", "https://startupdaily.net/feed/"),
 ]
 
 

@@ -283,6 +283,22 @@ rss:
   # paywalled. Blurb step may skip these; the funding extractor reads
   # the headline + RSS description and is fine without body.
 
+  # ─── More EU + global funding databases (added 2026-06-17) ─────────────
+  # 12 feeds, all live-probed. Broader EU regional coverage + Crunchbase
+  # News (which often beats the wire on US/EU rounds).
+  - { name: crunchbase_news     , url: https://news.crunchbase.com/feed/, topics: [vc, founders, tech] }
+  - { name: techfundingnews     , url: https://techfundingnews.com/feed/, topics: [vc, founders, tech] }
+  - { name: uktech_funding      , url: https://www.uktech.news/funding/feed/, topics: [vc, founders, fintech] }
+  - { name: startups_co_uk      , url: https://startups.co.uk/news/feed/, topics: [founders, tech] }
+  - { name: businesscloud_uk    , url: https://businesscloud.co.uk/feed/, topics: [tech, founders] }
+  - { name: vc_cafe             , url: https://www.vccafe.com/feed/, topics: [vc, founders] }
+  - { name: the_recursive       , url: https://therecursive.com/feed/, topics: [founders, vc, tech] }
+  - { name: startupbusiness_it  , url: https://www.startupbusiness.it/feed, topics: [founders, vc, tech] }
+  - { name: deutsche_startups   , url: https://www.deutsche-startups.de/feed/, topics: [founders, vc, tech] }
+  - { name: gruenderszene       , url: https://www.gruenderszene.de/feed, topics: [founders, vc, tech] }
+  - { name: frenchweb           , url: https://www.frenchweb.fr/feed, topics: [tech, founders, ai] }
+  - { name: startupdaily_au     , url: https://startupdaily.net/feed/, topics: [founders, vc, tech] }
+
 arxiv:
   categories:
     - cs.AI
