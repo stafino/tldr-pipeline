@@ -74,23 +74,19 @@ export default function EditionStories({
 
   const [copyState, setCopyState] = useState<'idle' | 'copied' | 'error'>('idle');
 
-  function downloadTxt() {
-    const blob = new Blob([issueText], { type: 'text/plain' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `${newsletterId}-${date}.txt`;
-    a.click();
-    URL.revokeObjectURL(url);
-  }
-
   async function exportToEmail() {
-    // Copy rich HTML + plain text to clipboard so paste-into-mail picks up
-    // the formatted version with real hyperlinks. Open a fresh mailto: with
-    // just the subject pre-filled — the user pastes (⌘V) into the body for
-    // the formatted version.
+    // One click: copy the rich HTML (+ plain-text fallback) to the
+    // clipboard, then open mailto: with the subject pre-filled. The
+    // user lands in the compose window and presses ⌘V to drop the
+    // formatted body in. mailto: can't carry HTML directly — every mail
+    // client strips it — so the clipboard handoff is what makes the
+    // titles render as real hyperlinks.
     try {
-      if (navigator.clipboard && typeof window !== 'undefined' && (window as any).ClipboardItem) {
+      if (
+        typeof window !== 'undefined' &&
+        navigator.clipboard &&
+        (window as any).ClipboardItem
+      ) {
         const item = new (window as any).ClipboardItem({
           'text/html': new Blob([issueHtml], { type: 'text/html' }),
           'text/plain': new Blob([issueText], { type: 'text/plain' }),
@@ -100,32 +96,13 @@ export default function EditionStories({
         await navigator.clipboard.writeText(issueText);
       }
       setCopyState('copied');
-      setTimeout(() => setCopyState('idle'), 2500);
+      setTimeout(() => setCopyState('idle'), 3000);
     } catch {
       setCopyState('error');
-      setTimeout(() => setCopyState('idle'), 2500);
+      setTimeout(() => setCopyState('idle'), 3000);
     }
     const subject = `${newsletterBrand} ${date}`;
     window.location.href = `mailto:?subject=${encodeURIComponent(subject)}`;
-  }
-
-  async function copyHtml() {
-    try {
-      if (navigator.clipboard && typeof window !== 'undefined' && (window as any).ClipboardItem) {
-        const item = new (window as any).ClipboardItem({
-          'text/html': new Blob([issueHtml], { type: 'text/html' }),
-          'text/plain': new Blob([issueText], { type: 'text/plain' }),
-        });
-        await navigator.clipboard.write([item]);
-      } else if (navigator.clipboard?.writeText) {
-        await navigator.clipboard.writeText(issueText);
-      }
-      setCopyState('copied');
-      setTimeout(() => setCopyState('idle'), 2500);
-    } catch {
-      setCopyState('error');
-      setTimeout(() => setCopyState('idle'), 2500);
-    }
   }
 
   return (
@@ -201,23 +178,13 @@ export default function EditionStories({
             >
               ✉ export to email
             </button>
-            <button
-              onClick={copyHtml}
-              className="px-4 py-2 rounded-md bg-surface border border-border text-text text-[12px] font-medium hover:bg-surface-hi"
-            >
-              ⧉ copy formatted
-            </button>
-            <button
-              onClick={downloadTxt}
-              className="px-4 py-2 rounded-md bg-surface border border-border text-text text-[12px] font-medium hover:bg-surface-hi"
-            >
-              ⬇ download .txt
-            </button>
             {copyState === 'copied' && (
-              <span className="text-[12px] text-ok">copied — paste into your email</span>
+              <span className="text-[12px] text-ok">
+                copied to clipboard — paste (⌘V) into the compose window
+              </span>
             )}
             {copyState === 'error' && (
-              <span className="text-[12px] text-no">clipboard blocked — try copy formatted</span>
+              <span className="text-[12px] text-no">clipboard blocked by browser</span>
             )}
           </div>
         </>
@@ -233,8 +200,11 @@ function buildIssueText(
   bySection: Record<string, Candidate[]>,
 ): string {
   // No TLDR branding at the top — keeps it safely yours to forward.
+  // Mirrors the canonical TLDR newsletter whitespace: one blank line
+  // between every block, two blank lines between stories.
   const lines: string[] = [];
   lines.push(`${brand} ${date}`);
+  lines.push('');
   lines.push('');
   for (const sec of sections) {
     const items = bySection[sec.id] ?? [];
@@ -242,13 +212,16 @@ function buildIssueText(
     lines.push(sec.emoji);
     lines.push(sec.name);
     lines.push('');
-    for (const it of items) {
+    for (let i = 0; i < items.length; i++) {
+      const it = items[i];
       lines.push(`${it.title} (${it.minute_read} minute read)`);
       lines.push(it.url);
       lines.push('');
       lines.push(it.blurb || '(blurb not generated)');
       lines.push('');
+      if (i < items.length - 1) lines.push('');
     }
+    lines.push('');
   }
   return lines.join('\n').trimEnd() + '\n';
 }
@@ -270,6 +243,12 @@ function buildIssueHtml(
 ): string {
   // Inline styles only — Gmail, Apple Mail and Outlook all strip <style>
   // blocks but keep style="..." attributes on individual elements.
+  //
+  // Spacing here is calibrated to match the actual TLDR newsletter
+  // 1:1: centered bold date header, generous 40px gap before each
+  // section, 32px section emoji centered with the bold section name
+  // tight under it, 20px gap between title and blurb, 40px gap
+  // between stories.
   const FONT =
     "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif";
   const parts: string[] = [];
@@ -277,24 +256,24 @@ function buildIssueHtml(
     `<div style="font-family:${FONT};font-size:15px;line-height:1.55;color:#111;max-width:640px;margin:0 auto;">`,
   );
   parts.push(
-    `<div style="font-size:18px;font-weight:700;margin:0 0 24px;">${esc(brand)} ${esc(date)}</div>`,
+    `<div style="text-align:center;font-size:18px;font-weight:700;margin:0 0 40px;">${esc(brand)} ${esc(date)}</div>`,
   );
   for (const sec of sections) {
     const items = bySection[sec.id] ?? [];
     if (items.length === 0) continue;
     parts.push(
-      `<div style="text-align:center;font-size:28px;line-height:1;margin:32px 0 6px;">${esc(sec.emoji)}</div>`,
+      `<div style="text-align:center;font-size:32px;line-height:1;margin:40px 0 8px;">${esc(sec.emoji)}</div>`,
     );
     parts.push(
-      `<div style="text-align:center;font-size:14px;font-weight:700;letter-spacing:0.03em;margin:0 0 20px;">${esc(sec.name)}</div>`,
+      `<div style="text-align:center;font-size:14px;font-weight:700;letter-spacing:0.02em;margin:0 0 28px;">${esc(sec.name)}</div>`,
     );
     for (const it of items) {
       const link = `<a href="${esc(it.url)}" style="color:#111;font-weight:700;text-decoration:underline;">${esc(it.title)} (${it.minute_read} minute read)</a>`;
-      parts.push(`<p style="margin:0 0 8px;">${link}</p>`);
+      parts.push(`<p style="margin:0 0 16px;">${link}</p>`);
       if (it.blurb) {
-        parts.push(`<p style="margin:0 0 24px;">${esc(it.blurb)}</p>`);
+        parts.push(`<p style="margin:0 0 40px;">${esc(it.blurb)}</p>`);
       } else {
-        parts.push(`<p style="margin:0 0 24px;color:#999;">(blurb not generated)</p>`);
+        parts.push(`<p style="margin:0 0 40px;color:#999;">(blurb not generated)</p>`);
       }
     }
   }
