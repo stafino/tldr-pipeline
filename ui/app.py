@@ -586,6 +586,20 @@ def _load_blurbs(date: str) -> dict[tuple[str, str], dict]:
 
 
 def _counts_pipeline(date: str) -> dict[str, int]:
+    if date == "All":
+        # Sum across every day's file
+        def _sum(dir_: Path) -> int:
+            total = 0
+            if dir_.exists():
+                for p in dir_.glob("*.jsonl"):
+                    total += len(read_jsonl(p))
+            return total
+        return {
+            "raw": _sum(RAW_DIR),
+            "deduped": _sum(DEDUP_DIR),
+            "scored": _sum(SCORED_DIR),
+            "blurbed": _sum(BLURBS_DIR),
+        }
     return {
         "raw": len(read_jsonl(RAW_DIR / f"{date}.jsonl")),
         "deduped": len(read_jsonl(DEDUP_DIR / f"{date}.jsonl")),
@@ -1041,7 +1055,10 @@ tb1, tb2, tb3, tb4 = st.columns([2, 3, 4, 3])
 with tb1:
     st.markdown('<div style="height:1px;"></div>', unsafe_allow_html=True)
 with tb2:
-    selected_date = st.selectbox("date", dates, index=0, label_visibility="collapsed")
+    selected_date = st.selectbox(
+        "date", ["All"] + dates, index=1, label_visibility="collapsed",
+        help="Pick a specific scrape date or 'All' to merge every day's data.",
+    )
 
 # Reload decisions when date changes
 if ss.loaded_date != selected_date:
@@ -1070,11 +1087,27 @@ st.markdown('<div class="topbar-sep"></div>', unsafe_allow_html=True)
 # ─────────────────────────────────────────────────────────────────────────────
 # Load scored + blurbs
 # ─────────────────────────────────────────────────────────────────────────────
-scored_all = [
-    ScoredStory.from_dict(d)
-    for d in _load_scored_cached(selected_date, _mtime(SCORED_DIR / f"{selected_date}.jsonl"))
-]
-blurbs = _load_blurbs(selected_date)
+if selected_date == "All":
+    # Aggregate every day's scored data, de-dupe by URL (keep highest scoring entry).
+    seen_urls: dict[str, ScoredStory] = {}
+    for d in dates:
+        for raw in _load_scored_cached(d, _mtime(SCORED_DIR / f"{d}.jsonl")):
+            ss_obj = ScoredStory.from_dict(raw)
+            existing = seen_urls.get(ss_obj.story.url)
+            if existing is None or ss_obj.score > existing.score:
+                seen_urls[ss_obj.story.url] = ss_obj
+    scored_all = list(seen_urls.values())
+    # Merge blurbs from every date
+    blurbs: dict[tuple[str, str], dict] = {}
+    for d in dates:
+        for k, v in _load_blurbs(d).items():
+            blurbs.setdefault(k, v)
+else:
+    scored_all = [
+        ScoredStory.from_dict(d)
+        for d in _load_scored_cached(selected_date, _mtime(SCORED_DIR / f"{selected_date}.jsonl"))
+    ]
+    blurbs = _load_blurbs(selected_date)
 
 # Apply search filter
 search_q = (ss.get("search") or "").strip().lower()
@@ -1221,26 +1254,24 @@ with mid_col:
     parts: list[str] = ['<div class="stories-pane">']
 
     if ss.selected_nl == CROSS_KEY:
-        # Backlog: every scored story, filtered to those PUBLISHED on the
-        # selected date (the top-bar date picker becomes the filter here).
-        target_iso = selected_date  # YYYY-MM-DD
-        backlog_stories = []
-        for s in scored_all:
-            pub = (s.story.published_at or "")[:10]
-            if pub == target_iso:
-                backlog_stories.append(s)
-        backlog_stories.sort(key=lambda s: s.score, reverse=True)
+        # Backlog: every scored story in the current data view. When a specific
+        # date is selected, that's the scrape date (the day we ingested). When
+        # 'All' is selected, this is everything we have across every day.
+        backlog_stories = sorted(scored_all, key=lambda s: s.score, reverse=True)
+
+        if selected_date == "All":
+            header_meta = f"{len(backlog_stories)} stories across all scrape dates"
+        else:
+            header_meta = f"{len(backlog_stories)} stories scraped on {selected_date}"
 
         parts.append(
             f'<div class="sec-head-top"><h2>★ Backlog</h2>'
-            f'<span class="meta">{len(backlog_stories)} stories published on {selected_date} '
-            f'(of {len(scored_all)} scored)</span></div>'
+            f'<span class="meta">{header_meta}</span></div>'
         )
         if not backlog_stories:
             parts.append(
-                f'<div class="empty">No stories were <b>published</b> on {selected_date}. '
-                f'Try a different date from the picker above — the backlog filters by '
-                f'each story\'s actual publish date, not the scrape date.</div>'
+                f'<div class="empty">No scored stories for this date. '
+                f'Try \'All\' to see everything we have across every scrape.</div>'
             )
         else:
             for rank, s in enumerate(backlog_stories, start=1):

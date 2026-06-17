@@ -1,14 +1,14 @@
 {
   "date": "2026-06-16",
   "newsletter": "tldr_infosec",
-  "fetched_at": "2026-06-16T16:22:51.637651+00:00",
+  "fetched_at": "2026-06-17T00:03:07.927413+00:00",
   "tldr_titles": [
     "ShinyHunters Claim Council of Europe Hack",
     "InfiniteCampus Data Breach Affects 137K School Staff Accounts",
     "LiteLLM Vulnerability Chain Lets Low-Privilege Users Take Over AI Gateway Servers",
     "SearchLeak: How We Turned M365 Copilot Into a One-Click Data Exfiltration Weapon",
-    "Humanity Protocol H Token Compromise: One Email, $36M Lost, 89% Crash",
     "After the VS Code Supply Chain Attack: Is Your Extension Blocking Actually Working?",
+    "Humanity Protocol H Token Compromise: One Email, $36M Lost, 89% Crash",
     "Google adds Hand gesture verification for reCAPTCHA",
     "Anthropic's Safety Superpower",
     "Chinese Hackers Hijacked Auth Flow, Spy On Isolated Network for a Decade",
@@ -20,7 +20,6 @@
   "tldr_matched": [
     false,
     false,
-    true,
     false,
     false,
     false,
@@ -28,53 +27,62 @@
     false,
     false,
     false,
-    true,
+    false,
+    false,
     false,
     false
   ],
   "predictions": [
     {
       "rank": 1,
-      "score": 87.0,
-      "title": "Cybercriminals mask malicious communications through Microsoft Teams relays",
-      "url": "https://www.helpnetsecurity.com/2026/06/16/dragonforce-microsoft-teams-malware-backdoor-turn/",
+      "score": 85.0,
+      "title": "Critical Copilot vulnerability allowed hackers to steal 2FA code from users",
+      "url": "https://arstechnica.com/security/2026/06/critical-copilot-vulnerability-allowed-hackers-to-seal-2fa-code-from-users/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
       "rank": 2,
-      "score": 84.0,
-      "title": "GhostTree Attack Abused Recursive Windows Junctions to Hide Malware",
-      "url": "https://www.bleepingcomputer.com/news/security/ghosttree-attack-abused-recursive-windows-junctions-to-hide-malware/",
+      "score": 83.0,
+      "title": "AI found 2,000 vulnerabilities in 7 weeks. We\u2019ve patched almost none of them",
+      "url": "https://www.cio.com/article/4185253/ai-found-2000-vulnerabilities-in-7-weeks-weve-patched-almost-none-of-them.html",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
       "rank": 3,
       "score": 82.0,
-      "title": "LiteLLM Vulnerability Chain Lets Low-Privilege Users Take Over AI Gateway Servers",
-      "url": "https://thehackernews.com/2026/06/litellm-vulnerability-chain-lets-low.html",
-      "matched_tldr_idx": 2,
-      "similarity": 1.0
+      "title": "GhostTree Attack Abused Recursive Windows Junctions to Hide Malware",
+      "url": "https://www.bleepingcomputer.com/news/security/ghosttree-attack-abused-recursive-windows-junctions-to-hide-malware/",
+      "matched_tldr_idx": null,
+      "similarity": null
     },
     {
       "rank": 4,
       "score": 82.0,
-      "title": "Crooks found a new way to collaborate using Teams \u2013 by hiding command-and-control traffic",
-      "url": "https://www.theregister.com/cyber-crime/2026/06/16/crooks-found-a-new-way-to-collaborate-using-teams-by-hiding-command-and-control-traffic/5256296",
+      "title": "Ransomware gang abuses Microsoft Teams relays to hide malicious traffic",
+      "url": "https://www.bleepingcomputer.com/news/security/ransomware-gang-abuses-microsoft-teams-relays-to-hide-malicious-traffic/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
       "rank": 5,
-      "score": 82.0,
-      "title": "Critical Copilot vulnerability allowed hackers to seal 2FA code from users",
-      "url": "https://arstechnica.com/security/2026/06/critical-copilot-vulnerability-allowed-hackers-to-seal-2fa-code-from-users/",
+      "score": 81.0,
+      "title": "OptinMonster WordPress plugin hacked in CDN supply-chain attack",
+      "url": "https://www.bleepingcomputer.com/news/security/optinmonster-wordpress-plugin-hacked-in-cdn-supply-chain-attack/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
       "rank": 6,
+      "score": 81.0,
+      "title": "Cybercriminals mask malicious communications through Microsoft Teams relays",
+      "url": "https://www.helpnetsecurity.com/2026/06/16/dragonforce-microsoft-teams-malware-backdoor-turn/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 7,
       "score": 81.0,
       "title": "SimpleHelp RMM flaw could give attackers full access to managed endpoints (CVE-2026-48558)",
       "url": "https://www.helpnetsecurity.com/2026/06/16/simplehelp-rmm-cve-2026-48558/",
@@ -82,87 +90,55 @@
       "similarity": null
     },
     {
-      "rank": 7,
-      "score": 80.0,
-      "title": "New Rokarolla Android Malware Steals PINs, SMS Codes, and Crypto Wallet Funds",
-      "url": "https://thehackernews.com/2026/06/new-rokarolla-android-malware-steals.html",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
       "rank": 8,
       "score": 80.0,
-      "title": "Attackers Exploit Three Fortinet FortiSandbox Flaws, One Patched Last Week",
-      "url": "https://thehackernews.com/2026/06/attackers-exploit-three-fortinet.html",
+      "title": "A backdoor in a LinkedIn job offer",
+      "url": "https://roman.pt/posts/linkedin-backdoor/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
       "rank": 9,
-      "score": 80.0,
-      "title": "Palo Alto Warns of Active Exploitation of PAN-OS GlobalProtect VPN Flaw",
-      "url": "https://thehackernews.com/2026/06/palo-alto-warns-of-active-exploitation.html",
+      "score": 79.0,
+      "title": "Windows version of SprySOCKS Linux malware used to attack govt orgs",
+      "url": "https://www.bleepingcomputer.com/news/security/windows-version-of-sprysocks-linux-malware-used-to-attack-govt-orgs/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
       "rank": 10,
       "score": 79.0,
-      "title": "Public and Private Medical Community Targeted by China-Nexus Threat Actor Pursuing Artificial Intelligence, Cyber, Medical, and National Defense Research",
-      "url": "https://cloud.google.com/blog/topics/threat-intelligence/prc-targets-us-medical-research/",
+      "title": "SimpleHelp bug lets hackers create rogue remote support accounts",
+      "url": "https://www.bleepingcomputer.com/news/security/simplehelp-bug-lets-hackers-create-rogue-remote-support-accounts/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
       "rank": 11,
-      "score": 78.0,
-      "title": "China-Linked SprySOCKS Backdoor Expands to Windows with Driver-Based Stealth",
-      "url": "https://thehackernews.com/2026/06/china-linked-sprysocks-backdoor-expands.html",
+      "score": 79.0,
+      "title": "Bug in FIFA World Cup internal system gave anyone ability to modify TV stream",
+      "url": "https://techcrunch.com/2026/06/16/bug-in-fifa-world-cup-internal-system-gave-anyone-ability-to-modify-tv-stream/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
       "rank": 12,
-      "score": 78.0,
-      "title": "Chinese Hackers Abused Google Workspace Rules to Steal Research and Defense Emails",
-      "url": "https://thehackernews.com/2026/06/chinese-hackers-abused-google-workspace.html",
+      "score": 79.0,
+      "title": "Atomic Arch Supply Chain Attack Hits 1,500 AUR Packages",
+      "url": "https://www.securityweek.com/atomic-arch-supply-chain-attack-hits-1500-aur-packages/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
       "rank": 13,
       "score": 78.0,
-      "title": "One-Click Microsoft 365 Copilot Flaw Could Have Let Attackers Steal Emails, Files, and MFA Codes",
-      "url": "https://thehackernews.com/2026/06/one-click-microsoft-365-copilot-flaw.html",
-      "matched_tldr_idx": 10,
-      "similarity": 0.8357780575752258
+      "title": "CISA warns of another cPanel plugin flaw exploited in attacks",
+      "url": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-another-actively-exploited-cpanel-plugin-flaw/",
+      "matched_tldr_idx": null,
+      "similarity": null
     },
     {
       "rank": 14,
-      "score": 78.0,
-      "title": "Popular WordPress Plugin Scripts Tampered to Plant Hidden Backdoors on Sites",
-      "url": "https://thehackernews.com/2026/06/popular-wordpress-plugin-scripts.html",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 15,
-      "score": 78.0,
-      "title": "Ransomware gang abuses Microsoft Teams relays to hide malicious traffic",
-      "url": "https://www.bleepingcomputer.com/news/security/ransomware-gang-abuses-microsoft-teams-relays-to-hide-malicious-traffic/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 16,
-      "score": 78.0,
-      "title": "Cisco fixes SD-WAN vManage flaw exploited in zero-day attacks",
-      "url": "https://www.bleepingcomputer.com/news/security/cisco-fixes-sd-wan-vmanage-flaw-exploited-in-zero-day-attacks/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 17,
       "score": 78.0,
       "title": "Cisco SD-WAN make-me-root bug under attack",
       "url": "https://www.theregister.com/patches/2026/06/15/cisco-sd-wan-make-me-root-bug-under-attack/5255916",
@@ -170,231 +146,199 @@
       "similarity": null
     },
     {
+      "rank": 15,
+      "score": 77.0,
+      "title": "New Rokarolla Android Malware Steals PINs, SMS Codes, and Crypto Wallet Funds",
+      "url": "https://thehackernews.com/2026/06/new-rokarolla-android-malware-steals.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 16,
+      "score": 77.0,
+      "title": "Cisco fixes SD-WAN vManage flaw exploited in zero-day attacks",
+      "url": "https://www.bleepingcomputer.com/news/security/cisco-fixes-sd-wan-vmanage-flaw-exploited-in-zero-day-attacks/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 17,
+      "score": 77.0,
+      "title": "Public and Private Medical Community Targeted by China-Nexus Threat Actor Pursuing Artificial Intelligence, Cyber, Medical, and National Defense Research",
+      "url": "https://cloud.google.com/blog/topics/threat-intelligence/prc-targets-us-medical-research/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
       "rank": 18,
-      "score": 78.0,
-      "title": "Arch Linux locks down AUR signups amid wave of malicious commits",
-      "url": "https://www.theregister.com/security/2026/06/15/arch-linux-locks-down-aur-signups-amid-wave-of-malicious-commits/5255511",
+      "score": 77.0,
+      "title": "Users cry foul after AMD stripped memory crypto from its consumer CPUs",
+      "url": "https://arstechnica.com/security/2026/06/users-cry-foul-after-amd-stripped-memory-crypto-from-its-consumer-cpus/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
       "rank": 19,
-      "score": 78.0,
-      "title": "AI found 2,000 vulnerabilities in 7 weeks. We\u2019ve patched almost none of them",
-      "url": "https://www.cio.com/article/4185253/ai-found-2000-vulnerabilities-in-7-weeks-weve-patched-almost-none-of-them.html",
+      "score": 77.0,
+      "title": "Google exposes China espionage group that\u2019s been lurking in networks undetected since 2023",
+      "url": "https://cyberscoop.com/google-unc6508-china-espionage-threat/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
       "rank": 20,
-      "score": 78.0,
-      "title": "Your \"Pro\" LLM Subscription May Actually Be \"Free\": Exposing Fingerprint Spoofing Risks in LLM Inference Services",
-      "url": "http://arxiv.org/abs/2606.16100v1",
+      "score": 76.0,
+      "title": "Crooks found a new way to collaborate using Teams \u2013 by hiding command-and-control traffic",
+      "url": "https://www.theregister.com/cyber-crime/2026/06/16/crooks-found-a-new-way-to-collaborate-using-teams-by-hiding-command-and-control-traffic/5256296",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
       "rank": 21,
-      "score": 77.0,
-      "title": "UK to require ID or face scan before you can make social media accounts",
-      "url": "https://www.bleepingcomputer.com/news/security/uk-to-require-id-or-face-scan-before-you-can-make-social-media-accounts/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 22,
-      "score": 73.0,
-      "title": "Transferable Self-Evolving Playbooks for Agentic Security Auditing",
-      "url": "http://arxiv.org/abs/2606.16420v1",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 23,
-      "score": 73.0,
-      "title": "Snyk VulnBench JS 1.0: Can LLMs Find the Same Bugs Twice?",
-      "url": "http://arxiv.org/abs/2606.15762v1",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 24,
-      "score": 70.0,
-      "title": "Di5Guise: 5G Privacy with vSIM",
-      "url": "http://arxiv.org/abs/2606.16943v1",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 25,
-      "score": 70.0,
-      "title": "From Third-Party to First-Party: Measuring and Protecting Against Modern Web Tracking Mechanisms",
-      "url": "http://arxiv.org/abs/2606.16720v1",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 26,
-      "score": 70.0,
-      "title": "SoK: Taxonomizing the Low-Level Attack Surface of Modern Web Browsers",
-      "url": "http://arxiv.org/abs/2606.16646v1",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 27,
-      "score": 68.0,
-      "title": "Measurement Study of Post-Quantum Readiness of Internet: 2026",
-      "url": "http://arxiv.org/abs/2606.16473v1",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 28,
-      "score": 68.0,
-      "title": "How memory safety CVEs differ between Rust and C/C++",
-      "url": "https://kobzol.github.io/rust/2026/06/15/how-memory-safety-cves-differ-between-rust-and-c-cpp.html",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 29,
-      "score": 68.0,
+      "score": 75.0,
       "title": "Flock Cameras Are Being Used for Stalking",
       "url": "https://www.schneier.com/blog/archives/2026/06/flock-cameras-are-being-used-for-stalking.html",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 30,
-      "score": 67.0,
-      "title": "obliv-clang: Real-World Oblivious Programming in C++",
-      "url": "http://arxiv.org/abs/2606.16187v1",
+      "rank": 22,
+      "score": 74.0,
+      "title": "Feds freaked over Fable 5 after simple 'fix this code' prompt, not jailbreak, says researcher",
+      "url": "https://www.theregister.com/security/2026/06/15/feds-freaked-over-fable-5-after-simple-fix-this-code-prompt-not-jailbreak-says-researcher/5255827",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 31,
-      "score": 67.0,
-      "title": "MASCOT-Android: A Curated Dataset and Automated Collection Pipeline for Android Malware Source Code Specimens",
-      "url": "http://arxiv.org/abs/2606.16072v1",
+      "rank": 23,
+      "score": 73.0,
+      "title": "How memory safety CVEs differ between Rust and C/C++",
+      "url": "https://kobzol.github.io/rust/2026/06/15/how-memory-safety-cves-differ-between-rust-and-c-cpp.html",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 32,
-      "score": 66.0,
-      "title": "The FCC Wants to Eliminate Burner Phones",
-      "url": "https://www.schneier.com/blog/archives/2026/06/the-fcc-wants-to-eliminate-burner-phones.html",
+      "rank": 24,
+      "score": 72.0,
+      "title": "The Proxy Knows Too Much: Sealing LLM API Routers with Attested TEEs",
+      "url": "http://arxiv.org/abs/2606.16358v1",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 33,
-      "score": 66.0,
-      "title": "FTC warns of record $3.5 billion losses to imposter scams in 2025",
-      "url": "https://www.bleepingcomputer.com/news/security/ftc-warns-of-record-35-billion-losses-to-imposter-scams-in-2025/",
+      "rank": 25,
+      "score": 70.0,
+      "title": "UK to require ID or face scan before you can make social media accounts",
+      "url": "https://www.bleepingcomputer.com/news/security/uk-to-require-id-or-face-scan-before-you-can-make-social-media-accounts/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 34,
-      "score": 66.0,
+      "rank": 26,
+      "score": 69.0,
+      "title": "From Third-Party to First-Party: Measuring and Protecting Against Modern Web Tracking Mechanisms",
+      "url": "http://arxiv.org/abs/2606.16720v1",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 27,
+      "score": 69.0,
       "title": "DOJ seizes CFAKE, SOCFAKE deepfake nude sites under TAKE IT DOWN Act",
       "url": "https://www.bleepingcomputer.com/news/security/doj-seizes-cfake-socfake-deepfake-nude-sites-under-take-it-down-act/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 35,
-      "score": 65.0,
-      "title": "SPARK: Security Knowledge Priming and Representation-Guided Knowledge Activation for LLM-based Secure Code Generation",
-      "url": "http://arxiv.org/abs/2606.16244v1",
+      "rank": 28,
+      "score": 68.0,
+      "title": "Endpoint Security Startup Ent Emerges From Stealth With $100 Million Seed Round",
+      "url": "https://www.securityweek.com/endpoint-security-startup-ent-emerges-from-stealth-with-100-million-seed-round/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 36,
-      "score": 65.0,
-      "title": "The Anatomy of Scam Scenarios: Large-Scale Characterization and Conversation-Aware Detection",
-      "url": "http://arxiv.org/abs/2606.16052v1",
+      "rank": 29,
+      "score": 66.0,
+      "title": "Transferable Self-Evolving Playbooks for Agentic Security Auditing",
+      "url": "http://arxiv.org/abs/2606.16420v1",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 37,
-      "score": 65.0,
-      "title": "AWS WAF adds AI traffic monetization capability to help content owners charge AI bots for content access",
-      "url": "https://aws.amazon.com/blogs/aws/aws-waf-adds-ai-traffic-monetization-capability-to-help-content-owners-charge-ai-bots-for-content-access/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 38,
-      "score": 65.0,
-      "title": "Software supply chains are heading for a transparency test",
-      "url": "https://www.helpnetsecurity.com/2026/06/16/enisa-software-supply-chain-transparency/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 39,
-      "score": 65.0,
-      "title": "MPX: A Unified Systolic Array for Matrix and Polynomial Multiplication",
-      "url": "http://arxiv.org/abs/2606.16394v1",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 40,
-      "score": 65.0,
+      "rank": 30,
+      "score": 66.0,
       "title": "Curl will not accept vulnerability reports during July 2026",
       "url": "https://daniel.haxx.se/blog/2026/06/15/curl-summer-of-bliss/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 41,
+      "rank": 31,
       "score": 65.0,
-      "title": "Scalable Malware Family Classification Using Quantum Kernel Based Machine Learning",
-      "url": "http://arxiv.org/abs/2606.16191v1",
+      "title": "US Cracks Down on Anthropic AI Models Amid Abuse Concerns",
+      "url": "https://www.darkreading.com/cyber-risk/us-cracks-down-anthropic-ai-models-abuse-concerns",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 42,
+      "rank": 32,
       "score": 64.0,
-      "title": "Cybersecurity vets protest \u2018dangerous\u2019 US government ban on Anthropic\u2019s most powerful models",
-      "url": "https://techcrunch.com/2026/06/15/cybersecurity-vets-protest-dangerous-us-government-ban-on-anthropics-most-powerful-models/",
+      "title": "Measurement Study of Post-Quantum Readiness of Internet: 2026",
+      "url": "http://arxiv.org/abs/2606.16473v1",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 43,
+      "rank": 33,
       "score": 63.0,
-      "title": "Cybersecurity experts don\u2019t think Anthropic\u2019s Fable 5 presents a unique threat",
-      "url": "https://cyberscoop.com/cybersecurity-experts-anthropic-fable-5-not-unique-ai-threat/",
+      "title": "Cross-Silo De-Anonymization Under Local Differential Privacy: Threat Model, Phase Transition, and Coordination Necessity",
+      "url": "http://arxiv.org/abs/2606.16763v1",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 44,
+      "rank": 34,
+      "score": 63.0,
+      "title": "The FCC Wants to Eliminate Burner Phones",
+      "url": "https://www.schneier.com/blog/archives/2026/06/the-fcc-wants-to-eliminate-burner-phones.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 35,
+      "score": 63.0,
+      "title": "White House Issues Memo to Bolster NSS Cybersecurity",
+      "url": "https://www.securityweek.com/white-house-issues-memo-to-bolster-nss-cybersecurity/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 36,
+      "score": 63.0,
+      "title": "Software supply chains are heading for a transparency test",
+      "url": "https://www.helpnetsecurity.com/2026/06/16/enisa-software-supply-chain-transparency/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 37,
       "score": 62.0,
-      "title": "SkillVetBench: LLM-as-Judge for Multi-Dimensional Security Risk Evaluation in Open-Source LLM Agent Skills",
-      "url": "http://arxiv.org/abs/2606.15899v1",
+      "title": "AI Agent Skill Managers Are a Supply-Chain Surface Most of Them Don't Guard",
+      "url": "https://www.implicator.ai/ai-agent-skill-managers-are-a-supply-chain-surface-most-of-them-dont-guard/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 45,
+      "rank": 38,
       "score": 62.0,
-      "title": "did:crdt: Coordination-Free Decentralised Identifiers via Signed CRDTs",
-      "url": "http://arxiv.org/abs/2606.16223v1",
+      "title": "Teleport adds LLM Proxy and Delegated Identity to secure AI agent actions and access",
+      "url": "https://www.helpnetsecurity.com/2026/06/16/llm-proxy-and-delegated-identity/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 46,
+      "rank": 39,
       "score": 62.0,
       "title": "Binary Decompilation LLM with Feedback-Driven Multi-Turn Refinement",
       "url": "http://arxiv.org/abs/2606.16162v1",
@@ -402,55 +346,39 @@
       "similarity": null
     },
     {
-      "rank": 47,
-      "score": 62.0,
-      "title": "Most CISOs Report Pressure to Bury Bad Security News",
-      "url": "https://www.darkreading.com/cyber-risk/most-cisos-report-pressure-to-bury-bad-security-news",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 48,
-      "score": 62.0,
-      "title": "French Security Service to Replace Palantir With Local Firm",
-      "url": "https://www.bloomberg.com/news/articles/2026-06-16/french-security-service-to-replace-palantir-with-local-software",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 49,
-      "score": 62.0,
-      "title": "The team that built Microsoft\u2019s Security Copilot just raised $100M to stop attacks before they happen",
-      "url": "https://thenextweb.com/news/ent-security-100m-seed-intent-aware-workspace-prevention",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 50,
+      "rank": 40,
       "score": 61.0,
-      "title": "Understanding Scam Trends and Rail Paths from Reddit Self-Disclosure Narratives",
-      "url": "http://arxiv.org/abs/2606.16874v1",
+      "title": "Automated jailbreak attack targeting multiple defense strategies",
+      "url": "http://arxiv.org/abs/2606.16751v1",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 51,
+      "rank": 41,
       "score": 61.0,
-      "title": "Google Chrome update will close the door on ad blockers",
-      "url": "https://9to5google.com/2026/06/15/google-chromes-next-update-will-mark-the-end-of-popular-ad-blockers/",
+      "title": "SoK: Taxonomizing the Low-Level Attack Surface of Modern Web Browsers",
+      "url": "http://arxiv.org/abs/2606.16646v1",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 52,
+      "rank": 42,
       "score": 61.0,
-      "title": "Feds freaked over Fable 5 after simple 'fix this code' prompt, not jailbreak, says researcher",
-      "url": "https://www.theregister.com/security/2026/06/15/feds-freaked-over-fable-5-after-simple-fix-this-code-prompt-not-jailbreak-says-researcher/5255827",
+      "title": "The Anatomy of Scam Scenarios: Large-Scale Characterization and Conversation-Aware Detection",
+      "url": "http://arxiv.org/abs/2606.16052v1",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 53,
+      "rank": 43,
+      "score": 61.0,
+      "title": "obliv-clang: Real-World Oblivious Programming in C++",
+      "url": "http://arxiv.org/abs/2606.16187v1",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 44,
       "score": 60.0,
       "title": "DoubtProbe: Black-Box Jailbreak Defense via Structural Verification and Semantic Auditing",
       "url": "http://arxiv.org/abs/2606.16527v1",
@@ -458,183 +386,159 @@
       "similarity": null
     },
     {
-      "rank": 54,
+      "rank": 45,
       "score": 60.0,
-      "title": "Meta is testing smart glass facial recognition tech that\u2019s also used by police and military: Report",
-      "url": "https://www.digitaltrends.com/wearables/meta-is-testing-smart-glass-facial-recognition-tech-thats-also-used-by-police-and-military-report/",
+      "title": "Snyk VulnBench JS 1.0: Can LLMs Find the Same Bugs Twice?",
+      "url": "http://arxiv.org/abs/2606.15762v1",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 55,
+      "rank": 46,
       "score": 60.0,
-      "title": "1Password acquires just-in-time access provider Apono",
-      "url": "https://siliconangle.com/2026/06/15/1password-acquires-just-time-access-provider-apono/",
+      "title": "MASCOT-Android: A Curated Dataset and Automated Collection Pipeline for Android Malware Source Code Specimens",
+      "url": "http://arxiv.org/abs/2606.16072v1",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 56,
+      "rank": 47,
       "score": 59.0,
-      "title": "A data-driven security quantification framework for IoT-based systems",
-      "url": "http://arxiv.org/abs/2606.16561v1",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 57,
-      "score": 59.0,
-      "title": "1Password debuts Credential Broker to release secrets only when needed",
-      "url": "https://siliconangle.com/2026/06/15/1password-debuts-credential-broker-release-secrets-needed/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 58,
-      "score": 58.0,
-      "title": "A Formal Resilience Framework for Cyber-Physical Embodied Systems under Device-Level Cyberattacks",
-      "url": "http://arxiv.org/abs/2606.16467v1",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 59,
-      "score": 58.0,
-      "title": "AppViewX targets ungoverned AI agents with new identity security product",
-      "url": "https://siliconangle.com/2026/06/16/appviewx-targets-ungoverned-ai-agents-new-identity-security-product/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 60,
-      "score": 58.0,
       "title": "RiskIQ founders launch Ent Security with $100M to rethink endpoint defense",
       "url": "https://siliconangle.com/2026/06/16/riskiq-founders-launch-ent-security-100m-rethink-endpoint-defense/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 61,
+      "rank": 48,
       "score": 58.0,
-      "title": "ChapsVision to replace Palantir in major contract with French intelligence agency",
-      "url": "https://sifted.eu/articles/chapsvision-to-replace-palantir-in-major-contract-with-french-intelligence-agency/",
+      "title": "SPARK: Security Knowledge Priming and Representation-Guided Knowledge Activation for LLM-based Secure Code Generation",
+      "url": "http://arxiv.org/abs/2606.16244v1",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 62,
+      "rank": 49,
       "score": 58.0,
+      "title": "How Millions of Digital Home Devices Are Secretly Powering Cyberattacks",
+      "url": "https://www.wsj.com/tech/cybersecurity/how-millions-of-digital-home-devices-are-secretly-powering-cyberattacks-8fd73584?mod=rss_Technology",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 50,
+      "score": 57.0,
+      "title": "Firefox 152 understands \u201cSssh!\u201d",
+      "url": "https://www.theregister.com/software/2026/06/16/firefox-152-understands-sssh/5256390",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 51,
+      "score": 57.0,
+      "title": "SkillVetBench: LLM-as-Judge for Multi-Dimensional Security Risk Evaluation in Open-Source LLM Agent Skills",
+      "url": "http://arxiv.org/abs/2606.15899v1",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 52,
+      "score": 57.0,
+      "title": "India orders temporary ban on Telegram over exam fraud concerns",
+      "url": "https://techcrunch.com/2026/06/16/india-temporarily-blocks-access-to-telegram-over-exam-fraud-concerns/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 53,
+      "score": 57.0,
+      "title": "FTC warns of record $3.5 billion losses to imposter scams in 2025",
+      "url": "https://www.bleepingcomputer.com/news/security/ftc-warns-of-record-35-billion-losses-to-imposter-scams-in-2025/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 54,
+      "score": 57.0,
       "title": "FBI: Fraudsters use couriers to steal money in crypto scams",
       "url": "https://www.bleepingcomputer.com/news/security/fbi-fraudsters-use-couriers-to-steal-money-in-crypto-scams/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 63,
+      "rank": 55,
       "score": 57.0,
-      "title": "Phantoms and Disclosures: a Causal Framework for Auditing Synthetic Data",
-      "url": "http://arxiv.org/abs/2606.16952v1",
+      "title": "Your Privacy My Cloak: Backdoor Attacks on Differentially Private Federated Learning",
+      "url": "http://arxiv.org/abs/2606.17035v1",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 56,
+      "score": 56.0,
+      "title": "Cybersecurity experts blast US government for restricting Anthropic\u2019s AI models",
+      "url": "https://www.ciodive.com/news/anthropic-us-government-export-ban-mythos-fable/822956/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 57,
+      "score": 56.0,
+      "title": "Chrome is removing the last workaround keeping Manifest V2 ad blockers alive",
+      "url": "https://www.digitaltrends.com/computing/chrome-is-removing-the-last-workaround-keeping-popular-ad-blockers-alive/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 58,
+      "score": 56.0,
+      "title": "Anthropic suspends Fable and Mythos systems \"for all users\" after US government claims jailbreak risk",
+      "url": "https://www.itpro.com/technology/artificial-intelligence/anthropic-suspends-fabel-and-mythos-systems-for-all-users-after-us-government-claims-jailbreak-risk",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 59,
+      "score": 56.0,
+      "title": "Cybersecurity experts don\u2019t think Anthropic\u2019s Fable 5 presents a unique threat",
+      "url": "https://cyberscoop.com/cybersecurity-experts-anthropic-fable-5-not-unique-ai-threat/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 60,
+      "score": 56.0,
+      "title": "Finland charges Russian captain and crew member of ship suspected of damaging undersea cables \u2014 prosecutors claim ship had eight more targets before it was stopped by coast guard",
+      "url": "https://www.tomshardware.com/networking/finland-charges-russian-captain-and-crew-member-of-ship-suspected-of-damaging-undersea-cables-prosecutors-claim-ship-had-eight-more-targets-before-it-was-stopped-by-coast-guard",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 61,
+      "score": 56.0,
+      "title": "From Refusal Geometry to Safety Geometry: Harmfulness--Refusal Coupling under Dynamic Adversarial Fine-Tuning",
+      "url": "http://arxiv.org/abs/2606.16349v1",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 62,
+      "score": 56.0,
+      "title": "Crypto scammers are sending couriers to victims\u2019 homes to collect cash",
+      "url": "https://www.helpnetsecurity.com/2026/06/16/crypto-scammers-couriers-cash-pickups-fbi-warning/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 63,
+      "score": 55.0,
+      "title": "Cyber threats stalking the 2026 World Cup",
+      "url": "https://www.sdxcentral.com/analysis/cyber-threats-stalking-the-2026-world-cup/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
       "rank": 64,
-      "score": 57.0,
-      "title": "Cloud CISO Perspectives: The 4 lessons that guided AI Threat Defense",
-      "url": "https://cloud.google.com/blog/products/identity-security/cloud-ciso-perspectives-the-4-lessons-that-guided-ai-threat-defense/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 65,
-      "score": 57.0,
-      "title": "Exclusive: Daylight gives managed detection and response customers searchable telemetry without a SIEM",
-      "url": "https://siliconangle.com/2026/06/16/exclusive-daylight-gives-mdr-customers-searchable-telemetry-without-siem/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 66,
-      "score": 57.0,
-      "title": "Beyond Identity launches Ceros AI agent security platform",
-      "url": "https://siliconangle.com/2026/06/16/beyond-identity-launches-ceros-ai-agent-security-platform/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 67,
-      "score": 57.0,
-      "title": "Gigamon-Zscaler integration adds application visibility to zero-trust access",
-      "url": "https://siliconangle.com/2026/06/15/gigamon-zscaler-integration-adds-application-visibility-zero-trust-access/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 68,
-      "score": 57.0,
-      "title": "Teleport adds LLM Proxy and Delegated Identity to secure AI agent actions and access",
-      "url": "https://www.helpnetsecurity.com/2026/06/16/llm-proxy-and-delegated-identity/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 69,
-      "score": 57.0,
-      "title": "FEnc$^2$: Unifying Data Packing for Efficient Private Inference via Convolution and Architecture-Aware Fragment Encoding",
-      "url": "http://arxiv.org/abs/2606.16359v1",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 70,
-      "score": 57.0,
-      "title": "Banned Book Library in a Wi-Fi Smart Light Bulb",
-      "url": "https://www.richardosgood.com/posts/banned-book-library/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 71,
-      "score": 56.0,
-      "title": "The Art of Mixology: Mixup-based Obfuscation for Privacy-Preserving Split Learning in Large Language Models",
-      "url": "http://arxiv.org/abs/2606.16801v1",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 72,
-      "score": 56.0,
-      "title": "Robust and Automated Reconfiguration of Byzantine Wide-Area Replication",
-      "url": "http://arxiv.org/abs/2606.16740v1",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 73,
-      "score": 56.0,
-      "title": "AI Agent Skill Managers Are a Supply-Chain Surface Most of Them Don't Guard",
-      "url": "https://www.implicator.ai/ai-agent-skill-managers-are-a-supply-chain-surface-most-of-them-dont-guard/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 74,
-      "score": 55.0,
-      "title": "Implementing workload identity with HashiCorp Vault and SPIFFE",
-      "url": "https://www.hashicorp.com/blog/implementing-workload-identity-with-hashicorp-vault-and-spiffe",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 75,
-      "score": 55.0,
-      "title": "Tailscale Aperture targets shadow AI with new controls for IT teams",
-      "url": "https://9to5mac.com/2026/06/16/tailscale-aperture-targets-shadow-ai-with-new-controls-for-it-teams/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 76,
       "score": 55.0,
       "title": "Okta expands Google Cloud partnership to secure AI agents and the browser",
       "url": "https://siliconangle.com/2026/06/16/okta-expands-google-cloud-partnership-secure-ai-agents-browser/",
@@ -642,27 +546,43 @@
       "similarity": null
     },
     {
-      "rank": 77,
+      "rank": 65,
       "score": 55.0,
-      "title": "Chrome is removing the last workaround keeping Manifest V2 ad blockers alive",
-      "url": "https://www.digitaltrends.com/computing/chrome-is-removing-the-last-workaround-keeping-popular-ad-blockers-alive/",
+      "title": "The team that built Microsoft\u2019s Security Copilot just raised $100M to stop attacks before they happen",
+      "url": "https://thenextweb.com/news/ent-security-100m-seed-intent-aware-workspace-prevention",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 66,
+      "score": 55.0,
+      "title": "Anthropic reserves right to check ID for Claude subs",
+      "url": "https://www.theregister.com/ai-and-ml/2026/06/15/anthropic-reserves-right-to-check-id-for-claude-subs/5255804",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 67,
+      "score": 55.0,
+      "title": "Exclusive: Daylight gives managed detection and response customers searchable telemetry without a SIEM",
+      "url": "https://siliconangle.com/2026/06/16/exclusive-daylight-gives-mdr-customers-searchable-telemetry-without-siem/",
       "matched_tldr_idx": null,
       "similarity": null
     }
   ],
   "recall_at": {
-    "10": 0.07692307692307693,
-    "25": 0.15384615384615385,
-    "50": 0.15384615384615385,
-    "100": 0.15384615384615385,
-    "77": 0.15384615384615385
+    "10": 0.0,
+    "25": 0.0,
+    "50": 0.0,
+    "100": 0.0,
+    "67": 0.0
   },
   "hits_at": {
-    "10": 1,
-    "25": 2,
-    "50": 2,
-    "100": 2,
-    "77": 2
+    "10": 0,
+    "25": 0,
+    "50": 0,
+    "100": 0,
+    "67": 0
   },
   "available": true,
   "tldr_urls": [
@@ -670,8 +590,8 @@
     "https://www.bleepingcomputer.com/news/security/infinite-campus-data-breach-affects-137-000-school-staff-accounts/",
     "https://thehackernews.com/2026/06/litellm-vulnerability-chain-lets-low.html",
     "https://www.varonis.com/blog/searchleak",
-    "https://en.cryptonomist.ch/2026/06/13/humanity-protocol-h-token-compromise/",
     "https://medium.com/@amankrew/after-the-github-vscode-supply-chain-attack-is-your-extension-block-actually-working-584e20c7161a",
+    "https://en.cryptonomist.ch/2026/06/13/humanity-protocol-h-token-compromise/",
     "https://docs.cloud.google.com/recaptcha/docs/hand-gesture-verification",
     "https://stratechery.com/2026/anthropics-safety-superpower/",
     "https://www.bleepingcomputer.com/news/security/chinese-hackers-hijack-auth-flow-spy-on-isolated-network-for-a-decade/",
@@ -685,8 +605,8 @@
     "bleepingcomputer.com",
     "thehackernews.com",
     "varonis.com",
-    "en.cryptonomist.ch",
     "medium.com",
+    "en.cryptonomist.ch",
     "docs.cloud.google.com",
     "stratechery.com",
     "bleepingcomputer.com",
