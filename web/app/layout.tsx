@@ -5,7 +5,7 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' });
 
 const SITE_URL = 'https://www.trylede.com';
-const TITLE = 'lede — TLDR newsletter curation';
+const TITLE = 'TLDR newsletter curator tool';
 const DESCRIPTION =
   'AI-assisted curation for the TLDR family of newsletters. Score, blurb and ship in minutes.';
 
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: TITLE,
-    template: '%s · lede',
+    template: '%s · TLDR curator',
   },
   description: DESCRIPTION,
   applicationName: 'lede',

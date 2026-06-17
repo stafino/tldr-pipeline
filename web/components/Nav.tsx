@@ -14,7 +14,7 @@ export default function Nav({ pipelinePills }: { pipelinePills?: React.ReactNode
   const pathname = usePathname();
   return (
     <div className="flex items-center gap-4 border-b border-border px-5 py-2.5">
-      <Link href="/" className="flex items-center gap-3" aria-label="lede home">
+      <Link href="/" className="flex items-center" aria-label="lede home">
         <Image
           src="/lede-logo-horizontal-reverse.svg"
           alt="lede"
@@ -23,7 +23,6 @@ export default function Nav({ pipelinePills }: { pipelinePills?: React.ReactNode
           priority
           className="h-5 w-auto"
         />
-        <span className="text-[11px] text-text-mute hidden sm:inline">TLDR curation pipeline</span>
       </Link>
       <div className="flex items-center gap-1 ml-4">
         {TABS.map((t) => {

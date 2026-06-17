@@ -16,6 +16,7 @@ import DatePicker from '@/components/DatePicker';
 import NewsletterPicker from '@/components/NewsletterPicker';
 import StoryRow from '@/components/StoryRow';
 import DetailPane from '@/components/DetailPane';
+import CurateNewsletterView from '@/components/CurateNewsletterView';
 
 export const dynamic = 'force-dynamic'; // always read fresh files
 
@@ -145,46 +146,33 @@ export default function Page({ searchParams }: { searchParams: Search }) {
   } else {
     const nl = newsletters[selectedNl];
     if (nl) {
-      const bySec = topPerSection(scored, selectedNl, newsletters);
-      const total = Object.values(bySec).reduce((sum, arr) => sum + arr.length, 0);
+      // Flatten every story assigned to this newsletter (no per-section cap).
+      // CurateNewsletterView handles the "Accepted" group + per-section top-N
+      // client-side so accepted stories are pinned to the top regardless of
+      // whether they made the section cap.
+      const candidates = scored
+        .map((s: any) => {
+          const a = s.assignments.find((x: any) => x.newsletter === selectedNl);
+          if (!a) return null;
+          return {
+            story: s,
+            blurb: blurbIdx.get(`${s.story.url}||${selectedNl}`) ?? null,
+            sectionId: a.section_id,
+            scoreInSection: a.score,
+            publishedShort: shortDate(s.story.published_at, targetYear),
+          };
+        })
+        .filter(Boolean) as any[];
       middleContent = (
-        <div>
-          <SectionHeader title={nl.brand_name} meta={`${total} stories · ${selectedDate}`} />
-          {total === 0 ? (
-            <Empty>No stories assigned to {nl.brand_name} for {selectedDate}.</Empty>
-          ) : (
-            nl.sections.map((sec: any) => {
-              const stories = bySec[sec.id];
-              if (!stories || stories.length === 0) return null;
-              return (
-                <div key={sec.id}>
-                  <div className="flex items-center gap-2.5 pt-4 pb-2 border-b border-border bg-bg">
-                    <span className="text-[16px]">{sec.emoji}</span>
-                    <h3 className="text-[12px] uppercase tracking-[0.06em] font-semibold m-0">{sec.name}</h3>
-                    <span className="text-[11px] text-text-mute ml-auto">{stories.length}</span>
-                  </div>
-                  {stories.map((s: any, i: number) => {
-                    const b = blurbIdx.get(`${s.story.url}||${selectedNl}`);
-                    return (
-                      <StoryRow
-                        key={s.story.url}
-                        story={s}
-                        newsletterId={selectedNl}
-                        detailNewsletterId={selectedNl}
-                        rank={i + 1}
-                        blurb={b}
-                        selected={searchParams.story === s.story.url && (searchParams.nl_detail ?? selectedNl) === selectedNl}
-                        sectionMin={sec.min_words}
-                        sectionMax={sec.max_words}
-                        publishedShort={shortDate(s.story.published_at, targetYear)}
-                      />
-                    );
-                  })}
-                </div>
-              );
-            })
-          )}
-        </div>
+        <CurateNewsletterView
+          newsletterId={selectedNl}
+          newsletterBrand={nl.brand_name}
+          sections={nl.sections as any}
+          candidates={candidates}
+          selectedDate={selectedDate}
+          selectedStoryUrl={searchParams.story}
+          selectedDetailNlId={searchParams.nl_detail ?? selectedNl}
+        />
       );
     }
   }

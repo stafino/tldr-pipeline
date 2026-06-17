@@ -228,7 +228,11 @@ BLURB_CONCURRENCY = int(os.environ.get("BLURB_CONCURRENCY", "5"))
 def generate_for_newsletter(
     scored: list[ScoredStory], newsletter_id: str, use_cache: bool = True
 ) -> list[GeneratedBlurb]:
-    """Generate blurbs for the top-N-per-section assigned to one newsletter.
+    """Generate blurbs for *every* story assigned to one newsletter.
+
+    Previously this only blurbed top-N-per-section, which left curate-view
+    candidates without blurbs. Now we blurb everything the ranker assigned,
+    so the UI never surfaces "(no blurb)" rows.
 
     Skips stories we've already blurbed for this newsletter in the last
     14 days (read from data/blurbs/*.jsonl) — avoids the "same story
@@ -239,20 +243,23 @@ def generate_for_newsletter(
     from datetime import date as _date
 
     from common.past_blurbs import _canonical_url as canon, build_past_blurbed_set
-    from ranking.score import top_per_section
 
-    by_sec = top_per_section(scored, newsletter_id)
     past = build_past_blurbed_set(_date.today(), lookback_days=14)
 
     targets: list[ScoredStory] = []
     skipped_seen = 0
-    for stories in by_sec.values():
-        for s in stories:
-            key = (newsletter_id, canon(s.story.url))
-            if key in past:
-                skipped_seen += 1
-                continue
-            targets.append(s)
+    seen_urls: set[str] = set()
+    for s in scored:
+        if not any(a.newsletter == newsletter_id for a in s.assignments):
+            continue
+        if s.story.url in seen_urls:
+            continue
+        seen_urls.add(s.story.url)
+        key = (newsletter_id, canon(s.story.url))
+        if key in past:
+            skipped_seen += 1
+            continue
+        targets.append(s)
 
     if skipped_seen:
         log.info("Skipped %d already-blurbed stories for %s (last 14 days)",

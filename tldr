@@ -10,6 +10,8 @@
 #                         → run a single step (newsletter-agnostic)
 #   tldr blurbs [<nl_id>]
 #                         → generate blurbs for all newsletters (default) or one
+#   tldr backfill-blurbs  → re-run blurbs across every scored date so no
+#                           assigned story is left without a blurb (idempotent)
 #   tldr format [<nl_id>]
 #                         → render the formatted issue for all (default) or one
 #   tldr backtest <start> <end> [<nl_id>]
@@ -54,6 +56,24 @@ cmd_blurbs() {
   local nl="${1:-all}"
   log "blurbs  date=$DATE  newsletter=$nl"
   uv run python -m blurbs.run --date "$DATE" --newsletter "$nl"
+}
+
+cmd_backfill_blurbs() {
+  # Re-run blurbs over every scored date so no assigned story is left
+  # without a blurb. The blurb runner already skips stories already
+  # blurbed for the same newsletter in the last 14 days, so this is
+  # cheap to re-run idempotently.
+  log "backfill blurbs across all scored dates"
+  local dates
+  dates=$(ls data/scored/*.jsonl 2>/dev/null | xargs -n1 basename | sed 's/\.jsonl$//' | sort)
+  if [[ -z "$dates" ]]; then
+    err "no scored data to backfill"
+    return
+  fi
+  for d in $dates; do
+    DATE="$d" cmd_blurbs "all"
+  done
+  ok "backfill done"
 }
 
 cmd_format() {
@@ -140,6 +160,7 @@ main() {
     dedup)               cmd_dedup ;;
     rank)                cmd_rank ;;
     blurbs)              shift; cmd_blurbs "${1:-all}" ;;
+    backfill-blurbs|backfill_blurbs) cmd_backfill_blurbs ;;
     format|render)       shift; cmd_format "${1:-all}" ;;
     backtest)            shift; cmd_backtest "$@" ;;
     backtest_cache|cache_backtest)  cmd_backtest_cache ;;
