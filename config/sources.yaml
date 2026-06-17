@@ -261,6 +261,15 @@ rss:
   - { name: richmironov_sub     , url: https://richmironov.substack.com/feed, topics: [product, founders] }
   - { name: frontierai_sub      , url: https://frontierai.substack.com/feed, topics: [ai] }
 
+  # ─── Funding-focused feeds (2026-06-17) ────────────────────────────────
+  # Probed live; all returned valid RSS. Added to lift Funding-tab coverage
+  # which currently runs entirely off general tech press.
+  - { name: eu_startups         , url: https://www.eu-startups.com/feed/, topics: [founders, vc, fintech] }
+  - { name: geekwire            , url: https://www.geekwire.com/feed/, topics: [tech, founders, vc] }
+  - { name: techcrunch_venture  , url: https://techcrunch.com/category/venture/feed/, topics: [founders, vc] }
+  - { name: strictlyvc          , url: https://strictlyvc.com/feed/, topics: [founders, vc] }
+  - { name: saastr              , url: https://www.saastr.com/feed/, topics: [founders, gtm, vc] }
+
 arxiv:
   categories:
     - cs.AI

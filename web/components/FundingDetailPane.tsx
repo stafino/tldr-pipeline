@@ -11,6 +11,40 @@ function fmtUsd(usd: number | null, raw: string): string {
   return `$${usd}`;
 }
 
+function classifyStage(label: string): { short: string; tier: 'early' | 'growth' | 'late' | 'ext' | 'other' } {
+  const t = (label || '').trim().toLowerCase();
+  if (!t) return { short: '', tier: 'other' };
+  if (t.includes('pre-seed') || t.includes('preseed')) return { short: 'Pre-seed', tier: 'early' };
+  if (t === 'seed' || t.startsWith('seed ') || t.includes('seed round')) return { short: 'Seed', tier: 'early' };
+  const m = t.match(/series\s+([a-h])/);
+  if (m) {
+    const letter = m[1].toUpperCase();
+    const tier: 'growth' | 'late' = ['A', 'B'].includes(letter) ? 'growth' : 'late';
+    return { short: `Series ${letter}`, tier };
+  }
+  if (t.includes('extension')) return { short: 'Extension', tier: 'ext' };
+  if (t.includes('bridge')) return { short: 'Bridge', tier: 'ext' };
+  if (t.includes('growth')) return { short: 'Growth', tier: 'late' };
+  if (t.includes('pre-ipo') || t.includes('pre ipo')) return { short: 'Pre-IPO', tier: 'late' };
+  if (t.includes('strategic')) return { short: 'Strategic', tier: 'other' };
+  return { short: label.length > 12 ? label.slice(0, 12) + '…' : label, tier: 'other' };
+}
+
+function stageChipClass(tier: 'early' | 'growth' | 'late' | 'ext' | 'other'): string {
+  switch (tier) {
+    case 'early':
+      return 'bg-ok-soft text-ok border-ok';
+    case 'growth':
+      return 'bg-accent-soft text-accent border-accent';
+    case 'late':
+      return 'bg-purple-900/40 text-purple-300 border-purple-700';
+    case 'ext':
+      return 'bg-warn-soft text-warn border-warn';
+    default:
+      return 'bg-surface text-text-dim border-border';
+  }
+}
+
 export default function FundingDetailPane({
   round,
   blurb,
@@ -41,11 +75,17 @@ export default function FundingDetailPane({
           <span className="font-mono font-bold text-warn text-[14px]">
             {fmtUsd(round.amount_usd, round.amount_raw)}
           </span>
-          {round.round_label && (
-            <span className="font-mono text-[11px] text-text-dim uppercase tracking-[0.05em]">
-              {round.round_label}
-            </span>
-          )}
+          {(() => {
+            const stage = classifyStage(round.round_label);
+            if (!stage.short) return null;
+            return (
+              <span
+                className={`font-mono text-[10px] uppercase tracking-[0.05em] px-1.5 py-0.5 rounded border ${stageChipClass(stage.tier)}`}
+              >
+                {stage.short}
+              </span>
+            );
+          })()}
           {round.valuation_usd ? (
             <span className="font-mono text-[11px] text-ok">
               @ {fmtUsd(round.valuation_usd, '')} val

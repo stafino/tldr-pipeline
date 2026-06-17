@@ -22,6 +22,49 @@ function formatAmount(usd: number | null, raw: string): string {
   return `$${usd}`;
 }
 
+/**
+ * Normalize a free-form round_label into a short chip code + a stage tier
+ * so we can color-code stages consistently:
+ *   - "early" (pre-seed, seed) → green
+ *   - "growth" (A / B) → blue
+ *   - "late" (C+ / pre-IPO / growth) → purple
+ *   - "extension" → amber
+ *   - "strategic" / fallback → neutral
+ */
+function classifyStage(label: string): { short: string; tier: 'early' | 'growth' | 'late' | 'ext' | 'other' } {
+  const t = (label || '').trim().toLowerCase();
+  if (!t) return { short: '', tier: 'other' };
+  if (t.includes('pre-seed') || t.includes('preseed')) return { short: 'Pre-seed', tier: 'early' };
+  if (t === 'seed' || t.startsWith('seed ') || t.includes('seed round')) return { short: 'Seed', tier: 'early' };
+  const m = t.match(/series\s+([a-h])/);
+  if (m) {
+    const letter = m[1].toUpperCase();
+    const tier: 'growth' | 'late' = ['A', 'B'].includes(letter) ? 'growth' : 'late';
+    return { short: `Series ${letter}`, tier };
+  }
+  if (t.includes('extension')) return { short: 'Extension', tier: 'ext' };
+  if (t.includes('bridge')) return { short: 'Bridge', tier: 'ext' };
+  if (t.includes('growth')) return { short: 'Growth', tier: 'late' };
+  if (t.includes('pre-ipo') || t.includes('pre ipo')) return { short: 'Pre-IPO', tier: 'late' };
+  if (t.includes('strategic')) return { short: 'Strategic', tier: 'other' };
+  return { short: label.length > 12 ? label.slice(0, 12) + '…' : label, tier: 'other' };
+}
+
+function stageChipClass(tier: 'early' | 'growth' | 'late' | 'ext' | 'other'): string {
+  switch (tier) {
+    case 'early':
+      return 'bg-ok-soft text-ok border-ok';
+    case 'growth':
+      return 'bg-accent-soft text-accent border-accent';
+    case 'late':
+      return 'bg-purple-900/40 text-purple-300 border-purple-700';
+    case 'ext':
+      return 'bg-warn-soft text-warn border-warn';
+    default:
+      return 'bg-surface text-text-dim border-border';
+  }
+}
+
 function Row({
   r,
   selected,
@@ -47,15 +90,21 @@ function Row({
           {formatAmount(r.amount_usd, r.amount_raw)}
         </span>
         <div className="flex-1 min-w-0">
-          <div className="flex items-baseline gap-2 flex-wrap">
+          <div className="flex items-center gap-2 flex-wrap">
             <span className="text-[14px] font-semibold text-text">
               {r.company || '(unknown company)'}
             </span>
-            {r.round_label && (
-              <span className="font-mono text-[10.5px] text-text-mute uppercase tracking-[0.05em]">
-                {r.round_label}
-              </span>
-            )}
+            {(() => {
+              const stage = classifyStage(r.round_label);
+              if (!stage.short) return null;
+              return (
+                <span
+                  className={`font-mono text-[10px] uppercase tracking-[0.05em] px-1.5 py-0.5 rounded border ${stageChipClass(stage.tier)}`}
+                >
+                  {stage.short}
+                </span>
+              );
+            })()}
             {r.country && (
               <span className="font-mono text-[10.5px] text-text-mute">· {r.country}</span>
             )}
