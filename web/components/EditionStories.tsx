@@ -270,44 +270,43 @@ function buildIssueHtml(
     "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif";
   const EMOJI_FONT =
     "'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif";
-  const P = `font-family:${FONT};font-size:15px;line-height:1.55;color:#111;`;
-  const spacer = (h: number) =>
-    `<div style="height:${h}px;line-height:${h}px;font-size:1px;">&nbsp;</div>`;
+  // Gmail's compose-paste handler collapses spacer <div>s and strips many
+  // margins. Padding on the element itself is the one thing it reliably
+  // keeps, so all gaps are produced by padding-bottom (or padding-top on
+  // the very first child after a section heading).
+  const P_BASE = `font-family:${FONT};font-size:15px;line-height:1.55;color:#111;margin:0;`;
 
   const parts: string[] = [];
   parts.push(
-    `<div style="font-family:${FONT};font-size:15px;line-height:1.55;color:#111;max-width:640px;margin:0 auto;padding:0;">`,
+    `<div style="font-family:${FONT};font-size:15px;line-height:1.55;color:#111;max-width:640px;margin:0 auto;">`,
   );
   parts.push(
-    `<div style="${P}text-align:center;font-size:22px;font-weight:700;">${esc(brand)} ${esc(date)}</div>`,
+    `<p style="${P_BASE}text-align:center;font-size:22px;font-weight:700;padding:0 0 40px;">${esc(brand)} ${esc(date)}</p>`,
   );
-  parts.push(spacer(40));
 
   for (const sec of sections) {
     const items = bySection[sec.id] ?? [];
     if (items.length === 0) continue;
     parts.push(
-      `<div style="text-align:center;font-size:32px;line-height:1;"><span style="font-family:${EMOJI_FONT};">${esc(sec.emoji)}</span></div>`,
+      `<p style="${P_BASE}text-align:center;font-size:32px;line-height:1;padding:0 0 8px;"><span style="font-family:${EMOJI_FONT};">${esc(sec.emoji)}</span></p>`,
     );
-    parts.push(spacer(8));
     parts.push(
-      `<div style="${P}text-align:center;font-size:14px;font-weight:700;text-transform:uppercase;">${esc(sec.name)}</div>`,
+      `<p style="${P_BASE}text-align:center;font-size:14px;font-weight:700;text-transform:uppercase;padding:0 0 28px;">${esc(sec.name)}</p>`,
     );
-    parts.push(spacer(28));
     for (let i = 0; i < items.length; i++) {
       const it = items[i];
       const linkText = `<span style="color:#111;">${esc(it.title)} (${it.minute_read} minute read)</span>`;
       const link = `<a href="${esc(it.url)}" style="color:#111;font-weight:700;text-decoration:underline;">${linkText}</a>`;
-      parts.push(`<p style="${P}margin:0;">${link}</p>`);
-      parts.push(spacer(20));
+      parts.push(`<p style="${P_BASE}padding:0 0 20px;">${link}</p>`);
+      const bottomPad = i < items.length - 1 ? 40 : 48;
       if (it.blurb) {
-        parts.push(`<p style="${P}margin:0;">${esc(it.blurb)}</p>`);
+        parts.push(`<p style="${P_BASE}padding:0 0 ${bottomPad}px;">${esc(it.blurb)}</p>`);
       } else {
-        parts.push(`<p style="${P}margin:0;color:#999;">(blurb not generated)</p>`);
+        parts.push(
+          `<p style="${P_BASE}padding:0 0 ${bottomPad}px;color:#999;">(blurb not generated)</p>`,
+        );
       }
-      if (i < items.length - 1) parts.push(spacer(40));
     }
-    parts.push(spacer(40));
   }
   parts.push(`</div>`);
   return parts.join('\n');
