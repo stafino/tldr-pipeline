@@ -1,18 +1,20 @@
 import Link from 'next/link';
 import {
-  indexBlurbs,
   listAvailableDates,
   listFundingDates,
   loadBlurbsAll,
-  loadFunding,
-  loadFundingAll,
+  loadFundingRange,
 } from '@/lib/data';
 import Nav from '@/components/Nav';
-import DatePicker from '@/components/DatePicker';
+import FundingDateFilter from '@/components/FundingDateFilter';
 import FundingDetailPane from '@/components/FundingDetailPane';
 import type { Blurb, FundingRound } from '@/lib/types';
 
 export const dynamic = 'force-dynamic';
+
+function todayUTC(): string {
+  return new Date().toISOString().slice(0, 10);
+}
 
 function formatAmount(usd: number | null, raw: string): string {
   if (!usd) return raw || '—';
@@ -160,10 +162,21 @@ function Column({
   );
 }
 
+function fmtRange(from: string, to: string): string {
+  const fmt = (iso: string) =>
+    new Date(iso + 'T00:00:00Z').toLocaleDateString('en-GB', {
+      day: '2-digit',
+      month: 'short',
+      timeZone: 'UTC',
+    });
+  if (from === to) return fmt(from);
+  return `${fmt(from)} → ${fmt(to)}`;
+}
+
 export default function FundingPage({
   searchParams,
 }: {
-  searchParams: { date?: string; story?: string };
+  searchParams: { date?: string; from?: string; to?: string; story?: string };
 }) {
   const dates = listFundingDates();
 
@@ -179,17 +192,35 @@ export default function FundingPage({
     );
   }
 
-  const selectedDate = searchParams.date ?? dates[0];
-  const rounds = selectedDate === 'All' ? loadFundingAll(dates) : loadFunding(selectedDate);
-  const eu = rounds.filter((r) => r.region === 'EU');
-  const na = rounds.filter((r) => r.region === 'NA');
+  const today = todayUTC();
+  // Resolve the requested range. Priority:
+  //   1. explicit ?from=&to= range params (new model)
+  //   2. legacy ?date= param (kept for shareable links from before this change)
+  //   3. default: today (which may be empty if cron hasn't caught up)
+  let from: string;
+  let to: string;
+  if (searchParams.from && searchParams.to) {
+    from = searchParams.from;
+    to = searchParams.to;
+    if (from > to) [from, to] = [to, from];
+  } else if (searchParams.date) {
+    from = to = searchParams.date;
+  } else {
+    from = to = today;
+  }
 
-  // Build a (story_url → blurb) index across every newsletter for the same
-  // scrape window we're loading rounds for. A funding story is typically
-  // blurbed for tldr_founders or tldr_fintech (sometimes both); we pick
-  // whichever blurb shows up first.
-  const blurbScopeDates = selectedDate === 'All' ? dates : listAvailableDates();
-  const allBlurbs: Blurb[] = loadBlurbsAll(blurbScopeDates);
+  const rounds = loadFundingRange(from, to);
+  const eu = rounds
+    .filter((r) => r.region === 'EU')
+    .sort((a, b) => (b.amount_usd ?? 0) - (a.amount_usd ?? 0));
+  const na = rounds
+    .filter((r) => r.region === 'NA')
+    .sort((a, b) => (b.amount_usd ?? 0) - (a.amount_usd ?? 0));
+
+  // Blurb lookup is global — a funding story is typically blurbed for
+  // tldr_founders or tldr_fintech (sometimes both); we take whichever
+  // shows up first when iterating across newsletters.
+  const allBlurbs: Blurb[] = loadBlurbsAll(listAvailableDates());
   const blurbByUrl = new Map<string, Blurb>();
   for (const b of allBlurbs) {
     if (!blurbByUrl.has(b.story_url)) blurbByUrl.set(b.story_url, b);
@@ -202,7 +233,8 @@ export default function FundingPage({
 
   function hrefForRow(r: FundingRound): string {
     const next = new URLSearchParams();
-    if (selectedDate !== dates[0]) next.set('date', selectedDate);
+    next.set('from', from);
+    next.set('to', to);
     next.set('story', r.story_url);
     return '?' + next.toString();
   }
@@ -210,10 +242,11 @@ export default function FundingPage({
   return (
     <main>
       <Nav />
-      <div className="flex gap-3 px-5 py-3 border-b border-border items-center">
-        <DatePicker dates={dates} value={selectedDate} />
+      <div className="flex flex-col gap-2 px-5 py-3 border-b border-border">
+        <FundingDateFilter dates={dates} from={from} to={to} todayISO={today} />
         <div className="text-[10px] text-text-mute">
-          {rounds.length} rounds · EU {eu.length} · NA {na.length}
+          {fmtRange(from, to)} · {rounds.length} {rounds.length === 1 ? 'round' : 'rounds'} · EU{' '}
+          {eu.length} · NA {na.length}
         </div>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,_1fr)_minmax(0,_1fr)_minmax(0,_1fr)] gap-6 px-5 py-5">

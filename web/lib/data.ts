@@ -246,6 +246,12 @@ export function loadFundingAll(dates: string[]): FundingRound[] {
   return Array.from(byUrl.values());
 }
 
+/** Load funding rounds whose scrape date falls in [from, to] inclusive. */
+export function loadFundingRange(from: string, to: string): FundingRound[] {
+  const dates = listFundingDates().filter((d) => d >= from && d <= to);
+  return loadFundingAll(dates);
+}
+
 export function loadBacktestsForNewsletter(newsletterId: string, lastNDays = 7): BacktestResult[] {
   const out: BacktestResult[] = [];
   const dates = listBacktestDates().slice(0, lastNDays);
