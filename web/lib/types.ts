@@ -90,3 +90,20 @@ export interface Decision {
   status: DecisionStatus;
   edited_blurb?: string;
 }
+
+export type FundingRegion = 'EU' | 'NA' | 'OTHER';
+
+export interface FundingRound {
+  story_url: string;
+  title: string;
+  source: string;
+  published_at: string;
+  company: string;
+  amount_usd: number | null;
+  amount_raw: string;
+  round_label: string;
+  country: string;
+  region: FundingRegion;
+  investors: string[];
+  valuation_usd: number | null;
+}

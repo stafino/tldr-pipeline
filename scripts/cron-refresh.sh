@@ -58,6 +58,11 @@ run_stage "ingest" ./tldr ingest
 run_stage "dedup"  ./tldr dedup
 run_stage "rank"   ./tldr rank
 run_stage "blurbs" ./tldr blurbs all
+# Funding extraction: scan today's scored stories for startup funding rounds,
+# LLM-classify by EU/NA region, write to data/funding/<date>.jsonl. Cached
+# per URL so re-runs are no-ops; chained here to save tokens by sharing the
+# scored input with blurbs.
+run_stage "funding" ./tldr funding
 run_stage "format" ./tldr format all
 # Backtest cache: scrape TLDR's actual published issue for the target date
 # (and the last few days) and store the comparison vs our predictions so the
@@ -73,7 +78,7 @@ run_stage "learn_weights" uv run python scripts/learn_source_weights.py
 # if blurbs crashed.
 echo
 echo "── COMMIT & PUSH ────────────────────────────"
-git add data/scored data/blurbs data/issues 2>/dev/null || true
+git add data/scored data/blurbs data/issues data/funding 2>/dev/null || true
 if [[ -n "$(git diff --cached --name-only)" ]]; then
   git -c user.email="${GIT_AUTHOR_EMAIL:-oliverstaf1@gmail.com}" \
       -c user.name="${GIT_AUTHOR_NAME:-stafino}" \

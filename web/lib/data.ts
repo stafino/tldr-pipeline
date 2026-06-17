@@ -7,6 +7,7 @@ import type {
   ScoredStory,
   BacktestResult,
   Section,
+  FundingRound,
 } from './types';
 
 // Data location: prefer ./_embedded (created by scripts/embed.mjs for CLI
@@ -27,6 +28,7 @@ const REPO_ROOT = findRoot();
 const SCORED_DIR = path.join(REPO_ROOT, 'data', 'scored');
 const BLURBS_DIR = path.join(REPO_ROOT, 'data', 'blurbs');
 const BACKTEST_DIR = path.join(REPO_ROOT, 'data', 'backtest');
+const FUNDING_DIR = path.join(REPO_ROOT, 'data', 'funding');
 const NEWSLETTERS_PATH = path.join(REPO_ROOT, 'config', 'newsletters.yaml');
 
 /** All scrape file dates we have scored or blurb data for, newest first. */
@@ -217,6 +219,31 @@ export function loadBacktest(newsletterId: string, date: string): BacktestResult
   } catch {
     return null;
   }
+}
+
+/** All dates that have a funding JSONL, newest first. */
+export function listFundingDates(): string[] {
+  if (!fs.existsSync(FUNDING_DIR)) return [];
+  const dates = new Set<string>();
+  for (const f of fs.readdirSync(FUNDING_DIR)) {
+    if (f.endsWith('.jsonl')) dates.add(f.replace('.jsonl', ''));
+  }
+  return Array.from(dates).sort().reverse();
+}
+
+export function loadFunding(date: string): FundingRound[] {
+  return readJsonl<FundingRound>(path.join(FUNDING_DIR, `${date}.jsonl`));
+}
+
+/** Load every day's funding data, deduplicated by story_url (latest wins). */
+export function loadFundingAll(dates: string[]): FundingRound[] {
+  const byUrl = new Map<string, FundingRound>();
+  for (const d of dates) {
+    for (const r of loadFunding(d)) {
+      byUrl.set(r.story_url, r);
+    }
+  }
+  return Array.from(byUrl.values());
 }
 
 export function loadBacktestsForNewsletter(newsletterId: string, lastNDays = 7): BacktestResult[] {

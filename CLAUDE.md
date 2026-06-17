@@ -11,6 +11,7 @@ ingestion/   RSS scrapers              → data/raw/<date>.jsonl
 dedup/       URL canonicalization      → data/deduped/<date>.jsonl
 ranking/     Multi-newsletter scoring  → data/scored/<date>.jsonl
 blurbs/      Blurb generation (LLM)    → data/blurbs/<date>.jsonl
+funding/     Funding-round extraction  → data/funding/<date>.jsonl
 formatters/  Final issue rendering     → data/issues/<nl>-<date>.txt
 common/      Shared models + LLM client
 config/      newsletters.yaml (sections, target counts, edition size)
@@ -26,6 +27,7 @@ tldr         Bash CLI driver (entry point for every stage)
 ./tldr ingest|dedup|rank    # one stage
 ./tldr blurbs all           # blurb every assigned story across all newsletters
 ./tldr backfill-blurbs      # idempotent: re-run blurbs over every scored date
+./tldr funding              # extract EU/NA startup funding rounds from today's scored
 ./tldr format all           # render text issues
 ./tldr backtest 2026-06-10 2026-06-17   # recall@N vs real TLDR archives
 ./tldr status               # counts for today's pipeline
