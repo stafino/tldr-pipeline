@@ -137,38 +137,49 @@ export default function CurateNewsletterView({
         </div>
       )}
 
-      {sections.map((sec) => {
-        const stories = bySec[sec.id];
-        if (!stories || stories.length === 0) return null;
-        return (
-          <div key={sec.id}>
-            <div className="flex items-center gap-2.5 pt-4 pb-2 border-b border-border bg-bg">
-              <span className="text-[16px]">{sec.emoji}</span>
-              <h3 className="text-[12px] uppercase tracking-[0.06em] font-semibold m-0">
-                {sec.name}
-              </h3>
-              <span className="text-[11px] text-text-mute ml-auto">{stories.length}</span>
-            </div>
-            {stories.map((c, i) => (
-              <StoryRow
-                key={c.story.story.url}
-                story={c.story}
-                newsletterId={newsletterId}
-                detailNewsletterId={newsletterId}
-                rank={i + 1}
-                blurb={c.blurb ?? undefined}
-                selected={
-                  selectedStoryUrl === c.story.story.url &&
-                  selectedDetailNlId === newsletterId
-                }
-                sectionMin={sec.min_words}
-                sectionMax={sec.max_words}
-                publishedShort={c.publishedShort}
-              />
-            ))}
+      {remainingCount > 0 && (
+        <div>
+          <div className="flex items-center gap-2.5 pt-6 pb-2 border-b border-border-strong bg-bg">
+            <span className="text-[14px] leading-none text-warn">★</span>
+            <h2 className="text-[12px] uppercase tracking-[0.06em] font-semibold m-0 text-warn">
+              Backlog
+            </h2>
+            <span className="text-[11px] text-text-mute ml-auto">{remainingCount}</span>
           </div>
-        );
-      })}
+          {sections.map((sec) => {
+            const stories = bySec[sec.id];
+            if (!stories || stories.length === 0) return null;
+            return (
+              <div key={sec.id}>
+                <div className="flex items-center gap-2.5 pt-3 pb-1.5 border-b border-border bg-bg pl-1">
+                  <span className="text-[14px]">{sec.emoji}</span>
+                  <h3 className="text-[11px] uppercase tracking-[0.06em] font-semibold m-0 text-text-dim">
+                    {sec.name}
+                  </h3>
+                  <span className="text-[11px] text-text-mute ml-auto">{stories.length}</span>
+                </div>
+                {stories.map((c, i) => (
+                  <StoryRow
+                    key={c.story.story.url}
+                    story={c.story}
+                    newsletterId={newsletterId}
+                    detailNewsletterId={newsletterId}
+                    rank={i + 1}
+                    blurb={c.blurb ?? undefined}
+                    selected={
+                      selectedStoryUrl === c.story.story.url &&
+                      selectedDetailNlId === newsletterId
+                    }
+                    sectionMin={sec.min_words}
+                    sectionMax={sec.max_words}
+                    publishedShort={c.publishedShort}
+                  />
+                ))}
+              </div>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }
