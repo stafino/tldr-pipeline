@@ -71,8 +71,8 @@ export default function EditionStories({
     () => buildIssueHtml(newsletterBrand, date, sections, bySection),
     [newsletterBrand, date, sections, bySection],
   );
-  const issueMarkdown = useMemo(
-    () => buildIssueMarkdown(newsletterBrand, date, sections, bySection),
+  const issueRichHtml = useMemo(
+    () => buildIssueRichHtml(newsletterBrand, date, sections, bySection),
     [newsletterBrand, date, sections, bySection],
   );
 
@@ -115,12 +115,29 @@ export default function EditionStories({
     window.location.href = `mailto:?subject=${encodeURIComponent(subject)}`;
   }
 
-  async function copyMarkdown() {
-    // Plain markdown — pastes 1:1 into Substack and Beehiiv editors,
-    // which parse it into native blocks (headings, bold links, paragraphs).
-    // Lets the destination platform handle its own spacing template.
+  async function copyForEditor() {
+    // Semantic HTML (no inline styles) — Substack's and Beehiiv's
+    // TipTap-based editors parse this on paste and map each tag to a
+    // native block: <h1> → Heading 1, <h2> → Heading 2,
+    // <strong><a> → bold link, <p> → paragraph. The destination
+    // platform then applies its own typography.
+    //
+    // A plain-text fallback ships alongside so paste into a non-rich
+    // field still gets something readable.
     try {
-      await navigator.clipboard.writeText(issueMarkdown);
+      if (
+        typeof window !== 'undefined' &&
+        navigator.clipboard &&
+        (window as any).ClipboardItem
+      ) {
+        const item = new (window as any).ClipboardItem({
+          'text/html': new Blob([issueRichHtml], { type: 'text/html' }),
+          'text/plain': new Blob([issueText], { type: 'text/plain' }),
+        });
+        await navigator.clipboard.write([item]);
+      } else if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(issueText);
+      }
       setCopyState('copied');
       setTimeout(() => setCopyState('idle'), 3000);
     } catch {
@@ -243,11 +260,11 @@ export default function EditionStories({
               ⧉ copy body
             </button>
             <button
-              onClick={copyMarkdown}
+              onClick={copyForEditor}
               className="px-4 py-2 rounded-md bg-surface border border-border text-text text-[12px] font-medium hover:bg-surface-hi"
-              title="Paste into Substack or Beehiiv post editor — renders 1:1 as native blocks"
+              title="Paste into Substack or Beehiiv post editor — maps to native heading / bold link / paragraph blocks"
             >
-              ⧉ copy as markdown
+              ⧉ copy for Substack/Beehiiv
             </button>
             <button
               onClick={downloadEml}
@@ -304,36 +321,35 @@ function buildIssueText(
   return lines.join('\n').trimEnd() + '\n';
 }
 
-function buildIssueMarkdown(
+function buildIssueRichHtml(
   brand: string,
   date: string,
   sections: Section[],
   bySection: Record<string, Candidate[]>,
 ): string {
-  // Substack and Beehiiv both accept markdown paste into their post
-  // editors and parse it into native blocks. Keep it canonical:
-  // - H1 for the issue header
-  // - H2 with leading emoji for each section
-  // - **[Title (N minute read)](url)** for the bold linked title
-  // - blurb as a plain paragraph
-  // One blank line between blocks (markdown collapses extras).
-  const lines: string[] = [];
-  lines.push(`# ${brand} ${date}`);
-  lines.push('');
+  // Pure semantic HTML — NO inline styles. Both Substack and Beehiiv
+  // run TipTap-based editors that parse the structure on paste and
+  // map each tag to a native block (h1 → heading 1, h2 → heading 2,
+  // strong+a → bold link, p → paragraph). Adding inline styles only
+  // gets them stripped, so we let the platform's own theme take over.
+  const parts: string[] = [];
+  parts.push(`<h1>${esc(brand)} ${esc(date)}</h1>`);
   for (const sec of sections) {
     const items = bySection[sec.id] ?? [];
     if (items.length === 0) continue;
-    lines.push(`## ${sec.emoji} ${sec.name}`);
-    lines.push('');
+    parts.push(`<h2>${esc(sec.emoji)} ${esc(sec.name)}</h2>`);
     for (const it of items) {
-      const title = it.title.replace(/\]/g, '\\]').replace(/\[/g, '\\[');
-      lines.push(`**[${title} (${it.minute_read} minute read)](${it.url})**`);
-      lines.push('');
-      lines.push(it.blurb || '_(blurb not generated)_');
-      lines.push('');
+      parts.push(
+        `<p><strong><a href="${esc(it.url)}">${esc(it.title)} (${it.minute_read} minute read)</a></strong></p>`,
+      );
+      if (it.blurb) {
+        parts.push(`<p>${esc(it.blurb)}</p>`);
+      } else {
+        parts.push(`<p><em>(blurb not generated)</em></p>`);
+      }
     }
   }
-  return lines.join('\n').trimEnd() + '\n';
+  return parts.join('\n');
 }
 
 function esc(s: string): string {
