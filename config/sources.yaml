@@ -113,7 +113,10 @@ rss:
   - { name: select_star,        url: https://selectstar.com/blog/rss,                                         topics: [data] }
 
   # ─── Fintech ────────────────────────────────────────────────────────────
-  - { name: sifted,             url: https://sifted.eu/feed,                                                  topics: [fintech, founders] }
+  # sifted disabled 2026-06-17: paywall returns blocker page, article_fetch
+  #   times out, blurb generation fails. Re-enable once we have a reader-mode
+  #   fallback or accept items as title-only.
+  # - { name: sifted,             url: https://sifted.eu/feed,                                                  topics: [fintech, founders] }
   - { name: fintech_takes,      url: https://fintechtakes.com/feed/,                                          topics: [fintech] }
   - { name: net_interest,       url: https://www.netinterest.co/feed,                                         topics: [fintech] }
   - { name: rex_salisbury,      url: https://www.cambriancapital.com/feed,                                    topics: [fintech, vc] }
