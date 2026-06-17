@@ -18,21 +18,33 @@ Critical Copilot vulnerability allowed hackers to steal 2FA code from users (5 m
 
 (blurb not generated)
 
-Three critical Fortinet sandbox bugs splattered by unknown attackers (5 minute read)
+Three critical Fortinet sandbox bugs splattered by unknown attackers (1 minute read)
 
-(blurb not generated)
+Fortinet disclosed three critical vulnerabilities in its FortiSandbox malware-analysis appliance, all of which unknown attackers are already exploiting in the wild. Enterprise security teams running FortiSandbox should patch immediately, since the flaws sit in a tool meant to detect threats, and active exploitation gives intruders a foothold in the part of the stack defenders rely on to catch them.
 
-AMD's Mext buy shows how AI could solve the RAM shortage it created (5 minute read)
+AMD's Mext buy shows how AI could solve the RAM shortage it created (1 minute read)
 
-(blurb not generated)
+AMD acquired Mext, a memory-optimization startup, betting that smarter software-driven RAM tiering can ease the DRAM scarcity that AI workloads have driven to record prices. For enterprise IT buyers facing inflated server-memory costs and constrained capacity, the deal signals vendors are moving to squeeze more usable memory out of existing silicon rather than waiting on new fab supply to catch up.
 
 Cisco SD-WAN make-me-root bug under attack (5 minute read)
 
 (blurb not generated)
 
-“성능 향상 vs 데이터 우려”…스페이스X의 커서 인수에 엇갈린 평가 (4 minute read)
+CISA Warns of Actively Exploited Joomla JCE Flaw Allowing PHP Code Execution (1 minute read)
 
-SpaceX formally announced an all-stock acquisition of AI coding startup Cursor for $60B, with a $10B breakup fee if the deal collapses, positioning xAI's GPU capacity to lift the compute bottleneck that analysts call Cursor's biggest constraint on growth. The deal raises governance questions for the 64% of Fortune 500 firms running Cursor, as CIOs weigh whether the tool keeps model choice beyond Grok and how xAI's guardrails fit enterprise data requirements.
+CISA added a maximum-severity Joomla Content Editor flaw (CVE-2026-48907, CVSS 10.0) to its Known Exploited Vulnerabilities catalog after confirming active exploitation that lets unauthenticated users upload and run arbitrary PHP code. The bug affects JCE versions 1.0.0 through 2.9.99.4, was patched in 2.9.99.5 on June 3, and federal civilian agencies must apply the fix by June 19.
+
+3 Recently Patched Fortinet FortiSandbox Vulnerabilities in Hacker Crosshairs (1 minute read)
+
+Exploit intelligence firm Defused reported in-the-wild attacks targeting three recently patched Fortinet FortiSandbox flaws, including CVE-2026-39813, a critical authentication bypass, and CVE-2026-39808, a critical OS command injection bug, both patched in April. Separately, SOCRadar identified more than 30,000 Fortinet firewalls compromised in a self-propagating credential-harvesting campaign dubbed FortiBleed spanning organizations across 190-plus countries.
+
+“성능 향상 vs 데이터 우려”…스페이스X의 커서 인수에 엇갈린 평가 (5 minute read)
+
+(blurb not generated)
+
+Tesco is sprinting to quit VMware and Broadcom despite rapid migration risks (1 minute read)
+
+Tesco is accelerating its exit from VMware and Broadcom, pushing an aggressive migration timeline despite the operational risk of moving production workloads quickly off the virtualization stack. The retailer's sprint reflects broad enterprise backlash against Broadcom's post-acquisition VMware licensing changes, which bundled products and raised costs, pushing large customers toward alternatives like Nutanix, Proxmox, and KVM-based platforms.
 
 Cybercriminals mask malicious communications through Microsoft Teams relays (5 minute read)
 
@@ -58,9 +70,13 @@ Anthropic’s new privacy policy offers US consumers a way around the Fable ban 
 
 (blurb not generated)
 
-Salesforce to buy AI customer service platform Fin for $3.6 billion to boost agentic offerings (5 minute read)
+Chrome and Firefox Updated to Patch Critical, High-Severity Vulnerabilities (1 minute read)
 
-(blurb not generated)
+Google and Mozilla shipped browser updates patching more than 70 vulnerabilities across Chrome and Firefox, including critical use-after-free memory bugs that could enable remote code execution and sandbox escape. Chrome 149 fixes 33 defects and Firefox 152 fixes 40, with Mozilla also updating Firefox ESR, Thunderbird, and Firefox for iOS, making this a broad patch cycle for IT teams managing fleet browser deployments.
+
+Salesforce to buy AI customer service platform Fin for $3.6 billion to boost agentic offerings (1 minute read)
+
+Salesforce agreed to acquire AI customer service platform Fin, formerly Intercom, for about $3.6B to extend its Agentforce lineup, with the deal expected to close in Q4 of fiscal 2027. Fin brings an AI agent that resolves chat, email, WhatsApp, SMS, phone, and Slack queries on its proprietary Apex model, giving Salesforce more agentic deployment options as it defends its SaaS stack against AI-native rivals.
 
 SimpleHelp bug lets hackers create rogue remote support accounts (5 minute read)
 
@@ -70,48 +86,32 @@ Google exposes China espionage group that’s been lurking in networks undetecte
 
 (blurb not generated)
 
-Qualcomm said to be circling AI chip biz Tenstorrent in $10B RISC-V power play (5 minute read)
-
-(blurb not generated)
-
-Cybersecurity experts blast US government for restricting Anthropic’s AI models (5 minute read)
-
-(blurb not generated)
-
-GhostTree Attack Abused Recursive Windows Junctions to Hide Malware (5 minute read)
-
-(blurb not generated)
-
-Ransomware gang abuses Microsoft Teams relays to hide malicious traffic (5 minute read)
-
-(blurb not generated)
-
 🧠
 Analysis & Opinions
 
-Microsoft says you don’t need another email security tool; experts say, not so fast (3 minute read)
-
-Microsoft's new quarterly benchmark claims Defender for Office 365 catches the vast majority of malicious email on its own, missing 59% fewer high-severity threats than rival secure email gateways and gaining under 0.05% from integrated third-party partners. Security experts counter that aggregate percentages hide the absolute volume and severity of what slips through, and that one missed message can cause an incident, preserving the case for defense-in-depth. The pitch effectively pressures buyers to consolidate email security onto a single vendor.
-
-France's digital sovereignty push is struggling to escape the Microsoft gravity well (5 minute read)
+Microsoft says you don’t need another email security tool; experts say, not so fast (5 minute read)
 
 (blurb not generated)
+
+France's digital sovereignty push is struggling to escape the Microsoft gravity well (1 minute read)
+
+France's digital sovereignty effort is hitting a wall on the application layer, where a Nextcloud rollout has migrated storage off Microsoft but failed to move users off Office. The lesson for IT leaders is that swapping infrastructure is the easy part; replacing entrenched productivity software means fighting user habit, file-format lock-in, and feature parity gaps that open-source alternatives still struggle to close.
 
 From data residency to digital sovereignty: Architectural patterns for  cloud native platforms (5 minute read)
 
 (blurb not generated)
 
-The checklist problem behind critical infrastructure cyber safety (1 minute read)
+The checklist problem behind critical infrastructure cyber safety (5 minute read)
 
-New research from George Mason University argues that US critical-infrastructure cyber policy has let compliance stand in for safety, governing operational technology with the same data-centric controls as IT. The paper documents cases where compliant controls created physical hazards: fail-secure door latches that trapped occupants during fires, account lockouts that denied emergency access, and patches that forced unplanned SCADA downtime. The implication for buyers is that audit checklists do not certify that equipment can withstand an attack or failure.
+(blurb not generated)
 
 There's no such thing as an agentic CPU (5 minute read)
 
 (blurb not generated)
 
-A modest proposal: Reformat everything to make documents more palatable to AI (5 minute read)
+A modest proposal: Reformat everything to make documents more palatable to AI (1 minute read)
 
-(blurb not generated)
+The author argues that enterprises should restructure documents into AI-friendly formats rather than expecting models to wrestle with the messy layouts humans produce, floating a standardized "DocLang" as the fix. The implication for IT leaders is a familiar trade-off: cleaner machine ingestion and better RAG accuracy on one side, a fresh content-conversion mandate and yet another format standard to govern on the other.
 
 SQL Server may be too lucrative for Microsoft to ditch, but too legacy to love (5 minute read)
 
@@ -124,13 +124,17 @@ Introducing Brazos: Bringing liquid cooling to air-cooled data centers (5 minute
 
 (blurb not generated)
 
+AMD acquires storage software startup MEXT (1 minute read)
+
+AMD acquired storage software startup MEXT, whose Predictive Memory software makes flash appear as DRAM to the operating system, expanding usable memory capacity while preserving flash economics. The deal pairs MEXT's technology with AMD EPYC processors to cut server memory costs as DRAM prices climb, targeting AI and data center workloads where memory has become a primary performance and cost constraint.
+
 Copilot Cowork is now generally available (5 minute read)
 
 (blurb not generated)
 
-Control whether your users can have temporary chats and delete conversations in the Gemini app (5 minute read)
+Control whether your users can have temporary chats and delete conversations in the Gemini app (1 minute read)
 
-(blurb not generated)
+Google added admin controls for temporary chats and conversation deletion in the Gemini app, both ON by default and configurable at the domain, OU, or group level for all Workspace customers. The temporary-chat option lets users hold conversations that bypass history, while deletion controls give admins a governance lever alongside Vault's new retention rules and litigation holds for Gemini.
 
 AWS WAF adds AI traffic monetization capability to help content owners charge AI bots for content access (5 minute read)
 
@@ -144,9 +148,9 @@ AI note-taking is now available in Google Voice (5 minute read)
 
 (blurb not generated)
 
-Cloudflare DMARC Management is now generally available (5 minute read)
+Cloudflare DMARC Management is now generally available (1 minute read)
 
-(blurb not generated)
+Cloudflare made DMARC Management generally available, offering a redesigned dashboard that gives every customer a unified view of their email authentication posture and a guided path to full DMARC enforcement at no cost. The free tooling parses XML aggregate reports, surfaces SPF and DKIM gaps, and lets IT teams move toward reject policies without hiring an email security consultant.
 
 AWS Weekly Roundup: AWS FinOps Agent in preview, Gemma 4 on Bedrock, Kiro Pro Max, and more (June 15, 2026) (5 minute read)
 
@@ -160,9 +164,9 @@ RiskIQ founders launch Ent Security with $100M to rethink endpoint defense (5 mi
 
 (blurb not generated)
 
-HPE steers more Juniper Networks self-driving tech into its stack (5 minute read)
+HPE steers more Juniper Networks self-driving tech into its stack (1 minute read)
 
-(blurb not generated)
+HPE expanded its Juniper-derived self-driving networking across its portfolio, extending agentic AIOps from Mist and Marvis AI to wired CX switches, Aruba Central, and data center operations with predictive maintenance. New QFX5140 and QFX5252 switches target inference clusters and AMD's Helios rack, while Mist Data Center Assurance is now available through GreenLake alongside a unified AI-native SASE update.
 
 Introducing new Explores and Merge Queries in Looker (5 minute read)
 
@@ -176,24 +180,24 @@ HPE AI Factory adds features to improve your experience with agents (5 minute re
 
 (blurb not generated)
 
-Gemini in Chrome expands to more languages and regions, including Latin America, Africa, and the Middle East (5 minute read)
+Gemini in Chrome expands to more languages and regions, including Latin America, Africa, and the Middle East (1 minute read)
+
+Google expanded Gemini in Chrome to more languages and regions, including Latin America, Africa, and the Middle East, bringing tab summarization, content generation, and Gemini Live voice chat to all Workspace plans on ChromeOS, macOS, and Windows. The feature is on by default for eligible domains, so IT admins must opt out at the domain, OU, or group level if they want to gate browser-native AI access.
+
+HSBC Expects Over $100 Million Gains From Using Google AI Tools (5 minute read)
 
 (blurb not generated)
 
-HSBC Expects Over $100 Million Gains From Using Google AI Tools (1 minute read)
+Microsoft’s new Surface Pro 12 is its best 2-in-1 PC yet, but also its most expensive (1 minute read)
 
-HSBC will deploy Google Cloud's AI tools across its global operations, with individual projects each expected to generate over $100 million in added revenue or cost savings. The partnership gives Google Cloud a flagship financial-services reference account and signals that large banks are moving AI spend from pilots into production-scale rollouts tied to concrete P&L targets.
-
-Microsoft’s new Surface Pro 12 is its best 2-in-1 PC yet, but also its most expensive (5 minute read)
-
-(blurb not generated)
+Microsoft announced the Surface Pro 12, a 13-inch 2-in-1 built on Qualcomm's Snapdragon X2 chips with up to 53% faster graphics and 15.5 hours of battery life. The base configuration now starts at $1,499 with 16GB of RAM and 256GB of storage, a $500 jump over the 11th Edition driven partly by industry-wide LPDDR5x cost increases.
 
 ⚡
 Quick Links
 
-Intel’s performance-enhanced 18A-P process enters risk production — drop-in 18A upgrade promises 9% performance improvement at iso-power, cuts thermal resistance by 40% (5 minute read)
+Intel’s performance-enhanced 18A-P process enters risk production — drop-in 18A upgrade promises 9% performance improvement at iso-power, cuts thermal resistance by 40% (1 minute read)
 
-(blurb not generated)
+Intel’s 18A-P, a drop-in upgrade to 18A promising 9% more performance at iso-power, entered risk production.
 
 FBI dismantles Chinese phishing service that coached buyers to generate scam sites using AI —$88 cybercrime product linked to $1.9 billion in losses, 3.87 million stolen cards (5 minute read)
 
