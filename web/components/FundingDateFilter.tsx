@@ -3,15 +3,16 @@
 import { useRouter, useSearchParams } from 'next/navigation';
 
 interface Preset {
-  key: 'today' | 'yesterday' | 'this-week' | 'last-week';
+  key: 'today' | 'yesterday' | 'last-week' | 'last-14' | 'last-month';
   label: string;
 }
 
 const PRESETS: Preset[] = [
   { key: 'today', label: 'Today' },
   { key: 'yesterday', label: 'Yesterday' },
-  { key: 'this-week', label: 'This week' },
   { key: 'last-week', label: 'Last week' },
+  { key: 'last-14', label: 'Last 14 days' },
+  { key: 'last-month', label: 'Last month' },
 ];
 
 function fmtChip(iso: string): string {
@@ -29,36 +30,27 @@ function fmtChip(iso: string): string {
 function computeRange(preset: Preset['key'], todayISO: string): { from: string; to: string } {
   const today = new Date(todayISO + 'T00:00:00Z');
   const toIso = (d: Date) => d.toISOString().slice(0, 10);
-  const startOfIsoWeek = (d: Date) => {
-    const day = d.getUTCDay(); // 0=Sun..6=Sat
-    const diff = day === 0 ? 6 : day - 1; // back to Monday
-    const mon = new Date(d);
-    mon.setUTCDate(d.getUTCDate() - diff);
-    return mon;
+  const minusDays = (n: number) => {
+    const d = new Date(today);
+    d.setUTCDate(d.getUTCDate() - n);
+    return d;
   };
 
   switch (preset) {
     case 'today':
       return { from: todayISO, to: todayISO };
     case 'yesterday': {
-      const y = new Date(today);
-      y.setUTCDate(y.getUTCDate() - 1);
+      const y = minusDays(1);
       const iso = toIso(y);
       return { from: iso, to: iso };
     }
-    case 'this-week': {
-      const mon = startOfIsoWeek(today);
-      const sun = new Date(mon);
-      sun.setUTCDate(mon.getUTCDate() + 6);
-      return { from: toIso(mon), to: toIso(sun) };
-    }
-    case 'last-week': {
-      const mon = startOfIsoWeek(today);
-      mon.setUTCDate(mon.getUTCDate() - 7);
-      const sun = new Date(mon);
-      sun.setUTCDate(mon.getUTCDate() + 6);
-      return { from: toIso(mon), to: toIso(sun) };
-    }
+    // Rolling windows — match the GA / Stripe / Linear convention.
+    case 'last-week':
+      return { from: toIso(minusDays(6)), to: todayISO };
+    case 'last-14':
+      return { from: toIso(minusDays(13)), to: todayISO };
+    case 'last-month':
+      return { from: toIso(minusDays(29)), to: todayISO };
   }
 }
 
