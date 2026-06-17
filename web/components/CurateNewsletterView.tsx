@@ -46,14 +46,21 @@ export default function CurateNewsletterView({
     if (d?.status === 'approved') approvedUrls.add(c.story.story.url);
   }
 
-  const approved = candidates.filter((c) => approvedUrls.has(c.story.story.url));
-  // Keep approved order stable across sections by their primary section
-  approved.sort((a, b) => {
-    const ai = sections.findIndex((s) => s.id === a.sectionId);
-    const bi = sections.findIndex((s) => s.id === b.sectionId);
-    if (ai !== bi) return ai - bi;
-    return b.scoreInSection - a.scoreInSection;
-  });
+  // Group accepted by section in the same order as the newsletter's sections,
+  // so the "Accepted" block mirrors the section breakdown below.
+  const approvedBySec: Record<string, Candidate[]> = {};
+  for (const sec of sections) approvedBySec[sec.id] = [];
+  for (const c of candidates) {
+    if (!approvedUrls.has(c.story.story.url)) continue;
+    if (approvedBySec[c.sectionId]) approvedBySec[c.sectionId].push(c);
+  }
+  for (const sec of sections) {
+    approvedBySec[sec.id].sort((a, b) => b.scoreInSection - a.scoreInSection);
+  }
+  const approvedCount = sections.reduce(
+    (sum, s) => sum + approvedBySec[s.id].length,
+    0,
+  );
 
   // Per-section view: top-N by section score, excluding already-accepted stories.
   const bySec: Record<string, Candidate[]> = {};
@@ -68,14 +75,14 @@ export default function CurateNewsletterView({
   }
 
   const remainingCount = sections.reduce((sum, s) => sum + bySec[s.id].length, 0);
-  const totalShown = approved.length + remainingCount;
+  const totalShown = approvedCount + remainingCount;
 
   return (
     <div>
       <div className="flex items-baseline gap-3 pb-3 mb-1 border-b border-border-strong">
         <h2 className="text-[13px] font-bold tracking-tight m-0">{newsletterBrand}</h2>
         <span className="text-[11px] text-text-mute ml-auto">
-          {approved.length > 0 ? `${approved.length} accepted · ` : ''}
+          {approvedCount > 0 ? `${approvedCount} accepted · ` : ''}
           {totalShown} stories · {selectedDate}
         </span>
       </div>
@@ -86,33 +93,45 @@ export default function CurateNewsletterView({
         </div>
       )}
 
-      {approved.length > 0 && (
-        <div>
-          <div className="flex items-center gap-2.5 pt-4 pb-2 border-b border-border bg-bg">
+      {approvedCount > 0 && (
+        <div className="mb-1">
+          <div className="flex items-center gap-2.5 pt-4 pb-2 border-b border-border-strong bg-bg">
             <span className="text-[14px] leading-none text-ok">✓</span>
-            <h3 className="text-[12px] uppercase tracking-[0.06em] font-semibold m-0 text-ok">
+            <h2 className="text-[12px] uppercase tracking-[0.06em] font-semibold m-0 text-ok">
               Accepted
-            </h3>
-            <span className="text-[11px] text-text-mute ml-auto">{approved.length}</span>
+            </h2>
+            <span className="text-[11px] text-text-mute ml-auto">{approvedCount}</span>
           </div>
-          {approved.map((c, i) => {
-            const sec = sections.find((s) => s.id === c.sectionId);
+          {sections.map((sec) => {
+            const stories = approvedBySec[sec.id];
+            if (!stories || stories.length === 0) return null;
             return (
-              <StoryRow
-                key={c.story.story.url}
-                story={c.story}
-                newsletterId={newsletterId}
-                detailNewsletterId={newsletterId}
-                rank={i + 1}
-                blurb={c.blurb ?? undefined}
-                selected={
-                  selectedStoryUrl === c.story.story.url &&
-                  selectedDetailNlId === newsletterId
-                }
-                sectionMin={sec?.min_words ?? 40}
-                sectionMax={sec?.max_words ?? 80}
-                publishedShort={c.publishedShort}
-              />
+              <div key={`accepted-${sec.id}`}>
+                <div className="flex items-center gap-2.5 pt-3 pb-1.5 border-b border-border bg-bg pl-1">
+                  <span className="text-[14px]">{sec.emoji}</span>
+                  <h3 className="text-[11px] uppercase tracking-[0.06em] font-semibold m-0 text-text-dim">
+                    {sec.name}
+                  </h3>
+                  <span className="text-[11px] text-text-mute ml-auto">{stories.length}</span>
+                </div>
+                {stories.map((c, i) => (
+                  <StoryRow
+                    key={c.story.story.url}
+                    story={c.story}
+                    newsletterId={newsletterId}
+                    detailNewsletterId={newsletterId}
+                    rank={i + 1}
+                    blurb={c.blurb ?? undefined}
+                    selected={
+                      selectedStoryUrl === c.story.story.url &&
+                      selectedDetailNlId === newsletterId
+                    }
+                    sectionMin={sec.min_words}
+                    sectionMax={sec.max_words}
+                    publishedShort={c.publishedShort}
+                  />
+                ))}
+              </div>
             );
           })}
         </div>

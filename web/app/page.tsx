@@ -204,7 +204,7 @@ export default function Page({ searchParams }: { searchParams: Search }) {
           />
         </div>
         <div className="overflow-y-auto scroll-y">{middleContent}</div>
-        <div className="border-l border-border pl-4 overflow-y-auto scroll-y">
+        <div className="border-l border-border pl-4 sticky top-0 self-start max-h-screen overflow-y-auto scroll-y">
           <DetailPane story={selectedStory} newsletter={detailNewsletter} blurb={selectedBlurb} />
         </div>
       </div>
