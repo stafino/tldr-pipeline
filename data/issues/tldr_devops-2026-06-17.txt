@@ -38,6 +38,14 @@ Non-x86 servers now nearly half the market, IDC says (5 minute read)
 
 (blurb not generated)
 
+HPE Discover: Neri outlines an AI architecture built for agents (3 minute read)
+
+At HPE Discover 2026, CEO Antonio Neri detailed an AI infrastructure stack rebuilt for agentic workloads, including Private Cloud AI scaling to 256 GPUs, the Alletra MPX 10,000 storage layer with native MCP support, and Juniper-based networking from GPU racks to the inference edge. The agentic operations tier adds zero-code agent registration across any framework, a three-tier identity model, and Zerto clean-state rollback for when agents err.
+
+The Chainguard Athena coalition already shipped 2,000 patches across 500 open source projects (1 minute read)
+
+Chainguard launched Athena, an industry coalition that pools pre-disclosure vulnerability findings and remediates them under embargo, going live with more than two dozen members including Cisco, Cloudflare, Docker, JPMorganChase, and PwC. The pipeline has already processed 20,000 findings and shipped 2,000 patches across 500 open source projects, many surfaced by frontier AI programs like Anthropic's Project Glasswing and OpenAI's Daybreak, with metadata published as an OSV feed.
+
 Report: Microsoft to use AWS to help GitHub deal with a major surge in demand (1 minute read)
 
 GitHub is tapping AWS for short-term capacity to absorb a 30x demand surge driven by agentic coding tools, after an October 2025 plan to scale 10x proved insufficient and triggered several small outages. The move is a stopgap multi-cloud play while Microsoft continues its longer migration to fully host GitHub on Azure by 2027.
@@ -68,6 +76,10 @@ A 10GBASE-T SFP+ module in the author's study switch was overheating to 93C and 
 SNAS: A Multi-Layer Defense-in-Depth Architecture for Secure Egress in Sandboxed Workloads (5 minute read)
 
 (blurb not generated)
+
+Why cloud native belongs at the heart of agentic AI: Lessons from building a multi-agent security platform on Kubernetes (1 minute read)
+
+An engineer at Orange Innovation documents building an internal real-time security-operations platform where each AI agent runs as its own Kubernetes Deployment, not an in-process module, giving every agent independent resource limits, identity, and restart policy. The stack pairs Falco with eBPF and an Isolation Forest model to pre-filter syscall events before they reach LangGraph-driven agents coordinated over A2A. Treating agents as microservices means canary rollouts, HPA, and namespace isolation apply without reinvention.
 
 AI demands more engineering discipline. Not less (xpost) (5 minute read)
 

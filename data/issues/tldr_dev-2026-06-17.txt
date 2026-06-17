@@ -42,10 +42,6 @@ What are git worktrees, and why should I use them? (1 minute read)
 
 Git worktrees let you check out multiple branches into sibling folders simultaneously, so a hotfix can be created with `git worktree add ../hotfix -b fix main` without stashing changes or disrupting your original editor session. The post argues worktrees have become newly relevant because AI agents push developers toward parallel work, though each worktree needs its own dependency install, which can bloat disk usage across many checkouts.
 
-Making my TypeScript types 15.7x faster (3 minute read)
-
-The author optimized type instantiation counts in Sury, their schema validation library, cutting the cost of the common `S.Output` extraction by 15.7x. The three-step recipe pins inferred types with Vitest's `expectTypeOf` to catch silent drift, baselines instantiation counts with ArkType's `@ark/attest` in CI to flag regressions, then delegates the type-level rewrites to Claude.
-
 Even more batteries included with Emacs (1 minute read)
 
 The third installment in karthinks' "batteries included" series catalogs lesser-known features built into stock Emacs 28.1+, requiring no packages and learnable in under five minutes each. Highlights include `dictionary-tooltip-mode` for hover definitions backed by local dictionaries or Wiktionary, aimed at veteran users hunting for the niche commands that each tend to miss.
@@ -65,6 +61,10 @@ Structural Role Injection in Handlebars-Templated LLM Prompts: Triple-Brace Inte
 The Value of Adaptivity in LSM Bloom-Filter Tuning: A Log-Law and a Two-Clock Frontier (5 minute read)
 
 (blurb not generated)
+
+How to design AI agent loops: schedules, goals, and subagents in Claude Code and Codex (1 minute read)
+
+This podcast and write-up breaks down four ways to automate a prompt into a loop, heartbeat, cron, hook, and goal, and covers the five components any production loop needs: work trees, skills, plugins, subagents, and state tracking. It then walks through two live builds, a daily aging-PR reviewer in Claude Code that self-schedules and spawns subagents, and a weekly skills-identification loop in Codex whose goal-based subagents validate output in real time.
 
 When the Next Step Is Not One Step: Distribution-Aware Execution Modeling for Concurrent Go Programs (5 minute read)
 
@@ -105,9 +105,9 @@ Understanding the rationale behind a rule when trying to circumvent it (5 minute
 
 (blurb not generated)
 
-Your package-lock.json diff is unreadable. That's a supply-chain problem. (2 minute read)
+Zed Guild: What We Built, What We Learned (1 minute read)
 
-The author argues that unreadable package-lock.json diffs are a supply-chain liability, since most of this year's npm attacks slipped in through new transitive packages that nobody reviewed in the 4,000-line wall of churned hashes. Their tool, locksift, parses lockfiles structurally to show only what changed in the dependency tree, flagging added packages, major bumps, and downgrades rather than scanning for malice.
+Zed shared a retrospective on the Guild, a 12-week program that embedded outside contributors inside its team to triage issues, pair with engineers, and ship features across its million-plus-line Rust codebase. The first cohort drew hundreds of applicants, accepted about a quarter, and produced 148 merged pull requests from 33 active contributors working across three tracks scaled from issue reproduction to expert-level feature work.
 
 Agentic Code Review (5 minute read)
 
@@ -123,6 +123,14 @@ Launches & Tools
 Apple Foundation Models (1 minute read)
 
 Anthropic released Claude for Foundation Models, a Swift package that conforms Claude to the `LanguageModel` protocol in Apple's Foundation Models framework, so apps drive it through the same `LanguageModelSession` API used for Apple's on-device model. Requests go straight to the Claude API rather than through Apple, and developers swap between on-device and server-side models per session to add larger context, frontier reasoning, or server tools like web search and code execution.
+
+Show HN: cuTile Rust: Safe, data-race-free GPU kernels in Rust (1 minute read)
+
+cuTile Rust is a tile-based system from NVIDIA Labs for writing memory-safe, data-race-free GPU kernels in idiomatic Rust, extending ownership across the launch boundary by partitioning mutable tensors into disjoint tiles and sharing immutable ones. A #[cutile::module] macro captures each kernel's AST and JIT-compiles it through CUDA Tile IR into a cubin, supporting synchronous launches, async pipelines, and CUDA graph replay, with local opt-outs when lower-level control is needed.
+
+RFC 10008: The new HTTP Query Method (1 minute read)
+
+The IETF published RFC 10008, which standardizes the HTTP QUERY method for safe, idempotent requests that carry their input in the request body rather than the URI. QUERY fills the gap between GET and POST, letting large or sensitive query payloads be sent without URI length limits while remaining cacheable and automatically retriable since it makes no partial state changes.
 
 Wolfram Language and Mathematica version 15 (5 minute read)
 
@@ -164,9 +172,9 @@ Google Flight Simulator (5 minute read)
 
 (blurb not generated)
 
-Microsoft AntiSSRF open-source library helps block server-side request forgery (5 minute read)
+Z.ai pitches GLM-5.2 for long-running software engineering tasks (3 minute read)
 
-(blurb not generated)
+Z.ai released GLM-5.2, an MIT-licensed open-source coding model with a one million-token context window that the company says trails Claude Opus 4.8 by 1% on the FrontierSWE long-horizon benchmark. It targets repository-scale agentic work with IndexShare, which cuts per-token compute by 2.9x at full context length, plus multi-token prediction changes that lift speculative decoding acceptance by up to 20%.
 
 Openrouter Fusion API (1 minute read)
 
@@ -192,20 +200,8 @@ Wear OS 7 helps your smartwatch keep up with you (5 minute read)
 
 (blurb not generated)
 
-Firefox 152 understands 'Sssh!' (5 minute read)
-
-(blurb not generated)
-
-Google launches 'bubble' multi-tasking and foldable gaming mode with Android 17 (5 minute read)
-
-(blurb not generated)
-
 🎁
 Miscellaneous
-
-Malicious JetBrains Marketplace plugins steal AI API keys from developers (1 minute read)
-
-Aikido Security found at least 15 malicious JetBrains Marketplace plugins, published under seven vendor accounts and installed close to 70,000 times, that exfiltrate the OpenAI, DeepSeek, and SiliconFlow API keys developers enter into their settings to a hardcoded server. The plugins, first published in October 2025 with new ones added as recently as June 2026, function as advertised while quietly stealing credentials on "Apply" and reselling them to paid users.
 
 144 Mastra npm Packages Compromised via Hijacked Contributor Account (1 minute read)
 
@@ -215,13 +211,13 @@ SpaceX to acquire vibe coding startup Cursor for $60B (1 minute read)
 
 SpaceX announced it will acquire Cursor maker Anysphere for $60B in stock, closing this quarter and following an April partnership in which SpaceX provided tens of thousands of GPUs to train Cursor's in-house Composer 2.5 model. The deal hands Cursor's 1M+ daily active users access to SpaceX's post-xAI-merger compute, though how much of that capacity reaches the Cursor team remains unclear.
 
-Arch Linux locks down AUR signups amid wave of malicious commits (5 minute read)
+144 Mastra npm packages compromised in major software supply chain attack (2 minute read)
 
-(blurb not generated)
+Attackers compromised a single npm contributor account (ehindero) and mass-published malicious versions of 144 packages under the @mastra namespace, in an incident researchers from JFrog, SafeDep, Socket, and StepSecurity named easy-day-js. Because Mastra is a widely used JavaScript and TypeScript framework for AI apps, any project with a direct or transitive @mastra/* dependency may have pulled poisoned code on install or upgrade.
 
-Android 17 arrives on Pixel phones today (5 minute read)
+Malicious JetBrains Plugins Steal AI API Keys as Chrome Extensions Capture Chatbot Chats (1 minute read)
 
-(blurb not generated)
+Researchers flagged a coordinated campaign on the JetBrains Marketplace where 15 malicious plugins posed as DeepSeek-based AI coding assistants and exfiltrated developers' AI provider API keys to an attacker-controlled server in plaintext, with two plugins claiming over 25,000 downloads each. The plugins worked as advertised since October 2025 and even ran a paid tier that handed users someone else's API key, suggesting the keys themselves were stolen.
 
 Curl will not accept vulnerability reports during July 2026 (1 minute read)
 
@@ -258,6 +254,10 @@ GrapheneOS has been ported to Android 17 (1 minute read)
 
 GrapheneOS has been ported to Android 17 across all supported Pixel devices, with the first official release shipping tomorrow.
 
+GLM-5.2 is the new leading open weights model on Artificial Analysis (1 minute read)
+
+Z.ai's GLM-5.2 tops Artificial Analysis's open weights leaderboard at 51, ahead of MiniMax-M3 and DeepSeek V4 Pro, under an MIT license.
+
 Android 17 starts hitting Pixel phones and watches today (5 minute read)
 
 (blurb not generated)
@@ -285,10 +285,6 @@ Oracle's $3M OCI credits program gives CNCF projects large self-hosted Arm64 Git
 PromptMN: Pseudo Prompting Language (5 minute read)
 
 (blurb not generated)
-
-Flatpak-NG sounds like bad news for systemd refuseniks (1 minute read)
-
-Flatpak-NG, the next major version of the Linux app-packaging system, is set to take a hard dependency on systemd.
 
 Bifrost: Hybrid TEE-FHE Inference for Privacy-Preserving Transformer and LLM Serving (5 minute read)
 

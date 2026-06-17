@@ -18,10 +18,6 @@ Anthropic's Mythos model discovered more than 2,000 previously unknown vulnerabi
 
 Attackers hijacked the dormant npm account of a former Mastra contributor ("ehindero") and mass-published 144 malicious "@mastra/*" packages on June 17, each adding a tainted "easy-day-js" dependency whose postinstall hook drops a cross-platform infostealer targeting browser history and 160+ crypto wallet extensions. Audit Mastra installs from the past 24 hours, rotate any exposed credentials and wallet keys, and pin to releases carrying SLSA provenance attestations, since the attacker published from a personal token without them.
 
-Malicious JetBrains Marketplace plugins steal AI API keys from developers (1 minute read)
-
-At least 15 malicious JetBrains Marketplace plugins published under seven vendor accounts have been exfiltrating developers' AI provider API keys, with roughly 70,000 combined installs since October 2025. Discovered by Aikido Security, the plugins pose as AI coding assistants and Git tools, sending OpenAI, DeepSeek, and SiliconFlow keys to a hardcoded server (39.107.60[.]51) over HTTP when users click "Apply" after entering credentials.
-
 GhostTree Attack Abused Recursive Windows Junctions to Hide Malware (5 minute read)
 
 (blurb not generated)
@@ -34,31 +30,19 @@ CISA Warns of Actively Exploited Joomla JCE Flaw Allowing PHP Code Execution (1 
 
 CISA added CVE-2026-48907 (CVSS 10.0), a maximum-severity improper access control flaw in the Widget Factory Joomla Content Editor (JCE), to its KEV catalog after confirming active exploitation that lets unauthenticated users create editor profiles and upload and execute arbitrary PHP code. The flaw affects JCE versions 1.0.0 through 2.9.99.4 and is patched in 2.9.99.5, with FCEB agencies ordered to remediate by June 19.
 
-OptinMonster WordPress plugin hacked in CDN supply-chain attack (5 minute read)
-
-(blurb not generated)
-
-Cybercriminals mask malicious communications through Microsoft Teams relays (5 minute read)
-
-(blurb not generated)
-
-SimpleHelp RMM flaw could give attackers full access to managed endpoints (CVE-2026-48558) (5 minute read)
-
-(blurb not generated)
-
 Steam Workshop abused to spread malware via Wallpaper Engine app (1 minute read)
 
 Threat actors are abusing Steam Workshop's Wallpaper Engine app to distribute malware through "application" wallpapers, which run executable Windows code on install, per Kaspersky. Active since at least late 2025, the malicious packages deploy a DarkKomet backdoor, a trojanized AggregatorHost.dll that steals Steam credentials, and Lumma and Vidar stealers, with some samples downloaded tens of thousands of times.
+
+AMD silently removes memory encryption from consumer Ryzen CPUs, leaving users unaware that they may be vulnerable — security feature vanishes after newer AGESA firmware, AMD engineers go radio silent when pressed about the change (1 minute read)
+
+AMD appears to have silently removed Transparent Secure Memory Encryption (TSME) from consumer Ryzen CPUs outside its Pro lineup, stripping protection against physical attacks that siphon data from connected memory, with the change traced to AGESA 1.2.7.0 firmware. The removal is undetectable on Windows and hard to spot on Linux, so defenders relying on at-rest memory encryption for consumer endpoints should verify TSME status directly rather than assume it is still active.
 
 A backdoor in a LinkedIn job offer (5 minute read)
 
 (blurb not generated)
 
 Windows version of SprySOCKS Linux malware used to attack govt orgs (5 minute read)
-
-(blurb not generated)
-
-SimpleHelp bug lets hackers create rogue remote support accounts (5 minute read)
 
 (blurb not generated)
 
@@ -69,6 +53,10 @@ Three critical vulnerabilities in Fortinet's FortiSandbox are under active explo
 Bug in FIFA World Cup internal system gave anyone ability to modify TV stream (5 minute read)
 
 (blurb not generated)
+
+CISA orders feds to patch max severity Joomla plugin flaw by Friday (1 minute read)
+
+CISA added CVE-2026-48907, a maximum-severity improper access control flaw in the Widget Factory Joomla Content Editor plugin, to its KEV catalog and ordered FCEB agencies to patch by Friday under BOD 26-04. Unauthenticated attackers are exploiting it via automated attacks to upload and run PHP code, and JCE warns that patching to 2.9.99.6 closes the entry point but does not remove implants left on already-compromised sites.
 
 CISA warns of another cPanel plugin flaw exploited in attacks (5 minute read)
 
@@ -83,6 +71,18 @@ Cisco is warning that a privilege-escalation flaw in Catalyst SD-WAN Manager is 
 Three recently patched Fortinet FortiSandbox flaws are under active exploitation, with Defused and KEVIntel honeypots observing attacks on the critical CVE-2026-39813 (authentication bypass) and CVE-2026-39808 (OS command injection, RCE), plus the June-patched CVE-2026-25089 (unauthenticated command execution). Separately, SOCRadar's FortiBleed campaign has compromised over 30,000 Fortinet firewalls across 190 countries via password-spraying, so apply all available patches and rotate credentials on exposed appliances immediately.
 
 New Rokarolla Android Malware Steals PINs, SMS Codes, and Crypto Wallet Funds (5 minute read)
+
+(blurb not generated)
+
+Public and Private Medical Community Targeted by China-Nexus Threat Actor Pursuing Artificial Intelligence, Cyber, Medical, and National Defense Research (5 minute read)
+
+(blurb not generated)
+
+Chrome and Firefox Updated to Patch Critical, High-Severity Vulnerabilities (5 minute read)
+
+(blurb not generated)
+
+Joomla, LiteSpeed Vulnerabilities Exploited in Attacks (5 minute read)
 
 (blurb not generated)
 
@@ -141,10 +141,6 @@ Bifrost: Hybrid TEE-FHE Inference for Privacy-Preserving Transformer and LLM Ser
 
 (blurb not generated)
 
-The checklist problem behind critical infrastructure cyber safety (5 minute read)
-
-(blurb not generated)
-
 Evaluating Open-Source LLMs for Multi-Label ATT&CK Technique Classification on CTI Reports (5 minute read)
 
 (blurb not generated)
@@ -169,6 +165,10 @@ Stop Using JWTs (1 minute read)
 
 The author argues developers should stop using JWTs for user session management and use regular cookie sessions instead. The case rests on a few points: the JWT spec targets very short-lived tokens (~5 minutes), secure "stateless" auth is not actually feasible since you need server-side state to revoke tokens, and a JWT carrying only a session ID gains nothing over a plain session cookie while adding spec-level risk. Google's JWT usage is SSO transport between hosts, not browser sessions.
 
+Cyber threats stalking the 2026 World Cup (5 minute read)
+
+(blurb not generated)
+
 🧑‍💻
 Launches & Tools
 
@@ -176,13 +176,13 @@ GrapheneOS has been ported to Android 17 (1 minute read)
 
 GrapheneOS has been fully ported to Android 17, with developer builds available now and the first official release scheduled for tomorrow across all supported Pixel devices, including the 6a, 7, 8, and 10 Pro Fold. The hardened mobile OS has been tested on each device ahead of public release, continuing its same-day tracking of upstream Android.
 
-Microsoft AntiSSRF open-source library helps block server-side request forgery (5 minute read)
-
-(blurb not generated)
-
 Cloudflare DMARC Management is now generally available (1 minute read)
 
 Cloudflare made DMARC Management generally available for free to all customers, with a redesigned dashboard that guides domains to full DMARC enforcement without parsing raw XML aggregate reports. The tool unifies SPF, DKIM, DMARC, and BIMI posture in a single view, helping defenders move policies from p=none to quarantine or reject to block spoofing and brand impersonation.
+
+SentinelOne turns Purple AI loose to investigate threats on its own (1 minute read)
+
+SentinelOne opened its Purple AI Agentic Investigations capability to all Singularity Platform customers, adding "zero-click" autonomous threat investigation that triages, reaches a verdict, and can move to contain a threat without an analyst launching it. The feature runs on existing endpoint, identity, cloud, and third-party telemetry, uses a mix of Claude, GPT, and SentinelOne's Ultraviolet models, and ships with an adjustable human-in-the-loop control plus an auditable evidence chain.
 
 ARVO: Atlas of Reproducible Vulnerabilities for Open-Source Software (5 minute read)
 
@@ -191,6 +191,14 @@ ARVO: Atlas of Reproducible Vulnerabilities for Open-Source Software (5 minute r
 Multi-Source Cybersecurity Logs: An ATT&CK-Labeled Dataset and SLM Evaluation (5 minute read)
 
 (blurb not generated)
+
+What’s new in Databricks Platform security and compliance at Data + AI Summit 2026 (1 minute read)
+
+Databricks announced new platform security capabilities at Data + AI Summit 2026, including general availability of Automatic Identity Management for Microsoft Entra ID on AWS and GCP, AIM for Okta in public preview, and Context-Based Ingress policies. The release also adds Private Network Gateway and expanded Private Link support for Lakebase, plus broader AWS GovCloud coverage for AI services and upcoming FedRAMP High support on Azure Commercial.
+
+Jamf announces new native AI Governance control plane for macOS (1 minute read)
+
+Jamf announced AI Governance, an upcoming Jamf Pro capability that gives IT and security teams OS-level visibility and control over generative AI tools running on managed Macs, including local models and developer tooling that network proxies miss. It offers deep tool discovery, granular policy controls across model access, network, and file system, and Model Context Protocol server restrictions, plus a vendor engine that tracks new controls automatically.
 
 🎁
 Miscellaneous
@@ -207,13 +215,13 @@ UK to require ID or face scan before you can make social media accounts (5 minut
 
 (blurb not generated)
 
-DOJ seizes CFAKE, SOCFAKE deepfake nude sites under TAKE IT DOWN Act (1 minute read)
+AI Use by the US Government (1 minute read)
 
-The DOJ seized the CFAKE.com and SOCFAKE.com domains, which allegedly hosted nonconsensual AI-generated nude images and videos of women, in what appears to be the first publicly announced domain seizure under the TAKE IT DOWN Act. The action signals that the DOJ will use the new law to pursue infrastructure behind deepfake abuse sites, setting an enforcement precedent for operators hosting nonconsensual synthetic imagery.
+The OMB disclosed 3,611 active or planned federal AI use cases as of April 14, a 70% increase over the final Biden-era inventory, spanning grant-application ideology screening at HHS, inmate-misconduct prediction at the Bureau of Prisons, and reactor control at the Department of Energy. The author argues most of these programs could be implemented responsibly, and that the real objections trace to the underlying policies rather than the use of automation itself.
 
-Endpoint Security Startup Ent Emerges From Stealth With $100 Million Seed Round (5 minute read)
+1Password Acquires Apono in Reported $250M-$300M Deal (1 minute read)
 
-(blurb not generated)
+1Password acquired Apono, an Israel-based just-in-time access governance startup, in a deal Calcalist reported at $250M to $300M. The acquisition extends 1Password's identity platform to broker temporary, narrowly scoped privileges for humans, machines, and AI agents, the latter tied to a human delegator and declared task intent with real-time drift monitoring.
 
 An Empirical Analysis of AI Slop in Music Streaming (5 minute read)
 
@@ -235,9 +243,17 @@ The FCC Wants to Eliminate Burner Phones (5 minute read)
 
 (blurb not generated)
 
+The Chainguard Athena coalition already shipped 2,000 patches across 500 open source projects (1 minute read)
+
+Chainguard launched Athena, an industry coalition of more than two dozen members including BNY, Cisco, Cloudflare, Docker, and JPMorganChase, that pools pre-disclosure open source vulnerability findings and remediates them under embargo. The group says it has processed over 20,000 findings and shipped 2,000 patches across 500 projects, many sourced from frontier-AI bug-hunting programs like Anthropic's Project Glasswing and OpenAI's Daybreak.
+
 UK Social Media Ban for Minors Has Privacy Experts Worried (1 minute read)
 
 The UK will ban under-16s from user-to-user social platforms like Instagram, TikTok, and X starting in early 2027, with possible limits on infinite scrolling and digital curfews for under-18s. Privacy experts warn the mandate could push platforms toward intrusive age-verification that normalizes identity collection and surveillance, mirroring bans already in force in Australia and proposed in Canada and several EU states.
+
+Apple collects every tap to deliver App Store personalized recommendations (1 minute read)
+
+Security researchers at Mysk found that Apple's App Store logs every tap users make to power its new Personalized Collections feature, capturing identifiable analytics that can even derive a user's typing speed during searches, with no setting to disable the collection. The feature began rolling out this week in the U.S., and Apple currently offers no opt-out toggle for the underlying data capture.
 
 Security and Privacy Prompts in the Wild: What Users Ask LLMs and How LLMs Respond (5 minute read)
 
@@ -247,33 +263,25 @@ Cache to the Future: A Distributed Webpage Archive for Internet Blackouts (5 min
 
 (blurb not generated)
 
-RiskIQ founders launch Ent Security with $100M to rethink endpoint defense (1 minute read)
-
-RiskIQ founders Elias Manousos and Brandon Dixon launched Ent Security with $100M to build intent-aware endpoint defense that evaluates user and AI-agent behavior at the moment of use and intervenes before risky actions complete. The lightweight on-device agent applies customer-defined policy across users, agents, applications, and data, and is already running inside Global 2000 firms in hospitality, financial services, and defense to flag insider risk and data loss.
-
 How Millions of Digital Home Devices Are Secretly Powering Cyberattacks (5 minute read)
 
 (blurb not generated)
+
+What’s new in Android 17? Anti-theft tools, scam detection, and parental controls (1 minute read)
+
+Google started rolling out Android 17 to supported Pixel devices, adding a Contact Picker for granular contact sharing, expanded on-device Live Threat Detection for behaviors like SMS forwarding and accessibility-overlay abuse, and a Find Hub "Mark as lost" mode that biometric-locks missing phones. Several protections, including real-time dynamic signal monitoring of malicious app patterns, roll out to other devices in the second half of the year.
 
 Apple is about to make Hide My Email useless (1 minute read)
 
 Apple will move Sign in with Apple and Hide My Email aliases to the @private.icloud.com subdomain, making relay addresses trivially distinguishable from regular iCloud mailboxes. The change lets services block all aliases without affecting real iCloud accounts, undermining the plausible deniability that made Hide My Email useful for privacy; existing @icloud.com aliases can still be generated until the switch lands.
 
+Windows update leaves third-party Office document launches in limbo (1 minute read)
+
+A recent Windows update broke the file-association handlers that let third-party applications launch Microsoft Office documents, leaving those apps unable to open files they previously handled. Microsoft has acknowledged the regression but not yet shipped a fix, so admins relying on non-Microsoft document workflows should hold the update or prepare a rollback until a patch lands.
+
 Apple plans to change its Hide My Email privacy feature that could make it less effective (1 minute read)
 
 Apple will move Hide My Email's anonymized addresses from @icloud.com to a distinct @private.icloud.com domain in the coming weeks, letting apps and websites identify and block the masked sign-ups the feature was designed to obscure. Existing addresses keep forwarding, but developers must update mail filtering to avoid dropping messages, and the change lands months after Apple disclosed a Hide My Email user's real identity under subpoena.
-
-India orders temporary ban on Telegram over exam fraud concerns (5 minute read)
-
-(blurb not generated)
-
-FTC warns of record $3.5 billion losses to imposter scams in 2025 (5 minute read)
-
-(blurb not generated)
-
-Cybersecurity experts blast US government for restricting Anthropic’s AI models (5 minute read)
-
-(blurb not generated)
 
 ⚡
 Quick Links
@@ -297,10 +305,6 @@ Okta expands Google Cloud partnership to secure AI agents and the browser (5 min
 Anthropic reserves right to check ID for Claude subs (5 minute read)
 
 (blurb not generated)
-
-Your package-lock.json diff is unreadable. That's a supply-chain problem. (2 minute read)
-
-locksift is a zero-dependency tool that structurally diffs npm lockfiles to surface added, removed, and major-bumped packages for supply-chain review.
 
 Exclusive: Daylight gives managed detection and response customers searchable telemetry without a SIEM (1 minute read)
 

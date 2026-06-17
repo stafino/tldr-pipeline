@@ -22,6 +22,10 @@ Three critical Fortinet sandbox bugs splattered by unknown attackers (1 minute r
 
 Fortinet disclosed three critical vulnerabilities in its FortiSandbox malware-analysis appliance, all of which unknown attackers are already exploiting in the wild. Enterprise security teams running FortiSandbox should patch immediately, since the flaws sit in a tool meant to detect threats, and active exploitation gives intruders a foothold in the part of the stack defenders rely on to catch them.
 
+Microsoft confirms Office apps launch issues after June updates (1 minute read)
+
+Microsoft confirmed that Windows updates released on or after June 9, 2026 break OLE automation, preventing third-party applications like CCH Engagement, Zotero, and dental software Dentrix from launching Office apps or opening Word, Excel, and PowerPoint documents. No fix is available yet, so Microsoft is directing affected enterprises to open documents directly or contact Support for Business for an org-wide workaround.
+
 AMD's Mext buy shows how AI could solve the RAM shortage it created (1 minute read)
 
 AMD acquired Mext, a memory-optimization startup, betting that smarter software-driven RAM tiering can ease the DRAM scarcity that AI workloads have driven to record prices. For enterprise IT buyers facing inflated server-memory costs and constrained capacity, the deal signals vendors are moving to squeeze more usable memory out of existing silicon rather than waiting on new fab supply to catch up.
@@ -46,10 +50,6 @@ Tesco is sprinting to quit VMware and Broadcom despite rapid migration risks (1 
 
 Tesco is accelerating its exit from VMware and Broadcom, pushing an aggressive migration timeline despite the operational risk of moving production workloads quickly off the virtualization stack. The retailer's sprint reflects broad enterprise backlash against Broadcom's post-acquisition VMware licensing changes, which bundled products and raised costs, pushing large customers toward alternatives like Nutanix, Proxmox, and KVM-based platforms.
 
-Cybercriminals mask malicious communications through Microsoft Teams relays (5 minute read)
-
-(blurb not generated)
-
 Non-x86 servers now nearly half the market, IDC says (5 minute read)
 
 (blurb not generated)
@@ -58,33 +58,33 @@ Salesforce buys Fin for $3.6bn (5 minute read)
 
 (blurb not generated)
 
-SimpleHelp RMM flaw could give attackers full access to managed endpoints (CVE-2026-48558) (5 minute read)
+Windows update leaves third-party Office document launches in limbo (1 minute read)
 
-(blurb not generated)
+A recent Windows update broke the ability of third-party applications to launch Office document types, leaving non-Microsoft document handlers in an inconsistent state. IT teams running mixed productivity stacks face help-desk tickets and broken file associations until Microsoft ships a fix, reinforcing the operational cost of managing apps outside the native Microsoft 365 ecosystem.
 
 Nvidia PCs don’t need cloud for AI (5 minute read)
 
 (blurb not generated)
 
-Anthropic’s new privacy policy offers US consumers a way around the Fable ban (5 minute read)
+AMD acquires MEXT to add predictive memory optimization to its AI stack (2 minute read)
 
-(blurb not generated)
+AMD acquired memory-optimization startup MEXT, adding software that uses predictive algorithms to shuttle hot data between flash and DRAM and make flash behave more like memory. The deal targets a sharp enterprise pain point: Gartner forecasts a 130% rise in combined DRAM and SSD prices by end of 2026, pushing IT buyers toward software that extends effective memory capacity without proportional hardware spend.
 
 Chrome and Firefox Updated to Patch Critical, High-Severity Vulnerabilities (1 minute read)
 
 Google and Mozilla shipped browser updates patching more than 70 vulnerabilities across Chrome and Firefox, including critical use-after-free memory bugs that could enable remote code execution and sandbox escape. Chrome 149 fixes 33 defects and Firefox 152 fixes 40, with Mozilla also updating Firefox ESR, Thunderbird, and Firefox for iOS, making this a broad patch cycle for IT teams managing fleet browser deployments.
 
+Windows and Linux users: The deadline to update Secure Boot keys is near (1 minute read)
+
+Three Microsoft-signed Secure Boot certificates expire on June 24, after which firmware and OS components verified against them will no longer chain to a trusted root unless administrators provision the updated keys. IT teams that miss the window risk boot failures or Secure Boot fallback on Windows and Linux fleets, reopening the door to UEFI bootkits that load before the OS and survive reinstalls.
+
 Salesforce to buy AI customer service platform Fin for $3.6 billion to boost agentic offerings (1 minute read)
 
 Salesforce agreed to acquire AI customer service platform Fin, formerly Intercom, for about $3.6B to extend its Agentforce lineup, with the deal expected to close in Q4 of fiscal 2027. Fin brings an AI agent that resolves chat, email, WhatsApp, SMS, phone, and Slack queries on its proprietary Apex model, giving Salesforce more agentic deployment options as it defends its SaaS stack against AI-native rivals.
 
-SimpleHelp bug lets hackers create rogue remote support accounts (5 minute read)
+HPE Discover: Neri outlines an AI architecture built for agents (3 minute read)
 
-(blurb not generated)
-
-Google exposes China espionage group that’s been lurking in networks undetected since 2023 (5 minute read)
-
-(blurb not generated)
+At HPE Discover 2026, CEO Antonio Neri detailed an agent-oriented AI architecture spanning the full stack, including Private Cloud AI scaling to 256 GPUs, the Juniper-derived networking refresh, and the MCP-native Alletra MPX 10,000 storage layer. The pitch adds agentic governance controls like zero-code agent registration, a three-tier identity model, and Zerto rollback, positioning HPE's Juniper-integrated portfolio against Dell and Nutanix for enterprise agent infrastructure.
 
 🧠
 Analysis & Opinions
@@ -101,9 +101,17 @@ From data residency to digital sovereignty: Architectural patterns for  cloud na
 
 (blurb not generated)
 
-The checklist problem behind critical infrastructure cyber safety (5 minute read)
+Who owns the control plane? Google Cloud Next 2026 and the real contest in agentic AI (3 minute read)
 
-(blurb not generated)
+The author argues the real enterprise AI contest has shifted from model selection to ownership of the agentic control plane, the semantic context layer that decides what agents know, what they can do, and who is accountable. The strategic warning is lock-in: Gartner expects 40% of enterprise apps to embed agents by end of 2026 but over 40% of agentic projects to be canceled by 2027, so enterprises that don't own their own ontology cede governance to whichever vendor controls that layer.
+
+5 things CIOs must do as sovereignty becomes a design constraint (2 minute read)
+
+Geographic location has shifted from a deployment detail to a core architectural constraint, as CIOs reweight sourcing decisions around geopolitical risk, AI regulation, and data residency rather than total cost of ownership. The piece argues enterprises aren't abandoning hyperscalers but are redesigning how they use them, treating sovereign cloud options and cross-border data flows as first-order design variables. The practical takeaway: build a regional regulatory map into architecture reviews before consolidating further on any single global platform.
+
+Flash pricing — the elephant in the room for enterprise storage (2 minute read)
+
+The author argues that the decade-long vendor narrative of flash reaching pricing parity with HDDs was never true, and AI workloads have exposed it. Large AI datasets, object storage, and pre-compressed data deliver far lower data-reduction ratios than the "effective capacity" math assumed, while hyperscaler NAND buying squeezes SSD supply. Everpure's (formerly Pure Storage) CEO citing a third supply-chain disruption to justify price hikes signals enterprises should keep cheap HDDs in the mix rather than commit all-flash.
 
 There's no such thing as an agentic CPU (5 minute read)
 
@@ -160,9 +168,13 @@ Carrier Link for Google Voice (5 minute read)
 
 (blurb not generated)
 
-RiskIQ founders launch Ent Security with $100M to rethink endpoint defense (5 minute read)
+Jamf announces new native AI Governance control plane for macOS (1 minute read)
 
-(blurb not generated)
+Jamf announced AI Governance, a capability in Jamf Pro that gives IT and security teams OS-level visibility and policy control over generative AI tools running on managed Macs, including local models, developer tools, and Model Context Protocol servers. The native approach closes a gap network proxies and cross-platform endpoint tools miss on Apple Silicon, where AI apps run as background processes, and arrives as Gartner projects AI governance spending to pass $1B by 2030.
+
+SentinelOne turns Purple AI loose to investigate threats on its own (1 minute read)
+
+SentinelOne opened its Purple AI Agentic Investigations capability to all Singularity Platform customers, adding zero-click autonomous threat investigation that detects, triages, and moves to contain threats without an analyst launching it. The feature runs on existing endpoint, identity, and cloud telemetry with adjustable human-in-the-loop controls, and arrives alongside Singularity Credits, a unified currency customers draw down for AI work across the platform.
 
 HPE steers more Juniper Networks self-driving tech into its stack (1 minute read)
 
@@ -171,6 +183,10 @@ HPE expanded its Juniper-derived self-driving networking across its portfolio, e
 Introducing new Explores and Merge Queries in Looker (5 minute read)
 
 (blurb not generated)
+
+Meet the new Google Home Speaker, built for Gemini (1 minute read)
+
+Google released the Google Home Speaker, its first audio device built for Gemini, available for pre-order at $99.99 and shipping June 25. The Gemini for Home assistant handles multi-step commands, mid-sentence corrections, and conversational follow-ups, extending Google's Gemini footprint into the home-audio hardware that competes with Amazon Echo and Apple HomePod.
 
 Microsoft announces 12th-gen Surface Pro with Snapdragon X2 processors (5 minute read)
 
@@ -183,14 +199,6 @@ HPE AI Factory adds features to improve your experience with agents (5 minute re
 Gemini in Chrome expands to more languages and regions, including Latin America, Africa, and the Middle East (1 minute read)
 
 Google expanded Gemini in Chrome to more languages and regions, including Latin America, Africa, and the Middle East, bringing tab summarization, content generation, and Gemini Live voice chat to all Workspace plans on ChromeOS, macOS, and Windows. The feature is on by default for eligible domains, so IT admins must opt out at the domain, OU, or group level if they want to gate browser-native AI access.
-
-HSBC Expects Over $100 Million Gains From Using Google AI Tools (5 minute read)
-
-(blurb not generated)
-
-Microsoft’s new Surface Pro 12 is its best 2-in-1 PC yet, but also its most expensive (1 minute read)
-
-Microsoft announced the Surface Pro 12, a 13-inch 2-in-1 built on Qualcomm's Snapdragon X2 chips with up to 53% faster graphics and 15.5 hours of battery life. The base configuration now starts at $1,499 with 16GB of RAM and 256GB of storage, a $500 jump over the 11th Edition driven partly by industry-wide LPDDR5x cost increases.
 
 ⚡
 Quick Links
@@ -208,10 +216,6 @@ HPE offers VMware refugees a year off the meter (5 minute read)
 (blurb not generated)
 
 HPE expands Private Cloud AI factory portfolio to support next-gen autonomous agents (5 minute read)
-
-(blurb not generated)
-
-Beyond Identity launches Ceros AI agent security platform (5 minute read)
 
 (blurb not generated)
 
