@@ -19,6 +19,7 @@ const COPY = [
   ['data/scored', 'data/scored', /\.jsonl$/],
   ['data/blurbs', 'data/blurbs', /\.jsonl$/],
   ['data/backtest', 'data/backtest', /\.json$/],
+  ['data/funding', 'data/funding', /\.jsonl$/],
 ];
 
 function copyFile(src, dst) {
