@@ -1,12 +1,16 @@
+import Link from 'next/link';
 import {
+  indexBlurbs,
   listAvailableDates,
   listFundingDates,
+  loadBlurbsAll,
   loadFunding,
   loadFundingAll,
 } from '@/lib/data';
 import Nav from '@/components/Nav';
 import DatePicker from '@/components/DatePicker';
-import type { FundingRound } from '@/lib/types';
+import FundingDetailPane from '@/components/FundingDetailPane';
+import type { Blurb, FundingRound } from '@/lib/types';
 
 export const dynamic = 'force-dynamic';
 
@@ -18,22 +22,27 @@ function formatAmount(usd: number | null, raw: string): string {
   return `$${usd}`;
 }
 
-function formatValuation(usd: number | null): string {
-  if (!usd) return '';
-  if (usd >= 1_000_000_000) return `$${(usd / 1_000_000_000).toFixed(usd >= 10_000_000_000 ? 0 : 1)}B`;
-  if (usd >= 1_000_000) return `$${Math.round(usd / 1_000_000)}M`;
-  return `$${usd}`;
-}
-
-function Row({ r }: { r: FundingRound }) {
+function Row({
+  r,
+  selected,
+  hrefQuery,
+}: {
+  r: FundingRound;
+  selected: boolean;
+  hrefQuery: string;
+}) {
   return (
-    <a
-      href={r.story_url}
-      target="_blank"
-      rel="noopener"
-      className="block border-b border-border py-3 hover:bg-surface transition-colors"
+    <Link
+      href={hrefQuery}
+      scroll={false}
+      className={
+        'block border-b border-border py-3 px-3 cursor-pointer transition-colors ' +
+        (selected
+          ? 'bg-accent-soft border-l-2 border-l-accent pl-2.5'
+          : 'hover:bg-surface')
+      }
     >
-      <div className="flex items-baseline gap-3 px-3">
+      <div className="flex items-baseline gap-3">
         <span className="font-mono text-[13px] font-bold text-warn shrink-0 w-[68px]">
           {formatAmount(r.amount_usd, r.amount_raw)}
         </span>
@@ -47,36 +56,38 @@ function Row({ r }: { r: FundingRound }) {
                 {r.round_label}
               </span>
             )}
-            {r.valuation_usd ? (
-              <span className="font-mono text-[10.5px] text-ok">
-                @ {formatValuation(r.valuation_usd)} val
-              </span>
-            ) : null}
             {r.country && (
               <span className="font-mono text-[10.5px] text-text-mute">· {r.country}</span>
             )}
           </div>
           {r.investors.length > 0 && (
-            <div className="text-[11px] text-text-dim mt-0.5">
-              {r.investors.slice(0, 4).join(', ')}
-              {r.investors.length > 4 ? `, +${r.investors.length - 4} more` : ''}
+            <div className="text-[11px] text-text-dim mt-0.5 truncate">
+              {r.investors.slice(0, 3).join(', ')}
+              {r.investors.length > 3 ? `, +${r.investors.length - 3}` : ''}
             </div>
           )}
-          <div className="text-[10.5px] text-text-mute mt-0.5 truncate">{r.title}</div>
         </div>
       </div>
-    </a>
+    </Link>
   );
 }
 
-function Column({ label, rows }: { label: string; rows: FundingRound[] }) {
+function Column({
+  label,
+  rows,
+  selectedUrl,
+  hrefForRow,
+}: {
+  label: string;
+  rows: FundingRound[];
+  selectedUrl?: string;
+  hrefForRow: (r: FundingRound) => string;
+}) {
   const total = rows.reduce((sum, r) => sum + (r.amount_usd ?? 0), 0);
   return (
     <div>
       <div className="flex items-baseline gap-3 pb-2 mb-1 border-b border-border-strong px-3">
-        <h2 className="text-[12px] uppercase tracking-[0.08em] font-bold text-warn m-0">
-          {label}
-        </h2>
+        <h2 className="text-[12px] uppercase tracking-[0.08em] font-bold text-warn m-0">{label}</h2>
         <span className="text-[11px] text-text-mute ml-auto font-mono">
           {rows.length} {rows.length === 1 ? 'round' : 'rounds'}
           {total > 0 ? ` · ${formatAmount(total, '')} total` : ''}
@@ -87,7 +98,14 @@ function Column({ label, rows }: { label: string; rows: FundingRound[] }) {
           No {label} rounds for this date.
         </div>
       ) : (
-        rows.map((r) => <Row key={r.story_url} r={r} />)
+        rows.map((r) => (
+          <Row
+            key={r.story_url}
+            r={r}
+            selected={selectedUrl === r.story_url}
+            hrefQuery={hrefForRow(r)}
+          />
+        ))
       )}
     </div>
   );
@@ -96,7 +114,7 @@ function Column({ label, rows }: { label: string; rows: FundingRound[] }) {
 export default function FundingPage({
   searchParams,
 }: {
-  searchParams: { date?: string };
+  searchParams: { date?: string; story?: string };
 }) {
   const dates = listFundingDates();
 
@@ -114,9 +132,31 @@ export default function FundingPage({
 
   const selectedDate = searchParams.date ?? dates[0];
   const rounds = selectedDate === 'All' ? loadFundingAll(dates) : loadFunding(selectedDate);
-
   const eu = rounds.filter((r) => r.region === 'EU');
   const na = rounds.filter((r) => r.region === 'NA');
+
+  // Build a (story_url → blurb) index across every newsletter for the same
+  // scrape window we're loading rounds for. A funding story is typically
+  // blurbed for tldr_founders or tldr_fintech (sometimes both); we pick
+  // whichever blurb shows up first.
+  const blurbScopeDates = selectedDate === 'All' ? dates : listAvailableDates();
+  const allBlurbs: Blurb[] = loadBlurbsAll(blurbScopeDates);
+  const blurbByUrl = new Map<string, Blurb>();
+  for (const b of allBlurbs) {
+    if (!blurbByUrl.has(b.story_url)) blurbByUrl.set(b.story_url, b);
+  }
+
+  const selectedRound = searchParams.story
+    ? rounds.find((r) => r.story_url === searchParams.story) ?? null
+    : null;
+  const selectedBlurb = selectedRound ? blurbByUrl.get(selectedRound.story_url) : undefined;
+
+  function hrefForRow(r: FundingRound): string {
+    const next = new URLSearchParams();
+    if (selectedDate !== dates[0]) next.set('date', selectedDate);
+    next.set('story', r.story_url);
+    return '?' + next.toString();
+  }
 
   return (
     <main>
@@ -127,9 +167,12 @@ export default function FundingPage({
           {rounds.length} rounds · EU {eu.length} · NA {na.length}
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-5 py-5">
-        <Column label="🇪🇺 Europe" rows={eu} />
-        <Column label="🇺🇸 North America" rows={na} />
+      <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,_1fr)_minmax(0,_1fr)_minmax(0,_1fr)] gap-6 px-5 py-5">
+        <Column label="🇪🇺 Europe" rows={eu} selectedUrl={selectedRound?.story_url} hrefForRow={hrefForRow} />
+        <Column label="🇺🇸 North America" rows={na} selectedUrl={selectedRound?.story_url} hrefForRow={hrefForRow} />
+        <div className="lg:border-l lg:border-border lg:pl-6 lg:sticky lg:top-0 lg:self-start lg:max-h-screen lg:overflow-y-auto">
+          <FundingDetailPane round={selectedRound} blurb={selectedBlurb} />
+        </div>
       </div>
     </main>
   );
