@@ -244,38 +244,58 @@ function buildIssueHtml(
   // Inline styles only — Gmail, Apple Mail and Outlook all strip <style>
   // blocks but keep style="..." attributes on individual elements.
   //
-  // Spacing here is calibrated to match the actual TLDR newsletter
-  // 1:1: centered bold date header, generous 40px gap before each
-  // section, 32px section emoji centered with the bold section name
-  // tight under it, 20px gap between title and blurb, 40px gap
-  // between stories.
+  // Cross-client gotchas this version addresses:
+  // - Outlook (Windows) ignores font inheritance through <div>, so every
+  //   <p> repeats the font-family + size.
+  // - Gmail collapses top-level margins between <div>s erratically, so
+  //   gaps are produced by explicit empty spacer divs with fixed heights
+  //   instead of margin-bottom on the previous element.
+  // - Gmail rewrites visited <a> colors. Wrapping the link text in an
+  //   inner <span> with an explicit color prevents the recolor.
+  // - Emoji rendering varies — wrap each emoji in its own font stack so
+  //   Gmail-on-Windows falls back to Segoe UI Emoji instead of boxes.
   const FONT =
     "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif";
+  const EMOJI_FONT =
+    "'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif";
+  const P = `font-family:${FONT};font-size:15px;line-height:1.55;color:#111;`;
+  const spacer = (h: number) =>
+    `<div style="height:${h}px;line-height:${h}px;font-size:1px;">&nbsp;</div>`;
+
   const parts: string[] = [];
   parts.push(
-    `<div style="font-family:${FONT};font-size:15px;line-height:1.55;color:#111;max-width:640px;margin:0 auto;">`,
+    `<div style="font-family:${FONT};font-size:15px;line-height:1.55;color:#111;max-width:640px;margin:0 auto;padding:0;">`,
   );
   parts.push(
-    `<div style="text-align:center;font-size:18px;font-weight:700;margin:0 0 40px;">${esc(brand)} ${esc(date)}</div>`,
+    `<div style="${P}text-align:center;font-size:22px;font-weight:700;">${esc(brand)} ${esc(date)}</div>`,
   );
+  parts.push(spacer(40));
+
   for (const sec of sections) {
     const items = bySection[sec.id] ?? [];
     if (items.length === 0) continue;
     parts.push(
-      `<div style="text-align:center;font-size:32px;line-height:1;margin:40px 0 8px;">${esc(sec.emoji)}</div>`,
+      `<div style="text-align:center;font-size:32px;line-height:1;"><span style="font-family:${EMOJI_FONT};">${esc(sec.emoji)}</span></div>`,
     );
+    parts.push(spacer(8));
     parts.push(
-      `<div style="text-align:center;font-size:14px;font-weight:700;letter-spacing:0.02em;margin:0 0 28px;">${esc(sec.name)}</div>`,
+      `<div style="${P}text-align:center;font-size:14px;font-weight:700;text-transform:uppercase;">${esc(sec.name)}</div>`,
     );
-    for (const it of items) {
-      const link = `<a href="${esc(it.url)}" style="color:#111;font-weight:700;text-decoration:underline;">${esc(it.title)} (${it.minute_read} minute read)</a>`;
-      parts.push(`<p style="margin:0 0 16px;">${link}</p>`);
+    parts.push(spacer(28));
+    for (let i = 0; i < items.length; i++) {
+      const it = items[i];
+      const linkText = `<span style="color:#111;">${esc(it.title)} (${it.minute_read} minute read)</span>`;
+      const link = `<a href="${esc(it.url)}" style="color:#111;font-weight:700;text-decoration:underline;">${linkText}</a>`;
+      parts.push(`<p style="${P}margin:0;">${link}</p>`);
+      parts.push(spacer(20));
       if (it.blurb) {
-        parts.push(`<p style="margin:0 0 40px;">${esc(it.blurb)}</p>`);
+        parts.push(`<p style="${P}margin:0;">${esc(it.blurb)}</p>`);
       } else {
-        parts.push(`<p style="margin:0 0 40px;color:#999;">(blurb not generated)</p>`);
+        parts.push(`<p style="${P}margin:0;color:#999;">(blurb not generated)</p>`);
       }
+      if (i < items.length - 1) parts.push(spacer(40));
     }
+    parts.push(spacer(40));
   }
   parts.push(`</div>`);
   return parts.join('\n');
