@@ -29,7 +29,7 @@ const BLURBS_DIR = path.join(REPO_ROOT, 'data', 'blurbs');
 const BACKTEST_DIR = path.join(REPO_ROOT, 'data', 'backtest');
 const NEWSLETTERS_PATH = path.join(REPO_ROOT, 'config', 'newsletters.yaml');
 
-/** All dates we have scored or blurb data for, newest first. */
+/** All scrape file dates we have scored or blurb data for, newest first. */
 export function listAvailableDates(): string[] {
   const dates = new Set<string>();
   for (const dir of [SCORED_DIR, BLURBS_DIR]) {
@@ -39,6 +39,45 @@ export function listAvailableDates(): string[] {
     }
   }
   return Array.from(dates).sort().reverse();
+}
+
+/**
+ * All UTC publish dates that appear across loaded scored data, newest first.
+ * Used to power the "Filter by date" dropdown — picks the day a story was
+ * published, not the day the scraper happened to fetch it.
+ */
+export function listPublishedDates(): string[] {
+  const scrapeDates = listAvailableDates();
+  const dates = new Set<string>();
+  for (const d of scrapeDates) {
+    for (const s of loadScored(d)) {
+      const pub = s.story?.published_at;
+      if (typeof pub === 'string' && pub.length >= 10) {
+        dates.add(pub.slice(0, 10));
+      }
+    }
+  }
+  return Array.from(dates).sort().reverse();
+}
+
+/** Keep only stories whose UTC publish date matches `date`. */
+export function filterByPublishedDate<T extends { story: { published_at?: string } }>(
+  items: T[],
+  date: string,
+): T[] {
+  return items.filter(
+    (s) =>
+      typeof s.story?.published_at === 'string' &&
+      s.story.published_at.slice(0, 10) === date,
+  );
+}
+
+/** Keep only blurbs whose story_url is in `urls`. */
+export function filterBlurbsByStoryUrls<T extends { story_url: string }>(
+  blurbs: T[],
+  urls: Set<string>,
+): T[] {
+  return blurbs.filter((b) => urls.has(b.story_url));
 }
 
 function readJsonl<T>(filePath: string): T[] {

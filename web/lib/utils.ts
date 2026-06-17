@@ -13,9 +13,16 @@ export function shortDate(iso: string | undefined, targetYear: number): string {
   if (!iso) return '';
   const dt = new Date(iso);
   if (Number.isNaN(dt.getTime())) return '';
-  const opts: Intl.DateTimeFormatOptions = { month: 'short', day: 'numeric' };
-  const base = new Intl.DateTimeFormat('en-US', opts).format(dt);
-  return dt.getFullYear() === targetYear ? base : `${base}, ${dt.getFullYear()}`;
+  // Render in UTC so the row label matches the UTC-keyed "Filter by date" bucket.
+  const base = new Intl.DateTimeFormat('en-US', {
+    month: 'short',
+    day: 'numeric',
+    timeZone: 'UTC',
+  }).format(dt);
+  const year = Number(
+    new Intl.DateTimeFormat('en-US', { year: 'numeric', timeZone: 'UTC' }).format(dt),
+  );
+  return year === targetYear ? base : `${base}, ${year}`;
 }
 
 export function clamp(n: number, lo: number, hi: number): number {

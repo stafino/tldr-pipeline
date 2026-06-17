@@ -4,22 +4,20 @@ import { useRouter, useSearchParams } from 'next/navigation';
 
 const WEEKDAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
-function todayISO(): string {
-  const d = new Date();
-  const y = d.getFullYear();
-  const m = String(d.getMonth() + 1).padStart(2, '0');
-  const day = String(d.getDate()).padStart(2, '0');
-  return `${y}-${m}-${day}`;
+function todayUTCISO(): string {
+  return new Date().toISOString().slice(0, 10);
 }
 
 function fmtLabel(iso: string): string {
   if (iso === 'All') return 'All dates';
-  const today = todayISO();
-  const d = new Date(iso + 'T00:00:00');
-  const dd = String(d.getDate()).padStart(2, '0');
-  const mm = String(d.getMonth() + 1).padStart(2, '0');
-  const yyyy = d.getFullYear();
-  const weekday = WEEKDAYS[d.getDay()];
+  const today = todayUTCISO();
+  // Parse the iso (YYYY-MM-DD) as a UTC date so weekday math stays
+  // consistent with the UTC publish-date filter buckets.
+  const d = new Date(iso + 'T00:00:00Z');
+  const dd = iso.slice(8, 10);
+  const mm = iso.slice(5, 7);
+  const yyyy = iso.slice(0, 4);
+  const weekday = WEEKDAYS[d.getUTCDay()];
   const human = `${dd}-${mm}-${yyyy}`;
   if (iso === today) return `Today · ${human}`;
   return `${weekday} · ${human}`;

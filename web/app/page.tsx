@@ -1,11 +1,12 @@
 import {
   defaultNewsletterId,
+  filterBlurbsByStoryUrls,
+  filterByPublishedDate,
   indexBlurbs,
   listAvailableDates,
-  loadBlurbs,
+  listPublishedDates,
   loadBlurbsAll,
   loadNewsletters,
-  loadScored,
   loadScoredAll,
   topPerSection,
 } from '@/lib/data';
@@ -26,7 +27,8 @@ interface Search {
 }
 
 export default function Page({ searchParams }: { searchParams: Search }) {
-  const dates = listAvailableDates();
+  const scrapeDates = listAvailableDates();
+  const dates = listPublishedDates();
   const newsletters = loadNewsletters();
   const nlIds = Object.keys(newsletters);
 
@@ -44,15 +46,21 @@ export default function Page({ searchParams }: { searchParams: Search }) {
   const selectedDate = searchParams.date ?? dates[0];
   const selectedNl = searchParams.nl ?? defaultNewsletterId();
 
-  // Load data based on date selector
+  // Always load across every scrape file, then filter by the story's UTC
+  // publish date — so "Filter by date" means *published on this day*, not
+  // "scraped on this day". A story published Jun 16 that the cron fetched
+  // on Jun 17 stays under Jun 16.
+  const scoredAll = loadScoredAll(scrapeDates);
+  const blurbsAll = loadBlurbsAll(scrapeDates);
   let scored: any[];
   let blurbs: any[];
   if (selectedDate === 'All') {
-    scored = loadScoredAll(dates);
-    blurbs = loadBlurbsAll(dates);
+    scored = scoredAll;
+    blurbs = blurbsAll;
   } else {
-    scored = loadScored(selectedDate);
-    blurbs = loadBlurbs(selectedDate);
+    scored = filterByPublishedDate(scoredAll, selectedDate);
+    const urls = new Set(scored.map((s) => s.story.url));
+    blurbs = filterBlurbsByStoryUrls(blurbsAll, urls);
   }
   const blurbIdx = indexBlurbs(blurbs);
 

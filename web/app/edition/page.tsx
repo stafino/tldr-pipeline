@@ -1,10 +1,13 @@
 import {
   defaultNewsletterId,
+  filterBlurbsByStoryUrls,
+  filterByPublishedDate,
   indexBlurbs,
   listAvailableDates,
-  loadBlurbs,
+  listPublishedDates,
+  loadBlurbsAll,
   loadNewsletters,
-  loadScored,
+  loadScoredAll,
 } from '@/lib/data';
 import { canonicalDomain } from '@/lib/utils';
 import Nav from '@/components/Nav';
@@ -19,7 +22,8 @@ export default function EditionPage({
 }: {
   searchParams: { date?: string; nl?: string };
 }) {
-  const dates = listAvailableDates();
+  const scrapeDates = listAvailableDates();
+  const dates = listPublishedDates();
   const newsletters = loadNewsletters();
   const nlIds = Object.keys(newsletters);
 
@@ -32,14 +36,16 @@ export default function EditionPage({
     );
   }
 
-  // Edition is always day-scoped (you publish one issue per day)
+  // Edition is always day-scoped (you publish one issue per day) — and the day
+  // is the story's UTC publish date, not the scraper's fetch day.
   const requested = searchParams.date && searchParams.date !== 'All' ? searchParams.date : dates[0];
   const selectedDate = dates.includes(requested) ? requested : dates[0];
   const selectedNl = searchParams.nl ?? defaultNewsletterId();
   const nl = newsletters[selectedNl];
 
-  const scored = loadScored(selectedDate);
-  const blurbs = loadBlurbs(selectedDate);
+  const scored = filterByPublishedDate(loadScoredAll(scrapeDates), selectedDate);
+  const urls = new Set(scored.map((s) => s.story.url));
+  const blurbs = filterBlurbsByStoryUrls(loadBlurbsAll(scrapeDates), urls);
   const blurbIdx = indexBlurbs(blurbs);
 
   // Build approved stories per section (filtering happens client-side because
