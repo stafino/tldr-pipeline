@@ -1,9 +1,37 @@
 {
   "date": "2026-06-17",
   "newsletter": "tldr_infosec",
-  "fetched_at": "2026-06-17T06:49:30.264817+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-06-17T14:17:08.726663+00:00",
+  "tldr_titles": [
+    "Cardiac patients' medical data stolen and held to ransom",
+    "Google Vertex AI SDK Flaw Let Attackers Hijack Model Uploads via Bucket Squatting",
+    "Malicious JetBrains Marketplace Plugins Steal AI API Keys From Developers",
+    "The Beginning of the End of Social Engineering",
+    "I Could've Rickrolled the Entire FIFA World Cup. All I Needed Was My ID",
+    "Phishing for Lobsters: How We Tricked OpenClaw into Spilling Secrets",
+    "AWS WAF adds AI traffic monetization capability to help content owners charge AI bots for content access",
+    "White House Issues Memo to Bolster NSS Cybersecurity",
+    "Users cry foul after AMD stripped memory crypto from its consumer CPUs",
+    "How Old Are You Really? Inside Roblox's New Campaign To Verify User Ages",
+    "Apple is about to make Hide My Email useless",
+    "Copilot 'SearchLeak' Attack Allows 1-Click Data Theft",
+    "GrapheneOS has been ported to Android 17 and official releases are coming soon"
+  ],
+  "tldr_matched": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true,
+    false,
+    true,
+    false,
+    true
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -24,8 +52,8 @@
     {
       "rank": 3,
       "score": 82.0,
-      "title": "Malicious JetBrains Marketplace plugins steal AI API keys from developers",
-      "url": "https://www.bleepingcomputer.com/news/security/malicious-jetbrains-marketplace-plugins-steal-ai-api-keys-from-developers/",
+      "title": "144 Mastra npm Packages Compromised via Hijacked Contributor Account",
+      "url": "https://thehackernews.com/2026/06/144-mastra-npm-packages-compromised-via.html",
       "matched_tldr_idx": null,
       "similarity": null
     },
@@ -48,29 +76,13 @@
     {
       "rank": 6,
       "score": 81.0,
-      "title": "OptinMonster WordPress plugin hacked in CDN supply-chain attack",
-      "url": "https://www.bleepingcomputer.com/news/security/optinmonster-wordpress-plugin-hacked-in-cdn-supply-chain-attack/",
+      "title": "CISA Warns of Actively Exploited Joomla JCE Flaw Allowing PHP Code Execution",
+      "url": "https://thehackernews.com/2026/06/cisa-warns-of-actively-exploited-joomla.html",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
       "rank": 7,
-      "score": 81.0,
-      "title": "Cybercriminals mask malicious communications through Microsoft Teams relays",
-      "url": "https://www.helpnetsecurity.com/2026/06/16/dragonforce-microsoft-teams-malware-backdoor-turn/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 8,
-      "score": 81.0,
-      "title": "SimpleHelp RMM flaw could give attackers full access to managed endpoints (CVE-2026-48558)",
-      "url": "https://www.helpnetsecurity.com/2026/06/16/simplehelp-rmm-cve-2026-48558/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 9,
       "score": 80.0,
       "title": "Steam Workshop abused to spread malware via Wallpaper Engine app",
       "url": "https://www.bleepingcomputer.com/news/security/steam-workshop-abused-to-spread-malware-via-wallpaper-engine-app/",
@@ -78,7 +90,15 @@
       "similarity": null
     },
     {
-      "rank": 10,
+      "rank": 8,
+      "score": 80.0,
+      "title": "AMD silently removes memory encryption from consumer Ryzen CPUs, leaving users unaware that they may be vulnerable \u2014 security feature vanishes after newer AGESA firmware, AMD engineers go radio silent when pressed about the change",
+      "url": "https://www.tomshardware.com/pc-components/cpus/amd-silently-removes-memory-encryption-from-consumer-ryzen-cpus-leaving-users-unaware-that-they-may-be-vulnerable-security-feature-vanishes-after-newer-agesa-firmware-amd-engineers-go-radio-silent-when-pressed-about-the-change",
+      "matched_tldr_idx": 8,
+      "similarity": 0.729073166847229
+    },
+    {
+      "rank": 9,
       "score": 80.0,
       "title": "A backdoor in a LinkedIn job offer",
       "url": "https://roman.pt/posts/linkedin-backdoor/",
@@ -86,7 +106,7 @@
       "similarity": null
     },
     {
-      "rank": 11,
+      "rank": 10,
       "score": 79.0,
       "title": "Windows version of SprySOCKS Linux malware used to attack govt orgs",
       "url": "https://www.bleepingcomputer.com/news/security/windows-version-of-sprysocks-linux-malware-used-to-attack-govt-orgs/",
@@ -94,15 +114,7 @@
       "similarity": null
     },
     {
-      "rank": 12,
-      "score": 79.0,
-      "title": "SimpleHelp bug lets hackers create rogue remote support accounts",
-      "url": "https://www.bleepingcomputer.com/news/security/simplehelp-bug-lets-hackers-create-rogue-remote-support-accounts/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 13,
+      "rank": 11,
       "score": 79.0,
       "title": "Three critical Fortinet sandbox bugs splattered by unknown attackers",
       "url": "https://www.theregister.com/security/2026/06/16/three-critical-fortinet-sandbox-bugs-splattered-by-unknown-attackers/5256461",
@@ -110,7 +122,7 @@
       "similarity": null
     },
     {
-      "rank": 14,
+      "rank": 12,
       "score": 79.0,
       "title": "Bug in FIFA World Cup internal system gave anyone ability to modify TV stream",
       "url": "https://techcrunch.com/2026/06/16/bug-in-fifa-world-cup-internal-system-gave-anyone-ability-to-modify-tv-stream/",
@@ -118,15 +130,15 @@
       "similarity": null
     },
     {
-      "rank": 15,
-      "score": 79.0,
-      "title": "Atomic Arch Supply Chain Attack Hits 1,500 AUR Packages",
-      "url": "https://www.securityweek.com/atomic-arch-supply-chain-attack-hits-1500-aur-packages/",
+      "rank": 13,
+      "score": 78.0,
+      "title": "CISA orders feds to patch max severity Joomla plugin flaw by Friday",
+      "url": "https://www.bleepingcomputer.com/news/security/cisa-orders-feds-to-patch-max-severity-joomla-plugin-flaw-by-friday/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 16,
+      "rank": 14,
       "score": 78.0,
       "title": "CISA warns of another cPanel plugin flaw exploited in attacks",
       "url": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-another-actively-exploited-cpanel-plugin-flaw/",
@@ -134,7 +146,7 @@
       "similarity": null
     },
     {
-      "rank": 17,
+      "rank": 15,
       "score": 78.0,
       "title": "Cisco SD-WAN make-me-root bug under attack",
       "url": "https://www.theregister.com/patches/2026/06/15/cisco-sd-wan-make-me-root-bug-under-attack/5255916",
@@ -142,7 +154,15 @@
       "similarity": null
     },
     {
-      "rank": 18,
+      "rank": 16,
+      "score": 78.0,
+      "title": "3 Recently Patched Fortinet FortiSandbox Vulnerabilities in Hacker Crosshairs",
+      "url": "https://www.securityweek.com/3-recently-patched-fortinet-fortisandbox-vulnerabilities-in-hacker-crosshairs/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 17,
       "score": 77.0,
       "title": "New Rokarolla Android Malware Steals PINs, SMS Codes, and Crypto Wallet Funds",
       "url": "https://thehackernews.com/2026/06/new-rokarolla-android-malware-steals.html",
@@ -150,18 +170,26 @@
       "similarity": null
     },
     {
+      "rank": 18,
+      "score": 77.0,
+      "title": "Public and Private Medical Community Targeted by China-Nexus Threat Actor Pursuing Artificial Intelligence, Cyber, Medical, and National Defense Research",
+      "url": "https://cloud.google.com/blog/topics/threat-intelligence/prc-targets-us-medical-research/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
       "rank": 19,
       "score": 77.0,
-      "title": "Cisco fixes SD-WAN vManage flaw exploited in zero-day attacks",
-      "url": "https://www.bleepingcomputer.com/news/security/cisco-fixes-sd-wan-vmanage-flaw-exploited-in-zero-day-attacks/",
+      "title": "Chrome and Firefox Updated to Patch Critical, High-Severity Vulnerabilities",
+      "url": "https://www.securityweek.com/chrome-and-firefox-updated-to-patch-critical-high-severity-vulnerabilities/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
       "rank": 20,
       "score": 77.0,
-      "title": "Public and Private Medical Community Targeted by China-Nexus Threat Actor Pursuing Artificial Intelligence, Cyber, Medical, and National Defense Research",
-      "url": "https://cloud.google.com/blog/topics/threat-intelligence/prc-targets-us-medical-research/",
+      "title": "Joomla, LiteSpeed Vulnerabilities Exploited in Attacks",
+      "url": "https://www.securityweek.com/joomla-litespeed-vulnerabilities-exploited-in-attacks/",
       "matched_tldr_idx": null,
       "similarity": null
     },
@@ -170,8 +198,8 @@
       "score": 76.0,
       "title": "GrapheneOS has been ported to Android 17",
       "url": "https://discuss.grapheneos.org/d/36469-grapheneos-has-been-ported-to-android-17-and-official-releases-are-coming-soon",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 12,
+      "similarity": 1.0
     },
     {
       "rank": 22,
@@ -199,14 +227,6 @@
     },
     {
       "rank": 25,
-      "score": 71.0,
-      "title": "Microsoft AntiSSRF open-source library helps block server-side request forgery",
-      "url": "https://www.helpnetsecurity.com/2026/06/17/microsoft-antissrf-open-source-library/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 26,
       "score": 70.0,
       "title": "UK to require ID or face scan before you can make social media accounts",
       "url": "https://www.bleepingcomputer.com/news/security/uk-to-require-id-or-face-scan-before-you-can-make-social-media-accounts/",
@@ -214,15 +234,7 @@
       "similarity": null
     },
     {
-      "rank": 27,
-      "score": 69.0,
-      "title": "DOJ seizes CFAKE, SOCFAKE deepfake nude sites under TAKE IT DOWN Act",
-      "url": "https://www.bleepingcomputer.com/news/security/doj-seizes-cfake-socfake-deepfake-nude-sites-under-take-it-down-act/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 28,
+      "rank": 26,
       "score": 68.0,
       "title": "ShellGames: Speculative LLM-Driven SSH Deception",
       "url": "http://arxiv.org/abs/2606.17986v1",
@@ -230,7 +242,7 @@
       "similarity": null
     },
     {
-      "rank": 29,
+      "rank": 27,
       "score": 68.0,
       "title": "OTRO: Oblivious Tokenization Path with Square-Root ORAM",
       "url": "http://arxiv.org/abs/2606.17358v1",
@@ -238,15 +250,23 @@
       "similarity": null
     },
     {
-      "rank": 30,
+      "rank": 28,
       "score": 68.0,
-      "title": "Endpoint Security Startup Ent Emerges From Stealth With $100 Million Seed Round",
-      "url": "https://www.securityweek.com/endpoint-security-startup-ent-emerges-from-stealth-with-100-million-seed-round/",
+      "title": "AI Use by the US Government",
+      "url": "https://www.schneier.com/blog/archives/2026/06/ai-use-by-the-us-government.html",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 31,
+      "rank": 29,
+      "score": 68.0,
+      "title": "1Password Acquires Apono in Reported $250M-$300M Deal",
+      "url": "https://www.securityweek.com/1password-acquires-apono-in-reported-250m-300m-deal/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 30,
       "score": 67.0,
       "title": "An Empirical Analysis of AI Slop in Music Streaming",
       "url": "http://arxiv.org/abs/2606.18052v1",
@@ -254,7 +274,7 @@
       "similarity": null
     },
     {
-      "rank": 32,
+      "rank": 31,
       "score": 66.0,
       "title": "Cloudflare DMARC Management is now generally available",
       "url": "https://blog.cloudflare.com/dmarc-management-ga/",
@@ -262,7 +282,7 @@
       "similarity": null
     },
     {
-      "rank": 33,
+      "rank": 32,
       "score": 66.0,
       "title": "Security Community Slams US Ban on Exporting Mythos, Fable",
       "url": "https://www.darkreading.com/vulnerabilities-threats/security-community-slams-us-ban-on-exporting-mythos-fable",
@@ -270,7 +290,7 @@
       "similarity": null
     },
     {
-      "rank": 34,
+      "rank": 33,
       "score": 66.0,
       "title": "Curl will not accept vulnerability reports during July 2026",
       "url": "https://daniel.haxx.se/blog/2026/06/15/curl-summer-of-bliss/",
@@ -278,7 +298,7 @@
       "similarity": null
     },
     {
-      "rank": 35,
+      "rank": 34,
       "score": 65.0,
       "title": "SNAS: A Multi-Layer Defense-in-Depth Architecture for Secure Egress in Sandboxed Workloads",
       "url": "http://arxiv.org/abs/2606.17533v1",
@@ -286,7 +306,7 @@
       "similarity": null
     },
     {
-      "rank": 36,
+      "rank": 35,
       "score": 65.0,
       "title": "US Cracks Down on Anthropic AI Models Amid Abuse Concerns",
       "url": "https://www.darkreading.com/cyber-risk/us-cracks-down-anthropic-ai-models-abuse-concerns",
@@ -294,7 +314,7 @@
       "similarity": null
     },
     {
-      "rank": 37,
+      "rank": 36,
       "score": 63.0,
       "title": "PARSE: Provenance-Aware Retrieval Sanitization for Professional Domain LLM Agents",
       "url": "http://arxiv.org/abs/2606.17467v1",
@@ -302,7 +322,7 @@
       "similarity": null
     },
     {
-      "rank": 38,
+      "rank": 37,
       "score": 63.0,
       "title": "An AI Security Agent for Banking: Multi-Vector Fraud and AML Detection Across Retail and Corporate Accounts",
       "url": "http://arxiv.org/abs/2606.17555v1",
@@ -310,7 +330,7 @@
       "similarity": null
     },
     {
-      "rank": 39,
+      "rank": 38,
       "score": 63.0,
       "title": "SoK: AI-Augmented Binary Reversing",
       "url": "http://arxiv.org/abs/2606.17398v1",
@@ -318,7 +338,7 @@
       "similarity": null
     },
     {
-      "rank": 40,
+      "rank": 39,
       "score": 63.0,
       "title": "The FCC Wants to Eliminate Burner Phones",
       "url": "https://www.schneier.com/blog/archives/2026/06/the-fcc-wants-to-eliminate-burner-phones.html",
@@ -326,15 +346,15 @@
       "similarity": null
     },
     {
-      "rank": 41,
+      "rank": 40,
       "score": 63.0,
-      "title": "White House Issues Memo to Bolster NSS Cybersecurity",
-      "url": "https://www.securityweek.com/white-house-issues-memo-to-bolster-nss-cybersecurity/",
+      "title": "The Chainguard Athena coalition already shipped 2,000 patches across 500 open source projects",
+      "url": "https://www.helpnetsecurity.com/2026/06/17/chainguard-athena-coalition-fix-open-source-vulnerabilities/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 42,
+      "rank": 41,
       "score": 62.0,
       "title": "A Red-Team Study of Anthropic Fable 5 & Opus 4.8 Models",
       "url": "http://arxiv.org/abs/2606.18193v1",
@@ -342,7 +362,7 @@
       "similarity": null
     },
     {
-      "rank": 43,
+      "rank": 42,
       "score": 62.0,
       "title": "AI Agent Skill Managers Are a Supply-Chain Surface Most of Them Don't Guard",
       "url": "https://www.implicator.ai/ai-agent-skill-managers-are-a-supply-chain-surface-most-of-them-dont-guard/",
@@ -350,10 +370,18 @@
       "similarity": null
     },
     {
-      "rank": 44,
+      "rank": 43,
       "score": 62.0,
       "title": "Safety, Security, and Cognitive Risks in Neuro-Symbolic AI",
       "url": "http://arxiv.org/abs/2606.17223v1",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 44,
+      "score": 62.0,
+      "title": "SentinelOne turns Purple AI loose to investigate threats on its own",
+      "url": "https://siliconangle.com/2026/06/17/sentinelone-turns-purple-ai-loose-investigate-threats/",
       "matched_tldr_idx": null,
       "similarity": null
     },
@@ -367,6 +395,14 @@
     },
     {
       "rank": 46,
+      "score": 62.0,
+      "title": "UK Social Media Ban for Minors Has Privacy Experts Worried",
+      "url": "https://www.darkreading.com/cyber-risk/uk-social-media-ban-privacy-experts-worried",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 47,
       "score": 61.0,
       "title": "AI\u2019s constant patching treadmill can be a security problem",
       "url": "https://cyberscoop.com/claude-code-security-vulnerabilities-ai-patches-backslash-security/",
@@ -374,7 +410,15 @@
       "similarity": null
     },
     {
-      "rank": 47,
+      "rank": 48,
+      "score": 61.0,
+      "title": "Apple collects every tap to deliver App Store personalized recommendations",
+      "url": "https://9to5mac.com/2026/06/17/apple-collects-every-tap-to-deliver-app-store-personalized-recommendations/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 49,
       "score": 60.0,
       "title": "Microsoft says you don\u2019t need another email security tool; experts say, not so fast",
       "url": "https://www.cio.com/article/4185998/microsoft-says-you-dont-need-another-email-security-tool-experts-say-not-so-fast-3.html",
@@ -382,7 +426,7 @@
       "similarity": null
     },
     {
-      "rank": 48,
+      "rank": 50,
       "score": 60.0,
       "title": "Bifrost: Hybrid TEE-FHE Inference for Privacy-Preserving Transformer and LLM Serving",
       "url": "http://arxiv.org/abs/2606.17421v1",
@@ -390,15 +434,7 @@
       "similarity": null
     },
     {
-      "rank": 49,
-      "score": 60.0,
-      "title": "The checklist problem behind critical infrastructure cyber safety",
-      "url": "https://www.helpnetsecurity.com/2026/06/17/usa-critical-infrastructure-cyber-safety/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 50,
+      "rank": 51,
       "score": 60.0,
       "title": "Evaluating Open-Source LLMs for Multi-Label ATT&CK Technique Classification on CTI Reports",
       "url": "http://arxiv.org/abs/2606.18166v1",
@@ -406,7 +442,7 @@
       "similarity": null
     },
     {
-      "rank": 51,
+      "rank": 52,
       "score": 60.0,
       "title": "Multi-Source Cybersecurity Logs: An ATT&CK-Labeled Dataset and SLM Evaluation",
       "url": "http://arxiv.org/abs/2606.18190v1",
@@ -414,7 +450,7 @@
       "similarity": null
     },
     {
-      "rank": 52,
+      "rank": 53,
       "score": 60.0,
       "title": "Security and Privacy Prompts in the Wild: What Users Ask LLMs and How LLMs Respond",
       "url": "http://arxiv.org/abs/2606.18062v1",
@@ -422,18 +458,10 @@
       "similarity": null
     },
     {
-      "rank": 53,
+      "rank": 54,
       "score": 60.0,
       "title": "Cache to the Future: A Distributed Webpage Archive for Internet Blackouts",
       "url": "http://arxiv.org/abs/2606.17245v1",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 54,
-      "score": 59.0,
-      "title": "RiskIQ founders launch Ent Security with $100M to rethink endpoint defense",
-      "url": "https://siliconangle.com/2026/06/16/riskiq-founders-launch-ent-security-100m-rethink-endpoint-defense/",
       "matched_tldr_idx": null,
       "similarity": null
     },
@@ -448,13 +476,21 @@
     {
       "rank": 56,
       "score": 58.0,
+      "title": "What\u2019s new in Android 17? Anti-theft tools, scam detection, and parental controls",
+      "url": "https://www.helpnetsecurity.com/2026/06/17/android-17-security-and-privacy-features/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 57,
+      "score": 58.0,
       "title": "Security-Induced Braess Paradoxes in Service Function Chain Orchestration",
       "url": "http://arxiv.org/abs/2606.17987v1",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 57,
+      "rank": 58,
       "score": 57.0,
       "title": "Verifying the Rust Standard Library",
       "url": "http://arxiv.org/abs/2606.17374v1",
@@ -462,7 +498,7 @@
       "similarity": null
     },
     {
-      "rank": 58,
+      "rank": 59,
       "score": 57.0,
       "title": "Differential Privacy of Gaussian Process Posterior Sampling",
       "url": "http://arxiv.org/abs/2606.17995v1",
@@ -470,7 +506,7 @@
       "similarity": null
     },
     {
-      "rank": 59,
+      "rank": 60,
       "score": 57.0,
       "title": "Learning Red Agent Policy from Observations for Neurosymbolic Autonomous Cyber Agents",
       "url": "http://arxiv.org/abs/2606.18223v1",
@@ -478,39 +514,39 @@
       "similarity": null
     },
     {
-      "rank": 60,
-      "score": 57.0,
-      "title": "Apple is about to make Hide My Email useless",
-      "url": "https://arseniyshestakov.com/2026/06/16/apple-is-about-to-make-hide-my-email-useless/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
       "rank": 61,
       "score": 57.0,
-      "title": "Apple plans to change its Hide My Email privacy feature that could make it less effective",
-      "url": "https://techcrunch.com/2026/06/16/apple-plans-to-change-its-hide-my-email-privacy-feature-that-could-make-it-less-effective/",
+      "title": "What\u2019s new in Databricks Platform security and compliance at Data + AI Summit 2026",
+      "url": "https://www.databricks.com/blog/whats-new-databricks-platform-security-and-compliance-data-ai-summit-2026",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
       "rank": 62,
       "score": 57.0,
-      "title": "India orders temporary ban on Telegram over exam fraud concerns",
-      "url": "https://techcrunch.com/2026/06/16/india-temporarily-blocks-access-to-telegram-over-exam-fraud-concerns/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "title": "Apple is about to make Hide My Email useless",
+      "url": "https://arseniyshestakov.com/2026/06/16/apple-is-about-to-make-hide-my-email-useless/",
+      "matched_tldr_idx": 10,
+      "similarity": 1.0
     },
     {
       "rank": 63,
       "score": 57.0,
-      "title": "FTC warns of record $3.5 billion losses to imposter scams in 2025",
-      "url": "https://www.bleepingcomputer.com/news/security/ftc-warns-of-record-35-billion-losses-to-imposter-scams-in-2025/",
+      "title": "Windows update leaves third-party Office document launches in limbo",
+      "url": "https://www.theregister.com/personal-tech/2026/06/17/windows-update-leaves-third-party-office-document-launches-in-limbo/5257425",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
       "rank": 64,
+      "score": 57.0,
+      "title": "Apple plans to change its Hide My Email privacy feature that could make it less effective",
+      "url": "https://techcrunch.com/2026/06/16/apple-plans-to-change-its-hide-my-email-privacy-feature-that-could-make-it-less-effective/",
+      "matched_tldr_idx": 10,
+      "similarity": 0.8631340265274048
+    },
+    {
+      "rank": 65,
       "score": 57.0,
       "title": "Your Privacy My Cloak: Backdoor Attacks on Differentially Private Federated Learning",
       "url": "http://arxiv.org/abs/2606.17035v1",
@@ -518,7 +554,7 @@
       "similarity": null
     },
     {
-      "rank": 65,
+      "rank": 66,
       "score": 56.0,
       "title": "Cordon: Semantic Transactions for Tool-Using LLM Agents",
       "url": "http://arxiv.org/abs/2606.17573v1",
@@ -526,18 +562,10 @@
       "similarity": null
     },
     {
-      "rank": 66,
+      "rank": 67,
       "score": 56.0,
       "title": "Stop Using JWTs",
       "url": "https://gist.github.com/samsch/0d1f3d3b4745d778f78b230cf6061452",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 67,
-      "score": 56.0,
-      "title": "Cybersecurity experts blast US government for restricting Anthropic\u2019s AI models",
-      "url": "https://www.ciodive.com/news/anthropic-us-government-export-ban-mythos-fable/822956/",
       "matched_tldr_idx": null,
       "similarity": null
     },
@@ -552,13 +580,29 @@
     {
       "rank": 69,
       "score": 55.0,
+      "title": "Cyber threats stalking the 2026 World Cup",
+      "url": "https://www.sdxcentral.com/analysis/cyber-threats-stalking-the-2026-world-cup/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 70,
+      "score": 55.0,
+      "title": "Jamf announces new native AI Governance control plane for macOS",
+      "url": "https://9to5mac.com/2026/06/17/jamf-launches-native-ai-governance-control-plane-for-macos/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 71,
+      "score": 55.0,
       "title": "Okta expands Google Cloud partnership to secure AI agents and the browser",
       "url": "https://siliconangle.com/2026/06/16/okta-expands-google-cloud-partnership-secure-ai-agents-browser/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 70,
+      "rank": 72,
       "score": 55.0,
       "title": "Anthropic reserves right to check ID for Claude subs",
       "url": "https://www.theregister.com/ai-and-ml/2026/06/15/anthropic-reserves-right-to-check-id-for-claude-subs/5255804",
@@ -566,7 +610,7 @@
       "similarity": null
     },
     {
-      "rank": 71,
+      "rank": 73,
       "score": 55.0,
       "title": "Exclusive: Daylight gives managed detection and response customers searchable telemetry without a SIEM",
       "url": "https://siliconangle.com/2026/06/16/exclusive-daylight-gives-mdr-customers-searchable-telemetry-without-siem/",
@@ -574,7 +618,7 @@
       "similarity": null
     },
     {
-      "rank": 72,
+      "rank": 74,
       "score": 55.0,
       "title": "Verifiable computations for dynamic encrypted control",
       "url": "http://arxiv.org/abs/2606.18109v1",
@@ -582,7 +626,7 @@
       "similarity": null
     },
     {
-      "rank": 73,
+      "rank": 75,
       "score": 55.0,
       "title": "Unicorn \u2013 The Ultimate CPU Emulator",
       "url": "https://www.unicorn-engine.org/",
@@ -590,9 +634,49 @@
       "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.07692307692307693,
+    "25": 0.15384615384615385,
+    "50": 0.15384615384615385,
+    "100": 0.23076923076923078,
+    "75": 0.23076923076923078
+  },
+  "hits_at": {
+    "10": 1,
+    "25": 2,
+    "50": 2,
+    "100": 3,
+    "75": 3
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://www.malwarebytes.com/blog/news/2026/06/cardiac-patients-medical-data-stolen-and-held-to-ransom",
+    "https://thehackernews.com/2026/06/google-vertex-ai-sdk-flaw-let-attackers.html",
+    "https://www.bleepingcomputer.com/news/security/malicious-jetbrains-marketplace-plugins-steal-ai-api-keys-from-developers/",
+    "https://www.darkreading.com/cyberattacks-data-breaches/beginning-end-social-engineering",
+    "https://bobdahacker.com/blog/fifa-hack",
+    "https://www.varonis.com/blog/openclaw-phishing",
+    "https://aws.amazon.com/blogs/aws/aws-waf-adds-ai-traffic-monetization-capability-to-help-content-owners-charge-ai-bots-for-content-access/",
+    "https://www.securityweek.com/white-house-issues-memo-to-bolster-nss-cybersecurity/",
+    "https://arstechnica.com/security/2026/06/users-cry-foul-after-amd-stripped-memory-crypto-from-its-consumer-cpus/",
+    "https://www.nbcnews.com/tech/tech-news/inside-roblox-age-verification-efforts-rcna346973",
+    "https://arseniyshestakov.com/2026/06/16/apple-is-about-to-make-hide-my-email-useless/",
+    "https://www.darkreading.com/application-security/copilot-searchleak-attack-1-click-data-theft",
+    "https://discuss.grapheneos.org/d/36469-grapheneos-has-been-ported-to-android-17-and-official-releases-are-coming-soon"
+  ],
+  "tldr_domains": [
+    "malwarebytes.com",
+    "thehackernews.com",
+    "bleepingcomputer.com",
+    "darkreading.com",
+    "bobdahacker.com",
+    "varonis.com",
+    "aws.amazon.com",
+    "securityweek.com",
+    "arstechnica.com",
+    "nbcnews.com",
+    "arseniyshestakov.com",
+    "darkreading.com",
+    "discuss.grapheneos.org"
+  ]
 }

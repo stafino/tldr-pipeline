@@ -78,7 +78,7 @@ run_stage "learn_weights" uv run python scripts/learn_source_weights.py
 # if blurbs crashed.
 echo
 echo "── COMMIT & PUSH ────────────────────────────"
-git add data/scored data/blurbs data/issues data/funding 2>/dev/null || true
+git add data/scored data/blurbs data/issues data/funding data/backtest 2>/dev/null || true
 if [[ -n "$(git diff --cached --name-only)" ]]; then
   git -c user.email="${GIT_AUTHOR_EMAIL:-oliverstaf1@gmail.com}" \
       -c user.name="${GIT_AUTHOR_NAME:-stafino}" \
