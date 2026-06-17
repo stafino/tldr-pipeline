@@ -71,6 +71,10 @@ export default function EditionStories({
     () => buildIssueHtml(newsletterBrand, date, sections, bySection),
     [newsletterBrand, date, sections, bySection],
   );
+  const issueMarkdown = useMemo(
+    () => buildIssueMarkdown(newsletterBrand, date, sections, bySection),
+    [newsletterBrand, date, sections, bySection],
+  );
 
   const [copyState, setCopyState] = useState<'idle' | 'copied' | 'error'>('idle');
 
@@ -109,6 +113,20 @@ export default function EditionStories({
     await copyBody();
     const subject = `${newsletterBrand} ${date}`;
     window.location.href = `mailto:?subject=${encodeURIComponent(subject)}`;
+  }
+
+  async function copyMarkdown() {
+    // Plain markdown — pastes 1:1 into Substack and Beehiiv editors,
+    // which parse it into native blocks (headings, bold links, paragraphs).
+    // Lets the destination platform handle its own spacing template.
+    try {
+      await navigator.clipboard.writeText(issueMarkdown);
+      setCopyState('copied');
+      setTimeout(() => setCopyState('idle'), 3000);
+    } catch {
+      setCopyState('error');
+      setTimeout(() => setCopyState('idle'), 3000);
+    }
   }
 
   function downloadEml() {
@@ -225,6 +243,13 @@ export default function EditionStories({
               ⧉ copy body
             </button>
             <button
+              onClick={copyMarkdown}
+              className="px-4 py-2 rounded-md bg-surface border border-border text-text text-[12px] font-medium hover:bg-surface-hi"
+              title="Paste into Substack or Beehiiv post editor — renders 1:1 as native blocks"
+            >
+              ⧉ copy as markdown
+            </button>
+            <button
               onClick={downloadEml}
               className="px-4 py-2 rounded-md bg-surface border border-border text-text text-[12px] font-medium hover:bg-surface-hi"
               title="Double-click the file to open as a real email draft — spacing stays intact"
@@ -275,6 +300,38 @@ function buildIssueText(
       if (i < items.length - 1) lines.push('');
     }
     lines.push('');
+  }
+  return lines.join('\n').trimEnd() + '\n';
+}
+
+function buildIssueMarkdown(
+  brand: string,
+  date: string,
+  sections: Section[],
+  bySection: Record<string, Candidate[]>,
+): string {
+  // Substack and Beehiiv both accept markdown paste into their post
+  // editors and parse it into native blocks. Keep it canonical:
+  // - H1 for the issue header
+  // - H2 with leading emoji for each section
+  // - **[Title (N minute read)](url)** for the bold linked title
+  // - blurb as a plain paragraph
+  // One blank line between blocks (markdown collapses extras).
+  const lines: string[] = [];
+  lines.push(`# ${brand} ${date}`);
+  lines.push('');
+  for (const sec of sections) {
+    const items = bySection[sec.id] ?? [];
+    if (items.length === 0) continue;
+    lines.push(`## ${sec.emoji} ${sec.name}`);
+    lines.push('');
+    for (const it of items) {
+      const title = it.title.replace(/\]/g, '\\]').replace(/\[/g, '\\[');
+      lines.push(`**[${title} (${it.minute_read} minute read)](${it.url})**`);
+      lines.push('');
+      lines.push(it.blurb || '_(blurb not generated)_');
+      lines.push('');
+    }
   }
   return lines.join('\n').trimEnd() + '\n';
 }
