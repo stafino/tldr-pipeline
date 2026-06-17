@@ -22,9 +22,9 @@ AWS Weekly Roundup: AWS FinOps Agent in preview, Gemma 4 on Bedrock, Kiro Pro Ma
 
 (blurb not generated)
 
-Hetzner Price Adjustment (1 minute read)
+Hetzner Price Adjustment (5 minute read)
 
-Hetzner raised prices across its cloud servers, dedicated hardware, and storage products, citing higher energy, hardware, and infrastructure costs as the drivers behind the adjustment. The increase narrows the cost gap that has made Hetzner a default budget alternative to AWS and GCP for teams running their own k8s and CI fleets, and the 574-comment HN thread reflects how sensitive that pricing has been to infra-team build-versus-rent math.
+(blurb not generated)
 
 Cisco SD-WAN make-me-root bug under attack (5 minute read)
 
@@ -34,13 +34,9 @@ Non-x86 servers now nearly half the market, IDC says (5 minute read)
 
 (blurb not generated)
 
-Software supply chains are heading for a transparency test (5 minute read)
+Intel-born networking tech resurfaces as InfiniBand alternative for DoE supers (5 minute read)
 
 (blurb not generated)
-
-Intel-born networking tech resurfaces as InfiniBand alternative for DoE supers (1 minute read)
-
-Cornelis Networks is positioning Omni-Path, the high-speed interconnect Intel originally developed and spun out, as an Ethernet- and InfiniBand-competitive fabric for Department of Energy supercomputers chasing lower-latency collective operations at exascale. The pitch targets HPC and AI clusters where InfiniBand's Nvidia ownership and Ethernet's congestion behavior leave operators wanting a third option for predictable tail latency on tightly coupled jobs.
 
 🚀
 Opinions & Tutorials
@@ -49,21 +45,21 @@ From data residency to digital sovereignty: Architectural patterns for  cloud na
 
 (blurb not generated)
 
-What job interviews taught me about Kubernetes (1 minute read)
+What job interviews taught me about Kubernetes (5 minute read)
 
-The author uses Kubernetes interview questions as a lens for the internals practitioners gloss over in daily operations, walking through how the scheduler, kubelet, and control loops actually behave under questioning. The piece argues that interview prep exposes the gap between running kubectl commands and understanding why a pod is stuck pending or a node goes NotReady. Useful as a self-audit for platform engineers who operate clusters without having traced the reconciliation path end to end.
+(blurb not generated)
 
-Implementing workload identity with HashiCorp Vault and SPIFFE (1 minute read)
+Implementing workload identity with HashiCorp Vault and SPIFFE (5 minute read)
 
-HashiCorp published a guide to using Vault as a SPIFFE identity issuer and broker, issuing SVIDs to workloads so services authenticate by verified identity rather than long-lived secrets. The post draws a clear boundary for where SPIRE belongs, with Vault handling issuance and authorization brokering while SPIRE manages node and workload attestation. The payoff is fewer static credentials to rotate and a consistent identity layer across clusters.
+(blurb not generated)
 
-10Gb/s Ethernet: switching to a Broadcom SFP+ module (1 minute read)
+10Gb/s Ethernet: switching to a Broadcom SFP+ module (5 minute read)
 
-A 10GBASE-T SFP+ module in the author's study switch was overheating to 93C and thermal-flapping, shutting down at 95C and dropping the LAN until air conditioning kept it cool. The fix was swapping the Marvell-based MikroTik S+RJ10 for a Broadcom BCM84891-based 10Gtek module, which draws roughly 1.6W versus the older generation's higher power draw. The takeaway for anyone running 10GBASE-T over copper: check the PHY chip, since the Broadcom generation runs cool enough to avoid 24/7 cooling as a workaround.
+(blurb not generated)
 
-Your Java Container Is Lying to You About Its Memory (2 minute read)
+SNAS: A Multi-Layer Defense-in-Depth Architecture for Secure Egress in Sandboxed Workloads (1 minute read)
 
-A dev.to post explains why Java containers OOM well below their cgroup limit: the JVM's native memory, metaspace, code cache, thread stacks, and direct buffers all sit outside the heap your monitoring watches. The author recommends sizing the heap with -XX:MaxRAMPercentage=75.0 instead of a fixed -Xmx, capping metaspace, and enabling NativeMemoryTracking so jcmd can show the RSS overhead you need to budget for.
+Snowflake engineers detail SNAS, the production architecture that gives Snowpark's sandboxed UDFs external network access while preserving multi-tenant isolation. The design layers eBPF packet filtering, GENEVE overlay networks, and distributed egress proxies, plus an EDT-based eBPF bandwidth limiter and dual-tier policy enforcement to handle connection limits and port exhaustion. It runs across all Snowflake regions, supporting petabyte-scale transfers and latency-sensitive integrations.
 
 AI demands more engineering discipline. Not less (xpost) (5 minute read)
 
@@ -72,22 +68,22 @@ AI demands more engineering discipline. Not less (xpost) (5 minute read)
 ⚒️
 Launches & Tools
 
-Amazon S3 annotations: attach rich, queryable context directly to your objects (1 minute read)
+Amazon S3 annotations: attach rich, queryable context directly to your objects (5 minute read)
 
-AWS announced S3 annotations, letting teams attach up to 1,000 named annotations per object (1 MB each, 1 GB total) in JSON, XML, YAML, or plain text, editable without rewriting the object. Annotations travel with objects through copy, replication, and cross-region transfers, and flow into S3 Metadata tables queryable from Athena, giving agentic workflows scalable context without expensive retrieval.
+(blurb not generated)
 
-What’s new with Terraform + Ansible (1 minute read)
+What’s new with Terraform + Ansible (5 minute read)
 
-HashiCorp released Terraform Ansible collection 2.0, powered by pyTFE, giving teams an API-first way to manage Terraform workspaces, runs, remote execution, and outputs directly from Ansible playbooks under role-based access controls. The collection eliminates the custom scripts and brittle glue code teams previously maintained to keep the two tools in sync, cutting maintenance overhead and reducing the upgrade breakage that disconnected permission models caused.
+(blurb not generated)
 
-Introducing tfctl: The CLI for HCP Terraform and TFE (1 minute read)
+Introducing tfctl: The CLI for HCP Terraform and TFE (5 minute read)
 
-HashiCorp released tfctl, the first official CLI for HCP Terraform and Terraform Enterprise platform operations like canceling runs, creating workspaces, and managing variables that the Terraform CLI doesn't cover. Built on the OpenAPI spec for full API coverage, it ships with dry-run guardrails, schema discovery, and JSON, markdown, or table output, and is scoped so delete commands require interactive confirmation to keep autonomous agents from running them.
+(blurb not generated)
 
-AWS WAF adds AI traffic monetization capability to help content owners charge AI bots for content access (1 minute read)
+AWS WAF adds AI traffic monetization capability to help content owners charge AI bots for content access (5 minute read)
 
-AWS WAF added AI traffic monetization, a Bot Control capability that lets content providers and publishers price, meter, and collect payment from AI bots and agents hitting their content and APIs. Owners set a price, accept payment through third-party providers, and grant scoped access directly at the edge, turning unwanted crawler traffic into a revenue stream without standing up separate gateway infrastructure.
+(blurb not generated)
 
-Cloudflare DMARC Management is now generally available (1 minute read)
+Cloudflare DMARC Management is now generally available (5 minute read)
 
-Cloudflare made DMARC Management generally available to all customers for free, shipping a redesigned dashboard that gives a unified view of email authentication posture and guides domains toward full DMARC enforcement without parsing XML reports by hand. The tool ties together SPF, DKIM, and DMARC reporting to surface who is spoofing your domain and block impersonation before mail reaches inboxes.
+(blurb not generated)
