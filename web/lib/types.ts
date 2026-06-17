@@ -1,0 +1,92 @@
+export interface Story {
+  title: string;
+  url: string;
+  source: string;
+  source_type: string;
+  published_at: string;
+  raw_text?: string;
+  related_sources?: string[];
+  source_topics?: string[];
+}
+
+export interface Assignment {
+  newsletter: string;
+  section_id: string;
+  score: number;
+}
+
+export interface ScoredStory {
+  story: Story;
+  score: number;
+  reasoning: string;
+  is_technical: boolean;
+  is_novel: boolean;
+  is_mainstream_relevant: boolean;
+  assignments: Assignment[];
+  components?: Record<string, number>;
+  boosts?: Record<string, number>;
+  hn_points?: number;
+  hn_comments?: number;
+}
+
+export interface Blurb {
+  story_url: string;
+  title: string;
+  newsletter: string;
+  section_id: string;
+  blurb: string;
+  word_count: number;
+  minute_read: number;
+  needs_review?: boolean;
+}
+
+export interface Section {
+  id: string;
+  name: string;
+  emoji: string;
+  min_words: number;
+  max_words: number;
+  target_count: number;
+  description: string;
+}
+
+export interface Newsletter {
+  id: string;
+  brand_name: string;
+  voice_skill: string;
+  sections: Section[];
+  topics: string[];
+  edition_size: number;
+}
+
+export interface PredictionMatch {
+  rank: number;
+  score: number;
+  title: string;
+  url: string;
+  matched_tldr_idx: number | null;
+  similarity: number | null;
+}
+
+export interface BacktestResult {
+  date: string;
+  newsletter: string;
+  fetched_at: string;
+  tldr_titles: string[];
+  tldr_matched: boolean[];
+  predictions: PredictionMatch[];
+  recall_at: Record<string, number>;
+  hits_at: Record<string, number>;
+  available: boolean;
+  tldr_urls?: string[];
+  tldr_domains?: string[];
+}
+
+export type DecisionStatus = 'pending' | 'approved' | 'rejected';
+
+export interface Decision {
+  story_url: string;
+  newsletter: string;
+  status: DecisionStatus;
+  edited_blurb?: string;
+}
