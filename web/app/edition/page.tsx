@@ -31,12 +31,14 @@ export default function EditionPage({
     );
   }
 
-  const selectedDate = searchParams.date ?? dates[0];
+  // Edition is always day-scoped (you publish one issue per day)
+  const requested = searchParams.date && searchParams.date !== 'All' ? searchParams.date : dates[0];
+  const selectedDate = dates.includes(requested) ? requested : dates[0];
   const selectedNl = searchParams.nl ?? defaultNewsletterId();
   const nl = newsletters[selectedNl];
 
-  const scored = selectedDate === 'All' ? [] : loadScored(selectedDate);
-  const blurbs = selectedDate === 'All' ? [] : loadBlurbs(selectedDate);
+  const scored = loadScored(selectedDate);
+  const blurbs = loadBlurbs(selectedDate);
   const blurbIdx = indexBlurbs(blurbs);
 
   // Build approved stories per section (filtering happens client-side because
@@ -54,18 +56,21 @@ export default function EditionPage({
     <main>
       <Nav />
       <div className="flex gap-3 px-5 py-3 border-b border-border items-center">
-        <DatePicker dates={dates} value={selectedDate} />
-        <select
-          defaultValue={selectedNl}
-          onChange={(e) => (window.location.search = `?nl=${e.target.value}&date=${selectedDate}`)}
-          className="bg-surface border border-border text-text text-[12px] rounded px-2 py-1 outline-none"
-        >
-          {nlIds.map((id) => (
-            <option key={id} value={id}>
-              {newsletters[id].brand_name}
-            </option>
-          ))}
-        </select>
+        <DatePicker dates={dates} value={selectedDate} allowAll={false} />
+        <label className="inline-flex items-center gap-2 text-[11px] text-text-mute uppercase tracking-[0.06em] font-semibold">
+          <span>Newsletter</span>
+          <select
+            defaultValue={selectedNl}
+            onChange={(e) => (window.location.search = `?nl=${e.target.value}&date=${selectedDate}`)}
+            className="bg-surface border border-border text-text text-[12px] rounded px-2 py-1 outline-none normal-case font-normal tracking-normal"
+          >
+            {nlIds.map((id) => (
+              <option key={id} value={id}>
+                {newsletters[id].brand_name}
+              </option>
+            ))}
+          </select>
+        </label>
         {nl && (
           <div className="text-[10px] text-text-mute">
             edition cap: {nl.edition_size} stories · {nl.sections.length} sections

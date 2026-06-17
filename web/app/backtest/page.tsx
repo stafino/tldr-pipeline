@@ -1,11 +1,7 @@
-import {
-  listBacktestDates,
-  loadBacktest,
-  loadBacktestsForNewsletter,
-  loadNewsletters,
-} from '@/lib/data';
+import { listBacktestDates, loadBacktest, loadNewsletters } from '@/lib/data';
 import Nav from '@/components/Nav';
 import BacktestPicker from '@/components/BacktestPicker';
+import DatePicker from '@/components/DatePicker';
 
 export const dynamic = 'force-dynamic';
 
@@ -38,10 +34,11 @@ export default function BacktestPage({
     );
   }
 
-  // Hero: aggregate recall for latest date
+  // Hero respects the same `date` query param the other views use.
   const latestDate = dates[0];
+  const heroDate = searchParams.date && dates.includes(searchParams.date) ? searchParams.date : latestDate;
   const latestResults = nlIds
-    .map((nid) => loadBacktest(nid, latestDate))
+    .map((nid) => loadBacktest(nid, heroDate))
     .filter((r): r is NonNullable<typeof r> => r !== null && r.available && r.predictions.length > 0);
 
   const totalTldr = latestResults.reduce((s, r) => s + r.tldr_titles.length, 0);
@@ -58,9 +55,12 @@ export default function BacktestPage({
     ? (latestResults.reduce((s, r) => s + (r.hits_at?.[String(maxK)] ?? 0), 0) / totalTldr) * 100
     : 0;
 
-  // Per-newsletter aggregates (last 7 days)
+  // Per-newsletter aggregates: last 7 days ending at heroDate
+  const histDates = dates.filter((d) => d <= heroDate).slice(0, 7);
   const rows = nlIds.map((nid) => {
-    const history = loadBacktestsForNewsletter(nid, 7).filter((r) => r.predictions.length > 0);
+    const history = histDates
+      .map((d) => loadBacktest(nid, d))
+      .filter((r): r is NonNullable<typeof r> => r !== null && r.available && r.predictions.length > 0);
     if (history.length === 0)
       return { nid, brand: newsletters[nid].brand_name, none: true } as any;
     const aggTldr = history.reduce((s, r) => s + r.tldr_titles.length, 0);
@@ -83,14 +83,20 @@ export default function BacktestPage({
     };
   });
 
-  // Detail pick
-  const detailDate = searchParams.date ?? latestDate;
+  // Detail pick — date is shared with hero filter; newsletter is per-section
+  const detailDate = heroDate;
   const detailNl = searchParams.nl ?? nlIds[0];
   const detail = loadBacktest(detailNl, detailDate);
 
   return (
     <main>
       <Nav />
+      <div className="flex gap-3 px-5 py-3 border-b border-border items-center">
+        <DatePicker dates={dates} value={heroDate} allowAll={false} />
+        <div className="text-[10px] text-text-mute">
+          {dates.length} backtest dates available · table aggregates last 7 days up to this date
+        </div>
+      </div>
       <div className="max-w-[1300px] mx-auto px-5 py-5">
         <div
           className="rounded-lg border border-border-strong p-6 mb-5"
@@ -100,7 +106,7 @@ export default function BacktestPage({
             How well we match TLDR
           </h2>
           <p className="text-[22px] font-semibold mb-3 -tracking-[0.01em]">
-            {latestDate} · {latestResults.length} newsletters compared · {totalTldr} stories TLDR
+            {heroDate} · {latestResults.length} newsletters compared · {totalTldr} stories TLDR
             actually published
           </p>
           <div className="flex gap-8 flex-wrap">
@@ -179,8 +185,6 @@ export default function BacktestPage({
         <h3 className="text-[14px] font-semibold mt-6 mb-3">Today vs published — side by side</h3>
         <BacktestPicker
           newsletters={Object.fromEntries(nlIds.map((id) => [id, newsletters[id].brand_name]))}
-          dates={dates}
-          defaultDate={detailDate}
           defaultNl={detailNl}
         />
 
