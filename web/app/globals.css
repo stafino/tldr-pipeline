@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-inter: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+html, body {
+  background: #0a0a0a;
+  color: #fafafa;
+  min-height: 100vh;
+  font-feature-settings: 'cv11', 'ss01';
+}
+
+/* Hide scrollbar visually but keep it functional */
+.scroll-y::-webkit-scrollbar { width: 8px; }
+.scroll-y::-webkit-scrollbar-track { background: transparent; }
+.scroll-y::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 4px; }
+.scroll-y::-webkit-scrollbar-thumb:hover { background: #404040; }
+
+.row-shell-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}

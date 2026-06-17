@@ -23,3 +23,9 @@ data/embeddings_cache/
 .env
 uv.lock
 .streamlit/secrets.toml
+
+# Next.js viewer in web/ (its own .gitignore also applies)
+web/node_modules/
+web/.next/
+web/.vercel/
+web/*.log
