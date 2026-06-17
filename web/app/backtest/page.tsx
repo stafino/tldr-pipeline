@@ -37,6 +37,8 @@ export default function BacktestPage({
   // Hero respects the same `date` query param the other views use.
   const latestDate = dates[0];
   const heroDate = searchParams.date && dates.includes(searchParams.date) ? searchParams.date : latestDate;
+  const selectedNl = searchParams.nl ?? 'all';
+  const isAggregate = selectedNl === 'all' || !nlIds.includes(selectedNl);
   const latestResults = nlIds
     .map((nid) => loadBacktest(nid, heroDate))
     .filter((r): r is NonNullable<typeof r> => r !== null && r.available && r.predictions.length > 0);
@@ -85,110 +87,114 @@ export default function BacktestPage({
 
   // Detail pick — date is shared with hero filter; newsletter is per-section
   const detailDate = heroDate;
-  const detailNl = searchParams.nl ?? nlIds[0];
-  const detail = loadBacktest(detailNl, detailDate);
+  const detailNl = isAggregate ? nlIds[0] : selectedNl;
+  const detail = isAggregate ? null : loadBacktest(detailNl, detailDate);
 
   return (
     <main>
       <Nav />
-      <div className="flex gap-3 px-5 py-3 border-b border-border items-center">
+      <div className="flex gap-3 px-5 py-3 border-b border-border items-center flex-wrap">
         <DatePicker dates={dates} value={heroDate} allowAll={false} />
+        <BacktestPicker
+          newsletters={Object.fromEntries(nlIds.map((id) => [id, newsletters[id].brand_name]))}
+          defaultNl={selectedNl}
+          includeAll
+          inline
+        />
         <div className="text-[10px] text-text-mute">
-          {dates.length} backtest dates available · table aggregates last 7 days up to this date
+          {isAggregate
+            ? `${dates.length} dates · table aggregates last 7 days`
+            : `comparing ${newsletters[detailNl]?.brand_name} for ${detailDate}`}
         </div>
       </div>
       <div className="max-w-[1300px] mx-auto px-5 py-5">
-        <div
-          className="rounded-lg border border-border-strong p-6 mb-5"
-          style={{ background: 'linear-gradient(135deg, #171717 0%, #1a2030 100%)' }}
-        >
-          <h2 className="text-[14px] font-semibold uppercase tracking-[0.1em] text-text-dim mb-1.5">
-            How well we match TLDR
-          </h2>
-          <p className="text-[22px] font-semibold mb-3 -tracking-[0.01em]">
-            {heroDate} · {latestResults.length} newsletters compared · {totalTldr} stories TLDR
-            actually published
-          </p>
-          <div className="flex gap-8 flex-wrap">
-            <Stat label="recall @ top 10" value={`${Math.round(r10)}%`} accent />
-            <Stat label="recall @ top 25" value={`${Math.round(r25)}%`} accent />
-            <Stat label="recall @ top 50" value={`${Math.round(r50)}%`} accent />
-            <Stat label="recall @ any (full pool)" value={`${Math.round(rAll)}%`} />
-          </div>
-        </div>
+        {isAggregate ? (
+          <>
+            <div
+              className="rounded-lg border border-border-strong p-6 mb-5"
+              style={{ background: 'linear-gradient(135deg, #171717 0%, #1a2030 100%)' }}
+            >
+              <h2 className="text-[14px] font-semibold uppercase tracking-[0.1em] text-text-dim mb-1.5">
+                How well we match TLDR
+              </h2>
+              <p className="text-[22px] font-semibold mb-3 -tracking-[0.01em]">
+                {heroDate} · {latestResults.length} newsletters compared · {totalTldr} stories TLDR
+                actually published
+              </p>
+              <div className="flex gap-8 flex-wrap">
+                <Stat label="recall @ top 10" value={`${Math.round(r10)}%`} accent />
+                <Stat label="recall @ top 25" value={`${Math.round(r25)}%`} accent />
+                <Stat label="recall @ top 50" value={`${Math.round(r50)}%`} accent />
+                <Stat label="recall @ any (full pool)" value={`${Math.round(rAll)}%`} />
+              </div>
+            </div>
 
-        <p className="text-[12px] text-text-mute leading-[1.5] mb-5">
-          <b className="text-text-dim">Recall</b> = "of the stories TLDR actually published, how many
-          did we surface in our top N?" Matches via title-embedding similarity ≥ 0.62, with
-          URL-overlap as a strong cross-check (catches the Fox/Roku case). Low numbers point to
-          source coverage gaps — TLDR sources heavily from X, LinkedIn, and inside-baseball
-          Substacks.
-        </p>
+            <p className="text-[12px] text-text-mute leading-[1.5] mb-5">
+              <b className="text-text-dim">Recall</b> = "of the stories TLDR actually published, how
+              many did we surface in our top N?" Matches via title-embedding similarity ≥ 0.62,
+              with URL-overlap as a strong cross-check. Low numbers point to source coverage gaps —
+              TLDR sources heavily from X, LinkedIn, and inside-baseball Substacks. Pick a
+              specific newsletter above to see the day's side-by-side.
+            </p>
 
-        <table className="w-full text-[13px] border-collapse mb-6">
-          <thead>
-            <tr>
-              <th className="text-left py-2.5 px-3 text-[10px] uppercase tracking-[0.08em] text-text-mute border-b border-border-strong">
-                Newsletter
-              </th>
-              <th className="text-right py-2.5 px-3 text-[10px] uppercase tracking-[0.08em] text-text-mute border-b border-border-strong">
-                R@10
-              </th>
-              <th className="text-right py-2.5 px-3 text-[10px] uppercase tracking-[0.08em] text-text-mute border-b border-border-strong">
-                R@25
-              </th>
-              <th className="text-right py-2.5 px-3 text-[10px] uppercase tracking-[0.08em] text-text-mute border-b border-border-strong">
-                R@50
-              </th>
-              <th className="text-right py-2.5 px-3 text-[10px] uppercase tracking-[0.08em] text-text-mute border-b border-border-strong">
-                R@all
-              </th>
-              <th className="text-left py-2.5 px-3 text-[10px] uppercase tracking-[0.08em] text-text-mute border-b border-border-strong">
-                Last 7 days (R@10)
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map((row: any) => (
-              <tr key={row.nid} className="hover:bg-surface">
-                <td className="py-2.5 px-3 border-b border-border text-text font-medium">{row.brand}</td>
-                {row.none ? (
-                  <td colSpan={4} className="py-2.5 px-3 border-b border-border italic text-text-mute">
-                    no comparable issue yet
-                  </td>
-                ) : (
-                  <>
-                    <td className={`text-right py-2.5 px-3 border-b border-border font-mono font-semibold ${rcls(row.r10)}`}>
-                      {Math.round(row.r10 * 100)}%
-                    </td>
-                    <td className={`text-right py-2.5 px-3 border-b border-border font-mono font-semibold ${rcls(row.r25)}`}>
-                      {Math.round(row.r25 * 100)}%
-                    </td>
-                    <td className={`text-right py-2.5 px-3 border-b border-border font-mono font-semibold ${rcls(row.r50)}`}>
-                      {Math.round(row.r50 * 100)}%
-                    </td>
-                    <td className={`text-right py-2.5 px-3 border-b border-border font-mono font-semibold ${rcls(row.rAll)}`}>
-                      {Math.round(row.rAll * 100)}%
-                    </td>
-                  </>
-                )}
-                {!row.none && (
-                  <td className="py-2.5 px-3 border-b border-border font-mono text-accent tracking-[2px]">
-                    {row.spark}
-                  </td>
-                )}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-
-        <h3 className="text-[14px] font-semibold mt-6 mb-3">Today vs published — side by side</h3>
-        <BacktestPicker
-          newsletters={Object.fromEntries(nlIds.map((id) => [id, newsletters[id].brand_name]))}
-          defaultNl={detailNl}
-        />
-
-        {detail === null || !detail.available ? (
+            <table className="w-full text-[13px] border-collapse mb-6">
+              <thead>
+                <tr>
+                  <th className="text-left py-2.5 px-3 text-[10px] uppercase tracking-[0.08em] text-text-mute border-b border-border-strong">
+                    Newsletter
+                  </th>
+                  <th className="text-right py-2.5 px-3 text-[10px] uppercase tracking-[0.08em] text-text-mute border-b border-border-strong">
+                    R@10
+                  </th>
+                  <th className="text-right py-2.5 px-3 text-[10px] uppercase tracking-[0.08em] text-text-mute border-b border-border-strong">
+                    R@25
+                  </th>
+                  <th className="text-right py-2.5 px-3 text-[10px] uppercase tracking-[0.08em] text-text-mute border-b border-border-strong">
+                    R@50
+                  </th>
+                  <th className="text-right py-2.5 px-3 text-[10px] uppercase tracking-[0.08em] text-text-mute border-b border-border-strong">
+                    R@all
+                  </th>
+                  <th className="text-left py-2.5 px-3 text-[10px] uppercase tracking-[0.08em] text-text-mute border-b border-border-strong">
+                    Last 7 days (R@10)
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {rows.map((row: any) => (
+                  <tr key={row.nid} className="hover:bg-surface">
+                    <td className="py-2.5 px-3 border-b border-border text-text font-medium">{row.brand}</td>
+                    {row.none ? (
+                      <td colSpan={4} className="py-2.5 px-3 border-b border-border italic text-text-mute">
+                        no comparable issue yet
+                      </td>
+                    ) : (
+                      <>
+                        <td className={`text-right py-2.5 px-3 border-b border-border font-mono font-semibold ${rcls(row.r10)}`}>
+                          {Math.round(row.r10 * 100)}%
+                        </td>
+                        <td className={`text-right py-2.5 px-3 border-b border-border font-mono font-semibold ${rcls(row.r25)}`}>
+                          {Math.round(row.r25 * 100)}%
+                        </td>
+                        <td className={`text-right py-2.5 px-3 border-b border-border font-mono font-semibold ${rcls(row.r50)}`}>
+                          {Math.round(row.r50 * 100)}%
+                        </td>
+                        <td className={`text-right py-2.5 px-3 border-b border-border font-mono font-semibold ${rcls(row.rAll)}`}>
+                          {Math.round(row.rAll * 100)}%
+                        </td>
+                      </>
+                    )}
+                    {!row.none && (
+                      <td className="py-2.5 px-3 border-b border-border font-mono text-accent tracking-[2px]">
+                        {row.spark}
+                      </td>
+                    )}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </>
+        ) : detail === null || !detail.available ? (
           <div className="bg-surface border border-dashed border-border rounded-md py-10 px-6 text-center text-text-mute text-[13px]">
             No published TLDR issue for {newsletters[detailNl]?.brand_name} on {detailDate}.
           </div>
@@ -197,7 +203,21 @@ export default function BacktestPage({
             We have no predictions for this date.
           </div>
         ) : (
-          <CompareGrid detail={detail} brand={newsletters[detailNl].brand_name} />
+          <>
+            <div className="flex items-baseline gap-4 mb-4 pb-2 border-b border-border-strong">
+              <h2 className="text-[16px] font-semibold m-0">
+                {newsletters[detailNl].brand_name} · {detailDate}
+              </h2>
+              <span className="text-[12px] text-text-mute ml-auto">
+                <b className={rcls((detail.hits_at?.['10'] ?? 0) / Math.max(1, detail.tldr_titles.length))}>
+                  R@10 {Math.round(((detail.hits_at?.['10'] ?? 0) / Math.max(1, detail.tldr_titles.length)) * 100)}%
+                </b>{' '}
+                · R@25 {Math.round(((detail.hits_at?.['25'] ?? 0) / Math.max(1, detail.tldr_titles.length)) * 100)}%
+                {' '}· R@50 {Math.round(((detail.hits_at?.['50'] ?? 0) / Math.max(1, detail.tldr_titles.length)) * 100)}%
+              </span>
+            </div>
+            <CompareGrid detail={detail} brand={newsletters[detailNl].brand_name} />
+          </>
         )}
       </div>
     </main>
