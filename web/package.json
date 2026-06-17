@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev --port 3000",
+    "embed": "node scripts/embed.mjs",
+    "predeploy": "node scripts/embed.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"

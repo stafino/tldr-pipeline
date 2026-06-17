@@ -9,9 +9,20 @@ import type {
   Section,
 } from './types';
 
-// At build time on Vercel, the project root contains the cloned repo —
-// data/ and config/ live one level up from web/.
-const REPO_ROOT = path.resolve(process.cwd(), '..');
+// Data location: prefer ./_embedded (created by scripts/embed.mjs for CLI
+// deploys), then ../ (local dev + GitHub-integration deploy where the whole
+// repo is checked out).
+function findRoot(): string {
+  const candidates = [
+    path.resolve(process.cwd(), '_embedded'),
+    path.resolve(process.cwd(), '..'),
+  ];
+  for (const c of candidates) {
+    if (fs.existsSync(path.join(c, 'config', 'newsletters.yaml'))) return c;
+  }
+  return candidates[1];
+}
+const REPO_ROOT = findRoot();
 
 const SCORED_DIR = path.join(REPO_ROOT, 'data', 'scored');
 const BLURBS_DIR = path.join(REPO_ROOT, 'data', 'blurbs');
