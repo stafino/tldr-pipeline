@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -13,10 +14,17 @@ export default function Nav({ pipelinePills }: { pipelinePills?: React.ReactNode
   const pathname = usePathname();
   return (
     <div className="flex items-center gap-4 border-b border-border px-5 py-2.5">
-      <div className="flex items-center gap-3">
-        <h1 className="text-[14px] font-semibold tracking-tight">lede</h1>
-        <span className="text-[11px] text-text-mute">TLDR curation pipeline</span>
-      </div>
+      <Link href="/" className="flex items-center gap-3" aria-label="lede home">
+        <Image
+          src="/lede-logo-horizontal-reverse.svg"
+          alt="lede"
+          width={2400}
+          height={785}
+          priority
+          className="h-5 w-auto"
+        />
+        <span className="text-[11px] text-text-mute hidden sm:inline">TLDR curation pipeline</span>
+      </Link>
       <div className="flex items-center gap-1 ml-4">
         {TABS.map((t) => {
           const active =
