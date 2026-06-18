@@ -1,17 +1,43 @@
 {
   "date": "2026-06-18",
   "newsletter": "tldr_data",
-  "fetched_at": "2026-06-18T09:52:05.589913+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-06-18T10:52:11.809842+00:00",
+  "tldr_titles": [
+    "Predicting model behavior before release by simulating deployment",
+    "Building an AI Database for Agentic GTM Operations",
+    "From Scoring to Spelling: Rebuilding Ads Retrieval at Instacart",
+    "Federated Query Platform for ML at Scale: Architecture and Multi-Tenancy",
+    "Why We Moved from Hive-Style Data Lakes to Apache Iceberg?",
+    "Data Processing is Becoming a GPU Workload",
+    "The Identity Crisis: Why Entity Resolution Is the Missing Foundation of Every Data Product Stack",
+    "pg_kpart version 1.0",
+    "Introducing Lakehouse//RT: Real-Time Performance on a Unified Lakehouse",
+    "Fine-tuning a clinical AI model to frontier parity",
+    "How Data 360 Segmentation Processes a Quadrillion Records Across Arbitrary Customer Data Models",
+    "The NULL in your NOT IN"
+  ],
+  "tldr_matched": [
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
   "predictions": [
     {
       "rank": 1,
       "score": 77.0,
       "title": "Building the agentic data stack: A practical dbt guide for the AI era",
       "url": "https://www.getdbt.com/blog/building-the-agentic-data-stack-a-practical-dbt-guide-for-the-ai-era",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 1,
+      "similarity": 0.7063410878181458
     },
     {
       "rank": 2,
@@ -286,9 +312,47 @@
       "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.08333333333333333,
+    "25": 0.08333333333333333,
+    "50": 0.08333333333333333,
+    "100": 0.08333333333333333,
+    "35": 0.08333333333333333
+  },
+  "hits_at": {
+    "10": 1,
+    "25": 1,
+    "50": 1,
+    "100": 1,
+    "35": 1
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://openai.com/index/deployment-simulation/",
+    "https://medium.com/@john.kutay/building-an-ai-database-for-agentic-gtm-operations-6a0c86fb8cdc",
+    "https://tech.instacart.com/from-scoring-to-spelling-rebuilding-ads-retrieval-at-instacart-cf36b4e8d1bb",
+    "https://medium.com/guidewire-engineering-blog/federated-query-platform-for-ml-at-scale-architecture-and-multi-tenancy-3a2c060ff3e5",
+    "https://medium.com/@rongalinaidu/why-we-moved-from-hive-style-data-lakes-to-apache-iceberg-f9f23e7a64d3",
+    "https://anyscale.com/blog/data-processing-becoming-gpu-workload",
+    "https://moderndata101.substack.com/p/the-identity-crisis-entity-resolution",
+    "https://www.postgresql.org/about/news/pg_kpart-version-10-3316/",
+    "https://www.databricks.com/blog/introducing-lakehousert-real-time-performance-unified-lakehouse",
+    "https://www.heidihealth.com/blog/clinical-ai-model-fine-tuning",
+    "https://engineering.salesforce.com/how-data-360-segmentation-processes-a-quadrillion-records-across-arbitrary-customer-data-models/",
+    "https://boringsql.com/posts/not-in-null/"
+  ],
+  "tldr_domains": [
+    "openai.com",
+    "medium.com",
+    "tech.instacart.com",
+    "medium.com",
+    "medium.com",
+    "anyscale.com",
+    "moderndata101.substack.com",
+    "postgresql.org",
+    "databricks.com",
+    "heidihealth.com",
+    "engineering.salesforce.com",
+    "boringsql.com"
+  ]
 }

@@ -140,12 +140,18 @@ def fetch_tldr_titles(newsletter_id: str, date: str) -> list[str]:
     return [t for t, _ in fetch_tldr_stories(newsletter_id, date)]
 
 
+SANE_MAX_TITLES = 30  # TLDR issues never carry more than ~20-25 articles
+
+
 def fetch_tldr_stories(newsletter_id: str, date: str) -> list[tuple[str, str]]:
     """Scrape the published headlines AND source URLs from tldr.tech/<slug>/<date>.
 
     Returns list of (title, source_url) tuples. URL may be "" if not found.
-    Returns an empty list if the page doesn't exist OR if it returned the
-    newsletter's landing page (when the day's issue isn't published yet).
+    Returns an empty list if the page doesn't exist, OR if it returned an
+    archive/landing fallback (when the day's issue isn't published yet —
+    tldr.tech responds 200 with a multi-issue aggregate in that case,
+    yielding 100+ titles, which always means "no issue today" not "huge
+    issue today"). The SANE_MAX_TITLES threshold catches the fallback.
     """
     slug = SLUG_MAP.get(newsletter_id)
     if not slug:
@@ -194,6 +200,17 @@ def fetch_tldr_stories(newsletter_id: str, date: str) -> list[tuple[str, str]]:
         if t not in seen:
             seen.add(t)
             deduped.append((t, u))
+
+    if len(deduped) > SANE_MAX_TITLES:
+        log.warning(
+            "tldr.tech/%s/%s returned %d titles — treating as not-yet-published "
+            "archive fallback (real issues never exceed ~25 articles)",
+            slug,
+            date,
+            len(deduped),
+        )
+        return []
+
     return deduped
 
 
