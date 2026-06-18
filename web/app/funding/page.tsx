@@ -225,7 +225,7 @@ function fmtRange(from: string, to: string): string {
 export default function FundingPage({
   searchParams,
 }: {
-  searchParams: { date?: string; from?: string; to?: string; story?: string; stage?: string; min?: string };
+  searchParams: { date?: string; from?: string; to?: string; story?: string; stage?: string; min?: string; investor?: string };
 }) {
   const dates = listFundingDates();
 
@@ -261,13 +261,25 @@ export default function FundingPage({
   const stageFilter = (searchParams.stage ?? '').toLowerCase();
   const minFilter = (searchParams.min ?? '').toLowerCase();
   const minUsd = minUsdFromKey(minFilter);
+  const investorFilter = (searchParams.investor ?? '').trim();
+  // When an investor filter is active, sweep the full date range we
+  // have so the user actually sees every round they led/co-led. Solo
+  // filters on a single-day window are useless.
+  const sweepFrom = investorFilter ? dates[dates.length - 1] : from;
+  const sweepTo = investorFilter ? dates[0] : to;
 
-  let rounds = loadFundingRange(from, to);
+  let rounds = loadFundingRange(sweepFrom, sweepTo);
   if (stageFilter) {
     rounds = rounds.filter((r) => classifyStage(r.round_label).tier === stageFilter);
   }
   if (minUsd > 0) {
     rounds = rounds.filter((r) => (r.amount_usd ?? 0) >= minUsd);
+  }
+  if (investorFilter) {
+    const needle = investorFilter.toLowerCase();
+    rounds = rounds.filter((r) =>
+      r.investors.some((inv) => inv.toLowerCase().includes(needle)),
+    );
   }
   const eu = rounds
     .filter((r) => r.region === 'EU')
@@ -311,10 +323,18 @@ export default function FundingPage({
           />
         </div>
         <div className="text-[10px] text-text-mute">
-          {fmtRange(from, to)} · {rounds.length} {rounds.length === 1 ? 'round' : 'rounds'} · EU{' '}
+          {investorFilter
+            ? `all dates · investor: ${investorFilter}`
+            : fmtRange(from, to)}{' '}
+          · {rounds.length} {rounds.length === 1 ? 'round' : 'rounds'} · EU{' '}
           {eu.length} · NA {na.length}
           {(stageFilter || minFilter) && (
             <span className="ml-2 text-warn">· filters active</span>
+          )}
+          {investorFilter && (
+            <a href="?" className="ml-2 text-accent hover:underline">
+              clear investor filter ×
+            </a>
           )}
         </div>
       </div>

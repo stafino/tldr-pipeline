@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 import type { Blurb, FundingRound } from '@/lib/types';
 import { canonicalDomain } from '@/lib/utils';
 
@@ -52,6 +54,15 @@ export default function FundingDetailPane({
   round: FundingRound | null;
   blurb: Blurb | undefined;
 }) {
+  const sp = useSearchParams();
+
+  function investorHref(name: string): string {
+    const next = new URLSearchParams(sp.toString());
+    next.set('investor', name);
+    next.delete('story'); // detail will be empty after the filter changes
+    return '?' + next.toString();
+  }
+
   if (!round) {
     return (
       <div className="text-text-mute text-[12px] text-center px-6 py-9 border border-dashed border-border rounded-md">
@@ -110,12 +121,15 @@ export default function FundingDetailPane({
           </div>
           <div className="flex flex-wrap gap-1.5">
             {round.investors.map((inv) => (
-              <span
+              <Link
                 key={inv}
-                className="font-mono text-[11px] text-text-dim bg-surface border border-border rounded px-2 py-0.5"
+                href={investorHref(inv)}
+                scroll={false}
+                className="font-mono text-[11px] text-text-dim bg-surface border border-border rounded px-2 py-0.5 hover:text-text hover:border-accent transition-colors"
+                title={`Show every round with ${inv} as an investor`}
               >
                 {inv}
-              </span>
+              </Link>
             ))}
           </div>
         </div>
