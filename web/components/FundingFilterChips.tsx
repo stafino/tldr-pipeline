@@ -1,27 +1,15 @@
 'use client';
 
 import { useRouter, useSearchParams } from 'next/navigation';
+import { MIN_PRESETS, STAGE_PRESETS } from '@/lib/funding-filters';
 
 /**
  * Two rows of toggle chips: stage tier + minimum amount. Each chip is a
  * pure URL shortcut — clicking sets/clears the relevant query param.
- * Dealroom uses similar $100M+ quick-filters; Crunchbase News round-ups
- * cluster by stage. Mirror both.
+ * Single-select within each row. Source of truth for the chip metadata
+ * is lib/funding-filters.ts so the server page can read it without
+ * tripping the RSC client/server boundary.
  */
-const STAGES: { key: string; label: string }[] = [
-  { key: 'early', label: 'Early' },
-  { key: 'growth', label: 'Growth' },
-  { key: 'late', label: 'Late' },
-  { key: 'ext', label: 'Extension' },
-];
-
-const MINS: { key: string; label: string; usd: number }[] = [
-  { key: '10m', label: '$10M+', usd: 10_000_000 },
-  { key: '50m', label: '$50M+', usd: 50_000_000 },
-  { key: '100m', label: '$100M+', usd: 100_000_000 },
-  { key: '500m', label: '$500M+', usd: 500_000_000 },
-];
-
 export default function FundingFilterChips({
   stage,
   min,
@@ -48,7 +36,7 @@ export default function FundingFilterChips({
   return (
     <div className="flex gap-2 items-center flex-wrap text-[11px]">
       <span className="text-text-mute uppercase tracking-[0.06em] font-semibold mr-1">Stage</span>
-      {STAGES.map((s) => (
+      {STAGE_PRESETS.map((s) => (
         <button
           key={s.key}
           onClick={() => toggle('stage', s.key, stage)}
@@ -58,7 +46,7 @@ export default function FundingFilterChips({
         </button>
       ))}
       <span className="text-text-mute uppercase tracking-[0.06em] font-semibold mr-1 ml-3">Min</span>
-      {MINS.map((m) => (
+      {MIN_PRESETS.map((m) => (
         <button
           key={m.key}
           onClick={() => toggle('min', m.key, min)}
@@ -69,9 +57,4 @@ export default function FundingFilterChips({
       ))}
     </div>
   );
-}
-
-export function minUsdFromKey(key: string): number {
-  const m = MINS.find((x) => x.key === key);
-  return m ? m.usd : 0;
 }

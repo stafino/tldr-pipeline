@@ -8,7 +8,8 @@ import {
 } from '@/lib/data';
 import Nav from '@/components/Nav';
 import FundingDateFilter from '@/components/FundingDateFilter';
-import FundingFilterChips, { minUsdFromKey } from '@/components/FundingFilterChips';
+import FundingFilterChips from '@/components/FundingFilterChips';
+import { minUsdFromKey } from '@/lib/funding-filters';
 import FundingCsvExport from '@/components/FundingCsvExport';
 import FundingDetailPane from '@/components/FundingDetailPane';
 import type { Blurb, FundingRound } from '@/lib/types';
