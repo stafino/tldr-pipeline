@@ -70,7 +70,9 @@ cmd_backfill_blurbs() {
   # cheap to re-run idempotently.
   log "backfill blurbs across all scored dates"
   local dates
-  dates=$(ls data/scored/*.jsonl 2>/dev/null | xargs -n1 basename | sed 's/\.jsonl$//' | sort)
+  # Newest date first — today's gaps matter most to users; older days
+  # are nice-to-have. Reverse sort instead of forward sort.
+  dates=$(ls data/scored/*.jsonl 2>/dev/null | xargs -n1 basename | sed 's/\.jsonl$//' | sort -r)
   if [[ -z "$dates" ]]; then
     err "no scored data to backfill"
     return
