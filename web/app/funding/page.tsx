@@ -26,6 +26,28 @@ function formatAmount(usd: number | null, raw: string): string {
 }
 
 /**
+ * Dealroom-style relative timestamp: "4h ago", "2d ago", "3w ago".
+ * Computed server-side at render — fine for a page that's force-dynamic.
+ * Falls back to short date for anything older than 30 days.
+ */
+function relativeFromNow(raisedDate: string, today: string): string {
+  if (!raisedDate) return '';
+  const r = new Date(raisedDate + 'T00:00:00Z').getTime();
+  const t = new Date(today + 'T00:00:00Z').getTime();
+  const days = Math.round((t - r) / (24 * 60 * 60 * 1000));
+  if (days <= 0) return 'today';
+  if (days === 1) return 'yesterday';
+  if (days < 7) return `${days}d ago`;
+  if (days < 30) return `${Math.floor(days / 7)}w ago`;
+  // older — short ISO-ish format
+  return new Date(raisedDate + 'T00:00:00Z').toLocaleDateString('en-GB', {
+    day: '2-digit',
+    month: 'short',
+    timeZone: 'UTC',
+  });
+}
+
+/**
  * Normalize a free-form round_label into a short chip code + a stage tier
  * so we can color-code stages consistently:
  *   - "early" (pre-seed, seed) → green
@@ -72,10 +94,12 @@ function Row({
   r,
   selected,
   hrefQuery,
+  today,
 }: {
   r: FundingRound;
   selected: boolean;
   hrefQuery: string;
+  today: string;
 }) {
   return (
     <Link
@@ -111,6 +135,9 @@ function Row({
             {r.country && (
               <span className="font-mono text-[10.5px] text-text-mute">· {r.country}</span>
             )}
+            <span className="font-mono text-[10.5px] text-text-mute ml-auto">
+              {relativeFromNow(r.raised_date, today)}
+            </span>
           </div>
           {r.investors.length > 0 && (
             <div className="text-[11px] text-text-dim mt-0.5 truncate">
@@ -129,11 +156,13 @@ function Column({
   rows,
   selectedUrl,
   hrefForRow,
+  today,
 }: {
   label: string;
   rows: FundingRound[];
   selectedUrl?: string;
   hrefForRow: (r: FundingRound) => string;
+  today: string;
 }) {
   const total = rows.reduce((sum, r) => sum + (r.amount_usd ?? 0), 0);
   return (
@@ -156,6 +185,7 @@ function Column({
             r={r}
             selected={selectedUrl === r.story_url}
             hrefQuery={hrefForRow(r)}
+            today={today}
           />
         ))
       )}
@@ -265,8 +295,8 @@ export default function FundingPage({
         </div>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,_1fr)_minmax(0,_1fr)_minmax(0,_1fr)] gap-6 px-5 py-5">
-        <Column label="🇪🇺 Europe" rows={eu} selectedUrl={selectedRound?.story_url} hrefForRow={hrefForRow} />
-        <Column label="🇺🇸 North America" rows={na} selectedUrl={selectedRound?.story_url} hrefForRow={hrefForRow} />
+        <Column label="🇪🇺 Europe" rows={eu} selectedUrl={selectedRound?.story_url} hrefForRow={hrefForRow} today={today} />
+        <Column label="🇺🇸 North America" rows={na} selectedUrl={selectedRound?.story_url} hrefForRow={hrefForRow} today={today} />
         <div className="lg:border-l lg:border-border lg:pl-6 lg:sticky lg:top-0 lg:self-start lg:max-h-screen lg:overflow-y-auto">
           <FundingDetailPane round={selectedRound} blurb={selectedBlurb} />
         </div>
