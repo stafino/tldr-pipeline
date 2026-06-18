@@ -44,6 +44,28 @@ export default function BacktestPage({
     .filter((r): r is NonNullable<typeof r> => r !== null && r.available && r.predictions.length > 0);
 
   const totalTldr = latestResults.reduce((s, r) => s + r.tldr_titles.length, 0);
+
+  // Per-source recall: across every newsletter on the hero date, group
+  // TLDR's actual picks by their source domain and count how often we
+  // matched. Surfaces the highest-leverage source-coverage gaps.
+  const sourceStats = new Map<string, { tldr: number; matched: number }>();
+  for (const r of latestResults) {
+    const doms = r.tldr_domains ?? [];
+    const matched = r.tldr_matched ?? [];
+    for (let i = 0; i < doms.length; i++) {
+      const d = (doms[i] || '').toLowerCase();
+      if (!d) continue;
+      const s = sourceStats.get(d) ?? { tldr: 0, matched: 0 };
+      s.tldr += 1;
+      if (matched[i]) s.matched += 1;
+      sourceStats.set(d, s);
+    }
+  }
+  const sourceRows = Array.from(sourceStats.entries())
+    .map(([domain, s]) => ({ domain, ...s, missed: s.tldr - s.matched }))
+    .filter((r) => r.tldr >= 1)
+    .sort((a, b) => b.missed - a.missed || b.tldr - a.tldr)
+    .slice(0, 15);
   function totalHits(k: number) {
     return latestResults.reduce((s, r) => s + (r.hits_at?.[String(k)] ?? 0), 0);
   }
@@ -193,6 +215,55 @@ export default function BacktestPage({
                 ))}
               </tbody>
             </table>
+
+            {sourceRows.length > 0 && (
+              <div className="mb-6">
+                <h3 className="text-[13px] font-semibold mb-1.5">Where we missed today</h3>
+                <p className="text-[11.5px] text-text-mute mb-3">
+                  Top domains TLDR cited that we didn&apos;t catch — start here when picking new
+                  RSS sources or tuning the ranker.
+                </p>
+                <table className="w-full text-[12.5px] border-collapse">
+                  <thead>
+                    <tr>
+                      <th className="text-left py-2 px-3 text-[10px] uppercase tracking-[0.08em] text-text-mute border-b border-border-strong">
+                        Domain
+                      </th>
+                      <th className="text-right py-2 px-3 text-[10px] uppercase tracking-[0.08em] text-text-mute border-b border-border-strong w-[80px]">
+                        TLDR picks
+                      </th>
+                      <th className="text-right py-2 px-3 text-[10px] uppercase tracking-[0.08em] text-text-mute border-b border-border-strong w-[80px]">
+                        We matched
+                      </th>
+                      <th className="text-right py-2 px-3 text-[10px] uppercase tracking-[0.08em] text-text-mute border-b border-border-strong w-[80px]">
+                        Recall
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {sourceRows.map((r) => {
+                      const recall = r.tldr ? r.matched / r.tldr : 0;
+                      return (
+                        <tr key={r.domain} className="hover:bg-surface">
+                          <td className="py-2 px-3 border-b border-border font-mono text-text">
+                            {r.domain}
+                          </td>
+                          <td className="text-right py-2 px-3 border-b border-border font-mono text-text-dim">
+                            {r.tldr}
+                          </td>
+                          <td className="text-right py-2 px-3 border-b border-border font-mono text-text-dim">
+                            {r.matched}
+                          </td>
+                          <td className={`text-right py-2 px-3 border-b border-border font-mono font-semibold ${rcls(recall)}`}>
+                            {Math.round(recall * 100)}%
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
+            )}
           </>
         ) : detail === null || !detail.available ? (
           <div className="bg-surface border border-dashed border-border rounded-md py-10 px-6 text-center text-text-mute text-[13px]">
