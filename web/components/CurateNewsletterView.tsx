@@ -1,6 +1,8 @@
 'use client';
 
+import { useSearchParams } from 'next/navigation';
 import { useDecisions } from './useDecisions';
+import useCurateKeyboard from './useCurateKeyboard';
 import StoryRow from './StoryRow';
 import type { ScoredStory, Blurb } from '@/lib/types';
 
@@ -76,6 +78,33 @@ export default function CurateNewsletterView({
 
   const remainingCount = sections.reduce((sum, s) => sum + bySec[s.id].length, 0);
   const totalShown = approvedCount + remainingCount;
+
+  // Flatten the visible stories in the exact render order so j/k navigation
+  // matches what the user sees. Accepted block first, then Backlog.
+  const orderedUrls: string[] = [];
+  for (const sec of sections) {
+    for (const c of approvedBySec[sec.id] ?? []) orderedUrls.push(c.story.story.url);
+  }
+  for (const sec of sections) {
+    for (const c of bySec[sec.id] ?? []) orderedUrls.push(c.story.story.url);
+  }
+
+  const sp = useSearchParams();
+  function hrefForUrl(url: string): string {
+    const next = new URLSearchParams(sp.toString());
+    next.set('story', url);
+    next.set('nl_detail', newsletterId);
+    if (!next.has('nl')) next.set('nl', newsletterId);
+    return '?' + next.toString();
+  }
+
+  const { showHelp, closeHelp } = useCurateKeyboard({
+    orderedUrls,
+    selectedUrl: selectedStoryUrl,
+    newsletterId,
+    hrefForUrl,
+    openUrlForSelected: selectedStoryUrl,
+  });
 
   return (
     <div>
@@ -178,6 +207,49 @@ export default function CurateNewsletterView({
               </div>
             );
           })}
+        </div>
+      )}
+
+      {showHelp && (
+        <div
+          className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50"
+          onClick={closeHelp}
+        >
+          <div
+            className="bg-surface border border-border-strong rounded-lg p-6 max-w-md w-[90%]"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-baseline justify-between mb-3 pb-2 border-b border-border">
+              <h3 className="text-[14px] font-semibold m-0">Keyboard shortcuts</h3>
+              <button
+                onClick={closeHelp}
+                className="text-text-mute text-[11px] hover:text-text"
+              >
+                Esc to close
+              </button>
+            </div>
+            <div className="grid grid-cols-[60px_1fr] gap-y-2 gap-x-4 text-[12.5px]">
+              <kbd className="font-mono text-text-dim">j / ↓</kbd>
+              <span>Next story</span>
+              <kbd className="font-mono text-text-dim">k / ↑</kbd>
+              <span>Previous story</span>
+              <kbd className="font-mono text-text-dim">a</kbd>
+              <span>Approve current story</span>
+              <kbd className="font-mono text-text-dim">r</kbd>
+              <span>Reject current story</span>
+              <kbd className="font-mono text-text-dim">u</kbd>
+              <span>Undo (reset decision)</span>
+              <kbd className="font-mono text-text-dim">o</kbd>
+              <span>Open source URL in new tab</span>
+              <kbd className="font-mono text-text-dim">?</kbd>
+              <span>Toggle this help</span>
+              <kbd className="font-mono text-text-dim">Esc</kbd>
+              <span>Clear selection / close help</span>
+            </div>
+            <p className="text-[11px] text-text-mute mt-4 mb-0">
+              Shortcuts pause while you&apos;re typing in the blurb editor.
+            </p>
+          </div>
         </div>
       )}
     </div>
