@@ -1,0 +1,275 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR Dev 2026-06-18
+
+🧑‍💻
+Articles & Tutorials
+
+How we run Firecracker VMs inside EC2 and start browsers in less than 1s (1 minute read)
+
+Browser Use rebuilt its cloud browser infrastructure on Firecracker microVMs running inside EC2, giving every session its own isolated VM that starts in under a second. The nested-VM setup cut costs from $0.06 to $0.02 per browser hour and replaced a Unikraft unikernel design that handled idle shutdown well but couldn't autoscale fast enough during traffic spikes.
+
+Building Reliable Agentic AI Systems (1 minute read)
+
+Thoughtcombines from keyword search to research assistant for Bayer pharma researchers.Bayer engineers built a system that lets pharmaceutical researchers query decades of study data buried in PDF reports, evolving from keyword-based search into an LLM research assistant that answers complex questions and drafts regulatory documents. The writeup details the architecture choices that made it reliable, including how the team handled retrieval over dense scientific documents and constrained the model to keep outputs grounded and auditable.
+
+The time the x86 emulator team found code so bad they fixed it during emulation (1 minute read)
+
+Raymond Chen recounts how Windows' x86-on-ARM emulation team hit application code so pathologically inefficient that the just-in-time translator effectively rewrote it on the fly, producing emulated output that ran better than the original native instructions. The post uses the case to explain how binary translation can recognize and collapse redundant instruction patterns, turning a quirk of bad code into a window onto how the emulator's optimizer actually works.
+
+Making ast.walk 220x Faster (1 minute read)
+
+Reflex rewrote Python's `ast.walk` for their code-generation linter, replacing the generator-based traversal with an inlined iterative loop that appends to a list instead of yielding nodes. Eliminating the `yield` suspensions and inlining `iter_child_nodes` cut per-node overhead from ~285 nanoseconds to a fraction of that, yielding a 220x speedup on the hot path that validates AI-generated code.
+
+Correlated randomness in Slay the Spire 2 (5 minute read)
+
+(blurb not generated)
+
+All Smoke, No Alarm: Oracle Signals in Agent-Authored Test Code (5 minute read)
+
+(blurb not generated)
+
+What are git worktrees, and why should I use them? (1 minute read)
+
+Git worktrees let you check out multiple branches into sibling folders simultaneously, so a hotfix can be created with `git worktree add ../hotfix -b fix main` without stashing changes or disrupting your original editor session. The post argues worktrees have become newly relevant because AI agents push developers toward parallel work, though each worktree needs its own dependency install, which can bloat disk usage across many checkouts.
+
+A robot is sprinting towards you. Do you want it running on Claude or Grok? (1 minute read)
+
+A developer at OpenRouter dropped eleven LLMs into a 2D battle royale and ran 30 games, finding that Grok 4.1 Fast won 13 matches at $0.97 per win while Claude Sonnet 4.6, which kept trying to form alliances, took second with 5 wins at $26.78 each. The post's takeaway is that standard benchmarks like Artificial Analysis failed to predict winners, and the model with the most kills, GPT 5.4, never topped the leaderboard.
+
+The Value of Adaptivity in LSM Bloom-Filter Tuning: A Log-Law and a Two-Clock Frontier (5 minute read)
+
+(blurb not generated)
+
+How to design AI agent loops: schedules, goals, and subagents in Claude Code and Codex (1 minute read)
+
+This podcast and write-up breaks down four ways to automate a prompt into a loop, heartbeat, cron, hook, and goal, and covers the five components any production loop needs: work trees, skills, plugins, subagents, and state tracking. It then walks through two live builds, a daily aging-PR reviewer in Claude Code that self-schedules and spawns subagents, and a weekly skills-identification loop in Codex whose goal-based subagents validate output in real time.
+
+When the Next Step Is Not One Step: Distribution-Aware Execution Modeling for Concurrent Go Programs (5 minute read)
+
+(blurb not generated)
+
+How to Optimize Transformer-Based Models for Low-Precision Training (5 minute read)
+
+(blurb not generated)
+
+Humiliating IIS servers for fun and jail time (5 minute read)
+
+(blurb not generated)
+
+Decoupling Search from Reasoning: A Vendor-Agnostic Grounding Architecture for LLM Agents (1 minute read)
+
+This paper introduces Decoupled Search Grounding (DSG), which moves retrieval out of the reasoning model into an MCP-compatible gateway that exposes provider routing, fallback, retrieval-depth control, and caching as configurable controls. Across five frontier models, DSG nearly matches native search accuracy on SimpleQA (86.1% vs 87.7%) at 91% lower search cost, hits a 99.4% warm-cache rate with 68% lower latency, and cuts cost over 98% on an e-commerce workload.
+
+PracRepair: LLM-Empowered Automated Program Repair Inspired by Human-Like Debugging Practices (5 minute read)
+
+(blurb not generated)
+
+Start fresh, don't lift and shift: a dbt migration guide (5 minute read)
+
+(blurb not generated)
+
+Exploring Statistical Change Point Detection Techniques for Performance Anomaly Detection at Mozilla (1 minute read)
+
+Mozilla evaluated 25 change-point detection methods and 15 ensemble approaches against Perfherder's Student's T-test, which produces 12.5% false-positive alert groups and misses regressions in 6.8% of cases. Offline and hybrid CPD methods raised recall at a steep precision cost, but ensemble voting balanced the trade-off for an 11% F1 improvement, validated on a ground-truth dataset of 174 series annotated by eleven performance engineers.
+
+The Siren Song of  ariaNotify() (1 minute read)
+
+The new ariaNotify() method, defined in the WAI-ARIA 1.3 spec, lets developers programmatically trigger screen reader narration with a single string argument, replacing the brittle live-region workarounds that previously handled asynchronous content changes. The author walks through why live regions are so error-prone, then argues the new API should be reserved for cases that genuinely cannot be solved any other way, including pushing back on the feature itself.
+
+Designing frontend systems for cloud latency, not just cloud failure (2 minute read)
+
+The author argues that frontend reliability should account for cloud latency, not just outright failure, since distributed dependencies, serverless cold starts, and asynchronous state propagation make slow responses a normal operating condition rather than an exception. The piece makes the case that interfaces designed around ideal conditions feel broken to users well before anything technically fails, because people rarely distinguish "slow" from "broken.
+
+Context engineering is the new analytics engineering skill: a practical guide for dbt users (5 minute read)
+
+(blurb not generated)
+
+🧠
+Opinions & Advice
+
+AI demands more engineering discipline. Not less (1 minute read)
+
+The author argues that now that models like Opus 4.5 generate code on par with the median engineer, the bottleneck shifts from writing code to verifying it, making code review, tests, and immutable-infrastructure habits more important rather than less. They draw the analogy to the move from handcrafted server "pets" to immutable infrastructure, arguing teams that loosen discipline to move faster with AI are repeating a mistake that earned ops a decade of incidents.
+
+Stop Using JWTs (1 minute read)
+
+The author argues JWTs should not be used to keep users logged in, because the spec targets very short-lived tokens and secure "stateless" sessions aren't actually feasible without server-side state. The post contends a regular cookie session is the better tool, noting that even Google uses cookie sessions in the browser and reserves JWTs for single sign-on transport between hosts.
+
+Is Meta destroying its engineering organization? (5 minute read)
+
+(blurb not generated)
+
+Understanding the rationale behind a rule when trying to circumvent it (5 minute read)
+
+(blurb not generated)
+
+The AUR Supply Chain Attack: When Trust Becomes the Vulnerability (3 minute read)
+
+Attackers hijacked more than 400 orphaned Arch User Repository packages by adopting abandoned maintainer slots and editing PKGBUILD scripts to pull a malicious npm package, whose preinstall hook dropped a Rust credential stealer that harvests browser sessions, SSH keys, and GitHub, npm, and Vault tokens during a normal package build. The author argues the exploit targeted social trust rather than code, since spoofed commit metadata and intact package histories made the tampered build instructions look like routine maintenance.
+
+Local Qwen isn't a worse Opus, it's a different tool (1 minute read)
+
+The author argues that local Qwen models aren't a budget Opus substitute but a distinct tool with a different reliability profile, drawing on production use across a bootstrapped software business rather than benchmark claims or airplane-coding anecdotes. An RTX 6000 Pro paid for itself within two or three months, but the post is candid about Qwen's worst failure modes: infinite loops and hallucination that worsen once you quantize down to fit a consumer GPU.
+
+Want your images back? That'll be $5 (5 minute read)
+
+(blurb not generated)
+
+Zed Guild: What We Built, What We Learned (1 minute read)
+
+Zed shared a retrospective on the Guild, a 12-week program that embedded outside contributors inside its team to triage issues, pair with engineers, and ship features across its million-plus-line Rust codebase. The first cohort drew hundreds of applicants, accepted about a quarter, and produced 148 merged pull requests from 33 active contributors working across three tracks scaled from issue reproduction to expert-level feature work.
+
+Position: Coding Benchmarks Are Misaligned with Agentic Software Engineering (5 minute read)
+
+(blurb not generated)
+
+Smelly config files will make your agents waste tokens, researchers warn (1 minute read)
+
+Researchers found that poorly structured configuration files force coding agents to burn extra tokens re-parsing ambiguous or redundant context, with "smelly" configs measurably inflating the per-task cost of agent runs. The takeaway for engineers is to treat agent config like code, pruning dead settings and tightening structure so the model spends its context window on the task instead of decoding your setup.
+
+Where Did the Variability Go? From Vibe Coding to Product Lines by Regeneration (1 minute read)
+
+The authors analyzed 10 vibe-coded C/C++ projects and found near-zero in-artifact variability, since the LLM resolves every configuration decision at generation time rather than at compile or runtime. They propose Variability by Regeneration, where the LLM derives a separate dead-code-free binary for each variant from a declarative spec and a dispatcher routes requests, arguing that variability in AI-generated software belongs in the specification rather than the code.
+
+🚀
+Launches & Tools
+
+Show HN: cuTile Rust: Safe, data-race-free GPU kernels in Rust (1 minute read)
+
+cuTile Rust is a tile-based system from NVIDIA Labs for writing memory-safe, data-race-free GPU kernels in idiomatic Rust, extending ownership across the launch boundary by partitioning mutable tensors into disjoint tiles and sharing immutable ones. A #[cutile::module] macro captures each kernel's AST and JIT-compiles it through CUDA Tile IR into a cubin, supporting synchronous launches, async pipelines, and CUDA graph replay, with local opt-outs when lower-level control is needed.
+
+RFC 10008: The new HTTP Query Method (1 minute read)
+
+The IETF published RFC 10008, which standardizes the HTTP QUERY method for safe, idempotent requests that carry their input in the request body rather than the URI. QUERY fills the gap between GET and POST, letting large or sensitive query payloads be sent without URI length limits while remaining cacheable and automatically retriable since it makes no partial state changes.
+
+Wolfram Language and Mathematica version 15 (5 minute read)
+
+(blurb not generated)
+
+Homebrew 6.0 released with new security mechanism, Linux sandbox and more (5 minute read)
+
+(blurb not generated)
+
+Getting more from each token: How Copilot improves context handling and model routing (1 minute read)
+
+GitHub Copilot in VS Code now cuts per-turn overhead with prompt caching, which reuses model state for repeated prompt prefixes, and tool search, which loads tool schemas on demand instead of sending every definition every turn. The goal is spending less of each session on recurring context and more on the task, with Auto routing also expanding so Copilot picks the model that fits the work without the developer choosing each time.
+
+Check out what's new in Android 17 (1 minute read)
+
+Android 17 began rolling out to Pixel devices today, adding Bubbles for floating any app into a resizable window, a foldable gaming mode with a 50/50 game-and-gamepad layout plus native controller remapping, and Screen Reactions for simultaneous selfie-and-screen recording. The release also tightens permissions with temporary precise-location grants and selective contact sharing, and reduces high-def gaming frame drops through more efficient memory cleanup.
+
+Lore – Open source version control system designed for scalability (1 minute read)
+
+Epic Games released Lore, a centralized, content-addressed version control system that models repository state as Merkle trees over an immutable revision chain. It targets binary-heavy repos at scale through deduplication and sparse, on-demand hydration, positioning it against Perforce for game studios rather than Git's distributed model.
+
+Z.ai’s open-weights GLM-5.2 beats GPT-5.5 on multiple long-horizon coding benchmarks for 1/6th the cost (3 minute read)
+
+Z.ai released GLM-5.2, a 753B-parameter open-weights model under an MIT license that beats GPT-5.5 on several long-horizon coding benchmarks at roughly a sixth of the cost. The model ships with a 1M-token context window and an IndexShare optimization that reuses one indexer across every four sparse attention layers, cutting per-token compute FLOPs by 2.9x at maximum context length.
+
+Introducing tfctl: The CLI for HCP Terraform and TFE (1 minute read)
+
+HashiCorp released tfctl, the first official CLI for HCP Terraform and Terraform Enterprise platform operations like canceling runs, creating workspaces, and managing variables that the Terraform CLI doesn't cover. Built on the platform's OpenAPI spec for full API coverage, it adds safety guardrails including --dry-run previews and interactive confirmation on deletes, plus JSON, markdown, and table output for piping to jq, agents, or the terminal.
+
+Prop For That (1 minute read)
+
+Prop For That, from Open Props creator Adam Argyle, exposes runtime values CSS can't normally access as live custom properties, including cursor position, scroll velocity, progress values, form states, and current time. You import the library, mark an element with a data-props-for attribute to trigger the relevant script, then read values like var(--live-pointer-x) directly in your styles instead of wiring up the JavaScript yourself.
+
+Bringing more agent harnesses and frameworks to Cloudflare, starting with Flue (1 minute read)
+
+Cloudflare added durable execution, dynamic code execution, a durable filesystem, and dynamic workflows to its Agents SDK, exposing those primitives as a base layer for any agent harness or framework. Flue, a new open-source framework from the team behind Astro, is the first to build on it, shipping its 1.0 Beta this week atop the Pi harness.
+
+Z.ai pitches GLM-5.2 for long-running software engineering tasks (3 minute read)
+
+Z.ai released GLM-5.2, an MIT-licensed open-source coding model with a one million-token context window that the company says trails Claude Opus 4.8 by 1% on the FrontierSWE long-horizon benchmark. It targets repository-scale agentic work with IndexShare, which cuts per-token compute by 2.9x at full context length, plus multi-token prediction changes that lift speculative decoding acceptance by up to 20%.
+
+[AINews] GLM-5.2: the top Frontend Coding model in the world, IndexShare for Speculative Decoding (5 minute read)
+
+(blurb not generated)
+
+ICYMI: OpenAI released CDP support for browser use on Codex (5 minute read)
+
+(blurb not generated)
+
+Git good with Epic Games' new open source VCS, Lore (1 minute read)
+
+Epic Games released Lore, an open source version control system built to handle the massive binary assets and monorepo scale that Git struggles with on large game projects. The system targets workflows where artists and engineers commit multi-gigabyte files, positioning it as an alternative to Perforce for studios that have outgrown Git's large-file handling.
+
+Clojure Hosted on Go (1 minute read)
+
+Glojure is an interpreter for Clojure hosted on Go, giving Clojure code direct access to Go libraries the way the JVM version reaches Java. As a hosted language, all Go values work as Glojure values and vice versa, though the project is early (v0.3.0), runs only a subset of core Clojure, and makes no backwards-compatibility guarantees before v1.
+
+Stanford's DeLM cuts multi-agent task costs 50% — without a central orchestrator (5 minute read)
+
+(blurb not generated)
+
+What’s new with Terraform + Ansible (1 minute read)
+
+HashiCorp released Terraform Ansible collection 2.0, powered by the now-GA pyTFE library, providing an API-first way to manage Terraform workspaces, runs, remote execution, and outputs directly from Ansible playbooks. The release replaces the custom scripts and CLI glue code teams previously maintained to sync the two tools, adding role-based access controls, dynamic inventory, and an enhanced Terraform actions experience.
+
+Wear OS 7 helps your smartwatch keep up with you (5 minute read)
+
+(blurb not generated)
+
+Firefox 152 understands 'Sssh!' (5 minute read)
+
+(blurb not generated)
+
+🎁
+Miscellaneous
+
+144 Mastra npm Packages Compromised via Hijacked Contributor Account (1 minute read)
+
+Attackers hijacked a former Mastra contributor's npm account whose scope access was never revoked and mass-published 144 malicious packages across the @mastra/* namespace, each adding a dependency on "easy-day-js," a dayjs clone that runs a cross-platform crypto-stealing RAT via a postinstall hook. Mastra generated SLSA provenance on CI publishes but did not require it, so a standard personal token could still push unattested versions that npm accepted.
+
+SpaceX to acquire vibe coding startup Cursor for $60B (1 minute read)
+
+SpaceX announced it will acquire Cursor maker Anysphere for $60B in stock, closing this quarter and following an April partnership in which SpaceX provided tens of thousands of GPUs to train Cursor's in-house Composer 2.5 model. The deal hands Cursor's 1M+ daily active users access to SpaceX's post-xAI-merger compute, though how much of that capacity reaches the Cursor team remains unclear.
+
+Malicious JetBrains Plugins Steal AI API Keys as Chrome Extensions Capture Chatbot Chats (1 minute read)
+
+Researchers flagged a coordinated campaign on the JetBrains Marketplace where 15 malicious plugins posed as DeepSeek-based AI coding assistants and exfiltrated developers' AI provider API keys to an attacker-controlled server in plaintext, with two plugins claiming over 25,000 downloads each. The plugins worked as advertised since October 2025 and even ran a paid tier that handed users someone else's API key, suggesting the keys themselves were stolen.
+
+SpaceX to acquire the AI coding startup Cursor for $60 billion (1 minute read)
+
+SpaceX agreed to acquire AI coding startup Cursor for $60B in stock, with the deal expected to close in Q3 pending regulatory approval. The purchase folds Cursor into SpaceX's xAI unit to compete with Anthropic and OpenAI on coding tools, though Cursor's market share has slipped from 41% to roughly 26% over the past year as Anthropic captured half the category.
+
+Apple's WebKit performance tax leaves iOS browsers stuck in the slow lane, says Microsoft (5 minute read)
+
+(blurb not generated)
+
+Anthropic "pauses" token-based billing for its Claude Agent SDK (1 minute read)
+
+Anthropic paused a billing change that would have separated Claude Agent SDK usage from standard subscription limits and charged it at API rates, reversing the plan days after it took effect on June 15. The shift preserves the current setup where SDK and "claude -p" usage draws from generous weekly subscription caps, which power users and third-party apps had leveraged for many times the API-equivalent value of their plans.
+
+Google Chrome update will close the door on ad blockers (5 minute read)
+
+(blurb not generated)
+
+SpaceX purchases Cursor, a Claude Code and OpenAI Codex competitor [U] (5 minute read)
+
+(blurb not generated)
+
+⚡
+Quick Links
+
+Predicting model behavior before release by simulating deployment (1 minute read)
+
+OpenAI shared Deployment Simulation, a method that replays past conversations against candidate models to estimate undesired behavior rates before release.
+
+GrapheneOS has been ported to Android 17 (1 minute read)
+
+GrapheneOS has been ported to Android 17 across all supported Pixel devices, with the first official release shipping tomorrow.
+
+GLM-5.2 is the new leading open weights model on Artificial Analysis (1 minute read)
+
+Z.ai's GLM-5.2 tops Artificial Analysis's open weights leaderboard at 51, ahead of MiniMax-M3 and DeepSeek V4 Pro, under an MIT license.
+
+I admire Fabrice Bellard. He is almost certainly a better overall programmer (5 minute read)
+
+(blurb not generated)
+
+TIL: You can make HTTP requests without curl using Bash /dev/TCP (1 minute read)
+
+Bash can speak HTTP without curl by opening a TCP socket through /dev/tcp and writing the request by hand.

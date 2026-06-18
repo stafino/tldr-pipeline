@@ -1,0 +1,315 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR InfoSec 2026-06-18
+
+🔓
+Attacks & Vulnerabilities
+
+Massive breach spills credentials for thousands of sensitive networks (1 minute read)
+
+Researchers disclosed a credential-spraying campaign against internet-facing FortiGate firewalls that compromised nearly 74,000 devices across 194 countries, dumping plaintext credentials for organizations including Oracle, Chevron, Lenovo, FedEx, a NATO defense contractor, and Fortinet itself. Roughly half of all exposed Fortinet firewalls are affected and most remain online with valid credentials, so operators should treat compromised devices as live, rotate credentials, and audit downstream RADIUS and Active Directory access immediately.
+
+Microsoft Confirms RoguePlanet Defender Zero-Day, Says Patch is in Development (1 minute read)
+
+Microsoft confirmed a Defender zero-day codenamed RoguePlanet (CVE-2026-50656, CVSS 7.8), a race condition in the Malware Protection Engine that hands attackers a SYSTEM-level shell regardless of whether real-time protection is enabled. No patch has shipped yet, public PoC code from researcher Chaotic Eclipse already exists, and this is the fourth Defender flaw the same researcher has disclosed after BlueHammer, UnDefend, and RedSun.
+
+FortiBleed leak exposes Fortinet VPN credentials for 73,000 devices. (1 minute read)
+
+A leak dubbed "FortiBleed," discovered by researcher Bob Diachenko, exposed valid FortiGate SSL VPN credentials, including plaintext passwords, for 73,932 firewall URLs at organizations including Chevron, Samsung, AT&T, and Mercedes-Benz. Diachenko attributes the haul to a Russian-speaking group that intercepted and cracked SSL VPN authentication hashes; affected organizations should treat exposed appliances as compromised, force password resets, and audit Active Directory for lateral movement.
+
+144 Mastra npm Packages Compromised via Hijacked Contributor Account (1 minute read)
+
+Attackers hijacked the dormant npm account of a former Mastra contributor ("ehindero") and mass-published 144 malicious "@mastra/*" packages on June 17, each adding a tainted "easy-day-js" dependency whose postinstall hook drops a cross-platform infostealer targeting browser history and 160+ crypto wallet extensions. Audit Mastra installs from the past 24 hours, rotate any exposed credentials and wallet keys, and pin to releases carrying SLSA provenance attestations, since the attacker published from a personal token without them.
+
+GhostTree Attack Abused Recursive Windows Junctions to Hide Malware (5 minute read)
+
+(blurb not generated)
+
+Microsoft Teams Relay Servers Abused in DragonForce Ransomware Attack (1 minute read)
+
+DragonForce ransomware operators deployed Backdoor.Turn, a Go-based implant that abuses Microsoft's TURN relay infrastructure to disguise C2 traffic as legitimate Microsoft Teams sessions, which Symantec calls the first malware family to weaponize TURN this way. The actor gained access to a US services firm via an unpatched SQL/MSSQL server in December 2025, used DLL sideloading and a BYOVD driver exploit for kernel-level access, then disabled security processes before encrypting and exfiltrating data.
+
+CISA Warns of Actively Exploited Joomla JCE Flaw Allowing PHP Code Execution (1 minute read)
+
+CISA added CVE-2026-48907 (CVSS 10.0), a maximum-severity improper access control flaw in the Widget Factory Joomla Content Editor (JCE), to its KEV catalog after confirming active exploitation that lets unauthenticated users create editor profiles and upload and execute arbitrary PHP code. The flaw affects JCE versions 1.0.0 through 2.9.99.4 and is patched in 2.9.99.5, with FCEB agencies ordered to remediate by June 19.
+
+Steam Workshop abused to spread malware via Wallpaper Engine app (1 minute read)
+
+Threat actors are abusing Steam Workshop's Wallpaper Engine app to distribute malware through "application" wallpapers, which run executable Windows code on install, per Kaspersky. Active since at least late 2025, the malicious packages deploy a DarkKomet backdoor, a trojanized AggregatorHost.dll that steals Steam credentials, and Lumma and Vidar stealers, with some samples downloaded tens of thousands of times.
+
+AMD silently removes memory encryption from consumer Ryzen CPUs, leaving users unaware that they may be vulnerable — security feature vanishes after newer AGESA firmware, AMD engineers go radio silent when pressed about the change (1 minute read)
+
+AMD appears to have silently removed Transparent Secure Memory Encryption (TSME) from consumer Ryzen CPUs outside its Pro lineup, stripping protection against physical attacks that siphon data from connected memory, with the change traced to AGESA 1.2.7.0 firmware. The removal is undetectable on Windows and hard to spot on Linux, so defenders relying on at-rest memory encryption for consumer endpoints should verify TSME status directly rather than assume it is still active.
+
+Three critical Fortinet sandbox bugs splattered by unknown attackers (1 minute read)
+
+Three critical vulnerabilities in Fortinet's FortiSandbox are under active exploitation by unidentified attackers, with the flaws allowing remote code execution on the threat-analysis appliances. Organizations running FortiSandbox on reachable network segments should apply Fortinet's patches immediately and hunt for signs of compromise, since a foothold on the sandbox itself can blind detection and expose submitted malware samples and analysis data.
+
+CISA orders feds to patch max severity Joomla plugin flaw by Friday (1 minute read)
+
+CISA added CVE-2026-48907, a maximum-severity improper access control flaw in the Widget Factory Joomla Content Editor plugin, to its KEV catalog and ordered FCEB agencies to patch by Friday under BOD 26-04. Unauthenticated attackers are exploiting it via automated attacks to upload and run PHP code, and JCE warns that patching to 2.9.99.6 closes the entry point but does not remove implants left on already-compromised sites.
+
+New Rokarolla Android Malware Steals PINs, SMS Codes, and Crypto Wallet Funds (5 minute read)
+
+(blurb not generated)
+
+Chrome and Firefox Updated to Patch Critical, High-Severity Vulnerabilities (5 minute read)
+
+(blurb not generated)
+
+Joomla, LiteSpeed Vulnerabilities Exploited in Attacks (5 minute read)
+
+(blurb not generated)
+
+Malicious JetBrains Plugins Steal AI API Keys as Chrome Extensions Capture Chatbot Chats (1 minute read)
+
+Fifteen malicious JetBrains Marketplace plugins, posing as DeepSeek-based AI coding assistants, have exfiltrated users' OpenAI, SiliconFlow, and DeepSeek API keys in plaintext to an attacker server (39.107.60.51) since late October 2025. Aikido Security found the plugins work as advertised while siphoning entered keys, with two—CodeGPT AI Assistant and DeepSeek AI Assist—each showing over 25,000 possibly inflated downloads, so audit installs and rotate any keys exposed to them.
+
+Google Vertex AI SDK Flaw Let Attackers Hijack Model Uploads via Bucket Squatting (5 minute read)
+
+(blurb not generated)
+
+New Rokarolla Android malware targets 217 banking, crypto apps (1 minute read)
+
+New Rokarolla Android banking trojan targets 217 banking and cryptocurrency apps using 137 C2 commands, spreading via fake Chrome and TikTok installers that impersonate Google Play Protect to drop the payload. Once granted Accessibility permissions, it serves phishing overlays to steal credentials and card data, logs keystrokes, harvests SMS and contacts, and disables Play Protect, per Zimperium.
+
+Cisco adds another SD-WAN box to max-severity bug advisory (5 minute read)
+
+(blurb not generated)
+
+Crooks found a new way to collaborate using Teams – by hiding command-and-control traffic (5 minute read)
+
+(blurb not generated)
+
+PhantomSkill: Malicious Code Injection in Agent Skill Ecosystems (1 minute read)
+
+This paper presents PhantomSkill, an attack framework that hides malicious behavior in the auxiliary resources of third-party agent skills rather than their text descriptions, using a technique called VulMask to rewrite overt malware into trigger-activated, vulnerability-shaped code that evades automated reviewers. The authors argue skill ecosystems need resource-level vetting and execution-time containment, treating exploitable vulnerabilities in agent skills as potential malicious payloads.
+
+🧠
+Strategies & Tactics
+
+CodeSentinel: A Three-Layer Defense Against Indirect Prompt Injection in Code Contexts (1 minute read)
+
+CodeSentinel is an inference-time sanitizer that defends code LLMs against indirect prompt injection hidden in retrieved context like comments, strings, identifiers, and decoy code. It uses Tree-sitter to extract high-risk CST nodes, then applies syntax-guided pre-filtering, CST-guided Dynamic Min-K% scoring, and node perturbation analysis to detect and neutralize adversarial triggers before they reach the model. Across six attack families it hit 0.80 average node-level F1, outperforming CodeGarrison, DePA, and KillBadCode.
+
+OpenAnt: LLM-Powered Vulnerability Discovery Through Code Decomposition, Adversarial Verification, and Dynamic Testing (1 minute read)
+
+OpenAnt is an open-source pipeline that pairs static analysis with LLM reasoning to find vulnerabilities in large codebases, decomposing them into reachability-filtered units to cut the analysis surface by up to 97%. Candidate bugs pass through adversarial verification under simulated attacker constraints, then dynamic validation in auto-generated, sandboxed exploit environments. On OpenSSL, WordPress, and Flowise, the closed-loop approach surfaced previously unknown vulnerabilities while substantially reducing the false positives that make static scanners hard to triage.
+
+Evaluating Prompting-Based Defenses Against Domain-Camouflaged Injection Attacks (1 minute read)
+
+This paper evaluates five prompting-based defenses against domain-camouflaged injection attacks, which hide malicious instructions in domain-appropriate vocabulary to slip past syntactic detectors, across three model families and 3,510 trials. Paraphrasing retrieved content before agent processing was the most consistent defense, cutting camouflage attack success by 55-84% and beating a Llama Guard 4 configuration on every model. Effectiveness is heavily model-dependent, and financial deployments retained 26-33% baseline attack success with no prompting defense fully closing the gap on weaker models.
+
+CloakLM: Obfuscating GPU Memory Layout to Mitigate Model Ex-filtration for Serving (1 minute read)
+
+CloakLM is a software-only framework that obfuscates GPU memory layout to block model exfiltration from untrusted accelerator infrastructure, countering attacks like Hermes (PCIe reconstruction) and TunnelS (HBM dumps). It combines PCIe traffic shaping, weight shuffling, and HBM page remapping so authorized inference sees a valid layout while observers see fragmented state. The authors report near-native performance on LLaMA and Qwen under vLLM, with no hardware changes required.
+
+Code-Augur: Agentic Vulnerability Detection via Specification Inference (1 minute read)
+
+This paper introduces Code-Augur, an agentic vulnerability-detection harness that forces LLM agents to commit their tacit security assumptions as in-source assertions, then runs a guided fuzzer to falsify them. When the fuzzer trips an assertion, it surfaces either a real vulnerability or a flawed specification to refine, grounding the agent's reasoning in actual runtime behavior. The authors report 22 new vulnerabilities in open-source projects and higher detection rates than prior agents, using widely available models like Sonnet and DeepSeek rather than specialized ones like Claude Mythos.
+
+AI Agent Skill Managers Are a Supply-Chain Surface Most of Them Don't Guard (5 minute read)
+
+(blurb not generated)
+
+Quantifying Compromise Risk in Exceptional Access Architectures Under Sparse and Indirect Evidence (1 minute read)
+
+This paper builds a structured uncertainty framework to quantify systemic compromise risk in lawful exceptional access (EA) architectures, modeling transmission-layer (T-EA) and over-the-top (OTT-EA) designs separately. Across all calibrations, EA-equipped systems carry strictly higher risk than no-EA counterfactuals, with T-EA's annual compromise probability ranging 1.4% to 12.9% and OTT-EA risk concentrated in the tail under correlated campaigns. Because key-material exfiltration is irreversible, the cumulative multi-decade risk weighs heaviest on OTT-EA's larger user populations.
+
+Lifecycle-Aware Dynamic Analysis for Secure ML Model Execution (1 minute read)
+
+This paper proposes Moat, a dynamic, lifecycle-aware approach to securing ML model execution that watches the effects a model has on the host system rather than scanning artifacts for known signatures or format-specific rules. The key observation is that models operate in well-defined lifecycle phases with structured, predictable host interactions, so deviations flag malicious behavior. Evaluated against 77,974 Hugging Face artifacts and 31 CVE PoCs, the reference implementation Re-Moat detected every tested attack class at a near-zero false-positive rate.
+
+AI’s constant patching treadmill can be a security problem (1 minute read)
+
+Backslash Security reviewed two months of Claude Code update logs and found Anthropic silently shipped 30-plus security-relevant patches between April and early June 2026, covering prompt injection, data poisoning, OAuth credential leakage, and arbitrary code execution. One fix closed a bypass where adding a single backslash defeated guardrails against catastrophic deletion commands. The takeaway: AI coding tools patch at a far higher cadence than traditional software, so enable auto-updates and track changelogs for undisclosed fixes.
+
+Compute-Budgeted Exploitability Evidence Graphs for Prospective Vulnerability Triage (1 minute read)
+
+This paper proposes a leakage-safe protocol for evaluating vulnerability triage prospectively, scoring each CVE only from public evidence (advisories, exploit archives, fix commits, forum discourse) visible by a fixed decision time, with every score paired with an auditable certificate of supporting signals. On 12,012 prospective CVEs, budgeted evidence selection raised leakage-safe recall@50 from 0.010 to 0.026, while a naive random split inflated apparent recall by 8.5x. The takeaway for defenders: most retrospective exploitability benchmarks overstate real-world prioritization performance.
+
+Detecting Hidden ML Training With Zero-Overhead Telemetry (1 minute read)
+
+This paper tests whether GPU compute-governance monitoring can survive an adversary trying to hide training runs. Using only zero-overhead, privacy-preserving NVML telemetry, the authors built a classifier that hits 98.2% binary accuracy at flagging training workloads across 9 GPU models and 4 architecture generations, and holds 43-87% accuracy against adversarially disguised workloads over 5 rounds of monitor-evader iteration. The takeaway for governance schemes is that content-agnostic side-channel signals are robust enough to detect hidden training without ever touching model weights or data.
+
+TRAP: Benchmark for Task-completion and Resistance to Active Privacy-extraction (1 minute read)
+
+This paper introduces TRAP, a benchmark testing whether AI agents can use private fields like passport numbers to complete tasks without leaking them to an attacker prompting in natural language. Across 22 frontier and open-source models, all leaked private data, and stronger instruction-following correlated with higher leakage; prompt-based defenses cut leakage only by degrading task accuracy. The authors prove no soft-constraint defense can hit both goals, and propose replacing private fields with hash keys before they reach the model.
+
+CHERI-D: Secure and efficient inline object ID for CHERI temporal memory safety (1 minute read)
+
+This paper introduces CHERI-D, an architectural extension that stores per-object ID metadata inline with allocation data to give CHERI hardware native temporal memory safety. It enables strict use-after-free mitigation rather than the weaker use-after-reallocation protection of the current software-based approach, Cornucopia Reloaded, while substantially cutting the revocation overhead that solution incurs. Evaluated in both simulation and hardware, it points toward UAF defenses cheap enough to run by default.
+
+Stop Using JWTs (1 minute read)
+
+The author argues developers should stop using JWTs for user session management and use regular cookie sessions instead. The case rests on a few points: the JWT spec targets very short-lived tokens (~5 minutes), secure "stateless" auth is not actually feasible since you need server-side state to revoke tokens, and a JWT carrying only a session ID gains nothing over a plain session cookie while adding spec-level risk. Google's JWT usage is SSO transport between hosts, not browser sessions.
+
+TGCM: Topic-Guided Generative Disentanglement of Interleaved APT Technique Sequences (1 minute read)
+
+This paper introduces TGCM, a generative disentanglement framework that separates concurrent APT campaigns from interleaved audit logs, jointly inferring how many campaigns are present and assigning each technique to its source. It uses Consistency Models for single-step inverse mapping and a topic-guided prior built from MITRE ATT&CK narratives to keep recovered attack chains coherent. Across DARPA TC-E3/E5 traces and 15 baselines, it improved separation under heavy technique sharing and generalized zero-shot to in-the-wild interleaved data without retraining.
+
+Signature filtering: a lightweight enhancement for statistical watermark detection in large language models (1 minute read)
+
+This paper introduces signature filtering, a detection-time add-on that strengthens statistical watermark detection in LLM outputs without changing how watermarks are embedded. It learns a small set of "signature" tokens that make watermark tests unreliable and strips them before detection, raising detection rates in weak-signal and low-entropy settings from 8–31% to 78–99% while keeping false positives negligible. The method is model-agnostic and holds up under scrambling and 25–50% token perturbation, improving provenance checks for LLM-generated text.
+
+Runtime Compliance Verification for AI Agents (1 minute read)
+
+This paper introduces C-Trace, a framework that enforces GDPR compliance on AI agents at runtime by expressing rules like consent, purpose limitation, data minimization, and the right to erasure as formal predicates over execution traces. A runtime monitor intercepts every tool call and model output, rejecting non-compliant actions. Across four case studies, it held attack success rate at or below 12% under 10% extractor noise and 0% with perfect extraction, with false positives at or below 16%.
+
+AI vs Rule-Based Secret Scanning in CI: Which Actually Works (3 minute read)
+
+The author argues the AI-vs-rule-based secret scanning debate is a false binary, drawing on running both in production across orgs from 5 to 200 developers. Rule-based tools like Gitleaks (150+ secret types, fully offline, deterministic) catch known patterns cheaply, while ML scanners like GitGuardian and Nightfall add context to flag obfuscated or base64-encoded secrets that defeat regex. The practical takeaway is to layer them, since leaked credentials in CI logs and git history remain a top initial-access vector.
+
+AI Sandboxes: A Threat Model, Taxonomy, and Measurement Framework (1 minute read)
+
+This paper proposes a threat model, taxonomy, and measurement framework for AI sandboxes, the bounded environments used to test, verify, and validate digital AI, embodied autonomy, and cyber-physical systems. The authors formalize the sandbox boundary and a weakest-link rule for composing per-dimension evidence, and define measurements spanning fidelity, controllability, observability, containment, reproducibility, and governance. Notably, their threat model includes attacks on the assurance apparatus itself, clarifying which risks a sandbox can actually contain and what evidence it can support for regulatory assurance.
+
+Evaluating the Effectiveness of LLMs in Aiding Compliance Testing of PKCS#1-v1.5 (1 minute read)
+
+This paper tests whether grammar-level mutation plus LLM code synthesis can generate spec-compliance test inputs for PKCS#1 v1.5 signature verification, evaluated against the Morpheus oracle across 48 cryptographic library implementations. The approach reproduced 10 of 13 known violation categories and surfaced one previously unreported discrepancy, but LLM hallucination corrupted 82.5% of generated scripts. The authors quantify a gap between 99.8% operational reliability and 17.5% semantic fidelity, arguing LLM synthesis is trustworthy only where structural correctness, not faithful mutation, is what matters.
+
+🧑‍💻
+Launches & Tools
+
+GrapheneOS has been ported to Android 17 (1 minute read)
+
+GrapheneOS has been fully ported to Android 17, with developer builds available now and the first official release scheduled for tomorrow across all supported Pixel devices, including the 6a, 7, 8, and 10 Pro Fold. The hardened mobile OS has been tested on each device ahead of public release, continuing its same-day tracking of upstream Android.
+
+AWS Security Agent adds threat modeling, Kiro power and Claude Code plugin, and more (1 minute read)
+
+AWS Security Agent, part of AWS Continuum, added STRIDE-based threat modeling and full-repository code review (both in preview), with pull request scanning, remediation commits, and integrations for GitHub, GitLab, Bitbucket, and Confluence. A new MCP integration plus a Claude Code plugin and Kiro support let teams run code reviews, generate threat models, and apply fixes inline from any IDE or CLI.
+
+Cloudflare DMARC Management is now generally available (1 minute read)
+
+Cloudflare made DMARC Management generally available for free to all customers, with a redesigned dashboard that guides domains to full DMARC enforcement without parsing raw XML aggregate reports. The tool unifies SPF, DKIM, DMARC, and BIMI posture in a single view, helping defenders move policies from p=none to quarantine or reject to block spoofing and brand impersonation.
+
+PYPILINE: Malicious PyPI Package Detection via Suspicious API Knowledge and Agent Workflow (1 minute read)
+
+PYPILINE is a malicious PyPI package detector that pairs a suspicious-API knowledge base, built from AST and call-graph analysis of known-bad packages, with an LLM agent workflow that produces interpretable maliciousness reports. The authors report 96.7% precision, 99.6% recall, and a 98.1% F1, beating prior tools on precision by 5.7 to 24.2 points, with built-in vector-database retrieval and email delivery of analysis results.
+
+SentinelOne turns Purple AI loose to investigate threats on its own (1 minute read)
+
+SentinelOne opened its Purple AI Agentic Investigations capability to all Singularity Platform customers, adding "zero-click" autonomous threat investigation that triages, reaches a verdict, and can move to contain a threat without an analyst launching it. The feature runs on existing endpoint, identity, cloud, and third-party telemetry, uses a mix of Claude, GPT, and SentinelOne's Ultraviolet models, and ships with an adjustable human-in-the-loop control plus an auditable evidence chain.
+
+Homebrew 6.0 released with new security mechanism, Linux sandbox and more (5 minute read)
+
+(blurb not generated)
+
+WitnessAI Agentic Control secures AI agents, tools, and MCP server access (5 minute read)
+
+(blurb not generated)
+
+AWS unveils agent security, data access tools (1 minute read)
+
+AWS released a set of agent security and data-access tools at its re:Inforce conference, aimed at controlling what AI agents can read and act on across enterprise environments. The launch leans on Anthropic's Mythos model to surface vulnerabilities faster, positioning the tooling for teams already running agentic workflows on AWS infrastructure.
+
+AWS launches Continuum to find and fix code vulnerabilities at machine speed (1 minute read)
+
+AWS launched Continuum, a model-agnostic security platform now in gated preview that ingests a customer's vulnerability backlog, prioritizes findings by reachability and production impact, validates them by building working exploits in a sandbox, and recommends network, policy, or code fixes. It starts in a human-in-the-loop learn mode, with every recommendation accompanied by its reasoning, and can graduate to an enforce mode that automates remediation by customer-defined risk categories.
+
+What’s new in Databricks Platform security and compliance at Data + AI Summit 2026 (1 minute read)
+
+Databricks announced new platform security capabilities at Data + AI Summit 2026, including general availability of Automatic Identity Management for Microsoft Entra ID on AWS and GCP, AIM for Okta in public preview, and Context-Based Ingress policies. The release also adds Private Network Gateway and expanded Private Link support for Lakebase, plus broader AWS GovCloud coverage for AI services and upcoming FedRAMP High support on Azure Commercial.
+
+Jamf announces new native AI Governance control plane for macOS (1 minute read)
+
+Jamf announced AI Governance, an upcoming Jamf Pro capability that gives IT and security teams OS-level visibility and control over generative AI tools running on managed Macs, including local models and developer tooling that network proxies miss. It offers deep tool discovery, granular policy controls across model access, network, and file system, and Model Context Protocol server restrictions, plus a vendor engine that tracks new controls automatically.
+
+🎁
+Miscellaneous
+
+Flock Cameras Are Being Used for Stalking (1 minute read)
+
+Investigations have uncovered more than a dozen cases nationwide where police officers used the Flock automated license-plate reader network to track and stalk individuals without legal justification. The incidents highlight the weak access controls and audit gaps in mass-surveillance camera systems, which retain location data on ordinary drivers and offer few technical safeguards against insider abuse.
+
+Feds freaked over Fable 5 after 'fix this code', not jailbreak, say researchers (1 minute read)
+
+A security researcher claims federal alarm over the Fable 5 model traced back to a benign "fix this code" prompt rather than the jailbreak that officials described. The researcher, who says they were the only person to read the underlying paper, argues the government mischaracterized routine model behavior as a threat, raising questions about how AI capability claims are vetted before they drive policy.
+
+UK to require ID or face scan before you can make social media accounts (5 minute read)
+
+(blurb not generated)
+
+AI Use by the US Government (1 minute read)
+
+The OMB disclosed 3,611 active or planned federal AI use cases as of April 14, a 70% increase over the final Biden-era inventory, spanning grant-application ideology screening at HHS, inmate-misconduct prediction at the Bureau of Prisons, and reactor control at the Department of Energy. The author argues most of these programs could be implemented responsibly, and that the real objections trace to the underlying policies rather than the use of automation itself.
+
+1Password Acquires Apono in Reported $250M-$300M Deal (1 minute read)
+
+1Password acquired Apono, an Israel-based just-in-time access governance startup, in a deal Calcalist reported at $250M to $300M. The acquisition extends 1Password's identity platform to broker temporary, narrowly scoped privileges for humans, machines, and AI agents, the latter tied to a human delegator and declared task intent with real-time drift monitoring.
+
+Security Community Slams US Ban on Exporting Mythos, Fable (1 minute read)
+
+Dozens of security experts signed an open letter urging the US government to reverse export controls that bar foreign nationals from using Anthropic's Claude Fable 5 and Mythos 5, restrictions that forced Anthropic to suspend both models on June 12 for compliance. The government has not stated a specific reason, though Semafor reported the order followed White House suspicion that a China-linked group accessed Mythos, which Anthropic says can discover critical vulnerabilities and build novel exploits.
+
+Google to use UK and EU user IP addresses for ad personalization (1 minute read)
+
+Google notified advertisers that on or shortly after August 3, 2026, it will begin using UK, EEA, and Swiss user IP addresses for ad measurement and personalization, a purpose that triggers consent requirements under GDPR. The shift follows Google's December 2024 reversal of its fingerprinting prohibition, which the UK's ICO called "irresponsible," since IP-based device identification underpins tracking when cookies are blocked or cleared.
+
+Volkswagen started blocking GrapheneOS users (1 minute read)
+
+Volkswagen's myVW app began blocking GrapheneOS users, joining a growing list of apps that reject the hardened Android fork over Play Integrity attestation checks. Affected owners report partial workarounds involving fresh Play Store installs and temporarily enabling Google Play services, but the trend signals tightening app-side device attestation that increasingly locks out privacy-focused and de-Googled mobile setups.
+
+US holds off blacklisting DeepSeek, more than 100 firms deemed security risks (1 minute read)
+
+The Trump administration declined to add DeepSeek to the Commerce Department's Entity List, holding off on export restrictions that would bar the Chinese AI firm from buying US technology. The decision came alongside a broader review that flagged more than 100 companies as national security risks, signaling internal disagreement over how aggressively to target China's AI sector.
+
+UK Social Media Ban for Minors Has Privacy Experts Worried (1 minute read)
+
+The UK will ban under-16s from user-to-user social platforms like Instagram, TikTok, and X starting in early 2027, with possible limits on infinite scrolling and digital curfews for under-18s. Privacy experts warn the mandate could push platforms toward intrusive age-verification that normalizes identity collection and surveillance, mirroring bans already in force in Australia and proposed in Canada and several EU states.
+
+Apple collects every tap to deliver App Store personalized recommendations (1 minute read)
+
+Security researchers at Mysk found that Apple's App Store logs every tap users make to power its new Personalized Collections feature, capturing identifiable analytics that can even derive a user's typing speed during searches, with no setting to disable the collection. The feature began rolling out this week in the U.S., and Apple currently offers no opt-out toggle for the underlying data capture.
+
+Security and Privacy Prompts in the Wild: What Users Ask LLMs and How LLMs Respond (5 minute read)
+
+(blurb not generated)
+
+Apple is about to make Hide My Email useless (1 minute read)
+
+Apple will move Sign in with Apple and Hide My Email aliases to the @private.icloud.com subdomain, making relay addresses trivially distinguishable from regular iCloud mailboxes. The change lets services block all aliases without affecting real iCloud accounts, undermining the plausible deniability that made Hide My Email useful for privacy; existing @icloud.com aliases can still be generated until the switch lands.
+
+Windows update leaves third-party Office document launches in limbo (1 minute read)
+
+A recent Windows update broke the file-association handlers that let third-party applications launch Microsoft Office documents, leaving those apps unable to open files they previously handled. Microsoft has acknowledged the regression but not yet shipped a fix, so admins relying on non-Microsoft document workflows should hold the update or prepare a rollback until a patch lands.
+
+FTC warns of record $3.5 billion losses to imposter scams in 2025 (5 minute read)
+
+(blurb not generated)
+
+Circles Sold Phone Spy Tools to Repressive States, Report Says (1 minute read)
+
+Circles, a Bulgaria-based surveillance vendor, sold phone-tracking and communications-interception tools to governments with documented records of repression, according to documents obtained by Human Rights Watch. The technology let authorities locate mobile phones and eavesdrop on private calls, adding to scrutiny of EU-based vendors supplying spyware to states that use it against dissidents and journalists.
+
+Cybersecurity experts blast US government for restricting Anthropic’s AI models (5 minute read)
+
+(blurb not generated)
+
+AI cyber warfare startup Twenty raises $100M at $1B valuation (1 minute read)
+
+Twenty, a startup building AI cyber warfare software for the U.S. military and intelligence community, raised $100M at a $1B valuation in a Series B led by Accel. Founded in 2024 by former Palo Alto Networks executives, Twenty automates offensive tasks that take human operators weeks while keeping manual evaluation in the loop, and has disclosed nothing about the underlying AI stack.
+
+Finland charges Russian captain and crew member of ship suspected of damaging undersea cables — prosecutors claim ship had eight more targets before it was stopped by coast guard (5 minute read)
+
+(blurb not generated)
+
+Databricks acquires cyberattack detection startup Panther (5 minute read)
+
+(blurb not generated)
+
+⚡
+Quick Links
+
+Understanding the "Airport" Censorship Circumvention Ecosystem in China (1 minute read)
+
+First systematic study of China's "airport" proxy ecosystem finds 3,431 active services used by over half of surveyed users to bypass the Great Firewall.
+
+ARES: A Platform for Adaptive Role-Based Evaluation of Social Engineering Risks in Human--AI Games (5 minute read)
+
+(blurb not generated)
+
+Unicorn – The Ultimate CPU Emulator (1 minute read)
+
+Unicorn Engine, the lightweight CPU emulator framework widely used for malware analysis and reverse engineering, won Alibaba Cloud's Asian Star 10x10 Award.

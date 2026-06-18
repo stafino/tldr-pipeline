@@ -1,7 +1,7 @@
 {
   "date": "2026-06-17",
   "newsletter": "tldr_ai",
-  "fetched_at": "2026-06-17T14:09:13.863737+00:00",
+  "fetched_at": "2026-06-18T09:44:59.042694+00:00",
   "tldr_titles": [
     "GLM-5.2",
     "Android 17 Expands AI Agent Integration",
@@ -9,8 +9,8 @@
     "Cursor Origin",
     "OpenAI released CDP support for browser use on Codex",
     "Fastest, Largest, Strongest: NVIDIA Blackwell Sweeps MLPerf Training 6.0",
-    "Qualcomm wants to be the chip inside whatever replaces your smartphone, and it just announced two products toward that end",
     "Anthropic \u201cpauses\u201d token-based billing for its Claude Agent SDK",
+    "Qualcomm wants to be the chip inside whatever replaces your smartphone, and it just announced two products toward that end",
     "Never waste a token",
     "OpenAI prepares major ChatGPT voice upgrade with GPT-Bidi-1",
     "Why Weibo's tiny VibeThinker-3B has the AI world arguing over benchmarks again",
@@ -27,7 +27,7 @@
     false,
     false,
     true,
-    true,
+    false,
     false
   ],
   "predictions": [
@@ -146,13 +146,21 @@
     {
       "rank": 15,
       "score": 74.0,
+      "title": "A look at chaos inside Anthropic after disabling Fable 5 and Mythos 5 with less than 90 minutes of notice, as some staff wonder if Trump is bullying them (New York Times)",
+      "url": "https://www.techmeme.com/260617/p30#a260617p30",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 16,
+      "score": 74.0,
       "title": "Boosting MoE Training Throughput with Advanced Fusion Kernels",
       "url": "https://developer.nvidia.com/blog/boosting-moe-training-throughput-with-advanced-fusion-kernels/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 16,
+      "rank": 17,
       "score": 74.0,
       "title": "Ternary Mamba: Grouped Quantization-Aware Training of W1.58A16 State Space Models",
       "url": "http://arxiv.org/abs/2606.18114v1",
@@ -160,7 +168,7 @@
       "similarity": null
     },
     {
-      "rank": 17,
+      "rank": 18,
       "score": 74.0,
       "title": "Dynamic Rollout Editing for Reducing Overthinking in RL-Trained Reasoning Models",
       "url": "http://arxiv.org/abs/2606.17890v1",
@@ -168,7 +176,15 @@
       "similarity": null
     },
     {
-      "rank": 18,
+      "rank": 19,
+      "score": 74.0,
+      "title": "GLM 5.2 Performance Benchmarks",
+      "url": "https://artificialanalysis.ai/models/glm-5-2",
+      "matched_tldr_idx": 0,
+      "similarity": 0.6954516172409058
+    },
+    {
+      "rank": 20,
       "score": 73.0,
       "title": "SpaceX to buy Cursor for $60B",
       "url": "https://www.reuters.com/legal/transactional/spacex-buy-anysphere-60-billion-2026-06-16/",
@@ -176,7 +192,7 @@
       "similarity": null
     },
     {
-      "rank": 19,
+      "rank": 21,
       "score": 73.0,
       "title": "SpaceX to acquire AI coding platform Cursor for $60 billion",
       "url": "https://arstechnica.com/ai/2026/06/spacex-will-acquire-coding-tool-cursor-to-compete-with-anthropic-openai/",
@@ -184,7 +200,7 @@
       "similarity": null
     },
     {
-      "rank": 20,
+      "rank": 22,
       "score": 73.0,
       "title": "Elon Musk Is Unleashing SpaceX\u2019s New War Chest to Solve His AI Problem",
       "url": "https://www.wsj.com/tech/ai/elon-musk-is-unleashing-spacexs-new-war-chest-to-solve-his-ai-problem-255f4969?mod=rss_Technology",
@@ -192,7 +208,7 @@
       "similarity": null
     },
     {
-      "rank": 21,
+      "rank": 23,
       "score": 73.0,
       "title": "Amazon S3 annotations: attach rich, queryable context directly to your objects",
       "url": "https://aws.amazon.com/blogs/aws/amazon-s3-annotations-attach-rich-queryable-context-directly-to-your-objects/",
@@ -200,7 +216,7 @@
       "similarity": null
     },
     {
-      "rank": 22,
+      "rank": 24,
       "score": 73.0,
       "title": "Visual Verification Enables Inference-time Steering and Autonomous Policy Improvement",
       "url": "http://arxiv.org/abs/2606.18247v1",
@@ -208,7 +224,7 @@
       "similarity": null
     },
     {
-      "rank": 23,
+      "rank": 25,
       "score": 73.0,
       "title": "All Smoke, No Alarm: Oracle Signals in Agent-Authored Test Code",
       "url": "http://arxiv.org/abs/2606.18168v1",
@@ -216,7 +232,7 @@
       "similarity": null
     },
     {
-      "rank": 24,
+      "rank": 26,
       "score": 73.0,
       "title": "NoiseTilt: Noise-Tilted Reverse Kernels for Diffusion Reward Alignment",
       "url": "http://arxiv.org/abs/2606.18066v1",
@@ -224,7 +240,7 @@
       "similarity": null
     },
     {
-      "rank": 25,
+      "rank": 27,
       "score": 73.0,
       "title": "Variable-Width Transformers",
       "url": "http://arxiv.org/abs/2606.18246v1",
@@ -232,7 +248,7 @@
       "similarity": null
     },
     {
-      "rank": 26,
+      "rank": 28,
       "score": 73.0,
       "title": "Learning from the Self-future: On-policy Self-distillation for dLLMs",
       "url": "http://arxiv.org/abs/2606.18195v1",
@@ -240,7 +256,7 @@
       "similarity": null
     },
     {
-      "rank": 27,
+      "rank": 29,
       "score": 73.0,
       "title": "ProvenanceGuard: Source-Aware Factuality Verification for MCP-Based LLM Agents",
       "url": "http://arxiv.org/abs/2606.18037v1",
@@ -248,7 +264,7 @@
       "similarity": null
     },
     {
-      "rank": 28,
+      "rank": 30,
       "score": 73.0,
       "title": "Cordon: Semantic Transactions for Tool-Using LLM Agents",
       "url": "http://arxiv.org/abs/2606.17573v1",
@@ -256,7 +272,7 @@
       "similarity": null
     },
     {
-      "rank": 29,
+      "rank": 31,
       "score": 73.0,
       "title": "Macron Seeks Way Around Trump\u2019s Ban on Anthropic\u2019s AI Models",
       "url": "https://www.bloomberg.com/news/articles/2026-06-17/macron-seeks-way-around-trump-s-ban-on-anthropic-s-ai-models",
@@ -264,7 +280,7 @@
       "similarity": null
     },
     {
-      "rank": 30,
+      "rank": 32,
       "score": 72.0,
       "title": "NVIDIA Blackwell Tops MLPerf Training 6.0 with Industry-Leading Scale and Performance",
       "url": "https://developer.nvidia.com/blog/nvidia-blackwell-tops-mlperf-training-6-0-with-industry-leading-scale-and-performance/",
@@ -272,7 +288,7 @@
       "similarity": 0.8293991684913635
     },
     {
-      "rank": 31,
+      "rank": 33,
       "score": 72.0,
       "title": "Z.ai pitches GLM-5.2 for long-running software engineering tasks",
       "url": "https://www.infoworld.com/article/4186136/z-ai-pitches-glm-5-2-for-long-running-software-engineering-tasks.html",
@@ -280,7 +296,7 @@
       "similarity": null
     },
     {
-      "rank": 32,
+      "rank": 34,
       "score": 72.0,
       "title": "SubQ 1.1 Small",
       "url": "https://subq.ai/subq-1-1-small-technical-report",
@@ -288,7 +304,7 @@
       "similarity": null
     },
     {
-      "rank": 33,
+      "rank": 35,
       "score": 72.0,
       "title": "From the Hugging Face Hub to robot hardware with Strands Agents and LeRobot",
       "url": "https://huggingface.co/blog/amazon/strands-lerobot-hub-to-hardware",
@@ -296,7 +312,7 @@
       "similarity": null
     },
     {
-      "rank": 34,
+      "rank": 36,
       "score": 72.0,
       "title": "Stanford's DeLM cuts multi-agent task costs 50% \u2014 without a central orchestrator",
       "url": "https://venturebeat.com/orchestration/stanfords-delm-cuts-multi-agent-task-costs-50-without-a-central-orchestrator",
@@ -304,15 +320,7 @@
       "similarity": null
     },
     {
-      "rank": 35,
-      "score": 72.0,
-      "title": "Volterra Generative Models",
-      "url": "http://arxiv.org/abs/2606.18071v1",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 36,
+      "rank": 37,
       "score": 71.0,
       "title": "Claude Corps",
       "url": "https://www.anthropic.com/news/claude-corps",
@@ -320,7 +328,7 @@
       "similarity": null
     },
     {
-      "rank": 37,
+      "rank": 38,
       "score": 70.0,
       "title": "Riding High After I.P.O., SpaceX Will Buy A.I. Start-Up for $60 Billion",
       "url": "https://www.nytimes.com/2026/06/16/business/spacex-cursor-aquisition-ipo.html",
@@ -328,7 +336,7 @@
       "similarity": null
     },
     {
-      "rank": 38,
+      "rank": 39,
       "score": 70.0,
       "title": "Unlocking UK house-building with AI-accelerated planning",
       "url": "https://deepmind.google/blog/unlocking-uk-house-building-with-ai-accelerated-planning/",
@@ -336,7 +344,7 @@
       "similarity": null
     },
     {
-      "rank": 39,
+      "rank": 40,
       "score": 70.0,
       "title": "Anthropic's Fable shutdown is a big moment for open-source AI",
       "url": "https://www.cnbc.com/2026/06/16/anthropics-fable-shutdown-is-a-big-moment-for-open-source-ai.html",
@@ -344,7 +352,7 @@
       "similarity": null
     },
     {
-      "rank": 40,
+      "rank": 41,
       "score": 70.0,
       "title": "Import AI 461: \"Alignment is not on track\"; FrontierCode; and synthetic research interns",
       "url": "https://importai.substack.com/p/import-ai-461-alignment-is-not-on",
@@ -352,7 +360,7 @@
       "similarity": null
     },
     {
-      "rank": 41,
+      "rank": 42,
       "score": 70.0,
       "title": "Feds freaked over Fable 5 after simple 'fix this code' prompt, not jailbreak, says researcher",
       "url": "https://www.theregister.com/security/2026/06/15/feds-freaked-over-fable-5-after-simple-fix-this-code-prompt-not-jailbreak-says-researcher/5255827",
@@ -360,7 +368,7 @@
       "similarity": null
     },
     {
-      "rank": 42,
+      "rank": 43,
       "score": 69.0,
       "title": "Qualcomm said to be circling AI chip biz Tenstorrent in $10B RISC-V power play",
       "url": "https://www.theregister.com/systems/2026/06/16/qualcomm-said-to-be-circling-ai-chip-biz-tenstorrent-in-10b-risc-v-power-play/5256084",
@@ -368,7 +376,7 @@
       "similarity": null
     },
     {
-      "rank": 43,
+      "rank": 44,
       "score": 69.0,
       "title": "[AINews] GLM-5.2: the top Frontend Coding model in the world, IndexShare for Speculative Decoding",
       "url": "https://www.latent.space/p/ainews-glm-52-the-top-frontend-coding",
@@ -376,20 +384,12 @@
       "similarity": null
     },
     {
-      "rank": 44,
+      "rank": 45,
       "score": 68.0,
       "title": "GLM-5.2: Built for Long-Horizon Tasks",
       "url": "https://huggingface.co/blog/zai-org/glm-52-blog",
       "matched_tldr_idx": 0,
       "similarity": 0.682863175868988
-    },
-    {
-      "rank": 45,
-      "score": 68.0,
-      "title": "Why Weibo\u2019s tiny VibeThinker-3B has the AI world arguing over benchmarks again",
-      "url": "https://venturebeat.com/technology/why-weibos-tiny-vibethinker-3b-has-the-ai-world-arguing-over-benchmarks-again",
-      "matched_tldr_idx": 10,
-      "similarity": 1.0
     },
     {
       "rank": 46,
@@ -442,13 +442,29 @@
     {
       "rank": 52,
       "score": 65.0,
+      "title": "Anthropic CEO Amodei on Compute Spend, Surpassing OpenAI",
+      "url": "https://www.bloomberg.com/news/videos/2026-06-17/anthropic-ceo-amodei-on-compute-spend-surpassing-openai",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 53,
+      "score": 65.0,
       "title": "Anthropic to meet with Trump administration over Mythos dispute",
       "url": "https://www.cnbc.com/2026/06/15/anthropic-mythos-trump-ai.html",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 53,
+      "rank": 54,
+      "score": 65.0,
+      "title": "Anthropic Employees Accuse Trump Administration of Targeting Them",
+      "url": "https://www.nytimes.com/2026/06/17/technology/anthropic-trump-administration-fable.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 55,
       "score": 64.0,
       "title": "Security Community Slams US Ban on Exporting Mythos, Fable",
       "url": "https://www.darkreading.com/vulnerabilities-threats/security-community-slams-us-ban-on-exporting-mythos-fable",
@@ -456,7 +472,7 @@
       "similarity": null
     },
     {
-      "rank": 54,
+      "rank": 56,
       "score": 64.0,
       "title": "Estonia says it will assign personal ID numbers to AI agents to give them \"limited, controllable, and auditable authorizations\" as they take actions for humans (Ott Tammik/Bloomberg)",
       "url": "https://www.techmeme.com/260617/p21#a260617p21",
@@ -464,7 +480,7 @@
       "similarity": null
     },
     {
-      "rank": 55,
+      "rank": 57,
       "score": 63.0,
       "title": "An Empirical Analysis of AI Slop in Music Streaming",
       "url": "http://arxiv.org/abs/2606.18052v1",
@@ -472,7 +488,7 @@
       "similarity": null
     },
     {
-      "rank": 56,
+      "rank": 58,
       "score": 63.0,
       "title": "Pretrained to Imagine, Fine-Tuned to Act: The Rise of World-Action Models",
       "url": "https://developer.nvidia.com/blog/pretrained-to-imagine-fine-tuned-to-act-the-rise-of-world-action-models/",
@@ -480,7 +496,7 @@
       "similarity": null
     },
     {
-      "rank": 57,
+      "rank": 59,
       "score": 63.0,
       "title": "The Measurement Gap in the Automation of EU Law: Benchmarking Doctrinal Legal Reasoning under the EU AI Act",
       "url": "http://arxiv.org/abs/2606.18158v1",
@@ -488,7 +504,7 @@
       "similarity": null
     },
     {
-      "rank": 58,
+      "rank": 60,
       "score": 63.0,
       "title": "AI Use by the US Government",
       "url": "https://www.schneier.com/blog/archives/2026/06/ai-use-by-the-us-government.html",
@@ -496,7 +512,7 @@
       "similarity": null
     },
     {
-      "rank": 59,
+      "rank": 61,
       "score": 63.0,
       "title": "LiteLLM Vulnerability Chain Lets Low-Privilege Users Take Over AI Gateway Servers",
       "url": "https://thehackernews.com/2026/06/litellm-vulnerability-chain-lets-low.html",
@@ -504,7 +520,7 @@
       "similarity": null
     },
     {
-      "rank": 60,
+      "rank": 62,
       "score": 63.0,
       "title": "Opinion | Why Does Trump Hate Anthropic?",
       "url": "https://www.wsj.com/opinion/anthropic-donald-trump-china-ai-pentagon-37896148?mod=rss_Technology",
@@ -512,7 +528,7 @@
       "similarity": null
     },
     {
-      "rank": 61,
+      "rank": 63,
       "score": 63.0,
       "title": "GPT\u2011NL: a sovereign language model for the Netherlands",
       "url": "https://www.tno.nl/en/digital/artificial-intelligence/gpt-nl/",
@@ -520,15 +536,7 @@
       "similarity": null
     },
     {
-      "rank": 62,
-      "score": 62.0,
-      "title": "Sources describe Huawei's efforts to rebuild its chip business seven years after the US cut Huawei off from advanced chips, as it bets on logic-stacking tech (Financial Times)",
-      "url": "https://www.techmeme.com/260617/p13#a260617p13",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 63,
+      "rank": 64,
       "score": 62.0,
       "title": "D.O.J. Seeks to Halt Pollution Lawsuit Against Elon Musk\u2019s Data Center",
       "url": "https://www.nytimes.com/2026/06/16/climate/xai-musk-mississippi-grok-turbine-lawsuit-naacp.html",
@@ -536,23 +544,7 @@
       "similarity": null
     },
     {
-      "rank": 64,
-      "score": 62.0,
-      "title": "Sources: Trump officials discussed ways to structure government equity stakes in AI companies, with Commerce Secretary Lutnick favoring a sovereign wealth fund (Eleanor Mueller/Semafor)",
-      "url": "https://www.techmeme.com/260617/p14#a260617p14",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
       "rank": 65,
-      "score": 62.0,
-      "title": "US holds off blacklisting DeepSeek and 100-plus Chinese firms",
-      "url": "https://thenextweb.com/news/us-holds-off-blacklisting-deepseek-and-100-plus-chinese-firms",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 66,
       "score": 62.0,
       "title": "Anthropic suspends Fable and Mythos systems \"for all users\" after US government claims jailbreak risk",
       "url": "https://www.itpro.com/technology/artificial-intelligence/anthropic-suspends-fabel-and-mythos-systems-for-all-users-after-us-government-claims-jailbreak-risk",
@@ -560,7 +552,7 @@
       "similarity": null
     },
     {
-      "rank": 67,
+      "rank": 66,
       "score": 62.0,
       "title": "We Analyzed 137K Sites: 97% of llms.txt Files Never Get Read",
       "url": "https://ahrefs.com/blog/llmstxt-study/",
@@ -568,7 +560,7 @@
       "similarity": null
     },
     {
-      "rank": 68,
+      "rank": 67,
       "score": 62.0,
       "title": "Google develops Personalization controls for Gemini",
       "url": "https://www.testingcatalog.com/google-develops-personalization-controls-for-gemini/",
@@ -576,7 +568,7 @@
       "similarity": null
     },
     {
-      "rank": 69,
+      "rank": 68,
       "score": 61.0,
       "title": "Position: Coding Benchmarks Are Misaligned with Agentic Software Engineering",
       "url": "http://arxiv.org/abs/2606.17799v1",
@@ -584,7 +576,7 @@
       "similarity": null
     },
     {
-      "rank": 70,
+      "rank": 69,
       "score": 61.0,
       "title": "Cybersecurity experts blast US government for restricting Anthropic\u2019s AI models",
       "url": "https://www.ciodive.com/news/anthropic-us-government-export-ban-mythos-fable/822956/",
@@ -592,7 +584,7 @@
       "similarity": null
     },
     {
-      "rank": 71,
+      "rank": 70,
       "score": 61.0,
       "title": "The Secret to Marathon-Winning Humanoid Robots",
       "url": "https://spectrum.ieee.org/china-humanoid-robot-marathon",
@@ -600,7 +592,7 @@
       "similarity": null
     },
     {
-      "rank": 72,
+      "rank": 71,
       "score": 61.0,
       "title": "Context engineering is the new analytics engineering skill: a practical guide for dbt users",
       "url": "https://www.getdbt.com/blog/context-engineering-is-the-new-analytics-engineering-skill-a-practical-guide-for-dbt-users",
@@ -608,7 +600,7 @@
       "similarity": null
     },
     {
-      "rank": 73,
+      "rank": 72,
       "score": 61.0,
       "title": "Adaptive Volumetric Mechanical Property Fields Invariant to Resolution",
       "url": "http://arxiv.org/abs/2606.18231v1",
@@ -616,7 +608,7 @@
       "similarity": null
     },
     {
-      "rank": 74,
+      "rank": 73,
       "score": 60.0,
       "title": "A comparison of human and LLM-simulated participants in a writing style task",
       "url": "http://arxiv.org/abs/2606.16778v1",
@@ -624,7 +616,7 @@
       "similarity": null
     },
     {
-      "rank": 75,
+      "rank": 74,
       "score": 60.0,
       "title": "Copilot 'SearchLeak' Attack Allows 1-Click Data Theft",
       "url": "https://www.darkreading.com/application-security/copilot-searchleak-attack-1-click-data-theft",
@@ -632,7 +624,7 @@
       "similarity": null
     },
     {
-      "rank": 76,
+      "rank": 75,
       "score": 60.0,
       "title": "'A signal of where power sits': Trump and world leaders joined by OpenAI, Anthropic, Google at G7",
       "url": "https://www.cnbc.com/2026/06/17/g7-trump-ai-tech-leaders-openai-anthropic-google.html",
@@ -640,10 +632,18 @@
       "similarity": null
     },
     {
-      "rank": 77,
+      "rank": 76,
       "score": 60.0,
       "title": "144 Mastra npm Packages Compromised via Hijacked Contributor Account",
       "url": "https://thehackernews.com/2026/06/144-mastra-npm-packages-compromised-via.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 77,
+      "score": 59.0,
+      "title": "Nvidia plans to raise at least $20 billion in its first debt sale since start of AI boom",
+      "url": "https://www.cnbc.com/2026/06/15/nvidia-plans-to-raise-about-20-billion-first-debt-sale-in-ai-boom.html",
       "matched_tldr_idx": null,
       "similarity": null
     },
@@ -739,16 +739,16 @@
   "recall_at": {
     "10": 0.08333333333333333,
     "25": 0.16666666666666666,
-    "50": 0.3333333333333333,
-    "100": 0.3333333333333333,
-    "88": 0.3333333333333333
+    "50": 0.25,
+    "100": 0.25,
+    "88": 0.25
   },
   "hits_at": {
     "10": 1,
     "25": 2,
-    "50": 4,
-    "100": 4,
-    "88": 4
+    "50": 3,
+    "100": 3,
+    "88": 3
   },
   "available": true,
   "tldr_urls": [
@@ -758,8 +758,8 @@
     "https://x.com/cursor_ai/status/2067012220832329782",
     "https://www.testingcatalog.com/icymi-openai-released-cdp-support-for-browser-use-on-codex/",
     "https://blogs.nvidia.com/blog/blackwell-mlperf-training-6-0/",
-    "https://techcrunch.com/2026/06/16/qualcomm-wants-to-be-the-chip-inside-whatever-replaces-your-smartphone-and-it-just-announced-two-products-toward-that-end/",
     "https://arstechnica.com/ai/2026/06/anthropic-pauses-token-based-billing-for-its-claude-agent-sdk/",
+    "https://techcrunch.com/2026/06/16/qualcomm-wants-to-be-the-chip-inside-whatever-replaces-your-smartphone-and-it-just-announced-two-products-toward-that-end/",
     "https://sunilpai.dev/posts/never-waste-a-token/",
     "https://www.testingcatalog.com/openai-prepares-major-chatgpt-voice-upgrade-with-gpt-bidi-1/",
     "https://venturebeat.com/technology/why-weibos-tiny-vibethinker-3b-has-the-ai-world-arguing-over-benchmarks-again",
@@ -772,8 +772,8 @@
     "x.com",
     "testingcatalog.com",
     "blogs.nvidia.com",
-    "techcrunch.com",
     "arstechnica.com",
+    "techcrunch.com",
     "sunilpai.dev",
     "testingcatalog.com",
     "venturebeat.com",
