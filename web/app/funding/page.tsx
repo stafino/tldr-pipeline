@@ -7,6 +7,7 @@ import {
 } from '@/lib/data';
 import Nav from '@/components/Nav';
 import FundingDateFilter from '@/components/FundingDateFilter';
+import FundingFilterChips, { minUsdFromKey } from '@/components/FundingFilterChips';
 import FundingDetailPane from '@/components/FundingDetailPane';
 import type { Blurb, FundingRound } from '@/lib/types';
 
@@ -176,7 +177,7 @@ function fmtRange(from: string, to: string): string {
 export default function FundingPage({
   searchParams,
 }: {
-  searchParams: { date?: string; from?: string; to?: string; story?: string };
+  searchParams: { date?: string; from?: string; to?: string; story?: string; stage?: string; min?: string };
 }) {
   const dates = listFundingDates();
 
@@ -209,7 +210,17 @@ export default function FundingPage({
     from = to = today;
   }
 
-  const rounds = loadFundingRange(from, to);
+  const stageFilter = (searchParams.stage ?? '').toLowerCase();
+  const minFilter = (searchParams.min ?? '').toLowerCase();
+  const minUsd = minUsdFromKey(minFilter);
+
+  let rounds = loadFundingRange(from, to);
+  if (stageFilter) {
+    rounds = rounds.filter((r) => classifyStage(r.round_label).tier === stageFilter);
+  }
+  if (minUsd > 0) {
+    rounds = rounds.filter((r) => (r.amount_usd ?? 0) >= minUsd);
+  }
   const eu = rounds
     .filter((r) => r.region === 'EU')
     .sort((a, b) => (b.amount_usd ?? 0) - (a.amount_usd ?? 0));
@@ -244,9 +255,13 @@ export default function FundingPage({
       <Nav />
       <div className="flex flex-col gap-2 px-5 py-3 border-b border-border">
         <FundingDateFilter dates={dates} from={from} to={to} todayISO={today} />
+        <FundingFilterChips stage={stageFilter} min={minFilter} />
         <div className="text-[10px] text-text-mute">
           {fmtRange(from, to)} · {rounds.length} {rounds.length === 1 ? 'round' : 'rounds'} · EU{' '}
           {eu.length} · NA {na.length}
+          {(stageFilter || minFilter) && (
+            <span className="ml-2 text-warn">· filters active</span>
+          )}
         </div>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,_1fr)_minmax(0,_1fr)_minmax(0,_1fr)] gap-6 px-5 py-5">
