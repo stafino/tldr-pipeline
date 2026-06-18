@@ -52,7 +52,8 @@ class FundingRound:
     story_url: str
     title: str
     source: str
-    published_at: str
+    published_at: str  # when the *article* was published (RSS/scrape time)
+    raised_date: str   # when the *round* was announced/closed (YYYY-MM-DD)
     company: str
     amount_usd: float | None
     amount_raw: str
@@ -124,8 +125,20 @@ Return ONLY a JSON object. No markdown, no commentary. Schema:
   "country": "country where the startup is headquartered, full name | empty if unknown",
   "region": "EU | NA | OTHER",
   "investors": ["list of named investors, empty list if none stated"],
-  "valuation_usd": number (USD-equivalent valuation) | null
+  "valuation_usd": number (USD-equivalent valuation) | null,
+  "raised_date": "YYYY-MM-DD when the round was announced or closed | empty if not stated"
 }
+
+raised_date rules:
+- Look in the article body for phrases like "announced today", "today, X
+  closed", "earlier this week", "X said Monday", "on June 12", or explicit
+  ISO dates. Extract that as the raise date.
+- "today" / "this morning" / "Monday" → resolve relative to the
+  Published timestamp passed in the user message. E.g. if Published is
+  2026-06-14 and the article says "announced today", raised_date is
+  2026-06-14.
+- If you can't find any explicit signal, leave it empty (we will fall
+  back to the article publish date).
 
 Region rules:
 - EU: any European country (incl. UK, Switzerland, Norway).
@@ -232,14 +245,23 @@ def _extract_one(story: ScoredStory) -> FundingRound | None:
     return _build_from_payload(story, payload)
 
 
+_DATE_RE = re.compile(r"^(\d{4})-(\d{2})-(\d{2})$")
+
+
 def _build_from_payload(story: ScoredStory, payload: dict) -> FundingRound:
     country = (payload.get("country") or "").strip()
     region = _resolve_region(country, payload.get("region"))
+    # raised_date: trust the LLM if it returned a well-formed YYYY-MM-DD,
+    # otherwise fall back to the article's publish date (close enough for
+    # fresh news; only drifts on retrospective coverage).
+    raw_raised = (payload.get("raised_date") or "").strip()
+    raised_date = raw_raised if _DATE_RE.match(raw_raised) else story.story.published_at[:10]
     return FundingRound(
         story_url=story.story.url,
         title=story.story.title,
         source=story.story.source,
         published_at=story.story.published_at,
+        raised_date=raised_date,
         company=(payload.get("company") or "").strip(),
         amount_usd=_to_float(payload.get("amount_usd")),
         amount_raw=(payload.get("amount_raw") or "").strip(),

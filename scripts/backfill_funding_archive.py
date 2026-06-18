@@ -296,13 +296,14 @@ def main() -> None:
         rounds.append(r)
     log.info("classified %d EU/NA rounds", len(rounds))
 
-    # 4. Group by published date and merge
+    # 4. Group by *raised* date (the LLM-extracted announcement date,
+    #    falling back to article publish date when not stated) and merge.
     by_date: dict[str, list[dict]] = defaultdict(list)
     for r in rounds:
-        d_str = r.published_at[:10]
+        d_str = r.raised_date or r.published_at[:10]
         by_date[d_str].append(r.to_dict())
     for d_str, rows in by_date.items():
-        log.info("  %s: %d rounds", d_str, len(rows))
+        log.info("  raised %s: %d rounds", d_str, len(rows))
 
     added = merge_into_existing(by_date, dry_run=args.dry_run)
     log.info("done — added %d new rows across %d dates", added, len(by_date))

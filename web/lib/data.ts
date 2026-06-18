@@ -221,8 +221,8 @@ export function loadBacktest(newsletterId: string, date: string): BacktestResult
   }
 }
 
-/** All dates that have a funding JSONL, newest first. */
-export function listFundingDates(): string[] {
+/** Scrape dates with a funding JSONL (file-system names, newest first). */
+function listScrapeDates(): string[] {
   if (!fs.existsSync(FUNDING_DIR)) return [];
   const dates = new Set<string>();
   for (const f of fs.readdirSync(FUNDING_DIR)) {
@@ -231,25 +231,43 @@ export function listFundingDates(): string[] {
   return Array.from(dates).sort().reverse();
 }
 
-export function loadFunding(date: string): FundingRound[] {
-  return readJsonl<FundingRound>(path.join(FUNDING_DIR, `${date}.jsonl`));
-}
-
-/** Load every day's funding data, deduplicated by story_url (latest wins). */
-export function loadFundingAll(dates: string[]): FundingRound[] {
+/** Load every funding row across every scrape file, deduplicated by story_url. */
+function loadAllRows(): FundingRound[] {
   const byUrl = new Map<string, FundingRound>();
-  for (const d of dates) {
-    for (const r of loadFunding(d)) {
-      byUrl.set(r.story_url, r);
+  for (const d of listScrapeDates()) {
+    const file = path.join(FUNDING_DIR, `${d}.jsonl`);
+    for (const r of readJsonl<FundingRound>(file)) {
+      // Backwards-compat for rows written before raised_date existed.
+      const fixed: FundingRound = {
+        ...r,
+        raised_date: r.raised_date || (r.published_at?.slice(0, 10) ?? d),
+      };
+      byUrl.set(fixed.story_url, fixed);
     }
   }
   return Array.from(byUrl.values());
 }
 
-/** Load funding rounds whose scrape date falls in [from, to] inclusive. */
+/** Distinct raised_dates across every stored round, newest first. */
+export function listFundingDates(): string[] {
+  const out = new Set<string>();
+  for (const r of loadAllRows()) out.add(r.raised_date);
+  return Array.from(out).sort().reverse();
+}
+
+/** Load funding rounds whose raised_date falls in [from, to] inclusive. */
 export function loadFundingRange(from: string, to: string): FundingRound[] {
-  const dates = listFundingDates().filter((d) => d >= from && d <= to);
-  return loadFundingAll(dates);
+  return loadAllRows().filter((r) => r.raised_date >= from && r.raised_date <= to);
+}
+
+/** Legacy single-day loader (kept for back-compat with any old callers). */
+export function loadFunding(raisedDate: string): FundingRound[] {
+  return loadFundingRange(raisedDate, raisedDate);
+}
+
+/** Load every funding row, deduplicated by story_url. */
+export function loadFundingAll(): FundingRound[] {
+  return loadAllRows();
 }
 
 export function loadBacktestsForNewsletter(newsletterId: string, lastNDays = 7): BacktestResult[] {
