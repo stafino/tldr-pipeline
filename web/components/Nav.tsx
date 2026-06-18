@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import DecisionsSync from './DecisionsSync';
 
 const TABS = [
   { href: '/', label: 'Curate' },
@@ -47,7 +48,10 @@ export default function Nav({ pipelinePills }: { pipelinePills?: React.ReactNode
           );
         })}
       </div>
-      <div className="ml-auto">{pipelinePills}</div>
+      <div className="ml-auto flex items-center gap-3">
+        {pipelinePills}
+        <DecisionsSync />
+      </div>
     </div>
   );
 }
