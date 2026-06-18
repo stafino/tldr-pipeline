@@ -75,6 +75,10 @@ export default function EditionStories({
     () => buildIssueRichHtml(newsletterBrand, date, sections, bySection),
     [newsletterBrand, date, sections, bySection],
   );
+  const issueMarkdown = useMemo(
+    () => buildIssueMarkdown(newsletterBrand, date, sections, bySection),
+    [newsletterBrand, date, sections, bySection],
+  );
 
   const [copyState, setCopyState] = useState<'idle' | 'copied' | 'error'>('idle');
 
@@ -113,6 +117,24 @@ export default function EditionStories({
     await copyBody();
     const subject = `${newsletterBrand} ${date}`;
     window.location.href = `mailto:?subject=${encodeURIComponent(subject)}`;
+  }
+
+  async function copyMarkdown() {
+    // Markdown for Ghost, Notion, GitHub Discussions, docs sites — any
+    // editor that natively parses .md. We tested earlier that Substack
+    // and Beehiiv editors do NOT parse markdown on paste (they render the
+    // raw "## " text); for those, the copyForEditor button is the right
+    // one. This button is for everything else.
+    try {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(issueMarkdown);
+      }
+      setCopyState('copied');
+      setTimeout(() => setCopyState('idle'), 3000);
+    } catch {
+      setCopyState('error');
+      setTimeout(() => setCopyState('idle'), 3000);
+    }
   }
 
   async function copyForEditor() {
@@ -267,6 +289,13 @@ export default function EditionStories({
               ⧉ copy for Substack/Beehiiv
             </button>
             <button
+              onClick={copyMarkdown}
+              className="px-4 py-2 rounded-md bg-surface border border-border text-text text-[12px] font-medium hover:bg-surface-hi"
+              title="Paste into Ghost, Notion, GitHub, docs — any .md editor"
+            >
+              ⧉ copy as Markdown
+            </button>
+            <button
               onClick={downloadEml}
               className="px-4 py-2 rounded-md bg-surface border border-border text-text text-[12px] font-medium hover:bg-surface-hi"
               title="Double-click the file to open as a real email draft — spacing stays intact"
@@ -317,6 +346,37 @@ function buildIssueText(
       if (i < items.length - 1) lines.push('');
     }
     lines.push('');
+  }
+  return lines.join('\n').trimEnd() + '\n';
+}
+
+function buildIssueMarkdown(
+  brand: string,
+  date: string,
+  sections: Section[],
+  bySection: Record<string, Candidate[]>,
+): string {
+  // Standard CommonMark — h1 for issue title, h2 for sections (with the
+  // section emoji inline), bold-linked story title with the "(N minute
+  // read)" suffix, blurb paragraph below. Mirrors the email layout but
+  // in markdown form for Ghost/Notion/GitHub/docs paste.
+  const lines: string[] = [];
+  lines.push(`# ${brand} · ${date}`);
+  lines.push('');
+  for (const sec of sections) {
+    const items = bySection[sec.id] ?? [];
+    if (items.length === 0) continue;
+    lines.push(`## ${sec.emoji} ${sec.name}`);
+    lines.push('');
+    for (const it of items) {
+      const titleText = `${it.title} (${it.minute_read} minute read)`;
+      lines.push(`**[${titleText}](${it.url})**`);
+      lines.push('');
+      if (it.blurb) {
+        lines.push(it.blurb);
+        lines.push('');
+      }
+    }
   }
   return lines.join('\n').trimEnd() + '\n';
 }
