@@ -14,6 +14,7 @@ import { shortDate } from '@/lib/utils';
 import Nav from '@/components/Nav';
 import DatePicker from '@/components/DatePicker';
 import NewsletterPicker from '@/components/NewsletterPicker';
+import SearchFilter from '@/components/SearchFilter';
 import StoryRow from '@/components/StoryRow';
 import DetailPane from '@/components/DetailPane';
 import CurateNewsletterView from '@/components/CurateNewsletterView';
@@ -25,6 +26,7 @@ interface Search {
   nl?: string;
   story?: string;
   nl_detail?: string;
+  q?: string;
 }
 
 export default function Page({ searchParams }: { searchParams: Search }) {
@@ -46,6 +48,7 @@ export default function Page({ searchParams }: { searchParams: Search }) {
 
   const selectedDate = searchParams.date ?? dates[0];
   const selectedNl = searchParams.nl ?? defaultNewsletterId();
+  const searchQuery = (searchParams.q ?? '').trim().toLowerCase();
 
   // Always load across every scrape file, then filter by the story's UTC
   // publish date — so "Filter by date" means *published on this day*, not
@@ -60,6 +63,18 @@ export default function Page({ searchParams }: { searchParams: Search }) {
     blurbs = blurbsAll;
   } else {
     scored = filterByPublishedDate(scoredAll, selectedDate);
+    const urls0 = new Set(scored.map((s) => s.story.url));
+    blurbs = filterBlurbsByStoryUrls(blurbsAll, urls0);
+  }
+
+  // Apply free-text filter across title + domain + source (case-insensitive).
+  if (searchQuery) {
+    scored = scored.filter((s: any) => {
+      const t = (s.story.title ?? '').toLowerCase();
+      const u = (s.story.url ?? '').toLowerCase();
+      const src = (s.story.source ?? '').toLowerCase();
+      return t.includes(searchQuery) || u.includes(searchQuery) || src.includes(searchQuery);
+    });
     const urls = new Set(scored.map((s) => s.story.url));
     blurbs = filterBlurbsByStoryUrls(blurbsAll, urls);
   }
@@ -192,6 +207,7 @@ export default function Page({ searchParams }: { searchParams: Search }) {
       <Nav pipelinePills={pills} />
       <div className="flex gap-3 px-5 py-3 border-b border-border items-center">
         <DatePicker dates={dates} value={selectedDate} />
+        <SearchFilter value={searchQuery} placeholder="Title, domain, source…" />
         <div className="text-[10px] text-text-mute">{nlIds.length} newsletters · {dates.length} dates available</div>
       </div>
       <div className="grid grid-cols-[220px_minmax(0,_3fr)_minmax(0,_2fr)] gap-4 px-5 py-3">
