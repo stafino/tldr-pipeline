@@ -1,11 +1,20 @@
 from __future__ import annotations
 
 import logging
+import socket
 from datetime import datetime, timezone
 
 import feedparser
+import requests
 
 from common.story import Story
+
+# Hard timeout for every RSS fetch. feedparser.parse(url) uses urllib's
+# default which can hang for hours on a dead host (we saw a 50-min hang
+# on thehackernews mid-cron). 15s gives flaky-but-alive feeds enough
+# room while killing zombies fast.
+FEED_TIMEOUT = 15
+socket.setdefaulttimeout(FEED_TIMEOUT)
 
 log = logging.getLogger(__name__)
 
@@ -23,8 +32,16 @@ def pull_rss(
     silently defaulted to 'now') — this matters for feeds like Paul Graham's
     that emit the full archive without dates.
     """
+    # Pre-fetch with requests so we get a deterministic timeout, then hand
+    # the raw bytes to feedparser. Avoids feedparser's hang-forever default.
     try:
-        parsed = feedparser.parse(url)
+        resp = requests.get(
+            url,
+            timeout=FEED_TIMEOUT,
+            headers={"User-Agent": "Mozilla/5.0 (compatible; lede/1.0)"},
+        )
+        resp.raise_for_status()
+        parsed = feedparser.parse(resp.content)
     except Exception as e:
         log.warning("RSS pull failed for %s: %s", name, e)
         return []
