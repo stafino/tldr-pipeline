@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { canonicalDomain } from '@/lib/utils';
 import {
   listAvailableDates,
   listFundingDates,
@@ -136,7 +137,22 @@ function Row({
             {r.country && (
               <span className="font-mono text-[10.5px] text-text-mute">· {r.country}</span>
             )}
-            <span className="font-mono text-[10.5px] text-text-mute ml-auto">
+            <span className="font-mono text-[10.5px] text-text-mute ml-auto flex items-center gap-1.5">
+              {(() => {
+                const dom = canonicalDomain(r.story_url);
+                if (!dom) return null;
+                return (
+                  /* eslint-disable-next-line @next/next/no-img-element */
+                  <img
+                    src={`https://icons.duckduckgo.com/ip3/${dom}.ico`}
+                    alt=""
+                    width={14}
+                    height={14}
+                    className="rounded-sm bg-surface opacity-80"
+                    loading="lazy"
+                  />
+                );
+              })()}
               {relativeFromNow(r.raised_date, today)}
             </span>
           </div>
