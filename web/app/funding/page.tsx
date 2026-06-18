@@ -8,6 +8,7 @@ import {
 import Nav from '@/components/Nav';
 import FundingDateFilter from '@/components/FundingDateFilter';
 import FundingFilterChips, { minUsdFromKey } from '@/components/FundingFilterChips';
+import FundingCsvExport from '@/components/FundingCsvExport';
 import FundingDetailPane from '@/components/FundingDetailPane';
 import type { Blurb, FundingRound } from '@/lib/types';
 
@@ -285,7 +286,13 @@ export default function FundingPage({
       <Nav />
       <div className="flex flex-col gap-2 px-5 py-3 border-b border-border">
         <FundingDateFilter dates={dates} from={from} to={to} todayISO={today} />
-        <FundingFilterChips stage={stageFilter} min={minFilter} />
+        <div className="flex items-center justify-between gap-3 flex-wrap">
+          <FundingFilterChips stage={stageFilter} min={minFilter} />
+          <FundingCsvExport
+            rounds={rounds}
+            filename={`lede-funding-${from}_to_${to}.csv`}
+          />
+        </div>
         <div className="text-[10px] text-text-mute">
           {fmtRange(from, to)} · {rounds.length} {rounds.length === 1 ? 'round' : 'rounds'} · EU{' '}
           {eu.length} · NA {na.length}
