@@ -6,108 +6,108 @@ TLDR Dev 2026-06-19
 🧑‍💻
 Articles & Tutorials
 
-Project Valhalla, Explained: How a Decade of Work Arrives in JDK 28 (1 minute read)
+Project Valhalla, Explained: How a Decade of Work Arrives in JDK 28 (5 minute read)
 
-On June 15, Oracle engineer Lois Foltan confirmed that JEP 401: Value Classes and Objects, the core of Project Valhalla, is targeting JDK 28 in a pull request adding over 197,000 lines across 1,816 files. This deep-dive traces the decade-long effort to make user-defined types "code like a class, work like an int," and cautions that the JDK 28 cut is preview-only, disabled by default, and just the first part of the project.
+(blurb not generated)
 
-AI coding agents may be getting bad instructions from ‘smelly’ config files (2 minute read)
+AI coding agents may be getting bad instructions from ‘smelly’ config files (5 minute read)
 
-Researchers at Brazil's Federal University of Minas Gerais published the first catalog of "configuration smells" in coding-agent files like Agents.md and Claude.md, identifying six recurring flaws including lint leakage, context bloat, skill leakage, and conflicting instructions. They found at least one smell in 91 of 100 popular open-source repos, with lint leakage in 62% of files and context bloat in 42%, all of which inflate token costs and degrade how agents interpret project conventions.
+(blurb not generated)
 
-Migrate from OpenClaw (1 minute read)
+Migrate from OpenClaw (5 minute read)
 
-The `hermes claw migrate` command imports an existing OpenClaw setup, including legacy Clawdbot and Moltbot directories, into Nous Research's Hermes agent, mapping config keys for personas, memory, skills, MCP servers, and TTS while archiving anything without a Hermes equivalent. The guide details a dry-run preview before any changes, four-source API key resolution under `--migrate-secrets`, and a `--portal` flag that collapses multi-provider setups into one OAuth login covering 300+ models.
+(blurb not generated)
 
-N-Version Programming with Coding Agents (1 minute read)
+So You Want to Define a Well-Known URI (1 minute read)
 
-This paper applies N-version programming to AI coding agents, generating 48 implementations of the Knight-Leveson Launch Interceptor spec across different agents, models, and languages, then testing them on a shared oracle with 1,000,000 randomized inputs. Majority voting across three-version units dropped mean failures from 387.44 to 130.99, and 11,844 N-version units showed zero observed failures, though common-mode failures persisted where the specification was ambiguous.
+Mnot, co-author of the Well-Known URI spec and the registry's Designated Expert, lays out when a `/.well-known/` location is the right tool: cases where the client already knows the site and needs to discover something site-wide, like robots.txt or change-password. He warns against registrations sought for legitimacy or used as URL shorteners, since the latter locks you into a 1:1 service-to-site relationship.
 
-The Correctness Illusion in LLM-Generated GPU Kernels (1 minute read)
+N-Version Programming with Coding Agents (5 minute read)
 
-This paper shows that standard GPU kernel benchmarks like KernelBench, TritonBench, and GEAK certify buggy LLM-generated kernels as correct because they check only fixed shapes, dtypes, and tolerances with allclose. Re-running 24 Triton and CPU kernels under schema-aware seeded fuzzing against an fp64 reference caught all 9 seeded bugs and passed all 15 controls, with identical verdicts across five GPU classes.
+(blurb not generated)
 
-Probe-and-Refine Tuning of Repository Guidance for Coding Agents (1 minute read)
+The Correctness Illusion in LLM-Generated GPU Kernels (5 minute read)
 
-Probe-and-refine tuning iteratively diagnoses and patches a repository's agent guidance file using synthetic bug-fix probes through single-shot LLM calls, with no agent loop during tuning. On SWE-bench Verified, it lifts Qwen3.5-35B's resolve rate to 33.0% from 28.3% for a static knowledge base, with the gain coming from coverage rather than precision: better guidance helps agents reach the correct file while per-patch precision holds near 59%.
+(blurb not generated)
 
-We built a persistent agent memory layer on Elasticsearch with 0.89 recall (1 minute read)
+Probe-and-Refine Tuning of Repository Guidance for Coding Agents (5 minute read)
 
-Elastic's Search Labs built a persistent long-term memory layer for agents on Elasticsearch, using three indices structured around cognitive-science memory categories, a hybrid recall query with RRF and a cross-encoder reranker, supersession for contradicted facts, decay, and per-user document-level security. On a QA eval over 168 questions, recall@10 averages 0.89 with zero cross-tenant leaks, and the full implementation is on GitHub.
+(blurb not generated)
 
-Emacs 31 is around the corner: The changes I'm daily driving (1 minute read)
+We built a persistent agent memory layer on Elasticsearch with 0.89 recall (5 minute read)
 
-Emacs 31 is in pre-release, and the author has been daily-driving builds from the emacs-31 and master branches for months, folding each new feature into a no-external-packages config. The standout change is built-in tree-sitter support: setting `treesit-enabled-modes` to `t` auto-switches major modes to their tree-sitter variants, while `treesit-auto-install-grammar` fetches and compiles missing grammars on demand, replacing the old manual `treesit-language-source-alist` ceremony.
+(blurb not generated)
 
-I hate compilers (1 minute read)
+Emacs 31 is around the corner: The changes I'm daily driving (5 minute read)
 
-The author needed reproducible builds of `wasm2js` for Anubis, but identical source produced byte-different binaries across machines, so they vendored a deterministic copy compiled to WebAssembly via wasi-sdk. Getting there meant passing `--no-wasm-opt` to stop Clang silently invoking a system tool during linking, and disabling address-space randomization with `setarch` to kill ~29-byte diffs from pointer-dependent catch-reference ordering, with separate x86_64 and arm64 checksums as the remaining trade-off.
+(blurb not generated)
 
-A robot is sprinting towards you. Do you want it running on Claude or Grok? (1 minute read)
+I hate compilers (5 minute read)
 
-A developer at OpenRouter dropped eleven LLMs into a 2D battle royale and ran 30 games, finding that Grok 4.1 Fast won 13 matches at $0.97 per win while Claude Sonnet 4.6, which kept trying to form alliances, took second with 5 wins at $26.78 each. The post's takeaway is that standard benchmarks like Artificial Analysis failed to predict winners, and the model with the most kills, GPT 5.4, never topped the leaderboard.
+(blurb not generated)
 
-Before the Pull Request: Mining Multi-Agent Coordination (1 minute read)
+A robot is sprinting towards you. Do you want it running on Claude or Grok? (5 minute read)
 
-This paper introduces grite, an open-source coordination substrate for autonomous coding agents that stores a signed, append-only event log inside git itself, capturing how concurrent agents claim and collide over shared work before any PR opens. The shared log cuts redundant re-work from 78% to 0% while tripling useful throughput, and its mineable history surfaces failure modes like lock starvation and race-to-close that PR telemetry never reveals.
+(blurb not generated)
 
-.gitignore Isn't the only way to ignore files in Git (1 minute read)
+Before the Pull Request: Mining Multi-Agent Coordination (5 minute read)
 
-Git supports three levels of file ignoring beyond the standard checked-in .gitignore: `.git/info/exclude` for per-repo rules that stay out of version control, and `~/.config/git/ignore` for machine-wide patterns like .DS_Store. The post covers configuring a custom global ignore path via `core.excludesFile` and using `git check-ignore -v` to trace which file and line is excluding a given path.
+(blurb not generated)
+
+.gitignore Isn't the only way to ignore files in Git (5 minute read)
+
+(blurb not generated)
 
 Is it agentic enough? Benchmarking open models on your own tooling (5 minute read)
 
-Hugging Face introduces a benchmark that measures not just whether a coding agent solves a task with a library like transformers, but how much work it takes, fanning model × revision × task runs across Hugging Face Jobs on identical hardware. The post argues libraries now need agent-friendly design, a clear CLI, extensive structured docs, and self-contained examples, since a clunky API or stale docs sends the agent down a longer, more expensive path.
+(blurb not generated)
 
-Phoenix: Safe GitHub Issue Resolution via Multi-Agent LLMs (1 minute read)
+Phoenix: Safe GitHub Issue Resolution via Multi-Agent LLMs (5 minute read)
 
-Phoenix is a multi-agent LLM system that resolves GitHub issues end to end, splitting the work across six specialized agents (planner, reproducer, coder, tester, failure analyst, PR) behind seven layered safety controls and a baseline-aware test check. On a 24-instance SWE-bench Lite slice it oracle-resolves 75% with no pass-to-pass regressions, though manual review found half the resulting PRs place code at incorrect paths.
+(blurb not generated)
 
-How to design AI agent loops: schedules, goals, and subagents in Claude Code and Codex (1 minute read)
+How to design AI agent loops: schedules, goals, and subagents in Claude Code and Codex (5 minute read)
 
-This podcast and write-up breaks down four ways to automate a prompt into a loop, heartbeat, cron, hook, and goal, and covers the five components any production loop needs: work trees, skills, plugins, subagents, and state tracking. It then walks through two live builds, a daily aging-PR reviewer in Claude Code that self-schedules and spawns subagents, and a weekly skills-identification loop in Codex whose goal-based subagents validate output in real time.
+(blurb not generated)
 
-UltraQuant: 4-bit KV Caching for Context-Heavy Agents (1 minute read)
+UltraQuant: 4-bit KV Caching for Context-Heavy Agents (5 minute read)
 
-UltraQuant compresses the KV cache to 4 bits for long-context, multi-turn agents, combining Walsh-Hadamard rotation, asymmetric K/V treatment, and an FP4 path with FP8 queries, UE8M0 group scales, and scaled-MFMA kernels on AMD CDNA4 GPUs. On a cache-pressured agentic workload it cuts P50 time-to-first-token by 3.47x in late rounds and lifts output throughput 1.63x over the vLLM FP8 KV baseline.
+(blurb not generated)
 
 Beyond LoRA: Can you beat the most popular fine-tuning technique? (5 minute read)
 
-This Hugging Face post argues that engineers default to LoRA for parameter-efficient fine-tuning without considering the dozens of alternatives, and walks through the PEFT library's unified API for testing methods like quantized adapters and other low-memory approaches. It covers when PEFT is worth it over prompting or full fine-tuning, plus LoRA's underdiscussed perks: tiny checkpoints, resistance to catastrophic forgetting, and serving many fine-tunes from one base model.
+(blurb not generated)
 
-StaminaBench: Stress-Testing Coding Agents over 100 Interaction Turns (1 minute read)
+StaminaBench: Stress-Testing Coding Agents over 100 Interaction Turns (5 minute read)
 
-StaminaBench measures how many consecutive change requests a coding agent handles before breaking, evaluating six harnesses across seven open-source LLMs on a procedurally generated REST API task that grows to 6,000 lines over 100 turns. Every model failed within 5-6 turns, but feeding test results back for retries improved passed-turn count up to 12x, and harness choice swung strong models by up to 6x.
+(blurb not generated)
 
-Beyond Static Endpoints: Tool Programs as an Interface for Flexible Agentic Web Services (1 minute read)
+Beyond Static Endpoints: Tool Programs as an Interface for Flexible Agentic Web Services (5 minute read)
 
-ToolPro represents an agent's tool intent as an executable program that encodes multi-step service interactions with loops, conditionals, and retries, rather than forcing static endpoint calls. Running over MCP-style services in a WebAssembly sandbox, it uses effect-aware replay for exactly-once state-modifying calls and cuts end-to-end latency by up to 53.4% and client-side traffic by up to 96.1%, with bigger gains under higher network latency.
-
-Multi-LCB: Extending LiveCodeBench to Multiple Programming Languages (1 minute read)
-
-Multi-LCB extends LiveCodeBench beyond Python to twelve programming languages by transforming existing LCB tasks into equivalent problems while preserving the benchmark's contamination controls and evaluation protocol. Evaluating 24 instruction and reasoning models, the authors found clear Python overfitting, language-specific contamination, and wide gaps in multilingual code-generation performance.
+(blurb not generated)
 
 🧠
 Opinions & Advice
 
-AI demands more engineering discipline. Not less (1 minute read)
+AI demands more engineering discipline. Not less (5 minute read)
 
-The author argues that now that models like Opus 4.5 generate code on par with the median engineer, the bottleneck shifts from writing code to verifying it, making code review, tests, and immutable-infrastructure habits more important rather than less. They draw the analogy to the move from handcrafted server "pets" to immutable infrastructure, arguing teams that loosen discipline to move faster with AI are repeating a mistake that earned ops a decade of incidents.
+(blurb not generated)
 
-How software development’s speed obsession enabled TeamPCP’s chaos crusade (1 minute read)
+How software development’s speed obsession enabled TeamPCP’s chaos crusade (5 minute read)
 
-The threat actor TeamPCP has injected malicious code into more than 1,000 software packages in under four months, starting with Trivy in February and exploiting the open-source trust model that lets organizations ingest unvetted dependencies. The author argues the attacks are notable for scale rather than novelty, and that AI coding agents installing unvetted packages with no human in the loop have widened an already-known gap in CI/CD pipelines.
+(blurb not generated)
 
-Local Qwen isn't a worse Opus, it's a different tool (1 minute read)
+Local Qwen isn't a worse Opus, it's a different tool (5 minute read)
 
-The author argues that local Qwen models aren't a budget Opus substitute but a distinct tool with a different reliability profile, drawing on production use across a bootstrapped software business rather than benchmark claims or airplane-coding anecdotes. An RTX 6000 Pro paid for itself within two or three months, but the post is candid about Qwen's worst failure modes: infinite loops and hallucination that worsen once you quantize down to fit a consumer GPU.
+(blurb not generated)
 
 Want your images back? That'll be $5 (5 minute read)
 
 (blurb not generated)
 
-Smelly config files will make your agents waste tokens, researchers warn (1 minute read)
+Smelly config files will make your agents waste tokens, researchers warn (5 minute read)
 
-Researchers found that poorly structured configuration files force coding agents to burn extra tokens re-parsing ambiguous or redundant context, with "smelly" configs measurably inflating the per-task cost of agent runs. The takeaway for engineers is to treat agent config like code, pruning dead settings and tightening structure so the model spends its context window on the task instead of decoding your setup.
+(blurb not generated)
 
 Why AI coding debt is different (5 minute read)
 
@@ -116,41 +116,45 @@ Why AI coding debt is different (5 minute read)
 🚀
 Launches & Tools
 
-Datasette Apps: Host custom HTML applications inside Datasette (1 minute read)
+Datasette Apps: Host custom HTML applications inside Datasette (5 minute read)
 
-Simon Willison released datasette-apps, a plugin that hosts self-contained HTML+JavaScript applications inside a sandboxed iframe on your Datasette instance, where they can run read-only SQL queries against your data and write queries through configured stored queries. The sandbox uses `allow-scripts allow-forms` plus an injected CSP header to block cookie and localStorage access and outbound HTTP requests, preventing a buggy or malicious app from exfiltrating private data.
+(blurb not generated)
 
-RFC 10008: The new HTTP Query Method (1 minute read)
+RFC 10008: The new HTTP Query Method (5 minute read)
 
-The IETF published RFC 10008, which standardizes the HTTP QUERY method for safe, idempotent requests that carry their input in the request body rather than the URI. QUERY fills the gap between GET and POST, letting large or sensitive query payloads be sent without URI length limits while remaining cacheable and automatically retriable since it makes no partial state changes.
+(blurb not generated)
 
 Homebrew 6.0 released with new security mechanism, Linux sandbox and more (5 minute read)
 
 (blurb not generated)
 
-Zero-Touch OAuth for MCP (1 minute read)
+Temporary Cloudflare Accounts for AI agents (1 minute read)
 
-The MCP Enterprise-Managed Authorization extension is now stable, letting organizations control MCP server access through their existing identity provider instead of per-user OAuth and repeated consent prompts. Clients exchange an Identity Assertion JWT grant (ID-JAG) obtained during SSO for an access token, giving end-users zero-touch connection on first login, with Anthropic, Microsoft, and Okta among the early adopters.
+Cloudflare launched Temporary Cloudflare Accounts for Agents, letting any AI agent run `wrangler deploy --temporary` to ship a Worker, API, or site with no signup, OAuth, or token copy-paste. The deployment stays live for 60 minutes, during which a human can claim it permanently or let it expire, giving background agents the throwaway write-deploy-verify target they need without a browser auth step.
 
-Getting more from each token: How Copilot improves context handling and model routing (1 minute read)
+Zero-Touch OAuth for MCP (5 minute read)
 
-GitHub Copilot in VS Code now cuts per-turn overhead with prompt caching, which reuses model state for repeated prompt prefixes, and tool search, which loads tool schemas on demand instead of sending every definition every turn. The goal is spending less of each session on recurring context and more on the task, with Auto routing also expanding so Copilot picks the model that fits the work without the developer choosing each time.
+(blurb not generated)
 
-Lore – Open source version control system designed for scalability (1 minute read)
+Getting more from each token: How Copilot improves context handling and model routing (5 minute read)
 
-Epic Games released Lore, a centralized, content-addressed version control system that models repository state as Merkle trees over an immutable revision chain. It targets binary-heavy repos at scale through deduplication and sparse, on-demand hydration, positioning it against Perforce for game studios rather than Git's distributed model.
+(blurb not generated)
 
-npm v12’s Biggest Security Change: From Implicit to Explicit Trust (1 minute read)
+Lore – Open source version control system designed for scalability (5 minute read)
 
-npm v12 (estimated July 2026) flips package installation from implicit to explicit trust, blocking three high-risk vectors by default: lifecycle scripts (allowScripts), Git-repository installs (--allow-git), and remote-URL installs (--allow-remote). JFrog's research team ties those mechanisms to roughly 53% of malicious npm attacks over the past year, shifting responsibility for installation-time execution from external scanners onto npm itself.
+(blurb not generated)
 
-Bringing more agent harnesses and frameworks to Cloudflare, starting with Flue (1 minute read)
+npm v12’s Biggest Security Change: From Implicit to Explicit Trust (5 minute read)
 
-Cloudflare added durable execution, dynamic code execution, a durable filesystem, and dynamic workflows to its Agents SDK, exposing those primitives as a base layer for any agent harness or framework. Flue, a new open-source framework from the team behind Astro, is the first to build on it, shipping its 1.0 Beta this week atop the Pi harness.
+(blurb not generated)
 
-Z.ai pitches GLM-5.2 for long-running software engineering tasks (3 minute read)
+Bringing more agent harnesses and frameworks to Cloudflare, starting with Flue (5 minute read)
 
-Z.ai released GLM-5.2, an MIT-licensed open-source coding model with a one million-token context window that the company says trails Claude Opus 4.8 by 1% on the FrontierSWE long-horizon benchmark. It targets repository-scale agentic work with IndexShare, which cuts per-token compute by 2.9x at full context length, plus multi-token prediction changes that lift speculative decoding acceptance by up to 20%.
+(blurb not generated)
+
+Z.ai pitches GLM-5.2 for long-running software engineering tasks (5 minute read)
+
+(blurb not generated)
 
 [AINews] GLM-5.2: the top Frontend Coding model in the world, IndexShare for Speculative Decoding (5 minute read)
 
@@ -158,90 +162,86 @@ Z.ai released GLM-5.2, an MIT-licensed open-source coding model with a one milli
 
 GitLab 19.1 released (5 minute read)
 
-GitLab 19.1 shipped secret false positive detection with the GitLab Duo Agent Platform as generally available, automatically analyzing each critical and high severity secret finding after a scan and adding an AI assessment, confidence score, and reasoning to the vulnerability report. The release also adds an always-on availability mode that lets administrators force GitLab Duo on across an entire instance or top-level group, blocking project owners from disabling it for centralized AI governance.
+(blurb not generated)
 
-Git good with Epic Games' new open source VCS, Lore (1 minute read)
+Git good with Epic Games' new open source VCS, Lore (5 minute read)
 
-Epic Games released Lore, an open source version control system built to handle the massive binary assets and monorepo scale that Git struggles with on large game projects. The system targets workflows where artists and engineers commit multi-gigabyte files, positioning it as an alternative to Perforce for studios that have outgrown Git's large-file handling.
+(blurb not generated)
 
-Clojure Hosted on Go (1 minute read)
+Clojure Hosted on Go (5 minute read)
 
-Glojure is an interpreter for Clojure hosted on Go, giving Clojure code direct access to Go libraries the way the JVM version reaches Java. As a hosted language, all Go values work as Glojure values and vice versa, though the project is early (v0.3.0), runs only a subset of core Clojure, and makes no backwards-compatibility guarantees before v1.
+(blurb not generated)
 
-Agentic coding deserves more than a chat box bolted onto VS Code (1 minute read)
+Vercel debuts eve open source agent framework, tries to fix shadow AI with Passport (1 minute read)
 
-Polypore is an open-source agentic desktop IDE built on Tauri 2, where every surface is a dockable sandboxed panel and the agent is the primary actor across the layout, memory system, debug tooling, and a bundled Node MCP sidecar exposing 22+ tools. Secrets stay in the OS keyring and are swapped for handle sentinels before any agent spawns, so the model drives panels and injects credentials over RPC without ever seeing plaintext.
+Vercel released eve, an open-source framework for building AI agents, alongside Passport, a tool meant to curb shadow AI by tracking and governing which models and agents employees run. The CTO concedes that going through Vercel to reach AWS carries a cost premium, but argues more efficient compute utilization offsets it.
+
+Agentic coding deserves more than a chat box bolted onto VS Code (5 minute read)
+
+(blurb not generated)
 
 From the Hugging Face Hub to robot hardware with Strands Agents and LeRobot (5 minute read)
 
-Strands Robots is an open source SDK from AWS (Apache 2.0) that exposes LeRobot's robot abstractions, simulation, and policy inference as AgentTools you compose into a single Strands agent. The same agent code records demonstrations to the Hub, runs policies in simulation, deploys to a physical SO-101 with one keyword-argument change, and fans out to a robot fleet over a Zenoh peer mesh, with LeRobot's own CLIs still handling hardware recording and calibration.
+(blurb not generated)
 
 Agentic Resource Discovery: Let agents search (5 minute read)
 
-Agentic Resource Discovery (ARD) is an open specification, built by contributors from Microsoft, Google, GoDaddy, and Hugging Face, that lets agents search for and load tools, skills, and other agents at runtime instead of having URLs hardcoded into config files. It sits as a discovery layer in front of MCP, Skills, and A2A, defining a static `ai-catalog.json` manifest plus a `POST /search` registry, with Hugging Face's Discover Tool already indexing thousands of Spaces, Skills, and MCP servers.
+(blurb not generated)
 
-Anthropic's Claude Code Artifacts update brings live, shared dashboards and interactive workspaces to enterprises (2 minute read)
+Anthropic's Claude Code Artifacts update brings live, shared dashboards and interactive workspaces to enterprises (5 minute read)
 
-Anthropic added Artifacts to Claude Code on Team and Enterprise plans, turning a session's work into a live, shareable HTML page that builds from the local repo, connected data sources, and monitoring tools without standing up extra infrastructure. The page refreshes in-place at a fixed URL as the agent works and versions every change for rollback, landing about two weeks after OpenAI shipped a similar enterprise hosting feature called Sites for Codex.
+(blurb not generated)
 
 Microsoft updates Visual Studio Code with easier language model discovery and in-app search (5 minute read)
 
 (blurb not generated)
 
-Proactively reduce tech debt autonomously with AWS Transform – continuous modernization (preview) (1 minute read)
-
-AWS Transform – continuous modernization, now in preview, autonomously scans codebases across thousands of repositories against configurable baselines, then prioritizes tech debt findings and opens pull requests that remediate them. The capability targets end-of-life dependencies, deprecated frameworks, and outdated Lambda runtimes continuously rather than app-by-app, and lets platform teams codify their own policies, such as approved libraries or internal coding standards, to enforce across every repo.
-
-Apple showcases its new developer AI tools in impressive 90-minute presentation (1 minute read)
-
-Apple published a 90-minute WWDC26 session, "Inside Apple Intelligence and Xcode," that demos the new Xcode 27, Foundation Models, Core AI, and MLX frameworks for developers. The standout segments build a full app with 3D animations and Visual Intelligence from a few prompts, and run the 1-trillion-parameter Kimi 2.6 model locally across four Mac Studios over RDMA-over-Thunderbolt.
-
 🎁
 Miscellaneous
 
-How hacker group TeamPCP exploited the open source trust model and distribution method to compromise and inject malware into over 1,000 software packages (Matt Kapko/CyberScoop) (1 minute read)
+How hacker group TeamPCP exploited the open source trust model and distribution method to compromise and inject malware into over 1,000 software packages (Matt Kapko/CyberScoop) (5 minute read)
 
-The hacker group TeamPCP compromised over 1,000 software packages by abusing the open source ecosystem's implicit trust and distribution model to inject malware. The campaign exploited maintainer credentials and package-manager defaults rather than novel code vulnerabilities, putting the burden on developers to audit dependencies and lock down supply-chain access.
+(blurb not generated)
 
-I found 10k GitHub repositories distributing Trojan malware (1 minute read)
+I found 10k GitHub repositories distributing Trojan malware (5 minute read)
 
-A developer discovered roughly 10,000 GitHub repositories distributing Trojan malware, each cloning a legitimate project's commits and periodically re-pushing a single readme change that adds a link to a malicious zip archive. GitHub support took about six weeks to remove the repos the author reported, leaving the broader campaign of identically-patterned, non-forked clones largely intact.
+(blurb not generated)
 
-145 Mastra npm Packages Compromised via Hijacked Contributor Account (1 minute read)
+145 Mastra npm Packages Compromised via Hijacked Contributor Account (5 minute read)
 
-Attackers hijacked a former Mastra contributor's npm account whose scope access was never revoked and mass-published 144 malicious packages across the @mastra/* namespace, each adding a dependency on "easy-day-js," a dayjs clone that runs a cross-platform crypto-stealing RAT via a postinstall hook. Mastra generated SLSA provenance on CI publishes but did not require it, so a standard personal token could still push unattested versions that npm accepted.
+(blurb not generated)
 
-Malicious JetBrains Plugins Steal AI API Keys as Chrome Extensions Capture Chatbot Chats (1 minute read)
+Malicious JetBrains Plugins Steal AI API Keys as Chrome Extensions Capture Chatbot Chats (5 minute read)
 
-Researchers flagged a coordinated campaign on the JetBrains Marketplace where 15 malicious plugins posed as DeepSeek-based AI coding assistants and exfiltrated developers' AI provider API keys to an attacker-controlled server in plaintext, with two plugins claiming over 25,000 downloads each. The plugins worked as advertised since October 2025 and even ran a paid tier that handed users someone else's API key, suggesting the keys themselves were stolen.
+(blurb not generated)
 
-ShapedPlugin update flow hacked to infect WordPress sites (1 minute read)
+ShapedPlugin update flow hacked to infect WordPress sites (5 minute read)
 
-Attackers compromised ShapedPlugin's official update channel and pushed backdoored builds of three paid WooCommerce plugins (Product Slider Pro, Real Testimonials Pro, and Smart Post Show Pro) to paying customers between May 21 and June 12. The malware installs a hidden fake plugin that harvests admin credentials, 2FA secrets, wp-config.php keys, and three months of WooCommerce payment data before self-deleting to cover its tracks.
+(blurb not generated)
 
 Apple's WebKit performance tax leaves iOS browsers stuck in the slow lane, says Microsoft (5 minute read)
 
 (blurb not generated)
 
-Google sets timeline for Android developer verification enforcement (1 minute read)
+Google sets timeline for Android developer verification enforcement (5 minute read)
 
-Google set September 30, 2026 as the enforcement date for Android developer verification, starting with users in Brazil, Indonesia, Singapore, and Thailand, where apps distributed through stores like Google Play, Galaxy Store, and GetApps must be linked to a verified identity before installation. New APIs let developers register package names in bulk or via CI/CD, and a fee-free limited distribution account lets hobbyists ship to up to 20 devices without a government ID.
+(blurb not generated)
 
-Apple announces major App Store changes for Brazil, including alternative app marketplaces (1 minute read)
+Apple announces major App Store changes for Brazil, including alternative app marketplaces (5 minute read)
 
-Apple opened iOS in Brazil to alternative app marketplaces and outside payment methods for users on iOS 26.5 and up, settling a CADE dispute that started with a 2022 MercadoLibre complaint. Apps distributed off the App Store still go through baseline Notarization and must carry age ratings, and the changes bar direct web sideloading while introducing a Japan-style commission structure.
+(blurb not generated)
 
 ⚡
 Quick Links
 
-AutoPass: Evidence-Guided LLM Agents for Compiler Performance Tuning (1 minute read)
+AutoPass: Evidence-Guided LLM Agents for Compiler Performance Tuning (5 minute read)
 
-AutoPass is a training-free multi-agent framework that queries LLVM internals to tune compiler passes, beating -O3 by up to 1.117x.
+(blurb not generated)
 
-CS 6120: Advanced Compilers: The Self-Guided Online Course (2020) (1 minute read)
+CS 6120: Advanced Compilers: The Self-Guided Online Course (2020) (5 minute read)
 
-Cornell's PhD-level Advanced Compilers course, free and self-guided, covering IRs, dataflow, SSA, LLVM, and GC through papers and hacking tasks.
+(blurb not generated)
 
-Migrating from GNU Stow to Chezmoi (1 minute read)
+Migrating from GNU Stow to Chezmoi (5 minute read)
 
-Developer migrates dotfiles from GNU Stow to chezmoi, swapping symlinks for a managed source repo to keep three Macs converged.
+(blurb not generated)
