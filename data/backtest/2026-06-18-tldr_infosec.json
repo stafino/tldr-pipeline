@@ -1,9 +1,37 @@
 {
   "date": "2026-06-18",
   "newsletter": "tldr_infosec",
-  "fetched_at": "2026-06-19T02:40:54.934616+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-06-19T12:49:56.958140+00:00",
+  "tldr_titles": [
+    "FortiBleed Leak Exposes Fortinet VPN Credentials for 73K Devices",
+    "Sweeping Credential-Harvesting Heist Compromises 30K+ Fortinet Devices",
+    "A 27-Year-Old Authentication Bypass in OpenBSD's PPP Stack",
+    "Inside Claude Managed Agents: Reverse Engineering the Security Boundaries of Anthropic's Hosted Agent Runtime",
+    "On Post-Quantum Security Adoption",
+    "QoS Policies",
+    "Chainguard, JPMorgan, BNY Team Up to Secure Open Source from AI Threats",
+    "How We Cut Semgrep's Taint Analysis Time by 75%",
+    "China-Nexus Actor Spies on US Researchers Undetected for a Year",
+    "Peter Thiel's Dialog Network was Super Secret. A Data Leak Changed That",
+    "Cyberattack sees crops kept in the ground",
+    "JetBrains Marketplace Ecosystem Security Update: Addressing Malicious Third-Party AI Plugins",
+    "Estonia to quarantine emails sent from Russian .ru domain before they reach government officials"
+  ],
+  "tldr_matched": [
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true,
+    false
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -26,8 +54,8 @@
       "score": 83.0,
       "title": "FortiBleed leak exposes Fortinet VPN credentials for 73,000 devices.",
       "url": "https://www.bleepingcomputer.com/news/security/fortibleed-leak-exposes-fortinet-vpn-credentials-for-73-000-devices/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 0,
+      "similarity": 1.0
     },
     {
       "rank": 4,
@@ -114,8 +142,8 @@
       "score": 76.0,
       "title": "Malicious JetBrains Plugins Steal AI API Keys as Chrome Extensions Capture Chatbot Chats",
       "url": "https://thehackernews.com/2026/06/malicious-jetbrains-plugins-steal-ai.html",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 11,
+      "similarity": 0.7034369707107544
     },
     {
       "rank": 15,
@@ -606,9 +634,49 @@
       "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.07692307692307693,
+    "25": 0.15384615384615385,
+    "50": 0.15384615384615385,
+    "100": 0.15384615384615385,
+    "75": 0.15384615384615385
+  },
+  "hits_at": {
+    "10": 1,
+    "25": 2,
+    "50": 2,
+    "100": 2,
+    "75": 2
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://www.bleepingcomputer.com/news/security/fortibleed-leak-exposes-fortinet-vpn-credentials-for-73-000-devices/",
+    "https://www.darkreading.com/cyberattacks-data-breaches/sweeping-credential-harvesting-heist-compromises-30k-fortinet-devices",
+    "https://blog.argus-systems.ai/blog/openbsd-pap-27-year-auth-bypass.html",
+    "https://pluto.security/blog/inside-claude-managed-agents/",
+    "https://brandonrozek.com/blog/post-quantum-security-adoption/",
+    "https://ipurple.team/2026/06/17/qos-policies/",
+    "https://www.infosecurity-magazine.com/news/chainguard-bny-open-source-athena/",
+    "https://semgrep.dev/blog/2026/how-we-cut-semgreps-taint-analysis-time-by-75-percent/",
+    "https://www.darkreading.com/threat-intelligence/china-nexus-actor-us-researchers-undetected",
+    "https://san.com/cc/peter-thiels-dialog-network-was-super-secret-a-data-leak-changed-that/",
+    "https://www.theregister.com/cyber-crime/2026/06/17/cyberattack-sees-crops-kept-in-the-ground/5256321",
+    "https://blog.jetbrains.com/platform/2026/06/marketplace-ecosystem-security-update-malicious-ai-plugins/",
+    "https://therecord.media/estonia-quarantine-russian-emails"
+  ],
+  "tldr_domains": [
+    "bleepingcomputer.com",
+    "darkreading.com",
+    "blog.argus-systems.ai",
+    "pluto.security",
+    "brandonrozek.com",
+    "ipurple.team",
+    "infosecurity-magazine.com",
+    "semgrep.dev",
+    "darkreading.com",
+    "san.com",
+    "theregister.com",
+    "blog.jetbrains.com",
+    "therecord.media"
+  ]
 }

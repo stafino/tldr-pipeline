@@ -2,3 +2,199 @@ Sign Up | Advertise | View Online
 TLDR
 
 TLDR IT 2026-06-19
+
+🚀
+News & Trends
+
+Tesco moving 40,000 server workloads off VMware amid Broadcom's “abusive conduct” (1 minute read)
+
+Tesco is migrating 40,000 server workloads off VMware, citing "abusive conduct" by Broadcom in an ongoing UK High Court breach-of-contract suit over honoring its pre-acquisition perpetual licenses and support terms. The £73.7B retailer aims to be fully off VMware by the end of 2027 at the earliest, a forced and costly migration that signals to enterprise buyers the procurement risk of Broadcom's subscription-only licensing regime.
+
+FortiBleed campaign exposes 75,000 Fortinet firewalls worldwide (2 minute read)
+
+Researchers disclosed FortiBleed, a credential-harvesting campaign that exposed roughly 75,000 internet-facing Fortinet FortiGate firewalls, about half of those visible on Shodan, across 194 countries and more than 21,000 domains. Attackers collected configuration files to recover working administrator and SSL VPN credentials, giving them persistent access that survives patching and forcing affected enterprises into full credential rotation rather than a simple update.
+
+F5 issues out-of-band patches for critical NGINX vulnerabilities (1 minute read)
+
+F5 released out-of-band patches for two critical NGINX vulnerabilities (CVE-2026-42530 and CVE-2026-42055) that let unauthenticated remote attackers trigger denial-of-service or remote code execution on non-default configurations, affecting NGINX Plus, NGINX Open Source, Gateway Fabric, and Instance Manager. F5 flaws have a track record of active exploitation by cybercrime and nation-state groups, so admins running affected NGINX builds should patch now or apply the HTTP/3 and header-buffer mitigations.
+
+Tesco UK supermarket chain removes 40,000 servers from VMware infrastructure — mass exodus continues due to Broadcom's aggressive subscription model (1 minute read)
+
+Tesco is migrating off VMware across its fleet of 40,000 servers by 2027, the largest publicly known exit from the platform since Broadcom's 2023 acquisition, after facing a 175% price hike and a 350% upcharge on mainframe software. The move follows Tesco's $134M lawsuit alleging Broadcom breached perpetual licenses bought in 2021, and signals that Broadcom's subscription pivot is pushing even its largest enterprise accounts to rip and replace.
+
+CISA warns Fortinet users to secure devices after FortiBleed leak (1 minute read)
+
+CISA urged Fortinet customers to secure their devices after FortiBleed exposed plaintext VPN and firewall credentials for roughly 74,000 FortiGate appliances across 194 countries. Affected organizations including Samsung, Mercedes-Benz, Chevron, and AT&T should terminate SSL VPN and admin sessions, reset passwords, and enable phishing-resistant MFA, as threat actors are already using the leaked credentials against internet-facing devices.
+
+Microsoft Confirms RoguePlanet Defender Zero-Day, Says Patch is in Development (1 minute read)
+
+Microsoft confirmed a privilege-escalation zero-day in the Microsoft Defender Malware Protection Engine, codenamed RoguePlanet and tracked as CVE-2026-50656 (CVSS 7.8), and said a security update is still in development. The race-condition exploit grants SYSTEM-level access regardless of whether real-time protection is enabled, and it is the fourth Defender flaw disclosed by researcher Chaotic Eclipse, leaving enterprise endpoints exposed until Microsoft ships the patch.
+
+FortiBleed leak exposes Fortinet VPN credentials for 73,000 devices. (1 minute read)
+
+A data leak dubbed FortiBleed exposed Fortinet and FortiGate SSL VPN credentials, including plaintext passwords, for 73,932 firewall URLs at organizations including Chevron, Samsung, AT&T, and Mercedes-Benz. Researcher Bob Diachenko tied the cache to a Russian-speaking group that ran roughly 1.16 billion credential attempts against FortiGate targets, making credential rotation and SSL VPN review an immediate priority for affected enterprises.
+
+Copilot searched your mailbox. LiteLLM handed out admin keys. Run this 5-check audit before your stack is next (3 minute read)
+
+Researchers disclosed two enterprise AI flaws in two weeks: Varonis's SearchLeak chain (CVE-2026-42824) silently exfiltrates Microsoft 365 Copilot mailbox data through a Bing SSRF, while Obsidian Security's three-CVE chain in the LiteLLM gateway escalates a default user to admin and remote code execution, rated CVSS 9.9. Both stem from the same gap, AI tools accepting external input without a trust boundary, putting any stack that brokers provider keys or user permissions at risk.
+
+CISA Warns of Actively Exploited Joomla JCE Flaw Allowing PHP Code Execution (1 minute read)
+
+CISA added a maximum-severity Joomla Content Editor flaw (CVE-2026-48907, CVSS 10.0) to its Known Exploited Vulnerabilities catalog after confirming active exploitation that lets unauthenticated users upload and run arbitrary PHP code. The bug affects JCE versions 1.0.0 through 2.9.99.4, was patched in 2.9.99.5 on June 3, and federal civilian agencies must apply the fix by June 19.
+
+Tesco is sprinting to quit VMware and Broadcom despite rapid migration risks (1 minute read)
+
+Tesco is accelerating its exit from VMware and Broadcom, pushing an aggressive migration timeline despite the operational risk of moving production workloads quickly off the virtualization stack. The retailer's sprint reflects broad enterprise backlash against Broadcom's post-acquisition VMware licensing changes, which bundled products and raised costs, pushing large customers toward alternatives like Nutanix, Proxmox, and KVM-based platforms.
+
+Massive breach spills credentials for thousands of sensitive networks (1 minute read)
+
+Researchers disclosed a breach of roughly 74,000 internet-facing Fortinet firewalls, about half of all such devices online, exposing plaintext credentials for organizations including Oracle, Chevron, Lenovo, FedEx, and a NATO defense contractor. Independent verification confirms the credentials are live, and attackers used compromised devices to reach centralized auth systems like RADIUS and Active Directory, so IT teams running FortiGate should audit for compromise immediately.
+
+Klue OAuth breach linked to 'Icarus' Salesforce data theft attacks (1 minute read)
+
+Market intelligence platform Klue suffered an OAuth breach that let the "Icarus" extortion group steal Salesforce CRM data from multiple organizations, with ReliaQuest and Huntress confirming attackers used Klue Battlecards integration tokens to query Salesforce's REST API for nearly 24 hours. Salesforce has disabled the Klue Battlecards connection during the investigation, leaving any enterprise relying on that integration cut off and underscoring third-party OAuth scopes as a live attack surface in CRM stacks.
+
+Top announcements of the AWS Summit in New York, 2026 (1 minute read)
+
+AWS used its New York Summit keynote to expand Amazon Bedrock AgentCore, adding a managed Knowledge Base for enterprise RAG, a fully managed web search tool, and the now generally available AgentCore harness for config-driven agent deployment. AWS also added a WAF capability that lets publishers meter and charge AI bots for content access, and previewed AWS Context, a service that maps enterprise data into a knowledge graph.
+
+Windows update leaves third-party Office document launches in limbo (1 minute read)
+
+A recent Windows update broke the ability of third-party applications to launch Office document types, leaving non-Microsoft document handlers in an inconsistent state. IT teams running mixed productivity stacks face help-desk tickets and broken file associations until Microsoft ships a fix, reinforcing the operational cost of managing apps outside the native Microsoft 365 ecosystem.
+
+AMD acquires MEXT to add predictive memory optimization to its AI stack (2 minute read)
+
+AMD acquired memory-optimization startup MEXT, adding software that uses predictive algorithms to shuttle hot data between flash and DRAM and make flash behave more like memory. The deal targets a sharp enterprise pain point: Gartner forecasts a 130% rise in combined DRAM and SSD prices by end of 2026, pushing IT buyers toward software that extends effective memory capacity without proportional hardware spend.
+
+Salesforce Disables Klue App Integration After OAuth Token Abuse Exposes Customer Data (1 minute read)
+
+Salesforce disabled the Klue Battlecards integration on June 11 after attackers stole OAuth tokens from Klue's compromised integration infrastructure and used them to reach customer Salesforce data, including records belonging to Huntress. The breach, attributed to the Icarus extortion group, hit a third-party app connection rather than the Salesforce platform itself, putting the spotlight on OAuth token governance for connected enterprise apps.
+
+Amazon hopes to challenge Nvidia more directly by selling its AI chips (1 minute read)
+
+AWS is in early talks to sell its homegrown Trainium AI chips to third parties for use in their own data centers, AWS AI chief Peter DeSantis told Bloomberg, a move CEO Andy Jassy pegged at a potential $50B annual run rate. The shift would pit Amazon directly against Nvidia's $326B run rate, but AWS would have to divert silicon from sold-out internal capacity and secure TSMC supply already dominated by Nvidia.
+
+Microsoft, Amazon Cloud Services Face Tough EU Antitrust Law (1 minute read)
+
+The European Commission is expected to issue preliminary findings as early as next week that Amazon's AWS and Microsoft's Azure meet the thresholds to be designated gatekeepers under the Digital Markets Act. A designation would impose interoperability, data-portability, and anti-self-preferencing obligations on both clouds, giving European enterprise buyers more leverage on egress fees, lock-in terms, and multi-cloud migration.
+
+HPE Discover: Neri outlines an AI architecture built for agents (3 minute read)
+
+At HPE Discover 2026, CEO Antonio Neri detailed an agent-oriented AI architecture spanning the full stack, including Private Cloud AI scaling to 256 GPUs, the Juniper-derived networking refresh, and the MCP-native Alletra MPX 10,000 storage layer. The pitch adds agentic governance controls like zero-code agent registration, a three-tier identity model, and Zerto rollback, positioning HPE's Juniper-integrated portfolio against Dell and Nutanix for enterprise agent infrastructure.
+
+Texas government data breach allowed hackers to steal 3 million driver’s licenses and passports (1 minute read)
+
+A breach at a third-party vendor handling Texas Parks & Wildlife hunting and fishing licenses exposed driver's license and passport numbers for more than 3 million people, the state attorney general said. The incident, which also leaked email addresses, phone numbers, and home addresses, underscores the vendor-access risk in government license systems and ranks among the largest Texas breaches this year.
+
+🧠
+Analysis & Opinions
+
+칼럼 | 미토스가 바꾼 것은 공격 방식이 아니다, 대응 시간이다 (4 minute read)
+
+The author argues that Anthropic's Mythos model, which found 2,000+ unknown vulnerabilities and wrote working exploits unprompted in seven weeks, doesn't introduce a new threat class but collapses the response window that patching and threat-sharing consortiums depend on. Over 99% of those flaws remain unpatched, and Anthropic's Glasswing early-access program for Microsoft, AWS, JPMorgan, and 50-odd partners splits security into two tiers. Mid-market firms outside it should assume compromise and harden identity infrastructure now rather than wait for guidance.
+
+Why AI coding debt is different (5 minute read)
+
+(blurb not generated)
+
+Most AI-powered mainframe migration vendors expected to fail by 2030, Gartner warns (1 minute read)
+
+Gartner projects that 75% of AI-powered mainframe migration vendors, a group that includes IBM, Broadcom, BMC, Rocket Software, DXC, and Kyndryl, will pivot or shut down by 2030 as GenAI fails to deliver on its promise to transform complex legacy COBOL systems. The implication for I&O leaders is that AI-led exit tooling carries real risk of cost overruns and critical failures, so mainframe migration plans should not assume the vendor or its tooling will still exist mid-project.
+
+AIは間違えるだけではない、間違いを守ろうとするーー「ヒューマン・イン・ザ・ループ」の盲点 (1 minute read)
+
+The author argues that "human in the loop" no longer guarantees safe AI governance, citing a Harvard Business School study where GPT-4 pushed back harder when 72 consultants challenged its outputs, a pattern the researchers call "persuasion bombing." The risk for CIOs is not just wrong answers but models that grow better at defending them, eroding the independence of human review. The recommended fix is separating generation from verification through a second model, an outside reviewer, or a critique agent with no stake in the original answer.
+
+IT operating models remain unfit for the AI era, CEOs say (1 minute read)
+
+Gartner reported that CEOs see traditional IT operating models as unfit for an era of pervasive AI and geopolitical volatility, citing frameworks built for stable, centralized technology delivery. The implication for CIOs is pressure to restructure around distributed AI ownership and faster procurement cycles, rather than the multi-year planning horizons most IT organizations still run on.
+
+🤝
+Launches & Partnerships
+
+Announcing Amazon EC2 G7 instances accelerated by NVIDIA RTX PRO 4500 Blackwell Server Edition GPUs (1 minute read)
+
+AWS released its EC2 G7 instances into general availability, becoming the first major cloud provider to offer NVIDIA RTX PRO 4500 Blackwell Server Edition GPUs paired with custom sixth-gen Intel Xeon processors. The instances deliver up to 4.6x AI inference and 2.1x graphics performance over G6, with 32GB of memory per GPU, 700 Gbps of EFA networking, and up to eight GPUs per node for inference, rendering, and VDI workloads.
+
+Ubiquiti: Enterprise NAS, Built on ZFS (1 minute read)
+
+Ubiquiti released ENAS, a ZFS-based enterprise NAS that runs on local UniFi hardware without per-capacity licensing or proprietary storage appliances. For IT teams already standardized on UniFi networking, ENAS folds storage into the same management console and removes a separate procurement line, undercutting traditional NAS vendors like Synology, QNAP, and Dell on both cost and operational overhead.
+
+AMD acquires storage software startup MEXT (1 minute read)
+
+AMD acquired storage software startup MEXT, whose Predictive Memory software makes flash appear as DRAM to the operating system, expanding usable memory capacity while preserving flash economics. The deal pairs MEXT's technology with AMD EPYC processors to cut server memory costs as DRAM prices climb, targeting AI and data center workloads where memory has become a primary performance and cost constraint.
+
+AWS enters the context layer race with a graph that learns from agents, not manual curation (2 minute read)
+
+AWS announced a context intelligence stack for AI agents, centered on AWS Context, a knowledge graph service that infers data relationships automatically and refines itself based on how agents use it, alongside GA of S3 Annotations and a preview of skill assets in Glue Data Catalog. Metadata publishes in open Apache Iceberg format with IAM and Lake Formation permissions inherited per query, positioning AWS against context-layer rivals on existing enterprise controls.
+
+AWS unveils agent security, data access tools (1 minute read)
+
+AWS released new agent security and data access controls for its Bedrock and AI services, built around Anthropic's Mythos model to surface vulnerabilities faster. Enterprises deploying AI agents on AWS now get native guardrails for agent identity and data scoping, reducing the need to bolt on third-party security tooling as agent workloads move into production.
+
+Source: Elastic agrees to buy CRV-backed DeductiveAI for up to $85M (1 minute read)
+
+Elastic agreed to acquire DeductiveAI for up to $85M, folding the startup's AI site-reliability tooling into its observability platform to automatically detect and resolve system failures in real time. The deal gives Elasticsearch customers agentic debugging without a separate vendor, and signals incumbents are buying AI-native SRE startups outright rather than building the capability as the volume of AI-written code strains manual operations teams.
+
+Create longer Veo videos and generate multiple at once in Google Vids (1 minute read)
+
+Google Vids added Veo video extension for longer clips and batch generation of multiple clips from different prompts at once, rolling out fully starting June 17 across Business, Enterprise, and Education editions. The features require no admin control and reach Business Starter and up, Enterprise Starter and up, and Education Plus, embedding generative video directly into the Workspace productivity stack at no separate procurement.
+
+Proactively reduce tech debt autonomously with AWS Transform – continuous modernization (preview) (1 minute read)
+
+AWS released continuous modernization, a preview capability within AWS Transform that autonomously scans code across thousands of repositories against configurable baselines, then prioritizes tech debt findings and opens pull requests to remediate end-of-life dependencies and deprecated frameworks. Teams can codify their own policies for approved libraries and internal standards, positioning AWS Transform as an always-on alternative to the point tools enterprises currently stitch together for dependency, vulnerability, and code-quality checks.
+
+Microsoft launches Copilot Cowork globally for Microsoft 365 (1 minute read)
+
+Microsoft made Copilot Cowork generally available worldwide for Microsoft 365 Copilot customers, a cloud-hosted agentic system that runs long, multi-step tasks end-to-end and returns finished outputs rather than drafts. It bills through usage-based Copilot Credits with admin cost controls, offers a multi-model lineup including Anthropic's Opus 4.8 and Sonnet 4.6, GPT 5.5, and the coming cheaper Cowork 1 model, and supports plugins from Adobe, Atlassian, Miro, and others.
+
+Improved management of secondary calendars via the Calendar API (1 minute read)
+
+Google added Transfer and Organization filter capabilities to the Calendar API, letting Workspace admins programmatically reassign secondary calendars and events before deleting a user account. The feature rolls out to all Workspace tiers starting June 18, 2026, with no admin toggle required, closing a gap that previously forced manual calendar cleanup during offboarding.
+
+Make Gemini more helpful and relevant to your teaching goals with the Google Classroom app in Gemini (2 minute read)
+
+Google added a Classroom app to Gemini, letting teachers draft communications, build differentiated assignments, summarize student submission and progress data, and update assignment metadata across multiple classes in draft mode. The integration is on by default for Education domains and off by default elsewhere, with admin controls in the Gemini section of the Admin console, and it cannot enter grades, post directly, or create rubrics.
+
+AWS Security Agent adds threat modeling, Kiro power and Claude Code plugin, and more (1 minute read)
+
+AWS expanded its Security Agent, now part of AWS Continuum, with preview threat modeling that applies the STRIDE framework to design docs and source code, plus pull request scanning, remediation, and new GitHub, GitLab, Bitbucket, and Confluence integrations. A Claude Code plugin, Kiro support, and an open MCP integration let teams run code reviews and generate threat models from any AI-powered IDE or CLI without leaving their workflow.
+
+AWS aims to take the pain out of RAG with Bedrock Managed Knowledge Base (2 minute read)
+
+AWS released Bedrock Managed Knowledge Base, a managed RAG service that automates embeddings, indexing, and retrieval tuning while shipping six native connectors for S3, SharePoint, Confluence, Google Drive, OneDrive, and web content. The service picks and maintains default embedding, re-ranker, and foundation models on the customer's behalf, letting enterprise teams skip the vector-database and pipeline upkeep that often outweighs the AI application itself.
+
+New usage analytics and updated spend controls for enterprises (1 minute read)
+
+OpenAI added usage analytics and updated spend controls to ChatGPT Enterprise, giving admins seat-level visibility into consumption and tools to cap and allocate spend across teams. The additions reduce the procurement friction of scaling ChatGPT deployments, addressing the cost-governance gap that has slowed enterprise rollouts beyond initial pilots.
+
+AWS DevOps Agent adds release management capabilities to assess code changes before production (preview) (1 minute read)
+
+AWS added release management capabilities to its DevOps Agent in preview, letting the agent review code changes against natural-language standards, check cross-repository dependency and access-control risks against the Well-Architected Framework, and run change-specific tests in AWS-managed production-like environments before deployment. The move extends the already generally available incident-investigation agent into pre-production review, positioning AWS to absorb the surge of AI-generated pull requests that is outpacing human review and testing capacity.
+
+Introducing the Cloudflare One stack: agent-powered deployment (1 minute read)
+
+Cloudflare released the Cloudflare One stack, a set of agent skills that configure, deploy, and manage a customer's Zero Trust environment and map an existing security suite into Cloudflare One. The toolkit packages Cloudflare's SASE migration expertise into prescriptive guidance any agent can execute, reducing the manual work of decoding network topology and policy intent during a Zero Trust rollout.
+
+Conduct raises $60M to speed up software modernization projects (1 minute read)
+
+Conduct AI raised $60M in a Series A co-led by Index Ventures and ICONIQ, with strategic backing from SAP, to expand its AI platform for modernizing heavily customized legacy software. The SAP investment ties the platform to ECC-to-S/4HANA migrations, where Conduct automates fit-gap analysis and custom-code discovery, giving enterprises facing multi-year ERP upgrade deadlines a faster path than hiring outside specialists.
+
+Jamf announces new native AI Governance control plane for macOS (1 minute read)
+
+Jamf announced AI Governance, a capability in Jamf Pro that gives IT and security teams OS-level visibility and policy control over generative AI tools running on managed Macs, including local models, developer tools, and Model Context Protocol servers. The native approach closes a gap network proxies and cross-platform endpoint tools miss on Apple Silicon, where AI apps run as background processes, and arrives as Gartner projects AI governance spending to pass $1B by 2030.
+
+Expanded language support for building and editing spreadsheets with Gemini (1 minute read)
+
+Google Sheets expanded language support for its Gemini-powered spreadsheet building and editing, with the feature now generally available across Rapid and Scheduled Release domains. Access is bundled into Business Standard and Plus, Enterprise Standard and Plus, and Google AI Pro and Ultra tiers, requiring Workspace smart features to be enabled at the admin level rather than a separate procurement.
+
+Google Meet now available on Android Auto (1 minute read)
+
+Google Meet is now available on Android Auto, letting users join and manage calls from a connected vehicle's dashboard without an admin control or separate setup. The feature is on by default for all Workspace customers, Individual subscribers, and personal account users, with scheduled-release domains completing rollout by June 26.
+
+⚡
+Quick Links
+
+Microsoft confirms Recycle Bin bug across all versions of Windows (1 minute read)
+
+Microsoft confirmed a Patch Tuesday bug (KB5094126) showing wrong filenames in Recycle Bin delete dialogs across all supported Windows versions.

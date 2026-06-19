@@ -1,9 +1,35 @@
 {
   "date": "2026-06-15",
   "newsletter": "tldr_dev",
-  "fetched_at": "2026-06-19T02:40:53.682613+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-06-19T12:37:43.088524+00:00",
+  "tldr_titles": [
+    "Slightly reducing the sloppiness of AI generated frontend",
+    "Formal methods and the future of programming",
+    "The only scalable delete in Postgres is DROP TABLE",
+    "A frontier without an ecosystem is not stable",
+    "No, everyone is not using AI for everything",
+    "Don't trust large context windows",
+    "Why AI hasn't replaced software engineers, and won't",
+    "The computer science degree isn't dead",
+    "Vibe Coder vs Software Engineer",
+    "How to earn a billion dollars",
+    "Claude Fable is relentlessly proactive",
+    "AI is code \u2013 and can't be prompted into being smarter"
+  ],
+  "tldr_matched": [
+    false,
+    true,
+    false,
+    false,
+    false,
+    true,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -26,8 +52,8 @@
       "score": 68.0,
       "title": "Formal methods and the future of programming",
       "url": "https://blog.janestreet.com/formal-methods-at-jane-street-index/?from_theconsensus=1",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 1,
+      "similarity": 1.0
     },
     {
       "rank": 4,
@@ -226,8 +252,8 @@
       "score": 57.0,
       "title": "AI demands more engineering discipline. Not less (xpost)",
       "url": "https://charity.wtf/2026/06/15/ai-demands-more-engineering-discipline-not-less-xpost/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 6,
+      "similarity": 0.6999273300170898
     },
     {
       "rank": 29,
@@ -282,8 +308,8 @@
       "score": 56.0,
       "title": "Don't trust large context windows",
       "url": "https://garrit.xyz/posts/2026-05-06-dont-trust-large-context-windows",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 5,
+      "similarity": 1.0
     },
     {
       "rank": 36,
@@ -342,9 +368,47 @@
       "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.08333333333333333,
+    "25": 0.08333333333333333,
+    "50": 0.25,
+    "100": 0.25,
+    "42": 0.25
+  },
+  "hits_at": {
+    "10": 1,
+    "25": 1,
+    "50": 3,
+    "100": 3,
+    "42": 3
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://envs.net/~volpe/blog/posts/reduce-slop.html",
+    "https://blog.janestreet.com/formal-methods-at-jane-street-index/",
+    "https://planetscale.com/blog/the-only-scalable-delete",
+    "https://x.com/satyanadella/status/2066182223213293753",
+    "https://gabrielweinberg.com/p/people-are-consuming-ai-like-they",
+    "https://garrit.xyz/posts/2026-05-06-dont-trust-large-context-windows",
+    "https://www.normaltech.ai/p/why-ai-hasnt-replaced-software-engineers",
+    "https://spectrum.ieee.org/computer-science-degree-isnt-dead",
+    "https://yusufaytas.com/vibe-coder-vs-software-engineer",
+    "https://paulgraham.com/earn.html",
+    "https://simonwillison.net/2026/Jun/11/fable-is-relentlessly-proactive/",
+    "https://www.theregister.com/ai-and-ml/2026/06/14/ai-is-code-and-cant-be-prompted-into-being-smarter/5254141"
+  ],
+  "tldr_domains": [
+    "envs.net",
+    "blog.janestreet.com",
+    "planetscale.com",
+    "x.com",
+    "gabrielweinberg.com",
+    "garrit.xyz",
+    "normaltech.ai",
+    "spectrum.ieee.org",
+    "yusufaytas.com",
+    "paulgraham.com",
+    "simonwillison.net",
+    "theregister.com"
+  ]
 }

@@ -1,9 +1,37 @@
 {
   "date": "2026-06-17",
   "newsletter": "tldr_infosec",
-  "fetched_at": "2026-06-19T02:40:54.517807+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-06-19T12:40:13.450097+00:00",
+  "tldr_titles": [
+    "Google Vertex AI SDK Flaw Let Attackers Hijack Model Uploads via Bucket Squatting",
+    "Cardiac patients' medical data stolen and held to ransom",
+    "Malicious JetBrains Marketplace Plugins Steal AI API Keys From Developers",
+    "I Could've Rickrolled the Entire FIFA World Cup. All I Needed Was My ID",
+    "Phishing for Lobsters: How We Tricked OpenClaw into Spilling Secrets",
+    "The Beginning of the End of Social Engineering",
+    "AWS WAF adds AI traffic monetization capability to help content owners charge AI bots for content access",
+    "White House Issues Memo to Bolster NSS Cybersecurity",
+    "Users cry foul after AMD stripped memory crypto from its consumer CPUs",
+    "How Old Are You Really? Inside Roblox's New Campaign To Verify User Ages",
+    "Apple is about to make Hide My Email useless",
+    "Copilot 'SearchLeak' Attack Allows 1-Click Data Theft",
+    "GrapheneOS has been ported to Android 17 and official releases are coming soon"
+  ],
+  "tldr_matched": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true,
+    false,
+    true,
+    false,
+    true
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -66,8 +94,8 @@
       "score": 80.0,
       "title": "AMD silently removes memory encryption from consumer Ryzen CPUs, leaving users unaware that they may be vulnerable \u2014 security feature vanishes after newer AGESA firmware, AMD engineers go radio silent when pressed about the change",
       "url": "https://www.tomshardware.com/pc-components/cpus/amd-silently-removes-memory-encryption-from-consumer-ryzen-cpus-leaving-users-unaware-that-they-may-be-vulnerable-security-feature-vanishes-after-newer-agesa-firmware-amd-engineers-go-radio-silent-when-pressed-about-the-change",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 8,
+      "similarity": 0.729073166847229
     },
     {
       "rank": 9,
@@ -170,8 +198,8 @@
       "score": 76.0,
       "title": "GrapheneOS has been ported to Android 17",
       "url": "https://discuss.grapheneos.org/d/36469-grapheneos-has-been-ported-to-android-17-and-official-releases-are-coming-soon",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 12,
+      "similarity": 1.0
     },
     {
       "rank": 22,
@@ -506,8 +534,8 @@
       "score": 57.0,
       "title": "Apple is about to make Hide My Email useless",
       "url": "https://arseniyshestakov.com/2026/06/16/apple-is-about-to-make-hide-my-email-useless/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 10,
+      "similarity": 1.0
     },
     {
       "rank": 64,
@@ -522,8 +550,8 @@
       "score": 57.0,
       "title": "Apple plans to change its Hide My Email privacy feature that could make it less effective",
       "url": "https://techcrunch.com/2026/06/16/apple-plans-to-change-its-hide-my-email-privacy-feature-that-could-make-it-less-effective/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 10,
+      "similarity": 0.8631340265274048
     },
     {
       "rank": 66,
@@ -638,9 +666,49 @@
       "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.07692307692307693,
+    "25": 0.15384615384615385,
+    "50": 0.15384615384615385,
+    "100": 0.23076923076923078,
+    "79": 0.23076923076923078
+  },
+  "hits_at": {
+    "10": 1,
+    "25": 2,
+    "50": 2,
+    "100": 3,
+    "79": 3
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://thehackernews.com/2026/06/google-vertex-ai-sdk-flaw-let-attackers.html",
+    "https://www.malwarebytes.com/blog/news/2026/06/cardiac-patients-medical-data-stolen-and-held-to-ransom",
+    "https://www.bleepingcomputer.com/news/security/malicious-jetbrains-marketplace-plugins-steal-ai-api-keys-from-developers/",
+    "https://bobdahacker.com/blog/fifa-hack",
+    "https://www.varonis.com/blog/openclaw-phishing",
+    "https://www.darkreading.com/cyberattacks-data-breaches/beginning-end-social-engineering",
+    "https://aws.amazon.com/blogs/aws/aws-waf-adds-ai-traffic-monetization-capability-to-help-content-owners-charge-ai-bots-for-content-access/",
+    "https://www.securityweek.com/white-house-issues-memo-to-bolster-nss-cybersecurity/",
+    "https://arstechnica.com/security/2026/06/users-cry-foul-after-amd-stripped-memory-crypto-from-its-consumer-cpus/",
+    "https://www.nbcnews.com/tech/tech-news/inside-roblox-age-verification-efforts-rcna346973",
+    "https://arseniyshestakov.com/2026/06/16/apple-is-about-to-make-hide-my-email-useless/",
+    "https://www.darkreading.com/application-security/copilot-searchleak-attack-1-click-data-theft",
+    "https://discuss.grapheneos.org/d/36469-grapheneos-has-been-ported-to-android-17-and-official-releases-are-coming-soon"
+  ],
+  "tldr_domains": [
+    "thehackernews.com",
+    "malwarebytes.com",
+    "bleepingcomputer.com",
+    "bobdahacker.com",
+    "varonis.com",
+    "darkreading.com",
+    "aws.amazon.com",
+    "securityweek.com",
+    "arstechnica.com",
+    "nbcnews.com",
+    "arseniyshestakov.com",
+    "darkreading.com",
+    "discuss.grapheneos.org"
+  ]
 }

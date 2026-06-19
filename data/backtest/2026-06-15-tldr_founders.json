@@ -1,9 +1,39 @@
 {
   "date": "2026-06-15",
   "newsletter": "tldr_founders",
-  "fetched_at": "2026-06-19T02:40:53.659754+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-06-19T12:37:37.319722+00:00",
+  "tldr_titles": [
+    "No, everyone is not using AI for everything",
+    "A frontier without an ecosystem is not stable",
+    "Who will set price/intelligence?",
+    "Why AI chat still beats AI voice in sales",
+    "#crazyideas at Stripe",
+    "Same growth, half the go-to-market team",
+    "Introducing the Fusion API",
+    "Introducing the Open Knowledge Format",
+    "No one cares about your launch as much as you do",
+    "The best AI companies are winning consumers and enterprises at the same time",
+    "How to Earn a Billion Dollars",
+    "Software Is Not A Single-Player Game",
+    "How AI Search Grounding Actually Works: Google vs OpenAI vs Anthropic",
+    "Why Your Next Pivot Costs More Than You Think"
+  ],
+  "tldr_matched": [
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true,
+    true,
+    false,
+    false,
+    false
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -26,8 +56,8 @@
       "score": 68.0,
       "title": "How to earn a billion dollars",
       "url": "https://paulgraham.com/earn.html",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 10,
+      "similarity": 1.0
     },
     {
       "rank": 4,
@@ -66,8 +96,8 @@
       "score": 62.0,
       "title": "As AI companies race to go public, who else is along for the ride?",
       "url": "https://techcrunch.com/2026/06/14/as-ai-companies-race-to-go-public-who-else-is-along-for-the-ride/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 9,
+      "similarity": 0.6204838156700134
     },
     {
       "rank": 9,
@@ -146,8 +176,8 @@
       "score": 58.0,
       "title": "Not everyone is using AI for everything",
       "url": "https://gabrielweinberg.com/p/people-are-consuming-ai-like-they",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 0,
+      "similarity": 1.0
     },
     {
       "rank": 19,
@@ -206,9 +236,49 @@
       "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.14285714285714285,
+    "25": 0.21428571428571427,
+    "50": 0.21428571428571427,
+    "100": 0.21428571428571427
+  },
+  "hits_at": {
+    "10": 2,
+    "25": 3,
+    "50": 3,
+    "100": 3
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://gabrielweinberg.com/p/people-are-consuming-ai-like-they",
+    "https://x.com/satyanadella/status/2066182223213293753",
+    "https://x.com/JayaGup10/status/2065965053334216718",
+    "https://www.saastr.com/why-ai-sdrs-take-2-weeks-to-deploy-and-why-most-people-still-prefer-chat/",
+    "https://kenneth.io/post/crazyideas-at-stripe",
+    "https://www.saastr.com/dear-saastr-whats-really-changed-in-gtm-in-2026/",
+    "https://threadreaderapp.com/thread/2065856853989270011.html",
+    "https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing/",
+    "https://seths.blog/2026/06/the-nature-of-launch-day/",
+    "https://insights.euclid.vc/p/vertical-ai-is-blurring-enterprise-and-consumer-nikhil-basu-trivedi-footwork-vc",
+    "https://paulgraham.com/earn.html",
+    "https://www.davidpoll.com/2026/06/software-is-not-a-single-player-game/",
+    "https://dejan.ai/blog/grounding/",
+    "https://www.productcoalition.com/p/the-pivot-tax-what-changing-direction"
+  ],
+  "tldr_domains": [
+    "gabrielweinberg.com",
+    "x.com",
+    "x.com",
+    "saastr.com",
+    "kenneth.io",
+    "saastr.com",
+    "threadreaderapp.com",
+    "cloud.google.com",
+    "seths.blog",
+    "insights.euclid.vc",
+    "paulgraham.com",
+    "davidpoll.com",
+    "dejan.ai",
+    "productcoalition.com"
+  ]
 }
