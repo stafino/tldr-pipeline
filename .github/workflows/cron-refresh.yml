@@ -1,0 +1,90 @@
+name: cron-refresh
+
+# Cloud version of scripts/cron-refresh.sh. Runs on a GitHub-hosted runner
+# so it fires regardless of whether the MacBook is asleep. The local
+# launchd cron still runs for daytime; this one is the overnight safety
+# net. Manual trigger is also exposed so you can fire it from the
+# Actions tab whenever.
+#
+# Required secret:
+#   ANTHROPIC_API_KEY — get from console.anthropic.com → API Keys
+#
+# Cost note: this runs LLM_BACKEND=api (no Claude Code subscription in
+# the cloud), so every cron costs real API tokens — roughly $2-5 per
+# run depending on how many new stories pass through ranking + how
+# many fresh blurbs are needed. Daily at 04:00 UTC = ~$60-150/month.
+# Bump the schedule lower or raise it as needed.
+
+on:
+  schedule:
+    # 04:00 UTC = 05:00 Czech winter / 06:00 Czech summer. Catches the
+    # overnight gap when the local cron is asleep with the laptop.
+    - cron: '0 4 * * *'
+  workflow_dispatch:
+    inputs:
+      date:
+        description: 'Pipeline date YYYY-MM-DD (defaults to today)'
+        required: false
+        type: string
+
+# Only one refresh at a time. If a manual run kicks off while the
+# scheduled one is still going, queue it; don't cancel either.
+concurrency:
+  group: cron-refresh
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      LLM_BACKEND: api
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      DATE: ${{ inputs.date }}
+      # Git identity for the auto-push at the end of cron-refresh.sh
+      GIT_AUTHOR_EMAIL: 'github-actions[bot]@users.noreply.github.com'
+      GIT_AUTHOR_NAME: 'github-actions[bot]'
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # full history so push can rebase if needed
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v3
+        with:
+          enable-cache: true
+
+      - name: Sync deps
+        run: uv sync --frozen
+
+      - name: Run pipeline
+        # cron-refresh.sh chains: ingest → dedup → rank → blurbs →
+        # funding → format → backtest_cache → learn_weights → commit
+        # → push. Failures in any single stage are logged but don't
+        # abort the rest (run_stage captures exit codes individually).
+        run: bash scripts/cron-refresh.sh
+
+      - name: Push results (fallback if script's own push hit a conflict)
+        # The script tries its own push first; this step rebases and
+        # retries in case a concurrent local push beat us to it.
+        if: always()
+        run: |
+          if [[ -z "$(git log origin/main..HEAD 2>/dev/null)" ]]; then
+            echo "Nothing to push."
+            exit 0
+          fi
+          git config user.email "${GIT_AUTHOR_EMAIL}"
+          git config user.name "${GIT_AUTHOR_NAME}"
+          git pull --rebase origin main || true
+          git push origin main
