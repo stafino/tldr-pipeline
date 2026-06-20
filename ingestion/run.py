@@ -11,6 +11,7 @@ from common.story import write_jsonl
 from ingestion.arxiv_puller import pull_arxiv
 from ingestion.hn import pull_hn
 from ingestion.rss import pull_all_rss
+from ingestion.tldr_picks import pull_tldr_picks
 
 log = logging.getLogger(__name__)
 
@@ -63,6 +64,11 @@ def main() -> None:
             min_score=hn.get("min_score", 75),
         )
     )
+
+    # TLDR's own previously-published picks — high-trust input that
+    # closes the recall loop. Excludes today (the date the backtest
+    # compares against) so we don't trivially self-match.
+    stories.extend(pull_tldr_picks(target, lookback_days=7))
 
     out_path = Path(args.out_dir) / f"{args.date}.jsonl"
     write_jsonl(out_path, stories)
