@@ -1,25 +1,26 @@
 name: cron-refresh
 
-# Cloud version of scripts/cron-refresh.sh. Runs on a GitHub-hosted runner
-# so it fires regardless of whether the MacBook is asleep. The local
-# launchd cron still runs for daytime; this one is the overnight safety
-# net. Manual trigger is also exposed so you can fire it from the
-# Actions tab whenever.
+# Cloud version of scripts/cron-refresh.sh. Sits here as a break-glass
+# option in case the local launchd cron stops being viable (laptop
+# retired, traveling without it, etc). Currently MANUAL-ONLY — no
+# schedule trigger — so it costs $0 unless you fire it from the
+# Actions tab.
 #
-# Required secret:
+# Required secret (only needed when you manually trigger a run):
 #   ANTHROPIC_API_KEY — get from console.anthropic.com → API Keys
 #
-# Cost note: this runs LLM_BACKEND=api (no Claude Code subscription in
-# the cloud), so every cron costs real API tokens — roughly $2-5 per
-# run depending on how many new stories pass through ranking + how
-# many fresh blurbs are needed. Daily at 04:00 UTC = ~$60-150/month.
-# Bump the schedule lower or raise it as needed.
+# Cost when invoked: ~$2-5 per run (LLM_BACKEND=api in the cloud,
+# can't use the Claude Code subscription). If you enable a schedule:
+#   daily   = ~$60-150/month
+#   2x/day  = ~$120-300/month
+#   6 hours = ~$240-600/month
+# Add a `schedule:` block under `on:` below to flip it on.
 
 on:
-  schedule:
-    # 04:00 UTC = 05:00 Czech winter / 06:00 Czech summer. Catches the
-    # overnight gap when the local cron is asleep with the laptop.
-    - cron: '0 4 * * *'
+  # Manual-only by design — kept free. Uncomment the `schedule:` block
+  # below to enable automatic runs (costs real API tokens).
+  # schedule:
+  #   - cron: '0 4 * * *'  # 04:00 UTC daily
   workflow_dispatch:
     inputs:
       date:
