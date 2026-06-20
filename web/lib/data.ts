@@ -74,6 +74,31 @@ export function filterByPublishedDate<T extends { story: { published_at?: string
   );
 }
 
+/**
+ * Sliding-window date filter: keeps stories whose UTC publish date is in
+ * the inclusive [date - daysBack, date] window. Matches how a morning
+ * newsletter actually reads — Tuesday's edition covers Monday-afternoon
+ * through Tuesday-morning stories, not just Tuesday-published ones.
+ *
+ * Default daysBack = 1 (= today + yesterday).
+ */
+export function filterByPublishedWindow<T extends { story: { published_at?: string } }>(
+  items: T[],
+  date: string,
+  daysBack: number = 1,
+): T[] {
+  const end = new Date(date + 'T00:00:00Z');
+  const start = new Date(end);
+  start.setUTCDate(start.getUTCDate() - daysBack);
+  const startIso = start.toISOString().slice(0, 10);
+  return items.filter((s) => {
+    const pub = s.story?.published_at;
+    if (typeof pub !== 'string') return false;
+    const d = pub.slice(0, 10);
+    return d >= startIso && d <= date;
+  });
+}
+
 /** Keep only blurbs whose story_url is in `urls`. */
 export function filterBlurbsByStoryUrls<T extends { story_url: string }>(
   blurbs: T[],

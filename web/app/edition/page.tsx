@@ -1,7 +1,7 @@
 import {
   defaultNewsletterId,
   filterBlurbsByStoryUrls,
-  filterByPublishedDate,
+  filterByPublishedWindow,
   indexBlurbs,
   listAvailableDates,
   listPublishedDates,
@@ -43,7 +43,8 @@ export default function EditionPage({
   const selectedNl = searchParams.nl ?? defaultNewsletterId();
   const nl = newsletters[selectedNl];
 
-  const scored = filterByPublishedDate(loadScoredAll(scrapeDates), selectedDate);
+  // 2-day window — see lib/data.ts:filterByPublishedWindow rationale.
+  const scored = filterByPublishedWindow(loadScoredAll(scrapeDates), selectedDate, 1);
   const urls = new Set(scored.map((s) => s.story.url));
   const blurbs = filterBlurbsByStoryUrls(loadBlurbsAll(scrapeDates), urls);
   const blurbIdx = indexBlurbs(blurbs);

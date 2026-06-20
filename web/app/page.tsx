@@ -1,7 +1,7 @@
 import {
   defaultNewsletterId,
   filterBlurbsByStoryUrls,
-  filterByPublishedDate,
+  filterByPublishedWindow,
   indexBlurbs,
   listAvailableDates,
   listPublishedDates,
@@ -62,7 +62,10 @@ export default function Page({ searchParams }: { searchParams: Search }) {
     scored = scoredAll;
     blurbs = blurbsAll;
   } else {
-    scored = filterByPublishedDate(scoredAll, selectedDate);
+    // 2-day sliding window: picking 20-06 includes 19-06 stories too,
+    // matches how a real morning newsletter reads (yesterday afternoon
+    // through this morning's wire).
+    scored = filterByPublishedWindow(scoredAll, selectedDate, 1);
     const urls0 = new Set(scored.map((s) => s.story.url));
     blurbs = filterBlurbsByStoryUrls(blurbsAll, urls0);
   }
@@ -208,7 +211,10 @@ export default function Page({ searchParams }: { searchParams: Search }) {
       <div className="flex gap-3 px-5 py-3 border-b border-border items-center">
         <DatePicker dates={dates} value={selectedDate} />
         <SearchFilter value={searchQuery} placeholder="Title, domain, source…" />
-        <div className="text-[10px] text-text-mute">{nlIds.length} newsletters · {dates.length} dates available</div>
+        <div className="text-[10px] text-text-mute">
+          {nlIds.length} newsletters · {dates.length} dates available
+          <span className="ml-2 text-text-dim">(+ prev day rolled in)</span>
+        </div>
       </div>
       <div className="grid grid-cols-[220px_minmax(0,_3fr)_minmax(0,_2fr)] gap-4 px-5 py-3">
         <div className="border-r border-border pr-3 sticky top-0 self-start max-h-screen overflow-y-auto scroll-y">
