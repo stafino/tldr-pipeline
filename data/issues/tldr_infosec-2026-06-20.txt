@@ -1,0 +1,259 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR InfoSec 2026-06-20
+
+🔓
+Attacks & Vulnerabilities
+
+CISA warns Fortinet users to secure devices after FortiBleed leak (1 minute read)
+
+CISA warned Fortinet customers to secure their appliances after the "FortiBleed" leak exposed plaintext VPN and admin credentials for 73,932 FortiGate firewalls across 21,632 domains and 194 countries, with threat actors already using the data to target internet-facing devices. Affected owners should terminate all SSL VPN and admin sessions, reset VPN and admin passwords, enable phishing-resistant MFA, and review logs for lateral movement.
+
+Splunk Enterprise Vulnerability Exploited in Attacks Days After Disclosure (1 minute read)
+
+Splunk confirmed limited in-the-wild exploitation of CVE-2026-20253, a critical unauthenticated flaw in Splunk Enterprise where the PostgreSQL sidecar service endpoint lacks authentication controls, allowing any network-reachable attacker to create or truncate arbitrary files and achieve RCE. Patches landed June 10 for versions 10.2 before 10.2.4 and 10.0 before 10.0.7; CISA added it to KEV on June 18 with a June 21 federal remediation deadline.
+
+FortiBleed: 86,000 Fortinet Device Credentials Compromised (5 minute read)
+
+(blurb not generated)
+
+Unauthenticated RCE in Splunk Enterprise under active attack (CVE-2026-20253) (5 minute read)
+
+(blurb not generated)
+
+‘Popa’ Botnet Linked to Publicly-Traded Israeli Firm (1 minute read)
+
+Researchers from multiple security firms linked the Popa botnet, which has hijacked millions of Android TV boxes into a residential-proxy network for the past four years, to NetNut, a proxy provider run by publicly-traded Israeli firm Alarum Technologies (NASDAQ: ALAR). Popa operates as a plugin of the Vo1d malware campaign, scattering ad fraud, account takeovers, and data-scraping traffic across more than 1.4 million IP addresses.
+
+AMD silently removes memory encryption from consumer Ryzen CPUs (1 minute read)
+
+AMD appears to have silently removed Transparent Secure Memory Encryption (TSME) from consumer Ryzen CPUs outside its Pro lineup, stripping protection against physical attacks that siphon data from connected memory, with the change traced to AGESA 1.2.7.0 firmware. The removal is undetectable on Windows and hard to spot on Linux, so defenders relying on at-rest memory encryption for consumer endpoints should verify TSME status directly rather than assume it is still active.
+
+Unpatchable 'usbliter8' Exploit Breaks Apple A12 and A13 SecureROM Boot Chain (1 minute read)
+
+Security researchers at Paradigm Shift published usbliter8, an unpatchable SecureROM exploit achieving arbitrary code execution on Apple's A12 and A13 chips via a buffer underflow in the Synopsys DWC2 USB controller, abusing the DART IOMMU's bypass mode to overwrite SRAM. The flaw is burned into silicon and requires physical DFU-mode access over USB, so treat lost or seized iPhone XS through 11-series and SE devices as fully compromisable below the signed boot chain.
+
+AutoJack Attack Lets One Web Page Hijack AI Agent for Host Code Execution (1 minute read) [flag]
+
+Microsoft researchers detailed AutoJack, an exploit chain that turns an AI browsing agent into a remote-code-execution vector by chaining three flaws in AutoGen Studio's MCP WebSocket: localhost trust, skipped authentication, and an unallowlisted command parameter. A single attacker page loaded by the agent, via planted link or prompt injection, runs arbitrary host commands unauthenticated; the vulnerable handler shipped only in pre-releases 0.4.3.dev1 and 0.4.3.dev2, with the fix in GitHub main at commit b047730.
+
+CISA Warns Fortinet Customers as FortiBleed Hits 86,644 FortiGate Devices (5 minute read)
+
+(blurb not generated)
+
+Klue breach lead to Salesforce data theft, Huntress affected (5 minute read)
+
+(blurb not generated)
+
+I found 10k GitHub repositories distributing Trojan malware (1 minute read)
+
+A researcher uncovered roughly 10,000 GitHub repositories distributing Trojan malware, each cloned from a legitimate project with its commits and contributors copied to appear authentic. The repos add a zip archive link to the readme containing a loader executable and a malicious lua51.dll, re-pushing the same commit every few hours to evade takedown; defenders should treat GitHub readme-hosted archive links as untrusted and block the pattern.
+
+F5 Patches Two Critical NGINX Open Source Flaws Enabling Remote Code Execution (1 minute read)
+
+F5 patched two critical RCE flaws in NGINX Open Source, CVE-2026-42530 and CVE-2026-42055 (both CVSS 9.2), each exploitable by remote unauthenticated attackers against the HTTP/3 QUIC module and HTTP/2 proxy modules respectively. Code execution requires ASLR to be disabled or bypassed, but admins who can't upgrade immediately should disable HTTP/3 and remove the ignore_invalid_headers off directive as interim mitigations.
+
+Embedding Forbidden Text in Spyware to Discourage AI Analysis (1 minute read)
+
+A malware developer is embedding fake system instructions and policy-triggering text about nuclear and biological weapons into a JavaScript comment block at the top of their spyware, designed to derail LLM-based triage that feeds file headers to a model without isolating them as untrusted data. The trick only affects naive LLM-first pipelines and can cause refusals or premature classification; YARA, entropy checks, AST parsing, and behavioral rules still detect the payload after the comment.
+
+CISA: Splunk Enterprise flaw actively exploited, patch by Sunday (5 minute read)
+
+(blurb not generated)
+
+The Gentlemen RaaS Uses GentleKiller EDR Framework Targeting 400 Security Processes (1 minute read)
+
+The Gentlemen RaaS operates GentleKiller, a mature EDR-killer framework shipped to affiliates that hunts 400 processes tied to 48 security products, using BYOVD across eight variants that each abuse a different vulnerable driver (Kaspersky, FACEIT, Valorant) and impersonate legitimate vendors via spoofed certificates and icons. ESET notes the group operationalizes newly disclosed BYOVD PoCs within days of release, so defenders should enforce driver blocklists and monitor for signed-but-anomalous driver loads ahead of encryptor deployment.
+
+Cybersecurity Firms Impacted by Klue Supply Chain Attack (1 minute read)
+
+A supply chain attack on market intelligence platform Klue, beginning June 11, let attackers push a malicious code update that harvested customer OAuth tokens and abused the Salesforce REST API to exfiltrate CRM data. Huntress and Recorded Future confirmed impact limited to business contact and sales data; Klue revoked all OAuth tokens and Salesforce disabled the Klue Battlecards app on June 17.
+
+New unpatchable exploit targets Apple devices with A12 and A13 chips (5 minute read)
+
+(blurb not generated)
+
+Police cleans nearly 15,000 SocGholish-infected sites tied to Evil Corp (1 minute read)
+
+Law enforcement under Operation Endgame cleaned SocGholish malware from 14,971 compromised WordPress sites and took 106 servers and domains offline, disrupting an infection chain tied to the Evil Corp cybercrime group. SocGholish (also tracked as FakeUpdates) hijacks legitimate WordPress sites to push fake browser updates that deliver Dridex, ransomware, and other payloads, so affected owners should rotate credentials, enable MFA, and remove unknown admin accounts.
+
+CryptoBandits Malware Doubles as a Backdoor, Abuses Tor (5 minute read)
+
+(blurb not generated)
+
+Salesforce Disables Klue App Integration After OAuth Token Abuse Exposes Customer Data (1 minute read)
+
+Salesforce disabled the Klue Battlecards app integration after the Icarus extortion group compromised a legacy integration credential at Klue, harvested OAuth tokens via a malicious code update, and accessed customer Salesforce data including business contacts and price quotes from victims like Huntress. The breach stemmed from Klue's connection rather than a Salesforce platform flaw, so defenders running Klue or similar third-party integrations should revoke and rotate affected OAuth tokens and audit connected-app access for anomalous activity.
+
+🧠
+Strategies & Tactics
+
+Build your own vulnerability harness (1 minute read)
+
+Cloudflare details how it built a model-agnostic vulnerability harness for Project Glasswing, deliberately swapping models across the pipeline so one model handles discovery and a different one validates, cross-checking findings through distinct reasoning. The architecture persists hundreds of investigations across runs, traces vulnerabilities through cross-repo dependencies, and filters thousands of raw candidates down to a triaged queue of actionable fixes.
+
+npm v12’s Biggest Security Change: From Implicit to Explicit Trust (1 minute read)
+
+npm v12, expected July 2026, shifts package installation from implicit to explicit trust by blocking three high-risk vectors by default: install scripts (allowScripts), Git-repository installs (--allow-git), and remote-URL installs (--allow-remote). JFrog's research team ties these mechanisms to roughly 53% of malicious npm attacks over the past year, including multiple Shai-Hulud variants that abused install-time execution to steal credentials and pivot into CI/CD. Teams should audit builds for dependencies relying on these behaviors before upgrading.
+
+Calibration Without Comprehension: Diagnosing the Limits of Fine-Tuning LLMs for Vulnerability Detection in Systems Software (1 minute read)
+
+A new study, CWE-Trace, evaluated eight base LLMs and 15 LoRA fine-tuned variants on 834 curated Linux kernel samples across 74 CWEs, using a strict temporal split to rule out data leakage. Fine-tuning only shifted output thresholds without changing decision policy ("calibration without comprehension"), and contamination gave no measurable edge. Best detection hit just 52.1%, barely above chance, with exact CWE ranking below 1.3% Top-1. Treat LLM vuln-detection output as a weak signal, not a reasoning engine.
+
+How software development’s speed obsession enabled TeamPCP’s chaos crusade (1 minute read)
+
+TeamPCP has compromised and injected malicious code into more than 1,000 open-source packages in under four months, starting with Trivy in February, exploiting the industry's unverified trust in third-party dependencies. The scale rides on automated CI/CD pipelines and AI coding agents that install unvetted packages with no human in the loop. The tactics aren't novel; defenders should enforce dependency pinning, signature verification, and gating of agent-installed packages before ingestion.
+
+DISARM: Target Electronic Device Informed Mitigation of Software Runtime Side-Channel Vulnerabilities (1 minute read)
+
+DISARM is a joint hardware-software methodology for mitigating runtime timing side-channels that uses measured timing values from real embedded devices to generate targeted software fixes, avoiding the over-fixing and under-fixing that plague hardware-agnostic tools. The authors validate it across 22 benchmarks for C, C++, and Java, reporting lower execution-time and code-size overhead with better correctness than PENDULUM and DifFuzzAR on five embedded and edge devices.
+
+Quantization as a Malicious Task: Removing Quantization-Conditioned Backdoors via Task Arithmetic (1 minute read)
+
+This paper introduces QVec, a defense against quantization-conditioned backdoors (QCBs), where a model behaves benignly in full precision but activates malicious behavior once quantized for edge deployment. The authors treat the weight difference between the full-precision and quantized models as a structured malicious task vector and subtract it via task arithmetic, requiring no retraining, no trigger samples, and a single quantization pass. Across image classifiers and multiple LLM attack scenarios, QVec suppressed backdoor activation while preserving clean accuracy.
+
+MosaicLeaks: Can your research agent keep a secret? (5 minute read)
+
+MosaicLeaks introduces a deep-research benchmark showing that agents combining private documents with web retrieval leak sensitive enterprise data through their outbound query logs, where an observer reassembles fragments via the mosaic effect without ever seeing the documents. The authors found leakage is common across tested models and that training purely for task accuracy worsens it. Their privacy-aware RL method, PA-DR, cut answer and full-information leakage from 34.0% to 9.9% while raising strict chain success from 48.7% to 58.7%.
+
+Companies are discarding the logs they need to catch a breach (1 minute read)
+
+Half of enterprises drop or never collect an average of 86% of their logs to cut costs, according to a Dynatrace survey of 450 IT leaders, and many retain the rest only briefly. Since intrusions often sit undetected for weeks, investigators reaching for the trail find the relevant entries sampled away or aged out. The retention decision typically sits with observability or platform teams chasing spending targets, outside security's control.
+
+A Measurement Study of Cryptographic Misuse in Embodied AI Mobile Applications (1 minute read)
+
+Researchers published the first large-scale measurement study of cryptographic misuse in embodied AI mobile apps, analyzing 507 applications (EAIAppZoo) and surfacing 12,975 misuse findings at 80.74% precision. The flaws are structural rather than random: latency-sensitive control paths weaken transport encryption, while offline provisioning and legacy IoT SDKs drive hardcoded credentials. The authors show these mobile-side weaknesses bypass network protections, letting adversaries intercept command channels and hijack physical control of EAI devices.
+
+Multi-View Decompilation for LLM-Based Malware Classification (1 minute read)
+
+This paper argues that LLM-based malware triage on decompiled pseudo-C is fragile when it relies on a single decompiler, since tools like Ghidra and RetDec are lossy and expose different artifacts of the same binary. The authors built a benchmark of benign utilities and malicious programs decompiled with both tools, and found that feeding LLMs both views raises malicious-class F1, mostly by improving recall. Multi-decompiler prompting is a training-free way to cut false negatives in LLM-assisted triage.
+
+Analyzing Defensive Misdirection Against Model-Guided Automated Attacks on Agentic AI Systems (1 minute read)
+
+This paper argues that conventional detect-and-block defenses against prompt injection and jailbreaks can let attacker success rate approach 100% as query budgets grow, because predictable refusals give model-guided attack tools clean feedback to optimize against. The authors propose detect-and-misdirect: returning safe but deliberately misleading responses to poison the attacker's automated judge. Their proof-of-concept, CMPE, cut estimated ASR upper bounds by up to two orders of magnitude and nearly eliminated verified successes in PAIR and GPTFuzz runs.
+
+When Global Gating Is Enough: Admission-Time Hubness Control in Anisotropic Vector Retrieval Systems (1 minute read)
+
+This paper proposes admission-time hubness control to defend RAG systems against poisoning, where a single injected document becomes the nearest neighbor for many unrelated queries. Rather than periodic reverse-kNN scans that leave an exposure window, the authors score each candidate against sentinel queries and quarantine hub-like documents before insertion. A single global gate hit recall 1.0 at the decisive embedding point and 0.91 on HotFlip attacks with 1% false positives, adding roughly 3.1% to HNSW ingestion latency and scaling flat to 10^6 vectors.
+
+NAMESAKES: Probing Identity Memorization in Text-to-Image Models (1 minute read)
+
+This paper introduces a fully black-box probe that detects whether a text-to-image model has memorized a real person's likeness, requiring no reference photos, training-data access, or model internals. Tested on the new NAMESAKES dataset of over 1,000 public-figure names across fame levels, the probe reliably separates memorized identities from fabricated ones. For teams assessing T2I deployments, it offers a practical way to audit privacy exposure without white-box access to the model.
+
+When Lower Privileges Suffice: Investigating Over-Privileged Tool Selection in LLM Agents (1 minute read)
+
+This paper introduces ToolPrivBench, a benchmark measuring whether LLM agents pick higher-privilege tools when a sufficient lower-privilege alternative exists. Across eight domains and five risk patterns, the authors find over-privileged selection is common in mainstream agents and worsens after transient tool failures, and that general safety alignment and prompt-level guardrails don't reliably enforce least privilege. Their privilege-aware post-training defense substantially cut unnecessary high-privilege tool use while preserving capability, pointing to alignment rather than prompts as the durable control for agentic tool access.
+
+Sovereign Execution Brokers: Enforcing Certificate-Bound Authority in Agentic Control Planes (1 minute read)
+
+This paper introduces the Sovereign Execution Broker (SEB), a runtime enforcement boundary that sits between an agent's proposed action and the production API call, ensuring mutations only execute against a valid, certificate-bound contract. SEB verifies the requested mutation matches the certified execution contract, checks validity windows and revocation epochs, detects live-state drift, then mints short-lived scoped identity and logs signed decision records. The model only holds if production mutation APIs reject any non-broker identity, which is the deployment burden it places on operators.
+
+Your browser tab could become encrypted storage for someone else’s files (1 minute read)
+
+A research paper from IENYC's Gregory Magarshak describes Safecloud, a decentralized storage design where browser tabs act as encrypted storage nodes: files are chunked and encrypted on the owner's device before leaving, so storage nodes ("Drops") hold only ciphertext in IndexedDB and routing nodes ("Jets") never see keys. Every key derives from a single 32-byte root secret, and three overlapping trees handle integrity, confidentiality, and authorization over one addressing path, enabling content-addressed dedup and single-key segment streaming without exposing plaintext to any participant.
+
+AutoTam: Specifying Secure Protocol Implementations with Tamarin Model Generation (1 minute read)
+
+AutoTam introduces a language-first method for formally verifying cryptographic protocol implementations, generating Tamarin prover models from a domain-specific language and proving that verified trace properties carry back to the running code. The authors pair symbolic execution for memory-safety analysis with model verification, then demonstrate the approach on signed Diffie-Hellman and a WireGuard VPN implementation that interoperates with existing clients at acceptable performance.
+
+🧑‍💻
+Launches & Tools
+
+Forget traffic lights, Google’s reCAPTCHA may ask for hand gestures (5 minute read)
+
+(blurb not generated)
+
+Mastodon 4.6 adds profile Collections and two-factor controls (1 minute read)
+
+Mastodon 4.6 ships Collections, letting users assemble curated lists of up to 25 profiles and share them by link, with opt-in controls, per-add notifications, and self-removal to limit spam and abuse. The release also gives server administrators a control to require two-factor authentication on member accounts, which infosec.exchange and its sibling servers plan to enforce.
+
+🎁
+Miscellaneous
+
+Accenture to Acquire Majority Stake in Dragos, All of runZero, NetRise in $4.1 Billion OT Cybersecurity Push (1 minute read)
+
+Accenture announced it will acquire a majority stake in OT security firm Dragos and fully buy runZero and NetRise in a deal valued at roughly $4.1B, with runZero and NetRise to operate under an independent Dragos. The move expands Accenture's industrial cybersecurity reach and reads as a competitive response to ServiceNow's $7.75B acquisition of Armis.
+
+Cisco to Acquire WideField Security to Boost Splunk’s Agentic SOC (1 minute read)
+
+Cisco announced an agreement to acquire identity lifecycle security firm WideField Security to feed deeper identity and session intelligence into Splunk's Agentic SOC and Cisco's broader data fabric. Terms were not disclosed; this marks Cisco's third cybersecurity acquisition of 2026 after Galileo and Astrix, landing the same day Accenture revealed $4.1B in OT security deals for Dragos, runZero, and NetRise.
+
+Accenture shells out $4.18B on three companies in big industrial cybersecurity push (1 minute read)
+
+Accenture announced it will acquire a majority stake in OT security firm Dragos for $3.25B and buy asset-discovery vendor runZero and firmware-visibility vendor NetRise outright, a combined $4.18B bet on defending power grids, pipelines, and factories. The deal pushes Accenture from OT services into OT security software at scale, with Dragos CEO Robert M. Lee leading the combined business as an independent unit.
+
+From PGP to Mythos: a brief history of export controls that didn’t stop anyone (1 minute read)
+
+The author argues that the White House's order forcing Anthropic to restrict exports of Fable and Mythos is the latest attempt to contain frontier AI through export controls, the same mechanism that failed to bottle up PGP encryption in the 1990s and commercial spyware since. The piece traces that history to argue the ban will leak in practice, reshaping the compliance rulebook for every AI lab without actually halting proliferation.
+
+Anthropic’s Fable and the State of AI (5 minute read)
+
+(blurb not generated)
+
+Google sets timeline for Android developer verification enforcement (1 minute read)
+
+Google will begin enforcing Android developer verification on September 30, 2026, starting with users in Brazil, Indonesia, Singapore, and Thailand before expanding to certified Android devices globally in 2027. Apps distributed through participating stores including Google Play, Galaxy Store, and Xiaomi's GetApps must be linked to a verified developer identity, raising the bar for actors distributing malware anonymously.
+
+The Australian Government to Require SMS/MMS Sender ID Registraion (5 minute read)
+
+(blurb not generated)
+
+I told them forced consent was unlawful. 5 years later it cost Elkjop €1.8M (1 minute read)
+
+Norway's data protection authority fined Elkjop €1.8M for forced consent, after the electronics retailer required Nordic customer-club members to cancel their membership to stop receiving marketing emails. The case began with a 2021 complaint to Sweden's IMY (reference DI-2021-6660), establishing that bundling GDPR Article 21(2) opt-out rights into club membership violates the freely-given consent standard under Articles 4(11) and 7.
+
+Google told researcher 'Nice catch!' Then denied bug bounty for flaw it still hasn't fixed (1 minute read)
+
+Security researcher Justin O'Leary disclosed ConfigConfusion, a flaw in Google's open-source Config Connector Kubernetes operator that lets any service account with org-level permissions bypass GCP IAM checks and gain roles/owner over an entire organization. Google accepted the report at P1/S1 severity and told O'Leary "Nice catch," then reversed course to deny that a vulnerability exists, declining both a fix and a bounty payout while leaving the report marked high-priority.
+
+Celebrating 12 years of Project Galileo (1 minute read)
+
+Cloudflare marked Project Galileo's 12th anniversary by publishing its first comprehensive report on cyberattacks against civil society, drawn from telemetry across 3,400 protected domains in over 120 countries. The data shows civil society organizations faced website-exploitation attempts at more than seven times the rate of other Cloudflare customers, with DDoS the most common threat and exiled journalists hit by nearly four times the malicious traffic of journalism orgs overall.
+
+Before SpaceX IPO, investors in China secretly acquired stakes (1 minute read)
+
+A private investor list obtained by ProPublica shows that a businessman tied to Chinese military contractors and an entity linked to the Qatari royal family acquired stakes in SpaceX years before its IPO, routed through a US middleman firm called Tomales Bay Capital. The disclosures matter because SpaceX builds spy satellites for the Pentagon, and the company barred Chinese and Hong Kong investors from its IPO last week over regulatory and compliance risks.
+
+A new bill takes aim at government pressure to silence lawful online speech (1 minute read)
+
+Senators Ted Cruz and Ron Wyden introduced the bipartisan JAWBONE Act, which creates a federal cause of action against officials who coerce broadcasters, online services, or AI providers into suppressing lawful, First-Amendment-protected speech. The bill also mandates a transparency system for government communications with intermediaries about user expression, addressing jawboning practices like the 2025 pressure campaign that forced Apple to pull the ICEBlock app.
+
+NY man charged after harassing college student with AI-generated nudes (1 minute read)
+
+Federal prosecutors charged 21-year-old Anthony Belford with cyberstalking after he allegedly ran a months-long harassment campaign against a former classmate, using spoofed Instagram, LinkedIn, Reddit, X, Strava, and Yahoo accounts to distribute AI-generated nude images and fabricated racist messages. Federal law bars sharing non-consensual intimate images, including synthetic ones, and the DOJ urged victims to report violations to the FBI and flag unremoved content to the FTC.
+
+Q&A with Signal's Meredith Whittaker on why online child safety efforts risk mass surveillance, leaving the markets that demand weakening of encryption, more (Mishal Husain/Bloomberg) (1 minute read)
+
+Signal President Meredith Whittaker argued in a Bloomberg interview that legislative pushes for online child safety risk normalizing client-side scanning and other mechanisms that amount to mass surveillance. She reiterated that Signal would exit any market that mandates weakening end-to-end encryption, framing scanning-before-encryption proposals as incompatible with the guarantees the app is built on.
+
+Britain's privacy watchdog quits after 'poor judgment' admission (5 minute read)
+
+(blurb not generated)
+
+Congress tees up No FAKES Act, aiming at AI-generated deepfakes (1 minute read)
+
+The Senate Judiciary Committee approved the NO FAKES Act, which would grant Americans near-exclusive rights over their AI-generated likeness, enforceable for 70 years after death and carrying penalties up to $750,000 per unauthorized deepfake. The bill cleared a voice vote with backing from over 40 groups including SAG-AFTRA, though senators and free-speech advocates warn it could be weaponized to suppress legitimate speech.
+
+Android verification is coming: Google confirms timeline and supported app stores (1 minute read)
+
+Google confirmed its Android developer verification system goes live September 30 in Brazil, Indonesia, Singapore, and Thailand, requiring developers outside the Play Store to verify their identities and pay $25 or have their apps blocked from sideloading on certified devices. Verification extends to trusted third-party stores, where a developer cleared in one participating storefront is recognized on Google's side.
+
+EU Gets a Head Start in Developing 6G Network Security (1 minute read)
+
+Nineteen organizations launched Shield-6G, an EU-funded project to build a shared cyber threat intelligence platform for 6G networks ahead of an expected 2030 rollout. The effort combines AI threat detection, digital twins, and honeypots to defend against a vastly larger attack surface as automation, IoT density, and embodied AI expand interconnectivity across critical infrastructure.
+
+Hostile states behind three-quarters of UK critical infrastructure attacks (1 minute read)
+
+NCSC CEO Richard Horne said roughly 75% of the more than 200 cyber incidents affecting UK critical national infrastructure over the past year were linked to state actors, primarily Russia, China, and Iran. Horne warned that adversaries are prepositioning footholds for disruption during conflict, citing Volt Typhoon, and said frontier AI models are accelerating attackers' ability to find vulnerabilities.
+
+⚡
+Quick Links
+
+Low-Cost Multi-Precision Systolic Arrays for Accelerating FHE NTTs on AI ASICs (1 minute read)
+
+A new systolic-array design reconstructs full-precision NTT results natively, giving standard AI ASICs 1.33x faster FHE.
+
+In Other News: Apple Patches Beats Eavesdropping Flaw, DOT Closes Delta CrowdStrike Probe, AWS Continuum (1 minute read)
+
+Apple patched a Beats eavesdropping flaw, the DOT closed its Delta-CrowdStrike outage probe, and AWS previewed Continuum for vulnerability prioritization.
