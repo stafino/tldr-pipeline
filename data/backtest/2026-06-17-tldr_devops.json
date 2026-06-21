@@ -1,9 +1,31 @@
 {
   "date": "2026-06-17",
   "newsletter": "tldr_devops",
-  "fetched_at": "2026-06-21T14:28:39.656937+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-06-21T20:38:51.093923+00:00",
+  "tldr_titles": [
+    "HCP Terraform adds project-level run tasks",
+    "Route public traffic to private applications with Cloudflare",
+    "Give GitHub Copilot CLI real code intelligence with language servers",
+    "From data residency to digital sovereignty: Architectural patterns for cloud native platforms",
+    "Finding the Needle: Taming 150,000+ Backstage Entities with a Type-Safe Search and Command Palette",
+    "Better Together: Amazon EKS Auto Mode and Istio Ambient Mesh",
+    "How attackers are jailbreaking LLMs with CTF framing and how to catch them",
+    "AWS WAF adds AI traffic monetization capability to help content owners charge AI bots for content access",
+    "Docker joins the Athena coalition: a cross-industry collaboration for supply chain security",
+    "Report: GKE Inference Gateway delivers up to 92% faster AI responses"
+  ],
+  "tldr_matched": [
+    false,
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -42,16 +64,16 @@
       "score": 74.0,
       "title": "From data residency to digital sovereignty: Architectural patterns for  cloud native platforms",
       "url": "https://www.cncf.io/blog/2026/06/16/from-data-residency-to-digital-sovereignty-architectural-patterns-for-cloud-native-platforms/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 3,
+      "similarity": 1.0
     },
     {
       "rank": 6,
       "score": 74.0,
       "title": "AWS WAF adds AI traffic monetization capability to help content owners charge AI bots for content access",
       "url": "https://aws.amazon.com/blogs/aws/aws-waf-adds-ai-traffic-monetization-capability-to-help-content-owners-charge-ai-bots-for-content-access/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 7,
+      "similarity": 1.0
     },
     {
       "rank": 7,
@@ -206,9 +228,41 @@
       "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.2,
+    "25": 0.2,
+    "50": 0.2,
+    "100": 0.2
+  },
+  "hits_at": {
+    "10": 2,
+    "25": 2,
+    "50": 2,
+    "100": 2
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://www.hashicorp.com/en/blog/hcp-terraform-adds-project-level-run-tasks",
+    "https://blog.cloudflare.com/private-origins-dns-routing/",
+    "https://github.blog/ai-and-ml/github-copilot/give-github-copilot-cli-real-code-intelligence-with-language-servers/",
+    "https://www.cncf.io/blog/2026/06/16/from-data-residency-to-digital-sovereignty-architectural-patterns-for-cloud-native-platforms/",
+    "https://blog.allegro.tech/2026/06/taming-backstage-entities-with-a-type-safe-search-and-command-palette.html",
+    "https://aws.amazon.com/blogs/containers/better-together-amazon-eks-auto-mode-and-istio-ambient-mesh/",
+    "https://webflow.sysdig.com/blog/how-attackers-are-jailbreaking-llms-with-ctf-framing-and-how-to-catch-them",
+    "https://aws.amazon.com/blogs/aws/aws-waf-adds-ai-traffic-monetization-capability-to-help-content-owners-charge-ai-bots-for-content-access/",
+    "https://www.docker.com/blog/docker-joins-the-athena-coalition-a-cross-industry-collaboration-for-supply-chain-security/",
+    "https://cloud.google.com/blog/products/containers-kubernetes/gke-inference-gateway-prefix-caching-accelerates-ai-inference/"
+  ],
+  "tldr_domains": [
+    "hashicorp.com",
+    "blog.cloudflare.com",
+    "github.blog",
+    "cncf.io",
+    "blog.allegro.tech",
+    "aws.amazon.com",
+    "ebflow.sysdig.com",
+    "aws.amazon.com",
+    "docker.com",
+    "cloud.google.com"
+  ]
 }

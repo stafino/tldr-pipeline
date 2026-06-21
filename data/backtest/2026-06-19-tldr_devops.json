@@ -1,9 +1,31 @@
 {
   "date": "2026-06-19",
   "newsletter": "tldr_devops",
-  "fetched_at": "2026-06-21T14:28:40.567770+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-06-21T20:40:08.058785+00:00",
+  "tldr_titles": [
+    "Announcing Stack Overflow for Agents",
+    "Server-Side Tools Are Now Available for DigitalOcean Inference Engine",
+    "Amazon S3 annotations: attach rich, queryable context directly to your objects",
+    "Why cloud native belongs at the heart of agentic AI: Lessons from building a multi-agent security platform on Kubernetes",
+    "Build your own vulnerability harness",
+    "Hardened Images Explained: Fewer CVEs, Smaller Attack Surface",
+    "AI Coding Agent Horror Stories: The 13-Hour AWS Outage",
+    "Continuous Delivery Office Hours Ep.5: Delivering database changes",
+    "When failover isn't safe: Building high-availability PostgreSQL on Kubernetes",
+    "Three hidden GKE optimization opportunities unlocked by Google Cloud VM modernization"
+  ],
+  "tldr_matched": [
+    false,
+    true,
+    false,
+    true,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -26,8 +48,8 @@
       "score": 75.0,
       "title": "Build your own vulnerability harness",
       "url": "https://blog.cloudflare.com/build-your-own-vulnerability-harness/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 4,
+      "similarity": 1.0
     },
     {
       "rank": 4,
@@ -114,8 +136,8 @@
       "score": 63.0,
       "title": "Server-Side Tools Are Now Available for DigitalOcean Inference Engine",
       "url": "https://www.digitalocean.com/blog/server-side-tools-public-preview",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 1,
+      "similarity": 1.0
     },
     {
       "rank": 15,
@@ -242,8 +264,8 @@
       "score": 58.0,
       "title": "Why cloud native belongs at the heart of agentic AI: Lessons from building a multi-agent security platform on Kubernetes",
       "url": "https://www.cncf.io/blog/2026/06/17/why-cloud-native-belongs-at-the-heart-of-agentic-ai-lessons-from-building-a-multi-agent-security-platform-on-kubernetes/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 3,
+      "similarity": 1.0
     },
     {
       "rank": 31,
@@ -318,9 +340,43 @@
       "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.1,
+    "25": 0.2,
+    "50": 0.3,
+    "100": 0.3,
+    "39": 0.3
+  },
+  "hits_at": {
+    "10": 1,
+    "25": 2,
+    "50": 3,
+    "100": 3,
+    "39": 3
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://stackoverflow.blog/2026/06/10/announcing-stack-overflow-for-agents/",
+    "https://www.digitalocean.com/blog/server-side-tools-public-preview",
+    "https://aws.amazon.com/blogs/aws/amazon-s3-annotations-attach-rich-queryable-context-directly-to-your-objects/",
+    "https://www.cncf.io/blog/2026/06/17/why-cloud-native-belongs-at-the-heart-of-agentic-ai-lessons-from-building-a-multi-agent-security-platform-on-kubernetes/",
+    "https://blog.cloudflare.com/build-your-own-vulnerability-harness/",
+    "https://www.docker.com/blog/what-are-hardened-images/",
+    "https://www.docker.com/blog/coding-agent-horror-stories-the-13-hour-aws-outage/",
+    "https://octopus.com/blog/continuous-delivery-office-hours-e5",
+    "https://www.datadoghq.com/blog/engineering/postgresql-ha-kubernetes/",
+    "https://platformengineering.org/blog/three-hidden-gke-optimization-opportunities-unlocked-by-google-cloud-vm-modernization"
+  ],
+  "tldr_domains": [
+    "stackoverflow.blog",
+    "digitalocean.com",
+    "aws.amazon.com",
+    "cncf.io",
+    "blog.cloudflare.com",
+    "docker.com",
+    "docker.com",
+    "octopus.com",
+    "datadoghq.com",
+    "platformengineering.org"
+  ]
 }

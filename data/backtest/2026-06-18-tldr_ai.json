@@ -1,9 +1,37 @@
 {
   "date": "2026-06-18",
   "newsletter": "tldr_ai",
-  "fetched_at": "2026-06-21T14:28:39.849677+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-06-21T20:39:08.322426+00:00",
+  "tldr_titles": [
+    "ChatGPT Improves Scheduled Tasks and Retires Pulse",
+    "ChatGPT's market share slips below 50% for first time",
+    "Kimi K2.7 Code vs Claude Fable 5: Landing Pages That Cost 94% Less",
+    "Brain the Size of a Planet: Are LLMs Thonking too Hard?",
+    "Production Infrastructure for AI Agents",
+    "MolmoMotion: Language-guided 3D motion forecasting",
+    "Vercel Connect",
+    "Building AI Agents for AR Glasses and XR Devices with NVIDIA XR AI",
+    "Cursor's new model",
+    "Noam Shazeer is joining OpenAI",
+    "Replit is now available in Claude",
+    "Introducing LifeSciBench",
+    "Mistral has a new model coming this Summer"
+  ],
+  "tldr_matched": [
+    false,
+    false,
+    false,
+    false,
+    true,
+    true,
+    false,
+    true,
+    false,
+    true,
+    false,
+    true,
+    false
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -66,16 +94,16 @@
       "score": 77.0,
       "title": "Google Gemini co-lead Noam Shazeer leaves for OpenAI",
       "url": "https://www.cnbc.com/2026/06/18/google-gemini-co-lead-noam-shazeer-leaves-for-openai.html",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 9,
+      "similarity": 0.7852373123168945
     },
     {
       "rank": 9,
       "score": 77.0,
       "title": "Building Reliable Agentic AI Systems",
       "url": "https://martinfowler.com/articles/reliable-llm-bayer.html",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 4,
+      "similarity": 0.6667694449424744
     },
     {
       "rank": 10,
@@ -90,8 +118,8 @@
       "score": 77.0,
       "title": "MolmoMotion: Language-guided 3D motion forecasting",
       "url": "https://huggingface.co/blog/allenai/molmomotion",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 5,
+      "similarity": 1.0
     },
     {
       "rank": 12,
@@ -146,8 +174,8 @@
       "score": 73.0,
       "title": "Introducing LifeSciBench",
       "url": "https://openai.com/index/introducing-life-sci-bench",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 11,
+      "similarity": 1.0
     },
     {
       "rank": 19,
@@ -250,8 +278,8 @@
       "score": 71.0,
       "title": "Building AI Agents for AR Glasses and XR Devices with NVIDIA XR AI",
       "url": "https://developer.nvidia.com/blog/building-ai-agents-for-ar-glasses-and-xr-devices-with-nvidia-xr-ai/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 7,
+      "similarity": 1.0
     },
     {
       "rank": 32,
@@ -622,9 +650,49 @@
       "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.15384615384615385,
+    "25": 0.3076923076923077,
+    "50": 0.38461538461538464,
+    "100": 0.38461538461538464,
+    "77": 0.38461538461538464
+  },
+  "hits_at": {
+    "10": 2,
+    "25": 4,
+    "50": 5,
+    "100": 5,
+    "77": 5
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://x.com/ChatGPTapp/status/2067316960875168181",
+    "https://techcrunch.com/2026/06/16/chatgpts-market-share-slips-below-50-for-first-time/",
+    "https://x.com/nutlope/status/2067281915887943890",
+    "https://parsiya.net/blog/llm-thonking/",
+    "https://vercel.com/blog/introducing-eve",
+    "https://huggingface.co/blog/allenai/molmomotion",
+    "https://vercel.com/blog/introducing-vercel-connect",
+    "https://developer.nvidia.com/blog/building-ai-agents-for-ar-glasses-and-xr-devices-with-nvidia-xr-ai/",
+    "https://threadreaderapp.com/thread/2066946225837109735.html",
+    "https://threadreaderapp.com/thread/2067400851438932297.html",
+    "https://replit.com/blog/replit-claude",
+    "https://openai.com/index/introducing-life-sci-bench/",
+    "https://threadreaderapp.com/thread/2066913356548542827.html"
+  ],
+  "tldr_domains": [
+    "x.com",
+    "techcrunch.com",
+    "x.com",
+    "parsiya.net",
+    "vercel.com",
+    "huggingface.co",
+    "vercel.com",
+    "developer.nvidia.com",
+    "threadreaderapp.com",
+    "threadreaderapp.com",
+    "replit.com",
+    "openai.com",
+    "threadreaderapp.com"
+  ]
 }

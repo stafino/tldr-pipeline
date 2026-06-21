@@ -1,9 +1,35 @@
 {
   "date": "2026-06-18",
   "newsletter": "tldr_fintech",
-  "fetched_at": "2026-06-21T14:28:40.284760+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-06-21T20:39:38.882298+00:00",
+  "tldr_titles": [
+    "Adyen leans into agentic commerce",
+    "Klarna embeds in Bolt mobility app",
+    "Apple delves deeper into payments",
+    "Nuvei to buy Payoneer for $2.75B",
+    "Stablecoins are giving embedded finance a second life",
+    "Mercury launches Command, a new way to run your business through banking",
+    "Coinbase unveils its vision for an \u201ceverything exchange\u201d",
+    "Robinhood cuts nearly 300 employees",
+    "Brazilian stablecoin infrastructure firm Trace Finance raises $32m",
+    "A2A business payments platform Interchecks raises $50 million",
+    "PayPal winds down venture unit",
+    "Stripe and AWS enable AI agent payments for content owners and publishers"
+  ],
+  "tldr_matched": [
+    false,
+    false,
+    false,
+    false,
+    true,
+    false,
+    true,
+    false,
+    true,
+    false,
+    false,
+    false
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -18,8 +44,8 @@
       "score": 71.0,
       "title": "Fidelity joins Wall Street's race to manage stablecoin reserves",
       "url": "https://www.coindesk.com/markets/2026/06/17/fidelity-joins-wall-street-s-race-to-manage-stablecoin-reserves",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 4,
+      "similarity": 0.6301937699317932
     },
     {
       "rank": 3,
@@ -122,8 +148,8 @@
       "score": 62.0,
       "title": "Here is how Coinbase plan to survive the crypto downturn by ditching its reliance on trading fees",
       "url": "https://www.coindesk.com/business/2026/06/17/here-is-how-coinbase-plan-to-survive-the-crypto-downturn-by-ditching-its-reliance-on-trading-fees",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 6,
+      "similarity": 0.620550274848938
     },
     {
       "rank": 16,
@@ -202,8 +228,8 @@
       "score": 58.0,
       "title": "Stablecoin infrastructure firm Trace Finance raises $32 million Series A, says valuation grew 10x from seed",
       "url": "https://www.theblock.co/post/405104/trace-finance-funding-valuation-stablecoins-crypto?utm_source=rss&utm_medium=rss",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 8,
+      "similarity": 0.7634357213973999
     },
     {
       "rank": 26,
@@ -230,9 +256,47 @@
       "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.08333333333333333,
+    "25": 0.25,
+    "50": 0.25,
+    "100": 0.25,
+    "28": 0.25
+  },
+  "hits_at": {
+    "10": 1,
+    "25": 3,
+    "50": 3,
+    "100": 3,
+    "28": 3
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://www.finextra.com/pressarticle/110158/adyen-leans-into-agentic-commerce",
+    "https://www.finextra.com/pressarticle/110167/klarna-embeds-in-bolt-mobility-app",
+    "https://www.paymentsdive.com/news/apple-delves-deeper-into-payments-ai-iphone-siri-retail-merchants/822664/",
+    "https://www.paymentsdive.com/news/nuvei-to-buy-payoneer-for-275b/822908/",
+    "https://x.com/jevgenijs/status/2066830301884477839",
+    "https://www.businesswire.com/news/home/20260616596362/en/Mercury-Launches-Command-a-New-Way-to-Run-Your-Business-Through-Banking",
+    "https://www.coinbase.com/blog/system-update-take-control-of-your-money-with-coinbase",
+    "https://www.bankingdive.com/news/robinhood-300-employees-workforce-cut-reduction-tenev-10-percent/823035/",
+    "https://www.finextra.com/newsarticle/47949/brazilian-stablecoin-infrastructure-firm-trace-finance-raises-32m",
+    "https://www.finextra.com/newsarticle/47929/a2a-business-payments-platform-interchecks-raises-50-million",
+    "https://www.finextra.com/newsarticle/47945/paypal-winds-down-venture-unit",
+    "https://www.finextra.com/newsarticle/47940/stripe-and-aws-enable-ai-agent-payments-for-content-owners-and-publishers"
+  ],
+  "tldr_domains": [
+    "finextra.com",
+    "finextra.com",
+    "paymentsdive.com",
+    "paymentsdive.com",
+    "x.com",
+    "businesswire.com",
+    "coinbase.com",
+    "bankingdive.com",
+    "finextra.com",
+    "finextra.com",
+    "finextra.com",
+    "finextra.com"
+  ]
 }

@@ -6,13 +6,13 @@ TLDR InfoSec 2026-06-21
 🔓
 Attacks & Vulnerabilities
 
-CISA warns Fortinet users to secure devices after FortiBleed leak (5 minute read)
+CISA warns Fortinet users to secure devices after FortiBleed leak (1 minute read)
 
-(blurb not generated)
+CISA warned Fortinet customers to secure their appliances after the "FortiBleed" leak exposed plaintext VPN and admin credentials for 73,932 FortiGate firewalls across 21,632 domains and 194 countries, with threat actors already using the data to target internet-facing devices. Affected owners should terminate all SSL VPN and admin sessions, reset VPN and admin passwords, enable phishing-resistant MFA, and review logs for lateral movement.
 
-Splunk Enterprise Vulnerability Exploited in Attacks Days After Disclosure (5 minute read)
+Splunk Enterprise Vulnerability Exploited in Attacks Days After Disclosure (1 minute read)
 
-(blurb not generated)
+Splunk confirmed limited in-the-wild exploitation of CVE-2026-20253, a critical unauthenticated flaw in Splunk Enterprise where the PostgreSQL sidecar service endpoint lacks authentication controls, allowing any network-reachable attacker to create or truncate arbitrary files and achieve RCE. Patches landed June 10 for versions 10.2 before 10.2.4 and 10.0 before 10.0.7; CISA added it to KEV on June 18 with a June 21 federal remediation deadline.
 
 FortiBleed: 86,000 Fortinet Device Credentials Compromised (5 minute read)
 
@@ -22,21 +22,21 @@ Unauthenticated RCE in Splunk Enterprise under active attack (CVE-2026-20253) (5
 
 (blurb not generated)
 
-Unpatchable 'usbliter8' Exploit Breaks Apple A12 and A13 SecureROM Boot Chain (5 minute read)
+Unpatchable 'usbliter8' Exploit Breaks Apple A12 and A13 SecureROM Boot Chain (1 minute read)
 
-(blurb not generated)
+Security researchers at Paradigm Shift published usbliter8, an unpatchable SecureROM exploit achieving arbitrary code execution on Apple's A12 and A13 chips via a buffer underflow in the Synopsys DWC2 USB controller, abusing the DART IOMMU's bypass mode to overwrite SRAM. The flaw is burned into silicon and requires physical DFU-mode access over USB, so treat lost or seized iPhone XS through 11-series and SE devices as fully compromisable below the signed boot chain.
 
-AutoJack Attack Lets One Web Page Hijack AI Agent for Host Code Execution (5 minute read)
+AutoJack Attack Lets One Web Page Hijack AI Agent for Host Code Execution (1 minute read) [flag]
 
-(blurb not generated)
+Microsoft researchers detailed AutoJack, an exploit chain that turns an AI browsing agent into a remote-code-execution vector by chaining three flaws in AutoGen Studio's MCP WebSocket: localhost trust, skipped authentication, and an unallowlisted command parameter. A single attacker page loaded by the agent, via planted link or prompt injection, runs arbitrary host commands unauthenticated; the vulnerable handler shipped only in pre-releases 0.4.3.dev1 and 0.4.3.dev2, with the fix in GitHub main at commit b047730.
 
 CISA Warns Fortinet Customers as FortiBleed Hits 86,644 FortiGate Devices (5 minute read)
 
 (blurb not generated)
 
-Microsoft links Mastra AI supply chain attack to North Korean hackers (5 minute read)
+Microsoft links Mastra AI supply chain attack to North Korean hackers (1 minute read)
 
-(blurb not generated)
+Microsoft attributed the Mastra AI supply-chain compromise to North Korean actor Sapphire Sleet (BlueNoroff), which hijacked the npm maintainer account "ehindero" and pushed malicious updates to 140+ packages in the @mastra scope injecting a typosquatted dependency, "easy-day-js." The postinstall dropper disabled TLS verification and pulled a cross-platform infostealer that targets 166 crypto wallet extensions, so teams using @mastra packages should audit lockfiles, rotate exposed credentials and API keys, and purge easy-day-js.
 
 Klue breach lead to Salesforce data theft, Huntress affected (5 minute read)
 
@@ -50,17 +50,17 @@ CISA: Splunk Enterprise flaw actively exploited, patch by Sunday (5 minute read)
 
 (blurb not generated)
 
-Users cry foul after AMD stripped memory crypto from its consumer CPUs (5 minute read)
+Users cry foul after AMD stripped memory crypto from its consumer CPUs (1 minute read)
 
-(blurb not generated)
+AMD silently removed Transparent Secure Memory Encryption (TSME) from its consumer Ryzen CPUs, leaving DRAM contents unencrypted and exposing systems to cold-boot and physical memory-extraction attacks that the feature was meant to mitigate. The change was undocumented and appears deliberate, so defenders relying on at-rest memory encryption for laptops or kiosks should verify TSME support per SKU rather than assume parity with prior generations.
 
-The Gentlemen RaaS Uses GentleKiller EDR Framework Targeting 400 Security Processes (5 minute read)
+The Gentlemen RaaS Uses GentleKiller EDR Framework Targeting 400 Security Processes (1 minute read)
 
-(blurb not generated)
+The Gentlemen RaaS operates GentleKiller, a mature EDR-killer framework shipped to affiliates that hunts 400 processes tied to 48 security products, using BYOVD across eight variants that each abuse a different vulnerable driver (Kaspersky, FACEIT, Valorant) and impersonate legitimate vendors via spoofed certificates and icons. ESET notes the group operationalizes newly disclosed BYOVD PoCs within days of release, so defenders should enforce driver blocklists and monitor for signed-but-anomalous driver loads ahead of encryptor deployment.
 
-Cybersecurity Firms Impacted by Klue Supply Chain Attack (5 minute read)
+Cybersecurity Firms Impacted by Klue Supply Chain Attack (1 minute read)
 
-(blurb not generated)
+A supply chain attack on market intelligence platform Klue, beginning June 11, let attackers push a malicious code update that harvested customer OAuth tokens and abused the Salesforce REST API to exfiltrate CRM data. Huntress and Recorded Future confirmed impact limited to business contact and sales data; Klue revoked all OAuth tokens and Salesforce disabled the Klue Battlecards app on June 17.
 
 Google Vertex AI SDK Flaw Let Attackers Hijack Model Uploads via Bucket Squatting (5 minute read)
 
@@ -70,122 +70,126 @@ CryptoBandits Malware Doubles as a Backdoor, Abuses Tor (5 minute read)
 
 (blurb not generated)
 
-Salesforce Disables Klue App Integration After OAuth Token Abuse Exposes Customer Data (5 minute read)
+Salesforce Disables Klue App Integration After OAuth Token Abuse Exposes Customer Data (1 minute read)
 
-(blurb not generated)
+Salesforce disabled the Klue Battlecards app integration after the Icarus extortion group compromised a legacy integration credential at Klue, harvested OAuth tokens via a malicious code update, and accessed customer Salesforce data including business contacts and price quotes from victims like Huntress. The breach stemmed from Klue's connection rather than a Salesforce platform flaw, so defenders running Klue or similar third-party integrations should revoke and rotate affected OAuth tokens and audit connected-app access for anomalous activity.
 
-Researchers drop checkm8-style BootROM exploit for A12 and A13 iPhones (5 minute read)
+AryStinger botnet infected thousands of D-Link routers worldwide (1 minute read)
 
-(blurb not generated)
+AryStinger, a previously undocumented botnet detailed by Qianxin's XLab, has compromised more than 4,000 outdated D-Link DIR-850L and DIR-818LW routers by chaining old flaws including CVE-2013-3307, CVE-2016-5681, and CVE-2025-11837. Infected devices become remote "executors" for distributed scanning, proxying, tunneling, and command execution, and can also hijack DNS and sniff traffic, so operators of affected models should patch or retire them and rotate any credentials exposed through the device.
 
-7,000 Langflow servers are under attack. LangGraph and LangChain have the same holes (5 minute read)
+Researchers drop checkm8-style BootROM exploit for A12 and A13 iPhones (1 minute read)
 
-(blurb not generated)
+Researchers released a checkm8-style BootROM exploit affecting A12 and A13 iPhones, including the iPhone XS, XR, and 11 lines, that enables tethered jailbreaks and physical-access compromise. Because the flaw sits in read-only boot code, Apple cannot patch it in software, so defenders managing affected devices should treat them as vulnerable to data extraction once an attacker has physical possession.
 
-Microsoft found malware that hijacks crypto wallets and spreads through USB sticks (5 minute read)
+7,000 Langflow servers are under attack. LangGraph and LangChain have the same holes (3 minute read)
 
-(blurb not generated)
+A path traversal in Langflow's file upload endpoint is under active in-the-wild exploitation across roughly 7,000 exposed servers, yielding unauthenticated RCE per Tenable and VulnCheck. The same bug classes hit sibling frameworks: Check Point chained a SQLite-checkpointer SQL injection (CVE-2025-67644) to RCE in LangGraph, and Cyera found a LangChain-core prompt-loader traversal that reads secrets off disk.
 
 🧠
 Strategies & Tactics
 
-Build your own vulnerability harness (5 minute read)
+Build your own vulnerability harness (1 minute read)
 
-(blurb not generated)
+Cloudflare details how it built a model-agnostic vulnerability harness for Project Glasswing, deliberately swapping models across the pipeline so one model handles discovery and a different one validates, cross-checking findings through distinct reasoning. The architecture persists hundreds of investigations across runs, traces vulnerabilities through cross-repo dependencies, and filters thousands of raw candidates down to a triaged queue of actionable fixes.
 
 MosaicLeaks: Can your research agent keep a secret? (5 minute read)
 
-(blurb not generated)
+MosaicLeaks introduces a deep-research benchmark showing that agents combining private documents with web retrieval leak sensitive enterprise data through their outbound query logs, where an observer reassembles fragments via the mosaic effect without ever seeing the documents. The authors found leakage is common across tested models and that training purely for task accuracy worsens it. Their privacy-aware RL method, PA-DR, cut answer and full-information leakage from 34.0% to 9.9% while raising strict chain success from 48.7% to 58.7%.
 
-Linux eliminates the strncpy API after six years of work, 360 patches (5 minute read)
+Linux eliminates the strncpy API after six years of work, 360 patches (1 minute read)
 
-(blurb not generated)
+Linux 7.2 removed the strncpy() API from the kernel after a six-year, 362-commit campaign to migrate every caller off it. The function was a persistent source of bugs due to counter-intuitive NUL-termination semantics and redundant zero-fill overhead. Kernel code should now use strscpy() for NUL-terminated copies, strscpy_pad() or strtomem_pad() for zero-padded fields, or memcpy() for known-length copies.
 
-Your browser tab could become encrypted storage for someone else’s files (5 minute read)
+Your browser tab could become encrypted storage for someone else’s files (1 minute read)
 
-(blurb not generated)
+A research paper from IENYC's Gregory Magarshak describes Safecloud, a decentralized storage design where browser tabs act as encrypted storage nodes: files are chunked and encrypted on the owner's device before leaving, so storage nodes ("Drops") hold only ciphertext in IndexedDB and routing nodes ("Jets") never see keys. Every key derives from a single 32-byte root secret, and three overlapping trees handle integrity, confidentiality, and authorization over one addressing path, enabling content-addressed dedup and single-key segment streaming without exposing plaintext to any participant.
 
 How Dropbox uses MCP and Dash to close the design-to-code security gap (5 minute read)
 
-(blurb not generated)
+Dropbox built a system that combines MCP, foundational LLMs, and its Dash content index to automatically pull the relevant threat model during code review and check whether code changes meet the security requirements agreed on during design. Because Dash already indexes years of security reviews and engineering docs, the system closes the design-to-code gap without engineers manually linking threat models to pull requests. The post covers the architecture and what months of threat-model analysis revealed.
 
 How attackers are jailbreaking LLMs with CTF framing and how to catch them (5 minute read)
 
-(blurb not generated)
+Sysdig's Threat Research Team documented a "jailbreak-to-deploy" pattern where attackers frame exploit requests to their own upstream LLMs as CTF challenges or CVE-hunting exercises, coaxing the models past safety training into writing working exploit code they ship nearly verbatim. The framing leaks into telemetry: CVE-templated strings like ctf-litellm-cve42271-mcp-stdio/1.0 appeared in User-Agents, password fields, and AWS roleSessionNames across campaigns hitting PraisonAI, LiteLLM, FastGPT, Open-WebUI, and Gotenberg. Hunt for those baked-in CTF/CVE labels as detection artifacts.
 
 🧑‍💻
 Launches & Tools
 
-GrapheneOS has been ported to Android 17 and official releases are coming soon (5 minute read)
+GrapheneOS has been ported to Android 17 and official releases are coming soon (1 minute read)
 
-(blurb not generated)
+GrapheneOS has been fully ported to Android 17, with developer builds available now and the first official release scheduled for tomorrow across all supported Pixel devices, including the 6a, 7, 8, and 10 Pro Fold. The hardened mobile OS has been tested on each device ahead of public release, continuing its same-day tracking of upstream Android.
 
-Show HN: We post-trained a model that pen tests instead of refusing (5 minute read)
+Show HN: We post-trained a model that pen tests instead of refusing (1 minute read)
 
-(blurb not generated)
+Cosine released Argus Red, a CLI backed by a model the company post-trained for offensive security rather than wrapping an off-the-shelf API behind a prompt. It runs two modes — Security Scan reads code for vulnerabilities, and a gated Pen Test mode attempts real exploits against authorized systems, with optional Exploit Verification that reproduces each finding before it lands in the markdown report.
 
-Loupe – A iOS app that raises awareness about what native apps can see (5 minute read)
+Loupe – A iOS app that raises awareness about what native apps can see (1 minute read)
 
-(blurb not generated)
+Loupe is an open-source iOS and iPadOS app from Mysk that reads real device-fingerprinting values from public Apple APIs, the same ones third-party apps call, and displays them raw across three access tiers: passive readings exposed with no prompt, permission-gated data, and side-channel tricks like canOpenURL scheme probing and Keychain persistence across reinstalls. Everything stays on-device unless manually exported, making it a useful demonstration of the fingerprinting surface practitioners assess in mobile privacy reviews.
 
 Forget traffic lights, Google’s reCAPTCHA may ask for hand gestures (5 minute read)
 
 (blurb not generated)
 
-Mastodon 4.6 adds profile Collections and two-factor controls (5 minute read)
+Mastodon 4.6 adds profile Collections and two-factor controls (1 minute read)
 
-(blurb not generated)
+Mastodon 4.6 ships Collections, letting users assemble curated lists of up to 25 profiles and share them by link, with opt-in controls, per-add notifications, and self-removal to limit spam and abuse. The release also gives server administrators a control to require two-factor authentication on member accounts, which infosec.exchange and its sibling servers plan to enforce.
 
 Introducing AWS Continuum for security at machine speed (5 minute read)
 
-(blurb not generated)
+AWS launched AWS Continuum, a gated-preview agent that ingests findings from existing tools and its own scans, prioritizes them against a context graph of your environment, and validates exploitability by building reproducible proof in an isolated sandbox before applying reversible mitigations within defined guardrails. The release also adds Continuum penetration testing, code scanning, and STRIDE-format threat modeling in preview, working alongside Amazon GuardDuty and AWS Security Hub.
 
 🎁
 Miscellaneous
 
-Cisco to Acquire WideField Security to Boost Splunk’s Agentic SOC (5 minute read)
+Cisco to Acquire WideField Security to Boost Splunk’s Agentic SOC (1 minute read)
 
-(blurb not generated)
+Cisco announced an agreement to acquire identity lifecycle security firm WideField Security to feed deeper identity and session intelligence into Splunk's Agentic SOC and Cisco's broader data fabric. Terms were not disclosed; this marks Cisco's third cybersecurity acquisition of 2026 after Galileo and Astrix, landing the same day Accenture revealed $4.1B in OT security deals for Dragos, runZero, and NetRise.
 
-From PGP to Mythos: a brief history of export controls that didn’t stop anyone (5 minute read)
+From PGP to Mythos: a brief history of export controls that didn’t stop anyone (1 minute read)
 
-(blurb not generated)
+The author argues that the White House's order forcing Anthropic to restrict exports of Fable and Mythos is the latest attempt to contain frontier AI through export controls, the same mechanism that failed to bottle up PGP encryption in the 1990s and commercial spyware since. The piece traces that history to argue the ban will leak in practice, reshaping the compliance rulebook for every AI lab without actually halting proliferation.
 
 Anthropic’s Fable and the State of AI (5 minute read)
 
 (blurb not generated)
 
-Google sets timeline for Android developer verification enforcement (5 minute read)
+Google sets timeline for Android developer verification enforcement (1 minute read)
 
-(blurb not generated)
+Google will begin enforcing Android developer verification on September 30, 2026, starting with users in Brazil, Indonesia, Singapore, and Thailand before expanding to certified Android devices globally in 2027. Apps distributed through participating stores including Google Play, Galaxy Store, and Xiaomi's GetApps must be linked to a verified developer identity, raising the bar for actors distributing malware anonymously.
 
-Accenture to buy Dragos, runZero, and NetRise in $4.2 billion cybersecurity deal (5 minute read)
+Accenture to buy Dragos, runZero, and NetRise in $4.2 billion cybersecurity deal (1 minute read)
 
-(blurb not generated)
+Accenture agreed to acquire a majority stake in Dragos and full ownership of runZero and NetRise in a $4.2B deal to build out end-to-end OT and critical-infrastructure security. The combination pairs Dragos' OT threat detection with runZero's attack-surface intelligence and NetRise's firmware and software supply-chain visibility, targeting the "xOT" environments spanning ICS, IoT, and cloud-connected industrial assets.
 
-White House Issues Memo to Bolster NSS Cybersecurity (5 minute read)
+White House Issues Memo to Bolster NSS Cybersecurity (1 minute read)
 
-(blurb not generated)
+President Trump signed National Security Presidential Memorandum-12, directing baseline cybersecurity requirements for National Security Systems and ensuring civilian-agency NSS get the same protection as DoD and IC systems. The memo reestablishes the Committee on National Security Systems to set minimum standards and issue emergency directives, names the NSA director as National Manager for NSS, and requires agencies to maintain an annual NSS inventory within three months.
 
-White House delays US voting-machine vulnerability report (5 minute read)
+White House delays US voting-machine vulnerability report (1 minute read)
 
-(blurb not generated)
+The White House Office of the Director of National Intelligence delayed the public release of a CISA report documenting security vulnerabilities in US voting machines, with months remaining before the 2026 midterms. The study's findings stay classified for now, leaving election officials and state-level defenders without the technical details needed to assess and remediate exposure on the affected equipment.
 
-Apple is about to make Hide My Email useless (5 minute read)
+Microsoft’s June update fixed 208 security flaws and introduced a cascade of new bugs across all Windows versions (1 minute read)
 
-(blurb not generated)
+Microsoft's June Patch Tuesday update KB5094126 patched a record 208 vulnerabilities on June 9 but introduced regressions across every supported Windows version, including Recycle Bin display glitches, BitLocker recovery-screen lockouts on enterprise hardware, OneDrive failures on domain-joined PCs, and system freezes. Microsoft traced the Recycle Bin bug to a hardening fix for a 23-year-old Windows Shell buffer flaw and won't ship a correction until July 14.
 
-A new bill takes aim at government pressure to silence lawful online speech (5 minute read)
+Identity verification on Claude (1 minute read)
 
-(blurb not generated)
+Anthropic is rolling out identity verification on Claude, requiring a government-issued photo ID and a live selfie through verification partner Persona for certain capabilities, platform-integrity checks, and compliance measures. Persona, not Anthropic, collects and stores the ID and selfie data, with Anthropic acting as data controller and accessing records only when needed, such as reviewing an appeal.
 
-NY man charged after harassing college student with AI-generated nudes (5 minute read)
+Apple is about to make Hide My Email useless (1 minute read)
 
-(blurb not generated)
+Apple will move Sign in with Apple and Hide My Email aliases to the @private.icloud.com subdomain, making relay addresses trivially distinguishable from regular iCloud mailboxes. The change lets services block all aliases without affecting real iCloud accounts, undermining the plausible deniability that made Hide My Email useful for privacy; existing @icloud.com aliases can still be generated until the switch lands.
 
-Q&A with Signal's Meredith Whittaker on why online child safety efforts risk mass surveillance, leaving the markets that demand weakening of encryption, more (Mishal Husain/Bloomberg) (5 minute read)
+A new bill takes aim at government pressure to silence lawful online speech (1 minute read)
 
-(blurb not generated)
+Senators Ted Cruz and Ron Wyden introduced the bipartisan JAWBONE Act, which creates a federal cause of action against officials who coerce broadcasters, online services, or AI providers into suppressing lawful, First-Amendment-protected speech. The bill also mandates a transparency system for government communications with intermediaries about user expression, addressing jawboning practices like the 2025 pressure campaign that forced Apple to pull the ICEBlock app.
+
+NY man charged after harassing college student with AI-generated nudes (1 minute read)
+
+Federal prosecutors charged 21-year-old Anthony Belford with cyberstalking after he allegedly ran a months-long harassment campaign against a former classmate, using spoofed Instagram, LinkedIn, Reddit, X, Strava, and Yahoo accounts to distribute AI-generated nude images and fabricated racist messages. Federal law bars sharing non-consensual intimate images, including synthetic ones, and the DOJ urged victims to report violations to the FBI and flag unremoved content to the FTC.
 
 Britain's privacy watchdog quits after 'poor judgment' admission (5 minute read)
 
@@ -193,23 +197,23 @@ Britain's privacy watchdog quits after 'poor judgment' admission (5 minute read)
 
 CISA gives federal agencies as little as three days to patch the riskiest bugs (5 minute read)
 
-(blurb not generated)
+CISA issued a new directive requiring federal civilian agencies to remediate the highest-risk vulnerabilities in as little as three days, replacing the static deadlines of the prior Known Exploited Vulnerabilities process with risk-based prioritization. Agencies must now triage flaws by exploitability and exposure rather than a uniform timeline, compressing patch windows for internet-facing systems most likely to be targeted.
 
-The UK will scan asylum-seekers’ faces for age checks—despite knowing the tech is flawed (5 minute read)
+The UK will scan asylum-seekers’ faces for age checks—despite knowing the tech is flawed (1 minute read)
 
-(blurb not generated)
+The UK Home Office will deploy facial age estimation to assess undocumented asylum seekers at the border starting next year, despite an internal report showing the systems regularly misclassify children as adults. A WIRED and Lighthouse Reports investigation found the best-performing of seven tested algorithms degraded significantly on Sub-Saharan Africans, the largest group subject to age assessments in 2025.
 
 ⚡
 Quick Links
 
-In Other News: Apple Patches Beats Eavesdropping Flaw, DOT Closes Delta CrowdStrike Probe, AWS Continuum (5 minute read)
+In Other News: Apple Patches Beats Eavesdropping Flaw, DOT Closes Delta CrowdStrike Probe, AWS Continuum (1 minute read)
 
-(blurb not generated)
+Apple patched a Beats eavesdropping flaw, the DOT closed its Delta-CrowdStrike outage probe, and AWS previewed Continuum for vulnerability prioritization.
 
 SPHINCS-: Efficient Stateless Post-Quantum Signature Verification on the EVM (5 minute read)
 
-(blurb not generated)
+A Solidity SPHINCS+ variant verifies NIST-aligned post-quantum signatures on Ethereum at ~150K gas, no precompile or protocol change required.
 
 Apple adds keylogger to iOS App Store for targeted advertising: tied to your account and unencrypted (5 minute read)
 
-(blurb not generated)
+Researchers found the iOS App Store logs every tap and keystroke unencrypted, tied to your account, with no opt-out.

@@ -6,45 +6,45 @@ TLDR Dev 2026-06-21
 🧑‍💻
 Articles & Tutorials
 
-Bun has an open PR adding shared-memory threads to JavaScriptCore (5 minute read)
+Bun has an open PR adding shared-memory threads to JavaScriptCore (1 minute read)
 
-(blurb not generated)
+Jarred Sumner has an open WebKit PR adding shared-memory threads to JavaScriptCore, where `new Thread(fn, ...args)` runs a real closure on another core in the same heap, with no structured clone, message passing, or stringified-source-in-a-blob worker dance. Parallel JavaScript already executes through all four JIT tiers with no global lock and the thread test suite passes, but thread-sanitizer cleanup, fuzzing, and a long soak remain, and the author notes it may never merge.
 
-Alice is impatient (5 minute read)
+Alice is impatient (1 minute read)
 
-(blurb not generated)
+This post explains the inspection paradox: users experience a t-weighted version of your latency distribution, so the mean wait they feel is E[X] + Var(X)/E[X], not your reported mean. An interactive simulation drives the point home, with a 30-minute median TTR and 10-hour p99 yielding a one-hour MTTR on your dashboards but a six-hour mean recovery for customers.
 
-There are no instances in ATProto (5 minute read)
+There are no instances in ATProto (1 minute read)
 
-(blurb not generated)
+Dan Abramov argues that "instances" are a category error in atproto, which separates hosting from aggregation the way blogs separated publishing from readers like Google Reader, rather than enclosing users inside self-hosted communities the way Mastodon does. Your data lives in a personal repository you control, and apps are mere projections over the network, so there is no server you "join" and no community walls to pick between.
 
-Project Valhalla, Explained: How a Decade of Work Arrives in JDK 28 (5 minute read)
+Project Valhalla, Explained: How a Decade of Work Arrives in JDK 28 (1 minute read)
 
-(blurb not generated)
+On June 15, Oracle engineer Lois Foltan confirmed that JEP 401: Value Classes and Objects, the core of Project Valhalla, is targeting JDK 28 in a pull request adding over 197,000 lines across 1,816 files. This deep-dive traces the decade-long effort to make user-defined types "code like a class, work like an int," and cautions that the JDK 28 cut is preview-only, disabled by default, and just the first part of the project.
 
-Linux eliminates the strncpy API after six years of work, 360 patches (5 minute read)
+Linux eliminates the strncpy API after six years of work, 360 patches (1 minute read)
 
-(blurb not generated)
+Linux 7.2 removes the strncpy() API from the kernel, the end of a six-year effort spanning roughly 362 commits to migrate every caller off an interface long deprecated for its counter-intuitive NUL-termination semantics and redundant destination zero-filling. Kernel code now uses targeted replacements instead: strscpy() and strscpy_pad() for NUL-terminated destinations, strtomem_pad() for fixed-width fields, and memcpy_and_pad() or memcpy() for bounded copies.
 
-How we built an internal data analytics agent (5 minute read)
+How we built an internal data analytics agent (1 minute read)
 
-(blurb not generated)
+GitHub built Qubot, an internal Copilot-powered agent that lets any employee query the company's data warehouse in plain language and get answers in seconds. The architecture splits into three parts — a Slack/VS Code/CLI interface, a context layer, and a query engine — with each Slack question spawning a Copilot Cloud Agent that returns a markdown report in a pull request for later reuse.
 
-Building reliable agentic AI systems (5 minute read)
+Building reliable agentic AI systems (1 minute read)
 
-(blurb not generated)
+Thoughtcombines from keyword search to research assistant for Bayer pharma researchers.Bayer engineers built a system that lets pharmaceutical researchers query decades of study data buried in PDF reports, evolving from keyword-based search into an LLM research assistant that answers complex questions and drafts regulatory documents. The writeup details the architecture choices that made it reliable, including how the team handled retrieval over dense scientific documents and constrained the model to keep outputs grounded and auditable.
 
-Epoll vs. io_uring in Linux (5 minute read)
+Epoll vs. io_uring in Linux (1 minute read)
 
-(blurb not generated)
+This post compares Linux's two asynchronous I/O interfaces, explaining why epoll's design forces two syscalls per I/O event (it signals readiness, leaving you to call read/write yourself) and how that context-switch overhead scales badly under high connection counts. io_uring instead reports completion rather than readiness, using shared submission and completion ring buffers so a single io_uring_enter call can batch many operations, which led the author to rewrite their TinyGate reverse proxy around it.
 
-Surprising economics of load-balanced systems (5 minute read)
+Surprising economics of load-balanced systems (1 minute read)
 
-(blurb not generated)
+Modeling a load-balanced fleet as an M/M/c queue, the author shows that mean request latency asymptotically approaches the one-second service time as server count grows, even with per-server load held constant at 80%. The counterintuitive result is that bigger fleets queue a smaller fraction of requests, so scaling out improves observed latency for free rather than just adding throughput, with the same trend holding at the tail percentiles.
 
-AI coding agents may be getting bad instructions from ‘smelly’ config files (5 minute read)
+AI coding agents may be getting bad instructions from ‘smelly’ config files (2 minute read)
 
-(blurb not generated)
+Researchers at Brazil's Federal University of Minas Gerais published the first catalog of "configuration smells" in coding-agent files like Agents.md and Claude.md, identifying six recurring flaws including lint leakage, context bloat, skill leakage, and conflicting instructions. They found at least one smell in 91 of 100 popular open-source repos, with lint leakage in 62% of files and context bloat in 42%, all of which inflate token costs and degrade how agents interpret project conventions.
 
 So You Want to Define a Well-Known URI (5 minute read)
 
@@ -52,97 +52,101 @@ So You Want to Define a Well-Known URI (5 minute read)
 
 When failover isn't safe: Building high-availability PostgreSQL on Kubernetes (5 minute read)
 
-(blurb not generated)
+Datadog rearchitected its Kubernetes-based PostgreSQL clusters after a gameday zonal-failure test exposed that primaries kept accepting writes while replicas fell behind, leaving no replica current enough to promote safely. The fix uses synchronous replication for failover candidates coordinated by Patroni, trading some write latency for guaranteed durability so failover becomes both automatic and lossless.
 
 AI Coding Agent Horror Stories: The 13-Hour AWS Outage (5 minute read)
 
-(blurb not generated)
+A Docker post-mortem walks through how an AI coding agent's unsupervised changes cascaded into a 13-hour AWS outage, tracing the failure from a plausible-looking automated fix to the production blast radius it triggered. The writeup uses the incident to argue for guardrails around agent-driven deploys, including human review gates, scoped permissions, and sandboxed execution before changes reach live infrastructure.
 
-PostgresBench: A Reproducible Benchmark for Postgres Services (5 minute read)
+PostgresBench: A Reproducible Benchmark for Postgres Services (1 minute read)
 
-(blurb not generated)
+ClickHouse released PostgresBench, a public benchmark that applies the reproducible ClickBench methodology to managed Postgres services using pgbench's standard TPC-B-like workload of short, write-heavy transactions. Runs are fixed at 256 clients, 16 threads, and 10 minutes with prepared statements, and every query, dataset, and config is published so anyone can reproduce the numbers, submit results, or flag an unfair setup.
 
 How We Cut Semgrep's Taint Analysis Time by 75% (5 minute read)
 
-(blurb not generated)
+Semgrep rearchitected its interfile taint analysis to cut runtime by 75%, eliminating the "run taint twice" approach that recomputed taint configs and re-ran dataflow over every function after already producing cross-file taint signatures. The post details how passing signatures back into the original intrafile engine duplicated most of the analysis work, and how unifying the two paths removed the redundant pass without changing detection results.
 
-I hate compilers (5 minute read)
+I hate compilers (1 minute read)
 
-(blurb not generated)
+The author needed reproducible builds of `wasm2js` for Anubis, but identical source produced byte-different binaries across machines, so they vendored a deterministic copy compiled to WebAssembly via wasi-sdk. Getting there meant passing `--no-wasm-opt` to stop Clang silently invoking a system tool during linking, and disabling address-space randomization with `setarch` to kill ~29-byte diffs from pointer-dependent catch-reference ordering, with separate x86_64 and arm64 checksums as the remaining trade-off.
 
-Researchers grow a hypothesis tree for AI coding agents (5 minute read)
+Researchers grow a hypothesis tree for AI coding agents (2 minute read)
 
-(blurb not generated)
+Researchers from Renmin University and Microsoft Research introduced Arbor, a persistent hypothesis tree that lets AI coding agents retain experiments and lessons across long research sessions instead of losing them on context resets. A long-lived coordinator manages strategy while short-lived executors run isolated worktrees to test competing hypotheses, a design that delivered 2.5x better performance than standard agents on real engineering tasks under the same budget.
 
 From SQLi to RCE - Exploiting LangGraph's Checkpointer (5 minute read)
 
-(blurb not generated)
+Check Point researcher Yarden Porat shows how an unsanitized filter key in LangGraph's SQLite checkpointer flows straight into a json_extract SQL clause, turning get_state_history() into SQL injection that escalates to remote code execution. The managed LangSmith Deployment runs PostgreSQL and is unaffected, but self-hosted users should upgrade to langgraph-checkpoint-sqlite 3.0.1+, langgraph 1.0.10+, or langgraph-checkpoint-redis 1.0.2+.
+
+Agent Loop Cost: 11x Your Per-Call Quote, in 40 Lines (3 minute read)
+
+A 40-line offline script reads one JSONL agent trace and prices the full task loop, exposing how every tool-call re-bills the system prompt and prior results so the real bill grows quadratically with call count. On the author's bloated 14-step fixture it measured $2.26 per task against a $0.20 per-call quote, an 11.29x gap, and exits non-zero as a pre-execution CI gate.
 
 Give GitHub Copilot CLI real code intelligence with language servers (5 minute read)
 
-(blurb not generated)
-
-Inside Claude Managed Agents: Reverse Engineering the Security Boundaries of Anthropic's Hosted Agent Runtime (5 minute read)
-
-(blurb not generated)
+This guide explains how to wire Language Server Protocol servers into GitHub Copilot CLI so the agent resolves symbols through go-to-definition, find-references, and type resolution instead of grepping through JARs, site-packages, and node_modules. The LSP Setup skill automates installation and configuration across 14 languages, giving the agent precise types, overloads, and signatures that text-search heuristics miss.
 
 🧠
 Opinions & Advice
 
-Hey, n00b, we didn't hire you to complete tasks (5 minute read)
+Hey, n00b, we didn't hire you to complete tasks (1 minute read)
 
-(blurb not generated)
+Kent Beck argues that junior engineers are hired as an option premium on the engineer they will become, not for the tasks they complete, since a senior could clear that task backlog faster anyway. Seniors are sorting new hires into A, B, and C performers, so the signal that matters is not throughput but evidence of growth, judgment, and making the people around you more productive.
+
+Who owns your ATProto identity? (1 minute read)
+
+The author argues that ATProto's PDS model gives whoever operates your Personal Data Server total control of your identity, since it holds the signing and rotation keys that authorize every commit across the ecosystem. Unlike a traditional platform, where a breach is scoped to one service, a compromised or malicious PDS can impersonate or lock you out of every ATProto app at once, from Bluesky posts to Tangled git pushes, with cryptographically valid signatures.
 
 Why is Meta destroying its engineering organization? (5 minute read)
 
 (blurb not generated)
 
-LLMs Are Complicated Now (5 minute read)
+LLMs Are Complicated Now (1 minute read)
 
-(blurb not generated)
+The author argues that LLM architectures have lost their early simplicity, evolving from clean stacks of repeated Transformer modules into tangles of attention variants, mixture-of-experts routing, mixed-in vision and audio encoders, and inference-time sharding across GPUs. Drawing a parallel to how recommendation systems grew complex, they warn that performance optimization is becoming load-bearing, making it hard to keep a pure baseline definition that agents could reliably fuse into optimized kernels.
 
-Local Qwen isn't a worse Opus, it's a different tool (5 minute read)
+Local Qwen isn't a worse Opus, it's a different tool (1 minute read)
 
-(blurb not generated)
+The author argues that local Qwen models aren't a budget Opus substitute but a distinct tool with a different reliability profile, drawing on production use across a bootstrapped software business rather than benchmark claims or airplane-coding anecdotes. An RTX 6000 Pro paid for itself within two or three months, but the post is candid about Qwen's worst failure modes: infinite loops and hallucination that worsen once you quantize down to fit a consumer GPU.
 
 Agentic Code Review (5 minute read)
 
 (blurb not generated)
 
-When I reject AI code even if it works (5 minute read)
+When I reject AI code even if it works (1 minute read)
 
-(blurb not generated)
+The author rejects working AI-generated code whenever he can't explain the approach in his own words, the diff is bigger than the problem, or it adds abstractions before they're proven necessary. He argues the real bottleneck has shifted from writing code to reviewing volume an engineer never reasoned through, and that passing CI doesn't make a solution adequate, scalable, or extensible.
 
 $10,000,000 on the line: how we measure Devin's engineering output (5 minute read)
 
-(blurb not generated)
+Cognition's Ryan Bai argues that Devin's value should be measured by a per-customer guarantee, with Cognition putting up to $10M behind the claim that Devin ships more engineering output than it costs. The post details the measurement system built to validate this on independent data, framing AI coding agents as a usage-based output bet rather than a per-seat subscription.
 
 The Mythical Agent-Month (5 minute read)
 
-(blurb not generated)
+The author revisits Fred Brooks's The Mythical Man-Month to ask whether a single developer orchestrating a swarm of AI coding agents escapes the coordination overhead, scope creep, and architectural drift that Brooks's Law pinned on large teams. He argues the human expert remains essential for now, supplying conceptual integrity and continuous supervision, but expects the same old bottlenecks to resurface once one person is managing many parallel agent sessions.
 
 🚀
 Launches & Tools
 
-Datasette Apps: Host custom HTML applications inside Datasette (5 minute read)
+Datasette Apps: Host custom HTML applications inside Datasette (1 minute read)
 
-(blurb not generated)
+Simon Willison released datasette-apps, a plugin that hosts self-contained HTML+JavaScript applications inside a sandboxed iframe on your Datasette instance, where they can run read-only SQL queries against your data and write queries through configured stored queries. The sandbox uses `allow-scripts allow-forms` plus an injected CSP header to block cookie and localStorage access and outbound HTTP requests, preventing a buggy or malicious app from exfiltrating private data.
 
-Apple Foundation Models (5 minute read)
+Apple Foundation Models (1 minute read)
 
-(blurb not generated)
+Anthropic released Claude for Foundation Models, a Swift package that conforms Claude to the `LanguageModel` protocol in Apple's Foundation Models framework, so apps drive it through the same `LanguageModelSession` API used for Apple's on-device model. Requests go straight to the Claude API rather than through Apple, and developers swap between on-device and server-side models per session to add larger context, frontier reasoning, or server tools like web search and code execution.
 
 Temporary Cloudflare Accounts for AI agents (5 minute read)
 
 (blurb not generated)
 
-Loupe – A iOS app that raises awareness about what native apps can see (5 minute read)
+Loupe – A iOS app that raises awareness about what native apps can see (1 minute read)
 
-(blurb not generated)
+Loupe is an open-source iOS and iPadOS app that reads device fingerprinting signals straight from public Apple APIs and displays the raw values any third-party app could collect. It sorts readings into three tiers by access cost: passive signals like locale and battery that need no prompt, permission-gated data like contacts and photos, and side channels like canOpenURL scheme probing and Keychain persistence across reinstalls.
 
-UHF X11: X11 Built for VisionOS and Apple Vision Pro (5 minute read)
+UHF X11: X11 Built for VisionOS and Apple Vision Pro (1 minute read)
 
-(blurb not generated)
+UHF X11 turns an Apple Vision Pro into a full X11 display server, letting each X11 top-level open as its own rootless visionOS window that you can place anywhere in your space. It accepts connections from trusted machines over native X11 TCP with on-device auth cookies, supports GLX/OpenGL rendering, and adds CRT scanline, phosphor, and glow presets for vintage Xlib clients.
 
 Vercel debuts eve open source agent framework, tries to fix shadow AI with Passport (5 minute read)
 
@@ -154,19 +158,19 @@ Homebrew 6.0 released with new security mechanism, Linux sandbox, and more (5 mi
 
 Four Ways We're Using Our MCP Server at Figma (5 minute read)
 
-(blurb not generated)
+Figma expanded its MCP server to push design decisions into the tools where code is written, with new support for custom fonts, MCP skills, and architecture layouts in FigJam. The post details four internal workflows, including an agent that refreshes a living Figma Slides deck by pulling context from Slack, Google Drive, and release notes, handling roughly the first 80% of the content work before human review.
 
-Anthropic launches live Artifacts for Claude Code (5 minute read)
+Anthropic launches live Artifacts for Claude Code (1 minute read)
 
-(blurb not generated)
+Anthropic launched Artifacts for Claude Code in beta, turning coding sessions into live, shareable web pages like PR walkthroughs, dashboards, and release checklists that update in real time as the session runs. Each artifact is built from full session context including codebase, connectors, and conversation history, with version history and org-scoped access controls, available now to Claude Team and Enterprise via the CLI and desktop app.
 
 Android 17 Expands AI Agent Integration (5 minute read)
 
-(blurb not generated)
+Android 17 expands AppFunctions, a platform API that lets apps register capabilities as orchestratable tools for Android MCP, an on-device equivalent of the Model Context Protocol that Gemini and other agents can discover and execute against an app's local state. The alpha Jetpack library exposes a function as an agent tool by annotating a class and documenting it with KDoc, and the release ships Android 17 source to AOSP alongside mandatory large-screen resizability.
 
-Show HN: TownSquare, a tiny presence layer for websites (5 minute read)
+Show HN: TownSquare, a tiny presence layer for websites (1 minute read)
 
-(blurb not generated)
+TownSquare is a presence layer for websites that you add by dropping a single `<script>` tag before the closing body tag, with no build step or dependencies. Visitors see each other in real time and can move around, send short messages, jump, and high-five, joining a shared network of sites that opt in with no accounts required.
 
 Accelerating researchers and developers building multilingual AI with a new open dataset (5 minute read)
 
@@ -174,35 +178,35 @@ Accelerating researchers and developers building multilingual AI with a new open
 
 Introducing the MDN MCP server (5 minute read)
 
-(blurb not generated)
+Mozilla released the MDN MCP server, which exposes MDN's web platform documentation and browser compatibility data to any MCP-compatible client, including VS Code, Zed, Cursor, Claude Code, and Codex CLI. The server targets the staleness problem in coding agents, letting them check current Baseline support for features like the light-dark() CSS function instead of relying on training-cutoff knowledge, with the trade-off that it ships as experimental.
 
 Building AI Agents for AR Glasses and XR Devices with NVIDIA XR AI (5 minute read)
 
 (blurb not generated)
 
-Show HN: We post-trained a model that pen tests instead of refusing (5 minute read)
+Show HN: We post-trained a model that pen tests instead of refusing (1 minute read)
 
-(blurb not generated)
+Argusred is a CLI from Cosine that runs a model post-trained for offensive security, with two modes: a Security Scan that reads your code and a Pen Test that attempts real exploits against systems you authorize. Findings land in a markdown report with location, severity, cause, and fix direction, and optional Exploit Verification has the agent reproduce each vulnerability so what you see is confirmed rather than theoretical.
 
 Bcachefs exits experimental status in new 'performance release' (5 minute read)
 
 (blurb not generated)
 
-AWS aims to take the pain out of RAG with Bedrock Managed Knowledge Base (5 minute read)
+AWS aims to take the pain out of RAG with Bedrock Managed Knowledge Base (2 minute read)
 
-(blurb not generated)
+AWS released Bedrock Managed Knowledge Base, a managed RAG service that auto-selects and maintains the embeddings, re-ranker, and foundation models behind enterprise retrieval, plus six native connectors for S3, SharePoint, Confluence, Google Drive, OneDrive, and web content. Smart Parsing and an Agentic Retriever target accuracy across mixed content types and multi-repository queries, with the trade-off being less control over model choice and pipeline internals.
 
 Replit is now available in Claude (5 minute read)
 
-(blurb not generated)
+Replit is now available directly inside Claude, letting you design an app in Claude Design with natural language and send it to Replit to keep building, refining, and shipping in one flow. Claude can also hand off any general development task to Replit through the official Replit Connector, so spinning up a backend or iterating on an existing project no longer requires copy-pasting between tools or switching context.
 
-Write cleaner and faster Python code (5 minute read)
+Write cleaner and faster Python code (2 minute read)
 
-(blurb not generated)
+InfoWorld's Python roundup covers Meta's Pyrefly 1.0 type-checking linter, which ships with PyTorch and Django support, and Python 3.15's new sampling profiler for low-overhead bottleneck hunting. It also walks through virtual environment tooling and flags Hades, a supply-chain malware strain that hides in PyPI packages and evades LLM-based code analysis.
 
-Show HN: Make PDFs look scanned (CLI or in the browser via WASM) (5 minute read)
+Show HN: Make PDFs look scanned (CLI or in the browser via WASM) (1 minute read)
 
-(blurb not generated)
+make-look-scanned is a CLI that degrades a PDF to mimic a physical scan, applying skew, grayscale, warm paper tone, scanner grain, defocus, edge shadow, and JPEG artifacts, then reassembling the pages into a new image-only PDF that drops the original selectable text. Output is deterministic by default, seeding from the file's content so the same input always reproduces the same scan, and the Go effects pipeline also runs client-side in the browser via WASM.
 
 🎁
 Miscellaneous
@@ -213,34 +217,34 @@ AURpocalypse now: a look at the recent AUR attacks (5 minute read)
 
 GlassWASM: WebAssembly Malware Found in Trojanized Open VSX Extensions (5 minute read)
 
-(blurb not generated)
+Socket's Threat Research team found WebAssembly malware embedded in trojanized VS Code extensions on the Open VSX registry, compiled from Go with TinyGo and auto-executed on activation via a renamed loader. The payload encrypts every string with ChaCha20 and uses the Solana blockchain as a takedown-resistant C2 dead-drop, polling an attacker wallet's on-chain memo field to fetch and run OS-specific second-stage commands through Node's child_process.
 
-7,000 Langflow servers are under attack. LangGraph and LangChain have the same holes (5 minute read)
+7,000 Langflow servers are under attack. LangGraph and LangChain have the same holes (3 minute read)
 
-(blurb not generated)
+Three of the most widely deployed AI agent frameworks — LangGraph, Langflow, and LangChain — were each found to turn an ordinary bug class into remote code execution or secret theft, with roughly 7,000 Langflow servers already under active in-the-wild attack. Researchers chained a SQL injection in LangGraph's SQLite checkpointer to RCE, traced a path traversal in Langflow's file upload endpoint to live exploitation, and documented a LangChain-core prompt loader flaw that reads credentials straight off disk.
 
-SpaceX to acquire the AI coding startup Cursor for $60 billion (5 minute read)
+SpaceX to acquire the AI coding startup Cursor for $60 billion (1 minute read)
 
-(blurb not generated)
+SpaceX agreed to acquire AI coding startup Cursor for $60B in stock, with the deal expected to close in Q3 pending regulatory approval. The purchase folds Cursor into SpaceX's xAI unit to compete with Anthropic and OpenAI on coding tools, though Cursor's market share has slipped from 41% to roughly 26% over the past year as Anthropic captured half the category.
 
-Google sets timeline for Android developer verification enforcement (5 minute read)
+Google sets timeline for Android developer verification enforcement (1 minute read)
 
-(blurb not generated)
+Google set September 30, 2026 as the enforcement date for Android developer verification, starting with users in Brazil, Indonesia, Singapore, and Thailand, where apps distributed through stores like Google Play, Galaxy Store, and GetApps must be linked to a verified identity before installation. New APIs let developers register package names in bulk or via CI/CD, and a fee-free limited distribution account lets hobbyists ship to up to 20 devices without a government ID.
 
-Malicious JetBrains Marketplace Plugins Steal AI API Keys From Developers (5 minute read)
+Malicious JetBrains Marketplace Plugins Steal AI API Keys From Developers (1 minute read)
 
-(blurb not generated)
+Aikido Security found at least 15 malicious JetBrains Marketplace plugins, published under seven vendor accounts and installed close to 70,000 times, that exfiltrate the OpenAI, DeepSeek, and SiliconFlow API keys developers enter into their settings to a hardcoded server. The plugins, first published in October 2025 with new ones added as recently as June 2026, function as advertised while quietly stealing credentials on "Apply" and reselling them to paid users.
 
 ⚡
 Quick Links
 
-CSSQuake (5 minute read)
+CSSQuake (1 minute read)
 
-(blurb not generated)
+A playable Quake-style FPS rendered entirely in CSS, with multiplayer, dynamic lighting, and particle effects.
 
-GrapheneOS has been ported to Android 17 and official releases are coming soon (5 minute read)
+GrapheneOS has been ported to Android 17 and official releases are coming soon (1 minute read)
 
-(blurb not generated)
+GrapheneOS has been ported to Android 17 across all supported Pixel devices, with the first official release shipping tomorrow.
 
 Android 17 starts hitting Pixel phones and watches today (5 minute read)
 
@@ -248,20 +252,24 @@ Android 17 starts hitting Pixel phones and watches today (5 minute read)
 
 A 27-Year-Old Authentication Bypass in OpenBSD's PPP Stack (5 minute read)
 
-(blurb not generated)
+OpenBSD's PAP authenticator used attacker-controlled length fields as the bcmp comparison length, so zero-length credentials bypassed authentication entirely for 27 years.
+
+Open-source Vulkan driver NVK gains experimental DLSS support — bringing Nvidia’s upscaling tech to Linux via imported CUDA binaries (1 minute read)
+
+NVK, the open-source Nvidia Vulkan driver in Mesa, gained experimental DLSS support by loading Nvidia's pre-compiled CUDA binaries behind an experimental flag.
 
 Ramp SWE-Bench: a private, production-grounded coding benchmark (5 minute read)
 
-(blurb not generated)
+Ramp released Ramp SWE-Bench, a private coding benchmark built from real engineering problems faced in its production codebase.
 
 pg_kpart version 1.0 (5 minute read)
 
-(blurb not generated)
+pg_kpart 1.0 is a PostgreSQL extension that blocks queries scanning every partition without a usable partition-key predicate, preventing accidental full-hierarchy scans.
 
-A 3D voxel game engine written in APL (1 minute read)
-
-A developer built an experimental 3D voxel game engine in APL, using the notation to drive a Vulkan, DirectX12, and Metal rendering backend.
-
-I Stored a Website in a Favicon (5 minute read)
+A 3D voxel game engine written in APL (5 minute read)
 
 (blurb not generated)
+
+I Stored a Website in a Favicon (1 minute read)
+
+A developer encoded an entire HTML page into a favicon's RGB pixels, fitting a 212-byte payload into 71 pixels decoded client-side.

@@ -1,17 +1,43 @@
 {
   "date": "2026-06-18",
   "newsletter": "tldr_dev",
-  "fetched_at": "2026-06-21T14:28:39.917069+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-06-21T20:39:12.367636+00:00",
+  "tldr_titles": [
+    "How We Made Cloud Browsers 3x Cheaper and Faster",
+    "Making budget models punch above their weight with a smart harness",
+    "Agentic coding and persistent returns to expertise",
+    "But yak shaving is fun",
+    "The Dialogue Dividend",
+    "Introducing eve",
+    "Building TREX: Code execution and artifact generation for AI code review",
+    "Brain the Size of a Planet: Are LLMs Thonking too Hard?",
+    "Image compression",
+    "Can gzip be a language model?",
+    "Exa Agent",
+    "The founder's playbook: Building an AI-native startup"
+  ],
+  "tldr_matched": [
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
   "predictions": [
     {
       "rank": 1,
       "score": 77.0,
       "title": "How we run Firecracker VMs inside EC2 and start browsers in less than 1s",
       "url": "https://browser-use.com/posts/firecracker-browser-infra",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 0,
+      "similarity": 1.0
     },
     {
       "rank": 2,
@@ -518,9 +544,47 @@
       "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.08333333333333333,
+    "25": 0.08333333333333333,
+    "50": 0.08333333333333333,
+    "100": 0.08333333333333333,
+    "64": 0.08333333333333333
+  },
+  "hits_at": {
+    "10": 1,
+    "25": 1,
+    "50": 1,
+    "100": 1,
+    "64": 1
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://browser-use.com/posts/firecracker-browser-infra",
+    "https://yogthos.net/posts/2026-06-08-dirge-code.html",
+    "https://www.anthropic.com/research/claude-code-expertise",
+    "https://parksb.github.io/en/article/32.html",
+    "https://www.thesignalist.io/s/the-dialogue-dividend/",
+    "https://vercel.com/blog/introducing-eve",
+    "https://www.greptile.com/blog/trex-code-execution",
+    "https://parsiya.net/blog/llm-thonking/",
+    "https://www.makingsoftware.com/chapters/image-compression",
+    "https://nathan.rs/posts/gzip-lm/",
+    "https://exa.ai/blog/exa-agent",
+    "https://claude.com/blog/the-founders-playbook"
+  ],
+  "tldr_domains": [
+    "browser-use.com",
+    "yogthos.net",
+    "anthropic.com",
+    "parksb.github.io",
+    "thesignalist.io",
+    "vercel.com",
+    "greptile.com",
+    "parsiya.net",
+    "makingsoftware.com",
+    "nathan.rs",
+    "exa.ai",
+    "claude.com"
+  ]
 }
