@@ -2,6 +2,7 @@
 
 import { useRouter, useSearchParams } from 'next/navigation';
 import { MIN_PRESETS, STAGE_PRESETS } from '@/lib/funding-filters';
+import { filterChipClass } from '@/lib/chip-classes';
 
 /**
  * Two rows of toggle chips: stage tier + minimum amount. Each chip is a
@@ -27,12 +28,6 @@ export default function FundingFilterChips({
     router.push('?' + next.toString(), { scroll: false });
   }
 
-  const chipClass = (active: boolean) =>
-    'px-2.5 py-1 rounded-md text-[11px] font-medium border transition-colors ' +
-    (active
-      ? 'bg-accent-soft text-text border-accent'
-      : 'bg-surface text-text-dim border-border hover:bg-surface-hi hover:text-text');
-
   return (
     <div className="flex gap-2 items-center flex-wrap text-[11px]">
       <span className="text-text-mute uppercase tracking-[0.06em] font-semibold mr-1">Stage</span>
@@ -40,7 +35,7 @@ export default function FundingFilterChips({
         <button
           key={s.key}
           onClick={() => toggle('stage', s.key, stage)}
-          className={chipClass(stage === s.key)}
+          className={filterChipClass(stage === s.key)}
         >
           {s.label}
         </button>
@@ -50,7 +45,7 @@ export default function FundingFilterChips({
         <button
           key={m.key}
           onClick={() => toggle('min', m.key, min)}
-          className={chipClass(min === m.key)}
+          className={filterChipClass(min === m.key)}
         >
           {m.label}
         </button>

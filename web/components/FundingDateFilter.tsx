@@ -1,6 +1,7 @@
 'use client';
 
 import { useRouter, useSearchParams } from 'next/navigation';
+import { filterChipClass } from '@/lib/chip-classes';
 
 interface Preset {
   key: 'today' | 'yesterday' | 'last-week' | 'last-14' | 'last-month';
@@ -105,11 +106,7 @@ export default function FundingDateFilter({
     pushRange(nextFrom, v);
   }
 
-  const chipClass = (key: Preset['key'] | 'custom') =>
-    'px-2.5 py-1 rounded-md text-[11px] font-medium border transition-colors ' +
-    (active === key
-      ? 'bg-accent-soft text-text border-accent'
-      : 'bg-surface text-text-dim border-border hover:bg-surface-hi hover:text-text');
+  const chipClass = (key: Preset['key'] | 'custom') => filterChipClass(active === key);
 
   return (
     <div className="flex gap-2 items-center flex-wrap">
