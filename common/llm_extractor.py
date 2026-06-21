@@ -24,12 +24,12 @@ from __future__ import annotations
 
 import logging
 import re
-from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import Generic, Optional, TypeVar
 
 from common.cache import UrlJsonCache
 from common.json_utils import parse_llm_json
 from common.llm import complete
+from common.parallel import parallel_map
 from common.story import ScoredStory
 
 log = logging.getLogger(__name__)
@@ -126,20 +126,19 @@ class LLMExtractor(Generic[T]):
             len(scored),
         )
 
-        out: list[T] = []
-        with ThreadPoolExecutor(max_workers=self.concurrency) as pool:
-            futures = {pool.submit(self.extract_one, s): s for s in candidates}
-            for fut in as_completed(futures):
-                try:
-                    r = fut.result()
-                except Exception as e:
-                    log.warning("%s worker error: %r", label, e)
-                    continue
-                if r is None:
-                    continue
-                if not self.post_filter(r):
-                    continue
-                out.append(r)
+        def _run(story: ScoredStory) -> Optional[T]:
+            r = self.extract_one(story)
+            if r is None or not self.post_filter(r):
+                return None
+            return r
+
+        out: list[T] = parallel_map(
+            _run,
+            candidates,
+            concurrency=self.concurrency,
+            log=log,
+            error_msg_fn=lambda _s, e: f"{label} worker error: {e!r}",
+        )
 
         out = self.sort_results(out)
         log.info("%s: kept %d results", label, len(out))

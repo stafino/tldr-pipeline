@@ -239,9 +239,9 @@ def generate_for_newsletter(
     blurbed twice" failure mode where slight ranking shuffles cause
     re-runs to generate redundant blurbs.
     """
-    from concurrent.futures import ThreadPoolExecutor, as_completed
     from datetime import date as _date
 
+    from common.parallel import parallel_map
     from common.past_blurbs import _canonical_url as canon, build_past_blurbed_set
 
     past = build_past_blurbed_set(_date.today(), lookback_days=14)
@@ -265,17 +265,10 @@ def generate_for_newsletter(
         log.info("Skipped %d already-blurbed stories for %s (last 14 days)",
                  skipped_seen, newsletter_id)
 
-    out: list[GeneratedBlurb] = []
-    with ThreadPoolExecutor(max_workers=BLURB_CONCURRENCY) as pool:
-        futures = {
-            pool.submit(generate_blurb, s, newsletter_id, use_cache): s for s in targets
-        }
-        for fut in as_completed(futures):
-            try:
-                b = fut.result()
-            except Exception as e:
-                log.warning("blurb worker error: %r", e)
-                continue
-            if b is not None:
-                out.append(b)
-    return out
+    return parallel_map(
+        lambda s: generate_blurb(s, newsletter_id, use_cache),
+        targets,
+        concurrency=BLURB_CONCURRENCY,
+        log=log,
+        error_msg_fn=lambda _s, e: f"blurb worker error: {e!r}",
+    )
