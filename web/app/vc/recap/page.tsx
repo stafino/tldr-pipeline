@@ -1,14 +1,11 @@
 import Link from 'next/link';
+import { todayUTC } from '@/lib/formatters';
 import { loadVcRange } from '@/lib/data';
 import Nav from '@/components/Nav';
 import { canonFirm, canonPerson, dedupCanon } from '@/lib/vc-aliases';
 import type { VcArticle, VcSector, VcType } from '@/lib/types';
 
 export const dynamic = 'force-dynamic';
-
-function todayUTC(): string {
-  return new Date().toISOString().slice(0, 10);
-}
 
 const SECTIONS: { key: VcType; emoji: string; name: string; cap: number }[] = [
   { key: 'fund_news', emoji: '💰', name: 'Funds & LPs', cap: 8 },

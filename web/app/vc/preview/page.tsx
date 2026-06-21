@@ -1,14 +1,11 @@
 import Link from 'next/link';
+import { todayUTC } from '@/lib/formatters';
 import { listVcDates, loadVcRange } from '@/lib/data';
 import Nav from '@/components/Nav';
 import { canonFirm, dedupCanon } from '@/lib/vc-aliases';
 import type { VcArticle, VcSector, VcType } from '@/lib/types';
 
 export const dynamic = 'force-dynamic';
-
-function todayUTC(): string {
-  return new Date().toISOString().slice(0, 10);
-}
 
 /**
  * Public-facing pitch page. Shareable URL: trylede.com/vc/preview

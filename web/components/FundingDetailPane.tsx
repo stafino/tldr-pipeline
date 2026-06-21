@@ -4,48 +4,7 @@ import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import type { Blurb, FundingRound } from '@/lib/types';
 import { canonicalDomain } from '@/lib/utils';
-
-function fmtUsd(usd: number | null, raw: string): string {
-  if (!usd) return raw || '—';
-  if (usd >= 1_000_000_000) return `$${(usd / 1_000_000_000).toFixed(usd >= 10_000_000_000 ? 0 : 1)}B`;
-  if (usd >= 1_000_000) return `$${Math.round(usd / 1_000_000)}M`;
-  if (usd >= 1_000) return `$${Math.round(usd / 1_000)}K`;
-  return `$${usd}`;
-}
-
-function classifyStage(label: string): { short: string; tier: 'early' | 'growth' | 'late' | 'ext' | 'other' } {
-  const t = (label || '').trim().toLowerCase();
-  if (!t) return { short: '', tier: 'other' };
-  if (t.includes('pre-seed') || t.includes('preseed')) return { short: 'Pre-seed', tier: 'early' };
-  if (t === 'seed' || t.startsWith('seed ') || t.includes('seed round')) return { short: 'Seed', tier: 'early' };
-  const m = t.match(/series\s+([a-h])/);
-  if (m) {
-    const letter = m[1].toUpperCase();
-    const tier: 'growth' | 'late' = ['A', 'B'].includes(letter) ? 'growth' : 'late';
-    return { short: `Series ${letter}`, tier };
-  }
-  if (t.includes('extension')) return { short: 'Extension', tier: 'ext' };
-  if (t.includes('bridge')) return { short: 'Bridge', tier: 'ext' };
-  if (t.includes('growth')) return { short: 'Growth', tier: 'late' };
-  if (t.includes('pre-ipo') || t.includes('pre ipo')) return { short: 'Pre-IPO', tier: 'late' };
-  if (t.includes('strategic')) return { short: 'Strategic', tier: 'other' };
-  return { short: label.length > 12 ? label.slice(0, 12) + '…' : label, tier: 'other' };
-}
-
-function stageChipClass(tier: 'early' | 'growth' | 'late' | 'ext' | 'other'): string {
-  switch (tier) {
-    case 'early':
-      return 'bg-ok-soft text-ok border-ok';
-    case 'growth':
-      return 'bg-accent-soft text-accent border-accent';
-    case 'late':
-      return 'bg-purple-900/40 text-purple-300 border-purple-700';
-    case 'ext':
-      return 'bg-warn-soft text-warn border-warn';
-    default:
-      return 'bg-surface text-text-dim border-border';
-  }
-}
+import { classifyFundingStage, formatUsd, stageChipClass } from '@/lib/formatters';
 
 export default function FundingDetailPane({
   round,
@@ -84,10 +43,10 @@ export default function FundingDetailPane({
         </div>
         <div className="flex items-baseline gap-2 flex-wrap text-[12px]">
           <span className="font-mono font-bold text-warn text-[14px]">
-            {fmtUsd(round.amount_usd, round.amount_raw)}
+            {formatUsd(round.amount_usd, round.amount_raw)}
           </span>
           {(() => {
-            const stage = classifyStage(round.round_label);
+            const stage = classifyFundingStage(round.round_label);
             if (!stage.short) return null;
             return (
               <span
@@ -99,7 +58,7 @@ export default function FundingDetailPane({
           })()}
           {round.valuation_usd ? (
             <span className="font-mono text-[11px] text-ok">
-              @ {fmtUsd(round.valuation_usd, '')} val
+              @ {formatUsd(round.valuation_usd, '')} val
             </span>
           ) : null}
           <span

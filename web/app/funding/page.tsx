@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { canonicalDomain } from '@/lib/utils';
+import { classifyFundingStage, formatUsd, relativeDate, stageChipClass, todayUTC } from '@/lib/formatters';
 import {
   listAvailableDates,
   listFundingDates,
@@ -15,83 +16,6 @@ import FundingDetailPane from '@/components/FundingDetailPane';
 import type { Blurb, FundingRound } from '@/lib/types';
 
 export const dynamic = 'force-dynamic';
-
-function todayUTC(): string {
-  return new Date().toISOString().slice(0, 10);
-}
-
-function formatAmount(usd: number | null, raw: string): string {
-  if (!usd) return raw || '—';
-  if (usd >= 1_000_000_000) return `$${(usd / 1_000_000_000).toFixed(usd >= 10_000_000_000 ? 0 : 1)}B`;
-  if (usd >= 1_000_000) return `$${Math.round(usd / 1_000_000)}M`;
-  if (usd >= 1_000) return `$${Math.round(usd / 1_000)}K`;
-  return `$${usd}`;
-}
-
-/**
- * Dealroom-style relative timestamp: "4h ago", "2d ago", "3w ago".
- * Computed server-side at render — fine for a page that's force-dynamic.
- * Falls back to short date for anything older than 30 days.
- */
-function relativeFromNow(raisedDate: string, today: string): string {
-  if (!raisedDate) return '';
-  const r = new Date(raisedDate + 'T00:00:00Z').getTime();
-  const t = new Date(today + 'T00:00:00Z').getTime();
-  const days = Math.round((t - r) / (24 * 60 * 60 * 1000));
-  if (days <= 0) return 'today';
-  if (days === 1) return 'yesterday';
-  if (days < 7) return `${days}d ago`;
-  if (days < 30) return `${Math.floor(days / 7)}w ago`;
-  // older — short ISO-ish format
-  return new Date(raisedDate + 'T00:00:00Z').toLocaleDateString('en-GB', {
-    day: '2-digit',
-    month: 'short',
-    timeZone: 'UTC',
-  });
-}
-
-/**
- * Normalize a free-form round_label into a short chip code + a stage tier
- * so we can color-code stages consistently:
- *   - "early" (pre-seed, seed) → green
- *   - "growth" (A / B) → blue
- *   - "late" (C+ / pre-IPO / growth) → purple
- *   - "extension" → amber
- *   - "strategic" / fallback → neutral
- */
-function classifyStage(label: string): { short: string; tier: 'early' | 'growth' | 'late' | 'ext' | 'other' } {
-  const t = (label || '').trim().toLowerCase();
-  if (!t) return { short: '', tier: 'other' };
-  if (t.includes('pre-seed') || t.includes('preseed')) return { short: 'Pre-seed', tier: 'early' };
-  if (t === 'seed' || t.startsWith('seed ') || t.includes('seed round')) return { short: 'Seed', tier: 'early' };
-  const m = t.match(/series\s+([a-h])/);
-  if (m) {
-    const letter = m[1].toUpperCase();
-    const tier: 'growth' | 'late' = ['A', 'B'].includes(letter) ? 'growth' : 'late';
-    return { short: `Series ${letter}`, tier };
-  }
-  if (t.includes('extension')) return { short: 'Extension', tier: 'ext' };
-  if (t.includes('bridge')) return { short: 'Bridge', tier: 'ext' };
-  if (t.includes('growth')) return { short: 'Growth', tier: 'late' };
-  if (t.includes('pre-ipo') || t.includes('pre ipo')) return { short: 'Pre-IPO', tier: 'late' };
-  if (t.includes('strategic')) return { short: 'Strategic', tier: 'other' };
-  return { short: label.length > 12 ? label.slice(0, 12) + '…' : label, tier: 'other' };
-}
-
-function stageChipClass(tier: 'early' | 'growth' | 'late' | 'ext' | 'other'): string {
-  switch (tier) {
-    case 'early':
-      return 'bg-ok-soft text-ok border-ok';
-    case 'growth':
-      return 'bg-accent-soft text-accent border-accent';
-    case 'late':
-      return 'bg-purple-900/40 text-purple-300 border-purple-700';
-    case 'ext':
-      return 'bg-warn-soft text-warn border-warn';
-    default:
-      return 'bg-surface text-text-dim border-border';
-  }
-}
 
 function Row({
   r,
@@ -117,7 +41,7 @@ function Row({
     >
       <div className="flex items-baseline gap-3">
         <span className="font-mono text-[13px] font-bold text-warn shrink-0 w-[68px]">
-          {formatAmount(r.amount_usd, r.amount_raw)}
+          {formatUsd(r.amount_usd, r.amount_raw)}
         </span>
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 flex-wrap">
@@ -125,7 +49,7 @@ function Row({
               {r.company || '(unknown company)'}
             </span>
             {(() => {
-              const stage = classifyStage(r.round_label);
+              const stage = classifyFundingStage(r.round_label);
               if (!stage.short) return null;
               return (
                 <span
@@ -154,7 +78,7 @@ function Row({
                   />
                 );
               })()}
-              {relativeFromNow(r.raised_date, today)}
+              {relativeDate(r.raised_date, today)}
             </span>
           </div>
           {r.investors.length > 0 && (
@@ -189,7 +113,7 @@ function Column({
         <h2 className="text-[12px] uppercase tracking-[0.08em] font-bold text-warn m-0">{label}</h2>
         <span className="text-[11px] text-text-mute ml-auto font-mono">
           {rows.length} {rows.length === 1 ? 'round' : 'rounds'}
-          {total > 0 ? ` · ${formatAmount(total, '')} total` : ''}
+          {total > 0 ? ` · ${formatUsd(total, '')} total` : ''}
         </span>
       </div>
       {rows.length === 0 ? (
@@ -270,7 +194,7 @@ export default function FundingPage({
 
   let rounds = loadFundingRange(sweepFrom, sweepTo);
   if (stageFilter) {
-    rounds = rounds.filter((r) => classifyStage(r.round_label).tier === stageFilter);
+    rounds = rounds.filter((r) => classifyFundingStage(r.round_label).tier === stageFilter);
   }
   if (minUsd > 0) {
     rounds = rounds.filter((r) => (r.amount_usd ?? 0) >= minUsd);

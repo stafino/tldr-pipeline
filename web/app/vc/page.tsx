@@ -1,15 +1,12 @@
 import Link from 'next/link';
 import { canonicalDomain } from '@/lib/utils';
+import { relativeDate, todayUTC } from '@/lib/formatters';
 import { listVcDates, loadVcRange } from '@/lib/data';
 import Nav from '@/components/Nav';
 import { canonFirm, dedupCanon } from '@/lib/vc-aliases';
 import type { VcArticle, VcRegion, VcSector, VcType } from '@/lib/types';
 
 export const dynamic = 'force-dynamic';
-
-function todayUTC(): string {
-  return new Date().toISOString().slice(0, 10);
-}
 
 const TYPE_LABELS: Record<VcType, { label: string; emoji: string; color: string }> = {
   fund_news: {
@@ -87,21 +84,7 @@ const REGION_LABELS: Record<VcRegion, { label: string; flag: string }> = {
 
 const REGIONS_ORDER: VcRegion[] = ['NA', 'EU', 'ASIA', 'GLOBAL', 'OTHER'];
 
-function relativeFromNow(iso: string, today: string): string {
-  if (!iso) return '';
-  const r = new Date((iso.slice(0, 10) || today) + 'T00:00:00Z').getTime();
-  const t = new Date(today + 'T00:00:00Z').getTime();
-  const days = Math.round((t - r) / (24 * 60 * 60 * 1000));
-  if (days <= 0) return 'today';
-  if (days === 1) return 'yesterday';
-  if (days < 7) return `${days}d ago`;
-  if (days < 30) return `${Math.floor(days / 7)}w ago`;
-  return new Date((iso.slice(0, 10) || today) + 'T00:00:00Z').toLocaleDateString('en-GB', {
-    day: '2-digit',
-    month: 'short',
-    timeZone: 'UTC',
-  });
-}
+// relativeFromNow lived here; now uses lib/formatters:relativeDate (identical logic).
 
 function Row({ r, today }: { r: VcArticle; today: string }) {
   const meta = TYPE_LABELS[r.vc_type] ?? TYPE_LABELS.market_signal;
@@ -138,7 +121,7 @@ function Row({ r, today }: { r: VcArticle; today: string }) {
                 {dom}
               </span>
             )}
-            <span>· {relativeFromNow(r.published_at, today)}</span>
+            <span>· {relativeDate(r.published_at, today)}</span>
             {r.region !== 'OTHER' && <span>· {r.region}</span>}
             {r.firms.length > 0 && (
               <span className="text-text-dim normal-case">
