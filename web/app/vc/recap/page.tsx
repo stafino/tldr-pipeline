@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { ISSUE_SECTIONS } from '@/lib/vc-metadata';
 import { todayUTC } from '@/lib/formatters';
 import { loadVcRange } from '@/lib/data';
 import Nav from '@/components/Nav';
@@ -7,14 +8,6 @@ import type { VcArticle, VcSector, VcType } from '@/lib/types';
 
 export const dynamic = 'force-dynamic';
 
-const SECTIONS: { key: VcType; emoji: string; name: string; cap: number }[] = [
-  { key: 'fund_news', emoji: '💰', name: 'Funds & LPs', cap: 8 },
-  { key: 'exit', emoji: '🚪', name: 'Exits & IPOs', cap: 8 },
-  { key: 'partner_move', emoji: '🪑', name: 'People & Moves', cap: 6 },
-  { key: 'market_signal', emoji: '📈', name: 'Market Signals', cap: 6 },
-  { key: 'opinion', emoji: '💭', name: 'Opinion & Analysis', cap: 4 },
-  { key: 'regulatory', emoji: '⚖️', name: 'Regulatory', cap: 4 },
-];
 
 function isoWeek(d: Date): { year: number; week: number } {
   const tmp = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate()));
@@ -167,7 +160,7 @@ export default function VcRecapPage({
             )}
 
             {/* The recap body — sections of stories */}
-            {SECTIONS.map((sec) => {
+            {ISSUE_SECTIONS.map((sec) => {
               const items = (bySection[sec.key] ?? []).slice(0, sec.cap);
               if (items.length === 0) return null;
               return (

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { REGIONS_ORDER, REGION_LABELS, SECTORS_ORDER, SECTOR_LABELS, TYPES_ORDER, TYPE_LABELS } from '@/lib/vc-metadata';
 import { canonicalDomain } from '@/lib/utils';
 import { relativeDate, todayUTC } from '@/lib/formatters';
 import { listVcDates, loadVcRange } from '@/lib/data';
@@ -7,82 +8,6 @@ import { canonFirm, dedupCanon } from '@/lib/vc-aliases';
 import type { VcArticle, VcRegion, VcSector, VcType } from '@/lib/types';
 
 export const dynamic = 'force-dynamic';
-
-const TYPE_LABELS: Record<VcType, { label: string; emoji: string; color: string }> = {
-  fund_news: {
-    label: 'Fund news',
-    emoji: '💰',
-    color: 'bg-ok-soft text-ok border-ok',
-  },
-  partner_move: {
-    label: 'Partner moves',
-    emoji: '🪑',
-    color: 'bg-accent-soft text-accent border-accent',
-  },
-  exit: {
-    label: 'Exits',
-    emoji: '🚪',
-    color: 'bg-purple-900/40 text-purple-300 border-purple-700',
-  },
-  market_signal: {
-    label: 'Market signals',
-    emoji: '📈',
-    color: 'bg-warn-soft text-warn border-warn',
-  },
-  opinion: {
-    label: 'Opinion',
-    emoji: '💭',
-    color: 'bg-surface text-text-dim border-border',
-  },
-  regulatory: {
-    label: 'Regulatory',
-    emoji: '⚖️',
-    color: 'bg-no-soft text-no border-no',
-  },
-};
-
-const TYPES_ORDER: VcType[] = [
-  'fund_news',
-  'partner_move',
-  'exit',
-  'market_signal',
-  'opinion',
-  'regulatory',
-];
-
-const SECTOR_LABELS: Record<VcSector, { label: string; emoji: string }> = {
-  ai: { label: 'AI', emoji: '🤖' },
-  fintech: { label: 'Fintech', emoji: '💳' },
-  crypto: { label: 'Crypto', emoji: '⛓️' },
-  climate: { label: 'Climate', emoji: '🌱' },
-  biotech: { label: 'Biotech', emoji: '🧬' },
-  enterprise: { label: 'Enterprise', emoji: '🏢' },
-  consumer: { label: 'Consumer', emoji: '🛍️' },
-  deeptech: { label: 'Deep tech', emoji: '🔬' },
-  other: { label: 'Other', emoji: '·' },
-};
-
-const SECTORS_ORDER: VcSector[] = [
-  'ai',
-  'fintech',
-  'crypto',
-  'enterprise',
-  'deeptech',
-  'climate',
-  'biotech',
-  'consumer',
-  'other',
-];
-
-const REGION_LABELS: Record<VcRegion, { label: string; flag: string }> = {
-  NA: { label: 'North America', flag: '🇺🇸' },
-  EU: { label: 'Europe', flag: '🇪🇺' },
-  ASIA: { label: 'Asia', flag: '🌏' },
-  GLOBAL: { label: 'Global', flag: '🌐' },
-  OTHER: { label: 'Other', flag: '·' },
-};
-
-const REGIONS_ORDER: VcRegion[] = ['NA', 'EU', 'ASIA', 'GLOBAL', 'OTHER'];
 
 // relativeFromNow lived here; now uses lib/formatters:relativeDate (identical logic).
 

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { ISSUE_SECTIONS } from '@/lib/vc-metadata';
 import { todayUTC } from '@/lib/formatters';
 import { canonicalDomain } from '@/lib/utils';
 import { listVcDates, loadVcRange } from '@/lib/data';
@@ -9,50 +10,6 @@ import type { VcArticle, VcType } from '@/lib/types';
 
 export const dynamic = 'force-dynamic';
 
-const SECTIONS: { key: VcType; emoji: string; name: string; tagline: string; cap: number }[] = [
-  {
-    key: 'fund_news',
-    emoji: '💰',
-    name: 'Funds & LPs',
-    tagline: 'Fund launches, closes, LP commitments, fund-of-funds news',
-    cap: 4,
-  },
-  {
-    key: 'exit',
-    emoji: '🚪',
-    name: 'Exits & IPOs',
-    tagline: 'IPO talks, acquisitions, secondary sales',
-    cap: 4,
-  },
-  {
-    key: 'partner_move',
-    emoji: '🪑',
-    name: 'People & Moves',
-    tagline: 'Hires, departures, board changes at firms and notable startups',
-    cap: 3,
-  },
-  {
-    key: 'market_signal',
-    emoji: '📈',
-    name: 'Market Signals',
-    tagline: 'Sector trends, performance data, LP behavior, vintage analysis',
-    cap: 3,
-  },
-  {
-    key: 'opinion',
-    emoji: '💭',
-    name: 'Opinion & Analysis',
-    tagline: 'Partner essays, predictions, strategy commentary',
-    cap: 2,
-  },
-  {
-    key: 'regulatory',
-    emoji: '⚖️',
-    name: 'Regulatory',
-    tagline: 'SEC, antitrust, fund regulation, fee + carry policy',
-    cap: 2,
-  },
-];
 
 function pickEstimatedRead(headline: string, snippet: string): number {
   const words = (snippet || headline).split(/\s+/).filter(Boolean).length;
@@ -106,7 +63,7 @@ export default function VcIssuePage({
   for (const r of all) (bySectionAll[r.vc_type] ??= []).push(r);
   const bySection: Partial<Record<VcType, VcArticle[]>> = {};
   const quickLinks: VcArticle[] = [];
-  for (const sec of SECTIONS) {
+  for (const sec of ISSUE_SECTIONS) {
     const list = (bySectionAll[sec.key] ?? []).slice().sort(
       (a, b) => (b.published_at ?? '').localeCompare(a.published_at ?? ''),
     );
@@ -173,7 +130,7 @@ export default function VcIssuePage({
           <VcSubjectVariants
             issueNum={issueNum}
             topByType={Object.fromEntries(
-              SECTIONS.map((s) => [s.key, bySection[s.key]?.[0]]),
+              ISSUE_SECTIONS.map((s) => [s.key, bySection[s.key]?.[0]]),
             ) as Record<VcType, VcArticle | undefined>}
           />
         )}
@@ -185,7 +142,7 @@ export default function VcIssuePage({
           </div>
         ) : (
           <div className="mt-2">
-            {SECTIONS.map((sec) => {
+            {ISSUE_SECTIONS.map((sec) => {
               const items = bySection[sec.key] ?? [];
               if (items.length === 0) return null;
               return (
@@ -273,7 +230,7 @@ export default function VcIssuePage({
           </p>
         </div>
 
-        <VcIssueExport issueLabel={issueLabel} sections={SECTIONS} bySection={bySection} />
+        <VcIssueExport issueLabel={issueLabel} sections={ISSUE_SECTIONS} bySection={bySection} />
       </div>
     </main>
   );
