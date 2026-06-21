@@ -53,27 +53,66 @@ run_stage() {
   fi
 }
 
-# Each stage is its own ./tldr subcommand so a failure in one doesn't stop the next.
+# Background variant: spawn the command to its own log, return immediately.
+# Pair with wait_stage <name> to block + replay the log + record exit code.
+run_stage_bg() {
+  local name="$1"; shift
+  local logfile="/tmp/cron-stage-$name.log"
+  echo "  → $name started in parallel"
+  (
+    echo "── STAGE: $name (parallel) ──────────────────"
+    if "$@"; then
+      echo "▸ $name: ok"
+    else
+      local rc=$?
+      echo "✗ $name: failed with exit code $rc"
+      exit $rc
+    fi
+  ) > "$logfile" 2>&1 &
+  echo $! > "/tmp/cron-pid-$name"
+}
+
+wait_stage() {
+  local name="$1"
+  local pid
+  pid=$(cat "/tmp/cron-pid-$name" 2>/dev/null) || return
+  if wait "$pid"; then
+    STATUS[$name]="ok"
+  else
+    STATUS[$name]="failed (rc=$?)"
+  fi
+  # Replay the stage's log inline so it appears in the main cron log
+  cat "/tmp/cron-stage-$name.log" 2>/dev/null
+  rm -f "/tmp/cron-stage-$name.log" "/tmp/cron-pid-$name"
+}
+
+# ─── Sequential prereqs ─────────────────────────────────────────────
+# ingest → dedup → rank produces data/scored/<date>.jsonl which every
+# downstream stage reads. Has to be serial.
 run_stage "ingest" ./tldr ingest
 run_stage "dedup"  ./tldr dedup
 run_stage "rank"   ./tldr rank
-run_stage "blurbs" ./tldr blurbs all
-# Funding extraction: scan today's scored stories for startup funding rounds,
-# LLM-classify by EU/NA region, write to data/funding/<date>.jsonl. Cached
-# per URL so re-runs are no-ops; chained here to save tokens by sharing the
-# scored input with blurbs.
-run_stage "funding" ./tldr funding
-# VC industry classifier — surfaces fund news, partner moves, exits,
-# market signals, opinion. Powers the /vc tab in the web viewer.
-run_stage "vc" ./tldr vc
+
+# ─── Parallel fan-out ───────────────────────────────────────────────
+# blurbs, funding, vc, backtest all read data/scored and write to
+# disjoint paths. Fire them concurrently and wait for all to finish.
+# The Claude Code CLI handles ~20 simultaneous calls fine, which is
+# the worst-case sum of these stages' internal concurrency.
+echo
+echo "── PARALLEL FAN-OUT (blurbs + funding + vc + backtest) ──"
+run_stage_bg "blurbs"   ./tldr blurbs all
+run_stage_bg "funding"  ./tldr funding
+run_stage_bg "vc"       ./tldr vc
+run_stage_bg "backtest" ./tldr backtest_cache
+
+wait_stage "blurbs"
+wait_stage "funding"
+wait_stage "vc"
+wait_stage "backtest"
+
+# ─── Sequential post-deps ───────────────────────────────────────────
+# format needs blurbs done. learn_weights needs backtest done.
 run_stage "format" ./tldr format all
-# Backtest cache: scrape TLDR's actual published issue for the target date
-# (and the last few days) and store the comparison vs our predictions so the
-# UI can render the recall dashboard without re-scraping at view time.
-run_stage "backtest" ./tldr backtest_cache
-# Learn from the backtest gap: update per-newsletter source-weight
-# preferences so the next ranking run biases toward sources TLDR
-# actually picks from.
 run_stage "learn_weights" uv run python scripts/learn_source_weights.py
 
 # Commit + push whatever data actually landed, even if some stages failed.
@@ -97,7 +136,7 @@ ls -1t data/logs/cron-*.log 2>/dev/null | tail -n +31 | xargs -r rm -f
 
 echo
 echo "── SUMMARY ──────────────────────────────────"
-for stage in ingest dedup rank blurbs format backtest learn_weights; do
+for stage in ingest dedup rank blurbs funding vc backtest format learn_weights; do
   printf "  %-8s %s\n" "$stage" "${STATUS[$stage]:-skipped}"
 done
 echo "▸ refresh complete: $(date)"
