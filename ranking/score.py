@@ -7,6 +7,7 @@ import os
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
+from common.config import RANKING
 from common.llm import complete
 from common.newsletters import Newsletter, load_newsletters
 from common.story import Assignment, ScoredStory, Story
@@ -17,7 +18,8 @@ RUBRIC_PATH = Path(".claude/skills/curation_rubric.md")
 RUBRIC_OVERRIDES_DIR = Path(".claude/skills/rubric_overrides")
 CACHE_DIR = Path("data/scored/.cache")
 
-RANKING_MODEL = os.environ.get("RANKING_MODEL", "claude-sonnet-4-6")
+# Back-compat aliases for any external importer.
+RANKING_MODEL = RANKING.model
 
 # Minimum per-newsletter score to keep an assignment. Stories with no
 # assignment above this threshold are dropped.
@@ -25,7 +27,7 @@ MIN_ASSIGNMENT_SCORE = int(os.environ.get("MIN_ASSIGNMENT_SCORE", "55"))
 
 # Parallel LLM calls. The CLI backend is subprocess-bound and slow per call;
 # parallelism cuts wall time roughly linearly until rate limits or CPU saturate.
-RANKING_CONCURRENCY = int(os.environ.get("RANKING_CONCURRENCY", "6"))
+RANKING_CONCURRENCY = RANKING.concurrency
 
 SYSTEM_TEMPLATE = """You are an editorial scorer for the TLDR family of daily newsletters. For each candidate story you decide (a) which TLDR newsletters it belongs in, (b) which section of each newsletter, (c) how strong a fit it is (0-100 per assignment), and (d) overall metadata. Always return JSON matching the exact schema requested. No prose outside JSON.
 

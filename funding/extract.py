@@ -15,20 +15,21 @@ validator, and post-filter (drop OTHER region).
 from __future__ import annotations
 
 import logging
-import os
 import re
 from dataclasses import asdict, dataclass
 from pathlib import Path
 
 from common.cache import UrlJsonCache
+from common.config import FUNDING
 from common.llm_extractor import LLMExtractor
 from common.story import ScoredStory
 
 log = logging.getLogger(__name__)
 
 # Cheap and fast — extraction is tiny structured output, no need for Opus.
-FUNDING_MODEL = os.environ.get("FUNDING_MODEL", "claude-haiku-4-5-20251001")
-FUNDING_CONCURRENCY = int(os.environ.get("FUNDING_CONCURRENCY", "8"))
+# Back-compat aliases for any external importer.
+FUNDING_MODEL = FUNDING.model
+FUNDING_CONCURRENCY = FUNDING.concurrency
 
 _CACHE = UrlJsonCache(Path("data/funding_cache"))
 

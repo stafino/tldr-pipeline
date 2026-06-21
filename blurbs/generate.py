@@ -3,18 +3,20 @@ from __future__ import annotations
 import hashlib
 import json
 import logging
-import os
 import re
 from dataclasses import dataclass
 from pathlib import Path
 
+from common.config import BLURB
 from common.llm import complete
 from common.newsletters import Newsletter, Section, get_newsletter
 from common.story import ScoredStory
 
 log = logging.getLogger(__name__)
 
-BLURB_MODEL = os.environ.get("BLURB_MODEL", "claude-opus-4-7")
+# Back-compat aliases for any external importer.
+BLURB_MODEL = BLURB.model
+BLURB_CONCURRENCY = BLURB.concurrency
 CACHE_DIR = Path("data/blurbs/.cache")
 
 SYSTEM_TEMPLATE = """You write blurbs for {brand_name}, a daily TLDR newsletter. You match the voice canon exactly.
@@ -220,9 +222,6 @@ def generate_blurb(
     )
     cache_path.write_text(json.dumps(result.to_dict()))
     return result
-
-
-BLURB_CONCURRENCY = int(os.environ.get("BLURB_CONCURRENCY", "5"))
 
 
 def generate_for_newsletter(

@@ -16,19 +16,20 @@ this module supplies the VC-specific prompts, vocab, and validators.
 from __future__ import annotations
 
 import logging
-import os
 import re
 from dataclasses import asdict, dataclass
 from pathlib import Path
 
 from common.cache import UrlJsonCache
+from common.config import VC
 from common.llm_extractor import LLMExtractor
 from common.story import ScoredStory
 
 log = logging.getLogger(__name__)
 
-VC_MODEL = os.environ.get("VC_MODEL", "claude-haiku-4-5-20251001")
-VC_CONCURRENCY = int(os.environ.get("VC_CONCURRENCY", "8"))
+# Back-compat aliases for any external importer.
+VC_MODEL = VC.model
+VC_CONCURRENCY = VC.concurrency
 
 _CACHE = UrlJsonCache(Path("data/vc_cache"))
 
