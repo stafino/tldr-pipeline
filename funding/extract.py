@@ -9,8 +9,6 @@ Pipeline-stage philosophy:
 
 from __future__ import annotations
 
-import hashlib
-import json
 import logging
 import os
 import re
@@ -18,6 +16,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import asdict, dataclass
 from pathlib import Path
 
+from common.cache import UrlJsonCache
 from common.json_utils import parse_llm_json
 from common.llm import complete
 from common.story import ScoredStory
@@ -28,7 +27,7 @@ log = logging.getLogger(__name__)
 FUNDING_MODEL = os.environ.get("FUNDING_MODEL", "claude-haiku-4-5-20251001")
 FUNDING_CONCURRENCY = int(os.environ.get("FUNDING_CONCURRENCY", "8"))
 
-CACHE_DIR = Path("data/funding_cache")
+_CACHE = UrlJsonCache(Path("data/funding_cache"))
 
 # Title keywords that pre-qualify a story for LLM extraction. Cheap regex
 # pass to avoid running an LLM on every Hacker News post. Erring on
@@ -164,30 +163,14 @@ Published: {published_at}
 Return the JSON object."""
 
 
-# --- cache -------------------------------------------------------------------
-
-
-def _cache_path(url: str) -> Path:
-    h = hashlib.sha1(url.encode()).hexdigest()
-    return CACHE_DIR / f"{h}.json"
-
-
-def _load_cached(url: str) -> dict | None:
-    p = _cache_path(url)
-    if not p.exists():
-        return None
-    try:
-        return json.loads(p.read_text())
-    except Exception:
-        return None
-
-
-def _save_cached(url: str, payload: dict) -> None:
-    CACHE_DIR.mkdir(parents=True, exist_ok=True)
-    _cache_path(url).write_text(json.dumps(payload))
-
-
 # --- extraction --------------------------------------------------------------
+
+
+# Back-compat shim — scripts/backfill_funding_archive.py imports _cache_path
+# to bust stale entries before re-classifying. Keep the symbol working so
+# the script doesn't need its own refactor in this commit.
+def _cache_path(url: str) -> Path:
+    return _CACHE.path_for(url)
 
 
 def _extract_one(story: ScoredStory) -> FundingRound | None:
@@ -196,7 +179,7 @@ def _extract_one(story: ScoredStory) -> FundingRound | None:
     Results — including negatives — are cached so re-runs of the day are cheap.
     """
     url = story.story.url
-    cached = _load_cached(url)
+    cached = _CACHE.load(url)
     if cached is not None:
         if not cached.get("is_funding"):
             return None
@@ -221,7 +204,7 @@ def _extract_one(story: ScoredStory) -> FundingRound | None:
         log.warning("funding extract: could not parse JSON for %s", url)
         return None
 
-    _save_cached(url, payload)
+    _CACHE.save(url, payload)
 
     if not payload.get("is_funding"):
         return None

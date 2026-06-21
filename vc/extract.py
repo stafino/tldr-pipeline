@@ -11,8 +11,6 @@ LLM cost bounded, then classifies each candidate into one of six types.
 
 from __future__ import annotations
 
-import hashlib
-import json
 import logging
 import os
 import re
@@ -20,6 +18,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import asdict, dataclass
 from pathlib import Path
 
+from common.cache import UrlJsonCache
 from common.json_utils import parse_llm_json
 from common.llm import complete
 from common.story import ScoredStory
@@ -29,7 +28,7 @@ log = logging.getLogger(__name__)
 VC_MODEL = os.environ.get("VC_MODEL", "claude-haiku-4-5-20251001")
 VC_CONCURRENCY = int(os.environ.get("VC_CONCURRENCY", "8"))
 
-CACHE_DIR = Path("data/vc_cache")
+_CACHE = UrlJsonCache(Path("data/vc_cache"))
 
 # Pre-filter regex: title contains any keyword commonly found in VC
 # industry coverage. Erring permissive — LLM has final say.
@@ -187,32 +186,12 @@ Return the JSON object."""
 # --- cache -------------------------------------------------------------------
 
 
-def _cache_path(url: str) -> Path:
-    h = hashlib.sha1(url.encode()).hexdigest()
-    return CACHE_DIR / f"{h}.json"
-
-
-def _load_cached(url: str) -> dict | None:
-    p = _cache_path(url)
-    if not p.exists():
-        return None
-    try:
-        return json.loads(p.read_text())
-    except Exception:
-        return None
-
-
-def _save_cached(url: str, payload: dict) -> None:
-    CACHE_DIR.mkdir(parents=True, exist_ok=True)
-    _cache_path(url).write_text(json.dumps(payload))
-
-
 # --- extraction --------------------------------------------------------------
 
 
 def _extract_one(story: ScoredStory) -> VcArticle | None:
     url = story.story.url
-    cached = _load_cached(url)
+    cached = _CACHE.load(url)
     if cached is not None:
         if not cached.get("is_vc"):
             return None
@@ -237,7 +216,7 @@ def _extract_one(story: ScoredStory) -> VcArticle | None:
         log.warning("vc extract: could not parse JSON for %s", url)
         return None
 
-    _save_cached(url, payload)
+    _CACHE.save(url, payload)
 
     if not payload.get("is_vc"):
         return None
