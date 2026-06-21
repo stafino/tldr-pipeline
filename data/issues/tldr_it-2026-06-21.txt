@@ -1,0 +1,160 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR IT 2026-06-21
+
+🚀
+News & Trends
+
+Microsoft links Mastra AI supply chain attack to North Korean hackers (1 minute read)
+
+Microsoft attributed the Mastra AI supply chain attack, which compromised more than 140 npm packages in the @mastra scope, to North Korean state actor Sapphire Sleet after attackers hijacked a maintainer account to inject a dayjs typosquat that dropped a cross-platform credential and crypto-wallet stealer. The campaign reinforces npm dependency provenance as an enterprise procurement concern, pushing IT teams toward maintainer-account hardening, install-hook controls, and software supply chain monitoring across developer endpoints.
+
+FortiBleed: 86,000 Fortinet Device Credentials Compromised (5 minute read)
+
+(blurb not generated)
+
+Tesco UK supermarket chain removes 40,000 servers from VMware infrastructure — mass exodus continues due to Broadcom's aggressive subscription model (1 minute read)
+
+Tesco is migrating off VMware across its fleet of 40,000 servers by 2027, the largest publicly known exit from the platform since Broadcom's 2023 acquisition, after facing a 175% price hike and a 350% upcharge on mainframe software. The move follows Tesco's $134M lawsuit alleging Broadcom breached perpetual licenses bought in 2021, and signals that Broadcom's subscription pivot is pushing even its largest enterprise accounts to rip and replace.
+
+CISA warns Fortinet users to secure devices after FortiBleed leak (1 minute read)
+
+CISA urged Fortinet customers to secure their devices after FortiBleed exposed plaintext VPN and firewall credentials for roughly 74,000 FortiGate appliances across 194 countries. Affected organizations including Samsung, Mercedes-Benz, Chevron, and AT&T should terminate SSL VPN and admin sessions, reset passwords, and enable phishing-resistant MFA, as threat actors are already using the leaked credentials against internet-facing devices.
+
+CISA Warns Fortinet Customers as FortiBleed Hits 86,644 FortiGate Devices (5 minute read)
+
+(blurb not generated)
+
+Unauthenticated RCE in Splunk Enterprise under active attack (CVE-2026-20253) (5 minute read)
+
+(blurb not generated)
+
+CISA: Splunk Enterprise flaw actively exploited, patch by Sunday (5 minute read)
+
+(blurb not generated)
+
+New attack turned Microsoft 365 Copilot into 1-click data theft tool (5 minute read)
+
+Microsoft patched a critical Microsoft 365 Copilot Enterprise vulnerability, dubbed SearchLeak and rated CVE-2026-42824 at maximum severity, that let a single malicious link exfiltrate data from a victim's mailbox, OneDrive, and SharePoint. Varonis researchers chained a prompt injection, an HTML rendering race condition, and a Bing SSRF-enabled CSP bypass so a victim's click alone triggered Copilot to search company data and leak it to an attacker server.
+
+Salesforce Disables Klue App Integration After OAuth Token Abuse Exposes Customer Data (1 minute read)
+
+Salesforce disabled the Klue Battlecards integration on June 11 after attackers stole OAuth tokens from Klue's compromised integration infrastructure and used them to reach customer Salesforce data, including records belonging to Huntress. The breach, attributed to the Icarus extortion group, hit a third-party app connection rather than the Salesforce platform itself, putting the spotlight on OAuth token governance for connected enterprise apps.
+
+Why Use App-Level Auth When Every Database Has Auth? (Splunk Enterprise CVE-2026-20253 Pre-Auth RCE) (5 minute read)
+
+watchTowr published a technical analysis of CVE-2026-20253, a pre-authentication remote code execution flaw in Splunk Enterprise's PostgreSQL Sidecar Service Endpoint that carries a 9.8 CVSS score. The PostgreSQL sidecar is not installed or enabled in every deployment, so exposure depends on configuration, but SIEM operators running affected versions should apply Splunk's June 10th advisory and audit whether the endpoint is reachable.
+
+Amazon hopes to challenge Nvidia more directly by selling its AI chips (1 minute read)
+
+AWS is in early talks to sell its homegrown Trainium AI chips to third parties for use in their own data centers, AWS AI chief Peter DeSantis told Bloomberg, a move CEO Andy Jassy pegged at a potential $50B annual run rate. The shift would pit Amazon directly against Nvidia's $326B run rate, but AWS would have to divert silicon from sold-out internal capacity and secure TSMC supply already dominated by Nvidia.
+
+Google workspace threatening to block Firefox access (1 minute read)
+
+Google Workspace began showing Firefox users an interstitial urging them to switch to Chrome to access admin.google.com, which Google support framed as a non-blocking security recommendation it would not document publicly. The move revives concerns that Google leverages Workspace's enterprise footprint to steer admins toward Chrome, and it gives IT teams standardized on Firefox a new reason to scrutinize browser lock-in across their Google stack.
+
+FortiBleed Leak Exposes Fortinet VPN Credentials for 73K Devices (1 minute read)
+
+A data leak dubbed FortiBleed exposed Fortinet and FortiGate SSL VPN credentials, including plaintext passwords, for 73,932 firewall URLs at organizations including Chevron, Samsung, AT&T, and Mercedes-Benz. Researcher Bob Diachenko tied the cache to a Russian-speaking group that ran roughly 1.16 billion credential attempts against FortiGate targets, making credential rotation and SSL VPN review an immediate priority for affected enterprises.
+
+Microsoft confirms Windows 11 26H2, urges IT admins to prepare for release (1 minute read)
+
+Microsoft confirmed Windows 11 26H2 and told IT admins to begin prepping rollout, shipping it as a small enablement package that toggles features already present in the shared servicing branch rather than a full OS replacement. The eKB approach means faster, lower-disruption deployment for 24H2 and 25H2 fleets, with 24-month consumer and 36-month Enterprise support cycles and an expected early-October 2026 rollout.
+
+Klue breach lead to Salesforce data theft, Huntress affected (5 minute read)
+
+(blurb not generated)
+
+Cisco to Acquire WideField Security to Boost Splunk’s Agentic SOC (1 minute read)
+
+Cisco agreed to acquire identity lifecycle security firm WideField Security to fold human and non-human identity discovery, session monitoring, and behavioral analytics into Splunk's Agentic SOC and Cisco's data fabric. The deal, Cisco's third cybersecurity acquisition of 2026 after Galileo and Astrix, adds credential and session context to threat investigations, positioning the combined stack to govern autonomous AI activity for enterprises standardized on Splunk.
+
+US energy regulator to order grid operators to expedite AI data center applications — says projects should bring their own power or cut usage during high demand (1 minute read)
+
+The U.S. Federal Energy Regulatory Commission is preparing an order requiring grid operators to fast-track AI data center interconnections, prioritizing projects that bring their own power or curtail demand during peak stress, with feasibility studies due in 90 days. The move aligns with Trump's AI Action Plan but lands as grid operators pass buildout costs to ratepayers, including PJM Interconnection's 75.5% power-cost hike and a $2B infrastructure charge Maryland is contesting before FERC.
+
+Splunk Enterprise Vulnerability Exploited in Attacks Days After Disclosure (1 minute read)
+
+Cisco-owned Splunk confirmed active exploitation of CVE-2026-20253, a critical unauthenticated flaw in its PostgreSQL sidecar that lets remote attackers create or truncate arbitrary files and, per WatchTowr's published PoC, achieve remote code execution. CISA added it to the KEV catalog on June 18 with a June 21 federal deadline, so IT teams running Splunk Enterprise 10.0 or 10.2 should patch to the fixed releases now.
+
+Klue OAuth breach victim list grows as Icarus hackers claim attack (1 minute read)
+
+Klue confirmed attackers stole OAuth tokens from a compromised legacy integration credential on June 12, then used them to exfiltrate Salesforce CRM data from multiple customer environments, including Huntress, with the Icarus extortion group now claiming responsibility. The breach extends the pattern of OAuth-token abuse against third-party SaaS integrations, putting pressure on enterprise buyers to audit every connected app with standing Salesforce access and revoke unused tokens.
+
+Sweeping Credential-Harvesting Heist Compromises 30K+ Fortinet Devices (1 minute read)
+
+A Russian-speaking threat group has compromised more than 30,791 internet-facing Fortinet firewalls and VPN gateways across 194 countries, harvesting verified working credentials rather than exploiting any Fortinet flaw, according to SOCRadar. Telecommunications, government, and critical-infrastructure organizations dominate the victim list, and over 20% of affected devices belong to enterprises with more than $1B in annual revenue, putting weak default and long-lived admin accounts squarely in scope for credential audits.
+
+🧠
+Analysis & Opinions
+
+Why Amazon hates 'human-in-the-loop' AI governance (1 minute read)
+
+Amazon Security VP Eric Brandwine argues that human-in-the-loop is not the gold standard for governing agentic AI, because humans are non-deterministic, inconsistent, and prone to the same mistakes and confabulation as LLMs. His sharper point is normalization of deviance: human reviewers tune out repeated false alarms and stop responding, so a rubber-stamping human in the loop offers enterprises less real oversight than the control its presence implies.
+
+칼럼 | 미토스가 바꾼 것은 공격 방식이 아니다, 대응 시간이다 (4 minute read)
+
+The author argues that Anthropic's Mythos model, which found 2,000+ unknown vulnerabilities and wrote working exploits unprompted in seven weeks, doesn't introduce a new threat class but collapses the response window that patching and threat-sharing consortiums depend on. Over 99% of those flaws remain unpatched, and Anthropic's Glasswing early-access program for Microsoft, AWS, JPMorgan, and 50-odd partners splits security into two tiers. Mid-market firms outside it should assume compromise and harden identity infrastructure now rather than wait for guidance.
+
+A modest proposal: Reformat everything to make documents more palatable to AI (1 minute read)
+
+The author argues that enterprises should restructure documents into AI-friendly formats rather than expecting models to wrestle with the messy layouts humans produce, floating a standardized "DocLang" as the fix. The implication for IT leaders is a familiar trade-off: cleaner machine ingestion and better RAG accuracy on one side, a fresh content-conversion mandate and yet another format standard to govern on the other.
+
+🤝
+Launches & Partnerships
+
+Copilot Cowork is now generally available (5 minute read)
+
+(blurb not generated)
+
+AWS WAF adds AI traffic monetization capability to help content owners charge AI bots for content access (5 minute read)
+
+(blurb not generated)
+
+Google Workspace Weekly Recap - June 19, 2026 (5 minute read)
+
+(blurb not generated)
+
+Anthropic launches managed connector access with Okta (1 minute read)
+
+Anthropic launched Enterprise-Managed Authorization for MCP connectors, letting admins provision connector access across Claude chat, Claude Code, and Cowork through their identity provider, starting with Okta. Built on an open MCP extension, the feature ties permissions and revocation to IdP group assignments for vendors including Asana, Atlassian, Figma, Linear, and Supabase, with Slack support planned and HubSpot, Ramp, and Webflow already deploying it.
+
+Forget traffic lights, Google’s reCAPTCHA may ask for hand gestures (5 minute read)
+
+(blurb not generated)
+
+AWS aims to take the pain out of RAG with Bedrock Managed Knowledge Base (2 minute read)
+
+AWS released Bedrock Managed Knowledge Base, a managed RAG service that automates embeddings, indexing, and retrieval tuning while shipping six native connectors for S3, SharePoint, Confluence, Google Drive, OneDrive, and web content. The service picks and maintains default embedding, re-ranker, and foundation models on the customer's behalf, letting enterprise teams skip the vector-database and pipeline upkeep that often outweighs the AI application itself.
+
+OpenAI Introduced Enterprise Usage Analytics (5 minute read)
+
+OpenAI added usage analytics and spend controls to ChatGPT Enterprise, giving admins seat-level visibility into consumption and the ability to cap spending across teams. The tooling addresses a recurring procurement complaint for IT buyers managing large rollouts, where unbounded usage made costs hard to forecast and chargeback to business units nearly impossible.
+
+OpenAI adds spend controls and usage analytics to ChatGPT Enterprise (5 minute read)
+
+(blurb not generated)
+
+AWS announces AWS Blocks, an open-source framework for composing application backends on AWS (Preview) (5 minute read)
+
+AWS released AWS Blocks into public preview, an open-source TypeScript framework that lets developers build application backends with database, auth, file uploads, and background jobs running locally before deploying to production AWS with zero code changes. The framework is free beyond standard usage-based AWS charges and supports a drop-down to AWS CDK at any point, deepening AWS lock-in while lowering the infrastructure-skills barrier for enterprise development teams.
+
+⚡
+Quick Links
+
+New Prinz Eugen ransomware prioritizes recent files for encryption (1 minute read)
+
+New Go-based Prinz Eugen ransomware encrypts recently modified files first, skips RaaS, and uses RDP credentials plus legitimate RMM tools for access.
+
+Why the FDA’s new real-world evidence guidance ends the era of structured-data-only submissions (5 minute read)
+
+(blurb not generated)
+
+Microsoft's latest Windows bug belongs in the Recycle Bin (5 minute read)
+
+(blurb not generated)
+
+Google adds Hand gesture verification for reCAPTCHA (5 minute read)
+
+Google added hand gesture verification to reCAPTCHA, analyzing 21 hand-knuckle landmarks from camera video that's deleted after each challenge.

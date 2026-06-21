@@ -1,0 +1,101 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR DevOps 2026-06-21
+
+📱
+News & Trends
+
+Bcachefs exits experimental status in new 'performance release' (5 minute read)
+
+(blurb not generated)
+
+Let's Encrypt had a higher error rate for 90 minutes today (1 minute read)
+
+Let's Encrypt's ACME v02 production API returned errors on a portion of certificate renewals today before the service recovered to a fully operational state across both High Assurance datacenters. Teams running short-lived certs with tight auto-renewal windows should confirm their cert-manager or Certbot retries succeeded, since a failed renewal that slips past expiry triggers TLS outages rather than a graceful retry.
+
+Unauthenticated RCE in Splunk Enterprise under active attack (CVE-2026-20253) (5 minute read)
+
+(blurb not generated)
+
+Kubernetes in the Age of AI (5 minute read)
+
+An O'Reilly Radar piece tracks Kubernetes's shift from container orchestrator to default AI infrastructure platform, citing CNCF survey data that 82% of container users now run it in production, up from 66% in 2023. The article argues that operationalizing AI/ML workloads on k8s remains underserved, with practitioners flagging model serving, scheduling for compute-intensive jobs, and MLOps tooling as the gaps teams hit in production.
+
+Tesco UK supermarket chain removes 40,000 servers from VMware infrastructure — mass exodus continues due to Broadcom's aggressive subscription model (1 minute read)
+
+Tesco is replacing VMware across its entire fleet of 40,000 servers by 2027, the largest publicly known migration off the platform since Broadcom's 2023 acquisition and a follow-on to the $134M lawsuit Tesco filed over voided perpetual licenses. The chain cites a 175% price hike on VMware and 350% on mainframe software, plus Broadcom cutting support and security updates for non-subscription customers.
+
+🚀
+Opinions & Tutorials
+
+Build your own vulnerability harness (1 minute read)
+
+Cloudflare's Project Glasswing team details how to build a model-agnostic vulnerability-scanning harness, arguing that generic coding agents fail because they hold one hypothesis at a time and lose state during context compaction. The architecture treats models as interchangeable, using one for discovery and a different one for validation so findings are cross-checked by distinct logic, then traces vulnerabilities across cross-repo dependencies down to a triaged queue.
+
+How We Made Cloud Browsers 3x Cheaper and Faster (1 minute read)
+
+Browser Use rebuilt its cloud browser infrastructure on Firecracker microVMs running nested inside EC2 instances, cutting session cost from $0.06 to $0.02 per browser-hour and starting a fully isolated Chromium in under a second. The post details how they made nested virtualization fast enough to be practical, and why they abandoned Unikraft unikernels, which idled cheaply but couldn't autoscale fast enough when traffic spiked.
+
+Cell-Based Architecture for Resilient Payment Systems (5 minute read)
+
+American Express detailed how its core payments platform uses cell-based architecture to isolate failures into independent cells, each running its own services and data so a localized fault stays contained instead of cascading across the platform. The post walks through the design principles the team has followed since a 2018 cloud-native rebuild, showing how cell isolation shrinks blast radius while keeping latency low and letting the platform scale capacity without expanding the failure domain.
+
+What job interviews taught me about Kubernetes (1 minute read)
+
+The author uses Kubernetes interview questions as a lens for the internals practitioners gloss over in daily operations, walking through how the scheduler, kubelet, and control loops actually behave under questioning. The piece argues that interview prep exposes the gap between running kubectl commands and understanding why a pod is stuck pending or a node goes NotReady. Useful as a self-audit for platform engineers who operate clusters without having traced the reconciliation path end to end.
+
+Alice is impatient (1 minute read)
+
+The author argues that SREs and customers measure time differently: thanks to the inspection paradox, users experience a t-weighted latency distribution, not your mean. A service reporting a sub-1-minute MTTR or 100ms mean request can leave customers experiencing hours of recovery or seconds of wait, because long requests and outages dominate their perception. The takeaway is to track tail latency and variance, not just averages.
+
+Surprising economics of load-balanced systems (1 minute read)
+
+Marc Brooker works through an M/M/c queuing model where c single-request servers sit behind a load balancer, with offered load scaled linearly to hold per-server utilization constant. The counterintuitive result, derived from Erlang's C formula, is that mean client latency drops toward the one-second service floor as c grows, because larger pools queue a shrinking fraction of requests. The practical takeaway for capacity planning: bigger shared pools beat many small ones at the same utilization.
+
+Google Cloud publishes a secure MCP-on-GKE guide (5 minute read)
+
+Google Cloud published a walkthrough for deploying a remote MCP server on GKE Autopilot using the Streamable HTTP transport, replacing per-developer local stdio servers with a centralized, horizontally scaling endpoint. Because the servers are stateless, Autopilot absorbs traffic spikes without manual node management, and a single update propagates to every connected agent and pipeline. The guide leans on the Kubernetes Gateway API and SSL certificates to force encrypted-only traffic and block unauthorized connections.
+
+How We Cut Semgrep's Taint Analysis Time by 75% (5 minute read)
+
+Semgrep's engineering team explained how they cut interfile taint-analysis time by 75% by eliminating a redundant "run taint twice" step that recomputed taint configs and reran dataflow analysis after the interfile pass already produced them. The original design duplicated work to avoid porting intrafile dataflow logic to the new cross-file engine. The writeup walks through the sources, propagators, sanitizers, and sinks model and where the wasted computation hid.
+
+Epoll vs. io_uring in Linux (1 minute read)
+
+The author walks through why Linux gives you two models for async I/O, using a student-built reverse proxy as the throughline. epoll signals when a socket is ready but still costs two syscalls per I/O event plus a context switch each, which dominates overhead at high connection counts. io_uring instead reports when I/O is done via shared submission and completion ring buffers, batching many operations into a single io_uring_enter() call and cutting syscall traffic sharply.
+
+Why cloud native belongs at the heart of agentic AI: Lessons from building a multi-agent security platform on Kubernetes (1 minute read)
+
+An engineer at Orange Innovation documents building an internal real-time security-operations platform where each AI agent runs as its own Kubernetes Deployment, not an in-process module, giving every agent independent resource limits, identity, and restart policy. The stack pairs Falco with eBPF and an Isolation Forest model to pre-filter syscall events before they reach LangGraph-driven agents coordinated over A2A. Treating agents as microservices means canary rollouts, HPA, and namespace isolation apply without reinvention.
+
+Running MicroVMs in Proxmox VE, the Easy Way (1 minute read)
+
+The author built pve-microvm, a Debian package that makes QEMU's microvm machine type a first-class managed guest in Proxmox VE, splitting the difference between LXC containers and full VMs. It ships a custom kernel, patches Proxmox's Perl internals for web UI integration, supports 21 guest OSes, and boots in under 300ms with KVM-level isolation. The author now runs Gitea, Caddy, and mini-firewalls on it as a daily driver.
+
+⚒️
+Launches & Tools
+
+Temporary Cloudflare Accounts for AI agents (5 minute read)
+
+(blurb not generated)
+
+Amazon S3 annotations: attach rich, queryable context directly to your objects (1 minute read)
+
+AWS announced S3 annotations, letting teams attach up to 1,000 named annotations per object (1 MB each, 1 GB total) in JSON, XML, YAML, or plain text, editable without rewriting the object. Annotations travel with objects through copy, replication, and cross-region transfers, and flow into S3 Metadata tables queryable from Athena, giving agentic workflows scalable context without expensive retrieval.
+
+AWS WAF adds AI traffic monetization capability to help content owners charge AI bots for content access (1 minute read)
+
+AWS WAF added AI traffic monetization, a Bot Control capability that lets content providers and publishers price, meter, and collect payment from AI bots and agents hitting their content and APIs. Owners set a price, accept payment through third-party providers, and grant scoped access directly at the edge, turning unwanted crawler traffic into a revenue stream without standing up separate gateway infrastructure.
+
+Server-Side Tools Are Now Available for DigitalOcean Inference Engine (2 minute read)
+
+DigitalOcean launched Server-Side Tools in public preview for its Inference Engine, letting a model run web search, web fetch, Knowledge Bases retrieval, and MCP servers from inside a single inference request. Teams enable them with an existing Model Access Key, removing the separate tool infrastructure, credentials, and orchestration layer that agentic workflows usually require to operate.
+
+Vercel Connect (5 minute read)
+
+Vercel released Vercel Connect in public beta, replacing long-lived provider tokens stored in environment variables with runtime credential exchange that hands agents short-lived, task-scoped tokens. Teams register a connector once per provider like Slack or GitHub, attach it to projects with access controls, and let the SDK refresh tokens automatically, shrinking the blast radius when a credential leaks.
+
+Bootimus – A Self-Contained PXE and HTTP Boot Server (5 minute read)
+
+(blurb not generated)
