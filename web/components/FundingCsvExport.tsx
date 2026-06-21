@@ -1,24 +1,12 @@
 'use client';
 
+import { escapeCsv } from '@/lib/escape';
 import type { FundingRound } from '@/lib/types';
 
 /**
  * One-click CSV export of the rows currently visible on /funding. Mirrors
- * the column order Crunchbase News uses in its weekly funding wraps:
- *   Date, Company, Amount (USD), Amount (raw), Stage, Region, Country,
- *   Investors, Valuation (USD), Source URL
- *
- * Pure client-side — no API call, no auth.
+ * the column order Crunchbase News uses in its weekly funding wraps.
  */
-function escape(cell: unknown): string {
-  if (cell === null || cell === undefined) return '';
-  const s = String(cell);
-  if (s.includes(',') || s.includes('"') || s.includes('\n')) {
-    return `"${s.replace(/"/g, '""')}"`;
-  }
-  return s;
-}
-
 function buildCsv(rounds: FundingRound[]): string {
   const header = [
     'raised_date',
@@ -47,7 +35,7 @@ function buildCsv(rounds: FundingRound[]): string {
       r.story_url,
       r.title,
     ]
-      .map(escape)
+      .map(escapeCsv)
       .join(','),
   );
   return [header.join(','), ...rows].join('\n') + '\n';

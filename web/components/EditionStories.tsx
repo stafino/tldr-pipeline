@@ -1,6 +1,9 @@
 'use client';
 
 import { useMemo, useState } from 'react';
+import { escapeHtml } from '@/lib/escape';
+import { copyRichToClipboard, copyTextToClipboard } from '@/lib/clipboard';
+import { downloadEml } from '@/lib/eml-builder';
 import Link from 'next/link';
 import { useDecisions } from './useDecisions';
 
@@ -82,35 +85,22 @@ export default function EditionStories({
 
   const [copyState, setCopyState] = useState<'idle' | 'copied' | 'error'>('idle');
 
+  function flashOk() {
+    setCopyState('copied');
+    setTimeout(() => setCopyState('idle'), 3000);
+  }
+  function flashErr() {
+    setCopyState('error');
+    setTimeout(() => setCopyState('idle'), 3000);
+  }
+
   async function copyBody() {
-    // Copies the rich HTML (+ plain-text fallback) to the clipboard.
-    // Pasting (⌘V) into Gmail/Apple Mail picks up the formatted version
-    // with real hyperlinks; pasting into a plain-text field gets the
-    // text-only version. mailto: can't carry HTML — every mail client
-    // strips it — so the clipboard handoff is what makes the titles
-    // render as real links.
-    try {
-      if (
-        typeof window !== 'undefined' &&
-        navigator.clipboard &&
-        (window as any).ClipboardItem
-      ) {
-        const item = new (window as any).ClipboardItem({
-          'text/html': new Blob([issueHtml], { type: 'text/html' }),
-          'text/plain': new Blob([issueText], { type: 'text/plain' }),
-        });
-        await navigator.clipboard.write([item]);
-      } else if (navigator.clipboard?.writeText) {
-        await navigator.clipboard.writeText(issueText);
-      }
-      setCopyState('copied');
-      setTimeout(() => setCopyState('idle'), 3000);
-      return true;
-    } catch {
-      setCopyState('error');
-      setTimeout(() => setCopyState('idle'), 3000);
-      return false;
-    }
+    // Rich HTML + plain-text fallback to clipboard — pasting into
+    // Gmail/Apple Mail picks up the formatted version with real
+    // hyperlinks.
+    const ok = await copyRichToClipboard(issueHtml, issueText);
+    ok ? flashOk() : flashErr();
+    return ok;
   }
 
   async function exportToEmail() {
@@ -120,86 +110,28 @@ export default function EditionStories({
   }
 
   async function copyMarkdown() {
-    // Markdown for Ghost, Notion, GitHub Discussions, docs sites — any
-    // editor that natively parses .md. We tested earlier that Substack
-    // and Beehiiv editors do NOT parse markdown on paste (they render the
-    // raw "## " text); for those, the copyForEditor button is the right
-    // one. This button is for everything else.
-    try {
-      if (navigator.clipboard?.writeText) {
-        await navigator.clipboard.writeText(issueMarkdown);
-      }
-      setCopyState('copied');
-      setTimeout(() => setCopyState('idle'), 3000);
-    } catch {
-      setCopyState('error');
-      setTimeout(() => setCopyState('idle'), 3000);
-    }
+    // Markdown for Ghost / Notion / GitHub. Substack + Beehiiv use the
+    // copyForEditor path since their editors render raw "## " text.
+    const ok = await copyTextToClipboard(issueMarkdown);
+    ok ? flashOk() : flashErr();
   }
 
   async function copyForEditor() {
-    // Semantic HTML (no inline styles) — Substack's and Beehiiv's
-    // TipTap-based editors parse this on paste and map each tag to a
-    // native block: <h1> → Heading 1, <h2> → Heading 2,
-    // <strong><a> → bold link, <p> → paragraph. The destination
-    // platform then applies its own typography.
-    //
-    // A plain-text fallback ships alongside so paste into a non-rich
-    // field still gets something readable.
-    try {
-      if (
-        typeof window !== 'undefined' &&
-        navigator.clipboard &&
-        (window as any).ClipboardItem
-      ) {
-        const item = new (window as any).ClipboardItem({
-          'text/html': new Blob([issueRichHtml], { type: 'text/html' }),
-          'text/plain': new Blob([issueText], { type: 'text/plain' }),
-        });
-        await navigator.clipboard.write([item]);
-      } else if (navigator.clipboard?.writeText) {
-        await navigator.clipboard.writeText(issueText);
-      }
-      setCopyState('copied');
-      setTimeout(() => setCopyState('idle'), 3000);
-    } catch {
-      setCopyState('error');
-      setTimeout(() => setCopyState('idle'), 3000);
-    }
+    // Semantic HTML mapped to native blocks by TipTap-based editors
+    // (Substack, Beehiiv).
+    const ok = await copyRichToClipboard(issueRichHtml, issueText);
+    ok ? flashOk() : flashErr();
   }
 
-  function downloadEml() {
-    // A full RFC 822 message with multipart/alternative (plain + HTML).
-    // Double-click the file → default mail client opens it as a draft
-    // with the HTML body intact. Bypasses clipboard normalization
-    // entirely, so spacing stays 1:1 with what we generated.
-    const subject = `${newsletterBrand} ${date}`;
-    const boundary = `=_lede_${Math.floor((Number(date.replace(/-/g, '')) || 0))}_${newsletterId}`;
-    const eml = [
-      `MIME-Version: 1.0`,
-      `Subject: ${subject}`,
-      `Content-Type: multipart/alternative; boundary="${boundary}"`,
-      ``,
-      `--${boundary}`,
-      `Content-Type: text/plain; charset=UTF-8`,
-      `Content-Transfer-Encoding: 8bit`,
-      ``,
-      issueText,
-      `--${boundary}`,
-      `Content-Type: text/html; charset=UTF-8`,
-      `Content-Transfer-Encoding: 8bit`,
-      ``,
-      `<!doctype html><html><body>${issueHtml}</body></html>`,
-      `--${boundary}--`,
-      ``,
-    ].join('\r\n');
-    const blob = new Blob([eml], { type: 'message/rfc822' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `${newsletterId}-${date}.eml`;
-    a.click();
-    URL.revokeObjectURL(url);
+  function downloadEmlFile() {
+    // RFC 822 multipart/alternative — opening the file in Apple Mail
+    // loads it as a draft with HTML intact, no paste normalization.
+    downloadEml({
+      filename: `${newsletterId}-${date}.eml`,
+      subject: `${newsletterBrand} ${date}`,
+      plainText: issueText,
+      html: issueHtml,
+    });
   }
 
   return (
@@ -296,7 +228,7 @@ export default function EditionStories({
               ⧉ copy as Markdown
             </button>
             <button
-              onClick={downloadEml}
+              onClick={downloadEmlFile}
               className="px-4 py-2 rounded-md bg-surface border border-border text-text text-[12px] font-medium hover:bg-surface-hi"
               title="Double-click the file to open as a real email draft — spacing stays intact"
             >
@@ -393,32 +325,23 @@ function buildIssueRichHtml(
   // strong+a → bold link, p → paragraph). Adding inline styles only
   // gets them stripped, so we let the platform's own theme take over.
   const parts: string[] = [];
-  parts.push(`<h1>${esc(brand)} ${esc(date)}</h1>`);
+  parts.push(`<h1>${escapeHtml(brand)} ${escapeHtml(date)}</h1>`);
   for (const sec of sections) {
     const items = bySection[sec.id] ?? [];
     if (items.length === 0) continue;
-    parts.push(`<h2>${esc(sec.emoji)} ${esc(sec.name)}</h2>`);
+    parts.push(`<h2>${escapeHtml(sec.emoji)} ${escapeHtml(sec.name)}</h2>`);
     for (const it of items) {
       parts.push(
-        `<p><strong><a href="${esc(it.url)}">${esc(it.title)} (${it.minute_read} minute read)</a></strong></p>`,
+        `<p><strong><a href="${escapeHtml(it.url)}">${escapeHtml(it.title)} (${it.minute_read} minute read)</a></strong></p>`,
       );
       if (it.blurb) {
-        parts.push(`<p>${esc(it.blurb)}</p>`);
+        parts.push(`<p>${escapeHtml(it.blurb)}</p>`);
       } else {
         parts.push(`<p><em>(blurb not generated)</em></p>`);
       }
     }
   }
   return parts.join('\n');
-}
-
-function esc(s: string): string {
-  return s
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#39;');
 }
 
 function buildIssueHtml(
@@ -455,26 +378,26 @@ function buildIssueHtml(
     `<div style="font-family:${FONT};font-size:15px;line-height:1.55;color:#111;max-width:640px;margin:0 auto;">`,
   );
   parts.push(
-    `<p style="${P_BASE}text-align:center;font-size:22px;font-weight:700;padding:0 0 40px;">${esc(brand)} ${esc(date)}</p>`,
+    `<p style="${P_BASE}text-align:center;font-size:22px;font-weight:700;padding:0 0 40px;">${escapeHtml(brand)} ${escapeHtml(date)}</p>`,
   );
 
   for (const sec of sections) {
     const items = bySection[sec.id] ?? [];
     if (items.length === 0) continue;
     parts.push(
-      `<p style="${P_BASE}text-align:center;font-size:32px;line-height:1;padding:0 0 8px;"><span style="font-family:${EMOJI_FONT};">${esc(sec.emoji)}</span></p>`,
+      `<p style="${P_BASE}text-align:center;font-size:32px;line-height:1;padding:0 0 8px;"><span style="font-family:${EMOJI_FONT};">${escapeHtml(sec.emoji)}</span></p>`,
     );
     parts.push(
-      `<p style="${P_BASE}text-align:center;font-size:14px;font-weight:700;text-transform:uppercase;padding:0 0 28px;">${esc(sec.name)}</p>`,
+      `<p style="${P_BASE}text-align:center;font-size:14px;font-weight:700;text-transform:uppercase;padding:0 0 28px;">${escapeHtml(sec.name)}</p>`,
     );
     for (let i = 0; i < items.length; i++) {
       const it = items[i];
-      const linkText = `<span style="color:#111;">${esc(it.title)} (${it.minute_read} minute read)</span>`;
-      const link = `<a href="${esc(it.url)}" style="color:#111;font-weight:700;text-decoration:underline;">${linkText}</a>`;
+      const linkText = `<span style="color:#111;">${escapeHtml(it.title)} (${it.minute_read} minute read)</span>`;
+      const link = `<a href="${escapeHtml(it.url)}" style="color:#111;font-weight:700;text-decoration:underline;">${linkText}</a>`;
       parts.push(`<p style="${P_BASE}padding:0 0 20px;">${link}</p>`);
       const bottomPad = i < items.length - 1 ? 40 : 48;
       if (it.blurb) {
-        parts.push(`<p style="${P_BASE}padding:0 0 ${bottomPad}px;">${esc(it.blurb)}</p>`);
+        parts.push(`<p style="${P_BASE}padding:0 0 ${bottomPad}px;">${escapeHtml(it.blurb)}</p>`);
       } else {
         parts.push(
           `<p style="${P_BASE}padding:0 0 ${bottomPad}px;color:#999;">(blurb not generated)</p>`,

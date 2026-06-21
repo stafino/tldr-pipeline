@@ -1,6 +1,9 @@
 'use client';
 
 import { useMemo, useState } from 'react';
+import { escapeHtml } from '@/lib/escape';
+import { copyRichToClipboard, copyTextToClipboard } from '@/lib/clipboard';
+import { downloadEml } from '@/lib/eml-builder';
 import type { VcArticle, VcType } from '@/lib/types';
 import { canonicalDomain } from '@/lib/utils';
 
@@ -8,15 +11,6 @@ interface Section {
   key: VcType;
   emoji: string;
   name: string;
-}
-
-function escHtml(s: string): string {
-  return s
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#39;');
 }
 
 function pickRead(headline: string, summary: string): number {
@@ -106,7 +100,7 @@ function buildHtml(
     `<div style="font-family:${FONT};font-size:15px;line-height:1.55;color:#111;max-width:640px;margin:0 auto;">`,
   );
   parts.push(
-    `<p style="${P}text-align:center;font-size:22px;font-weight:700;padding:0 0 8px;">${escHtml(label)}</p>`,
+    `<p style="${P}text-align:center;font-size:22px;font-weight:700;padding:0 0 8px;">${escapeHtml(label)}</p>`,
   );
   parts.push(
     `<p style="${P}text-align:center;font-size:13px;color:#666;padding:0 0 32px;">A daily digest of the venture capital industry — funds, partners, exits, signals.</p>`,
@@ -115,18 +109,18 @@ function buildHtml(
     const items = bySection[sec.key] ?? [];
     if (items.length === 0) continue;
     parts.push(
-      `<p style="${P}text-align:center;font-size:32px;line-height:1;padding:0 0 8px;"><span style="font-family:${EMOJI};">${escHtml(sec.emoji)}</span></p>`,
+      `<p style="${P}text-align:center;font-size:32px;line-height:1;padding:0 0 8px;"><span style="font-family:${EMOJI};">${escapeHtml(sec.emoji)}</span></p>`,
     );
     parts.push(
-      `<p style="${P}text-align:center;font-size:14px;font-weight:700;text-transform:uppercase;padding:0 0 28px;">${escHtml(sec.name)}</p>`,
+      `<p style="${P}text-align:center;font-size:14px;font-weight:700;text-transform:uppercase;padding:0 0 28px;">${escapeHtml(sec.name)}</p>`,
     );
     for (const r of items) {
       const headline = r.headline_summary || r.title;
       const min = pickRead(r.title, r.headline_summary);
-      const link = `<a href="${escHtml(r.story_url)}" style="color:#111;font-weight:700;text-decoration:underline;"><span style="color:#111;">${escHtml(headline)} (${min} minute read)</span></a>`;
+      const link = `<a href="${escapeHtml(r.story_url)}" style="color:#111;font-weight:700;text-decoration:underline;"><span style="color:#111;">${escapeHtml(headline)} (${min} minute read)</span></a>`;
       parts.push(`<p style="${P}padding:0 0 12px;">${link}</p>`);
       if (r.blurb) {
-        parts.push(`<p style="${P}padding:0 0 16px;">${escHtml(r.blurb)}</p>`);
+        parts.push(`<p style="${P}padding:0 0 16px;">${escapeHtml(r.blurb)}</p>`);
       }
       if (r.firms.length > 0 || r.region !== 'OTHER') {
         const meta = [
@@ -134,7 +128,7 @@ function buildHtml(
           ...r.firms.slice(0, 4),
         ].filter(Boolean).join(' · ');
         parts.push(
-          `<p style="${P}padding:0 0 32px;color:#666;font-size:12px;">${escHtml(meta)}</p>`,
+          `<p style="${P}padding:0 0 32px;color:#666;font-size:12px;">${escapeHtml(meta)}</p>`,
         );
       } else {
         parts.push(`<p style="${P}padding:0 0 32px;">&nbsp;</p>`);
@@ -165,65 +159,27 @@ export default function VcIssueExport({
   }
 
   async function copyRich() {
-    try {
-      if (typeof window !== 'undefined' && (window as any).ClipboardItem) {
-        const item = new (window as any).ClipboardItem({
-          'text/html': new Blob([html], { type: 'text/html' }),
-          'text/plain': new Blob([txt], { type: 'text/plain' }),
-        });
-        await navigator.clipboard.write([item]);
-      } else {
-        await navigator.clipboard.writeText(txt);
-      }
-      toast('Issue copied — paste into your email');
-    } catch {
-      toast('Copy blocked by browser');
-    }
+    const ok = await copyRichToClipboard(html, txt);
+    toast(ok ? 'Issue copied — paste into your email' : 'Copy blocked by browser');
   }
 
   async function copyMd() {
-    try {
-      await navigator.clipboard.writeText(md);
-      toast('Markdown copied');
-    } catch {
-      toast('Copy blocked');
-    }
+    const ok = await copyTextToClipboard(md);
+    toast(ok ? 'Markdown copied' : 'Copy blocked');
   }
 
   async function emailDraft() {
     await copyRich();
-    const subject = issueLabel;
-    window.location.href = `mailto:?subject=${encodeURIComponent(subject)}`;
+    window.location.href = `mailto:?subject=${encodeURIComponent(issueLabel)}`;
   }
 
-  function downloadEml() {
-    const subject = issueLabel;
-    const boundary = `=_tldrvc_${Date.now().toString(36)}`;
-    const eml = [
-      `MIME-Version: 1.0`,
-      `Subject: ${subject}`,
-      `Content-Type: multipart/alternative; boundary="${boundary}"`,
-      ``,
-      `--${boundary}`,
-      `Content-Type: text/plain; charset=UTF-8`,
-      `Content-Transfer-Encoding: 8bit`,
-      ``,
-      txt,
-      `--${boundary}`,
-      `Content-Type: text/html; charset=UTF-8`,
-      `Content-Transfer-Encoding: 8bit`,
-      ``,
-      `<!doctype html><html><body>${html}</body></html>`,
-      `--${boundary}--`,
-      ``,
-    ].join('\r\n');
-    const blob = new Blob([eml], { type: 'message/rfc822' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `tldr-vc-${issueLabel.slice(-10)}.eml`;
-    a.click();
-    URL.revokeObjectURL(url);
+  function downloadEmlFile() {
+    downloadEml({
+      filename: `tldr-vc-${issueLabel.slice(-10)}.eml`,
+      subject: issueLabel,
+      plainText: txt,
+      html,
+    });
   }
 
   return (
@@ -251,7 +207,7 @@ export default function VcIssueExport({
           ⧉ Copy markdown
         </button>
         <button
-          onClick={downloadEml}
+          onClick={downloadEmlFile}
           className="px-4 py-2 rounded-md bg-surface border border-border text-text text-[12px] font-medium hover:bg-surface-hi"
         >
           ⬇ .eml (1:1 draft)
