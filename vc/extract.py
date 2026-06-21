@@ -20,6 +20,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import asdict, dataclass
 from pathlib import Path
 
+from common.json_utils import parse_llm_json
 from common.llm import complete
 from common.story import ScoredStory
 
@@ -183,23 +184,6 @@ Published: {published_at}
 Return the JSON object."""
 
 
-def _parse_json(text: str) -> dict | None:
-    t = text.strip()
-    if t.startswith("```"):
-        t = re.sub(r"^```(?:json)?\s*", "", t)
-        t = re.sub(r"\s*```$", "", t)
-    try:
-        return json.loads(t)
-    except json.JSONDecodeError:
-        m = re.search(r"\{.*\}", t, re.DOTALL)
-        if not m:
-            return None
-        try:
-            return json.loads(m.group(0))
-        except json.JSONDecodeError:
-            return None
-
-
 # --- cache -------------------------------------------------------------------
 
 
@@ -248,7 +232,7 @@ def _extract_one(story: ScoredStory) -> VcArticle | None:
         log.warning("vc extract LLM error for %s: %r", url, e)
         return None
 
-    payload = _parse_json(raw)
+    payload = parse_llm_json(raw)
     if payload is None:
         log.warning("vc extract: could not parse JSON for %s", url)
         return None
