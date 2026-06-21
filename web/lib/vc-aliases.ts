@@ -5,7 +5,7 @@
  * "Tiger Global Management" and "Tiger" and "Tiger Global" all end up
  * as separate entries. This kills leaderboard accuracy.
  *
- * Simple lookup-table approach — explicit > clever. Each entry maps
+ * Simple lookup-table approach - explicit > clever. Each entry maps
  * any variant to a single canonical name. Unknown firms pass through
  * untouched.
  */

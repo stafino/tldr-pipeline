@@ -8,7 +8,7 @@ The pipeline ingests RSS, arXiv, Hacker News across 100+ sources, deduplicates s
 2. Which **section** of each newsletter is the right slot.
 3. A per-newsletter fit score.
 
-Then it generates voice-matched blurbs (Opus 4.7) for each (story, newsletter) pair, and renders each newsletter's issue in the **exact TLDR layout** — ready for a curator to review, edit, and ship.
+Then it generates voice-matched blurbs (Opus 4.7) for each (story, newsletter) pair, and renders each newsletter's issue in the **exact TLDR layout** - ready for a curator to review, edit, and ship.
 
 Goal: cut curator time per issue by 50-70% while preserving voice and editorial judgment, **across every TLDR newsletter at once**.
 
@@ -16,7 +16,7 @@ Goal: cut curator time per issue by 50-70% while preserving voice and editorial 
 
 | Newsletter | Slug | Audience |
 |---|---|---|
-| TLDR (Tech) | `tldr_tech` | General technical readers — the flagship daily digest |
+| TLDR (Tech) | `tldr_tech` | General technical readers - the flagship daily digest |
 | TLDR AI | `tldr_ai` | ML engineers and AI researchers |
 | TLDR Founders | `tldr_founders` | Startup founders and operators |
 | TLDR Dev | `tldr_dev` | Software engineers across stacks |
@@ -70,10 +70,10 @@ Switch with `LLM_BACKEND=cli|api` in `.env`.
 
 Editorial knowledge in `.claude/skills/`:
 
-- `tldr_voice_core.md` — universal voice rules across all newsletters
-- `tldr_<nl>_voice.md` — 13 per-newsletter addenda (length, audience, jargon, anti-patterns specific to that newsletter)
-- `curation_rubric.md` — 5-dimension 0-100 scoring rubric with disqualifiers and tie-breakers
-- `data_sources.md` — source list with quality notes
+- `tldr_voice_core.md` - universal voice rules across all newsletters
+- `tldr_<nl>_voice.md` - 13 per-newsletter addenda (length, audience, jargon, anti-patterns specific to that newsletter)
+- `curation_rubric.md` - 5-dimension 0-100 scoring rubric with disqualifiers and tie-breakers
+- `data_sources.md` - source list with quality notes
 
 The blurb generator loads `tldr_voice_core.md` + the relevant per-newsletter addendum every call.
 
@@ -83,14 +83,14 @@ The blurb generator loads `tldr_voice_core.md` + the relevant per-newsletter add
 # install uv if missing
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
-# configure (LLM_BACKEND=cli is the default — no API key needed)
+# configure (LLM_BACKEND=cli is the default - no API key needed)
 cp .env.example .env
 
 # run everything for today + open the review UI
 ./tldr
 ```
 
-The full pipeline for a day with 100+ ingested stories takes ~40-90 minutes in CLI mode (the subprocess-spawn overhead is the main cost). Subsequent runs hit the disk cache and finish in seconds. The cache is keyed by `(set-of-newsletters, url, title)` for ranking and `(newsletter, section, url)` for blurbs — both invalidate automatically if the newsletter set or section schema changes.
+The full pipeline for a day with 100+ ingested stories takes ~40-90 minutes in CLI mode (the subprocess-spawn overhead is the main cost). Subsequent runs hit the disk cache and finish in seconds. The cache is keyed by `(set-of-newsletters, url, title)` for ranking and `(newsletter, section, url)` for blurbs - both invalidate automatically if the newsletter set or section schema changes.
 
 ## `tldr` subcommands
 
@@ -100,7 +100,7 @@ The full pipeline for a day with 100+ ingested stories takes ~40-90 minutes in C
 | `tldr refresh` | Full pipeline only |
 | `tldr ingest` / `dedup` / `rank` | Single step (newsletter-agnostic) |
 | `tldr blurbs` | Blurbs for ALL newsletters (default) |
-| `tldr blurbs tldr_ai` | Blurbs for one newsletter only — useful for iteration |
+| `tldr blurbs tldr_ai` | Blurbs for one newsletter only - useful for iteration |
 | `tldr format` | Render ALL newsletter issues |
 | `tldr format tldr_ai` | Render one |
 | `tldr ui` | Launch the Streamlit review UI |
@@ -124,7 +124,7 @@ Env overrides: `DATE=YYYY-MM-DD`, `LLM_BACKEND=cli|api`, `MIN_ASSIGNMENT_SCORE=5
 
 Each source carries `topics:` tags. The ranking model sees these and uses them as a hint when picking newsletters.
 
-**Not yet wired up:** X / LinkedIn ingestion. X's API requires a paid tier; LinkedIn has no public RSS. TLDR cites both via threadreader unrolls and "from a LinkedIn post" framing — until we add these, you'll undercount stories sourced there. Worth knowing when looking at backtest recall numbers.
+**Not yet wired up:** X / LinkedIn ingestion. X's API requires a paid tier; LinkedIn has no public RSS. TLDR cites both via threadreader unrolls and "from a LinkedIn post" framing - until we add these, you'll undercount stories sourced there. Worth knowing when looking at backtest recall numbers.
 
 ## Cost model
 
@@ -161,11 +161,11 @@ tldr-pipeline/
 ├── config/                 # sources.yaml, newsletters.yaml
 ├── .claude/skills/         # Voice core + 13 per-newsletter addenda + rubric
 ├── data/                   # Generated artifacts (gitignored)
-├── tldr                    # Subcommand driver — `tldr` to run everything
+├── tldr                    # Subcommand driver - `tldr` to run everything
 ├── pyproject.toml
 └── .env.example
 ```
 
 ## Status
 
-Working prototype, end-to-end across all 13 newsletters. Not production-hardened: no auth on the Streamlit UI, no per-curator click-data signal in ranking (that's the obvious next step — pull historical TLDR open/click data per newsletter and learn a re-ranker on top of the LLM scores), no X / LinkedIn ingestion. Backtest recall is a useful metric but undercounts because we miss the X-sourced stories TLDR cites.
+Working prototype, end-to-end across all 13 newsletters. Not production-hardened: no auth on the Streamlit UI, no per-curator click-data signal in ranking (that's the obvious next step - pull historical TLDR open/click data per newsletter and learn a re-ranker on top of the LLM scores), no X / LinkedIn ingestion. Backtest recall is a useful metric but undercounts because we miss the X-sourced stories TLDR cites.

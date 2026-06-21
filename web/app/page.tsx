@@ -50,7 +50,7 @@ export default function Page({ searchParams }: { searchParams: Search }) {
   const searchQuery = (searchParams.q ?? '').trim().toLowerCase();
 
   // Always load across every scrape file, then filter by the story's UTC
-  // publish date — so "Filter by date" means *published on this day*, not
+  // publish date - so "Filter by date" means *published on this day*, not
   // "scraped on this day". A story published Jun 16 that the cron fetched
   // on Jun 17 stays under Jun 16.
   const scoredAll = loadScoredAll(scrapeDates);

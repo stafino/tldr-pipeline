@@ -4,7 +4,7 @@ Used by blurb generation to escape the "RSS snippet is too short" problem
 that makes blurbs vague. Uses trafilatura (fast, well-maintained article
 extractor). Falls back to readability-lxml or beautiful soup heuristics.
 
-Cached on disk by URL hash with no TTL — article bodies don't change.
+Cached on disk by URL hash with no TTL - article bodies don't change.
 """
 
 from __future__ import annotations

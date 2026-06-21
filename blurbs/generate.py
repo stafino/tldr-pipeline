@@ -234,7 +234,7 @@ def generate_for_newsletter(
     so the UI never surfaces "(no blurb)" rows.
 
     Skips stories we've already blurbed for this newsletter in the last
-    14 days (read from data/blurbs/*.jsonl) — avoids the "same story
+    14 days (read from data/blurbs/*.jsonl) - avoids the "same story
     blurbed twice" failure mode where slight ranking shuffles cause
     re-runs to generate redundant blurbs.
     """

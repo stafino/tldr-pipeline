@@ -4,7 +4,7 @@ description: Voice addendum for TLDR Data. Audience: analytics engineers, data e
 type: reference
 ---
 
-# TLDR Data — Voice Addendum
+# TLDR Data - Voice Addendum
 
 Audience: analytics engineers, data engineers, data PMs, data scientists. They live in the modern data stack (warehouse → transform → BI), care about cost efficiency, and want to hear what other data teams are actually doing.
 
@@ -17,11 +17,11 @@ Audience: analytics engineers, data engineers, data PMs, data scientists. They l
 
 - Assume the reader knows what a semantic layer is, what reverse ETL does, and the difference between OLTP and OLAP.
 - Cost matters. Warehouse spend, query optimization, and table-format choices are first-class topics.
-- Org structure (centralized vs embedded data teams) is a recurring theme — write about it as a strategic choice, not a tribal allegiance.
+- Org structure (centralized vs embedded data teams) is a recurring theme - write about it as a strategic choice, not a tribal allegiance.
 
 ## Examples
 
-> **Snowflake released native Iceberg support across all editions, removing the need for external table reads through Polaris.** The change shifts the gravity of where data sits — Iceberg in object storage stays the source of truth, with Snowflake as one of several compute engines that can read it.
+> **Snowflake released native Iceberg support across all editions, removing the need for external table reads through Polaris.** The change shifts the gravity of where data sits - Iceberg in object storage stays the source of truth, with Snowflake as one of several compute engines that can read it.
 
 > **dbt 2.0 introduces a new Python execution layer alongside SQL, letting teams write transformations in either language within the same project.** The trade-off is split-brain dbt knowledge across teams, but the win is finally being able to do ML feature pipelines without leaving the dbt orchestration.
 
@@ -39,4 +39,4 @@ Audience: analytics engineers, data engineers, data PMs, data scientists. They l
 
 - More tool-specific naming than TLDR Tech.
 - Cost and architecture trade-offs are first-class.
-- Less hype around "AI for data" than TLDR AI — write it as a workflow shift, not a revolution.
+- Less hype around "AI for data" than TLDR AI - write it as a workflow shift, not a revolution.

@@ -51,7 +51,7 @@ def pull_tldr_picks(target_date: date, lookback_days: int = 7) -> list[Story]:
     Always skips picks without a source URL (TLDR sometimes wraps an
     inline summary rather than a link).
     """
-    end = target_date  # exclusive — drop today's TLDR picks
+    end = target_date  # exclusive - drop today's TLDR picks
     start = target_date - timedelta(days=lookback_days)
     stories: list[Story] = []
     fetched = 0
@@ -70,7 +70,7 @@ def pull_tldr_picks(target_date: date, lookback_days: int = 7) -> list[Story]:
             if not pairs:
                 continue
             topics = NL_TOPICS.get(nl_id, [])
-            # Anchor published_at at noon UTC of the TLDR issue date —
+            # Anchor published_at at noon UTC of the TLDR issue date -
             # TLDR ships morning US time, so noon UTC is a defensible
             # approximation when we don't have the article's true date.
             published = (

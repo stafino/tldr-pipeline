@@ -2,8 +2,8 @@
 
 The pipeline has two pieces with different deployment shapes:
 
-1. **Pipeline** (ingest → dedup → rank → blurbs → format) — runs the Claude CLI against your Claude Code subscription. **Must run locally** because OAuth tokens only work on your machine.
-2. **Streamlit UI** — read-only viewer of the data the pipeline produced. **Deployable** to Streamlit Community Cloud, Fly.io, Render, etc.
+1. **Pipeline** (ingest → dedup → rank → blurbs → format) - runs the Claude CLI against your Claude Code subscription. **Must run locally** because OAuth tokens only work on your machine.
+2. **Streamlit UI** - read-only viewer of the data the pipeline produced. **Deployable** to Streamlit Community Cloud, Fly.io, Render, etc.
 
 The cron job (`scripts/cron-refresh.sh`) runs every 6 hours on your Mac, refreshes the pipeline, commits the data files to git, and pushes. The deployed Streamlit auto-pulls on each refresh and shows the latest issues.
 
@@ -42,7 +42,7 @@ tail -f data/logs/launchd.stderr.log
 4. If any data changed, commit `data/blurbs`, `data/scored`, `data/issues` and push
 5. Rotate logs (keep last 30 runs)
 
-The cron does **not** commit the intermediate `data/raw` or `data/deduped` files — those are large and regenerable.
+The cron does **not** commit the intermediate `data/raw` or `data/deduped` files - those are large and regenerable.
 
 ## Streamlit Cloud deployment
 
@@ -67,7 +67,7 @@ Streamlit Cloud auto-redeploys on every push to `main`, including the cron's dat
 | Regenerate a blurb | ✗ | Would need `claude` CLI or `ANTHROPIC_API_KEY` |
 | Run the pipeline on-demand | ✗ | Same reason |
 
-For the TLDR demo, this is fine — the deployed UI is the audience-facing artifact; the curator workflow happens locally.
+For the TLDR demo, this is fine - the deployed UI is the audience-facing artifact; the curator workflow happens locally.
 
 ## Alternative deployment targets
 
@@ -75,7 +75,7 @@ For the TLDR demo, this is fine — the deployed UI is the audience-facing artif
 
 ```bash
 fly launch --image python:3.11-slim
-# Then add a Dockerfile and a fly.toml — see Fly's docs
+# Then add a Dockerfile and a fly.toml - see Fly's docs
 ```
 
 Same constraint: no Claude CLI, so the pipeline only runs in CI / locally.
@@ -111,8 +111,8 @@ Then the cron uses the API, no subscription dependency, and the same pipeline ca
 
 ## Troubleshooting
 
-**Cron didn't fire**: check `data/logs/launchd.stderr.log` for permission errors. macOS may have blocked it on first run — go to System Settings → Privacy & Security → Login Items, find the agent.
+**Cron didn't fire**: check `data/logs/launchd.stderr.log` for permission errors. macOS may have blocked it on first run - go to System Settings → Privacy & Security → Login Items, find the agent.
 
 **Cron fires but `claude` CLI fails**: launchd uses a minimal PATH. The wrapper script sets `/opt/homebrew/bin:/usr/local/bin:...`. If your `claude` is elsewhere, edit `scripts/cron-refresh.sh` line 14 to add its directory.
 
-**Streamlit Cloud build fails on `torch`**: torch is heavy. If Streamlit Cloud's build timeout is hit, switch to a lighter embedding model (e.g., drop sentence-transformers and use `fastembed` or hash-based dedup). The deployed UI doesn't actually need torch — only the dedup step does, and dedup runs locally.
+**Streamlit Cloud build fails on `torch`**: torch is heavy. If Streamlit Cloud's build timeout is hit, switch to a lighter embedding model (e.g., drop sentence-transformers and use `fastembed` or hash-based dedup). The deployed UI doesn't actually need torch - only the dedup step does, and dedup runs locally.

@@ -45,7 +45,7 @@ function computeRange(preset: Preset['key'], todayISO: string): { from: string; 
       const iso = toIso(y);
       return { from: iso, to: iso };
     }
-    // Rolling windows — match the GA / Stripe / Linear convention.
+    // Rolling windows - match the GA / Stripe / Linear convention.
     case 'last-week':
       return { from: toIso(minusDays(6)), to: todayISO };
     case 'last-14':

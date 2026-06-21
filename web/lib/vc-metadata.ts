@@ -88,7 +88,7 @@ export const REGION_LABELS: Record<VcRegion, { label: string; flag: string }> = 
 export const REGIONS_ORDER: VcRegion[] = ['NA', 'EU', 'ASIA', 'GLOBAL', 'OTHER'];
 
 /**
- * The "TLDR-VC issue" section layout — same shape used by /vc/issue and
+ * The "TLDR-VC issue" section layout - same shape used by /vc/issue and
  * /vc/recap. `cap` is the per-section story limit; recap uses higher
  * caps than the daily issue.
  */
@@ -101,46 +101,10 @@ export interface IssueSection {
 }
 
 export const ISSUE_SECTIONS: IssueSection[] = [
-  {
-    key: 'fund_news',
-    emoji: '💰',
-    name: 'Funds & LPs',
-    tagline: 'Fund launches, closes, LP commitments, fund-of-funds news',
-    cap: 4,
-  },
-  {
-    key: 'exit',
-    emoji: '🚪',
-    name: 'Exits & IPOs',
-    tagline: 'IPO talks, acquisitions, secondary sales',
-    cap: 4,
-  },
-  {
-    key: 'partner_move',
-    emoji: '🪑',
-    name: 'People & Moves',
-    tagline: 'Hires, departures, board changes at firms and notable startups',
-    cap: 3,
-  },
-  {
-    key: 'market_signal',
-    emoji: '📈',
-    name: 'Market Signals',
-    tagline: 'Sector trends, performance data, LP behavior, vintage analysis',
-    cap: 3,
-  },
-  {
-    key: 'opinion',
-    emoji: '💭',
-    name: 'Opinion & Analysis',
-    tagline: 'Partner essays, predictions, strategy commentary',
-    cap: 2,
-  },
-  {
-    key: 'regulatory',
-    emoji: '⚖️',
-    name: 'Regulatory',
-    tagline: 'SEC, antitrust, fund regulation, fee + carry policy',
-    cap: 2,
-  },
+  { key: 'fund_news',     emoji: '💰', name: 'Funds & LPs',    tagline: 'Launches, closes, LP commits', cap: 4 },
+  { key: 'exit',          emoji: '🚪', name: 'Exits & IPOs',   tagline: 'IPOs, M&A, secondaries',       cap: 4 },
+  { key: 'partner_move',  emoji: '🪑', name: 'People & Moves', tagline: 'Hires, exits, board changes',  cap: 3 },
+  { key: 'market_signal', emoji: '📈', name: 'Market Signals', tagline: 'Trends, performance, vintage', cap: 3 },
+  { key: 'opinion',       emoji: '💭', name: 'Opinion',        tagline: 'Essays, predictions',          cap: 2 },
+  { key: 'regulatory',    emoji: '⚖️', name: 'Regulatory',     tagline: 'SEC, antitrust, fund rules',   cap: 2 },
 ];

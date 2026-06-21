@@ -29,7 +29,7 @@ def pull_rss(
     """Pull entries from a single RSS feed published within [after, before).
 
     Entries without a parseable publication date are dropped (rather than
-    silently defaulted to 'now') — this matters for feeds like Paul Graham's
+    silently defaulted to 'now') - this matters for feeds like Paul Graham's
     that emit the full archive without dates.
     """
     # Pre-fetch with requests so we get a deterministic timeout, then hand

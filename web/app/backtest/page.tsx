@@ -107,7 +107,7 @@ export default function BacktestPage({
     };
   });
 
-  // Detail pick — date is shared with hero filter; newsletter is per-section
+  // Detail pick - date is shared with hero filter; newsletter is per-section
   const detailDate = heroDate;
   const detailNl = isAggregate ? nlIds[0] : selectedNl;
   const detail = isAggregate ? null : loadBacktest(detailNl, detailDate);
@@ -154,7 +154,7 @@ export default function BacktestPage({
             <p className="text-[12px] text-text-mute leading-[1.5] mb-5">
               <b className="text-text-dim">Recall</b> = "of the stories TLDR actually published, how
               many did we surface in our top N?" Matches via title-embedding similarity ≥ 0.62,
-              with URL-overlap as a strong cross-check. Low numbers point to source coverage gaps —
+              with URL-overlap as a strong cross-check. Low numbers point to source coverage gaps -
               TLDR sources heavily from X, LinkedIn, and inside-baseball Substacks. Pick a
               specific newsletter above to see the day's side-by-side.
             </p>
@@ -220,7 +220,7 @@ export default function BacktestPage({
               <div className="mb-6">
                 <h3 className="text-[13px] font-semibold mb-1.5">Where we missed today</h3>
                 <p className="text-[11.5px] text-text-mute mb-3">
-                  Top domains TLDR cited that we didn&apos;t catch — start here when picking new
+                  Top domains TLDR cited that we didn&apos;t catch - start here when picking new
                   RSS sources or tuning the ranker.
                 </p>
                 <div className="overflow-x-auto -mx-4 sm:mx-0 px-4 sm:px-0"><table className="w-full text-[12.5px] border-collapse min-w-[480px]">

@@ -3,7 +3,7 @@
 Pipeline-stage philosophy:
 - Re-use the stories the ranker already scored. No new HTTP fetching.
 - Pre-filter by a cheap keyword pass so we only LLM-call promising titles.
-- Cache by canonical URL — re-runs are no-ops once a story has been
+- Cache by canonical URL - re-runs are no-ops once a story has been
   extracted, regardless of whether it ended up classified as funding.
 
 The cache → snippet → LLM → parse → save → typed-result skeleton (and
@@ -26,7 +26,7 @@ from common.story import ScoredStory
 
 log = logging.getLogger(__name__)
 
-# Cheap and fast — extraction is tiny structured output, no need for Opus.
+# Cheap and fast - extraction is tiny structured output, no need for Opus.
 # Back-compat aliases for any external importer.
 FUNDING_MODEL = FUNDING.model
 FUNDING_CONCURRENCY = FUNDING.concurrency
@@ -35,7 +35,7 @@ _CACHE = UrlJsonCache(Path("data/funding_cache"))
 
 # Title keywords that pre-qualify a story for LLM extraction. Cheap regex
 # pass to avoid running an LLM on every Hacker News post. Erring on
-# permissive — the LLM can still say "not a funding story".
+# permissive - the LLM can still say "not a funding story".
 TITLE_KEYWORDS = re.compile(
     r"\b("
     r"raises?|raised|raising|"
@@ -74,7 +74,7 @@ class FundingRound:
 # --- region resolution -------------------------------------------------------
 
 _EU_COUNTRIES = {
-    # Broad "Europe in venture parlance" — includes UK, Switzerland, Norway,
+    # Broad "Europe in venture parlance" - includes UK, Switzerland, Norway,
     # Iceland, the rest of EFTA. Matches how Sifted / Dealroom treat the region.
     "austria", "belgium", "bulgaria", "croatia", "cyprus", "czechia", "czech republic",
     "denmark", "estonia", "finland", "france", "germany", "greece", "hungary",
@@ -170,7 +170,7 @@ Return the JSON object."""
 # --- extraction --------------------------------------------------------------
 
 
-# Back-compat shim — scripts/backfill_funding_archive.py imports _cache_path
+# Back-compat shim - scripts/backfill_funding_archive.py imports _cache_path
 # to bust stale entries before re-classifying. Keep the symbol working so
 # the script doesn't need its own refactor in this commit.
 def _cache_path(url: str) -> Path:
@@ -262,7 +262,7 @@ _EXTRACTOR = _FundingExtractor()
 def _extract_one(story: ScoredStory) -> FundingRound | None:
     """Return a FundingRound for a story that's a funding announcement, else None.
 
-    Results — including negatives — are cached so re-runs of the day are cheap.
+    Results - including negatives - are cached so re-runs of the day are cheap.
     """
     return _EXTRACTOR.extract_one(story)
 

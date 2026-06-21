@@ -4,7 +4,7 @@ description: Voice addendum for TLDR DevOps. Audience: SREs, platform engineers,
 type: reference
 ---
 
-# TLDR DevOps — Voice Addendum
+# TLDR DevOps - Voice Addendum
 
 Audience: platform engineers, SREs, infrastructure-team leads, devtools engineers. They run production and care about reliability, cost, and toil.
 
@@ -15,7 +15,7 @@ Audience: platform engineers, SREs, infrastructure-team leads, devtools engineer
 ## Audience-targeting
 
 - Use the operational vocabulary directly: SLO, SLI, error budget, P99, blast radius, dependency hell, rolling restart, chaos engineering.
-- Name specific tools (k8s, Argo CD, Backstage, Datadog, Prometheus, Grafana, Tempo, Loki). Skip "modern observability stack" — say which one.
+- Name specific tools (k8s, Argo CD, Backstage, Datadog, Prometheus, Grafana, Tempo, Loki). Skip "modern observability stack" - say which one.
 - Cost (compute, monitoring spend, on-call hours) is a first-class concern.
 
 ## Examples

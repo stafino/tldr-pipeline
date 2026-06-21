@@ -68,11 +68,11 @@ Our pipeline currently covers **139** RSS source domains.
 | 20 | `pages.awscloud.com` | 2 | ❌ |
 
 **Sample stories from missing sources** (to sanity-check they're worth adding):
-- `threadreaderapp.com` — Anthropic Suspended Access to Fable 5 and Mythos 5
-- `x.com` — Inference cost at scale with napkin math
-- `github.com` — Count Anything
-- `jobs.ashbyhq.com` — Why Apple built a third-party AI system for Siri and then refused to show it at 
-- `testingcatalog.com` — Meet Dreambeans, an app that connects you with what matters
+- `threadreaderapp.com` - Anthropic Suspended Access to Fable 5 and Mythos 5
+- `x.com` - Inference cost at scale with napkin math
+- `github.com` - Count Anything
+- `jobs.ashbyhq.com` - Why Apple built a third-party AI system for Siri and then refused to show it at 
+- `testingcatalog.com` - Meet Dreambeans, an app that connects you with what matters
 
 ## tldr_crypto
 
@@ -102,11 +102,11 @@ Our pipeline currently covers **139** RSS source domains.
 | 20 | `a16zcrypto.substack.com` | 1 | ❌ |
 
 **Sample stories from missing sources** (to sanity-check they're worth adding):
-- `threadreaderapp.com` — Coinbase launches tool to let AI agents manage trading and payments
-- `x.com` — Visa gives AI agents their own cards, with OpenAI as launch partner
-- `decrypt.co` — Revolut to Launch US Bank with Stablecoin Services and FDIC in 2026
-- `dlnews.com` — KelpDAO Funds on Arbitrum Caught Between Recovery Vote and DPRK
-- `ethresear.ch` — How to Automate MEV Blockchain Analysis Using OpenClaw and MCP
+- `threadreaderapp.com` - Coinbase launches tool to let AI agents manage trading and payments
+- `x.com` - Visa gives AI agents their own cards, with OpenAI as launch partner
+- `decrypt.co` - Revolut to Launch US Bank with Stablecoin Services and FDIC in 2026
+- `dlnews.com` - KelpDAO Funds on Arbitrum Caught Between Recovery Vote and DPRK
+- `ethresear.ch` - How to Automate MEV Blockchain Analysis Using OpenClaw and MCP
 
 ## tldr_data
 
@@ -136,11 +136,11 @@ Our pipeline currently covers **139** RSS source domains.
 | 20 | `engineering.atspotify.com` | 1 | ❌ |
 
 **Sample stories from missing sources** (to sanity-check they're worth adding):
-- `github.com` — dbt Core v2 is here: still open source, now rebuilt for what's next
-- `medium.com` — OpenTelemetry Launches “Blueprints” Initiative to Simplify Enterprise Observabil
-- `roundup.getdbt.com` — Protocols for transactional usage of object storage
-- `engineering.fb.com` — Why your AI agent has amnesia and why forgetting is the fix
-- `linkedin.com` — April 2026 PDC State of Data Modeling Survey Results Are In!
+- `github.com` - dbt Core v2 is here: still open source, now rebuilt for what's next
+- `medium.com` - OpenTelemetry Launches “Blueprints” Initiative to Simplify Enterprise Observabil
+- `roundup.getdbt.com` - Protocols for transactional usage of object storage
+- `engineering.fb.com` - Why your AI agent has amnesia and why forgetting is the fix
+- `linkedin.com` - April 2026 PDC State of Data Modeling Survey Results Are In!
 
 ## tldr_design
 
@@ -170,11 +170,11 @@ Our pipeline currently covers **139** RSS source domains.
 | 20 | `roadtovr.com` | 1 | ❌ |
 
 **Sample stories from missing sources** (to sanity-check they're worth adding):
-- `designyoutrust.com` — Sketching the Impossible: a 3D Portfolio Built Without a Single 3D Model
-- `9to5mac.com` — Netflix Turns to Generative AI to Fix a Problem it Helped Create
-- `webdesignerdepot.com` — Design Systems that Document AI
-- `itsnicethat.com` — Who Survives AI? Useful Insights from Walter Terruso
-- `medium.com` — The thinking was never just mine
+- `designyoutrust.com` - Sketching the Impossible: a 3D Portfolio Built Without a Single 3D Model
+- `9to5mac.com` - Netflix Turns to Generative AI to Fix a Problem it Helped Create
+- `webdesignerdepot.com` - Design Systems that Document AI
+- `itsnicethat.com` - Who Survives AI? Useful Insights from Walter Terruso
+- `medium.com` - The thinking was never just mine
 
 ## tldr_dev
 
@@ -204,11 +204,11 @@ Our pipeline currently covers **139** RSS source domains.
 | 20 | `jjmojojjmojo.github.io` | 1 | ❌ |
 
 **Sample stories from missing sources** (to sanity-check they're worth adding):
-- `go.clerk.com` — How to Grow From Senior to Staff Engineer in the AI Era
-- `spin.atomicobject.com` — The Newest Instagram "Exploit" is the Goofiest I've Seen
-- `github.com` — I Stopped Fighting My Tools and Built a Game Engine in D
-- `jobs.ashbyhq.com` — AI is a Meteor. Don't be a Dinosaur
-- `getunblocked.com` — My Thoughts on AI, Part 2: Agent Setup, Workflow, and Tools
+- `go.clerk.com` - How to Grow From Senior to Staff Engineer in the AI Era
+- `spin.atomicobject.com` - The Newest Instagram "Exploit" is the Goofiest I've Seen
+- `github.com` - I Stopped Fighting My Tools and Built a Game Engine in D
+- `jobs.ashbyhq.com` - AI is a Meteor. Don't be a Dinosaur
+- `getunblocked.com` - My Thoughts on AI, Part 2: Agent Setup, Workflow, and Tools
 
 ## tldr_devops
 
@@ -238,11 +238,11 @@ Our pipeline currently covers **139** RSS source domains.
 | 20 | `twingate.com` | 1 | ❌ |
 
 **Sample stories from missing sources** (to sanity-check they're worth adding):
-- `about.gitlab.com` — GitHub pulls pin on npm's auto-run scripts
-- `digitalocean.com` — Get started with OpenAI GPT-5.5, GPT-5.4 models, and Codex on Amazon Bedrock
-- `techcommunity.microsoft.com` — DigitalOcean Serverless Inference: A Deep Dive
-- `blog.cloudflare.com` — The Inference Tax: How Prefix-Aware Routing Eliminates the Hidden Cost of LLMs a
-- `docker.com` — Prompt → Secure Infrastructure: The Claude Code DevSecOps Shift on AWS
+- `about.gitlab.com` - GitHub pulls pin on npm's auto-run scripts
+- `digitalocean.com` - Get started with OpenAI GPT-5.5, GPT-5.4 models, and Codex on Amazon Bedrock
+- `techcommunity.microsoft.com` - DigitalOcean Serverless Inference: A Deep Dive
+- `blog.cloudflare.com` - The Inference Tax: How Prefix-Aware Routing Eliminates the Hidden Cost of LLMs a
+- `docker.com` - Prompt → Secure Infrastructure: The Claude Code DevSecOps Shift on AWS
 
 ## tldr_fintech
 
@@ -272,11 +272,11 @@ Our pipeline currently covers **139** RSS source domains.
 | 20 | `thepaypers.com` | 1 | ❌ |
 
 **Sample stories from missing sources** (to sanity-check they're worth adding):
-- `bloomberg.com` — SoFi launches SoFiUSD for 14.7 million users as first bank-issued stablecoin
-- `pymnts.com` — SEC delays plan allowing for crypto versions of US Stocks
-- `paymentsdive.com` — Jamie Dimon vows JPMorganChase will fight Clarity Act
-- `threadreaderapp.com` — Former Citadel quants raise $78 million for AI fintech Moment
-- `x.com` — Chime turns a profit as members hit 10.2 Million
+- `bloomberg.com` - SoFi launches SoFiUSD for 14.7 million users as first bank-issued stablecoin
+- `pymnts.com` - SEC delays plan allowing for crypto versions of US Stocks
+- `paymentsdive.com` - Jamie Dimon vows JPMorganChase will fight Clarity Act
+- `threadreaderapp.com` - Former Citadel quants raise $78 million for AI fintech Moment
+- `x.com` - Chime turns a profit as members hit 10.2 Million
 
 ## tldr_founders
 
@@ -306,11 +306,11 @@ Our pipeline currently covers **139** RSS source domains.
 | 20 | `venturebeat.com` | 1 | ✅ |
 
 **Sample stories from missing sources** (to sanity-check they're worth adding):
-- `aprildunford.substack.com` — Why your AI bill keeps exploding
-- `saastr.com` — In a confusing market, buyers buy your point of view
-- `x.com` — The New Primitives of AI-Native Development
-- `plane.zoom.us` — Three ways founders are building in public
-- `newsletter.posthog.com` — Do you have search market fit for AEO/SEO?
+- `aprildunford.substack.com` - Why your AI bill keeps exploding
+- `saastr.com` - In a confusing market, buyers buy your point of view
+- `x.com` - The New Primitives of AI-Native Development
+- `plane.zoom.us` - Three ways founders are building in public
+- `newsletter.posthog.com` - Do you have search market fit for AEO/SEO?
 
 ## tldr_infosec
 
@@ -340,11 +340,11 @@ Our pipeline currently covers **139** RSS source domains.
 | 20 | `bbc.com` | 1 | ❌ |
 
 **Sample stories from missing sources** (to sanity-check they're worth adding):
-- `hackread.com` — Signal says UK plan to scan devices for nude images 'endangers us all'
-- `github.com` — xz, two years on: what scanners still cannot catch
-- `securityaffairs.com` — ChatGPhish Vulnerability Turns ChatGPT Web Summaries Into a Phishing Surface
-- `cloud.google.com` — Automating Security Operations with AI: Triaging Renovate PRs
-- `unit42.paloaltonetworks.com` — CISA Enhances Known Exploited Vulnerabilities Catalog to include New Nomination 
+- `hackread.com` - Signal says UK plan to scan devices for nude images 'endangers us all'
+- `github.com` - xz, two years on: what scanners still cannot catch
+- `securityaffairs.com` - ChatGPhish Vulnerability Turns ChatGPT Web Summaries Into a Phishing Surface
+- `cloud.google.com` - Automating Security Operations with AI: Triaging Renovate PRs
+- `unit42.paloaltonetworks.com` - CISA Enhances Known Exploited Vulnerabilities Catalog to include New Nomination 
 
 ## tldr_it
 
@@ -374,11 +374,11 @@ Our pipeline currently covers **139** RSS source domains.
 | 20 | `montecarlo.ai` | 1 | ❌ |
 
 **Sample stories from missing sources** (to sanity-check they're worth adding):
-- `infosecurity-magazine.com` — Broadcom, Apollo, and Blackstone are launching a $35 billion AI infrastructure p
-- `moderndata101.substack.com` — Ivanti patches max-severity Sentry flaws
-- `networkworld.com` — Built for the enterprise, ready for AI: Under the hood of Monte Carlo's platform
-- `workspaceupdates.googleblog.com` — F5 Adds AI-Powered WAF And Virtual Patching For Faster Threat Response
-- `github.com` — Google Meet Adds 1080p Video For ChromeOS Room Hardware
+- `infosecurity-magazine.com` - Broadcom, Apollo, and Blackstone are launching a $35 billion AI infrastructure p
+- `moderndata101.substack.com` - Ivanti patches max-severity Sentry flaws
+- `networkworld.com` - Built for the enterprise, ready for AI: Under the hood of Monte Carlo's platform
+- `workspaceupdates.googleblog.com` - F5 Adds AI-Powered WAF And Virtual Patching For Faster Threat Response
+- `github.com` - Google Meet Adds 1080p Video For ChromeOS Room Hardware
 
 ## tldr_marketing
 
@@ -408,11 +408,11 @@ Our pipeline currently covers **139** RSS source domains.
 | 20 | `marketingdive.com` | 1 | ❌ |
 
 **Sample stories from missing sources** (to sanity-check they're worth adding):
-- `futuresocial.beehiiv.com` — How We Grew Toro TMS's Content From 5% to 25% of Revenue
-- `thestateofbrand.com` — Media spend on customer acquisition accelerates amid rush to AI
-- `linkedin.com` — Cautious Shoppers Reward Clear Value
-- `jobs.ashbyhq.com` — Nearly 90% of AI Citations for B2B SaaS Come from Off-Site Sources
-- `conversion-rate-experts.com` — Which Social Media Trends are worth your brand's time?
+- `futuresocial.beehiiv.com` - How We Grew Toro TMS's Content From 5% to 25% of Revenue
+- `thestateofbrand.com` - Media spend on customer acquisition accelerates amid rush to AI
+- `linkedin.com` - Cautious Shoppers Reward Clear Value
+- `jobs.ashbyhq.com` - Nearly 90% of AI Citations for B2B SaaS Come from Off-Site Sources
+- `conversion-rate-experts.com` - Which Social Media Trends are worth your brand's time?
 
 ## tldr_product
 
@@ -442,11 +442,11 @@ Our pipeline currently covers **139** RSS source domains.
 | 20 | `productparty.us` | 1 | ❌ |
 
 **Sample stories from missing sources** (to sanity-check they're worth adding):
-- `aakashg.com` — Your AI strategy has a trust problem, not a tooling problem
-- `cutlefish.substack.com` — Emotional Intelligence for Product Managers: The Competitive Advantage AI Can't 
-- `antmurphy.me` — Skateboards, Cars, and the Return of Code-First Discovery
-- `threadreaderapp.com` — Building Software Is Learning
-- `jeffgothelf.com` — Code Isn't Product
+- `aakashg.com` - Your AI strategy has a trust problem, not a tooling problem
+- `cutlefish.substack.com` - Emotional Intelligence for Product Managers: The Competitive Advantage AI Can't 
+- `antmurphy.me` - Skateboards, Cars, and the Return of Code-First Discovery
+- `threadreaderapp.com` - Building Software Is Learning
+- `jeffgothelf.com` - Code Isn't Product
 
 ## tldr_tech
 
@@ -476,8 +476,8 @@ Our pipeline currently covers **139** RSS source domains.
 | 20 | `seangoedecke.com` | 8 | ❌ |
 
 **Sample stories from missing sources** (to sanity-check they're worth adding):
-- `github.com` — Has AI Already Killed How-To Nonfiction? Sales Trends, My Personal Data, and Wha
-- `threadreaderapp.com` — What's new in web extensions: I/O 2026 recap
-- `x.com` — Tokenmaxxing, Promomaxxing, and Misaligned Incentives in Tech
-- `mohkohn.co.uk` — The Untrainable
-- `linkedin.com` — Anthropic's AI Jobs Paper
+- `github.com` - Has AI Already Killed How-To Nonfiction? Sales Trends, My Personal Data, and Wha
+- `threadreaderapp.com` - What's new in web extensions: I/O 2026 recap
+- `x.com` - Tokenmaxxing, Promomaxxing, and Misaligned Incentives in Tech
+- `mohkohn.co.uk` - The Untrainable
+- `linkedin.com` - Anthropic's AI Jobs Paper

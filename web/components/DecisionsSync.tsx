@@ -46,11 +46,11 @@ export default function DecisionsSync() {
       const incoming =
         data && typeof data === 'object' && data.decisions ? data.decisions : data;
       if (!incoming || typeof incoming !== 'object') {
-        setFlash('Invalid file — expected JSON map');
+        setFlash('Invalid file - expected JSON map');
         setTimeout(() => setFlash(''), 3000);
         return;
       }
-      // Merge incoming onto existing — keep both, incoming wins on key
+      // Merge incoming onto existing - keep both, incoming wins on key
       // collision (more recent edit assumed).
       const merged = { ...decisions, ...incoming };
       persist(merged);
@@ -58,7 +58,7 @@ export default function DecisionsSync() {
       setFlash(`Imported ${added} decisions (${Object.keys(merged).length} total)`);
       setTimeout(() => setFlash(''), 3000);
     } catch (err) {
-      setFlash('Import failed — invalid JSON');
+      setFlash('Import failed - invalid JSON');
       setTimeout(() => setFlash(''), 3000);
     }
     if (fileRef.current) fileRef.current.value = '';

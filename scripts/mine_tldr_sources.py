@@ -230,7 +230,7 @@ def write_audit(citations_by_nl: dict[str, list[StoryCitation]], days: int, curr
             shown = set()
             for c in cits:
                 if c.domain in {d for d, _ in missing[:5]} and c.domain not in shown:
-                    lines.append(f"- `{c.domain}` — {c.title[:80]}")
+                    lines.append(f"- `{c.domain}` - {c.title[:80]}")
                     shown.add(c.domain)
                 if len(shown) >= 5:
                     break

@@ -5,7 +5,7 @@ import type { VcArticle, VcType } from '@/lib/types';
 
 /**
  * Beehiiv-style A/B subject-line picker. Derives three angles from the
- * day's top stories — no LLM call, pure deterministic. Click any
+ * day's top stories - no LLM call, pure deterministic. Click any
  * variant to copy it.
  */
 export default function VcSubjectVariants({
@@ -33,7 +33,7 @@ export default function VcSubjectVariants({
   if (lead) {
     variants.push({
       label: 'Marquee',
-      value: `TLDR VC #${issueNum} — ${shorten(lead.headline_summary || lead.title, 65)}`,
+      value: `TLDR VC #${issueNum} - ${shorten(lead.headline_summary || lead.title, 65)}`,
     });
   }
   if (exit) {
@@ -62,7 +62,7 @@ export default function VcSubjectVariants({
   if (variants.length === 0) {
     variants.push({
       label: 'Default',
-      value: `TLDR VC #${issueNum} — your daily venture digest`,
+      value: `TLDR VC #${issueNum} - your daily venture digest`,
     });
   }
 
@@ -81,7 +81,7 @@ export default function VcSubjectVariants({
     <details className="my-6 border border-border rounded-md bg-surface/30">
       <summary className="px-3 py-2 text-[11px] uppercase tracking-[0.08em] text-text-mute font-semibold cursor-pointer hover:text-text">
         Subject line variants (click to copy)
-        {flash && <span className="ml-2 text-ok normal-case tracking-normal">— {flash}</span>}
+        {flash && <span className="ml-2 text-ok normal-case tracking-normal">- {flash}</span>}
       </summary>
       <div className="px-3 pb-3 space-y-2">
         {variants.map((v) => (

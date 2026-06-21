@@ -2,14 +2,14 @@
  * Shared formatters for /funding and /vc views.
  *
  * Previously duplicated across 3 files (funding/page.tsx,
- * FundingDetailPane.tsx, vc/page.tsx). Identical logic — pulled here.
+ * FundingDetailPane.tsx, vc/page.tsx). Identical logic - pulled here.
  */
 
 /**
- * "$5B" / "$60M" / "$300K" / "—". Matches Crunchbase News convention.
+ * "$5B" / "$60M" / "$300K" / "-". Matches Crunchbase News convention.
  */
 export function formatUsd(usd: number | null, raw: string = ''): string {
-  if (!usd) return raw || '—';
+  if (!usd) return raw || '-';
   if (usd >= 1_000_000_000)
     return `$${(usd / 1_000_000_000).toFixed(usd >= 10_000_000_000 ? 0 : 1)}B`;
   if (usd >= 1_000_000) return `$${Math.round(usd / 1_000_000)}M`;
@@ -38,7 +38,7 @@ export function relativeDate(iso: string, todayISO: string): string {
 }
 
 /**
- * Funding-round stage tier — used to colour-code chips.
+ * Funding-round stage tier - used to colour-code chips.
  *   - Pre-seed / Seed → "early" (green)
  *   - Series A / B → "growth" (blue)
  *   - Series C+ / pre-IPO / growth → "late" (purple)

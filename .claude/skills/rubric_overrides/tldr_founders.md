@@ -1,4 +1,4 @@
-## TLDR Founders — scoring overrides
+## TLDR Founders - scoring overrides
 
 The audience is founders and operators (Seed → Series C). They read for
 how-to playbooks, market structure shifts, and direct operator commentary.
@@ -17,4 +17,4 @@ Bias the score DOWN when the story is:
 - Recruiting fluff or hiring advice without measurable outcome.
 - "10 lessons I learned at startup X" listicles without specifics.
 - Pure product news from a company without operator-relevant detail.
-- Stories without numbers — they don't earn the headline slot.
+- Stories without numbers - they don't earn the headline slot.

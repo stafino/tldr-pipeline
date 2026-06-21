@@ -36,14 +36,14 @@ export default function EditionPage({
     );
   }
 
-  // Edition is always day-scoped (you publish one issue per day) — and the day
+  // Edition is always day-scoped (you publish one issue per day) - and the day
   // is the story's UTC publish date, not the scraper's fetch day.
   const requested = searchParams.date && searchParams.date !== 'All' ? searchParams.date : dates[0];
   const selectedDate = dates.includes(requested) ? requested : dates[0];
   const selectedNl = searchParams.nl ?? defaultNewsletterId();
   const nl = newsletters[selectedNl];
 
-  // 2-day window — see lib/data.ts:filterByPublishedWindow rationale.
+  // 2-day window - see lib/data.ts:filterByPublishedWindow rationale.
   const scored = filterByPublishedWindow(loadScoredAll(scrapeDates), selectedDate, 1);
   const urls = new Set(scored.map((s) => s.story.url));
   const blurbs = filterBlurbsByStoryUrls(loadBlurbsAll(scrapeDates), urls);

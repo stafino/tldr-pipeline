@@ -1,4 +1,4 @@
-"""TLDR pipeline curator UI — dark theme, link-based navigation.
+"""TLDR pipeline curator UI - dark theme, link-based navigation.
 
 Three-pane layout (Linear Triage style):
 - left rail: clickable newsletters + Backlog (universal queue filtered by date)
@@ -37,7 +37,7 @@ CROSS_KEY = "__cross__"
 st.set_page_config(page_title="tldr pipeline", layout="wide", initial_sidebar_state="collapsed")
 
 # ─────────────────────────────────────────────────────────────────────────────
-# Color tokens (CSS variables) — change here once, every component picks it up.
+# Color tokens (CSS variables) - change here once, every component picks it up.
 # ─────────────────────────────────────────────────────────────────────────────
 st.markdown(
     """
@@ -67,7 +67,7 @@ st.markdown(
     [data-testid="stHeader"] { display: none; }
     [data-testid="stToolbar"] { display: none; }
 
-    /* Inter — applied via inheritance so icon fonts (Material Icons used by
+    /* Inter - applied via inheritance so icon fonts (Material Icons used by
        Streamlit's expander chevron, selectbox arrows, etc.) keep working. */
     html, body, .stApp {
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
@@ -170,14 +170,14 @@ st.markdown(
     .chip.warn { background: var(--warn-soft); color: #fcd34d; border-color: #d97706; }
     .chip.accent { background: var(--accent-soft); color: #c7d2fe; border-color: var(--accent); }
 
-    /* ─── Detail pane — clear hierarchy ─── */
+    /* ─── Detail pane - clear hierarchy ─── */
     .detail-empty {
         color: var(--text-mute); font-size: 12px; padding: 24px 0;
         border: 1px dashed var(--border); border-radius: 6px;
         text-align: center;
     }
 
-    /* H1 — story title */
+    /* H1 - story title */
     .d-title {
         font-size: 26px;
         font-weight: 700;
@@ -187,7 +187,7 @@ st.markdown(
         letter-spacing: -0.018em;
         font-family: 'Inter', -apple-system, sans-serif;
     }
-    /* H2 — subtitle (source · score · newsletter), flex with real gaps */
+    /* H2 - subtitle (source · score · newsletter), flex with real gaps */
     .d-meta {
         display: flex;
         align-items: center;
@@ -219,7 +219,7 @@ st.markdown(
         font-weight: 600;
         font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
     }
-    /* H3 — section labels (proper subsubtitle, NOT tiny caption) */
+    /* H3 - section labels (proper subsubtitle, NOT tiny caption) */
     .d-label {
         font-size: 11.5px;
         font-weight: 700;
@@ -229,7 +229,7 @@ st.markdown(
         margin: 28px 0 10px;
         font-family: 'Inter', sans-serif;
     }
-    /* Body — section content (regular Inter, smaller than nothing else but the label) */
+    /* Body - section content (regular Inter, smaller than nothing else but the label) */
     .d-body {
         font-size: 14px;
         color: var(--text-dim);
@@ -294,7 +294,7 @@ st.markdown(
         padding-top: 10px;
     }
 
-    /* ─── Blurb editor — fully transparent, reads like newsletter prose ─── */
+    /* ─── Blurb editor - fully transparent, reads like newsletter prose ─── */
     [data-testid="stTextArea"], [data-testid="stTextArea"] > div,
     [data-testid="stTextArea"] [data-baseweb], [data-testid="stTextArea"] [data-baseweb] > div {
         background: transparent !important;
@@ -712,7 +712,7 @@ with tabs_col:
     )
 
 # ─────────────────────────────────────────────────────────────────────────────
-# BACKTEST view — early return
+# BACKTEST view - early return
 # ─────────────────────────────────────────────────────────────────────────────
 if current_view == "backtest":
     from common import backtest as bt
@@ -741,7 +741,7 @@ if current_view == "backtest":
     total_hits_50 = sum(r.hits_at.get(50, 0) for r in latest_results)
     # "Any" tier: largest K we have, which is whatever the cache stored as the
     # all-predictions bucket. The compute_backtest function stores n_pred as the
-    # last key — find the biggest K available across these results.
+    # last key - find the biggest K available across these results.
     max_k = max((max(r.hits_at.keys()) for r in latest_results if r.hits_at), default=0)
     total_hits_all = sum(r.hits_at.get(max_k, 0) for r in latest_results) if max_k else 0
     recall_10 = (total_hits_10 / total_tldr * 100) if total_tldr else 0
@@ -762,7 +762,7 @@ if current_view == "backtest":
         f'<p style="color:var(--text-mute);font-size:12px;margin:-12px 0 22px;line-height:1.5;">'
         f'<b style="color:var(--text-dim);">Recall</b> = "of the stories TLDR actually published, how many did we surface in our top N?" '
         f'Matches via title-embedding similarity ≥ 0.72 (so "OpenAI Acquires Ona" matches "OpenAI buys long-agent startup Ona"). '
-        f'Low numbers point to source coverage gaps — TLDR sources heavily from X, LinkedIn, and inside-baseball Substacks we haven\'t wired up yet.'
+        f'Low numbers point to source coverage gaps - TLDR sources heavily from X, LinkedIn, and inside-baseball Substacks we haven\'t wired up yet.'
         f'</p>'
     )
     st.markdown(hero, unsafe_allow_html=True)
@@ -781,7 +781,7 @@ if current_view == "backtest":
     rows_html = []
     for nid in nl_ids:
         history = bt.load_all_for(nid, last_n_days=7)
-        # Filter to days we actually have predictions for — otherwise the
+        # Filter to days we actually have predictions for - otherwise the
         # "TLDR title denominator" gets counted but our hits are 0 by definition.
         history = [r for r in history if r.predictions]
         if not history:
@@ -834,7 +834,7 @@ if current_view == "backtest":
 
     # Detailed compare: pick a (date, newsletter) to inspect
     st.markdown('<h3 style="font-size:14px;font-weight:600;color:var(--text);margin:24px 0 12px;">'
-                'Today vs published — side by side</h3>', unsafe_allow_html=True)
+                'Today vs published - side by side</h3>', unsafe_allow_html=True)
 
     bt_cols = st.columns([1, 1, 4])
     with bt_cols[0]:
@@ -855,7 +855,7 @@ if current_view == "backtest":
         )
     elif not detail.predictions:
         st.markdown(
-            '<div class="bt-empty">We have no predictions for this date — '
+            '<div class="bt-empty">We have no predictions for this date - '
             'the pipeline didn\'t run, or no stories scored above the threshold.</div>',
             unsafe_allow_html=True,
         )
@@ -914,7 +914,7 @@ if current_view == "backtest":
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# EDITION view — what's actually going in the issue
+# EDITION view - what's actually going in the issue
 # Shows ONLY curator-approved stories per newsletter, capped at each
 # newsletter's edition_size. Section-grouped, with per-section issue counter.
 # ─────────────────────────────────────────────────────────────────────────────
@@ -1049,7 +1049,7 @@ if current_view == "edition":
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# CURATE view (default) — original three-pane layout below
+# CURATE view (default) - original three-pane layout below
 # ─────────────────────────────────────────────────────────────────────────────
 tb1, tb2, tb3, tb4 = st.columns([2, 3, 4, 3])
 with tb1:
@@ -1345,7 +1345,7 @@ with mid_col:
     st.markdown("".join(parts), unsafe_allow_html=True)
 
 
-# ─── RIGHT PANE — Detail / Editor ───
+# ─── RIGHT PANE - Detail / Editor ───
 with det_col:
     selected_url = ss.selected_url
     selected_nl_for_detail = ss.selected_nl_for_detail
@@ -1403,7 +1403,7 @@ with det_col:
         wc = len(edited.split())
         in_range = sec_obj and (sec_obj.min_words <= wc <= sec_obj.max_words)
         wc_class = "d-wc ok" if in_range else ("d-wc bad" if sec_obj else "d-wc")
-        target = f"{sec_obj.min_words}–{sec_obj.max_words}" if sec_obj else "—"
+        target = f"{sec_obj.min_words}-{sec_obj.max_words}" if sec_obj else "-"
         check = "✓" if in_range else "⚠"
         st.markdown(
             f'<div class="{wc_class}">{wc} words {check} · target {target} · '
@@ -1411,7 +1411,7 @@ with det_col:
             unsafe_allow_html=True,
         )
 
-        # Action buttons — wrapped in a sentinel div so column-position CSS works.
+        # Action buttons - wrapped in a sentinel div so column-position CSS works.
         st.markdown('<div class="action-row-anchor"></div>', unsafe_allow_html=True)
         ab1, ab2, ab3 = st.columns([1, 1, 1], gap="small")
         with ab1:
@@ -1481,7 +1481,7 @@ with det_col:
             bottom_parts.append('<div class="d-label">why it matters</div>')
             bottom_parts.append(f'<p class="d-body">{reasoning_safe}</p>')
 
-        # Score breakdown — explainability panel showing how the score was built
+        # Score breakdown - explainability panel showing how the score was built
         comp = selected_scored.components or {}
         boosts = selected_scored.boosts or {}
         if comp or boosts or selected_scored.hn_points:
@@ -1573,7 +1573,7 @@ else:
     issue_text = ""
 
 # Family bundle
-bundle_parts: list[str] = [f"TLDR family bundle — {selected_date}\n"]
+bundle_parts: list[str] = [f"TLDR family bundle - {selected_date}\n"]
 for nid in nl_ids:
     merged = _merged_blurbs_for(nid)
     if not merged:
@@ -1611,7 +1611,7 @@ with st.expander("how is the score calculated?", expanded=False):
     st.markdown(
         """
         <div class="score-doc">
-        <p>Every candidate story is scored <b>0–100</b> against five editorial
+        <p>Every candidate story is scored <b>0-100</b> against five editorial
         dimensions. The model assigns sub-scores per dimension and combines them
         with the weights below:</p>
 

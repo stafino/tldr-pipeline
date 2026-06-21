@@ -1,7 +1,7 @@
-## TLDR Tech — scoring overrides
+## TLDR Tech - scoring overrides
 
 The audience is general technical readers across stacks. TLDR Tech is the
-flagship digest — broad coverage, less specialty depth than the other
+flagship digest - broad coverage, less specialty depth than the other
 newsletters.
 
 Bias the score UP when the story has:

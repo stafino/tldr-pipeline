@@ -62,7 +62,7 @@ export default function VcIssueExport({
   bySection: Partial<Record<VcType, VcArticle[]>>;
 }) {
   // VC plain-text strips the tagline em-dash flourish for a tighter look;
-  // markdown + email HTML keep the full "— funds, partners, exits, signals"
+  // markdown + email HTML keep the full "- funds, partners, exits, signals"
   // version. Build two docs with the differing taglines.
   const docFull = useMemo<IssueDoc>(
     () =>
@@ -70,7 +70,7 @@ export default function VcIssueExport({
         issueLabel,
         sections,
         bySection,
-        'A daily digest of the venture capital industry — funds, partners, exits, signals.',
+        'A 5-minute daily on venture. Funds, exits, people, signals.',
       ),
     [issueLabel, sections, bySection],
   );
@@ -80,7 +80,7 @@ export default function VcIssueExport({
         issueLabel,
         sections,
         bySection,
-        'A daily digest of the venture capital industry.',
+        'A 5-minute daily on venture. Funds, exits, people, signals.',
       ),
     [issueLabel, sections, bySection],
   );
@@ -117,7 +117,7 @@ export default function VcIssueExport({
 
   async function copyRich() {
     const ok = await copyRichToClipboard(html, txt);
-    toast(ok ? 'Issue copied — paste into your email' : 'Copy blocked by browser');
+    toast(ok ? 'Issue copied - paste into your email' : 'Copy blocked by browser');
   }
 
   async function copyMd() {

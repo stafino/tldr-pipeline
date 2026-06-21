@@ -1,6 +1,6 @@
 """Shared JSON parsing helpers for LLM-extractor modules.
 
-LLMs return JSON wrapped in unpredictable scaffolding — markdown fences,
+LLMs return JSON wrapped in unpredictable scaffolding - markdown fences,
 preamble text, sometimes extra commentary after the closing brace. The
 funding and vc extractors both need to deal with this, so the parsing
 logic lives here once.
@@ -21,7 +21,7 @@ def parse_llm_json(text: str) -> dict | None:
 
     Strategy:
     1. Strip surrounding whitespace and any ```json/``` fences.
-    2. Try a straight json.loads — succeeds for well-behaved replies.
+    2. Try a straight json.loads - succeeds for well-behaved replies.
     3. Fall back to extracting the first { … } block via regex and
        parsing that, in case the model added preamble or commentary.
     4. Return None on total failure (caller should log a warning).

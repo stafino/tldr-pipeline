@@ -38,7 +38,7 @@ GLOBAL RUBRIC (apply to every newsletter):
 LEARNED SOURCE PREFERENCES (per newsletter):
 
 The pipeline tracks which source domains TLDR has historically picked
-from. Use these as a soft prior when scoring — stories from a favored
+from. Use these as a soft prior when scoring - stories from a favored
 source for a given newsletter deserve a modest score boost (+3 to +8).
 Stories from unknown / low-preference domains aren't penalized; this is
 purely a positive signal.
@@ -47,11 +47,11 @@ purely a positive signal.
 
 FRESHNESS PRIOR:
 
-TLDR is a daily newsletter — fresh news wins. Apply this freshness
+TLDR is a daily newsletter - fresh news wins. Apply this freshness
 adjustment to the score:
   - < 12 hours old: +5 (breaking)
   - 12-24 hours old: +3 (very fresh)
-  - 24-48 hours old: 0 (neutral — typical)
+  - 24-48 hours old: 0 (neutral - typical)
   - 48-72 hours old: -3 (stale for daily)
   - > 72 hours old: -8 (likely already covered)
 The hours_old field is provided per story.
@@ -60,7 +60,7 @@ ALREADY-COVERED FLAG:
 
 If a story has already_covered_by listing newsletter IDs, TLDR already
 published this exact URL in the last 14 days. Don't recommend it again
-unless it's a major update — apply a -25 score adjustment to the
+unless it's a major update - apply a -25 score adjustment to the
 already-covered newsletter(s) so it falls out of the top pool.
 
 ENGAGEMENT SIGNAL:
@@ -72,14 +72,14 @@ signal. Apply this adjustment:
   - HN >= 100 points: +3
   - HN >= 50 points: +1
   - HN < 50 or no signal: 0
-Don't penalize — many high-quality stories never trend on HN.
+Don't penalize - many high-quality stories never trend on HN.
 
 TLDR FAMILY (assign the story to all newsletters where its score would be {min_score} or above; you can also return [] if it fits none):
 
 {family}
 
 IMPORTANT:
-- Always pick a section_id from the listed sections for that newsletter — never invent one.
+- Always pick a section_id from the listed sections for that newsletter - never invent one.
 - A story can land in 0, 1, 2, or 3 newsletters. Be selective; don't force-fit.
 - Quick Links is the catch-all when a story is interesting but not strong enough for a primary section.
 - If a story is pure hype, content marketing, off-topic, or duplicate-y, return assignments: []."""
@@ -146,7 +146,7 @@ def _format_family(nls: dict[str, Newsletter]) -> str:
     blocks = []
     for nid, nl in nls.items():
         section_lines = "\n".join(
-            f"      - {s.id}: {s.name} — {s.description}" for s in nl.sections
+            f"      - {s.id}: {s.name} - {s.description}" for s in nl.sections
         )
         topics = ", ".join(nl.topics) if nl.topics else "(general)"
         blocks.append(
@@ -196,7 +196,7 @@ def rank_stories(stories: list[Story], use_cache: bool = True) -> list[ScoredSto
     }
 
     # Inject learned source-weight preferences per newsletter (if any exist).
-    # The first run has empty weights — the file is populated after the first
+    # The first run has empty weights - the file is populated after the first
     # backtest cycle and compounds from there.
     from common.source_weights import format_for_prompt
 
@@ -206,7 +206,7 @@ def rank_stories(stories: list[Story], use_cache: bool = True) -> list[ScoredSto
         if block:
             source_pref_lines.append(block)
     source_preferences = "\n\n".join(source_pref_lines) if source_pref_lines else (
-        "(No learned preferences yet — they populate after the first backtest cycle.)"
+        "(No learned preferences yet - they populate after the first backtest cycle.)"
     )
 
     # Build a "TLDR already published this URL in the last 14 days" set.

@@ -1,4 +1,4 @@
-## TLDR AI — scoring overrides
+## TLDR AI - scoring overrides
 
 The audience reads TLDR AI for: (1) what frontier labs shipped, (2) what new
 techniques actually work in production, (3) AI business / strategy moves.
@@ -6,7 +6,7 @@ techniques actually work in production, (3) AI business / strategy moves.
 Bias the score UP when the story has:
 - A model release with weights, paper, or system card (especially Anthropic /
   OpenAI / DeepMind / Meta / xAI / Mistral / Qwen).
-- Concrete benchmark numbers and reproducibility — code, weights, or eval data.
+- Concrete benchmark numbers and reproducibility - code, weights, or eval data.
 - A material capability gain (>1.5× on a standard benchmark, new modality,
   cost reduction).
 - A frontier-lab business / regulatory story (M&A, fundraising, partnerships,

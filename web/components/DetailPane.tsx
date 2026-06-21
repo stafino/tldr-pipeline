@@ -40,7 +40,7 @@ export default function DetailPane({ story, newsletter, blurb }: Props) {
 
   const wc = edited.split(/\s+/).filter(Boolean).length;
   const inRange = section ? wc >= section.min_words && wc <= section.max_words : false;
-  const target = section ? `${section.min_words}–${section.max_words}` : '—';
+  const target = section ? `${section.min_words}-${section.max_words}` : '-';
 
   function approve() {
     upsert(story!.story.url, newsletter!.id, {

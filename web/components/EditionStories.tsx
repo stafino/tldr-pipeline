@@ -133,7 +133,7 @@ export default function EditionStories({
   }
 
   async function copyBody() {
-    // Rich HTML + plain-text fallback to clipboard — pasting into
+    // Rich HTML + plain-text fallback to clipboard - pasting into
     // Gmail/Apple Mail picks up the formatted version with real
     // hyperlinks.
     const ok = await copyRichToClipboard(issueHtml, issueText);
@@ -162,7 +162,7 @@ export default function EditionStories({
   }
 
   function downloadEmlFile() {
-    // RFC 822 multipart/alternative — opening the file in Apple Mail
+    // RFC 822 multipart/alternative - opening the file in Apple Mail
     // loads it as a draft with HTML intact, no paste normalization.
     downloadEml({
       filename: `${newsletterId}-${date}.eml`,
@@ -254,27 +254,27 @@ export default function EditionStories({
             <button
               onClick={copyForEditor}
               className="px-4 py-2 rounded-md bg-surface border border-border text-text text-[12px] font-medium hover:bg-surface-hi"
-              title="Paste into Substack or Beehiiv post editor — maps to native heading / bold link / paragraph blocks"
+              title="Paste into Substack or Beehiiv post editor - maps to native heading / bold link / paragraph blocks"
             >
               ⧉ copy for Substack/Beehiiv
             </button>
             <button
               onClick={copyMarkdown}
               className="px-4 py-2 rounded-md bg-surface border border-border text-text text-[12px] font-medium hover:bg-surface-hi"
-              title="Paste into Ghost, Notion, GitHub, docs — any .md editor"
+              title="Paste into Ghost, Notion, GitHub, docs - any .md editor"
             >
               ⧉ copy as Markdown
             </button>
             <button
               onClick={downloadEmlFile}
               className="px-4 py-2 rounded-md bg-surface border border-border text-text text-[12px] font-medium hover:bg-surface-hi"
-              title="Double-click the file to open as a real email draft — spacing stays intact"
+              title="Double-click the file to open as a real email draft - spacing stays intact"
             >
               ⬇ download .eml (1:1)
             </button>
             {copyState === 'copied' && (
               <span className="text-[12px] text-ok">
-                copied — paste (⌘V) into your email
+                copied - paste (⌘V) into your email
               </span>
             )}
             {copyState === 'error' && (

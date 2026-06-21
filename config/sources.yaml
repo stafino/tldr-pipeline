@@ -132,7 +132,7 @@ rss:
   - { name: techmeme,           url: https://www.techmeme.com/feed.xml,                                       topics: [tech, ai, founders] }
 
   # ─── Added from TLDR source audit (the top domains TLDR actually cites) ────
-  # Major financial / business news — cited heavily across all newsletters
+  # Major financial / business news - cited heavily across all newsletters
   - { name: bloomberg_tech,     url: https://feeds.bloomberg.com/technology/news.rss,                          topics: [tech, founders, fintech] }
   - { name: bloomberg_markets,  url: https://feeds.bloomberg.com/markets/news.rss,                             topics: [founders, fintech, crypto] }
   - { name: cnbc_tech,          url: https://www.cnbc.com/id/19854910/device/rss/rss.html,                     topics: [tech, founders] }
@@ -175,14 +175,14 @@ rss:
   - { name: creativeboom,       url: https://www.creativeboom.com/feed/,                                       topics: [design] }
   - { name: dezeen,             url: https://www.dezeen.com/feed/,                                             topics: [design] }
 
-  # Founders / VC specialty — discovered in TLDR Founders source audit
+  # Founders / VC specialty - discovered in TLDR Founders source audit
   - { name: mironov,            url: https://www.mironov.com/feed/,                                            topics: [founders, product] }
   - { name: elenaverna,         url: https://www.elenaverna.com/feed,                                          topics: [founders, growth, marketing] }
   - { name: speedrun_sub,       url: https://speedrun.substack.com/feed,                                       topics: [founders] }
   - { name: not_boring,         url: https://www.notboring.co/feed,                                            topics: [founders, fintech, crypto] }
   - { name: contrary_research,  url: https://research.contrary.com/feed,                                       topics: [founders, vc] }
 
-  # ─── Space / Hard tech (operationally deep — SpaceX, energy, manufacturing) ─
+  # ─── Space / Hard tech (operationally deep - SpaceX, energy, manufacturing) ─
   - { name: payload_space,      url: https://payloadspace.com/feed/,                                          topics: [space, founders, tech] }
   - { name: spacenews,          url: https://spacenews.com/feed/,                                             topics: [space, tech] }
   - { name: nasaspaceflight,    url: https://www.nasaspaceflight.com/feed/,                                   topics: [space, tech] }
@@ -279,7 +279,7 @@ rss:
   - { name: maddyness_uk        , url: https://www.maddyness.com/uk/feed/, topics: [founders, vc, tech] }
   - { name: uktech_news         , url: https://www.uktech.news/feed/, topics: [founders, vc, tech] }
   - { name: sifted_titles       , url: https://sifted.eu/feed, topics: [founders, fintech] }
-  # ↑ Sifted re-enabled for headline ingestion only — article body is
+  # ↑ Sifted re-enabled for headline ingestion only - article body is
   # paywalled. Blurb step may skip these; the funding extractor reads
   # the headline + RSS description and is fine without body.
 

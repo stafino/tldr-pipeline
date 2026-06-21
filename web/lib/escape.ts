@@ -1,5 +1,5 @@
 /**
- * Shared escapers — used by every issue-export builder + CSV export.
+ * Shared escapers - used by every issue-export builder + CSV export.
  * Three identical implementations existed in EditionStories, VcIssueExport
  * and FundingCsvExport. One source of truth here.
  */

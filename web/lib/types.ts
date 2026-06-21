@@ -134,7 +134,7 @@ export interface FundingRound {
   title: string;
   source: string;
   published_at: string;
-  // YYYY-MM-DD — when the round was actually announced/closed. Set by the
+  // YYYY-MM-DD - when the round was actually announced/closed. Set by the
   // LLM extractor from the article body, falling back to the article's
   // publish date when no explicit signal is found. This is the date the
   // /funding UI filters on.

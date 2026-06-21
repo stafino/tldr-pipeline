@@ -144,7 +144,7 @@ export default function VcPage({
         </span>
       </div>
       <div className="max-w-[1100px] mx-auto px-4 sm:px-5 py-5">
-        {/* Volume + signal hero — the "this is a real newsletter" banner */}
+        {/* Volume + signal hero - the "this is a real newsletter" banner */}
         <div
           className="rounded-lg border border-border-strong p-5 mb-6"
           style={{ background: 'linear-gradient(135deg, #171717 0%, #1a2030 100%)' }}
@@ -174,7 +174,7 @@ export default function VcPage({
           </div>
         </div>
 
-        {/* Sector heatmap + Geographic split + Investor leaderboard — three small cards */}
+        {/* Sector heatmap + Geographic split + Investor leaderboard - three small cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
           {/* Sector heatmap */}
           <div className="border border-border rounded-md p-3">

@@ -4,7 +4,7 @@ description: Voice addendum for TLDR Marketing. Audience: growth and demand-gen 
 type: reference
 ---
 
-# TLDR Marketing — Voice Addendum
+# TLDR Marketing - Voice Addendum
 
 Audience: growth marketers, demand-gen leads, brand marketers, content strategists. Read for channel shifts, campaign playbooks, and AI's impact on marketing work.
 
@@ -15,7 +15,7 @@ Audience: growth marketers, demand-gen leads, brand marketers, content strategis
 ## Audience-targeting
 
 - Use channel-specific vocabulary: CAC, payback period, MQL→SQL conversion, CTR, ROAS, organic share-of-voice, dark-social attribution.
-- Name platforms (Google Ads, Meta, LinkedIn Ads, TikTok, HubSpot, Marketo). Skip "modern marketing tech stack" — say which one.
+- Name platforms (Google Ads, Meta, LinkedIn Ads, TikTok, HubSpot, Marketo). Skip "modern marketing tech stack" - say which one.
 - Numbers carry. Channel benchmarks, CAC changes, conversion lifts get a number when available.
 
 ## Examples

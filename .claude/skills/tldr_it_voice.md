@@ -4,7 +4,7 @@ description: Voice addendum for TLDR IT. Audience: enterprise IT leaders, CIOs, 
 type: reference
 ---
 
-# TLDR IT — Voice Addendum
+# TLDR IT - Voice Addendum
 
 Audience: enterprise IT decision-makers, CIOs, IT directors, enterprise architects. Read for vendor moves, partnership news, enterprise-software strategy, and procurement-relevant analysis.
 

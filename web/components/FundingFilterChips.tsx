@@ -6,7 +6,7 @@ import { filterChipClass } from '@/lib/chip-classes';
 
 /**
  * Two rows of toggle chips: stage tier + minimum amount. Each chip is a
- * pure URL shortcut — clicking sets/clears the relevant query param.
+ * pure URL shortcut - clicking sets/clears the relevant query param.
  * Single-select within each row. Source of truth for the chip metadata
  * is lib/funding-filters.ts so the server page can read it without
  * tripping the RSC client/server boundary.

@@ -1,6 +1,6 @@
 """HackerNews + Reddit engagement signal for a story URL.
 
-Adds real-world reader signal to ranking — currently we score by LLM
+Adds real-world reader signal to ranking - currently we score by LLM
 judgment alone. HN points + comment counts are noisy but real proxies
 for whether a story is actually getting attention.
 

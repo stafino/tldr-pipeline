@@ -1,4 +1,4 @@
-## TLDR DevOps — scoring overrides
+## TLDR DevOps - scoring overrides
 
 The audience is SREs, platform engineers, observability/CI-CD engineers.
 

@@ -56,9 +56,7 @@ export default function VcPreviewPage() {
             TLDR VC
           </h1>
           <p className="text-[16px] sm:text-[18px] text-text-dim leading-snug mb-6 max-w-[560px]">
-            A daily 5-minute digest of the venture capital industry — fund launches,
-            partner moves, exits, market signals, regulatory shifts. The wedge nobody
-            ships yet.
+            A 5-minute daily on venture. Funds, exits, people, signals. The wedge nobody ships yet.
           </p>
           <div className="flex flex-wrap gap-3">
             <Link
@@ -90,9 +88,9 @@ export default function VcPreviewPage() {
             What makes it different
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-[13.5px]">
-            <Card title="🇪🇺 EU + global coverage" body="Term Sheet, StrictlyVC, Axios Pro all skew US-centric. TLDR VC pulls from tech.eu, Sifted, Silicon Canals, EU-Startups, Maddyness, plus the US wire." />
-            <Card title="🪑 Partner radar" body="Hires, departures, founding moves — aggregated across firms. The trend nobody bothers to surface daily." />
-            <Card title="📈 Signal, not stenography" body="Headline-summary LLM rewrites every story to a punchy one-liner. Reader sees the takeaway, not the press release." />
+            <Card title="🇪🇺 EU + global" body="Term Sheet skews US. TLDR VC pulls Sifted, tech.eu, Silicon Canals, plus the US wire." />
+            <Card title="🪑 Partner radar" body="Hires, departures, founding moves. Aggregated across firms daily." />
+            <Card title="📈 Signal, not stenography" body="LLM rewrites every story into one punchy line. Reader sees the takeaway, not the press release." />
           </div>
         </div>
 
@@ -159,7 +157,7 @@ export default function VcPreviewPage() {
         {/* Closing CTA */}
         <div className="border-t border-border pt-8 text-center">
           <p className="text-[13.5px] text-text-dim mb-4">
-            Built by <a href="https://www.oliverstafurik.com" className="text-accent hover:underline" target="_blank" rel="noopener">Oliver Stafurik</a> on the <Link href="/" className="text-accent hover:underline">lede curation pipeline</Link> — same backbone as the 13 existing TLDR titles.
+            Built by <a href="https://www.oliverstafurik.com" className="text-accent hover:underline" target="_blank" rel="noopener">Oliver Stafurik</a> on the <Link href="/" className="text-accent hover:underline">lede curation pipeline</Link> - same backbone as the 13 existing TLDR titles.
           </p>
           <Link
             href="/vc/issue"

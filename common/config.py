@@ -2,7 +2,7 @@
 
 Per-stage `ModelConfig` bundles the LLM model id and its parallel-worker
 count. Env var names are unchanged so the cron + Vercel env config keep
-working — only the read site moved.
+working - only the read site moved.
 """
 
 from __future__ import annotations
@@ -26,7 +26,7 @@ def _model_config(prefix: str, default_model: str, default_concurrency: int) -> 
     )
 
 
-# Per-stage configs — defaults match what each module previously hardcoded.
+# Per-stage configs - defaults match what each module previously hardcoded.
 FUNDING = _model_config("FUNDING", "claude-haiku-4-5-20251001", 8)
 VC = _model_config("VC", "claude-haiku-4-5-20251001", 8)
 RANKING = _model_config("RANKING", "claude-sonnet-4-6", 6)

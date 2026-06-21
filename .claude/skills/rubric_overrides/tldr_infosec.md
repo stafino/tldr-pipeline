@@ -1,6 +1,6 @@
-## TLDR InfoSec — scoring overrides
+## TLDR InfoSec - scoring overrides
 
-The audience is security practitioners — appsec, infrasec, threat intel,
+The audience is security practitioners - appsec, infrasec, threat intel,
 IT security. They want CVEs, active campaigns, and defensive playbooks.
 
 Bias the score UP when the story has:

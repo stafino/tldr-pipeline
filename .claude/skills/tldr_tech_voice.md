@@ -1,10 +1,10 @@
 ---
 name: tldr_tech_voice
-description: Voice addendum for TLDR (Tech), the main digest. Mixes light coverage from every topic — keep blurbs accessible to a general technical reader.
+description: Voice addendum for TLDR (Tech), the main digest. Mixes light coverage from every topic - keep blurbs accessible to a general technical reader.
 type: reference
 ---
 
-# TLDR (Tech) — Voice Addendum
+# TLDR (Tech) - Voice Addendum
 
 The flagship daily. Mixed topics, broad technical audience: engineers across specialties, founders, students, tech-adjacent professionals. Less depth per blurb than the topic-specific newsletters; the reader gets a wide scan.
 
@@ -36,7 +36,7 @@ The flagship daily. Mixed topics, broad technical audience: engineers across spe
 
 ## What's distinctive vs other TLDR newsletters
 
-- Broader audience than TLDR AI or TLDR Founders — assume LESS prior context than those.
+- Broader audience than TLDR AI or TLDR Founders - assume LESS prior context than those.
 - Shorter than TLDR Founders blurbs (those are 60-110 words; here it's 40-80).
 - More neutral tone than TLDR Founders (less prescriptive, more reportorial).
 - Reader cares about both technical substance AND business impact in similar proportion.

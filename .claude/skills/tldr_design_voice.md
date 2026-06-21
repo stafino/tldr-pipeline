@@ -4,7 +4,7 @@ description: Voice addendum for TLDR Design. Audience: product designers, design
 type: reference
 ---
 
-# TLDR Design — Voice Addendum
+# TLDR Design - Voice Addendum
 
 Audience: product designers, UX practitioners, brand designers, design leaders. Read for craft, tooling shifts, and design-business news.
 

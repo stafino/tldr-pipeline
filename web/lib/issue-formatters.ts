@@ -34,7 +34,7 @@ export interface IssueSection {
 }
 
 export interface IssueDoc {
-  /** Top-of-issue title — e.g. "TLDR Marketing · 2026-06-21" or "TLDR VC 2026-06-21" */
+  /** Top-of-issue title - e.g. "TLDR Marketing · 2026-06-21" or "TLDR VC 2026-06-21" */
   title: string;
   /** Optional tagline directly under the title (VC issue uses this; Edition does not) */
   tagline?: string | null;
@@ -181,7 +181,7 @@ export function buildSemanticHtmlIssue(
  *   gaps are produced by padding on the element itself rather than margin.
  * - Gmail rewrites visited <a> colors. Wrapping the link text in an
  *   inner <span> with an explicit color prevents the recolor.
- * - Emoji rendering varies — wrap each emoji in its own font stack so
+ * - Emoji rendering varies - wrap each emoji in its own font stack so
  *   Gmail-on-Windows falls back to Segoe UI Emoji instead of boxes.
  */
 const EMAIL_FONT =
@@ -204,7 +204,7 @@ export interface EmailHtmlOptions {
   /**
    * Padding-bottom on the blurb (or fallback) paragraph.
    * Edition uses different values for non-last vs last story in a section
-   * (40 vs 48) — set `edition` to enable that branching.
+   * (40 vs 48) - set `edition` to enable that branching.
    * VC: single value (16).
    */
   blurbPadding:

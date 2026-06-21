@@ -3,7 +3,7 @@
  *
  * EditionStories.tsx and VcIssueExport.tsx both built .eml files with
  * identical scaffolding (different subject + body). One implementation
- * here, downloaded as <filename>.eml — opening it in Apple Mail / Spark
+ * here, downloaded as <filename>.eml - opening it in Apple Mail / Spark
  * loads the formatted HTML 1:1, no clipboard-paste normalization in the
  * way.
  */

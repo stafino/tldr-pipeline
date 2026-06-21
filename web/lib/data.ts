@@ -47,7 +47,7 @@ export function listAvailableDates(): string[] {
 
 /**
  * All UTC publish dates that appear across loaded scored data, newest first.
- * Used to power the "Filter by date" dropdown — picks the day a story was
+ * Used to power the "Filter by date" dropdown - picks the day a story was
  * published, not the day the scraper happened to fetch it.
  */
 export function listPublishedDates(): string[] {
@@ -67,7 +67,7 @@ export function listPublishedDates(): string[] {
 /**
  * Sliding-window date filter: keeps stories whose UTC publish date is in
  * the inclusive [date - daysBack, date] window. Matches how a morning
- * newsletter actually reads — Tuesday's edition covers Monday-afternoon
+ * newsletter actually reads - Tuesday's edition covers Monday-afternoon
  * through Tuesday-morning stories, not just Tuesday-published ones.
  *
  * Default daysBack = 1 (= today + yesterday).

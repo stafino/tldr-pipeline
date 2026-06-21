@@ -1,4 +1,4 @@
-## TLDR Design — scoring overrides
+## TLDR Design - scoring overrides
 
 The audience is product designers, UX, brand designers, design engineers.
 

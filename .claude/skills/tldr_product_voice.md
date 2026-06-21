@@ -4,7 +4,7 @@ description: Voice addendum for TLDR Product. Audience: product managers and pro
 type: reference
 ---
 
-# TLDR Product — Voice Addendum
+# TLDR Product - Voice Addendum
 
 Audience: product managers (IC and director-level), product ops, product leaders. Read for craft (discovery, prioritization), platform shifts, and case studies.
 

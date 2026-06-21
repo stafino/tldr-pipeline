@@ -3,7 +3,7 @@
  * render small toggle chips with the same active/inactive treatment; this
  * util is the single source for that string. Keep it a util (not a component)
  * because the chips render as <button> in one place and as a <span> wrapping
- * <select>s in another — a wrapper component wouldn't fit both shapes.
+ * <select>s in another - a wrapper component wouldn't fit both shapes.
  */
 export function filterChipClass(active: boolean): string {
   return (

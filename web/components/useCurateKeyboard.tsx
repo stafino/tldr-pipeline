@@ -6,14 +6,14 @@ import { useDecisions } from './useDecisions';
 
 /**
  * Keyboard nav for the Curate tab.
- *   j / ↓ — next story
- *   k / ↑ — previous story
- *   a     — approve current story
- *   r     — reject current story
- *   u     — undo (reset decision)
- *   o     — open source URL in new tab
- *   ?     — show shortcut help overlay
- *   Esc   — clear selection / close help
+ *   j / ↓ - next story
+ *   k / ↑ - previous story
+ *   a     - approve current story
+ *   r     - reject current story
+ *   u     - undo (reset decision)
+ *   o     - open source URL in new tab
+ *   ?     - show shortcut help overlay
+ *   Esc   - clear selection / close help
  *
  * No-ops when an input/textarea is focused so blurb editing isn't broken.
  */

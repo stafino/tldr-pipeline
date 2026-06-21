@@ -1,4 +1,4 @@
-"""VC industry classifier — surfaces non-deal venture content.
+"""VC industry classifier - surfaces non-deal venture content.
 
 The Funding tab covers startup raises. This module covers everything
 *else* a VC reader cares about: fund news, partner moves, exits, market
@@ -34,7 +34,7 @@ VC_CONCURRENCY = VC.concurrency
 _CACHE = UrlJsonCache(Path("data/vc_cache"))
 
 # Pre-filter regex: title contains any keyword commonly found in VC
-# industry coverage. Erring permissive — LLM has final say.
+# industry coverage. Erring permissive - LLM has final say.
 TITLE_KEYWORDS = re.compile(
     r"\b("
     # Fund-side
@@ -145,7 +145,7 @@ vc_type classification (pick the best fit):
 - fund_news: new fund launched/closed, LP commits, fund-of-funds, asset
   manager moves into venture, large pool of capital being raised by an
   investment firm (NOT a startup operating-business raise)
-- partner_move: a notable person joins/leaves/founds anything — a VC firm,
+- partner_move: a notable person joins/leaves/founds anything - a VC firm,
   a portfolio company at exec/board level, AI lab leadership. Anything
   that signals capital allocation power moving around.
 - exit: IPO (filed, priced, talks), acquisition where one party is a

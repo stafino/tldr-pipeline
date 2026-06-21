@@ -6,7 +6,7 @@ type: reference
 
 # TLDR AI Curation Rubric
 
-You are scoring candidate stories on a 0-100 scale for inclusion in TLDR AI. Apply the dimensions below. Be calibrated — most stories should score in the 30-65 range; reserve 80+ for stories you would lead an issue with.
+You are scoring candidate stories on a 0-100 scale for inclusion in TLDR AI. Apply the dimensions below. Be calibrated - most stories should score in the 30-65 range; reserve 80+ for stories you would lead an issue with.
 
 ## Audience profile
 
@@ -25,7 +25,7 @@ They are smart, time-constrained, and allergic to marketing. They read for: (1) 
 How much real signal does this story carry for a working engineer or researcher?
 
 - 90-100: Novel technique with reproducible details (paper with code, post with benchmarks, model release with weights). Reader can apply or evaluate it.
-- 70-89: Substantive technical description, named approach, real numbers — but maybe no code or limited reproducibility.
+- 70-89: Substantive technical description, named approach, real numbers - but maybe no code or limited reproducibility.
 - 40-69: Product launch or feature with some technical context but mostly capability-claim.
 - 10-39: Press release or summary with no method, no numbers, no concrete capability.
 - 0-9: Pure announcement, blog post about culture/hiring, opinion without argument.
@@ -48,7 +48,7 @@ If true / if shipped, how much does this change what a serious AI person should 
 - 70-89: Meaningful but bounded implication (a new technique enables a class of applications; a competitor closes a known gap).
 - 40-69: Interesting data point that nudges the picture slightly.
 - 10-39: Minor news that doesn't change anything material.
-- 0-9: No implication — pure curiosity content.
+- 0-9: No implication - pure curiosity content.
 
 ### 4. Source credibility (15%)
 
@@ -83,7 +83,7 @@ Even if the rubric scores high, cap the final score at 25 if any of these apply:
 - The piece is AI-generated thinkpiece content with no original reporting or analysis.
 - The piece is content marketing thinly disguised as analysis (look for vendor self-promotion with no critical distance).
 - The piece is pure hype without specific claims ("AI will transform everything").
-- The same story was covered by TLDR AI in the last 14 days. (You won't see prior issues here — flag with low novelty score and the editor will catch it.)
+- The same story was covered by TLDR AI in the last 14 days. (You won't see prior issues here - flag with low novelty score and the editor will catch it.)
 - The piece is a rage-post or culture-war framing with no technical content.
 - The piece is a sponsored post or press release republished verbatim.
 
@@ -104,7 +104,7 @@ When two stories score similarly:
 - Score ~65: "Cognition raises $1B Series D to expand Devin." Significant business news but not a technical contribution.
 - Score ~50: "Microsoft introduces Scout, a new always-on agent for Frontier users." Product launch from a major player, but capability claims are not novel.
 - Score ~35: "10 ways AI is changing engineering jobs." Trend piece, no specific claims.
-- Score ~20: "Why ChatGPT is the most important invention since fire" thinkpiece without evidence — cap by disqualifier.
+- Score ~20: "Why ChatGPT is the most important invention since fire" thinkpiece without evidence - cap by disqualifier.
 
 ## Output format
 
@@ -114,8 +114,8 @@ When asked to score a single story, return ONLY a JSON object with the following
 {
   "score": <integer 0-100>,
   "reasoning": "<one sentence explaining the dominant factor, under 200 chars>",
-  "is_technical": <bool — true if the story has substantive technical content>,
-  "is_novel": <bool — true if the story is meaningfully different from recent coverage>,
-  "is_mainstream_relevant": <bool — true if non-specialists would care>
+  "is_technical": <bool - true if the story has substantive technical content>,
+  "is_novel": <bool - true if the story is meaningfully different from recent coverage>,
+  "is_mainstream_relevant": <bool - true if non-specialists would care>
 }
 ```

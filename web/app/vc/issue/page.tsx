@@ -17,7 +17,7 @@ function pickEstimatedRead(headline: string, snippet: string): number {
 }
 
 function intro(allCount: number, byType: Partial<Record<VcType, number>>): string {
-  // Deterministic editorial frame — no LLM cost. Picks the biggest signal
+  // Deterministic editorial frame - no LLM cost. Picks the biggest signal
   // of the day and leads with it.
   if (allCount === 0) return 'Quiet day on the wire.';
   const parts: string[] = [];
@@ -26,7 +26,7 @@ function intro(allCount: number, byType: Partial<Record<VcType, number>>): strin
   if ((byType.partner_move ?? 0) >= 2) parts.push(`${byType.partner_move} partner moves`);
   if ((byType.regulatory ?? 0) >= 1) parts.push(`${byType.regulatory} regulatory beat${byType.regulatory! > 1 ? 's' : ''}`);
   if (parts.length === 0) {
-    return `${allCount} stories shaping venture today — mostly signals and analysis.`;
+    return `${allCount} stories shaping venture today - mostly signals and analysis.`;
   }
   return `Today: ${parts.join(', ')}. Curated below.`;
 }
@@ -99,12 +99,6 @@ export default function VcIssuePage({
       </div>
 
       <div className="max-w-[680px] mx-auto px-4 sm:px-5 py-6 sm:py-8">
-        {/* Sponsor slot — visible placeholder so the editor sees the slot is built in */}
-        <div className="border border-dashed border-border rounded-md p-3 mb-8 text-center text-[11px] text-text-mute">
-          [ sponsor slot · open ]<br />
-          <span className="text-text-dim">~7M tech-professional reach. <a href="mailto:oliver@trylede.com" className="text-accent hover:underline">advertise@trylede.com</a></span>
-        </div>
-
         {/* Issue header */}
         <div className="text-center mb-2">
           <div className="text-[10px] uppercase tracking-[0.15em] text-text-mute mb-1">
@@ -114,11 +108,11 @@ export default function VcIssuePage({
             {issueHeader}
           </h1>
           <p className="text-[12.5px] sm:text-[13px] text-text-mute leading-snug max-w-md mx-auto m-0">
-            A daily 5-minute digest of the venture capital industry — funds, partners, exits, signals.
+            A 5-minute daily on venture. Funds, exits, people, signals.
           </p>
         </div>
 
-        {/* Editor's intro — short, deterministic, no LLM cost */}
+        {/* Editor's intro - short, deterministic, no LLM cost */}
         {all.length > 0 && (
           <div className="mt-6 mb-8 text-center text-[13px] text-text-dim italic">
             💌 {headerIntro}
@@ -189,7 +183,7 @@ export default function VcIssuePage({
               );
             })}
 
-            {/* Quick Links — overflow from any section, one-liners */}
+            {/* Quick Links - overflow from any section, one-liners */}
             {quickLinks.length > 0 && (
               <section className="mb-10 sm:mb-12">
                 <div className="text-center mb-5">
@@ -198,7 +192,7 @@ export default function VcIssuePage({
                     Quick Links
                   </h2>
                   <div className="text-[11px] text-text-mute mt-0.5">
-                    Worth a click — short version
+                    Worth a click - short version
                   </div>
                 </div>
                 {quickLinks.map((r) => {
@@ -226,7 +220,7 @@ export default function VcIssuePage({
           <p className="m-0 mb-1">If you have any comments or feedback, just hit reply.</p>
           <p className="m-0">
             Thanks for reading,<br />
-            <span className="text-text font-semibold">— Oliver</span>
+            <span className="text-text font-semibold">- Oliver</span>
           </p>
         </div>
 

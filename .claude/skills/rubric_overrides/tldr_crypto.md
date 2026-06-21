@@ -1,4 +1,4 @@
-## TLDR Crypto — scoring overrides
+## TLDR Crypto - scoring overrides
 
 The audience is protocol engineers, crypto-native traders, web3 builders.
 

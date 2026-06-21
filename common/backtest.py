@@ -29,7 +29,7 @@ ARCHIVE_URL = "https://tldr.tech/{slug}/{d}"
 USER_AGENT = "tldr-pipeline-backtest/0.3 (+contact@example.com)"
 
 # Title-cosine threshold. Lowered from 0.72 → 0.62 now that URL-overlap acts as
-# a strong cross-check — fewer false positives, more true matches caught.
+# a strong cross-check - fewer false positives, more true matches caught.
 SIM_THRESHOLD = 0.62
 
 SLUG_MAP = {
@@ -123,7 +123,7 @@ def _canonical_url(url: str) -> str:
     try:
         from urllib.parse import urlparse
         p = urlparse(url)
-        # Strip query string entirely (utm_*, ref=, etc.) — TLDR appends ?utm_source=tldrai
+        # Strip query string entirely (utm_*, ref=, etc.) - TLDR appends ?utm_source=tldrai
         host = p.netloc.lower()
         if host.startswith("www."):
             host = host[4:]
@@ -147,7 +147,7 @@ def fetch_tldr_stories(newsletter_id: str, date: str) -> list[tuple[str, str]]:
 
     Returns list of (title, source_url) tuples. URL may be "" if not found.
     Returns an empty list if the page doesn't exist, OR if it returned an
-    archive/landing fallback (when the day's issue isn't published yet —
+    archive/landing fallback (when the day's issue isn't published yet -
     tldr.tech responds 200 with a multi-issue aggregate in that case,
     yielding 100+ titles, which always means "no issue today" not "huge
     issue today"). The SANE_MAX_TITLES threshold catches the fallback.
@@ -202,7 +202,7 @@ def fetch_tldr_stories(newsletter_id: str, date: str) -> list[tuple[str, str]]:
 
     if len(deduped) > SANE_MAX_TITLES:
         log.warning(
-            "tldr.tech/%s/%s returned %d titles — treating as not-yet-published "
+            "tldr.tech/%s/%s returned %d titles - treating as not-yet-published "
             "archive fallback (real issues never exceed ~25 articles)",
             slug,
             date,
@@ -259,7 +259,7 @@ def compute_matches(
         if u and u not in url_to_tldr_idx:
             url_to_tldr_idx[u] = i
 
-    # Title embeddings — embed both original and rewritten variants so we
+    # Title embeddings - embed both original and rewritten variants so we
     # can take the best similarity score per prediction.
     has_rewrites = bool(predicted_titles_rewritten) and len(predicted_titles_rewritten) == n_pred
     if has_rewrites:
@@ -308,7 +308,7 @@ def _predicted_titles_and_urls(
 ) -> tuple[list[tuple[float, str, str]], int]:
     """Return [(score, title, url), ...] for ALL the predictions we'd display
     for this (newsletter, date). The set comes from top_per_section, which
-    respects each section's target_count — so the size scales with the
+    respects each section's target_count - so the size scales with the
     newsletters.yaml config (currently 25 × 5 sections = up to 125 per newsletter).
 
     Returns also the total count of stories scored that day (for context)."""

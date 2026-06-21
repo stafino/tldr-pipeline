@@ -1,4 +1,4 @@
-## TLDR Fintech — scoring overrides
+## TLDR Fintech - scoring overrides
 
 The audience is payments engineers, banking-infra builders, fintech operators.
 

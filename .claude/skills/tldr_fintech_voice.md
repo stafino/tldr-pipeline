@@ -4,7 +4,7 @@ description: Voice addendum for TLDR Fintech. Audience: payments engineers, fint
 type: reference
 ---
 
-# TLDR Fintech — Voice Addendum
+# TLDR Fintech - Voice Addendum
 
 Audience: fintech founders, payments engineers, embedded-finance teams, banking-infra builders. Read for new fintech launches, payment-rail innovations, banking-as-a-service moves, and regulatory shifts.
 

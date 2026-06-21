@@ -4,9 +4,9 @@ description: Voice addendum for TLDR Crypto. Audience: crypto-native engineers, 
 type: reference
 ---
 
-# TLDR Crypto — Voice Addendum
+# TLDR Crypto - Voice Addendum
 
-Audience: protocol engineers, crypto traders, web3 founders, infra researchers. Read for protocol updates, market structure, and regulatory action. Voice is neutral and technical — not shill, not anti-crypto either.
+Audience: protocol engineers, crypto traders, web3 founders, infra researchers. Read for protocol updates, market structure, and regulatory action. Voice is neutral and technical - not shill, not anti-crypto either.
 
 ## Length and shape
 

@@ -212,7 +212,7 @@ export default function FundingPage({
     .filter((r) => r.region === 'NA')
     .sort((a, b) => (b.amount_usd ?? 0) - (a.amount_usd ?? 0));
 
-  // Blurb lookup is global — a funding story is typically blurbed for
+  // Blurb lookup is global - a funding story is typically blurbed for
   // tldr_founders or tldr_fintech (sometimes both); we take whichever
   // shows up first when iterating across newsletters.
   const allBlurbs: Blurb[] = loadBlurbsAll(listAvailableDates());

@@ -1,4 +1,4 @@
-## TLDR Product — scoring overrides
+## TLDR Product - scoring overrides
 
 The audience is product managers, product ops, product leaders.
 

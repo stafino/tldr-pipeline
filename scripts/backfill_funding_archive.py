@@ -80,7 +80,7 @@ def tc_walk_dates(start: date, end: date) -> list[tuple[str, str, date]]:
             m = TC_URL_RE.match(href)
             if not m:
                 continue
-            # Only keep articles whose URL-encoded date matches the page date —
+            # Only keep articles whose URL-encoded date matches the page date -
             # filters out TC's "related stories" sidebar from other days.
             art_date = date(int(m.group(1)), int(m.group(2)), int(m.group(3)))
             if art_date != d:
@@ -112,7 +112,7 @@ EU_FEEDS = [
     ("uktech_news", "https://www.uktech.news/feed/"),
     ("sifted_titles", "https://sifted.eu/feed"),
     ("eu_startups", "https://www.eu-startups.com/feed/"),
-    # Added 2026-06-17 — broader EU databases + dedicated funding feeds
+    # Added 2026-06-17 - broader EU databases + dedicated funding feeds
     ("crunchbase_news", "https://news.crunchbase.com/feed/"),
     ("techfundingnews", "https://techfundingnews.com/feed/"),
     ("uktech_funding", "https://www.uktech.news/funding/feed/"),
@@ -131,8 +131,8 @@ EU_FEEDS = [
 def eu_walk_rss(oldest_allowed: date) -> list[tuple[str, str, date, str]]:
     """Return (url, title, published_date, source_name) from EU funding feeds.
 
-    RSS only carries the publisher's most recent items (typically 10–50),
-    so we can't go back arbitrarily far — but the current window catches
+    RSS only carries the publisher's most recent items (typically 10-50),
+    so we can't go back arbitrarily far - but the current window catches
     every fresh EU round that hit the wire in the last few days.
     """
     out: list[tuple[str, str, date, str]] = []
@@ -199,7 +199,7 @@ def build_synthetic(
 def merge_into_existing(rounds_by_date: dict[str, list[dict]], dry_run: bool) -> int:
     """Write or merge each date's rounds into data/funding/<date>.jsonl.
 
-    Dedupe by story_url — if the same URL is already in the file (from a
+    Dedupe by story_url - if the same URL is already in the file (from a
     previous cron or backfill), the existing entry wins. This script is
     additive only.
     """
@@ -233,7 +233,7 @@ def merge_into_existing(rounds_by_date: dict[str, list[dict]], dry_run: bool) ->
                 for r in existing.values():
                     f.write(json.dumps(r))
                     f.write("\n")
-            log.info("wrote %s — added %d, total now %d", path, added, len(existing))
+            log.info("wrote %s - added %d, total now %d", path, added, len(existing))
         written += added
     return written
 
@@ -264,12 +264,12 @@ def main() -> None:
     ] + eu_articles
     log.info("combined %d articles from all sources", len(raw_articles))
 
-    # 2. Title pre-filter — drop anything that doesn't look like a round
+    # 2. Title pre-filter - drop anything that doesn't look like a round
     candidates = [a for a in raw_articles if TITLE_KEYWORDS.search(a[1])]
     log.info("%d candidates after title filter (of %d)", len(candidates), len(raw_articles))
 
     # 3. Fetch article body + LLM-classify. We need the body because
-    #    headlines alone rarely state "HQ'd in $COUNTRY" — without it the
+    #    headlines alone rarely state "HQ'd in $COUNTRY" - without it the
     #    LLM defaults to region=OTHER and we drop everything. Sifted body
     #    is paywalled so fetch will return empty for those; the LLM can
     #    still classify many of them from headline + RSS-style title.
@@ -277,7 +277,7 @@ def main() -> None:
     for url, title, d, source in candidates:
         body = fetch_body(url)
         story = build_synthetic(url, title, d, source=source, body=body)
-        # Drop any stale cache entry — earlier runs might have classified this
+        # Drop any stale cache entry - earlier runs might have classified this
         # URL as OTHER from headline-only context. Force the LLM to re-extract
         # now that we're feeding it the body.
         cp = _cache_path(url)
@@ -305,7 +305,7 @@ def main() -> None:
         log.info("  raised %s: %d rounds", d_str, len(rows))
 
     added = merge_into_existing(by_date, dry_run=args.dry_run)
-    log.info("done — added %d new rows across %d dates", added, len(by_date))
+    log.info("done - added %d new rows across %d dates", added, len(by_date))
 
 
 if __name__ == "__main__":

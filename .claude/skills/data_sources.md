@@ -13,7 +13,7 @@ This file documents which sources the ingestion layer pulls from and why. The ac
 | Source | URL | Quality | Frequency | What it's good for |
 |---|---|---|---|---|
 | `openai_blog` | https://openai.com/news/rss.xml | High (first-party) | 1-3/week | Model releases, official policy posts, deal announcements. Almost always worth surfacing. |
-| `anthropic_news` | https://www.anthropic.com/news/rss.xml | High (first-party) | 1-3/week | Same as OpenAI — first-party. Research posts (e.g., interpretability) and product news. |
+| `anthropic_news` | https://www.anthropic.com/news/rss.xml | High (first-party) | 1-3/week | Same as OpenAI - first-party. Research posts (e.g., interpretability) and product news. |
 | `deepmind_blog` | https://deepmind.google/blog/rss.xml | High (first-party) | 1-2/week | Capability demos and research papers from DeepMind. |
 | `google_research` | https://research.google/blog/rss/ | High | 2-4/week | Research breadth across DeepMind and other Google research orgs. |
 | `meta_ai` | https://ai.meta.com/blog/rss/ | High | 1-3/week | Llama series, FAIR papers, infra posts. |
@@ -33,14 +33,14 @@ This file documents which sources the ingestion layer pulls from and why. The ac
 ## arXiv
 
 Default categories scanned:
-- `cs.AI` — general AI
-- `cs.LG` — machine learning
-- `cs.CL` — computational linguistics / NLP (most LLM papers land here)
+- `cs.AI` - general AI
+- `cs.LG` - machine learning
+- `cs.CL` - computational linguistics / NLP (most LLM papers land here)
 
 Optionally add:
-- `cs.CV` — for vision/multimodal heavy issues
-- `cs.RO` — for robotics stories
-- `stat.ML` — overlapping with cs.LG, lower volume
+- `cs.CV` - for vision/multimodal heavy issues
+- `cs.RO` - for robotics stories
+- `stat.ML` - overlapping with cs.LG, lower volume
 
 Each category pulls up to 50 most recent submissions in the trailing 36 hours. Most won't be newsletter-worthy; the ranking model will down-weight pure theory papers without empirical results.
 
@@ -56,7 +56,7 @@ Each category pulls up to 50 most recent submissions in the trailing 36 hours. M
 - `lookback_hours`: 24. We want today's top stories, not yesterday's.
 - Filter: title must contain one of the AI keyword tokens (`ingestion/hn.py`).
 
-HN is the lowest-priority source in the dedup canonical-picking. It's useful for surfacing stories that broke on personal blogs or smaller outlets and then bubbled up — those are often Deep Dive candidates.
+HN is the lowest-priority source in the dedup canonical-picking. It's useful for surfacing stories that broke on personal blogs or smaller outlets and then bubbled up - those are often Deep Dive candidates.
 
 ## Not yet implemented
 
@@ -73,8 +73,8 @@ If a story type keeps appearing in TLDR's actual issues but not in our top-30, t
 
 When the same story appears via multiple sources, the dedup module picks the canonical source using this priority (highest wins). See `dedup/cluster.py` for the actual map.
 
-1. Frontier-lab first-party blog (OpenAI, Anthropic, DeepMind, Google Research, Meta AI) — 95-100
-2. arXiv — 90
-3. Trusted secondary (Simon Willison, Import AI, aqnichol) — 70-80
-4. Other RSS — 60
-5. HN — 40
+1. Frontier-lab first-party blog (OpenAI, Anthropic, DeepMind, Google Research, Meta AI) - 95-100
+2. arXiv - 90
+3. Trusted secondary (Simon Willison, Import AI, aqnichol) - 70-80
+4. Other RSS - 60
+5. HN - 40

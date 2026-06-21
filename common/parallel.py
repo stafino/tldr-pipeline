@@ -4,7 +4,7 @@ Several modules share the same shape: submit `fn` over an iterable,
 swallow exceptions (with a warning), drop `None` results, collect the
 survivors into a list. `parallel_map` absorbs that pattern.
 
-Order is NOT preserved — results come back in completion order (the
+Order is NOT preserved - results come back in completion order (the
 caller should sort or re-index by URL if it needs ordering).
 """
 

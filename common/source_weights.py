@@ -13,13 +13,13 @@ The data model:
   }
 
 Definitions:
-  picks       — count of times TLDR <newsletter> published a story from this
+  picks       - count of times TLDR <newsletter> published a story from this
                 domain (mined from the archive over the last N days).
-  predictions — count of times we (the pipeline) surfaced a story from this
+  predictions - count of times we (the pipeline) surfaced a story from this
                 domain in our top-pool for the same newsletter.
-  ratio       — picks / (picks + predictions_without_pick). High ratio = TLDR
+  ratio       - picks / (picks + predictions_without_pick). High ratio = TLDR
                 actually picks from this source when we surface it.
-  weight      — derived score multiplier suggested for the ranker. Bayesian-smoothed
+  weight      - derived score multiplier suggested for the ranker. Bayesian-smoothed
                 against a global prior so domains with very few samples
                 don't get extreme weights.
 

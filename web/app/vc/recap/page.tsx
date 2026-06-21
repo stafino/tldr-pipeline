@@ -20,7 +20,7 @@ function isoWeek(d: Date): { year: number; week: number } {
 
 export default function VcRecapPage() {
   // Default: last 7 days ending today. ?week=YYYY-WW for specific weeks
-  // (not implemented yet — placeholder for future archive routes).
+  // (not implemented yet - placeholder for future archive routes).
   const today = todayUTC();
   const endDate = new Date(today + 'T00:00:00Z');
   const start = new Date(endDate);
@@ -155,7 +155,7 @@ export default function VcRecapPage() {
               </div>
             )}
 
-            {/* The recap body — sections of stories */}
+            {/* The recap body - sections of stories */}
             {ISSUE_SECTIONS.map((sec) => {
               const items = (bySection[sec.key] ?? []).slice(0, sec.cap);
               if (items.length === 0) return null;

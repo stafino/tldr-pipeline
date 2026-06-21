@@ -4,7 +4,7 @@ description: Voice addendum for TLDR InfoSec. Audience: practitioners running se
 type: reference
 ---
 
-# TLDR InfoSec — Voice Addendum
+# TLDR InfoSec - Voice Addendum
 
 Audience: security engineers, threat-intel analysts, IT-sec leads, AppSec engineers. They want operational specifics, not sensational framing.
 
@@ -20,7 +20,7 @@ Audience: security engineers, threat-intel analysts, IT-sec leads, AppSec engine
 
 ## Examples
 
-> **A critical authentication-bypass in Citrix NetScaler ADC (CVE-2026-7842, CVSS 9.8) is being exploited in the wild, allowing unauthenticated session takeover.** Citrix released a patch on June 11 — networks running the affected appliances on the edge should treat exposure as already compromised and rotate session tokens after patching.
+> **A critical authentication-bypass in Citrix NetScaler ADC (CVE-2026-7842, CVSS 9.8) is being exploited in the wild, allowing unauthenticated session takeover.** Citrix released a patch on June 11 - networks running the affected appliances on the edge should treat exposure as already compromised and rotate session tokens after patching.
 
 > **A new technique exploits MCP server hosts that don't isolate tool execution, allowing a malicious server to read arbitrary files via path traversal in tool arguments.** The fix is to scope tool filesystem access in the MCP host runtime, which most current implementations don't do by default.
 

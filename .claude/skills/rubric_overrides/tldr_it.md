@@ -1,4 +1,4 @@
-## TLDR IT — scoring overrides
+## TLDR IT - scoring overrides
 
 The audience is enterprise IT leaders, CIOs, infrastructure architects.
 

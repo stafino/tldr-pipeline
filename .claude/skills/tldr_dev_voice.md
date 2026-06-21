@@ -4,7 +4,7 @@ description: Voice addendum for TLDR Dev. Audience: working software engineers a
 type: reference
 ---
 
-# TLDR Dev — Voice Addendum
+# TLDR Dev - Voice Addendum
 
 Audience: working software engineers across web, mobile, backend, infra, devtools. Read for new techniques, post-mortems, debates about practice, and useful libraries.
 
@@ -32,7 +32,7 @@ Audience: working software engineers across web, mobile, backend, infra, devtool
 - **🧑‍💻 Articles & Tutorials:** Lead with the technique or system being explained. If there's a number (latency, cost, scale), it goes in sentence 1.
 - **🧠 Opinions & Advice:** State the author's thesis directly. Don't preface with "this is a controversial take".
 - **🚀 Launches & Tools:** Name the tool, name what it does, name what it replaces or improves on.
-- **🎁 Miscellaneous:** Industry news that affects engineers — layoffs, big-tech reorgs, language deprecations.
+- **🎁 Miscellaneous:** Industry news that affects engineers - layoffs, big-tech reorgs, language deprecations.
 - **⚡ Quick Links:** Single sentence, often a fragment.
 
 ## What's distinctive

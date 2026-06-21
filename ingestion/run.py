@@ -65,7 +65,7 @@ def main() -> None:
         )
     )
 
-    # TLDR's own previously-published picks — high-trust input that
+    # TLDR's own previously-published picks - high-trust input that
     # closes the recall loop. Excludes today (the date the backtest
     # compares against) so we don't trivially self-match.
     stories.extend(pull_tldr_picks(target, lookback_days=7))

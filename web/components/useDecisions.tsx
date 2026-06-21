@@ -9,7 +9,7 @@ type DecisionMap = Record<string, Decision>; // key = `${story_url}||${newslette
 
 // Module-level cache so every useDecisions() instance reads from one source.
 // Without this, DetailPane's upsert would only update DetailPane's local state
-// — CurateNewsletterView, NewsletterPicker, etc. would stay stale until they
+// - CurateNewsletterView, NewsletterPicker, etc. would stay stale until they
 // re-mount.
 let cache: DecisionMap = {};
 let loaded = false;

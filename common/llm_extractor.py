@@ -16,7 +16,7 @@ The funding and vc modules both implement the same skeleton:
   - how to turn a parsed payload into a typed result, returning `None`
     when the LLM classified the story out of scope (`parse_payload`).
 
-Everything else — caching, threading, logging, JSON parsing — is
+Everything else - caching, threading, logging, JSON parsing - is
 handled here so the two extractors stay logic-identical.
 """
 

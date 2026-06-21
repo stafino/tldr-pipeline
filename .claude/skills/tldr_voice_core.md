@@ -10,13 +10,13 @@ Every TLDR newsletter shares the same underlying register. Per-newsletter voice 
 
 ## Smart Brevity
 
-Where the story can carry it, structure the blurb in the Axios Smart Brevity pattern. It's not mandatory — a tight 2-sentence blurb is still preferred for short items — but for the lead Headlines and Deep Dives items, lean into this shape:
+Where the story can carry it, structure the blurb in the Axios Smart Brevity pattern. It's not mandatory - a tight 2-sentence blurb is still preferred for short items - but for the lead Headlines and Deep Dives items, lean into this shape:
 
-1. **Lede (one sentence)**: the news in 12–22 words. Concrete subject, concrete verb, the most newsworthy detail.
-2. **Why it matters (one sentence)**: the operator/reader consequence. Not a restatement of the lede — the implication. Start with "Why it matters:" only if the section's natural format allows it; otherwise just write the implication directly.
+1. **Lede (one sentence)**: the news in 12-22 words. Concrete subject, concrete verb, the most newsworthy detail.
+2. **Why it matters (one sentence)**: the operator/reader consequence. Not a restatement of the lede - the implication. Start with "Why it matters:" only if the section's natural format allows it; otherwise just write the implication directly.
 3. **By the numbers / What's next (optional)**: a third sentence with the strongest data point, the unresolved question, or what's expected next. Omit when there isn't one.
 
-The cumulative effect of Smart Brevity is "lede → so what → so now what". The reader can stop after sentence 1 and still get the news; sentence 2 gives the strategic reading; sentence 3 gives the texture. Don't fake any of these — if the story doesn't have an implication or a next step, skip it rather than padding.
+The cumulative effect of Smart Brevity is "lede → so what → so now what". The reader can stop after sentence 1 and still get the news; sentence 2 gives the strategic reading; sentence 3 gives the texture. Don't fake any of these - if the story doesn't have an implication or a next step, skip it rather than padding.
 
 For Quick Links and very short items, collapse to one sentence: lede only.
 
@@ -28,7 +28,7 @@ For Quick Links and very short items, collapse to one sentence: lede only.
 
 **Concrete over abstract.** Numbers, named products, named labs, named techniques. "$1B at a $26B valuation" beats "huge funding round". "Sonnet 4.6 beats GPT-5.5 on SWE-Bench by 4 points" beats "frontier improvement".
 
-**No marketing register.** These words are banned: groundbreaking, revolutionary, game-changing, paradigm-shifting, next-generation, unveils, unveiled, dives deep, deep dives, exciting, thrilled. "Unveiled" is press-release vocab — use "released", "shared", "introduced".
+**No marketing register.** These words are banned: groundbreaking, revolutionary, game-changing, paradigm-shifting, next-generation, unveils, unveiled, dives deep, deep dives, exciting, thrilled. "Unveiled" is press-release vocab - use "released", "shared", "introduced".
 
 **No reader-side framing.** Avoid: "this is huge for [audience]", "what this means for you", "buckle up", "get ready", "imagine a world", "what if". Don't tell the reader how to feel.
 
@@ -42,9 +42,9 @@ For Quick Links and very short items, collapse to one sentence: lede only.
 - Funding/M&A: "Cognition raised $1B at a $26B valuation."
 - Think-piece: "The author argues…" or just state the thesis as the lede.
 
-**Plain English. Specialist jargon only when it's the actual technical term.** QAT, microVM, MCP, k8s, RAG — fine. "High-density inference substrate" — not fine, use "compute capacity".
+**Plain English. Specialist jargon only when it's the actual technical term.** QAT, microVM, MCP, k8s, RAG - fine. "High-density inference substrate" - not fine, use "compute capacity".
 
-**Calibrated tone.** Confident but not breathless. State the strong claim plainly; don't dress it up. Avoid hedging stacks ("could potentially possibly maybe") — pick a degree of certainty.
+**Calibrated tone.** Confident but not breathless. State the strong claim plainly; don't dress it up. Avoid hedging stacks ("could potentially possibly maybe") - pick a degree of certainty.
 
 ## What never appears
 
@@ -74,7 +74,7 @@ For Quick Links and very short items, collapse to one sentence: lede only.
 
 - One sentence max. Often a fragment.
 - The title carries the topic; the blurb adds one useful piece of context.
-- No "interesting thread on X" framing — surface the actual idea.
+- No "interesting thread on X" framing - surface the actual idea.
 - Tutorials/papers: state the thing the post teaches, in 8-15 words.
 
 ## Style of numbers and dates
@@ -82,7 +82,7 @@ For Quick Links and very short items, collapse to one sentence: lede only.
 - Currency: $1B, $26B, $5.7T (with B/M/T suffix; never "1 billion dollars" in prose).
 - Percentages: 85%, not 85 percent.
 - Time deltas: "the past six months", "since Q1", "in the trailing 24 hours".
-- Ranges: "$10M to $25M" or "10–25M". Use en dash for numeric ranges if available, else "to".
+- Ranges: "$10M to $25M" or "10-25M". Use en dash for numeric ranges if available, else "to".
 
 ## Anti-pattern repair table
 

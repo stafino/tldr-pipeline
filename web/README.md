@@ -1,4 +1,4 @@
-# lede — Next.js viewer
+# lede - Next.js viewer
 
 1:1 port of the Streamlit UI in Next.js 14 (App Router) + Tailwind. Reads
 data from the parent repo's `data/` and `config/` directories at build / SSR time.
@@ -43,5 +43,5 @@ After deploy, add `lede.io` in Vercel → Settings → Domains.
 
 - Clicking a story row is instant (client-side navigation, no server rerun)
 - Approve / reject persists to `localStorage` instead of server-side JSONL
-- The deployed UI is read-only on the pipeline data — generation still runs locally
+- The deployed UI is read-only on the pipeline data - generation still runs locally
 - No background pipeline orchestration in the web app (kept in the Python CLI)

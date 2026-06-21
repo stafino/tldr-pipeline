@@ -2,7 +2,7 @@
 #
 # Scheduled refresh runner. Triggered by launchd every 6 hours.
 # Runs each pipeline stage separately and ALWAYS attempts the commit+push step
-# at the end — partial data is better than no data. Each stage's exit code is
+# at the end - partial data is better than no data. Each stage's exit code is
 # captured so a failure in one stage doesn't abort the rest.
 #
 # Logs to data/logs/cron-YYYYMMDD-HHMM.log; older logs are rotated.
@@ -49,7 +49,7 @@ run_stage() {
   else
     local rc=$?
     STATUS[$name]="failed (rc=$rc)"
-    echo "✗ $name: failed with exit code $rc — continuing"
+    echo "✗ $name: failed with exit code $rc - continuing"
   fi
 }
 

@@ -2,12 +2,12 @@ name: cron-refresh
 
 # Cloud version of scripts/cron-refresh.sh. Sits here as a break-glass
 # option in case the local launchd cron stops being viable (laptop
-# retired, traveling without it, etc). Currently MANUAL-ONLY — no
-# schedule trigger — so it costs $0 unless you fire it from the
+# retired, traveling without it, etc). Currently MANUAL-ONLY - no
+# schedule trigger - so it costs $0 unless you fire it from the
 # Actions tab.
 #
 # Required secret (only needed when you manually trigger a run):
-#   ANTHROPIC_API_KEY — get from console.anthropic.com → API Keys
+#   ANTHROPIC_API_KEY - get from console.anthropic.com → API Keys
 #
 # Cost when invoked: ~$2-5 per run (LLM_BACKEND=api in the cloud,
 # can't use the Claude Code subscription). If you enable a schedule:
@@ -17,7 +17,7 @@ name: cron-refresh
 # Add a `schedule:` block under `on:` below to flip it on.
 
 on:
-  # Manual-only by design — kept free. Uncomment the `schedule:` block
+  # Manual-only by design - kept free. Uncomment the `schedule:` block
   # below to enable automatic runs (costs real API tokens).
   # schedule:
   #   - cron: '0 4 * * *'  # 04:00 UTC daily

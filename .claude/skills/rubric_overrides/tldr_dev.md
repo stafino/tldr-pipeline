@@ -1,4 +1,4 @@
-## TLDR Dev — scoring overrides
+## TLDR Dev - scoring overrides
 
 The audience is working engineers across web, mobile, backend. They want
 implementation detail, post-mortems, and tool releases worth trying.

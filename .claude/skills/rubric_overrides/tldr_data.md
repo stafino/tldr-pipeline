@@ -1,4 +1,4 @@
-## TLDR Data — scoring overrides
+## TLDR Data - scoring overrides
 
 The audience is data engineers, analytics engineers, data PMs, and data
 scientists working in the modern data stack.

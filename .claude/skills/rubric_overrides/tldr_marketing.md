@@ -1,4 +1,4 @@
-## TLDR Marketing — scoring overrides
+## TLDR Marketing - scoring overrides
 
 The audience is growth/demand-gen/brand marketers. They read for channel
 shifts and specific tactics tested with real numbers.
