@@ -5,6 +5,11 @@ Pipeline-stage philosophy:
 - Pre-filter by a cheap keyword pass so we only LLM-call promising titles.
 - Cache by canonical URL — re-runs are no-ops once a story has been
   extracted, regardless of whether it ended up classified as funding.
+
+The cache → snippet → LLM → parse → save → typed-result skeleton (and
+the parallel-worker fan-out) lives in `common.llm_extractor.LLMExtractor`;
+this module supplies the funding-specific prompts, schema, region
+validator, and post-filter (drop OTHER region).
 """
 
 from __future__ import annotations
@@ -12,13 +17,11 @@ from __future__ import annotations
 import logging
 import os
 import re
-from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import asdict, dataclass
 from pathlib import Path
 
 from common.cache import UrlJsonCache
-from common.json_utils import parse_llm_json
-from common.llm import complete
+from common.llm_extractor import LLMExtractor
 from common.story import ScoredStory
 
 log = logging.getLogger(__name__)
@@ -173,44 +176,6 @@ def _cache_path(url: str) -> Path:
     return _CACHE.path_for(url)
 
 
-def _extract_one(story: ScoredStory) -> FundingRound | None:
-    """Return a FundingRound for a story that's a funding announcement, else None.
-
-    Results — including negatives — are cached so re-runs of the day are cheap.
-    """
-    url = story.story.url
-    cached = _CACHE.load(url)
-    if cached is not None:
-        if not cached.get("is_funding"):
-            return None
-        return _build_from_payload(story, cached)
-
-    snippet = (story.story.raw_text or "")[:600]
-    snippet_block = f"Snippet: {snippet}" if snippet else ""
-    user = EXTRACT_USER_TEMPLATE.format(
-        title=story.story.title,
-        source=story.story.source,
-        published_at=story.story.published_at,
-        snippet_block=snippet_block,
-    )
-    try:
-        raw = complete(EXTRACT_SYSTEM, user, model=FUNDING_MODEL, max_tokens=400)
-    except Exception as e:
-        log.warning("funding extract LLM error for %s: %r", url, e)
-        return None
-
-    payload = parse_llm_json(raw)
-    if payload is None:
-        log.warning("funding extract: could not parse JSON for %s", url)
-        return None
-
-    _CACHE.save(url, payload)
-
-    if not payload.get("is_funding"):
-        return None
-    return _build_from_payload(story, payload)
-
-
 _DATE_RE = re.compile(r"^(\d{4})-(\d{2})-(\d{2})$")
 
 
@@ -248,6 +213,59 @@ def _to_float(v) -> float | None:
         return None
 
 
+class _FundingExtractor(LLMExtractor[FundingRound]):
+    cache = _CACHE
+    model = FUNDING_MODEL
+    concurrency = FUNDING_CONCURRENCY
+    title_filter_re = TITLE_KEYWORDS
+    system_prompt = EXTRACT_SYSTEM
+    log_label = "funding"
+
+    def build_user_prompt(self, story: ScoredStory) -> str:
+        snippet = (story.story.raw_text or "")[:600]
+        snippet_block = f"Snippet: {snippet}" if snippet else ""
+        return EXTRACT_USER_TEMPLATE.format(
+            title=story.story.title,
+            source=story.story.source,
+            published_at=story.story.published_at,
+            snippet_block=snippet_block,
+        )
+
+    def parse_payload(self, story: ScoredStory, payload: dict) -> FundingRound | None:
+        if not payload.get("is_funding"):
+            return None
+        return _build_from_payload(story, payload)
+
+    def post_filter(self, result: FundingRound) -> bool:
+        # Drop funding rounds outside EU/NA (the user only cares about those two).
+        return result.region != "OTHER"
+
+    def sort_results(self, results: list[FundingRound]) -> list[FundingRound]:
+        # Sort by region, then amount (desc), then company name.
+        return sorted(
+            results,
+            key=lambda r: (
+                r.region,
+                -(r.amount_usd or 0),
+                (r.company or "").lower(),
+            ),
+        )
+
+
+# Back-compat: `scripts/backfill_funding_archive.py` imports `_extract_one`
+# as a free function. Keep the symbol pointing at an instance method bound
+# to a module-level extractor.
+_EXTRACTOR = _FundingExtractor()
+
+
+def _extract_one(story: ScoredStory) -> FundingRound | None:
+    """Return a FundingRound for a story that's a funding announcement, else None.
+
+    Results — including negatives — are cached so re-runs of the day are cheap.
+    """
+    return _EXTRACTOR.extract_one(story)
+
+
 def extract_funding(scored: list[ScoredStory]) -> list[FundingRound]:
     """Pre-filter to plausible titles, then LLM-extract in parallel.
 
@@ -256,35 +274,4 @@ def extract_funding(scored: list[ScoredStory]) -> list[FundingRound]:
     - Stories the LLM says are not funding rounds.
     - Funding rounds outside EU/NA (the user only cares about those two).
     """
-    candidates = [s for s in scored if TITLE_KEYWORDS.search(s.story.title or "")]
-    log.info(
-        "funding: %d candidates (of %d scored) after title filter",
-        len(candidates),
-        len(scored),
-    )
-
-    out: list[FundingRound] = []
-    with ThreadPoolExecutor(max_workers=FUNDING_CONCURRENCY) as pool:
-        futures = {pool.submit(_extract_one, s): s for s in candidates}
-        for fut in as_completed(futures):
-            try:
-                r = fut.result()
-            except Exception as e:
-                log.warning("funding worker error: %r", e)
-                continue
-            if r is None:
-                continue
-            if r.region == "OTHER":
-                continue
-            out.append(r)
-
-    # Sort by region, then amount (desc), then company name.
-    out.sort(
-        key=lambda r: (
-            r.region,
-            -(r.amount_usd or 0),
-            (r.company or "").lower(),
-        ),
-    )
-    log.info("funding: kept %d EU/NA rounds", len(out))
-    return out
+    return _EXTRACTOR.extract(scored)

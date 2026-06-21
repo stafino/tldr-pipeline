@@ -7,6 +7,10 @@ niche newsletter.
 
 Re-uses the existing scored.jsonl input. Pre-filters by keyword to keep
 LLM cost bounded, then classifies each candidate into one of six types.
+
+The cache → snippet → LLM → parse → save → typed-result skeleton (and
+the parallel-worker fan-out) lives in `common.llm_extractor.LLMExtractor`;
+this module supplies the VC-specific prompts, vocab, and validators.
 """
 
 from __future__ import annotations
@@ -14,13 +18,11 @@ from __future__ import annotations
 import logging
 import os
 import re
-from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import asdict, dataclass
 from pathlib import Path
 
 from common.cache import UrlJsonCache
-from common.json_utils import parse_llm_json
-from common.llm import complete
+from common.llm_extractor import LLMExtractor
 from common.story import ScoredStory
 
 log = logging.getLogger(__name__)
@@ -183,44 +185,7 @@ Published: {published_at}
 Return the JSON object."""
 
 
-# --- cache -------------------------------------------------------------------
-
-
 # --- extraction --------------------------------------------------------------
-
-
-def _extract_one(story: ScoredStory) -> VcArticle | None:
-    url = story.story.url
-    cached = _CACHE.load(url)
-    if cached is not None:
-        if not cached.get("is_vc"):
-            return None
-        return _build_from_payload(story, cached)
-
-    snippet = (story.story.raw_text or "")[:600]
-    snippet_block = f"Snippet: {snippet}" if snippet else ""
-    user = EXTRACT_USER_TEMPLATE.format(
-        title=story.story.title,
-        source=story.story.source,
-        published_at=story.story.published_at,
-        snippet_block=snippet_block,
-    )
-    try:
-        raw = complete(EXTRACT_SYSTEM, user, model=VC_MODEL, max_tokens=400)
-    except Exception as e:
-        log.warning("vc extract LLM error for %s: %r", url, e)
-        return None
-
-    payload = parse_llm_json(raw)
-    if payload is None:
-        log.warning("vc extract: could not parse JSON for %s", url)
-        return None
-
-    _CACHE.save(url, payload)
-
-    if not payload.get("is_vc"):
-        return None
-    return _build_from_payload(story, payload)
 
 
 def _build_from_payload(story: ScoredStory, payload: dict) -> VcArticle:
@@ -249,28 +214,40 @@ def _build_from_payload(story: ScoredStory, payload: dict) -> VcArticle:
     )
 
 
+class _VcExtractor(LLMExtractor[VcArticle]):
+    cache = _CACHE
+    model = VC_MODEL
+    concurrency = VC_CONCURRENCY
+    title_filter_re = TITLE_KEYWORDS
+    system_prompt = EXTRACT_SYSTEM
+    log_label = "vc"
+
+    def build_user_prompt(self, story: ScoredStory) -> str:
+        snippet = (story.story.raw_text or "")[:600]
+        snippet_block = f"Snippet: {snippet}" if snippet else ""
+        return EXTRACT_USER_TEMPLATE.format(
+            title=story.story.title,
+            source=story.story.source,
+            published_at=story.story.published_at,
+            snippet_block=snippet_block,
+        )
+
+    def parse_payload(self, story: ScoredStory, payload: dict) -> VcArticle | None:
+        if not payload.get("is_vc"):
+            return None
+        return _build_from_payload(story, payload)
+
+    def sort_results(self, results: list[VcArticle]) -> list[VcArticle]:
+        return sorted(results, key=lambda r: (r.vc_type, r.published_at), reverse=True)
+
+
+_EXTRACTOR = _VcExtractor()
+
+
+def _extract_one(story: ScoredStory) -> VcArticle | None:
+    return _EXTRACTOR.extract_one(story)
+
+
 def extract_vc(scored: list[ScoredStory]) -> list[VcArticle]:
     """Pre-filter scored stories by VC keywords, LLM-classify the survivors."""
-    candidates = [s for s in scored if TITLE_KEYWORDS.search(s.story.title or "")]
-    log.info(
-        "vc: %d candidates (of %d scored) after title filter",
-        len(candidates),
-        len(scored),
-    )
-
-    out: list[VcArticle] = []
-    with ThreadPoolExecutor(max_workers=VC_CONCURRENCY) as pool:
-        futures = {pool.submit(_extract_one, s): s for s in candidates}
-        for fut in as_completed(futures):
-            try:
-                r = fut.result()
-            except Exception as e:
-                log.warning("vc worker error: %r", e)
-                continue
-            if r is None:
-                continue
-            out.append(r)
-
-    out.sort(key=lambda r: (r.vc_type, r.published_at), reverse=True)
-    log.info("vc: kept %d articles", len(out))
-    return out
+    return _EXTRACTOR.extract(scored)
