@@ -11,6 +11,7 @@ const nextConfig = {
         '../data/blurbs/*.jsonl',
         '../data/backtest/*.json',
         '../data/funding/*.jsonl',
+        '../data/vc/*.jsonl',
         '_embedded/**/*',
       ],
     },

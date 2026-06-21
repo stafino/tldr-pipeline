@@ -93,6 +93,29 @@ export interface Decision {
 
 export type FundingRegion = 'EU' | 'NA' | 'OTHER';
 
+export type VcType =
+  | 'fund_news'
+  | 'partner_move'
+  | 'exit'
+  | 'market_signal'
+  | 'opinion'
+  | 'regulatory';
+
+export type VcRegion = 'NA' | 'EU' | 'ASIA' | 'GLOBAL' | 'OTHER';
+
+export interface VcArticle {
+  story_url: string;
+  title: string;
+  source: string;
+  published_at: string;
+  is_vc: boolean;
+  vc_type: VcType;
+  headline_summary: string;
+  firms: string[];
+  people: string[];
+  region: VcRegion;
+}
+
 export interface FundingRound {
   story_url: string;
   title: string;

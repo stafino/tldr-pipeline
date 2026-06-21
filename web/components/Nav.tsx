@@ -9,6 +9,7 @@ const TABS = [
   { href: '/', label: 'Curate' },
   { href: '/edition', label: 'Edition' },
   { href: '/funding', label: 'Funding' },
+  { href: '/vc', label: 'VC' },
   { href: '/backtest', label: 'Backtest' },
 ];
 

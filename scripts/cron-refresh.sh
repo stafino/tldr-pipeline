@@ -63,6 +63,9 @@ run_stage "blurbs" ./tldr blurbs all
 # per URL so re-runs are no-ops; chained here to save tokens by sharing the
 # scored input with blurbs.
 run_stage "funding" ./tldr funding
+# VC industry classifier — surfaces fund news, partner moves, exits,
+# market signals, opinion. Powers the /vc tab in the web viewer.
+run_stage "vc" ./tldr vc
 run_stage "format" ./tldr format all
 # Backtest cache: scrape TLDR's actual published issue for the target date
 # (and the last few days) and store the comparison vs our predictions so the
@@ -78,7 +81,7 @@ run_stage "learn_weights" uv run python scripts/learn_source_weights.py
 # if blurbs crashed.
 echo
 echo "── COMMIT & PUSH ────────────────────────────"
-git add data/scored data/blurbs data/issues data/funding data/backtest 2>/dev/null || true
+git add data/scored data/blurbs data/issues data/funding data/vc data/backtest 2>/dev/null || true
 if [[ -n "$(git diff --cached --name-only)" ]]; then
   git -c user.email="${GIT_AUTHOR_EMAIL:-oliverstaf1@gmail.com}" \
       -c user.name="${GIT_AUTHOR_NAME:-stafino}" \

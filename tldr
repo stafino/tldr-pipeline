@@ -63,6 +63,11 @@ cmd_funding() {
   uv run python -m funding.run --date "$DATE"
 }
 
+cmd_vc() {
+  log "vc      date=$DATE"
+  uv run python -m vc.run --date "$DATE"
+}
+
 cmd_backfill_blurbs() {
   # Re-run blurbs over every scored date so no assigned story is left
   # without a blurb. The blurb runner already skips stories already
@@ -95,6 +100,7 @@ cmd_refresh() {
   cmd_rank
   cmd_blurbs "all"
   cmd_funding
+  cmd_vc
   cmd_format "all"
   ok "done — issues at data/issues/*-${DATE}.txt"
 }
@@ -170,6 +176,7 @@ main() {
     blurbs)              shift; cmd_blurbs "${1:-all}" ;;
     backfill-blurbs|backfill_blurbs) cmd_backfill_blurbs ;;
     funding)             cmd_funding ;;
+    vc)                  cmd_vc ;;
     format|render)       shift; cmd_format "${1:-all}" ;;
     backtest)            shift; cmd_backtest "$@" ;;
     backtest_cache|cache_backtest)  cmd_backtest_cache ;;

@@ -8,6 +8,7 @@ import type {
   BacktestResult,
   Section,
   FundingRound,
+  VcArticle,
 } from './types';
 
 // Data location: prefer ./_embedded (created by scripts/embed.mjs for CLI
@@ -29,6 +30,7 @@ const SCORED_DIR = path.join(REPO_ROOT, 'data', 'scored');
 const BLURBS_DIR = path.join(REPO_ROOT, 'data', 'blurbs');
 const BACKTEST_DIR = path.join(REPO_ROOT, 'data', 'backtest');
 const FUNDING_DIR = path.join(REPO_ROOT, 'data', 'funding');
+const VC_DIR = path.join(REPO_ROOT, 'data', 'vc');
 const NEWSLETTERS_PATH = path.join(REPO_ROOT, 'config', 'newsletters.yaml');
 
 /** All scrape file dates we have scored or blurb data for, newest first. */
@@ -293,6 +295,36 @@ export function loadFunding(raisedDate: string): FundingRound[] {
 /** Load every funding row, deduplicated by story_url. */
 export function loadFundingAll(): FundingRound[] {
   return loadAllRows();
+}
+
+/* ─── VC tab ────────────────────────────────────────────────────────────── */
+
+function listVcDates(): string[] {
+  if (!fs.existsSync(VC_DIR)) return [];
+  const dates = new Set<string>();
+  for (const f of fs.readdirSync(VC_DIR)) {
+    if (f.endsWith('.jsonl')) dates.add(f.replace('.jsonl', ''));
+  }
+  return Array.from(dates).sort().reverse();
+}
+
+function loadVcRows(): VcArticle[] {
+  const byUrl = new Map<string, VcArticle>();
+  for (const d of listVcDates()) {
+    for (const r of readJsonl<VcArticle>(path.join(VC_DIR, `${d}.jsonl`))) {
+      byUrl.set(r.story_url, r);
+    }
+  }
+  return Array.from(byUrl.values());
+}
+
+export { listVcDates };
+
+export function loadVcRange(from: string, to: string): VcArticle[] {
+  return loadVcRows().filter((r) => {
+    const d = (r.published_at || '').slice(0, 10);
+    return d >= from && d <= to;
+  });
 }
 
 export function loadBacktestsForNewsletter(newsletterId: string, lastNDays = 7): BacktestResult[] {
