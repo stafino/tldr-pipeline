@@ -63,7 +63,7 @@ export default function EditionPage({
   return (
     <main>
       <Nav />
-      <div className="flex gap-3 px-5 py-3 border-b border-border items-center">
+      <div className="flex flex-wrap gap-3 px-4 sm:px-5 py-3 border-b border-border items-center">
         <DatePicker dates={dates} value={selectedDate} allowAll={false} />
         <InlineNewsletterPicker
           ids={nlIds}

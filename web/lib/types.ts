@@ -127,6 +127,7 @@ export interface VcArticle {
   region: VcRegion;
   sector?: VcSector; // optional for backwards-compat with rows written
                      // before the schema added it; UI treats missing as 'other'
+  blurb?: string;    // 60-80 word LLM summary; optional for back-compat
 }
 
 export interface FundingRound {

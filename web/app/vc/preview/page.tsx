@@ -50,16 +50,16 @@ export default function VcPreviewPage() {
     <main>
       <Nav />
 
-      <section className="max-w-[820px] mx-auto px-5 py-12">
+      <section className="max-w-[820px] mx-auto px-4 sm:px-5 py-10 sm:py-12">
         {/* Hero */}
         <div className="mb-10">
           <div className="text-[11px] uppercase tracking-[0.12em] text-text-mute mb-2">
             Niche newsletter proposal
           </div>
-          <h1 className="text-[40px] font-bold tracking-tight leading-[1.05] mb-4">
+          <h1 className="text-[34px] sm:text-[40px] font-bold tracking-tight leading-[1.05] mb-4">
             TLDR VC
           </h1>
-          <p className="text-[18px] text-text-dim leading-snug mb-6 max-w-[560px]">
+          <p className="text-[16px] sm:text-[18px] text-text-dim leading-snug mb-6 max-w-[560px]">
             A daily 5-minute digest of the venture capital industry — fund launches,
             partner moves, exits, market signals, regulatory shifts. The wedge nobody
             ships yet.

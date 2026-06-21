@@ -218,7 +218,7 @@ export default function VcPage({
   return (
     <main>
       <Nav />
-      <div className="flex items-center gap-3 px-5 py-3 border-b border-border text-[10px] text-text-mute">
+      <div className="flex flex-wrap items-center gap-3 px-4 sm:px-5 py-3 border-b border-border text-[10px] text-text-mute">
         Window: <span className="text-text-dim font-mono">last {daysBack} days</span>
         {rounds.length !== allRounds.length && (
           <span className="text-warn">
@@ -237,7 +237,7 @@ export default function VcPage({
           </Link>
         </span>
       </div>
-      <div className="max-w-[1100px] mx-auto px-5 py-5">
+      <div className="max-w-[1100px] mx-auto px-4 sm:px-5 py-5">
         {/* Volume + signal hero — the "this is a real newsletter" banner */}
         <div
           className="rounded-lg border border-border-strong p-5 mb-6"

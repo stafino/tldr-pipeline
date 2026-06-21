@@ -75,7 +75,7 @@ export default function VcRecapPage({
   return (
     <main>
       <Nav />
-      <div className="flex items-center gap-4 px-5 py-3 border-b border-border text-[11px] text-text-mute">
+      <div className="flex flex-wrap items-center gap-3 px-4 sm:px-5 py-3 border-b border-border text-[11px] text-text-mute">
         <Link href="/vc" className="hover:text-text">← back to feed</Link>
         <span className="text-text-dim">
           Window: <span className="font-mono">{from} → {today}</span> ·{' '}
@@ -86,10 +86,10 @@ export default function VcRecapPage({
         </Link>
       </div>
 
-      <div className="max-w-[720px] mx-auto px-5 py-8">
+      <div className="max-w-[720px] mx-auto px-4 sm:px-5 py-6 sm:py-8">
         {/* Issue header */}
         <div className="text-center mb-10">
-          <h1 className="text-[30px] font-bold tracking-tight mb-1">{label}</h1>
+          <h1 className="text-[24px] sm:text-[30px] font-bold tracking-tight mb-1">{label}</h1>
           <p className="text-[12.5px] text-text-mute">
             The week in venture capital, in one digest.
           </p>

@@ -44,8 +44,8 @@ function buildMarkdown(
       const min = pickRead(r.title, r.headline_summary);
       lines.push(`**[${headline} (${min} minute read)](${r.story_url})**`);
       lines.push('');
-      if (r.headline_summary && r.title !== r.headline_summary) {
-        lines.push(r.title);
+      if (r.blurb) {
+        lines.push(r.blurb);
         lines.push('');
       }
       if (r.firms.length > 0 || r.region !== 'OTHER') {
@@ -82,10 +82,11 @@ function buildPlainText(
       const min = pickRead(r.title, r.headline_summary);
       lines.push(`${headline} (${min} minute read)`);
       lines.push(r.story_url);
-      if (r.headline_summary && r.title !== r.headline_summary) {
-        lines.push(r.title);
-      }
       lines.push('');
+      if (r.blurb) {
+        lines.push(r.blurb);
+        lines.push('');
+      }
     }
   }
   return lines.join('\n').trimEnd() + '\n';
@@ -124,8 +125,8 @@ function buildHtml(
       const min = pickRead(r.title, r.headline_summary);
       const link = `<a href="${escHtml(r.story_url)}" style="color:#111;font-weight:700;text-decoration:underline;"><span style="color:#111;">${escHtml(headline)} (${min} minute read)</span></a>`;
       parts.push(`<p style="${P}padding:0 0 12px;">${link}</p>`);
-      if (r.headline_summary && r.title !== r.headline_summary) {
-        parts.push(`<p style="${P}padding:0 0 8px;">${escHtml(r.title)}</p>`);
+      if (r.blurb) {
+        parts.push(`<p style="${P}padding:0 0 16px;">${escHtml(r.blurb)}</p>`);
       }
       if (r.firms.length > 0 || r.region !== 'OTHER') {
         const meta = [

@@ -115,7 +115,7 @@ export default function BacktestPage({
   return (
     <main>
       <Nav />
-      <div className="flex gap-3 px-5 py-3 border-b border-border items-center flex-wrap">
+      <div className="flex gap-3 px-4 sm:px-5 py-3 border-b border-border items-center flex-wrap">
         <DatePicker dates={dates} value={heroDate} allowAll={false} />
         <BacktestPicker
           newsletters={Object.fromEntries(nlIds.map((id) => [id, newsletters[id].brand_name]))}
@@ -129,7 +129,7 @@ export default function BacktestPage({
             : `comparing ${newsletters[detailNl]?.brand_name} for ${detailDate}`}
         </div>
       </div>
-      <div className="max-w-[1300px] mx-auto px-5 py-5">
+      <div className="max-w-[1300px] mx-auto px-4 sm:px-5 py-5">
         {isAggregate ? (
           <>
             <div
@@ -159,7 +159,7 @@ export default function BacktestPage({
               specific newsletter above to see the day's side-by-side.
             </p>
 
-            <table className="w-full text-[13px] border-collapse mb-6">
+            <div className="overflow-x-auto -mx-4 sm:mx-0 px-4 sm:px-0 mb-6"><table className="w-full text-[13px] border-collapse min-w-[600px]">
               <thead>
                 <tr>
                   <th className="text-left py-2.5 px-3 text-[10px] uppercase tracking-[0.08em] text-text-mute border-b border-border-strong">
@@ -214,7 +214,7 @@ export default function BacktestPage({
                   </tr>
                 ))}
               </tbody>
-            </table>
+            </table></div>
 
             {sourceRows.length > 0 && (
               <div className="mb-6">
@@ -223,7 +223,7 @@ export default function BacktestPage({
                   Top domains TLDR cited that we didn&apos;t catch — start here when picking new
                   RSS sources or tuning the ranker.
                 </p>
-                <table className="w-full text-[12.5px] border-collapse">
+                <div className="overflow-x-auto -mx-4 sm:mx-0 px-4 sm:px-0"><table className="w-full text-[12.5px] border-collapse min-w-[480px]">
                   <thead>
                     <tr>
                       <th className="text-left py-2 px-3 text-[10px] uppercase tracking-[0.08em] text-text-mute border-b border-border-strong">
@@ -261,7 +261,7 @@ export default function BacktestPage({
                       );
                     })}
                   </tbody>
-                </table>
+                </table></div>
               </div>
             )}
           </>
@@ -315,7 +315,7 @@ function Stat({ label, value, accent }: { label: string; value: string; accent?:
 function CompareGrid({ detail, brand }: { detail: any; brand: string }) {
   return (
     <>
-      <div className="grid grid-cols-2 gap-8 mt-3">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mt-3">
         <div>
           <div className="text-[11px] uppercase tracking-[0.1em] text-text-mute font-semibold mb-2.5 pb-2 border-b border-border-strong">
             TLDR {brand.replace('TLDR ', '').replace('TLDR', '')} actually published ({detail.tldr_titles.length})

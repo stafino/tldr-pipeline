@@ -203,7 +203,7 @@ export default function EditionStories({
   }
 
   return (
-    <div className="px-5 py-5 max-w-[1100px]">
+    <div className="px-4 sm:px-5 py-5 max-w-[1100px]">
       <div
         className="rounded-lg border border-border-strong p-5 mb-6"
         style={{ background: 'linear-gradient(135deg, #171717 0%, #1a2030 100%)' }}

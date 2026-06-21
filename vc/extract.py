@@ -93,6 +93,7 @@ class VcArticle:
     people: list[str]  # named people mentioned
     region: str  # "NA" | "EU" | "ASIA" | "GLOBAL" | "OTHER"
     sector: str = "other"  # one of VC_SECTORS keys
+    blurb: str = ""  # 60-80 word TLDR-voice summary, paragraph below the headline
 
     def to_dict(self) -> dict:
         return asdict(self)
@@ -112,10 +113,19 @@ Schema:
   "vc_type": "fund_news | partner_move | exit | market_signal | opinion | regulatory" | "",
   "sector": "ai | fintech | crypto | climate | biotech | enterprise | consumer | deeptech | other",
   "headline_summary": "one-line punchy summary, 8-15 words" | "",
+  "blurb": "60-80 word paragraph summary in TLDR voice (see below)" | "",
   "firms": ["named VC firms or notable startups, e.g. Sequoia, a16z, OpenAI"],
   "people": ["named people, e.g. Marc Andreessen, Sam Altman"],
   "region": "NA | EU | ASIA | GLOBAL | OTHER"
 }
+
+blurb voice:
+- 60-80 words. Three short, declarative sentences.
+- Lead with the *what*. Second sentence adds the *who* + key numbers.
+- Third sentence frames the *why it matters* for a VC reader.
+- No hedging ("could", "may", "potentially"). No PR copy phrases
+  ("revolutionizing", "game-changing", "ecosystem").
+- Pure facts the reader needs to know in 15 seconds.
 
 sector classification:
 - ai: AI / ML / LLMs / agents / GenAI
@@ -272,6 +282,7 @@ def _build_from_payload(story: ScoredStory, payload: dict) -> VcArticle:
         people=[s for s in (payload.get("people") or []) if isinstance(s, str)],
         region=region,
         sector=sector,
+        blurb=(payload.get("blurb") or "").strip(),
     )
 
 

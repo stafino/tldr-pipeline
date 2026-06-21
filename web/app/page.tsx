@@ -208,16 +208,16 @@ export default function Page({ searchParams }: { searchParams: Search }) {
   return (
     <main>
       <Nav pipelinePills={pills} />
-      <div className="flex gap-3 px-5 py-3 border-b border-border items-center">
+      <div className="flex flex-wrap gap-3 px-4 sm:px-5 py-3 border-b border-border items-center">
         <DatePicker dates={dates} value={selectedDate} />
         <SearchFilter value={searchQuery} placeholder="Title, domain, source…" />
-        <div className="text-[10px] text-text-mute">
+        <div className="text-[10px] text-text-mute basis-full sm:basis-auto">
           {nlIds.length} newsletters · {dates.length} dates available
           <span className="ml-2 text-text-dim">(+ prev day rolled in)</span>
         </div>
       </div>
-      <div className="grid grid-cols-[220px_minmax(0,_3fr)_minmax(0,_2fr)] gap-4 px-5 py-3">
-        <div className="border-r border-border pr-3 sticky top-0 self-start max-h-screen overflow-y-auto scroll-y">
+      <div className="grid grid-cols-1 lg:grid-cols-[220px_minmax(0,_3fr)_minmax(0,_2fr)] gap-4 px-4 sm:px-5 py-3">
+        <div className="lg:border-r lg:border-border pr-0 lg:pr-3 lg:sticky lg:top-0 lg:self-start lg:max-h-screen lg:overflow-y-auto scroll-y">
           <NewsletterPicker
             ids={nlIds}
             brandNames={brandNames}
@@ -225,8 +225,8 @@ export default function Page({ searchParams }: { searchParams: Search }) {
             includeBacklog
           />
         </div>
-        <div className="overflow-y-auto scroll-y">{middleContent}</div>
-        <div className="border-l border-border pl-4 sticky top-0 self-start max-h-screen overflow-y-auto scroll-y">
+        <div className="lg:overflow-y-auto scroll-y">{middleContent}</div>
+        <div className="lg:border-l lg:border-border pl-0 lg:pl-4 lg:sticky lg:top-0 lg:self-start lg:max-h-screen lg:overflow-y-auto scroll-y">
           <DetailPane story={selectedStory} newsletter={detailNewsletter} blurb={selectedBlurb} />
         </div>
       </div>

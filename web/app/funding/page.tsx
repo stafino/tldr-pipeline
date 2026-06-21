@@ -313,7 +313,7 @@ export default function FundingPage({
   return (
     <main>
       <Nav />
-      <div className="flex flex-col gap-2 px-5 py-3 border-b border-border">
+      <div className="flex flex-col gap-2 px-4 sm:px-5 py-3 border-b border-border">
         <FundingDateFilter dates={dates} from={from} to={to} todayISO={today} />
         <div className="flex items-center justify-between gap-3 flex-wrap">
           <FundingFilterChips stage={stageFilter} min={minFilter} />
@@ -338,7 +338,7 @@ export default function FundingPage({
           )}
         </div>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,_1fr)_minmax(0,_1fr)_minmax(0,_1fr)] gap-6 px-5 py-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[minmax(0,_1fr)_minmax(0,_1fr)_minmax(0,_1fr)] gap-6 px-4 sm:px-5 py-5">
         <Column label="🇪🇺 Europe" rows={eu} selectedUrl={selectedRound?.story_url} hrefForRow={hrefForRow} today={today} />
         <Column label="🇺🇸 North America" rows={na} selectedUrl={selectedRound?.story_url} hrefForRow={hrefForRow} today={today} />
         <div className="lg:border-l lg:border-border lg:pl-6 lg:sticky lg:top-0 lg:self-start lg:max-h-screen lg:overflow-y-auto">
