@@ -8,7 +8,7 @@ News & Trends
 
 Snowflake and the Agentic Resource Discovery Specification (5 minute read)
 
-Snowflake announced support for the Agentic Resource Discovery (ARD) Specification, an open protocol developed with Microsoft, GoDaddy, and others that standardizes how AI agents, MCP servers, and API tools are cataloged and discovered across an enterprise. ARD adds a federated discovery layer above existing invocation protocols, so an agent a data team ships in Snowflake becomes findable from Copilot or any AI client without manual wiring, while the discovery service stays out of the invocation path.
+(blurb not generated)
 
 Trump kneecaps Anthropic, SpaceX bags Cursor and Databricks debuts AI agent coworker (5 minute read)
 
@@ -17,48 +17,48 @@ Trump kneecaps Anthropic, SpaceX bags Cursor and Databricks debuts AI agent cowo
 🧠
 Deep Dives & Analysis
 
-PostgresBench: A Reproducible Benchmark for Postgres Services (1 minute read)
+PostgresBench: A Reproducible Benchmark for Postgres Services (5 minute read)
 
-ClickHouse released PostgresBench, a public, reproducible benchmark for managed Postgres services that applies the same open methodology as its ClickBench OLAP suite. It runs the standard pgbench TPC-B-like workload (256 clients, 16 threads, 10-minute runs) with all configuration published so anyone can reproduce or challenge the numbers. The move pitches Postgres for transactional work and ClickHouse for analytics as a single best-of-breed stack, and gives data teams a transparent way to compare managed Postgres providers on write-heavy workloads.
+(blurb not generated)
 
-How we built an internal data analytics agent (1 minute read)
+How we built an internal data analytics agent (5 minute read)
 
-GitHub built Qubot, a Copilot-powered analytics agent that lets any employee query the company's data warehouse in plain language and get an answer in seconds. The architecture splits into three parts: a UI layer (Slack, VS Code, Copilot CLI), a context layer that encodes which data model, grain, and filters to use, and a query engine. Every answer is saved as a markdown report in a pull request, so teams can refine the query or promote it to a dashboard.
+(blurb not generated)
 
 When failover isn't safe: Building high-availability PostgreSQL on Kubernetes (5 minute read)
 
-Datadog rearchitected its Kubernetes-based PostgreSQL clusters to use Patroni-coordinated synchronous replication after a gameday exposed an unsafe failover mode. A simulated zonal failure spiked network latency, stalling replication so far that no replica was current enough to promote without data loss, leaving clusters stuck waiting for latency to subside. The writeup covers how they traded durability against latency and validated the design through benchmarking and failure testing.
+(blurb not generated)
 
 The only scalable delete in Postgres is DROP TABLE (5 minute read)
 
-PlanetScale argues that the only Postgres delete that actually scales is dropping or truncating an entire table, because MVCC makes large DELETEs "work added" rather than work done. Big batch deletes leave dead tuples behind, don't return disk to the OS until a lock-heavy VACUUM FULL, skip index cleanup, and add write and replication load that can stall other writers. The takeaway is a schema-design one: partition or shard so bulk cleanup becomes a DROP TABLE or TRUNCATE instead of a DELETE.
+(blurb not generated)
 
 🚀
 Launches & Tools
 
-Amazon S3 annotations: attach rich, queryable context directly to your objects (1 minute read)
+Amazon S3 annotations: attach rich, queryable context directly to your objects (5 minute read)
 
-Amazon S3 added annotations, letting you attach up to 1,000 named, queryable annotations per object (1 MB each, 1 GB total) in JSON, XML, YAML, or plain text, editable without rewriting the object. Enabling S3 Metadata flows annotations into managed annotation tables queryable from Amazon Athena, giving teams a way to keep evolving context like transcripts or AI summaries alongside petabyte-scale data without separate metadata databases.
+(blurb not generated)
 
-Datasette Apps: Host custom HTML applications inside Datasette (1 minute read)
+Datasette Apps: Host custom HTML applications inside Datasette (5 minute read)
 
-Datasette Apps, a new plugin, lets you host self-contained HTML+JavaScript applications inside Datasette that run in a sandboxed iframe and query your data with read-only SQL, or write queries when configured with stored queries. The sandbox blocks cookie and localStorage access and injects a CSP header that prevents outbound HTTP requests, so a buggy or malicious app cannot exfiltrate private data.
+(blurb not generated)
 
 Ingesting the Milky Way: Petabyte-Scale with Zerobus Ingest (5 minute read)
 
-Databricks released Zerobus Ingest, a fully managed serverless streaming service that pushes data directly into Delta tables governed by Unity Catalog, removing the need to run Kafka when the destination is the lakehouse. In benchmarking against NASA's NEOWISE dataset, it ingested 1PB in under 24 hours at a sustained 12 GB/s to a single table with zero pre-configuration.
+(blurb not generated)
 
-Accelerating researchers and developers building multilingual AI with a new open dataset (1 minute read)
+Accelerating researchers and developers building multilingual AI with a new open dataset (5 minute read)
 
-GitHub published a repository-level dataset under CC0-1.0 that maps multilingual developer content across READMEs, issues, and pull requests, giving teams a discovery layer for non-English code documentation. The release targets researchers and developers training multilingual AI, surfacing where natural-language signals live inside repositories rather than treating code corpora as English-only.
+(blurb not generated)
 
 ⚡
 Quick Links
 
 British Columbia, Time Zones, and Postgres (5 minute read)
 
-British Columbia's switch to permanent UTC-7 can silently shift Postgres timestamptz appointments by an hour unless tzdata is updated.
+(blurb not generated)
 
 Introducing the Open Knowledge Format (5 minute read)
 
-Google introduced the Open Knowledge Format, an open spec representing AI context as markdown files with YAML frontmatter.
+(blurb not generated)
