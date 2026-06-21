@@ -1,9 +1,14 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-import { escapeHtml } from '@/lib/escape';
 import { copyRichToClipboard, copyTextToClipboard } from '@/lib/clipboard';
 import { downloadEml } from '@/lib/eml-builder';
+import {
+  buildEmailHtmlIssue,
+  buildMarkdownIssue,
+  buildPlainTextIssue,
+  type IssueDoc,
+} from '@/lib/issue-formatters';
 import type { VcArticle, VcType } from '@/lib/types';
 import { canonicalDomain } from '@/lib/utils';
 
@@ -18,125 +23,34 @@ function pickRead(headline: string, summary: string): number {
   return Math.max(1, Math.min(6, Math.ceil(w / 200)));
 }
 
-function buildMarkdown(
-  label: string,
-  sections: Section[],
-  bySection: Partial<Record<VcType, VcArticle[]>>,
-): string {
-  const lines: string[] = [];
-  lines.push(`# ${label}`);
-  lines.push('');
-  lines.push(`*A daily digest of the venture capital industry — funds, partners, exits, signals.*`);
-  lines.push('');
-  for (const sec of sections) {
-    const items = bySection[sec.key] ?? [];
-    if (items.length === 0) continue;
-    lines.push(`## ${sec.emoji} ${sec.name}`);
-    lines.push('');
-    for (const r of items) {
-      const headline = r.headline_summary || r.title;
-      const min = pickRead(r.title, r.headline_summary);
-      lines.push(`**[${headline} (${min} minute read)](${r.story_url})**`);
-      lines.push('');
-      if (r.blurb) {
-        lines.push(r.blurb);
-        lines.push('');
-      }
-      if (r.firms.length > 0 || r.region !== 'OTHER') {
-        const meta = [
-          r.region !== 'OTHER' ? r.region : '',
-          ...r.firms.slice(0, 4),
-        ].filter(Boolean).join(' · ');
-        lines.push(`*${meta}*`);
-        lines.push('');
-      }
-    }
-  }
-  return lines.join('\n').trimEnd() + '\n';
+function buildMetaLine(r: VcArticle): string | null {
+  if (r.firms.length === 0 && r.region === 'OTHER') return null;
+  return [r.region !== 'OTHER' ? r.region : '', ...r.firms.slice(0, 4)]
+    .filter(Boolean)
+    .join(' · ');
 }
 
-function buildPlainText(
+function toIssueDoc(
   label: string,
   sections: Section[],
   bySection: Partial<Record<VcType, VcArticle[]>>,
-): string {
-  const lines: string[] = [];
-  lines.push(label);
-  lines.push('A daily digest of the venture capital industry.');
-  lines.push('');
-  for (const sec of sections) {
-    const items = bySection[sec.key] ?? [];
-    if (items.length === 0) continue;
-    lines.push('');
-    lines.push(sec.emoji);
-    lines.push(sec.name);
-    lines.push('');
-    for (const r of items) {
-      const headline = r.headline_summary || r.title;
-      const min = pickRead(r.title, r.headline_summary);
-      lines.push(`${headline} (${min} minute read)`);
-      lines.push(r.story_url);
-      lines.push('');
-      if (r.blurb) {
-        lines.push(r.blurb);
-        lines.push('');
-      }
-    }
-  }
-  return lines.join('\n').trimEnd() + '\n';
-}
-
-function buildHtml(
-  label: string,
-  sections: Section[],
-  bySection: Partial<Record<VcType, VcArticle[]>>,
-): string {
-  const FONT =
-    "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif";
-  const EMOJI = "'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif";
-  const P = `font-family:${FONT};font-size:15px;line-height:1.55;color:#111;margin:0;`;
-  const parts: string[] = [];
-  parts.push(
-    `<div style="font-family:${FONT};font-size:15px;line-height:1.55;color:#111;max-width:640px;margin:0 auto;">`,
-  );
-  parts.push(
-    `<p style="${P}text-align:center;font-size:22px;font-weight:700;padding:0 0 8px;">${escapeHtml(label)}</p>`,
-  );
-  parts.push(
-    `<p style="${P}text-align:center;font-size:13px;color:#666;padding:0 0 32px;">A daily digest of the venture capital industry — funds, partners, exits, signals.</p>`,
-  );
-  for (const sec of sections) {
-    const items = bySection[sec.key] ?? [];
-    if (items.length === 0) continue;
-    parts.push(
-      `<p style="${P}text-align:center;font-size:32px;line-height:1;padding:0 0 8px;"><span style="font-family:${EMOJI};">${escapeHtml(sec.emoji)}</span></p>`,
-    );
-    parts.push(
-      `<p style="${P}text-align:center;font-size:14px;font-weight:700;text-transform:uppercase;padding:0 0 28px;">${escapeHtml(sec.name)}</p>`,
-    );
-    for (const r of items) {
-      const headline = r.headline_summary || r.title;
-      const min = pickRead(r.title, r.headline_summary);
-      const link = `<a href="${escapeHtml(r.story_url)}" style="color:#111;font-weight:700;text-decoration:underline;"><span style="color:#111;">${escapeHtml(headline)} (${min} minute read)</span></a>`;
-      parts.push(`<p style="${P}padding:0 0 12px;">${link}</p>`);
-      if (r.blurb) {
-        parts.push(`<p style="${P}padding:0 0 16px;">${escapeHtml(r.blurb)}</p>`);
-      }
-      if (r.firms.length > 0 || r.region !== 'OTHER') {
-        const meta = [
-          r.region !== 'OTHER' ? r.region : '',
-          ...r.firms.slice(0, 4),
-        ].filter(Boolean).join(' · ');
-        parts.push(
-          `<p style="${P}padding:0 0 32px;color:#666;font-size:12px;">${escapeHtml(meta)}</p>`,
-        );
-      } else {
-        parts.push(`<p style="${P}padding:0 0 32px;">&nbsp;</p>`);
-      }
-    }
-  }
-  parts.push(`</div>`);
-  return parts.join('\n');
+  tagline: string | null,
+): IssueDoc {
+  return {
+    title: label,
+    tagline,
+    sections: sections.map((sec) => ({
+      emoji: sec.emoji,
+      name: sec.name,
+      stories: (bySection[sec.key] ?? []).map((r) => ({
+        url: r.story_url,
+        title: r.headline_summary || r.title,
+        minuteRead: pickRead(r.title, r.headline_summary),
+        blurb: r.blurb || null,
+        meta: buildMetaLine(r),
+      })),
+    })),
+  };
 }
 
 export default function VcIssueExport({
@@ -148,9 +62,53 @@ export default function VcIssueExport({
   sections: Section[];
   bySection: Partial<Record<VcType, VcArticle[]>>;
 }) {
-  const md = useMemo(() => buildMarkdown(issueLabel, sections, bySection), [issueLabel, sections, bySection]);
-  const txt = useMemo(() => buildPlainText(issueLabel, sections, bySection), [issueLabel, sections, bySection]);
-  const html = useMemo(() => buildHtml(issueLabel, sections, bySection), [issueLabel, sections, bySection]);
+  // VC plain-text strips the tagline em-dash flourish for a tighter look;
+  // markdown + email HTML keep the full "— funds, partners, exits, signals"
+  // version. Build two docs with the differing taglines.
+  const docFull = useMemo<IssueDoc>(
+    () =>
+      toIssueDoc(
+        issueLabel,
+        sections,
+        bySection,
+        'A daily digest of the venture capital industry — funds, partners, exits, signals.',
+      ),
+    [issueLabel, sections, bySection],
+  );
+  const docPlain = useMemo<IssueDoc>(
+    () =>
+      toIssueDoc(
+        issueLabel,
+        sections,
+        bySection,
+        'A daily digest of the venture capital industry.',
+      ),
+    [issueLabel, sections, bySection],
+  );
+
+  const md = useMemo(() => buildMarkdownIssue(docFull, { emitMeta: true }), [docFull]);
+  const txt = useMemo(
+    () =>
+      buildPlainTextIssue(docPlain, {
+        titleTrailingBlankLines: 1,
+        blankBeforeSection: true,
+      }),
+    [docPlain],
+  );
+  const html = useMemo(
+    () =>
+      buildEmailHtmlIssue(docFull, {
+        titlePaddingBottom: 8,
+        taglinePaddingBottom: 32,
+        taglineFontSize: 13,
+        taglineColor: '#666',
+        storyLinkPaddingBottom: 12,
+        blurbPadding: { kind: 'fixed', value: 16 },
+        metaStyle: { paddingBottom: 32, color: '#666', fontSize: 12 },
+        emptyStorySpacer: true,
+      }),
+    [docFull],
+  );
 
   const [flash, setFlash] = useState<string>('');
   function toast(msg: string) {

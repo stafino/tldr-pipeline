@@ -1,9 +1,15 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-import { escapeHtml } from '@/lib/escape';
 import { copyRichToClipboard, copyTextToClipboard } from '@/lib/clipboard';
 import { downloadEml } from '@/lib/eml-builder';
+import {
+  buildEmailHtmlIssue,
+  buildMarkdownIssue,
+  buildPlainTextIssue,
+  buildSemanticHtmlIssue,
+  type IssueDoc,
+} from '@/lib/issue-formatters';
 import Link from 'next/link';
 import { useDecisions } from './useDecisions';
 
@@ -66,22 +72,54 @@ export default function EditionStories({
       ? 'ready to publish'
       : 'over capacity';
 
-  const issueText = useMemo(
-    () => buildIssueText(newsletterBrand, date, sections, bySection),
+  const issueDoc = useMemo<IssueDoc>(
+    () => ({
+      title: `${newsletterBrand} ${date}`,
+      sections: sections.map((sec) => ({
+        emoji: sec.emoji,
+        name: sec.name,
+        stories: (bySection[sec.id] ?? []).map((it) => ({
+          url: it.url,
+          title: it.title,
+          minuteRead: it.minute_read,
+          blurb: it.blurb || null,
+        })),
+      })),
+    }),
     [newsletterBrand, date, sections, bySection],
+  );
+  // Edition markdown uses "Brand · Date"; plain text, email HTML and
+  // semantic HTML all use "Brand Date" (no separator).
+  const issueDocMd = useMemo<IssueDoc>(
+    () => ({ ...issueDoc, title: `${newsletterBrand} · ${date}` }),
+    [issueDoc, newsletterBrand, date],
+  );
+
+  const issueText = useMemo(
+    () =>
+      buildPlainTextIssue(issueDoc, {
+        titleTrailingBlankLines: 2,
+        extraBlankBetweenStories: true,
+        blankAfterSection: true,
+        blurbFallback: '(blurb not generated)',
+      }),
+    [issueDoc],
   );
   const issueHtml = useMemo(
-    () => buildIssueHtml(newsletterBrand, date, sections, bySection),
-    [newsletterBrand, date, sections, bySection],
+    () =>
+      buildEmailHtmlIssue(issueDoc, {
+        titlePaddingBottom: 40,
+        storyLinkPaddingBottom: 20,
+        blurbPadding: { kind: 'edition', betweenStories: 40, lastInSection: 48 },
+        blurbFallback: { text: '(blurb not generated)', color: '#999' },
+      }),
+    [issueDoc],
   );
   const issueRichHtml = useMemo(
-    () => buildIssueRichHtml(newsletterBrand, date, sections, bySection),
-    [newsletterBrand, date, sections, bySection],
+    () => buildSemanticHtmlIssue(issueDoc, { blurbFallback: '(blurb not generated)' }),
+    [issueDoc],
   );
-  const issueMarkdown = useMemo(
-    () => buildIssueMarkdown(newsletterBrand, date, sections, bySection),
-    [newsletterBrand, date, sections, bySection],
-  );
+  const issueMarkdown = useMemo(() => buildMarkdownIssue(issueDocMd), [issueDocMd]);
 
   const [copyState, setCopyState] = useState<'idle' | 'copied' | 'error'>('idle');
 
@@ -249,162 +287,3 @@ export default function EditionStories({
   );
 }
 
-function buildIssueText(
-  brand: string,
-  date: string,
-  sections: Section[],
-  bySection: Record<string, Candidate[]>,
-): string {
-  // No TLDR branding at the top — keeps it safely yours to forward.
-  // Mirrors the canonical TLDR newsletter whitespace: one blank line
-  // between every block, two blank lines between stories.
-  const lines: string[] = [];
-  lines.push(`${brand} ${date}`);
-  lines.push('');
-  lines.push('');
-  for (const sec of sections) {
-    const items = bySection[sec.id] ?? [];
-    if (items.length === 0) continue;
-    lines.push(sec.emoji);
-    lines.push(sec.name);
-    lines.push('');
-    for (let i = 0; i < items.length; i++) {
-      const it = items[i];
-      lines.push(`${it.title} (${it.minute_read} minute read)`);
-      lines.push(it.url);
-      lines.push('');
-      lines.push(it.blurb || '(blurb not generated)');
-      lines.push('');
-      if (i < items.length - 1) lines.push('');
-    }
-    lines.push('');
-  }
-  return lines.join('\n').trimEnd() + '\n';
-}
-
-function buildIssueMarkdown(
-  brand: string,
-  date: string,
-  sections: Section[],
-  bySection: Record<string, Candidate[]>,
-): string {
-  // Standard CommonMark — h1 for issue title, h2 for sections (with the
-  // section emoji inline), bold-linked story title with the "(N minute
-  // read)" suffix, blurb paragraph below. Mirrors the email layout but
-  // in markdown form for Ghost/Notion/GitHub/docs paste.
-  const lines: string[] = [];
-  lines.push(`# ${brand} · ${date}`);
-  lines.push('');
-  for (const sec of sections) {
-    const items = bySection[sec.id] ?? [];
-    if (items.length === 0) continue;
-    lines.push(`## ${sec.emoji} ${sec.name}`);
-    lines.push('');
-    for (const it of items) {
-      const titleText = `${it.title} (${it.minute_read} minute read)`;
-      lines.push(`**[${titleText}](${it.url})**`);
-      lines.push('');
-      if (it.blurb) {
-        lines.push(it.blurb);
-        lines.push('');
-      }
-    }
-  }
-  return lines.join('\n').trimEnd() + '\n';
-}
-
-function buildIssueRichHtml(
-  brand: string,
-  date: string,
-  sections: Section[],
-  bySection: Record<string, Candidate[]>,
-): string {
-  // Pure semantic HTML — NO inline styles. Both Substack and Beehiiv
-  // run TipTap-based editors that parse the structure on paste and
-  // map each tag to a native block (h1 → heading 1, h2 → heading 2,
-  // strong+a → bold link, p → paragraph). Adding inline styles only
-  // gets them stripped, so we let the platform's own theme take over.
-  const parts: string[] = [];
-  parts.push(`<h1>${escapeHtml(brand)} ${escapeHtml(date)}</h1>`);
-  for (const sec of sections) {
-    const items = bySection[sec.id] ?? [];
-    if (items.length === 0) continue;
-    parts.push(`<h2>${escapeHtml(sec.emoji)} ${escapeHtml(sec.name)}</h2>`);
-    for (const it of items) {
-      parts.push(
-        `<p><strong><a href="${escapeHtml(it.url)}">${escapeHtml(it.title)} (${it.minute_read} minute read)</a></strong></p>`,
-      );
-      if (it.blurb) {
-        parts.push(`<p>${escapeHtml(it.blurb)}</p>`);
-      } else {
-        parts.push(`<p><em>(blurb not generated)</em></p>`);
-      }
-    }
-  }
-  return parts.join('\n');
-}
-
-function buildIssueHtml(
-  brand: string,
-  date: string,
-  sections: Section[],
-  bySection: Record<string, Candidate[]>,
-): string {
-  // Inline styles only — Gmail, Apple Mail and Outlook all strip <style>
-  // blocks but keep style="..." attributes on individual elements.
-  //
-  // Cross-client gotchas this version addresses:
-  // - Outlook (Windows) ignores font inheritance through <div>, so every
-  //   <p> repeats the font-family + size.
-  // - Gmail collapses top-level margins between <div>s erratically, so
-  //   gaps are produced by explicit empty spacer divs with fixed heights
-  //   instead of margin-bottom on the previous element.
-  // - Gmail rewrites visited <a> colors. Wrapping the link text in an
-  //   inner <span> with an explicit color prevents the recolor.
-  // - Emoji rendering varies — wrap each emoji in its own font stack so
-  //   Gmail-on-Windows falls back to Segoe UI Emoji instead of boxes.
-  const FONT =
-    "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif";
-  const EMOJI_FONT =
-    "'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif";
-  // Gmail's compose-paste handler collapses spacer <div>s and strips many
-  // margins. Padding on the element itself is the one thing it reliably
-  // keeps, so all gaps are produced by padding-bottom (or padding-top on
-  // the very first child after a section heading).
-  const P_BASE = `font-family:${FONT};font-size:15px;line-height:1.55;color:#111;margin:0;`;
-
-  const parts: string[] = [];
-  parts.push(
-    `<div style="font-family:${FONT};font-size:15px;line-height:1.55;color:#111;max-width:640px;margin:0 auto;">`,
-  );
-  parts.push(
-    `<p style="${P_BASE}text-align:center;font-size:22px;font-weight:700;padding:0 0 40px;">${escapeHtml(brand)} ${escapeHtml(date)}</p>`,
-  );
-
-  for (const sec of sections) {
-    const items = bySection[sec.id] ?? [];
-    if (items.length === 0) continue;
-    parts.push(
-      `<p style="${P_BASE}text-align:center;font-size:32px;line-height:1;padding:0 0 8px;"><span style="font-family:${EMOJI_FONT};">${escapeHtml(sec.emoji)}</span></p>`,
-    );
-    parts.push(
-      `<p style="${P_BASE}text-align:center;font-size:14px;font-weight:700;text-transform:uppercase;padding:0 0 28px;">${escapeHtml(sec.name)}</p>`,
-    );
-    for (let i = 0; i < items.length; i++) {
-      const it = items[i];
-      const linkText = `<span style="color:#111;">${escapeHtml(it.title)} (${it.minute_read} minute read)</span>`;
-      const link = `<a href="${escapeHtml(it.url)}" style="color:#111;font-weight:700;text-decoration:underline;">${linkText}</a>`;
-      parts.push(`<p style="${P_BASE}padding:0 0 20px;">${link}</p>`);
-      const bottomPad = i < items.length - 1 ? 40 : 48;
-      if (it.blurb) {
-        parts.push(`<p style="${P_BASE}padding:0 0 ${bottomPad}px;">${escapeHtml(it.blurb)}</p>`);
-      } else {
-        parts.push(
-          `<p style="${P_BASE}padding:0 0 ${bottomPad}px;color:#999;">(blurb not generated)</p>`,
-        );
-      }
-    }
-  }
-  parts.push(`</div>`);
-  return parts.join('\n');
-}
