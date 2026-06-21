@@ -2,7 +2,8 @@ import Link from 'next/link';
 import { canonicalDomain } from '@/lib/utils';
 import { listVcDates, loadVcRange } from '@/lib/data';
 import Nav from '@/components/Nav';
-import type { VcArticle, VcType } from '@/lib/types';
+import { canonFirm, dedupCanon } from '@/lib/vc-aliases';
+import type { VcArticle, VcRegion, VcSector, VcType } from '@/lib/types';
 
 export const dynamic = 'force-dynamic';
 
@@ -51,6 +52,40 @@ const TYPES_ORDER: VcType[] = [
   'opinion',
   'regulatory',
 ];
+
+const SECTOR_LABELS: Record<VcSector, { label: string; emoji: string }> = {
+  ai: { label: 'AI', emoji: '🤖' },
+  fintech: { label: 'Fintech', emoji: '💳' },
+  crypto: { label: 'Crypto', emoji: '⛓️' },
+  climate: { label: 'Climate', emoji: '🌱' },
+  biotech: { label: 'Biotech', emoji: '🧬' },
+  enterprise: { label: 'Enterprise', emoji: '🏢' },
+  consumer: { label: 'Consumer', emoji: '🛍️' },
+  deeptech: { label: 'Deep tech', emoji: '🔬' },
+  other: { label: 'Other', emoji: '·' },
+};
+
+const SECTORS_ORDER: VcSector[] = [
+  'ai',
+  'fintech',
+  'crypto',
+  'enterprise',
+  'deeptech',
+  'climate',
+  'biotech',
+  'consumer',
+  'other',
+];
+
+const REGION_LABELS: Record<VcRegion, { label: string; flag: string }> = {
+  NA: { label: 'North America', flag: '🇺🇸' },
+  EU: { label: 'Europe', flag: '🇪🇺' },
+  ASIA: { label: 'Asia', flag: '🌏' },
+  GLOBAL: { label: 'Global', flag: '🌐' },
+  OTHER: { label: 'Other', flag: '·' },
+};
+
+const REGIONS_ORDER: VcRegion[] = ['NA', 'EU', 'ASIA', 'GLOBAL', 'OTHER'];
 
 function relativeFromNow(iso: string, today: string): string {
   if (!iso) return '';
@@ -118,46 +153,12 @@ function Row({ r, today }: { r: VcArticle; today: string }) {
   );
 }
 
-function TypeFilterChips({ active }: { active: VcType | '' }) {
-  return (
-    <div className="flex gap-2 flex-wrap text-[11px]">
-      <Link
-        href="?"
-        className={
-          'px-2.5 py-1 rounded-md font-medium border transition-colors ' +
-          (active === ''
-            ? 'bg-accent-soft text-text border-accent'
-            : 'bg-surface text-text-dim border-border hover:bg-surface-hi hover:text-text')
-        }
-      >
-        All
-      </Link>
-      {TYPES_ORDER.map((t) => {
-        const meta = TYPE_LABELS[t];
-        const on = active === t;
-        return (
-          <Link
-            key={t}
-            href={`?type=${t}`}
-            className={
-              'px-2.5 py-1 rounded-md font-medium border transition-colors ' +
-              (on
-                ? 'bg-accent-soft text-text border-accent'
-                : 'bg-surface text-text-dim border-border hover:bg-surface-hi hover:text-text')
-            }
-          >
-            {meta.emoji} {meta.label}
-          </Link>
-        );
-      })}
-    </div>
-  );
-}
+// TypeFilterChips removed — the type pivots live in the hero banner now
 
 export default function VcPage({
   searchParams,
 }: {
-  searchParams: { type?: string; days?: string };
+  searchParams: { type?: string; days?: string; sector?: string; region?: string };
 }) {
   const dates = listVcDates();
   if (dates.length === 0) {
@@ -179,39 +180,213 @@ export default function VcPage({
   const from = fromDate.toISOString().slice(0, 10);
 
   const typeFilter = (searchParams.type ?? '') as VcType | '';
-  let rounds = loadVcRange(from, to);
+  const sectorFilter = (searchParams.sector ?? '') as VcSector | '';
+  const regionFilter = (searchParams.region ?? '') as VcRegion | '';
+
+  const allRounds = loadVcRange(from, to);
+  let rounds = allRounds;
   if (typeFilter && TYPE_LABELS[typeFilter]) {
     rounds = rounds.filter((r) => r.vc_type === typeFilter);
   }
+  if (sectorFilter && SECTOR_LABELS[sectorFilter]) {
+    rounds = rounds.filter((r) => (r.sector ?? 'other') === sectorFilter);
+  }
+  if (regionFilter && REGION_LABELS[regionFilter]) {
+    rounds = rounds.filter((r) => r.region === regionFilter);
+  }
   rounds.sort((a, b) => (b.published_at ?? '').localeCompare(a.published_at ?? ''));
 
-  // Counts per type for the badge in the toolbar
+  // ─── Aggregates for the volume / heatmap / leaderboard banners ────────
   const countsByType: Partial<Record<VcType, number>> = {};
-  for (const r of loadVcRange(from, to)) {
+  const countsBySector: Partial<Record<VcSector, number>> = {};
+  const countsByRegion: Partial<Record<VcRegion, number>> = {};
+  const firmCounts: Record<string, number> = {};
+  for (const r of allRounds) {
     countsByType[r.vc_type] = (countsByType[r.vc_type] ?? 0) + 1;
+    const sec: VcSector = (r.sector ?? 'other') as VcSector;
+    countsBySector[sec] = (countsBySector[sec] ?? 0) + 1;
+    countsByRegion[r.region] = (countsByRegion[r.region] ?? 0) + 1;
+    for (const firm of dedupCanon(r.firms ?? [], canonFirm)) {
+      firmCounts[firm] = (firmCounts[firm] ?? 0) + 1;
+    }
   }
+  const topFirms = Object.entries(firmCounts)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 10);
+  const maxSector = Math.max(1, ...Object.values(countsBySector).map((v) => v ?? 0));
 
   return (
     <main>
       <Nav />
-      <div className="flex flex-col gap-2 px-5 py-3 border-b border-border">
-        <TypeFilterChips active={typeFilter} />
-        <div className="text-[10px] text-text-mute">
-          last {daysBack} days · {rounds.length} {rounds.length === 1 ? 'article' : 'articles'}
-          {typeFilter && (
-            <>
-              {' '}· filtered by{' '}
-              <span className="text-warn">{TYPE_LABELS[typeFilter].label.toLowerCase()}</span>
-            </>
-          )}
-          {!typeFilter && (
-            <span className="ml-2 text-text-dim">
-              {TYPES_ORDER.map((t) => `${TYPE_LABELS[t].emoji}${countsByType[t] ?? 0}`).join(' · ')}
-            </span>
-          )}
-        </div>
+      <div className="flex items-center gap-3 px-5 py-3 border-b border-border text-[10px] text-text-mute">
+        Window: <span className="text-text-dim font-mono">last {daysBack} days</span>
+        {rounds.length !== allRounds.length && (
+          <span className="text-warn">
+            (filtered: {rounds.length} of {allRounds.length})
+          </span>
+        )}
+        <span className="ml-auto flex gap-3 text-[11px]">
+          <Link href="/vc/issue" className="text-accent hover:underline">
+            📰 Today&apos;s issue
+          </Link>
+          <Link href="/vc/recap" className="text-accent hover:underline">
+            🗓️ Weekly recap
+          </Link>
+          <Link href="/vc/preview" className="text-accent hover:underline">
+            🎯 Pitch page
+          </Link>
+        </span>
       </div>
-      <div className="max-w-[900px] mx-auto px-5 py-5">
+      <div className="max-w-[1100px] mx-auto px-5 py-5">
+        {/* Volume + signal hero — the "this is a real newsletter" banner */}
+        <div
+          className="rounded-lg border border-border-strong p-5 mb-6"
+          style={{ background: 'linear-gradient(135deg, #171717 0%, #1a2030 100%)' }}
+        >
+          <div className="text-[11px] uppercase tracking-[0.1em] text-text-dim mb-1.5">
+            TLDR VC · last {daysBack} days
+          </div>
+          <div className="text-[26px] font-bold tracking-tight mb-3">
+            {allRounds.length} VC-relevant {allRounds.length === 1 ? 'article' : 'articles'}
+            <span className="text-text-dim">{' '}· ~{Math.round(allRounds.length / daysBack)}/day</span>
+          </div>
+          <div className="flex flex-wrap gap-4 text-[12.5px]">
+            {TYPES_ORDER.map((t) => (
+              <Link
+                key={t}
+                href={t === typeFilter ? '?' : `?type=${t}`}
+                className={
+                  'flex items-baseline gap-1.5 hover:text-text transition-colors ' +
+                  (t === typeFilter ? 'text-warn' : 'text-text-dim')
+                }
+              >
+                <span className="text-[16px]">{TYPE_LABELS[t].emoji}</span>
+                <span className="font-mono font-bold text-text">{countsByType[t] ?? 0}</span>
+                <span>{TYPE_LABELS[t].label.toLowerCase()}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* Sector heatmap + Geographic split + Investor leaderboard — three small cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+          {/* Sector heatmap */}
+          <div className="border border-border rounded-md p-3">
+            <div className="text-[10px] uppercase tracking-[0.08em] text-text-mute font-semibold mb-2.5">
+              Sectors covered
+            </div>
+            <div className="space-y-1.5">
+              {SECTORS_ORDER.filter((s) => (countsBySector[s] ?? 0) > 0).map((s) => {
+                const n = countsBySector[s] ?? 0;
+                const pct = (n / maxSector) * 100;
+                const active = sectorFilter === s;
+                return (
+                  <Link
+                    key={s}
+                    href={active ? '?' : `?sector=${s}`}
+                    className={`block group ${active ? 'opacity-100' : 'opacity-90 hover:opacity-100'}`}
+                  >
+                    <div className="flex items-baseline gap-2 mb-0.5">
+                      <span className="text-[12px]">{SECTOR_LABELS[s].emoji}</span>
+                      <span className={`text-[12px] ${active ? 'text-warn font-semibold' : 'text-text'}`}>
+                        {SECTOR_LABELS[s].label}
+                      </span>
+                      <span className="ml-auto font-mono text-[11px] text-text-mute">{n}</span>
+                    </div>
+                    <div className="h-1 bg-surface rounded-sm overflow-hidden">
+                      <div
+                        className={active ? 'h-full bg-warn' : 'h-full bg-accent group-hover:bg-accent'}
+                        style={{ width: `${pct}%` }}
+                      />
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Geographic split */}
+          <div className="border border-border rounded-md p-3">
+            <div className="text-[10px] uppercase tracking-[0.08em] text-text-mute font-semibold mb-2.5">
+              By region
+            </div>
+            <div className="space-y-1.5">
+              {REGIONS_ORDER.filter((r) => (countsByRegion[r] ?? 0) > 0).map((r) => {
+                const n = countsByRegion[r] ?? 0;
+                const active = regionFilter === r;
+                return (
+                  <Link
+                    key={r}
+                    href={active ? '?' : `?region=${r}`}
+                    className="flex items-baseline gap-2 text-[12.5px] hover:bg-surface rounded px-1 py-0.5 -mx-1"
+                  >
+                    <span>{REGION_LABELS[r].flag}</span>
+                    <span className={active ? 'text-warn font-semibold' : 'text-text'}>
+                      {REGION_LABELS[r].label}
+                    </span>
+                    <span className="ml-auto font-mono text-[11px] text-text-mute">{n}</span>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Investor leaderboard */}
+          <div className="border border-border rounded-md p-3">
+            <div className="text-[10px] uppercase tracking-[0.08em] text-text-mute font-semibold mb-2.5">
+              Most-mentioned investors
+            </div>
+            {topFirms.length === 0 ? (
+              <div className="text-[11px] text-text-mute py-2">No firm mentions yet.</div>
+            ) : (
+              <div className="space-y-1">
+                {topFirms.map(([firm, n]) => (
+                  <div key={firm} className="flex items-baseline gap-2 text-[12.5px]">
+                    <span className="text-text truncate">{firm}</span>
+                    <span className="ml-auto font-mono text-[11px] text-text-mute">{n}</span>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+
+        {(sectorFilter || regionFilter || typeFilter) && (
+          <div className="mb-3 flex items-baseline gap-2 text-[11px]">
+            <span className="text-text-mute">Active filters:</span>
+            {typeFilter && (
+              <Link href={`?${[
+                sectorFilter ? `sector=${sectorFilter}` : '',
+                regionFilter ? `region=${regionFilter}` : '',
+              ].filter(Boolean).join('&')}`}
+                className="text-warn hover:underline">
+                ✕ {TYPE_LABELS[typeFilter].label}
+              </Link>
+            )}
+            {sectorFilter && (
+              <Link href={`?${[
+                typeFilter ? `type=${typeFilter}` : '',
+                regionFilter ? `region=${regionFilter}` : '',
+              ].filter(Boolean).join('&')}`}
+                className="text-warn hover:underline">
+                ✕ {SECTOR_LABELS[sectorFilter].label}
+              </Link>
+            )}
+            {regionFilter && (
+              <Link href={`?${[
+                typeFilter ? `type=${typeFilter}` : '',
+                sectorFilter ? `sector=${sectorFilter}` : '',
+              ].filter(Boolean).join('&')}`}
+                className="text-warn hover:underline">
+                ✕ {REGION_LABELS[regionFilter].label}
+              </Link>
+            )}
+            <Link href="?" className="text-accent hover:underline ml-1">
+              clear all
+            </Link>
+          </div>
+        )}
+
         {rounds.length === 0 ? (
           <div className="text-text-mute text-[13px] py-10 text-center border border-dashed border-border rounded">
             No VC articles matching the current filter.

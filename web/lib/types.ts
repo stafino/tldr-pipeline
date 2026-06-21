@@ -103,6 +103,17 @@ export type VcType =
 
 export type VcRegion = 'NA' | 'EU' | 'ASIA' | 'GLOBAL' | 'OTHER';
 
+export type VcSector =
+  | 'ai'
+  | 'fintech'
+  | 'crypto'
+  | 'climate'
+  | 'biotech'
+  | 'enterprise'
+  | 'consumer'
+  | 'deeptech'
+  | 'other';
+
 export interface VcArticle {
   story_url: string;
   title: string;
@@ -114,6 +125,8 @@ export interface VcArticle {
   firms: string[];
   people: string[];
   region: VcRegion;
+  sector?: VcSector; // optional for backwards-compat with rows written
+                     // before the schema added it; UI treats missing as 'other'
 }
 
 export interface FundingRound {

@@ -67,6 +67,19 @@ VC_TYPES = {
 }
 
 
+VC_SECTORS = {
+    "ai": "AI / ML / LLMs / agents",
+    "fintech": "Payments, banking, lending, insurance, crypto-fintech",
+    "crypto": "Pure crypto / web3 / DeFi (not fintech wrapped in crypto)",
+    "climate": "Climate / energy / batteries / EV / nuclear",
+    "biotech": "Biotech / health / pharma / medical devices",
+    "enterprise": "B2B SaaS / dev tools / infrastructure / data",
+    "consumer": "Consumer apps / commerce / media / gaming",
+    "deeptech": "Robotics / hardware / quantum / space / chips",
+    "other": "Anything else, or generalist/cross-sector",
+}
+
+
 @dataclass
 class VcArticle:
     story_url: str
@@ -79,6 +92,7 @@ class VcArticle:
     firms: list[str]  # named VC firms mentioned
     people: list[str]  # named people mentioned
     region: str  # "NA" | "EU" | "ASIA" | "GLOBAL" | "OTHER"
+    sector: str = "other"  # one of VC_SECTORS keys
 
     def to_dict(self) -> dict:
         return asdict(self)
@@ -96,11 +110,23 @@ Schema:
 {
   "is_vc": true | false,
   "vc_type": "fund_news | partner_move | exit | market_signal | opinion | regulatory" | "",
+  "sector": "ai | fintech | crypto | climate | biotech | enterprise | consumer | deeptech | other",
   "headline_summary": "one-line punchy summary, 8-15 words" | "",
   "firms": ["named VC firms or notable startups, e.g. Sequoia, a16z, OpenAI"],
   "people": ["named people, e.g. Marc Andreessen, Sam Altman"],
   "region": "NA | EU | ASIA | GLOBAL | OTHER"
 }
+
+sector classification:
+- ai: AI / ML / LLMs / agents / GenAI
+- fintech: payments, banking, lending, insurance, stablecoins
+- crypto: pure web3 / DeFi / token (not fintech wrapped in crypto)
+- climate: energy, batteries, EV, nuclear, carbon
+- biotech: health, pharma, medical devices, longevity
+- enterprise: B2B SaaS, dev tools, infrastructure, data, cyber
+- consumer: apps, commerce, media, gaming, creator economy
+- deeptech: robotics, hardware, quantum, space, semiconductors
+- other: generalist, cross-sector, or unclear
 
 vc_type classification (pick the best fit):
 - fund_news: new fund launched/closed, LP commits, fund-of-funds, asset
@@ -231,6 +257,9 @@ def _build_from_payload(story: ScoredStory, payload: dict) -> VcArticle:
     region = (payload.get("region") or "OTHER").upper().strip()
     if region not in {"NA", "EU", "ASIA", "GLOBAL", "OTHER"}:
         region = "OTHER"
+    sector = (payload.get("sector") or "other").lower().strip()
+    if sector not in VC_SECTORS:
+        sector = "other"
     return VcArticle(
         story_url=story.story.url,
         title=story.story.title,
@@ -242,6 +271,7 @@ def _build_from_payload(story: ScoredStory, payload: dict) -> VcArticle:
         firms=[s for s in (payload.get("firms") or []) if isinstance(s, str)],
         people=[s for s in (payload.get("people") or []) if isinstance(s, str)],
         region=region,
+        sector=sector,
     )
 
 
