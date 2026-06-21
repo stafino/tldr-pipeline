@@ -5,7 +5,6 @@ export interface Story {
   source_type: string;
   published_at: string;
   raw_text?: string;
-  related_sources?: string[];
   source_topics?: string[];
 }
 

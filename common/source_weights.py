@@ -30,13 +30,12 @@ from __future__ import annotations
 
 import json
 import logging
-import re
-from collections import Counter, defaultdict
+from collections import Counter
 from dataclasses import dataclass
 from pathlib import Path
 from urllib.parse import urlparse
 
-from common.backtest import BACKTEST_DIR, BacktestResult, load_cached
+from common.backtest import BACKTEST_DIR
 from common.newsletters import load_newsletters
 from common.story import ScoredStory, read_jsonl
 

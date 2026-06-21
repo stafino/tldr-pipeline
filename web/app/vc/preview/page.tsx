@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import { todayUTC } from '@/lib/formatters';
-import { listVcDates, loadVcRange } from '@/lib/data';
+import { loadVcRange } from '@/lib/data';
 import Nav from '@/components/Nav';
 import { canonFirm, dedupCanon } from '@/lib/vc-aliases';
-import type { VcArticle, VcSector, VcType } from '@/lib/types';
+import type { VcSector, VcType } from '@/lib/types';
 
 export const dynamic = 'force-dynamic';
 
@@ -13,7 +13,6 @@ export const dynamic = 'force-dynamic';
  * instead of explaining the concept in text.
  */
 export default function VcPreviewPage() {
-  const dates = listVcDates();
   const today = todayUTC();
   // Sample window: last 14 days for the "what 2 weeks of TLDR VC looks like" pitch
   const fromDate = new Date(today + 'T00:00:00Z');

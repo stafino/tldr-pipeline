@@ -14,12 +14,11 @@ import argparse
 import logging
 import re
 import sys
-import time
-from collections import Counter, defaultdict
+from collections import Counter
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass
 from datetime import date as _date
-from datetime import datetime, timedelta
+from datetime import timedelta
 from pathlib import Path
 from urllib.parse import urlparse
 

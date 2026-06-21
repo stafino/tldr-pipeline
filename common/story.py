@@ -14,7 +14,6 @@ class Story:
     source_type: str  # rss | arxiv | hn
     published_at: str  # ISO 8601
     raw_text: str = ""
-    related_sources: list[str] = field(default_factory=list)
     source_topics: list[str] = field(default_factory=list)
 
     def to_dict(self) -> dict:
@@ -29,7 +28,6 @@ class Story:
             source_type=d["source_type"],
             published_at=d["published_at"],
             raw_text=d.get("raw_text", ""),
-            related_sources=d.get("related_sources", []),
             source_topics=d.get("source_topics", []),
         )
 

@@ -37,8 +37,6 @@ export default function DetailPane({ story, newsletter, blurb }: Props) {
   const section = newsletter.sections.find((s) => s.id === a?.section_id);
   const sectionLabel = section?.name ?? a?.section_id;
   const domain = canonicalDomain(story.story.url) || story.story.source;
-  const key = `${story.story.url}||${newsletter.id}`;
-  const decision = decisions[key];
 
   const wc = edited.split(/\s+/).filter(Boolean).length;
   const inRange = section ? wc >= section.min_words && wc <= section.max_words : false;

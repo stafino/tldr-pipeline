@@ -18,11 +18,7 @@ function isoWeek(d: Date): { year: number; week: number } {
   return { year: tmp.getUTCFullYear(), week };
 }
 
-export default function VcRecapPage({
-  searchParams,
-}: {
-  searchParams: { week?: string };
-}) {
+export default function VcRecapPage() {
   // Default: last 7 days ending today. ?week=YYYY-WW for specific weeks
   // (not implemented yet — placeholder for future archive routes).
   const today = todayUTC();

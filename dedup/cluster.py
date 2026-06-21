@@ -62,17 +62,14 @@ def cluster_stories(stories: list[Story], threshold: float = 0.82) -> list[Story
         return []
 
     # Cheap pre-pass: collapse exact-domain + exact-title matches first.
-    seen_keys: dict[tuple[str, str], int] = {}
+    seen_keys: set[tuple[str, str]] = set()
     deduped_pre: list[Story] = []
     for s in stories:
         key = (s.title.strip().lower(), _domain(s.url))
         if key in seen_keys:
-            idx = seen_keys[key]
-            if s.url not in deduped_pre[idx].related_sources:
-                deduped_pre[idx].related_sources.append(s.url)
-        else:
-            seen_keys[key] = len(deduped_pre)
-            deduped_pre.append(s)
+            continue
+        seen_keys.add(key)
+        deduped_pre.append(s)
 
     titles = [s.title for s in deduped_pre]
     embs = embed_titles(titles)
@@ -105,12 +102,6 @@ def cluster_stories(stories: list[Story], threshold: float = 0.82) -> list[Story
     for members in clusters.values():
         members_stories = [deduped_pre[i] for i in members]
         chosen = max(members_stories, key=_source_priority)
-        related = set(chosen.related_sources)
-        for m in members_stories:
-            if m.url != chosen.url:
-                related.add(m.url)
-            related.update(m.related_sources)
-        chosen.related_sources = sorted(related)
         canonical.append(chosen)
 
     log.info("Dedup: %d -> %d stories (threshold=%.2f)", len(stories), len(canonical), threshold)

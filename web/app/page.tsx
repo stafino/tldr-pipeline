@@ -8,7 +8,6 @@ import {
   loadBlurbsAll,
   loadNewsletters,
   loadScoredAll,
-  topPerSection,
 } from '@/lib/data';
 import { shortDate } from '@/lib/utils';
 import Nav from '@/components/Nav';

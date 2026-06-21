@@ -9,7 +9,7 @@ from pathlib import Path
 
 from common.config import BLURB
 from common.llm import complete
-from common.newsletters import Newsletter, Section, get_newsletter
+from common.newsletters import Section, get_newsletter
 from common.story import ScoredStory
 
 log = logging.getLogger(__name__)

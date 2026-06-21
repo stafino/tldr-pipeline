@@ -64,18 +64,6 @@ export function listPublishedDates(): string[] {
   return Array.from(dates).sort().reverse();
 }
 
-/** Keep only stories whose UTC publish date matches `date`. */
-export function filterByPublishedDate<T extends { story: { published_at?: string } }>(
-  items: T[],
-  date: string,
-): T[] {
-  return items.filter(
-    (s) =>
-      typeof s.story?.published_at === 'string' &&
-      s.story.published_at.slice(0, 10) === date,
-  );
-}
-
 /**
  * Sliding-window date filter: keeps stories whose UTC publish date is in
  * the inclusive [date - daysBack, date] window. Matches how a morning
@@ -125,11 +113,11 @@ function readJsonl<T>(filePath: string): T[] {
   return out;
 }
 
-export function loadScored(date: string): ScoredStory[] {
+function loadScored(date: string): ScoredStory[] {
   return readJsonl<ScoredStory>(path.join(SCORED_DIR, `${date}.jsonl`));
 }
 
-export function loadBlurbs(date: string): Blurb[] {
+function loadBlurbs(date: string): Blurb[] {
   return readJsonl<Blurb>(path.join(BLURBS_DIR, `${date}.jsonl`));
 }
 
@@ -202,32 +190,6 @@ export function defaultNewsletterId(): string {
   return parsed?.default ?? 'tldr_tech';
 }
 
-/** Return stories per section for one newsletter, sorted by per-newsletter score, capped at target_count. */
-export function topPerSection(
-  scored: ScoredStory[],
-  newsletterId: string,
-  newsletters: Record<string, Newsletter>,
-): Record<string, ScoredStory[]> {
-  const nl = newsletters[newsletterId];
-  if (!nl) return {};
-  const groups: Record<string, ScoredStory[]> = {};
-  for (const sec of nl.sections) groups[sec.id] = [];
-  for (const s of scored) {
-    const a = s.assignments.find((a) => a.newsletter === newsletterId);
-    if (!a) continue;
-    if (groups[a.section_id]) groups[a.section_id].push(s);
-  }
-  for (const sec of nl.sections) {
-    groups[sec.id].sort((a, b) => {
-      const sa = a.assignments.find((x) => x.newsletter === newsletterId)?.score ?? 0;
-      const sb = b.assignments.find((x) => x.newsletter === newsletterId)?.score ?? 0;
-      return sb - sa;
-    });
-    groups[sec.id] = groups[sec.id].slice(0, sec.target_count);
-  }
-  return groups;
-}
-
 /** Available backtest dates (latest first). */
 export function listBacktestDates(): string[] {
   if (!fs.existsSync(BACKTEST_DIR)) return [];
@@ -287,16 +249,6 @@ export function loadFundingRange(from: string, to: string): FundingRound[] {
   return loadAllRows().filter((r) => r.raised_date >= from && r.raised_date <= to);
 }
 
-/** Legacy single-day loader (kept for back-compat with any old callers). */
-export function loadFunding(raisedDate: string): FundingRound[] {
-  return loadFundingRange(raisedDate, raisedDate);
-}
-
-/** Load every funding row, deduplicated by story_url. */
-export function loadFundingAll(): FundingRound[] {
-  return loadAllRows();
-}
-
 /* ─── VC tab ────────────────────────────────────────────────────────────── */
 
 function listVcDates(): string[] {
@@ -327,12 +279,3 @@ export function loadVcRange(from: string, to: string): VcArticle[] {
   });
 }
 
-export function loadBacktestsForNewsletter(newsletterId: string, lastNDays = 7): BacktestResult[] {
-  const out: BacktestResult[] = [];
-  const dates = listBacktestDates().slice(0, lastNDays);
-  for (const d of dates) {
-    const r = loadBacktest(newsletterId, d);
-    if (r) out.push(r);
-  }
-  return out;
-}

@@ -19,7 +19,6 @@ import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urlparse
 
-from common.newsletters import load_newsletters
 from common.story import ScoredStory, read_jsonl
 from ranking.score import top_per_section
 
@@ -122,7 +121,7 @@ def _canonical_url(url: str) -> str:
     if not url:
         return ""
     try:
-        from urllib.parse import urlparse, urlunparse
+        from urllib.parse import urlparse
         p = urlparse(url)
         # Strip query string entirely (utm_*, ref=, etc.) — TLDR appends ?utm_source=tldrai
         host = p.netloc.lower()

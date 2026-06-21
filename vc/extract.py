@@ -245,10 +245,6 @@ class _VcExtractor(LLMExtractor[VcArticle]):
 _EXTRACTOR = _VcExtractor()
 
 
-def _extract_one(story: ScoredStory) -> VcArticle | None:
-    return _EXTRACTOR.extract_one(story)
-
-
 def extract_vc(scored: list[ScoredStory]) -> list[VcArticle]:
     """Pre-filter scored stories by VC keywords, LLM-classify the survivors."""
     return _EXTRACTOR.extract(scored)

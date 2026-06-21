@@ -61,8 +61,6 @@ function Row({ r, today }: { r: VcArticle; today: string }) {
   );
 }
 
-// TypeFilterChips removed — the type pivots live in the hero banner now
-
 export default function VcPage({
   searchParams,
 }: {

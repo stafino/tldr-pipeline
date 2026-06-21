@@ -8,7 +8,7 @@
  * way.
  */
 
-export function buildEml(opts: {
+function buildEml(opts: {
   subject: string;
   plainText: string;
   html: string;

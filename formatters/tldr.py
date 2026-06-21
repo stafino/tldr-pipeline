@@ -9,7 +9,7 @@ from dataclasses import dataclass
 from datetime import date
 from pathlib import Path
 
-from common.newsletters import Newsletter, get_newsletter, load_newsletters
+from common.newsletters import get_newsletter, load_newsletters
 from common.story import ScoredStory, read_jsonl
 from ranking.score import top_per_section
 

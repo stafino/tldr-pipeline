@@ -24,7 +24,3 @@ export function shortDate(iso: string | undefined, targetYear: number): string {
   );
   return year === targetYear ? base : `${base}, ${year}`;
 }
-
-export function clamp(n: number, lo: number, hi: number): number {
-  return Math.max(lo, Math.min(hi, n));
-}

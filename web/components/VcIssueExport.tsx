@@ -10,7 +10,6 @@ import {
   type IssueDoc,
 } from '@/lib/issue-formatters';
 import type { VcArticle, VcType } from '@/lib/types';
-import { canonicalDomain } from '@/lib/utils';
 
 interface Section {
   key: VcType;

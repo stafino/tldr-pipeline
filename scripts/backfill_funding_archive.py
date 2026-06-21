@@ -22,8 +22,7 @@ import json
 import logging
 import re
 from collections import defaultdict
-from dataclasses import asdict
-from datetime import date, datetime, timedelta, timezone
+from datetime import date, timedelta
 from pathlib import Path
 
 import feedparser
