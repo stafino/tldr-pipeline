@@ -58,9 +58,9 @@ Inside Claude Managed Agents: Reverse Engineering the Security Boundaries of Ant
 
 (blurb not generated)
 
-Memory Safe Inline Assembly (1 minute read)
+Memory Safe Inline Assembly (5 minute read)
 
-Fil-C, the memory-safe C dialect, now supports GCC/clang inline assembly syntax in a pre-release build, preserving the exact assembly template you write while guaranteeing memory safety. The post details how mistakes that would silently miscompile in standard C, like omitting a `+` constraint or a `cc` clobber, instead degrade to a panic or an illegal instruction trap at worst.
+(blurb not generated)
 
 The golden rule of Customizable Select (5 minute read)
 
@@ -74,9 +74,9 @@ Building a design system specced for engineers and agents (5 minute read)
 
 (blurb not generated)
 
-Good results fine tuning a local LLM like Qwen 3:0.6B to categorize questions (1 minute read)
+Good results fine tuning a local LLM like Qwen 3:0.6B to categorize questions (5 minute read)
 
-The author fine-tuned Qwen 3:0.6B with Unsloth on ~850 household questions to classify queries into metadata categories like pool, car, and HVAC, using the labels to narrow the vector search space before a RAG lookup. The post benchmarks the tuned 600M-parameter classifier against a prompt-only baseline across ~130 integration tests, walking through the 70/15/15 train/eval/test split and the accuracy gains from fine-tuning.
+(blurb not generated)
 
 How to Make AI Agents Follow Your Design System (5 minute read)
 
@@ -97,9 +97,9 @@ Why is Meta destroying its engineering organization? (5 minute read)
 
 (blurb not generated)
 
-The minimum viable unit of saleable software (5 minute read)
+The minimum viable unit of saleable software (1 minute read)
 
-(blurb not generated)
+The author argues that LLMs have shifted the buy-vs-build calculus but not eliminated the case for selling software, since LLM-built systems still demand dozens of feedback loops to reach quality and carry ongoing maintenance cost. His bet on turning the River side project into a business rests on cheap not meaning free, leaving room for polished, well-maintained packages that internal LLM clones rarely match.
 
 LLMs Are Complicated Now (5 minute read)
 
@@ -121,9 +121,9 @@ $10,000,000 on the line: how we measure Devin's engineering output (5 minute rea
 
 (blurb not generated)
 
-There is minimal downside to switching to open models (1 minute read)
+There is minimal downside to switching to open models (5 minute read)
 
-Drawing an analogy to the years when running Linux carried real professional risk, the author argues that open-weight LLMs have closed enough of the gap that switching away from Claude and GPT now costs little, a shift prompted by Claude's ID verification rollout. The remaining trade-offs are concrete: open models still trail proprietary ones on leaderboards, and self-hosting to preserve privacy is some combination of expensive, complicated, and slow.
+(blurb not generated)
 
 The Mythical Agent-Month (5 minute read)
 
@@ -132,9 +132,9 @@ The Mythical Agent-Month (5 minute read)
 🚀
 Launches & Tools
 
-Deno Desktop (1 minute read)
+Deno Desktop (5 minute read)
 
-Deno v2.9.0 introduces `deno desktop`, a command that turns any Deno project from a single TypeScript file to a Next.js, SvelteKit, or Vite SSR app into a self-contained, cross-compilable binary bundling the runtime and a web rendering engine. It defaults to the OS webview for small binaries with optional bundled Chromium, swaps socket IPC for in-process bindings, and ships built-in bsdiff auto-update, though it currently runs only in the canary build.
+(blurb not generated)
 
 Apple Foundation Models (5 minute read)
 
@@ -160,9 +160,9 @@ Android 17 Expands AI Agent Integration (5 minute read)
 
 (blurb not generated)
 
-Show HN: Recall – Local project memory for Claude Code (1 minute read)
+Show HN: Recall – Local project memory for Claude Code (5 minute read)
 
-Recall is a local memory plugin for Claude Code that logs each session to an append-only `history.md` and condenses it into a compact `context.md` summary using a classical Python summarizer rather than an LLM call. It solves the cold-start problem without spending model tokens or sending transcripts to any external API, so resuming a project loads from a ~1-2K token digest instead of re-explaining everything each session.
+(blurb not generated)
 
 Show HN: TownSquare, a tiny presence layer for websites (5 minute read)
 
@@ -215,9 +215,9 @@ Announcing Stack Overflow for Agents (5 minute read)
 🎁
 Miscellaneous
 
-Hundreds of AI-powered iOS apps found exposing credentials (1 minute read)
+Hundreds of AI-powered iOS apps found exposing credentials (5 minute read)
 
-Researchers at Wake Forest University analyzed 444 iOS apps with LLM features and found 282, or 64%, exposed exploitable credentials, including 54 plaintext API keys and 136 leaked authentication tokens. The most popular affected app had over 2.3 million ratings, and 55% of leaks routed traffic through custom developer backends, meaning provider-side fixes alone cannot close the gap.
+(blurb not generated)
 
 GlassWASM: WebAssembly Malware Found in Trojanized Open VSX Extensions (5 minute read)
 
@@ -250,9 +250,9 @@ A 27-Year-Old Authentication Bypass in OpenBSD's PPP Stack (5 minute read)
 
 (blurb not generated)
 
-잘못된 Claude.md가 AI를 망친다…연구진이 꼽은 설정 파일 6대 문제 (4 minute read)
+잘못된 Claude.md가 AI를 망친다…연구진이 꼽은 설정 파일 6대 문제 (5 minute read)
 
-Researchers cataloged six "configuration smells" in Claude.md/Agents.md files, with lint leakage and context bloat the most common.
+(blurb not generated)
 
 Open-source Vulkan driver NVK gains experimental DLSS support — bringing Nvidia’s upscaling tech to Linux via imported CUDA binaries (5 minute read)
 
@@ -266,9 +266,9 @@ pg_kpart version 1.0 (5 minute read)
 
 (blurb not generated)
 
-A 3D voxel game engine written in APL (5 minute read)
+A 3D voxel game engine written in APL (1 minute read)
 
-(blurb not generated)
+A developer built an experimental 3D voxel game engine in APL, using the notation to drive a Vulkan, DirectX12, and Metal rendering backend.
 
 I Stored a Website in a Favicon (5 minute read)
 
