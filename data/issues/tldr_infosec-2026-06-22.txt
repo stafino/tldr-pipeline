@@ -14,6 +14,10 @@ A backdoor in a LinkedIn job offer (5 minute read)
 
 (blurb not generated)
 
+Hundreds of AI-powered iOS apps found exposing credentials (1 minute read)
+
+Researchers at Wake Forest University analyzed 444 iOS apps with LLM features and found 282 (64%) exposing exploitable credentials, including 136 leaking authentication tokens, 92 allowing unauthenticated backend access, and 54 hardcoding plaintext API keys. The leakage was systemic rather than niche, affecting apps with up to 2.3 million ratings, and 55% routed traffic through custom developer backends that provider-side mitigations alone cannot fix.
+
 Users cry foul after AMD stripped memory crypto from its consumer CPUs (5 minute read)
 
 (blurb not generated)
@@ -58,6 +62,10 @@ China-Nexus Actor Spies on US Researchers Undetected for a Year (5 minute read)
 
 (blurb not generated)
 
+Ethereum Layer 2 Taiko halts block production following exploit; urges users to withdraw funds (1 minute read)
+
+Taiko, an Ethereum Layer 2, halted block production after an exploit and urged users to withdraw funds, with onchain security firm Blockaid attributing the likely root cause to a flaw in the Taiko bridge's source-signal proof validation. The halt freezes the rollup while the validation bug is investigated, so users with assets bridged through Taiko should exit to Ethereum mainnet before block production resumes.
+
 Salesforce Data Thefts Continue via Klue App Compromise (5 minute read)
 
 (blurb not generated)
@@ -70,21 +78,13 @@ Cyberattack sees crops kept in the ground (5 minute read)
 
 (blurb not generated)
 
+Texas Parks & Wildlife Data Breach Affects 3 Million Individuals (1 minute read)
+
+The Texas Parks and Wildlife Department disclosed a breach affecting roughly 3 million people who bought hunting and fishing licenses, stemming from a cyberattack on an unnamed third-party license-sales vendor. Exposed data includes email and physical addresses, phone numbers, driver's license details, and passport numbers, but not Social Security numbers, dates of birth, or financial information.
+
 Hackers hijacked Brazil’s emergency alert system and sent ‘misanthropy’ to millions of phones (5 minute read)
 
 (blurb not generated)
-
-Hackers leak facial recognition records tied to millions of Madison Square Garden visitors (5 minute read)
-
-(blurb not generated)
-
-Unauthorized alert sent to cell phones across Brazil (5 minute read)
-
-(blurb not generated)
-
-AMD will reinstate memory encryption on Ryzen 9000 CPUs via BIOS update in July (1 minute read)
-
-AMD will reinstate Transparent Secure Memory Encryption (TSME) on non-PRO Ryzen 9000 desktop CPUs via a July BIOS update, reversing a quiet removal in AGESA 1.2.7.0 that disabled the firmware-level RAM encryption present since 2020. TSME defends against cold-boot attacks where an attacker with physical access extracts sensitive data from memory, so affected fleets should apply the July microcode and confirm encryption status post-update.
 
 🧠
 Strategies & Tactics
@@ -92,6 +92,10 @@ Strategies & Tactics
 Build your own vulnerability harness (5 minute read)
 
 (blurb not generated)
+
+Encrypted DNS still tells an eavesdropper where to look (1 minute read)
+
+Encrypted DNS over TLS, HTTPS, QUIC, and CoAP hides query contents but leaves plaintext headers that mark a flow as DNS, letting an eavesdropper on a wireless link single it out to block, profile, or analyze it. A new study trained a Random Forest classifier on 296 IoT scenarios and found addresses, ports, and monotonic counters leak the most. The authors propose eliding headers via SCHC compression and CoAP block-wise transfer to even out packet lengths.
 
 MosaicLeaks: Can your research agent keep a secret? (5 minute read)
 
@@ -128,8 +132,16 @@ Introducing AWS Continuum for security at machine speed (5 minute read)
 
 (blurb not generated)
 
+Agent Beacon: Open-source telemetry layer for AI agents (1 minute read)
+
+Asymptote Labs released Beacon, an open-source (MIT, mostly Go) telemetry layer that configures OpenTelemetry export and hooks for AI coding agents like Claude Code, Codex CLI, and Cursor, then normalizes their file edits, command execution, tool use, and approval decisions into a single JSON event log. It runs locally without an account, binds its dashboard to loopback, offers redaction and retention modes, and can forward events into customer-managed SIEMs.
+
 🎁
 Miscellaneous
+
+NSA director: 'Mythos "broke into almost all of our classified systems in hours" (1 minute read)
+
+The NSA director told The Economist that Anthropic's Mythos model "broke into almost all of our classified systems in hours," a disclosure that surfaced amid the Trump administration's move to block the company from federal work. The account underscores how far offensive AI tooling has advanced inside government red-team exercises, even as the legal fight over Anthropic's access to classified networks remains unresolved.
 
 White House Issues Memo to Bolster NSS Cybersecurity (5 minute read)
 

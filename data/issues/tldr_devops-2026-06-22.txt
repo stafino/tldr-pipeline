@@ -64,13 +64,17 @@ Temporary Cloudflare accounts for AI agents (5 minute read)
 
 (blurb not generated)
 
-The systemd 261 release brings a software TPM, new OS installer (1 minute read)
+The systemd 261 release brings a software TPM, new OS installer (5 minute read)
 
-systemd 261 shipped with an IMDS subsystem that exposes a local Varlink API for cloud instance metadata, recognizing EC2, Azure, GCE, Hetzner, and Oracle Cloud by their SMBIOS data. The release also adds kexec state preservation via FileDescriptorStorePreserve, a software TPM service backed by IBM's swtpm, and systemd-sysinstall, a Varlink-based textual OS installer.
+(blurb not generated)
 
 Server-Side Tools Are Now Available for DigitalOcean Inference Engine (5 minute read)
 
 (blurb not generated)
+
+Agent Beacon: Open-source telemetry layer for AI agents (1 minute read)
+
+Asymptote Labs released Beacon, an open-source Go tool that configures OpenTelemetry export for AI coding agents like Claude Code, Codex CLI, and Cursor, normalizing their file edits, command runs, and tool calls into a single JSON event log readable from a loopback dashboard or forwarded to a SIEM. It runs locally under MIT license with no account required, defaulting to full capture but offering redacted retention modes that strip prompt text, command output, and raw diffs.
 
 Vercel Connect (5 minute read)
 
