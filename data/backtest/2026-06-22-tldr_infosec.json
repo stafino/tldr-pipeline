@@ -1,12 +1,62 @@
 {
   "date": "2026-06-22",
   "newsletter": "tldr_infosec",
-  "fetched_at": "2026-06-22T08:08:38.723721+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-06-22T15:02:45.455557+00:00",
+  "tldr_titles": [
+    "FortiBleed: 86,000 Fortinet Device Credentials Compromised",
+    "Apple's A12 and A13 Chips Facing New Unpatchable Exploit",
+    "Texas Data Breach Hits 3 Million: Driver's Licenses, Passport Numbers Stolen From Hunting Vendor",
+    "Novo Nordisk Breach: How a Leaked GitHub Token Exposed the Exact Ozempic Formula",
+    "Making secret scanning more trustworthy: Reducing false positives at scale",
+    "Threat Brief: Mitigating Large-Scale Credential Attacks",
+    "VaultSort V4: Hardware-Bound File Encryption and Touch ID",
+    "Blinding the Watchmen: Abusing Cloud Logging Services for Defense Evasion and Visibility",
+    "White House delays release of US voting machine study as midterms near",
+    "Microsoft discovers new lightweight backdoor that steals cryptocurrency",
+    "Linux Finally Eliminates The strncpy API After Six Years Of Work, 360+ Patches",
+    "Nginx as a Reverse Proxy"
+  ],
+  "tldr_matched": [
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true,
+    false
+  ],
   "predictions": [
     {
       "rank": 1,
+      "score": 88.0,
+      "title": "PixelSmash \u2013 Critical FFmpeg Vulnerability Turns Media Files into Weapons",
+      "url": "https://jfrog.com/blog/pixelsmash-critical-ffmpeg-vulnerability-turns-media-files-into-weapons/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 2,
+      "score": 84.0,
+      "title": "New Exploit Bypasses Apple\u2019s Boot Defenses, Affects Millions of iPhones",
+      "url": "https://www.securityweek.com/new-exploit-bypasses-apples-boot-defenses-affects-millions-of-iphones/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 3,
+      "score": 83.0,
+      "title": "Decades-Old Squid Proxy Flaw \u2018Squidbleed\u2019 Can Expose User Data",
+      "url": "https://www.securityweek.com/decades-old-squid-proxy-flaw-squidbleed-can-expose-user-data/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 4,
       "score": 80.0,
       "title": "Microsoft links Mastra AI supply chain attack to North Korean hackers",
       "url": "https://www.bleepingcomputer.com/news/security/microsoft-links-mastra-ai-supply-chain-attack-to-north-korean-hackers/",
@@ -14,7 +64,15 @@
       "similarity": null
     },
     {
-      "rank": 2,
+      "rank": 5,
+      "score": 80.0,
+      "title": "North Korean Hackers Blamed for Mastra NPM Supply Chain Attack",
+      "url": "https://www.securityweek.com/north-korean-hackers-blamed-for-mastra-npm-supply-chain-attack/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 6,
       "score": 80.0,
       "title": "A backdoor in a LinkedIn job offer",
       "url": "https://roman.pt/posts/linkedin-backdoor/",
@@ -22,7 +80,15 @@
       "similarity": null
     },
     {
-      "rank": 3,
+      "rank": 7,
+      "score": 78.0,
+      "title": "Klue hack results in data breach at several cybersecurity firms",
+      "url": "https://techcrunch.com/2026/06/22/klue-hack-results-in-data-breach-at-several-cybersecurity-firms/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 8,
       "score": 78.0,
       "title": "Hundreds of AI-powered iOS apps found exposing credentials",
       "url": "https://www.helpnetsecurity.com/2026/06/22/llm-api-credential-leakage-ios-apps/",
@@ -30,7 +96,7 @@
       "similarity": null
     },
     {
-      "rank": 4,
+      "rank": 9,
       "score": 77.0,
       "title": "Users cry foul after AMD stripped memory crypto from its consumer CPUs",
       "url": "https://arstechnica.com/security/2026/06/users-cry-foul-after-amd-stripped-memory-crypto-from-its-consumer-cpus/",
@@ -38,7 +104,7 @@
       "similarity": null
     },
     {
-      "rank": 5,
+      "rank": 10,
       "score": 76.0,
       "title": "Google Vertex AI SDK Flaw Let Attackers Hijack Model Uploads via Bucket Squatting",
       "url": "https://thehackernews.com/2026/06/google-vertex-ai-sdk-flaw-let-attackers.html",
@@ -46,7 +112,15 @@
       "similarity": null
     },
     {
-      "rank": 6,
+      "rank": 11,
+      "score": 76.0,
+      "title": "Canada\u2019s Spy Agency Used First-of-Its-Kind Warrant to Clean Botnet-Infected Devices",
+      "url": "https://thehackernews.com/2026/06/canadas-spy-agency-used-first-of-its.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 12,
       "score": 74.0,
       "title": "AryStinger botnet infected thousands of D-Link routers worldwide",
       "url": "https://www.bleepingcomputer.com/news/security/arystinger-botnet-infected-thousands-of-d-link-routers-worldwide/",
@@ -54,7 +128,7 @@
       "similarity": null
     },
     {
-      "rank": 7,
+      "rank": 13,
       "score": 74.0,
       "title": "Copilot 'SearchLeak' Attack Allows 1-Click Data Theft",
       "url": "https://www.darkreading.com/application-security/copilot-searchleak-attack-1-click-data-theft",
@@ -62,7 +136,7 @@
       "similarity": null
     },
     {
-      "rank": 8,
+      "rank": 14,
       "score": 74.0,
       "title": "DragonForce Hackers Abuse Microsoft Teams Relays to Hide Backdoor.Turn C2 Traffic",
       "url": "https://thehackernews.com/2026/06/dragonforce-hackers-abuse-microsoft.html",
@@ -70,7 +144,23 @@
       "similarity": null
     },
     {
-      "rank": 9,
+      "rank": 15,
+      "score": 73.0,
+      "title": "Fortinet Responds to FortiBleed Campaign",
+      "url": "https://www.securityweek.com/fortinet-responds-to-fortibleed-campaign/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 16,
+      "score": 72.0,
+      "title": "New OXLOADER Loader Uses Malicious Google Ads to Deliver CastleStealer",
+      "url": "https://thehackernews.com/2026/06/new-oxloader-loader-uses-malicious.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 17,
       "score": 72.0,
       "title": "AryStinger Malware Infects 4,300 Legacy Routers to Build Reconnaissance Proxy Network",
       "url": "https://thehackernews.com/2026/06/arystinger-malware-infects-4300-legacy.html",
@@ -78,7 +168,15 @@
       "similarity": null
     },
     {
-      "rank": 10,
+      "rank": 18,
+      "score": 72.0,
+      "title": "23 ClawHub plugins squatting official scopes expose AI registry security gaps",
+      "url": "https://www.helpnetsecurity.com/2026/06/22/clawhub-code-executing-plugins-video/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 19,
       "score": 72.0,
       "title": "Humiliating IIS servers for fun and jail time",
       "url": "https://mll.sh/humiliating-iis-servers-for-fun-and-jail-time/",
@@ -86,15 +184,15 @@
       "similarity": null
     },
     {
-      "rank": 11,
+      "rank": 20,
       "score": 72.0,
       "title": "Sweeping Credential-Harvesting Heist Compromises 30K+ Fortinet Devices",
       "url": "https://www.darkreading.com/cyberattacks-data-breaches/sweeping-credential-harvesting-heist-compromises-30k-fortinet-devices",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 0,
+      "similarity": 0.7876313924789429
     },
     {
-      "rank": 12,
+      "rank": 21,
       "score": 72.0,
       "title": "Build your own vulnerability harness",
       "url": "https://blog.cloudflare.com/build-your-own-vulnerability-harness/",
@@ -102,7 +200,7 @@
       "similarity": null
     },
     {
-      "rank": 13,
+      "rank": 22,
       "score": 72.0,
       "title": "GrapheneOS has been ported to Android 17 and official releases are coming soon",
       "url": "https://discuss.grapheneos.org/d/36469-grapheneos-has-been-ported-to-android-17-and-official-releases-are-coming-soon",
@@ -110,7 +208,7 @@
       "similarity": null
     },
     {
-      "rank": 14,
+      "rank": 23,
       "score": 70.0,
       "title": "Show HN: We post-trained a model that pen tests instead of refusing",
       "url": "https://www.argusred.com/cli",
@@ -118,7 +216,7 @@
       "similarity": null
     },
     {
-      "rank": 15,
+      "rank": 24,
       "score": 69.0,
       "title": "Loupe \u2013 A iOS app that raises awareness about what native apps can see",
       "url": "https://github.com/mysk-research/loupe",
@@ -126,7 +224,7 @@
       "similarity": null
     },
     {
-      "rank": 16,
+      "rank": 25,
       "score": 68.0,
       "title": "Hackers Exploit Gravity SMTP WordPress Plugin Bug to Expose API Keys",
       "url": "https://thehackernews.com/2026/06/hackers-exploit-gravity-smtp-wordpress.html",
@@ -134,15 +232,15 @@
       "similarity": null
     },
     {
-      "rank": 17,
+      "rank": 26,
       "score": 68.0,
-      "title": "Satellite reveals immense scale of GPS signal tampering",
-      "url": "https://www.space.com/space-exploration/satellites/its-quite-a-bit-more-than-we-expected-satellite-reveals-immense-scale-of-gps-signal-tampering",
+      "title": "How Claude Mythos found a 15-year-old bug in Mozilla Firefox | Brian Grinstead",
+      "url": "https://www.lennysnewsletter.com/p/how-claude-mythos-found-a-15-year",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 18,
+      "rank": 27,
       "score": 68.0,
       "title": "Encrypted DNS still tells an eavesdropper where to look",
       "url": "https://www.helpnetsecurity.com/2026/06/22/research-encrypted-dns-privacy/",
@@ -150,7 +248,7 @@
       "similarity": null
     },
     {
-      "rank": 19,
+      "rank": 28,
       "score": 68.0,
       "title": "NSA director: 'Mythos \"broke into almost all of our classified systems in hours\"",
       "url": "https://www.economist.com/briefing/2026/06/14/donald-trumps-blocking-of-anthropic-is-capricious-and-chaotic",
@@ -158,63 +256,23 @@
       "similarity": null
     },
     {
-      "rank": 20,
+      "rank": 29,
       "score": 67.0,
-      "title": "New Prinz Eugen ransomware prioritizes recent files for encryption",
-      "url": "https://www.bleepingcomputer.com/news/security/new-prinz-eugen-ransomware-prioritizes-recent-files-for-encryption/",
+      "title": "What the Latest ShinyHunters Breaches Reveal About Modern Cyberattacks",
+      "url": "https://www.securityweek.com/what-the-latest-shinyhunters-breaches-reveal-about-modern-cyberattacks/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 21,
-      "score": 67.0,
-      "title": "China-Nexus Actor Spies on US Researchers Undetected for a Year",
-      "url": "https://www.darkreading.com/threat-intelligence/china-nexus-actor-us-researchers-undetected",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 22,
-      "score": 66.0,
-      "title": "Ethereum Layer 2 Taiko halts block production following exploit; urges users to withdraw funds",
-      "url": "https://www.theblock.co/post/405486/taiko-confirms-exploit?utm_source=rss&utm_medium=rss",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 23,
-      "score": 66.0,
-      "title": "Salesforce Data Thefts Continue via Klue App Compromise",
-      "url": "https://www.darkreading.com/cyberattacks-data-breaches/salesforce-data-thefts-klue-app-compromise",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 24,
-      "score": 65.0,
-      "title": "Secret Network\u2019s Axelar bridge drained for $4.67 million in infinite-mint exploit that went unnoticed for seven days",
-      "url": "https://www.theblock.co/post/405459/secret-networks-axelar-bridge-drained-for-4-67-million-in-infinite-mint-exploit-that-went-unnoticed-for-seven-days?utm_source=rss&utm_medium=rss",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 25,
-      "score": 64.0,
-      "title": "Cyberattack sees crops kept in the ground",
-      "url": "https://www.theregister.com/cyber-crime/2026/06/17/cyberattack-sees-crops-kept-in-the-ground/5256321",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 26,
+      "rank": 30,
       "score": 63.0,
-      "title": "Texas Parks & Wildlife Data Breach Affects 3 Million Individuals",
-      "url": "https://www.securityweek.com/texas-parks-wildlife-data-breach-affects-3-million-individuals/",
+      "title": "Google Sets Sept. 30 Deadline for Android Developer Verification in Four Countries",
+      "url": "https://thehackernews.com/2026/06/google-sets-sept-30-deadline-for.html",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 27,
+      "rank": 31,
       "score": 63.0,
       "title": "White House Issues Memo to Bolster NSS Cybersecurity",
       "url": "https://www.securityweek.com/white-house-issues-memo-to-bolster-nss-cybersecurity/",
@@ -222,7 +280,7 @@
       "similarity": null
     },
     {
-      "rank": 28,
+      "rank": 32,
       "score": 62.0,
       "title": "MosaicLeaks: Can your research agent keep a secret?",
       "url": "https://huggingface.co/blog/ServiceNow/mosaicleaks",
@@ -230,7 +288,7 @@
       "similarity": null
     },
     {
-      "rank": 29,
+      "rank": 33,
       "score": 62.0,
       "title": "Introducing AWS Continuum for security at machine speed",
       "url": "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-continuum/",
@@ -238,7 +296,7 @@
       "similarity": null
     },
     {
-      "rank": 30,
+      "rank": 34,
       "score": 62.0,
       "title": "Agent Beacon: Open-source telemetry layer for AI agents",
       "url": "https://www.helpnetsecurity.com/2026/06/22/agent-beacon-open-source-telemetry-layer-ai-agents/",
@@ -246,15 +304,15 @@
       "similarity": null
     },
     {
-      "rank": 31,
-      "score": 60.0,
-      "title": "Microsoft\u2019s June update fixed 208 security flaws and introduced a cascade of new bugs across all Windows versions",
-      "url": "https://thenextweb.com/news/windows-11-kb5094126-recycle-bin-bug-patch-tuesday",
+      "rank": 35,
+      "score": 61.0,
+      "title": "A Glimpse into the \u201cSearch Your Target\u201d Market for Stolen Credentials",
+      "url": "https://www.bleepingcomputer.com/news/security/a-glimpse-into-the-search-your-target-market-for-stolen-credentials/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 32,
+      "rank": 36,
       "score": 59.0,
       "title": "Identity verification on Claude",
       "url": "https://support.claude.com/en/articles/14328960-identity-verification-on-claude",
@@ -262,15 +320,15 @@
       "similarity": null
     },
     {
-      "rank": 33,
+      "rank": 37,
       "score": 58.0,
       "title": "Linux eliminates the strncpy API after six years of work, 360 patches",
       "url": "https://www.phoronix.com/news/Linux-7.2-Drops-strncpy",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 10,
+      "similarity": 1.0
     },
     {
-      "rank": 34,
+      "rank": 38,
       "score": 57.0,
       "title": "Apple is about to make Hide My Email useless",
       "url": "https://arseniyshestakov.com/2026/06/16/apple-is-about-to-make-hide-my-email-useless/",
@@ -278,7 +336,23 @@
       "similarity": null
     },
     {
-      "rank": 35,
+      "rank": 39,
+      "score": 57.0,
+      "title": "In a rare joint statement, Five Eyes leaders warn AI models capable of taking down governments and businesses are mere months away, urging leaders to \"act now\" (Sarah Basford Canales/The Guardian)",
+      "url": "https://www.techmeme.com/260622/p21#a260622p21",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 40,
+      "score": 57.0,
+      "title": "Cisco widens agentic security with AI identity acquisition",
+      "url": "https://www.sdxcentral.com/news/cisco-widens-agentic-security-with-ai-identity-acquisition/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 41,
       "score": 56.0,
       "title": "How Dropbox uses MCP and Dash to close the design-to-code security gap",
       "url": "https://dropbox.tech/security/dropbox-mcp-dash-design-code-security",
@@ -286,7 +360,7 @@
       "similarity": null
     },
     {
-      "rank": 36,
+      "rank": 42,
       "score": 56.0,
       "title": "CISA gives federal agencies as little as three days to patch the riskiest bugs",
       "url": "https://www.cisa.gov/news-events/news/cisa-issues-new-directive-improving-how-federal-agencies-prioritize-mitigation-cyber-vulnerabilities",
@@ -294,7 +368,7 @@
       "similarity": null
     },
     {
-      "rank": 37,
+      "rank": 43,
       "score": 56.0,
       "title": "SPHINCS-: Efficient Stateless Post-Quantum Signature Verification on the EVM",
       "url": "https://ethresear.ch/t/sphincs-minus-efficient-stateless-post-quantum-signature-verification-on-the-evm/25165",
@@ -302,7 +376,7 @@
       "similarity": null
     },
     {
-      "rank": 38,
+      "rank": 44,
       "score": 56.0,
       "title": "Apple adds keylogger to iOS App Store for targeted advertising: tied to your account and unencrypted",
       "url": "https://www.osnews.com/story/145322/apple-adds-keylogger-to-ios-app-store-for-targeted-advertising-tied-to-your-account-and-unencrypted/",
@@ -310,7 +384,7 @@
       "similarity": null
     },
     {
-      "rank": 39,
+      "rank": 45,
       "score": 55.0,
       "title": "How attackers are jailbreaking LLMs with CTF framing and how to catch them",
       "url": "https://webflow.sysdig.com/blog/how-attackers-are-jailbreaking-llms-with-ctf-framing-and-how-to-catch-them",
@@ -318,17 +392,63 @@
       "similarity": null
     },
     {
-      "rank": 40,
+      "rank": 46,
       "score": 55.0,
       "title": "The UK will scan asylum-seekers\u2019 faces for age checks\u2014despite knowing the tech is flawed",
       "url": "https://arstechnica.com/tech-policy/2026/06/the-uk-will-scan-asylum-seekers-faces-for-age-checks-despite-knowing-the-tech-is-flawed/",
       "matched_tldr_idx": null,
       "similarity": null
+    },
+    {
+      "rank": 47,
+      "score": 55.0,
+      "title": "Professional Athletes and Wearables",
+      "url": "https://www.schneier.com/blog/archives/2026/06/professional-athletes-and-wearables.html",
+      "matched_tldr_idx": null,
+      "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.0,
+    "25": 0.08333333333333333,
+    "50": 0.16666666666666666,
+    "100": 0.16666666666666666,
+    "47": 0.16666666666666666
+  },
+  "hits_at": {
+    "10": 0,
+    "25": 1,
+    "50": 2,
+    "100": 2,
+    "47": 2
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://www.securityweek.com/fortibleed-86000-fortinet-device-credentials-compromised/",
+    "https://www.macrumors.com/2026/06/18/a12-and-a13-chips-facing-exploit/",
+    "https://www.techtimes.com/articles/318790/20260621/texas-data-breach-hits-3-million-drivers-licenses-passport-numbers-stolen-hunting-vendor.htm",
+    "https://www.pentesty.co/blog/novo-nordisk-ozempic-fulcrumsec-breach-2026",
+    "https://github.blog/security/making-secret-scanning-more-trustworthy-reducing-false-positives-at-scale/",
+    "https://unit42.paloaltonetworks.com/large-scale-credential-attacks/",
+    "https://www.vaultsort.com/blog/vaultsort-v4-hardware-bound-encryption-touch-id",
+    "https://unit42.paloaltonetworks.com/cloud-logging-defense-evasion/",
+    "https://www.reuters.com/world/white-house-delays-release-us-voting-machine-study-midterms-near-2026-06-19/",
+    "https://arstechnica.com/security/2026/06/microsoft-spots-new-self-propagating-malware-for-stealing-cryptocurrency/",
+    "https://www.phoronix.com/news/Linux-7.2-Drops-strncpy",
+    "https://sanyamserver.online/posts/nginx-reverse-proxy/"
+  ],
+  "tldr_domains": [
+    "securityweek.com",
+    "macrumors.com",
+    "techtimes.com",
+    "pentesty.co",
+    "github.blog",
+    "unit42.paloaltonetworks.com",
+    "vaultsort.com",
+    "unit42.paloaltonetworks.com",
+    "reuters.com",
+    "arstechnica.com",
+    "phoronix.com",
+    "sanyamserver.online"
+  ]
 }

@@ -21,9 +21,9 @@ When failover isn't safe: Building high-availability PostgreSQL on Kubernetes (5
 
 (blurb not generated)
 
-The only scalable delete in Postgres is DROP TABLE (5 minute read)
+The only scalable delete in Postgres is DROP TABLE (3 minute read)
 
-(blurb not generated)
+Large DELETEs in Postgres add work rather than reclaim it: MVCC keeps dead tuples around, autovacuum only marks their space reusable instead of returning it to the OS, and the writes still replicate, stalling other writers under synchronous replication. The author argues that any schema expecting big cleanups should model deletion as DROP TABLE or TRUNCATE, which free disk immediately. Partition by the dimension you delete along, then drop partitions instead of scanning rows.
 
 🚀
 Launches & Tools

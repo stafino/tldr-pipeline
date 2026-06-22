@@ -1,9 +1,35 @@
 {
   "date": "2026-06-22",
   "newsletter": "tldr_dev",
-  "fetched_at": "2026-06-22T08:08:36.772762+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-06-22T14:58:58.564129+00:00",
+  "tldr_titles": [
+    "JSON-LD Explained for Personal Websites",
+    "I Stored a Website in a Favicon",
+    "Building Reliable Agentic AI Systems",
+    "There is minimal downside to switching to open models",
+    "Hey, N00b, We Didn't Hire You to Complete Tasks",
+    "Temporary Cloudflare Accounts for AI agents",
+    "The Minimum Viable Unit of Saleable Software",
+    "Ten years of ClickHouse in open source",
+    "Developers don't understand CORS",
+    "Ploy raises $27M to turn your company's website into your hardest working employee",
+    "Ask for no, don't ask for yes",
+    "When I reject AI code even if it works"
+  ],
+  "tldr_matched": [
+    false,
+    true,
+    true,
+    true,
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    true
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -23,6 +49,14 @@
     },
     {
       "rank": 3,
+      "score": 77.0,
+      "title": "Skip Recompiling 70+ iOS Packages on Every Build",
+      "url": "https://dev.to/expo/skip-recompiling-70-ios-packages-on-every-build-27a6",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 4,
       "score": 76.0,
       "title": "Alice is impatient",
       "url": "https://brooker.co.za/blog/2026/06/19/waiting.html",
@@ -30,7 +64,7 @@
       "similarity": null
     },
     {
-      "rank": 4,
+      "rank": 5,
       "score": 76.0,
       "title": "Apple Foundation Models",
       "url": "https://platform.claude.com/docs/en/cli-sdks-libraries/libraries/apple-foundation-models",
@@ -38,7 +72,15 @@
       "similarity": null
     },
     {
-      "rank": 5,
+      "rank": 6,
+      "score": 76.0,
+      "title": "Codex logging bug may write TBs to local SSDs",
+      "url": "https://github.com/openai/codex/issues/28224",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 7,
       "score": 72.0,
       "title": "Linux eliminates the strncpy API after six years of work, 360 patches",
       "url": "https://www.phoronix.com/news/Linux-7.2-Drops-strncpy",
@@ -46,15 +88,15 @@
       "similarity": null
     },
     {
-      "rank": 6,
+      "rank": 8,
       "score": 68.0,
       "title": "Building reliable agentic AI systems",
       "url": "https://martinfowler.com/articles/reliable-llm-bayer.html",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 2,
+      "similarity": 1.0
     },
     {
-      "rank": 7,
+      "rank": 9,
       "score": 68.0,
       "title": "Epoll vs. io_uring in Linux",
       "url": "https://sibexi.co/posts/epoll-vs-io_uring/",
@@ -62,7 +104,15 @@
       "similarity": null
     },
     {
-      "rank": 8,
+      "rank": 10,
+      "score": 66.0,
+      "title": "How Claude Mythos found a 15-year-old bug in Mozilla Firefox | Brian Grinstead",
+      "url": "https://www.lennysnewsletter.com/p/how-claude-mythos-found-a-15-year",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 11,
       "score": 65.0,
       "title": "When failover isn't safe: Building high-availability PostgreSQL on Kubernetes",
       "url": "https://www.datadoghq.com/blog/engineering/postgresql-ha-kubernetes/",
@@ -70,7 +120,15 @@
       "similarity": null
     },
     {
-      "rank": 9,
+      "rank": 12,
+      "score": 65.0,
+      "title": "North Korean Hackers Blamed for Mastra NPM Supply Chain Attack",
+      "url": "https://www.securityweek.com/north-korean-hackers-blamed-for-mastra-npm-supply-chain-attack/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 13,
       "score": 64.0,
       "title": "AI Coding Agent Horror Stories: The 13-Hour AWS Outage",
       "url": "https://www.docker.com/blog/coding-agent-horror-stories-the-13-hour-aws-outage/",
@@ -78,15 +136,7 @@
       "similarity": null
     },
     {
-      "rank": 10,
-      "score": 63.0,
-      "title": "Hey, n00b, we didn't hire you to complete tasks",
-      "url": "https://newsletter.kentbeck.com/p/hey-n00b-we-didnt-hire-you-to-complete",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 11,
+      "rank": 14,
       "score": 63.0,
       "title": "Hundreds of AI-powered iOS apps found exposing credentials",
       "url": "https://www.helpnetsecurity.com/2026/06/22/llm-api-credential-leakage-ios-apps/",
@@ -94,7 +144,7 @@
       "similarity": null
     },
     {
-      "rank": 12,
+      "rank": 15,
       "score": 62.0,
       "title": "PostgresBench: A Reproducible Benchmark for Postgres Services",
       "url": "https://clickhouse.com/blog/postgresbench",
@@ -102,7 +152,7 @@
       "similarity": null
     },
     {
-      "rank": 13,
+      "rank": 16,
       "score": 62.0,
       "title": "How We Cut Semgrep's Taint Analysis Time by 75%",
       "url": "https://semgrep.dev/blog/2026/how-we-cut-semgreps-taint-analysis-time-by-75-percent/",
@@ -110,7 +160,7 @@
       "similarity": null
     },
     {
-      "rank": 14,
+      "rank": 17,
       "score": 62.0,
       "title": "I hate compilers",
       "url": "https://xeiaso.net/notes/2026/anubis-wasm-vendor-binary/",
@@ -118,7 +168,7 @@
       "similarity": null
     },
     {
-      "rank": 15,
+      "rank": 18,
       "score": 62.0,
       "title": "Who owns your ATProto identity?",
       "url": "https://kevinak.se/blog/who-actually-owns-your-atproto-identity-hint-its-probably-not-you",
@@ -126,7 +176,23 @@
       "similarity": null
     },
     {
-      "rank": 16,
+      "rank": 19,
+      "score": 62.0,
+      "title": "PP-OCRv6 on Hugging Face: 50-Language OCR from 1.5M to 34.5M Parameters",
+      "url": "https://huggingface.co/blog/PaddlePaddle/pp-ocrv6",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 20,
+      "score": 62.0,
+      "title": "PixelSmash \u2013 Critical FFmpeg Vulnerability Turns Media Files into Weapons",
+      "url": "https://jfrog.com/blog/pixelsmash-critical-ffmpeg-vulnerability-turns-media-files-into-weapons/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 21,
       "score": 62.0,
       "title": "GlassWASM: WebAssembly Malware Found in Trojanized Open VSX Extensions",
       "url": "https://socket.dev/blog/glasswasm-malware-open-vsx-extensions",
@@ -134,7 +200,7 @@
       "similarity": null
     },
     {
-      "rank": 17,
+      "rank": 22,
       "score": 61.0,
       "title": "From SQLi to RCE - Exploiting LangGraph's Checkpointer",
       "url": "https://research.checkpoint.com/2026/from-sqli-to-rce-exploiting-langgraphs-checkpointer/",
@@ -142,7 +208,7 @@
       "similarity": null
     },
     {
-      "rank": 18,
+      "rank": 23,
       "score": 61.0,
       "title": "Loupe \u2013 A iOS app that raises awareness about what native apps can see",
       "url": "https://github.com/mysk-research/loupe",
@@ -150,7 +216,7 @@
       "similarity": null
     },
     {
-      "rank": 19,
+      "rank": 24,
       "score": 61.0,
       "title": "UHF X11: X11 Built for VisionOS and Apple Vision Pro",
       "url": "https://www.lispm.net/apps/uhf-x11/",
@@ -158,7 +224,7 @@
       "similarity": null
     },
     {
-      "rank": 20,
+      "rank": 25,
       "score": 61.0,
       "title": "Homebrew 6.0 released with new security mechanism, Linux sandbox, and more",
       "url": "https://www.theregister.com/devops/2026/06/17/homebrew-60-released-with-new-security-mechanism-linux-sandbox-and-more/5257570",
@@ -166,7 +232,7 @@
       "similarity": null
     },
     {
-      "rank": 21,
+      "rank": 26,
       "score": 60.0,
       "title": "Give GitHub Copilot CLI real code intelligence with language servers",
       "url": "https://github.blog/ai-and-ml/github-copilot/give-github-copilot-cli-real-code-intelligence-with-language-servers/",
@@ -174,7 +240,7 @@
       "similarity": null
     },
     {
-      "rank": 22,
+      "rank": 27,
       "score": 60.0,
       "title": "Why is Meta destroying its engineering organization?",
       "url": "https://newsletter.pragmaticengineer.com/p/why-is-meta-destroying-its-engineering",
@@ -182,7 +248,7 @@
       "similarity": null
     },
     {
-      "rank": 23,
+      "rank": 28,
       "score": 60.0,
       "title": "Four Ways We're Using Our MCP Server at Figma",
       "url": "https://www.figma.com/blog/4-ways-were-using-our-mcp-server-at-figma/",
@@ -190,7 +256,7 @@
       "similarity": null
     },
     {
-      "rank": 24,
+      "rank": 29,
       "score": 60.0,
       "title": "CSSQuake",
       "url": "https://cssquake.com/",
@@ -198,7 +264,7 @@
       "similarity": null
     },
     {
-      "rank": 25,
+      "rank": 30,
       "score": 59.0,
       "title": "Inside Claude Managed Agents: Reverse Engineering the Security Boundaries of Anthropic's Hosted Agent Runtime",
       "url": "https://pluto.security/blog/inside-claude-managed-agents/",
@@ -206,15 +272,23 @@
       "similarity": null
     },
     {
-      "rank": 26,
+      "rank": 31,
       "score": 59.0,
       "title": "The minimum viable unit of saleable software",
       "url": "https://brandur.org/minimum-viable-unit",
+      "matched_tldr_idx": 6,
+      "similarity": 1.0
+    },
+    {
+      "rank": 32,
+      "score": 58.0,
+      "title": "The only scalable delete in Postgres is DROP TABLE",
+      "url": "https://dev.to/planetscale/the-only-scalable-delete-in-postgres-is-drop-table-1596",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 27,
+      "rank": 33,
       "score": 58.0,
       "title": "Memory Safe Inline Assembly",
       "url": "https://fil-c.org/inlineasm",
@@ -222,7 +296,7 @@
       "similarity": null
     },
     {
-      "rank": 28,
+      "rank": 34,
       "score": 58.0,
       "title": "The golden rule of Customizable Select",
       "url": "https://webkit.org/blog/18117/the-golden-rule-of-customizable-select/",
@@ -230,7 +304,7 @@
       "similarity": null
     },
     {
-      "rank": 29,
+      "rank": 35,
       "score": 58.0,
       "title": "Android 17 Expands AI Agent Integration",
       "url": "https://android-developers.googleblog.com/2026/06/Android-17.html",
@@ -238,7 +312,7 @@
       "similarity": null
     },
     {
-      "rank": 30,
+      "rank": 36,
       "score": 58.0,
       "title": "Show HN: Recall \u2013 Local project memory for Claude Code",
       "url": "https://github.com/raiyanyahya/recall",
@@ -246,7 +320,7 @@
       "similarity": null
     },
     {
-      "rank": 31,
+      "rank": 37,
       "score": 58.0,
       "title": "Show HN: TownSquare, a tiny presence layer for websites",
       "url": "https://townsquare.cauenapier.com/",
@@ -254,7 +328,7 @@
       "similarity": null
     },
     {
-      "rank": 32,
+      "rank": 38,
       "score": 58.0,
       "title": "Accelerating researchers and developers building multilingual AI with a new open dataset",
       "url": "https://github.blog/ai-and-ml/llms/accelerating-researchers-and-developers-building-multilingual-ai-with-a-new-open-dataset/",
@@ -262,7 +336,7 @@
       "similarity": null
     },
     {
-      "rank": 33,
+      "rank": 39,
       "score": 58.0,
       "title": "Introducing the MDN MCP server",
       "url": "https://developer.mozilla.org/en-US/blog/introducing-mdn-mcp-server/",
@@ -270,7 +344,7 @@
       "similarity": null
     },
     {
-      "rank": 34,
+      "rank": 40,
       "score": 58.0,
       "title": "GrapheneOS has been ported to Android 17 and official releases are coming soon",
       "url": "https://discuss.grapheneos.org/d/36469-grapheneos-has-been-ported-to-android-17-and-official-releases-are-coming-soon",
@@ -278,7 +352,7 @@
       "similarity": null
     },
     {
-      "rank": 35,
+      "rank": 41,
       "score": 58.0,
       "title": "Android 17 starts hitting Pixel phones and watches today",
       "url": "https://arstechnica.com/gadgets/2026/06/android-17-starts-hitting-pixel-phones-and-watches-today/",
@@ -286,7 +360,7 @@
       "similarity": null
     },
     {
-      "rank": 36,
+      "rank": 42,
       "score": 57.0,
       "title": "Humiliating IIS servers for fun and jail time",
       "url": "https://mll.sh/humiliating-iis-servers-for-fun-and-jail-time/",
@@ -294,7 +368,15 @@
       "similarity": null
     },
     {
-      "rank": 37,
+      "rank": 43,
+      "score": 57.0,
+      "title": "Using Scroll-Driven Animations for Opposing Scroll Directions",
+      "url": "https://css-tricks.com/scroll-driven-animations-opposing-scroll-directions/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 44,
       "score": 57.0,
       "title": "Building a design system specced for engineers and agents",
       "url": "https://evilmartians.com/chronicles/building-a-design-system-specced-for-engineers-and-agents",
@@ -302,7 +384,7 @@
       "similarity": null
     },
     {
-      "rank": 38,
+      "rank": 45,
       "score": 57.0,
       "title": "LLMs Are Complicated Now",
       "url": "https://ianbarber.blog/2026/06/19/llms-are-complicated-now/",
@@ -310,7 +392,7 @@
       "similarity": null
     },
     {
-      "rank": 39,
+      "rank": 46,
       "score": 57.0,
       "title": "Local Qwen isn't a worse Opus, it's a different tool",
       "url": "https://blog.alexellis.io/local-ai-is-not-opus/",
@@ -318,7 +400,7 @@
       "similarity": null
     },
     {
-      "rank": 40,
+      "rank": 47,
       "score": 57.0,
       "title": "Agentic Code Review",
       "url": "https://addyosmani.com/blog/agentic-code-review/",
@@ -326,7 +408,7 @@
       "similarity": null
     },
     {
-      "rank": 41,
+      "rank": 48,
       "score": 57.0,
       "title": "Building AI Agents for AR Glasses and XR Devices with NVIDIA XR AI",
       "url": "https://developer.nvidia.com/blog/building-ai-agents-for-ar-glasses-and-xr-devices-with-nvidia-xr-ai/",
@@ -334,7 +416,7 @@
       "similarity": null
     },
     {
-      "rank": 42,
+      "rank": 49,
       "score": 57.0,
       "title": "Show HN: We post-trained a model that pen tests instead of refusing",
       "url": "https://www.argusred.com/cli",
@@ -342,7 +424,7 @@
       "similarity": null
     },
     {
-      "rank": 43,
+      "rank": 50,
       "score": 57.0,
       "title": "Replit is now available in Claude",
       "url": "https://replit.com/blog/replit-claude",
@@ -350,7 +432,7 @@
       "similarity": null
     },
     {
-      "rank": 44,
+      "rank": 51,
       "score": 57.0,
       "title": "Show HN: Make PDFs look scanned (CLI or in the browser via WASM)",
       "url": "https://github.com/overflowy/make-look-scanned",
@@ -358,7 +440,7 @@
       "similarity": null
     },
     {
-      "rank": 45,
+      "rank": 52,
       "score": 57.0,
       "title": "SpaceX to acquire the AI coding startup Cursor for $60 billion",
       "url": "https://www.cnbc.com/2026/06/16/spacex-spcx-cursor-acquisition-ipo.html",
@@ -366,7 +448,31 @@
       "similarity": null
     },
     {
-      "rank": 46,
+      "rank": 53,
+      "score": 57.0,
+      "title": "Google Sets Sept. 30 Deadline for Android Developer Verification in Four Countries",
+      "url": "https://thehackernews.com/2026/06/google-sets-sept-30-deadline-for.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 54,
+      "score": 57.0,
+      "title": "Pledging Another $400k to the Zig Software Foundation",
+      "url": "https://mitchellh.com/writing/zig-donation-2026",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 55,
+      "score": 57.0,
+      "title": "23 ClawHub plugins squatting official scopes expose AI registry security gaps",
+      "url": "https://www.helpnetsecurity.com/2026/06/22/clawhub-code-executing-plugins-video/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 56,
       "score": 57.0,
       "title": "A 27-Year-Old Authentication Bypass in OpenBSD's PPP Stack",
       "url": "https://blog.argus-systems.ai/blog/openbsd-pap-27-year-auth-bypass.html",
@@ -374,23 +480,15 @@
       "similarity": null
     },
     {
-      "rank": 47,
-      "score": 56.0,
-      "title": "Good results fine tuning a local LLM like Qwen 3:0.6B to categorize questions",
-      "url": "https://www.teachmecoolstuff.com/viewarticle/fine-tuning-a-local-llm-to-categorize-questions",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 48,
+      "rank": 57,
       "score": 56.0,
       "title": "When I reject AI code even if it works",
       "url": "https://vinibrasil.com/when-i-reject-ai-code-even-if-it-works/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 11,
+      "similarity": 1.0
     },
     {
-      "rank": 49,
+      "rank": 58,
       "score": 56.0,
       "title": "$10,000,000 on the line: how we measure Devin's engineering output",
       "url": "https://x.com/ryanbai1412/status/2065466603358306470",
@@ -398,7 +496,7 @@
       "similarity": null
     },
     {
-      "rank": 50,
+      "rank": 59,
       "score": 56.0,
       "title": "Framer 3.0",
       "url": "https://www.framer.com/updates/framer-3",
@@ -406,7 +504,7 @@
       "similarity": null
     },
     {
-      "rank": 51,
+      "rank": 60,
       "score": 56.0,
       "title": "Vercel Connect",
       "url": "https://vercel.com/blog/introducing-vercel-connect",
@@ -414,7 +512,7 @@
       "similarity": null
     },
     {
-      "rank": 52,
+      "rank": 61,
       "score": 56.0,
       "title": "AWS announces AWS Blocks, an open-source framework for composing application backends on AWS (Preview)",
       "url": "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-blocks-preview/",
@@ -422,15 +520,7 @@
       "similarity": null
     },
     {
-      "rank": 53,
-      "score": 56.0,
-      "title": "Claude Code now supports artifacts",
-      "url": "https://claude.com/blog/artifacts-in-claude-code",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 54,
+      "rank": 62,
       "score": 56.0,
       "title": "Malicious JetBrains Marketplace Plugins Steal AI API Keys From Developers",
       "url": "https://www.bleepingcomputer.com/news/security/malicious-jetbrains-marketplace-plugins-steal-ai-api-keys-from-developers/",
@@ -438,7 +528,7 @@
       "similarity": null
     },
     {
-      "rank": 55,
+      "rank": 63,
       "score": 56.0,
       "title": "\uc798\ubabb\ub41c Claude.md\uac00 AI\ub97c \ub9dd\uce5c\ub2e4\u2026\uc5f0\uad6c\uc9c4\uc774 \uaf3d\uc740 \uc124\uc815 \ud30c\uc77c 6\ub300 \ubb38\uc81c",
       "url": "https://www.cio.com/article/4187601/%ec%9e%98%eb%aa%bb%eb%90%9c-claude-md%ea%b0%80-ai%eb%a5%bc-%eb%a7%9d%ec%b9%9c%eb%8b%a4%ec%97%b0%ea%b5%ac%ec%a7%84%ec%9d%b4-%ea%bc%bd%ec%9d%80-%ec%84%a4%ec%a0%95-%ed%8c%8c%ec%9d%bc-6%eb%8c%80.html",
@@ -446,7 +536,7 @@
       "similarity": null
     },
     {
-      "rank": 56,
+      "rank": 64,
       "score": 56.0,
       "title": "Open-source Vulkan driver NVK gains experimental DLSS support \u2014 bringing Nvidia\u2019s upscaling tech to Linux via imported CUDA binaries",
       "url": "https://www.tomshardware.com/pc-components/gpu-drivers/open-source-nvidia-vulkan-driver-nvk-gains-experimental-dlss-support-by-importing-pre-baked-cuda-binaries",
@@ -454,7 +544,7 @@
       "similarity": null
     },
     {
-      "rank": 57,
+      "rank": 65,
       "score": 56.0,
       "title": "Ramp SWE-Bench: a private, production-grounded coding benchmark",
       "url": "https://x.com/RampLabs/status/2065485806605619304",
@@ -462,7 +552,7 @@
       "similarity": null
     },
     {
-      "rank": 58,
+      "rank": 66,
       "score": 56.0,
       "title": "pg_kpart version 1.0",
       "url": "https://www.postgresql.org/about/news/pg_kpart-version-10-3316/",
@@ -470,23 +560,15 @@
       "similarity": null
     },
     {
-      "rank": 59,
-      "score": 55.0,
-      "title": "How to Make AI Agents Follow Your Design System",
-      "url": "https://www.builder.io/blog/how-to-make-ai-agents-follow-your-design-system",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 60,
+      "rank": 67,
       "score": 55.0,
       "title": "There is minimal downside to switching to open models",
       "url": "https://www.marble.onl/posts/cancel_claude.html",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 3,
+      "similarity": 1.0
     },
     {
-      "rank": 61,
+      "rank": 68,
       "score": 55.0,
       "title": "The Mythical Agent-Month",
       "url": "https://wesmckinney.com/blog/mythical-agent-month/",
@@ -494,15 +576,15 @@
       "similarity": null
     },
     {
-      "rank": 62,
+      "rank": 69,
       "score": 55.0,
-      "title": "Announcing Stack Overflow for Agents",
-      "url": "https://stackoverflow.blog/2026/06/10/announcing-stack-overflow-for-agents/",
+      "title": "Lisp in the Rust Type System",
+      "url": "https://github.com/playX18/lisp-in-types/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 63,
+      "rank": 70,
       "score": 55.0,
       "title": "A 3D voxel game engine written in APL",
       "url": "https://github.com/namgyaaal/avoxelgame",
@@ -510,17 +592,55 @@
       "similarity": null
     },
     {
-      "rank": 64,
+      "rank": 71,
       "score": 55.0,
       "title": "I Stored a Website in a Favicon",
       "url": "https://www.timwehrle.de/blog/i-stored-a-website-in-a-favicon/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 1,
+      "similarity": 1.0
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.08333333333333333,
+    "25": 0.08333333333333333,
+    "50": 0.16666666666666666,
+    "100": 0.4166666666666667,
+    "71": 0.4166666666666667
+  },
+  "hits_at": {
+    "10": 1,
+    "25": 1,
+    "50": 2,
+    "100": 5,
+    "71": 5
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://hawksley.dev/blog/json-ld-explained-for-personal-websites/",
+    "https://www.timwehrle.de/blog/i-stored-a-website-in-a-favicon/",
+    "https://martinfowler.com/articles/reliable-llm-bayer.html",
+    "https://www.marble.onl/posts/cancel_claude.html",
+    "https://newsletter.kentbeck.com/p/hey-n00b-we-didnt-hire-you-to-complete",
+    "https://blog.cloudflare.com/temporary-accounts/",
+    "https://brandur.org/minimum-viable-unit",
+    "https://clickhouse.com/blog/open-source-10",
+    "https://fosterelli.co/developers-dont-understand-cors",
+    "https://ploy.ai/blog/ploy-raises-27m",
+    "https://www.mooreds.com/wordpress/archives/3518",
+    "https://vinibrasil.com/when-i-reject-ai-code-even-if-it-works/"
+  ],
+  "tldr_domains": [
+    "hawksley.dev",
+    "timwehrle.de",
+    "martinfowler.com",
+    "marble.onl",
+    "newsletter.kentbeck.com",
+    "blog.cloudflare.com",
+    "brandur.org",
+    "clickhouse.com",
+    "fosterelli.co",
+    "ploy.ai",
+    "mooreds.com",
+    "vinibrasil.com"
+  ]
 }

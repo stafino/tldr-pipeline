@@ -1,9 +1,31 @@
 {
   "date": "2026-06-22",
   "newsletter": "tldr_devops",
-  "fetched_at": "2026-06-22T08:08:39.683220+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-06-22T15:04:56.999942+00:00",
+  "tldr_titles": [
+    "New usage analytics and updated spend controls for enterprises",
+    "Temporary Cloudflare Accounts for AI agents",
+    "Introducing the Cloudflare One stack: agent-powered deployment",
+    "I am dreading our LLM-written incident report future",
+    "Production-Ready Autonomous Incident Resolution with AWS DevOps Agent (now GA) and Datadog MCP Server",
+    "One vulnerability view: From scanner coverage to AI governance",
+    "Ten years of ClickHouse in open source",
+    "Deploying Fastly's Next-Gen WAF with Google Cloud Service Extensions to Help Secure Traffic at Scale",
+    "Accelerating agentic development and incident resolution with New Relic AI + AWS",
+    "Announcing Amazon EC2 G7 instances accelerated by NVIDIA RTX PRO 4500 Blackwell Server Edition GPUs"
+  ],
+  "tldr_matched": [
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -58,8 +80,8 @@
       "score": 63.0,
       "title": "Temporary Cloudflare accounts for AI agents",
       "url": "https://blog.cloudflare.com/temporary-accounts/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 1,
+      "similarity": 1.0
     },
     {
       "rank": 8,
@@ -111,6 +133,14 @@
     },
     {
       "rank": 14,
+      "score": 59.0,
+      "title": "Telemetry that matters: Designing sustainable, high-impact observability pipelines",
+      "url": "https://www.cncf.io/blog/2026/06/22/telemetry-that-matters-designing-sustainable-high-impact-observability-pipelines/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 15,
       "score": 58.0,
       "title": "Epoll vs. io_uring in Linux",
       "url": "https://sibexi.co/posts/epoll-vs-io_uring/",
@@ -118,7 +148,7 @@
       "similarity": null
     },
     {
-      "rank": 15,
+      "rank": 16,
       "score": 58.0,
       "title": "Why cloud native belongs at the heart of agentic AI: Lessons from building a multi-agent security platform on Kubernetes",
       "url": "https://www.cncf.io/blog/2026/06/17/why-cloud-native-belongs-at-the-heart-of-agentic-ai-lessons-from-building-a-multi-agent-security-platform-on-kubernetes/",
@@ -126,7 +156,7 @@
       "similarity": null
     },
     {
-      "rank": 16,
+      "rank": 17,
       "score": 58.0,
       "title": "Agent Beacon: Open-source telemetry layer for AI agents",
       "url": "https://www.helpnetsecurity.com/2026/06/22/agent-beacon-open-source-telemetry-layer-ai-agents/",
@@ -134,7 +164,7 @@
       "similarity": null
     },
     {
-      "rank": 17,
+      "rank": 18,
       "score": 58.0,
       "title": "Vercel Connect",
       "url": "https://vercel.com/blog/introducing-vercel-connect",
@@ -142,7 +172,7 @@
       "similarity": null
     },
     {
-      "rank": 18,
+      "rank": 19,
       "score": 57.0,
       "title": "Bootimus \u2013 A Self-Contained PXE and HTTP Boot Server",
       "url": "https://bootimus.com",
@@ -150,9 +180,43 @@
       "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.1,
+    "25": 0.1,
+    "50": 0.1,
+    "100": 0.1,
+    "19": 0.1
+  },
+  "hits_at": {
+    "10": 1,
+    "25": 1,
+    "50": 1,
+    "100": 1,
+    "19": 1
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://openai.com/index/chatgpt-enterprise-spend-controls/",
+    "https://blog.cloudflare.com/temporary-accounts/",
+    "https://blog.cloudflare.com/cloudflare-one-stack/",
+    "https://surfingcomplexity.blog/2026/06/19/i-am-dreading-our-llm-written-incident-report-future/",
+    "https://aws.amazon.com/blogs/devops/production-ready-autonomous-incident-resolution-with-aws-devops-agent-now-ga-and-datadog-mcp-server/",
+    "https://about.gitlab.com/blog/one-vulnerability-view/",
+    "https://clickhouse.com/blog/open-source-10",
+    "https://www.fastly.com/blog/deploying-fastly-next-gen-waf-google-cloud-service-extensions-secure-traffic",
+    "https://newrelic.com/blog/news/new-relic-ai-aws",
+    "https://aws.amazon.com/blogs/aws/announcing-amazon-ec2-g7-instances-accelerated-by-nvidia-rtx-pro-4500-blackwell-server-edition-gpus/"
+  ],
+  "tldr_domains": [
+    "openai.com",
+    "blog.cloudflare.com",
+    "blog.cloudflare.com",
+    "surfingcomplexity.blog",
+    "aws.amazon.com",
+    "about.gitlab.com",
+    "clickhouse.com",
+    "fastly.com",
+    "newrelic.com",
+    "aws.amazon.com"
+  ]
 }

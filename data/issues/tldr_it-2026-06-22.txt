@@ -10,13 +10,13 @@ Microsoft links Mastra AI supply chain attack to North Korean hackers (5 minute 
 
 (blurb not generated)
 
-Microsoft’s June update fixed 208 security flaws and introduced a cascade of new bugs across all Windows versions (5 minute read)
-
-(blurb not generated)
-
 New attack turned Microsoft 365 Copilot into 1-click data theft tool (5 minute read)
 
 (blurb not generated)
+
+Tesco races to migrate 40,000 servers away from VMware amid licensing spat (1 minute read)
+
+Tesco is migrating roughly 40,000 servers off VMware "at exceptional pace," targeting completion by end of 2027, after filing a 2025 breach-of-contract suit alleging Broadcom failed to honor perpetual licenses it bought in 2021 for vSphere Foundation, Cloud Foundation, and Tanzu. The retailer seeks $130M in damages and says it has been forced into costlier alternatives with reduced functionality, marking one of the largest post-Broadcom VMware exits to date.
 
 Why Use App-Level Auth When Every Database Has Auth? (Splunk Enterprise CVE-2026-20253 Pre-Auth RCE) (5 minute read)
 
@@ -30,13 +30,33 @@ FortiBleed Leak Exposes Fortinet VPN Credentials for 73K Devices (5 minute read)
 
 (blurb not generated)
 
+Microsoft tells Windows users to get ready for 26H2 – unless they're on 26H1 (1 minute read)
+
+Microsoft told Windows customers to begin preparing for the 26H2 feature update, while carving out an exception for systems already running 26H1, which stay on their current servicing track. The split messaging complicates upgrade planning for IT teams managing mixed fleets, who now have to map which devices target 26H2 and which sit on 26H1 before scheduling deployment rings.
+
+Decades-Old Squid Proxy Flaw ‘Squidbleed’ Can Expose User Data (1 minute read)
+
+Researchers at Calif.io disclosed Squidbleed (CVE-2026-47729), a Heartbleed-style memory leak in the Squid open source proxy that has persisted since 1997 and can expose other users' cleartext HTTP request data, including credentials, session tokens, and API keys. The bug is patched in Squid 7.6 and 8 and matters most in shared-proxy environments like corporate networks and public Wi-Fi, where IT teams should patch or disable FTP support.
+
+Copilot Cowork is now generally available: Everything you need to know, including pricing, usage limits, and new features (1 minute read)
+
+Microsoft made Copilot Cowork generally available worldwide, integrating Anthropic's Claude Cowork into Microsoft 365 Copilot with new model choice, plugin extensibility, and cost-management controls. The launch hands enterprises a task-automating agent that can manage files and send emails on a worker's behalf, and its arrival has already pressured dedicated SaaS vendors whose functions it threatens to absorb.
+
+New Exploit Bypasses Apple’s Boot Defenses, Affects Millions of iPhones (1 minute read)
+
+European research firm Paradigm Shift disclosed Usbliter8, an unpatchable BootROM exploit in Apple's SecureROM that grants full code execution before the OS loads on iPhones with A12 and A13 chips, including the XS, XR, and 11, plus S4 and S5 Apple Watches. The flaw requires physical USB access and cannot reach Secure Enclave-protected user data, but it hands forensics vendors a durable unlock path on millions of 2018-2019 devices that no patch can close.
+
 Sweeping Credential-Harvesting Heist Compromises 30K+ Fortinet Devices (5 minute read)
 
 (blurb not generated)
 
-Samsung Electronics brings ChatGPT and Codex to employees (5 minute read)
+Samsung Electronics brings ChatGPT and Codex to employees (1 minute read)
 
-(blurb not generated)
+Samsung Electronics deployed ChatGPT Enterprise and Codex to employees worldwide, making it one of OpenAI's largest enterprise rollouts to date. The deal embeds OpenAI's models and coding agent directly into a global manufacturer's workflows, expanding OpenAI's enterprise footprint against Microsoft Copilot and Google Gemini in accounts where those incumbents already hold ground.
+
+Cisco widens agentic security with AI identity acquisition (1 minute read)
+
+Cisco agreed to acquire WideField Security and fold its identity, session, and activity telemetry into Splunk's agentic SOC, building on its earlier Galileo and Astrix deals. The buy extends Cisco's push to give Splunk customers unified context across human, machine, and AI-agent activity, deepening the Cisco Data Fabric as a security layer for monitoring autonomous workloads at scale.
 
 Chinese Hackers Hijacked Auth Flow, Spy On Isolated Network for a Decade (5 minute read)
 
@@ -62,32 +82,16 @@ Windows 11 New Media Player Uses 3.5x More RAM, Charges for Popular Video Codecs
 
 (blurb not generated)
 
-Supermarket giant Tesco sues VMware for breach of contract (2025) (5 minute read)
+Klue hack results in data breach at several cybersecurity firms (1 minute read)
 
-(blurb not generated)
-
-AryStinger botnet infected thousands of D-Link routers worldwide (5 minute read)
-
-(blurb not generated)
-
-AryStinger Malware Infects 4,300 Legacy Routers to Build Reconnaissance Proxy Network (1 minute read)
-
-AryStinger malware has infected at least 4,300 legacy routers, mostly D-Link DIR-850L units running Realtek RTL819X chips, turning them into a distributed reconnaissance and proxy network that scans, fingerprints, and tunnels traffic before an attacker breaks in. A second strain hits QNAP NAS boxes through CVE-2025-11837, a flaw patched in November 2025, so unpatched appliances and end-of-life routers remain the exposed surface IT teams need to retire or segment.
-
-Salesforce Data Thefts Continue via Klue App Compromise (5 minute read)
-
-(blurb not generated)
-
-Samsung rolls out ChatGPT Enterprise and Codex to all staff in Korea and DX division staff globally; OpenAI says it's one of its largest enterprise deployments (Kim Su-jeong/CHOSUNBIZ) (5 minute read)
-
-(blurb not generated)
-
-China-Nexus Actor Spies on US Researchers Undetected for a Year (5 minute read)
-
-(blurb not generated)
+Hackers breached Vancouver-based market intelligence vendor Klue on June 12 using a compromised legacy credential, then pulled customer data from connected Salesforce clouds at firms including Gong, Jamf, HackerOne, Snyk, Recorded Future, and Tanium. The breach extends a run of supply-chain attacks on middleware integrators like Gainsight and Salesloft, raising the procurement question of how much third-party data access enterprises grant tools that link directly into their cloud databases.
 
 🧠
 Analysis & Opinions
+
+Lessons from the VMwars – nothing virtual about the Broadcom vs Tesco slugfest (1 minute read)
+
+The author dissects the legal fight between Broadcom and UK retailer Tesco over VMware licensing terms, using it to draw lessons for any enterprise still running virtualized infrastructure post-acquisition. The core argument is that Broadcom's shift to subscription bundles and aggressive audit posture leaves customers with little leverage once they are locked in. The practical takeaway for IT leaders is to model migration costs and contractual exit terms before the next renewal, not after the invoice arrives.
 
 Why Amazon hates 'human-in-the-loop' AI governance (5 minute read)
 
@@ -100,17 +104,13 @@ A modest proposal: Reformat everything to make documents more palatable to AI (5
 🤝
 Launches & Partnerships
 
-Copilot Cowork is now generally available (5 minute read)
-
-(blurb not generated)
-
 AWS WAF adds AI traffic monetization capability to help content owners charge AI bots for content access (5 minute read)
 
 (blurb not generated)
 
-AI 도입 넘어 비용 관리로…오픈AI, 사용량 분석·예산 설정 기능 공개 (5 minute read)
+AI 도입 넘어 비용 관리로…오픈AI, 사용량 분석·예산 설정 기능 공개 (2 minute read)
 
-(blurb not generated)
+OpenAI added spend controls and enhanced usage analytics to ChatGPT Enterprise, giving admins a centralized Global Admin Console that tracks ChatGPT and Codex credit consumption by user, product, and model, plus per-team budgets. The tooling answers enterprise demand for AI cost governance as agent sprawl grows, though Forrester and Gartner analysts note it measures activity rather than tying spend to business outcomes.
 
 OpenAI Introduced Enterprise Usage Analytics (5 minute read)
 
@@ -123,9 +123,9 @@ AWS announces AWS Blocks, an open-source framework for composing application bac
 🎁
 Miscellaneous
 
-Anthropic's Mythos mess just keeps getting more complicated (1 minute read)
+Anthropic's Mythos mess just keeps getting more complicated (5 minute read)
 
-Anthropic disabled its Mythos 5 and Fable 5 models for all customers after the Trump administration issued an export-control order last week barring any foreign national, including Anthropic staff, from using them on national-security grounds. The Register's Kettle podcast digs into Amazon's possible role in the decision and warns that open-weight models will likely match the same capabilities, making the restriction hard to enforce for enterprise buyers caught without access.
+(blurb not generated)
 
 ⚡
 Quick Links
@@ -133,6 +133,10 @@ Quick Links
 New Prinz Eugen ransomware prioritizes recent files for encryption (5 minute read)
 
 (blurb not generated)
+
+Microsoft is building an AI datacenter that "uses less water than a fast food restaurant" (1 minute read)
+
+Microsoft is building project Kilby, a 2GW Texas AI datacenter powered by a 20-year Chevron natural-gas deal and closed-loop cooling.
 
 Google adds Hand gesture verification for reCAPTCHA (5 minute read)
 

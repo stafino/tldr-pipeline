@@ -26,6 +26,10 @@ Epoll vs. io_uring in Linux (5 minute read)
 
 (blurb not generated)
 
+How Claude Mythos found a 15-year-old bug in Mozilla Firefox | Brian Grinstead (1 minute read)
+
+Mozilla distinguished engineer Brian Grinstead points an agentic bug-finding pipeline at Firefox's tens of millions of lines of code, shipping a record month of security fixes that included a 15-year-old bug. He argues the harness matters as much as Anthropic's Mythos model, walking through the goal-loop pattern, an LLM judge that ranks files before spending compute, and a verifier subagent that kills false positives.
+
 When failover isn't safe: Building high-availability PostgreSQL on Kubernetes (5 minute read)
 
 (blurb not generated)
@@ -58,9 +62,13 @@ Inside Claude Managed Agents: Reverse Engineering the Security Boundaries of Ant
 
 (blurb not generated)
 
-Memory Safe Inline Assembly (5 minute read)
+The only scalable delete in Postgres is DROP TABLE (3 minute read)
 
-(blurb not generated)
+The author argues that large DELETEs in Postgres are "work added, not work done," since MVCC leaves dead tuples behind that don't free disk space, force replication overhead, and burden other writers until autovacuum catches up. The recommendation is to design schemas so bulk cleanup can be expressed as a DROP TABLE or TRUNCATE, which reclaim space immediately instead of leaving the heap and indexes to garbage-collect later.
+
+Memory Safe Inline Assembly (1 minute read)
+
+Fil-C, the memory-safe C dialect, now supports GCC/clang inline assembly syntax in a pre-release build, preserving the exact assembly template you write while guaranteeing memory safety. The post details how mistakes that would silently miscompile in standard C, like omitting a `+` constraint or a `cc` clobber, instead degrade to a panic or an illegal instruction trap at worst.
 
 The golden rule of Customizable Select (5 minute read)
 
@@ -70,24 +78,16 @@ Humiliating IIS servers for fun and jail time (5 minute read)
 
 (blurb not generated)
 
+Using Scroll-Driven Animations for Opposing Scroll Directions (1 minute read)
+
+This post shows how to build columns of items scrolling in opposite directions using CSS scroll-driven animations, with no JavaScript required. The author walks through the markup, a CSS mask-based fade at the column edges, and per-column animation-range timing to drive the opposing motion, noting the demo respects reduced-motion settings and currently works in Chrome and Safari.
+
 Building a design system specced for engineers and agents (5 minute read)
-
-(blurb not generated)
-
-Good results fine tuning a local LLM like Qwen 3:0.6B to categorize questions (5 minute read)
-
-(blurb not generated)
-
-How to Make AI Agents Follow Your Design System (5 minute read)
 
 (blurb not generated)
 
 🧠
 Opinions & Advice
-
-Hey, n00b, we didn't hire you to complete tasks (5 minute read)
-
-(blurb not generated)
 
 Who owns your ATProto identity? (5 minute read)
 
@@ -97,9 +97,9 @@ Why is Meta destroying its engineering organization? (5 minute read)
 
 (blurb not generated)
 
-The minimum viable unit of saleable software (1 minute read)
+The minimum viable unit of saleable software (5 minute read)
 
-The author argues that LLMs have shifted the buy-vs-build calculus but not eliminated the case for selling software, since LLM-built systems still demand dozens of feedback loops to reach quality and carry ongoing maintenance cost. His bet on turning the River side project into a business rests on cheap not meaning free, leaving room for polished, well-maintained packages that internal LLM clones rarely match.
+(blurb not generated)
 
 LLMs Are Complicated Now (5 minute read)
 
@@ -121,9 +121,9 @@ $10,000,000 on the line: how we measure Devin's engineering output (5 minute rea
 
 (blurb not generated)
 
-There is minimal downside to switching to open models (5 minute read)
+There is minimal downside to switching to open models (1 minute read)
 
-(blurb not generated)
+Drawing an analogy to the years when running Linux carried real professional risk, the author argues that open-weight LLMs have closed enough of the gap that switching away from Claude and GPT now costs little, a shift prompted by Claude's ID verification rollout. The remaining trade-offs are concrete: open models still trail proprietary ones on leaderboards, and self-hosting to preserve privacy is some combination of expensive, complicated, and slow.
 
 The Mythical Agent-Month (5 minute read)
 
@@ -132,13 +132,21 @@ The Mythical Agent-Month (5 minute read)
 🚀
 Launches & Tools
 
-Deno Desktop (5 minute read)
+Deno Desktop (1 minute read)
 
-(blurb not generated)
+Deno v2.9.0 introduces `deno desktop`, a command that turns any Deno project from a single TypeScript file to a Next.js, SvelteKit, or Vite SSR app into a self-contained, cross-compilable binary bundling the runtime and a web rendering engine. It defaults to the OS webview for small binaries with optional bundled Chromium, swaps socket IPC for in-process bindings, and ships built-in bsdiff auto-update, though it currently runs only in the canary build.
+
+Skip Recompiling 70+ iOS Packages on Every Build (2 minute read)
+
+Expo SDK 56 ships its iOS modules as precompiled XCFrameworks distributed through npm, so apps link prebuilt binaries instead of recompiling React Native core, Expo modules, and native dependencies from source on every clean build. The change works in existing apps with no migration and advances React Native's broader move off Ruby-based CocoaPods, which goes read-only in December 2026, toward Swift Package Manager.
 
 Apple Foundation Models (5 minute read)
 
 (blurb not generated)
+
+PP-OCRv6 on Hugging Face: 50-Language OCR from 1.5M to 34.5M Parameters (5 minute read)
+
+PaddleOCR released PP-OCRv6, a universal OCR model family scaling from 1.5M to 34.5M parameters across tiny, small, and medium tiers, with the small and medium tiers covering 50 languages including Chinese, English, Japanese, and 46 Latin-script languages. The medium tier hits 86.2% detection Hmean and 83.2% recognition accuracy on PaddleOCR's in-house benchmarks, improving on PP-OCRv5_server by 4.6 and 5.1 points respectively, with PaddlePaddle, Transformers, and ONNX Runtime deployment backends.
 
 Loupe – A iOS app that raises awareness about what native apps can see (5 minute read)
 
@@ -160,9 +168,9 @@ Android 17 Expands AI Agent Integration (5 minute read)
 
 (blurb not generated)
 
-Show HN: Recall – Local project memory for Claude Code (5 minute read)
+Show HN: Recall – Local project memory for Claude Code (1 minute read)
 
-(blurb not generated)
+Recall is a local memory plugin for Claude Code that logs each session to an append-only `history.md` and condenses it into a compact `context.md` summary using a classical Python summarizer rather than an LLM call. It solves the cold-start problem without spending model tokens or sending transcripts to any external API, so resuming a project loads from a ~1-2K token digest instead of re-explaining everything each session.
 
 Show HN: TownSquare, a tiny presence layer for websites (5 minute read)
 
@@ -204,20 +212,24 @@ AWS announces AWS Blocks, an open-source framework for composing application bac
 
 (blurb not generated)
 
-Claude Code now supports artifacts (5 minute read)
-
-(blurb not generated)
-
-Announcing Stack Overflow for Agents (5 minute read)
-
-(blurb not generated)
-
 🎁
 Miscellaneous
 
-Hundreds of AI-powered iOS apps found exposing credentials (5 minute read)
+Codex logging bug may write TBs to local SSDs (1 minute read)
 
-(blurb not generated)
+A GitHub issue reports that OpenAI's Codex CLI continuously writes its SQLite feedback logs to disk at a rate of roughly 640 TB/year, enough to exhaust a consumer SSD's rated write endurance in under a year. The reporter traced about 96% of the writes to verbose TRACE-level logging and mirrored telemetry, including high-frequency inotify and websocket payload entries that filtering could eliminate.
+
+North Korean Hackers Blamed for Mastra NPM Supply Chain Attack (1 minute read)
+
+Microsoft attributed last week's Mastra supply chain attack to North Korean group Sapphire Sleet, which compromised an NPM maintainer account and added a malicious dayjs typosquat to 141 packages totaling roughly 8 million weekly downloads. The obfuscated postinstall dropper ran during npm install on Windows, macOS, and Linux, harvesting system data and targeting 160-plus crypto browser extensions, so any workstation or CI/CD pipeline that installed during the June 17 window is exposed.
+
+Hundreds of AI-powered iOS apps found exposing credentials (1 minute read)
+
+Researchers at Wake Forest University analyzed 444 iOS apps with LLM features and found 282, or 64%, exposed exploitable credentials, including 54 plaintext API keys and 136 leaked authentication tokens. The most popular affected app had over 2.3 million ratings, and 55% of leaks routed traffic through custom developer backends, meaning provider-side fixes alone cannot close the gap.
+
+PixelSmash – Critical FFmpeg Vulnerability Turns Media Files into Weapons (1 minute read)
+
+JFrog Security Research disclosed PixelSmash (CVE-2026-8461), a critical heap out-of-bounds write in FFmpeg's MagicYUV decoder that escalates from a crash to reliable remote code execution via a single crafted 50KB AVI file. Because nearly every media app links libavcodec, the blast radius spans Jellyfin, Nextcloud, mpv, Kodi, OBS, and more, with researchers demonstrating full RCE against Jellyfin through an automatic library scan.
 
 GlassWASM: WebAssembly Malware Found in Trojanized Open VSX Extensions (5 minute read)
 
@@ -226,6 +238,14 @@ GlassWASM: WebAssembly Malware Found in Trojanized Open VSX Extensions (5 minute
 SpaceX to acquire the AI coding startup Cursor for $60 billion (5 minute read)
 
 (blurb not generated)
+
+Google Sets Sept. 30 Deadline for Android Developer Verification in Four Countries (1 minute read)
+
+Google will begin enforcing Android developer verification on September 30, 2026, blocking normal installs of apps from unregistered developers on certified devices in Brazil, Indonesia, Singapore, and Thailand, across both Google Play and OEM stores from Samsung, Xiaomi, OPPO, vivo, Honor, and Transsion. The check runs on-device via a new Android Developer Verifier service, hitting independent and open-source channels hardest, with unverified apps installable only through ADB or a deliberately high-friction sideload flow.
+
+Pledging Another $400k to the Zig Software Foundation (1 minute read)
+
+Mitchell Hashimoto pledged another $400,000 to the Zig Software Foundation, bringing his family's total support to $700,000 since an initial 2024 donation. The post defends ZSF's strict no-LLM contribution policy as a legitimate cultural boundary, framing the recent backlash around Bun's Zig fork as a failure of empathy rather than a fault in Zig's approach to maintainership and quality.
 
 Malicious JetBrains Marketplace Plugins Steal AI API Keys From Developers (5 minute read)
 
@@ -246,13 +266,17 @@ Android 17 starts hitting Pixel phones and watches today (5 minute read)
 
 (blurb not generated)
 
+23 ClawHub plugins squatting official scopes expose AI registry security gaps (1 minute read)
+
+Researchers found 23 code-executing ClawHub plugins squatting the official @openclaw and @clawhub scopes while owned by unrelated accounts.
+
 A 27-Year-Old Authentication Bypass in OpenBSD's PPP Stack (5 minute read)
 
 (blurb not generated)
 
-잘못된 Claude.md가 AI를 망친다…연구진이 꼽은 설정 파일 6대 문제 (5 minute read)
+잘못된 Claude.md가 AI를 망친다…연구진이 꼽은 설정 파일 6대 문제 (4 minute read)
 
-(blurb not generated)
+Researchers cataloged six "configuration smells" in Claude.md/Agents.md files, with lint leakage and context bloat the most common.
 
 Open-source Vulkan driver NVK gains experimental DLSS support — bringing Nvidia’s upscaling tech to Linux via imported CUDA binaries (5 minute read)
 
@@ -266,9 +290,13 @@ pg_kpart version 1.0 (5 minute read)
 
 (blurb not generated)
 
-A 3D voxel game engine written in APL (1 minute read)
+Lisp in the Rust Type System (1 minute read)
 
-A developer built an experimental 3D voxel game engine in APL, using the notation to drive a Vulkan, DirectX12, and Metal rendering backend.
+A Rust project implements a Lisp interpreter entirely in the trait system, evaluating recursive functions, lexical scoping, and call/ec at compile time.
+
+A 3D voxel game engine written in APL (5 minute read)
+
+(blurb not generated)
 
 I Stored a Website in a Favicon (5 minute read)
 

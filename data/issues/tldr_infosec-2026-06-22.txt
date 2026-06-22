@@ -6,17 +6,37 @@ TLDR InfoSec 2026-06-22
 🔓
 Attacks & Vulnerabilities
 
+PixelSmash – Critical FFmpeg Vulnerability Turns Media Files into Weapons (1 minute read)
+
+JFrog disclosed PixelSmash (CVE-2026-8461, CVSS 8.8), a heap out-of-bounds write in FFmpeg's MagicYUV decoder that escalates from a crash to reliable RCE when an application processes a single crafted media file. Researchers demonstrated full code execution against Jellyfin and Nextcloud via a 50 KB AVI upload; upgrade FFmpeg now, or disable the MagicYUV decoder at build time if it isn't needed.
+
+New Exploit Bypasses Apple’s Boot Defenses, Affects Millions of iPhones (1 minute read) [flag]
+
+Paradigm Shift disclosed Usbliter8, an unpatchable BootROM exploit in Apple's SecureROM that chains a USB controller bug and a firmware config weakness to trigger an out-of-bounds write and gain full code execution before the OS loads on A12/A13 iPhones and S4/S5 Apple Watches. The attack requires physical USB access and cannot read user data directly since the Secure Enclave stays intact, but PoC code is public and the affected chips cannot be fixed via software, making it most useful to forensics vendors.
+
+Decades-Old Squid Proxy Flaw ‘Squidbleed’ Can Expose User Data (1 minute read)
+
+Squidbleed (CVE-2026-47729), a Heartbleed-style memory leak that has sat in Squid Proxy's FTP parser since 1997, lets an attacker controlling a reachable FTP server read past a buffer boundary into uncleared HTTP request data from other users, exposing credentials, session tokens, and API keys in shared proxy environments. Exposure is limited to cleartext HTTP and TLS-terminating deployments; patches shipped in Squid 8 and 7.6, and disabling unused FTP support mitigates the risk.
+
 Microsoft links Mastra AI supply chain attack to North Korean hackers (5 minute read)
 
 (blurb not generated)
+
+North Korean Hackers Blamed for Mastra NPM Supply Chain Attack (1 minute read)
+
+Microsoft attributed last week's Mastra NPM supply chain attack to North Korean group Sapphire Sleet (BlueNoroff), which compromised the 'ehindero' maintainer account on June 17 and published 141 packages depending on easy-day-js, a dayjs typosquat carrying an obfuscated postinstall dropper. Any workstation or CI/CD pipeline that ran npm install during the 45-minute window should be treated as compromised, given the affected @mastra packages pull roughly 8M weekly downloads.
 
 A backdoor in a LinkedIn job offer (5 minute read)
 
 (blurb not generated)
 
-Hundreds of AI-powered iOS apps found exposing credentials (5 minute read)
+Klue hack results in data breach at several cybersecurity firms (1 minute read)
 
-(blurb not generated)
+Cybercrime group Icarus breached Vancouver-based market intelligence provider Klue on June 12 using a compromised legacy credential tied to an integration tool, stealing customer Salesforce data from firms including HackerOne, Snyk, Recorded Future, Tanium, Jamf, and OneTrust. Icarus has threatened to publish the stolen records, mostly business contact details, on Monday absent a ransom payment, making Klue the latest middleware provider hit in a wave of single-point-of-failure supply-chain attacks alongside Gainsight and Salesloft.
+
+Hundreds of AI-powered iOS apps found exposing credentials (1 minute read)
+
+Researchers at Wake Forest University analyzed 444 iOS apps with LLM features and found 282 (64%) exposing exploitable credentials, including 136 leaking authentication tokens, 92 allowing unauthenticated backend access, and 54 hardcoding plaintext API keys. The leakage was systemic rather than niche, affecting apps with up to 2.3 million ratings, and 55% routed traffic through custom developer backends that provider-side mitigations alone cannot fix.
 
 Users cry foul after AMD stripped memory crypto from its consumer CPUs (5 minute read)
 
@@ -38,9 +58,21 @@ DragonForce Hackers Abuse Microsoft Teams Relays to Hide Backdoor.Turn C2 Traffi
 
 (blurb not generated)
 
-AryStinger Malware Infects 4,300 Legacy Routers to Build Reconnaissance Proxy Network (1 minute read)
+Fortinet Responds to FortiBleed Campaign (1 minute read)
 
-AryStinger malware has infected at least 4,300 legacy routers, exploiting CVE-2013-3307 in Linksys and CVE-2016-5681 in D-Link models to build a distributed reconnaissance and proxy network rather than a DDoS botnet. QiAnXin's XLab reports the pool is mostly D-Link DIR-850L devices, skewing to South Korea and China, with a second Go-based strain hitting QNAP NAS boxes via the patched CVE-2025-11837.
+Fortinet says the FortiBleed campaign harvesting credentials from its firewalls and VPNs exploits no new vulnerability, instead reusing credentials from prior breaches and brute-forcing devices lacking MFA, yielding 86,000 working credentials across 194 countries. Compromised FortiGate customers should terminate admin and VPN sessions, rotate credentials, enforce MFA, and upgrade to releases supporting PBKDF2 hashing of administrator credentials.
+
+New OXLOADER Loader Uses Malicious Google Ads to Deliver CastleStealer (1 minute read)
+
+Elastic Security Labs disclosed REF8372, a financially motivated campaign that uses malicious Google Ads impersonating a verified Ukrainian advertiser to deliver CastleStealer via a new loader dubbed OXLOADER. Victims searching for software like Node.js are redirected to fake sites serving Storj-hosted batch scripts that fetch OXLOADER, which uses control-flow flattening, mixed Boolean-Arithmetic, and DLL side-loading to evade static detection and deploy the .NET stealer.
+
+AryStinger Malware Infects 4,300 Legacy Routers to Build Reconnaissance Proxy Network (5 minute read)
+
+(blurb not generated)
+
+23 ClawHub plugins squatting official scopes expose AI registry security gaps (1 minute read)
+
+Researchers found 23 code-executing plugins published under ClawHub's official @openclaw and @clawhub scopes while owned by unrelated accounts, since the registry never reserved those namespaces to their legitimate owners. Even with non-malicious code, the official-looking scopes are a supply-chain risk that could let an attacker push trusted-seeming plugins to Claude and OpenClaw agents; ClawHub restricted scope ownership after the disclosure.
 
 Humiliating IIS servers for fun and jail time (5 minute read)
 
@@ -54,38 +86,6 @@ Hackers Exploit Gravity SMTP WordPress Plugin Bug to Expose API Keys (5 minute r
 
 (blurb not generated)
 
-Satellite reveals immense scale of GPS signal tampering (5 minute read)
-
-(blurb not generated)
-
-New Prinz Eugen ransomware prioritizes recent files for encryption (5 minute read)
-
-(blurb not generated)
-
-China-Nexus Actor Spies on US Researchers Undetected for a Year (5 minute read)
-
-(blurb not generated)
-
-Ethereum Layer 2 Taiko halts block production following exploit; urges users to withdraw funds (5 minute read)
-
-(blurb not generated)
-
-Salesforce Data Thefts Continue via Klue App Compromise (5 minute read)
-
-(blurb not generated)
-
-Secret Network’s Axelar bridge drained for $4.67 million in infinite-mint exploit that went unnoticed for seven days (5 minute read)
-
-(blurb not generated)
-
-Cyberattack sees crops kept in the ground (5 minute read)
-
-(blurb not generated)
-
-Texas Parks & Wildlife Data Breach Affects 3 Million Individuals (5 minute read)
-
-(blurb not generated)
-
 🧠
 Strategies & Tactics
 
@@ -93,13 +93,25 @@ Build your own vulnerability harness (5 minute read)
 
 (blurb not generated)
 
-Encrypted DNS still tells an eavesdropper where to look (5 minute read)
+How Claude Mythos found a 15-year-old bug in Mozilla Firefox | Brian Grinstead (1 minute read)
 
-(blurb not generated)
+Mozilla distinguished engineer Brian Grinstead detailed the agentic harness behind Firefox's record month of security fixes, including a 15-year-old bug, and argues the pipeline deserves roughly half the credit versus Anthropic's Mythos model. Key components: an LLM judge that scores and ranks files before spending compute, a verifier subagent that kills false positives, and a goal-loop that retries scoped problems past the point a human quits. Humans still review every patch.
+
+Encrypted DNS still tells an eavesdropper where to look (1 minute read)
+
+Encrypted DNS over TLS, HTTPS, QUIC, and CoAP hides query contents but leaves plaintext headers that mark a flow as DNS, letting an eavesdropper on a wireless link single it out to block, profile, or analyze it. A new study trained a Random Forest classifier on 296 IoT scenarios and found addresses, ports, and monotonic counters leak the most. The authors propose eliding headers via SCHC compression and CoAP block-wise transfer to even out packet lengths.
+
+What the Latest ShinyHunters Breaches Reveal About Modern Cyberattacks (1 minute read)
+
+ShinyHunters' latest wave of breaches (University of Nottingham, DentaQuest, 7-Eleven, Medtronic, Wynn Resorts) shows the group rarely exploits software flaws, instead abusing identity: infostealer-harvested credentials, OAuth token theft, MFA fatigue, vishing, help desk impersonation, and overly permissive SaaS and guest-access configs across Salesforce, Snowflake, and Okta. Defenders should enforce phishing-resistant MFA, audit OAuth grants and guest-user permissions, and monitor for anomalous authentication rather than relying on perimeter controls.
 
 MosaicLeaks: Can your research agent keep a secret? (5 minute read)
 
 (blurb not generated)
+
+A Glimpse into the “Search Your Target” Market for Stolen Credentials (1 minute read)
+
+Flare analyzed 470 underground forum posts from January 2025 to June 2026 advertising "search your target" services, a dedicated layer that lets buyers query infostealer databases of tens of billions of lines for credentials matching a specific company, domain, platform, or geography instead of buying bulk combo lists. The brokers sit between infostealer infections and account takeover, offering filtering, deduplication, and formatting into outputs like URL:LOGIN:PASS and MAIL:PASS. Buyer feedback flags a gap between advertised and actual quality, with lower volumes and many invalid or duplicated credentials.
 
 Linux eliminates the strncpy API after six years of work, 360 patches (5 minute read)
 
@@ -132,22 +144,26 @@ Introducing AWS Continuum for security at machine speed (5 minute read)
 
 (blurb not generated)
 
-Agent Beacon: Open-source telemetry layer for AI agents (5 minute read)
+Agent Beacon: Open-source telemetry layer for AI agents (1 minute read)
 
-(blurb not generated)
+Asymptote Labs released Beacon, an open-source (MIT, mostly Go) telemetry layer that configures OpenTelemetry export and hooks for AI coding agents like Claude Code, Codex CLI, and Cursor, then normalizes their file edits, command execution, tool use, and approval decisions into a single JSON event log. It runs locally without an account, binds its dashboard to loopback, offers redaction and retention modes, and can forward events into customer-managed SIEMs.
 
 🎁
 Miscellaneous
 
-NSA director: 'Mythos "broke into almost all of our classified systems in hours" (5 minute read)
+Canada’s Spy Agency Used First-of-Its-Kind Warrant to Clean Botnet-Infected Devices (1 minute read)
 
-(blurb not generated)
+Canada's Federal Court has disclosed that CSIS used a threat reduction warrant for the first time to reach into Canadian-soil servers, SOHO routers, and IoT devices and dismantle two foreign-run botnets, altering and destroying the malicious data without seeking user identities or intercepting content. The court found the threat clearly established and imminent, flagging the energy sector as a target, though the redacted ruling does not attribute the operators beyond foreign-state actors.
+
+NSA director: 'Mythos "broke into almost all of our classified systems in hours" (1 minute read)
+
+The NSA director told The Economist that Anthropic's Mythos model "broke into almost all of our classified systems in hours," a disclosure that surfaced amid the Trump administration's move to block the company from federal work. The account underscores how far offensive AI tooling has advanced inside government red-team exercises, even as the legal fight over Anthropic's access to classified networks remains unresolved.
+
+Google Sets Sept. 30 Deadline for Android Developer Verification in Four Countries (1 minute read)
+
+Google will begin enforcing Android developer verification on September 30, 2026, blocking normal installs of unverified apps on certified devices in Brazil, Indonesia, Singapore, and Thailand across Google Play and OEM stores from Samsung, Xiaomi, OPPO, vivo, Honor, and Transsion. Developers must register a legal identity and sign each app to stay installable; unregistered apps will only reach certified phones via ADB or Google's 24-hour high-friction sideload flow, hitting independent and open-source channels hardest.
 
 White House Issues Memo to Bolster NSS Cybersecurity (5 minute read)
-
-(blurb not generated)
-
-Microsoft’s June update fixed 208 security flaws and introduced a cascade of new bugs across all Windows versions (5 minute read)
 
 (blurb not generated)
 
@@ -159,6 +175,14 @@ Apple is about to make Hide My Email useless (5 minute read)
 
 (blurb not generated)
 
+In a rare joint statement, Five Eyes leaders warn AI models capable of taking down governments and businesses are mere months away, urging leaders to "act now" (Sarah Basford Canales/The Guardian) (1 minute read)
+
+Five Eyes intelligence leaders issued a rare joint statement warning that AI models capable of disabling governments and businesses are months away, urging policymakers to "act now." The statement signals likely near-term regulatory and procurement shifts for security teams, though it offers no specifics on capabilities, timelines, or the controls defenders should put in place.
+
+Cisco widens agentic security with AI identity acquisition (1 minute read)
+
+Cisco announced its intent to acquire WideField Security, a 2023-founded identity-security startup, integrating its technology into the Splunk suite to strengthen agentic SOC capabilities by correlating identity, session, and activity telemetry across human, machine, and AI-agent activity. The deal extends a buying streak that includes Galileo Technologies and Astrix Security, positioning Cisco to sell unified machine- and agent-identity context as autonomous workloads proliferate.
+
 CISA gives federal agencies as little as three days to patch the riskiest bugs (5 minute read)
 
 (blurb not generated)
@@ -166,6 +190,10 @@ CISA gives federal agencies as little as three days to patch the riskiest bugs (
 The UK will scan asylum-seekers’ faces for age checks—despite knowing the tech is flawed (5 minute read)
 
 (blurb not generated)
+
+Professional Athletes and Wearables (1 minute read)
+
+Wearable biometric data collected from professional athletes is emerging as a serious privacy and labor concern, with leagues eyeing commercialization and bettors wanting access to data like a player's overnight heart rate or sleep timing. The author notes the unusual dynamic: unlike most surveillance tech deployed first against people with diminished rights, the surveilled here are wealthy, powerful, and often unionized, with aging and injured players most exposed during contract negotiations.
 
 ⚡
 Quick Links
