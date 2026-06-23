@@ -1,0 +1,179 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR IT 2026-06-23
+
+🚀
+News & Trends
+
+FortiBleed: 86,000 Fortinet Device Credentials Compromised (5 minute read)
+
+(blurb not generated)
+
+Microsoft fixes AutoGen Studio flaw that enabled code execution (1 minute read)
+
+Microsoft patched a vulnerability chain dubbed AutoJack in AutoGen Studio, the GUI for its open-source multi-agent framework, which could let a malicious webpage trick a developer's browsing agent into executing arbitrary PowerShell or Bash commands on the host. The flaw was fixed before any PyPI release, so only developers who built from the main GitHub branch during a narrow window were exposed.
+
+Fortinet: Oracle and other goliaths in firewall fallout as GPU 'democratization' blamed for mass hack (1 minute read)
+
+Attackers compromised roughly 74,000 internet-facing FortiGate devices, nearly half of all publicly exposed Fortinet firewalls, harvesting enterprise credentials from organizations including Oracle, Samsung, Siemens, PwC, Accenture, and a NATO defense contractor. Researchers tied the campaign to a rented 45-GPU cluster used to crack and generate password variants at scale, evidence that cheap on-demand GPU access has lowered the bar for credential attacks on enterprise edge infrastructure.
+
+A new unpatchable flaw in Apple chips opens the door to an iPhone jailbreak (1 minute read)
+
+Paradigm Shift, a Barcelona-based offensive security firm, published "usbliter8," a proof-of-concept exploit for an unpatchable Boot ROM flaw in Apple's A12 and A13 chips that affects the iPhone XS, XR, and 11. Because the flaw sits in immutable silicon, no software update can fix it, leaving hardware refresh the only mitigation for older fleets and handing forensics vendors like Cellebrite another physical-access path into seized devices.
+
+FFmpeg fixes PixelSmash flaw in widely used video decoder (1 minute read)
+
+FFmpeg patched PixelSmash (CVE-2026-8461), a high-severity heap out-of-bounds write in the MagicYUV decoder that JFrog used to achieve remote code execution on a Jellyfin media server through its normal library-scan pipeline. Any application built on libavcodec is exposed, including Kodi, OBS Studio, Nextcloud, PhotoPrism, and Linux desktop thumbnail generators, so IT teams should prioritize updating FFmpeg across self-hosted media and file-preview infrastructure.
+
+New attack turned Microsoft 365 Copilot into 1-click data theft tool (5 minute read)
+
+(blurb not generated)
+
+FortiBleed campaign used custom FortiGate sniffer to steal credentials (1 minute read)
+
+SOCRadar reported that the FortiBleed campaign has compromised FortiGate firewalls since at least February 2026 using "FortigateSniffer," a Golang tool that abuses FortiOS's built-in diagnose sniffer command to harvest RADIUS, NTLM, Kerberos, and LDAP credentials across 24 protocols. The finding contradicts Fortinet's claim that the incident is only a collection of old leaked credentials, indicating an active operation against more than 430,000 internet-exposed devices.
+
+Microsoft and Chevron plan one of the largest gas-powered data center projects in US (1 minute read)
+
+Microsoft and Chevron will develop Project Kilby, a 2.67-gigawatt natural gas plant in West Texas dedicated to a Microsoft-operated AI and cloud data center under a 20-year power purchase agreement. The dedicated buildout signals that Microsoft is prioritizing guaranteed AI compute capacity over its 2030 carbon-neutral pledge, since the plant could emit more than 13 million tons of CO2 annually.
+
+Oracle Cut 21,000 Jobs in 12 Months, Says AI Replaced Some Roles (1 minute read)
+
+Oracle cut 21,000 jobs over the past 12 months, a deeper reduction than previously disclosed, attributing some of the eliminated roles to AI taking over the work. The cuts land as Oracle pours capital into AI infrastructure, signaling a shift toward funding data-center buildout over headcount as it leans on automation to hold down operating costs.
+
+Dell launches AI server based on Nvidia Vera Rubin GPUs (3 minute read)
+
+Dell launched the PowerEdge XE8812, a liquid-cooled AI server built on Nvidia's Vera Rubin NVL4 architecture that scales to 144 GPUs per rack and anchors the Dell AI Factory with Nvidia preconfigured stack of compute, PowerScale and PowerStore storage, networking, and Nvidia AI Enterprise software. The system adds 50% more memory per socket and GPU versus the prior GB200 generation, letting enterprises run larger models and simulations entirely in-memory without staging or swapping.
+
+Tesco races to migrate 40,000 servers away from VMware amid licensing spat (5 minute read)
+
+(blurb not generated)
+
+Amazon hopes to challenge Nvidia more directly by selling its AI chips (5 minute read)
+
+(blurb not generated)
+
+The memory crisis is getting so bad that even retro RAM prices are going to the Moon (1 minute read)
+
+Memory prices are climbing across the board as AI infrastructure demand soaks up DRAM and NAND supply, with the squeeze now reaching even legacy and retro RAM formats that normally sit outside the data center supply chain. Enterprise buyers face higher costs and longer lead times on server memory and storage refreshes, pushing IT teams to lock in procurement early or stretch existing hardware further into 2026.
+
+FortiBleed Leak Exposes Fortinet VPN Credentials for 73K Devices (5 minute read)
+
+(blurb not generated)
+
+Microsoft says Windows 11 26H2 is coming soon, details upgrade process (1 minute read)
+
+Microsoft confirmed Windows 11 26H2 as its next annual feature update and detailed a shared servicing model that lets devices on 24H2 and 25H2 upgrade through a 174 KB enablement package and a restart, versus a 6.5 GB full install. Systems on 23H2 and older sit on a different servicing branch and need the full upgrade, with no changes to hardware requirements and general availability expected in the fall.
+
+Microsoft tells Windows users to get ready for 26H2 – unless they're on 26H1 (5 minute read)
+
+(blurb not generated)
+
+Filing: Oracle's global workforce fell by 21,000 employees in the past 12 months to 141,000 as of May 31; the company says AI adoption has led to reductions (Brody Ford/Bloomberg) (1 minute read)
+
+Oracle's global headcount fell by 21,000 over the past 12 months to 141,000 as of May 31, with the company attributing the reductions to AI adoption in a recent filing. The cuts land as Oracle ramps capital spending on AI data center capacity, signaling a bet that automation can offset payroll while infrastructure costs climb.
+
+Decades-Old Squid Proxy Flaw ‘Squidbleed’ Can Expose User Data (5 minute read)
+
+(blurb not generated)
+
+ShapedPlugin WordPress Pro Plugins Backdoored in Supply Chain Attack (1 minute read)
+
+Attackers compromised ShapedPlugin's build and distribution pipeline, injecting backdoor code into Pro releases of Product Slider Pro for WooCommerce, Real Testimonials Pro, and Smart Post Show Pro delivered through the vendor's licensed update channels, with one flaw rated CVSS 10.0. The malware harvests wp-config.php credentials, admin accounts, SMTP secrets, and recent WooCommerce order data, making this a procurement-level reminder to audit third-party plugin supply chains, not just core platforms.
+
+Linux and Secure Boot certificate expiration (2025) (1 minute read)
+
+Microsoft's 2011 key used to sign the shim UEFI bootloader for Secure Boot expires in September, after which it will no longer sign the first-stage loader that Linux distributions rely on to boot under Secure Boot. A replacement key has existed since 2023 but is absent from many systems and may require a vendor firmware update, leaving distributors and IT teams to handle new installs and patch coverage before the deadline.
+
+🧠
+Analysis & Opinions
+
+Lessons from the VMwars – nothing virtual about the Broadcom vs Tesco slugfest (5 minute read)
+
+(blurb not generated)
+
+Why Amazon hates 'human-in-the-loop' AI governance (5 minute read)
+
+(blurb not generated)
+
+A modest proposal: Reformat everything to make documents more palatable to AI (5 minute read)
+
+(blurb not generated)
+
+🤝
+Launches & Partnerships
+
+Announcing Amazon EC2 G7 instances accelerated by NVIDIA RTX PRO 4500 Blackwell Server Edition GPUs (1 minute read)
+
+AWS released its EC2 G7 instances into general availability, becoming the first major cloud provider to offer NVIDIA RTX PRO 4500 Blackwell Server Edition GPUs paired with custom sixth-gen Intel Xeon processors. The instances deliver up to 4.6x AI inference and 2.1x graphics performance over G6, with 32GB of memory per GPU, 700 Gbps of EFA networking, and up to eight GPUs per node for inference, rendering, and VDI workloads.
+
+Production-Ready Autonomous Incident Resolution with AWS DevOps Agent (now GA) and Datadog MCP Server (5 minute read)
+
+AWS made its DevOps Agent generally available alongside the now-GA Datadog MCP Server, giving teams a production-ready path to autonomous incident triage and resolution across AWS, multicloud, and on-premises environments. The integration lets AI agents pull Datadog observability data through the Model Context Protocol instead of brittle API calls, positioning AWS and Datadog as the joint stack for automated incident response and cutting on-call resolution from hours to minutes.
+
+AWS enters the context layer race with a graph that learns from agents, not manual curation (2 minute read)
+
+AWS announced a context intelligence stack for AI agents, centered on AWS Context, a knowledge graph service that infers data relationships automatically and refines itself based on how agents use it, alongside GA of S3 Annotations and a preview of skill assets in Glue Data Catalog. Metadata publishes in open Apache Iceberg format with IAM and Lake Formation permissions inherited per query, positioning AWS against context-layer rivals on existing enterprise controls.
+
+AWS WAF adds AI traffic monetization capability to help content owners charge AI bots for content access (5 minute read)
+
+(blurb not generated)
+
+AWS Continuum offers devs help with securing code (2 minute read)
+
+AWS launched Continuum, a service that continuously discovers, investigates, and remediates code vulnerabilities across first-party and third-party software, with an enforce mode that autonomously fixes lapses once it learns an environment's guardrails. The service pulls penetration testing and code scanning from AWS's existing Security Agent and adds threat modeling that generates STRIDE-format models from source or design docs, positioning AWS to keep security triage pace with agentic development.
+
+Troubleshoot formula errors quickly with Gemini in Google Sheets (1 minute read)
+
+Google added Gemini-powered formula error troubleshooting to Google Sheets, surfacing explanations and fixes for broken formulas directly in the spreadsheet. The feature is on by default where Gemini for Workspace in Sheets is enabled, covering Business and Enterprise Standard and Plus tiers, with a gradual rollout running up to 15 days from June 22.
+
+AI 도입 넘어 비용 관리로…오픈AI, 사용량 분석·예산 설정 기능 공개 (5 minute read)
+
+(blurb not generated)
+
+Introducing the Cloudflare One stack: agent-powered deployment (1 minute read)
+
+Cloudflare released the Cloudflare One stack, a set of agent skills that configure, deploy, and manage a customer's Zero Trust environment and map an existing security suite into Cloudflare One. The toolkit packages Cloudflare's SASE migration expertise into prescriptive guidance any agent can execute, reducing the manual work of decoding network topology and policy intent during a Zero Trust rollout.
+
+Boost BigQuery with Python: Managed Python UDFs now generally available (2 minute read)
+
+Google made BigQuery Managed Python UDFs generally available, letting data teams run custom Python with libraries like NumPy, pandas, and scikit-learn directly inside SQL queries on serverless, auto-scaling infrastructure. The functions are now fully supported for production workloads and integrated into BigQuery's billing SKUs, removing the need to maintain separate containers or compute services to run Python helper logic against enterprise data.
+
+Tesla plans to sell modular AI data center hardware called ‘Megapod' (5 minute read)
+
+Tesla filed an intent-to-use trademark for "Megapod," a modular, self-contained AI data center system bundling servers, networking, power distribution, and cooling, plus management software, less than a year after it killed its Dojo training computer. The product would compete directly with Nvidia's GB200 NVL72 and DGX SuperPOD, the rack-scale reference designs that Dell and Supermicro already build on, putting Tesla in a market Nvidia's chips effectively underpin.
+
+AWS announces AWS Blocks, an open-source framework for composing application backends on AWS (Preview) (5 minute read)
+
+(blurb not generated)
+
+🎁
+Miscellaneous
+
+Blinding the Watchmen: Abusing Cloud Logging Services for Defense Evasion and Visibility (5 minute read)
+
+Unit 42 documented attack techniques that target cloud logging services like AWS CloudTrail and Google Cloud Logging, showing how attackers disrupt log flows to evade detection or quietly route copies of audit logs into their own accounts for continuous visibility. The breakdown gives security and cloud-ops teams concrete misconfigurations to harden and specific service-misuse patterns to add to their detection rules.
+
+Anthropic's Mythos mess just keeps getting more complicated (1 minute read)
+
+Anthropic disabled its Mythos 5 and Fable 5 models for all customers after the Trump administration issued an export-control order last week barring any foreign national, including Anthropic staff, from using them on national-security grounds. The Register's Kettle podcast digs into Amazon's possible role in the decision and warns that open-weight models will likely match the same capabilities, making the restriction hard to enforce for enterprise buyers caught without access.
+
+⚡
+Quick Links
+
+Threat Brief: Mitigating Large-Scale Credential Attacks (5 minute read)
+
+Unit 42 details a large-scale password spraying campaign ("FortiBleed") harvesting credentials from internet-exposed Fortinet, Sophos, and MSSQL devices.
+
+Apple's A12 and A13 Chips Facing New Unpatchable Exploit (5 minute read)
+
+Researchers published usbliter8, an unpatchable BootROM exploit affecting Apple's A12 and A13 chips, covering iPhone XS through iPhone 11.
+
+Microsoft is building an AI datacenter that "uses less water than a fast food restaurant" (5 minute read)
+
+(blurb not generated)
+
+Google adds Hand gesture verification for reCAPTCHA (5 minute read)
+
+(blurb not generated)

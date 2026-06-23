@@ -1,0 +1,60 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR Data 2026-06-23
+
+📊
+News & Trends
+
+Snowflake and the Agentic Resource Discovery Specification (5 minute read)
+
+(blurb not generated)
+
+The new database world according to Google: Inexact queries and AI in everything (1 minute read)
+
+Google's database leadership laid out a roadmap built on AI-embedded tooling and "inexact" queries, with a product exec predicting that humans won't directly use data platforms within three to five years. The bet is that agents, not analysts, become the primary query interface, pushing vendors toward natural-language and approximate-result systems rather than the exact, schema-bound SQL that data teams build on today.
+
+🧠
+Deep Dives & Analysis
+
+How we built an internal data analytics agent (5 minute read)
+
+(blurb not generated)
+
+The analytics engineer in 2026: system designer, governance owner, AI context provider (1 minute read)
+
+dbt argues the analytics engineer's job has shifted from writing models to designing the system around them, as AI now handles scaffolding, first-draft docs, and boilerplate tests for the 72% of analytics engineers who code with AI assistance. The remaining work is the judgment AI can't do: defining metric grain, drawing domain boundaries, and structuring the semantic layer so downstream AI queries stay consistent. Governance outputs like contracts, tests, and column-level lineage become the role's measured deliverable.
+
+The semantic debt crisis no one is talking about (1 minute read)
+
+The author argues that organizations carry "semantic debt" alongside technical debt: every metric built without a canonical definition, every filter hardcoded into a dashboard instead of the data layer, is a withdrawal that compounds until three teams present three defensible-but-conflicting numbers for the same metric. The fix is encoding business meaning into the data itself through a semantic layer, which the piece frames as the foundation that makes AI reliable in production rather than a modeling nicety.
+
+When failover isn't safe: Building high-availability PostgreSQL on Kubernetes (5 minute read)
+
+(blurb not generated)
+
+🚀
+Launches & Tools
+
+Amazon S3 annotations: attach rich, queryable context directly to your objects (5 minute read)
+
+(blurb not generated)
+
+Boost BigQuery with Python: Managed Python UDFs now generally available (2 minute read)
+
+Google made BigQuery's Managed Python UDFs generally available, letting teams run custom Python with libraries like NumPy, pandas, and scikit-learn directly inside SQL queries or BigFrames on serverless, auto-scaling compute. BigQuery handles container builds, security patching, and execution, so procedural logic, scientific computation, and external API enrichment that used to need separate infrastructure now run next to the data without managing images or compute services.
+
+AWS enters the context layer race with a graph that learns from agents, not manual curation (2 minute read)
+
+AWS announced a context intelligence stack for AI agents, led by AWS Context, a knowledge graph service that automatically maps relationships across existing data and refines itself based on which sources agents actually use. It publishes all metadata as Apache Iceberg to S3 Tables queryable via Athena, Redshift, or Spark, and ships alongside GA of S3 Annotations and a preview of skill assets in Glue Data Catalog.
+
+Accelerating researchers and developers building multilingual AI with a new open dataset (5 minute read)
+
+(blurb not generated)
+
+⚡
+Quick Links
+
+British Columbia, Time Zones, and Postgres (5 minute read)
+
+(blurb not generated)

@@ -1,0 +1,117 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR DevOps 2026-06-23
+
+📱
+News & Trends
+
+Kubernetes in the Age of AI (5 minute read)
+
+(blurb not generated)
+
+Linux and Secure Boot certificate expiration (2025) (1 minute read)
+
+The Microsoft 2011 key used to sign the shim first-stage UEFI bootloader expires in September, after which Microsoft will stop signing the bootloader that Linux distributions rely on to boot under Secure Boot. A 2023 replacement key exists but is missing from many systems and often requires a vendor firmware update, so the breakage mainly hits new installs on Secure Boot hardware and adds work for distributors and users.
+
+AWS Weekly Roundup: NY Summit recap, Local Zone in Hanoi, Grok 4.3 in Bedrock, price reductions, and more (June 22, 2026) (1 minute read)
+
+AWS recapped its NY Summit, where it introduced Continuum, an AI-native security service for the code vulnerability lifecycle, pushed Bedrock AgentCore to GA with a managed orchestration harness and the new Context service, and added release-gating to its DevOps Agent. The roundup also covers a new Local Zone in Hanoi with S3 and EBS local snapshots for data residency, Grok 4.3 landing in Bedrock, and several price reductions.
+
+🚀
+Opinions & Tutorials
+
+Build your own vulnerability harness (5 minute read)
+
+(blurb not generated)
+
+How We Made Cloud Browsers 3x Cheaper and Faster (5 minute read)
+
+(blurb not generated)
+
+Cell-Based Architecture for Resilient Payment Systems (5 minute read)
+
+(blurb not generated)
+
+How we found a bug in the hyper HTTP library (1 minute read)
+
+Cloudflare engineers spent six weeks tracing why their rearchitected Images binding intermittently returned truncated payloads, 200-status responses that cut a two-megabyte image down to a few hundred kilobytes, only for larger files. The culprit was a race condition in the hyper Rust HTTP library governing how processed image data streamed back to the client. The fix was four lines of code, a reminder that edge-network rollouts surface failure modes invisible under normal load.
+
+Making secret scanning more trustworthy: Reducing false positives at scale (5 minute read)
+
+GitHub partnered with Microsoft Security & AI's Agents Offense team to add LLM-based contextual verification to its secret scanning, reasoning about how a detected value appears in code rather than whether it merely matches a secret-like pattern. The goal is to bring AI-detected secrets closer to the precision GitHub already achieves on provider-pattern detections across billions of pushes. Fewer low-value alerts means less triage toil and more developer trust in the system, without sacrificing coverage.
+
+Blinding the Watchmen: Abusing Cloud Logging Services for Defense Evasion and Visibility (5 minute read)
+
+Unit 42 researchers detail how attackers target cloud logging services like AWS CloudTrail and Google Cloud Logging to blind defenders, breaking down two attack classes: defense evasion that modifies or disables logging resources to execute unnoticed, and continuous visibility that siphons logs into attacker-controlled accounts. The writeup maps the specific configurations and detections platform teams need to catch logging-service tampering before it erases the audit trail you rely on for incident response.
+
+What job interviews taught me about Kubernetes (5 minute read)
+
+(blurb not generated)
+
+Google Cloud publishes a secure MCP-on-GKE guide (5 minute read)
+
+(blurb not generated)
+
+How We Cut Semgrep's Taint Analysis Time by 75% (5 minute read)
+
+(blurb not generated)
+
+Telemetry that matters: Designing sustainable, high-impact observability pipelines (5 minute read)
+
+(blurb not generated)
+
+Why cloud native belongs at the heart of agentic AI: Lessons from building a multi-agent security platform on Kubernetes (5 minute read)
+
+(blurb not generated)
+
+⚒️
+Launches & Tools
+
+Temporary Cloudflare Accounts for AI agents (5 minute read)
+
+(blurb not generated)
+
+Amazon S3 annotations: attach rich, queryable context directly to your objects (5 minute read)
+
+(blurb not generated)
+
+Run isolated sandboxes with full lifecycle control: AWS Lambda introduces MicroVMs (1 minute read)
+
+AWS introduced Lambda MicroVMs, a Firecracker-backed serverless primitive that hands each user or session its own isolated, stateful execution environment with VM-level isolation, near-instant launch and resume, and pause-to-idle pricing. It targets multi-tenant apps that run untrusted user- or AI-generated code, such as coding assistants and analytics platforms, removing the choice between slow-booting VMs and containers that need custom kernel hardening.
+
+Announcing Amazon EC2 G7 instances accelerated by NVIDIA RTX PRO 4500 Blackwell Server Edition GPUs (1 minute read)
+
+AWS made general availability for EC2 G7 instances, the first major cloud offering of NVIDIA RTX PRO 4500 Blackwell Server Edition GPUs, delivering up to 4.6x AI inference and 2.1x graphics performance over G6. Each instance scales to 8 GPUs and 256GB of GPU memory, with 700 Gbps of EFA networking (7x G6) and 7.6TB of local NVMe to keep large models and datasets close to compute.
+
+AWS WAF adds AI traffic monetization capability to help content owners charge AI bots for content access (5 minute read)
+
+(blurb not generated)
+
+GitHub Actions hardens checkout security to block ‘pwn request’ attacks (2 minute read)
+
+GitHub released actions/checkout v7, which now fails workflows that fetch unreviewed fork code under pull_request_target or workflow_run triggers, closing the "pwn request" hole that let attackers run forked code with full workflow privileges and reach repo secrets. The secure-by-default change backports to all supported major versions on July 16, so floating tags like actions/checkout@v4 pick it up automatically while SHA-pinned workflows need a manual bump or Dependabot upgrade.
+
+Introducing the Cloudflare One stack: agent-powered deployment (1 minute read)
+
+Cloudflare released the Cloudflare One stack, a set of agent skills that configure, deploy, and manage a Zero Trust environment and map an existing security suite into Cloudflare One. The toolkit packages migration expertise from thousands of customer deployments, giving agents the network-topology and vendor-configuration context they otherwise lack to operate on SASE infrastructure.
+
+The systemd 261 release brings a software TPM, new OS installer (1 minute read)
+
+systemd 261 shipped with an IMDS subsystem that exposes a local Varlink API for cloud instance metadata, recognizing EC2, Azure, GCE, Hetzner, and Oracle Cloud by their SMBIOS data. The release also adds kexec state preservation via FileDescriptorStorePreserve, a software TPM service backed by IBM's swtpm, and systemd-sysinstall, a Varlink-based textual OS installer.
+
+Server-Side Tools Are Now Available for DigitalOcean Inference Engine (5 minute read)
+
+(blurb not generated)
+
+Agent Beacon: Open-source telemetry layer for AI agents (5 minute read)
+
+(blurb not generated)
+
+Vercel Connect (5 minute read)
+
+(blurb not generated)
+
+One vulnerability view: From scanner coverage to AI governance (3 minute read)
+
+GitLab 19.1 adds a single vulnerability view that enforces any SARIF-emitting third-party scanner across every project under one policy, eliminating the per-project drift that lets new repos ship unscanned for weeks. Third-party findings now flow through GitLab Duo's auto-remediation, with SAST false-positive triage and agentic resolution opening ready-to-merge fixes, plus a beta of AI audit event streaming to track agent behavior.
