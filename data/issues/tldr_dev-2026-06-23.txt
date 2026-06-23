@@ -6,9 +6,9 @@ TLDR Dev 2026-06-23
 🧑‍💻
 Articles & Tutorials
 
-How we found a bug in the hyper HTTP library (5 minute read)
+How we found a bug in the hyper HTTP library (1 minute read)
 
-(blurb not generated)
+Cloudflare engineers spent six weeks tracing intermittent truncation in their Images binding, where larger transformation requests returned a 200 status but delivered only a fraction of the expected image data. The root cause was a race condition in the hyper Rust HTTP library affecting how processed image data streamed back to the client, and the fix came down to four lines of code.
 
 Linux Finally Eliminates The strncpy API After Six Years Of Work, 360+ Patches (5 minute read)
 
@@ -16,11 +16,11 @@ Linux Finally Eliminates The strncpy API After Six Years Of Work, 360+ Patches (
 
 Making secret scanning more trustworthy: Reducing false positives at scale (5 minute read)
 
-(blurb not generated)
+GitHub partnered with Microsoft Security & AI's Agents Offense team to add LLM-based contextual verification to its secret scanning, borrowing the in-context reasoning approach from Agentic Secret Finder to judge whether a detected value is a real exposure rather than just pattern-matching it. The goal is to bring AI-detected generic secrets up to the same precision as provider-pattern detections, cutting low-value alerts that erode developer trust without sacrificing coverage.
 
-Adopting AV1 for Real-Time Communication (RTC) at Scale (5 minute read)
+Adopting AV1 for Real-Time Communication (RTC) at Scale (1 minute read)
 
-(blurb not generated)
+Meta rolled out the AV1 video codec across the majority of mobile devices in its Messenger and WhatsApp real-time calling apps, after introducing it on high-end hardware in 2023. The post details the rate control and error resilience work behind the deployment, citing at least a 20% bitrate reduction over H.264/AVC on low- and mid-range devices and noticeably sharper video at the sub-100 kbps bitrates common in emerging markets.
 
 How we built an internal data analytics agent (5 minute read)
 
@@ -30,25 +30,25 @@ Building reliable agentic AI systems (5 minute read)
 
 (blurb not generated)
 
-The new HTTP QUERY method explained (1 minute read)
+The new HTTP QUERY method explained (5 minute read)
 
-RFC 10008 introduces the HTTP QUERY method, a safe, idempotent verb that carries filter criteria in a request body instead of cramming complex relational queries, deep nesting, and arrays into GET query strings that hit URL length limits and get logged by middleware. The post explains why a GET with a body fails in practice, since proxies and servers inconsistently reject, drop, or honor the body.
+(blurb not generated)
 
 ClickHouse Ingestion at Scale: An Open-Source Zepto Engineering Story (5 minute read)
 
-(blurb not generated)
+Zepto rewrote core parts of the open-source ClickHouse Kafka Connect connector to add buffering and batching logic, boosting ingestion throughput by 45% while eliminating GC pauses and cutting ClickHouse insert pressure. The post traces how Confluent Cloud's managed black box blocked low-level broker and connector tuning at a sustained 10 MB/s, and details the two pull requests Zepto merged back upstream to fix the hidden performance killers.
 
 How Claude Mythos found a 15-year-old bug in Mozilla Firefox | Brian Grinstead (5 minute read)
 
 (blurb not generated)
 
-Habituation at the Gate: Rising Approval and Declining Scrutiny in Human Review of AI Agent Code (1 minute read)
+Habituation at the Gate: Rising Approval and Declining Scrutiny in Human Review of AI Agent Code (5 minute read)
 
-A longitudinal study of 400 repeat reviewers and 11,429 reviews over seven months found that human approval of AI-agent pull requests rose from 30.1% to 36.8% as reviewers gained experience, an effect that persists after controlling for calendar time and PR size. The authors read it as reflexive habituation rather than calibrated trust, since review latency grew 3.5x while inline comment volume fell 22%, meaning reviewers sat longer in queue but inspected code less.
+(blurb not generated)
 
-Beyond Simpson's Paradox: A Cascade of Confounders in AI Agent Pull-Request Co-Authorship (1 minute read)
+Beyond Simpson's Paradox: A Cascade of Confounders in AI Agent Pull-Request Co-Authorship (5 minute read)
 
-The authors analyze 33,596 pull requests from five AI coding agents and show that the apparent co-authorship merge gap (53.8% vs 79.8% pooled) is a Simpson's Paradox driven by Codex dominating 64.9% of the data. After controlling for repository selection and PR structure like commit count, no agent retains a clear co-authorship effect, exposing the pooled statistic as a selection and structure artifact rather than causal evidence.
+(blurb not generated)
 
 When failover isn't safe: Building high-availability PostgreSQL on Kubernetes (5 minute read)
 
@@ -58,17 +58,17 @@ AI Coding Agent Horror Stories: The 13-Hour AWS Outage (5 minute read)
 
 (blurb not generated)
 
-GLM-5.2 – How to Run Locally (5 minute read)
+GLM-5.2 – How to Run Locally (1 minute read)
 
-(blurb not generated)
+Unsloth released Dynamic GGUF quants of Z.ai's GLM-5.2, a 744B-parameter MoE with 40B active parameters and a 1M context window, letting the open model run on local hardware down to a 239GB 2-bit build that fits a 256GB unified-memory Mac. The 2-bit quant holds ~82% accuracy at 84% smaller than the full 1.5TB model, with 4-bit and 5-bit dynamic quants measuring near-lossless on KL divergence.
 
 Shipping huggingface_hub every week with AI, open tools, and a human in the loop (5 minute read)
 
-Hugging Face moved huggingface_hub from a 4-to-6-week release cadence to weekly shipping via a single GitHub Actions workflow built entirely on open-source tools and open-weights models. Mechanical steps like version bumps, tagging, and downstream test branches run automatically, while a human stays in the loop only for release notes and announcements, where judgment matters and no vendor contract or closed model is required.
-
-Codex-maxxing for long-running work (5 minute read)
-
 (blurb not generated)
+
+Codex-maxxing for long-running work (1 minute read)
+
+In this OpenAI whitepaper, Jason Liu lays out strategies for running Codex as a persistent workspace that preserves context and sustains progress across multi-prompt projects. The guide covers breaking goals into verifiable steps, maintaining continuity across parallel workstreams, and deciding when to delegate execution to Codex versus when to keep a human in the loop.
 
 How We Cut Semgrep's Taint Analysis Time by 75% (5 minute read)
 
@@ -80,46 +80,54 @@ I hate compilers (5 minute read)
 
 Don't rely on instructions, use Agent Hooks to enforce guardrails (5 minute read)
 
+The author argues that AGENTS.md and CLAUDE.md instructions are unreliable guardrails because agents ignore them, and shows how Agent Hooks enforce rules deterministically instead. The post walks through two Claude Code hooks: a PreToolUse hook that blocks raw `<input>` tags by exiting with code 2 to feed stderr back as agent feedback, and a Stop hook that prevents the agent from claiming it's done while a design-system ratchet test fails.
+
+On Good Authority: Release-Authority Measurement for Registry-Mediated Package Ecosystems (5 minute read)
+
 (blurb not generated)
-
-I fuzzed my own Supabase RLS — and found a cross-tenant leak (2 minute read)
-
-The author built rlsgrid, an MIT-licensed tool that attacks Supabase and Postgres row-level security by seeding two synthetic tenants and actually executing cross-tenant SELECT, INSERT, UPDATE, and DELETE operations, so any success is a real leak rather than a theoretical one. Running it against his own app with green tests surfaced a FOR ALL policy that had let one tenant update another's rows for weeks, and the tool emits a pgTAP suite to catch regressions in CI.
 
 🧠
 Opinions & Advice
 
-The text in Claude Code’s “Extended Thinking” output (5 minute read)
+The text in Claude Code’s “Extended Thinking” output (1 minute read)
 
-(blurb not generated)
+The author argues that Claude Code's local "Extended Thinking" logs are not an authentic record of the model's reasoning, since Anthropic encrypts the actual thinking into a signature it holds the key to and returns only a lossy summary over the API. The practical takeaway for engineers is to stop treating those local files as an audit trail, because reconstructing the real logic that drove an agent's actions requires an enterprise agreement and is impossible from your machine alone.
 
-Prompt Injection as Role Confusion (5 minute read)
+The Coming Loop (1 minute read)
 
-(blurb not generated)
+The author argues that agentic engineering is shifting from the in-agent tool loop to a harness-level loop, where a queue feeds tasks to a machine and an outer harness decides whether the work is actually finished or needs another session. He resists adopting it for code he cares about, citing models that write overly defensive, locally-reasoned code and his own unwillingness to ship systems he cannot fully explain.
+
+Prompt Injection as Role Confusion (1 minute read)
+
+The author argues that prompt injection is fundamentally a role-confusion problem: because an LLM receives system prompts, user messages, tool outputs, and its own reasoning as one undifferentiated token stream, it cannot reliably tell its own thoughts from injected text. Framing roles as the core abstraction lets the post derive new attacks, explain existing mech-interp results, and predict when an injection will succeed.
 
 Who owns your ATProto identity? (5 minute read)
 
 (blurb not generated)
 
-In praise of memcached (1 minute read)
+In praise of memcached (5 minute read)
 
-The author argues that Redis often enters a stack as a volatile cache but gets quietly treated as a persistent database, leaving ops teams to maintain it like a fragile pet once apps depend on data surviving restarts. The case for memcached is that its deliberately minimal feature set keeps a cache a cache, removing the temptation to lean on it for persistence the team never planned to guarantee.
+(blurb not generated)
 
 The Flat Curve Society (5 minute read)
 
-(blurb not generated)
+The author argues that as frontier models cross into dangerous capability, access to them will be restricted like nuclear weapons, with governments clamping down on the compute supply chain rather than the models themselves. Most companies and engineers will be left with capped, mediocre models or buy intelligence vending-machine style, sending specs to vendors who run the work on their own servers.
 
 Why is Meta destroying its engineering organization? (5 minute read)
 
 (blurb not generated)
 
-The minimum viable unit of saleable software (5 minute read)
+The minimum viable unit of saleable software (1 minute read)
+
+The author argues that LLMs have shifted the buy-vs-build calculus but not eliminated the case for selling software, since LLM-built systems still demand dozens of feedback loops to reach quality and carry ongoing maintenance cost. His bet on turning the River side project into a business rests on cheap not meaning free, leaving room for polished, well-maintained packages that internal LLM clones rarely match.
+
+Why Drawing Tablet Brands Won't Collaborate on Linux Floss Drivers (1 minute read)
+
+The author, who reviews drawing tablets on Linux, documents his failed push to get brands like Huion, XpPen, Gaomon, and Ugee to share hardware specs with the kernel's hid/input maintainers for open-source drivers. After reaching a technical contact who manages drivers across all four brands, he traces the wall to a business reality: the brands treat their proprietary driver structure as a competitive asset and see no upside in upstream FLOSS collaboration.
+
+Understanding the (In)Security of Vibe-Coded Applications (5 minute read)
 
 (blurb not generated)
-
-Understanding the (In)Security of Vibe-Coded Applications (1 minute read)
-
-This paper studies the security of vibe-coded applications built largely through natural-language prompting of AI agents, finding recurring flaws like placeholder logic, unfiltered input, and exposed secrets that differ from conventional codebases. The authors trace these to systematic agent limitations such as memory loss and weak security knowledge, and show that better models and prompting reduce but never eliminate the underlying risk.
 
 Local Qwen isn't a worse Opus, it's a different tool (5 minute read)
 
@@ -135,7 +143,7 @@ Agentic Code Review (5 minute read)
 
 I am dreading our LLM-written incident report future (5 minute read)
 
-(blurb not generated)
+The author argues that using LLMs to write incident reports, not just gather their inputs, removes the thinking-while-writing step that forces engineers to confront whether their explanation actually fits the evidence. The result is a plausible, unchecked narrative that may invent system couplings or miss real interactions, which the author considers more dangerous than LLM coding because there is no test to catch the fabrication.
 
 When I reject AI code even if it works (5 minute read)
 
@@ -156,9 +164,9 @@ Apple Foundation Models (5 minute read)
 
 (blurb not generated)
 
-Show HN: Oak – Git alternative designed for agents (5 minute read)
+Show HN: Oak – Git alternative designed for agents (1 minute read)
 
-(blurb not generated)
+Oak is an open-source version control system built for AI coding agents, structured as a Rust Cargo workspace with a reusable VCS library and a CLI that agents drive. It uses branch-per-session as the unit of work, branch descriptions instead of per-commit messages, and content-addressed lazy mounts that hydrate on demand, making it faster than git for agent workloads.
 
 Temporary Cloudflare Accounts for AI agents (5 minute read)
 
@@ -166,35 +174,47 @@ Temporary Cloudflare Accounts for AI agents (5 minute read)
 
 Lighthouse agentic browsing scoring (5 minute read)
 
-(blurb not generated)
+Chrome's Lighthouse added an Agentic Browsing category that runs deterministic audits on how well a site supports machine interaction, checking WebMCP tool registration, accessibility-tree integrity, and layout stability. Rather than a 0-100 score, it reports a fractional pass ratio plus per-audit pass/fail status, and the CDP-driven checks are reproducible enough to wire into CI/CD.
 
-Interactions API: our primary interface for Gemini models and agents (5 minute read)
+F3 (1 minute read)
 
-(blurb not generated)
+F3 is a research-prototype columnar file format that aims to fix the layout limitations of Parquet and ORC while staying interoperable, using embedded Wasm decoders so readers can support custom encodings without a format rewrite. The project is a proof-of-concept tied to a 2025 paper, currently tested only on Debian and explicitly not meant for production use.
 
-Run isolated sandboxes with full lifecycle control: AWS Lambda introduces MicroVMs (5 minute read)
+Interactions API: our primary interface for Gemini models and agents (1 minute read)
 
-(blurb not generated)
+Google moved its Interactions API to general availability and made it the primary interface for calling Gemini models and running agents, replacing the December 2025 beta. The GA release adds Managed Agents that provision a remote Linux sandbox per call, background execution via background=True, mixed built-in and custom tools in one request, and Flex/Priority tiers that cut cost by up to 50%.
+
+Run isolated sandboxes with full lifecycle control: AWS Lambda introduces MicroVMs (1 minute read)
+
+AWS Lambda introduced MicroVMs, a serverless primitive that runs untrusted user- or AI-generated code in isolated, stateful environments powered by Firecracker, the same virtualization behind Lambda functions. Each MicroVM gives a session VM-level isolation with near-instant launch and resume, retains memory and disk state for the session, and pauses to low idle cost when the user steps away.
 
 Announcing DuckDB 1.5.4 (5 minute read)
 
-(blurb not generated)
+DuckDB 1.5.4 (Variegata) is the fifth patch release in the 1.5 line, shipping bugfixes, security patches, and performance work alongside a parallel v1.4.5 LTS (Andium) release. Fixes include correctness bugs in VARIANT casts and MERGE INTO binding, several crash and memory-leak repairs in Arrow GeoArrow serialization and gzip writes, and allocator and Parquet stats-pruning improvements.
 
-GitHub Actions hardens checkout security to block ‘pwn request’ attacks (5 minute read)
+Show HN: TikZ Editor – WYSIWYG editor for figures in LaTeX (1 minute read)
 
-(blurb not generated)
+TikZ Editor is a browser-based WYSIWYG tool for building TikZ figures, letting you draw diagrams visually while it generates the corresponding LaTeX code. It targets the usual friction of hand-writing TikZ coordinates and node positioning, with the canvas and emitted code staying in sync as you edit.
+
+Unlimited OCR: One-Shot Long-Horizon Parsing (1 minute read)
+
+Baidu released Unlimited-OCR, a document-parsing model that extends Deepseek-OCR to handle long, multi-page inputs in a single pass. It runs through HuggingFace transformers on CUDA GPUs, supports single-image, multi-page, and PDF parsing with a 32K-token output window, and ships with weights on both HuggingFace and ModelScope alongside an arXiv paper.
 
 PP-OCRv6 on Hugging Face: 50-Language OCR from 1.5M to 34.5M Parameters (5 minute read)
 
 (blurb not generated)
 
-Sniff out stale AI override advice with this open source CLI (1 minute read)
-
-A new open source CLI scans AI override files like CLAUDE.md, .cursorrules, and AGENTS.md to flag guidance that has drifted out of sync with the codebase it points at. The tool targets a common failure mode where outdated instructions silently steer coding agents toward dead files, renamed functions, or conventions the repo no longer follows.
-
-CCCL Runtime: A Modern C++ Runtime for CUDA (5 minute read)
+Sniff out stale AI override advice with this open source CLI (5 minute read)
 
 (blurb not generated)
+
+CCCL Runtime: A Modern C++ Runtime for CUDA (1 minute read)
+
+NVIDIA released CCCL runtime, a set of header-only C++ APIs (`<cuda/stream>`, `<cuda/buffer>`, `<cuda/launch>`) that reimplements core CUDA functionality like stream management, memory allocation, and kernel launches on top of the driver API. It targets the same role as the classic CUDA runtime but with modern C++ idioms for safer resource management and explicit dependencies, plus compatibility helpers for incremental adoption without rewriting surrounding CUDA runtime code.
+
+Announcing General availability of the Azure Cosmos DB vNext emulator (3 minute read)
+
+Microsoft made the Azure Cosmos DB vNext emulator generally available as a Docker image running on Linux, macOS, and Windows across x64 and ARM64, giving developers a local instance for inner-loop work and CI integration tests. GA adds vector search, OpenTelemetry support, and a bundled Cosmos DB Shell that auto-runs `.csh` scripts from `/init` at startup, moving dataset bootstrap into the container and dropping app-side readiness polling.
 
 Homebrew 6.0 released with new security mechanism, Linux sandbox, and more (5 minute read)
 
@@ -204,6 +224,10 @@ Four Ways We're Using Our MCP Server at Figma (5 minute read)
 
 (blurb not generated)
 
+Build real agentic apps using CUGA: two dozen working examples on a lightweight harness (5 minute read)
+
+CUGA, IBM's open-source agent harness, handles the planning, execution loop, tool calls, and state management so building an agent comes down to a tool list and a prompt, installed via pip install cuga. The companion cuga-apps repo ships two dozen single-file FastAPI apps wrapping one CugaAgent each, with configurable Fast, Balanced, and Accurate reasoning modes and a choice of local, Docker, or E2B sandboxes.
+
 Android 17 Expands AI Agent Integration (5 minute read)
 
 (blurb not generated)
@@ -212,22 +236,6 @@ Show HN: Recall – Local project memory for Claude Code (5 minute read)
 
 (blurb not generated)
 
-Accelerating researchers and developers building multilingual AI with a new open dataset (5 minute read)
-
-(blurb not generated)
-
-Introducing the MDN MCP server (5 minute read)
-
-(blurb not generated)
-
-Building AI Agents for AR Glasses and XR Devices with NVIDIA XR AI (5 minute read)
-
-(blurb not generated)
-
-An Introduction to YOLO26 (1 minute read)
-
-Roboflow published a walkthrough of YOLO26, an end-to-end multi-task vision model family spanning detection, instance segmentation, pose estimation, oriented detection, and classification across five sizes from Nano to Extra Large. It removes Non-Maximum Suppression and drops the Distribution Focal Loss module to cut latency and improve edge and low-power hardware compatibility, with COCO benchmarks and comparisons against RF-DETR, LW-DETR, and D-FINE.
-
 🎁
 Miscellaneous
 
@@ -235,9 +243,9 @@ Codex logging bug may write TBs to local SSDs (5 minute read)
 
 (blurb not generated)
 
-North Korean Hackers Blamed for Mastra NPM Supply Chain Attack (5 minute read)
+Elevated error rate across multiple models (1 minute read)
 
-(blurb not generated)
+Anthropic's status page reported an elevated error rate affecting multiple Claude models, degrading API responses for applications built on those endpoints. Teams routing production traffic through Claude saw failed or retried requests during the window, a reminder that single-provider LLM integrations inherit the provider's uptime and benefit from fallback routing or graceful degradation.
 
 PixelSmash – Critical FFmpeg Vulnerability Turns Media Files into Weapons (5 minute read)
 
@@ -251,21 +259,21 @@ Pledging another $400k to the Zig software foundation (5 minute read)
 
 (blurb not generated)
 
-ShapedPlugin WordPress Pro Plugins Backdoored in Supply Chain Attack (5 minute read)
+ShapedPlugin WordPress Pro Plugins Backdoored in Supply Chain Attack (1 minute read)
+
+Attackers compromised ShapedPlugin's build and distribution pipeline, injecting backdoor code into Pro versions of Product Slider Pro for WooCommerce, Real Testimonials Pro, and Smart Post Show Pro delivered through the vendor's official licensed update channels. The malware fetches a remote payload on every admin page load, captures plaintext credentials and 2FA codes, exfiltrates wp-config.php and recent WooCommerce order data, and carries a CVSS 10.0 rating, while free WordPress.org builds are unaffected.
+
+Steam Machine launches today (1 minute read)
+
+Valve's Steam Machine ships today, a compact living-room PC running SteamOS on Linux with Proton handling Windows game compatibility. The launch extends Valve's push to make Linux a viable gaming target, building on the Steam Deck's Proton layer that has steadily closed the compatibility gap with native Windows titles.
+
+Researchers Detail DifyTap Flaws in Dify That Could Expose AI Chats Across Tenants (1 minute read)
+
+Zafran Security disclosed four vulnerabilities, collectively named DifyTap, in Dify, the open-source agentic workflow platform with over 146,000 GitHub stars. Two were critical and two required no authentication, with cross-tenant flaws that let attackers read other customers' private AI chats and uploaded documents on the multi-tenant cloud service using only a file UUID.
+
+Malicious npm Packages Pose as PostCSS Tools to Deliver Windows RAT (5 minute read)
 
 (blurb not generated)
-
-Steam Machine launches today (5 minute read)
-
-(blurb not generated)
-
-Researchers Detail DifyTap Flaws in Dify That Could Expose AI Chats Across Tenants (5 minute read)
-
-(blurb not generated)
-
-Malicious npm Packages Pose as PostCSS Tools to Deliver Windows RAT (1 minute read)
-
-JFrog researchers flagged three malicious npm packages published by the user "abdrizak" that impersonate the widely used postcss-selector-parser library to drop a Windows remote access trojan. The packages run a JavaScript dropper that fetches a PowerShell downloader and a Nuitka-compiled Python RAT capable of stealing Chrome credentials, running shell commands, and exfiltrating files, and all three remain live on npm.
 
 SpaceX to acquire the AI coding startup Cursor for $60 billion (5 minute read)
 
@@ -282,6 +290,10 @@ Malicious JetBrains Marketplace Plugins Steal AI API Keys From Developers (5 min
 ⚡
 Quick Links
 
+Boost Inference Performance up to 15x on NVIDIA Blackwell Using DFlash Speculative Decoding (1 minute read)
+
+NVIDIA released DFlash, an open-source block-diffusion drafter for speculative decoding that boosts gpt-oss-120b inference up to 15x on Blackwell.
+
 GrapheneOS has been ported to Android 17 and official releases are coming soon (5 minute read)
 
 (blurb not generated)
@@ -290,33 +302,29 @@ Android 17 starts hitting Pixel phones and watches today (5 minute read)
 
 (blurb not generated)
 
-Will It Mythos? (1 minute read)
-
-A developer built a benchmark from bugs Anthropic's Mythos found to test whether other models can detect them blind.
-
-Optimizing Models to Be Fast at Codegen (5 minute read)
+Will It Mythos? (5 minute read)
 
 (blurb not generated)
+
+Optimizing Models to Be Fast at Codegen (5 minute read) [flag]
+
+Morph trains workload-specific speculative drafters on coding output, lifting acceptance from 1.93x to 3.07x and serving open models like Qwen and DeepSeek faster.
 
 A 27-Year-Old Authentication Bypass in OpenBSD's PPP Stack (5 minute read)
 
 (blurb not generated)
 
-잘못된 Claude.md가 AI를 망친다…연구진이 꼽은 설정 파일 6대 문제 (5 minute read)
+DifyTap Bugs Let Attackers 'Wiretap' AI Chat Histories (1 minute read)
 
-(blurb not generated)
-
-Open-source Vulkan driver NVK gains experimental DLSS support — bringing Nvidia’s upscaling tech to Linux via imported CUDA binaries (5 minute read)
-
-(blurb not generated)
+Researchers disclosed four Dify vulnerabilities, dubbed DifyTap, that let attackers wiretap AI chat histories and exfiltrate cross-tenant data; patched in 1.14.2.
 
 pg_kpart version 1.0 (5 minute read)
 
 (blurb not generated)
 
-A 3D voxel game engine written in APL (5 minute read)
+A 3D voxel game engine written in APL (1 minute read)
 
-(blurb not generated)
+A developer built an experimental 3D voxel game engine in APL, using the notation to drive a Vulkan, DirectX12, and Metal rendering backend.
 
 I Stored a Website in a Favicon (5 minute read)
 

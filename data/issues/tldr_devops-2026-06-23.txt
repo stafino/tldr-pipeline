@@ -6,28 +6,40 @@ TLDR DevOps 2026-06-23
 📱
 News & Trends
 
-They sold their startup to Datadog. Now, they’ve raised $35M to disrupt it (1 minute read)
+GitHub Updates actions/checkout to Block Common Pwn Request Attack Patterns (1 minute read)
 
-Two former Datadog engineers raised $35M in Series A funding for Tsuga, a Paris-based observability platform that runs inside the customer's own cloud account on AWS to avoid the per-byte fees that make legacy tools expensive for high-telemetry AI workloads. Six months after launching, Tsuga reports several million in revenue and six-figure average contracts with customers including Black Forest Labs and Le Monde, bringing total funding to $45M.
+GitHub updated actions/checkout to refuse fork pull request code in pull_request_target and workflow_run workflows by default, blocking the most common pwn request pattern that lets attackers steal the privileged GITHUB_TOKEN and secrets. The change ships in v7 effective June 18, 2026, backports to all supported major versions on July 16, and requires authors to set allow-unsafe-pr-checkout to true to opt out.
+
+AWS unveils sovereign-centric micro serverless virtual machines (1 minute read)
+
+AWS released Lambda MicroVMs, a new Firecracker-backed resource that hands each user or session its own isolated environment with up to 16 vCPUs, 32 GB of memory, and 32 GB of disk for running untrusted or AI-generated code. Idle instances suspend via API or lifecycle policy while preserving memory and disk state, capping costs and targeting the data-sovereignty and isolation demands of multi-tenant AI workloads.
+
+They sold their startup to Datadog. Now, they’ve raised $35M to disrupt it (5 minute read)
+
+(blurb not generated)
 
 Kubernetes in the Age of AI (5 minute read)
 
 (blurb not generated)
 
-Tsuga raises $35m to keep AI-era observability inside the customer’s own cloud (1 minute read)
+Linux and Secure Boot certificate expiration (2025) (1 minute read)
 
-Tsuga, a Paris startup founded by two ex-Datadog engineers, raised a $35m Series A led by Singular to run observability inside the customer's own cloud rather than ingesting telemetry into a vendor's. The model drops per-byte pricing as AI agent loops explode data volumes, runs unsampled root-cause analysis on-prem, and keeps traces inside the customer's perimeter, doubling as a data-residency argument for regulated European teams.
+The Microsoft 2011 key used to sign the shim first-stage UEFI bootloader expires in September, after which Microsoft will stop signing the bootloader that Linux distributions rely on to boot under Secure Boot. A 2023 replacement key exists but is missing from many systems and often requires a vendor firmware update, so the breakage mainly hits new installs on Secure Boot hardware and adds work for distributors and users.
 
-Linux and Secure Boot certificate expiration (2025) (5 minute read)
+Verifiable, private AI: Google Cloud expands Confidential Computing frontiers (2 minute read)
 
-(blurb not generated)
+Google Cloud expanded its Confidential Computing lineup with Confidential G4 VMs and Confidential GKE Nodes, pairing NVIDIA RTX PRO 6000 Blackwell GPUs with 5th-gen AMD EPYC Turin CPUs to keep AI inference and fine-tuning data encrypted inside hardware TEEs, including in transit between CPU and GPU. The preview ships in every region the standard G4 is available, across On Demand, Reservations, DWS Flex Start, and Spot consumption models.
 
-AWS Weekly Roundup: NY Summit recap, Local Zone in Hanoi, Grok 4.3 in Bedrock, price reductions, and more (June 22, 2026) (5 minute read)
+AWS Weekly Roundup: NY Summit recap, Local Zone in Hanoi, Grok 4.3 in Bedrock, price reductions, and more (June 22, 2026) (1 minute read)
 
-(blurb not generated)
+AWS recapped its NY Summit, where it introduced Continuum, an AI-native security service for the code vulnerability lifecycle, pushed Bedrock AgentCore to GA with a managed orchestration harness and the new Context service, and added release-gating to its DevOps Agent. The roundup also covers a new Local Zone in Hanoi with S3 and EBS local snapshots for data residency, Grok 4.3 landing in Bedrock, and several price reductions.
 
 🚀
 Opinions & Tutorials
+
+Building Jaeger’s ClickHouse backend: 8.6× compression on 10 million spans (1 minute read)
+
+Jaeger v2.18.0 ships a native ClickHouse storage backend, giving teams a columnar alternative to Cassandra and Elasticsearch for distributed tracing. The maintainer measured 8.6× compression on 10 million spans, driven by the heavy repetition in trace data: service names, operation names, and status codes that a column-oriented OLAP store deduplicates cheaply. The post walks through the schema design and the trade-offs against the index-heavy operational overhead of the older backends.
 
 Build your own vulnerability harness (5 minute read)
 
@@ -41,17 +53,17 @@ Cell-Based Architecture for Resilient Payment Systems (5 minute read)
 
 (blurb not generated)
 
-How we found a bug in the hyper HTTP library (5 minute read)
+How we found a bug in the hyper HTTP library (1 minute read)
 
-(blurb not generated)
+Cloudflare engineers spent six weeks tracing why their rearchitected Images binding intermittently returned truncated payloads, 200-status responses that cut a two-megabyte image down to a few hundred kilobytes, only for larger files. The culprit was a race condition in the hyper Rust HTTP library governing how processed image data streamed back to the client. The fix was four lines of code, a reminder that edge-network rollouts surface failure modes invisible under normal load.
 
 Making secret scanning more trustworthy: Reducing false positives at scale (5 minute read)
 
-(blurb not generated)
+GitHub partnered with Microsoft Security & AI's Agents Offense team to add LLM-based contextual verification to its secret scanning, reasoning about how a detected value appears in code rather than whether it merely matches a secret-like pattern. The goal is to bring AI-detected secrets closer to the precision GitHub already achieves on provider-pattern detections across billions of pushes. Fewer low-value alerts means less triage toil and more developer trust in the system, without sacrificing coverage.
 
 Blinding the Watchmen: Abusing Cloud Logging Services for Defense Evasion and Visibility (5 minute read)
 
-(blurb not generated)
+Unit 42 researchers detail how attackers target cloud logging services like AWS CloudTrail and Google Cloud Logging to blind defenders, breaking down two attack classes: defense evasion that modifies or disables logging resources to execute unnoticed, and continuous visibility that siphons logs into attacker-controlled accounts. The writeup maps the specific configurations and detections platform teams need to catch logging-service tampering before it erases the audit trail you rely on for incident response.
 
 What job interviews taught me about Kubernetes (5 minute read)
 
@@ -75,7 +87,11 @@ Why cloud native belongs at the heart of agentic AI: Lessons from building a mul
 
 Shipping huggingface_hub every week with AI, open tools, and a human in the loop (5 minute read)
 
-Hugging Face documented how it moved huggingface_hub from a release every 4-6 weeks to a weekly release driven by a single GitHub Actions workflow. The team automated the mechanical steps (version bumps, tagging, downstream test branches, post-release PRs) and used open-weights models to draft release notes and announcements, keeping a human in the loop only where judgment matters. The whole setup runs on open-source tools with no vendor contract or closed model required.
+(blurb not generated)
+
+Agent Auth: A lawyer’s day in court (1 minute read)
+
+The author uses a courtroom analogy to break down authentication for AI agents, mapping a lawyer representing a client to the layers an agent platform must implement: agent identity, principal identity, On-Behalf-Of delegation tokens, and policy enforcement. The argument treats agents as microservices-plus, demanding stricter auth because one agent acts for many users, plus guardrails and observability over prompts, tool calls, and request contents.
 
 ⚒️
 Launches & Tools
@@ -88,34 +104,42 @@ Amazon S3 annotations: attach rich, queryable context directly to your objects (
 
 (blurb not generated)
 
-Run isolated sandboxes with full lifecycle control: AWS Lambda introduces MicroVMs (5 minute read)
+Run isolated sandboxes with full lifecycle control: AWS Lambda introduces MicroVMs (1 minute read)
 
-(blurb not generated)
+AWS introduced Lambda MicroVMs, a Firecracker-backed serverless primitive that hands each user or session its own isolated, stateful execution environment with VM-level isolation, near-instant launch and resume, and pause-to-idle pricing. It targets multi-tenant apps that run untrusted user- or AI-generated code, such as coding assistants and analytics platforms, removing the choice between slow-booting VMs and containers that need custom kernel hardening.
 
-Announcing Amazon EC2 G7 instances accelerated by NVIDIA RTX PRO 4500 Blackwell Server Edition GPUs (5 minute read)
+Announcing Amazon EC2 G7 instances accelerated by NVIDIA RTX PRO 4500 Blackwell Server Edition GPUs (1 minute read)
 
-(blurb not generated)
+AWS made general availability for EC2 G7 instances, the first major cloud offering of NVIDIA RTX PRO 4500 Blackwell Server Edition GPUs, delivering up to 4.6x AI inference and 2.1x graphics performance over G6. Each instance scales to 8 GPUs and 256GB of GPU memory, with 700 Gbps of EFA networking (7x G6) and 7.6TB of local NVMe to keep large models and datasets close to compute.
+
+AWS debuts Lambda MicroVMs with up to 8 hours runtime (1 minute read)
+
+AWS launched Lambda MicroVMs, extending the serverless runtime from a 15-minute cap to as long as 8 hours per invocation with hardware-isolated execution. The longer ceiling targets untrusted code, AI agents, and batch jobs that previously forced teams onto Fargate or EC2, though sustained 8-hour invocations shift the cost calculus closer to always-on compute than traditional event-driven Lambda.
 
 AWS WAF adds AI traffic monetization capability to help content owners charge AI bots for content access (5 minute read)
 
 (blurb not generated)
 
-GitHub Actions hardens checkout security to block ‘pwn request’ attacks (5 minute read)
+Introducing the Cloudflare One stack: agent-powered deployment (1 minute read)
 
-(blurb not generated)
+Cloudflare released the Cloudflare One stack, a set of agent skills that configure, deploy, and manage a Zero Trust environment and map an existing security suite into Cloudflare One. The toolkit packages migration expertise from thousands of customer deployments, giving agents the network-topology and vendor-configuration context they otherwise lack to operate on SASE infrastructure.
 
-Introducing the Cloudflare One stack: agent-powered deployment (5 minute read)
+Log Analytics is now Observability Analytics: Query logs and traces with SQL (2 minute read)
 
-(blurb not generated)
+Google Cloud renamed Log Analytics to Observability Analytics and made trace data and the configuration Observability API generally available, letting teams run SQL across logs and distributed trace spans in one place without moving or duplicating data. SREs can now join application logs to trace spans in a single query, surfacing slow checkout requests or P95 latency on external AI agent tool calls for faster root-cause analysis.
 
 Server-Side Tools Are Now Available for DigitalOcean Inference Engine (5 minute read)
 
 (blurb not generated)
 
+Ubuntu Livepatch arrives on Arm64 to eliminate system reboots for kernel updates (1 minute read)
+
+Canonical extended its Livepatch service to Arm64, letting Ubuntu Core 26 and Ubuntu 26.04 LTS systems apply kernel security patches without the reboot that normally follows a kernel update. The feature targets machines that can't tolerate downtime and helps organizations work toward Cyber Resilience Act compliance, and it runs through Ubuntu Pro, which is free for several home devices.
+
 Vercel Connect (5 minute read)
 
 (blurb not generated)
 
-One vulnerability view: From scanner coverage to AI governance (5 minute read)
+One vulnerability view: From scanner coverage to AI governance (3 minute read)
 
-(blurb not generated)
+GitLab 19.1 adds a single vulnerability view that enforces any SARIF-emitting third-party scanner across every project under one policy, eliminating the per-project drift that lets new repos ship unscanned for weeks. Third-party findings now flow through GitLab Duo's auto-remediation, with SAST false-positive triage and agentic resolution opening ready-to-merge fixes, plus a beta of AI audit event streaming to track agent behavior.

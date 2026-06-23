@@ -10,9 +10,13 @@ Snowflake and the Agentic Resource Discovery Specification (5 minute read)
 
 (blurb not generated)
 
-The new database world according to Google: Inexact queries and AI in everything (5 minute read)
+EDB converges analytics on Postgres to support AI agents (2 minute read)
 
-(blurb not generated)
+EDB introduced converged analytics for its managed EDB Postgres AI service, keeping Postgres as the operational source of truth and using Apache Iceberg as a shared catalog across ClickHouse, WarehousePG, and Spark so analytical engines query the same data without copies or ETL. The move follows Databricks' Neon-based LTAP from the opposite direction, betting that enterprises focused on data sovereignty want AI and analytics running on infrastructure they own and control.
+
+The new database world according to Google: Inexact queries and AI in everything (1 minute read)
+
+Google's database leadership laid out a roadmap built on AI-embedded tooling and "inexact" queries, with a product exec predicting that humans won't directly use data platforms within three to five years. The bet is that agents, not analysts, become the primary query interface, pushing vendors toward natural-language and approximate-result systems rather than the exact, schema-bound SQL that data teams build on today.
 
 🧠
 Deep Dives & Analysis
@@ -21,45 +25,45 @@ How we built an internal data analytics agent (5 minute read)
 
 (blurb not generated)
 
-SemCEB: A Cardinality Estimation Benchmark for Semantic Operators (1 minute read)
-
-SemCEB is the first benchmark for cardinality estimation over semantic operators, the LLM-backed SQL filters and joins whose predicates are written in natural language. It spans 102 hand-curated queries across a range of selectivities, testing filters and joins in isolation. The stakes are cost: per-tuple LLM calls make bad plans orders of magnitude more expensive. Sampling proved robust but slow and pricey, while Semantic Histograms ran cheaper but stayed sensitive to predicate type.
-
-When Is a Columnar Scan Bandwidth-Bound? A Decode-Throughput Law and Its Cross-Hardware Validation (1 minute read)
-
-This paper offers a one-parameter law for when a columnar scan is actually memory-bandwidth-bound rather than compute-bound. The key finding is that a decoder's value throughput is independent of bit-width, so the achieved bandwidth fraction follows f = min(1, T_dec·b/8β), with the compute-to-bandwidth ridge at b* = 8β/T_dec. Fitting one parameter per strategy reproduced measured bandwidth fractions within median error 0.027 on x86/AVX2 and 0.003 on a held-out Apple M4.
-
-The analytics engineer in 2026: system designer, governance owner, AI context provider (5 minute read)
+SemCEB: A Cardinality Estimation Benchmark for Semantic Operators (5 minute read)
 
 (blurb not generated)
 
-The semantic debt crisis no one is talking about (5 minute read)
+When Is a Columnar Scan Bandwidth-Bound? A Decode-Throughput Law and Its Cross-Hardware Validation (5 minute read)
 
 (blurb not generated)
 
-The Table Says Otherwise: Testing LLMs with Counterfactual Relational Data (1 minute read)
+The analytics engineer in 2026: system designer, governance owner, AI context provider (1 minute read)
 
-This paper introduces ContraTable, a benchmark that tests whether LLMs answer table questions from the provided data or from memorized facts. It pairs an original database with a counterfactual version that keeps the same schema but rewrites country, club, and player attributes across 214 matched questions. Models handle single-table lookups but degrade on joins, comparisons, and temporal reasoning, falling back on pretrained knowledge when the table conflicts with familiar facts. The takeaway: table-QA evaluation should measure faithfulness, not just accuracy.
+dbt argues the analytics engineer's job has shifted from writing models to designing the system around them, as AI now handles scaffolding, first-draft docs, and boilerplate tests for the 72% of analytics engineers who code with AI assistance. The remaining work is the judgment AI can't do: defining metric grain, drawing domain boundaries, and structuring the semantic layer so downstream AI queries stay consistent. Governance outputs like contracts, tests, and column-level lineage become the role's measured deliverable.
+
+The semantic debt crisis no one is talking about (1 minute read)
+
+The author argues that organizations carry "semantic debt" alongside technical debt: every metric built without a canonical definition, every filter hardcoded into a dashboard instead of the data layer, is a withdrawal that compounds until three teams present three defensible-but-conflicting numbers for the same metric. The fix is encoding business meaning into the data itself through a semantic layer, which the piece frames as the foundation that makes AI reliable in production rather than a modeling nicety.
+
+The Table Says Otherwise: Testing LLMs with Counterfactual Relational Data (5 minute read)
+
+(blurb not generated)
 
 When failover isn't safe: Building high-availability PostgreSQL on Kubernetes (5 minute read)
 
 (blurb not generated)
 
-SelPE: Progressive Selection for Private Structured Text Synthesis (1 minute read)
+SelPE: Progressive Selection for Private Structured Text Synthesis (5 minute read)
 
-SelPE is a framework for generating synthetic structured text, like clinical triage notes or transaction logs, under differential privacy when only a handful of real examples exist. Instead of noisy aggregation or private model training, it spends the privacy budget on a sequence of top-1 selections and splits generation into semantic abstraction and schema realization. The authors report better structural validity, fidelity, and downstream utility than tabular or text-only DP methods in low-data regimes.
+(blurb not generated)
 
-A Compositional Language for Property Graphs (1 minute read)
+A Compositional Language for Property Graphs (5 minute read)
 
-This paper argues that the newly standardized graph query languages GQL and SQL/PGQ have a core flaw: they aren't compositional, and despite handling reachability and all first-order queries, they can't express everything in NLOGSPACE. The authors propose a fix built on regular path queries with variables and a graph-to-graph language called #Datalog that can construct new nodes, edges, and paths, then map it to concrete additions the standards committee could adopt.
+(blurb not generated)
 
-A Set-Theoretic Approach to Detecting Logic Bugs in DBMS Inner Join Optimizations (1 minute read)
+A Set-Theoretic Approach to Detecting Logic Bugs in DBMS Inner Join Optimizations (5 minute read)
 
-This paper introduces JoinEquiv, a metamorphic testing tool that catches logic bugs in INNER JOIN optimization by rewriting a query into semantically equivalent forms using set-theory transformations, then flagging any case where the results diverge. Running it against MySQL, TiDB, DuckDB, and Percona surfaced 29 previously unknown issues, 27 now officially confirmed. The takeaway for data teams: optimizer correctness, not just crashes or latency, is a live failure mode worth testing against.
+(blurb not generated)
 
-SQLConductor: Search-to-Policy Learning for Step-wise Text-to-SQL Orchestration (1 minute read)
+SQLConductor: Search-to-Policy Learning for Step-wise Text-to-SQL Orchestration (5 minute read)
 
-SQLConductor proposes step-wise orchestration for text-to-SQL, training a policy model to pick the next subtask action based on intermediate artifacts and feedback rather than committing to a fixed pipeline upfront. The authors use Monte Carlo Tree Search to explore candidate workflows, then distill the robust patterns into a deployable policy via stability-weighted fine-tuning and curriculum RL. A compact policy coordinating frozen larger models hits 73.2% execution accuracy on BIRD-Dev, beating systems that train bigger SQL backbones directly.
+(blurb not generated)
 
 🚀
 Launches & Tools
@@ -68,13 +72,21 @@ Amazon S3 annotations: attach rich, queryable context directly to your objects (
 
 (blurb not generated)
 
-Boost BigQuery with Python: Managed Python UDFs now generally available (5 minute read)
+What Fivetran + dbt Labs brought to Databricks Data + AI Summit (and what you can take home) (1 minute read)
 
-(blurb not generated)
+dbt Labs and Fivetran, now merged into one company, used Databricks Data + AI Summit to pitch Open Data Infrastructure for agents that query the warehouse continuously and need governed, tested, traceable context. The concrete takeaway is a customer pattern from Integral Ad Science that wires Databricks to dbt through MCP servers, letting an agent pull model metadata and lineage to answer why a BI number is wrong.
 
-AWS enters the context layer race with a graph that learns from agents, not manual curation (5 minute read)
+Boost BigQuery with Python: Managed Python UDFs now generally available (2 minute read)
 
-(blurb not generated)
+Google made BigQuery's Managed Python UDFs generally available, letting teams run custom Python with libraries like NumPy, pandas, and scikit-learn directly inside SQL queries or BigFrames on serverless, auto-scaling compute. BigQuery handles container builds, security patching, and execution, so procedural logic, scientific computation, and external API enrichment that used to need separate infrastructure now run next to the data without managing images or compute services.
+
+AWS enters the context layer race with a graph that learns from agents, not manual curation (2 minute read)
+
+AWS announced a context intelligence stack for AI agents, led by AWS Context, a knowledge graph service that automatically maps relationships across existing data and refines itself based on which sources agents actually use. It publishes all metadata as Apache Iceberg to S3 Tables queryable via Athena, Redshift, or Spark, and ships alongside GA of S3 Annotations and a preview of skill assets in Glue Data Catalog.
+
+Introducing OmniVec: An Open-Source Embedding Platform for AI Apps on Azure (3 minute read)
+
+Microsoft open-sourced OmniVec, a platform that runs the embedding pipelines keeping vector representations of operational data in sync, with backfill, change tracking, model invocation, and retry logic handled across four primitives: source, model, destination, and pipeline. It deploys into your own Azure subscription with support for Cosmos DB, PostgreSQL, and SQL Server as sources, and replaces the bespoke change-capture plumbing most teams rebuild for every AI app.
 
 Accelerating researchers and developers building multilingual AI with a new open dataset (5 minute read)
 
@@ -82,6 +94,10 @@ Accelerating researchers and developers building multilingual AI with a new open
 
 ⚡
 Quick Links
+
+Building Jaeger’s ClickHouse backend: 8.6× compression on 10 million spans (1 minute read)
+
+Jaeger v2.18.0 ships a native ClickHouse tracing backend, hitting 8.6× compression on 10M spans via columnar storage.
 
 British Columbia, Time Zones, and Postgres (5 minute read)
 

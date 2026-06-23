@@ -6,29 +6,37 @@ TLDR 2026-06-23
 📱
 Big Tech & Startups
 
-A New Era of Midjourney (5 minute read)
+Mistral OCR 4 (1 minute read)
 
-(blurb not generated)
+Mistral released OCR 4, a compact document-extraction model that returns bounding boxes, typed-block classification, and inline confidence scores alongside text across 170 languages. It runs in a single container for self-hosted deployments, tops OlmOCRBench at 85.20, and feeds structured, citation-ready output into RAG and enterprise search pipelines.
 
-Steam Machine launches today (5 minute read)
+A New Era of Midjourney (1 minute read)
 
-(blurb not generated)
+Midjourney, the AI image-generation startup, launched Midjourney Medical, a new effort applying its image models to healthcare and clinical imaging. The move marks the company's first expansion beyond consumer creative tools into a regulated vertical, where accuracy and safety requirements are far steeper than in general-purpose image generation.
 
-A new unpatchable flaw in Apple chips opens the door to an iPhone jailbreak (5 minute read)
+Steam Machine launches today (1 minute read)
 
-(blurb not generated)
+Valve launched the Steam Machine, a compact living-room PC running SteamOS that brings the handheld Steam Deck's console-style experience to a TV. The release marks Valve's return to dedicated gaming hardware after the original Steam Machine line stalled a decade ago, positioning SteamOS as an alternative to Windows for couch gaming.
+
+A new unpatchable flaw in Apple chips opens the door to an iPhone jailbreak (1 minute read)
+
+Paradigm Shift, a Barcelona-based offensive security firm, published "usbliter8," an unpatchable Boot ROM vulnerability in Apple's A12 and A13 chips that ship in iPhones from the XS through the iPhone 11. The flaw requires physical access and must be chained with other exploits to build a jailbreak, but because the Boot ROM is burned into silicon, Apple cannot patch it on affected 2018-2019 devices.
 
 NSA director: 'Mythos "broke into almost all of our classified systems in hours" (5 minute read)
 
 (blurb not generated)
 
-Interactions API: our primary interface for Gemini models and agents (5 minute read)
+AWS debuts Lambda MicroVMs with up to 8 hours runtime (1 minute read)
 
-(blurb not generated)
+AWS launched Lambda MicroVMs, extending its serverless platform with isolated microVMs that can run for up to eight hours instead of the prior 15-minute function ceiling. The longer-running, hardware-isolated environments target untrusted code, AI agents, and other long jobs, positioning Lambda to compete with sandboxed-execution services as agent workloads push past traditional function limits.
 
-Run isolated sandboxes with full lifecycle control: AWS Lambda introduces MicroVMs (5 minute read)
+Interactions API: our primary interface for Gemini models and agents (1 minute read)
 
-(blurb not generated)
+Google announced that its Interactions API has reached general availability and is now the primary interface for building with Gemini models and agents, replacing the role-based schema with typed steps for inference, agents, and long-running background jobs. The GA release adds Managed Agents that provision a remote Linux sandbox, mixed built-in and custom tools, media generation with Nano Banana 2 and Lyria 3, and Flex and Priority tiers that cut costs up to 50%.
+
+Run isolated sandboxes with full lifecycle control: AWS Lambda introduces MicroVMs (1 minute read)
+
+AWS announced Lambda MicroVMs, a serverless primitive that gives each user or session its own Firecracker-isolated, stateful execution environment with near-instant launch and resume. The product targets AI coding assistants, interactive code sandboxes, and other multi-tenant apps that run untrusted code, offering VM-level isolation without the minutes-long startup of traditional VMs or the custom hardening containers require.
 
 Apple is about to make Hide My Email useless (5 minute read)
 
@@ -38,13 +46,13 @@ SpaceX to acquire Cursor for $60B in stock, days after blockbuster IPO (5 minute
 
 (blurb not generated)
 
-New Exploit Bypasses Apple’s Boot Defenses, Affects Millions of iPhones (5 minute read)
+China Takes Supercomputer Crown From U.S. For First Time Since 2017 (5 minute read)
 
 (blurb not generated)
 
-China Takes Supercomputer Crown From U.S. For First Time Since 2017 (1 minute read)
+Oracle cut 21,000 jobs this year and its SEC filing explicitly blames AI (1 minute read)
 
-A supercomputer in Shenzhen was named the world's fastest, giving China the top spot for the first time since 2017. The machine runs entirely on standard microprocessors rather than the GPUs that dominate modern high-performance computing, an unusual design choice as the US restricts China's access to advanced AI chips.
+Oracle's global workforce fell to 141,000 full-time employees as of May 31, down roughly 21,000 from a year earlier, and its annual SEC filing states plainly that adopting AI across its operations "have resulted, and may continue to result, in reductions to our workforce." The deepest cuts hit Oracle Health, the unit built on the $28.3B Cerner acquisition, while teams working on Oracle Cloud Infrastructure and AI services were largely spared or expanded.
 
 AI Startup Midjourney Pivots to Health With Ultrasound Machine (5 minute read)
 
@@ -58,86 +66,78 @@ Identity verification on Claude (5 minute read)
 
 (blurb not generated)
 
-Memory Chips and China, Microsoft and Chinese Models (1 minute read)
+Memory Chips and China, Microsoft and Chinese Models (5 minute read)
 
-Ben Thompson argues that the big three memory makers, by selling to Chinese customers, risk seeding the rivals that will eventually undercut them, much as past openings let Chinese manufacturers climb the value chain. He adds that Microsoft has strong incentives to adopt Chinese open models, since cheaper, capable weights would lower its inference costs and reduce dependence on a single frontier lab.
+(blurb not generated)
 
 Snap unveils $2,195 AR glasses as CEO Evan Spiegel bets on post-smartphone future (5 minute read)
 
 (blurb not generated)
 
-Anthropic’s powerful Mythos AI reportedly breached ‘almost all’ NSA classified systems within a few hours during red-team test — report sheds more light on the U.S. government's sudden ban on the flagship models (5 minute read)
+Anthropic’s powerful Mythos AI reportedly breached ‘almost all’ NSA classified systems within a few hours during red-team test — report sheds more light on the U.S. government's sudden ban on the flagship models (1 minute read)
 
-(blurb not generated)
+A reported NSA red-team test in which Anthropic's Mythos model breached "almost all" classified systems within hours has surfaced as the likely trigger for the US government's June 12 ban on its flagship models. The account, attributed to NSA chief Gen. Joshua Rudd via Sen. Mark Warner, follows a directive barring foreign nationals from Fable 5 and Mythos 5, which prompted Anthropic to disable both models globally rather than enforce nationality-based access.
 
-OpenAI launches new security tools and updates GPT-5.5-Cyber (5 minute read)
+OpenAI launches new security tools and updates GPT-5.5-Cyber (1 minute read)
 
-(blurb not generated)
+OpenAI launched a suite of defensive security tools centered on a shift from finding bugs to landing fixes, including an updated Codex Security plugin and the full GPT-5.5-Cyber model in limited release for verified defenders. Since its March preview, Codex Security has scanned over 30 million commits across 30,000 codebases, while GPT-5.5-Cyber scored 85.6% on CyberGym versus 81.8% for GPT-5.5.
 
-Following user outcry, AMD reinstates memory encryption in consumer CPUs (5 minute read)
+Following user outcry, AMD reinstates memory encryption in consumer CPUs (1 minute read)
 
-(blurb not generated)
-
-Apple Price Increases, Apple Intelligence and the E.U. (5 minute read)
-
-(blurb not generated)
-
-Valve engineers talk Steam Machine, pricing, and the benefits of massive heatsinks — explain why Valve hardware needs to be a 'self-sustained program' (5 minute read)
-
-(blurb not generated)
+AMD will restore TSME memory encryption to consumer Ryzen CPUs after a recent firmware update silently stripped the feature and triggered widespread user backlash. The protection, which encrypts a chip's entire memory contents to defeat cold boot and other physical-access attacks, was removed without notice and was nearly undetectable on Windows, prompting critics to call the move underhanded since continued support required no hardware changes.
 
 🚀
 Science & Futuristic Technology
 
-Top500: China's Arm-based LineShine surpasses the US' El Capitan by 20% to be the world's fastest supercomputer, the first time China takes the crown since 2017 (Don Clark/New York Times) (1 minute read)
+China's LineShine supercomputer dethrones US' El Capitan, secures first place in Top 500 list — first machine in the rankings to sustain more than 2 ExaFLOPS of double-precision performance using only CPUs (1 minute read)
 
-China's Arm-based LineShine supercomputer in Shenzhen topped the latest Top500 list, beating the US system El Capitan by 20% to become the world's fastest, the first time China has held the rank since 2017. LineShine relies entirely on standard microprocessors rather than the GPUs that power most leading machines, suggesting a divergent path to peak performance amid US export controls on advanced chips.
+China's LineShine supercomputer topped the Top 500 list at 2.198 FP64 ExaFLOPS on Linpack, dethroning the US El Capitan and becoming the first ranked system to sustain over 2 ExaFLOPS of double-precision performance using only CPUs. Built in Shenzhen from 13.79 million Armv9 cores across semi-custom 304-core LX2 chips, it leads on traditional HPC workloads but trails El Capitan, Frontier, and Aurora on mixed-precision benchmarks that matter for AI.
+
+China’s LineShine dethrones El Capitan as the world’s fastest supercomputer (3 minute read)
+
+China's LineShine debuted atop the 67th TOP500 list at 2.198 exaflops, ending El Capitan's reign and giving China its first No. 1 system since 2017. Installed in Shenzhen, LineShine reached the top with a CPU-only domestic design built on China's LingKun platform, LingQi interconnect, and Kylin OS, sidestepping the AMD and Intel accelerators that power rival US systems.
 
 Nvidia's Autonomous Robotics Research (5 minute read)
 
+Nvidia's ENPIRE is a harness that lets coding agents run real-world robot learning as a closed loop, automatically resetting scenes, executing policies, verifying outcomes, and refining the next iteration. Using it, frontier coding agents autonomously developed manipulation policies reaching a 99% success rate on dexterous tasks like organizing pins and cutting zip ties, with optional acceleration across a parallel robot fleet.
+
+China appears to be developing 7-meter-diameter reusable rockets (5 minute read)
+
 (blurb not generated)
-
-China appears to be developing 7-meter-diameter reusable rockets (1 minute read)
-
-Procurement records, a delivered 7.5-meter stainless steel forging, and launch pad planning indicate China's main space contractor CASC is developing a new 7-meter-diameter reusable rocket, sitting between the 5-meter Long March 10 and the 10-meter Long March 9. The intermediate vehicle, which has no public designation, would use clusters of methalox YF-209 engines to lift 25,000 to 50,000 kg to low Earth orbit, comparable to Blue Origin's New Glenn.
 
 Inside NVIDIA Halos for Robotics: A Full-Stack Functional Safety System for Physical AI (5 minute read)
 
 (blurb not generated)
 
-Nvidia Halos (5 minute read)
+Nvidia Halos (1 minute read)
+
+Nvidia released Halos, a full-stack safety system that unifies guardrails across chips, AI models, software, and tools to cover the entire autonomous-vehicle development lifecycle from cloud to car. The framework spans design, deployment, and validation using Nvidia's DGX, Omniverse, Cosmos, and DRIVE AGX platforms, includes a third-party inspection lab for regulatory compliance, and is now extending beyond AVs into robotics.
+
+A Chinese supercomputer just secured first place on the Top500 list for the first time since 2017: Here’s everything we know about LineShine (5 minute read)
 
 (blurb not generated)
 
-A Chinese supercomputer just secured first place on the Top500 list for the first time since 2017: Here’s everything we know about LineShine (1 minute read)
+Arm servers capture over 45% of data center market revenue — GPU clusters and high-end AI infrastructure fuel a tectonic shift away from x86 (1 minute read)
 
-China's LineShine supercomputer took the top spot on the 2026 Top500 list with a debut score of 2.198 exaflops on the HPL benchmark, ending El Capitan's reign and marking the first Chinese number one since Sunway TaihuLight in 2017. The Shenzhen-based system runs roughly 14 million Arm-based cores in a rare CPU-only design, delivering a 20% performance edge over El Capitan while pushing three remaining US systems into the second-through-fifth spots.
+Arm-based servers now command over 45% of data center revenue, per IDC, as GPU- and ASIC-accelerated systems drove more than 70% of global server revenue in Q1 2026 and eroded the long-standing x86 lead from AMD and Intel. The market hit a record $122.6B for the quarter, up 30.4% year-over-year, with Dell on top after revenue surged 244% to $20.3B on AI demand.
 
-Arm servers capture over 45% of data center market revenue — GPU clusters and high-end AI infrastructure fuel a tectonic shift away from x86 (5 minute read)
+Canada plans 'nuclear renaissance' with up to 10 reactors built by 2040 (1 minute read)
 
-(blurb not generated)
-
-Canada plans 'nuclear renaissance' with up to 10 reactors built by 2040 (5 minute read)
-
-(blurb not generated)
+Canada released a national nuclear strategy targeting up to 10 new reactors by 2040, with construction on two large-scale units starting by 2035 and a domestic microreactor finalized for remote-community deployment by the late 2030s. The plan, which officials estimate could exceed $100B, aims to double the country's grid capacity by 2050, expand uranium exports, and sell Canadian-made reactors abroad.
 
 AI coding agents taught robots how to install GPUs and cut zip ties (5 minute read)
 
 (blurb not generated)
 
-Report: Kennedy Space Center not ready for era of super heavy rockets (5 minute read)
+Report: Kennedy Space Center not ready for era of super heavy rockets (1 minute read)
 
-(blurb not generated)
+A NASA Inspector General report found that launch infrastructure at Kennedy Space Center is aging and lacks the capacity to meet rising demand from SpaceX's Starship and Blue Origin's New Glenn. Kennedy has only a handful of pads, including Launch Complex 39A leased to SpaceX, leaving roads, gas lines, and other facilities strained as super heavy rockets enter regular service.
 
-Sony’s First LOFIC Image Sensor Promises Nearly 17 Stops of Dynamic Range (5 minute read)
+Sony’s First LOFIC Image Sensor Promises Nearly 17 Stops of Dynamic Range (1 minute read)
 
-(blurb not generated)
+Sony introduced the Lytia L910, its first image sensor built on a Lateral Overflow Integration Capacitor (LOFIC) structure, which captures roughly 16.6 stops of dynamic range in a single 50-megapixel exposure. The Type 1/1.28 sensor uses new HDR and noise-reduction circuitry to limit highlight blowout and dark-area noise, and is set to ship in flagship smartphones later this year.
 
 Building AI Agents for AR Glasses and XR Devices with NVIDIA XR AI (5 minute read)
-
-(blurb not generated)
-
-Acoustic mapping app uses thousands of networked old Android phones to hunt Shahed drones — crowd-sourced microphone network spots small, low-RCS military targets (5 minute read)
 
 (blurb not generated)
 
@@ -145,29 +145,29 @@ NASA picks Eric Schmidt's rocket company for Mars mission, setting up a race wit
 
 (blurb not generated)
 
-Nvidia says its AI data center design runs hotter to use a lot less water (5 minute read)
+How GPT-5 helped immunologist Derya Unutmaz solve a 3-year-old mystery (1 minute read)
+
+OpenAI shared an account of how immunologist Derya Unutmaz used GPT-5 Pro to crack a T cell behavior question that had stumped his lab for three years. The model proposed a mechanistic hypothesis that fit the experimental data, work the team says could feed into cancer and autoimmune disease research.
+
+With Starfall, SpaceX eyes an edge in global cargo delivery from orbit (5 minute read)
 
 (blurb not generated)
 
-With Starfall, SpaceX eyes an edge in global cargo delivery from orbit (1 minute read)
+Rocket Lab launches satellite for U.S. Space Force Victus Haze responsive space exercise (1 minute read)
 
-SpaceX launched its first test of Starfall, a saucer-shaped reentry pod designed to deliver cargo anywhere on Earth from low-Earth orbit, on a Falcon 9 from Cape Canaveral. After two orbits, the vehicle was set for a parachute-assisted Pacific splashdown, with SpaceX also pitching it for in-space manufacturing and returning microgravity-made materials like pharmaceuticals.
+Rocket Lab launched the Victus Haze "Puma" spacecraft for the U.S. Space Force aboard an Electron rocket from New Zealand on June 19, opening a military exercise to rapidly identify and characterize threats in orbit. Built under a $32M contract, the satellite will conduct rendezvous and proximity operations against a craft from startup True Anomaly, the fourth demo in the Space Force's push to make responsive launch an operational capability.
 
-Rocket Lab launches satellite for U.S. Space Force Victus Haze responsive space exercise (5 minute read)
+Chinese spaceplane releases object into orbit, according to commercial space surveillance (1 minute read)
 
-(blurb not generated)
+China's Shenlong reusable spaceplane released an unknown object into orbit during its fourth mission, according to commercial tracking firm LeoLabs, which cataloged it with high confidence from radar observations. The release follows a pattern from the secretive program's earlier flights, which featured rendezvous and proximity operations with deployed subsatellites, mirroring the behavior of the US Space Force's X-37B.
 
-Chinese spaceplane releases object into orbit, according to commercial space surveillance (5 minute read)
+SpaceX tests upcoming Starfall reentry vehicle with demonstration mission on Tuesday (1 minute read)
 
-(blurb not generated)
+SpaceX will launch a demonstration of its Starfall reentry vehicle early Tuesday on a Falcon 9 from Cape Canaveral, deorbiting the disk-shaped capsule for a Pacific splashdown hours after liftoff. Starfall is a mass-produced 2,100 kg spacecraft built to autonomously return up to 1,000 kg of payload from orbit, targeting point-to-point cargo and in-orbit manufacturing once operational.
 
-Open-source Vulkan driver NVK gains experimental DLSS support — bringing Nvidia’s upscaling tech to Linux via imported CUDA binaries (5 minute read)
+China takes back top spot in latest supercomputer ranking (1 minute read)
 
-(blurb not generated)
-
-Trump signs orders to build a quantum computer and protect against the one that could break encryption (5 minute read)
-
-The White House issued twin executive orders directing U.S. agencies to build a large-scale quantum computer while hardening federal systems against quantum attacks on encryption. One order tasks the Department of Energy with hosting an advanced machine and the Pentagon with fielding quantum sensors by 2028, while the second mandates migration to post-quantum cryptography by 2030 to counter "harvest now, decrypt later" threats.
+China's LineShine supercomputer hit 2.198 exaflops to claim the top spot on the Top500 ranking, the first system to exceed two exaflops of sustained CPU-only double-precision performance and the first Chinese machine to lead since 2017. It beat Lawrence Livermore's El Capitan (1.809 exaflops) using a custom 304-core processor and 13.79 million cores rather than GPUs, sidestepping US chip embargoes.
 
 💻
 Programming, Design & Data Science
@@ -176,17 +176,21 @@ Linux Finally Eliminates The strncpy API After Six Years Of Work, 360+ Patches (
 
 (blurb not generated)
 
-VibeThinker: 3B param model that beats Opus 4.5 on reasoning with novel SFT+GRPO (1 minute read)
-
-VibeThinker-3B is a 3B-parameter dense model that reaches frontier reasoning scores, hitting 94.3 on AIME26 and 80.2 Pass@1 on LiveCodeBench v6 while matching or beating far larger systems like Gemini 3 Pro and DeepSeek V3.2. The authors credit a Spectrum-to-Signal pipeline of curriculum SFT, multi-domain RL, and self-distillation, arguing that verifiable reasoning compresses into compact cores while broad knowledge still needs parameter coverage.
-
-Moebius: 0.2B image inpainting model with 10B-level performance (5 minute read)
+VibeThinker: 3B param model that beats Opus 4.5 on reasoning with novel SFT+GRPO (5 minute read)
 
 (blurb not generated)
+
+Moebius: 0.2B image inpainting model with 10B-level performance (1 minute read)
+
+Moebius is a 0.2B-parameter image inpainting model that matches the quality of 10B-parameter systems. The framework uses a latent diffusion architecture with restructured U-Net blocks and a multi-granularity distillation strategy that aligns the lightweight model with a high-capacity teacher, recovering quality lost to aggressive compression.
 
 Deno Desktop (5 minute read)
 
 (blurb not generated)
+
+Boost Inference Performance up to 15x on NVIDIA Blackwell Using DFlash Speculative Decoding (1 minute read)
+
+NVIDIA released DFlash, an open-source block-diffusion drafter for speculative decoding that drafts an entire block of candidate tokens in one forward pass instead of sequentially. It boosts gpt-oss-120b inference on Blackwell by up to 15x at high interactivity, beats EAGLE-3 by 1.5x, and ships with 20 checkpoints on Hugging Face plus recipes for Blackwell and Hopper GPUs.
 
 Agentic coding and persistent returns to expertise (5 minute read)
 
@@ -196,13 +200,13 @@ How We Made Cloud Browsers 3x Cheaper and Faster (5 minute read)
 
 (blurb not generated)
 
-How we found a bug in the hyper HTTP library (5 minute read)
+How we found a bug in the hyper HTTP library (1 minute read)
 
-(blurb not generated)
+Cloudflare engineers spent six weeks tracing intermittent truncation in their Images service to a race condition in hyper, the Rust HTTP library, where large image responses returned a 200 status but arrived cut short by megabytes. The fix took four lines of code, and the writeup walks through how socket handoffs between the Workers runtime and the Images binding exposed the bug.
 
-Adopting AV1 for Real-Time Communication (RTC) at Scale (5 minute read)
+Adopting AV1 for Real-Time Communication (RTC) at Scale (1 minute read)
 
-(blurb not generated)
+Meta has enabled the AV1 video codec on the majority of mobile devices in its RTC apps, including Messenger and WhatsApp, after introducing it for high-end devices in 2023. The codec delivers at least a 20% bitrate reduction versus H.264/AVC, keeping video calls clearer on slow or limited networks where bitrates often fall between 10 and 400 kbps.
 
 Cell-Based Architecture for Resilient Payment Systems (5 minute read)
 
@@ -216,52 +220,52 @@ Building reliable agentic AI systems (5 minute read)
 
 (blurb not generated)
 
-The new HTTP QUERY method explained (1 minute read)
+An Introduction to YOLO26 (5 minute read)
 
-The new HTTP QUERY method standardizes sending a request body with read requests, solving the long-standing problem of cramming complex filters, deep nesting, and arrays into GET query strings that hit URL length limits and encoding ambiguity. Unlike GET requests with bodies, which proxies and servers handle inconsistently, QUERY is safe and idempotent by design, giving APIs a defined way to express rich queries without resorting to POST.
+(blurb not generated)
 
-An Introduction to YOLO26 (1 minute read)
+The new HTTP QUERY method explained (5 minute read)
 
-Roboflow published an introduction to YOLO26, an end-to-end computer vision model family that handles detection, instance segmentation, pose estimation, oriented object detection, and classification across five size variants from Nano to Extra Large. Released in January 2026, it removes Non-Maximum Suppression to cut latency and drops the Distribution Focal Loss module for better edge and low-power hardware support, with the post benchmarking it on COCO against RF-DETR, LW-DETR, and D-FINE.
+(blurb not generated)
 
 ClickHouse Ingestion at Scale: An Open-Source Zepto Engineering Story (5 minute read)
 
+Zepto rebuilt its Kafka-to-ClickHouse ingestion pipeline after Confluent Cloud's managed setup blocked the low-level broker and connector tuning it needed to sustain 10 MB/s of event traffic. By adding batching and buffering logic to the open-source ClickHouse Kafka Connect connector, the team boosted ingestion 45%, eliminated GC pauses, and cut insert pressure, contributing the fixes back upstream in two merged pull requests.
+
+The Coming Loop (1 minute read)
+
+The author describes a shift in agentic engineering from prompting coding agents directly to writing harness-level loops that queue work, attempt it, judge whether an agent's "I'm done" was real, and keep the task alive across sessions or machines. He argues this approach still fails for code he cares about, since present-day models produce overly defensive, locally reasoned code that adds fallbacks instead of making bad states impossible.
+
+Beyond Simpson's Paradox: A Cascade of Confounders in AI Agent Pull-Request Co-Authorship (5 minute read)
+
 (blurb not generated)
 
-Beyond Simpson's Paradox: A Cascade of Confounders in AI Agent Pull-Request Co-Authorship (1 minute read)
+In praise of memcached (5 minute read)
 
-This paper reanalyzes 33,596 pull requests from five AI coding agents and shows that the apparent merge-rate penalty for human co-authorship (53.8% vs. 79.8%) is a Simpson's Paradox driven by agent mix, since Codex dominates the data and rarely uses co-authorship. Once repository selection and PR structure are controlled, no agent retains a clear co-authorship effect, suggesting prior cross-sectional associations are selection artifacts rather than causal benefits.
+(blurb not generated)
 
-In praise of memcached (1 minute read)
+Hidden Gems: Part 4 (1 minute read)
 
-The author argues that memcached is often the better choice for a cache because its minimal feature set prevents teams from quietly turning it into a database, the fate that frequently befalls Redis. Because Redis persists data and offers rich abstractions, developers start relying on it as a system of record, leaving ops to monitor it like a pet rather than a disposable cache.
+Zed published the fourth installment of its Hidden Gems series, surfacing lesser-known editor features. The post covers toggling a centered layout for wide screens, keyboard shortcuts for navigating multiple projects and git worktrees, and configuring Zed as the $EDITOR for command-line tools like git commit in the integrated terminal.
 
 LLMs are complicated now (5 minute read)
 
-(blurb not generated)
-
-Enterprise-Managed Authorization: Zero-touch OAuth for MCP (5 minute read)
-
-(blurb not generated)
-
-On Good Authority: Release-Authority Measurement for Registry-Mediated Package Ecosystems (1 minute read)
-
-This paper introduces a release-authority record that compares each package release to its predecessor across publisher, repository, workflow, provenance, and signing evidence to flag when the public path used to publish code quietly changed. Tested across 45,812 releases from npm, PyPI, Maven Central, and RubyGems, the method surfaced 204 release-path discontinuities as review cues, with practitioners rating most flagged cases as worth immediate inspection.
-
-I hate compilers (5 minute read)
-
-(blurb not generated)
+Modern LLM architectures have accumulated the same kind of complexity that once made recommendation systems intractable, with attention variants like grouped, sparse, sliding-window, and linear stacking alongside mixture-of-experts routing and mixed-in vision and audio encoders. The author argues that as performance optimization shifts from optional to load-bearing, swapping one architecture component for another requires a fused, optimized baseline before you can even tell whether the change is worth pursuing.
 
 🎁
 Miscellaneous
+
+Nearly half of LG smart TV apps contain residential proxy SDKs (1 minute read)
+
+Researchers at Spur scanned 6,038 LG and Samsung smart TV apps and found 2,058 of them, nearly half on LG, bundled residential proxy SDKs that route strangers' internet traffic through users' home networks. The apps, often calm-by-design tools like clocks and fish tanks, ask for consent once and keep selling the connection in the background after they're closed, with the proxy company frequently doubling as the publisher.
 
 FortiBleed: 86,000 Fortinet Device Credentials Compromised (5 minute read)
 
 (blurb not generated)
 
-Fortinet: Oracle and other goliaths in firewall fallout as GPU 'democratization' blamed for mass hack (5 minute read)
+Fortinet: Oracle and other goliaths in firewall fallout as GPU 'democratization' blamed for mass hack (1 minute read)
 
-(blurb not generated)
+A credential-harvesting campaign dubbed "Fortibleed" compromised roughly 74,000 FortiGate devices across 190 countries, leaking enterprise logins from Oracle, Samsung, Foxconn, Siemens, PwC, Accenture, and a NATO defense contractor. Researcher Kevin Beaumont attributes the scale not to nation-states but to cheap GPU rentals, arguing that hourly access to clusters like the attackers' 45-GPU rig now lets low-skill actors crack passwords at scale.
 
 GrapheneOS has been ported to Android 17 and official releases are coming soon (5 minute read)
 
@@ -271,37 +275,49 @@ Who owns your ATProto identity? (5 minute read)
 
 (blurb not generated)
 
-Trump Signs Executive Order Accelerating Post-Quantum Cryptography Migration (1 minute read)
-
-Trump signed Executive Order 14409 to accelerate federal migration to post-quantum cryptography, citing the "harvest now, decrypt later" threat in which adversaries steal encrypted data today to crack it once quantum computers mature. Agencies must inventory high-value systems and transition them to PQC for key establishment by the end of 2030 and digital signatures by 2031, with federal contractors required to comply with NIST standards on the same timeline.
-
-The text in Claude Code’s “Extended Thinking” output (5 minute read)
+Trump Signs Executive Order Accelerating Post-Quantum Cryptography Migration (5 minute read)
 
 (blurb not generated)
+
+The text in Claude Code’s “Extended Thinking” output (1 minute read)
+
+The author found that Claude Code's locally saved "thinking blocks" contain only a 600-character encrypted signature, not readable text, because Anthropic encrypts the reasoning, holds the key, and returns only a summary unless you have an enterprise agreement. The practical warning: the extended-thinking output you can view is a lossy summary, not the actual reasoning that drove the agent, so it can't serve as a genuine audit trail.
 
 Canada’s Spy Agency Used First-of-Its-Kind Warrant to Clean Botnet-Infected Devices (5 minute read)
 
 (blurb not generated)
 
-Never Give Them Your Face (5 minute read)
+FFmpeg PixelSmash Flaw Allows RCE on Video Players, Media Servers, NAS Appliances (1 minute read)
 
-(blurb not generated)
+JFrog disclosed PixelSmash (CVE-2026-8461, CVSS 8.8), a heap out-of-bounds write in FFmpeg's MagicYUV decoder that lets a crafted 50KB media file trigger remote code execution before the process crashes. Because libavcodec underpins video players, file-manager thumbnailers, self-hosted media servers, NAS boxes, and cloud transcoders, the bug enables zero-click, no-authentication attacks via any delivered file, including torrents auto-imported into a monitored library.
 
-Ukraine puts its Russian war trophies online for allies to pick apart (5 minute read)
+Ukraine puts its Russian war trophies online for allies to pick apart (1 minute read)
 
-(blurb not generated)
+Ukraine published technical breakdowns of captured Russian weaponry online, opening its trove of battlefield trophies for allied militaries and engineers to study. The catalog details components, electronics, and design choices found in seized hardware, turning frontline salvage into shared intelligence that NATO partners can use to understand Russian capabilities and harden their own systems.
 
-NSF slashes research programs to support new tech initiative, insiders say (5 minute read)
+MSG Made Dossier on Activists Who Opposed Facial Recognition (1 minute read)
 
-(blurb not generated)
+Madison Square Garden compiled a dossier on activists who publicly criticized its facial recognition system, collecting their tweets and comments into a document accessible to staff inside the company. 404 Media found the file in a 45GB cache stolen by hackers and posted online this month, showing the Jim Dolan-run venue tracks specific critics of the biometric surveillance it deploys on patrons.
+
+NSF slashes research programs to support new tech initiative, insiders say (1 minute read)
+
+The National Science Foundation is cutting existing research programs to fund a new technology initiative, according to insiders cited by Science. The reallocation would shift money away from established grants toward the agency's emerging tech priorities, raising concerns among researchers about the future of basic science funding.
+
+Scattered Spider members plead guilty to hacking Transport for London (1 minute read)
+
+Two Scattered Spider members, Thalha Jubair (20) and Owen Flowers (18), pleaded guilty to the 2024 hack of Transport for London, which forced all 28,000 employees to reset passwords in person and caused £29M ($38.3M) in damage. UK investigators credited TfL's early engagement with law enforcement for the conviction and have linked Flowers to intrusions at US healthcare providers SSM Health and Sutter Health.
 
 The 100k whys of AI (5 minute read)
 
 (blurb not generated)
 
-Flock-Powered Police Chiefs Stalking Women Shows Why Warrants Are Needed (5 minute read)
+Elevated error rate across multiple models (1 minute read)
 
-(blurb not generated)
+Anthropic reported an elevated error rate across multiple Claude models on its status page, with the incident drawing attention on Hacker News. The disruption underscores how dependent production tooling and agent workflows have become on a handful of frontier model providers, where a single upstream incident can ripple into downstream apps that route requests through one API.
+
+Flock-Powered Police Chiefs Stalking Women Shows Why Warrants Are Needed (1 minute read)
+
+An Illinois police chief was arrested and charged with two felony counts of official misconduct after prosecutors said he used Prairie Grove's Flock license plate readers and a state database to track six people he knew, including three former romantic partners. The Institute for Justice has counted at least 18 similar cases of officers using Flock to stalk partners and rivals, arguing the pattern is why such searches should require a warrant.
 
 White House delays release of US voting machine study as midterms near (5 minute read)
 
@@ -315,52 +331,36 @@ I Could've Rickrolled the Entire FIFA World Cup. All I Needed Was My ID (5 minut
 
 (blurb not generated)
 
-FFmpeg fixes PixelSmash flaw in widely used video decoder (5 minute read)
+FFmpeg fixes PixelSmash flaw in widely used video decoder (1 minute read)
 
-(blurb not generated)
-
-MoneyGram joins Solana as validator amid stablecoin payment push (5 minute read)
-
-(blurb not generated)
-
-Humiliating IIS servers for fun and jail time (5 minute read)
-
-(blurb not generated)
-
-LiteLLM Vulnerability Chain Lets Low-Privilege Users Take Over AI Gateway Servers (5 minute read)
-
-(blurb not generated)
-
-Pledging another $400k to the Zig software foundation (5 minute read)
-
-(blurb not generated)
+FFmpeg patched PixelSmash (CVE-2026-8461), a high-severity heap out-of-bounds write in its MagicYUV decoder that JFrog used to achieve remote code execution against a Jellyfin media server through its normal library scan. Any application built on libavcodec is exposed, including Kodi, OBS Studio, Nextcloud, and desktop thumbnail generators, since a malicious AVI, MKV, or MOV file can trigger the flaw on open or preview.
 
 ⚡
 Quick Links
 
-Residential proxy SDKs are hiding in LG and Samsung smart TV apps (1 minute read)
-
-Spur Intelligence found residential proxy SDKs in 34% of scanned LG webOS and Samsung Tizen apps, quietly routing strangers' web traffic through home connections.
-
 Making secret scanning more trustworthy: Reducing false positives at scale (5 minute read)
 
-(blurb not generated)
+GitHub added LLM-based contextual verification to its secret scanning, cutting false positives by reasoning about how a detected value appears in code.
 
-Show HN: Oak – Git alternative designed for agents (5 minute read)
+Show HN: Oak – Git alternative designed for agents (1 minute read) [flag]
 
-(blurb not generated)
+Oak is a content-addressed, open-source version control system built for AI agents, using branch-per-session and lazy mounts to outpace git on agent workloads.
+
+F3 (1 minute read)
+
+F3 is a research-prototype columnar file format that fixes Parquet's layout limits while staying future-proof through embedded Wasm decoders.
 
 New attack turned Microsoft 365 Copilot into 1-click data theft tool (5 minute read)
 
 (blurb not generated)
 
-Valve Steam Machine review: Couch gaming unboxed, but not always at 4K (5 minute read)
+Valve Steam Machine review: Couch gaming unboxed, but not always at 4K (1 minute read)
 
-(blurb not generated)
+Valve's $1,049 Steam Machine brings SteamOS to the couch but tops out at 1080p or 1440p in newer games.
 
 Atlassian's DESIGN.md is Here: What We Learned Testing Portable Design Context in Practice (5 minute read)
 
-(blurb not generated)
+Atlassian tested Google's open-source DESIGN.md format and found it portable but less sophisticated than its own design-context tooling.
 
 MolmoMotion: Language-guided 3D motion forecasting (5 minute read)
 
@@ -374,21 +374,17 @@ Introducing LifeSciBench (5 minute read)
 
 (blurb not generated)
 
-29-Year-Old Squid Proxy Bug 'Squidbleed' Can Leak Cleartext HTTP Requests (5 minute read)
+29-Year-Old Squid Proxy Bug 'Squidbleed' Can Leak Cleartext HTTP Requests (1 minute read)
 
-(blurb not generated)
-
-A $1,400 experiment in AI security auditing outperformed OpenAI’s Codex Security (1 minute read)
-
-An open-source model running an evolved audit playbook beat OpenAI's Codex Security on vulnerability detection, for $1,400.
+A 29-year-old Squid proxy heap over-read, dubbed Squidbleed, leaks other users' cleartext HTTP requests and credentials.
 
 Production-Ready Autonomous Incident Resolution with AWS DevOps Agent (now GA) and Datadog MCP Server (5 minute read)
 
-(blurb not generated)
+AWS DevOps Agent is now generally available, pairing with the GA Datadog MCP Server for autonomous incident triage across AWS, multicloud, and on-prem.
 
 Announcing DuckDB 1.5.4 (5 minute read)
 
-(blurb not generated)
+DuckDB 1.5.4 (Variegata) ships correctness fixes, performance improvements, and security patches, alongside a parallel v1.4.5 LTS release.
 
 A 27-Year-Old Authentication Bypass in OpenBSD's PPP Stack (5 minute read)
 
@@ -396,24 +392,28 @@ A 27-Year-Old Authentication Bypass in OpenBSD's PPP Stack (5 minute read)
 
 New AI Visibility Insights in Bing Webmaster Tools: Intents, Topics, Citation Share, Compare (5 minute read)
 
-(blurb not generated)
+Bing Webmaster Tools added four preview features showing publishers why their content gets cited in AI answers: Intents, Topics, Citation Share, and Compare.
 
-Ethereum Foundation’s Interim ED Lays Out Execution Plan: MEV Elimination, Default Privacy, ETH Pay (5 minute read)
+Ethereum Foundation’s Interim ED Lays Out Execution Plan: MEV Elimination, Default Privacy, ETH Pay (1 minute read)
 
-(blurb not generated)
+Ethereum Foundation's interim ED laid out a six-part plan to eliminate toxic MEV, make privacy a protocol default, and pay staff in ETH.
 
 Import AI 462: Superpersuasion; self-sustaining AI; paths to ASI (5 minute read)
 
 (blurb not generated)
 
-Codex-maxxing for long-running work (5 minute read)
+Codex-maxxing for long-running work (1 minute read)
 
-(blurb not generated)
+An OpenAI whitepaper on using Codex as a persistent workspace that preserves context across long-running, multi-step projects.
 
-Breaking Into a Prison Tablet (5 minute read)
+What the Fortibleed campaign means for organizations running FortiGate firewalls (1 minute read)
 
-(blurb not generated)
+Researchers reconstructed the FortiBleed campaign's full attack chain from leaked attacker tools, revealing automated credential harvesting against exposed FortiGate firewalls.
 
-Decades-Old Squid Proxy Flaw ‘Squidbleed’ Can Expose User Data (5 minute read)
+JaredFromSubway MEV bot hacked in $15 million crypto theft (1 minute read)
+
+The JaredFromSubway sandwich bot lost $15M after an attacker fed it fake MEV opportunities to harvest ERC-20 token approvals, then drained the funds.
+
+Tesco races to migrate 40,000 servers away from VMware amid licensing spat (5 minute read)
 
 (blurb not generated)

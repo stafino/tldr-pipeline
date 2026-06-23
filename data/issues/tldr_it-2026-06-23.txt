@@ -10,79 +10,79 @@ FortiBleed: 86,000 Fortinet Device Credentials Compromised (5 minute read)
 
 (blurb not generated)
 
-Microsoft fixes AutoGen Studio flaw that enabled code execution (5 minute read)
+Microsoft fixes AutoGen Studio flaw that enabled code execution (1 minute read)
+
+Microsoft patched a vulnerability chain dubbed AutoJack in AutoGen Studio, the GUI for its open-source multi-agent framework, which could let a malicious webpage trick a developer's browsing agent into executing arbitrary PowerShell or Bash commands on the host. The flaw was fixed before any PyPI release, so only developers who built from the main GitHub branch during a narrow window were exposed.
+
+Fortinet: Oracle and other goliaths in firewall fallout as GPU 'democratization' blamed for mass hack (1 minute read)
+
+Attackers compromised roughly 74,000 internet-facing FortiGate devices, nearly half of all publicly exposed Fortinet firewalls, harvesting enterprise credentials from organizations including Oracle, Samsung, Siemens, PwC, Accenture, and a NATO defense contractor. Researchers tied the campaign to a rented 45-GPU cluster used to crack and generate password variants at scale, evidence that cheap on-demand GPU access has lowered the bar for credential attacks on enterprise edge infrastructure.
+
+Trump Signs Executive Order Accelerating Post-Quantum Cryptography Migration (5 minute read)
 
 (blurb not generated)
 
-Fortinet: Oracle and other goliaths in firewall fallout as GPU 'democratization' blamed for mass hack (5 minute read)
+A new unpatchable flaw in Apple chips opens the door to an iPhone jailbreak (1 minute read)
 
-(blurb not generated)
+Paradigm Shift, a Barcelona-based offensive security firm, published "usbliter8," a proof-of-concept exploit for an unpatchable Boot ROM flaw in Apple's A12 and A13 chips that affects the iPhone XS, XR, and 11. Because the flaw sits in immutable silicon, no software update can fix it, leaving hardware refresh the only mitigation for older fleets and handing forensics vendors like Cellebrite another physical-access path into seized devices.
 
-Trump Signs Executive Order Accelerating Post-Quantum Cryptography Migration (1 minute read)
+LastPass notifies customers that their personal information and customer support case records were stolen during a hack at Canadian market research company Klue (Zack Whittaker/TechCrunch) (1 minute read)
 
-Trump signed Executive Order 14409 directing OMB, NIST, NSA, DHS, and CISA to develop technical guidance that moves federal agencies to post-quantum cryptography, with deadlines of December 31, 2030 for key establishment and 2031 for digital signatures. Federal contractors must comply with NIST PQC standards by the end of 2030, making cryptographic inventory and migration a near-term procurement requirement rather than a long-horizon planning exercise.
+LastPass notified customers that their personal information and customer support case records were stolen in a breach at Klue, a Canadian market research vendor it uses. The incident is another third-party supply-chain exposure for LastPass, whose own 2022 vault breach already pushed enterprise buyers to scrutinize how the password manager and its subcontractors handle customer data.
 
-A new unpatchable flaw in Apple chips opens the door to an iPhone jailbreak (5 minute read)
+FFmpeg fixes PixelSmash flaw in widely used video decoder (1 minute read)
 
-(blurb not generated)
+FFmpeg patched PixelSmash (CVE-2026-8461), a high-severity heap out-of-bounds write in the MagicYUV decoder that JFrog used to achieve remote code execution on a Jellyfin media server through its normal library-scan pipeline. Any application built on libavcodec is exposed, including Kodi, OBS Studio, Nextcloud, PhotoPrism, and Linux desktop thumbnail generators, so IT teams should prioritize updating FFmpeg across self-hosted media and file-preview infrastructure.
 
-FFmpeg fixes PixelSmash flaw in widely used video decoder (5 minute read)
+FortiBleed Attackers Turn Firewalls Into Credential Stealers as Heists Persist (1 minute read)
 
-(blurb not generated)
+Researchers at SOCRadar detailed FortigateSniffer, a Golang tool that abuses FortiOS's built-in packet-sniffer diagnostic to turn compromised FortiGate firewalls into passive credential collectors, harvesting 110 million credentials across 24 authentication protocols from an estimated 430,000 devices. CISA has urged organizations to patch and rotate credentials as the Russian-linked campaign, active since February, expands to high-value targets including a NATO-aligned defense contractor.
+
+Scattered Spider members plead guilty to hacking Transport for London (1 minute read)
+
+Two members of the Scattered Spider cybercrime group, Thalha Jubair and Owen Flowers, pleaded guilty to the September 2024 breach of Transport for London that cost the agency £29 million ($38.3M) and forced all 28,000 employees to reset passwords in person. The NCA credited TfL's early engagement with law enforcement for the conviction, a pointed message to enterprises weighing whether to disclose intrusions on critical infrastructure.
+
+21,000 Oracle jobs vanish amid Big Red's big bets on AI (1 minute read)
+
+Oracle's headcount fell from 162,000 to 141,000 over the past year, a cut of roughly 21,000 jobs, even as the company pours billions into datacenter expansion to chase AI workloads. The reshuffle signals Oracle is funding its capex-heavy AI infrastructure bet partly by trimming staff, a trade-off enterprise buyers should weigh when assessing the vendor's support depth and long-term roadmap stability.
 
 New attack turned Microsoft 365 Copilot into 1-click data theft tool (5 minute read)
 
 (blurb not generated)
 
-FortiBleed campaign used custom FortiGate sniffer to steal credentials (5 minute read)
+China’s LineShine dethrones El Capitan as the world’s fastest supercomputer (3 minute read)
+
+China’s LineShine debuted atop the 67th TOP500 list at 2.198 exaflops, beating Lawrence Livermore’s El Capitan by more than 20% and ending U.S. leadership for the first time since 2017. The system reached No. 1 with a CPU-only domestic stack built on China’s LingKun platform, LingQi interconnect, and Kylin OS, sidestepping the AMD and Intel accelerators that power the top U.S. systems.
+
+FortiBleed campaign used custom FortiGate sniffer to steal credentials (1 minute read)
+
+SOCRadar reported that the FortiBleed campaign has compromised FortiGate firewalls since at least February 2026 using "FortigateSniffer," a Golang tool that abuses FortiOS's built-in diagnose sniffer command to harvest RADIUS, NTLM, Kerberos, and LDAP credentials across 24 protocols. The finding contradicts Fortinet's claim that the incident is only a collection of old leaked credentials, indicating an active operation against more than 430,000 internet-exposed devices.
+
+Microsoft and Chevron plan one of the largest gas-powered data center projects in US (1 minute read)
+
+Microsoft and Chevron will develop Project Kilby, a 2.67-gigawatt natural gas plant in West Texas dedicated to a Microsoft-operated AI and cloud data center under a 20-year power purchase agreement. The dedicated buildout signals that Microsoft is prioritizing guaranteed AI compute capacity over its 2030 carbon-neutral pledge, since the plant could emit more than 13 million tons of CO2 annually.
+
+AWS unveils sovereign-centric micro serverless virtual machines (1 minute read)
+
+AWS launched Lambda MicroVMs, a Firecracker-backed resource that gives each end user or session an isolated environment for running untrusted or AI-generated code, with up to 16 vCPUs, 32GB of memory, and eight hours of runtime per machine. The offering targets enterprises facing data-sovereignty and AI-security pressure, letting teams run code in regional, lifecycle-controlled sandboxes without managing virtualization infrastructure or standing up a separate vendor.
+
+Google Apps Script is now a Google Workspace core service with enterprise-grade data protection (1 minute read)
+
+Google reclassified Apps Script as a Google Workspace core service, extending enterprise-grade data protection, compliance coverage, and technical support to the automation platform that powers custom functions and add-ons across Sheets, Docs, and Slides. Organizations that previously disabled Apps Script over security or compliance concerns can now re-enable it under Google's standard data governance terms, removing a procurement blocker for sanctioned in-house automation.
+
+A Chinese supercomputer just secured first place on the Top500 list for the first time since 2017: Here’s everything we know about LineShine (5 minute read)
 
 (blurb not generated)
 
-Microsoft and Chevron plan one of the largest gas-powered data center projects in US (5 minute read)
+Dell launches AI server based on Nvidia Vera Rubin GPUs (3 minute read)
 
-(blurb not generated)
-
-A Chinese supercomputer just secured first place on the Top500 list for the first time since 2017: Here’s everything we know about LineShine (1 minute read)
-
-China's LineShine supercomputer took the top spot on the 2026 Top500 list at 2.198 exaflops, ending El Capitan's run and marking the first Chinese system at number one since Sunway TaihuLight in 2017. The CPU-only cluster runs roughly 14 million Arm-based cores on a domestic stack, including LX2 processors linked to Huawei, the Kylin OS, and a proprietary interconnect, underscoring China's push to build sovereign HPC without US silicon.
-
-Dell launches AI server based on Nvidia Vera Rubin GPUs (5 minute read)
-
-(blurb not generated)
+Dell launched the PowerEdge XE8812, a liquid-cooled AI server built on Nvidia's Vera Rubin NVL4 architecture that scales to 144 GPUs per rack and anchors the Dell AI Factory with Nvidia preconfigured stack of compute, PowerScale and PowerStore storage, networking, and Nvidia AI Enterprise software. The system adds 50% more memory per socket and GPU versus the prior GB200 generation, letting enterprises run larger models and simulations entirely in-memory without staging or swapping.
 
 Tesco races to migrate 40,000 servers away from VMware amid licensing spat (5 minute read)
 
 (blurb not generated)
 
 Amazon hopes to challenge Nvidia more directly by selling its AI chips (5 minute read)
-
-(blurb not generated)
-
-The memory crisis is getting so bad that even retro RAM prices are going to the Moon (5 minute read)
-
-(blurb not generated)
-
-FortiBleed Leak Exposes Fortinet VPN Credentials for 73K Devices (5 minute read)
-
-(blurb not generated)
-
-Microsoft says Windows 11 26H2 is coming soon, details upgrade process (5 minute read)
-
-(blurb not generated)
-
-Microsoft tells Windows users to get ready for 26H2 – unless they're on 26H1 (5 minute read)
-
-(blurb not generated)
-
-Filing: Oracle's global workforce fell by 21,000 employees in the past 12 months to 141,000 as of May 31; the company says AI adoption has led to reductions (Brody Ford/Bloomberg) (5 minute read)
-
-(blurb not generated)
-
-Oracle Sheds 21,000 Jobs as It Sharpens Focus on AI (1 minute read)
-
-Oracle cut roughly 21,000 jobs in its last fiscal year, shrinking head count about 13% as it redirects spending toward AI infrastructure. The cuts signal that Oracle is funding its capital-intensive AI buildout partly through payroll, a trade-off enterprise buyers should weigh against the company's ability to support its database and cloud commitments.
-
-Decades-Old Squid Proxy Flaw ‘Squidbleed’ Can Expose User Data (5 minute read)
 
 (blurb not generated)
 
@@ -101,76 +101,124 @@ A modest proposal: Reformat everything to make documents more palatable to AI (5
 
 (blurb not generated)
 
-What 20 years of AWS taught me about agentic AI (3 minute read)
+What 20 years of AWS taught me about agentic AI (5 minute read)
 
-Spec-driven development keeps AI coding agents from wandering, argues a 20-year AWS engineer: instead of dropping an agent into a repo with a vague prompt, co-create a requirements spec, design document, and task breakdown in Markdown first. The implication for IT leaders is that agentic coding scales to critical codebases only with the same governance discipline as human teams, not autonomy. Acceptance criteria and strict testing become the contract that defines "done.
+(blurb not generated)
 
 🤝
 Launches & Partnerships
 
-Announcing Amazon EC2 G7 instances accelerated by NVIDIA RTX PRO 4500 Blackwell Server Edition GPUs (5 minute read)
+Announcing Amazon EC2 G7 instances accelerated by NVIDIA RTX PRO 4500 Blackwell Server Edition GPUs (1 minute read)
 
-(blurb not generated)
+AWS released its EC2 G7 instances into general availability, becoming the first major cloud provider to offer NVIDIA RTX PRO 4500 Blackwell Server Edition GPUs paired with custom sixth-gen Intel Xeon processors. The instances deliver up to 4.6x AI inference and 2.1x graphics performance over G6, with 32GB of memory per GPU, 700 Gbps of EFA networking, and up to eight GPUs per node for inference, rendering, and VDI workloads.
 
 Production-Ready Autonomous Incident Resolution with AWS DevOps Agent (now GA) and Datadog MCP Server (5 minute read)
 
-(blurb not generated)
+AWS made its DevOps Agent generally available alongside the now-GA Datadog MCP Server, giving teams a production-ready path to autonomous incident triage and resolution across AWS, multicloud, and on-premises environments. The integration lets AI agents pull Datadog observability data through the Model Context Protocol instead of brittle API calls, positioning AWS and Datadog as the joint stack for automated incident response and cutting on-call resolution from hours to minutes.
 
-AWS enters the context layer race with a graph that learns from agents, not manual curation (5 minute read)
+AWS enters the context layer race with a graph that learns from agents, not manual curation (2 minute read)
 
-(blurb not generated)
+AWS announced a context intelligence stack for AI agents, centered on AWS Context, a knowledge graph service that infers data relationships automatically and refines itself based on how agents use it, alongside GA of S3 Annotations and a preview of skill assets in Glue Data Catalog. Metadata publishes in open Apache Iceberg format with IAM and Lake Formation permissions inherited per query, positioning AWS against context-layer rivals on existing enterprise controls.
+
+AWS debuts Lambda MicroVMs with up to 8 hours runtime (1 minute read)
+
+AWS launched Lambda MicroVMs, extending its serverless platform to support workloads that run up to eight hours, a major jump from the previous 15-minute execution ceiling. The longer runtime and microVM isolation target untrusted code, AI agents, and long-running batch jobs, letting enterprises consolidate workloads that previously required Fargate or EC2 onto Lambda's pay-per-use billing.
 
 AWS WAF adds AI traffic monetization capability to help content owners charge AI bots for content access (5 minute read)
 
 (blurb not generated)
 
-AWS Continuum offers devs help with securing code (5 minute read)
+Join Google Meet calls from Safari on iOS devices (1 minute read)
 
-(blurb not generated)
+Google Workspace added support for joining Google Meet calls directly from Safari on iOS, automatically redirecting users who lack the Gmail or Meet app to a browser-based session. The change removes an app-install requirement for ad-hoc participants and rolls out to all Workspace customers and personal accounts starting June 23, with no admin control to configure.
 
-Troubleshoot formula errors quickly with Gemini in Google Sheets (5 minute read)
+AWS Continuum offers devs help with securing code (2 minute read)
 
-(blurb not generated)
+AWS launched Continuum, a service that continuously discovers, investigates, and remediates code vulnerabilities across first-party and third-party software, with an enforce mode that autonomously fixes lapses once it learns an environment's guardrails. The service pulls penetration testing and code scanning from AWS's existing Security Agent and adds threat modeling that generates STRIDE-format models from source or design docs, positioning AWS to keep security triage pace with agentic development.
 
-AI 도입 넘어 비용 관리로…오픈AI, 사용량 분석·예산 설정 기능 공개 (5 minute read)
+Verifiable, private AI: Google Cloud expands Confidential Computing frontiers (2 minute read)
 
-(blurb not generated)
+Google Cloud launched Confidential G4 VMs and Confidential GKE Nodes in preview, pairing NVIDIA RTX PRO 6000 Blackwell GPUs with 5th Gen AMD EPYC Turin CPUs to run AI inference and fine-tuning inside hardware-based Trusted Execution Environments. The setup encrypts data in use across the CPU-GPU path and is offered in every region where standard G4 runs, giving regulated buyers confidential GPU compute without sacrificing scale or consumption flexibility.
 
-Introducing the Cloudflare One stack: agent-powered deployment (5 minute read)
+Announcing the Public Preview of Integrated Embeddings in Azure Cosmos DB: Build AI Apps With Embeddings That Stay in Sync (2 minute read)
 
-(blurb not generated)
+Microsoft put Integrated Embeddings for Azure Cosmos DB into public preview, letting the database automatically generate and maintain vector embeddings as items are written and updated, using a configured Microsoft Foundry model. Enterprises building RAG on Cosmos DB can now drop the separate embedding pipeline they had to build and operate for change tracking, retries, and scaling, keeping vectors in sync without extra infrastructure.
 
-Boost BigQuery with Python: Managed Python UDFs now generally available (5 minute read)
+Okta expands Cross App Access ecosystem to secure AI agent connections (1 minute read)
 
-(blurb not generated)
+Okta said more than 25 software makers, including Atlassian, Slack, Zoom, Cursor, and Anthropic's Claude, have signed onto its Cross App Access framework, which routes AI agent connections to enterprise apps through a company's existing identity controls. Built as an OAuth extension and now the official authorization extension for the Model Context Protocol, XAA replaces static API keys and unseen consent screens with identity policy that follows an agent across applications.
+
+Enhanced security monitoring with expanded Admin password reset alerts (1 minute read)
+
+Google Workspace expanded its admin alerting to cover all admin password resets, replacing the narrower "Super Admin password reset" rule with a broader detection that is on by default for every Workspace customer. Existing recipient-list customizations carry over automatically and the rollout began June 22 with no end-user impact, so admins get wider account-takeover monitoring without any procurement or configuration work.
+
+Anthropic launches Claude Tag, an agentic AI coworker for Slack that can learn context, give suggestions, and more, in beta for Claude Team and Enterprise tiers (David Gewirtz/ZDNET) (1 minute read)
+
+Anthropic launched Claude Tag, an agentic AI coworker that lives in Slack and can learn channel context, surface suggestions, and act on requests, now in beta for Claude Team and Enterprise customers. The move pushes Anthropic into the day-to-day collaboration layer where Slack and Microsoft Teams already sit, giving enterprises an embedded agent without a separate procurement on top of their existing Claude seats.
+
+Introducing the Cloudflare One stack: agent-powered deployment (1 minute read)
+
+Cloudflare released the Cloudflare One stack, a set of agent skills that configure, deploy, and manage a customer's Zero Trust environment and map an existing security suite into Cloudflare One. The toolkit packages Cloudflare's SASE migration expertise into prescriptive guidance any agent can execute, reducing the manual work of decoding network topology and policy intent during a Zero Trust rollout.
+
+Announcing General availability of the Azure Cosmos DB vNext emulator (3 minute read)
+
+Microsoft made the Azure Cosmos DB vNext emulator generally available as a Docker image that runs locally across Linux, macOS, and Windows on x64 and ARM64, with GA adding vector search, OpenTelemetry support, and a bundled Cosmos DB Shell. The shell auto-runs /init scripts before the gateway accepts requests, letting teams seed deterministic datasets for CI integration tests without app-side bootstrap or readiness polling.
+
+Log Analytics is now Observability Analytics: Query logs and traces with SQL (2 minute read)
+
+Google Cloud renamed Log Analytics to Observability Analytics and made trace data and a management Observability API generally available, letting teams query and JOIN logs and distributed traces with SQL in one place without moving the data. The unified telemetry layer, backed by BigQuery, lets SREs correlate observability data with business metrics and trace agentic workloads, putting Google in closer competition with Datadog and Splunk on enterprise observability.
+
+Dragos Unveils AI for OT Security (1 minute read)
+
+Dragos released EmberAI, an OT-specific security assistant built on its decade-long Intelligence Fabric dataset that lets analysts query threats, assets, and vulnerabilities in plain language while keeping customer data inside their own deployment. The launch follows Accenture's $4.1B move to take a majority stake in Dragos and fully acquire runZero and NetRise, signaling a deeper push into operational-technology security for enterprise buyers.
+
+Google Cloud ups telecom game with Nokia AI agent infusion (1 minute read)
+
+Google Cloud and Nokia expanded their partnership with AI agents for autonomous network operations, built on Google's Agent Development Kit and Gemini Enterprise Agent Platform and deployed in Nokia's Assurance Center. Two of six agents are live now, with the rest arriving when the platform launches as a SaaS offering on Google Cloud Marketplace in September 2026, and Google claims the agents cut issue-resolution times by 50% to 80%.
+
+Boost BigQuery with Python: Managed Python UDFs now generally available (2 minute read)
+
+Google made BigQuery Managed Python UDFs generally available, letting data teams run custom Python with libraries like NumPy, pandas, and scikit-learn directly inside SQL queries on serverless, auto-scaling infrastructure. The functions are now fully supported for production workloads and integrated into BigQuery's billing SKUs, removing the need to maintain separate containers or compute services to run Python helper logic against enterprise data.
 
 Tesla plans to sell modular AI data center hardware called ‘Megapod' (5 minute read)
 
-(blurb not generated)
+Tesla filed an intent-to-use trademark for "Megapod," a modular, self-contained AI data center system bundling servers, networking, power distribution, and cooling, plus management software, less than a year after it killed its Dojo training computer. The product would compete directly with Nvidia's GB200 NVL72 and DGX SuperPOD, the rack-scale reference designs that Dell and Supermicro already build on, putting Tesla in a market Nvidia's chips effectively underpin.
 
-AWS announces AWS Blocks, an open-source framework for composing application backends on AWS (Preview) (5 minute read)
+Gemini in Google Sheets can now help you debug and fix formula errors (1 minute read)
 
-(blurb not generated)
+Google started rolling out a Gemini update in Google Sheets that diagnoses and fixes formula errors in one click, available where Workspace admins have enabled Gemini for Workspace in Sheets. The feature handles everything from basic arithmetic to complex calculations, extending Google's push to move AI from the side panel into the grid after Gemini in Sheets hit a 70.48% success rate on SpreadsheetBench.
 
 🎁
 Miscellaneous
 
 Blinding the Watchmen: Abusing Cloud Logging Services for Defense Evasion and Visibility (5 minute read)
 
-(blurb not generated)
+Unit 42 documented attack techniques that target cloud logging services like AWS CloudTrail and Google Cloud Logging, showing how attackers disrupt log flows to evade detection or quietly route copies of audit logs into their own accounts for continuous visibility. The breakdown gives security and cloud-ops teams concrete misconfigurations to harden and specific service-misuse patterns to add to their detection rules.
 
-Anthropic's Mythos mess just keeps getting more complicated (5 minute read)
+Anthropic's Mythos mess just keeps getting more complicated (1 minute read)
 
-(blurb not generated)
+Anthropic disabled its Mythos 5 and Fable 5 models for all customers after the Trump administration issued an export-control order last week barring any foreign national, including Anthropic staff, from using them on national-security grounds. The Register's Kettle podcast digs into Amazon's possible role in the decision and warns that open-weight models will likely match the same capabilities, making the restriction hard to enforce for enterprise buyers caught without access.
 
 ⚡
 Quick Links
 
 Threat Brief: Mitigating Large-Scale Credential Attacks (5 minute read)
 
-(blurb not generated)
+Unit 42 details a large-scale password spraying campaign ("FortiBleed") harvesting credentials from internet-exposed Fortinet, Sophos, and MSSQL devices.
 
 Apple's A12 and A13 Chips Facing New Unpatchable Exploit (5 minute read)
+
+Researchers published usbliter8, an unpatchable BootROM exploit affecting Apple's A12 and A13 chips, covering iPhone XS through iPhone 11.
+
+EDB converges analytics on Postgres to support AI agents (2 minute read)
+
+EDB added converged analytics to EDB Postgres AI, keeping Postgres as source of truth via Iceberg to feed AI agents fresh data.
+
+Microsoft Access finally breaks free of its 22-inch form limit (1 minute read)
+
+Microsoft Access removed its decades-old 22-inch form-width limit, expanding the design canvas for legacy database apps.
+
+Microsoft is building an AI datacenter that "uses less water than a fast food restaurant" (5 minute read)
 
 (blurb not generated)
 
