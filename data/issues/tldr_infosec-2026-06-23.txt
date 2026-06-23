@@ -18,21 +18,17 @@ FortiBleed: 86,000 Fortinet Device Credentials Compromised (5 minute read)
 
 (blurb not generated)
 
-FFmpeg fixes PixelSmash flaw in widely used video decoder (1 minute read)
+FFmpeg fixes PixelSmash flaw in widely used video decoder (5 minute read)
 
-FFmpeg patched PixelSmash (CVE-2026-8461, CVSS 8.8), a heap out-of-bounds write in the MagicYUV decoder triggered by a malicious AVI, MKV, or MOV file processed through libavcodec. JFrog achieved full RCE against a Jellyfin 10.11.9 server via its automatic library scan; Kodi, OBS, PhotoPrism, Nextcloud, and desktop thumbnail generators are also exposed, with RCE viable when ASLR is disabled or chained around.
+(blurb not generated)
 
 Decades-Old Squid Proxy Flaw ‘Squidbleed’ Can Expose User Data (5 minute read)
 
 (blurb not generated)
 
-Nearly half of LG smart TV apps contain residential proxy SDKs (1 minute read)
+A new unpatchable flaw in Apple chips opens the door to an iPhone jailbreak (5 minute read)
 
-Researchers at Spur scanned 6,038 LG and Samsung smart TV apps and found 2,058 of them, nearly half on LG, bundling residential proxy SDKs from vendors like Bright Data that route strangers' internet traffic through the TV's home connection. The SDKs ask for consent once during setup and keep proxying after the app is closed, often with the proxy company itself acting as publisher, making these devices long-lived, unaudited exit nodes on home networks.
-
-A new unpatchable flaw in Apple chips opens the door to an iPhone jailbreak (1 minute read)
-
-Paradigm Shift, a Barcelona offensive-security firm, published "usbliter8," a Boot ROM flaw with a proof-of-concept affecting Apple's A12 and A13 chips in the iPhone XS, XR, and 11. Because the bug sits in immutable, burned-in code it cannot be patched, but exploitation requires physical access and must be chained with further bugs to achieve a full jailbreak or forensic unlock.
+(blurb not generated)
 
 North Korean Hackers Blamed for Mastra NPM Supply Chain Attack (5 minute read)
 
@@ -42,37 +38,41 @@ A backdoor in a LinkedIn job offer (5 minute read)
 
 (blurb not generated)
 
-Researchers Detail DifyTap Flaws in Dify That Could Expose AI Chats Across Tenants (1 minute read) [flag]
+Researchers Detail DifyTap Flaws in Dify That Could Expose AI Chats Across Tenants (5 minute read)
 
-Zafran Security disclosed four vulnerabilities, collectively named DifyTap, in Dify, the open-source agentic workflow platform, two of them critical (CVE-2026-41948 at CVSS 9.4, CVE-2026-41947 at 9.1) and two requiring no authentication, that allow cross-tenant reads of other customers' AI chats and uploaded files on Dify's multi-tenant cloud. Operators on affected versions should patch immediately and treat prior cross-tenant conversation and document exposure as possible, since the flaws created a covert exfiltration channel.
+(blurb not generated)
 
-ShapedPlugin WordPress Pro Plugins Backdoored in Supply Chain Attack (1 minute read)
+Residential proxy SDKs are hiding in LG and Samsung smart TV apps (1 minute read)
 
-Threat actors compromised ShapedPlugin's build and EDD distribution pipeline, backdooring Pro releases of Product Slider Pro for WooCommerce (CVE-2026-49777, CVSS 10.0), Real Testimonials Pro, and Smart Post Show Pro (incident-wide CVE-2026-10735, CVSS 9.8). The loader fetches a self-erasing payload that captures plaintext credentials and 2FA codes, exfiltrates wp-config.php and admin accounts, and drops a web shell; only Pro builds from account.shapedplugin.com are affected.
+Spur Intelligence scanned 6,038 LG webOS and Samsung Tizen smart TV apps and found 2,058 (34.1%) embedding residential proxy SDKs from vendors like Bright Data and Honeygain, which route third-party web traffic through home connections after a single consent prompt. Amazon and Roku already ban the category, but LG and Samsung have not acted, leaving these always-on devices silently monetizing user IPs as proxy exit nodes.
 
-Microsoft fixes AutoGen Studio flaw that enabled code execution (1 minute read)
+Microsoft fixes AutoGen Studio flaw that enabled code execution (5 minute read)
 
-Microsoft patched AutoJack, a three-flaw chain in AutoGen Studio that let a malicious webpage drive a developer's browsing agent into running arbitrary PowerShell, Bash, or executables on the host via the unauthenticated localhost MCP WebSocket. Exposure was limited to those building from the main GitHub branch between the MCP plugin commit and the hardening fix; PyPI releases, including autogenstudio 0.4.2.2, were never affected.
+(blurb not generated)
 
 Klue hack results in data breach at several cybersecurity firms (5 minute read)
 
 (blurb not generated)
 
-Hundreds of AI-powered iOS apps found exposing credentials (5 minute read)
+ShapedPlugin WordPress Pro Plugins Backdoored in Supply Chain Attack (5 minute read)
 
 (blurb not generated)
+
+Russian Initial Access Broker Behind FortiBleed Campaign (1 minute read)
+
+A Russian initial access broker is running FortiBleed, a credential-harvesting campaign that SOCRadar says has scoped over 430,000 internet-exposed FortiGate firewalls since at least February, using a custom Golang sniffer to passively capture authentication traffic across 24 protocols. The financially motivated actor has compromised an estimated 110 million credentials and is still actively sniffing 19,000 targets, so treat edge appliances with exposed SSH or VPN as compromised and rotate credentials.
 
 Google Vertex AI SDK Flaw Let Attackers Hijack Model Uploads via Bucket Squatting (5 minute read)
 
 (blurb not generated)
 
-29-Year-Old Squid Proxy Bug 'Squidbleed' Can Leak Cleartext HTTP Requests (1 minute read) [flag]
+29-Year-Old Squid Proxy Bug 'Squidbleed' Can Leak Cleartext HTTP Requests (5 minute read)
 
-Squidbleed (CVE-2026-47729), a 29-year-old heap over-read in Squid's FTP directory-listing parser, lets any client already permitted to use the proxy leak another user's cleartext HTTP request, including Authorization headers and session tokens, by pointing the proxy at an attacker-controlled FTP server. The bug is live in Squid's default config and proof-of-concept code is public; patch and verify the guard lands in FtpGateway.cc rather than trusting version numbers, since distros ship their own backports.
+(blurb not generated)
 
-FortiBleed campaign used custom FortiGate sniffer to steal credentials (1 minute read)
+FortiBleed campaign used custom FortiGate sniffer to steal credentials (5 minute read)
 
-SOCRadar reports that the FortiBleed campaign has targeted more than 430,000 FortiGate firewalls since February 2026, deploying a Golang tool called FortigateSniffer that abuses the legitimate FortiOS "diagnose sniffer packet" command to harvest credentials from RADIUS, NTLM, Kerberos, and LDAP traffic. The initial-access broker behind it gains admin access via credential stuffing and brute-force, so defenders should rotate FortiGate credentials and audit SSH sessions for sniffer activity.
+(blurb not generated)
 
 AryStinger botnet infected thousands of D-Link routers worldwide (5 minute read)
 
@@ -89,135 +89,179 @@ DragonForce Hackers Abuse Microsoft Teams Relays to Hide Backdoor.Turn C2 Traffi
 🧠
 Strategies & Tactics
 
-Prompt Injection as Role Confusion (1 minute read)
+Prompt Injection as Role Confusion (5 minute read)
 
-This writeup argues prompt injection is fundamentally a role-confusion problem: an LLM receives system prompts, user messages, tool outputs, and its own reasoning as one undifferentiated token stream, and the role tags meant to partition that stream are a weak signal the model can be made to misread. The authors use this framing to construct new attacks, explain mechanistic-interpretability findings, and predict when injections succeed, arguing that hardening role separation matters more than patching individual payloads.
+(blurb not generated)
 
 Build your own vulnerability harness (5 minute read)
 
 (blurb not generated)
 
-Linux and Secure Boot certificate expiration (2025) (1 minute read)
+Linux and Secure Boot certificate expiration (2025) (5 minute read)
 
-The Microsoft 2011 key used to sign the shim first-stage UEFI bootloader expires in September, after which Microsoft will stop signing shim with it, breaking Secure Boot installs of new Linux distributions on affected systems. A replacement key has existed since 2023 but may not be present in firmware and can require a vendor firmware update that may never ship. Defenders running Secure Boot fleets should audit firmware key databases now and push fwupd/LVFS updates before the cutover.
+(blurb not generated)
 
 How Claude Mythos found a 15-year-old bug in Mozilla Firefox | Brian Grinstead (5 minute read)
 
 (blurb not generated)
 
-Encrypted DNS still tells an eavesdropper where to look (5 minute read)
+One-Prompt Censorship Evasion via Generative Diffusion Models (1 minute read)
 
-(blurb not generated)
+This paper reframes censorship evasion as a semantic image-to-image editing task, introducing FlowPaint, a diffusion-based framework that reshapes censored network traffic into benign-looking patterns from a single natural-language prompt. The authors report it outperforms existing evasion tools against both rule-based middleboxes and learning-based traffic classifiers, with users switching between censorship paradigms by varying the instruction rather than hand-tuning mechanism-specific configs. For defenders, it signals that DPI and ML traffic classifiers face an adversary that generalizes across modalities without manual fitting.
 
 What the Latest ShinyHunters Breaches Reveal About Modern Cyberattacks (5 minute read)
 
 (blurb not generated)
 
+On Good Authority: Release-Authority Measurement for Registry-Mediated Package Ecosystems (1 minute read)
+
+This paper introduces a predecessor-aware release-authority record that flags when a package's public publishing path (publisher, repository, workflow, provenance, signing) changes from the prior release, surfacing review cues that dependency graphs miss. Across 43,100 predecessor comparisons spanning npm, PyPI, Maven Central, and RubyGems, the rules identified 204 release-path discontinuities, and practitioners rated 20 of 30 sampled triggers as warranting immediate review. The signals don't catch same-path compromise or unchanged compromised CI, which need separate evidence.
+
+OpenAI rolls out AI-led push to fix open-source software flaws (2 minute read)
+
+OpenAI launched Patch the Planet with Trail of Bits, using AI-assisted vulnerability research plus human review to find and remediate flaws in core open-source projects including Python, Go, cURL, and pyca/cryptography. The program has already flagged hundreds of issues and merged dozens of patches, with Trail of Bits engineers filtering false positives before they reach maintainers. Analysts caution it only shifts enterprise risk if treated as one input to a supply-chain program, not a replacement for one.
+
+VeriPort: Automated and Verified Patch Backporting at Scale (1 minute read)
+
+VeriPort is an agentic system that automatically backports security patches to every affected version of an open-source dependency, building an evidence chain to confirm each patch blocks exploitation and preserves functionality. It resolved 95.3% of 128 BackportBench tasks, beating Claude Code by 22.7 points, and generated over 5,000 verified patches across 169 high- and critical-severity CVEs. In the process it flagged 2,100 versions wrongly listed as affected and 127 previously unidentified vulnerable versions, prompting upstream corrections to 23 advisories.
+
 MosaicLeaks: Can your research agent keep a secret? (5 minute read)
 
 (blurb not generated)
+
+RAVEN: Agentic RAG for Automated Vulnerability Repair (1 minute read)
+
+RAVEN is an agentic RAG framework for automated vulnerability repair that pairs a multi-faceted retrieval pipeline over historical fixes with a Curator Agent that pulls cross-file dependencies to patch vulnerabilities local context alone can't resolve. It runs on open-source LLMs in a fully local, low-GPU setup and hit an 83.13% repair success rate across 160 real-world CVEs spanning two languages, unseen CWE categories, and out-of-distribution settings, beating prior state-of-the-art frameworks at negligible cost.
+
+What You See Is Not What You Execute: Memory-Based Runtime SBOM Generation for Supply Chain Security (1 minute read)
+
+MEM-SBOM is a memory forensics framework that generates software bills of materials directly from the runtime state of Python applications, recovering loaded modules from the interpreter's internal structures without requiring prior instrumentation. Built as Volatility 3 plugins and tested against 51 real-world apps, it hit 100% extraction accuracy and surfaced runtime packages that metadata- and filesystem-based SBOM tools miss. The payoff for defenders is a forensically sound view of what code actually executed during incident response, including which dependencies reach vulnerable functions.
 
 A Glimpse into the “Search Your Target” Market for Stolen Credentials (5 minute read)
 
 (blurb not generated)
 
-Red-Teaming after Mythos — Zico Kolter & Matt Fredrikson, Gray Swan (1 minute read)
-
-In a Latent Space interview, Gray Swan cofounders Zico Kolter and Matt Fredrikson argue that AI security is a distinct discipline from traditional cybersecurity, because agents like Codex and Claude Code expose a new exploit class via indirect prompt injection. They detail Gray Swan's tooling, including Shade, an automated red-teaming model they say now outperforms humans at breaking AI systems, and contend that frontier models do not become inherently safer as they scale.
-
-Never Give Them Your Face (1 minute read)
-
-The author argues that online age-verification laws are functionally identity-verification mandates: to confirm no minor is present, a service must check everyone, turning a rule written for teenagers into a universal ID checkpoint backed by government documents or facial scans. The piece notes that almost none of these systems accept a document attesting only to being over eighteen, because the captured data — name, birthdate, document number, face — is the point, and unlike a password, a face cannot be reset once breached.
-
-Free VPN And Streaming Apps Are Polluting Business Networks With Residential Proxy Traffic (5 minute read)
-
-Infoblox Threat Intel found that 65% of its Threat Defense Cloud customers made DNS queries to residential-proxy domains in 2026, totaling over 500 billion queries per month. Free VPN, streaming, and productivity apps often enroll users' devices as exit nodes via buried EULA clauses, lending home routers, phones, and IoT gear to fraud, scraping, and other abuse. Defenders should monitor DNS for proxy-orchestration domains and treat affected hosts as exposed to legal and IP-reputation fallout.
-
-How Dropbox uses MCP and Dash to close the design-to-code security gap (5 minute read)
+Red-Teaming after Mythos — Zico Kolter & Matt Fredrikson, Gray Swan (5 minute read)
 
 (blurb not generated)
 
-Cisco's SSE Rollout Shows The Real Work Behind Zero Trust (5 minute read)
+DE-FIVE: Detecting Malicious Image Prompts via Fourier Features and Image Vector Embeddings (1 minute read)
 
-Cisco IT engineers detailed their 12-month migration from a hardware-heavy, 12-location VPN model to a unified cloud-delivered Security Service Edge (SSE) fabric built on their earlier Zero Trust Access foundation. They report an 18% drop in help desk cases, near-zero security incident rates, and the retirement of 20+ legacy VPN options. The writeup focuses on the engineering grind of dismantling end-of-life infrastructure and consolidating disparate hardware to cut MTTR and close visibility gaps.
+This paper introduces DE-FIVE, a training-free framework for detecting malicious image prompts against vision language models, targeting adversarial perturbations and indirect prompt injection delivered through crafted images. It pairs a black-box detector operating on Fourier-domain features with a white-box detector that uses image vector embeddings from the visual encoder, derived from only a few-shot malicious set. The authors report it consistently outperforms state-of-the-art baselines without retraining or deploying additional classifiers.
 
-How attackers are jailbreaking LLMs with CTF framing and how to catch them (5 minute read)
+Never Give Them Your Face (5 minute read)
+
+(blurb not generated)
+
+Safety in Self-Evolving LLM Agent Systems: Threats, Amplification, and Case Studies (1 minute read)
+
+This paper analyzes the security of self-evolving LLM agent systems, which autonomously update their own parameters, memory, tools, and architecture. Using a Module-Lifecycle Attack Surface matrix, the authors find that 17 of 25 cells face critical threats with no effective mitigation, and that evolution-native frameworks hit a 100% attack persistence rate (40/40 payloads) while co-located scanners blocked just 2.5%. The core finding: self-evolution converts session-bounded attacks into lineage-persistent ones that self-amplify across generations, making static defenses structurally inadequate.
+
+TROPT: An Open Framework for Unifying and Advancing Discrete Text Optimization (1 minute read)
+
+TROPT is the first open-source framework that unifies discrete text-trigger optimization, the search for input sequences that steer a model toward an attacker-specified objective and the basis for most LLM jailbreaks. It ships with 30+ recipes built from 15+ optimizers (white-box to black-box) and 15+ losses, letting red teams compare techniques head-to-head and port attacks across domains like corpus-poisoning embedding models. The authors' large-scale experiments surface potent but underadopted jailbreak strategies defenders should expect to see weaponized.
+
+Public Diffusion Models, Private Images: Key-Controlled Inversion for Conditional Reconstruction (1 minute read)
+
+This paper proposes key-controlled inversion, an access-control scheme for white-box diffusion models where published parameters let anyone invert intermediate latents back to the original input image. The authors turn diffusion's exponential error propagation into a defense by injecting key-dependent noise into the inversion formula, so only the correct key reconstructs the image and any other key yields unrecognizable output. They prove the resulting ciphertext distribution is IND-CPA secure with adversary advantage exponentially small in a tunable security parameter.
+
+Free VPN And Streaming Apps Are Polluting Business Networks With Residential Proxy Traffic (5 minute read)
 
 (blurb not generated)
 
 🧑‍💻
 Launches & Tools
 
+A $1,400 experiment in AI security auditing outperformed OpenAI’s Codex Security (1 minute read)
+
+Researchers released EVOHUNT, a vulnerability-hunting system that holds the AI model fixed and instead evolves an external text "playbook" through a three-agent audit, verify, and rewrite loop. An open-source GLM agent running an evolved playbook found real bugs in 11.3% of 371 test cases against Codex Security's 9.2%, with the month-long training campaign costing roughly $1,400 and yielding 28 confirmed disclosures across 18 projects.
+
 GrapheneOS has been ported to Android 17 and official releases are coming soon (5 minute read)
 
 (blurb not generated)
 
-Daybreak: Tools for securing every organization in the world (1 minute read)
+Daybreak: Tools for securing every organization in the world (5 minute read)
 
-OpenAI expanded its Daybreak program with new defensive tooling, including an updated Codex Security plugin that discovers and patches vulnerabilities, and the full release of GPT-5.5-Cyber, which scores 85.6% on CyberGym versus 81.8% for GPT-5.5, available through a limited release to trusted defenders. It also launched Patch the Planet with Trail of Bits and HackerOne, with cURL, Go, Python, and 30-plus open-source projects committed to AI-assisted patching.
+(blurb not generated)
 
-Cloudflare teams up with big browsers to help websites tell welcome from unwelcome visitors (1 minute read)
+OpenAI wants AI to fix vulnerabilities, not just find them (1 minute read)
 
-Cloudflare partnered with major browser vendors on Web Bot Auth, a standard that uses cryptographically signed HTTP message signatures to let sites verify which automated agents are legitimate rather than relying on spoofable user-agent strings or IP allowlists. Operators can register signing keys so welcome crawlers and AI agents authenticate themselves, giving defenders a cleaner signal to block unverified bot traffic without breaking sanctioned automation.
+OpenAI expanded Daybreak, its cybersecurity initiative, and updated Codex Security to move beyond discovery into automated remediation, generating codebase-specific patches that human operators review before applying. Since the March preview, Codex Security has scanned over 30M commits across 30,000 codebases and auto-confirmed more than 500,000 fixes, and the updated plugin triages findings from scanners, advisories, and bug bounties, then exports results via SARIF and CodeQL.
 
-OpenAI expands Daybreak with Patch the Planet and full GPT-5.5-Cyber release (1 minute read)
+Sniff out stale AI override advice with this open source CLI (1 minute read)
 
-OpenAI expanded its Daybreak program with Patch the Planet, an open-source patching initiative built with Trail of Bits and HackerOne, alongside an updated Codex Security plugin and the full release of GPT-5.5-Cyber. More than 30 projects including cURL, Python, and Go have signed on, with every AI-surfaced finding reviewed by a human security engineer before reaching maintainers.
+A new open source CLI scans the instruction files that steer AI coding assistants and flags override rules that have gone stale, surfacing guidance that now points models toward deprecated or insecure patterns. Teams leaning on agent rule files should run it in CI to catch drift before outdated advice quietly degrades generated code or reintroduces fixed vulnerabilities.
 
-OpenAI unveils an updated GPT-5.5-Cyber model, launches the Patch the Planet initiative in partnership with Trail of Bits to fix open source bugs, and more (Lily Hay Newman/Wired) (1 minute read)
+Cloudflare teams up with big browsers to help websites tell welcome from unwelcome visitors (5 minute read)
 
-OpenAI released an updated GPT-5.5-Cyber model and launched Patch the Planet, a program with Trail of Bits to find and fix bugs in widely used open source projects. The model targets vulnerability discovery and remediation workflows, and the initiative aims to feed AI-generated patches back upstream, raising the familiar questions about triage load and patch quality for maintainers receiving them.
+(blurb not generated)
 
-OpenAI launches new security tools and updates GPT-5.5-Cyber (1 minute read)
+OpenAI expands Daybreak with Patch the Planet and full GPT-5.5-Cyber release (5 minute read)
 
-OpenAI launched a suite of defender tools, expanding Daybreak from bug discovery into patch automation via an updated Codex Security plugin and a limited release of GPT-5.5-Cyber, gated to verified defenders. Codex Security scans full codebases, commits, or diffs and exports findings as SARIF and CodeQL; GPT-5.5-Cyber scored 85.6% on CyberGym and 39.5% on ExploitGym, beating GPT-5.5 on both.
+(blurb not generated)
+
+OpenAI launches new security tools and updates GPT-5.5-Cyber (5 minute read)
+
+(blurb not generated)
 
 Introducing AWS Continuum for security at machine speed (5 minute read)
 
 (blurb not generated)
 
-Agent Beacon: Open-source telemetry layer for AI agents (5 minute read)
+Patch the Planet: a Daybreak initiative to support open source maintainers (5 minute read)
 
 (blurb not generated)
 
-Patch the Planet: a Daybreak initiative to support open source maintainers (1 minute read)
+An Automated Framework for Input Alphabet Construction in Stateful Protocol Implementation Learning (1 minute read)
 
-OpenAI launched Patch the Planet, a Daybreak initiative built with Trail of Bits that pairs AI-assisted vulnerability research using OpenAI's models and Codex Security with human review to find and patch flaws in critical open-source projects. Initial participants include cURL, pyca/cryptography, aiohttp, Sigstore, NATS Server, and the Go and Python projects, with Trail of Bits, HackerOne, and Calif handling triage, patch development, and coordinated disclosure.
+This paper introduces an automated framework that uses LLMs to generate input alphabets for state machine learning of stateful protocol implementations, parsing message layouts and mutating them to cover valid and invalid message spaces without manual protocol expertise. A mini-batch incremental strategy reuses learned automata as the alphabet grows, and the approach reproduced known vulnerabilities and surfaced novel semantic bugs that developers have since confirmed and patched.
 
-AWS Continuum offers devs help with securing code (2 minute read)
+AWS Continuum offers devs help with securing code (5 minute read)
 
-AWS released Continuum, a service that continuously discovers, validates, and remediates vulnerabilities across first-party and third-party code, proposing fixes through existing dev workflows and adding STRIDE threat modeling generated from source or design docs. An "enforce mode" lets it autonomously patch code lapses once it learns an environment's guardrails, and it inherits penetration-testing and code-scanning capabilities from AWS Security Agent.
+(blurb not generated)
 
 🎁
 Miscellaneous
+
+Trump Signs Executive Order Accelerating Post-Quantum Cryptography Migration (1 minute read)
+
+Trump signed Executive Order 14409 directing OMB, NIST, NSA, DHS, and CISA to develop technical guidance and accelerate federal post-quantum cryptography migration, citing the "harvest now, decrypt later" threat. Agencies must inventory high-value systems and transition key establishment to PQC by December 31, 2030 and digital signatures by 2031, and federal contractors must use NIST-compliant algorithms by the end of 2030.
 
 Canada’s Spy Agency Used First-of-Its-Kind Warrant to Clean Botnet-Infected Devices (5 minute read)
 
 (blurb not generated)
 
-Following user outcry, AMD reinstates memory encryption in consumer CPUs (1 minute read)
+Following user outcry, AMD reinstates memory encryption in consumer CPUs (5 minute read)
 
-AMD will reinstate Transparent Secure Memory Encryption (TSME) on consumer Ryzen processors after silently stripping the full-memory encryption via firmware update, drawing widespread user backlash. The protection defends against cold boot and other physical-access attacks, and its quiet removal was undetectable on Windows and required significant technical effort to confirm on Linux.
+(blurb not generated)
 
 NSA director: 'Mythos "broke into almost all of our classified systems in hours" (5 minute read)
 
 (blurb not generated)
 
-Flock-Powered Police Chiefs Stalking Women Shows Why Warrants Are Needed (1 minute read)
+Flock-Powered Police Chiefs Stalking Women Shows Why Warrants Are Needed (5 minute read)
 
-The police chief of Holiday Hills, Illinois, was arrested June 18, 2026, and charged with two felony counts of official misconduct for using Prairie Grove's Flock license plate readers and the LEADS database to track six people, including three former romantic partners. The Institute for Justice has documented at least 18 similar cases of officers abusing Flock LPR, fueling a constitutional challenge that argues such tracking should require a warrant.
+(blurb not generated)
 
-Trump executive orders speed up post-quantum migration, boost industry (1 minute read)
+Trump executive orders speed up post-quantum migration, boost industry (5 minute read)
 
-Trump signed two executive orders Monday accelerating federal adoption of NIST-vetted post-quantum encryption ahead of the current 2035 deadline and directing federal financing toward the domestic quantum computing industry. Civilian agencies that miss the new migration deadline must report to OMB explaining why, following a May Commerce announcement of more than $2B in CHIPS Act incentives for nine quantum companies.
+(blurb not generated)
+
+Two Scattered Spider hackers plead guilty over Transport for London cyberattack (1 minute read)
+
+Two Scattered Spider members, Thalha Jubair, 20, and Owen Flowers, 18, pleaded guilty under the UK Computer Misuse Act over the 2024 Transport for London attack that ran up £29M in losses and recovery costs. Sentencing is set for July 16; investigators also tied Flowers to intrusions at U.S. healthcare providers SSM Health and Sutter Health.
+
+Trump signs executive orders setting 2031 deadline for post-quantum migration (1 minute read)
+
+Trump signed executive orders requiring all federal high-value assets and systems to migrate to post-quantum cryptography by the end of 2031. The deadline gives agencies and their vendors a fixed timeline to inventory cryptographic dependencies and deploy NIST-standardized PQC algorithms ahead of "harvest now, decrypt later" threats.
 
 Google Sets Sept. 30 Deadline for Android Developer Verification in Four Countries (5 minute read)
 
 (blurb not generated)
 
-Court rules SAVE database illegal, orders it dismantled (1 minute read)
+Court rules SAVE database illegal, orders it dismantled (5 minute read)
 
-A federal court ruled the Trump administration's SAVE national voter database illegal and ordered it dismantled, finding it violated the Privacy Act, the Social Security Act, and the Administrative Procedure Act. Judge Sparkle Sooknanan vacated the system after records showed agencies knowingly combined unreliable citizenship data from multiple databases, resulting in eligible voters being wrongly flagged as non-citizens and removed from the rolls.
+(blurb not generated)
 
 White House Issues Memo to Bolster NSS Cybersecurity (5 minute read)
 
@@ -227,57 +271,57 @@ Accenture to buy Dragos, runZero, and NetRise in $4.2 billion cybersecurity deal
 
 (blurb not generated)
 
-Anthropic’s powerful Mythos AI reportedly breached ‘almost all’ NSA classified systems within a few hours during red-team test — report sheds more light on the U.S. government's sudden ban on the flagship models (1 minute read)
+Anthropic’s powerful Mythos AI reportedly breached ‘almost all’ NSA classified systems within a few hours during red-team test — report sheds more light on the U.S. government's sudden ban on the flagship models (5 minute read)
 
-Anthropic's Mythos 5 model breached "almost all" NSA classified systems within hours during an authorized June 11 red-team exercise, according to NSA chief Gen. Joshua Rudd as relayed by Sen. Mark Warner and reported by The Economist. The result preceded a June 12 federal directive barring foreign nationals from Fable 5 and Mythos 5, prompting Anthropic to disable both models globally rather than enforce nationality-based access controls.
+(blurb not generated)
 
-President Trump signs two executive orders aimed at speeding the development of advanced quantum computers and mitigating the security threats they present (Amrith Ramkumar/Wall Street Journal) (1 minute read)
+Trump signs orders to build a quantum computer and protect against the one that could break encryption (5 minute read)
 
-Trump signed two executive orders directing federal agencies to accelerate quantum computer development while preparing defenses against the cryptographic threats those machines pose. The orders push faster migration to post-quantum cryptography across government systems, signaling that agencies and their vendors should prioritize PQC roadmaps now rather than waiting for cryptographically relevant quantum hardware to arrive.
+The White House issued twin executive orders directing federal agencies to both build a large-scale quantum computer and harden systems against quantum-enabled attacks on encryption. EO 14409 mandates a post-quantum cryptography migration with key establishment secured by 2030, citing the "harvest now, decrypt later" threat where adversaries collect encrypted data today to crack once capable machines exist.
+
+Five Eyes spooks warn AI means infosec incidents can become ‘major operational and financial crises’ (1 minute read)
+
+Five Eyes cyber agencies issued joint guidance warning that AI is accelerating both the speed and scale of security incidents, turning routine breaches into "major operational and financial crises" for unprepared organizations. The advisory urges boards and security leaders to treat AI-driven attack acceleration as a governance issue, building faster detection and response capacity rather than relying on perimeter controls alone.
+
+Récolter aujourd’hui, déchiffrer demain : pourquoi Washington accélère sa transition post-quantique (1 minute read)
+
+Trump signed two Executive Orders accelerating US quantum strategy, including one that moves the federal deadline for migrating to post-quantum cryptography forward from 2035 to 2031 and prioritizes hardening critical infrastructure. The compressed timeline reflects the "Harvest Now, Decrypt Later" threat, in which adversaries collect encrypted traffic today to break it once quantum decryption matures, so agencies should begin inventorying and rotating vulnerable cryptography now.
 
 Identity verification on Claude (5 minute read)
 
 (blurb not generated)
 
-Cloudflare teams up with Chrome, Firefox, and Edge on a privacy-first anti-bot protocol (1 minute read)
-
-Cloudflare, Mozilla, Google, Microsoft, and Shopify are co-developing PACT (Private Access Control Tokens), a protocol that issues anonymous tokens proving a visitor is human or an authorized agent, replacing CAPTCHAs and forced logins without tracking users or reconstructing browsing history. The group plans to submit it for formal standardization as Cloudflare Radar data shows bots now generate roughly 58% of global HTTP requests, overtaking human traffic.
-
-Ukraine puts its Russian war trophies online for allies to pick apart (1 minute read)
-
-Ukraine published a public database of captured Russian military hardware, inviting allied governments and defense researchers to analyze the recovered electronics, weapons systems, and embedded components. The trove offers Western intelligence and supply-chain analysts a direct look at the foreign chips and commercial parts Russia relies on, exposing sanctions-evasion routes and the provenance of components inside fielded systems.
-
-Intel agencies: Frontier AI models will reshape cybersecurity faster than expected (1 minute read)
-
-The Five Eyes intelligence alliance warned in a joint statement that frontier AI models capable of transforming offensive and defensive cyber operations are "months away" from broad public availability, citing models like Anthropic's Fable 5 and OpenAI's Daybreak. The agencies, with signatures from the NSA and acting CISA leadership, flagged legacy systems, slow patching cycles, and weak identity controls as the weaknesses AI will excel at exploiting.
-
-Apple is about to make Hide My Email useless (5 minute read)
+Ukraine puts its Russian war trophies online for allies to pick apart (5 minute read)
 
 (blurb not generated)
 
-Cloudflare forms pact with browser giants to protect your privacy with tokens (1 minute read)
-
-Cloudflare partnered with Mozilla, Google, and Microsoft on a proposed web standard called Private Access Tokens (PACT), which issues anonymous "personhood" tokens that browsers present to other sites as proof a visitor is human, without revealing identity or browsing history. The standard aims to replace cookie tracking and CAPTCHA as agentic AI traffic grows, distinguishing human users from autonomous agents acting on their behalf.
-
-Cisco widens agentic security with AI identity acquisition (5 minute read)
+Intel agencies: Frontier AI models will reshape cybersecurity faster than expected (5 minute read)
 
 (blurb not generated)
 
-Sources: Meta internally exposed data from its employee-tracking program meant to help train its AI models, including full prompts and private conversations (Wired) (1 minute read)
+Duo accused of role in TfL cyber attack plead guilty after ‘lengthy, highly complex, and painstaking investigation’ (1 minute read)
 
-Meta internally exposed data from an employee-tracking program built to train its AI models, with full prompts and private conversations accessible to workers who shouldn't have had access, according to Wired. The incident adds to scrutiny of how the company sources and governs training data, and raises questions about access controls on the sensitive human-generated datasets feeding its models.
-
-Anthropic’s new privacy policy collects biometric data from flagged Claude users (1 minute read)
-
-Anthropic updated its privacy policy, effective July 8, to require a flagged subset of Claude users to submit government IDs and selfies for identity verification, generating facial geometry templates that may qualify as biometric data under state laws. Verification is handled by Persona, a Thiel-backed firm previously dropped by Discord over ID-sharing concerns and tied to a reported exposure of roughly 2,500 files on a US government endpoint.
+Two alleged Scattered Spider members, Thalha Jubair, 20, and Owen Flowers, 18, pleaded guilty to Computer Misuse Act offenses over the September 2024 Transport for London attack that disrupted service for around 10 million riders and forced password resets for all 28,000 employees. NCA evidence tied Flowers to intrusions at US healthcare firms SSM Health and Sutter Health, plus video he recorded of Jubair accessing TfL systems.
 
 ⚡
 Quick Links
 
 MEV Bot Exploited for $15M via Fake-Token Route Attack (5 minute read)
 
-An MEV bot lost $15M after an attacker baited its arbitrage logic into routing through a fake-token pool.
+(blurb not generated)
 
 Apple adds keylogger to iOS App Store for targeted advertising: tied to your account and unencrypted (5 minute read)
 
 (blurb not generated)
+
+SelPE: Progressive Selection for Private Structured Text Synthesis (1 minute read)
+
+SelPE concentrates differential-privacy budget on top-1 selections to synthesize structured text from few private records.
+
+The EVerest Dataset for Secure Software Engineering (1 minute read)
+
+EVerest, a multi-artifact security dataset spanning requirements, architecture, and code for EV charging stations, whose creation surfaced and fixed a CWE-1295 weakness.
+
+CITADEL: CSI-Based Jamming Detection and Open-Set Classification for IIoT Networks (1 minute read)
+
+CITADEL detects and classifies IIoT RF jamming, including zero-day attacks, using only commodity-device CSI, hitting 97.1% zero-day detection.

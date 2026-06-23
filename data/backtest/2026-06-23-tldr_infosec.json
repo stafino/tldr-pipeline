@@ -1,9 +1,35 @@
 {
   "date": "2026-06-23",
   "newsletter": "tldr_infosec",
-  "fetched_at": "2026-06-23T01:18:41.584299+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-06-23T14:23:19.122753+00:00",
+  "tldr_titles": [
+    "Apple patches Beats Studio Buds flaw that could turn earbuds into a wiretap",
+    "7,000 Langflow servers are under attack. LangGraph and LangChain have the same holes",
+    "Gizmodo readers hit with ClickFix malware prompts after account compromise",
+    "A public Sentry key is all it takes to hijack Claude Code, Cursor, and Codex",
+    "Reverse Once, Run Forever: Defending Code You Can't Hide",
+    "An update on FortiBleed \u2014 what's happening with victim orgs",
+    "RFC 9958 - Post-Quantum Cryptography for Engineers",
+    "Canada's Spy Agency Used First-of-Its-Kind Warrant to Clean Botnet-Infected Devices",
+    "Why your microVM sandbox solves a particular problem very well, but not the agent security problem",
+    "Decades-Old Squid Proxy Flaw \u2018Squidbleed' Can Expose User Data",
+    "Google hits 50% IPv6",
+    "Klue hack results in data breach at several cybersecurity firms"
+  ],
+  "tldr_matched": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true,
+    false,
+    true,
+    false,
+    true
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -42,19 +68,11 @@
       "score": 83.0,
       "title": "Decades-Old Squid Proxy Flaw \u2018Squidbleed\u2019 Can Expose User Data",
       "url": "https://www.securityweek.com/decades-old-squid-proxy-flaw-squidbleed-can-expose-user-data/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 9,
+      "similarity": 1.0
     },
     {
       "rank": 6,
-      "score": 82.0,
-      "title": "Nearly half of LG smart TV apps contain residential proxy SDKs",
-      "url": "https://spur.us/blog/smart-tv-apps-residential-proxy-sdks",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 7,
       "score": 81.0,
       "title": "A new unpatchable flaw in Apple chips opens the door to an iPhone jailbreak",
       "url": "https://techcrunch.com/2026/06/22/a-new-unpatchable-flaw-in-apple-chips-opens-the-door-to-an-iphone-jailbreak/",
@@ -62,7 +80,7 @@
       "similarity": null
     },
     {
-      "rank": 8,
+      "rank": 7,
       "score": 80.0,
       "title": "North Korean Hackers Blamed for Mastra NPM Supply Chain Attack",
       "url": "https://www.securityweek.com/north-korean-hackers-blamed-for-mastra-npm-supply-chain-attack/",
@@ -70,7 +88,7 @@
       "similarity": null
     },
     {
-      "rank": 9,
+      "rank": 8,
       "score": 80.0,
       "title": "A backdoor in a LinkedIn job offer",
       "url": "https://roman.pt/posts/linkedin-backdoor/",
@@ -78,7 +96,7 @@
       "similarity": null
     },
     {
-      "rank": 10,
+      "rank": 9,
       "score": 79.0,
       "title": "Researchers Detail DifyTap Flaws in Dify That Could Expose AI Chats Across Tenants",
       "url": "https://thehackernews.com/2026/06/researchers-detail-difytap-flaws-in.html",
@@ -86,10 +104,18 @@
       "similarity": null
     },
     {
+      "rank": 10,
+      "score": 79.0,
+      "title": "Residential proxy SDKs are hiding in LG and Samsung smart TV apps",
+      "url": "https://www.helpnetsecurity.com/2026/06/23/tv-residential-proxy-sdk/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
       "rank": 11,
-      "score": 78.0,
-      "title": "ShapedPlugin WordPress Pro Plugins Backdoored in Supply Chain Attack",
-      "url": "https://thehackernews.com/2026/06/shapedplugin-wordpress-pro-plugins.html",
+      "score": 79.0,
+      "title": "Trump Signs Executive Order Accelerating Post-Quantum Cryptography Migration",
+      "url": "https://www.securityweek.com/trump-signs-executive-order-accelerating-post-quantum-cryptography-migration/",
       "matched_tldr_idx": null,
       "similarity": null
     },
@@ -106,19 +132,27 @@
       "score": 78.0,
       "title": "Klue hack results in data breach at several cybersecurity firms",
       "url": "https://techcrunch.com/2026/06/22/klue-hack-results-in-data-breach-at-several-cybersecurity-firms/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 11,
+      "similarity": 1.0
     },
     {
       "rank": 14,
       "score": 78.0,
-      "title": "Hundreds of AI-powered iOS apps found exposing credentials",
-      "url": "https://www.helpnetsecurity.com/2026/06/22/llm-api-credential-leakage-ios-apps/",
+      "title": "ShapedPlugin WordPress Pro Plugins Backdoored in Supply Chain Attack",
+      "url": "https://thehackernews.com/2026/06/shapedplugin-wordpress-pro-plugins.html",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
       "rank": 15,
+      "score": 76.0,
+      "title": "Russian Initial Access Broker Behind FortiBleed Campaign",
+      "url": "https://www.securityweek.com/russian-initial-access-broker-behind-fortibleed-campaign/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 16,
       "score": 76.0,
       "title": "Google Vertex AI SDK Flaw Let Attackers Hijack Model Uploads via Bucket Squatting",
       "url": "https://thehackernews.com/2026/06/google-vertex-ai-sdk-flaw-let-attackers.html",
@@ -126,23 +160,23 @@
       "similarity": null
     },
     {
-      "rank": 16,
+      "rank": 17,
       "score": 76.0,
       "title": "Canada\u2019s Spy Agency Used First-of-Its-Kind Warrant to Clean Botnet-Infected Devices",
       "url": "https://thehackernews.com/2026/06/canadas-spy-agency-used-first-of-its.html",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 17,
-      "score": 75.0,
-      "title": "29-Year-Old Squid Proxy Bug 'Squidbleed' Can Leak Cleartext HTTP Requests",
-      "url": "https://thehackernews.com/2026/06/29-year-old-squid-proxy-bug-squidbleed.html",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 7,
+      "similarity": 1.0
     },
     {
       "rank": 18,
+      "score": 75.0,
+      "title": "29-Year-Old Squid Proxy Bug 'Squidbleed' Can Leak Cleartext HTTP Requests",
+      "url": "https://thehackernews.com/2026/06/29-year-old-squid-proxy-bug-squidbleed.html",
+      "matched_tldr_idx": 9,
+      "similarity": 0.7077709436416626
+    },
+    {
+      "rank": 19,
       "score": 74.0,
       "title": "FortiBleed campaign used custom FortiGate sniffer to steal credentials",
       "url": "https://www.bleepingcomputer.com/news/security/fortibleed-campaign-used-custom-fortigate-sniffer-to-steal-credentials/",
@@ -150,7 +184,7 @@
       "similarity": null
     },
     {
-      "rank": 19,
+      "rank": 20,
       "score": 74.0,
       "title": "AryStinger botnet infected thousands of D-Link routers worldwide",
       "url": "https://www.bleepingcomputer.com/news/security/arystinger-botnet-infected-thousands-of-d-link-routers-worldwide/",
@@ -158,7 +192,7 @@
       "similarity": null
     },
     {
-      "rank": 20,
+      "rank": 21,
       "score": 74.0,
       "title": "Copilot 'SearchLeak' Attack Allows 1-Click Data Theft",
       "url": "https://www.darkreading.com/application-security/copilot-searchleak-attack-1-click-data-theft",
@@ -166,7 +200,7 @@
       "similarity": null
     },
     {
-      "rank": 21,
+      "rank": 22,
       "score": 74.0,
       "title": "DragonForce Hackers Abuse Microsoft Teams Relays to Hide Backdoor.Turn C2 Traffic",
       "url": "https://thehackernews.com/2026/06/dragonforce-hackers-abuse-microsoft.html",
@@ -174,7 +208,7 @@
       "similarity": null
     },
     {
-      "rank": 22,
+      "rank": 23,
       "score": 73.0,
       "title": "Prompt Injection as Role Confusion",
       "url": "https://role-confusion.github.io",
@@ -182,7 +216,15 @@
       "similarity": null
     },
     {
-      "rank": 23,
+      "rank": 24,
+      "score": 73.0,
+      "title": "A $1,400 experiment in AI security auditing outperformed OpenAI\u2019s Codex Security",
+      "url": "https://www.helpnetsecurity.com/2026/06/23/codex-security-ai-security-auditing/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 25,
       "score": 72.0,
       "title": "Build your own vulnerability harness",
       "url": "https://blog.cloudflare.com/build-your-own-vulnerability-harness/",
@@ -190,7 +232,7 @@
       "similarity": null
     },
     {
-      "rank": 24,
+      "rank": 26,
       "score": 72.0,
       "title": "Linux and Secure Boot certificate expiration (2025)",
       "url": "https://lwn.net/Articles/1029767/",
@@ -198,7 +240,7 @@
       "similarity": null
     },
     {
-      "rank": 25,
+      "rank": 27,
       "score": 72.0,
       "title": "GrapheneOS has been ported to Android 17 and official releases are coming soon",
       "url": "https://discuss.grapheneos.org/d/36469-grapheneos-has-been-ported-to-android-17-and-official-releases-are-coming-soon",
@@ -206,7 +248,7 @@
       "similarity": null
     },
     {
-      "rank": 26,
+      "rank": 28,
       "score": 71.0,
       "title": "Following user outcry, AMD reinstates memory encryption in consumer CPUs",
       "url": "https://arstechnica.com/security/2026/06/following-user-outcry-amd-reinstates-memory-encryption-in-consumer-cpus/",
@@ -214,7 +256,7 @@
       "similarity": null
     },
     {
-      "rank": 27,
+      "rank": 29,
       "score": 68.0,
       "title": "How Claude Mythos found a 15-year-old bug in Mozilla Firefox | Brian Grinstead",
       "url": "https://www.lennysnewsletter.com/p/how-claude-mythos-found-a-15-year",
@@ -222,15 +264,15 @@
       "similarity": null
     },
     {
-      "rank": 28,
+      "rank": 30,
       "score": 68.0,
-      "title": "Encrypted DNS still tells an eavesdropper where to look",
-      "url": "https://www.helpnetsecurity.com/2026/06/22/research-encrypted-dns-privacy/",
+      "title": "One-Prompt Censorship Evasion via Generative Diffusion Models",
+      "url": "http://arxiv.org/abs/2606.22717v1",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 29,
+      "rank": 31,
       "score": 68.0,
       "title": "Daybreak: Tools for securing every organization in the world",
       "url": "https://openai.com/index/daybreak-securing-the-world",
@@ -238,7 +280,15 @@
       "similarity": null
     },
     {
-      "rank": 30,
+      "rank": 32,
+      "score": 68.0,
+      "title": "OpenAI wants AI to fix vulnerabilities, not just find them",
+      "url": "https://www.helpnetsecurity.com/2026/06/23/openai-expanded-daybreak-cybersecurity-initiative/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 33,
       "score": 68.0,
       "title": "NSA director: 'Mythos \"broke into almost all of our classified systems in hours\"",
       "url": "https://www.economist.com/briefing/2026/06/14/donald-trumps-blocking-of-anthropic-is-capricious-and-chaotic",
@@ -246,7 +296,7 @@
       "similarity": null
     },
     {
-      "rank": 31,
+      "rank": 34,
       "score": 68.0,
       "title": "Flock-Powered Police Chiefs Stalking Women Shows Why Warrants Are Needed",
       "url": "https://ipvm.com/reports/police-chiefs-track",
@@ -254,7 +304,7 @@
       "similarity": null
     },
     {
-      "rank": 32,
+      "rank": 35,
       "score": 67.0,
       "title": "What the Latest ShinyHunters Breaches Reveal About Modern Cyberattacks",
       "url": "https://www.securityweek.com/what-the-latest-shinyhunters-breaches-reveal-about-modern-cyberattacks/",
@@ -262,7 +312,15 @@
       "similarity": null
     },
     {
-      "rank": 33,
+      "rank": 36,
+      "score": 67.0,
+      "title": "Sniff out stale AI override advice with this open source CLI",
+      "url": "https://www.theregister.com/security/2026/06/23/sniff-out-stale-ai-override-advice-with-this-open-source-cli/5259853",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 37,
       "score": 67.0,
       "title": "Cloudflare teams up with big browsers to help websites tell welcome from unwelcome visitors",
       "url": "https://www.theregister.com/software/2026/06/22/cloudflare-teams-up-with-big-browsers-to-help-websites-tell-welcome-from-unwelcome-visitors/5259782",
@@ -270,7 +328,7 @@
       "similarity": null
     },
     {
-      "rank": 34,
+      "rank": 38,
       "score": 67.0,
       "title": "Trump executive orders speed up post-quantum migration, boost industry",
       "url": "https://cyberscoop.com/trump-executive-order-post-quantum-encryption-deadline/",
@@ -278,7 +336,47 @@
       "similarity": null
     },
     {
-      "rank": 35,
+      "rank": 39,
+      "score": 67.0,
+      "title": "Two Scattered Spider hackers plead guilty over Transport for London cyberattack",
+      "url": "https://www.helpnetsecurity.com/2026/06/23/transport-london-cyberattack-scattered-spider-members-plead-guilty/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 40,
+      "score": 66.0,
+      "title": "Trump signs executive orders setting 2031 deadline for post-quantum migration",
+      "url": "https://www.theblock.co/post/405737/trump-executive-orders-quantum-computing?utm_source=rss&utm_medium=rss",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 41,
+      "score": 65.0,
+      "title": "On Good Authority: Release-Authority Measurement for Registry-Mediated Package Ecosystems",
+      "url": "http://arxiv.org/abs/2606.22593v1",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 42,
+      "score": 64.0,
+      "title": "OpenAI rolls out AI-led push to fix open-source software flaws",
+      "url": "https://www.infoworld.com/article/4188325/openai-rolls-out-ai-led-push-to-fix-open-source-software-flaws-2.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 43,
+      "score": 63.0,
+      "title": "VeriPort: Automated and Verified Patch Backporting at Scale",
+      "url": "http://arxiv.org/abs/2606.22704v1",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 44,
       "score": 63.0,
       "title": "OpenAI expands Daybreak with Patch the Planet and full GPT-5.5-Cyber release",
       "url": "https://siliconangle.com/2026/06/22/openai-expands-daybreak-patch-planet-full-gpt-5-5-cyber-release/",
@@ -286,7 +384,7 @@
       "similarity": null
     },
     {
-      "rank": 36,
+      "rank": 45,
       "score": 63.0,
       "title": "Google Sets Sept. 30 Deadline for Android Developer Verification in Four Countries",
       "url": "https://thehackernews.com/2026/06/google-sets-sept-30-deadline-for.html",
@@ -294,7 +392,7 @@
       "similarity": null
     },
     {
-      "rank": 37,
+      "rank": 46,
       "score": 63.0,
       "title": "Court rules SAVE database illegal, orders it dismantled",
       "url": "https://cyberscoop.com/court-rules-save-database-illegal-orders-dismantling/",
@@ -302,7 +400,7 @@
       "similarity": null
     },
     {
-      "rank": 38,
+      "rank": 47,
       "score": 63.0,
       "title": "White House Issues Memo to Bolster NSS Cybersecurity",
       "url": "https://www.securityweek.com/white-house-issues-memo-to-bolster-nss-cybersecurity/",
@@ -310,7 +408,7 @@
       "similarity": null
     },
     {
-      "rank": 39,
+      "rank": 48,
       "score": 63.0,
       "title": "Accenture to buy Dragos, runZero, and NetRise in $4.2 billion cybersecurity deal",
       "url": "https://www.helpnetsecurity.com/2026/06/19/accenture-dragos-runzero-netrise-acquisition/",
@@ -318,7 +416,7 @@
       "similarity": null
     },
     {
-      "rank": 40,
+      "rank": 49,
       "score": 62.0,
       "title": "MosaicLeaks: Can your research agent keep a secret?",
       "url": "https://huggingface.co/blog/ServiceNow/mosaicleaks",
@@ -326,15 +424,23 @@
       "similarity": null
     },
     {
-      "rank": 41,
+      "rank": 50,
       "score": 62.0,
-      "title": "OpenAI unveils an updated GPT-5.5-Cyber model, launches the Patch the Planet initiative in partnership with Trail of Bits to fix open source bugs, and more (Lily Hay Newman/Wired)",
-      "url": "https://www.techmeme.com/260622/p32#a260622p32",
+      "title": "RAVEN: Agentic RAG for Automated Vulnerability Repair",
+      "url": "http://arxiv.org/abs/2606.22647v1",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 42,
+      "rank": 51,
+      "score": 62.0,
+      "title": "What You See Is Not What You Execute: Memory-Based Runtime SBOM Generation for Supply Chain Security",
+      "url": "http://arxiv.org/abs/2606.22827v1",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 52,
       "score": 62.0,
       "title": "OpenAI launches new security tools and updates GPT-5.5-Cyber",
       "url": "https://www.testingcatalog.com/openai-launches-new-security-tools-and-updates-gpt-5-5-cyber/",
@@ -342,7 +448,7 @@
       "similarity": null
     },
     {
-      "rank": 43,
+      "rank": 53,
       "score": 62.0,
       "title": "Introducing AWS Continuum for security at machine speed",
       "url": "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-continuum/",
@@ -350,15 +456,7 @@
       "similarity": null
     },
     {
-      "rank": 44,
-      "score": 62.0,
-      "title": "Agent Beacon: Open-source telemetry layer for AI agents",
-      "url": "https://www.helpnetsecurity.com/2026/06/22/agent-beacon-open-source-telemetry-layer-ai-agents/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 45,
+      "rank": 54,
       "score": 62.0,
       "title": "Anthropic\u2019s powerful Mythos AI reportedly breached \u2018almost all\u2019 NSA classified systems within a few hours during red-team test \u2014 report sheds more light on the U.S. government's sudden ban on the flagship models",
       "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropics-powerful-mythos-ai-reportedly-breached-almost-all-nsa-classified-systems-within-a-few-hours-during-red-team-test-report-sheds-more-light-on-the-u-s-governments-sudden-ban-on-the-flagship-models",
@@ -366,15 +464,15 @@
       "similarity": null
     },
     {
-      "rank": 46,
+      "rank": 55,
       "score": 62.0,
-      "title": "President Trump signs two executive orders aimed at speeding the development of advanced quantum computers and mitigating the security threats they present (Amrith Ramkumar/Wall Street Journal)",
-      "url": "https://www.techmeme.com/260622/p39#a260622p39",
+      "title": "Trump signs orders to build a quantum computer and protect against the one that could break encryption",
+      "url": "https://www.coindesk.com/tech/2026/06/23/trump-signs-orders-to-build-a-quantum-computer-and-protect-against-the-one-that-could-break-encryption",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 47,
+      "rank": 56,
       "score": 61.0,
       "title": "A Glimpse into the \u201cSearch Your Target\u201d Market for Stolen Credentials",
       "url": "https://www.bleepingcomputer.com/news/security/a-glimpse-into-the-search-your-target-market-for-stolen-credentials/",
@@ -382,7 +480,15 @@
       "similarity": null
     },
     {
-      "rank": 48,
+      "rank": 57,
+      "score": 61.0,
+      "title": "Five Eyes spooks warn AI means infosec incidents can become \u2018major operational and financial crises\u2019",
+      "url": "https://www.theregister.com/security/2026/06/23/five-eyes-spooks-warn-ai-means-infosec-incidents-can-become-major-operational-and-financial-crises/5259916",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 58,
       "score": 60.0,
       "title": "Red-Teaming after Mythos \u2014 Zico Kolter & Matt Fredrikson, Gray Swan",
       "url": "https://www.latent.space/p/gray-swan",
@@ -390,7 +496,15 @@
       "similarity": null
     },
     {
-      "rank": 49,
+      "rank": 59,
+      "score": 60.0,
+      "title": "DE-FIVE: Detecting Malicious Image Prompts via Fourier Features and Image Vector Embeddings",
+      "url": "http://arxiv.org/abs/2606.22779v1",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 60,
       "score": 60.0,
       "title": "Never Give Them Your Face",
       "url": "https://nevergivethemyourface.com/",
@@ -398,7 +512,7 @@
       "similarity": null
     },
     {
-      "rank": 50,
+      "rank": 61,
       "score": 60.0,
       "title": "Patch the Planet: a Daybreak initiative to support open source maintainers",
       "url": "https://openai.com/index/patch-the-planet",
@@ -406,7 +520,31 @@
       "similarity": null
     },
     {
-      "rank": 51,
+      "rank": 62,
+      "score": 60.0,
+      "title": "An Automated Framework for Input Alphabet Construction in Stateful Protocol Implementation Learning",
+      "url": "http://arxiv.org/abs/2606.23464v1",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 63,
+      "score": 60.0,
+      "title": "R\u00e9colter aujourd\u2019hui, d\u00e9chiffrer demain : pourquoi Washington acc\u00e9l\u00e8re sa transition post-quantique",
+      "url": "https://www.frenchweb.fr/recolter-aujourdhui-dechiffrer-demain-pourquoi-washington-accelere-sa-transition-post-quantique/462522",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 64,
+      "score": 59.0,
+      "title": "Safety in Self-Evolving LLM Agent Systems: Threats, Amplification, and Case Studies",
+      "url": "http://arxiv.org/abs/2606.23075v1",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 65,
       "score": 59.0,
       "title": "Identity verification on Claude",
       "url": "https://support.claude.com/en/articles/14328960-identity-verification-on-claude",
@@ -414,7 +552,23 @@
       "similarity": null
     },
     {
-      "rank": 52,
+      "rank": 66,
+      "score": 58.0,
+      "title": "TROPT: An Open Framework for Unifying and Advancing Discrete Text Optimization",
+      "url": "http://arxiv.org/abs/2606.23496v1",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 67,
+      "score": 58.0,
+      "title": "Public Diffusion Models, Private Images: Key-Controlled Inversion for Conditional Reconstruction",
+      "url": "http://arxiv.org/abs/2606.22988v1",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 68,
       "score": 58.0,
       "title": "Free VPN And Streaming Apps Are Polluting Business Networks With Residential Proxy Traffic",
       "url": "https://www.techradar.com/pro/security/popular-free-vpn-streaming-apps-bombard-business-networks-with-laundered-traffic-used-by-criminals-to-blend-into-normal-consumer-noise-heres-how-to-keep-safe",
@@ -422,7 +576,7 @@
       "similarity": null
     },
     {
-      "rank": 53,
+      "rank": 69,
       "score": 58.0,
       "title": "AWS Continuum offers devs help with securing code",
       "url": "https://www.infoworld.com/article/4187916/aws-continuum-offers-devs-help-with-securing-code.html",
@@ -430,15 +584,7 @@
       "similarity": null
     },
     {
-      "rank": 54,
-      "score": 58.0,
-      "title": "Cloudflare teams up with Chrome, Firefox, and Edge on a privacy-first anti-bot protocol",
-      "url": "https://thenextweb.com/news/cloudflare-pact-browser-privacy-bot-traffic-protocol",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 55,
+      "rank": 70,
       "score": 58.0,
       "title": "Ukraine puts its Russian war trophies online for allies to pick apart",
       "url": "https://www.theregister.com/offbeat/2026/06/22/ukraine-puts-its-russian-war-trophies-online-for-allies-to-pick-apart/5259688",
@@ -446,7 +592,7 @@
       "similarity": null
     },
     {
-      "rank": 56,
+      "rank": 71,
       "score": 58.0,
       "title": "Intel agencies: Frontier AI models will reshape cybersecurity faster than expected",
       "url": "https://cyberscoop.com/five-eyes-alliance-say-advanced-ai-hacking-models-months-away/",
@@ -454,31 +600,15 @@
       "similarity": null
     },
     {
-      "rank": 57,
-      "score": 57.0,
-      "title": "Apple is about to make Hide My Email useless",
-      "url": "https://arseniyshestakov.com/2026/06/16/apple-is-about-to-make-hide-my-email-useless/",
+      "rank": 72,
+      "score": 58.0,
+      "title": "Duo accused of role in TfL cyber attack plead guilty after \u2018lengthy, highly complex, and painstaking investigation\u2019",
+      "url": "https://www.itpro.com/security/cyber-attacks/duo-accused-of-role-in-tfl-cyber-attack-plead-guilty-after-lengthy-highly-complex-and-painstaking-investigation",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 58,
-      "score": 57.0,
-      "title": "Cloudflare forms pact with browser giants to protect your privacy with tokens",
-      "url": "https://www.sdxcentral.com/news/cloudflare-forms-pact-with-browser-giants-to-protect-your-privacy-with-tokens/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 59,
-      "score": 57.0,
-      "title": "Cisco widens agentic security with AI identity acquisition",
-      "url": "https://www.sdxcentral.com/news/cisco-widens-agentic-security-with-ai-identity-acquisition/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 60,
+      "rank": 73,
       "score": 57.0,
       "title": "MEV Bot Exploited for $15M via Fake-Token Route Attack",
       "url": "https://threadreaderapp.com/thread/2068459102741909968.html",
@@ -486,39 +616,7 @@
       "similarity": null
     },
     {
-      "rank": 61,
-      "score": 56.0,
-      "title": "How Dropbox uses MCP and Dash to close the design-to-code security gap",
-      "url": "https://dropbox.tech/security/dropbox-mcp-dash-design-code-security",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 62,
-      "score": 56.0,
-      "title": "Cisco's SSE Rollout Shows The Real Work Behind Zero Trust",
-      "url": "https://blogs.cisco.com/cisco-on-cisco/engineering-resilience-lessons-from-the-front-lines-of-ciscos-sse-deployment",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 63,
-      "score": 56.0,
-      "title": "Sources: Meta internally exposed data from its employee-tracking program meant to help train its AI models, including full prompts and private conversations (Wired)",
-      "url": "https://www.techmeme.com/260622/p38#a260622p38",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 64,
-      "score": 56.0,
-      "title": "Anthropic\u2019s new privacy policy collects biometric data from flagged Claude users",
-      "url": "https://thenextweb.com/news/anthropic-claude-id-verification-privacy-policy-persona-biometric",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 65,
+      "rank": 74,
       "score": 56.0,
       "title": "Apple adds keylogger to iOS App Store for targeted advertising: tied to your account and unencrypted",
       "url": "https://www.osnews.com/story/145322/apple-adds-keylogger-to-ios-app-store-for-targeted-advertising-tied-to-your-account-and-unencrypted/",
@@ -526,17 +624,71 @@
       "similarity": null
     },
     {
-      "rank": 66,
+      "rank": 75,
       "score": 55.0,
-      "title": "How attackers are jailbreaking LLMs with CTF framing and how to catch them",
-      "url": "https://webflow.sysdig.com/blog/how-attackers-are-jailbreaking-llms-with-ctf-framing-and-how-to-catch-them",
+      "title": "SelPE: Progressive Selection for Private Structured Text Synthesis",
+      "url": "http://arxiv.org/abs/2606.22817v1",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 76,
+      "score": 55.0,
+      "title": "The EVerest Dataset for Secure Software Engineering",
+      "url": "http://arxiv.org/abs/2606.23197v1",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 77,
+      "score": 55.0,
+      "title": "CITADEL: CSI-Based Jamming Detection and Open-Set Classification for IIoT Networks",
+      "url": "http://arxiv.org/abs/2606.22939v1",
       "matched_tldr_idx": null,
       "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.08333333333333333,
+    "25": 0.25,
+    "50": 0.25,
+    "100": 0.25,
+    "77": 0.25
+  },
+  "hits_at": {
+    "10": 1,
+    "25": 3,
+    "50": 3,
+    "100": 3,
+    "77": 3
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://www.malwarebytes.com/blog/bugs/2026/06/apple-patches-beats-studio-buds-flaw-that-could-turn-earbuds-into-a-wiretap",
+    "https://venturebeat.com/security/7000-langflow-servers-under-attack-langgraph-langchain-same-holes",
+    "https://www.theregister.com/security/2026/06/22/gizmodo-readers-hit-with-clickfix-malware-prompts-after-account-compromise/5259226",
+    "https://thenewstack.io/agentjacking-sentry-mcp-attack/",
+    "https://trustsig.eu/blog/reverse-once-run-forever",
+    "https://doublepulsar.com/an-update-on-fortibleed-whats-happening-with-victim-orgs-c0671a50e7f4",
+    "https://datatracker.ietf.org/doc/html/rfc9958",
+    "https://thehackernews.com/2026/06/canadas-spy-agency-used-first-of-its.html",
+    "https://decodebytes.substack.com/p/why-your-microvm-sandbox-solves-a",
+    "https://www.securityweek.com/decades-old-squid-proxy-flaw-squidbleed-can-expose-user-data/",
+    "https://blog.apnic.net/2026/04/28/google-hits-50-ipv6/",
+    "https://techcrunch.com/2026/06/22/klue-hack-results-in-data-breach-at-several-cybersecurity-firms/"
+  ],
+  "tldr_domains": [
+    "malwarebytes.com",
+    "venturebeat.com",
+    "theregister.com",
+    "thenewstack.io",
+    "trustsig.eu",
+    "doublepulsar.com",
+    "datatracker.ietf.org",
+    "thehackernews.com",
+    "decodebytes.substack.com",
+    "securityweek.com",
+    "blog.apnic.net",
+    "techcrunch.com"
+  ]
 }
