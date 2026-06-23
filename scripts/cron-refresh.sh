@@ -115,6 +115,11 @@ wait_stage "backtest"
 run_stage "format" ./tldr format all
 run_stage "learn_weights" uv run python scripts/learn_source_weights.py
 
+# Daily EU-funding tweet. Self-throttles: skips outside 09-11 UTC window,
+# skips if already tweeted today, skips if no EU rounds. So safe to call
+# every cron run.
+run_stage "tweet" uv run python scripts/tweet_funding.py
+
 # Commit + push whatever data actually landed, even if some stages failed.
 # That way the deployed Streamlit at least gets fresh raw/scored data even
 # if blurbs crashed.
@@ -136,7 +141,7 @@ ls -1t data/logs/cron-*.log 2>/dev/null | tail -n +31 | xargs -r rm -f
 
 echo
 echo "── SUMMARY ──────────────────────────────────"
-for stage in ingest dedup rank blurbs funding vc backtest format learn_weights; do
+for stage in ingest dedup rank blurbs funding vc backtest format learn_weights tweet; do
   printf "  %-8s %s\n" "$stage" "${STATUS[$stage]:-skipped}"
 done
 echo "▸ refresh complete: $(date)"
