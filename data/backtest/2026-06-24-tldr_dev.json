@@ -1,9 +1,37 @@
 {
   "date": "2026-06-24",
   "newsletter": "tldr_dev",
-  "fetched_at": "2026-06-24T11:05:54.174866+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-06-24T15:44:10.870292+00:00",
+  "tldr_titles": [
+    "Hidden Technical Debt of AI Systems: Agent Harness",
+    "The Low-Tech AI Of Elden Ring",
+    "An Ex-Meta L8's Agentic Engineering Setup",
+    "Building in the Age of Collaborative Coding",
+    "The Coming Loop",
+    "Daybreak: Tools for securing every organization in the world",
+    "Mistral OCR 4: SOTA OCR for Document Intelligence",
+    "Will It Mythos?",
+    "The State of AI Post-Training Agents",
+    "Fired by Google for creating the Google workspace CLI",
+    "Introducing Claude Tag",
+    "Vulnerability Reports Are Not Special Anymore",
+    "GLM-5.2 - How to Run Locally"
+  ],
+  "tldr_matched": [
+    false,
+    false,
+    false,
+    false,
+    true,
+    false,
+    true,
+    true,
+    false,
+    true,
+    false,
+    true,
+    true
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -162,8 +190,8 @@
       "score": 67.0,
       "title": "Unlimited OCR: One-shot long-horizon parsing",
       "url": "https://github.com/baidu/Unlimited-OCR",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 6,
+      "similarity": 0.6680372357368469
     },
     {
       "rank": 21,
@@ -186,8 +214,8 @@
       "score": 66.0,
       "title": "The Coming Loop",
       "url": "https://lucumr.pocoo.org/2026/6/23/the-coming-loop/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 4,
+      "similarity": 1.0
     },
     {
       "rank": 24,
@@ -240,13 +268,21 @@
     {
       "rank": 30,
       "score": 63.0,
+      "title": "GLM 5.2: why I\u2019m replacing Opus in Claude Code with this new model",
+      "url": "https://www.lennysnewsletter.com/p/glm-52-why-im-replacing-opus-in-claude",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 31,
+      "score": 63.0,
       "title": "FUTO Swipe \u2013 A new swipe typing model",
       "url": "https://swipe.futo.tech/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 31,
+      "rank": 32,
       "score": 63.0,
       "title": "Show HN: TikZ Editor \u2013 WYSIWYG editor for figures in LaTeX",
       "url": "https://tikz.dev/editor/",
@@ -254,7 +290,7 @@
       "similarity": null
     },
     {
-      "rank": 32,
+      "rank": 33,
       "score": 63.0,
       "title": "Elevated error rate across multiple models",
       "url": "https://status.claude.com/incidents/jbhf20wjmzrf",
@@ -262,7 +298,7 @@
       "similarity": null
     },
     {
-      "rank": 33,
+      "rank": 34,
       "score": 62.0,
       "title": "The text in Claude Code's \u201cExtended Thinking\u201d output is not authentic",
       "url": "https://patrickmccanna.net/the-text-in-claude-codes-extended-thinking-output-is-not-authentic/",
@@ -270,7 +306,7 @@
       "similarity": null
     },
     {
-      "rank": 34,
+      "rank": 35,
       "score": 62.0,
       "title": "Bayesian control for coding agents",
       "url": "http://arxiv.org/abs/2606.24453v1",
@@ -278,15 +314,15 @@
       "similarity": null
     },
     {
-      "rank": 35,
+      "rank": 36,
       "score": 62.0,
       "title": "GLM-5.2 \u2013 How to Run Locally",
       "url": "https://unsloth.ai/docs/models/glm-5.2",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 12,
+      "similarity": 1.0
     },
     {
-      "rank": 36,
+      "rank": 37,
       "score": 62.0,
       "title": "Shipping huggingface_hub every week with AI, open tools, and a human in the loop",
       "url": "https://huggingface.co/blog/huggingface-hub-release-ci",
@@ -294,15 +330,15 @@
       "similarity": null
     },
     {
-      "rank": 37,
+      "rank": 38,
       "score": 62.0,
       "title": "Vulnerability reports are not special anymore",
       "url": "https://words.filippo.io/vuln-reports/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 11,
+      "similarity": 1.0
     },
     {
-      "rank": 38,
+      "rank": 39,
       "score": 62.0,
       "title": "Prompt Injection as Role Confusion",
       "url": "https://role-confusion.github.io",
@@ -310,7 +346,7 @@
       "similarity": null
     },
     {
-      "rank": 39,
+      "rank": 40,
       "score": 62.0,
       "title": "In praise of memcached",
       "url": "https://jchri.st/blog/in-praise-of-memcached/",
@@ -318,7 +354,7 @@
       "similarity": null
     },
     {
-      "rank": 40,
+      "rank": 41,
       "score": 62.0,
       "title": "PP-OCRv6 on Hugging Face: 50-Language OCR from 1.5M to 34.5M Parameters",
       "url": "https://huggingface.co/blog/PaddlePaddle/pp-ocrv6",
@@ -326,7 +362,7 @@
       "similarity": null
     },
     {
-      "rank": 41,
+      "rank": 42,
       "score": 62.0,
       "title": "Using Visual Studio Code\u2019s \u2018air-gapped\u2019 AI model mode",
       "url": "https://www.infoworld.com/article/4186817/using-visual-studio-codes-air-gapped-ai-model-mode.html",
@@ -334,7 +370,7 @@
       "similarity": null
     },
     {
-      "rank": 42,
+      "rank": 43,
       "score": 62.0,
       "title": "TypeScript Performance in TanStack Table V9",
       "url": "https://tanstack.com/blog/tanstack-table-v9-typescript-performance",
@@ -342,7 +378,7 @@
       "similarity": null
     },
     {
-      "rank": 43,
+      "rank": 44,
       "score": 62.0,
       "title": "PixelSmash \u2013 Critical FFmpeg Vulnerability Turns Media Files into Weapons",
       "url": "https://jfrog.com/blog/pixelsmash-critical-ffmpeg-vulnerability-turns-media-files-into-weapons/",
@@ -350,15 +386,15 @@
       "similarity": null
     },
     {
-      "rank": 44,
+      "rank": 45,
       "score": 62.0,
       "title": "Fired by Google for creating the Google workspace CLI",
       "url": "https://twitter.com/JPoehnelt/status/2069482265953087602",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 9,
+      "similarity": 1.000000238418579
     },
     {
-      "rank": 45,
+      "rank": 46,
       "score": 62.0,
       "title": "GlassWASM: WebAssembly Malware Found in Trojanized Open VSX Extensions",
       "url": "https://socket.dev/blog/glasswasm-malware-open-vsx-extensions",
@@ -366,7 +402,7 @@
       "similarity": null
     },
     {
-      "rank": 46,
+      "rank": 47,
       "score": 61.0,
       "title": "The Flat Curve Society",
       "url": "https://steve-yegge.medium.com/the-flat-curve-society-36c8b01eb33b",
@@ -374,7 +410,7 @@
       "similarity": null
     },
     {
-      "rank": 47,
+      "rank": 48,
       "score": 61.0,
       "title": "Sniff out stale AI override advice with this open source CLI",
       "url": "https://www.theregister.com/security/2026/06/23/sniff-out-stale-ai-override-advice-with-this-open-source-cli/5259853",
@@ -382,7 +418,15 @@
       "similarity": null
     },
     {
-      "rank": 48,
+      "rank": 49,
+      "score": 61.0,
+      "title": "We're making Bunny DNS free: because a faster internet won't build itself",
+      "url": "https://bunny.net/blog/were-making-bunny-dns-free/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 50,
       "score": 61.0,
       "title": "CCCL Runtime: A Modern C++ Runtime for CUDA",
       "url": "https://developer.nvidia.com/blog/cccl-runtime-a-modern-c-runtime-for-cuda/",
@@ -390,7 +434,7 @@
       "similarity": null
     },
     {
-      "rank": 49,
+      "rank": 51,
       "score": 61.0,
       "title": "Homebrew 6.0 released with new security mechanism, Linux sandbox, and more",
       "url": "https://www.theregister.com/devops/2026/06/17/homebrew-60-released-with-new-security-mechanism-linux-sandbox-and-more/5257570",
@@ -398,7 +442,7 @@
       "similarity": null
     },
     {
-      "rank": 50,
+      "rank": 52,
       "score": 61.0,
       "title": "Pledging another $400k to the Zig software foundation",
       "url": "https://mitchellh.com/writing/zig-donation-2026",
@@ -406,7 +450,7 @@
       "similarity": null
     },
     {
-      "rank": 51,
+      "rank": 53,
       "score": 60.0,
       "title": "The Minimum Viable Unit of Saleable Software",
       "url": "https://brandur.org/minimum-viable-unit",
@@ -414,7 +458,7 @@
       "similarity": null
     },
     {
-      "rank": 52,
+      "rank": 54,
       "score": 60.0,
       "title": "Why is Meta destroying its engineering organization?",
       "url": "https://newsletter.pragmaticengineer.com/p/why-is-meta-destroying-its-engineering",
@@ -422,7 +466,7 @@
       "similarity": null
     },
     {
-      "rank": 53,
+      "rank": 55,
       "score": 60.0,
       "title": "Raspberry Pi Pico W as USB Wi-Fi Adapter",
       "url": "https://gitlab.com/baiyibai/pico-usb-wifi",
@@ -430,15 +474,7 @@
       "similarity": null
     },
     {
-      "rank": 54,
-      "score": 60.0,
-      "title": "Four Ways We're Using Our MCP Server at Figma",
-      "url": "https://www.figma.com/blog/4-ways-were-using-our-mcp-server-at-figma/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 55,
+      "rank": 56,
       "score": 60.0,
       "title": "ShapedPlugin WordPress Pro Plugins Backdoored in Supply Chain Attack",
       "url": "https://thehackernews.com/2026/06/shapedplugin-wordpress-pro-plugins.html",
@@ -446,7 +482,7 @@
       "similarity": null
     },
     {
-      "rank": 56,
+      "rank": 57,
       "score": 60.0,
       "title": "7,000 Langflow servers are under attack. LangGraph and LangChain have the same holes",
       "url": "https://venturebeat.com/security/7000-langflow-servers-under-attack-langgraph-langchain-same-holes",
@@ -454,7 +490,7 @@
       "similarity": null
     },
     {
-      "rank": 57,
+      "rank": 58,
       "score": 60.0,
       "title": "A public Sentry key is all it takes to hijack Claude Code, Cursor, and Codex",
       "url": "https://thenewstack.io/agentjacking-sentry-mcp-attack/",
@@ -462,7 +498,7 @@
       "similarity": null
     },
     {
-      "rank": 58,
+      "rank": 59,
       "score": 59.0,
       "title": "Why Drawing Tablet Brands Won't Collaborate on Linux Floss Drivers",
       "url": "https://www.davidrevoy.com/article1154/why-drawing-tablet-brands-wont-collaborate-on-linux-floss-drivers",
@@ -470,7 +506,7 @@
       "similarity": null
     },
     {
-      "rank": 59,
+      "rank": 60,
       "score": 59.0,
       "title": "Steam Machine launches today",
       "url": "https://store.steampowered.com/news/group/45479024/view/685257114654870245",
@@ -478,7 +514,7 @@
       "similarity": null
     },
     {
-      "rank": 60,
+      "rank": 61,
       "score": 59.0,
       "title": "GLM-5.2 Raises the Bar for Open Models",
       "url": "https://thezvi.wordpress.com/2026/06/22/glm-5-2-is-the-new-best-open-model/",
@@ -486,7 +522,7 @@
       "similarity": null
     },
     {
-      "rank": 61,
+      "rank": 62,
       "score": 59.0,
       "title": "GLM-5.2 Is The New Best Open Model",
       "url": "https://thezvi.wordpress.com/2026/06/22/glm-5-2-is-the-new-best-open-model/",
@@ -494,7 +530,7 @@
       "similarity": null
     },
     {
-      "rank": 62,
+      "rank": 63,
       "score": 59.0,
       "title": "Boost Inference Performance up to 15x on NVIDIA Blackwell Using DFlash Speculative Decoding",
       "url": "https://developer.nvidia.com/blog/boost-inference-performance-up-to-15x-on-nvidia-blackwell-using-dflash-speculative-decoding/",
@@ -502,7 +538,7 @@
       "similarity": null
     },
     {
-      "rank": 63,
+      "rank": 64,
       "score": 58.0,
       "title": "GrapheneOS has been ported to Android 17 and official releases are coming soon",
       "url": "https://discuss.grapheneos.org/d/36469-grapheneos-has-been-ported-to-android-17-and-official-releases-are-coming-soon",
@@ -510,7 +546,7 @@
       "similarity": null
     },
     {
-      "rank": 64,
+      "rank": 65,
       "score": 58.0,
       "title": "Android 17 starts hitting Pixel phones and watches today",
       "url": "https://arstechnica.com/gadgets/2026/06/android-17-starts-hitting-pixel-phones-and-watches-today/",
@@ -518,7 +554,7 @@
       "similarity": null
     },
     {
-      "rank": 65,
+      "rank": 66,
       "score": 58.0,
       "title": "\"Fix\" MacBook Neo Cursor Lag: Record 1 Pixel of the Screen Every 10 Seconds",
       "url": "https://gist.github.com/retroplasma/ec21767d0a8380c7ea9c2fbee1c7d6bf",
@@ -526,15 +562,15 @@
       "similarity": null
     },
     {
-      "rank": 66,
+      "rank": 67,
       "score": 58.0,
       "title": "Will It Mythos?",
       "url": "https://swelljoe.com/post/will-it-mythos/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 7,
+      "similarity": 1.0
     },
     {
-      "rank": 67,
+      "rank": 68,
       "score": 58.0,
       "title": "Optimizing Models to Be Fast at Codegen",
       "url": "https://www.morphllm.com/blog/codegen-inference-research",
@@ -542,7 +578,7 @@
       "similarity": null
     },
     {
-      "rank": 68,
+      "rank": 69,
       "score": 57.0,
       "title": "Local Qwen isn't a worse Opus, it's a different tool",
       "url": "https://blog.alexellis.io/local-ai-is-not-opus/",
@@ -550,7 +586,7 @@
       "similarity": null
     },
     {
-      "rank": 69,
+      "rank": 70,
       "score": 57.0,
       "title": "LLMs are complicated now",
       "url": "https://ianbarber.blog/2026/06/19/llms-are-complicated-now/",
@@ -558,7 +594,7 @@
       "similarity": null
     },
     {
-      "rank": 70,
+      "rank": 71,
       "score": 57.0,
       "title": "I am dreading our LLM-written incident report future",
       "url": "https://surfingcomplexity.blog/2026/06/19/i-am-dreading-our-llm-written-incident-report-future/",
@@ -566,7 +602,7 @@
       "similarity": null
     },
     {
-      "rank": 71,
+      "rank": 72,
       "score": 57.0,
       "title": "Researchers Detail DifyTap Flaws in Dify That Could Expose AI Chats Across Tenants",
       "url": "https://thehackernews.com/2026/06/researchers-detail-difytap-flaws-in.html",
@@ -574,7 +610,7 @@
       "similarity": null
     },
     {
-      "rank": 72,
+      "rank": 73,
       "score": 57.0,
       "title": "Malicious npm Packages Pose as PostCSS Tools to Deliver Windows RAT",
       "url": "https://thehackernews.com/2026/06/malicious-npm-packages-pose-as-postcss.html",
@@ -582,7 +618,7 @@
       "similarity": null
     },
     {
-      "rank": 73,
+      "rank": 74,
       "score": 57.0,
       "title": "'Cordyceps': Mushrooming Malicious Pull Requests Threaten Developer Workflows",
       "url": "https://www.darkreading.com/application-security/cordyceps-malicious-pull-requests-developer-workflows",
@@ -590,7 +626,7 @@
       "similarity": null
     },
     {
-      "rank": 74,
+      "rank": 75,
       "score": 57.0,
       "title": "SpaceX to acquire the AI coding startup Cursor for $60 billion",
       "url": "https://www.cnbc.com/2026/06/16/spacex-spcx-cursor-acquisition-ipo.html",
@@ -598,7 +634,7 @@
       "similarity": null
     },
     {
-      "rank": 75,
+      "rank": 76,
       "score": 57.0,
       "title": "Google Sets Sept. 30 Deadline for Android Developer Verification in Four Countries",
       "url": "https://thehackernews.com/2026/06/google-sets-sept-30-deadline-for.html",
@@ -606,7 +642,7 @@
       "similarity": null
     },
     {
-      "rank": 76,
+      "rank": 77,
       "score": 57.0,
       "title": "A 27-Year-Old Authentication Bypass in OpenBSD's PPP Stack",
       "url": "https://blog.argus-systems.ai/blog/openbsd-pap-27-year-auth-bypass.html",
@@ -614,7 +650,7 @@
       "similarity": null
     },
     {
-      "rank": 77,
+      "rank": 78,
       "score": 56.0,
       "title": "Don't verify email addresses by sending spam to them",
       "url": "https://milek7.pl/mailverifyspam/",
@@ -622,7 +658,7 @@
       "similarity": null
     },
     {
-      "rank": 78,
+      "rank": 79,
       "score": 56.0,
       "title": "When I reject AI code even if it works",
       "url": "https://vinibrasil.com/when-i-reject-ai-code-even-if-it-works/",
@@ -630,7 +666,7 @@
       "similarity": null
     },
     {
-      "rank": 79,
+      "rank": 80,
       "score": 56.0,
       "title": "Swift Package Index joins Apple, pledges to remain open source",
       "url": "https://9to5mac.com/2026/06/23/swift-package-index-joins-apple-pledges-to-remain-open-source/",
@@ -638,7 +674,7 @@
       "similarity": null
     },
     {
-      "rank": 80,
+      "rank": 81,
       "score": 56.0,
       "title": "Malicious JetBrains Marketplace Plugins Steal AI API Keys From Developers",
       "url": "https://www.bleepingcomputer.com/news/security/malicious-jetbrains-marketplace-plugins-steal-ai-api-keys-from-developers/",
@@ -646,7 +682,7 @@
       "similarity": null
     },
     {
-      "rank": 81,
+      "rank": 82,
       "score": 56.0,
       "title": "Grad Detect: Gradient-Based Hallucination Detection in LLMs",
       "url": "http://arxiv.org/abs/2606.24790v1",
@@ -654,7 +690,7 @@
       "similarity": null
     },
     {
-      "rank": 82,
+      "rank": 83,
       "score": 56.0,
       "title": "DifyTap Bugs Let Attackers 'Wiretap' AI Chat Histories",
       "url": "https://www.darkreading.com/application-security/difytap-bugs-wiretap-ai-chat-histories",
@@ -662,7 +698,7 @@
       "similarity": null
     },
     {
-      "rank": 83,
+      "rank": 84,
       "score": 56.0,
       "title": "pg_kpart version 1.0",
       "url": "https://www.postgresql.org/about/news/pg_kpart-version-10-3316/",
@@ -670,18 +706,10 @@
       "similarity": null
     },
     {
-      "rank": 84,
+      "rank": 85,
       "score": 55.0,
       "title": "There is minimal downside to switching to open models",
       "url": "https://www.marble.onl/posts/cancel_claude.html",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 85,
-      "score": 55.0,
-      "title": "Why doesn't MQTT have its own Express? Introducing mqttkit",
-      "url": "https://dev.to/keypdev/why-doesnt-mqtt-have-its-own-express-introducing-mqttkit-11il",
       "matched_tldr_idx": null,
       "similarity": null
     },
@@ -702,9 +730,49 @@
       "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.0,
+    "25": 0.15384615384615385,
+    "50": 0.38461538461538464,
+    "100": 0.46153846153846156,
+    "87": 0.46153846153846156
+  },
+  "hits_at": {
+    "10": 0,
+    "25": 2,
+    "50": 5,
+    "100": 6,
+    "87": 6
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://leehanchung.github.io/blogs/2026/05/08/hidden-technical-debt-agent-harness/",
+    "https://nega.tv/posts/low-tech-ai-of-elden-ring.html",
+    "https://blog.bytebytego.com/p/an-ex-meta-l8s-agentic-engineering",
+    "https://www.builder.io/blog/building-in-the-age-of-collaborative-coding",
+    "https://lucumr.pocoo.org/2026/6/23/the-coming-loop/",
+    "https://openai.com/index/daybreak-securing-the-world/",
+    "https://mistral.ai/news/ocr-4/",
+    "https://swelljoe.com/post/will-it-mythos/",
+    "https://thoughtfullab.com/the-state-of-ai-post-training-agents.html",
+    "https://xcancel.com/JPoehnelt/status/2069482265953087602",
+    "https://www.anthropic.com/news/introducing-claude-tag",
+    "https://words.filippo.io/vuln-reports/",
+    "https://unsloth.ai/docs/models/glm-5.2"
+  ],
+  "tldr_domains": [
+    "leehanchung.github.io",
+    "nega.tv",
+    "blog.bytebytego.com",
+    "builder.io",
+    "lucumr.pocoo.org",
+    "openai.com",
+    "mistral.ai",
+    "swelljoe.com",
+    "thoughtfullab.com",
+    "xcancel.com",
+    "anthropic.com",
+    "ords.filippo.io",
+    "unsloth.ai"
+  ]
 }
