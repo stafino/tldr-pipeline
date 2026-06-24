@@ -1,9 +1,37 @@
 {
   "date": "2026-06-23",
   "newsletter": "tldr_dev",
-  "fetched_at": "2026-06-24T07:59:39.516416+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-06-24T11:03:17.476156+00:00",
+  "tldr_titles": [
+    "p99 0 ms* autocomplete for 240 million domain names",
+    "Everything a Senior Engineer Needs to Know About What's Inside an LLM",
+    "Optimization catalog. How 4 bytes of padding make array clearing 49% faster",
+    "In praise of memcached",
+    "You should use AI for reviewing code especially when the diff is huge",
+    "Deno Desktop",
+    "LLM-Driven Feature Discovery",
+    "GLM-5.2 Is The New Best Open Model",
+    "GLM-5.2 vs Claude Opus",
+    "The text in Claude Code's \u201cExtended Thinking\u201d output is not authentic",
+    "Ten Years of Terms and Conditions",
+    "TypeScript Performance in TanStack Table V9",
+    "I'm the agent for Claude now"
+  ],
+  "tldr_matched": [
+    false,
+    true,
+    false,
+    true,
+    false,
+    true,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false,
+    false
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -18,8 +46,8 @@
       "score": 78.0,
       "title": "Deno Desktop",
       "url": "https://docs.deno.com/runtime/desktop/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 5,
+      "similarity": 1.0
     },
     {
       "rank": 3,
@@ -74,8 +102,8 @@
       "score": 70.0,
       "title": "The text in Claude Code\u2019s \u201cExtended Thinking\u201d output",
       "url": "https://patrickmccanna.net/the-text-in-claude-codes-extended-thinking-output-is-not-authentic/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 9,
+      "similarity": 1.0
     },
     {
       "rank": 10,
@@ -290,8 +318,8 @@
       "score": 62.0,
       "title": "In praise of memcached",
       "url": "https://jchri.st/blog/in-praise-of-memcached/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 3,
+      "similarity": 1.0
     },
     {
       "rank": 37,
@@ -514,8 +542,8 @@
       "score": 57.0,
       "title": "LLMs are complicated now",
       "url": "https://ianbarber.blog/2026/06/19/llms-are-complicated-now/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 1,
+      "similarity": 0.6243974566459656
     },
     {
       "rank": 65,
@@ -630,9 +658,49 @@
       "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.15384615384615385,
+    "25": 0.15384615384615385,
+    "50": 0.23076923076923078,
+    "100": 0.3076923076923077,
+    "78": 0.3076923076923077
+  },
+  "hits_at": {
+    "10": 2,
+    "25": 2,
+    "50": 3,
+    "100": 4,
+    "78": 4
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://ruurtjan.com/articles/p99-0ms-autocomplete-for-240-million-domain-names",
+    "https://www.pathtostaff.com/p/everything-a-senior-engineer-needs",
+    "https://blog.andr2i.com/posts/2026-06-22-optimization-catalog-how-4-bytes-of-padding-make-array-clearing-49-faster",
+    "https://jchri.st/blog/in-praise-of-memcached/",
+    "https://simianwords.bearblog.dev/you-should-use-ai-for-reviewing-code-especially-when-the-diff-is-huge/",
+    "https://docs.deno.com/runtime/desktop/",
+    "https://www.alignmentforum.org/posts/WAZWA6FPQvH8okouJ/llm-driven-feature-discovery",
+    "https://thezvi.wordpress.com/2026/06/22/glm-5-2-is-the-new-best-open-model/",
+    "https://techstackups.com/comparisons/glm-5.2-vs-opus/",
+    "https://patrickmccanna.net/the-text-in-claude-codes-extended-thinking-output-is-not-authentic/",
+    "https://henryach.com/blog/tsandcs/",
+    "https://tanstack.com/blog/tanstack-table-v9-typescript-performance",
+    "https://www.aha.io/engineering/articles/im-the-for-claude-now"
+  ],
+  "tldr_domains": [
+    "ruurtjan.com",
+    "pathtostaff.com",
+    "blog.andr2i.com",
+    "jchri.st",
+    "simianwords.bearblog.dev",
+    "docs.deno.com",
+    "alignmentforum.org",
+    "thezvi.wordpress.com",
+    "techstackups.com",
+    "patrickmccanna.net",
+    "henryach.com",
+    "tanstack.com",
+    "aha.io"
+  ]
 }

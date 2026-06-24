@@ -1,9 +1,41 @@
 {
   "date": "2026-06-22",
   "newsletter": "tldr_ai",
-  "fetched_at": "2026-06-24T07:59:39.163718+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-06-24T11:01:47.713292+00:00",
+  "tldr_titles": [
+    "Sakana Fugu",
+    "Inception Labs' Mercury 2 AI Beats Google's DiffusionGemma at Its Own Game",
+    "Nobel laureate John Jumper is leaving DeepMind for rival Anthropic",
+    "Auditing DiffusionGemma Transparency",
+    "AI Pauses",
+    "Nvidia's Autonomous Robotics Research",
+    "From Prompting Agents to Loop Engineering",
+    "Optimizing Models to Be Fast at Codegen",
+    "Notes on the Industry Job Search",
+    "A viral doomsday scenario aims to shake Europe out of its AI complacency",
+    "LLMs are complicated now",
+    "Solving an ARD problem in AI: Agentic Resource Discovery",
+    "When Ideology Becomes Systemic Risk",
+    "There is minimal downside to switching to open models",
+    "AI Engineer Claims to Have Cracked Linear A"
+  ],
+  "tldr_matched": [
+    true,
+    false,
+    true,
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    true,
+    true,
+    false,
+    true,
+    false
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -26,8 +58,8 @@
       "score": 79.0,
       "title": "Inside NVIDIA Halos for Robotics: A Full-Stack Functional Safety System for Physical AI",
       "url": "https://developer.nvidia.com/blog/inside-nvidia-halos-for-robotics-a-full-stack-functional-safety-system-for-physical-ai/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 5,
+      "similarity": 0.678831160068512
     },
     {
       "rank": 4,
@@ -82,8 +114,8 @@
       "score": 75.0,
       "title": "Sakana Fugu",
       "url": "https://sakana.ai/fugu/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 0,
+      "similarity": 1.000000238418579
     },
     {
       "rank": 11,
@@ -162,8 +194,8 @@
       "score": 71.0,
       "title": "Building AI Agents for AR Glasses and XR Devices with NVIDIA XR AI",
       "url": "https://developer.nvidia.com/blog/building-ai-agents-for-ar-glasses-and-xr-devices-with-nvidia-xr-ai/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 5,
+      "similarity": 0.6289328932762146
     },
     {
       "rank": 21,
@@ -202,8 +234,8 @@
       "score": 70.0,
       "title": "Nobel laureate John Jumper is leaving DeepMind for rival Anthropic",
       "url": "https://techcrunch.com/2026/06/20/nobel-laureate-john-jumper-is-leaving-deepmind-for-rival-anthropic/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 2,
+      "similarity": 1.0
     },
     {
       "rank": 26,
@@ -370,8 +402,8 @@
       "score": 62.0,
       "title": "LLMs Are Complicated Now",
       "url": "https://ianbarber.blog/2026/06/19/llms-are-complicated-now/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 10,
+      "similarity": 1.0
     },
     {
       "rank": 47,
@@ -434,8 +466,8 @@
       "score": 60.0,
       "title": "A Nobel laureate just walked out of Google DeepMind for Anthropic, and the part nobody is discussing is what Alphabet had reassigned him to do before he left",
       "url": "https://siliconcanals.com/sc-n-a-nobel-laureate-just-walked-out-of-google-deepmind-for-anthropic-and-the-part-nobody-is-discussing-is-what-alphabet-had-reassigned-him-to-do-before-he-left/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 2,
+      "similarity": 0.6981862783432007
     },
     {
       "rank": 55,
@@ -506,8 +538,8 @@
       "score": 58.0,
       "title": "Snowflake and the Agentic Resource Discovery Specification",
       "url": "https://www.snowflake.com/en/blog/agentic-resource-discovery-specification/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 11,
+      "similarity": 0.6521778702735901
     },
     {
       "rank": 64,
@@ -562,16 +594,16 @@
       "score": 57.0,
       "title": "Nvidia Seeks to Make Humanoid AI Robots Safer Around Humans",
       "url": "https://www.bloomberg.com/news/articles/2026-06-22/nvidia-seeks-to-make-humanoid-ai-robots-safer-around-humans",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 5,
+      "similarity": 0.6966395378112793
     },
     {
       "rank": 71,
       "score": 56.0,
       "title": "There is minimal downside to switching to open models",
       "url": "https://www.marble.onl/posts/cancel_claude.html",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 13,
+      "similarity": 1.0
     },
     {
       "rank": 72,
@@ -630,9 +662,53 @@
       "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.13333333333333333,
+    "25": 0.2,
+    "50": 0.26666666666666666,
+    "100": 0.4,
+    "78": 0.4
+  },
+  "hits_at": {
+    "10": 2,
+    "25": 3,
+    "50": 4,
+    "100": 6,
+    "78": 6
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://threadreaderapp.com/thread/2068862070062485867.html",
+    "https://decrypt.co/371722/inception-labs-mercury-2-ai-beats-googles-diffusiongemma",
+    "https://techcrunch.com/2026/06/20/nobel-laureate-john-jumper-is-leaving-deepmind-for-rival-anthropic/",
+    "https://www.lesswrong.com/posts/zoYXpdaMgFT43Wc24/how-transparent-is-diffusiongemma-and-why-it-matters",
+    "https://thezvi.substack.com/p/ai-173-ai-pauses",
+    "https://research.nvidia.com/labs/gear/enpire/",
+    "https://x.com/omarsar0/status/2068008743153832264",
+    "https://www.morphllm.com/blog/codegen-inference-research",
+    "https://alisawuffles.github.io/blog/job-search/",
+    "https://www.theguardian.com/technology/2026/jun/20/europe-sleepwalking-ai-disaster-us-china",
+    "https://ianbarber.blog/2026/06/19/llms-are-complicated-now/",
+    "https://www.infoworld.com/article/4187305/solving-an-ard-problem-in-ai-agentic-resource-discovery.html",
+    "https://x.com/haridigresses/status/2068167592301223939",
+    "https://www.marble.onl/posts/cancel_claude.html",
+    "https://aiclambake.com/clamtakes/linear-a/"
+  ],
+  "tldr_domains": [
+    "threadreaderapp.com",
+    "decrypt.co",
+    "techcrunch.com",
+    "lesswrong.com",
+    "thezvi.substack.com",
+    "research.nvidia.com",
+    "x.com",
+    "morphllm.com",
+    "alisawuffles.github.io",
+    "theguardian.com",
+    "ianbarber.blog",
+    "infoworld.com",
+    "x.com",
+    "marble.onl",
+    "aiclambake.com"
+  ]
 }

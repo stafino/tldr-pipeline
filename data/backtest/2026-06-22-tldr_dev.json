@@ -1,9 +1,35 @@
 {
   "date": "2026-06-22",
   "newsletter": "tldr_dev",
-  "fetched_at": "2026-06-24T07:59:39.207537+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-06-24T11:02:01.714003+00:00",
+  "tldr_titles": [
+    "I Stored a Website in a Favicon",
+    "Building Reliable Agentic AI Systems",
+    "JSON-LD Explained for Personal Websites",
+    "There is minimal downside to switching to open models",
+    "Hey, N00b, We Didn't Hire You to Complete Tasks",
+    "Temporary Cloudflare Accounts for AI agents",
+    "The Minimum Viable Unit of Saleable Software",
+    "Ten years of ClickHouse in open source",
+    "Developers don't understand CORS",
+    "Ploy raises $27M to turn your company's website into your hardest working employee",
+    "Ask for no, don't ask for yes",
+    "When I reject AI code even if it works"
+  ],
+  "tldr_matched": [
+    true,
+    true,
+    false,
+    true,
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    true
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -66,8 +92,8 @@
       "score": 68.0,
       "title": "Building reliable agentic AI systems",
       "url": "https://martinfowler.com/articles/reliable-llm-bayer.html",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 1,
+      "similarity": 1.0
     },
     {
       "rank": 9,
@@ -250,8 +276,8 @@
       "score": 59.0,
       "title": "The minimum viable unit of saleable software",
       "url": "https://brandur.org/minimum-viable-unit",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 6,
+      "similarity": 1.0
     },
     {
       "rank": 32,
@@ -458,8 +484,8 @@
       "score": 56.0,
       "title": "When I reject AI code even if it works",
       "url": "https://vinibrasil.com/when-i-reject-ai-code-even-if-it-works/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 11,
+      "similarity": 1.0
     },
     {
       "rank": 58,
@@ -538,8 +564,8 @@
       "score": 55.0,
       "title": "There is minimal downside to switching to open models",
       "url": "https://www.marble.onl/posts/cancel_claude.html",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 3,
+      "similarity": 1.0
     },
     {
       "rank": 68,
@@ -570,13 +596,51 @@
       "score": 55.0,
       "title": "I Stored a Website in a Favicon",
       "url": "https://www.timwehrle.de/blog/i-stored-a-website-in-a-favicon/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 0,
+      "similarity": 1.0
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.08333333333333333,
+    "25": 0.08333333333333333,
+    "50": 0.16666666666666666,
+    "100": 0.4166666666666667,
+    "71": 0.4166666666666667
+  },
+  "hits_at": {
+    "10": 1,
+    "25": 1,
+    "50": 2,
+    "100": 5,
+    "71": 5
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://www.timwehrle.de/blog/i-stored-a-website-in-a-favicon/",
+    "https://martinfowler.com/articles/reliable-llm-bayer.html",
+    "https://hawksley.dev/blog/json-ld-explained-for-personal-websites/",
+    "https://www.marble.onl/posts/cancel_claude.html",
+    "https://newsletter.kentbeck.com/p/hey-n00b-we-didnt-hire-you-to-complete",
+    "https://blog.cloudflare.com/temporary-accounts/",
+    "https://brandur.org/minimum-viable-unit",
+    "https://clickhouse.com/blog/open-source-10",
+    "https://fosterelli.co/developers-dont-understand-cors",
+    "https://ploy.ai/blog/ploy-raises-27m",
+    "https://www.mooreds.com/wordpress/archives/3518",
+    "https://vinibrasil.com/when-i-reject-ai-code-even-if-it-works/"
+  ],
+  "tldr_domains": [
+    "timwehrle.de",
+    "martinfowler.com",
+    "hawksley.dev",
+    "marble.onl",
+    "newsletter.kentbeck.com",
+    "blog.cloudflare.com",
+    "brandur.org",
+    "clickhouse.com",
+    "fosterelli.co",
+    "ploy.ai",
+    "mooreds.com",
+    "vinibrasil.com"
+  ]
 }

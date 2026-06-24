@@ -1,9 +1,39 @@
 {
   "date": "2026-06-23",
   "newsletter": "tldr_ai",
-  "fetched_at": "2026-06-24T07:59:39.465714+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-06-24T11:03:10.241668+00:00",
+  "tldr_titles": [
+    "SpaceX signs computing power deal with open-source AI startup Reflection worth up to $6.3 billion",
+    "OpenAI launches new security tools and updates GPT-5.5-Cyber",
+    "Alibaba's AI video model rises to No. 2 in global rankings, as OpenAI's Sora and ByteDance's Seedance fall away",
+    "The text in Claude Code's \u201cExtended Thinking\u201d output is not authentic",
+    "Knowledge Agents: Beat Frontier Models with Better Structure",
+    "GLM-5.2 Raises the Bar for Open Models",
+    "Model Size Scaling in 2023-2031",
+    "Using Codex for Long-Running Projects",
+    "Moebius",
+    "Loop Engineering Clearly Explained",
+    "Anthropic says Claude may want to see your ID",
+    "claude-sonnet-5",
+    "Anthropic prepares Cowork support for mobile apps",
+    "Tencent tests AI assistant in China's most popular app as it looks to catch up with rivals"
+  ],
+  "tldr_matched": [
+    true,
+    true,
+    false,
+    true,
+    false,
+    false,
+    false,
+    true,
+    true,
+    false,
+    true,
+    false,
+    false,
+    false
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -58,8 +88,8 @@
       "score": 81.0,
       "title": "Moebius: 0.2B image inpainting model with 10B-level performance",
       "url": "https://hustvl.github.io/Moebius/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 8,
+      "similarity": 1.0
     },
     {
       "rank": 8,
@@ -90,8 +120,8 @@
       "score": 77.0,
       "title": "The text in Claude Code\u2019s \u201cExtended Thinking\u201d output",
       "url": "https://patrickmccanna.net/the-text-in-claude-codes-extended-thinking-output-is-not-authentic/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 3,
+      "similarity": 1.0
     },
     {
       "rank": 12,
@@ -114,8 +144,8 @@
       "score": 76.0,
       "title": "Daybreak: Tools for securing every organization in the world",
       "url": "https://openai.com/index/daybreak-securing-the-world",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 1,
+      "similarity": 0.7069374918937683
     },
     {
       "rank": 15,
@@ -146,8 +176,8 @@
       "score": 75.0,
       "title": "OpenAI launches new security tools and updates GPT-5.5-Cyber",
       "url": "https://www.testingcatalog.com/openai-launches-new-security-tools-and-updates-gpt-5-5-cyber/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 1,
+      "similarity": 1.0
     },
     {
       "rank": 19,
@@ -162,8 +192,8 @@
       "score": 75.0,
       "title": "Identity verification on Claude",
       "url": "https://support.claude.com/en/articles/14328960-identity-verification-on-claude",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 10,
+      "similarity": 0.7205790877342224
     },
     {
       "rank": 21,
@@ -290,8 +320,8 @@
       "score": 71.0,
       "title": "OpenAI's new GPT-5.5-Cyber tops Claude Mythos 5 in vulnerability benchmark",
       "url": "https://www.neowin.net/news/openais-new-gpt-55-cyber-tops-claude-mythos-5-in-vulnerability-benchmark/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 1,
+      "similarity": 0.647794783115387
     },
     {
       "rank": 37,
@@ -442,8 +472,8 @@
       "score": 66.0,
       "title": "SpaceX to acquire the AI coding startup Cursor for $60 billion",
       "url": "https://www.cnbc.com/2026/06/16/spacex-spcx-cursor-acquisition-ipo.html",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 0,
+      "similarity": 0.6541420221328735
     },
     {
       "rank": 56,
@@ -490,8 +520,8 @@
       "score": 63.0,
       "title": "Codex-maxxing for long-running work",
       "url": "https://openai.com/index/codex-maxxing-long-running-work",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 7,
+      "similarity": 1.0
     },
     {
       "rank": 62,
@@ -634,8 +664,8 @@
       "score": 60.0,
       "title": "Anthropic says Claude may want to see your ID",
       "url": "https://techcrunch.com/2026/06/22/anthropic-says-claude-may-want-to-see-your-id/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 10,
+      "similarity": 1.0
     },
     {
       "rank": 80,
@@ -750,9 +780,51 @@
       "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.07142857142857142,
+    "25": 0.2857142857142857,
+    "50": 0.2857142857142857,
+    "100": 0.42857142857142855,
+    "93": 0.42857142857142855
+  },
+  "hits_at": {
+    "10": 1,
+    "25": 4,
+    "50": 4,
+    "100": 6,
+    "93": 6
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://www.cnbc.com/2026/06/22/spacex-ai-colossus-data-center-reflection.html",
+    "https://www.testingcatalog.com/openai-launches-new-security-tools-and-updates-gpt-5-5-cyber/",
+    "https://venturebeat.com/technology/alibabas-ai-video-model-rises-to-no-2-in-global-rankings-as-openais-sora-and-bytedances-seedance-fall-away",
+    "https://patrickmccanna.net/the-text-in-claude-codes-extended-thinking-output-is-not-authentic/",
+    "https://weightythoughts.com/p/knowledge-agents-beat-frontier-models",
+    "https://thezvi.wordpress.com/2026/06/22/glm-5-2-is-the-new-best-open-model/",
+    "https://www.lesswrong.com/posts/yLHiQGCPdvzL9fBn3/model-size-scaling-in-2023-2031",
+    "https://openai.com/index/codex-maxxing-long-running-work/",
+    "https://hustvl.github.io/Moebius/",
+    "https://x.com/akshay_pachaar/status/2069118430582866051",
+    "https://techcrunch.com/2026/06/22/anthropic-says-claude-may-want-to-see-your-id/",
+    "https://x.com/synthwavedd/status/2068701837427974655",
+    "https://www.testingcatalog.com/anthropic-prepares-cowork-support-for-mobile-apps/",
+    "https://www.cnbc.com/2026/06/22/tencent-ai-assistant-wechat-china.html"
+  ],
+  "tldr_domains": [
+    "cnbc.com",
+    "testingcatalog.com",
+    "venturebeat.com",
+    "patrickmccanna.net",
+    "eightythoughts.com",
+    "thezvi.wordpress.com",
+    "lesswrong.com",
+    "openai.com",
+    "hustvl.github.io",
+    "x.com",
+    "techcrunch.com",
+    "x.com",
+    "testingcatalog.com",
+    "cnbc.com"
+  ]
 }

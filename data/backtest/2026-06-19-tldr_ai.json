@@ -1,9 +1,41 @@
 {
   "date": "2026-06-19",
   "newsletter": "tldr_ai",
-  "fetched_at": "2026-06-24T07:59:38.038041+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-06-24T11:00:05.470621+00:00",
+  "tldr_titles": [
+    "OpenAI prepares GPT-5.6 models for the upcoming release",
+    "Midjourney, the AI image generator, is developing a full-body ultrasonic scanner",
+    "Self-Improving Memory for Agents",
+    "Reinforcement learning towards broadly and persistently beneficial models",
+    "MosaicLeaks: Can your research agent keep a secret?",
+    "Revisiting Hard Questions with Replay Buffers",
+    "Claude Code now supports artifacts",
+    "Securing the future of AI agents",
+    "Google Is Using Nvidia's Playbook to Build a Rival AI Chip Business",
+    "Godfather of AI blasts Musk's xAI as 'failure,' says labs are risking a 'big bubble explosion'",
+    "Mistral AI to get Code and Apps features on Vibe",
+    "OpenAI Introduced Enterprise Usage Analytics",
+    "That Untravell'd World",
+    "The $13 Billion AI Startup Betting on Cheaper Alternatives to OpenAI, Anthropic",
+    "\u2018No poaching' our people, China's AI behemoth DeepSeek reportedly tells investors"
+  ],
+  "tldr_matched": [
+    false,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -130,8 +162,8 @@
       "score": 74.0,
       "title": "MosaicLeaks: Can your research agent keep a secret?",
       "url": "https://huggingface.co/blog/ServiceNow/mosaicleaks",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 4,
+      "similarity": 1.0
     },
     {
       "rank": 17,
@@ -274,8 +306,8 @@
       "score": 69.0,
       "title": "Sources detail how Google is using Nvidia's playbook to build an AI chip business, including providing $3.2B to fund a NY data center renting TPUs to Anthropic (Wall Street Journal)",
       "url": "https://www.techmeme.com/260619/p4#a260619p4",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 8,
+      "similarity": 0.8750934600830078
     },
     {
       "rank": 35,
@@ -482,8 +514,8 @@
       "score": 62.0,
       "title": "DeepSeek was set to be added to US Entity List for supporting China\u2019s military and intelligence operations, report claims \u2014 White House holds off to avoid escalating tensions with China",
       "url": "https://www.tomshardware.com/tech-industry/deepseek-was-set-to-be-added-to-us-entity-list-for-supporting-chinas-military-and-intelligence-operations-report-claims-white-house-holds-off-to-avoid-escalating-tensions-with-china",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 14,
+      "similarity": 0.6498370170593262
     },
     {
       "rank": 61,
@@ -622,9 +654,53 @@
       "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.0,
+    "25": 0.06666666666666667,
+    "50": 0.13333333333333333,
+    "100": 0.2,
+    "77": 0.2
+  },
+  "hits_at": {
+    "10": 0,
+    "25": 1,
+    "50": 2,
+    "100": 3,
+    "77": 3
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://www.testingcatalog.com/openai-prepares-gpt-5-6-models-for-the-upcoming-release/",
+    "https://www.engadget.com/2196998/midjourney-full-body-ultrasonic-scanner/",
+    "https://www.perplexity.ai/hub/blog/self-improving-memory-for-agents",
+    "https://alignment.openai.com/beneficial-rl/",
+    "https://huggingface.co/blog/ServiceNow/mosaicleaks",
+    "https://byungkwanlee.github.io/ZPPO-page/",
+    "https://claude.com/blog/artifacts-in-claude-code",
+    "https://deepmind.google/blog/securing-the-future-of-ai-agents/",
+    "https://www.wsj.com/tech/ai/google-is-using-nvidias-playbook-to-build-a-rival-ai-chip-business-1eac86f9",
+    "https://www.cnbc.com/2026/06/18/yann-lecun-elon-musk-xai-failure-ai-labs-bubble-risk.html",
+    "https://www.testingcatalog.com/mistral-ai-to-get-code-and-apps-features-on-vibe/",
+    "https://openai.com/index/chatgpt-enterprise-spend-controls/",
+    "https://www.hyperdimensional.co/p/that-untravelld-world",
+    "https://www.wsj.com/tech/ai/the-13-billion-ai-startup-betting-on-cheaper-alternatives-to-openai-anthropic-b9679603",
+    "https://www.cnbc.com/2026/06/18/no-poaching-our-people-chinas-deepseek-reportedly-tells-investors.html"
+  ],
+  "tldr_domains": [
+    "testingcatalog.com",
+    "engadget.com",
+    "perplexity.ai",
+    "alignment.openai.com",
+    "huggingface.co",
+    "byungkwanlee.github.io",
+    "claude.com",
+    "deepmind.google",
+    "sj.com",
+    "cnbc.com",
+    "testingcatalog.com",
+    "openai.com",
+    "hyperdimensional.co",
+    "sj.com",
+    "cnbc.com"
+  ]
 }

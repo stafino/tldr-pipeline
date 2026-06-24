@@ -1,9 +1,33 @@
 {
   "date": "2026-06-22",
   "newsletter": "tldr_founders",
-  "fetched_at": "2026-06-24T07:59:39.185974+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-06-24T11:01:55.148785+00:00",
+  "tldr_titles": [
+    "Workflows Are King",
+    "Evals: the strategic IP that will define the next era of AI",
+    "The Minimum Viable Unit of Saleable Software",
+    "The Fake Traction Problem",
+    "Work Whiplash",
+    "Lighthouse agentic browsing scoring",
+    "On the Precipice",
+    "Risk Is Severely Misunderstood",
+    "Before It Was Obvious",
+    "Lost confidence",
+    "The New Rules of Media with Marc Andreessen & Ben Horowitz"
+  ],
+  "tldr_matched": [
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -58,8 +82,8 @@
       "score": 63.0,
       "title": "The minimum viable unit of saleable software",
       "url": "https://brandur.org/minimum-viable-unit",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 2,
+      "similarity": 1.0
     },
     {
       "rank": 8,
@@ -262,9 +286,45 @@
       "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.09090909090909091,
+    "25": 0.09090909090909091,
+    "50": 0.09090909090909091,
+    "100": 0.09090909090909091,
+    "32": 0.09090909090909091
+  },
+  "hits_at": {
+    "10": 1,
+    "25": 1,
+    "50": 1,
+    "100": 1,
+    "32": 1
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://x.com/jaminball/status/2067981638227964220",
+    "https://x.com/GarrettLord/status/2068754262440767500",
+    "https://brandur.org/minimum-viable-unit",
+    "https://healthvc.substack.com/p/the-fake-traction-problem",
+    "https://mollyg.substack.com/p/work-whiplash",
+    "https://developer.chrome.com/docs/lighthouse/agentic-browsing/scoring",
+    "https://x.com/MrRazzi17/status/2068094623046660319",
+    "https://x.com/calvinchen/status/2068151715409674536",
+    "https://x.com/lmrankhan/status/2067718954705915993",
+    "https://longform.asmartbear.com/confidence",
+    "https://a16z.simplecast.com/episodes/the-new-rules-of-media-marc-andreessen-ben-horowitz-nXXfWW8E"
+  ],
+  "tldr_domains": [
+    "x.com",
+    "x.com",
+    "brandur.org",
+    "healthvc.substack.com",
+    "mollyg.substack.com",
+    "developer.chrome.com",
+    "x.com",
+    "x.com",
+    "x.com",
+    "longform.asmartbear.com",
+    "a16z.simplecast.com"
+  ]
 }

@@ -1,9 +1,31 @@
 {
   "date": "2026-06-22",
   "newsletter": "tldr_devops",
-  "fetched_at": "2026-06-24T07:59:39.316282+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-06-24T11:02:34.847085+00:00",
+  "tldr_titles": [
+    "New usage analytics and updated spend controls for enterprises",
+    "Temporary Cloudflare Accounts for AI agents",
+    "Introducing the Cloudflare One stack: agent-powered deployment",
+    "I am dreading our LLM-written incident report future",
+    "Production-Ready Autonomous Incident Resolution with AWS DevOps Agent (now GA) and Datadog MCP Server",
+    "One vulnerability view: From scanner coverage to AI governance",
+    "Ten years of ClickHouse in open source",
+    "Deploying Fastly's Next-Gen WAF with Google Cloud Service Extensions to Help Secure Traffic at Scale",
+    "Announcing Amazon EC2 G7 instances accelerated by NVIDIA RTX PRO 4500 Blackwell Server Edition GPUs",
+    "Accelerating agentic development and incident resolution with New Relic AI + AWS"
+  ],
+  "tldr_matched": [
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -58,8 +80,8 @@
       "score": 63.0,
       "title": "Temporary Cloudflare accounts for AI agents",
       "url": "https://blog.cloudflare.com/temporary-accounts/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 1,
+      "similarity": 1.0
     },
     {
       "rank": 8,
@@ -158,9 +180,43 @@
       "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.1,
+    "25": 0.1,
+    "50": 0.1,
+    "100": 0.1,
+    "19": 0.1
+  },
+  "hits_at": {
+    "10": 1,
+    "25": 1,
+    "50": 1,
+    "100": 1,
+    "19": 1
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://openai.com/index/chatgpt-enterprise-spend-controls/",
+    "https://blog.cloudflare.com/temporary-accounts/",
+    "https://blog.cloudflare.com/cloudflare-one-stack/",
+    "https://surfingcomplexity.blog/2026/06/19/i-am-dreading-our-llm-written-incident-report-future/",
+    "https://aws.amazon.com/blogs/devops/production-ready-autonomous-incident-resolution-with-aws-devops-agent-now-ga-and-datadog-mcp-server/",
+    "https://about.gitlab.com/blog/one-vulnerability-view/",
+    "https://clickhouse.com/blog/open-source-10",
+    "https://www.fastly.com/blog/deploying-fastly-next-gen-waf-google-cloud-service-extensions-secure-traffic",
+    "https://aws.amazon.com/blogs/aws/announcing-amazon-ec2-g7-instances-accelerated-by-nvidia-rtx-pro-4500-blackwell-server-edition-gpus/",
+    "https://newrelic.com/blog/news/new-relic-ai-aws"
+  ],
+  "tldr_domains": [
+    "openai.com",
+    "blog.cloudflare.com",
+    "blog.cloudflare.com",
+    "surfingcomplexity.blog",
+    "aws.amazon.com",
+    "about.gitlab.com",
+    "clickhouse.com",
+    "fastly.com",
+    "aws.amazon.com",
+    "newrelic.com"
+  ]
 }
