@@ -10,40 +10,40 @@ Snowflake and the Agentic Resource Discovery Specification (5 minute read)
 
 (blurb not generated)
 
-EDB converges analytics on Postgres to support AI agents (5 minute read)
+EDB converges analytics on Postgres to support AI agents (2 minute read)
 
-(blurb not generated)
+EDB introduced converged analytics for its managed EDB Postgres AI service, keeping Postgres as the operational source of truth and using Apache Iceberg as a shared catalog across ClickHouse, WarehousePG, and Spark so analytical engines query the same data without copies or ETL. The move follows Databricks' Neon-based LTAP from the opposite direction, betting that enterprises focused on data sovereignty want AI and analytics running on infrastructure they own and control.
 
-The new database world according to Google: Inexact queries and AI in everything (5 minute read)
+The new database world according to Google: Inexact queries and AI in everything (1 minute read)
 
-(blurb not generated)
+Google's database leadership laid out a roadmap built on AI-embedded tooling and "inexact" queries, with a product exec predicting that humans won't directly use data platforms within three to five years. The bet is that agents, not analysts, become the primary query interface, pushing vendors toward natural-language and approximate-result systems rather than the exact, schema-bound SQL that data teams build on today.
 
 🧠
 Deep Dives & Analysis
 
-Accelerating Presto with GPUs (5 minute read)
+Accelerating Presto with GPUs (1 minute read)
 
-(blurb not generated)
+Meta and Presto's maintainers extended Presto to run query operators on GPUs, using NVIDIA's cuDF library to keep data in GPU memory across distributed exchanges instead of round-tripping through the CPU. On TPC-H-derived benchmarks across a multi-GPU cluster, the team reports up to 6x cost/performance gains over CPU Presto. The code is upstream in open-source Presto/Velox and already running some customer production workloads, making it a real option for analytics teams weighing GPU spend against warehouse compute.
 
 How we built an internal data analytics agent (5 minute read)
 
 (blurb not generated)
 
-One Index for Subsumption and Roll-up across Time, Geography, and Ontology (5 minute read)
+One Index for Subsumption and Roll-up across Time, Geography, and Ontology (1 minute read)
 
-(blurb not generated)
+This paper introduces OEH, a single index that handles both subsumption testing ("is x under y?") and hierarchical roll-up across time, geospatial, and ontology hierarchies, which today each live in separate silos. It encodes trees as nested-set order-embeddings and low-width DAGs as chain decompositions, picked by a cheap structural probe. On five real hierarchies it matched a 2-hop index on latency using half the space and building 6-7x faster, while matching TimescaleDB's continuous aggregates and adding roll-up that 2-hop cannot.
 
 SemCEB: A Cardinality Estimation Benchmark for Semantic Operators (5 minute read)
 
 (blurb not generated)
 
-The analytics engineer in 2026: system designer, governance owner, AI context provider (5 minute read)
+The analytics engineer in 2026: system designer, governance owner, AI context provider (1 minute read)
 
-(blurb not generated)
+dbt argues the analytics engineer's job has shifted from writing models to designing the system around them, as AI now handles scaffolding, first-draft docs, and boilerplate tests for the 72% of analytics engineers who code with AI assistance. The remaining work is the judgment AI can't do: defining metric grain, drawing domain boundaries, and structuring the semantic layer so downstream AI queries stay consistent. Governance outputs like contracts, tests, and column-level lineage become the role's measured deliverable.
 
-The semantic debt crisis no one is talking about (5 minute read)
+The semantic debt crisis no one is talking about (1 minute read)
 
-(blurb not generated)
+The author argues that organizations carry "semantic debt" alongside technical debt: every metric built without a canonical definition, every filter hardcoded into a dashboard instead of the data layer, is a withdrawal that compounds until three teams present three defensible-but-conflicting numbers for the same metric. The fix is encoding business meaning into the data itself through a semantic layer, which the piece frames as the foundation that makes AI reliable in production rather than a modeling nicety.
 
 The Table Says Otherwise: Testing LLMs with Counterfactual Relational Data (5 minute read)
 
@@ -53,13 +53,23 @@ When failover isn't safe: Building high-availability PostgreSQL on Kubernetes (5
 
 (blurb not generated)
 
-Unified Dominance Graph for Interval-Predicate Approximate Nearest Neighbor Search (5 minute read)
+Unified Dominance Graph for Interval-Predicate Approximate Nearest Neighbor Search (1 minute read)
 
-(blurb not generated)
+This paper introduces the Unified Dominance Graph (UDG), a graph index for approximate nearest neighbor search constrained by interval predicates like containment and overlap. Treating an object's interval endpoints as two independent scalar filters bloats intersection overhead, so UDG maps both endpoints into a normalized 2D dominance space and reuses one construction across predicates. On standard benchmarks it beats hybrid search baselines while keeping indexing overhead low.
 
-Entity Resolution via Batched Oracle Queries (5 minute read)
+(72 words)
 
-(blurb not generated)
+Why the Frontier Ecosystem must be Open — Matei Zaharia and Reynold Xin, Databricks (1 minute read)
+
+In a 2026 Data + AI Summit conversation, Databricks cofounders Matei Zaharia and Reynold Xin make the case for keeping the frontier AI stack open, framing the now-$175B company as a full data-and-AI operating system rather than a lakehouse. They detail Omnigent, an open-source meta-harness that runs agents across Claude Code, Codex, and Cursor through a common API, and LTAP, which unifies the storage layer instead of collapsing query engines like HTAP.
+
+Entity Resolution via Batched Oracle Queries (1 minute read)
+
+This paper formalizes batched entity resolution, where an oracle clusters only a limited batch of records at a time and no batch is guaranteed to hold all of an entity's records. The authors prove that selecting optimal batches is NP-hard, give an optimal solution under a natural constraint on entity sizes, and frame the work as pay-as-you-go, trading oracle consults for recall at every step. Across six datasets, their method beats state-of-the-art baselines on recall per query budget.
+
+I rewrote PostHog's SQL parser, 70x faster, while barely looking at the code (1 minute read)
+
+A PostHog engineer rewrote the company's ANTLR-generated SQL parser by hand using multiple parallel Claude Code sessions, producing 16K lines of parser code, 5K lines of tooling, and a roughly 70x speedup. The new parser transpiles user SQL to ClickHouse and is functionally equivalent for all realistic queries, diverging only on pathological edge cases like SELECT SELECT FROM FROM WHERE WHERE. The write-up doubles as a case study in agent-driven rewrites of code the author barely read.
 
 A Compositional Language for Property Graphs (5 minute read)
 
@@ -69,13 +79,13 @@ A Set-Theoretic Approach to Detecting Logic Bugs in DBMS Inner Join Optimization
 
 (blurb not generated)
 
-Grading the Grader: Lessons from Evaluating an Agentic Data Analysis System (5 minute read)
+Grading the Grader: Lessons from Evaluating an Agentic Data Analysis System (1 minute read)
 
-(blurb not generated)
+This paper tackles how to reliably grade agentic data analysis systems, whose outputs mix code, numbers, and verbal diagnostics that single-turn eval methods can't handle. Running LAMBDA on 153 numerical QRData tasks, the authors built a three-layer cascade of strict regex matching, lenient LLM grading, and human snippet inspection, both automated graders hitting 100% precision with 97% lenient recall. An iterative nudge mechanism that cues the answer template lifted grading run success from 36% to 97%.
 
-FlowPipe: LLM-Enhanced Conditional Generative Flow Networks for Data Preparation Pipeline Construction (5 minute read)
+FlowPipe: LLM-Enhanced Conditional Generative Flow Networks for Data Preparation Pipeline Construction (1 minute read)
 
-(blurb not generated)
+FlowPipe reframes automated data-prep pipeline construction as conditional probabilistic flow generation over a DAG, using Conditional GFlowNets with a Trajectory Balance objective to tie terminal validation rewards back to early operator choices. LLM-derived priors condition the policy through Feature-wise Linear Modulation so dataset semantics steer the search, while failure awareness steers it away from invalid states. Across 74 real-world datasets it beats Multi-DQN baselines by 11.96% on accuracy and converges 12.5x faster.
 
 SQLConductor: Search-to-Policy Learning for Step-wise Text-to-SQL Orchestration (5 minute read)
 
@@ -88,40 +98,40 @@ Amazon S3 annotations: attach rich, queryable context directly to your objects (
 
 (blurb not generated)
 
-What Fivetran + dbt Labs brought to Databricks Data + AI Summit (and what you can take home) (5 minute read)
+What Fivetran + dbt Labs brought to Databricks Data + AI Summit (and what you can take home) (1 minute read)
+
+dbt Labs and Fivetran, now merged into one company, used Databricks Data + AI Summit to pitch Open Data Infrastructure for agents that query the warehouse continuously and need governed, tested, traceable context. The concrete takeaway is a customer pattern from Integral Ad Science that wires Databricks to dbt through MCP servers, letting an agent pull model metadata and lineage to answer why a BI number is wrong.
+
+Boost BigQuery with Python: Managed Python UDFs now generally available (2 minute read)
+
+Google made BigQuery's Managed Python UDFs generally available, letting teams run custom Python with libraries like NumPy, pandas, and scikit-learn directly inside SQL queries or BigFrames on serverless, auto-scaling compute. BigQuery handles container builds, security patching, and execution, so procedural logic, scientific computation, and external API enrichment that used to need separate infrastructure now run next to the data without managing images or compute services.
+
+JupOtter: Cell-Level Bug Detection in Jupyter Notebooks (1 minute read)
+
+JupOtter is a bug-detection system built specifically for Jupyter Notebooks, using a tokenization strategy that preserves cell structure and a cell-level prediction model trained on OtterDataset, a new corpus of over 21,000 notebooks annotated for fine-grained bugs. It beats both static analyzers and LLMs on F1 in two of three evaluation datasets, targeting the rise of buggy notebooks shipped as production code rather than throwaway prototypes.
+
+AWS enters the context layer race with a graph that learns from agents, not manual curation (2 minute read)
+
+AWS announced a context intelligence stack for AI agents, led by AWS Context, a knowledge graph service that automatically maps relationships across existing data and refines itself based on which sources agents actually use. It publishes all metadata as Apache Iceberg to S3 Tables queryable via Athena, Redshift, or Spark, and ships alongside GA of S3 Annotations and a preview of skill assets in Glue Data Catalog.
+
+Mistral OCR 4 Ships Bounding Boxes for 170-Language Document AI (1 minute read)
+
+Mistral released OCR 4, adding bounding boxes, block labels, and per-word confidence scores to its document extraction API, with 170-language support and availability through the Mistral API, SageMaker, and Microsoft Foundry. The block view returns coordinates for regions like tables, equations, and signatures so search and compliance systems can preserve page structure, and pricing runs $4 per 1,000 pages, or $2 through the Batch API.
+
+Statistics that live in your SQL (5 minute read)
 
 (blurb not generated)
-
-Boost BigQuery with Python: Managed Python UDFs now generally available (5 minute read)
-
-(blurb not generated)
-
-JupOtter: Cell-Level Bug Detection in Jupyter Notebooks (5 minute read)
-
-(blurb not generated)
-
-AWS enters the context layer race with a graph that learns from agents, not manual curation (5 minute read)
-
-(blurb not generated)
-
-Mistral OCR 4 Ships Bounding Boxes for 170-Language Document AI (5 minute read)
-
-(blurb not generated)
-
-Statistics that live in your SQL (1 minute read)
-
-the-stats-duck shipped v0.6.0, an MIT-licensed DuckDB extension that runs full statistics inside SQL: column profiling via meta(), R-style OLS regression with lm(), bootstrap confidence intervals, and Vega-Lite charts through a VISUALIZE ... DRAW grammar. It runs anywhere DuckDB does, including the browser, so exploratory stats and modeling that used to mean exporting to Python or R now stay in the query.
 
 ⚡
 Quick Links
 
-Building Jaeger’s ClickHouse backend: 8.6× compression on 10 million spans (5 minute read)
+Building Jaeger’s ClickHouse backend: 8.6× compression on 10 million spans (1 minute read)
 
-(blurb not generated)
+Jaeger v2.18.0 ships a native ClickHouse tracing backend, hitting 8.6× compression on 10M spans via columnar storage.
 
-Model selection with proper scoring rules on data sets of time series (5 minute read)
+Model selection with proper scoring rules on data sets of time series (1 minute read)
 
-(blurb not generated)
+This paper shows mean score, not median or mean rank, reliably identifies the true probabilistic model when test sets per time series are short.
 
 British Columbia, Time Zones, and Postgres (5 minute read)
 
