@@ -6,7 +6,10 @@ import Nav from '@/components/Nav';
 import { canonFirm, canonPerson, dedupCanon } from '@/lib/vc-aliases';
 import type { VcArticle, VcSector, VcType } from '@/lib/types';
 
-export const dynamic = 'force-dynamic';
+// Edge-cache each unique URL for 10 minutes. Curtails bandwidth
+// vs the previous force-dynamic mode that re-read every JSONL on
+// every visitor + bot crawl.
+export const revalidate = 600;
 
 
 function isoWeek(d: Date): { year: number; week: number } {

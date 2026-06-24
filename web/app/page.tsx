@@ -18,7 +18,10 @@ import StoryRow from '@/components/StoryRow';
 import DetailPane from '@/components/DetailPane';
 import CurateNewsletterView from '@/components/CurateNewsletterView';
 
-export const dynamic = 'force-dynamic'; // always read fresh files
+// Edge-cache each unique URL for 10 minutes. Curtails bandwidth
+// vs the previous force-dynamic mode that re-read every JSONL on
+// every visitor + bot crawl.
+export const revalidate = 600; // always read fresh files
 
 interface Search {
   date?: string;

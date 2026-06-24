@@ -8,7 +8,10 @@ import VcIssueExport from '@/components/VcIssueExport';
 import VcSubjectVariants from '@/components/VcSubjectVariants';
 import type { VcArticle, VcType } from '@/lib/types';
 
-export const dynamic = 'force-dynamic';
+// Edge-cache each unique URL for 10 minutes. Curtails bandwidth
+// vs the previous force-dynamic mode that re-read every JSONL on
+// every visitor + bot crawl.
+export const revalidate = 600;
 
 
 function pickEstimatedRead(headline: string, snippet: string): number {

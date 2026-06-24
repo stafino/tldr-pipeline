@@ -3,7 +3,10 @@ import Nav from '@/components/Nav';
 import BacktestPicker from '@/components/BacktestPicker';
 import DatePicker from '@/components/DatePicker';
 
-export const dynamic = 'force-dynamic';
+// Edge-cache each unique URL for 10 minutes. Curtails bandwidth
+// vs the previous force-dynamic mode that re-read every JSONL on
+// every visitor + bot crawl.
+export const revalidate = 600;
 
 const SPARK = '▁▂▃▄▅▆▇█';
 function sparkline(values: number[]): string {

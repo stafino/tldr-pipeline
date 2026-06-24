@@ -1,0 +1,32 @@
+# trylede.com
+# Public landing + pitch pages are crawlable. The dynamic data routes
+# explode into thousands of permutations (date+days+type+sector+region+
+# investor combinations) which would burn bandwidth without adding any
+# real index value, so we block crawlers on those.
+
+User-agent: *
+Allow: /$
+Allow: /vc/preview
+Allow: /vc/issue$
+Allow: /vc/recap$
+
+# Heavy parameterized routes - we don't want bots iterating these
+Disallow: /vc/issue?
+Disallow: /vc/recap?
+Disallow: /funding?
+Disallow: /backtest?
+Disallow: /edition?
+Disallow: /?date=
+Disallow: /?story=
+
+# Aggressive scrapers
+User-agent: AhrefsBot
+Disallow: /
+User-agent: SemrushBot
+Disallow: /
+User-agent: MJ12bot
+Disallow: /
+User-agent: DotBot
+Disallow: /
+
+Sitemap: https://www.trylede.com/sitemap.xml

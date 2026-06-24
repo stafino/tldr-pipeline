@@ -7,7 +7,10 @@ import Nav from '@/components/Nav';
 import { canonFirm, dedupCanon } from '@/lib/vc-aliases';
 import type { VcArticle, VcRegion, VcSector, VcType } from '@/lib/types';
 
-export const dynamic = 'force-dynamic';
+// Edge-cache each unique URL for 10 minutes. Curtails bandwidth
+// vs the previous force-dynamic mode that re-read every JSONL on
+// every visitor + bot crawl.
+export const revalidate = 600;
 
 // relativeFromNow lived here; now uses lib/formatters:relativeDate (identical logic).
 
@@ -79,7 +82,7 @@ export default function VcPage({
   }
 
   const today = todayUTC();
-  const daysBack = Math.max(1, Math.min(30, Number(searchParams.days ?? '14') || 14));
+  const daysBack = Math.max(1, Math.min(30, Number(searchParams.days ?? '7') || 7));
   const to = today;
   const fromDate = new Date(today + 'T00:00:00Z');
   fromDate.setUTCDate(fromDate.getUTCDate() - (daysBack - 1));

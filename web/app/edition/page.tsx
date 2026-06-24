@@ -15,7 +15,10 @@ import DatePicker from '@/components/DatePicker';
 import InlineNewsletterPicker from '@/components/InlineNewsletterPicker';
 import EditionStories from '@/components/EditionStories';
 
-export const dynamic = 'force-dynamic';
+// Edge-cache each unique URL for 10 minutes. Curtails bandwidth
+// vs the previous force-dynamic mode that re-read every JSONL on
+// every visitor + bot crawl.
+export const revalidate = 600;
 
 export default function EditionPage({
   searchParams,
