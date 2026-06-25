@@ -5,55 +5,29 @@
 rss:
   # ─── AI / ML / LLM ──────────────────────────────────────────────────────
   - { name: openai_blog,        url: https://openai.com/news/rss.xml,                                         topics: [ai] }
-  - { name: anthropic_news,     url: https://www.anthropic.com/news/rss.xml,                                  topics: [ai] }
   - { name: deepmind_blog,      url: https://deepmind.google/blog/rss.xml,                                    topics: [ai] }
   - { name: google_research,    url: https://research.google/blog/rss/,                                       topics: [ai, data] }
-  - { name: meta_ai,            url: https://ai.meta.com/blog/rss/,                                           topics: [ai] }
   - { name: huggingface_blog,   url: https://huggingface.co/blog/feed.xml,                                    topics: [ai, ml] }
-  - { name: simonwillison,      url: https://simonwillison.net/atom.xml,                                      topics: [ai, programming] }
   - { name: import_ai,          url: https://importai.substack.com/feed,                                      topics: [ai] }
   - { name: latent_space,       url: https://www.latent.space/feed,                                           topics: [ai, programming] }
-  - { name: aqnichol,           url: https://blog.aqnichol.com/feed.xml,                                      topics: [ai] }
-  - { name: langchain_blog,     url: https://blog.langchain.com/rss/,                                         topics: [ai, programming] }
   - { name: ai_snake_oil,       url: https://www.aisnakeoil.com/feed,                                         topics: [ai] }
-  - { name: marginalia_ai,      url: https://thomwolf.io/blog/feed.xml,                                       topics: [ai, ml] }
   - { name: nvidia_dev_blog,    url: https://developer.nvidia.com/blog/feed,                                  topics: [ai, ml] }
   - { name: oneuseful_ethan,    url: https://www.oneusefulthing.org/feed,                                     topics: [ai, founders] }
   - { name: dwarkesh,           url: https://www.dwarkesh.com/feed,                                           topics: [ai, founders] }
-  - { name: every,              url: https://every.to/feed.xml,                                               topics: [ai, founders, product] }
 
   # ─── Founders / Startups / VC / Business ────────────────────────────────
   - { name: stratechery,        url: https://stratechery.com/feed/,                                           topics: [founders, tech, ai] }
-  - { name: tomtunguz,          url: https://tomtunguz.com/feed.xml,                                          topics: [founders, vc] }
-  - { name: sacra,              url: https://sacra.com/research/rss/,                                         topics: [founders, vc] }
-  - { name: nfx,                url: https://www.nfx.com/feed,                                                topics: [founders, vc] }
-  - { name: andrewchen,         url: https://andrewchen.com/feed/,                                            topics: [founders, growth] }
-  - { name: firstround_review,  url: https://review.firstround.com/feed/,                                     topics: [founders, gtm, hiring] }
-  - { name: a16z_blog,          url: https://a16z.com/feed/,                                                  topics: [founders, vc, ai] }
   - { name: sequoia,            url: https://www.sequoiacap.com/feed/,                                        topics: [founders, vc] }
-  - { name: bessemer,           url: https://www.bvp.com/atlas/feed,                                          topics: [founders, vc] }
-  - { name: openviewpartners,   url: https://openviewpartners.com/blog/feed/,                                 topics: [founders, gtm] }
-  - { name: only_ceos,          url: https://www.theceomagazine.com/feed/,                                    topics: [founders] }
-  - { name: working_in_public,  url: https://nadia.xyz/posts/index.xml,                                       topics: [founders, programming] }
 
   # ─── Crypto / Web3 ──────────────────────────────────────────────────────
-  - { name: a16z_crypto,        url: https://a16zcrypto.com/feed/,                                            topics: [crypto] }
   - { name: theblock,           url: https://www.theblock.co/rss.xml,                                         topics: [crypto, fintech] }
-  - { name: bankless,           url: https://newsletter.banklesshq.com/feed,                                  topics: [crypto] }
-  - { name: messari,            url: https://messari.io/rss,                                                  topics: [crypto] }
   - { name: defiant,            url: https://thedefiant.io/feed,                                              topics: [crypto] }
-  - { name: paradigm,           url: https://www.paradigm.xyz/feed.xml,                                       topics: [crypto] }
-  - { name: variant_fund,       url: https://variant.fund/rss/,                                               topics: [crypto] }
   - { name: vitalik,            url: https://vitalik.eth.limo/feed.xml,                                       topics: [crypto] }
 
   # ─── Design / UX / UI ───────────────────────────────────────────────────
   - { name: smashing_magazine,  url: https://www.smashingmagazine.com/feed/,                                  topics: [design, programming] }
   - { name: css_tricks,         url: https://css-tricks.com/feed/,                                            topics: [design, programming] }
   - { name: uxcollective,       url: https://uxdesign.cc/feed,                                                topics: [design] }
-  - { name: nielsen_norman,     url: https://www.nngroup.com/feed/articles/,                                  topics: [design] }
-  - { name: figma_blog,         url: https://www.figma.com/blog/feed.xml,                                     topics: [design] }
-  - { name: airbnb_design,      url: https://airbnb.design/feed/,                                             topics: [design] }
-  - { name: julie_zhuo,         url: https://lookingglass.substack.com/feed,                                  topics: [design, product] }
 
   # ─── Infosec / Security ─────────────────────────────────────────────────
   - { name: krebs_security,     url: https://krebsonsecurity.com/feed/,                                       topics: [infosec] }
@@ -76,41 +50,28 @@ rss:
   - { name: kubernetes_blog,    url: https://kubernetes.io/feed.xml,                                          topics: [devops] }
   - { name: cncf_blog,          url: https://www.cncf.io/feed/,                                               topics: [devops] }
   - { name: hashicorp_blog,     url: https://www.hashicorp.com/blog/feed.xml,                                 topics: [devops] }
-  - { name: datadog_blog,       url: https://www.datadoghq.com/blog/feed.xml,                                 topics: [devops] }
   - { name: charity_majors,     url: https://charity.wtf/feed/,                                               topics: [devops, programming] }
 
   # ─── Marketing / Growth ─────────────────────────────────────────────────
-  - { name: demandcurve,        url: https://www.demandcurve.com/blog/rss.xml,                                topics: [marketing, founders] }
-  - { name: andrewchen_growth,  url: https://andrewchen.com/feed/,                                            topics: [marketing, growth, founders] }
-  - { name: growth_unhinged,    url: https://www.growthunhinged.com/feed,                                     topics: [marketing, gtm] }
   - { name: lennys_marketing,   url: https://www.lennysnewsletter.com/feed,                                   topics: [marketing, product, founders, gtm] }
-  - { name: marketing_brew,     url: https://www.morningbrew.com/marketing/feed,                              topics: [marketing] }
   - { name: hub_spot,           url: https://blog.hubspot.com/marketing/rss.xml,                              topics: [marketing] }
 
   # ─── Product ────────────────────────────────────────────────────────────
-  - { name: mind_the_product,   url: https://www.mindtheproduct.com/feed/,                                    topics: [product] }
   - { name: producttalk,        url: https://www.producttalk.org/feed/,                                       topics: [product] }
-  - { name: reforge,            url: https://www.reforge.com/blog/rss.xml,                                    topics: [product, growth, marketing] }
   - { name: leah_tharin,        url: https://www.leahtharin.com/feed,                                         topics: [product, growth] }
   - { name: silicon_valley_pm,  url: https://www.svpg.com/feed/,                                              topics: [product] }
 
   # ─── Developer / Programming ────────────────────────────────────────────
   - { name: github_blog,        url: https://github.blog/feed/,                                               topics: [programming, ai] }
   - { name: dev_to,             url: https://dev.to/feed,                                                     topics: [programming] }
-  - { name: shopify_eng,        url: https://shopify.engineering/blog.atom,                                   topics: [programming] }
   - { name: stripe_blog,        url: https://stripe.com/blog/feed.rss,                                        topics: [programming, fintech, founders] }
   - { name: martin_fowler,      url: https://martinfowler.com/feed.atom,                                      topics: [programming, devops] }
   - { name: julia_evans,        url: https://jvns.ca/atom.xml,                                                topics: [programming] }
 
   # ─── Data Engineering / Analytics ──────────────────────────────────────
   - { name: benn_substack,      url: https://benn.substack.com/feed,                                          topics: [data] }
-  - { name: locally_optimistic, url: https://locallyoptimistic.com/feed.xml,                                  topics: [data] }
-  - { name: motherduck_blog,    url: https://motherduck.com/blog/rss/,                                        topics: [data] }
   - { name: dbt_blog,           url: https://www.getdbt.com/blog/rss.xml,                                     topics: [data] }
-  - { name: snowflake_blog,     url: https://www.snowflake.com/blog/feed/,                                    topics: [data] }
   - { name: databricks_blog,    url: https://www.databricks.com/blog/feed.xml,                                topics: [data, ai] }
-  - { name: airbyte_blog,       url: https://airbyte.com/blog/rss.xml,                                        topics: [data] }
-  - { name: select_star,        url: https://selectstar.com/blog/rss,                                         topics: [data] }
 
   # ─── Fintech ────────────────────────────────────────────────────────────
   # sifted disabled 2026-06-17: paywall returns blocker page, article_fetch
@@ -119,7 +80,6 @@ rss:
   # - { name: sifted,             url: https://sifted.eu/feed,                                                  topics: [fintech, founders] }
   - { name: fintech_takes,      url: https://fintechtakes.com/feed/,                                          topics: [fintech] }
   - { name: net_interest,       url: https://www.netinterest.co/feed,                                         topics: [fintech] }
-  - { name: rex_salisbury,      url: https://www.cambriancapital.com/feed,                                    topics: [fintech, vc] }
   - { name: a_wealth_of_cs,     url: https://awealthofcommonsense.com/feed/,                                  topics: [fintech] }
 
   # ─── General Tech / Industry ────────────────────────────────────────────
@@ -128,7 +88,6 @@ rss:
   - { name: ars_technica,       url: https://feeds.arstechnica.com/arstechnica/index,                         topics: [tech, infosec, space] }
   - { name: hackaday,           url: https://hackaday.com/feed/,                                              topics: [tech] }
   - { name: ieee_spectrum,      url: https://spectrum.ieee.org/feeds/feed.rss,                                topics: [tech] }
-  - { name: morningbrew,        url: https://www.morningbrew.com/feed,                                        topics: [tech, founders] }
   - { name: techmeme,           url: https://www.techmeme.com/feed.xml,                                       topics: [tech, ai, founders] }
 
   # ─── Added from TLDR source audit (the top domains TLDR actually cites) ────
@@ -139,7 +98,6 @@ rss:
   - { name: cnbc_business,      url: https://www.cnbc.com/id/10001147/device/rss/rss.html,                     topics: [founders, fintech, tech] }
   - { name: wsj_tech,           url: https://feeds.content.dowjones.io/public/rss/RSSWSJD,                     topics: [tech, founders] }
   - { name: nyt_tech,           url: https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml,              topics: [tech, founders, ai] }
-  - { name: reuters_tech,       url: "https://www.reuters.com/arc/outboundfeeds/category/technology/?outputType=xml", topics: [tech, founders] }
   - { name: venturebeat,        url: https://venturebeat.com/feed/,                                            topics: [tech, ai, founders] }
   - { name: siliconangle,       url: https://siliconangle.com/feed/,                                           topics: [tech, it, ai] }
   - { name: thenextweb,         url: https://thenextweb.com/feed,                                              topics: [tech, founders] }
@@ -148,7 +106,6 @@ rss:
 
   # Crypto / fintech
   - { name: coindesk,           url: https://www.coindesk.com/arc/outboundfeeds/rss/,                          topics: [crypto, fintech] }
-  - { name: finextra,           url: https://www.finextra.com/feeds/rss.aspx,                                  topics: [fintech] }
 
   # Infosec specialty
   - { name: securityweek,       url: https://www.securityweek.com/feed/,                                       topics: [infosec] }
@@ -166,7 +123,6 @@ rss:
   - { name: marketingland,      url: https://marketingland.com/feed,                                           topics: [marketing] }
   - { name: neilpatel,          url: https://neilpatel.com/feed/,                                              topics: [marketing] }
   - { name: foundationinc,      url: https://foundationinc.co/feed/,                                           topics: [marketing] }
-  - { name: animalz,            url: https://www.animalz.co/blog/feed/,                                        topics: [marketing] }
   - { name: ahrefs_blog,        url: https://ahrefs.com/blog/feed/,                                            topics: [marketing] }
   - { name: backlinko,          url: https://backlinko.com/feed,                                               topics: [marketing] }
 
@@ -180,7 +136,6 @@ rss:
   - { name: elenaverna,         url: https://www.elenaverna.com/feed,                                          topics: [founders, growth, marketing] }
   - { name: speedrun_sub,       url: https://speedrun.substack.com/feed,                                       topics: [founders] }
   - { name: not_boring,         url: https://www.notboring.co/feed,                                            topics: [founders, fintech, crypto] }
-  - { name: contrary_research,  url: https://research.contrary.com/feed,                                       topics: [founders, vc] }
 
   # ─── Space / Hard tech (operationally deep - SpaceX, energy, manufacturing) ─
   - { name: payload_space,      url: https://payloadspace.com/feed/,                                          topics: [space, founders, tech] }
@@ -190,7 +145,6 @@ rss:
   - { name: casey_handmer,      url: https://caseyhandmer.wordpress.com/feed/,                                topics: [space, founders, tech] }
   - { name: construction_physics, url: https://www.construction-physics.com/feed,                             topics: [founders, tech, space] }
   - { name: doomberg,           url: https://doomberg.substack.com/feed,                                      topics: [founders, fintech, space] }
-  - { name: pmarchive,          url: https://pmarca.substack.com/feed,                                        topics: [founders, tech, ai, space] }
 
 
   # ─── Auto-discovered from TLDR archive (60-day audit) ─────────────
@@ -247,7 +201,6 @@ rss:
   - { name: cutlefish_substack_com, url: https://cutlefish.substack.com/feed/, topics: [product, founders] }  # 3× cited
   - { name: engineering_fb_com  , url: https://engineering.fb.com/feed/, topics: [devops, data] }  # 3× cited
   - { name: brandingstrategyinsider_com, url: https://brandingstrategyinsider.com/feed/, topics: [design, marketing] }  # 3× cited
-  - { name: cursor_com          , url: https://cursor.com/atom.xml, topics: [ai, programming] }  # 3× cited
   - { name: digitalocean_com    , url: https://digitalocean.com/blog/rss, topics: [devops, tech] }  # 3× cited
   - { name: go_clerk_com        , url: https://clerk.com/changelog/atom.xml, topics: [programming] }  # 3× cited
 
@@ -267,7 +220,6 @@ rss:
   - { name: eu_startups         , url: https://www.eu-startups.com/feed/, topics: [founders, vc, fintech] }
   - { name: geekwire            , url: https://www.geekwire.com/feed/, topics: [tech, founders, vc] }
   - { name: techcrunch_venture  , url: https://techcrunch.com/category/venture/feed/, topics: [founders, vc] }
-  - { name: strictlyvc          , url: https://strictlyvc.com/feed/, topics: [founders, vc] }
   - { name: saastr              , url: https://www.saastr.com/feed/, topics: [founders, gtm, vc] }
 
   # ─── EU-focused (added 2026-06-17 for funding coverage) ────────────────
