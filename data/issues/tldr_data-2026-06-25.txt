@@ -1,0 +1,100 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR Data 2026-06-25
+
+📊
+News & Trends
+
+Snowflake and the Agentic Resource Discovery Specification (5 minute read)
+
+(blurb not generated)
+
+EDB converges analytics on Postgres to support AI agents (5 minute read)
+
+(blurb not generated)
+
+🧠
+Deep Dives & Analysis
+
+Accelerating Presto with GPUs (5 minute read)
+
+(blurb not generated)
+
+How we built an internal data analytics agent (5 minute read)
+
+(blurb not generated)
+
+TabClean: Reusable LLM-Synthesized Programs for Tabular Data Cleaning (1 minute read)
+
+TabClean compiles LLM reasoning into reusable guarded cleaning programs, profiling a dirty table and a small annotated dev set to synthesize deterministic Python transformations that fire only when their dirty pattern, evidence support, and scope constraints all hold. The point is cost: instead of calling an LLM per row or per recurring batch, you pay once to compile a program and run it deterministically thereafter. Across six benchmarks it beats rule-based, learning-based, and LLM-based cleaners on F1 for five datasets while cutting recurring runtime and API spend.
+
+One Index for Subsumption and Roll-up across Time, Geography, and Ontology (5 minute read)
+
+(blurb not generated)
+
+The analytics engineer in 2026: system designer, governance owner, AI context provider (5 minute read)
+
+(blurb not generated)
+
+BitNet Text Embeddings (1 minute read)
+
+BITEMBED converts pretrained LLM backbones like Qwen3-0.6B and Gemma3-270M into BitNet-style embedding encoders with ternary weights and quantized activations, recovering near full-precision quality on MMTEB through contrastive pre-training and distillation from a full-precision teacher. The payoff is on the storage side: output embeddings are trained to support multiple precisions, so teams can dial the performance-versus-cost trade-off on large indexes instead of paying full-precision bandwidth on every vector lookup.
+
+When failover isn't safe: Building high-availability PostgreSQL on Kubernetes (5 minute read)
+
+(blurb not generated)
+
+Unified Dominance Graph for Interval-Predicate Approximate Nearest Neighbor Search (5 minute read)
+
+(blurb not generated)
+
+Why the Frontier Ecosystem must be Open — Matei Zaharia and Reynold Xin, Databricks (5 minute read)
+
+(blurb not generated)
+
+Entity Resolution via Batched Oracle Queries (5 minute read)
+
+(blurb not generated)
+
+I rewrote PostHog's SQL parser, 70x faster, while barely looking at the code (5 minute read)
+
+(blurb not generated)
+
+PostgreSQL is enough (2024) (1 minute read)
+
+The author argues that Postgres alone can replace most of the specialized tooling teams reach for by default, cataloging extensions and patterns that cover queues (pgmq), cron (pg_cron), vector search (pgvector), full-text search, analytics columnstores (ParadeDB, Hydra), CDC (Debezium, PeerDB), and REST/GraphQL APIs straight from the database. The trade-off is operational concentration, but the payoff is one system to run, back up, and reason about instead of a sprawling stack glued together with reverse ETL.
+
+🚀
+Launches & Tools
+
+Amazon S3 annotations: attach rich, queryable context directly to your objects (5 minute read)
+
+(blurb not generated)
+
+What Fivetran + dbt Labs brought to Databricks Data + AI Summit (and what you can take home) (5 minute read)
+
+(blurb not generated)
+
+Mistral OCR 4 (1 minute read)
+
+Mistral released OCR 4, an OCR model that returns bounding boxes, typed-block classification, and inline confidence scores alongside extracted text, with support for 170 languages and single-container self-hosted deployment. The structured output feeds RAG and enterprise search pipelines with citation-ready inputs, and Mistral reports a 72% average win rate against leading OCR systems plus a top 85.20 score on OlmOCRBench.
+
+Mistral OCR 4: SOTA OCR for Document Intelligence (1 minute read)
+
+Mistral released OCR 4, an OCR model that returns bounding boxes, typed-block classification, and inline confidence scores alongside extracted text, with support for 170 languages and single-container self-hosted deployment. The structured output feeds RAG and enterprise search pipelines with citation-ready inputs, and Mistral reports a 72% average win rate against leading OCR systems plus a top 85.20 score on OlmOCRBench.
+
+AWS enters the context layer race with a graph that learns from agents, not manual curation (5 minute read)
+
+(blurb not generated)
+
+Mistral OCR 4 Ships Bounding Boxes for 170-Language Document AI (5 minute read)
+
+(blurb not generated)
+
+⚡
+Quick Links
+
+Building Jaeger’s ClickHouse backend: 8.6× compression on 10 million spans (5 minute read)
+
+(blurb not generated)

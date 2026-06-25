@@ -1,0 +1,224 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR DevOps 2026-06-25
+
+📱
+News & Trends
+
+Google hits 50% IPv6 (5 minute read)
+
+(blurb not generated)
+
+Spotlight on WG Device Management (5 minute read)
+
+(blurb not generated)
+
+Cordyceps CI/CD Flaws Expose 300+ GitHub Repositories to Supply-Chain Attacks (1 minute read)
+
+Novee Security disclosed Cordyceps, a class of CI/CD misconfiguration where untrusted pull requests trigger privileged workflows, and its scan of 30,000 high-impact repos found 300-plus fully exploitable by any unauthenticated user with a free account. Affected projects include Microsoft's Azure Sentinel, Google's adk-samples, Apache Doris, and Cloudflare's Workers SDK, where forged approvals or crafted branch names let attackers run code on CI runners and steal long-lived credentials.
+
+We’re making Bunny DNS free (1 minute read)
+
+Bunny.net eliminated DNS query fees entirely, making Bunny DNS free with no query limits or per-request billing and free hosting for up to 500 domains per account. The change removes the unpredictable-bill risk on a service that already handles nearly 200 billion queries a month across 300,000 domains, using latency data, health checks, and JavaScript for dynamic routing.
+
+The post-quantum EO is an important milestone. Now it’s time to get to work (5 minute read)
+
+(blurb not generated)
+
+GitHub Updates actions/checkout to Block Common Pwn Request Attack Patterns (5 minute read)
+
+(blurb not generated)
+
+AWS unveils sovereign-centric micro serverless virtual machines (5 minute read)
+
+(blurb not generated)
+
+'Cordyceps': Mushrooming Malicious Pull Requests Threaten Developer Workflows (5 minute read)
+
+(blurb not generated)
+
+Kubernetes in the Age of AI (5 minute read)
+
+(blurb not generated)
+
+Verifiable, private AI: Google Cloud expands Confidential Computing frontiers (5 minute read)
+
+(blurb not generated)
+
+Microsoft’s next big thing for the cloud: an agent that keeps its cool when everything falls apart (5 minute read)
+
+(blurb not generated)
+
+Rethinking cloud operations with agentic observability (5 minute read)
+
+Microsoft announced general availability of the Azure Copilot Observability Agent, built on Azure Monitor to correlate logs, metrics, traces, and topology across agents, applications, and infrastructure for faster root-cause analysis. The launch targets a complexity problem Microsoft's own survey quantifies: 84% of organizations report rising cloud complexity, and 69% say it is outpacing their current operating model.
+
+OpenAI Codex bombards SSDs with needless write operations, costing millions (5 minute read)
+
+(blurb not generated)
+
+Decades-Old Squid Proxy Flaw ‘Squidbleed' Can Expose User Data (5 minute read)
+
+(blurb not generated)
+
+Companies are not looking before they're leaping into the AI playpen (1 minute read)
+
+A survey found that 93% of organizations have logged infrastructure incidents attributable to AI workloads, as teams push models into production faster than they can harden the platforms underneath them. The gap shows up as unplanned capacity spikes, misconfigured access, and reliability regressions that land on the SRE and platform teams left to absorb the blast radius.
+
+🚀
+Opinions & Tutorials
+
+Building Jaeger’s ClickHouse backend: 8.6× compression on 10 million spans (5 minute read)
+
+(blurb not generated)
+
+Build your own vulnerability harness (5 minute read)
+
+(blurb not generated)
+
+How We Made Cloud Browsers 3x Cheaper and Faster (5 minute read)
+
+(blurb not generated)
+
+Cell-Based Architecture for Resilient Payment Systems (5 minute read)
+
+(blurb not generated)
+
+How we found a bug in the hyper HTTP library (5 minute read)
+
+(blurb not generated)
+
+Making secret scanning more trustworthy: Reducing false positives at scale (5 minute read)
+
+(blurb not generated)
+
+Blinding the Watchmen: Abusing Cloud Logging Services for Defense Evasion and Visibility (5 minute read)
+
+(blurb not generated)
+
+What you need to know about Lambda MicroVMs (5 minute read)
+
+AWS launched Lambda MicroVMs, giving teams Firecracker-grade isolation with no shared kernel, sub-second snapshot boots, and stateful sessions that persist memory and disk for up to eight hours. The author argues it finally fits the AI-code-sandbox problem that EC2, ECS, and Lambda functions each solved only partially. The model is per-session VMs with dedicated HTTPS endpoints, bearer-token auth, and automatic suspend on idle so you stop paying when traffic stops.
+
+Google Cloud publishes a secure MCP-on-GKE guide (5 minute read)
+
+(blurb not generated)
+
+How We Cut Semgrep's Taint Analysis Time by 75% (5 minute read)
+
+(blurb not generated)
+
+Building a state-of-the-art development platform with Backstage (2 minute read)
+
+Backstage solved the developer-portal problem but not the platform problem, the author argues: a portal organizes catalogs and templates, while a platform owns deployments, environments, policies, and runtime operations. Wiring Backstage point-to-point into CI/CD, GitOps, Kubernetes, and observability produces a fragile "messy middle." The post's fix is a control plane between portal and runtime that compiles developer and platform-engineer abstractions into Kubernetes resources, enforces policies, and reconciles drift.
+
+Why cloud native belongs at the heart of agentic AI: Lessons from building a multi-agent security platform on Kubernetes (5 minute read)
+
+(blurb not generated)
+
+How Cloudflare responded to the “Copy Fail” Linux vulnerability (5 minute read)
+
+Cloudflare detailed its response to "Copy Fail" (CVE-2026-31431), a Linux kernel local privilege escalation in the AF_ALG crypto path disclosed on April 29, 2026. Because the company runs a custom LTS-based kernel that ships weekly internal builds and reboots its edge on a four-week ERR cycle, the fix was already deployed before public disclosure, and behavioral detections flagged the exploit pattern within minutes. The post argues that disciplined patch cadence, not incident heroics, is what neutralizes kernel CVEs at scale.
+
+Build and Deploy a Remote MCP Server to GKE in 30 Minutes (5 minute read)
+
+(blurb not generated)
+
+Shipping huggingface_hub every week with AI, open tools, and a human in the loop (5 minute read)
+
+(blurb not generated)
+
+Agent Auth: A lawyer’s day in court (5 minute read)
+
+(blurb not generated)
+
+The Dependency Black Hole (1 minute read)
+
+This paper introduces the "dependency black hole" theory from an industrial case study of 267 microservices, where compile-time, run-time, and task dependencies all concentrate around a dense core of "dependency magnet" services. The authors map the network to a black hole's anatomy: a singularity core, an event horizon of services being pulled in, and an outer accretion disk of lightly coupled services. The practical payoff is a lens for spotting services at risk of becoming magnets and justifying governance interventions before the core's blast radius grows.
+
+Explainer: Why your legacy storage is choking your expensive GPU (5 minute read)
+
+(blurb not generated)
+
+The uptime questions every engineering leader should ask this week (1 minute read)
+
+In an interview with Help Net Security, Oh Dear CTO Mattias Geniar argues that most outages start quietly as creeping latency or a slowly climbing error rate, and that teams page on the wrong signals: absolute numbers and isolated endpoints instead of deltas from baseline and real user outcomes. He recommends alerting on change rather than thresholds, and running end-to-end scenario checks like a simulated login or checkout. The piece closes with questions leaders can use to pressure-test their uptime story.
+
+⚒️
+Launches & Tools
+
+Temporary Cloudflare Accounts for AI agents (5 minute read)
+
+(blurb not generated)
+
+Amazon S3 annotations: attach rich, queryable context directly to your objects (5 minute read)
+
+(blurb not generated)
+
+Announcing Amazon EC2 G7 instances accelerated by NVIDIA RTX PRO 4500 Blackwell Server Edition GPUs (5 minute read)
+
+(blurb not generated)
+
+Run isolated sandboxes with full lifecycle control: AWS Lambda introduces MicroVMs (5 minute read)
+
+(blurb not generated)
+
+AWS debuts Lambda MicroVMs with up to 8 hours runtime (5 minute read)
+
+(blurb not generated)
+
+Cloudflare launched self-managed OAuth for all (1 minute read)
+
+Cloudflare opened self-managed OAuth to all developers on its platform, letting them create and manage their own OAuth clients for scoped, delegated access to the Cloudflare API instead of relying on API tokens. The change targets SaaS integrations, internal developer platforms, and agentic tools, and ships with clearer consent screens, dashboard-based revocation, and app-ownership visibility to blunt OAuth phishing.
+
+Introducing the Cloudflare One stack: agent-powered deployment (5 minute read)
+
+(blurb not generated)
+
+Log Analytics is now Observability Analytics: Query logs and traces with SQL (5 minute read)
+
+(blurb not generated)
+
+Server-Side Tools Are Now Available for DigitalOcean Inference Engine (5 minute read)
+
+(blurb not generated)
+
+Upbound open-sources Modelplane to optimize inference clusters (5 minute read)
+
+(blurb not generated)
+
+Amazon ECS introduces new high-resolution metrics for faster service auto scaling (1 minute read)
+
+Amazon ECS service auto scaling now supports high-resolution 20-second metrics, cutting the time to trigger scale-out from 363 to 86 seconds and total scale-and-provision time from 386 to 109 seconds in AWS benchmarks. Faster reaction lets teams trim baseline task counts and the preemptive capacity padding that hedges against traffic spikes, lowering compute cost while target tracking replaces the custom step-scaling policies that used to deliver aggressive scaling.
+
+HCP Vault Dedicated introduces cluster disaster recovery (public preview) (1 minute read)
+
+HashiCorp added cluster disaster recovery to HCP Vault Dedicated in public preview, letting teams run DR drills at the cluster level to simulate full cluster failures and verify failover readiness. The feature targets a gap in production Vault operations, where secrets-management outages have broad blast radius and recovery procedures often go untested until a real incident forces the issue.
+
+Minimus container images are now free (1 minute read)
+
+Minimus opened its catalog of hardened, minimal container images to a free tier, with curated Helm charts for deployment. The free images ship without support, SLA, or guaranteed patching timelines, and paid subscriptions may receive security updates first, so teams should weigh the smaller attack surface against slower CVE response before pulling them into production.
+
+Vercel Connect (5 minute read)
+
+(blurb not generated)
+
+Advancing AI agent security in Vault (5 minute read)
+
+(blurb not generated)
+
+Paris-based Tsuga, whose observability software runs in customers' own clouds to help them skip per-byte ingestion costs, raised a $35M Series A led by Singular (Ana Maria Constantin/The Next Web) (1 minute read)
+
+Tsuga, a Paris-based observability startup, raised a $35M Series A led by Singular to expand software that runs inside customers' own clouds and avoids per-byte ingestion costs. The in-cloud model targets the spend problem behind Datadog-style bills, where high-cardinality telemetry from AI agents pushes monitoring costs up faster than the infrastructure it watches.
+
+One vulnerability view: From scanner coverage to AI governance (5 minute read)
+
+(blurb not generated)
+
+⚡
+Quick Links
+
+GitLab Patch Release: 19.1.1, 19.0.3, 18.11.6 (5 minute read)
+
+(blurb not generated)

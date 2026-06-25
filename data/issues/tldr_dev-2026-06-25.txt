@@ -1,0 +1,339 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR Dev 2026-06-25
+
+🧑‍💻
+Articles & Tutorials
+
+How we found a bug in the hyper HTTP library (5 minute read)
+
+(blurb not generated)
+
+Linux Finally Eliminates The strncpy API After Six Years Of Work, 360+ Patches (5 minute read)
+
+(blurb not generated)
+
+Building Reliable Agentic AI Systems (5 minute read)
+
+(blurb not generated)
+
+Making secret scanning more trustworthy: Reducing false positives at scale (5 minute read)
+
+(blurb not generated)
+
+I rewrote PostHog's SQL parser, 70x faster, while barely looking at the code (5 minute read)
+
+(blurb not generated)
+
+Agentic Generation of AST Transformation Rules for Fixing Breaking Updates (5 minute read)
+
+(blurb not generated)
+
+RFC 9958 - Post-Quantum Cryptography for Engineers (5 minute read)
+
+(blurb not generated)
+
+How we built an internal data analytics agent (5 minute read)
+
+(blurb not generated)
+
+The new HTTP QUERY method explained (5 minute read)
+
+(blurb not generated)
+
+Using Codex for Long-Running Projects (5 minute read)
+
+(blurb not generated)
+
+ClickHouse Ingestion at Scale: An Open-Source Zepto Engineering Story (5 minute read)
+
+(blurb not generated)
+
+How Netflix Simplified Batch Compute with Kueue (5 minute read)
+
+Netflix replaced the custom queuing and scheduling logic in its homegrown Compute Managed Batch system with Kueue, a cloud-native job queueing system for batch workloads, as part of moving its Titus container platform toward Kubernetes-native components. The post covers how the team migrated millions of batch jobs to Kueue while preserving CMB's tenant hierarchy, priority-ordered execution, and per-tenant capacity reservations federated across multiple Kubernetes cells.
+
+When failover isn't safe: Building high-availability PostgreSQL on Kubernetes (5 minute read)
+
+(blurb not generated)
+
+AI Coding Agent Horror Stories: The 13-Hour AWS Outage (5 minute read)
+
+(blurb not generated)
+
+IntentTester: Intent-Driven Multi-agent Framework for Cross-Library Test Migration (1 minute read)
+
+IntentTester is a multi-agent framework that migrates unit tests across libraries and languages by abstracting them into a language-agnostic Test Description Language, aligning them to a repository graph, and synthesizing executable tests through LLM reasoning and iterative validation. Across nine Java and Python projects it produced 2,776 syntactically correct tests at 85% correctness versus 51% and 43% for structure-mapping baselines, and surfaced real defects including stack overflows and null dereferences that maintainers have patched.
+
+p99 0 ms* autocomplete for 240 million domain names (5 minute read)
+
+(blurb not generated)
+
+Constraint Tax in Open-Weight LLMs: An Empirical Study of Tool Calling Suppression Under Structured Output Constraints (1 minute read)
+
+This paper documents Tool Suppression, a reproducible failure where multiple open-weight models stop calling tools once JSON Schema constraints and tool calling are enabled together, even though each works fine in isolation. The authors trace it to grammar-based token masks that make tool-call tokens unreachable during decoding, and propose Transparent Two-Pass Execution to decouple tool calls from schema-constrained generation without retraining.
+
+The text in Claude Code's “Extended Thinking” output is not authentic (5 minute read)
+
+(blurb not generated)
+
+Shipping huggingface_hub every week with AI, open tools, and a human in the loop (5 minute read)
+
+(blurb not generated)
+
+I taught a bucket to speak Git (1 minute read)
+
+The author pointed go-git at a Tigris object storage bucket using billy, a Go filesystem abstraction, demonstrating that a git server can run directly on S3-style storage with no /usr/bin/git binary involved. The post walks through git's actual storage model, where a repository is just objects, trees, commits, and refs, and shows that go-git's filesystem-native design makes a bucket-backed repo Just Work.
+
+🧠
+Opinions & Advice
+
+The Coming Loop (5 minute read)
+
+(blurb not generated)
+
+There are a few things that I look back on as my mistakes in the early days (5 minute read)
+
+(blurb not generated)
+
+GLM 5.2: why I’m replacing Opus in Claude Code with this new model (1 minute read)
+
+Claire Vo ran GLM 5.2, Z.AI's open-weight coding model, through four real tasks in her production Next.js app, including a 45-minute autonomous bug-hunt pulling Sentry and Vercel logs, for $3.36 across roughly 6M tokens. She argues open weights buy cost and vendor independence worth the trade-offs, and reports the model matched ChatPRD's design system on the first try.
+
+PR spam today looks like email spam in the early 2000s (5 minute read)
+
+(blurb not generated)
+
+Vulnerability reports are not special anymore (5 minute read)
+
+(blurb not generated)
+
+In praise of memcached (5 minute read)
+
+(blurb not generated)
+
+The Flat Curve Society (5 minute read)
+
+(blurb not generated)
+
+The Minimum Viable Unit of Saleable Software (5 minute read)
+
+(blurb not generated)
+
+PostgreSQL is enough (2024) (1 minute read)
+
+The author argues that PostgreSQL alone can replace most of the specialized infrastructure teams reach for by default, covering job queues, full-text and vector search, audit logging, change-data-capture, and REST/GraphQL APIs through extensions and built-in features. The post catalogs the tooling for each use case, from pg_cron and pgmq to pgvector and PostgREST, making the case that one well-understood database beats a sprawl of services you have to operate separately.
+
+Local Qwen isn't a worse Opus, it's a different tool (5 minute read)
+
+(blurb not generated)
+
+LLMs are complicated now (5 minute read)
+
+(blurb not generated)
+
+I am dreading our LLM-written incident report future (5 minute read)
+
+(blurb not generated)
+
+The Problem is Prompt Debt (5 minute read)
+
+The author argues that hand-tuned natural language prompts accrue "prompt debt," a slow-building liability that caps what AI systems can become. As teams pile edge-case instructions and all-caps threats onto a single prompt, iteration grinds to a halt, the prompt becomes illegible to colleagues, and the application locks to one aging model because hot fixes break on any newer one.
+
+Don't verify email addresses by sending spam to them (5 minute read)
+
+(blurb not generated)
+
+When I reject AI code even if it works (5 minute read)
+
+(blurb not generated)
+
+There is minimal downside to switching to open models (5 minute read)
+
+(blurb not generated)
+
+GitHub shouldn't be a dependency for publishing Rust on crates.io (1 minute read)
+
+The author argues that crates.io's reliance on GitHub for authentication makes Microsoft a single point of failure for publishing Rust packages, leaving the ecosystem exposed to outages, account lockouts, and policy changes outside its control. The piece calls for independent authentication options so registry access doesn't hinge on one company's infrastructure or terms of service.
+
+🚀
+Launches & Tools
+
+Deno Desktop (5 minute read)
+
+(blurb not generated)
+
+Cloudflare launched self-managed OAuth for all (1 minute read)
+
+Cloudflare opened self-managed OAuth to all Developer Platform customers, letting developers create and manage their own OAuth clients for scoped, delegated access to the Cloudflare API instead of relying on harder-to-manage API tokens. The release adds clearer consent screens, dashboard-based revocation, and visible app ownership to curb OAuth phishing, targeting SaaS integrations, internal developer platforms, and agentic tools that need delegated access.
+
+LuaJIT 3.0 proposed syntax extensions (1 minute read)
+
+LuaJIT maintainer Mike Pall opened an umbrella issue proposing a set of syntax extensions for LuaJIT 3.0, with consolidated documentation evolving in the thread. The proposals are scoped to additions that improve quality-of-life, are proven in other languages or Lua dialects, introduce no syntactic ambiguity, and preserve backwards compatibility, explicitly avoiding the complexity of Perl, Ruby, C++, or Rust.
+
+Temporary Cloudflare Accounts for AI agents (5 minute read)
+
+(blurb not generated)
+
+Lighthouse agentic browsing scoring (5 minute read)
+
+(blurb not generated)
+
+F3 (5 minute read)
+
+(blurb not generated)
+
+Unlimited OCR: One-shot long-horizon parsing (5 minute read)
+
+(blurb not generated)
+
+Deno project is going to add cross-platform desktop apps in next major update (5 minute read)
+
+(blurb not generated)
+
+RubyLLM: A Ruby framework for all major AI providers (5 minute read)
+
+(blurb not generated)
+
+Run isolated sandboxes with full lifecycle control: AWS Lambda introduces MicroVMs (5 minute read)
+
+(blurb not generated)
+
+Announcing DuckDB 1.5.4 (5 minute read)
+
+(blurb not generated)
+
+Show HN: Nub – A Bun-like all-in-one toolkit for Node.js (5 minute read)
+
+(blurb not generated)
+
+Introducing computer use in Gemini 3.5 Flash (5 minute read)
+
+(blurb not generated)
+
+FUTO Swipe – A new swipe typing model (5 minute read)
+
+(blurb not generated)
+
+Making Windows a developer platform, again (3 minute read)
+
+Microsoft introduced Coreutils for Windows at Build 2026, a maintained fork of the Rust-based uutils coreutils that installs as a single binary and brings standard Unix commands like `ls -al` to PowerShell and cmd. The preview matches Unix syntax and output formatting so scripts port across WSL and native Windows, though it remains incomplete and conflicts with existing cmd and PowerShell commands.
+
+Show HN: TikZ Editor – WYSIWYG editor for figures in LaTeX (5 minute read)
+
+(blurb not generated)
+
+Accelerating Transformers Fine-Tuning with NVIDIA NeMo AutoModel (5 minute read)
+
+(blurb not generated)
+
+Using Visual Studio Code’s ‘air-gapped’ AI model mode (5 minute read)
+
+(blurb not generated)
+
+TypeScript Performance in TanStack Table V9 (5 minute read)
+
+(blurb not generated)
+
+Sniff out stale AI override advice with this open source CLI (5 minute read)
+
+(blurb not generated)
+
+🎁
+Miscellaneous
+
+Swift Package Index joins Apple (5 minute read)
+
+(blurb not generated)
+
+Elevated error rate across multiple models (5 minute read)
+
+(blurb not generated)
+
+GlassWASM: WebAssembly Malware Found in Trojanized Open VSX Extensions (5 minute read)
+
+(blurb not generated)
+
+7,000 Langflow servers are under attack. LangGraph and LangChain have the same holes (5 minute read)
+
+(blurb not generated)
+
+A public Sentry key is all it takes to hijack Claude Code, Cursor, and Codex (5 minute read)
+
+(blurb not generated)
+
+GLM-5.2 Raises the Bar for Open Models (5 minute read)
+
+(blurb not generated)
+
+GLM-5.2 Is The New Best Open Model (5 minute read)
+
+(blurb not generated)
+
+Malicious npm Packages Pose as PostCSS Tools to Deliver Windows RAT (5 minute read)
+
+(blurb not generated)
+
+'Cordyceps': Mushrooming Malicious Pull Requests Threaten Developer Workflows (5 minute read)
+
+(blurb not generated)
+
+Google is finally opening the Play Store to outside payments (5 minute read)
+
+(blurb not generated)
+
+Swift Package Index joins Apple, pledges to remain open source (5 minute read)
+
+(blurb not generated)
+
+JetBrains Marketplace Ecosystem Security Update: Addressing Malicious Third-Party AI Plugins (5 minute read)
+
+JetBrains removed 15 third-party AI plugins from its Marketplace on June 16 after reports that they masqueraded as text-generation and unit-testing utilities to harvest developer-configured AI provider API keys. The company banned the 7 publisher accounts behind the campaign and triggered a backend kill-switch that disables the plugins on next IDE relaunch, but anyone who used them should revoke affected keys immediately.
+
+⚡
+Quick Links
+
+Boost Inference Performance up to 15x on NVIDIA Blackwell Using DFlash Speculative Decoding (5 minute read)
+
+(blurb not generated)
+
+"Fix" MacBook Neo Cursor Lag: Record 1 Pixel of the Screen Every 10 Seconds (5 minute read)
+
+(blurb not generated)
+
+Will It Mythos? (5 minute read)
+
+(blurb not generated)
+
+Optimizing Models to Be Fast at Codegen (5 minute read)
+
+(blurb not generated)
+
+LibEvoBench: Probing Temporal Knowledge Stratification in Code Generation Models (1 minute read)
+
+LibEvoBench tests whether code models reason about library versions; results show they're version-oblivious, and only supplying docs (not naming the version) helps.
+
+A 27-Year-Old Authentication Bypass in OpenBSD's PPP Stack (5 minute read)
+
+(blurb not generated)
+
+Half-Life 2 in a Browser (1 minute read)
+
+A developer ported Half-Life 2 to run in the browser via WebAssembly, playable directly at the link.
+
+pg_kpart version 1.0 (5 minute read)
+
+(blurb not generated)
+
+Running Windows Games on a Hobby OS with Wine (5 minute read)
+
+(blurb not generated)
+
+I Stored a Website in a Favicon (5 minute read)
+
+(blurb not generated)
+
+JSON-LD Explained for Personal Websites (5 minute read)
+
+(blurb not generated)
