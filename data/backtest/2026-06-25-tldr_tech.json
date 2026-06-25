@@ -1,9 +1,39 @@
 {
   "date": "2026-06-25",
   "newsletter": "tldr_tech",
-  "fetched_at": "2026-06-25T10:03:11.257103+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-06-25T17:51:38.781352+00:00",
+  "tldr_titles": [
+    "Tesla, Sunrun team up on 16 GW virtual power plant for data centers",
+    "OpenAI unveils first chip as part of Broadcom deal in effort to \u2018build the full stack'",
+    "A New $500 Million Fund Is Trying to Eliminate the Common Cold",
+    "The Roomba Guy's Second Act: A Robot You'll Want to Snuggle",
+    "The Case for Language-Native Software",
+    "What I'm Finding About LLM Code Style and Token Costs",
+    "Anthropic's White House Negotiations Are Reportedly On Track After \u2018Weirdo' Dario Amodei Was Replaced",
+    "The CEO of AWS on why Amazon is hiring 11,000 interns and junior employees",
+    "Stop Programming in Markdown",
+    "Writing Loops, Not Prompts, Explained",
+    "Stop Building Chatbots. Build Agents That Open PRs",
+    "I wrote a 70x faster SQL parser while barely looking at the code",
+    "Qualcomm lands Meta as first named customer for its Dragonfly data centre chips",
+    "Amazon Seller Reveals Rare Glimpse of Shadow Bribery Market"
+  ],
+  "tldr_matched": [
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -18,27 +48,11 @@
       "score": 82.0,
       "title": "OpenAI and Broadcom unveil LLM-optimized inference chip",
       "url": "https://openai.com/index/openai-broadcom-jalapeno-inference-chip",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 1,
+      "similarity": 0.6696062088012695
     },
     {
       "rank": 3,
-      "score": 82.0,
-      "title": "OpenAI unveils its first custom chip, built by Broadcom",
-      "url": "https://techcrunch.com/2026/06/24/openai-unveils-its-first-custom-chip-built-by-broadcom/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 4,
-      "score": 82.0,
-      "title": "China's LineShine supercomputer dethrones US' El Capitan, secures first place in Top 500 list \u2014 first machine in the rankings to sustain more than 2 ExaFLOPS of double-precision performance using only CPUs",
-      "url": "https://www.tomshardware.com/tech-industry/supercomputers/chinas-lineshine-supercomputer-dethrones-us-el-capitan-secures-first-place-in-top-500-list-first-machine-in-the-rankings-to-sustain-more-than-2-exaflops-of-double-precision-performance-using-only-cpus",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 5,
       "score": 78.0,
       "title": "A New Era of Midjourney",
       "url": "https://www.midjourney.com/medical/blogpost",
@@ -46,7 +60,15 @@
       "similarity": null
     },
     {
-      "rank": 6,
+      "rank": 4,
+      "score": 78.0,
+      "title": "Unlocking the Cloudflare app ecosystem with OAuth for all",
+      "url": "https://blog.cloudflare.com/oauth-for-all/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 5,
       "score": 78.0,
       "title": "Cloudflare launched self-managed OAuth for all",
       "url": "https://blog.cloudflare.com/oauth-for-all/",
@@ -54,10 +76,18 @@
       "similarity": null
     },
     {
-      "rank": 7,
+      "rank": 6,
       "score": 78.0,
       "title": "China\u2019s LineShine dethrones El Capitan as the world\u2019s fastest supercomputer",
       "url": "https://www.networkworld.com/article/4188115/chinas-lineshine-dethrones-el-capitan-as-the-worlds-fastest-supercomputer.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 7,
+      "score": 76.0,
+      "title": "Apple to Skip High-End M6 Mac Chips in Favor of AI-Focused M7 Line",
+      "url": "https://www.bloomberg.com/news/articles/2026-06-25/apple-to-skip-high-end-m6-mac-chips-to-launch-m7-pro-m7-max-m7-ultra-instead",
       "matched_tldr_idx": null,
       "similarity": null
     },
@@ -96,13 +126,21 @@
     {
       "rank": 12,
       "score": 75.0,
+      "title": "Qualcomm acquires AI startup Modular in open ecosystem bet to challenge CUDA",
+      "url": "https://www.sdxcentral.com/news/qualcomm-acquires-ai-startup-modular-in-open-ecosystem-bet-to-challenge-cuda/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 13,
+      "score": 75.0,
       "title": "Nvidia's Autonomous Robotics Research",
       "url": "https://research.nvidia.com/labs/gear/enpire/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 13,
+      "rank": 14,
       "score": 75.0,
       "title": "VibeThinker: 3B param model that beats Opus 4.5 on reasoning with novel SFT+GRPO",
       "url": "https://arxiv.org/abs/2606.16140",
@@ -110,23 +148,23 @@
       "similarity": null
     },
     {
-      "rank": 14,
-      "score": 74.0,
-      "title": "Anthropic accuses Alibaba of running the largest distillation campaign yet against Claude",
-      "url": "https://thenextweb.com/news/anthropic-accuses-alibaba-distillation-claude-qwen",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
       "rank": 15,
       "score": 74.0,
-      "title": "AWS debuts Lambda MicroVMs with up to 8 hours runtime",
-      "url": "https://www.theregister.com/devops/2026/06/23/aws-debuts-lambda-microvms-with-up-to-8-hours-runtime/5260035",
+      "title": "Anthropic accuses Alibaba of campaign to 'brazenly' and 'illicitly' extract AI capabilities",
+      "url": "https://www.cnbc.com/2026/06/24/anthropic-alibaba-distillation-campaign.html",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
       "rank": 16,
+      "score": 74.0,
+      "title": "Qualcomm reveals HBC near-memory AI architecture, AI250 and AI350 accelerators \u2014 touts 6x higher bandwidth-per-watt compared to HBM, 200x capacity compared to on-chip SRAM",
+      "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/qualcomm-reveals-hbc-near-memory-ai-architecture-ai250-and-ai350-accelerators-touts-6x-higher-bandwidth-per-watt-compared-to-hbm-200x-capacity-compared-to-on-chip-sram",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 17,
       "score": 73.0,
       "title": "Run isolated sandboxes with full lifecycle control: AWS Lambda introduces MicroVMs",
       "url": "https://aws.amazon.com/blogs/aws/run-isolated-sandboxes-with-full-lifecycle-control-aws-lambda-introduces-microvms/",
@@ -134,7 +172,7 @@
       "similarity": null
     },
     {
-      "rank": 17,
+      "rank": 18,
       "score": 73.0,
       "title": "Boffin claims Microsoft's supposed quantum leap does not compute due to 'basic Python errors'",
       "url": "https://www.theregister.com/research/2026/06/24/boffin-claims-microsofts-supposed-quantum-leap-does-not-compute-due-to-basic-python-errors/5260489",
@@ -142,15 +180,15 @@
       "similarity": null
     },
     {
-      "rank": 18,
+      "rank": 19,
       "score": 73.0,
-      "title": "A new paper argues Microsoft exaggerated its quantum claims a year ago",
-      "url": "https://www.theverge.com/tech/956450/nature-microsoft-quantum-computing-majorana-1-claims",
+      "title": "Dolphin Emulator Progress Release 2606",
+      "url": "https://dolphin-emu.org/blog/2026/06/25/dolphin-progress-report-release-2606/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 19,
+      "rank": 20,
       "score": 73.0,
       "title": "FUTO Swipe \u2013 A new swipe typing model",
       "url": "https://swipe.futo.tech/",
@@ -158,7 +196,7 @@
       "similarity": null
     },
     {
-      "rank": 20,
+      "rank": 21,
       "score": 73.0,
       "title": "There are a few things that I look back on as my mistakes in the early days",
       "url": "https://twitter.com/ID_AA_Carmack/status/2069799283369345247",
@@ -166,23 +204,23 @@
       "similarity": null
     },
     {
-      "rank": 21,
-      "score": 72.0,
-      "title": "OpenAI, Broadcom Develop Custom Chip for AI Inference",
-      "url": "https://www.wsj.com/tech/ai/openai-broadcom-develop-custom-chip-for-ai-inference-beafd74a?mod=rss_Technology",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
       "rank": 22,
       "score": 72.0,
-      "title": "Qualcomm to Acquire AI Software Firm Modular in $3.9 Billion Stock Deal",
-      "url": "https://www.wsj.com/tech/ai/qualcomm-to-acquire-ai-software-firm-modular-in-3-9-billion-stock-deal-7b620c7c?mod=rss_Technology",
+      "title": "Apple says \"the rapid expansion of AI data centers has created an extraordinary surge in demand for memory and storage\"; the MacBook Neo rises from $599 to $699 (Mark Gurman/Bloomberg)",
+      "url": "https://www.techmeme.com/260625/p25#a260625p25",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
       "rank": 23,
+      "score": 72.0,
+      "title": "Apple Raises Prices on Some Products by $500",
+      "url": "https://www.bloomberg.com/news/videos/2026-06-25/apple-raises-prices-on-some-products-by-500-video",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 24,
       "score": 72.0,
       "title": "China Takes Supercomputer Crown From U.S. For First Time Since 2017",
       "url": "https://www.nytimes.com/2026/06/23/technology/china-supercomputer-crown-us.html",
@@ -190,7 +228,15 @@
       "similarity": null
     },
     {
-      "rank": 24,
+      "rank": 25,
+      "score": 72.0,
+      "title": "The engineer who built Swift and LLVM sold his AI startup to Qualcomm for $4B",
+      "url": "https://techfundingnews.com/the-engineer-who-built-swift-and-llvm-sold-his-ai-startup-to-qualcomm-for-4b/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 26,
       "score": 72.0,
       "title": "AI Startup Midjourney Pivots to Health With Ultrasound Machine",
       "url": "https://www.bloomberg.com/news/articles/2026-06-18/ai-startup-midjourney-pivots-to-health-with-ultrasound-machine",
@@ -198,7 +244,7 @@
       "similarity": null
     },
     {
-      "rank": 25,
+      "rank": 27,
       "score": 72.0,
       "title": "Introducing AWS Continuum for security at machine speed",
       "url": "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-continuum/",
@@ -206,7 +252,7 @@
       "similarity": null
     },
     {
-      "rank": 26,
+      "rank": 28,
       "score": 72.0,
       "title": "AI Is Designing Radio Chips That Humans Couldn\u2019t Even Imagine",
       "url": "https://spectrum.ieee.org/ai-radio-chip-design",
@@ -214,7 +260,7 @@
       "similarity": null
     },
     {
-      "rank": 27,
+      "rank": 29,
       "score": 71.0,
       "title": "Memory Chips and China, Microsoft and Chinese Models",
       "url": "https://stratechery.com/2026/memory-chips-and-china-microsoft-and-chinese-models/",
@@ -222,7 +268,7 @@
       "similarity": null
     },
     {
-      "rank": 28,
+      "rank": 30,
       "score": 71.0,
       "title": "Qualcomm to Acquire Modular",
       "url": "https://www.reuters.com/business/qualcomm-buy-ai-startup-modular-2026-06-24/",
@@ -230,7 +276,7 @@
       "similarity": null
     },
     {
-      "rank": 29,
+      "rank": 31,
       "score": 71.0,
       "title": "Swift Package Index joins Apple",
       "url": "https://swiftpackageindex.com/blog/swift-package-index-joins-apple",
@@ -238,7 +284,7 @@
       "similarity": null
     },
     {
-      "rank": 30,
+      "rank": 32,
       "score": 71.0,
       "title": "Chinese supercomputer using local processors heads TOP500 list",
       "url": "https://www.theregister.com/hpc/2026/06/24/chinese-supercomputer-using-local-processors-heads-top500-list/5260532",
@@ -246,7 +292,15 @@
       "similarity": null
     },
     {
-      "rank": 31,
+      "rank": 33,
+      "score": 70.0,
+      "title": "IBM stacks up a sub-nanometer chip future",
+      "url": "https://www.theregister.com/systems/2026/06/25/ibm-stacks-up-a-sub-nanometer-chip-future/5261555",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 34,
       "score": 70.0,
       "title": "China appears to be developing 7-meter-diameter reusable rockets",
       "url": "https://spacenews.com/china-appears-to-be-developing-7-meter-diameter-reusable-rockets/",
@@ -254,7 +308,7 @@
       "similarity": null
     },
     {
-      "rank": 32,
+      "rank": 35,
       "score": 70.0,
       "title": "Deno Desktop",
       "url": "https://docs.deno.com/runtime/desktop/",
@@ -262,23 +316,7 @@
       "similarity": null
     },
     {
-      "rank": 33,
-      "score": 69.0,
-      "title": "OpenAI Launches Daybreak To Automate Vulnerability Patching",
-      "url": "https://openai.com/index/daybreak-securing-the-world/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 34,
-      "score": 69.0,
-      "title": "Daybreak: Tools for securing every organization in the world",
-      "url": "https://openai.com/index/daybreak-securing-the-world/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 35,
+      "rank": 36,
       "score": 69.0,
       "title": "Boost Inference Performance up to 15x on NVIDIA Blackwell Using DFlash Speculative Decoding",
       "url": "https://developer.nvidia.com/blog/boost-inference-performance-up-to-15x-on-nvidia-blackwell-using-dflash-speculative-decoding/",
@@ -286,7 +324,7 @@
       "similarity": null
     },
     {
-      "rank": 36,
+      "rank": 37,
       "score": 69.0,
       "title": "Why American data centers can't plug in",
       "url": "https://worksinprogress.co/issue/why-american-data-centers-cant-plug-in/",
@@ -294,7 +332,15 @@
       "similarity": null
     },
     {
-      "rank": 37,
+      "rank": 38,
+      "score": 68.0,
+      "title": "Unconventional AI releases its first model, built on an oscillator architecture its founder says could cut power use by a factor of a thousand",
+      "url": "https://thenextweb.com/news/unconventional-ai-un0-oscillator-chip-image-generation-naveen-rao",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 39,
       "score": 68.0,
       "title": "A new supercomputer has dethroned the U.S \u2014 here\u2019s why it matters",
       "url": "https://www.digitaltrends.com/computing/a-new-supercomputer-has-dethroned-the-u-s-heres-why-it-matters/",
@@ -302,7 +348,15 @@
       "similarity": null
     },
     {
-      "rank": 38,
+      "rank": 40,
+      "score": 68.0,
+      "title": "IBM reveals sub-1nm chip technology, production expected in another 5 years",
+      "url": "https://www.neowin.net/news/ibm-reveals-sub-1nm-chip-technology-production-expected-in-another-5-years/?utm_source=rss",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 41,
       "score": 68.0,
       "title": "Building Reliable Agentic AI Systems",
       "url": "https://martinfowler.com/articles/reliable-llm-bayer.html",
@@ -310,7 +364,7 @@
       "similarity": null
     },
     {
-      "rank": 39,
+      "rank": 42,
       "score": 68.0,
       "title": "Agentic coding and persistent returns to expertise",
       "url": "https://www.anthropic.com/research/claude-code-expertise",
@@ -318,7 +372,7 @@
       "similarity": null
     },
     {
-      "rank": 40,
+      "rank": 43,
       "score": 68.0,
       "title": "How Netflix Simplified Batch Compute with Kueue",
       "url": "https://netflixtechblog.com/how-netflix-simplified-batch-compute-with-kueue-87860682629c",
@@ -326,7 +380,7 @@
       "similarity": null
     },
     {
-      "rank": 41,
+      "rank": 44,
       "score": 68.0,
       "title": "FortiBleed: 86,000 Fortinet Device Credentials Compromised",
       "url": "https://www.securityweek.com/fortibleed-86000-fortinet-device-credentials-compromised/",
@@ -334,7 +388,7 @@
       "similarity": null
     },
     {
-      "rank": 42,
+      "rank": 45,
       "score": 68.0,
       "title": "Nearly Half of LG Smart TV Apps Are Laced with Proxies",
       "url": "https://spur.us/blog/smart-tv-apps-residential-proxy-sdks",
@@ -342,15 +396,15 @@
       "similarity": null
     },
     {
-      "rank": 43,
+      "rank": 46,
       "score": 68.0,
-      "title": "White House app auto-downloads to government phones, can't be uninstalled",
-      "url": "https://arstechnica.com/tech-policy/2026/06/white-house-app-auto-downloads-to-government-phones-cant-be-uninstalled/",
+      "title": "Ford AI hiccups push carmaker to rehire \u2018gray beard\u2019 inspectors",
+      "url": "https://www.bloomberg.com/news/articles/2026-06-25/ford-has-been-rehiring-quality-inspectors-after-ai-fell-short",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 44,
+      "rank": 47,
       "score": 68.0,
       "title": "LuaJIT 3.0 proposed syntax extensions",
       "url": "https://github.com/LuaJIT/LuaJIT/issues/1475",
@@ -358,7 +412,15 @@
       "similarity": null
     },
     {
-      "rank": 45,
+      "rank": 48,
+      "score": 67.0,
+      "title": "Trump admin proposes axing brake-pedal requirement for AVs in a boost for Tesla",
+      "url": "https://techcrunch.com/2026/06/25/trump-admin-proposes-axing-brake-pedal-requirement-for-avs-in-a-boost-for-tesla/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 49,
       "score": 67.0,
       "title": "A Chinese supercomputer just secured first place on the Top500 list for the first time since 2017: Here\u2019s everything we know about LineShine",
       "url": "https://www.itpro.com/infrastructure/a-chinese-supercomputer-just-secured-first-place-on-the-top500-list-for-the-first-time-since-2017-heres-everything-we-know-about-lineshine",
@@ -366,7 +428,15 @@
       "similarity": null
     },
     {
-      "rank": 46,
+      "rank": 50,
+      "score": 67.0,
+      "title": "China schedules Long March 10B rocket launch and recovery attempt",
+      "url": "https://spacenews.com/china-schedules-long-march-10b-rocket-launch-and-recovery-attempt/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 51,
       "score": 67.0,
       "title": "How We Made Cloud Browsers 3x Cheaper and Faster",
       "url": "https://browser-use.com/posts/firecracker-browser-infra",
@@ -374,7 +444,7 @@
       "similarity": null
     },
     {
-      "rank": 47,
+      "rank": 52,
       "score": 67.0,
       "title": "Raspberry Pi Pico W as USB Wi-Fi Adapter",
       "url": "https://gitlab.com/baiyibai/pico-usb-wifi",
@@ -382,7 +452,15 @@
       "similarity": null
     },
     {
-      "rank": 48,
+      "rank": 53,
+      "score": 67.0,
+      "title": "Chrome Ad Blocker with 10M+ Installs Found with Dormant Script Injection Capability",
+      "url": "https://thehackernews.com/2026/06/chrome-ad-blocker-with-10m-installs.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 54,
       "score": 66.0,
       "title": "Google hits 50% IPv6",
       "url": "https://blog.apnic.net/2026/04/28/google-hits-50-ipv6/",
@@ -390,7 +468,7 @@
       "similarity": null
     },
     {
-      "rank": 49,
+      "rank": 55,
       "score": 65.0,
       "title": "AI coding agents taught robots how to install GPUs and cut zip ties",
       "url": "https://arstechnica.com/ai/2026/06/ai-coding-agents-can-autonomously-direct-robot-training/",
@@ -398,7 +476,7 @@
       "similarity": null
     },
     {
-      "rank": 50,
+      "rank": 56,
       "score": 65.0,
       "title": "How we found a bug in the hyper HTTP library",
       "url": "https://blog.cloudflare.com/hyper-bug/",
@@ -406,15 +484,31 @@
       "similarity": null
     },
     {
-      "rank": 51,
+      "rank": 57,
       "score": 65.0,
-      "title": "I rewrote PostHog's SQL parser, 70x faster, while barely looking at the code",
-      "url": "https://posthog.com/blog/sql-parser",
+      "title": "Deno 2.9",
+      "url": "https://deno.com/blog/v2.9",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 52,
+      "rank": 58,
+      "score": 65.0,
+      "title": "DeepReinforce releases Ornith-1.0 open-source coding models",
+      "url": "https://www.testingcatalog.com/deepreinforce-releases-ornith-1-0-open-source-coding-models/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 59,
+      "score": 65.0,
+      "title": "I rewrote PostHog's SQL parser, 70x faster, while barely looking at the code",
+      "url": "https://posthog.com/blog/sql-parser",
+      "matched_tldr_idx": 11,
+      "similarity": 1.0
+    },
+    {
+      "rank": 60,
       "score": 65.0,
       "title": "We\u2019re making Bunny DNS free",
       "url": "https://bunny.net/blog/were-making-bunny-dns-free/",
@@ -422,7 +516,7 @@
       "similarity": null
     },
     {
-      "rank": 53,
+      "rank": 61,
       "score": 65.0,
       "title": "The text in Claude Code's \u201cExtended Thinking\u201d output is not authentic",
       "url": "https://patrickmccanna.net/the-text-in-claude-codes-extended-thinking-output-is-not-authentic/",
@@ -430,7 +524,7 @@
       "similarity": null
     },
     {
-      "rank": 54,
+      "rank": 62,
       "score": 64.0,
       "title": "Building AI Agents for AR Glasses and XR Devices with NVIDIA XR AI",
       "url": "https://developer.nvidia.com/blog/building-ai-agents-for-ar-glasses-and-xr-devices-with-nvidia-xr-ai/",
@@ -438,7 +532,7 @@
       "similarity": null
     },
     {
-      "rank": 55,
+      "rank": 63,
       "score": 64.0,
       "title": "45\u00b0C cooling design cuts data center water use to near zero",
       "url": "https://blogs.nvidia.com/blog/liquid-cooling-ai-factories/",
@@ -446,7 +540,7 @@
       "similarity": null
     },
     {
-      "rank": 56,
+      "rank": 64,
       "score": 64.0,
       "title": "HPE\u2019s Slingshot tops supercomputer interconnects, but China steals the show",
       "url": "https://www.sdxcentral.com/news/hpes-slingshot-tops-supercomputer-interconnects-but-china-steals-the-show/",
@@ -454,7 +548,7 @@
       "similarity": null
     },
     {
-      "rank": 57,
+      "rank": 65,
       "score": 64.0,
       "title": "SpaceX launches secretive Starfall reentry demo mission",
       "url": "https://spacenews.com/spacex-launches-secretive-starfall-reentry-demo-mission/",
@@ -462,7 +556,7 @@
       "similarity": null
     },
     {
-      "rank": 58,
+      "rank": 66,
       "score": 64.0,
       "title": "Unlimited OCR: One-shot long-horizon parsing",
       "url": "https://github.com/baidu/Unlimited-OCR",
@@ -470,7 +564,15 @@
       "similarity": null
     },
     {
-      "rank": 59,
+      "rank": 67,
+      "score": 64.0,
+      "title": "How we built saga rollbacks for Cloudflare Workflows",
+      "url": "https://blog.cloudflare.com/rollbacks-for-workflows/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 68,
       "score": 64.0,
       "title": "\"Fix\" MacBook Neo Cursor Lag: Record 1 Pixel of the Screen Every 10 Seconds",
       "url": "https://gist.github.com/retroplasma/ec21767d0a8380c7ea9c2fbee1c7d6bf",
@@ -478,23 +580,7 @@
       "similarity": null
     },
     {
-      "rank": 60,
-      "score": 63.0,
-      "title": "Chinese Supercomputer Overtakes U.S. as World\u2019s Fastest",
-      "url": "https://www.wsj.com/tech/ai/chinese-supercomputer-overtakes-u-s-as-worlds-fastest-d0f8dbff?mod=rss_Technology",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 61,
-      "score": 63.0,
-      "title": "NASA picks Eric Schmidt's rocket company for Mars mission, setting up a race with SpaceX",
-      "url": "https://techcrunch.com/2026/06/17/nasa-picks-eric-schmidts-rocket-company-for-mars-mission-setting-up-a-race-with-spacex/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 62,
+      "rank": 69,
       "score": 63.0,
       "title": "Thinking to recall: How reasoning unlocks parametric knowledge in LLMs",
       "url": "https://research.google/blog/thinking-to-recall-how-reasoning-unlocks-parametric-knowledge-in-llms/",
@@ -502,15 +588,7 @@
       "similarity": null
     },
     {
-      "rank": 63,
-      "score": 63.0,
-      "title": "Figma adds code layers, support for animations, more AI features in new update",
-      "url": "https://techcrunch.com/2026/06/24/figma-adds-code-layers-support-for-animations-more-ai-features-in-new-update/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 64,
+      "rank": 70,
       "score": 63.0,
       "title": "Cell-Based Architecture for Resilient Payment Systems",
       "url": "https://americanexpress.io/cell-based-architecture-for-resilient-payment-systems/",
@@ -518,15 +596,7 @@
       "similarity": null
     },
     {
-      "rank": 65,
-      "score": 63.0,
-      "title": "Framer 3.0",
-      "url": "https://www.framer.com/updates/framer-3",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 66,
+      "rank": 71,
       "score": 63.0,
       "title": "Cordyceps CI/CD Flaws Expose 300+ GitHub Repositories to Supply-Chain Attacks",
       "url": "https://thehackernews.com/2026/06/cordyceps-cicd-flaws-expose-300-github.html",
@@ -534,7 +604,15 @@
       "similarity": null
     },
     {
-      "rank": 67,
+      "rank": 72,
+      "score": 63.0,
+      "title": "AI and Liability",
+      "url": "https://www.schneier.com/blog/archives/2026/06/ai-and-liability.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 73,
       "score": 63.0,
       "title": "\uc591\uc790\ucef4\ud4e8\ud130 \uc2dc\ub300 \ub300\ube44 \ub098\uc120 \ubbf8\uad6d\u2026PQC \uc758\ubb34\ud654\uc640 \uc591\uc790 \uae30\uc220 \uc721\uc131 \ubcd1\ud589",
       "url": "https://www.cio.com/article/4189211/%ec%96%91%ec%9e%90%ec%bb%b4%ed%93%a8%ed%84%b0-%ec%8b%9c%eb%8c%80-%eb%8c%80%eb%b9%84-%eb%82%98%ec%84%a0-%eb%af%b8%ea%b5%adpqc-%ec%9d%98%eb%ac%b4%ed%99%94%ec%99%80-%ec%96%91%ec%9e%90-%ea%b8%b0.html",
@@ -542,15 +620,7 @@
       "similarity": null
     },
     {
-      "rank": 68,
-      "score": 63.0,
-      "title": "Trump sets post-quantum crypto deadlines, launches broader federal quantum initiative",
-      "url": "https://www.cio.com/article/4188512/trump-sets-post-quantum-crypto-deadlines-launches-broader-federal-quantum-initiative-2.html",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 69,
+      "rank": 74,
       "score": 63.0,
       "title": "Europe is pushing back on Washington\u2019s chip war",
       "url": "https://techcrunch.com/2026/06/24/europe-is-pushing-back-on-washingtons-chip-war/",
@@ -558,7 +628,7 @@
       "similarity": null
     },
     {
-      "rank": 70,
+      "rank": 75,
       "score": 63.0,
       "title": "Making secret scanning more trustworthy: Reducing false positives at scale",
       "url": "https://github.blog/security/making-secret-scanning-more-trustworthy-reducing-false-positives-at-scale/",
@@ -566,23 +636,7 @@
       "similarity": null
     },
     {
-      "rank": 71,
-      "score": 62.0,
-      "title": "Real-Time Voice AI Hears but Does Not Listen",
-      "url": "http://arxiv.org/abs/2606.26083v1",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 72,
-      "score": 62.0,
-      "title": "How GPT-5 helped immunologist Derya Unutmaz solve a 3-year-old mystery",
-      "url": "https://openai.com/index/gpt-5-immunology-mystery",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 73,
+      "rank": 76,
       "score": 62.0,
       "title": "Zero-Day Exploitation of Vulnerability (CVE-2026-20245) in Cisco Catalyst SD-WAN Manager",
       "url": "https://cloud.google.com/blog/topics/threat-intelligence/zero-day-exploitation-cisco-catalyst-sd-wan-manager/",
@@ -590,15 +644,23 @@
       "similarity": null
     },
     {
-      "rank": 74,
+      "rank": 77,
       "score": 62.0,
-      "title": "Scattered Spider members plead guilty to hacking Transport for London",
-      "url": "https://www.bleepingcomputer.com/news/security/scattered-spider-members-plead-guilty-to-hacking-transport-for-london/",
+      "title": "New Gaslight macOS Malware Uses Prompt Injection to Disrupt AI-Assisted Analysis",
+      "url": "https://thehackernews.com/2026/06/new-gaslight-macos-malware-uses-prompt.html",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 75,
+      "rank": 78,
+      "score": 62.0,
+      "title": "Cellebrite said it cut off Russia, but Russia used its tools anyway",
+      "url": "https://techcrunch.com/2026/06/25/cellebrite-said-it-cut-off-russia-but-russia-used-is-tools-anyway/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 79,
       "score": 62.0,
       "title": "Elevated error rate across multiple models",
       "url": "https://status.claude.com/incidents/jbhf20wjmzrf",
@@ -606,7 +668,7 @@
       "similarity": null
     },
     {
-      "rank": 76,
+      "rank": 80,
       "score": 62.0,
       "title": "China black market Nvidia prices rocket in wake of smuggling crackdown and customs freeze \u2014 five-year-old A100 servers triple in price, now fetching up to $82,000",
       "url": "https://www.tomshardware.com/pc-components/gpu-drivers/five-year-old-nvidia-a100-servers-triple-in-price-in-china",
@@ -614,7 +676,7 @@
       "similarity": null
     },
     {
-      "rank": 77,
+      "rank": 81,
       "score": 62.0,
       "title": "In memory of the man who put red and green squiggles under words",
       "url": "https://devblogs.microsoft.com/oldnewthing/20260622-00/?p=112451",
@@ -622,7 +684,7 @@
       "similarity": null
     },
     {
-      "rank": 78,
+      "rank": 82,
       "score": 62.0,
       "title": "White House delays release of US voting machine study as midterms near",
       "url": "https://www.reuters.com/world/white-house-delays-release-us-voting-machine-study-midterms-near-2026-06-19/",
@@ -630,7 +692,7 @@
       "similarity": null
     },
     {
-      "rank": 79,
+      "rank": 83,
       "score": 62.0,
       "title": "Spotlight on WG Device Management",
       "url": "https://kubernetes.io/blog/2026/06/24/wg-device-management-spotlight-2026/",
@@ -638,7 +700,7 @@
       "similarity": null
     },
     {
-      "rank": 80,
+      "rank": 84,
       "score": 62.0,
       "title": "F3",
       "url": "https://github.com/future-file-format/f3",
@@ -646,7 +708,7 @@
       "similarity": null
     },
     {
-      "rank": 81,
+      "rank": 85,
       "score": 62.0,
       "title": "Atlassian's DESIGN.md is Here: What We Learned Testing Portable Design Context in Practice",
       "url": "https://www.atlassian.com/blog/ai-at-work/atlassians-design-md-is-here-what-we-learned-testing-portable-design-context-in-practice",
@@ -654,7 +716,7 @@
       "similarity": null
     },
     {
-      "rank": 82,
+      "rank": 86,
       "score": 62.0,
       "title": "Cloudflare Collaborates With Leading Browsers to Develop a Privacy-First Protocol For the Global Internet",
       "url": "https://www.cloudflare.com/pt-br/press/press-releases/2026/cloudflare-collaborates-with-leading-browsers-to-develop-a-privacy-first-protocol-for-the-global-internet/",
@@ -662,39 +724,15 @@
       "similarity": null
     },
     {
-      "rank": 83,
-      "score": 61.0,
-      "title": "Deno project is going to add cross-platform desktop apps in next major update",
-      "url": "https://www.theregister.com/software/2026/06/24/deno-project-is-going-to-add-cross-platform-desktop-apps-in-next-major-update/5261388",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 84,
-      "score": 61.0,
-      "title": "White House drastically shortens deadline for dropping quantum-vulnerable crypto",
-      "url": "https://arstechnica.com/information-technology/2026/06/executive-order-bumps-up-deadline-to-move-off-quantum-vulnerable-crypto/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 85,
-      "score": 61.0,
-      "title": "Algorithmic Monocultures in Hiring",
-      "url": "https://hai.stanford.edu/news/ai-hiring-tools-can-yield-racial-bias-and-systemic-rejection",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 86,
-      "score": 61.0,
-      "title": "AI Coding Agent Horror Stories: The 13-Hour AWS Outage",
-      "url": "https://www.docker.com/blog/coding-agent-horror-stories-the-13-hour-aws-outage/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
       "rank": 87,
+      "score": 61.0,
+      "title": "Russia uses Cellebrite to break into human rights activist\u2019s phone, even after cancellation of contract",
+      "url": "https://cyberscoop.com/russia-cellebrite-activist-phone-hacking/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 88,
       "score": 61.0,
       "title": "Moebius",
       "url": "https://hustvl.github.io/Moebius/",
@@ -702,7 +740,7 @@
       "similarity": null
     },
     {
-      "rank": 88,
+      "rank": 89,
       "score": 61.0,
       "title": "Amadey and StealC Malware Network Disrupted, 27M Stolen Credentials Recovered",
       "url": "https://thehackernews.com/2026/06/amadey-and-stealc-malware-network.html",
@@ -710,7 +748,7 @@
       "similarity": null
     },
     {
-      "rank": 89,
+      "rank": 90,
       "score": 61.0,
       "title": "Chrome 149 Update Resolves 18 Severe Vulnerabilities",
       "url": "https://www.securityweek.com/chrome-149-update-resolves-18-severe-vulnerabilities/",
@@ -718,7 +756,15 @@
       "similarity": null
     },
     {
-      "rank": 90,
+      "rank": 91,
+      "score": 61.0,
+      "title": "Zig's new bitCast semantics and LLVM back end improvements",
+      "url": "https://ziglang.org/devlog/2026/#2026-06-25",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 92,
       "score": 61.0,
       "title": "MolmoMotion: Language-guided 3D motion forecasting",
       "url": "https://huggingface.co/blog/allenai/molmomotion",
@@ -726,7 +772,7 @@
       "similarity": null
     },
     {
-      "rank": 91,
+      "rank": 93,
       "score": 61.0,
       "title": "Introducing LifeSciBench",
       "url": "https://openai.com/index/introducing-life-sci-bench/",
@@ -734,15 +780,7 @@
       "similarity": null
     },
     {
-      "rank": 92,
-      "score": 60.0,
-      "title": "Agentic Generation of AST Transformation Rules for Fixing Breaking Updates",
-      "url": "http://arxiv.org/abs/2606.24446v1",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 93,
+      "rank": 94,
       "score": 60.0,
       "title": "Mandiant reveals how Cisco SD-WAN zero-day attacks gained root access",
       "url": "https://www.bleepingcomputer.com/news/security/mandiant-reveals-how-cisco-sd-wan-zero-day-attacks-gained-root-access/",
@@ -750,7 +788,7 @@
       "similarity": null
     },
     {
-      "rank": 94,
+      "rank": 95,
       "score": 60.0,
       "title": "Base Beryl: B20 Token Standard, Faster Withdrawals, Reth V2",
       "url": "https://x.com/buildonbase/status/2067693904909189141",
@@ -758,7 +796,7 @@
       "similarity": null
     },
     {
-      "rank": 95,
+      "rank": 96,
       "score": 60.0,
       "title": "Malicious Edge extension abuses Native Messaging as bridge to malware",
       "url": "https://www.bleepingcomputer.com/news/security/malicious-edge-extension-abuses-native-messaging-as-bridge-to-malware/",
@@ -766,7 +804,7 @@
       "similarity": null
     },
     {
-      "rank": 96,
+      "rank": 97,
       "score": 60.0,
       "title": "Malicious hackers exploit Cisco zero-day for highest access level at communications service provider",
       "url": "https://cyberscoop.com/cisco-sd-wan-zero-day-exploit-communications-provider/",
@@ -774,7 +812,7 @@
       "similarity": null
     },
     {
-      "rank": 97,
+      "rank": 98,
       "score": 60.0,
       "title": "RFC 9958 - Post-Quantum Cryptography for Engineers",
       "url": "https://datatracker.ietf.org/doc/html/rfc9958",
@@ -782,7 +820,7 @@
       "similarity": null
     },
     {
-      "rank": 98,
+      "rank": 99,
       "score": 60.0,
       "title": "BitNet Text Embeddings",
       "url": "http://arxiv.org/abs/2606.25674v1",
@@ -790,25 +828,57 @@
       "similarity": null
     },
     {
-      "rank": 99,
+      "rank": 100,
       "score": 60.0,
       "title": "Production-Ready Autonomous Incident Resolution with AWS DevOps Agent (now GA) and Datadog MCP Server",
       "url": "https://aws.amazon.com/blogs/devops/production-ready-autonomous-incident-resolution-with-aws-devops-agent-now-ga-and-datadog-mcp-server/",
       "matched_tldr_idx": null,
       "similarity": null
-    },
-    {
-      "rank": 100,
-      "score": 60.0,
-      "title": "RubyLLM: A Ruby framework for all major AI providers",
-      "url": "https://rubyllm.com/",
-      "matched_tldr_idx": null,
-      "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.07142857142857142,
+    "25": 0.07142857142857142,
+    "50": 0.07142857142857142,
+    "100": 0.14285714285714285
+  },
+  "hits_at": {
+    "10": 1,
+    "25": 1,
+    "50": 1,
+    "100": 2
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://electrek.co/2026/06/24/tesla-sunrun-16gw-vpp-data-centers/",
+    "https://www.cnbc.com/2026/06/24/openai-and-broadcom-reveal-jalapeno-first-ai-chip-in-partnership.html",
+    "https://time.com/article/2026/06/24/500-million-intercept-fund-eliminate-common-cold/",
+    "https://www.wsj.com/tech/ai/familiar-machines-and-magic-robot-c8711e45",
+    "https://robenglander.com/writing/the-case-for-language-native-software/",
+    "https://www.jimmont.com/llm-style-token-costs",
+    "https://gizmodo.com/anthropics-white-house-negotiations-are-reportedly-on-track-after-weirdo-dario-amodei-was-replaced-2000777207",
+    "https://www.platformer.news/matt-garman-aws-ceo-interview-ai-jobs/",
+    "https://structural.chat/articles/programming-in-markdown/",
+    "https://rico.codes/loops-not-prompts",
+    "https://zackproser.com/blog/build-agents-that-open-prs",
+    "https://posthog.com/blog/sql-parser",
+    "https://thenextweb.com/news/qualcomm-dragonfly-meta-ai-data-center-chips-modular",
+    "https://www.bloomberg.com/news/articles/2026-06-24/inside-the-shadow-market-selling-access-to-amazon-employees"
+  ],
+  "tldr_domains": [
+    "electrek.co",
+    "cnbc.com",
+    "time.com",
+    "sj.com",
+    "robenglander.com",
+    "jimmont.com",
+    "gizmodo.com",
+    "platformer.news",
+    "structural.chat",
+    "rico.codes",
+    "zackproser.com",
+    "posthog.com",
+    "thenextweb.com",
+    "bloomberg.com"
+  ]
 }

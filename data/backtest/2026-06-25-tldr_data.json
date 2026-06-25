@@ -1,9 +1,33 @@
 {
   "date": "2026-06-25",
   "newsletter": "tldr_data",
-  "fetched_at": "2026-06-25T10:03:14.354760+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-06-25T17:53:11.210992+00:00",
+  "tldr_titles": [
+    "How Netflix Simplified Batch Compute with Kueue",
+    "Inside One Engineer's Journey to Master Long-Running Agents",
+    "Client-Side Load Balancing at a Million Requests Per Second",
+    "Real-Time Personalisation at Scale: How Zepto Understands What You Want, Right Now",
+    "Broken Windows of Data",
+    "Why Technically Excellent Data Teams Still Fail",
+    "Can We Agree on a Storage/Workload Architecture Taxonomy?",
+    "Uniting analytics with AI agents as work and roles shift in the GenAI era",
+    "Clustering Unstructured Text with LLM Embeddings and HDBSCAN",
+    "Running AI Agents Safely Inside Kubernetes",
+    "British Columbia, Time Zones, and Postgres"
+  ],
+  "tldr_matched": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false,
+    false
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -58,8 +82,8 @@
       "score": 63.0,
       "title": "The analytics engineer in 2026: system designer, governance owner, AI context provider",
       "url": "https://www.getdbt.com/blog/the-analytics-engineer-in-2026-system-designer-governance-owner-ai-context-provider",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 7,
+      "similarity": 0.6773048043251038
     },
     {
       "rank": 8,
@@ -151,14 +175,22 @@
     },
     {
       "rank": 19,
-      "score": 57.0,
-      "title": "EDB converges analytics on Postgres to support AI agents",
-      "url": "https://www.infoworld.com/article/4188484/edb-converges-analytics-on-postgres-to-support-ai-agents.html",
+      "score": 58.0,
+      "title": "Optimizing cloud economics with linear elastic caching",
+      "url": "https://research.google/blog/optimizing-cloud-economics-with-linear-elastic-caching/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
       "rank": 20,
+      "score": 57.0,
+      "title": "EDB converges analytics on Postgres to support AI agents",
+      "url": "https://www.infoworld.com/article/4188484/edb-converges-analytics-on-postgres-to-support-ai-agents.html",
+      "matched_tldr_idx": 7,
+      "similarity": 0.6391214728355408
+    },
+    {
+      "rank": 21,
       "score": 57.0,
       "title": "Mistral OCR 4 Ships Bounding Boxes for 170-Language Document AI",
       "url": "https://www.implicator.ai/mistral-ocr-4-ships-bounding-boxes-for-170-language-document-ai/",
@@ -166,7 +198,7 @@
       "similarity": null
     },
     {
-      "rank": 21,
+      "rank": 22,
       "score": 56.0,
       "title": "PostgreSQL is enough (2024)",
       "url": "https://gist.github.com/cpursley/c8fb81fe8a7e5df038158bdfe0f06dbb",
@@ -174,9 +206,45 @@
       "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.09090909090909091,
+    "25": 0.09090909090909091,
+    "50": 0.09090909090909091,
+    "100": 0.09090909090909091,
+    "22": 0.09090909090909091
+  },
+  "hits_at": {
+    "10": 1,
+    "25": 1,
+    "50": 1,
+    "100": 1,
+    "22": 1
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://netflixtechblog.com/how-netflix-simplified-batch-compute-with-kueue-87860682629c",
+    "https://careersatdoordash.com/blog/engineers-journey-long-running-ai-agents/",
+    "https://engineering.zalando.com/posts/2026/06/client-side-load-balancing.html",
+    "https://blog.zepto.com/real-time-personalisation-at-scale-how-zepto-understands-what-you-want-right-now-d743b13367c8",
+    "https://medium.com/booking-com-development/broken-windows-of-data-7f7d12ce2cd0",
+    "https://practicaldatacommunity.substack.com/p/why-technically-excellent-data-teams",
+    "https://jack-vanlightly.com/blog/2026/6/21/can-we-agree-on-a-storage/workload-architecture-taxonomy",
+    "https://techblog.lycorp.co.jp/en/techverse2026-105",
+    "https://machinelearningmastery.com/clustering-unstructured-text-with-llm-embeddings-and-hdbscan/",
+    "https://kodekloud.com/blog/running-ai-agents-safely-inside-kubernetes/",
+    "https://www.crunchydata.com/blog/british-columbia-and-time-zone-changes"
+  ],
+  "tldr_domains": [
+    "netflixtechblog.com",
+    "careersatdoordash.com",
+    "engineering.zalando.com",
+    "blog.zepto.com",
+    "medium.com",
+    "practicaldatacommunity.substack.com",
+    "jack-vanlightly.com",
+    "techblog.lycorp.co.jp",
+    "machinelearningmastery.com",
+    "kodekloud.com",
+    "crunchydata.com"
+  ]
 }

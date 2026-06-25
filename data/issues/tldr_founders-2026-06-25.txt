@@ -6,33 +6,25 @@ TLDR Founders 2026-06-25
 📈
 Headlines & Trends
 
-Adobe Just Deferred a Big Annual Price Increase. It’s the First Big Crack in B2B Pricing Power Since 2022. (1 minute read)
-
-Adobe just deferred roughly $500M ARR of Creative Cloud price increases it had already planned for the back half of FY2026, breaking a decade-long habit of raising prices like clockwork. For four years the B2B playbook was identical: hike every 12 to 18 months, bolt on an AI SKU, push net revenue retention above 110%, and customers paid because they had nowhere to go. When one of software's most pricing-powerful companies voluntarily walks away from a planned hike, the signal isn't generosity. It's the first real crack in B2B pricing power since 2022.
-
-OpenAI unveils its first custom chip, built by Broadcom (1 minute read)
-
-OpenAI released Jalapeño, its first custom inference chip, co-designed with Broadcom and partly developed with OpenAI's own models. The play is margin: the chip targets the cost of running real-time models like Codex, where early tests show better performance-per-watt than current alternatives, while pre-training likely stays on Nvidia. It puts OpenAI on the same path as Google and Amazon, owning every layer from chip to product so inference economics stop depending on a single supplier. For startups built on OpenAI's API, cheaper inference upstream is the lever that eventually moves their own unit costs.
-
-Qualcomm to Acquire AI Software Firm Modular in $3.9 Billion Stock Deal (5 minute read)
+Adobe Just Deferred a Big Annual Price Increase. It’s the First Big Crack in B2B Pricing Power Since 2022. (5 minute read)
 
 (blurb not generated)
+
+General Intuition, which trains AI agents in spatial reasoning via gameplay footage, raised $320M led by Khosla at a $2.3B valuation, for $454M in total funding (Rebecca Bellan/TechCrunch) (1 minute read)
+
+General Intuition raised $320M led by Khosla at a $2.3B valuation, bringing total funding to $454M to train AI agents on spatial reasoning using gameplay footage. The bet is that video games are a cheaper, richer source of physical-world reasoning data than the real-world capture most robotics and agent labs rely on. Spatial reasoning remains one of the weakest links in current models, and whoever supplies that capability cheaply becomes infrastructure for the robotics and agent companies building on top.
 
 AI Startup Midjourney Pivots to Health With Ultrasound Machine (5 minute read)
 
 (blurb not generated)
 
-Mirendil, founded by former Anthropic researchers and seeking to build self-improving AI for open-source developers, raised a $200M seed at a $1B valuation (Tina Li/Wall Street Journal) (1 minute read)
+Qualcomm to Acquire Modular (5 minute read)
 
-Mirendil, founded by former Anthropic researchers, raised a $200M seed at a $1B valuation from Andreessen Horowitz and Kleiner Perkins to build self-improving AI that can do the job of an AI engineer. The pitch is automation aimed at open-source developers, with the system improving itself rather than waiting on human tuning. A billion-dollar valuation on a seed round, before any product ships, signals how much capital is now chasing AI that writes and maintains the tools other developers depend on.
+(blurb not generated)
 
-Qualcomm to Acquire Modular (1 minute read)
+‘Digit’ maker Agility Robotics to go public in $2.5B deal — here’s what the filings say about its finances (5 minute read)
 
-Qualcomm agreed to acquire Modular, the AI infrastructure startup building a unified software stack for running models across different chips. The deal pushes Qualcomm beyond its mobile and Snapdragon roots and into the inference software layer, where the real fight against Nvidia's CUDA lock-in is being waged. For founders, it is another sign that the hardware giants now see the portability layer between models and silicon as the part of the stack worth owning outright.
-
-‘Digit’ maker Agility Robotics to go public in $2.5B deal — here’s what the filings say about its finances (1 minute read)
-
-Agility Robotics is taking its Digit humanoid public through a $2.5B SPAC merger with Churchill Capital Corp XI, becoming the first US-listed company built solely around humanoid robots. The filings show why the timing matters more than the numbers: Agility doesn't disclose revenue, remains unprofitable, burned roughly $100M in cash last year, and saw operating expenses climb to about $111M from $71M. Its headline $300M in "committed" Digit v5 orders comes with fine print that it isn't current revenue and hinges on a single undisclosed customer. The SPAC reload is funding humanoid bets long before the unit economics are proven.
+(blurb not generated)
 
 Records broken as eight European startups raised $1bn+ rounds in 2026 (5 minute read)
 
@@ -46,43 +38,51 @@ Anthropic Backer Menlo Ventures Raises $3B In New Funds To Back AI Startups Acro
 
 (blurb not generated)
 
-Anthropic accuses Alibaba of running the largest distillation campaign yet against Claude (1 minute read)
+Anthropic accuses Alibaba of campaign to 'brazenly' and 'illicitly' extract AI capabilities (1 minute read)
 
-Anthropic told senators and White House officials that operators linked to Alibaba's Qwen lab ran nearly 29 million Claude exchanges across about 25,000 fake accounts between April and June, the largest distillation campaign yet against a US lab. The queries targeted software engineering and agentic reasoning, Claude's most commercially valuable skills, and the volume alone exceeded Anthropic's earlier February allegations against DeepSeek, MiniMax, and Moonshot combined. The frontier labs are treating distillation as a national security problem, and if your moat is model quality, your competitor may be training on your outputs faster than you can ship them.
+Anthropic told the Senate Banking Committee that Alibaba ran the largest known distillation attack against its models to date, using roughly 25,000 fraudulent accounts to pull 28.8 million exchanges between April 22 and June 5. Distillation lets a weaker model train on a stronger one's outputs, so the cost of catching up keeps falling for whoever can scrape enough responses. For founders building on frontier APIs, the takeaway is that your model's outputs are now a contested asset, and the fight over who can copy them is moving from blog posts to Congress and export controls.
+
+The engineer who built Swift and LLVM sold his AI startup to Qualcomm for $4B (1 minute read)
+
+Qualcomm is acquiring Modular, the AI infrastructure startup co-founded by Chris Lattner, in an all-stock deal worth about $3.92B, doubling its valuation from $1.6B just nine months ago. Modular's pitch is hardware-agnostic AI software that lets developers write an app once and run it across Nvidia, AMD, Apple, and Qualcomm chips without rewriting their stack, and it already counts Oracle, Amazon, Nvidia, and AMD as customers. The target is the CUDA software lock-in that keeps Nvidia almost impossible to displace, and Qualcomm just bought the most credible attempt to break it.
 
 Memory Chips and China, Microsoft and Chinese Models (5 minute read)
 
 (blurb not generated)
 
-Google is finally opening the Play Store to outside payments (5 minute read)
+OpenAI, Anthropic and SpaceX Are Shaking Up VC Fundraising (1 minute read)
 
-(blurb not generated)
+A handful of giants now drives the entire VC fundraising market. OpenAI, Anthropic, and SpaceX have become large enough that the prospect of outsized gains lets firms raise record amounts of capital just to buy into them. The result is a barbell: money pools into a few late-stage names while the long tail of startups competes for what's left, which reshapes who gets funded and on what terms.
 
 Anthropic Veterans’ Startup Seeks to Help Scientists Develop Their Own AI (5 minute read)
 
 (blurb not generated)
 
-The VC that turned a $750M Anthropic deal into a $14B stake just raised $3B to do it again (1 minute read)
+French health insurance outfit Alan agrees €480M funding round (1 minute read)
 
-Menlo Ventures raised $3 billion across two AI funds, its largest haul in 50 years, on the strength of an Anthropic stake now worth roughly $14 billion off about $1 billion invested. The firm backed Anthropic in 2023 when it was pre-product and pre-revenue, then led its $750M Series D through an unconventional special-purpose vehicle. One foundation-model bet now bankrolls a full-stack AI portfolio spanning Lovable, Suno, and Skild AI, which is the playbook every AI-era fund is now trying to copy.
+Alan raised €480M in a Series G at a €5.5bn valuation, led by new investor Prosus and coming just months after a €100M round at €5bn. The Paris-based health insurer crossed €800M in ARR in Q1 2026 with 1.1 million customers across France, Spain, Belgium, and Canada. The pace tells the story: European insurtech that pairs coverage with care navigation and AI health tooling is now compounding fast enough to raise twice in a single year, and Alan plans to spend the money on new countries and acquisitions.
 
 After betting the firm on Anthropic, Menlo Ventures raises victorious $3B fund (5 minute read)
 
 (blurb not generated)
 
-AI coding agents could soon cost more than the developers using them (1 minute read)
+AI coding agents could soon cost more than the developers using them (5 minute read)
 
-AI coding agents are on track to cost more per month than the salaries of the developers running them, as token-heavy autonomous workflows rack up usage faster than any per-seat license ever did. A single Codex-style agent left running can burn through compute continuously, and recent reports show clumsy logging alone quietly writing data and costing millions. The implication is that the old per-developer pricing math breaks down, and the constraint on engineering output shifts from headcount to how tightly you govern agent spend.
+(blurb not generated)
 
-Assort Health, which develops AI voice agents for health care to handle scheduling and more, raised a $120M Series C led by Menlo Ventures at a $1.2B valuation (Heather Landi/Fierce Healthcare) (1 minute read)
+AI Revenue Starts to Exceed a Key Infrastructure Cost But Not By Much (1 minute read)
 
-Assort Health raised a $120M Series C led by Menlo Ventures at a $1.2B valuation, putting a new unicorn on AI voice agents that handle scheduling and other front-desk work for health systems. The bet is that the highest-volume, lowest-glamour calls — booking, rescheduling, intake — are where voice AI clears real cost before it touches anything clinical. With Menlo writing the check, expect more capital chasing the back-office layer of healthcare rather than diagnosis.
+AI revenue at the biggest cloud players has finally crossed $25B, edging past the depreciation on the infrastructure built to generate it, but the margin is thin. For Meta, Alphabet, and Microsoft the numbers now technically work, while Google and Amazon still need sustained premium pricing and strong user growth to recoup what they've spent. The takeaway is that the capex bet is no longer underwater, but it isn't paying off either, and the gap between spending and return stays narrow enough that any slip in demand flips the math back to red.
 
-OpenAI, Broadcom Develop Custom Chip for AI Inference (1 minute read)
+Sail, whose software optimizes how AI models run on existing chips, emerges from stealth with $80M in seed and Series A led by Kleiner at a $450M valuation (Lily Mae Lazarus/Fortune) (1 minute read)
 
-OpenAI is co-designing a custom inference chip with Broadcom, called Jalapeño, built to cut the cost and improve the efficiency of running its models. The move pushes OpenAI further into owning the full stack beneath its products, from models down to the silicon they run on. For a company whose biggest constraint is compute economics, controlling the inference hardware is how it stops paying Nvidia's margins and starts setting its own cost curve.
+Sail emerged from stealth with $80M in combined seed and Series A led by Kleiner Perkins at a $450M valuation. Its software squeezes more performance out of AI models on the chips companies already own, rather than chasing scarce new hardware. That points at a quieter shift in the AI buildout: with GPU supply tight and compute capex ballooning, the cheapest path to more capacity is increasingly software that wrings more out of the silicon already racked, not another order with Nvidia.
 
-Anthropic Accuses Alibaba of ‘Illicitly’ Accessing AI Models (5 minute read)
+The Fund That Backed Revolut at £300K. Now Raising $320M for What Comes Next (5 minute read)
+
+(blurb not generated)
+
+Exclusive: British Business Bank eyes stake in EU’s €5bn Scaleup Fund (5 minute read)
 
 (blurb not generated)
 
@@ -101,13 +101,21 @@ We used context engineering to 5x conversion and 2x activation (5 minute read)
 
 (blurb not generated)
 
-PayPal Put Agentforce on 8,000 Leads a Month No Human Was Going to Call. Conversions Jumped 50%. (1 minute read)
+The AI era requires a different kind of experimentation. (1 minute read)
 
-PayPal pointed an Agentforce SDR agent at the 8,000 merchants a month its 200-rep org was never going to call, the ones who stalled partway through onboarding, and meeting conversion is now running about 50% higher than reps managed alone. The agent runs a 10-nudge cadence on every lead and books the meeting, then hands the rep a qualified prospect with full context loaded. The lesson for operators is to stop waiting on clean CRM data and aim agents at the leads you already drop, where anything beats zero coverage.
+Your 2022 experimentation playbook optimized for minor tweaks, slow rollouts, and two-week wins, mostly pulling forward revenue that would have arrived anyway rather than driving step-function change. The author argues AI has collapsed the build cost that justified that caution, so the smart play is to run fewer cosmetic tests and aim experiments at foundational complexity and monetization, the bets that were too slow to attempt before. Some things are now cheap enough to just ship, which means the real skill is deciding what no longer needs an A/B test at all.
+
+PayPal Put Agentforce on 8,000 Leads a Month No Human Was Going to Call. Conversions Jumped 50%. (5 minute read)
+
+(blurb not generated)
 
 The founder's playbook: Building an AI-native startup (5 minute read)
 
 (blurb not generated)
+
+Booking.com for Business Shipped a Free Expense Tool in 6 Weeks. Don’t Copy the Tool, Copy the Sequence. (1 minute read)
+
+Booking.com for Business shipped a free expense tool in six weeks by inverting the usual order: instead of asking what AI can do, they hunted for where customers hit friction. In B2B that matters because friction is where churn lives, the moments users stall out and leave, so the admin wrapping a trip, reconstructing a $42 receipt three weeks later, was a bigger pain than booking the trip itself. The playbook to copy isn't the expense product, it's the sequence of finding the friction and building straight at it.
 
 People prefer products with fewer ingredients (5 minute read)
 
@@ -139,17 +147,21 @@ Stripe and AWS enable AI agent payments for content owners and publishers (5 min
 🎁
 Miscellaneous
 
-Founding a company in Germany: €9600, 152 days and I still can't send an invoice (1 minute read)
+Founding a company in Germany: €9600, 152 days and I still can't send an invoice (5 minute read)
 
-A founder spent more than €9,600 and 152 days incorporating his second company in Germany, and he still can't send a single invoice. The notary, two courts, a law firm, a tax firm, and the software vendors all billed him on time, while the one VAT ID he needs for reverse-charge invoicing to foreign clients is still coming by post. Everyone in the chain can invoice him; he is the only one who can't invoice anyone.
+(blurb not generated)
 
 Algorithmic Monocultures in Hiring (5 minute read)
 
 (blurb not generated)
 
-Ending respiratory infections (1 minute read)
+Ending respiratory infections (5 minute read)
 
-Intercept is a $500M philanthropic initiative betting that respiratory infections like colds and flu can be eliminated, the way clean water and pharma made cholera and typhoid rare a century ago. The bet rests on new platform technologies, immunology advances, and protein design tools funding two product types: broad-spectrum preventatives and air cleaning. The wager is that the gap was never the science but the funding, since broad-spectrum work fits neither philanthropic nor commercial models.
+(blurb not generated)
+
+Hey Nico, you didn't vibe code your data room but stole it from Papermark (1 minute read)
+
+Papermark's founder publicly accused another YC founder of stealing its open-source and enterprise-licensed code to build a competing data-room product, calling it copyright infringement rather than vibe coding. The open-source angle cuts both ways: publishing your code earns trust and contributions, but it also hands competitors a working blueprint and shifts the fight onto license enforcement. For founders building on permissive or dual-licensed code, the moat was never the code itself.
 
 My Vibe Coding Adventure, The App and the Experience, Ten Takeaways (5 minute read)
 
@@ -166,14 +178,14 @@ Tandem Health CEO: ‘We’re not dependent on OpenAI or Anthropic’ (5 minute 
 ⚡
 Quick Links
 
+Unconventional AI releases its first model, built on an oscillator architecture its founder says could cut power use by a factor of a thousand (1 minute read)
+
+Unconventional AI released Un-0, an image generation model matching diffusion quality on simulated oscillator hardware that doesn't exist yet.
+
 Why we're bullish on loops (5 minute read)
 
 (blurb not generated)
 
-Superhuman has acquired AI authenticity service GPTZero (5 minute read)
+You may see new ways to pay for Android apps and subscriptions starting next week (1 minute read)
 
-(blurb not generated)
-
-A PhD student’s nerve-healing polymer just raised €60M to take on the US operating room (5 minute read)
-
-(blurb not generated)
+Starting June 30, Android developers in the US, UK, and Europe can route purchases outside Google Play Billing and skip the cut.

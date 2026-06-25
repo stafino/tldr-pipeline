@@ -6,41 +6,57 @@ TLDR InfoSec 2026-06-25
 🔓
 Attacks & Vulnerabilities
 
-Zero-Day Exploitation of Vulnerability (CVE-2026-20245) in Cisco Catalyst SD-WAN Manager (2 minute read)
+Zero-Day Exploitation of Vulnerability (CVE-2026-20245) in Cisco Catalyst SD-WAN Manager (5 minute read)
 
-Mandiant disclosed active zero-day exploitation of CVE-2026-20245, a privilege-escalation flaw in Cisco Catalyst SD-WAN Manager that lets an attacker with a compromised admin account reach root via a malicious CSV upload that bypasses file-upload filtering. The actor, observed at a service provider in early 2026, established rogue SSH peering, altered default account passwords, and ran anti-forensic cleanup scripts to purge indicators, so defenders should patch, rotate appliance credentials, and audit peering configurations.
+(blurb not generated)
 
 FortiBleed: 86,000 Fortinet Device Credentials Compromised (5 minute read)
 
 (blurb not generated)
 
-Embedding Forbidden Text in Spyware to Discourage AI Analysis (1 minute read)
+Embedding Forbidden Text in Spyware to Discourage AI Analysis (5 minute read)
 
-A malware developer is prepending JavaScript block comments containing fake nuclear and biological weapons policy text to spyware payloads, aiming to derail LLM-based triage that feeds file headers to a model without isolating them as untrusted data. The trick can trigger refusal, context pollution, or premature classification in naive LLM-first scanners, but it does not evade YARA rules, entropy checks, AST parsing, or behavioral detection.
+(blurb not generated)
 
 Mandiant reveals how Cisco SD-WAN zero-day attacks gained root access (5 minute read)
 
 (blurb not generated)
 
-Cordyceps CI/CD Flaws Expose 300+ GitHub Repositories to Supply-Chain Attacks (1 minute read)
+Interesting Paper Exploring Prompt Injection (1 minute read)
 
-Novee Security disclosed Cordyceps, a class of CI/CD misconfiguration in which untrusted pull requests trigger privileged GitHub Actions workflows, enabling command injection, credential theft, and supply-chain compromise exploitable by any unauthenticated user with a free account. A scan of roughly 30,000 high-impact repositories found 300+ fully exploitable, including projects at Microsoft, Google, Apache, and Cloudflare; audit workflows that run on `pull_request_target` and strip write permissions and secrets from untrusted PR triggers.
+A new paper, "Prompt Injection as Role Confusion," argues that LLMs don't actually represent role tags as security boundaries but instead learn the textual style of each role/instruction block, which is why prompt injection succeeds. The authors conclude that without genuine role perception, injection defense stays whack-a-mole, and continuous role boundaries enable attacks that subtly shift model state through innocuous-looking text at scale.
 
-CISA warns of max severity Ubiquiti flaws exploited in attacks (1 minute read)
+Cordyceps CI/CD Flaws Expose 300+ GitHub Repositories to Supply-Chain Attacks (5 minute read)
 
-CISA added four actively exploited flaws to its KEV catalog, including three max-severity Ubiquiti UniFi OS bugs (CVE-2026-34908, -34909, -34910) that Bishop Fox chained for unauthenticated RCE with elevated privileges, plus a critical Lantronix EDS5000 command-injection (CVE-2025-67038). BOD 26-04 gives federal agencies three days to patch; apply Ubiquiti's May updates and Lantronix firmware 2.2.0.0R1, and run Bishop Fox's detection script to find vulnerable instances.
+(blurb not generated)
+
+CISA warns of max severity Ubiquiti flaws exploited in attacks (5 minute read)
+
+(blurb not generated)
 
 Cisco Unified CM flaw CVE-2026-20230 now exploited in attacks (5 minute read)
 
 (blurb not generated)
 
-Cisco Catalyst SD-WAN Zero-Day CVE-2026-20245 Exploited to Gain Root Access (1 minute read)
+Chrome Ad Blocker with 10M+ Installs Found with Dormant Script Injection Capability (1 minute read)
 
-Mandiant found an unknown threat actor exploited Cisco Catalyst SD-WAN flaw CVE-2026-20245 (CVSS 7.8) as a zero-day for at least two months before disclosure, uploading a malicious CSV to gain root on a communications provider's device. The attack chained earlier authentication-bypass zero-days (CVE-2026-20127, CVE-2026-20182) and used anti-forensic config restoration to evade detection, so apply Cisco's patches and audit SD-WAN peering connections and admin credentials.
+Adblock for YouTube, a Featured Chrome extension with over 10M installs, contains a dormant script-injection path that researchers at Island found can execute arbitrary JavaScript on any site via a single server-side config change, with no extension update or store review. No malicious payload has been observed, but the capability enables page reading, data theft, and session hijacking inside authenticated apps, and the extension shares ties to related ad blockers already pulled for malware.
+
+New Gaslight macOS Malware Uses Prompt Injection to Disrupt AI-Assisted Analysis (1 minute read)
+
+SentinelOne disclosed Gaslight, a Rust-based macOS implant and infostealer attributed with high confidence to North Korea-aligned actors, which embeds a prompt injection payload of fabricated system-failure messages to make LLM-assisted triage agents abort their own analysis. It persists via a LaunchAgent masquerading as "com.apple.system.services.activity," runs a Telegram bot C2 with a six-command shell, and harvests keychain, browser, and Terminal data into an exfiltrated ZIP.
+
+Cisco Catalyst SD-WAN Zero-Day CVE-2026-20245 Exploited to Gain Root Access (5 minute read)
+
+(blurb not generated)
 
 Fake AI Agent Skill Passed Security Scans and Reportedly Reached 26,000 Agents (5 minute read)
 
 (blurb not generated)
+
+New macOS malware embeds fake errors to confuse AI analysis tools (1 minute read)
+
+SentinelOne discovered macOS.Gaslight, a Rust backdoor and infostealer it attributes with high confidence to a North Korean-linked actor, which embeds a 3.5 KB cascade of 38 fake system-failure messages as prompt injection to make LLM-assisted triage agents doubt their session and abort analysis. The fabricated memory dumps, crash reports, and SQL injection alerts target the analysis agent's perception rather than the sandbox, so teams using AI-assisted reversing should isolate model output from execution decisions.
 
 Anthropic’s Fable 5 Model Jailbroken Within Days (5 minute read)
 
@@ -62,29 +78,13 @@ FortiBleed Attackers Turn Firewalls Into Credential Stealers as Heists Persist (
 
 (blurb not generated)
 
-Amadey, StealC malware operations disrupted in Operation Endgame action (1 minute read)
-
-Operation Endgame disrupted the Amadey botnet and StealC infostealer, with Microsoft, Europol, and partners taking down 326 servers and 142 domains tied to the malware-as-a-service operations, alongside the SocGholish loader. The action recovered roughly 27 million credentials stolen from over 385,000 systems; defenders should treat any credentials handled on affected hosts as compromised and force rotation.
-
-Klue hack results in data breach at several cybersecurity firms (5 minute read)
+Amadey, StealC malware operations disrupted in Operation Endgame action (5 minute read)
 
 (blurb not generated)
 
-Cisco Unified CM Flaw Exploited After PoC Reveals File-Write Path to Root (5 minute read)
+STOCKSTAY Another Day: The Latest Addition to Turla’s Intelligence Gathering Apparatus (2 minute read)
 
-(blurb not generated)
-
-Chrome 149 Update Resolves 18 Severe Vulnerabilities (1 minute read)
-
-Google released Chrome 149, patching 18 vulnerabilities including four critical, with more than half being use-after-free memory bugs (three critical, seven high) that can enable RCE and, when chained with OS or privileged-process flaws, sandbox escape. None are known to be exploited in the wild; update to 149.0.7827.196/197 on Windows and macOS and 149.0.7827.196 on Linux.
-
-CISA Warns Critical Lantronix EDS5000 Flaw Is Being Actively Exploited (5 minute read)
-
-(blurb not generated)
-
-Attackers Hit Cisco SD-WAN Flaw 2 Months Before Disclosure (5 minute read)
-
-(blurb not generated)
+Google Threat Intelligence Group attributed STOCKSTAY, a multi-component .NET backdoor deployed since at least December 2022, to FSB-linked Turla (aka Secret Blizzard, UAC-0194), citing significant code overlap with the group's KAZUAR toolkit. The backdoor has hit Ukrainian government and military targets and entities tied to Italian foreign policy, communicating with C2 over secure WebSocket via the websocket-sharp library for ongoing espionage.
 
 🧠
 Strategies & Tactics
@@ -109,55 +109,47 @@ GitHub Updates actions/checkout to Block Common Pwn Request Attack Patterns (5 m
 
 (blurb not generated)
 
-LLM security advice looks solid until you check the hard cases (1 minute read)
+New MCP specification kills old risks but opens fresh attack surfaces, Akamai finds (1 minute read)
 
-HelpBench, built by University College London and Google, tested 18 leading LLMs against 450 real privacy and security help questions sourced from Reddit and scored by expert rubrics. Advice averaged 82%, strongest on scams and account compromise, but roughly one in ten answers fell below 65%, with the worst failures in abuse and stalking scenarios. Models advised removing phone spyware without warning that abrupt removal can tip off an abuser, and praised an encrypted-vault deletion that left the original file recoverable. Watch what your users are being told.
+Akamai's analysis of the MCP 2026-07-28 specification finds the overhaul removes protocol-level risks but shifts security burden onto developers. The rebuild kills protocol-managed sessions (eliminating Mcp-Session-Id hijacking), restricts server-initiated prompts, and mandates OAuth 2.1 with PKCE. The tradeoff: the new stateless model hands clients tracking IDs and state objects, so servers using predictable identifiers or skipping integrity validation expose workflow-hijacking and cross-tenant data access. Audit implementations before the July 28 release; the deprecation window for legacy functionality runs 12 months.
 
-Decoupling Reconnaissance and Exploitation: Measuring the Capability Boundaries of LLM-Based Web Penetration Testing (1 minute read)
+Decoupling Reconnaissance and Exploitation: Measuring the Capability Boundaries of LLM-Based Web Penetration Testing (5 minute read)
 
-This paper proposes a two-stage evaluation framework that separates exploitation from reconnaissance to measure where LLM-based penetration-testing agents actually fail, using ground-truth injection across 70 web vulnerability testbeds. Given accurate vulnerability context, five open-source agents hit a 90% functional success rate on exploitation, but autonomous reconnaissance plateaus near 50% recall, mostly from failing to parse unstructured telemetry. Architecture matters: multi-agent designs handle long-chain deserialization better, while monolithic and graph-driven agents win on short-chain injections and access-control flaws.
+(blurb not generated)
 
 OpenAI rolls out AI-led push to fix open-source software flaws (5 minute read)
 
 (blurb not generated)
 
-How Reliable Is Your Jailbreak Judge? Calibration and Adversarial Robustness of Automated ASR Scoring (1 minute read)
+How Reliable Is Your Jailbreak Judge? Calibration and Adversarial Robustness of Automated ASR Scoring (5 minute read)
 
-This paper audits the automated judges that assign attack-success rates in LLM jailbreak research, testing two families against 596 human-labeled HarmBench completions. Dedicated classifiers over-flag (recall 0.974) but resist surface attacks, while LLM-as-judges hold precision yet show erratic recall (0.06 to 0.65); benign framing wrappers flip every LLM-judge 57% to 100% of the time without altering the harmful content. The authors recommend reporting judge precision and recall on a human-labeled slice and adding an adversarial check.
+(blurb not generated)
 
-Helpful or Harmful? Evaluating LLM-Assisted Vulnerability Patching via a Human Study (1 minute read)
+Helpful or Harmful? Evaluating LLM-Assisted Vulnerability Patching via a Human Study (5 minute read)
 
-This paper proposes a controlled human study, using a balanced crossover design, to test whether LLM-assisted vulnerability patching actually outperforms manual debugging or just produces superficial fixes. The key methodological detail is hidden "Ghost Tests" that validate patch security beyond the visible functional checks, catching repairs that pass functionality but fail security validation. Only a pilot has run so far, so treat the full results as forthcoming rather than established.
+(blurb not generated)
 
 MosaicLeaks: Can your research agent keep a secret? (5 minute read)
 
 (blurb not generated)
 
-Scoring AI hackers when there is no answer key (1 minute read)
-
-FrontierCyber, a new benchmark from AI security lab Irregular, drops models onto real systems with live defenses and no planted bugs or hints, then scores how far they get toward a security goal. The targets are everyday phones, hosted services, databases, and networks, each keeping its real sandboxing, authentication, and network boundaries intact. Because difficulty is unknown up front, Irregular predicts each challenge's band before runs and wires systems with canary strings and planted markers to credit partial progress.
-
-Representation Matters: An Empirical Study of Program Representations for LLM Vulnerability Reasoning (1 minute read)
-
-This paper introduces RepBench, a benchmark comparing how program representations affect LLM vulnerability detection across 107 Joern-derived C/C++ testcases spanning five CWE categories. The AST+PDG variant hit 83.2% accuracy versus 53.5% for raw source code, and graph-only prompts beat source-plus-graph while using far less context. The takeaway for AppSec teams building LLM detection tooling: feed models static-analysis graphs, not raw source, since dumping in full source dilutes the vulnerability-relevant evidence and degrades reasoning.
-
-SoK: AI Secure Code Generation: Progress, Pitfalls, and Paths Forward (1 minute read)
-
-This SoK evaluates AI secure code generation with a three-level framework measuring models' natural-language understanding of secure-coding principles, their code-level actuation during generation, and the gap between the two. Principle understanding strongly predicts security, functional correctness, and joint outcomes, but a large knowledge-actuation gap persists: models recognize the right security principles yet fail to implement them in working code. Teams relying on coding agents should keep security review in the loop rather than trusting that the model knows better.
-
-Security and Privacy in Retrieval-Augmented Generation: Architectures, Threats, Defenses, and Future Directions for Building Trustworthy Systems (1 minute read)
-
-This survey maps the security and privacy attack surface of Retrieval-Augmented Generation across centralized, on-device (Micro-RAG), federated, and hybrid deployments. The authors build a taxonomy spanning the retrieval, context-construction, and generation stages, cataloging attack classes including membership inference, index inference, knowledge-base poisoning, gradient leakage, and collusion, then review architectural, algorithmic, and cryptographic defenses against each. Useful for teams threat-modeling RAG pipelines beyond the usual prompt-injection focus.
-
-Leaking Circuit Secrets: Gradient Leakage Attacks on Graph Neural Networks (1 minute read)
-
-This paper presents the first systematic evaluation of gradient leakage attacks against graph neural networks used in circuit design and hardware-security tasks. Testing GraphSAGE, GCN, GIN, and GAT on ISCAS'85, EPFL, and TrustHub netlists, the authors show GLAs can recover gate types and hardware-Trojan properties, aiding adversaries in defeating logic locking or evading Trojan detection. Attention-based GAT leaks the most while injective GIN resists best, and standard defenses like differential privacy and gradient clipping only help in narrow settings and degrade accuracy.
-
-Free VPN And Streaming Apps Are Polluting Business Networks With Residential Proxy Traffic (5 minute read)
+Representation Matters: An Empirical Study of Program Representations for LLM Vulnerability Reasoning (5 minute read)
 
 (blurb not generated)
 
-Insights on Indirect Prompt Injection (5 minute read)
+SoK: AI Secure Code Generation: Progress, Pitfalls, and Paths Forward (5 minute read)
+
+(blurb not generated)
+
+Security and Privacy in Retrieval-Augmented Generation: Architectures, Threats, Defenses, and Future Directions for Building Trustworthy Systems (5 minute read)
+
+(blurb not generated)
+
+Leaking Circuit Secrets: Gradient Leakage Attacks on Graph Neural Networks (5 minute read)
+
+(blurb not generated)
+
+Free VPN And Streaming Apps Are Polluting Business Networks With Residential Proxy Traffic (5 minute read)
 
 (blurb not generated)
 
@@ -169,14 +161,18 @@ Cisco's SSE Rollout Shows The Real Work Behind Zero Trust (5 minute read)
 
 (blurb not generated)
 
+Why patch directives only go so far (5 minute read)
+
+(blurb not generated)
+
+General Techniques for Reducing Key-Switching Overhead in Privacy-Preserving Two-Party Transformer Inference (5 minute read)
+
+(blurb not generated)
+
 🧑‍💻
 Launches & Tools
 
-Automated Detection of Configuration-Specific Security Vulnerabilities via Patch Analysis (1 minute read)
-
-PatchLens is a static analysis technique that recovers Vulnerability Impact Conditions, Boolean predicates over compile-time options identifying which configuration variants of C/C++ software contained a given flaw, without compiling any variant. Evaluated across 1,192 Linux kernel, 289 FFmpeg, and 100 PHP patches, it produces compact predicates and shows that CVE texts encode the required options only about 1% of the time, enabling variant-aware CI triage, targeted fuzzing, and feature risk scoring.
-
-Sniff out stale AI override advice with this open source CLI (5 minute read)
+Automated Detection of Configuration-Specific Security Vulnerabilities via Patch Analysis (5 minute read)
 
 (blurb not generated)
 
@@ -196,23 +192,15 @@ OpenAI Expands Daybreak With GPT-5.5-Cyber to Help Defenders Patch Security Flaw
 
 (blurb not generated)
 
-Exclusive: Meet AIVEX, a New Triage Model Built to Reduce Supply Chain Threat and Risk (1 minute read)
-
-AIVEX, a CycloneDX VEX extension from researcher Devashri Datta, adds machine-readable exploitation context to vulnerability triage, pairing with a safety relevance interpretation layer (SRIL) that scores how a flaw's impact shifts across AI lifecycle stages. The pair aims to fix SBOM, VEX, and CVSS-based prioritization, which Datta argues misses context and lets supply chain attacks slip through; her SRIL writeup publishes via ISACA on July 1.
-
 Patch the Planet: a Daybreak initiative to support open source maintainers (5 minute read)
 
 (blurb not generated)
 
-BlowLive: Blow-Based Multi-Factor Biometrics with Liveness Detection and Revocability (1 minute read)
-
-This paper introduces BlowLive, a multi-factor biometric framework that fuses blow-acoustic signals with facial recognition and derives stable cryptographic keys from noisy inputs via a fuzzy extractor, hitting 99.56% accuracy on blow-acoustics and 100% on fusion across 50 participants. A Doppler shift-based liveness check defends against playback, synthetic, and deepfake spoofing at 99.42% accuracy, while the key-derivation scheme adds template protection and revocability that raw-template biometrics lack.
-
-IBM, Red Hat, Palo Alto team to secure open-source software (5 minute read)
+BlowLive: Blow-Based Multi-Factor Biometrics with Liveness Detection and Revocability (5 minute read)
 
 (blurb not generated)
 
-Snyk launches Evo Agentic Development Security to police AI coding agents (5 minute read)
+IBM, Red Hat, Palo Alto team to secure open-source software (5 minute read)
 
 (blurb not generated)
 
@@ -220,16 +208,20 @@ Enhanced security monitoring with expanded Admin password reset alerts (5 minute
 
 (blurb not generated)
 
+Palo Alto Networks, IBM to match patching with AI pace for operational threats and more (1 minute read)
+
+Palo Alto Networks, IBM, and Red Hat expanded their alliance to pair Palo Alto's Virtual Patching with IBM and Red Hat's $5B Project Lightwell, deploying network-layer virtual patches the same day a vulnerability is found while open-source fixes are validated upstream. The venture targets the shrinking window between disclosure and exploit across open-source software, OT, commercial apps, and healthcare, with preemptive protection before official patches ship.
+
 🎁
 Miscellaneous
 
-White House drastically shortens deadline for dropping quantum-vulnerable crypto (5 minute read)
+AI and Liability (1 minute read)
+
+A German court ruled that Google is liable for its AI search summaries, rejecting the defense that users know not to blindly trust AI-generated information and holding that the overviews are an expression of Google's own business activity. Schneier argues AI overviews rewrite third-party content with editorial discretion, placing them closer to a publisher than a carrier and outside the Section 230 shield that has long protected platforms.
+
+양자컴퓨터 시대 대비 나선 미국…PQC 의무화와 양자 기술 육성 병행 (5 minute read)
 
 (blurb not generated)
-
-양자컴퓨터 시대 대비 나선 미국…PQC 의무화와 양자 기술 육성 병행 (4 minute read)
-
-President Trump signed two executive orders accelerating federal post-quantum cryptography migration, setting deadlines of December 31, 2030 for key-establishment mechanisms and December 31, 2031 for digital signatures, while mandating per-agency crypto inventories and a Cryptographic Bill of Materials standard from NIST and CISA within 270 days. The orders cite "Harvest Now, Decrypt Later" collection by adversaries and extend compliance pressure to federal contractors and critical-infrastructure operators that must prove PQC readiness.
 
 Scattered Spider Hackers Plead Guilty on Day 1 of Trial (5 minute read)
 
@@ -239,25 +231,21 @@ One-two punch delivered in global operation disrupts cybercrime "assembly line" 
 
 (blurb not generated)
 
-Trump sets post-quantum crypto deadlines, launches broader federal quantum initiative (5 minute read)
-
-(blurb not generated)
-
 Trump Order Sets 2030 Deadline for Federal Post-Quantum Crypto Migration (5 minute read)
 
 (blurb not generated)
 
-White House app auto-downloads to government phones, can't be uninstalled (1 minute read)
+‘This operation marked a shift in strategy’: Three notorious malware networks have been taken down using RICO legislation (1 minute read)
 
-The White House automatically pushed its mobile app onto the work phones of millions of federal employees, and workers across the USDA, State Department, and Department of Labor report being unable to uninstall it. The app, identical to the public version, lacks a dedicated privacy or data policy beyond a contact email, raising questions about what device permissions and telemetry it carries on government hardware.
+Europol's Operation Endgame dismantled the infrastructure behind the SocGholish, Amadey, and StealC malware strains, neutralizing 326 servers and 142 domains and seizing over €41M in crypto with help from Microsoft and private security firms. US prosecutors applied RICO racketeering law to treat Amadey and StealC as a single conspiracy, a strategy shift toward disrupting the full malware-as-a-service chain rather than individual threats.
 
-Anthropic Claims Alibaba Ran ‘Brazen’ Campaign to Access Its Claude AI Model (1 minute read)
+Anthropic Claims Alibaba Ran ‘Brazen’ Campaign to Access Its Claude AI Model (5 minute read)
 
-Anthropic alleged in a letter obtained by the Wall Street Journal that Alibaba and its AI unit ran "the largest known distillation attack" against Claude to date. The accusation escalates IP-theft disputes around model distillation, where a rival systematically queries a frontier model to replicate its outputs and train a competing system.
+(blurb not generated)
 
-London cops bring live facial recognition to West End (1 minute read)
+London cops bring live facial recognition to West End (5 minute read)
 
-The Metropolitan Police deployed permanent live facial recognition cameras across London's West End, scanning passersby against watchlists in real time. The rollout extends LFR from temporary van-mounted deployments to fixed infrastructure, despite ongoing legal challenges and civil-liberties objections over consent, bias, and the absence of specific statutory authorization in UK law.
+(blurb not generated)
 
 DoJ Seizes Huione Cloud Account Tied to Cyber Scam Money Laundering (5 minute read)
 
@@ -291,11 +279,7 @@ FCC plans ID mandate that could block anonymous use of prepaid burner phones (5 
 
 (blurb not generated)
 
-NIST Opens Updated IoT Security Guidance to Public Review (1 minute read)
-
-NIST opened the initial public draft of SP 800-213 Revision 1, "IoT Product Cybersecurity Guidelines for the Federal Government," for comment through August 24. The revision reframes guidance around IoT products rather than devices, treats them as system elements in risk management, and ties into SP 800-30, SP 800-53 Rev. 5, and the SP 800-213A capability catalog.
-
-Five Eyes spooks warn AI means infosec incidents can become ‘major operational and financial crises’ (5 minute read)
+NIST Opens Updated IoT Security Guidance to Public Review (5 minute read)
 
 (blurb not generated)
 
@@ -303,16 +287,20 @@ Justice Department seizes infrastructure used by cyber scam and criminal marketp
 
 (blurb not generated)
 
+Récolter aujourd’hui, déchiffrer demain : pourquoi Washington accélère sa transition post-quantique (5 minute read)
+
+(blurb not generated)
+
+Cloudflare teams up with Chrome, Firefox, and Edge on a privacy-first anti-bot protocol (5 minute read)
+
+(blurb not generated)
+
 ⚡
 Quick Links
 
-WhatsApp will warn users before they message a potential scammer (1 minute read)
+Shoot the Honey, Cloak the Player: Towards Zero-Runtime-Overhead Proactive Defense and Detection for Visual Game Cheating (5 minute read)
 
-WhatsApp is rolling out an Android and iOS warning screen that flags chats with unknown numbers before users open them.
-
-Shoot the Honey, Cloak the Player: Towards Zero-Runtime-Overhead Proactive Defense and Detection for Visual Game Cheating (1 minute read)
-
-AimTrap defends FPS games against visual aimbots with adversarial camouflage and honeypot textures, hitting 96.9% lure success at negligible overhead.
+(blurb not generated)
 
 MEV Bot Exploited for $15M via Fake-Token Route Attack (5 minute read)
 
