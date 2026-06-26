@@ -186,11 +186,11 @@ Dolphin Emulator Progress Release 2606 (5 minute read)
 
 Unlocking the Cloudflare app ecosystem with OAuth for all (1 minute read)
 
-Cloudflare opened self-managed OAuth to all developers, letting them register their own OAuth clients for delegated, scoped access to the Cloudflare API. The change replaces hard-to-manage API tokens for third-party integrations and ships alongside upgrades to consent, revocation, and app-ownership visibility aimed at SaaS tools, internal platforms, and agentic apps.
+Cloudflare opened self-managed OAuth to all developers, letting them create and manage their own OAuth clients for delegated, scoped access to the Cloudflare API. The change replaces hard-to-manage API tokens with a standard OAuth flow for building SaaS integrations and agentic tools, paired with clearer consent screens, dashboard-based revocation, and app-ownership visibility to curb OAuth phishing.
 
 OAuth for all (1 minute read)
 
-Cloudflare opened self-managed OAuth to all developers, letting them register their own OAuth clients for delegated, scoped access to the Cloudflare API. The change replaces hard-to-manage API tokens for third-party integrations and ships alongside upgrades to consent, revocation, and app-ownership visibility aimed at SaaS tools, internal platforms, and agentic apps.
+Cloudflare opened self-managed OAuth to all developers, letting them create and manage their own OAuth clients for delegated, scoped access to the Cloudflare API. The change replaces hard-to-manage API tokens with a standard OAuth flow for building SaaS integrations and agentic tools, paired with clearer consent screens, dashboard-based revocation, and app-ownership visibility to curb OAuth phishing.
 
 Deno Desktop (5 minute read)
 
@@ -309,7 +309,7 @@ New Gaslight macOS Malware Uses Prompt Injection to Disrupt AI-Assisted Analysis
 
 Russia Used Cellebrite on Jailed Activist's iPhone Months After Sales Cutoff (1 minute read)
 
-Citizen Lab reported that Russian authorities used Cellebrite's UFED forensic tools to extract data from jailed opposition activist Andrey Pivovarov's iPhone in June 2021, three months after Cellebrite said it had stopped selling to Russia. The case, backed by both on-device traces and Russia's own forensic report, shows how export cutoffs can lag actual field use and how seized-device forensics drive political prosecutions.
+Citizen Lab reported that Russian authorities used Cellebrite's UFED forensic tools to extract data from jailed opposition activist Andrey Pivovarov's iPhone in June 2021, three months after Cellebrite said it had stopped selling to Russia. The finding rests on USB-pairing traces matching a known Cellebrite fingerprint and an official Russian forensic report naming the product, which logged searches for opposition figures and banned activist groups.
 
 The 'papers, please' era of the internet will decimate your privacy (1 minute read)
 
@@ -333,7 +333,7 @@ Malware authors are embedding fake instructions about nuclear and biological wea
 
 Prompt Injection in Automated Résumé Screening with Large Language Models: Single and Multi-Injection Settings (1 minute read)
 
-Résumé prompt injection reliably boosts rankings only when manipulation is rare and candidate quality is similar, collapsing when many candidates inject.
+A new paper studies prompt injection in LLM-based résumé screening, where candidates insert subtle self-promotional text that adds no real qualifications but nudges the model's ranking. The authors find injection reliably boosts rankings only when résumés are similar in quality and few candidates do it, collapsing as the tactic spreads, though it can occasionally let weaker candidates outrank stronger ones.
 
 ⚡
 Quick Links
@@ -396,7 +396,7 @@ RFC 9958 - Post-Quantum Cryptography for Engineers (5 minute read)
 
 Hallucination in World Models is Predictable and Preventable (1 minute read)
 
-This paper argues that hallucination in generative world models concentrates in low-coverage regions of the state-action space, making it predictable from lightweight data signals. The authors release MMBench2, a 427-hour benchmark, identify three distinct failure modes, and use their hallucination predictors as curiosity rewards to adapt a 350M-parameter model to unseen environments with as few as 50 real trajectories.
+World model hallucination is a data-coverage problem; the same signals that predict failures can guide mitigation with as few as 50 trajectories.
 
 Production-Ready Autonomous Incident Resolution with AWS DevOps Agent (now GA) and Datadog MCP Server (5 minute read)
 

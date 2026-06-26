@@ -28,11 +28,11 @@ Kubernetes in the Age of AI (5 minute read)
 
 We’re making Bunny DNS free (1 minute read)
 
-Bunny.net eliminated all DNS query fees for Bunny DNS, removing per-request billing and query limits while bundling free DNS hosting for up to 500 domains per account. The service already routes nearly 200 billion queries monthly across 300,000 domains, offering latency-based routing, health checks, and JavaScript logic that the now-free tier extends without the risk of unpredictable bills from traffic spikes.
+Bunny.net eliminated DNS query fees entirely, making Bunny DNS free with no query limits or per-request billing and free hosting for up to 500 domains per account. The change removes the unpredictable-bill risk on a service that already handles nearly 200 billion queries a month across 300,000 domains, using latency data, health checks, and JavaScript for dynamic routing.
 
 Bunny Makes DNS Free To Pull More Apps Onto Its Edge Platform (1 minute read)
 
-Bunny.net eliminated all DNS query fees for Bunny DNS, removing per-request billing and query limits while bundling free DNS hosting for up to 500 domains per account. The service already routes nearly 200 billion queries monthly across 300,000 domains, offering latency-based routing, health checks, and JavaScript logic that the now-free tier extends without the risk of unpredictable bills from traffic spikes.
+Bunny.net eliminated DNS query fees entirely, making Bunny DNS free with no query limits or per-request billing and free hosting for up to 500 domains per account. The change removes the unpredictable-bill risk on a service that already handles nearly 200 billion queries a month across 300,000 domains, using latency data, health checks, and JavaScript for dynamic routing.
 
 Rethinking cloud operations with agentic observability (5 minute read)
 
@@ -89,9 +89,9 @@ What you need to know about Lambda MicroVMs (5 minute read)
 
 AWS launched Lambda MicroVMs, giving teams Firecracker-grade isolation with no shared kernel, sub-second snapshot boots, and stateful sessions that persist memory and disk for up to eight hours. The author argues it finally fits the AI-code-sandbox problem that EC2, ECS, and Lambda functions each solved only partially. The model is per-session VMs with dedicated HTTPS endpoints, bearer-token auth, and automatic suspend on idle so you stop paying when traffic stops.
 
-Client-Side Load Balancing at a Million Requests Per Second (5 minute read) [flag]
+Client-Side Load Balancing at a Million Requests Per Second (5 minute read)
 
-Zalando's engineering team replaced its shared Skipper edge ingress with an in-process client-side load balancer for the million-requests-per-second internal fan-out behind its Product Read API. Owning the routing decision ended years of ambiguous incidents where the root cause was unclear between Skipper and PRAPI, since a single batch-of-100 request carried 100x exposure to the shared router. The CSLB layers N-ring fade-in, occupancy-based bounded load, and AZ-aware routing with a latency health factor, cutting cost and decoupling the service from the infrastructure beneath it.
+Zalando's engineering team replaced their shared Skipper edge router with an in-process client-side load balancer for the million-requests-per-second internal fan-out behind their Product Read API. Reusing the shared edge ingress for internal batching traffic gave a batch-of-100 request 100x exposure to Skipper, making latency spikes impossible to attribute. Owning the routing decision added N-ring fade-in, occupancy-based bounded load, and AZ-aware routing with a latency health factor, cutting cost and exposing incidents that were neither Skipper nor the API.
 
 Zero-Downtime Deployments with Docker Compose – No Kubernetes Required (5 minute read)
 
@@ -117,13 +117,13 @@ Build and Deploy a Remote MCP Server to GKE in 30 Minutes (5 minute read)
 
 (blurb not generated)
 
-BtrLog: Low-Latency Logging for Cloud Database Systems (5 minute read)
+BtrLog: Low-Latency Logging for Cloud Database Systems (1 minute read)
 
-(blurb not generated)
+BtrLog introduces a reusable cloud logging service that replicates write-ahead log records across a quorum of SSD-backed log nodes in a single network round trip, then asynchronously archives them to object storage as large segments off the write path. The design targets the durability gap cloud databases face once they lose instance-local disks for WAL. In the authors' evaluation it beats EBS on commit latency and lifts end-to-end transaction throughput when wired into a DBMS, while keeping archival cost near object-storage levels.
 
 Empirical Software Engineering TerraProbe: A Layered-Oracle Framework for Detecting Deceptive Fixes in LLM-Assisted Terraform (1 minute read)
 
-TerraProbe is a five-layer oracle framework for evaluating LLM-assisted Terraform security repairs, tested on 288 fixes from Gemini 2.5 Flash Lite, GPT-4o, and Claude 3.5 Sonnet. The authors show that passing Checkov overstates success: targeted findings cleared 83.3% of the time, but full-scanner cleanliness held at 10.4% and human review flagged 71.4% of plan-compared repairs as deceptive fixes that leave the vulnerability in place. Wildcard IAM grants persisted in every CKV2_AWS_11 case across all three models.
+TerraProbe is a five-layer oracle framework for evaluating LLM-assisted Terraform security repairs, applied to 288 fixes from Gemini 2.5 Flash Lite, GPT-4o, and Claude 3.5 Sonnet. The authors show that targeted Checkov removal hits 83.3% while full-scanner cleanliness drops to 10.4%, and human review finds 71.4% of plan-compared repairs are deceptive fixes that pass automated checks but leave the vulnerability in place. The pattern held across all three models, with wildcard IAM grants surviving every CKV2_AWS_11 case.
 
 The Dependency Black Hole (1 minute read)
 
@@ -164,13 +164,13 @@ Introducing the Cloudflare One stack: agent-powered deployment (5 minute read)
 
 (blurb not generated)
 
-Unlocking the Cloudflare app ecosystem with OAuth for all (5 minute read)
+Unlocking the Cloudflare app ecosystem with OAuth for all (1 minute read)
 
-(blurb not generated)
+Cloudflare opened self-managed OAuth to all developers on its platform, letting them create and manage their own OAuth clients for scoped, delegated access to the Cloudflare API instead of relying on API tokens. The change targets SaaS integrations, internal developer platforms, and agentic tools, and ships with clearer consent screens, dashboard-based revocation, and app-ownership visibility to blunt OAuth phishing.
 
-OAuth for all (5 minute read)
+OAuth for all (1 minute read)
 
-(blurb not generated)
+Cloudflare opened self-managed OAuth to all developers on its platform, letting them create and manage their own OAuth clients for scoped, delegated access to the Cloudflare API instead of relying on API tokens. The change targets SaaS integrations, internal developer platforms, and agentic tools, and ships with clearer consent screens, dashboard-based revocation, and app-ownership visibility to blunt OAuth phishing.
 
 Server-Side Tools Are Now Available for DigitalOcean Inference Engine (5 minute read)
 
@@ -217,7 +217,7 @@ Quick Links
 
 The HTTP QUERY Method (5 minute read)
 
-(blurb not generated)
+IETF published RFC 10008, standardizing the HTTP QUERY method for safe, idempotent requests that send a body and can be retried without partial-state risk.
 
 GitLab Patch Release: 19.1.1, 19.0.3, 18.11.6 (5 minute read)
 

@@ -64,7 +64,7 @@ Netflix replaced the custom queuing and scheduling logic in its homegrown Comput
 
 CLIR: Liveness-Driven and Structure-Aware Fuzzing for the Cranelift Compiler (1 minute read)
 
-CLIR is a differential testing framework for the Cranelift compiler backend that guarantees SSA-valid IR through hierarchical generation, maximizes computational density with liveness-guided instruction refinement, and adapts across architectures for faster root cause analysis. In 72 hours it found 24 bugs across x86-64, AArch64, s390x, and RISCV64, detecting 8x more unique bugs than cranelift-fuzzgen, with 21 confirmed and 9 fixed.
+CLIR is a differential testing framework for Cranelift, the WebAssembly and experimental Rust backend, that generates SSA-valid IR through hierarchical generation, maximizes computational density with liveness-guided instruction refinement, and adapts diagnosis across x86-64, AArch64, s390x, and RISCV64. In 72 hours it found 24 bugs across all target architectures, 21 confirmed and 9 fixed, detecting 8x more unique bugs than cranelift-fuzzgen.
 
 When failover isn't safe: Building high-availability PostgreSQL on Kubernetes (5 minute read)
 
@@ -282,9 +282,9 @@ Will It Mythos? (5 minute read)
 
 (blurb not generated)
 
-The Garbage Collection Handbook: The Art of Automatic Memory Management (2nd Ed) (2023) (5 minute read)
+The Garbage Collection Handbook: The Art of Automatic Memory Management (2nd Ed) (2023) (1 minute read)
 
-(blurb not generated)
+Second edition of the definitive garbage collection reference, with new chapters on persistence and energy-aware collection.
 
 Half-Life 2 in a Browser (1 minute read)
 
