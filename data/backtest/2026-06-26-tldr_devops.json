@@ -1,0 +1,486 @@
+{
+  "date": "2026-06-26",
+  "newsletter": "tldr_devops",
+  "fetched_at": "2026-06-26T11:39:34.126072+00:00",
+  "tldr_titles": [
+    "Grafana 13.1 release: observability as code updates, extending Grafana Assistant across more data sources, and more",
+    "Argo CD v3.5 Release Candidate",
+    "Getting more from each token: How Copilot improves context handling and model routing",
+    "How to Write an Effective Software Design Document",
+    "Building Modelplane on Crossplane",
+    "Bringing more agent harnesses and frameworks to Cloudflare, starting with Flue",
+    "Building and running custom code transformations without leaving your editor",
+    "Production-Ready Autonomous Incident Resolution with AWS DevOps Agent (now GA) and Datadog MCP Server",
+    "Building Jaeger's ClickHouse backend: 8.6\u00d7 compression on 10 million spans",
+    "AI Has Outpaced How Engineering Organizations Measure Developer Productivity"
+  ],
+  "tldr_matched": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    false
+  ],
+  "predictions": [
+    {
+      "rank": 1,
+      "score": 81.0,
+      "title": "Temporary Cloudflare Accounts for AI agents",
+      "url": "https://blog.cloudflare.com/temporary-accounts/",
+      "matched_tldr_idx": 5,
+      "similarity": 0.6540323495864868
+    },
+    {
+      "rank": 2,
+      "score": 80.0,
+      "title": "Amazon S3 annotations: attach rich, queryable context directly to your objects",
+      "url": "https://aws.amazon.com/blogs/aws/amazon-s3-annotations-attach-rich-queryable-context-directly-to-your-objects/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 3,
+      "score": 79.0,
+      "title": "Announcing Amazon EC2 G7 instances accelerated by NVIDIA RTX PRO 4500 Blackwell Server Edition GPUs",
+      "url": "https://aws.amazon.com/blogs/aws/announcing-amazon-ec2-g7-instances-accelerated-by-nvidia-rtx-pro-4500-blackwell-server-edition-gpus/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 4,
+      "score": 79.0,
+      "title": "Run isolated sandboxes with full lifecycle control: AWS Lambda introduces MicroVMs",
+      "url": "https://aws.amazon.com/blogs/aws/run-isolated-sandboxes-with-full-lifecycle-control-aws-lambda-introduces-microvms/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 5,
+      "score": 77.0,
+      "title": "How we built saga rollbacks for Cloudflare Workflows",
+      "url": "https://blog.cloudflare.com/rollbacks-for-workflows/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 6,
+      "score": 75.0,
+      "title": "Build your own vulnerability harness",
+      "url": "https://blog.cloudflare.com/build-your-own-vulnerability-harness/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 7,
+      "score": 74.0,
+      "title": "Introducing the Cluster API plugin for Headlamp",
+      "url": "https://kubernetes.io/blog/2026/06/25/headlamp-cluster-api-plugin/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 8,
+      "score": 72.0,
+      "title": "See your serverless: introducing the Headlamp plugin for Knative",
+      "url": "https://kubernetes.io/blog/2026/06/25/headlamp-knative-plugin/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 9,
+      "score": 71.0,
+      "title": "Google hits 50% IPv6",
+      "url": "https://blog.apnic.net/2026/04/28/google-hits-50-ipv6/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 10,
+      "score": 71.0,
+      "title": "Cell-Based Architecture for Resilient Payment Systems",
+      "url": "https://americanexpress.io/cell-based-architecture-for-resilient-payment-systems/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 11,
+      "score": 70.0,
+      "title": "Spotlight on WG Device Management",
+      "url": "https://kubernetes.io/blog/2026/06/24/wg-device-management-spotlight-2026/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 12,
+      "score": 70.0,
+      "title": "How we found a bug in the hyper HTTP library",
+      "url": "https://blog.cloudflare.com/hyper-bug/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 13,
+      "score": 70.0,
+      "title": "Making secret scanning more trustworthy: Reducing false positives at scale",
+      "url": "https://github.blog/security/making-secret-scanning-more-trustworthy-reducing-false-positives-at-scale/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 14,
+      "score": 68.0,
+      "title": "Cordyceps CI/CD Flaws Expose 300+ GitHub Repositories to Supply-Chain Attacks",
+      "url": "https://thehackernews.com/2026/06/cordyceps-cicd-flaws-expose-300-github.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 15,
+      "score": 68.0,
+      "title": "Building a Cluster-Aware AI Agent with Kubernetes, Argo CD, and GitOps",
+      "url": "https://www.cncf.io/blog/2026/06/25/building-a-cluster-aware-ai-agent-with-kubernetes-argo-cd-and-gitops/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 16,
+      "score": 67.0,
+      "title": "Blinding the Watchmen: Abusing Cloud Logging Services for Defense Evasion and Visibility",
+      "url": "https://unit42.paloaltonetworks.com/cloud-logging-defense-evasion/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 17,
+      "score": 66.0,
+      "title": "Optimizing cloud economics with linear elastic caching",
+      "url": "https://research.google/blog/optimizing-cloud-economics-with-linear-elastic-caching/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 18,
+      "score": 66.0,
+      "title": "Introducing the Cloudflare One stack: agent-powered deployment",
+      "url": "https://blog.cloudflare.com/cloudflare-one-stack/",
+      "matched_tldr_idx": 5,
+      "similarity": 0.7555823922157288
+    },
+    {
+      "rank": 19,
+      "score": 63.0,
+      "title": "GitHub Updates actions/checkout to Block Common Pwn Request Attack Patterns",
+      "url": "https://thehackernews.com/2026/06/github-updates-actionscheckout-to-block.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 20,
+      "score": 63.0,
+      "title": "Unlocking the Cloudflare app ecosystem with OAuth for all",
+      "url": "https://blog.cloudflare.com/oauth-for-all/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 21,
+      "score": 63.0,
+      "title": "OAuth for all",
+      "url": "https://blog.cloudflare.com/oauth-for-all/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 22,
+      "score": 63.0,
+      "title": "Server-Side Tools Are Now Available for DigitalOcean Inference Engine",
+      "url": "https://www.digitalocean.com/blog/server-side-tools-public-preview",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 23,
+      "score": 62.0,
+      "title": "What you need to know about Lambda MicroVMs",
+      "url": "https://theburningmonk.com/2026/06/what-you-need-to-know-about-lambda-microvms/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 24,
+      "score": 62.0,
+      "title": "Inspect Volcano workloads faster with Headlamp",
+      "url": "https://kubernetes.io/blog/2026/06/25/visual-context-volcano-headlamp-plugin/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 25,
+      "score": 62.0,
+      "title": "Deploy Boundary on Kubernetes with official Helm charts",
+      "url": "https://www.hashicorp.com/blog/deploy-boundary-on-kubernetes-with-official-helm-charts",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 26,
+      "score": 62.0,
+      "title": "Boundary 1.0 releases RDP session recording and improved management",
+      "url": "https://www.hashicorp.com/blog/boundary-1-releases-with-rdp-session-recording-and-improved-management",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 27,
+      "score": 62.0,
+      "title": "Amazon ECS introduces new high-resolution metrics for faster service auto scaling",
+      "url": "https://aws.amazon.com/blogs/aws/amazon-ecs-introduces-new-high-resolution-metrics-for-faster-service-auto-scaling/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 28,
+      "score": 60.0,
+      "title": "Kubernetes in the Age of AI",
+      "url": "https://www.oreilly.com/radar/kubernetes-in-the-age-of-ai/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 29,
+      "score": 60.0,
+      "title": "Client-Side Load Balancing at a Million Requests Per Second",
+      "url": "https://engineering.zalando.com/posts/2026/06/client-side-load-balancing.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 30,
+      "score": 60.0,
+      "title": "Zero-Downtime Deployments with Docker Compose \u2013 No Kubernetes Required",
+      "url": "https://statusdude.com/blog/zero-downtime-docker-compose",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 31,
+      "score": 60.0,
+      "title": "HCP Vault Dedicated introduces cluster disaster recovery (public preview)",
+      "url": "https://www.hashicorp.com/blog/hcp-vault-dedicated-introduces-cluster-disaster-recovery-public-preview",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 32,
+      "score": 60.0,
+      "title": "Minimus container images are now free",
+      "url": "https://images.minimus.io/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 33,
+      "score": 60.0,
+      "title": "The HTTP QUERY Method",
+      "url": "https://datatracker.ietf.org/doc/rfc10008/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 34,
+      "score": 58.0,
+      "title": "We\u2019re making Bunny DNS free",
+      "url": "https://bunny.net/blog/were-making-bunny-dns-free/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 35,
+      "score": 58.0,
+      "title": "Bunny Makes DNS Free To Pull More Apps Onto Its Edge Platform",
+      "url": "https://bunny.net/blog/were-making-bunny-dns-free/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 36,
+      "score": 58.0,
+      "title": "Building a state-of-the-art development platform with Backstage",
+      "url": "https://www.infoworld.com/article/4189074/building-a-state-of-the-art-development-platform-with-backstage.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 37,
+      "score": 58.0,
+      "title": "Migrating from Proxmox to NixOS and Incus",
+      "url": "https://www.nijho.lt/post/proxmox-to-nixos/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 38,
+      "score": 58.0,
+      "title": "Why cloud native belongs at the heart of agentic AI: Lessons from building a multi-agent security platform on Kubernetes",
+      "url": "https://www.cncf.io/blog/2026/06/17/why-cloud-native-belongs-at-the-heart-of-agentic-ai-lessons-from-building-a-multi-agent-security-platform-on-kubernetes/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 39,
+      "score": 58.0,
+      "title": "How Cloudflare responded to the \u201cCopy Fail\u201d Linux vulnerability",
+      "url": "https://blog.cloudflare.com/copy-fail-linux-vulnerability-mitigation/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 40,
+      "score": 58.0,
+      "title": "Build and Deploy a Remote MCP Server to GKE in 30 Minutes",
+      "url": "https://cloud.google.com/blog/topics/developers-practitioners/build-and-deploy-a-remote-mcp-server-to-gke-in-30-minutes/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 41,
+      "score": 57.0,
+      "title": "Rethinking cloud operations with agentic observability",
+      "url": "https://blogs.microsoft.com/blog/2026/06/23/rethinking-cloud-operations-with-agentic-observability/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 42,
+      "score": 57.0,
+      "title": "BtrLog: Low-Latency Logging for Cloud Database Systems",
+      "url": "http://arxiv.org/abs/2606.27051v1",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 43,
+      "score": 57.0,
+      "title": "ZeroTier Quantum RC2 brings post-quantum security closer to general availability",
+      "url": "https://www.helpnetsecurity.com/2026/06/26/zerotier-quantum-rc2/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 44,
+      "score": 57.0,
+      "title": "Advancing AI agent security in Vault",
+      "url": "https://www.hashicorp.com/blog/advancing-ai-agent-security-in-vault",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 45,
+      "score": 57.0,
+      "title": "Google Antigravity agents get full context with GitLab Orbit",
+      "url": "https://about.gitlab.com/blog/gitlab-orbit-and-google-antigravity/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 46,
+      "score": 56.0,
+      "title": "GitLab Patches Code Execution, Information Disclosure Vulnerabilities",
+      "url": "https://www.securityweek.com/gitlab-patches-code-execution-information-disclosure-vulnerabilities/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 47,
+      "score": 55.0,
+      "title": "Decades-Old Squid Proxy Flaw \u2018Squidbleed' Can Expose User Data",
+      "url": "https://www.securityweek.com/decades-old-squid-proxy-flaw-squidbleed-can-expose-user-data/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 48,
+      "score": 55.0,
+      "title": "Companies are not looking before they're leaping into the AI playpen",
+      "url": "https://www.theregister.com/devops/2026/06/24/companies-are-not-looking-before-theyre-leaping-into-the-ai-playpen/5261819",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 49,
+      "score": 55.0,
+      "title": "AI agent identification service gets official nod from open source giant",
+      "url": "https://www.sdxcentral.com/news/l/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 50,
+      "score": 55.0,
+      "title": "Empirical Software Engineering TerraProbe: A Layered-Oracle Framework for Detecting Deceptive Fixes in LLM-Assisted Terraform",
+      "url": "http://arxiv.org/abs/2606.26590v1",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 51,
+      "score": 55.0,
+      "title": "The Dependency Black Hole",
+      "url": "http://arxiv.org/abs/2606.25949v1",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 52,
+      "score": 55.0,
+      "title": "GitLab Patch Release: 19.1.1, 19.0.3, 18.11.6",
+      "url": "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-1-1-released/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    }
+  ],
+  "recall_at": {
+    "10": 0.1,
+    "25": 0.1,
+    "50": 0.1,
+    "100": 0.1,
+    "52": 0.1
+  },
+  "hits_at": {
+    "10": 1,
+    "25": 1,
+    "50": 1,
+    "100": 1,
+    "52": 1
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://grafana.com/blog/grafana-13-1-release-all-the-latest-features/",
+    "https://blog.argoproj.io/argo-cd-v3-5-release-candidate-02b1fbf7b419",
+    "https://github.blog/ai-and-ml/github-copilot/getting-more-from-each-token-how-copilot-improves-context-handling-and-model-routing/",
+    "https://refactoringenglish.com/excerpts/write-an-effective-design-doc/",
+    "https://blog.crossplane.io/building-modelplane/",
+    "https://blog.cloudflare.com/agents-platform-flue-sdk/",
+    "https://aws.amazon.com/blogs/devops/building-and-running-custom-code-transformations-without-leaving-your-editor/",
+    "https://aws.amazon.com/blogs/devops/production-ready-autonomous-incident-resolution-with-aws-devops-agent-now-ga-and-datadog-mcp-server/",
+    "https://www.cncf.io/blog/2026/06/23/building-jaegers-clickhouse-backend-8-6x-compression-on-10-million-spans/",
+    "https://www.devopsdigest.com/ai-has-outpaced-how-engineering-organizations-measure-developer-productivity"
+  ],
+  "tldr_domains": [
+    "grafana.com",
+    "blog.argoproj.io",
+    "github.blog",
+    "refactoringenglish.com",
+    "blog.crossplane.io",
+    "blog.cloudflare.com",
+    "aws.amazon.com",
+    "aws.amazon.com",
+    "cncf.io",
+    "devopsdigest.com"
+  ]
+}

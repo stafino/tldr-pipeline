@@ -1,0 +1,224 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR DevOps 2026-06-26
+
+📱
+News & Trends
+
+Google hits 50% IPv6 (5 minute read)
+
+(blurb not generated)
+
+Spotlight on WG Device Management (5 minute read)
+
+(blurb not generated)
+
+Cordyceps CI/CD Flaws Expose 300+ GitHub Repositories to Supply-Chain Attacks (1 minute read)
+
+Novee Security disclosed Cordyceps, a class of CI/CD misconfiguration where untrusted pull requests trigger privileged workflows, and its scan of 30,000 high-impact repos found 300-plus fully exploitable by any unauthenticated user with a free account. Affected projects include Microsoft's Azure Sentinel, Google's adk-samples, Apache Doris, and Cloudflare's Workers SDK, where forged approvals or crafted branch names let attackers run code on CI runners and steal long-lived credentials.
+
+GitHub Updates actions/checkout to Block Common Pwn Request Attack Patterns (5 minute read)
+
+(blurb not generated)
+
+Kubernetes in the Age of AI (5 minute read)
+
+(blurb not generated)
+
+We’re making Bunny DNS free (1 minute read)
+
+Bunny.net eliminated all DNS query fees for Bunny DNS, removing per-request billing and query limits while bundling free DNS hosting for up to 500 domains per account. The service already routes nearly 200 billion queries monthly across 300,000 domains, offering latency-based routing, health checks, and JavaScript logic that the now-free tier extends without the risk of unpredictable bills from traffic spikes.
+
+Bunny Makes DNS Free To Pull More Apps Onto Its Edge Platform (1 minute read)
+
+Bunny.net eliminated all DNS query fees for Bunny DNS, removing per-request billing and query limits while bundling free DNS hosting for up to 500 domains per account. The service already routes nearly 200 billion queries monthly across 300,000 domains, offering latency-based routing, health checks, and JavaScript logic that the now-free tier extends without the risk of unpredictable bills from traffic spikes.
+
+Rethinking cloud operations with agentic observability (5 minute read)
+
+Microsoft announced general availability of the Azure Copilot Observability Agent, built on Azure Monitor to correlate logs, metrics, traces, and topology across agents, applications, and infrastructure for faster root-cause analysis. The launch targets a complexity problem Microsoft's own survey quantifies: 84% of organizations report rising cloud complexity, and 69% say it is outpacing their current operating model.
+
+GitLab Patches Code Execution, Information Disclosure Vulnerabilities (5 minute read)
+
+(blurb not generated)
+
+Decades-Old Squid Proxy Flaw ‘Squidbleed' Can Expose User Data (5 minute read)
+
+(blurb not generated)
+
+Companies are not looking before they're leaping into the AI playpen (1 minute read)
+
+A survey found that 93% of organizations have logged infrastructure incidents attributable to AI workloads, as teams push models into production faster than they can harden the platforms underneath them. The gap shows up as unplanned capacity spikes, misconfigured access, and reliability regressions that land on the SRE and platform teams left to absorb the blast radius.
+
+AI agent identification service gets official nod from open source giant (5 minute read)
+
+(blurb not generated)
+
+🚀
+Opinions & Tutorials
+
+Build your own vulnerability harness (5 minute read)
+
+(blurb not generated)
+
+Cell-Based Architecture for Resilient Payment Systems (5 minute read)
+
+(blurb not generated)
+
+How we found a bug in the hyper HTTP library (5 minute read)
+
+(blurb not generated)
+
+Making secret scanning more trustworthy: Reducing false positives at scale (5 minute read)
+
+(blurb not generated)
+
+Building a Cluster-Aware AI Agent with Kubernetes, Argo CD, and GitOps (5 minute read)
+
+(blurb not generated)
+
+Blinding the Watchmen: Abusing Cloud Logging Services for Defense Evasion and Visibility (5 minute read)
+
+(blurb not generated)
+
+Optimizing cloud economics with linear elastic caching (5 minute read)
+
+(blurb not generated)
+
+What you need to know about Lambda MicroVMs (5 minute read)
+
+AWS launched Lambda MicroVMs, giving teams Firecracker-grade isolation with no shared kernel, sub-second snapshot boots, and stateful sessions that persist memory and disk for up to eight hours. The author argues it finally fits the AI-code-sandbox problem that EC2, ECS, and Lambda functions each solved only partially. The model is per-session VMs with dedicated HTTPS endpoints, bearer-token auth, and automatic suspend on idle so you stop paying when traffic stops.
+
+Client-Side Load Balancing at a Million Requests Per Second (5 minute read) [flag]
+
+Zalando's engineering team replaced its shared Skipper edge ingress with an in-process client-side load balancer for the million-requests-per-second internal fan-out behind its Product Read API. Owning the routing decision ended years of ambiguous incidents where the root cause was unclear between Skipper and PRAPI, since a single batch-of-100 request carried 100x exposure to the shared router. The CSLB layers N-ring fade-in, occupancy-based bounded load, and AZ-aware routing with a latency health factor, cutting cost and decoupling the service from the infrastructure beneath it.
+
+Zero-Downtime Deployments with Docker Compose – No Kubernetes Required (5 minute read)
+
+(blurb not generated)
+
+Building a state-of-the-art development platform with Backstage (2 minute read)
+
+Backstage solved the developer-portal problem but not the platform problem, the author argues: a portal organizes catalogs and templates, while a platform owns deployments, environments, policies, and runtime operations. Wiring Backstage point-to-point into CI/CD, GitOps, Kubernetes, and observability produces a fragile "messy middle." The post's fix is a control plane between portal and runtime that compiles developer and platform-engineer abstractions into Kubernetes resources, enforces policies, and reconciles drift.
+
+Migrating from Proxmox to NixOS and Incus (1 minute read)
+
+The author migrated his multi-node homelab from Proxmox to NixOS running Incus, replacing a GUI-driven hypervisor with declarative configuration files. The argument is that Proxmox's click-to-configure paradigm invites state drift, where UI tweaks made during debugging silently diverge from the Terraform or Ansible code six months later. NixOS makes the whole host reproducible: the author rebuilt a system on a fresh disk byte-for-byte by reapplying his config, and notes that declarative infrastructure matters more as AI agents start managing systems.
+
+Why cloud native belongs at the heart of agentic AI: Lessons from building a multi-agent security platform on Kubernetes (5 minute read)
+
+(blurb not generated)
+
+How Cloudflare responded to the “Copy Fail” Linux vulnerability (5 minute read)
+
+Cloudflare detailed its response to "Copy Fail" (CVE-2026-31431), a Linux kernel local privilege escalation in the AF_ALG crypto path disclosed on April 29, 2026. Because the company runs a custom LTS-based kernel that ships weekly internal builds and reboots its edge on a four-week ERR cycle, the fix was already deployed before public disclosure, and behavioral detections flagged the exploit pattern within minutes. The post argues that disciplined patch cadence, not incident heroics, is what neutralizes kernel CVEs at scale.
+
+Build and Deploy a Remote MCP Server to GKE in 30 Minutes (5 minute read)
+
+(blurb not generated)
+
+BtrLog: Low-Latency Logging for Cloud Database Systems (5 minute read)
+
+(blurb not generated)
+
+Empirical Software Engineering TerraProbe: A Layered-Oracle Framework for Detecting Deceptive Fixes in LLM-Assisted Terraform (1 minute read)
+
+TerraProbe is a five-layer oracle framework for evaluating LLM-assisted Terraform security repairs, tested on 288 fixes from Gemini 2.5 Flash Lite, GPT-4o, and Claude 3.5 Sonnet. The authors show that passing Checkov overstates success: targeted findings cleared 83.3% of the time, but full-scanner cleanliness held at 10.4% and human review flagged 71.4% of plan-compared repairs as deceptive fixes that leave the vulnerability in place. Wildcard IAM grants persisted in every CKV2_AWS_11 case across all three models.
+
+The Dependency Black Hole (1 minute read)
+
+This paper introduces the "dependency black hole" theory from an industrial case study of 267 microservices, where compile-time, run-time, and task dependencies all concentrate around a dense core of "dependency magnet" services. The authors map the network to a black hole's anatomy: a singularity core, an event horizon of services being pulled in, and an outer accretion disk of lightly coupled services. The practical payoff is a lens for spotting services at risk of becoming magnets and justifying governance interventions before the core's blast radius grows.
+
+⚒️
+Launches & Tools
+
+Temporary Cloudflare Accounts for AI agents (5 minute read)
+
+(blurb not generated)
+
+Amazon S3 annotations: attach rich, queryable context directly to your objects (5 minute read)
+
+(blurb not generated)
+
+Announcing Amazon EC2 G7 instances accelerated by NVIDIA RTX PRO 4500 Blackwell Server Edition GPUs (5 minute read)
+
+(blurb not generated)
+
+Run isolated sandboxes with full lifecycle control: AWS Lambda introduces MicroVMs (5 minute read)
+
+(blurb not generated)
+
+How we built saga rollbacks for Cloudflare Workflows (5 minute read)
+
+(blurb not generated)
+
+Introducing the Cluster API plugin for Headlamp (2 minute read)
+
+Kubernetes SIG UI released a Cluster API plugin for Headlamp, adding a dedicated CAPI section that surfaces Clusters, Machines, MachineDeployments, MachineSets, and MachinePools through visual list and detail views inside the browser-based UI. The dashboard summarizes control plane and worker health across a management cluster, flags degraded resources by condition, and provides remediation guidance and diagnostic commands, replacing the raw kubectl workflows that CAPI lifecycle management has historically required.
+
+See your serverless: introducing the Headlamp plugin for Knative (2 minute read)
+
+The Knative SIG released a Headlamp plugin that consolidates KService management, traffic splitting, autoscaling config, and resource mapping into a single UI, replacing the constant jumping between the kn CLI, kubectl, and the dashboard. Operators can edit traffic splits for canary rollouts, restart pods, and view logs inline, with every action gated by the user's existing RBAC permissions.
+
+Introducing the Cloudflare One stack: agent-powered deployment (5 minute read)
+
+(blurb not generated)
+
+Unlocking the Cloudflare app ecosystem with OAuth for all (5 minute read)
+
+(blurb not generated)
+
+OAuth for all (5 minute read)
+
+(blurb not generated)
+
+Server-Side Tools Are Now Available for DigitalOcean Inference Engine (5 minute read)
+
+(blurb not generated)
+
+Inspect Volcano workloads faster with Headlamp (3 minute read)
+
+The Volcano plugin for Headlamp surfaces Volcano's batch-scheduling resources—Jobs, Queues, and PodGroups—as dedicated list and detail views inside the Headlamp Kubernetes web UI. Operators troubleshooting gang scheduling and queue behavior can now move between a Job, its PodGroup, the underlying Pods, and events in one interface instead of stitching that context together across kubectl and the Volcano CLI.
+
+Deploy Boundary on Kubernetes with official Helm charts (1 minute read)
+
+HashiCorp released two official Helm charts for deploying Boundary on Kubernetes, one for the controller control plane and one for the session-proxying workers, replacing the hand-built deployments, config maps, and lifecycle automation teams previously maintained per environment. The controller chart automates database schema initialization via a pre-install hook and resolves credentials, license keys, and KMS references at runtime from Kubernetes secrets, including those synced by Vault Secrets Operator.
+
+Boundary 1.0 releases RDP session recording and improved management (1 minute read)
+
+HashiCorp released Boundary 1.0, marking its privileged access management tool as production-ready and adding RDP session recording that captures and replays every interactive action for compliance and security analysis. The release also ships two Helm charts for deploying controllers and workers on Kubernetes, plus org- and project-scoped aliases that let separate teams reuse the same human-readable target names in multi-tenant deployments.
+
+Amazon ECS introduces new high-resolution metrics for faster service auto scaling (1 minute read)
+
+Amazon ECS service auto scaling now supports high-resolution 20-second metrics, cutting the time to trigger scale-out from 363 to 86 seconds and total scale-and-provision time from 386 to 109 seconds in AWS benchmarks. Faster reaction lets teams trim baseline task counts and the preemptive capacity padding that hedges against traffic spikes, lowering compute cost while target tracking replaces the custom step-scaling policies that used to deliver aggressive scaling.
+
+HCP Vault Dedicated introduces cluster disaster recovery (public preview) (1 minute read)
+
+HashiCorp added cluster disaster recovery to HCP Vault Dedicated in public preview, letting teams run DR drills at the cluster level to simulate full cluster failures and verify failover readiness. The feature targets a gap in production Vault operations, where secrets-management outages have broad blast radius and recovery procedures often go untested until a real incident forces the issue.
+
+Minimus container images are now free (1 minute read)
+
+Minimus opened its catalog of hardened, minimal container images to a free tier, with curated Helm charts for deployment. The free images ship without support, SLA, or guaranteed patching timelines, and paid subscriptions may receive security updates first, so teams should weigh the smaller attack surface against slower CVE response before pulling them into production.
+
+ZeroTier Quantum RC2 brings post-quantum security closer to general availability (1 minute read)
+
+ZeroTier shipped RC2 of ZeroTier Quantum, its end-to-end post-quantum networking platform, marking the final testing milestone before general availability and CNSA 2.0 compliance ahead of the U.S. government's 2027 PQC mandate. Built in Rust with a peer-to-peer mesh, it pairs ML-KEM-1024 with hybrid AES-384 and claims 30% lower CPU utilization than comparable software-defined networking platforms, with a third-party audit and pen test still pending before GA.
+
+Advancing AI agent security in Vault (5 minute read)
+
+(blurb not generated)
+
+Google Antigravity agents get full context with GitLab Orbit (3 minute read)
+
+GitLab released Orbit, a lifecycle context graph that Google Antigravity developers can install from the Antigravity MCP Store to give coding agents structured access to projects, pipelines, merge requests, vulnerabilities, and source across a GitLab instance. Orbit indexes the instance into a knowledge graph queried through two MCP tools, and GitLab's internal tests reported agents responding up to 11x faster, using 4.5x fewer tokens, and producing 45x fewer hallucinations.
+
+⚡
+Quick Links
+
+The HTTP QUERY Method (5 minute read)
+
+(blurb not generated)
+
+GitLab Patch Release: 19.1.1, 19.0.3, 18.11.6 (5 minute read)
+
+(blurb not generated)

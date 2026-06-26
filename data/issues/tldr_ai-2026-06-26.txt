@@ -1,0 +1,351 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR AI 2026-06-26
+
+🚀
+Headlines & Launches
+
+OpenAI and Broadcom unveil LLM-optimized inference chip (1 minute read)
+
+OpenAI and Broadcom introduced Jalapeño, a custom chip built specifically for large language model inference. The companies designed it to improve performance, efficiency, and scale across AI systems, giving OpenAI more control over the compute stack that runs its models as it reduces reliance on third-party accelerators.
+
+Claude Tag (5 minute read)
+
+(blurb not generated)
+
+A New Era of Midjourney (5 minute read)
+
+(blurb not generated)
+
+Introducing computer use in Gemini 3.5 Flash (5 minute read)
+
+(blurb not generated)
+
+Anthropic Claims Alibaba Ran ‘Brazen’ Campaign to Access Its Claude AI Model (1 minute read)
+
+Anthropic alleged in a letter to The Wall Street Journal that Alibaba and its AI unit ran "the largest known distillation attack" against the company to access its Claude model. Distillation extracts a target model's behavior by querying it at scale to train a competing system, and Anthropic characterized the effort as a "brazen" campaign to replicate Claude's capabilities.
+
+DeepReinforce releases Ornith-1.0 open-source coding models (5 minute read)
+
+(blurb not generated)
+
+Qualcomm acquires AI startup Modular in open ecosystem bet to challenge CUDA (5 minute read)
+
+(blurb not generated)
+
+OpenAI launches new security tools and updates GPT-5.5-Cyber (5 minute read)
+
+(blurb not generated)
+
+OpenAI Launches Daybreak To Automate Vulnerability Patching (5 minute read)
+
+(blurb not generated)
+
+Daybreak: Tools for securing every organization in the world (5 minute read)
+
+(blurb not generated)
+
+Anthropic claims that China's Alibaba used 25,000 fake accounts and 28.8 million exchanges to illicitly 'distill' its Claude model — violations occurred from April to June 2026 (5 minute read)
+
+(blurb not generated)
+
+GLM-5.2 Raises the Bar for Open Models (5 minute read)
+
+(blurb not generated)
+
+GLM-5.2 Is The New Best Open Model (5 minute read)
+
+(blurb not generated)
+
+Krea 2 Technical Report (1 minute read)
+
+Krea released Krea 2, a series of foundation image-generation models aimed at creative exploration rather than a single polished default aesthetic. The models use a diffusion transformer trained through a multi-stage pipeline of pretraining, midtraining, SFT, preference optimization, and RL, with architectural additions like grouped-query attention, sigmoid-gated attention, and Qwen3-VL text encoding.
+
+Anthropic accuses Alibaba of using 25,000 fake accounts to scrape Claude AI (5 minute read)
+
+(blurb not generated)
+
+The White House is asking OpenAI to slow roll the release of its new model over safety concerns (1 minute read)
+
+OpenAI plans to limit the release of its new model, GPT-5.6, to a select group of close partners after the Trump administration requested a restricted rollout over safety concerns. CEO Sam Altman reportedly told staff the government would approve access customer by customer during a preview period, with a broader public release possible a couple of weeks later if it goes well.
+
+OpenAI will delay GPT-5.6 after Trump administration request (1 minute read)
+
+OpenAI will release GPT-5.6 in a limited preview to a small group of enterprise customers, complying with a Trump administration request to stagger the launch over security concerns. The administration will approve customer access case-by-case during the preview, a softer arrangement than the export control directive that forced Anthropic to suspend access to its Mythos 5 and Fable 5 models earlier this month.
+
+Anthropic says Alibaba must be punished for largest Claude cloning attack (1 minute read)
+
+Anthropic accused Alibaba of running the largest campaign yet to illicitly extract Claude's capabilities, citing more than 28.8 million exchanges generated through nearly 25,000 fraudulent accounts between April 22 and June 5. In a letter to senators, Anthropic said the operation targeted agentic reasoning, software engineering, and long-horizon tasks, and used obfuscation and proxy networks to evade detection after Trump moved to curb such distillation attacks.
+
+OpenAI unveils first chip as part of Broadcom deal in effort to 'build the full stack' (5 minute read)
+
+(blurb not generated)
+
+The US government asks OpenAI to slow its next model’s release (1 minute read)
+
+The Trump administration asked OpenAI to stagger the release of its upcoming GPT-5.6 model, marking the first time the US government has preemptively requested an American AI lab restrict a launch. Sam Altman told staff the model would first go to a short list of trusted partners, with the government approving access customer by customer during the preview period over cybersecurity concerns.
+
+🧠
+Deep Dives & Analysis
+
+Building Reliable Agentic AI Systems (5 minute read)
+
+(blurb not generated)
+
+The text in Claude Code's “Extended Thinking” output is not authentic (5 minute read)
+
+(blurb not generated)
+
+What happened after 2k people tried to hack my AI assistant (1 minute read)
+
+A developer built hackmyclaw.com, inviting anyone to email his OpenClaw assistant Fiu and try to make it leak a secrets.env file. After hitting the Hacker News front page, Fiu fielded over 6,000 emails from 2,000+ people using fake-future personas, compliance-audit pressure, and multilingual prompts, but the secrets never leaked. The exercise cost over $500 in API tokens and got the assistant's Gmail suspended for three days, while batch processing initially contaminated results until each email was given a fresh context.
+
+A Mechanistic Explanation of Prompt Injection (and why you should study roles) (5 minute read)
+
+This post presents a mechanistic theory of prompt injection, arguing the vulnerability comes down to how LLMs perceive roles defined by chat template tags. Because a model receives its entire context as one continuous token stream, its own reasoning, user instructions, and fetched webpage content all arrive through the same channel, with role tags as the only structure separating them. The authors use the theory to construct new attacks, explain prior mech interp findings, and predict when injections succeed.
+
+The Coming Loop (5 minute read)
+
+(blurb not generated)
+
+Why the Frontier Ecosystem must be Open — Matei Zaharia and Reynold Xin, Databricks (5 minute read)
+
+(blurb not generated)
+
+So You Want to Sell Inference (5 minute read)
+
+This post argues that reselling inference at cost is a zero-margin payment rail, and the only way to hold 30+ points of gross margin is to escape cost-plus pricing. Cost-plus markups compress toward zero as inference commoditizes and customers route to the raw API, while value-based pricing charges for outcomes like resolved tickets or completed tasks and stays decoupled from the inference line. The author notes distillation to proprietary small models is the most defensible way to widen margin.
+
+Augmentation with Dilution: A Large-Scale Empirical Study of Human Contributor Ecosystems After AI Coding Agent Adoption (1 minute read)
+
+This paper presents the first large-scale empirical study treating human contributors, not AI, as the dependent variable after AI coding agent adoption in open-source projects. Using a staggered difference-in-differences design across 11,097 GitHub repositories from 2023 to 2026, the authors find that agents don't reduce the absolute number of human contributors but cut their relative density, with newcomers' participation share dropping 3.7 points and review depth rising 5.3% as burden shifts from writing code to reviewing it.
+
+Preliminary Thoughts On The Midjourney Scanner (5 minute read)
+
+(blurb not generated)
+
+My Vibe Coding Adventure, The App and the Experience, Ten Takeaways (5 minute read)
+
+(blurb not generated)
+
+Agents That Know Too Much: A Data-Centric Survey of Privacy in LLM Agents (1 minute read)
+
+This survey reorganizes the scattered research on LLM agent privacy around the data an agent touches rather than the attacks it faces, covering query logs, intermediate results, memory writes, and inter-agent messages. The authors find that only information-flow control addresses both compositional and cross-session inference leakage, the two least-protected risks, and that no existing benchmark drives an agent across all its data surfaces under a single privacy policy.
+
+Why the Human Genome's Tangled Physicality May Confound AI (5 minute read)
+
+(blurb not generated)
+
+The Problem is Prompt Debt (5 minute read)
+
+The author argues that hand-tuning natural language prompts creates "prompt debt," a slow-accumulating liability that caps what AI applications can become. Plain-English prompts make prototyping effortless but degrade into brittle thickets of edge cases and all-caps threats, slowing iteration, becoming illegible to teammates, and locking systems to a single aging model. Datadog data backs this up: GPT-4o remains the most-used model in observed traffic because hot fixes break when teams switch models.
+
+There is minimal downside to switching to open models (5 minute read)
+
+(blurb not generated)
+
+⚒️
+Engineering & Research
+
+Moebius (5 minute read)
+
+(blurb not generated)
+
+Interesting Paper Exploring Prompt Injection (5 minute read)
+
+(blurb not generated)
+
+When Does Combining Language Models Help? A Co-Failure Ceiling on Routing, Voting, and Mixture-of-Agents Across 67 Frontier Models (1 minute read)
+
+This paper shows that combining language models through routing, voting, or mixture-of-agents cannot exceed one minus beta, the rate at which every model fails the same query, a ceiling that average pairwise error correlation cannot detect. Across 67 models from 21 providers, single-factor models underprice this all-wrong tail by about 2.5x on open-ended math, and on checkable tasks ensembling rarely beats the single best model without a strong query-level routing signal.
+
+Thinking to recall: How reasoning unlocks parametric knowledge in LLMs (5 minute read)
+
+(blurb not generated)
+
+Scaling AI Inference Across Multiple GPUs Using NVIDIA TensorRT with Multi-Device Inference Support (5 minute read)
+
+(blurb not generated)
+
+Reinforcement Learning without Ground-Truth Solutions can Improve LLMs (1 minute read)
+
+This paper introduces RiVER, a reinforcement learning framework that trains LLMs on score-based coding tasks using deterministic execution feedback instead of ground-truth solutions, addressing scale dominance and frequency dominance through calibrated reward shaping. Trained only on AtCoder Heuristic Contest tasks, it improved Qwen3-8B and GLM-Z1-9B by roughly 9% in ALE rating rank and also transferred to exact-solution benchmarks like LiveCodeBench and USACO.
+
+Hallucination in World Models is Predictable and Preventable (1 minute read)
+
+This paper argues that hallucination in generative world models is a data coverage problem, concentrating in low-coverage regions of the state-action space where lightweight signals can both detect and mitigate it. The authors introduce MMBench2, a 427-hour, 210-task dataset, identify three hallucination modes, and use their failure predictors as curiosity rewards to adapt a 350M-parameter model to unseen environments with as few as 50 real trajectories.
+
+Run a vLLM Server on HF Jobs in One Command (5 minute read)
+
+Hugging Face's new guide shows how to launch a vLLM server on HF Jobs with a single `hf jobs run` command, using the official vllm/vllm-openai image on a chosen GPU flavor. The server speaks the OpenAI API, exposes a public proxy URL authenticated with an HF token, and is billed per minute, making it suited for tests, evals, and batch generation rather than production.
+
+AI Is Designing Radio Chips That Humans Couldn’t Even Imagine (3 minute read)
+
+Princeton researchers applied reinforcement learning, inverse design, and diffusion models to generate radio-frequency integrated circuits (RFICs) from scratch, producing layouts that achieve record performance while cutting design time substantially. RFIC design has long remained an experience-driven craft that bottlenecks wireless progress, and the authors argue further gains will require large shared chip-design datasets and open ecosystems so models can learn universal electromagnetic and circuit behaviors.
+
+Prompt Injection in Automated Résumé Screening with Large Language Models: Single and Multi-Injection Settings (1 minute read)
+
+This paper studies prompt injection in LLM-based résumé screening, where candidates insert subtle self-promotional text that adds no real qualifications but nudges model rankings. The authors find injection reliably boosts rankings when résumés are similar and few candidates do it, but its effect collapses as more candidates inject, and with varied candidate quality it can occasionally let weaker applicants outrank stronger ones.
+
+MosaicLeaks: Can your research agent keep a secret? (5 minute read)
+
+(blurb not generated)
+
+Amazon S3 annotations: attach rich, queryable context directly to your objects (5 minute read)
+
+(blurb not generated)
+
+Accelerating Transformers Fine-Tuning with NVIDIA NeMo AutoModel (5 minute read)
+
+(blurb not generated)
+
+Lighthouse agentic browsing scoring (5 minute read)
+
+(blurb not generated)
+
+Temporary Cloudflare Accounts for AI agents (5 minute read)
+
+(blurb not generated)
+
+Which tokens does a hybrid model predict better? (5 minute read)
+
+(blurb not generated)
+
+Accelerating BEV Pooling on NVIDIA GPUs for Physical AI Applications (5 minute read)
+
+(blurb not generated)
+
+GLM 5.2: why I’m replacing Opus in Claude Code with this new model (1 minute read)
+
+GLM 5.2, the open-weight coding model from Z.AI, was run through four real tasks inside a production Next.js codebase, including an architecture audit, a landing page redesign, and a 45-minute autonomous bug-hunting session pulling from Sentry and Vercel logs. The full run cost $3.36 for roughly 6 million tokens, with the author concluding the model is good enough to replace Opus in Claude Code.
+
+Alibaba's model never trained as an agent — and improved agent performance across seven benchmarks (5 minute read)
+
+(blurb not generated)
+
+When are likely answers right? On Sequence Probability and Correctness in LLMs (1 minute read)
+
+This paper quantifies when a model's sequence probability, the conditional likelihood of a continuation given a prompt, actually predicts whether the answer is correct, testing the relationship across decoding methods, hyperparameters, datasets, and repeated responses. Higher probability tracks correctness across prompt-answer pairs in a fixed dataset, but raising it by tuning hyperparameters or methods does not reliably improve accuracy, and it fails to rank repeated responses to the same prompt.
+
+🎁
+Miscellaneous
+
+Nobel laureate John Jumper is leaving DeepMind for rival Anthropic (5 minute read)
+
+(blurb not generated)
+
+AI and Liability (5 minute read)
+
+(blurb not generated)
+
+Washington’s Foreign Ban on Anthropic’s Top Models May Backfire (1 minute read)
+
+The White House banned foreign access to Anthropic's top models, a restriction analysts say could redirect global demand toward China's open-source AI offerings. The move may undercut its own intent by accelerating adoption of Chinese alternatives like those from DeepSeek and Alibaba, giving rivals a foothold among developers cut off from US frontier systems.
+
+Anthropic Says Alibaba Ran 28.8 Million Claude Exchanges Through Fake Accounts (1 minute read)
+
+Anthropic told U.S. officials that operators affiliated with Alibaba and its Qwen lab ran 28.8 million Claude exchanges through nearly 25,000 fraudulent accounts between April 22 and June 5. The company described it as its largest known distillation attack, exceeding its February claims against DeepSeek, Moonshot AI, and MiniMax combined and targeting Claude's software engineering and agentic reasoning.
+
+A public Sentry key is all it takes to hijack Claude Code, Cursor, and Codex (5 minute read)
+
+(blurb not generated)
+
+Trump says he no longer views Anthropic as a national security threat after G7 meeting with CEO (5 minute read)
+
+(blurb not generated)
+
+N.S.A. Lost Access to Powerful A.I. Model Amid Anthropic Dispute (5 minute read)
+
+(blurb not generated)
+
+NSA lost access to Mythos amid Anthropic dispute (5 minute read)
+
+(blurb not generated)
+
+NSA Lost Access to Powerful AI Model Amid Anthropic Dispute (5 minute read)
+
+(blurb not generated)
+
+New Gaslight macOS Malware Uses Prompt Injection to Disrupt AI-Assisted Analysis (5 minute read)
+
+(blurb not generated)
+
+7,000 Langflow servers are under attack. LangGraph and LangChain have the same holes (5 minute read)
+
+(blurb not generated)
+
+Why American data centers can't plug in (5 minute read)
+
+(blurb not generated)
+
+Ford AI hiccups push carmaker to rehire ‘gray beard’ inspectors (5 minute read)
+
+(blurb not generated)
+
+Embedding Forbidden Text in Spyware to Discourage AI Analysis (1 minute read)
+
+Malware authors are embedding fake system instructions and policy-triggering text about nuclear and biological weapons into spyware comment blocks to derail LLM-based code analysis. The header doesn't affect execution but can trigger refusals, context pollution, or premature classification in naive AI-first triage pipelines, though static tools like YARA rules, entropy checks, and AST parsing still detect the underlying payload.
+
+New macOS malware embeds fake errors to confuse AI analysis tools (5 minute read)
+
+(blurb not generated)
+
+Data Exposure Flaws Threaten Dify AI Platform Used by 1 Million Apps (1 minute read)
+
+Zafran Security disclosed four vulnerabilities, collectively called DifyTap, in the open source LLMOps platform Dify, which powers over 1 million applications across more than 50 industries. The flaws, two rated critical, let attackers in multi-tenant cloud setups read other customers' private chats, trigger cross-tenant internal API calls, and access files uploaded by other tenants. Dify version 1.14.2 patches the issues.
+
+New Enterprise-Ready MCP Specification Brings New Security Challenges (1 minute read)
+
+Anthropic's Model Context Protocol moves to a new enterprise-ready spec on July 28, 2026, making MCP stateless at the protocol layer and giving legacy versions a 12-month deprecation window. Akamai's analysis found the redesign closes off session hijacking and unsolicited server prompts but opens new attack surfaces, including predictable tracking IDs that enable cross-tenant actions and MCP-specific HTTP headers that can leak API keys or PII.
+
+Proposed US law would make AI risk reporting a legal obligation (2 minute read)
+
+US lawmakers introduced the AI Incident Reporting Act, which would require developers of high-capability "covered models" to report major safety and security incidents to the Commerce Department within seven days. Reportable events include models attempting to evade human oversight, resist shutdown, or enable cyberattacks and chemical, biological, or nuclear weapons development, with the Secretary of Commerce setting the capability thresholds that trigger compliance.
+
+Medical diagnosis AIs can be tricked into telling whose data trained them (1 minute read)
+
+Researchers showed that medical diagnosis AI models can be manipulated into revealing whose data was used to train them, exposing a privacy risk in clinical machine learning systems. The attack could let adversaries confirm whether a specific patient's records were part of a training set, undermining the anonymity protections that healthcare deployments depend on.
+
+Italy is investigating Microsoft 365's price hike, saying Microsoft failed to inform users that AI tools like Copilot were being integrated into the service (Giulia Segreti/Reuters) (1 minute read)
+
+Italy's antitrust authority opened an investigation into Microsoft over its Microsoft 365 price increase, alleging the company failed to disclose that AI tools like Copilot were being bundled into the service. Regulators are examining whether the integration and accompanying price hike were communicated clearly enough to users, a question that could shape how AI features get packaged into existing subscriptions.
+
+⚡
+Quick Links
+
+Atlassian's DESIGN.md is Here: What We Learned Testing Portable Design Context in Practice (5 minute read)
+
+(blurb not generated)
+
+Snowflake and the Agentic Resource Discovery Specification (5 minute read)
+
+(blurb not generated)
+
+RubyLLM: A Ruby framework for all major AI providers (5 minute read)
+
+(blurb not generated)
+
+Nvidia Seeks to Make Humanoid AI Robots Safer Around Humans (5 minute read)
+
+(blurb not generated)
+
+Building AI tailored for education, with educators in the lead (5 minute read)
+
+(blurb not generated)
+
+Do AI Assistants Actually Render Your JavaScript when Grounding? We Put It to the Test (5 minute read)
+
+(blurb not generated)
+
+iOS 27 beta 2: Apple tells Siri AI to clearly refuse requests to summarize URLs (5 minute read)
+
+(blurb not generated)
+
+TrueFoundry acquires MLOps pioneer Seldon AI to accelerate enterprise agentic AI (5 minute read)
+
+(blurb not generated)
+
+ISTE 2026: Supporting teaching and learning with connected AI tools (5 minute read)
+
+(blurb not generated)

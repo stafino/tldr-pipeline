@@ -1,0 +1,307 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR InfoSec 2026-06-26
+
+🔓
+Attacks & Vulnerabilities
+
+Zero-Day Exploitation of Vulnerability (CVE-2026-20245) in Cisco Catalyst SD-WAN Manager (2 minute read)
+
+Mandiant disclosed active zero-day exploitation of CVE-2026-20245, a privilege-escalation flaw in Cisco Catalyst SD-WAN Manager that lets an attacker with a compromised admin account reach root via a malicious CSV upload that bypasses file-upload filtering. The actor, observed at a service provider in early 2026, established rogue SSH peering, altered default account passwords, and ran anti-forensic cleanup scripts to purge indicators, so defenders should patch, rotate appliance credentials, and audit peering configurations.
+
+FortiBleed: 86,000 Fortinet Device Credentials Compromised (5 minute read)
+
+(blurb not generated)
+
+Embedding Forbidden Text in Spyware to Discourage AI Analysis (1 minute read)
+
+A malware developer is prepending JavaScript block comments containing fake nuclear and biological weapons policy text to spyware payloads, aiming to derail LLM-based triage that feeds file headers to a model without isolating them as untrusted data. The trick can trigger refusal, context pollution, or premature classification in naive LLM-first scanners, but it does not evade YARA rules, entropy checks, AST parsing, or behavioral detection.
+
+Mandiant reveals how Cisco SD-WAN zero-day attacks gained root access (5 minute read)
+
+(blurb not generated)
+
+Interesting Paper Exploring Prompt Injection (5 minute read)
+
+(blurb not generated)
+
+Protocol Prying: Systematic Vulnerability Research in the Apple AirDrop and Android Quick Share Proximity Transfer Protocols (1 minute read)
+
+Researchers published the first cross-platform reverse-engineering and protocol-aware fuzzing study of Apple AirDrop and Android Quick Share, finding six pre-auth vulnerabilities (V1-V6) across the proximity transfer stacks used by over five billion devices. The flaws include three zero-click AirDrop DoS issues in macOS/iOS, a Samsung Quick Share D2D encryption bypass, and a heap use-after-free in Google Quick Share for Windows; Apple, Samsung, and Google acknowledged the reports.
+
+Cordyceps CI/CD Flaws Expose 300+ GitHub Repositories to Supply-Chain Attacks (1 minute read)
+
+Novee Security disclosed Cordyceps, a class of CI/CD misconfiguration in which untrusted pull requests trigger privileged GitHub Actions workflows, enabling command injection, credential theft, and supply-chain compromise exploitable by any unauthenticated user with a free account. A scan of roughly 30,000 high-impact repositories found 300+ fully exploitable, including projects at Microsoft, Google, Apache, and Cloudflare; audit workflows that run on `pull_request_target` and strip write permissions and secrets from untrusted PR triggers.
+
+CISA warns of max severity Ubiquiti flaws exploited in attacks (1 minute read)
+
+CISA added four actively exploited flaws to its KEV catalog, including three max-severity Ubiquiti UniFi OS bugs (CVE-2026-34908, -34909, -34910) that Bishop Fox chained for unauthenticated RCE with elevated privileges, plus a critical Lantronix EDS5000 command-injection (CVE-2025-67038). BOD 26-04 gives federal agencies three days to patch; apply Ubiquiti's May updates and Lantronix firmware 2.2.0.0R1, and run Bishop Fox's detection script to find vulnerable instances.
+
+Cisco Unified CM flaw CVE-2026-20230 now exploited in attacks (5 minute read)
+
+(blurb not generated)
+
+Chrome Ad Blocker with 10M+ Installs Found with Dormant Script Injection Capability (5 minute read)
+
+(blurb not generated)
+
+New Gaslight macOS Malware Uses Prompt Injection to Disrupt AI-Assisted Analysis (5 minute read)
+
+(blurb not generated)
+
+Cisco Catalyst SD-WAN Zero-Day CVE-2026-20245 Exploited to Gain Root Access (1 minute read)
+
+Mandiant found an unknown threat actor exploited Cisco Catalyst SD-WAN flaw CVE-2026-20245 (CVSS 7.8) as a zero-day for at least two months before disclosure, uploading a malicious CSV to gain root on a communications provider's device. The attack chained earlier authentication-bypass zero-days (CVE-2026-20127, CVE-2026-20182) and used anti-forensic config restoration to evade detection, so apply Cisco's patches and audit SD-WAN peering connections and admin credentials.
+
+New macOS malware embeds fake errors to confuse AI analysis tools (5 minute read)
+
+(blurb not generated)
+
+Malicious Edge extension abuses Native Messaging as bridge to malware (5 minute read)
+
+(blurb not generated)
+
+Malicious hackers exploit Cisco zero-day for highest access level at communications service provider (5 minute read)
+
+(blurb not generated)
+
+Russia Used Cellebrite on Jailed Activist's iPhone Months After Sales Cutoff (1 minute read)
+
+Citizen Lab published evidence on June 25 that Russian authorities used Cellebrite's UFED forensic tools to extract data from jailed opposition activist Andrey Pivovarov's iPhone 12 in June 2021, three months after Cellebrite said it stopped selling to Russia. MobileLockdown USB-pairing records matching a known Cellebrite host fingerprint, plus an official MVD forensic report naming UFED Physical Analyzer and UFED 4PC, show investigators pulling WhatsApp, Telegram, and Viber data to search for named opposition figures.
+
+Amadey and StealC Malware Network Disrupted, 27M Stolen Credentials Recovered (5 minute read)
+
+(blurb not generated)
+
+Amadey, StealC malware operations disrupted in Operation Endgame action (1 minute read)
+
+Operation Endgame disrupted the Amadey botnet and StealC infostealer, with Microsoft, Europol, and partners taking down 326 servers and 142 domains tied to the malware-as-a-service operations, alongside the SocGholish loader. The action recovered roughly 27 million credentials stolen from over 385,000 systems; defenders should treat any credentials handled on affected hosts as compromised and force rotation.
+
+STOCKSTAY Another Day: The Latest Addition to Turla’s Intelligence Gathering Apparatus (5 minute read)
+
+(blurb not generated)
+
+Klue hack results in data breach at several cybersecurity firms (5 minute read)
+
+(blurb not generated)
+
+🧠
+Strategies & Tactics
+
+RFC 9958 - Post-Quantum Cryptography for Engineers (5 minute read)
+
+(blurb not generated)
+
+Build your own vulnerability harness (5 minute read)
+
+(blurb not generated)
+
+A Deterministic Control Plane for LLM Coding Agents (1 minute read)
+
+A study of 10,008 public GitHub repositories (6,145 agent config files) finds that LLM coding-agent configurations behave as an unmanaged supply chain: 10.1% of tracked paths are SHA-256 exact duplicates across independent repos, 75.5% of clone pairs cross org boundaries, and under 1% declare permission boundaries. The authors propose Rel(AI)Build, a deterministic control plane that content-addresses agent definitions, enforces tiered permissions and blocklists before LLM invocation, and logs a hash-chained audit trail.
+
+GitHub Updates actions/checkout to Block Common Pwn Request Attack Patterns (5 minute read)
+
+(blurb not generated)
+
+New MCP specification kills old risks but opens fresh attack surfaces, Akamai finds (5 minute read)
+
+(blurb not generated)
+
+Inherited Circuits, Learned Semantics: How Fine-Tuning Creates Evasion Vulnerabilities Invisible to Standard Evaluation (1 minute read)
+
+This paper shows that fine-tuning an LLM for security classification can introduce evasion vulnerabilities that standard held-out evaluation misses. Studying Foundation-Sec-8B-Instruct, the authors find it inherits its classification circuit from base Llama, then specializes it into brittle token-level indicator rules that fail under behavior-preserving PowerShell transformations like alias substitution and case mutation. They propose a pre-deployment linear probe and indicator-token sign test to flag command families where semantics drift after fine-tuning.
+
+Chai: Agentic Discovery of Cryptographic Misuse Vulnerabilities (1 minute read)
+
+Chai is an AI system that discovers and validates cryptographic misuse vulnerabilities by inverting differential testing: instead of auditing one codebase for many flaws, it catalogs flaws at the library level and propagates them across a cryptographic dependency graph. Evaluated on X.509, JWT, and SAML libraries, it surfaced over 100 vulnerabilities, including a previously unknown critical bug in an SSL library powering billions of devices. The approach targets crypto misuse, a class that lacks the runtime instrumentation that makes memory-safety bugs cheap to confirm.
+
+MIRROR: Novelty-Constrained Memory-Guided MCTS Red-Teaming for Agentic RAG (1 minute read)
+
+MIRROR is a red-teaming framework that runs memory-guided Monte Carlo tree search across four attack surfaces of multimodal agentic RAG systems, including text poisoning, image injection, and orchestrator-level tool manipulation. A deterministic Novelty Gate blocks candidates that duplicate retrieved context, addressing the 73-84% template recycling the authors measured in prior text-poisoning tools. MIRROR hits 76% ASR on image poisoning versus 52% for baselines and 97% on orchestrator attacks at half the query cost; the authors released ART-SafeBench with 41,815 records for testing defenses.
+
+Adaptive Evaluation of Out-of-Band Defenses Against Prompt Injection in LLM Agents (1 minute read) [flag]
+
+This paper organizes out-of-band prompt-injection defenses for LLM agents (CaMeL, FIDES, Progent, FORGE) as classical integrity controls (Biba, reference monitors, least privilege), and warns that all are validated only on static benchmarks, the same gap that let adaptive attacks break twelve in-band defenses at over 90% success. An independent reproduction on AgentDojo with a self-hosted Qwen2.5-7B held: Progent cut mean attack success sixfold (25.8% to 4.2%), and a hand-crafted adaptive attack stayed at 2.6%. White-box GCG attacks remain untested.
+
+What happened after 2k people tried to hack my AI assistant (1 minute read)
+
+A developer ran hackmyclaw.com, inviting the public to email Fiu, an OpenClaw AI assistant, and trick it into leaking a secrets.env file. After reaching Hacker News, Fiu absorbed 6,000+ emails from 2,000+ people using future-self impersonation, fake compliance audits, and multilingual prompt injection, yet never leaked credentials or sent an unauthorized reply. A short anti-injection system prompt held, though batch processing initially cross-contaminated context, arguing for fresh per-email isolation when running agents on untrusted input.
+
+Privacy-Aware Infrastructure in the AI-Native Era: An Asset Classification Case Study (1 minute read)
+
+Meta detailed its privacy-aware infrastructure (PAI) approach to asset classification at scale, the "understand" layer that feeds retention, access, and purpose enforcement. The architecture is deliberately LLM-narrow: models interpret only novel or ambiguous assets (a field named "age" could be a person's age or a cache TTL), then distill their reasoning into versioned, human-reviewed deterministic rules that handle routine production decisions. The pattern keeps enforcement low-latency, replayable, and auditable while shrinking the model's production footprint over time.
+
+Helpful or Harmful? Evaluating LLM-Assisted Vulnerability Patching via a Human Study (1 minute read)
+
+This paper proposes a controlled human study, using a balanced crossover design, to test whether LLM-assisted vulnerability patching actually outperforms manual debugging or just produces superficial fixes. The key methodological detail is hidden "Ghost Tests" that validate patch security beyond the visible functional checks, catching repairs that pass functionality but fail security validation. Only a pilot has run so far, so treat the full results as forthcoming rather than established.
+
+Vulnerability Reports Are Not Special Anymore (5 minute read)
+
+(blurb not generated)
+
+MosaicLeaks: Can your research agent keep a secret? (5 minute read)
+
+(blurb not generated)
+
+DroidBreaker: Practical and Functional Problem-Space Attacks on Machine-Learning Android Malware Detectors (1 minute read)
+
+DroidBreaker is a problem-space attack framework that evades machine-learning Android malware detectors by manipulating only the APK components most influential to the target model, using build-safe, semantics-preserving injection and obfuscation of API calls, modules, permissions, and URLs. It achieves high evasion rates with few queries in both white-box and black-box settings and sharply cuts detections by commercial scanners on VirusTotal. The authors argue prior attacks overstated success by smoke-testing only installation rather than verifying the modified APK still runs its intended behavior.
+
+Autoformalization of Agent Instructions into Policy-as-Code (1 minute read)
+
+This paper presents an autoformalization pipeline that translates agent prompts, MCP tool descriptions, and natural-language policy documents into formally verified Cedar policies using an LLM generator-critic loop. The approach targets the gap between probabilistic guardrails, which offer no formal guarantees, and hand-coded symbolic enforcement, which doesn't scale. On MedAgentBench, the generated policies cover substantially more of the source specification than the prior hand-coded enforcement, pointing to a path for verifiable agent governance in high-stakes domains.
+
+PRISM: PE Relational Inter-Section Matrix. A 2D Section-Aware Dataset for Static PE Malware Detection (1 minute read)
+
+PRISM is an open dataset and feature representation for static Windows PE malware detection that encodes each binary as a 2D matrix of sections in file order, preserving positional and inter-section context that flat vectors like EMBER discard. It spans 83,633 deduplicated samples across 684 families, and a gradient-boosted classifier matches EMBER's binary-detection accuracy at roughly one-sixth the dimensionality. The structural signal is aimed at less-saturated tasks like malware family classification.
+
+A Mechanistic Explanation of Prompt Injection (and why you should study roles) (5 minute read)
+
+A new analysis argues that prompt injection works because LLMs receive the entire conversation as one undifferentiated token stream, and rely on role tags (<system>, <user>, <tool>) rather than any inherent channel separation to tell instructions from data. The authors use this role-based theory to construct novel attacks, explain prior mech-interp findings, and predict when injections succeed. They call for a research subfield focused on the "science of roles," with the full work published at ICML.
+
+VIGIL: Runtime Enforcement of Behavioral Specifications in AI Agent Skills (1 minute read)
+
+VIGIL is a runtime enforcement framework that checks an AI agent's actual execution trace against behavioral policies drawn from skill specifications, operator constraints, and cross-skill global rules. Its policy language compiles into SMT constraints over finite traces, catching violations that depend on event order, argument relationships, or cross-call value flow rather than single-call filters. On real LLM-agent runs across office, operational, and engineering tasks, it flagged policy violations with over 95% recall and a sub-10% false-positive rate.
+
+Ransomware gangs find Europe’s weakest link in third-party suppliers (5 minute read)
+
+(blurb not generated)
+
+🧑‍💻
+Launches & Tools
+
+Automated Detection of Configuration-Specific Security Vulnerabilities via Patch Analysis (1 minute read)
+
+PatchLens is a static analysis technique that recovers Vulnerability Impact Conditions, Boolean predicates over compile-time options identifying which configuration variants of C/C++ software contained a given flaw, without compiling any variant. Evaluated across 1,192 Linux kernel, 289 FFmpeg, and 100 PHP patches, it produces compact predicates and shows that CVE texts encode the required options only about 1% of the time, enabling variant-aware CI triage, targeted fuzzing, and feature risk scoring.
+
+ZeroTier Quantum RC2 brings post-quantum security closer to general availability (1 minute read)
+
+ZeroTier released RC2 of ZeroTier Quantum, its end-to-end encrypted networking platform, pairing ML-KEM-1024 with hybrid AES-384 and mutual identity authentication to meet NIST/NSA CNSA 2.0 and FIPS requirements. The Rust-based, zero-trust mesh targets "harvest now, decrypt later" threats ahead of the U.S. government's 2027 PQC mandate, with a third-party audit and pen test pending before general availability.
+
+OpenAI launches new security tools and updates GPT-5.5-Cyber (5 minute read)
+
+(blurb not generated)
+
+Introducing AWS Continuum for security at machine speed (5 minute read)
+
+(blurb not generated)
+
+A privacy-first take on local malware analysis (1 minute read)
+
+Burnyard, a research project from Ohio State University, runs dynamic malware analysis entirely on local hardware, executing samples via instruction-level user-space emulation that hooks every syscall and Windows API call to produce a traced classification across 43 malware families. The local-only design avoids the disclosure risk of uploading samples to VirusTotal or MalwareBazaar, where operators can spot their own hashes, and averaged 22.41 seconds on Windows samples versus VirusTotal's 32.36.
+
+Patch the Planet: a Daybreak initiative to support open source maintainers (5 minute read)
+
+(blurb not generated)
+
+IBM, Red Hat, Palo Alto team to secure open-source software (5 minute read)
+
+(blurb not generated)
+
+Boundary 1.0 releases RDP session recording and improved management (1 minute read)
+
+HashiCorp released Boundary 1.0, its privileged access management platform, adding session recording for RDP that captures and replays every interactive user action to support compliance audits and security event analysis. The release also ships two Helm charts for deploying controllers and workers on Kubernetes and adds org- and project-scoped aliases so teams in multi-tenant deployments can reuse human-readable target names.
+
+Chinese cybersecurity company claims it’s built a better-than-Mythos bug finder (1 minute read)
+
+A Chinese cybersecurity firm claims its new AI-driven vulnerability scanner outperforms Mythos at autonomous bug discovery, positioning it as a domestic rival to Western offensive-security tooling. The claim is vendor-supplied and unverified by independent benchmarks, so defenders should treat the performance numbers as marketing until reproducible results land, while noting that LLM-assisted bug finders are accelerating on both the attacker and defender sides.
+
+Palo Alto Networks, IBM to match patching with AI pace for operational threats and more (5 minute read)
+
+(blurb not generated)
+
+🎁
+Miscellaneous
+
+AI and Liability (5 minute read)
+
+(blurb not generated)
+
+One-two punch delivered in global operation disrupts cybercrime "assembly line" (5 minute read)
+
+(blurb not generated)
+
+‘This operation marked a shift in strategy’: Three notorious malware networks have been taken down using RICO legislation (5 minute read)
+
+(blurb not generated)
+
+Anthropic Claims Alibaba Ran ‘Brazen’ Campaign to Access Its Claude AI Model (1 minute read)
+
+Anthropic alleged in a letter obtained by the Wall Street Journal that Alibaba and its AI unit ran "the largest known distillation attack" against Claude to date. The accusation escalates IP-theft disputes around model distillation, where a rival systematically queries a frontier model to replicate its outputs and train a competing system.
+
+London cops bring live facial recognition to West End (1 minute read)
+
+The Metropolitan Police deployed permanent live facial recognition cameras across London's West End, scanning passersby against watchlists in real time. The rollout extends LFR from temporary van-mounted deployments to fixed infrastructure, despite ongoing legal challenges and civil-liberties objections over consent, bias, and the absence of specific statutory authorization in UK law.
+
+DoJ Seizes Huione Cloud Account Tied to Cyber Scam Money Laundering (5 minute read)
+
+(blurb not generated)
+
+Accenture to buy Dragos, runZero, and NetRise in $4.2 billion cybersecurity deal (5 minute read)
+
+(blurb not generated)
+
+Microsoft quietly extends free Windows 10 ESU support to October 2027 (1 minute read)
+
+Microsoft quietly extended its free Windows 10 consumer Extended Security Updates program by a year, pushing coverage to October 12, 2027, via documentation edits and a blog post addendum rather than a formal announcement. Consumers can enroll at no cost by syncing Windows settings to a Microsoft account or redeeming 1,000 reward points, buying defenders more time before unsupported Windows 10 fleets go dark.
+
+Accenture snaps up majority stake in Dragos, acquires runZero and NetRise in critical infrastructure security push (5 minute read)
+
+(blurb not generated)
+
+N.S.A. Lost Access to Powerful A.I. Model Amid Anthropic Dispute (5 minute read)
+
+(blurb not generated)
+
+NSA lost access to Mythos amid Anthropic dispute (5 minute read)
+
+(blurb not generated)
+
+NSA Lost Access to Powerful AI Model Amid Anthropic Dispute (5 minute read)
+
+(blurb not generated)
+
+Microsoft gives Windows 10 users an unexpected extra year of free security updates (1 minute read)
+
+Microsoft extended its consumer Windows 10 Extended Security Updates (ESU) program by a year, pushing free critical-security patches for eligible 22H2 devices out to October 12, 2027. The extension surfaced quietly through documentation edits rather than a formal announcement, giving teams still running Windows 10 fleets more runway to migrate to Windows 11 before coverage lapses.
+
+FCC passes new cybersecurity rules for emergency systems, undersea cables (1 minute read)
+
+The FCC approved new rules Thursday tightening cybersecurity for the Emergency Alert System and Wireless Emergency Alerts, mandating strong passwords, prompt patching, firewalls, and a new authentication ID to verify alerts before they spread. The same vote delivered the first comprehensive update to submarine cable regulations in decades, tightening some security requirements while exempting certain undersea cable providers from Team Telecom national security reviews.
+
+Cloudflare teams up with Chrome, Firefox, and Edge on a privacy-first anti-bot protocol (5 minute read)
+
+(blurb not generated)
+
+SIM-swapping gang busted in international police operation (1 minute read)
+
+Polish authorities arrested four members of an organized cybercrime group accused of SIM-swapping, cryptocurrency theft, and laundering proceeds estimated to exceed tens of millions of zlotys, in an operation supported by the FBI and HSI. The group breached telecom-affiliated infrastructure and employee email accounts to hijack victims' phone numbers, then drained exchange accounts via intercepted SMS and email; all four face up to 25 years in prison.
+
+The Web4 Agent Economy: A Large-Scale Empirical Study of the Landscape, Challenges, and Opportunities (1 minute read)
+
+A large-scale empirical study of the emerging "Web4" agent economy analyzed 99,448 identity registrations, 317M transaction logs, and 341 MCP projects, finding autonomous agents already process millions of daily machine-to-machine payments on protocols like MCP, x402, and EIP-8004. The authors warn this growth rests on immature infrastructure, with weak identity and authorization practices and unresolved payment interoperability as the most persistent security gap.
+
+The 'papers, please' era of the internet will decimate your privacy (1 minute read)
+
+The author argues that age-verification mandates are functionally identity-verification mandates, forcing users to hand government IDs or facial biometrics to opaque third-party services with unknown data-handling and breach exposure. Citing Australia's under-16 social media ban, the piece notes the law fails on its own terms, with roughly 70% of kids still using social media months after enforcement, while creating new troves of sensitive identity data.
+
+Cisco Acquires WideField To Secure AI Agents And Non-Human Identities (5 minute read)
+
+(blurb not generated)
+
+DraftKings hacker 'Snoopy' sentenced to 18 months in prison (1 minute read)
+
+Nathan Austad, a 21-year-old Minnesota man who operated the "Snoopy" shop selling access to hacked DraftKings accounts, was sentenced to 18 months in prison after pleading guilty to conspiracy to commit computer intrusion. The 2022 credential-stuffing attack compromised roughly 68,000 accounts and stole $600,000; Austad was ordered to pay $463,684 in forfeiture and $1.3M in restitution.
+
+⚡
+Quick Links
+
+MEV Bot Exploited for $15M via Fake-Token Route Attack (5 minute read)
+
+(blurb not generated)
+
+Trump Seeks to Boost Quantum Computing With New Executive Orders (5 minute read)
+
+(blurb not generated)

@@ -1,0 +1,92 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR Data 2026-06-26
+
+📊
+News & Trends
+
+Snowflake and the Agentic Resource Discovery Specification (5 minute read)
+
+(blurb not generated)
+
+🧠
+Deep Dives & Analysis
+
+Privacy-Aware Infrastructure in the AI-Native Era: An Asset Classification Case Study (1 minute read)
+
+Meta's engineering team detailed how it classifies data assets for privacy enforcement, where an ambiguous field like "age" could mean a person's age or a cache TTL. The architecture uses LLMs narrowly to interpret novel or ambiguous assets, then distills their judgments into versioned, human-reviewed deterministic rules that handle routine production enforcement. The goal is to shrink the LLM's production role over time, keeping enforcement low-latency, replayable, and auditable while humans adjudicate reference labels and approve rule promotions.
+
+I wrote a 70x faster SQL parser while barely looking at the code (5 minute read)
+
+(blurb not generated)
+
+How we built an internal data analytics agent (5 minute read)
+
+(blurb not generated)
+
+TabClean: Reusable LLM-Synthesized Programs for Tabular Data Cleaning (1 minute read)
+
+TabClean compiles LLM reasoning into reusable guarded cleaning programs, profiling a dirty table and a small annotated dev set to synthesize deterministic Python transformations that fire only when their dirty pattern, evidence support, and scope constraints all hold. The point is cost: instead of calling an LLM per row or per recurring batch, you pay once to compile a program and run it deterministically thereafter. Across six benchmarks it beats rule-based, learning-based, and LLM-based cleaners on F1 for five datasets while cutting recurring runtime and API spend.
+
+The analytics engineer in 2026: system designer, governance owner, AI context provider (5 minute read)
+
+(blurb not generated)
+
+BtrLog: Low-Latency Logging for Cloud Database Systems (1 minute read)
+
+BtrLog is a reusable cloud logging service that gives single-writer databases low-latency durable WAL appends without a proprietary, engine-coupled backend. It replicates log records across a quorum of SSD-backed log nodes in one network round trip, then asynchronously archives them to object storage as large segments to keep storage cost down. In evaluation it beat EBS on write latency and raised end-to-end transaction throughput when wired into a DBMS.
+
+When failover isn't safe: Building high-availability PostgreSQL on Kubernetes (5 minute read)
+
+(blurb not generated)
+
+Why the Frontier Ecosystem must be Open — Matei Zaharia and Reynold Xin, Databricks (5 minute read)
+
+(blurb not generated)
+
+Optimizing cloud economics with linear elastic caching (5 minute read)
+
+(blurb not generated)
+
+How Good Can Linear Models Be for Time-Series Forecasting? (1 minute read)
+
+This paper argues that most of the accuracy gap between simple and large time-series models can be closed by tuning preprocessing rather than scaling architectures. Using Ridge regression as a transparent testbed, the authors search over context length, local normalization, regularization, and augmentation across eight benchmarks, and beat Transformer, MLP, and CNN baselines on six of them. The findings overturn a common convention: optimal lookback is series-specific and often shrinks as forecast horizon grows, and normalizing over a trailing fraction of the context beats normalizing the whole window.
+
+EcoTable: Cost-effective Table Integration in Data Lakes for Natural Language Queries (1 minute read)
+
+EcoTable proposes a natural language-based data integration framework that, given a set of plain-English queries, automatically joins CSV and Parquet tables in a data lake into a form that answers them, skipping the predefined target schema that traditional ETL requires. It cuts LLM invocation costs 5x by using a lightweight model to score join likelihood and framing path discovery as a Steiner tree search, reserving expensive LLM calls for transformation code. Across four benchmarks with 200-plus queries, it beat baselines by more than 30% on accuracy.
+
+Query Cost Model Calibration in Confidential Virtual Machines (1 minute read)
+
+This paper tackles why analytical queries run slow inside confidential VMs like AMD SEV-SNP: the query optimizer still uses cost assumptions borrowed from non-encrypted KVM guests, which no longer hold once memory encryption and RMP translation enter the picture. The authors add a lightweight CVM-aware calibration that models data movement and translation overhead using physical proxies the optimizer already has, recovering up to 48% of the lost performance and beating the KVM baseline on some workloads.
+
+PostgreSQL is enough (2024) (1 minute read)
+
+The author argues that Postgres alone can replace most of the specialized tooling teams reach for by default, cataloging extensions and patterns that cover queues (pgmq), cron (pg_cron), vector search (pgvector), full-text search, analytics columnstores (ParadeDB, Hydra), CDC (Debezium, PeerDB), and REST/GraphQL APIs straight from the database. The trade-off is operational concentration, but the payoff is one system to run, back up, and reason about instead of a sprawling stack glued together with reverse ETL.
+
+🚀
+Launches & Tools
+
+Amazon S3 annotations: attach rich, queryable context directly to your objects (5 minute read)
+
+(blurb not generated)
+
+Mistral OCR 4: SOTA OCR for Document Intelligence (1 minute read)
+
+Mistral released OCR 4, an OCR model that returns bounding boxes, typed-block classification, and inline confidence scores alongside extracted text, with support for 170 languages and single-container self-hosted deployment. The structured output feeds RAG and enterprise search pipelines with citation-ready inputs, and Mistral reports a 72% average win rate against leading OCR systems plus a top 85.20 score on OlmOCRBench.
+
+AWS enters the context layer race with a graph that learns from agents, not manual curation (5 minute read)
+
+(blurb not generated)
+
+Mistral OCR 4 Ships Bounding Boxes for 170-Language Document AI (5 minute read)
+
+(blurb not generated)
+
+⚡
+Quick Links
+
+British Columbia, Time Zones, and Postgres (5 minute read)
+
+(blurb not generated)
