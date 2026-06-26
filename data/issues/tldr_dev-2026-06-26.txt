@@ -14,6 +14,10 @@ Linux Finally Eliminates The strncpy API After Six Years Of Work, 360+ Patches (
 
 (blurb not generated)
 
+Incident CVE-2026-LGTM (1 minute read)
+
+A satirical incident report walks through a malicious npm-style package that cleared seven independent AI-powered security gates, each failing for a different reason and none of them being that the code was actually safe. The piece skewers prompt injection via hidden white-on-white README text, scanners exhausting context windows on padded junk, and an LLM reviewer too squeamish to flag the exfiltration routine forty lines below the blob it choked on.
+
 Building Reliable Agentic AI Systems (5 minute read)
 
 (blurb not generated)
@@ -26,9 +30,9 @@ How we built saga rollbacks for Cloudflare Workflows (5 minute read)
 
 (blurb not generated)
 
-Mostly Automatic Translation of Language Interpreters from C to Safe Rust (1 minute read)
+Mostly Automatic Translation of Language Interpreters from C to Safe Rust (5 minute read)
 
-Reboot translates real-world C interpreters to safe Rust mostly automatically, converting six interpreters of 6k-23k lines with only 1 to 11 brief human interventions each while passing 100% of provided test suites and 62%-92% of held-out validation tests. It pairs feature reduction, which breaks the job into incrementally restored, individually testable milestones, with a multi-agent loop that keeps unreliable coding agents on track and eliminates memory bugs like heap overflows and use-after-free.
+(blurb not generated)
 
 RFC 9958 - Post-Quantum Cryptography for Engineers (5 minute read)
 
@@ -60,11 +64,11 @@ Interesting Paper Exploring Prompt Injection (5 minute read)
 
 How Netflix Simplified Batch Compute with Kueue (5 minute read)
 
-Netflix replaced the custom queuing and scheduling logic in its homegrown Compute Managed Batch system with Kueue, a cloud-native job queueing system for batch workloads, as part of moving its Titus container platform toward Kubernetes-native components. The post covers how the team migrated millions of batch jobs to Kueue while preserving CMB's tenant hierarchy, priority-ordered execution, and per-tenant capacity reservations federated across multiple Kubernetes cells.
+(blurb not generated)
 
-CLIR: Liveness-Driven and Structure-Aware Fuzzing for the Cranelift Compiler (1 minute read)
+CLIR: Liveness-Driven and Structure-Aware Fuzzing for the Cranelift Compiler (5 minute read)
 
-CLIR is a differential testing framework for Cranelift, the WebAssembly and experimental Rust backend, that generates SSA-valid IR through hierarchical generation, maximizes computational density with liveness-guided instruction refinement, and adapts diagnosis across x86-64, AArch64, s390x, and RISCV64. In 72 hours it found 24 bugs across all target architectures, 21 confirmed and 9 fixed, detecting 8x more unique bugs than cranelift-fuzzgen.
+(blurb not generated)
 
 When failover isn't safe: Building high-availability PostgreSQL on Kubernetes (5 minute read)
 
@@ -82,10 +86,6 @@ The text in Claude Code's “Extended Thinking” output is not authentic (5 min
 
 (blurb not generated)
 
-New MCP specification kills old risks but opens fresh attack surfaces, Akamai finds (5 minute read)
-
-(blurb not generated)
-
 🧠
 Opinions & Advice
 
@@ -93,17 +93,17 @@ The Coming Loop (5 minute read)
 
 (blurb not generated)
 
+Augmentation with Dilution: A Large-Scale Empirical Study of Human Contributor Ecosystems After AI Coding Agent Adoption (5 minute read)
+
+(blurb not generated)
+
 There are a few things that I look back on as my mistakes in the early days (5 minute read)
 
 (blurb not generated)
 
-GLM 5.2: why I’m replacing Opus in Claude Code with this new model (1 minute read)
+GLM 5.2: why I’m replacing Opus in Claude Code with this new model (5 minute read)
 
-Claire Vo ran GLM 5.2, Z.AI's open-weight coding model, through four real tasks in her production Next.js app, including a 45-minute autonomous bug-hunt pulling Sentry and Vercel logs, for $3.36 across roughly 6M tokens. She argues open weights buy cost and vendor independence worth the trade-offs, and reports the model matched ChatPRD's design system on the first try.
-
-Augmentation with Dilution: A Large-Scale Empirical Study of Human Contributor Ecosystems After AI Coding Agent Adoption (1 minute read)
-
-A study of 11,097 GitHub repositories from 2023 to 2026 finds that AI coding agent adoption does not reduce the absolute number of human contributors, but cuts their relative density and drops the newcomer participation share by 3.7 percentage points. The authors call this "augmentation with dilution," noting that review depth rises 5.3% as the burden shifts from writing code to reviewing AI-generated pull requests.
+(blurb not generated)
 
 PR spam today looks like email spam in the early 2000s (5 minute read)
 
@@ -121,17 +121,13 @@ The Minimum Viable Unit of Saleable Software (5 minute read)
 
 (blurb not generated)
 
-New Enterprise-Ready MCP Specification Brings New Security Challenges (1 minute read)
+New Enterprise-Ready MCP Specification Brings New Security Challenges (5 minute read)
 
-MCP's 2026-07-28 revision makes the protocol stateless at the layer, closing off session hijacking and unsolicited server prompts while tightening authentication, with legacy versions deprecated over a 12-month window. Akamai's analysis warns the rewrite shifts risk onto implementations: predictable tracking IDs and state objects open the door to cross-tenant workflow hijacking, and new MCP HTTP headers introduce desync attacks and secret leakage if developers map API keys or PII into them.
+(blurb not generated)
 
-A Deterministic Control Plane for LLM Coding Agents (1 minute read)
+A Deterministic Control Plane for LLM Coding Agents (5 minute read)
 
-A study of 6,145 agent config files across 10,008 GitHub repos finds that LLM coding rules and agent definitions propagate as undeclared shared components, with 10.1% being exact SHA-256 duplicates across independent repos and under 1% declaring any permission boundary. The authors argue this configuration layer should be governed by a deterministic, tool-agnostic control plane with content-addressed lockfiles, tiered permissions, and audit logs, rather than delegated to further LLM orchestration.
-
-PostgreSQL is enough (2024) (1 minute read)
-
-The author argues that PostgreSQL alone can replace most of the specialized infrastructure teams reach for by default, covering job queues, full-text and vector search, audit logging, change-data-capture, and REST/GraphQL APIs through extensions and built-in features. The post catalogs the tooling for each use case, from pg_cron and pgmq to pgvector and PostgREST, making the case that one well-understood database beats a sprawl of services you have to operate separately.
+(blurb not generated)
 
 LLMs are complicated now (5 minute read)
 
@@ -143,23 +139,23 @@ I am dreading our LLM-written incident report future (5 minute read)
 
 The Problem is Prompt Debt (5 minute read)
 
-The author argues that hand-tuned natural language prompts accrue "prompt debt," a slow-building liability that caps what AI systems can become. As teams pile edge-case instructions and all-caps threats onto a single prompt, iteration grinds to a halt, the prompt becomes illegible to colleagues, and the application locks to one aging model because hot fixes break on any newer one.
+(blurb not generated)
 
 When I reject AI code even if it works (5 minute read)
 
 (blurb not generated)
 
-Same Scrutiny, More Time: Eye Tracking Insights into Reviewing LLM-Labelled Code (1 minute read)
+Same Scrutiny, More Time: Eye Tracking Insights into Reviewing LLM-Labelled Code (5 minute read)
 
-A Wizard-of-Oz eye-tracking study found that labeling code as LLM-generated did not change how thoroughly engineers reviewed it, but it did make them fixate longer and shift strategy toward checking logical correctness and consulting the original prompt. The authors flag a gap between reviewers' stated intentions and actual behavior, arguing companies should revisit AI policies and treat the prompt as a reviewable software artifact.
+(blurb not generated)
 
 There is minimal downside to switching to open models (5 minute read)
 
 (blurb not generated)
 
-GitHub shouldn't be a dependency for publishing Rust on crates.io (1 minute read)
+GitHub shouldn't be a dependency for publishing Rust on crates.io (5 minute read)
 
-The author argues that crates.io's reliance on GitHub for authentication makes Microsoft a single point of failure for publishing Rust packages, leaving the ecosystem exposed to outages, account lockouts, and policy changes outside its control. The piece calls for independent authentication options so registry access doesn't hinge on one company's infrastructure or terms of service.
+(blurb not generated)
 
 🚀
 Launches & Tools
@@ -168,13 +164,13 @@ Deno 2.9 (5 minute read)
 
 (blurb not generated)
 
-Unlocking the Cloudflare app ecosystem with OAuth for all (1 minute read)
+Unlocking the Cloudflare app ecosystem with OAuth for all (5 minute read)
 
-Cloudflare opened self-managed OAuth to all Developer Platform customers, letting developers create and manage their own OAuth clients for scoped, delegated access to the Cloudflare API instead of relying on harder-to-manage API tokens. The release adds clearer consent screens, dashboard-based revocation, and visible app ownership to curb OAuth phishing, targeting SaaS integrations, internal developer platforms, and agentic tools that need delegated access.
+(blurb not generated)
 
-OAuth for all (1 minute read)
+OAuth for all (5 minute read)
 
-Cloudflare opened self-managed OAuth to all Developer Platform customers, letting developers create and manage their own OAuth clients for scoped, delegated access to the Cloudflare API instead of relying on harder-to-manage API tokens. The release adds clearer consent screens, dashboard-based revocation, and visible app ownership to curb OAuth phishing, targeting SaaS integrations, internal developer platforms, and agentic tools that need delegated access.
+(blurb not generated)
 
 Deno Desktop (5 minute read)
 
@@ -184,9 +180,9 @@ Zig's new bitCast semantics and LLVM back end improvements (5 minute read)
 
 (blurb not generated)
 
-LuaJIT 3.0 proposed syntax extensions (1 minute read)
+LuaJIT 3.0 proposed syntax extensions (5 minute read)
 
-LuaJIT maintainer Mike Pall opened an umbrella issue proposing a set of syntax extensions for LuaJIT 3.0, with consolidated documentation evolving in the thread. The proposals are scoped to additions that improve quality-of-life, are proven in other languages or Lua dialects, introduce no syntactic ambiguity, and preserve backwards compatibility, explicitly avoiding the complexity of Perl, Ruby, C++, or Rust.
+(blurb not generated)
 
 Temporary Cloudflare Accounts for AI agents (5 minute read)
 
@@ -197,10 +193,6 @@ Lighthouse agentic browsing scoring (5 minute read)
 (blurb not generated)
 
 Run a vLLM Server on HF Jobs in One Command (5 minute read)
-
-Hugging Face added `hf jobs run` support for vLLM, letting developers stand up an OpenAI-compatible inference server on rented GPU infrastructure with a single command and per-minute billing. The exposed endpoint speaks the standard OpenAI API behind an HF token, making it a quick option for tests, evals, or batch generation without the overhead of a managed Inference Endpoint.
-
-Deno project is going to add cross-platform desktop apps in next major update (5 minute read)
 
 (blurb not generated)
 
@@ -224,17 +216,17 @@ Introducing computer use in Gemini 3.5 Flash (5 minute read)
 
 (blurb not generated)
 
-Making Windows a developer platform, again (3 minute read)
+Making Windows a developer platform, again (5 minute read)
 
-Microsoft introduced Coreutils for Windows at Build 2026, a maintained fork of the Rust-based uutils coreutils that installs as a single binary and brings standard Unix commands like `ls -al` to PowerShell and cmd. The preview matches Unix syntax and output formatting so scripts port across WSL and native Windows, though it remains incomplete and conflicts with existing cmd and PowerShell commands.
+(blurb not generated)
 
 Apple takes over Swift Package Index, vows to remove  GitHub dependency (5 minute read)
 
 (blurb not generated)
 
-Show HN: OpenKnowledge – open source AI-first alternative to Obsidian/Notion (1 minute read)
+Show HN: OpenKnowledge – open source AI-first alternative to Obsidian/Notion (5 minute read)
 
-OpenKnowledge is an open-source, local-first markdown editor and LLM wiki that offers full WYSIWYG editing of plain markdown files plus collaborative AI editing through Claude, Codex, and Cursor or any agent via MCP. It ships as a macOS app or a CLI-served web app for Linux, Windows, and Intel Mac, with built-in agentic search and no-code team sharing backed by git and GitHub.
+(blurb not generated)
 
 DeepReinforce releases Ornith-1.0 open-source coding models (5 minute read)
 
@@ -244,8 +236,16 @@ Accelerating Transformers Fine-Tuning with NVIDIA NeMo AutoModel (5 minute read)
 
 (blurb not generated)
 
+Using Visual Studio Code’s ‘air-gapped’ AI model mode (5 minute read)
+
+(blurb not generated)
+
 🎁
 Miscellaneous
+
+A single config file in a cloned repository could steal your AWS credentials through Amazon Q Developer (1 minute read)
+
+Wiz Research disclosed CVE-2026-12957, a high-severity flaw in Amazon Q Developer that auto-registered and started attacker-controlled MCP servers from a cloned repo's config file with no consent prompt, handing over the developer's full AWS credentials, IAM role, and environment variables. Amazon patched it on May 12 by requiring explicit approval before any MCP server starts and restricting the environment variables those servers can access.
 
 GlassWASM: WebAssembly Malware Found in Trojanized Open VSX Extensions (5 minute read)
 
@@ -267,6 +267,26 @@ GLM-5.2 Is The New Best Open Model (5 minute read)
 
 (blurb not generated)
 
+Miasma Malware Targets npm Packages and GitHub Actions in Supply Chain Attack (1 minute read)
+
+Researchers tied a new wave of npm supply chain attacks to the Mini Shai-Hulud, Miasma, and Hades malware family, which trojanized two dozen packages including LeoPlatform and RStreams after compromising a maintainer's npm token and pushing malicious versions within a six-second window. The campaign skips package.json lifecycle hooks in favor of binding.gyp install-time execution, pulls in the Bun runtime to stage a credential stealer, and abuses GitHub Actions to exfiltrate CI/CD secrets.
+
+Miasma campaign poisons 20-plus npm packages, hunts for developer secrets (1 minute read)
+
+A supply-chain campaign dubbed Miasma has compromised more than 20 npm packages with malicious code that scans infected machines for developer secrets like API keys, cloud credentials, and tokens. The packages exfiltrate harvested data to attacker-controlled servers, extending the run of registry poisoning attacks that make every untrusted dependency install a credential-theft risk.
+
+Amazon Q Developer Flaw Could Let Malicious Repos Run Code via MCP Configs (1 minute read)
+
+Amazon patched a high-severity flaw in Amazon Q Developer (CVE-2026-12957, CVSS 8.5) that let a malicious repo run arbitrary code and steal a developer's live AWS session by dropping a single `.amazonq/mcp.json` config that the assistant auto-launched. Wiz Research showed the MCP servers inherited the developer's full environment, so update Language Servers for AWS to 1.69.0 across all four bundled IDE plugins.
+
+Oracle promises to open up MySQL governance, but the community wants guarantees (1 minute read)
+
+Oracle pledged to open up MySQL's governance after years of community frustration over its unilateral control of the open-source database. Maintainers and downstream forks like MariaDB want binding guarantees rather than promises, citing Oracle's track record of steering roadmap and licensing decisions without external input.
+
+Samsung will start charging for SmartThings API access (1 minute read)
+
+Samsung will start charging for SmartThings API access beginning in October, introducing a $5 monthly plan for non-commercial individual developers that hits anyone controlling Samsung devices through third-party tools like Home Assistant. The standard SmartThings app stays free, but the change puts custom and open-source smart home setups behind a cloud paywall, with Samsung citing unspecified enterprise-grade investments and a forthcoming Developer Center.
+
 ⚡
 Quick Links
 
@@ -282,13 +302,9 @@ Will It Mythos? (5 minute read)
 
 (blurb not generated)
 
-The Garbage Collection Handbook: The Art of Automatic Memory Management (2nd Ed) (2023) (1 minute read)
+Half-Life 2 in a Browser (5 minute read)
 
-Second edition of the definitive garbage collection reference, with new chapters on persistence and energy-aware collection.
-
-Half-Life 2 in a Browser (1 minute read)
-
-A developer ported Half-Life 2 to run in the browser via WebAssembly, playable directly at the link.
+(blurb not generated)
 
 Running Windows Games on a Hobby OS with Wine (5 minute read)
 

@@ -1,9 +1,37 @@
 {
   "date": "2026-06-26",
   "newsletter": "tldr_infosec",
-  "fetched_at": "2026-06-26T11:39:19.070578+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-06-26T18:33:48.473470+00:00",
+  "tldr_titles": [
+    "Polymarket users lose $3 million after frontend hack",
+    "Hacked Klue says criminals are deleting stolen customer data, but now other hackers are making threats",
+    "New macOS Malware Embeds Fake Errors to Confuse AI Analysis Tools",
+    "IoT Product Cybersecurity Guidelines for the Federal Government",
+    "Malicious Edge Extension Abuses Native Messaging as Bridge to Malware",
+    "Inside the 2026 SMB threat landscape: From phishing and scams to fake AI tools",
+    "Unlocking the Cloudflare app ecosystem with OAuth for all",
+    "Amadey and StealC Malware Network Disrupted, 27M Stolen Credentials Recovered",
+    "CL-STA-1062 Targets Southeast Asian Governments and Critical Infrastructure",
+    "The White House is asking OpenAI to slow roll the release of its new model over safety concerns",
+    "Interpol: Cybercrime Hits 30% of Recorded Crime in Surveyed APAC Countries",
+    "Chrome's next update will kill your adblocker - and make the web less safe",
+    "GitLab Patches Code Execution, Information Disclosure Vulnerabilities"
+  ],
+  "tldr_matched": [
+    false,
+    false,
+    true,
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -39,6 +67,22 @@
     },
     {
       "rank": 5,
+      "score": 83.0,
+      "title": "A single config file in a cloned repository could steal your AWS credentials through Amazon Q Developer",
+      "url": "https://thenextweb.com/news/amazon-q-developer-mcp-flaw-aws-credentials-stolen",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 6,
+      "score": 83.0,
+      "title": "Incident CVE-2026-LGTM",
+      "url": "https://nesbitt.io/2026/06/26/incident-report-cve-2026-lgtm.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 7,
       "score": 82.0,
       "title": "Interesting Paper Exploring Prompt Injection",
       "url": "https://www.schneier.com/blog/archives/2026/06/interesting-paper-exploring-prompt-injection.html",
@@ -46,7 +90,15 @@
       "similarity": null
     },
     {
-      "rank": 6,
+      "rank": 8,
+      "score": 82.0,
+      "title": "New Linux pedit COW Exploit Enables Root Access by Poisoning Cached Binaries",
+      "url": "https://thehackernews.com/2026/06/new-linux-pedit-cow-exploit-enables.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 9,
       "score": 82.0,
       "title": "Protocol Prying: Systematic Vulnerability Research in the Apple AirDrop and Android Quick Share Proximity Transfer Protocols",
       "url": "http://arxiv.org/abs/2606.26967v1",
@@ -54,7 +106,7 @@
       "similarity": null
     },
     {
-      "rank": 7,
+      "rank": 10,
       "score": 81.0,
       "title": "Cordyceps CI/CD Flaws Expose 300+ GitHub Repositories to Supply-Chain Attacks",
       "url": "https://thehackernews.com/2026/06/cordyceps-cicd-flaws-expose-300-github.html",
@@ -62,15 +114,7 @@
       "similarity": null
     },
     {
-      "rank": 8,
-      "score": 81.0,
-      "title": "CISA warns of max severity Ubiquiti flaws exploited in attacks",
-      "url": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-max-severity-ubiquiti-flaws-exploited-in-attacks/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 9,
+      "rank": 11,
       "score": 81.0,
       "title": "Cisco Unified CM flaw CVE-2026-20230 now exploited in attacks",
       "url": "https://www.bleepingcomputer.com/news/security/cisco-unified-cm-sme-flaw-cve-2026-20230-now-exploited-in-attacks/",
@@ -78,7 +122,15 @@
       "similarity": null
     },
     {
-      "rank": 10,
+      "rank": 12,
+      "score": 80.0,
+      "title": "New DirtyClone Linux Kernel Flaw Lets Local Users Gain Root via Cloned Packets",
+      "url": "https://thehackernews.com/2026/06/new-dirtyclone-linux-kernel-flaw-lets.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 13,
       "score": 80.0,
       "title": "Chrome Ad Blocker with 10M+ Installs Found with Dormant Script Injection Capability",
       "url": "https://thehackernews.com/2026/06/chrome-ad-blocker-with-10m-installs.html",
@@ -86,15 +138,15 @@
       "similarity": null
     },
     {
-      "rank": 11,
+      "rank": 14,
       "score": 80.0,
       "title": "New Gaslight macOS Malware Uses Prompt Injection to Disrupt AI-Assisted Analysis",
       "url": "https://thehackernews.com/2026/06/new-gaslight-macos-malware-uses-prompt.html",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 2,
+      "similarity": 0.6285765767097473
     },
     {
-      "rank": 12,
+      "rank": 15,
       "score": 80.0,
       "title": "Cisco Catalyst SD-WAN Zero-Day CVE-2026-20245 Exploited to Gain Root Access",
       "url": "https://thehackernews.com/2026/06/cisco-catalyst-sd-wan-zero-day-cve-2026.html",
@@ -102,23 +154,31 @@
       "similarity": null
     },
     {
-      "rank": 13,
+      "rank": 16,
       "score": 80.0,
       "title": "New macOS malware embeds fake errors to confuse AI analysis tools",
       "url": "https://www.bleepingcomputer.com/news/security/new-macos-malware-embeds-fake-errors-to-confuse-ai-analysis-tools/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 2,
+      "similarity": 1.0
     },
     {
-      "rank": 14,
+      "rank": 17,
       "score": 79.0,
       "title": "Malicious Edge extension abuses Native Messaging as bridge to malware",
       "url": "https://www.bleepingcomputer.com/news/security/malicious-edge-extension-abuses-native-messaging-as-bridge-to-malware/",
+      "matched_tldr_idx": 4,
+      "similarity": 1.0000003576278687
+    },
+    {
+      "rank": 18,
+      "score": 79.0,
+      "title": "Amazon Q flaw let booby-trapped Git repos execute code, swipe cloud creds",
+      "url": "https://www.theregister.com/cyber-crime/2026/06/26/amazon-q-flaw-let-booby-trapped-git-repos-execute-code-swipe-cloud-creds/5263202",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 15,
+      "rank": 19,
       "score": 79.0,
       "title": "Malicious hackers exploit Cisco zero-day for highest access level at communications service provider",
       "url": "https://cyberscoop.com/cisco-sd-wan-zero-day-exploit-communications-provider/",
@@ -126,42 +186,10 @@
       "similarity": null
     },
     {
-      "rank": 16,
-      "score": 78.0,
-      "title": "Russia Used Cellebrite on Jailed Activist's iPhone Months After Sales Cutoff",
-      "url": "https://thehackernews.com/2026/06/russia-used-cellebrite-on-jailed.html",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 17,
-      "score": 78.0,
-      "title": "Amadey and StealC Malware Network Disrupted, 27M Stolen Credentials Recovered",
-      "url": "https://thehackernews.com/2026/06/amadey-and-stealc-malware-network.html",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 18,
-      "score": 78.0,
-      "title": "Amadey, StealC malware operations disrupted in Operation Endgame action",
-      "url": "https://www.bleepingcomputer.com/news/security/amadey-stealc-malware-operations-disrupted-in-operation-endgame-action/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 19,
-      "score": 78.0,
-      "title": "STOCKSTAY Another Day: The Latest Addition to Turla\u2019s Intelligence Gathering Apparatus",
-      "url": "https://cloud.google.com/blog/topics/threat-intelligence/stockstay-turla-intelligence-gathering/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
       "rank": 20,
       "score": 78.0,
-      "title": "Klue hack results in data breach at several cybersecurity firms",
-      "url": "https://techcrunch.com/2026/06/22/klue-hack-results-in-data-breach-at-several-cybersecurity-firms/",
+      "title": "One Million Passports Leaked Online",
+      "url": "https://www.schneier.com/blog/archives/2026/06/one-million-passports-leaked-online.html",
       "matched_tldr_idx": null,
       "similarity": null
     },
@@ -207,6 +235,14 @@
     },
     {
       "rank": 26,
+      "score": 72.0,
+      "title": "Meta Is Testing Facial Recognition for Police and Military",
+      "url": "https://www.schneier.com/blog/archives/2026/06/meta-is-testing-facial-recognition-for-police-and-military.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 27,
       "score": 70.0,
       "title": "New MCP specification kills old risks but opens fresh attack surfaces, Akamai finds",
       "url": "https://siliconangle.com/2026/06/25/new-mcp-specification-kills-old-risks-opens-fresh-attack-surfaces-akamai-finds/",
@@ -214,18 +250,10 @@
       "similarity": null
     },
     {
-      "rank": 27,
+      "rank": 28,
       "score": 70.0,
       "title": "Automated Detection of Configuration-Specific Security Vulnerabilities via Patch Analysis",
       "url": "http://arxiv.org/abs/2606.25863v1",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 28,
-      "score": 70.0,
-      "title": "One-two punch delivered in global operation disrupts cybercrime \"assembly line\"",
-      "url": "https://arstechnica.com/security/2026/06/one-two-punch-delivered-in-global-operation-disrupts-cybercrime-assembly-line/",
       "matched_tldr_idx": null,
       "similarity": null
     },
@@ -312,29 +340,21 @@
     {
       "rank": 39,
       "score": 63.0,
-      "title": "Anthropic Claims Alibaba Ran \u2018Brazen\u2019 Campaign to Access Its Claude AI Model",
-      "url": "https://www.wsj.com/tech/ai/anthropic-claims-alibaba-ran-brazen-campaign-to-access-its-claude-ai-model-69d7a392?mod=rss_Technology",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 40,
-      "score": 63.0,
-      "title": "London cops bring live facial recognition to West End",
-      "url": "https://www.theregister.com/security/2026/06/24/london-cops-bring-live-facial-recognition-to-west-end/5261031",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 41,
-      "score": 63.0,
       "title": "DoJ Seizes Huione Cloud Account Tied to Cyber Scam Money Laundering",
       "url": "https://thehackernews.com/2026/06/doj-seizes-huione-cloud-account-tied-to.html",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 42,
+      "rank": 40,
+      "score": 63.0,
+      "title": "Critical open-source projects get a new security framework",
+      "url": "https://www.helpnetsecurity.com/2026/06/26/akrites-open-source-security-framework/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 41,
       "score": 63.0,
       "title": "Accenture to buy Dragos, runZero, and NetRise in $4.2 billion cybersecurity deal",
       "url": "https://www.helpnetsecurity.com/2026/06/19/accenture-dragos-runzero-netrise-acquisition/",
@@ -342,7 +362,7 @@
       "similarity": null
     },
     {
-      "rank": 43,
+      "rank": 42,
       "score": 62.0,
       "title": "MosaicLeaks: Can your research agent keep a secret?",
       "url": "https://huggingface.co/blog/ServiceNow/mosaicleaks",
@@ -350,7 +370,7 @@
       "similarity": null
     },
     {
-      "rank": 44,
+      "rank": 43,
       "score": 62.0,
       "title": "DroidBreaker: Practical and Functional Problem-Space Attacks on Machine-Learning Android Malware Detectors",
       "url": "http://arxiv.org/abs/2606.26707v1",
@@ -358,7 +378,7 @@
       "similarity": null
     },
     {
-      "rank": 45,
+      "rank": 44,
       "score": 62.0,
       "title": "OpenAI launches new security tools and updates GPT-5.5-Cyber",
       "url": "https://www.testingcatalog.com/openai-launches-new-security-tools-and-updates-gpt-5-5-cyber/",
@@ -366,7 +386,7 @@
       "similarity": null
     },
     {
-      "rank": 46,
+      "rank": 45,
       "score": 62.0,
       "title": "Introducing AWS Continuum for security at machine speed",
       "url": "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-continuum/",
@@ -374,10 +394,18 @@
       "similarity": null
     },
     {
+      "rank": 46,
+      "score": 62.0,
+      "title": "Linux Foundation Unveils New Open Source Security Project Akrites",
+      "url": "https://www.securityweek.com/linux-foundation-unveils-new-open-source-security-project-akrites/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
       "rank": 47,
       "score": 62.0,
-      "title": "A privacy-first take on local malware analysis",
-      "url": "https://www.helpnetsecurity.com/2026/06/26/burnyard-local-malware-analysis/",
+      "title": "Anthropic says Alibaba illicitly extracted Claude AI model capabilities",
+      "url": "https://www.reuters.com/world/china/anthropic-says-alibaba-illicitly-extracted-claude-ai-model-capabilities-2026-06-24/",
       "matched_tldr_idx": null,
       "similarity": null
     },
@@ -464,13 +492,21 @@
     {
       "rank": 58,
       "score": 58.0,
+      "title": "Securing CI/CD for an open source project, part 3: Credentials, verification, and what\u2019s next",
+      "url": "https://www.cncf.io/blog/2026/06/26/securing-ci-cd-for-an-open-source-project-part-3-credentials-verification-and-whats-next/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 59,
+      "score": 58.0,
       "title": "A Mechanistic Explanation of Prompt Injection (and why you should study roles)",
       "url": "https://www.lesswrong.com/posts/d8xDGzCEYE639qqEv/a-mechanistic-explanation-of-prompt-injection-and-why-you",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 59,
+      "rank": 60,
       "score": 58.0,
       "title": "VIGIL: Runtime Enforcement of Behavioral Specifications in AI Agent Skills",
       "url": "http://arxiv.org/abs/2606.26524v1",
@@ -478,15 +514,23 @@
       "similarity": null
     },
     {
-      "rank": 60,
+      "rank": 61,
       "score": 58.0,
-      "title": "Ransomware gangs find Europe\u2019s weakest link in third-party suppliers",
-      "url": "https://www.helpnetsecurity.com/2026/06/26/black-kite-european-cyber-threats-report/",
+      "title": "Security Profiles Operator v1: Stable APIs, Security Hardened, and Shaping Upstream Kubernetes",
+      "url": "https://www.cncf.io/blog/2026/06/26/security-profiles-operator-v1-stable-apis-security-hardened-and-shaping-upstream-kubernetes/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 61,
+      "rank": 62,
+      "score": 58.0,
+      "title": "Previewing GPT-5.6 Sol: a next-generation model",
+      "url": "https://openai.com/index/previewing-gpt-5-6-sol",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 63,
       "score": 58.0,
       "title": "Cloudflare teams up with Chrome, Firefox, and Edge on a privacy-first anti-bot protocol",
       "url": "https://thenextweb.com/news/cloudflare-pact-browser-privacy-bot-traffic-protocol",
@@ -494,7 +538,7 @@
       "similarity": null
     },
     {
-      "rank": 62,
+      "rank": 64,
       "score": 58.0,
       "title": "SIM-swapping gang busted in international police operation",
       "url": "https://www.helpnetsecurity.com/2026/06/26/poland-sim-swap-gang-arrests-cryptocurrency-theft/",
@@ -502,7 +546,7 @@
       "similarity": null
     },
     {
-      "rank": 63,
+      "rank": 65,
       "score": 57.0,
       "title": "IBM, Red Hat, Palo Alto team to secure open-source software",
       "url": "https://www.networkworld.com/article/4189077/ibm-red-hat-palo-alto-team-to-secure-open-source-software.html",
@@ -510,7 +554,7 @@
       "similarity": null
     },
     {
-      "rank": 64,
+      "rank": 66,
       "score": 57.0,
       "title": "The Web4 Agent Economy: A Large-Scale Empirical Study of the Landscape, Challenges, and Opportunities",
       "url": "http://arxiv.org/abs/2606.25876v1",
@@ -518,7 +562,7 @@
       "similarity": null
     },
     {
-      "rank": 65,
+      "rank": 67,
       "score": 57.0,
       "title": "The 'papers, please' era of the internet will decimate your privacy",
       "url": "https://expression.fire.org/p/the-papers-please-era-of-the-internet",
@@ -526,7 +570,7 @@
       "similarity": null
     },
     {
-      "rank": 66,
+      "rank": 68,
       "score": 57.0,
       "title": "Cisco Acquires WideField To Secure AI Agents And Non-Human Identities",
       "url": "https://www.crn.com/news/security/2026/cisco-bets-on-widefield-security-acquisition-to-tackle-agentic-ai-security-gap",
@@ -534,15 +578,7 @@
       "similarity": null
     },
     {
-      "rank": 67,
-      "score": 57.0,
-      "title": "DraftKings hacker 'Snoopy' sentenced to 18 months in prison",
-      "url": "https://www.bleepingcomputer.com/news/security/draftkings-hacker-snoopy-sentenced-to-18-months-in-prison/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 68,
+      "rank": 69,
       "score": 57.0,
       "title": "MEV Bot Exploited for $15M via Fake-Token Route Attack",
       "url": "https://threadreaderapp.com/thread/2068459102741909968.html",
@@ -550,7 +586,7 @@
       "similarity": null
     },
     {
-      "rank": 69,
+      "rank": 70,
       "score": 56.0,
       "title": "Boundary 1.0 releases RDP session recording and improved management",
       "url": "https://www.hashicorp.com/blog/boundary-1-releases-with-rdp-session-recording-and-improved-management",
@@ -558,7 +594,15 @@
       "similarity": null
     },
     {
-      "rank": 70,
+      "rank": 71,
+      "score": 56.0,
+      "title": "Proof\u2019s x401 establishes an open protocol for AI agent identity and authorization",
+      "url": "https://www.helpnetsecurity.com/2026/06/26/proofs-x401-establishes-an-open-protocol-for-ai-agent-identity-and-authorization/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 72,
       "score": 55.0,
       "title": "Chinese cybersecurity company claims it\u2019s built a better-than-Mythos bug finder",
       "url": "https://www.theregister.com/security/2026/06/26/chinese-cybersecurity-company-claims-its-built-a-better-than-mythos-bug-finder/5262642",
@@ -566,7 +610,7 @@
       "similarity": null
     },
     {
-      "rank": 71,
+      "rank": 73,
       "score": 55.0,
       "title": "Palo Alto Networks, IBM to match patching with AI pace for operational threats and more",
       "url": "https://www.sdxcentral.com/news/palo-alto-networks-ibm-to-match-patching-with-ai-pace-for-operational-threats-and-more/",
@@ -574,7 +618,7 @@
       "similarity": null
     },
     {
-      "rank": 72,
+      "rank": 74,
       "score": 55.0,
       "title": "Trump Seeks to Boost Quantum Computing With New Executive Orders",
       "url": "https://www.wsj.com/politics/policy/trump-seeks-to-boost-quantum-computing-with-new-executive-orders-b2200634",
@@ -582,9 +626,49 @@
       "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.0,
+    "25": 0.15384615384615385,
+    "50": 0.15384615384615385,
+    "100": 0.15384615384615385,
+    "74": 0.15384615384615385
+  },
+  "hits_at": {
+    "10": 0,
+    "25": 2,
+    "50": 2,
+    "100": 2,
+    "74": 2
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://cryptonews.net/news/security/33065348/",
+    "https://techcrunch.com/2026/06/25/hacked-klue-says-criminals-are-deleting-stolen-customer-data-but-now-other-hackers-are-making-threats/",
+    "https://www.bleepingcomputer.com/news/security/new-macos-malware-embeds-fake-errors-to-confuse-ai-analysis-tools/",
+    "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-213r1.ipd.pdf",
+    "https://www.bleepingcomputer.com/news/security/malicious-edge-extension-abuses-native-messaging-as-bridge-to-malware/amp/",
+    "https://securelist.com/smb-threat-report-2026/120357/",
+    "https://blog.cloudflare.com/oauth-for-all/",
+    "https://thehackernews.com/2026/06/amadey-and-stealc-malware-network.html",
+    "https://unit42.paloaltonetworks.com/cl-sta-1062-tinyrct-backdoor/",
+    "https://techcrunch.com/2026/06/25/the-white-house-is-asking-openai-to-slow-roll-the-release-of-its-new-model-over-safety-concerns/",
+    "https://www.techrepublic.com/article/news-interpol-cybercrime-report-apac/",
+    "https://www.zdnet.com/article/chromes-next-update-will-kill-your-adblocker-and-make-the-web-less-safe/",
+    "https://www.securityweek.com/gitlab-patches-code-execution-information-disclosure-vulnerabilities/"
+  ],
+  "tldr_domains": [
+    "cryptonews.net",
+    "techcrunch.com",
+    "bleepingcomputer.com",
+    "nvlpubs.nist.gov",
+    "bleepingcomputer.com",
+    "securelist.com",
+    "blog.cloudflare.com",
+    "thehackernews.com",
+    "unit42.paloaltonetworks.com",
+    "techcrunch.com",
+    "techrepublic.com",
+    "zdnet.com",
+    "securityweek.com"
+  ]
 }

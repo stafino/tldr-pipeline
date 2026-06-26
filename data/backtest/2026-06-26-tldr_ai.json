@@ -1,12 +1,46 @@
 {
   "date": "2026-06-26",
   "newsletter": "tldr_ai",
-  "fetched_at": "2026-06-26T11:39:05.640937+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-06-26T18:27:30.866210+00:00",
+  "tldr_titles": [
+    "Liquid AI Releases Liquid Foundation Models 2.5 230M",
+    "Vercel Launches AI SDK 7 with Enhanced Stream and Tool Orchestration",
+    "White House Asks OpenAI to Slow Roll New Model Release",
+    "\ud83d\udd2e The state of the AI economy",
+    "Scaling Laws, Carefully",
+    "Agents That Build Better Training Data",
+    "DeepReinforce releases Ornith-1.0 open-source coding models",
+    "Measuring Exploits in LLM Agents with Tool Use",
+    "Surprising lessons from my research scientist job search",
+    "We removed an LM's ability to speak German",
+    "Run a vLLM Server on HF Jobs in One Command",
+    "The Future of AI is Intuitive"
+  ],
+  "tldr_matched": [
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    true,
+    false
+  ],
   "predictions": [
     {
       "rank": 1,
+      "score": 93.0,
+      "title": "Previewing GPT-5.6 Sol: a next-generation model",
+      "url": "https://openai.com/index/previewing-gpt-5-6-sol",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 2,
       "score": 88.0,
       "title": "OpenAI and Broadcom unveil LLM-optimized inference chip",
       "url": "https://openai.com/index/openai-broadcom-jalapeno-inference-chip",
@@ -14,7 +48,7 @@
       "similarity": null
     },
     {
-      "rank": 2,
+      "rank": 3,
       "score": 86.0,
       "title": "Claude Tag",
       "url": "https://www.anthropic.com/news/introducing-claude-tag",
@@ -22,7 +56,7 @@
       "similarity": null
     },
     {
-      "rank": 3,
+      "rank": 4,
       "score": 83.0,
       "title": "Moebius",
       "url": "https://hustvl.github.io/Moebius/",
@@ -30,7 +64,23 @@
       "similarity": null
     },
     {
-      "rank": 4,
+      "rank": 5,
+      "score": 82.0,
+      "title": "OpenAI releases three versions of GPT-5.6, called Sol, Terra, and Luna, as a limited preview to ~20 companies, with participants disclosed to the US government (Axios)",
+      "url": "https://www.techmeme.com/260626/p16#a260626p16",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 6,
+      "score": 82.0,
+      "title": "Anthropic says Alibaba illicitly extracted Claude AI model capabilities",
+      "url": "https://www.reuters.com/world/china/anthropic-says-alibaba-illicitly-extracted-claude-ai-model-capabilities-2026-06-24/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 7,
       "score": 82.0,
       "title": "A New Era of Midjourney",
       "url": "https://www.midjourney.com/medical/blogpost",
@@ -38,7 +88,7 @@
       "similarity": null
     },
     {
-      "rank": 5,
+      "rank": 8,
       "score": 80.0,
       "title": "Introducing computer use in Gemini 3.5 Flash",
       "url": "https://deepmind.google/blog/introducing-computer-use-in-gemini-3-5-flash/",
@@ -46,23 +96,23 @@
       "similarity": null
     },
     {
-      "rank": 6,
-      "score": 79.0,
-      "title": "Anthropic Claims Alibaba Ran \u2018Brazen\u2019 Campaign to Access Its Claude AI Model",
-      "url": "https://www.wsj.com/tech/ai/anthropic-claims-alibaba-ran-brazen-campaign-to-access-its-claude-ai-model-69d7a392?mod=rss_Technology",
+      "rank": 9,
+      "score": 78.0,
+      "title": "OpenAI unveils GPT-5.6 amid US AI regulatory drama",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/957845/openai-gpt-5-6-trump-administration-ai-preview",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 7,
+      "rank": 10,
       "score": 78.0,
       "title": "DeepReinforce releases Ornith-1.0 open-source coding models",
       "url": "https://www.testingcatalog.com/deepreinforce-releases-ornith-1-0-open-source-coding-models/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 6,
+      "similarity": 1.0
     },
     {
-      "rank": 8,
+      "rank": 11,
       "score": 78.0,
       "title": "Interesting Paper Exploring Prompt Injection",
       "url": "https://www.schneier.com/blog/archives/2026/06/interesting-paper-exploring-prompt-injection.html",
@@ -70,7 +120,7 @@
       "similarity": null
     },
     {
-      "rank": 9,
+      "rank": 12,
       "score": 78.0,
       "title": "When Does Combining Language Models Help? A Co-Failure Ceiling on Routing, Voting, and Mixture-of-Agents Across 67 Frontier Models",
       "url": "http://arxiv.org/abs/2606.27288v1",
@@ -78,7 +128,7 @@
       "similarity": null
     },
     {
-      "rank": 10,
+      "rank": 13,
       "score": 77.0,
       "title": "Qualcomm acquires AI startup Modular in open ecosystem bet to challenge CUDA",
       "url": "https://www.sdxcentral.com/news/qualcomm-acquires-ai-startup-modular-in-open-ecosystem-bet-to-challenge-cuda/",
@@ -86,7 +136,7 @@
       "similarity": null
     },
     {
-      "rank": 11,
+      "rank": 14,
       "score": 77.0,
       "title": "Building Reliable Agentic AI Systems",
       "url": "https://martinfowler.com/articles/reliable-llm-bayer.html",
@@ -94,7 +144,7 @@
       "similarity": null
     },
     {
-      "rank": 12,
+      "rank": 15,
       "score": 77.0,
       "title": "Thinking to recall: How reasoning unlocks parametric knowledge in LLMs",
       "url": "https://research.google/blog/thinking-to-recall-how-reasoning-unlocks-parametric-knowledge-in-llms/",
@@ -102,7 +152,7 @@
       "similarity": null
     },
     {
-      "rank": 13,
+      "rank": 16,
       "score": 76.0,
       "title": "The text in Claude Code's \u201cExtended Thinking\u201d output is not authentic",
       "url": "https://patrickmccanna.net/the-text-in-claude-codes-extended-thinking-output-is-not-authentic/",
@@ -110,7 +160,7 @@
       "similarity": null
     },
     {
-      "rank": 14,
+      "rank": 17,
       "score": 76.0,
       "title": "Scaling AI Inference Across Multiple GPUs Using NVIDIA TensorRT with Multi-Device Inference Support",
       "url": "https://developer.nvidia.com/blog/scaling-ai-inference-across-multiple-gpus-using-nvidia-tensorrt-with-multi-device-inference-support/",
@@ -118,7 +168,7 @@
       "similarity": null
     },
     {
-      "rank": 15,
+      "rank": 18,
       "score": 76.0,
       "title": "Reinforcement Learning without Ground-Truth Solutions can Improve LLMs",
       "url": "http://arxiv.org/abs/2606.27369v1",
@@ -126,7 +176,7 @@
       "similarity": null
     },
     {
-      "rank": 16,
+      "rank": 19,
       "score": 75.0,
       "title": "OpenAI launches new security tools and updates GPT-5.5-Cyber",
       "url": "https://www.testingcatalog.com/openai-launches-new-security-tools-and-updates-gpt-5-5-cyber/",
@@ -134,7 +184,7 @@
       "similarity": null
     },
     {
-      "rank": 17,
+      "rank": 20,
       "score": 75.0,
       "title": "Hallucination in World Models is Predictable and Preventable",
       "url": "http://arxiv.org/abs/2606.27326v1",
@@ -142,7 +192,15 @@
       "similarity": null
     },
     {
-      "rank": 18,
+      "rank": 21,
+      "score": 74.0,
+      "title": "OpenAI unveils GPT-5.6 Sol, Terra and Luna models \u2014 but only accessible to limited preview partners for now, per US Gov",
+      "url": "https://venturebeat.com/technology/openai-unveils-gpt-5-6-sol-terra-and-luna-models-but-only-accessible-to-limited-preview-partners-for-now-per-us-gov",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 22,
       "score": 74.0,
       "title": "OpenAI Launches Daybreak To Automate Vulnerability Patching",
       "url": "https://openai.com/index/daybreak-securing-the-world/",
@@ -150,7 +208,7 @@
       "similarity": null
     },
     {
-      "rank": 19,
+      "rank": 23,
       "score": 74.0,
       "title": "Daybreak: Tools for securing every organization in the world",
       "url": "https://openai.com/index/daybreak-securing-the-world/",
@@ -158,15 +216,15 @@
       "similarity": null
     },
     {
-      "rank": 20,
+      "rank": 24,
       "score": 74.0,
       "title": "Run a vLLM Server on HF Jobs in One Command",
       "url": "https://huggingface.co/blog/vllm-jobs",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 10,
+      "similarity": 1.0
     },
     {
-      "rank": 21,
+      "rank": 25,
       "score": 74.0,
       "title": "AI Is Designing Radio Chips That Humans Couldn\u2019t Even Imagine",
       "url": "https://spectrum.ieee.org/ai-radio-chip-design",
@@ -174,7 +232,7 @@
       "similarity": null
     },
     {
-      "rank": 22,
+      "rank": 26,
       "score": 74.0,
       "title": "Prompt Injection in Automated R\u00e9sum\u00e9 Screening with Large Language Models: Single and Multi-Injection Settings",
       "url": "http://arxiv.org/abs/2606.27287v1",
@@ -182,7 +240,7 @@
       "similarity": null
     },
     {
-      "rank": 23,
+      "rank": 27,
       "score": 74.0,
       "title": "MosaicLeaks: Can your research agent keep a secret?",
       "url": "https://huggingface.co/blog/ServiceNow/mosaicleaks",
@@ -190,7 +248,7 @@
       "similarity": null
     },
     {
-      "rank": 24,
+      "rank": 28,
       "score": 73.0,
       "title": "Anthropic claims that China's Alibaba used 25,000 fake accounts and 28.8 million exchanges to illicitly 'distill' its Claude model \u2014 violations occurred from April to June 2026",
       "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropic-claims-that-chinas-alibaba-illicitly-distilled-its-models-from-april-to-june-2026-says-effort-involved-25-000-fake-accounts-and-28-8-million-exchanges-on-claude",
@@ -198,7 +256,7 @@
       "similarity": null
     },
     {
-      "rank": 25,
+      "rank": 29,
       "score": 73.0,
       "title": "GLM-5.2 Raises the Bar for Open Models",
       "url": "https://thezvi.wordpress.com/2026/06/22/glm-5-2-is-the-new-best-open-model/",
@@ -206,7 +264,7 @@
       "similarity": null
     },
     {
-      "rank": 26,
+      "rank": 30,
       "score": 73.0,
       "title": "GLM-5.2 Is The New Best Open Model",
       "url": "https://thezvi.wordpress.com/2026/06/22/glm-5-2-is-the-new-best-open-model/",
@@ -214,7 +272,7 @@
       "similarity": null
     },
     {
-      "rank": 27,
+      "rank": 31,
       "score": 73.0,
       "title": "Krea 2 Technical Report",
       "url": "https://www.krea.ai/blog/krea-2-technical-report",
@@ -222,7 +280,7 @@
       "similarity": null
     },
     {
-      "rank": 28,
+      "rank": 32,
       "score": 73.0,
       "title": "Amazon S3 annotations: attach rich, queryable context directly to your objects",
       "url": "https://aws.amazon.com/blogs/aws/amazon-s3-annotations-attach-rich-queryable-context-directly-to-your-objects/",
@@ -230,7 +288,7 @@
       "similarity": null
     },
     {
-      "rank": 29,
+      "rank": 33,
       "score": 73.0,
       "title": "Accelerating Transformers Fine-Tuning with NVIDIA NeMo AutoModel",
       "url": "https://huggingface.co/blog/nvidia/accelerating-fine-tuning-nvidia-nemo-automodel",
@@ -238,7 +296,7 @@
       "similarity": null
     },
     {
-      "rank": 30,
+      "rank": 34,
       "score": 73.0,
       "title": "Lighthouse agentic browsing scoring",
       "url": "https://developer.chrome.com/docs/lighthouse/agentic-browsing/scoring",
@@ -246,7 +304,7 @@
       "similarity": null
     },
     {
-      "rank": 31,
+      "rank": 35,
       "score": 72.0,
       "title": "Anthropic accuses Alibaba of using 25,000 fake accounts to scrape Claude AI",
       "url": "https://www.infoworld.com/article/4189342/anthropic-accuses-alibaba-of-using-25000-fake-accounts-to-scrape-claude-ai.html",
@@ -254,44 +312,12 @@
       "similarity": null
     },
     {
-      "rank": 32,
+      "rank": 36,
       "score": 72.0,
       "title": "The White House is asking OpenAI to slow roll the release of its new model over safety concerns",
       "url": "https://techcrunch.com/2026/06/25/the-white-house-is-asking-openai-to-slow-roll-the-release-of-its-new-model-over-safety-concerns/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 33,
-      "score": 72.0,
-      "title": "OpenAI will delay GPT-5.6 after Trump administration request",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/957372/openai-will-delay-gpt-5-6-after-trump-administration-request",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 34,
-      "score": 72.0,
-      "title": "Anthropic says Alibaba must be punished for largest Claude cloning attack",
-      "url": "https://arstechnica.com/tech-policy/2026/06/anthropic-claims-alibaba-defied-trump-to-attack-claude-and-steal-capabilities/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 35,
-      "score": 72.0,
-      "title": "OpenAI unveils first chip as part of Broadcom deal in effort to 'build the full stack'",
-      "url": "https://www.cnbc.com/2026/06/24/openai-and-broadcom-reveal-jalapeno-first-ai-chip-in-partnership.html",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 36,
-      "score": 72.0,
-      "title": "The US government asks OpenAI to slow its next model\u2019s release",
-      "url": "https://thenextweb.com/news/trump-administration-openai-stagger-model-release",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 2,
+      "similarity": 1.0
     },
     {
       "rank": 37,
@@ -328,21 +354,29 @@
     {
       "rank": 41,
       "score": 72.0,
-      "title": "Alibaba's model never trained as an agent \u2014 and improved agent performance across seven benchmarks",
-      "url": "https://venturebeat.com/technology/alibabas-model-never-trained-as-an-agent-and-improved-agent-performance-across-seven-benchmarks",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 42,
-      "score": 72.0,
       "title": "When are likely answers right? On Sequence Probability and Correctness in LLMs",
       "url": "http://arxiv.org/abs/2606.27359v1",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
+      "rank": 42,
+      "score": 72.0,
+      "title": "Einstein World Models",
+      "url": "http://arxiv.org/abs/2606.26969v1",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
       "rank": 43,
+      "score": 72.0,
+      "title": "OpenAI limits new AI models to 'trusted partners' at request of U.S. government",
+      "url": "https://www.cnbc.com/2026/06/26/openai-limits-new-ai-models-to-trusted-partners-request-us-government.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 44,
       "score": 70.0,
       "title": "Nobel laureate John Jumper is leaving DeepMind for rival Anthropic",
       "url": "https://techcrunch.com/2026/06/20/nobel-laureate-john-jumper-is-leaving-deepmind-for-rival-anthropic/",
@@ -350,7 +384,7 @@
       "similarity": null
     },
     {
-      "rank": 44,
+      "rank": 45,
       "score": 68.0,
       "title": "AI and Liability",
       "url": "https://www.schneier.com/blog/archives/2026/06/ai-and-liability.html",
@@ -358,7 +392,7 @@
       "similarity": null
     },
     {
-      "rank": 45,
+      "rank": 46,
       "score": 68.0,
       "title": "Washington\u2019s Foreign Ban on Anthropic\u2019s Top Models May Backfire",
       "url": "https://www.bloomberg.com/news/newsletters/2026-06-26/white-house-s-ban-on-anthropic-ai-access-may-boost-china-s-open-source-models",
@@ -366,7 +400,15 @@
       "similarity": null
     },
     {
-      "rank": 46,
+      "rank": 47,
+      "score": 68.0,
+      "title": "OpenAI's ChatGPT-5.6 gets the same banhammer treatment as Anthropic\u2019s Mythos from the federal government \u2014 source says that Washington cautioned OpenAI against releasing the model without receiving approval",
+      "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/openais-chatgpt-5-6-gets-the-same-banhammer-treatment-as-anthropics-mythos-from-the-federal-government-source-says-that-washington-cautioned-openai-against-releasing-the-model-without-receiving-approval",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 48,
       "score": 67.0,
       "title": "What happened after 2k people tried to hack my AI assistant",
       "url": "https://www.fernandoi.cl/posts/hackmyclaw/",
@@ -374,7 +416,23 @@
       "similarity": null
     },
     {
-      "rank": 47,
+      "rank": 49,
+      "score": 67.0,
+      "title": "US tells OpenAI to restrict access to its most powerful AI model",
+      "url": "https://www.infoworld.com/article/4190089/us-tells-openai-to-restrict-access-to-its-most-powerful-ai-model-2.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 50,
+      "score": 66.0,
+      "title": "Amazon Q flaw let booby-trapped Git repos execute code, swipe cloud creds",
+      "url": "https://www.theregister.com/cyber-crime/2026/06/26/amazon-q-flaw-let-booby-trapped-git-repos-execute-code-swipe-cloud-creds/5263202",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 51,
       "score": 66.0,
       "title": "Anthropic Says Alibaba Ran 28.8 Million Claude Exchanges Through Fake Accounts",
       "url": "https://www.implicator.ai/anthropic-says-alibaba-ran-28-8-million-claude-exchanges-through-fake-accounts/",
@@ -382,7 +440,7 @@
       "similarity": null
     },
     {
-      "rank": 48,
+      "rank": 52,
       "score": 65.0,
       "title": "A public Sentry key is all it takes to hijack Claude Code, Cursor, and Codex",
       "url": "https://thenewstack.io/agentjacking-sentry-mcp-attack/",
@@ -390,7 +448,7 @@
       "similarity": null
     },
     {
-      "rank": 49,
+      "rank": 53,
       "score": 65.0,
       "title": "Trump says he no longer views Anthropic as a national security threat after G7 meeting with CEO",
       "url": "https://thenextweb.com/news/trump-anthropic-not-national-security-threat-axios-interview",
@@ -398,7 +456,7 @@
       "similarity": null
     },
     {
-      "rank": 50,
+      "rank": 54,
       "score": 64.0,
       "title": "N.S.A. Lost Access to Powerful A.I. Model Amid Anthropic Dispute",
       "url": "https://www.nytimes.com/2026/06/23/us/politics/nsa-lost-access-anthropic-tool.html",
@@ -406,7 +464,7 @@
       "similarity": null
     },
     {
-      "rank": 51,
+      "rank": 55,
       "score": 64.0,
       "title": "NSA lost access to Mythos amid Anthropic dispute",
       "url": "https://www.nytimes.com/2026/06/23/us/politics/nsa-lost-access-anthropic-tool.html",
@@ -414,7 +472,7 @@
       "similarity": null
     },
     {
-      "rank": 52,
+      "rank": 56,
       "score": 64.0,
       "title": "NSA Lost Access to Powerful AI Model Amid Anthropic Dispute",
       "url": "https://www.nytimes.com/2026/06/23/us/politics/nsa-lost-access-anthropic-tool.html",
@@ -422,7 +480,7 @@
       "similarity": null
     },
     {
-      "rank": 53,
+      "rank": 57,
       "score": 63.0,
       "title": "A Mechanistic Explanation of Prompt Injection (and why you should study roles)",
       "url": "https://www.lesswrong.com/posts/d8xDGzCEYE639qqEv/a-mechanistic-explanation-of-prompt-injection-and-why-you",
@@ -430,7 +488,7 @@
       "similarity": null
     },
     {
-      "rank": 54,
+      "rank": 58,
       "score": 63.0,
       "title": "New Gaslight macOS Malware Uses Prompt Injection to Disrupt AI-Assisted Analysis",
       "url": "https://thehackernews.com/2026/06/new-gaslight-macos-malware-uses-prompt.html",
@@ -438,7 +496,7 @@
       "similarity": null
     },
     {
-      "rank": 55,
+      "rank": 59,
       "score": 63.0,
       "title": "7,000 Langflow servers are under attack. LangGraph and LangChain have the same holes",
       "url": "https://venturebeat.com/security/7000-langflow-servers-under-attack-langgraph-langchain-same-holes",
@@ -446,7 +504,7 @@
       "similarity": null
     },
     {
-      "rank": 56,
+      "rank": 60,
       "score": 63.0,
       "title": "Why American data centers can't plug in",
       "url": "https://worksinprogress.co/issue/why-american-data-centers-cant-plug-in/",
@@ -454,7 +512,7 @@
       "similarity": null
     },
     {
-      "rank": 57,
+      "rank": 61,
       "score": 63.0,
       "title": "Ford AI hiccups push carmaker to rehire \u2018gray beard\u2019 inspectors",
       "url": "https://www.bloomberg.com/news/articles/2026-06-25/ford-has-been-rehiring-quality-inspectors-after-ai-fell-short",
@@ -462,7 +520,15 @@
       "similarity": null
     },
     {
-      "rank": 58,
+      "rank": 62,
+      "score": 63.0,
+      "title": "OpenAI Limits Access to New Model, Citing Government Security Concerns",
+      "url": "https://www.wsj.com/tech/ai/openai-limits-access-to-new-model-citing-government-security-concerns-66420050?mod=rss_Technology",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 63,
       "score": 62.0,
       "title": "The Coming Loop",
       "url": "https://lucumr.pocoo.org/2026/6/23/the-coming-loop/",
@@ -470,7 +536,15 @@
       "similarity": null
     },
     {
-      "rank": 59,
+      "rank": 64,
+      "score": 62.0,
+      "title": "Augmentation with Dilution: A Large-Scale Empirical Study of Human Contributor Ecosystems After AI Coding Agent Adoption",
+      "url": "http://arxiv.org/abs/2606.26289v1",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 65,
       "score": 62.0,
       "title": "Why the Frontier Ecosystem must be Open \u2014 Matei Zaharia and Reynold Xin, Databricks",
       "url": "https://www.latent.space/p/databricks",
@@ -478,7 +552,15 @@
       "similarity": null
     },
     {
-      "rank": 60,
+      "rank": 66,
+      "score": 62.0,
+      "title": "AI inference is obviously profitable",
+      "url": "https://seangoedecke.com/ai-inference-is-obviously-profitable/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 67,
       "score": 62.0,
       "title": "So You Want to Sell Inference",
       "url": "https://tomtunguz.com/so-you-want-to-sell-inference/",
@@ -486,7 +568,7 @@
       "similarity": null
     },
     {
-      "rank": 61,
+      "rank": 68,
       "score": 62.0,
       "title": "Embedding Forbidden Text in Spyware to Discourage AI Analysis",
       "url": "https://www.schneier.com/blog/archives/2026/06/embedding-forbidden-text-in-spyware-to-discourage-ai-analysis-2.html",
@@ -494,7 +576,7 @@
       "similarity": null
     },
     {
-      "rank": 62,
+      "rank": 69,
       "score": 62.0,
       "title": "New macOS malware embeds fake errors to confuse AI analysis tools",
       "url": "https://www.bleepingcomputer.com/news/security/new-macos-malware-embeds-fake-errors-to-confuse-ai-analysis-tools/",
@@ -502,55 +584,7 @@
       "similarity": null
     },
     {
-      "rank": 63,
-      "score": 62.0,
-      "title": "Data Exposure Flaws Threaten Dify AI Platform Used by 1 Million Apps",
-      "url": "https://www.securityweek.com/data-exposure-flaws-threaten-dify-ai-platform-powering-over-1-million-apps/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 64,
-      "score": 62.0,
-      "title": "New Enterprise-Ready MCP Specification Brings New Security Challenges",
-      "url": "https://www.securityweek.com/new-enterprise-ready-mcp-specification-brings-new-security-challenges/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 65,
-      "score": 62.0,
-      "title": "Proposed US law would make AI risk reporting a legal obligation",
-      "url": "https://www.cio.com/article/4189918/proposed-us-law-would-make-ai-risk-reporting-a-legal-obligation-2.html",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 66,
-      "score": 61.0,
-      "title": "Augmentation with Dilution: A Large-Scale Empirical Study of Human Contributor Ecosystems After AI Coding Agent Adoption",
-      "url": "http://arxiv.org/abs/2606.26289v1",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 67,
-      "score": 61.0,
-      "title": "Medical diagnosis AIs can be tricked into telling whose data trained them",
-      "url": "https://www.theregister.com/ai-and-ml/2026/06/24/medical-diagnosis-ais-can-be-tricked-into-telling-whose-data-trained-them/5261501",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 68,
-      "score": 60.0,
-      "title": "Italy is investigating Microsoft 365's price hike, saying Microsoft failed to inform users that AI tools like Copilot were being integrated into the service (Giulia Segreti/Reuters)",
-      "url": "https://www.techmeme.com/260626/p8#a260626p8",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 69,
+      "rank": 70,
       "score": 60.0,
       "title": "Atlassian's DESIGN.md is Here: What We Learned Testing Portable Design Context in Practice",
       "url": "https://www.atlassian.com/blog/ai-at-work/atlassians-design-md-is-here-what-we-learned-testing-portable-design-context-in-practice",
@@ -558,7 +592,7 @@
       "similarity": null
     },
     {
-      "rank": 70,
+      "rank": 71,
       "score": 59.0,
       "title": "Preliminary Thoughts On The Midjourney Scanner",
       "url": "https://www.astralcodexten.com/p/preliminary-thoughts-on-the-midjourney",
@@ -566,7 +600,7 @@
       "similarity": null
     },
     {
-      "rank": 71,
+      "rank": 72,
       "score": 58.0,
       "title": "Snowflake and the Agentic Resource Discovery Specification",
       "url": "https://www.snowflake.com/en/blog/agentic-resource-discovery-specification/",
@@ -574,7 +608,7 @@
       "similarity": null
     },
     {
-      "rank": 72,
+      "rank": 73,
       "score": 57.0,
       "title": "My Vibe Coding Adventure, The App and the Experience, Ten Takeaways",
       "url": "https://stratechery.com/2026/my-vibe-coding-adventure-the-app-and-the-experience-ten-takeaways/",
@@ -582,7 +616,7 @@
       "similarity": null
     },
     {
-      "rank": 73,
+      "rank": 74,
       "score": 57.0,
       "title": "Agents That Know Too Much: A Data-Centric Survey of Privacy in LLM Agents",
       "url": "http://arxiv.org/abs/2606.26627v1",
@@ -590,7 +624,7 @@
       "similarity": null
     },
     {
-      "rank": 74,
+      "rank": 75,
       "score": 57.0,
       "title": "Why the Human Genome's Tangled Physicality May Confound AI",
       "url": "https://www.quantamagazine.org/why-the-human-genomes-tangled-physicality-may-confound-ai-20260618/",
@@ -598,7 +632,7 @@
       "similarity": null
     },
     {
-      "rank": 75,
+      "rank": 76,
       "score": 57.0,
       "title": "The Problem is Prompt Debt",
       "url": "https://www.dbreunig.com/2026/06/22/the-problem-is-prompt-debt.html",
@@ -606,7 +640,7 @@
       "similarity": null
     },
     {
-      "rank": 76,
+      "rank": 77,
       "score": 57.0,
       "title": "RubyLLM: A Ruby framework for all major AI providers",
       "url": "https://rubyllm.com/",
@@ -614,7 +648,7 @@
       "similarity": null
     },
     {
-      "rank": 77,
+      "rank": 78,
       "score": 57.0,
       "title": "Nvidia Seeks to Make Humanoid AI Robots Safer Around Humans",
       "url": "https://www.bloomberg.com/news/articles/2026-06-22/nvidia-seeks-to-make-humanoid-ai-robots-safer-around-humans",
@@ -622,7 +656,15 @@
       "similarity": null
     },
     {
-      "rank": 78,
+      "rank": 79,
+      "score": 56.0,
+      "title": "The next big breakthrough will be AIs learning on the job",
+      "url": "https://www.dwarkesh.com/p/the-next-paradigm",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 80,
       "score": 56.0,
       "title": "There is minimal downside to switching to open models",
       "url": "https://www.marble.onl/posts/cancel_claude.html",
@@ -630,7 +672,7 @@
       "similarity": null
     },
     {
-      "rank": 79,
+      "rank": 81,
       "score": 56.0,
       "title": "Building AI tailored for education, with educators in the lead",
       "url": "https://blog.google/products-and-platforms/products/education/iste-2026-educator-updates/",
@@ -638,7 +680,7 @@
       "similarity": null
     },
     {
-      "rank": 80,
+      "rank": 82,
       "score": 56.0,
       "title": "Do AI Assistants Actually Render Your JavaScript when Grounding? We Put It to the Test",
       "url": "https://www.searchengineworld.com/do-ai-assistants-actually-render-your-javascript-when-grounding-we-put-it-to-the-test",
@@ -646,7 +688,15 @@
       "similarity": null
     },
     {
-      "rank": 81,
+      "rank": 83,
+      "score": 56.0,
+      "title": "Detecting Misuse with the Claude Compliance API: The Threat is in the Content",
+      "url": "https://www.papermtn.co.uk/detecting-misuse-with-the-claude-compliance-api-the-threat-is-in-the-content/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 84,
       "score": 55.0,
       "title": "iOS 27 beta 2: Apple tells Siri AI to clearly refuse requests to summarize URLs",
       "url": "https://9to5mac.com/2026/06/24/ios-27-beta-2-apple-tells-siri-ai-to-clearly-refuse-requests-to-summarize-urls/",
@@ -654,7 +704,7 @@
       "similarity": null
     },
     {
-      "rank": 82,
+      "rank": 85,
       "score": 55.0,
       "title": "TrueFoundry acquires MLOps pioneer Seldon AI to accelerate enterprise agentic AI",
       "url": "https://siliconangle.com/2026/06/25/truefoundry-acquires-mlops-pioneer-seldon-ai-accelerate-enterprise-agentic-ai/",
@@ -662,7 +712,7 @@
       "similarity": null
     },
     {
-      "rank": 83,
+      "rank": 86,
       "score": 55.0,
       "title": "ISTE 2026: Supporting teaching and learning with connected AI tools",
       "url": "https://blog.google/products-and-platforms/products/education/collection-iste-june-2026/",
@@ -670,9 +720,47 @@
       "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.08333333333333333,
+    "25": 0.16666666666666666,
+    "50": 0.25,
+    "100": 0.25,
+    "86": 0.25
+  },
+  "hits_at": {
+    "10": 1,
+    "25": 2,
+    "50": 3,
+    "100": 3,
+    "86": 3
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://www.liquid.ai/blog/lfm2-5-230m",
+    "https://vercel.com/blog/ai-sdk-7",
+    "https://techcrunch.com/2026/06/25/the-white-house-is-asking-openai-to-slow-roll-the-release-of-its-new-model-over-safety-concerns/",
+    "https://www.exponentialview.co/p/the-state-of-the-ai-economy",
+    "https://lilianweng.github.io/posts/2026-06-24-scaling-laws/",
+    "https://arxiv.org/abs/2606.25996",
+    "https://www.testingcatalog.com/deepreinforce-releases-ornith-1-0-open-source-coding-models/",
+    "https://cursor.com/blog/reward-hacking-coding-benchmarks",
+    "https://yongzx.github.io/blog/2026/06/24/job-search/",
+    "https://threadreaderapp.com/thread/2070181051801235463.html",
+    "https://huggingface.co/blog/vllm-jobs",
+    "https://x.com/gen_intuition/status/2070177308539818005"
+  ],
+  "tldr_domains": [
+    "liquid.ai",
+    "vercel.com",
+    "techcrunch.com",
+    "exponentialview.co",
+    "lilianweng.github.io",
+    "arxiv.org",
+    "testingcatalog.com",
+    "cursor.com",
+    "yongzx.github.io",
+    "threadreaderapp.com",
+    "huggingface.co",
+    "x.com"
+  ]
 }
