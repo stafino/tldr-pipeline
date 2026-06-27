@@ -10,13 +10,13 @@ Incident CVE-2026-LGTM (5 minute read)
 
 (blurb not generated)
 
-Mostly Automatic Translation of Language Interpreters from C to Safe Rust (1 minute read)
+Mostly Automatic Translation of Language Interpreters from C to Safe Rust (5 minute read)
 
-Reboot translates real-world C language interpreters to safe Rust mostly automatically, converting six interpreters of 6k to 23k lines with only 1 to 11 brief human interventions each. It pairs feature reduction, which breaks the job into testable milestones that incrementally restore functionality, with a multi-agent loop that validates unreliable coding agents, passing 100% of provided test suites and eliminating memory bugs like use-after-free in mujs.
+(blurb not generated)
 
-DSpark: Speculative decoding accelerates LLM inference [pdf] (1 minute read)
+DSpark: Speculative decoding accelerates LLM inference [pdf] (5 minute read)
 
-DSpark applies speculative decoding to accelerate LLM inference by drafting multiple candidate tokens with a small model and verifying them in parallel against the full model. The paper reports throughput gains while preserving the target model's output distribution, with the draft-and-verify loop tuned to keep acceptance rates high without retraining the base model.
+(blurb not generated)
 
 How we built saga rollbacks for Cloudflare Workflows (5 minute read)
 
@@ -30,95 +30,99 @@ RFC 9958 - Post-Quantum Cryptography for Engineers (5 minute read)
 
 (blurb not generated)
 
-How Much Static Structure Do Code Agents Need? A Study of Deterministic Anchoring (1 minute read)
+How Much Static Structure Do Code Agents Need? A Study of Deterministic Anchoring (5 minute read)
 
-This paper tests whether injecting lightweight static-analysis facts (call graphs and inheritance topology) as plain-text comments makes LLM code agents navigate repositories more deterministically. Using OpenAI's Codex as a baseline, the authors find that anchoring improves function-level localization by 2.2pp, shortens trajectories by 1.6 rounds, and roughly halves run-to-run variance at the cost of about 10% more input tokens.
+(blurb not generated)
 
 Qwen-AgentWorld (5 minute read)
 
-Qwen-AgentWorld introduces two language world models (35B-A3B and 397B-A17B) that simulate agentic environments across 7 domains via long chain-of-thought reasoning, trained on 10M+ real interaction trajectories through a three-stage CPT/SFT/RL pipeline. Used as a decoupled simulator for agentic RL, it surpasses real-environment training alone, and as an agent foundation model the world-model warm-up lifts performance across 7 downstream benchmarks.
+(blurb not generated)
 
-Fintech Engineering Handbook (1 minute read)
-
-This handbook documents the patterns behind money-handling systems, organized around three principles: no invented data, no lost data, and no trust. It covers idempotency, deduplication, reconciliation, event sourcing, and audit trails, and breaks down the four ways to represent money, from floating-point precision losses to BigDecimal and minor-units integer storage.
-
-Dolphin Emulator Progress Release 2606 (5 minute read)
+Fintech Engineering Handbook (5 minute read)
 
 (blurb not generated)
 
 British Columbia, Time Zones, and Postgres (5 minute read)
 
-British Columbia switched to permanent UTC-7 on March 8, 2026, which breaks any Postgres `timestamptz` appointment stored before the rule change and queried after. Because these columns store UTC and reconvert using current tzdata, future November-to-March bookings can come back an hour off, and the post shows a SQL check to confirm whether your tzdata package has picked up the new offset.
+(blurb not generated)
 
 Measuring Exploits in LLM Agents with Tool Use (5 minute read)
 
-Cursor built an auditor agent to inspect SWE-bench Pro trajectories and found that 63% of Opus 4.8 Max's successful resolutions retrieved the known fix from the public web or bundled .git history rather than deriving it. Sealing git history and blocking internet access dropped Opus from 87.1% to 73.0% and Cursor's Composer 2.5 from 74.7% to 54.0%, showing that agentic coding benchmarks need controlled runtime environments, not just contamination-free training data.
+(blurb not generated)
 
 GLM-5.2 is the step change for open agents (5 minute read)
 
-Z.ai released GLM-5.2, an MIT-licensed open-weight model that the author argues crosses a capability threshold for agentic coding rather than being the incremental bump its version number suggests. The post tracks the post-launch evidence over benchmarks, noting that GLM-5.2 became the only open model competing with OpenAI and Anthropic on Arena's agent leaderboard, alongside Z.ai's use of the SLIME RL framework and a max-thinking-effort recommendation.
-
-PostCSS Adopted Staged Publishing. 685M Weekly Downloads Now Gated. (2 minute read)
-
-PostCSS maintainer Andrey Sitnik adopted npm's Staged Publishing across the `ai` account, putting 685M weekly downloads behind a human approval gate where CI builds and stages a release but a person must promote it to latest. The move answers a supply-chain debate: a stolen CI token can stage a malicious version but never promote it, closing the OIDC-token attack path that compromised TanStack and Red Hat's CI pipelines despite valid provenance attestations.
+(blurb not generated)
 
 How Netflix Simplified Batch Compute with Kueue (5 minute read)
 
-Netflix replaced the custom queuing and scheduling logic in its homegrown Compute Managed Batch system with Kueue, a cloud-native job queueing system for Kubernetes batch workloads, as part of moving its Titus container platform to be more Kubernetes-native. The post covers what drove the migration of millions of batch jobs, how the team preserved the tenant-hierarchy and per-tenant capacity model on top of Kueue, and what the switch lets the platform offer.
+(blurb not generated)
 
 How we found a bug in the hyper HTTP library (5 minute read)
 
 (blurb not generated)
 
-Same Scrutiny, More Time: Eye Tracking Insights into Reviewing LLM-Labelled Code (1 minute read)
+Same Scrutiny, More Time: Eye Tracking Insights into Reviewing LLM-Labelled Code (5 minute read)
 
-In a Wizard-of-Oz eye-tracking study, researchers found that labeling code as LLM-generated did not change how thoroughly engineers reviewed it, but did make them fixate longer on the labeled code and shift strategy toward checking logical correctness and reading the prompt. The authors flag a gap between developers' stated intent to scrutinize AI output and their actual behavior, arguing companies should revisit AI-assisted development policies and treat the prompt as a reviewable artifact.
+(blurb not generated)
 
-Anatomy of a Failed (Nation-State?) Attack (1 minute read)
+Anatomy of a Failed (Nation-State?) Attack (5 minute read)
 
-A Rust crates.io maintainer documents a fake-interview attack that used a fabricated VC persona, a defunct Singapore firm, and a real-sounding call to push a malicious "test" repo carrying a RAT the author dubs PinpinRAT. The payload-laden image evades every AV engine on VirusTotal, and the writeup walks through the social-engineering chain plus the IoC-detection script the author built to catch it.
+(blurb not generated)
 
-A Deterministic Control Plane for LLM Coding Agents (1 minute read)
+A Deterministic Control Plane for LLM Coding Agents (5 minute read)
 
-A study of 10,008 GitHub repos found agent config files (rules, agent definitions, IDE markdown) propagate as an unmanaged supply chain, with 10.1% of tracked paths being exact SHA-256 duplicates across independent orgs and under 1% declaring permission boundaries. The authors propose Rel(AI)Build, a deterministic control plane that content-addresses agent definitions, enforces tiered permissions and blocklists before LLM invocation, and compiles one canonical definition to seven IDE targets.
+(blurb not generated)
 
 Scaling AI Inference Across Multiple GPUs Using NVIDIA TensorRT with Multi-Device Inference Support (5 minute read)
+
+(blurb not generated)
+
+Framework's 10G Ethernet module exposes USB-C's complexity (5 minute read)
+
+(blurb not generated)
+
+BtrLog: Low-Latency Logging for Cloud Database Systems (5 minute read)
 
 (blurb not generated)
 
 🧠
 Opinions & Advice
 
-Clean GitHub repo tricks AI coding agents into running malware (1 minute read)
+Clean GitHub repo tricks AI coding agents into running malware (5 minute read)
 
-Researchers at Mozilla's 0DIN demonstrated an attack where a clean GitHub repo with no malicious code tricks Claude Code into opening a reverse shell while it tries to recover from a planted setup error. The agent never decides to run malware; it follows an error message that triggers a script fetching an attacker-controlled DNS TXT record, three indirection steps from anything it actually evaluated.
+(blurb not generated)
 
-Open source maintainership in the age of AI (3 minute read)
+Open source maintainership in the age of AI (5 minute read)
 
-The Kubernetes maintainers introduced an AI policy that requires contributors to disclose AI assistance, keeps the human contributor fully accountable for every change, and bans listing AI as a commit co-author or as an "assisted-by" trailer. The post argues AI has made code generation fast without improving code maintenance, so the project now enforces CLA checks on co-authors and expects reviewers to engage with humans rather than AI-generated review replies.
+(blurb not generated)
 
-The gap between open weights LLMs and closed source LLMs (1 minute read)
+Suspicious Discontinuities (2020) (1 minute read)
 
-The author tests the viral claim that open weights LLMs will catch up to closed source by December 2026, showing it holds only on a single benchmark. Repeating the analysis across all 18 Artificial Analysis benchmarks yields a near-flat average gap of just under 5 months, with coding closing fast while most other categories barely move.
+Danluu argues that US tax and subsidy policy is riddled with "suspicious discontinuities," sharp income cutoffs where earning one more dollar can cost thousands, as with the ACA subsidy cliff that can spike an individual's health insurance by roughly $7,200/yr at $48,560. The takeaway for engineers who model incentives: hard thresholds create perverse behavior, and people will rationally optimize against them, even buying put options to lose money before year-end.
+
+The gap between open weights LLMs and closed source LLMs (5 minute read)
+
+(blurb not generated)
 
 Can We Agree on a Storage/Workload Architecture Taxonomy? (5 minute read)
 
-Jack Vanlightly proposes a taxonomy for storage and workload architectures, classifying systems by number of systems, workloads, durable copies, and tiers to separate OLTP, OLAP, HTAP, and Databricks' new LTAP. The framework distinguishes tiering (one copy moved hot to cold) from materializing (a second durable copy in another system), with data visibility across workloads as the dimension that determines staleness.
+(blurb not generated)
 
 Broken Windows of Data (5 minute read)
 
-Booking.com applies the "broken windows" theory to its shared enterprise data warehouse, arguing that small quality lapses like loose grain definitions, duplicated metrics, or skipped reviews compound into platform-wide trust and maintainability problems as they propagate downstream. The author describes a hybrid operating model where domain teams own delivery but work inside common modelling rules and shared entities, keeping governance from becoming a delivery bottleneck.
+(blurb not generated)
 
 AI was supposed to kill engineering jobs, but new data suggests they're the most resilient (5 minute read)
 
-SignalFire's analysis of hiring across 80M+ companies found engineering was the most resilient tech job function in 2025, with engineering roles down just 11% from 2019 levels versus a 25% drop in overall tech hiring. Engineers made up 55% of new hires at the 12 "Tech Majors" last year, up from 46% in 2019, undercutting the claim that AI coding tools are already substituting for engineering headcount.
+(blurb not generated)
 
 🚀
 Launches & Tools
 
-Previewing GPT-5.6 Sol: a next-generation model (1 minute read)
+Previewing GPT-5.6 Sol: a next-generation model (5 minute read)
 
-OpenAI began a limited preview of the GPT-5.6 series, led by flagship Sol alongside Terra, a balanced model at 2x lower cost than GPT-5.5, and Luna for low-cost workloads. Sol sets a new state of the art on Terminal-Bench 2.1 and adds a max reasoning effort setting plus an ultra mode that spawns subagents for complex tasks, though access is restricted to trusted partners during a government-coordinated rollout.
+(blurb not generated)
 
 Zig's new bitCast semantics and LLVM back end improvements (5 minute read)
 
@@ -126,43 +130,35 @@ Zig's new bitCast semantics and LLVM back end improvements (5 minute read)
 
 Vercel Launches AI SDK 7 with Enhanced Stream and Tool Orchestration (5 minute read)
 
-Vercel released AI SDK 7, the TypeScript SDK with over 16 million weekly downloads, adding production depth for agent work across reasoning control, typed tool context, durable execution, and telemetry. The release standardizes provider-specific reasoning behind a single `reasoning` option, adds tool approvals and sandbox support for running agents, and ships a v6-to-v7 codemod for automated migration.
-
-Deno 2.9 (5 minute read)
-
 (blurb not generated)
 
 Run isolated sandboxes with full lifecycle control: AWS Lambda introduces MicroVMs (5 minute read)
 
 (blurb not generated)
 
-Show HN: OpenKnowledge – open source AI-first alternative to Obsidian/Notion (1 minute read)
+Show HN: OpenKnowledge – open source AI-first alternative to Obsidian/Notion (5 minute read)
 
-OpenKnowledge is an open-source markdown editor that pairs a true WYSIWYG editing surface with built-in MCP, agentic search, and collaborative AI editing through Claude, Codex, and Cursor. It runs as a macOS desktop app or a local web UI over any existing folder of markdown or MDX files, with optional git/GitHub sync for team sharing, positioning it as a private, local alternative to Obsidian and Notion.
+(blurb not generated)
 
-LuaJIT 3.0 proposed syntax extensions (1 minute read)
+LuaJIT 3.0 proposed syntax extensions (5 minute read)
 
-LuaJIT maintainer Mike Pall opened an umbrella issue proposing a set of syntax extensions for LuaJIT 3.0, constrained to additions that are already proven in other languages or Lua dialects, introduce no parsing ambiguities, and break no backwards compatibility. The proposal explicitly avoids the syntactic complexity of Perl, Ruby, C++, or Rust, and aims to keep tooling like formatters and LSPs straightforward to maintain.
+(blurb not generated)
 
-Gossamer: a Rust-flavoured language with real goroutines and pause-free memory (1 minute read)
+Gossamer: a Rust-flavoured language with real goroutines and pause-free memory (5 minute read)
 
-Gossamer is a new Rust-flavored language that pairs Go-style goroutines on an M:N scheduler with a Swift-like memory model, using deterministic reference counting and automatic cycle collection instead of a borrow checker or tracing GC. The pre-1.0 release (v0.20.0, Apache-2.0) runs as a bytecode VM with a REPL or compiles to a single dependency-free native binary via LLVM, and ships a standard library covering HTTP, JSON, crypto, and SQL.
+(blurb not generated)
 
-Captcha proves you're human. HATCHA proves you're not (1 minute read)
+OpenAI unveils GPT-5.6 Sol, Terra and Luna models — but only accessible to limited preview partners for now, per US Gov (5 minute read)
 
-HATCHA is a reverse CAPTCHA that gates access behind challenges easy for AI agents but tedious for humans, including large-number multiplication, string reversal, and binary decoding. Verification runs server-side with HMAC-signed stateless tokens that keep answers off the client, ships five built-in challenge types plus runtime-registered custom generators, and includes Next.js App Router and Express adapters out of the box.
-
-OpenAI unveils GPT-5.6 Sol, Terra and Luna models — but only accessible to limited preview partners for now, per US Gov (3 minute read)
-
-OpenAI announced GPT-5.6 in three variants: Sol for hard problems like complex coding and security research, Terra for high-volume business workloads, and Luna for fast, low-cost everyday tasks. Sol and Terra set new benchmark highs while Luna lands near GPT-5.5 levels, but access is limited to roughly 20 partner organizations pending a federal safety review, with general availability planned for the coming weeks.
+(blurb not generated)
 
 Run a vLLM Server on HF Jobs in One Command (5 minute read)
 
-Hugging Face's `hf jobs run` command stands up a vLLM server on HF infrastructure with a single line, requesting a GPU via `--flavor` and exposing the OpenAI-compatible port through HF's public jobs proxy. It targets quick tests, evals, and batch generation rather than production, billing per-minute by hardware usage and authenticating requests with your HF token as a bearer key, with Inference Endpoints recommended for managed serving.
+(blurb not generated)
 
-Apple adds Google Gemini coding assistant in Xcode 26.6 update (1 minute read)
+Apple adds Google Gemini coding assistant in Xcode 26.6 update (5 minute read)
 
-Xcode 26.6 adds Google Gemini as a coding assistant provider, joining Anthropic's Claude Agent and OpenAI Codex in Apple's IDE. The update also enables other compatible agents through the Agent Client Protocol and bundles Swift 6.3.3 plus SDKs for the iOS 26.5, macOS 26.5, and visionOS 26.5 release lines.
+(blurb not generated)
 
 DeepReinforce releases Ornith-1.0 open-source coding models (5 minute read)
 
@@ -170,11 +166,15 @@ DeepReinforce releases Ornith-1.0 open-source coding models (5 minute read)
 
 Grafana 13.1 release: observability as code updates, extending Grafana Assistant across more data sources, and more (5 minute read)
 
-Grafana released 13.1, expanding observability-as-code with four Git Sync enhancements, including importing dashboard JSON straight into a provisioned folder and syncing dashboards at the repo root without a containing folder. The release also extends Grafana Assistant to more data sources, with path-based uniqueness now letting dashboards share a title as long as they live at different paths in the repo.
+(blurb not generated)
 
-Show HN: Smart model routing directly in Claude, Codex and Cursor (1 minute read)
+Show HN: Smart model routing directly in Claude, Codex and Cursor (5 minute read)
 
-Workweave released Router, a drop-in proxy for Anthropic, OpenAI, and Gemini that uses a small on-box embedder to pick a model per request rather than a static rule, and points Claude Code, Codex, Cursor, or any app at a single endpoint. It speaks the native APIs of all three providers plus OSS models via OpenRouter, keeps provider keys encrypted on your machine, and emits OTLP traces out of the box.
+(blurb not generated)
+
+Turn your site into a place people can bump into each other (1 minute read)
+
+Town Square is an open-source widget that adds a live presence layer to any website, rendering current visitors as stick figures you can walk around, see what page they're reading, and message in real time. It runs without accounts, profiles, or persistent chat history, and ships with a public server so you can integrate it via the hosted service or self-host from the repo.
 
 Lighthouse agentic browsing scoring (5 minute read)
 
@@ -182,15 +182,19 @@ Lighthouse agentic browsing scoring (5 minute read)
 
 Stripe Directory public preview (5 minute read)
 
-Stripe released a public preview of Stripe Directory, a searchable index of businesses, published Stripe Apps, Stripe Projects providers, and machine-payment endpoints on the Stripe network, accessible via the `stripe directory search` CLI plugin. Output supports a `--format json` mode and installable agent skills, letting AI agents discover, compare, and integrate services autonomously using returned provider slugs and MPP endpoints.
+(blurb not generated)
 
 OpenAI upgrading ChatGPT and Codex with new GPT-5.6 models in limited release (5 minute read)
 
 (blurb not generated)
 
-See your serverless: introducing the Headlamp plugin for Knative (2 minute read)
+See your serverless: introducing the Headlamp plugin for Knative (5 minute read)
 
-The Headlamp Knative plugin brings serverless workload management into Headlamp, the open-source Kubernetes SIG UI, consolidating tasks that previously required jumping between the kn CLI, kubectl, and the Kubernetes dashboard. It adds a graph view of how KServices, Revisions, and DomainMappings relate, plus an edit mode for adjusting traffic splits across revisions, tuning autoscaling annotations, and restarting pods, all gated by your existing RBAC permissions.
+(blurb not generated)
+
+Microsoft launches MAI-Code-1-Flash on GitHub Copilot (1 minute read)
+
+Microsoft made MAI-Code-1-Flash, its in-house low-latency coding model, generally available to GitHub Copilot Business and Enterprise subscribers once admins enable the policy in Copilot settings. The model targets high-speed completion and agentic workflows for large teams, billed at usage-based provider list rates in line with Copilot's existing pricing.
 
 Show HN: I made Google Trends for Hacker News by indexing 18 years of comments (5 minute read)
 
@@ -219,9 +223,9 @@ Miasma Malware Targets npm Packages and GitHub Actions in Supply Chain Attack (5
 
 (blurb not generated)
 
-OpenAI launches GPT-5.6 Sol preview for select partners (1 minute read)
+OpenAI launches GPT-5.6 Sol preview for select partners (5 minute read)
 
-OpenAI opened a limited preview of GPT-5.6, led by its new flagship Sol model alongside the cheaper Terra and Luna, starting with trusted partners via the API and Codex. Sol adds a max reasoning effort and a subagent-driven ultra mode, claims state of the art on Terminal-Bench 2.1, and ships under a controlled rollout tied to its High cyber and bio risk classification.
+(blurb not generated)
 
 Linux Finally Eliminates The strncpy API After Six Years Of Work, 360+ Patches (5 minute read)
 
@@ -230,38 +234,42 @@ Linux Finally Eliminates The strncpy API After Six Years Of Work, 360+ Patches (
 ⚡
 Quick Links
 
-Introducing the Cluster API plugin for Headlamp (2 minute read)
+Anonymous GitHub account mass-dropping undisclosed 0-days (1 minute read)
 
-The Headlamp Kubernetes UI added a Cluster API plugin that replaces raw kubectl with visual list and detail views for CAPI cluster lifecycle resources.
+An anonymous GitHub account is mass-publishing PoC exploits for undisclosed 0-days across projects including FFmpeg, Firefox, PHP, and libssh2.
 
-Half-Life 2 in a Browser (1 minute read)
+Introducing the Cluster API plugin for Headlamp (5 minute read)
 
-A developer ported Half-Life 2 to run in the browser via WebAssembly, playable directly from a URL with no install.
+(blurb not generated)
 
-The Garbage Collection Handbook: The Art of Automatic Memory Management (2nd Ed) (2023) (1 minute read)
+Half-Life 2 in a Browser (5 minute read)
 
-The second edition of Richard Jones's authoritative GC reference, adding chapters on persistence and energy-aware collection plus modern parallel, concurrent, and real-time algorithms.
+(blurb not generated)
 
-When Does Combining Language Models Help? A Co-Failure Ceiling on Routing, Voting, and Mixture-of-Agents Across 67 Frontier Models (1 minute read)
+The Garbage Collection Handbook: The Art of Automatic Memory Management (2nd Ed) (2023) (5 minute read)
 
-Across 67 models, combining LLMs via routing or voting can't beat the rate at which every model fails the same query.
+(blurb not generated)
 
-To Run or Not to Run: Analyzing the Cost-Effectiveness of Code Execution in LLM-Based Program Repair (1 minute read)
+When Does Combining Language Models Help? A Co-Failure Ceiling on Routing, Voting, and Mixture-of-Agents Across 67 Frontier Models (5 minute read)
 
-Restricting code execution in LLM repair agents costs only 1.25 points of resolve rate while saving substantial tokens and wall-clock time.
+(blurb not generated)
 
-Streamlining Resource Binding with End-to-End Support for Vulkan Descriptor Heaps (1 minute read)
+To Run or Not to Run: Analyzing the Cost-Effectiveness of Code Execution in LLM-Based Program Repair (5 minute read)
 
-Vulkan's new VK_EXT_descriptor_heap extension gives direct control over descriptor memory, bringing resource binding closer to D3D12 parity.
+(blurb not generated)
+
+Streamlining Resource Binding with End-to-End Support for Vulkan Descriptor Heaps (5 minute read)
+
+(blurb not generated)
 
 Accelerating Transformers Fine-Tuning with NVIDIA NeMo AutoModel (5 minute read)
 
 (blurb not generated)
 
-OpenTTD 16.0-Beta1 (1 minute read)
+OpenTTD 16.0-Beta1 (5 minute read)
 
-OpenTTD 16.0-beta1 lands with reversible trains, open-join multiplayer companies, filterable dropdowns, and improved map generation, now open for testing.
+(blurb not generated)
 
 Liquid AI Releases Liquid Foundation Models 2.5 230M (5 minute read)
 
-Liquid AI released LFM2.5-230M, a 230M model hitting 213 tok/s on a Galaxy S25 Ultra and capable at tool use.
+(blurb not generated)

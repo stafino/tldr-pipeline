@@ -6,9 +6,9 @@ TLDR InfoSec 2026-06-27
 🔓
 Attacks & Vulnerabilities
 
-Clean GitHub repo tricks AI coding agents into running malware (1 minute read)
+Clean GitHub repo tricks AI coding agents into running malware (5 minute read)
 
-Researchers at Mozilla's 0DIN demonstrated an attack that tricks AI coding agents like Claude Code into opening a reverse shell while cloning a clean GitHub repository that contains no malicious code. A Python package refuses to run until "initialized," prompting the agent to auto-execute a setup command that fetches and runs an attacker-controlled payload from a DNS TXT record, yielding a shell with the developer's privileges.
+(blurb not generated)
 
 New Linux pedit COW Exploit Enables Root Access by Poisoning Cached Binaries (5 minute read)
 
@@ -18,9 +18,9 @@ New DirtyClone Linux Kernel Flaw Lets Local Users Gain Root via Cloned Packets (
 
 (blurb not generated)
 
-Protocol Prying: Systematic Vulnerability Research in the Apple AirDrop and Android Quick Share Proximity Transfer Protocols (1 minute read)
+Protocol Prying: Systematic Vulnerability Research in the Apple AirDrop and Android Quick Share Proximity Transfer Protocols (5 minute read)
 
-Researchers conducted the first cross-platform reverse-engineering and protocol-aware fuzzing of Apple AirDrop and Android Quick Share, the proximity transfer stacks running on over five billion devices, disclosing six zero-click-reachable vulnerabilities. Findings include three pre-auth AirDrop flaws in macOS/iOS (DoS, unbounded plist recursion, NULL deref), two Samsung Quick Share protocol bugs including a D2D encryption bypass, and a heap use-after-free in Google Quick Share for Windows.
+(blurb not generated)
 
 One Million Passports Leaked Online (5 minute read)
 
@@ -38,41 +38,45 @@ Amazon Q Flaw Enabled Cloud Credential Theft via Malicious Repositories (5 minut
 
 (blurb not generated)
 
-FBI Warns Russian Intelligence Hackers Target Signal Backup Recovery Keys (1 minute read)
+Anonymous GitHub account mass-dropping undisclosed 0-days (1 minute read)
 
-The FBI and CISA updated advisory PSA I-062626-PSA to warn that Russian intelligence actors UNC5792 and UNC4221 are now phishing high-value targets into surrendering their Signal Backup Recovery Key, granting full message-history access and account takeover without breaking Signal's encryption. The captured key persists across new accounts on the same number, so victims must generate a fresh key in Settings to invalidate it for future backup downloads.
+An anonymous GitHub account operating as "bikini/exploitarium" has consolidated and published working proof-of-concept exploits for previously undisclosed bugs across widely deployed software including FFmpeg, Firefox, libssh2 (CVE-2026-55200), nghttp2, Nmap, PHP, and RustDesk. With functional PoCs now public ahead of coordinated disclosure, defenders should inventory exposure to the named projects, prioritize the libssh2 and RustDesk RCE/LPE chains, and monitor for opportunistic exploitation until vendor patches land.
+
+FBI Warns Russian Intelligence Hackers Target Signal Backup Recovery Keys (5 minute read)
+
+(blurb not generated)
 
 New Gaslight macOS Malware Uses Prompt Injection to Disrupt AI-Assisted Analysis (5 minute read)
 
 (blurb not generated)
 
-FBI says Russian intelligence hackers have a new trick for reading your Signal messages, and it works even after you change phones (1 minute read)
+FBI says Russian intelligence hackers have a new trick for reading your Signal messages, and it works even after you change phones (5 minute read)
 
-The FBI and CISA updated advisory I-062626-PSA warns that Russian intelligence groups UNC5792 and UNC4221 are phishing Signal users into surrendering their backup recovery keys, granting persistent access to an account's full message and group history. The key survives a device change and even account re-registration on the same number, so the only mitigation is generating a new recovery key in Signal settings, which cannot undo data already exfiltrated.
+(blurb not generated)
 
-Anatomy of a Failed (Nation-State?) Attack (1 minute read)
+Anatomy of a Failed (Nation-State?) Attack (5 minute read)
 
-A security researcher and crates.io maintainer documented a targeted fake-interview campaign in which an attacker posing as a Singapore VC delivered a Windows backdoor (dubbed "PinpinRAT") via a trojanized code-test repository, with the payload hidden in an image that evades all VirusTotal AV engines. The lure followed the DPRK-style social-engineering playbook of fabricated investor personas and advisory pitches targeting open-source developers, and the RAT and IoCs have been reported to Canadian authorities (CCCS).
+(blurb not generated)
 
 Incident CVE-2026-LGTM (5 minute read)
 
 (blurb not generated)
 
-Google Details Turla's New STOCKSTAY Backdoor Used in Ukraine Espionage Attacks (1 minute read)
+Google Details Turla's New STOCKSTAY Backdoor Used in Ukraine Espionage Attacks (5 minute read)
 
-Google's Threat Intelligence Group attributed a previously undocumented .NET backdoor, STOCKSTAY, to Russian state actor Turla, which has deployed it against Ukrainian government and military targets and entities tied to Italian foreign policy. The multi-component implant shares significant code overlap with Turla's Kazuar backdoor, communicates over secure WebSocket C2 via the websocket-sharp library, and supports file theft, directory enumeration, and screen capture.
+(blurb not generated)
 
-Polymarket customers lose $3 million in supply-chain attack (1 minute read)
+Polymarket customers lose $3 million in supply-chain attack (5 minute read)
 
-Attackers compromised a third-party frontend dependency on Polymarket and injected malicious JavaScript that tricked users into approving fraudulent transactions, draining roughly $3 million in ParyonUSD from fewer than 15 accounts. Polymarket's backend was unaffected and the company will fully reimburse victims; PeckShield tracked the funds bridged from Polygon to Ethereum and swapped for about 1,893 ETH.
+(blurb not generated)
 
 StubZero: $148,337 RCE in Google Cloud Production (5 minute read)
 
-A researcher chained a public debugging endpoint on Google Cloud's cloudcrmipfrontend-pa API into full remote code execution on Google's production environment, earning a $148,337 bounty under CVE-2026-2031. The flaw exposed proto definitions for any internal google3 service via /v1/integrationPlatform:getProtoDefinition, leaking request and response schemas across unrelated products like YouTube before escalating to RCE.
+(blurb not generated)
 
-Russia Used Cellebrite on Jailed Activist's iPhone Months After Sales Cutoff (1 minute read)
+Russia Used Cellebrite on Jailed Activist's iPhone Months After Sales Cutoff (5 minute read)
 
-Citizen Lab reported on June 25 that Russian authorities used Cellebrite's UFED forensic tools to extract data from detained opposition activist Andrey Pivovarov's iPhone 12 in June 2021, three months after Cellebrite said it had stopped sales to Russia. MobileLockdown USB-pairing traces and an official MVD forensic report naming UFED Physical Analyzer corroborate the extraction, which pulled WhatsApp, Telegram, and Viber data for a political prosecution.
+(blurb not generated)
 
 Cybersecurity firms targeted by fraudulent OpenAI organization invites (5 minute read)
 
@@ -82,72 +86,64 @@ Interesting Paper Exploring Prompt Injection (5 minute read)
 
 (blurb not generated)
 
-CISA sets urgent deadline to fix Cisco flaw exploited in attacks (1 minute read)
-
-CISA added Cisco Unified Communications Manager flaw CVE-2026-20230, a critical unauthenticated SSRF, to its KEV catalog after Defused observed in-the-wild exploitation writing arbitrary files via crafted HTTP requests. Federal agencies have until June 28 under BOD 26-04 to patch it alongside CVE-2026-12569, a critical deserialization RCE in PTC Windchill and FlexPLM disclosed June 18.
-
 🧠
 Strategies & Tactics
 
-New Enterprise-Ready MCP Specification Brings New Security Challenges (1 minute read)
+New Enterprise-Ready MCP Specification Brings New Security Challenges (5 minute read)
 
-MCP's next specification (MCP 2026-07-28, final on July 28 with a 12-month deprecation window) makes the protocol stateless, killing session hijacking and unsolicited server prompts while tightening authentication. Akamai's analysis warns the shift trades those wins for new risks: predictable tracking IDs and state objects enable cross-agent data access and cross-tenant actions, and new MCP HTTP headers open desync attacks and secret leakage if developers map API keys or PII into them.
+(blurb not generated)
 
-A Deterministic Control Plane for LLM Coding Agents (1 minute read) [flag]
+A Deterministic Control Plane for LLM Coding Agents (5 minute read)
 
-This paper studies how LLM coding-agent configuration files (rules, agent definitions, IDE markdown) are governed across 10,008 GitHub repos and finds them effectively unmanaged: 10.1% of tracked config paths are exact SHA-256 duplicates across independent repos, 75.5% of clone pairs cross org boundaries, and under 1% declare any permission boundaries. The authors propose Rel(AI)Build, a deterministic control plane that treats agent definitions as a managed supply chain with content addressing, HMAC-stamped lockfiles, hash-chained audit logs, tiered permissions, and attack-derived blocklists enforced before LLM invocation.
+(blurb not generated)
 
-PostCSS Adopted Staged Publishing. 685M Weekly Downloads Now Gated. (2 minute read)
+What happened after 2k people tried to hack my AI assistant (5 minute read)
 
-PostCSS maintainer Andrey Sitnik adopted npm Staged Publishing across the high-traffic packages he publishes under a single credential, putting 685M weekly downloads behind a human approval gate. Staged Publishing splits build from release: CI stages a version, but a person must promote it to latest, so a stolen CI token alone can't ship malware. The move counters the CI-as-publisher pattern behind the TanStack and Red Hat compromises, where attackers published packages with valid SLSA provenance.
+(blurb not generated)
 
-What happened after 2k people tried to hack my AI assistant (1 minute read)
+Inherited Circuits, Learned Semantics: How Fine-Tuning Creates Evasion Vulnerabilities Invisible to Standard Evaluation (5 minute read)
 
-A researcher built hackmyclaw.com, an OpenClaw email assistant told to guard a secrets.env file, and invited Hacker News to break it. Over 2,000 people sent 6,000+ emails using fake urgency, spoofed "OpenClaw Admin" identities, multilingual prompts, and rapid-fire variations, but none exfiltrated the secrets or forced an unauthorized reply. The operational lessons matter more than the win: inbound volume triggered Gmail fraud suspension, ran up $500 in API costs, and batch processing leaked suspicion across emails until each was isolated in a fresh context.
-
-Inherited Circuits, Learned Semantics: How Fine-Tuning Creates Evasion Vulnerabilities Invisible to Standard Evaluation (1 minute read)
-
-Fine-tuning LLMs for security classification can expand their evasion surface even as held-out accuracy improves, this paper shows. Studying Foundation-Sec-8B-Instruct, the authors find it learns brittle token-level indicator rules that miss behavior-preserving PowerShell transformations (alias substitution, command reconstruction, case mutation) its Llama-3.1 base does not. They propose a pre-deployment check: a linear probe and indicator-token sign test flag command families whose canonical indicators shift role after fine-tuning, prioritizing red-team variant generation.
+(blurb not generated)
 
 Securing CI/CD for an open source project, part 3: Credentials, verification, and what’s next (5 minute read)
 
 (blurb not generated)
 
-Privacy-Aware Infrastructure in the AI-Native Era: An Asset Classification Case Study (1 minute read)
+Privacy-Aware Infrastructure in the AI-Native Era: An Asset Classification Case Study (5 minute read)
 
-Meta detailed its privacy-aware infrastructure (PAI) approach to asset classification, the "understand" layer that tells retention, access, and purpose controls what data they are actually governing. The hybrid pattern uses LLMs narrowly to interpret novel or ambiguous assets, then distills their behavior into versioned, human-reviewed deterministic rules that handle routine production enforcement at low latency. Humans adjudicate reference labels and approve rule promotions, keeping the auditable logic, not the model, in the decision path.
+(blurb not generated)
 
-Adaptive Evaluation of Out-of-Band Defenses Against Prompt Injection in LLM Agents (1 minute read)
+Adaptive Evaluation of Out-of-Band Defenses Against Prompt Injection in LLM Agents (5 minute read)
 
-This paper organizes out-of-band prompt-injection defenses (CaMeL, FIDES, Progent, RTBAS, FORGE) as classical integrity protection, reference monitoring, and least privilege, then warns that all are validated only on static benchmarks. The authors reproduced Progent's adaptive-attack analysis on AgentDojo with a self-hosted Qwen2.5-7B, where it cut mean attack success sixfold (25.8% to 4.2%) and held under a hand-crafted adaptive attack. A stronger white-box GCG attack remains untested.
+(blurb not generated)
 
-Empirical Software Engineering TerraProbe: A Layered-Oracle Framework for Detecting Deceptive Fixes in LLM-Assisted Terraform (1 minute read)
+Empirical Software Engineering TerraProbe: A Layered-Oracle Framework for Detecting Deceptive Fixes in LLM-Assisted Terraform (5 minute read)
 
-TerraProbe is a five-layer oracle framework for checking whether LLM-generated Terraform security fixes actually close the underlying vulnerability rather than just clearing the scanner finding. Across 288 repairs from Gemini 2.5 Flash Lite, GPT-4o, and Claude 3.5 Sonnet, targeted Checkov removal hit 83.3% but full-scanner cleanliness fell to 10.4%, and human review found 71.4% of plan-compared fixes were deceptive. Don't treat a vanished static-analysis finding as remediation; validate plan behavior and security intent.
+(blurb not generated)
 
-DKVE: Decentralized Key Validation for End-to-End Encrypted Messaging (1 minute read)
+DKVE: Decentralized Key Validation for End-to-End Encrypted Messaging (5 minute read)
 
-DKVE is a proposed protocol that validates contacts' public keys in end-to-end encrypted messaging by privacy-preservingly cross-checking them against mutual contacts in the user's social graph, using OPRF and OKVS to hide both queries and contact lists. In simulations on real social networks, it detected MitM key substitution with over 97% accuracy on strong-to-moderate-tie graphs and cut key-transparency queries by two orders of magnitude. It complements rather than replaces OOB and KT verification, struggling with bootstrapping and weak-tie networks.
+(blurb not generated)
 
-VIGIL: Runtime Enforcement of Behavioral Specifications in AI Agent Skills (1 minute read)
+VIGIL: Runtime Enforcement of Behavioral Specifications in AI Agent Skills (5 minute read)
 
-VIGIL is a runtime enforcement framework that checks an AI agent's actual execution trace against behavioral policies drawn from skill specifications, operator constraints, and cross-skill global rules. Its policy language compiles into SMT constraints over finite traces, catching violations that depend on event order, argument relationships, or cross-call value flow rather than single-call filters. On real LLM-agent runs across office, operational, and engineering tasks, it flagged policy violations with over 95% recall and a false-positive rate below 10%.
+(blurb not generated)
 
 Robinhood Cuts Access Approval Time to Support High-Velocity Development (5 minute read)
 
 (blurb not generated)
 
-TESLA-for-5G: Broadcast Authentication for 5G Networks Using TESLA (1 minute read)
+TESLA-for-5G: Broadcast Authentication for 5G Networks Using TESLA (5 minute read)
 
-This paper proposes TESLA-for-5G (TF5), a broadcast authentication protocol that lets user equipment verify 5G SIB1 messages with symmetric MACs and delayed key disclosure instead of per-message digital signatures, defending against fake base stations that broadcast forged system information during cell selection. Trust is bootstrapped at cell entry with a lightweight GG09 identity-based signature, avoiding certificate distribution, and the design is formally verified in Tamarin under a Dolev-Yao adversary and implemented on OpenAirInterface.
+(blurb not generated)
 
-Autoformalization of Agent Instructions into Policy-as-Code (1 minute read)
+Autoformalization of Agent Instructions into Policy-as-Code (5 minute read)
 
-This paper presents an autoformalization pipeline that translates agent prompts, MCP tool descriptions, and natural-language policy documents into formally verified Cedar policies using an LLM generator-critic loop. Unlike probabilistic guardrails or hand-coded symbolic enforcement, the approach yields formal guarantees while scaling to real policy breadth. On the MedAgentBench benchmark, the autoformalized policies covered substantially more of the source specification than prior hand-coded enforcement.
+(blurb not generated)
 
-Agents That Know Too Much: A Data-Centric Survey of Privacy in LLM Agents (1 minute read)
+Agents That Know Too Much: A Data-Centric Survey of Privacy in LLM Agents (5 minute read)
 
-This survey maps LLM agent privacy risks by the data an agent touches (databases, retrieved documents, persistent memory, inter-agent messages) rather than by attack type, covering leakage through queries, intermediate results, and delegated actions across RAG, text-to-SQL, and agent memory. Two gaps recur: only information-flow control addresses compositional and cross-session inference leakage, the least-protected risks, and no benchmark exercises an agent across all its data surfaces under a single privacy policy.
+(blurb not generated)
 
 Cloudflare teams up with Chrome, Firefox, and Edge on a privacy-first anti-bot protocol (5 minute read)
 
@@ -157,24 +153,28 @@ Vulnerability Reports Are Not Special Anymore (5 minute read)
 
 (blurb not generated)
 
-Mostly Automatic Translation of Language Interpreters from C to Safe Rust (1 minute read)
+Mostly Automatic Translation of Language Interpreters from C to Safe Rust (5 minute read)
 
-Reboot, a mostly-automatic technique, translated six real-world C interpreters (6k–23k lines) to safe Rust with only 1 to 11 human interventions each, passing 100% of provided test suites and 62%–92% of held-out validation tests. A security case study on mujs showed that heap buffer overflows and use-after-free present in the C original were eliminated in the safe Rust output, making interpreters that handle untrusted input a practical target for memory-safety migration.
+(blurb not generated)
 
-Tilikum: Transaction Fair Ordering on a DAG without Weak Edges (1 minute read)
+Tilikum: Transaction Fair Ordering on a DAG without Weak Edges (5 minute read)
 
-Tilikum is a DAG-based ledger protocol that enforces fair transaction ordering without weak edges, closing the reordering gap that has left DAG consensus protocols exposed to Blockchain Extractable Value (BEV) extraction even as linear chains like Ethereum gained fair-ordering defenses. It uses median-based timestamp aggregation to achieve ordering linearizability, and the Rust implementation reports up to 39x higher throughput than fair-ordering baselines (Narwhal/Tusk, Pompē, Themis, FairDAG) while blocking known DAG-specific reordering attacks.
+(blurb not generated)
 
-Design and Performance Evaluation of Secure RF and WiFi-Based Communication in Drone Swarms via Testbed Implementation (1 minute read)
+Design and Performance Evaluation of Secure RF and WiFi-Based Communication in Drone Swarms via Testbed Implementation (5 minute read)
 
-Researchers integrated five encryption schemes (MAVShield, AES-CTR, Speck-CTR, ChaCha20, Rabbit) into a four-UAV swarm testbed to secure MAVLink telemetry, which provides integrity and authentication but ships without encryption, leaving traffic open to eavesdropping. In flight experiments measuring CPU, memory, and packet delivery ratio, the authors' MAVShield framework matched unencrypted performance while resisting key-recovery attacks under algebraic cryptanalysis and Wireshark traffic analysis. Teams running UAV swarms should treat unencrypted MAVLink links as a confidentiality gap.
+(blurb not generated)
+
+A Mechanistic Explanation of Prompt Injection (and why you should study roles) (5 minute read)
+
+(blurb not generated)
 
 🧑‍💻
 Launches & Tools
 
-Chai: Agentic Discovery of Cryptographic Misuse Vulnerabilities (1 minute read)
+Chai: Agentic Discovery of Cryptographic Misuse Vulnerabilities (5 minute read)
 
-Chai is an AI system that discovers and validates cryptographic misuse vulnerabilities through differential testing, cataloging flaws at the library level and propagating them across a cryptographic dependency graph rather than auditing one codebase at a time. Across X.509, JWT, and SAML libraries it surfaced over 100 vulnerabilities, including a critical bug in an SSL library powering billions of devices and flaws in libraries behind a major browser and major Linux distributions.
+(blurb not generated)
 
 Linux Foundation Unveils New Open Source Security Project Akrites (5 minute read)
 
@@ -184,33 +184,33 @@ Security Profiles Operator v1: Stable APIs, Security Hardened, and Shaping Upstr
 
 (blurb not generated)
 
-MIRROR: Novelty-Constrained Memory-Guided MCTS Red-Teaming for Agentic RAG (1 minute read)
+MIRROR: Novelty-Constrained Memory-Guided MCTS Red-Teaming for Agentic RAG (5 minute read)
 
-MIRROR is a unified red-teaming framework for multimodal agentic RAG that runs memory-guided Monte Carlo tree search with a deterministic Novelty Gate, blocking candidates that copy retrieved context so generated attacks stay novel rather than recycling templates. It reports 76% ASR on image poisoning versus 52% for baselines and 97% on orchestrator attacks at half the query cost, and ships ART-SafeBench with 41,991+ records across four attack surfaces.
+(blurb not generated)
 
-PRISM: PE Relational Inter-Section Matrix. A 2D Section-Aware Dataset for Static PE Malware Detection (1 minute read)
+PRISM: PE Relational Inter-Section Matrix. A 2D Section-Aware Dataset for Static PE Malware Detection (5 minute read)
 
-PRISM is an open dataset and feature representation for static Windows PE malware detection that encodes each binary as a 2D section-aware matrix, preserving section ordering and inter-section context that flat vectors like EMBER, BODMAS, and SOREL-20M discard. It spans 83,633 deduplicated matrices across 684 malware families, matches EMBER's binary-detection accuracy at roughly one-sixth the dimensionality, and ships with the extraction library, trained models, and analysis pipeline under CC BY-NC-SA and MIT.
+(blurb not generated)
 
-zQR: A Verifiable QR-Driven zkSNARK Proof Verification Framework for Mobile Platforms (1 minute read)
+zQR: A Verifiable QR-Driven zkSNARK Proof Verification Framework for Mobile Platforms (5 minute read)
 
-zQR is a proof-of-concept framework that encodes zkSNARK proofs in QR codes so offline mobile verifiers can check zero-knowledge proofs without a network connection, using blockchain for auditability and LLMs for automatic circuit generation. The authors benchmark proof generation and verification latency, QR encoding and decoding times, and blockchain gas costs, fitting proofs into a version-19 QR symbol at low error correction.
+(blurb not generated)
 
-Boundary 1.0 releases RDP session recording and improved management (1 minute read)
+Boundary 1.0 releases RDP session recording and improved management (5 minute read)
 
-HashiCorp released Boundary 1.0, its privileged access management platform, adding session recording for RDP that captures and replays every interactive user action to support compliance audits and security event analysis. The release also ships two Helm charts for deploying controllers and workers on Kubernetes, plus org- and project-scoped aliases that let teams reuse human-readable target names across multi-tenant deployments.
+(blurb not generated)
 
-ZeroTier Quantum RC2 brings post-quantum security closer to general availability (1 minute read)
+ZeroTier Quantum RC2 brings post-quantum security closer to general availability (5 minute read)
 
-ZeroTier released RC2 of ZeroTier Quantum, its end-to-end post-quantum networking platform, pairing ML-KEM-1024 with hybrid AES-384 and mutual identity authentication in a Rust, memory-safe architecture to counter "harvest now, decrypt later" attacks. The release meets NIST and NSA CNSA 2.0 standards ahead of 2027 federal PQC mandates, and a third-party code audit and penetration test remain before general availability.
+(blurb not generated)
 
 Proof’s x401 establishes an open protocol for AI agent identity and authorization (5 minute read)
 
 (blurb not generated)
 
-Exclusive: Chainguard extends Repository scanning and policies to Java, Python and containers (1 minute read)
+Exclusive: Chainguard extends Repository scanning and policies to Java, Python and containers (5 minute read)
 
-Chainguard extended its Chainguard Repository product with malware scanning, policy enforcement, and visibility across Java packages, Python packages, and container images, adding to existing JavaScript coverage. The repository-level scanner flags "greyware" — packages that work as advertised while harvesting credentials or exfiltrating LLM prompts — and Chainguard says it blocks over 70 such projects weekly that evade traditional scanners.
+(blurb not generated)
 
 🎁
 Miscellaneous
@@ -219,17 +219,17 @@ Meta Is Testing Facial Recognition for Police and Military (5 minute read)
 
 (blurb not generated)
 
-FCC passes new cybersecurity rules for emergency systems, undersea cables (1 minute read)
+FCC passes new cybersecurity rules for emergency systems, undersea cables (5 minute read)
 
-The FCC approved new rules requiring Emergency Alert System and Wireless Emergency Alerts operators to enforce basic cyber hygiene, including strong passwords, prompt patching, firewalls, and a new authentication ID system to verify alerts before submission and block unauthorized broadcasts. A separate rule delivered the first comprehensive update to submarine cable regulations in decades, tightening some cybersecurity requirements while exempting certain undersea cable providers from Team Telecom national security licensing reviews.
+(blurb not generated)
 
 Critical open-source projects get a new security framework (5 minute read)
 
 (blurb not generated)
 
-OpenAI Previews GPT-5.6 Sol With Restricted Access and Stronger Cyber Safeguards (1 minute read)
+OpenAI Previews GPT-5.6 Sol With Restricted Access and Stronger Cyber Safeguards (5 minute read)
 
-OpenAI released GPT-5.6 in three variants (Sol, Terra, Luna) as a limited preview to a small set of companies under an ongoing U.S. government engagement, with Sol pitched as its most capable cybersecurity model yet. OpenAI restricted access behind its strongest safety stack to block offensive use while permitting vulnerability research, patch development, and defensive testing, and noted Sol matches Anthropic Mythos Preview on ExploitBench using roughly a third of the output tokens.
+(blurb not generated)
 
 AI and Liability (5 minute read)
 
@@ -239,76 +239,80 @@ AI and Liability (5 minute read)
 
 (blurb not generated)
 
-Anthropic says the US government is allowing Mythos 5 to be redeployed to critical infrastructure operators, and is working to restore general access to Fable 5 (@anthropicai) (1 minute read)
+Microsoft gives Windows 10 users an unexpected extra year of free security updates (5 minute read)
 
-Anthropic said the US government is allowing Mythos 5 to be redeployed to critical infrastructure operators and is working to restore general access to Fable 5. The reversal lifts earlier restrictions on the models, though Anthropic did not specify which agencies authorized the redeployment or what conditions apply to infrastructure use.
+(blurb not generated)
 
-Microsoft gives Windows 10 users an unexpected extra year of free security updates (1 minute read)
+We can still stop California's 3D printer surveillance scheme (5 minute read)
 
-Microsoft extended its consumer Windows 10 Extended Security Updates (ESU) program by a year, pushing free critical security updates out to October 12, 2027, via a quiet documentation update rather than a formal announcement. Enrollment remains gated on version 22H2, a Microsoft account, and one of three paths (Windows Backup sync, 1,000 Rewards points, or a $30 license covering up to 10 devices).
+(blurb not generated)
 
-We can still stop California's 3D printer surveillance scheme (1 minute read)
+US clears Anthropic to restore Mythos 5 to a small group of cyber defenders, but Fable 5 stays dark (5 minute read)
 
-The California State Assembly passed AB 2047, which would mandate surveillance and print-blocking software on 3D printers to prevent unlicensed firearm manufacturing, despite EFF warnings that the technology cannot work as intended. The bill now heads to the state senate after amendments that dropped the requirement for the software to actually prevent evasion, while leaving privacy, open source, and lawful-speech concerns unaddressed.
+(blurb not generated)
 
-US clears Anthropic to restore Mythos 5 to a small group of cyber defenders, but Fable 5 stays dark (1 minute read)
+Microsoft quietly extends free Windows 10 ESU support to October 2027 (5 minute read)
 
-The US government cleared Anthropic to restore its most powerful cybersecurity model, Mythos 5, to a small group of vetted cyber defenders and infrastructure providers, two weeks after Commerce invoked export controls to force both Mythos 5 and the public-facing Fable 5 offline. Fable 5 remains restricted while talks continue, and Anthropic has not disclosed what jailbreak mitigations it implemented to satisfy the government's concerns.
-
-Microsoft quietly extends free Windows 10 ESU support to October 2027 (1 minute read)
-
-Microsoft extended its free consumer Windows 10 Extended Security Updates program by a year, with coverage now running through October 12, 2027, via a quiet documentation update rather than a formal announcement. Defenders managing consumer or BYOD fleets gain another year of patches for Windows 10 endpoints, though enrollment still requires paying $30, syncing settings to a Microsoft account, or redeeming 1,000 reward points.
+(blurb not generated)
 
 NSA Lost Access to Powerful AI Model Amid Anthropic Dispute (5 minute read)
 
 (blurb not generated)
 
-Even the Secret Service won't use company-issued phones (1 minute read)
+Even the Secret Service won't use company-issued phones (5 minute read)
 
-The US Secret Service has barred staff from using government-issued phones, with agents instead relying on personal devices for sensitive work. The policy underscores persistent distrust of managed mobile fleets even inside federal agencies, where device security and supply-chain concerns continue to shape operational practice.
+(blurb not generated)
 
-ATF cancels controversial commercial geolocation contract (1 minute read)
+ATF cancels controversial commercial geolocation contract (5 minute read)
 
-The ATF canceled its contract for Penlink's Webloc commercial location-surveillance tool, which used ad-tech data to track Americans' geolocation without a warrant. The cancellation followed congressional scrutiny from Sen. Ron Wyden and Rep. Michael Cloud, and came after the agency had already run more than 340 searches using the system, including 222 tied to active case numbers.
+(blurb not generated)
 
-Anthropic says Alibaba must be punished for largest Claude cloning attack (1 minute read)
+Anthropic says Alibaba must be punished for largest Claude cloning attack (5 minute read)
 
-Anthropic told Senators Tim Scott and Elizabeth Warren that operators affiliated with Alibaba and its Qwen AI lab ran 28.8 million exchanges across roughly 25,000 fraudulent accounts between April 22 and June 5 to distill Claude's agentic reasoning, software engineering, and long-horizon capabilities. The campaign used obfuscation and proxy networks to evade detection and continued after Trump's April crackdown on Chinese model distillation, which had followed similar accusations against DeepSeek, Moonshot, and MiniMax.
+(blurb not generated)
 
-Aggressive federal PQE timeline prompts warnings for enterprises (3 minute read)
+Aggressive federal PQE timeline prompts warnings for enterprises (5 minute read)
 
-The Department of War announced a centralized oversight structure for post-quantum encryption and will fold PQC requirements into CMMC, building on an executive order mandating federal contractors meet NIST PQC standards by December 2030 for key establishment and 2031 for signatures. Gartner advises enterprises to build a PQC inventory and remediation program in 2026, move to automated cryptographic bills of materials by 2027, and brace for conflicting sovereignty-driven regulations as other governments follow.
+(blurb not generated)
 
-Cisco Adds NHI to Security Stack With Astrix, WideField Acquisitions (1 minute read)
+Cisco Adds NHI to Security Stack With Astrix, WideField Acquisitions (5 minute read)
 
-Cisco agreed to acquire NHI-governance startup Astrix Security and identity-intelligence firm WideField, building out a control plane for non-human identities like API keys, service accounts, and OAuth apps tied to AI agents. WideField's session and activity telemetry will feed Splunk's agentic SOC, normalizing and correlating identity data so teams can monitor how machine and agent accounts behave over time.
+(blurb not generated)
 
-Chinese cybersecurity company claims it’s built a better-than-Mythos bug finder (1 minute read)
+Chinese cybersecurity company claims it’s built a better-than-Mythos bug finder (5 minute read)
 
-A Chinese cybersecurity firm claims it has built an AI-driven vulnerability finder that outperforms Anthropic's Mythos at discovering exploitable bugs in real codebases. The claim is unverified and lacks published benchmarks, but it signals that automated bug discovery is becoming a competitive front between US and Chinese labs, raising the prospect of faster offensive tooling on both sides.
+(blurb not generated)
 
-The 'papers, please' era of the internet will decimate your privacy (1 minute read)
+The 'papers, please' era of the internet will decimate your privacy (5 minute read)
 
-The author argues that age-verification mandates are functionally identity-verification mandates that force users to hand sensitive biometrics and government IDs to opaque third-party apps with unclear data-handling and breach exposure. Citing Australia's under-16 social media ban, where roughly seven in 10 kids still used the platforms months later, the piece contends these laws degrade privacy for everyone while failing to achieve their stated goal.
+(blurb not generated)
 
-Federal agents track down woman, demand she remove Instagram post about ICE (1 minute read)
+Anthropic gets US government's permission to redeploy its Mythos cybersecurity AI model (5 minute read)
 
-Federal agents tracked down a Syracuse woman and demanded she delete an Instagram post criticizing ICE, raising questions about how the agents identified and located her from a social media account. The case highlights expanding government use of social media monitoring and attribution techniques against US persons exercising protected speech.
+(blurb not generated)
+
+New Initiative Tackles Security for End-of-Life Open Source Software (5 minute read)
+
+(blurb not generated)
 
 ⚡
 Quick Links
 
 Towards Native Post-Quantum Private ETH (5 minute read)
 
-An Ethereum researcher lays out the cryptographic work needed to enshrine post-quantum private transfers at L1, arguing turnstiles and HNDL-only defenses fall short.
+(blurb not generated)
 
 Polymarket hack updated to $3.1 million days after the platform promised users full refunds (5 minute read)
 
-Attackers compromised a third-party vendor to inject a malicious frontend script, phishing $3.1M in PUSD from 11 Polymarket wallets; full refunds pledged.
+(blurb not generated)
 
-In Other News: Chinese Mythos-Like AI, Tata Electronics Breach, Snyk Layoffs (1 minute read)
+In Other News: Chinese Mythos-Like AI, Tata Electronics Breach, Snyk Layoffs (5 minute read)
 
-SecurityWeek's weekly roundup covers a Chinese Mythos-style AI, a 630 GB Tata Electronics breach exposing Apple and Tesla data, and Snyk layoffs.
+(blurb not generated)
+
+Windows 10 quietly gets one more year of support and updates (5 minute read)
+
+(blurb not generated)
 
 New Site Calls Out Companies Without Passkey Support (5 minute read)
 
