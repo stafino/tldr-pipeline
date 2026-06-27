@@ -2,3 +2,67 @@ Sign Up | Advertise | View Online
 TLDR
 
 TLDR Data 2026-06-27
+
+📊
+News & Trends
+
+pgEdge joins rush to merge OLTP and OLAP storage to support AI (5 minute read)
+
+(blurb not generated)
+
+🧠
+Deep Dives & Analysis
+
+Privacy-Aware Infrastructure in the AI-Native Era: An Asset Classification Case Study (1 minute read)
+
+Meta's engineering team detailed how it classifies data assets for privacy enforcement, where the same field name like "age" can mean a protected attribute or a cache TTL. The core pattern is hybrid: LLMs interpret novel or ambiguous assets and cold-start cases, then their stable behavior gets distilled into versioned, human-reviewed deterministic rules that handle routine production decisions. The takeaway is using LLMs to bootstrap classification while keeping enforcement low-latency, replayable, and auditable.
+
+BtrLog: Low-Latency Logging for Cloud Database Systems (1 minute read)
+
+BtrLog is a reusable cloud logging service that handles write-ahead log durability for single-writer cloud databases, replicating records across a quorum of SSD-backed log nodes in one network round trip. The design beats EBS on commit latency by avoiding remote block storage on the critical write path, then asynchronously archives log segments to object storage to keep costs down. The pitch is decoupling WAL durability from engine-specific recovery protocols, so cloud-native databases stop rebuilding proprietary logging backends from scratch.
+
+The frontier fails the Turing test (1 minute read)
+
+The author argues the clean split between general-purpose and specialized AI models has collapsed into a spectrum, citing Engram's $98M raise to retrain general models on a company's private knowledge and Cursor's Composer, built by reinforcement-learning an open base model like Kimi K2.5 against its own environment. For data teams, the takeaway is that "general vs fine-tuned" is no longer a clean architectural choice. The frontier labs set the baseline, and everyone above them is buying a general model and grinding it toward their specific workflow.
+
+EcoTable: Cost-effective Table Integration in Data Lakes for Natural Language Queries (1 minute read)
+
+EcoTable proposes natural language-driven data integration, using LLMs to automatically join CSV and Parquet tables in a data lake into a form that answers a given set of SQL queries, skipping the predefined target schema and hand-built ETL pipeline. It controls LLM cost with a join-likelihood graph and Steiner tree search over candidate join paths, reserving expensive inference for transformation code generation. On four real-world benchmarks of 200-plus queries, the authors report over 30% higher accuracy and 5x lower LLM invocation costs than prior approaches.
+
+Optimizing cloud economics with linear elastic caching (5 minute read)
+
+(blurb not generated)
+
+How Good Can Linear Models Be for Time-Series Forecasting? (1 minute read)
+
+This paper argues that most of the accuracy gap between simple and large time-series models can be closed by tuning preprocessing rather than scaling architecture. Using Ridge regression with closed-form solutions, the authors search context length, normalization, regularization, and augmentation across eight benchmarks, beating prior linear forecasters and exceeding Transformer, MLP, and CNN baselines on six of eight. Optimal lookback turns out strongly series-specific and often non-monotonic in horizon, and the tuned hyperparameters double as a diagnostic on the data's structure.
+
+I wrote a 70x faster SQL parser while barely looking at the code (5 minute read)
+
+(blurb not generated)
+
+Building Jaeger's ClickHouse backend: 8.6× compression on 10 million spans (5 minute read)
+
+(blurb not generated)
+
+A Decision Framework for ETL Migration to Databricks (1 minute read)
+
+Databricks published a decision framework for migrating ETL off a legacy warehouse, arguing teams should evaluate each workload separately rather than rewrite everything in PySpark or lift SQL as-is. The guidance maps three paths: Databricks SQL for SQL-heavy logic (wrapped in Unity Catalog stored procedures when it needs loops or error handling), Spark Declarative Pipelines for declarative batch-plus-streaming, and PySpark for the rest. The phasing advice matters most: ship workload by workload instead of stalling on a master plan.
+
+How we built an internal data analytics agent (5 minute read)
+
+(blurb not generated)
+
+🚀
+Launches & Tools
+
+Mistral OCR 4: SOTA OCR for Document Intelligence (5 minute read)
+
+Mistral released OCR 4, an OCR model that returns bounding boxes, typed-block classification, and inline confidence scores alongside extracted text across 170 languages. The model runs in a single container for self-hosted deployments and feeds RAG and enterprise search pipelines, scoring 85.20 on OlmOCRBench with a 72% average win rate against competing systems in independent annotator tests.
+
+⚡
+Quick Links
+
+3D Spatial Pattern Matching (1 minute read)
+
+A paper extending spatial pattern matching from 2D to 3D, with a subgraph matching algorithm and two new datasets including real Hamburg building data.

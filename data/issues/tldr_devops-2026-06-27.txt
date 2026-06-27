@@ -2,3 +2,167 @@ Sign Up | Advertise | View Online
 TLDR
 
 TLDR DevOps 2026-06-27
+
+📱
+News & Trends
+
+Security Profiles Operator v1: Stable APIs, Security Hardened, and Shaping Upstream Kubernetes (5 minute read)
+
+(blurb not generated)
+
+New DirtyClone Linux Kernel Flaw Lets Local Users Gain Root via Cloned Packets (5 minute read)
+
+(blurb not generated)
+
+New Linux pedit COW Exploit Enables Root Access by Poisoning Cached Binaries (5 minute read)
+
+(blurb not generated)
+
+Miasma Malware Targets npm Packages and GitHub Actions in Supply Chain Attack (1 minute read)
+
+Researchers tied a new wave of supply chain attacks to the Mini Shai-Hulud/Miasma/Hades malware family, which trojanized two dozen npm packages including LeoPlatform and RStreams, plus a Go module, after compromising a maintainer's npm token and pushing poisoned versions within a six-second window. The malware skips lifecycle hooks in favor of binding.gyp install-time execution, then drops a "Run Copilot" GitHub Actions workflow to steal CI/CD secrets and developer credentials.
+
+Critical open-source projects get a new security framework (1 minute read)
+
+The Linux Foundation launched Akrites, an industry initiative establishing a shared Security Incident Response Team and Coordinated Vulnerability Disclosure process for open-source projects that underpin finance, healthcare, energy, and AI infrastructure. Founding members including AWS, Anthropic, GitHub, Google, IBM, Microsoft, and NVIDIA aim to fund and coordinate fixes for small maintainer teams as AI shortens the window between flaw discovery and exploitation.
+
+NVIDIA’s New AI Servers Run on Hotub Coolant and Don’t Need Evaporators (1 minute read)
+
+NVIDIA's Rubin server architecture moves every heat-generating chip onto closed-loop water blocks that run at 45-55 C, eliminating the evaporative chillers that have made AI data centers a target for water-conservation critics. The bigger driver is cost: running that hot lets dry radiators reject heat to ambient air, which NVIDIA says saves roughly $4M a year in cooling for a 50 MW hyperscaler.
+
+Cloudflare teams up with Chrome, Firefox, and Edge on a privacy-first anti-bot protocol (5 minute read)
+
+Cloudflare, Mozilla, Google, Microsoft, and Shopify are co-developing PACT (Private Access Control Tokens), a protocol that issues anonymous tokens to prove a visitor is human or an authorized agent, replacing CAPTCHAs and forced logins without tracking browsing history. The push lands as Cloudflare Radar shows bots now drive roughly 58% of global HTTP requests against 42% from people, and the group plans to submit PACT for formal standardization.
+
+Panmnesia boosts CXL scale with fabric switching. Meta repurposes old DRAM with CXL (5 minute read)
+
+(blurb not generated)
+
+🚀
+Opinions & Tutorials
+
+How we built saga rollbacks for Cloudflare Workflows (5 minute read)
+
+(blurb not generated)
+
+Securing CI/CD for an open source project, part 3: Credentials, verification, and what’s next (5 minute read)
+
+(blurb not generated)
+
+Open source maintainership in the age of AI (3 minute read)
+
+The Kubernetes project published its approach to AI-assisted contributions, centered on a formal AI policy that demands transparency and human accountability. Contributors must disclose AI use in PRs, cannot list AI as a commit co-author, and the project now runs CLA checks on co-authors to flag agent-generated PRs that aren't merge-ready. The core argument is that AI made code generation fast while doing nothing for maintainability, so a human must still own and understand every change.
+
+Terraform MCP server: Four real-world AI infrastructure patterns (5 minute read)
+
+(blurb not generated)
+
+Optimizing cloud economics with linear elastic caching (5 minute read)
+
+(blurb not generated)
+
+Building a Cluster-Aware AI Agent with Kubernetes, Argo CD, and GitOps (5 minute read)
+
+(blurb not generated)
+
+How Cloudflare responded to the “Copy Fail” Linux vulnerability (5 minute read)
+
+Cloudflare detailed how its Linux kernel patching cadence neutralized "Copy Fail" (CVE-2026-31431), a local privilege escalation bug, before public disclosure. An automated weekly build off LTS branches plus a four-week Edge Reboot Release cycle meant the fix was already deployed across most of its 6.12 fleet, with no exposure or service disruption. The retro argues that staying close to upstream LTS is the cheapest insurance against zero-day scramble.
+
+Blinding the Watchmen: Abusing Cloud Logging Services for Defense Evasion and Visibility (5 minute read)
+
+(blurb not generated)
+
+Client-Side Load Balancing at a Million Requests Per Second (5 minute read)
+
+Zalando's engineering team replaced their shared Skipper edge router with an in-process client-side load balancer for the million-requests-per-second internal fan-out behind PRAPI, their product read API serving 25 European markets. They layered on N-ring fade-in, occupancy-based bounded load, and AZ-aware routing with a latency health factor. Owning the routing decision cut cost, made the service resilient to the infrastructure beneath it, and finally exposed root causes that were neither Skipper nor PRAPI.
+
+Privacy-Aware Infrastructure in the AI-Native Era: An Asset Classification Case Study (1 minute read)
+
+Meta's engineering team described how it classifies data assets for privacy enforcement, where a field named "age" might mean a person's age or a cache TTL. The hybrid pattern builds rich context, then uses LLMs only for novel or ambiguous assets, distilling stable behavior into deterministic, versioned rules that humans review before promotion. The result keeps production enforcement low latency, replayable, and auditable while shrinking the LLM's runtime role over time.
+
+Migrating from Proxmox to NixOS and Incus (1 minute read)
+
+The author migrated a multi-node Proxmox homelab cluster to NixOS running Incus, arguing that a version-controlled declarative config should be the single source of truth so any host can be rebuilt byte-for-byte. The trade-off is Nix's steep learning curve, but the payoff is no imperative state drift from one-off debugging fixes that never make it back into the automation. A HN-front-page update concedes Proxmox supports `qm`, `pct`, REST, Terraform, and Ansible, narrowing the real argument to reproducibility over tooling.
+
+Empirical Software Engineering TerraProbe: A Layered-Oracle Framework for Detecting Deceptive Fixes in LLM-Assisted Terraform (1 minute read)
+
+TerraProbe is a five-layer oracle framework for evaluating LLM-assisted Terraform security repairs, applied to 288 fixes from Gemini 2.5 Flash Lite, GPT-4o, and Claude 3.5 Sonnet. The authors find that passing Checkov badly overstates success: targeted findings cleared 83.3% of the time, but full-scanner cleanliness hit 10.4% and 71.4% of plan-compared repairs were deceptive fixes leaving the vulnerability in place. Wildcard IAM grants persisted across all flagged cases, and the rate held across all three models.
+
+Robinhood Cuts Access Approval Time to Support High-Velocity Development (1 minute read)
+
+Robinhood's application security team built Secure Enhanced Remote Approval (SERA), a passkey-based system that orchestrates access approvals from any device without VPNs or managed laptops. Shipped earlier this year, it cut approval time 20% for developers and incident responders, removing a bottleneck that had slowed both incident response and feature rollout. The writeup covers the trade-offs of speeding up access grants without resorting to overpermissioning.
+
+Building a state-of-the-art development platform with Backstage (2 minute read)
+
+The author argues that Backstage solves the developer-portal problem but not the platform problem, since it organizes catalogs, docs, and golden-path templates while assuming an execution layer already exists beneath it. Wiring Backstage directly to CI/CD, GitOps, Kubernetes, and observability creates a fragile "messy middle" of custom integrations. The proposed fix is a control plane that compiles developer and platform abstractions into Kubernetes resources, enforces policies, reconciles drift, and feeds runtime state back to the portal.
+
+⚒️
+Launches & Tools
+
+Introducing the Cluster API plugin for Headlamp (2 minute read)
+
+The Kubernetes SIG UI team released a Cluster API plugin for Headlamp, adding a dedicated CAPI section with dashboard, list, and detail views for Clusters, Machines, MachineDeployments, MachineSets, and MachinePools across a management cluster. The plugin surfaces control plane and worker health, condition issues, and ownership hierarchies in the browser, and provides remediation guidance and diagnostic commands to replace raw kubectl debugging.
+
+From query to action: Introducing SQL alerting in Cloud Monitoring Observability Analytics (5 minute read)
+
+(blurb not generated)
+
+Deploy Boundary on Kubernetes with official Helm charts (1 minute read)
+
+HashiCorp released two official Helm charts for deploying Boundary on Kubernetes, one for the controller control plane and one for the workers that proxy sessions to target resources. The charts automate database schema initialization via a pre-install hook and resolve database credentials, license keys, and KMS references at runtime from Kubernetes secrets, replacing the hand-built deployments and lifecycle automation teams previously maintained per environment.
+
+Boundary 1.0 releases RDP session recording and improved management (1 minute read)
+
+HashiCorp released Boundary 1.0, its privileged access management tool, adding RDP session recording that captures and replays every interactive action during a session for compliance and security analysis. The release also ships controller and worker Helm charts to simplify deploying Boundary on Kubernetes, plus org- and project-scoped aliases that let separate teams reuse the same human-readable target names in multi-tenant setups.
+
+Inspect Volcano workloads faster with Headlamp (3 minute read)
+
+The Volcano plugin for Headlamp surfaces Volcano's batch-scheduler resources, Jobs, Queues, and PodGroups, in a single Kubernetes web UI, replacing the kubectl and Volcano CLI hopping needed to trace a workload today. Teams running AI/ML and HPC batch jobs can inspect queue behavior and gang-scheduling state in dedicated list and detail views instead of manually reconstructing the relationships between Pods, PodGroups, and the Jobs that own them.
+
+See your serverless: introducing the Headlamp plugin for Knative (2 minute read)
+
+The Knative project shipped a Headlamp plugin that consolidates serverless operations into a single UI, replacing the constant jumping between the kn CLI, kubectl, and the Kubernetes dashboard. Operators can edit traffic splits for canary rollouts, adjust autoscaling annotations, restart pods, and view logs inline, all gated by existing RBAC permissions and rendered against Headlamp's resource map of KServices, Revisions, and DomainMappings.
+
+Securing agentic AI with perimeter guardrails: What's new in VPC Service Controls (2 minute read)
+
+Google Cloud added agentic-AI capabilities to VPC Service Controls, letting teams treat agents as first-class IAM principals in ingress and egress perimeter rules and write conditional access policies on MCP attributes like mcp.toolName and mcp.tool.isReadOnly. The update also natively integrates the Gemini Enterprise Agent Platform, automatically blocking public internet access to protected instances and shrinking the blast radius when an agent is compromised.
+
+OAuth for all (1 minute read)
+
+Cloudflare opened self-managed OAuth to all developers, letting them register and manage their own OAuth clients for scoped, delegated access to the Cloudflare API instead of relying on long-lived API tokens. The release adds a clearer consent screen, dashboard-based revocation, and app-ownership visibility to blunt OAuth phishing, targeting SaaS integrations, internal developer platforms, and the growing class of agentic tools that need delegated access.
+
+Unlocking the Cloudflare app ecosystem with OAuth for all (1 minute read)
+
+Cloudflare opened self-managed OAuth to all developers, letting them register and manage their own OAuth clients for scoped, delegated access to the Cloudflare API instead of relying on long-lived API tokens. The release adds a clearer consent screen, dashboard-based revocation, and app-ownership visibility to blunt OAuth phishing, targeting SaaS integrations, internal developer platforms, and the growing class of agentic tools that need delegated access.
+
+HCP Vault Dedicated introduces cluster disaster recovery (public preview) (1 minute read)
+
+HashiCorp added cluster disaster recovery to HCP Vault Dedicated in public preview, letting teams fail over an individual Vault cluster even when the primary region is healthy and rehearse runbooks before real outages. The support-enabled feature targets production-tier clusters with DR enabled, covering cluster-level security events like compromise isolation that regional DR was not built to address.
+
+Google Antigravity agents get full context with GitLab Orbit (3 minute read)
+
+GitLab released Orbit for Google Antigravity, letting agents installed from the Antigravity MCP Store query a knowledge graph of projects, pipelines, merge requests, vulnerabilities, and code dependencies across a GitLab instance. The integration exposes two MCP tools, query_graph and get_graph_schema, and in early internal tests cut hallucinations up to 45x and token use up to 4.5x versus ungrounded agents.
+
+Run Codex in the cloud – DigitalOcean for Codex is now available (2 minute read)
+
+DigitalOcean released a Codex plugin in Public Preview that provisions persistent, pre-configured Droplets from inside Codex using natural language, handling SSH keys and the codex-universal toolchain via OAuth with no manual server setup. The persistent environment lets long-running agent work continue after engineers step away, with cost staying on the team's own DigitalOcean account and start/stop control available from the Codex mobile app.
+
+GitHub Updates actions/checkout to Block Common Pwn Request Attack Patterns (5 minute read)
+
+(blurb not generated)
+
+⚡
+Quick Links
+
+The HTTP QUERY Method (5 minute read)
+
+IETF published RFC 10008 defining the HTTP QUERY method, a safe, idempotent alternative to POST that can be retried without risking partial state changes.
+
+OpenRCA 2.0: From Outcome Labels to Causal Process Supervision (1 minute read)
+
+OpenRCA 2.0 benchmarks LLM root-cause agents on 500 cross-system incidents, finding exact root-cause recovery succeeds in just 20.7% of cases.
+
+Scaling without friction: Aliases at project scope in Boundary (1 minute read)
+
+Boundary 1.0 adds target aliases at project scope, letting teams own their own names and ending global alias collisions across projects.
