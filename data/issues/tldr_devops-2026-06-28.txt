@@ -1,0 +1,88 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR DevOps 2026-06-28
+
+📱
+News & Trends
+
+Security Profiles Operator v1: Stable APIs, Security Hardened, and Shaping Upstream Kubernetes (5 minute read)
+
+(blurb not generated)
+
+New DirtyClone Linux Kernel Flaw Lets Local Users Gain Root via Cloned Packets (5 minute read)
+
+(blurb not generated)
+
+New Linux pedit COW Exploit Enables Root Access by Poisoning Cached Binaries (5 minute read)
+
+(blurb not generated)
+
+Miasma Malware Targets npm Packages and GitHub Actions in Supply Chain Attack (1 minute read)
+
+Researchers tied a new wave of supply chain attacks to the Mini Shai-Hulud/Miasma/Hades malware family, which trojanized two dozen npm packages including LeoPlatform and RStreams, plus a Go module, after compromising a maintainer's npm token and pushing poisoned versions within a six-second window. The malware skips lifecycle hooks in favor of binding.gyp install-time execution, then drops a "Run Copilot" GitHub Actions workflow to steal CI/CD secrets and developer credentials.
+
+Critical open-source projects get a new security framework (1 minute read)
+
+The Linux Foundation launched Akrites, an industry initiative establishing a shared Security Incident Response Team and Coordinated Vulnerability Disclosure process for open-source projects that underpin finance, healthcare, energy, and AI infrastructure. Founding members including AWS, Anthropic, GitHub, Google, IBM, Microsoft, and NVIDIA aim to fund and coordinate fixes for small maintainer teams as AI shortens the window between flaw discovery and exploitation.
+
+Cloudflare teams up with Chrome, Firefox, and Edge on a privacy-first anti-bot protocol (5 minute read)
+
+Cloudflare, Mozilla, Google, Microsoft, and Shopify are co-developing PACT (Private Access Control Tokens), a protocol that issues anonymous tokens to prove a visitor is human or an authorized agent, replacing CAPTCHAs and forced logins without tracking browsing history. The push lands as Cloudflare Radar shows bots now drive roughly 58% of global HTTP requests against 42% from people, and the group plans to submit PACT for formal standardization.
+
+Panmnesia boosts CXL scale with fabric switching. Meta repurposes old DRAM with CXL (5 minute read)
+
+(blurb not generated)
+
+🚀
+Opinions & Tutorials
+
+Securing CI/CD for an open source project, part 3: Credentials, verification, and what’s next (5 minute read)
+
+(blurb not generated)
+
+Open source maintainership in the age of AI (3 minute read)
+
+The Kubernetes project published its approach to AI-assisted contributions, centered on a formal AI policy that demands transparency and human accountability. Contributors must disclose AI use in PRs, cannot list AI as a commit co-author, and the project now runs CLA checks on co-authors to flag agent-generated PRs that aren't merge-ready. The core argument is that AI made code generation fast while doing nothing for maintainability, so a human must still own and understand every change.
+
+Terraform MCP server: Four real-world AI infrastructure patterns (5 minute read)
+
+(blurb not generated)
+
+How Cloudflare responded to the “Copy Fail” Linux vulnerability (5 minute read)
+
+Cloudflare detailed how its Linux kernel patching cadence neutralized "Copy Fail" (CVE-2026-31431), a local privilege escalation bug, before public disclosure. An automated weekly build off LTS branches plus a four-week Edge Reboot Release cycle meant the fix was already deployed across most of its 6.12 fleet, with no exposure or service disruption. The retro argues that staying close to upstream LTS is the cheapest insurance against zero-day scramble.
+
+Blinding the Watchmen: Abusing Cloud Logging Services for Defense Evasion and Visibility (5 minute read)
+
+(blurb not generated)
+
+Client-Side Load Balancing at a Million Requests Per Second (5 minute read)
+
+Zalando's engineering team replaced their shared Skipper edge router with an in-process client-side load balancer for the million-requests-per-second internal fan-out behind PRAPI, their product read API serving 25 European markets. They layered on N-ring fade-in, occupancy-based bounded load, and AZ-aware routing with a latency health factor. Owning the routing decision cut cost, made the service resilient to the infrastructure beneath it, and finally exposed root causes that were neither Skipper nor PRAPI.
+
+⚒️
+Launches & Tools
+
+From query to action: Introducing SQL alerting in Cloud Monitoring Observability Analytics (5 minute read)
+
+(blurb not generated)
+
+Securing agentic AI with perimeter guardrails: What's new in VPC Service Controls (2 minute read)
+
+Google Cloud added agentic-AI capabilities to VPC Service Controls, letting teams treat agents as first-class IAM principals in ingress and egress perimeter rules and write conditional access policies on MCP attributes like mcp.toolName and mcp.tool.isReadOnly. The update also natively integrates the Gemini Enterprise Agent Platform, automatically blocking public internet access to protected instances and shrinking the blast radius when an agent is compromised.
+
+Unlocking the Cloudflare app ecosystem with OAuth for all (1 minute read)
+
+Cloudflare opened self-managed OAuth to all developers, letting them register and manage their own OAuth clients for scoped, delegated access to the Cloudflare API instead of relying on long-lived API tokens. The release adds a clearer consent screen, dashboard-based revocation, and app-ownership visibility to blunt OAuth phishing, targeting SaaS integrations, internal developer platforms, and the growing class of agentic tools that need delegated access.
+
+GitHub Updates actions/checkout to Block Common Pwn Request Attack Patterns (5 minute read)
+
+(blurb not generated)
+
+⚡
+Quick Links
+
+The HTTP QUERY Method (5 minute read)
+
+IETF published RFC 10008 defining the HTTP QUERY method, a safe, idempotent alternative to POST that can be retried without risking partial state changes.
