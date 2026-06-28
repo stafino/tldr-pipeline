@@ -13,9 +13,9 @@ pgEdge joins rush to merge OLTP and OLAP storage to support AI (5 minute read)
 🧠
 Deep Dives & Analysis
 
-The frontier fails the Turing test (5 minute read)
+The frontier fails the Turing test (1 minute read)
 
-(blurb not generated)
+The author argues the clean split between general-purpose and specialized AI models has collapsed into a spectrum, citing Engram's $98M raise to retrain general models on a company's private knowledge and Cursor's Composer, built by reinforcement-learning an open base model like Kimi K2.5 against its own environment. For data teams, the takeaway is that "general vs fine-tuned" is no longer a clean architectural choice. The frontier labs set the baseline, and everyone above them is buying a general model and grinding it toward their specific workflow.
 
 I wrote a 70x faster SQL parser while barely looking at the code (5 minute read)
 
@@ -25,9 +25,9 @@ Building Jaeger's ClickHouse backend: 8.6× compression on 10 million spans (5 m
 
 (blurb not generated)
 
-A Decision Framework for ETL Migration to Databricks (5 minute read)
+A Decision Framework for ETL Migration to Databricks (1 minute read)
 
-(blurb not generated)
+Databricks published a decision framework for migrating ETL off a legacy warehouse, arguing teams should evaluate each workload separately rather than rewrite everything in PySpark or lift SQL as-is. The guidance maps three paths: Databricks SQL for SQL-heavy logic (wrapped in Unity Catalog stored procedures when it needs loops or error handling), Spark Declarative Pipelines for declarative batch-plus-streaming, and PySpark for the rest. The phasing advice matters most: ship workload by workload instead of stalling on a master plan.
 
 How we built an internal data analytics agent (5 minute read)
 
@@ -36,10 +36,10 @@ How we built an internal data analytics agent (5 minute read)
 🚀
 Launches & Tools
 
-WAL-RUS: a Rust Rewrite of WAL-G for PostgreSQL Backups (1 minute read)
+WAL-RUS: a Rust Rewrite of WAL-G for PostgreSQL Backups (5 minute read)
 
-ClickHouse released WAL-RUS, an open-source Rust rewrite of WAL-G that handles Postgres backups and WAL archival while staying compatible with WAL-G's format. The goal is a predictable memory profile: Go's garbage-collected runtime produces a sawtooth memory pattern that forces operators to over-provision, leaving less headroom for Postgres queries, shared buffers, and page cache in resource-constrained environments.
+(blurb not generated)
 
 Mistral OCR 4: SOTA OCR for Document Intelligence (5 minute read)
 
-(blurb not generated)
+Mistral released OCR 4, an OCR model that returns bounding boxes, typed-block classification, and inline confidence scores alongside extracted text across 170 languages. The model runs in a single container for self-hosted deployments and feeds RAG and enterprise search pipelines, scoring 85.20 on OlmOCRBench with a 72% average win rate against competing systems in independent annotator tests.
