@@ -9,6 +9,7 @@ import {
 import Nav from '@/components/Nav';
 import FundingDateFilter from '@/components/FundingDateFilter';
 import MondayRaisesExport from '@/components/MondayRaisesExport';
+import { byFundingScore } from '@/lib/funding-rank';
 import type { IssueDoc } from '@/lib/issue-formatters';
 import type { Blurb, FundingRound } from '@/lib/types';
 
@@ -111,17 +112,25 @@ export default function MondayRaisesPage({
   const blurbByUrl = new Map<string, Blurb>();
   for (const b of allBlurbs) if (!blurbByUrl.has(b.story_url)) blurbByUrl.set(b.story_url, b);
 
+  // Only the top 5 ranked rounds per region make the edition.
+  const TOP_N = 5;
   const byRegion: Record<'EU' | 'NA', FundingRound[]> = { EU: [], NA: [] };
+  const seen: Record<'EU' | 'NA', number> = { EU: 0, NA: 0 };
   for (const r of rounds) {
     if (r.region === 'EU') byRegion.EU.push(r);
     else if (r.region === 'NA') byRegion.NA.push(r);
   }
   for (const k of ['EU', 'NA'] as const) {
-    byRegion[k].sort((a, b) => (b.amount_usd ?? 0) - (a.amount_usd ?? 0));
+    seen[k] = byRegion[k].length;
+    byRegion[k] = byRegion[k].sort(byFundingScore).slice(0, TOP_N);
   }
 
   const total = byRegion.EU.length + byRegion.NA.length;
-  const totalRaised = rounds.reduce((sum, r) => sum + (r.amount_usd ?? 0), 0);
+  const totalSeen = seen.EU + seen.NA;
+  const totalRaised = [...byRegion.EU, ...byRegion.NA].reduce(
+    (sum, r) => sum + (r.amount_usd ?? 0),
+    0,
+  );
   const rangeLabel = fmtRange(from, to);
   const tagline = 'EU and US startup funding rounds from last week. Five-minute read.';
   const issueLabel = `FF: Monday Raises · ${rangeLabel}`;
@@ -148,7 +157,7 @@ export default function MondayRaisesPage({
       <div className="flex flex-col gap-2 px-4 sm:px-5 py-3 border-b border-border">
         <FundingDateFilter dates={dates} from={from} to={to} todayISO={today} />
         <div className="text-[10px] text-text-mute">
-          {rangeLabel} · {total} {total === 1 ? 'round' : 'rounds'}
+          {rangeLabel} · top {total} of {totalSeen} {totalSeen === 1 ? 'round' : 'rounds'}
           {totalRaised > 0 ? ` · ${formatUsd(totalRaised, '')} raised` : ''} · EU{' '}
           {byRegion.EU.length} · NA {byRegion.NA.length}
         </div>
@@ -169,8 +178,8 @@ export default function MondayRaisesPage({
 
         {total > 0 && (
           <div className="mt-6 mb-8 text-center text-[13px] text-text-dim italic">
-            💸 {total} {total === 1 ? 'round' : 'rounds'}
-            {totalRaised > 0 ? `, ${formatUsd(totalRaised, '')} raised` : ''} across Europe and
+            💸 The week&apos;s top {total} {total === 1 ? 'raise' : 'raises'}
+            {totalRaised > 0 ? `, ${formatUsd(totalRaised, '')} raised` : ''}, across Europe and
             North America.
           </div>
         )}

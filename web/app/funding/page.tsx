@@ -11,6 +11,7 @@ import Nav from '@/components/Nav';
 import FundingDateFilter from '@/components/FundingDateFilter';
 import FundingFilterChips from '@/components/FundingFilterChips';
 import { minUsdFromKey } from '@/lib/funding-filters';
+import { byFundingScore } from '@/lib/funding-rank';
 import FundingCsvExport from '@/components/FundingCsvExport';
 import FundingDetailPane from '@/components/FundingDetailPane';
 import type { Blurb, FundingRound } from '@/lib/types';
@@ -208,12 +209,8 @@ export default function FundingPage({
       r.investors.some((inv) => inv.toLowerCase().includes(needle)),
     );
   }
-  const eu = rounds
-    .filter((r) => r.region === 'EU')
-    .sort((a, b) => (b.amount_usd ?? 0) - (a.amount_usd ?? 0));
-  const na = rounds
-    .filter((r) => r.region === 'NA')
-    .sort((a, b) => (b.amount_usd ?? 0) - (a.amount_usd ?? 0));
+  const eu = rounds.filter((r) => r.region === 'EU').sort(byFundingScore);
+  const na = rounds.filter((r) => r.region === 'NA').sort(byFundingScore);
 
   // Blurb lookup is global - a funding story is typically blurbed for
   // tldr_founders or tldr_fintech (sometimes both); we take whichever
