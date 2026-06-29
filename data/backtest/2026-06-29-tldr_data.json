@@ -1,9 +1,37 @@
 {
   "date": "2026-06-29",
   "newsletter": "tldr_data",
-  "fetched_at": "2026-06-29T09:13:12.585688+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-06-29T12:06:41.956865+00:00",
+  "tldr_titles": [
+    "How we built SmithDB's inverted index for full-text search",
+    "Automated Schema Evolution in Pinterest's Next-Generation DB Ingestion Framework",
+    "Turning Scattered Data Into Queryable Segments at Scale: How Razorpay Built Its Customer Data Platform",
+    "Building My Own Self-Hosted dbt Cloud",
+    "Why Real Workload Performance is the Metric that Matters",
+    "Apache Flink 2.3.0 Release Announcement",
+    "Kafka Share Groups - Pathological Fetch Waits with Record_limit",
+    "Hardwood 1.0: A Fast, Lightweight Apache Parquet Reader for the JVM",
+    "14x faster embeddings: how we rebuilt the ONNX path in Manticore",
+    "We Ran 250 AI Agent Evals to Find Out if Skills Beat Docs. The Answer Is More Complicated Than We Expected",
+    "How we used DSPy to turn AI evaluations into better responses in Dash chat",
+    "Gemma Interactions View",
+    "Host- and Domain-Level Web Graphs April, May, and June 2026"
+  ],
+  "tldr_matched": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -70,9 +98,49 @@
       "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.0,
+    "25": 0.0,
+    "50": 0.0,
+    "100": 0.0,
+    "8": 0.0
+  },
+  "hits_at": {
+    "10": 0,
+    "25": 0,
+    "50": 0,
+    "100": 0,
+    "8": 0
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://www.langchain.com/blog/full-text-search-in-smithdb-constructing-and-querying-our-inverted-index-pt-2",
+    "https://medium.com/pinterest-engineering/automated-schema-evolution-in-pinterests-next-generation-db-ingestion-framework-36c5c07070de",
+    "https://engineering.razorpay.com/turning-scattered-data-into-queryable-segments-at-scale-how-razorpay-built-its-customer-data-3937c4b012de",
+    "https://medium.com/@diedericks.dan/building-my-own-self-hosted-dbt-cloud-d3b737ae885c",
+    "https://www.snowflake.com/en/blog/engineering/measuring-real-workload-performance/",
+    "https://flink.apache.org/2026/06/25/apache-flink-2.3.0-release-announcement/",
+    "https://jack-vanlightly.com/blog/2026/6/24/kafka-share-groups-pathological-fetch-waits-with-recordlimit",
+    "https://www.morling.dev/blog/hardwood-1-0-fast-lightweight-apache-parquet-reader-for-the-jvm/",
+    "https://manticoresearch.com/blog/onnx-embeddings-speedup/",
+    "https://www.wix.engineering/post/we-ran-250-ai-agent-evals-to-find-out-if-skills-beat-docs-the-answer-is-more-complicated-than-we-ex",
+    "https://dropbox.tech/machine-learning/how-we-turned-ai-evaluations-into-better-responses-in-dash-chat",
+    "https://huggingface.co/spaces/gemma-challenge/gemma-interactions-view",
+    "https://commoncrawl.org/blog/host--and-domain-level-web-graphs-april-may-and-june-2026"
+  ],
+  "tldr_domains": [
+    "langchain.com",
+    "medium.com",
+    "engineering.razorpay.com",
+    "medium.com",
+    "snowflake.com",
+    "flink.apache.org",
+    "jack-vanlightly.com",
+    "morling.dev",
+    "manticoresearch.com",
+    "ix.engineering",
+    "dropbox.tech",
+    "huggingface.co",
+    "commoncrawl.org"
+  ]
 }

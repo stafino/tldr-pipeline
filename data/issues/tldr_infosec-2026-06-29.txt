@@ -14,6 +14,10 @@ FortiBleed: 86,000 Fortinet Device Credentials Compromised (5 minute read)
 
 (blurb not generated)
 
+Mozilla warns of indirect prompt injection risk in AI coding agents (1 minute read) [flag]
+
+Mozilla's 0DIN team demonstrated an indirect prompt injection attack in which a malicious GitHub repo steers AI coding agents like Claude Code into running setup commands that fetch a reverse-shell payload at runtime via a DNS TXT record, leaving nothing malicious in the repo for code review or static analysis to catch. Treat setup instructions in unfamiliar repos as untrusted code regardless of agent recommendations, and design agents to surface what a command actually executes rather than its literal string.
+
 Anatomy of a Failed (Nation-State?) Attack (5 minute read)
 
 (blurb not generated)
@@ -22,9 +26,13 @@ Cisco Unified CM flaw CVE-2026-20230 now exploited in attacks (5 minute read)
 
 (blurb not generated)
 
-Public PoC Released for Critical libssh2 CVE-2026-55200 Client-Side SSH Flaw (1 minute read)
+Public PoC Released for Critical libssh2 CVE-2026-55200 Client-Side SSH Flaw (5 minute read)
 
-A public PoC is out for CVE-2026-55200 (CVSS 9.2), a critical integer-overflow-to-heap-write in libssh2's ssh2_transport_read() that lets a malicious SSH server corrupt memory on a connecting client with no credentials or interaction, with possible RCE. The flaw affects all releases through 1.11.1 and is embedded in curl, Git, PHP, and firmware updaters, many statically linked, so inventory linked binaries and rebuild rather than relying on distro package updates.
+(blurb not generated)
+
+‘DirtyClone’ Linux Kernel Vulnerability Leads to Root Access (1 minute read)
+
+JFrog published technical details and a PoC for DirtyClone (CVE-2026-43503, CVSS 8.8), a Linux kernel local privilege escalation flaw in the networking stack's socket-buffer handling that lets any local user gain root. The bug is a variant of the DirtyFrag/Fragnesia family affecting Debian, Fedora, and Ubuntu with unprivileged user namespaces enabled; only kernels updated to v7.1-rc5 with the complete fix chain are protected, so partially patched LTS branches remain exposed.
 
 Klue hack results in data breach at several cybersecurity firms (5 minute read)
 
@@ -34,17 +42,25 @@ Amadey and StealC Malware Network Disrupted, 27M Stolen Credentials Recovered (5
 
 (blurb not generated)
 
-Hijacked npm and Go Packages Use VS Code Tasks to Deploy Python Infostealer (1 minute read)
+Hijacked npm and Go Packages Use VS Code Tasks to Deploy Python Infostealer (5 minute read)
 
-Hijacked npm packages (html-to-gutenberg, fetch-page-assets) and a cluster of Go packages hide execution inside a VS Code task configured with "runOn: folderOpen," triggering arbitrary code when the project is opened as a trusted workspace in VS Code or Cursor. The loader retrieves encrypted JavaScript from blockchain transaction data and deploys the InvisibleFerret Python infostealer, attributed to North Korea's Contagious Interview campaign and tracked as "Fake Font.
+(blurb not generated)
+
+US Offers $10 Million Bounty for Russian State Hackers as Messaging App Attacks Evolve (1 minute read)
+
+The US State Department is offering up to $10M for information on UNC5792 and UNC4221, Russian intelligence-linked actors phishing officials, military leaders, and Ukrainian targets to hijack Signal and WhatsApp accounts. A fresh CISA/FBI update warns the actors now request victims' Backup Recovery Keys, which stay valid across re-registration on the same number, so compromised users must generate a new key to revoke access.
 
 Nearly Half of LG Smart TV Apps Are Laced with Proxies (5 minute read)
 
 (blurb not generated)
 
-Data Exposure Flaws Threaten Dify AI Platform Used by 1 Million Apps (1 minute read)
+Data Exposure Flaws Threaten Dify AI Platform Used by 1 Million Apps (5 minute read)
 
-Four vulnerabilities dubbed DifyTap in the open-source LLMOps platform Dify, which powers over 1 million applications, enable cross-tenant data theft in multi-tenant deployments, including the critical CVE-2026-41948 (CVSS 9.4) in the plugin daemon and CVE-2026-41947 (CVSS 9.1) in tracing that creates a persistent message-exfiltration channel. Dify 1.14.2 patches all four flaws; operators running multi-tenant instances should update immediately and apply WAF rules to block exploitation.
+(blurb not generated)
+
+Microsoft Removes 119 Edge Extensions That Hid Malware in Images and Fonts (1 minute read)
+
+Microsoft removed 119 malicious Edge extensions tied to a single threat actor it tracks as StegoAd, which used steganography to hide payloads inside PNG, WebP, and WOFF2 image and font files, then activated days post-install to steal credentials and run ad fraud. Active since at least 2021, the extensions posed as ad blockers, VPNs, and translators across an install base of up to 2.6 million, using server-side validation, DevTools detection, and execution gates to evade analysis.
 
 Microsoft discovers new lightweight backdoor that steals cryptocurrency (5 minute read)
 
@@ -70,22 +86,6 @@ Ukraine Says Russian Intelligence Used Fake Support Texts to Steal Messaging Cre
 
 (blurb not generated)
 
-Anonymous GitHub account mass-dropping undisclosed 0-days (5 minute read)
-
-(blurb not generated)
-
-A public Sentry key is all it takes to hijack Claude Code, Cursor, and Codex (5 minute read)
-
-(blurb not generated)
-
-An update on FortiBleed — what's happening with victim orgs (5 minute read)
-
-(blurb not generated)
-
-Data breach exposes up to 14.2 million email logins at six ISPs (1 minute read)
-
-KDDI Corporation disclosed a breach in which attackers exploited a flaw in unnamed third-party software to access an email system shared across six Japanese ISPs, exposing up to 14.2 million current, former, and inactive accounts. The company blocked the intruder after discovering the compromise on June 17, but some passwords were stored in plaintext, so affected customers should reset email credentials and enable 2FA immediately.
-
 🧠
 Strategies & Tactics
 
@@ -109,9 +109,13 @@ A Mechanistic Explanation of Prompt Injection (and why you should study roles) (
 
 (blurb not generated)
 
-Companies keep bolting AI onto their products, and the security bill is coming due (1 minute read)
+What the post-quantum executive order really demands of CISOs (1 minute read)
 
-Cobalt's AI and Pentesting Pulse Report 2026 finds that AI and LLM features carry a high-risk vulnerability rate 2.7 times that of any other system, with about one in three findings rated high risk, a gap that has held for two years. These flaws also get fixed slowest, with a 38.4% resolution rate that leaves two of every three serious findings open. Shadow AI, where staff use unapproved tools and leak sensitive data, drives 44% of confirmed incidents, ahead of data poisoning and prompt injection.
+A new executive order sets binding post-quantum deadlines: federal high-value systems must move key establishment to PQC by Dec. 31, 2030, and digital signatures by Dec. 31, 2031. The author argues CISOs should treat this as a readiness and ownership problem, not a future compliance checkbox, since "Harvest Now, Decrypt Later" collection of long-lived data is already operational and procurement and migration cycles put 2030 inside current planning horizons.
+
+Companies keep bolting AI onto their products, and the security bill is coming due (5 minute read)
+
+(blurb not generated)
 
 Free VPN And Streaming Apps Are Polluting Business Networks With Residential Proxy Traffic (5 minute read)
 
@@ -132,17 +136,13 @@ Prompt Injection as Role Confusion (5 minute read)
 🧑‍💻
 Launches & Tools
 
-OpenAI Unveils GPT-5.6 Sol as Its Most Advanced Cybersecurity AI (1 minute read)
+OpenAI Unveils GPT-5.6 Sol as Its Most Advanced Cybersecurity AI (5 minute read)
 
-OpenAI released a limited preview of GPT-5.6 Sol, its most capable cybersecurity model, which matched Mythos Preview on ExploitBench while using roughly a third of the output tokens. Sol skews toward defensive work like vulnerability identification and patch development, isolating bugs in the Chromium and Firefox codebases without building a full-chain exploit, and ships behind real-time bio and cyber input classifiers.
+(blurb not generated)
 
-Perplexity Bumblebee Review: The Supply Chain Scanner Your Dev Machine Needs (3 minute read)
+DarkMoon: Open-source AI pentesting platform (5 minute read)
 
-Perplexity open-sourced Bumblebee, a read-only Go supply-chain scanner that inventories installed packages, editor and browser extensions, and MCP configs, then matches them against known-compromised advisories without ever invoking a package manager. It emits NDJSON and scanned 847 packages across 9 ecosystems in under 4 seconds, filling the developer-machine blind spot that CI, SBOM, and EDR tools miss, including poisoned claude_desktop_config.json MCP servers.
-
-DarkMoon: Open-source AI pentesting platform (1 minute read)
-
-DarkMoon, an open-source AI pentesting platform, runs end-to-end security assessments by pairing an LLM orchestrator (OpenCode) with an MCP control layer that exposes an allow-list of 50+ tools, including Nuclei, sqlmap, BloodHound, and NetExec, inside an isolated Docker container. The LLM never executes commands directly, and specialized sub-agents for web apps, Active Directory, Kubernetes, and network protocols map coverage to ISO 27001, NIST SP 800-115, and MITRE ATT&CK.
+(blurb not generated)
 
 OpenAI launches new security tools and updates GPT-5.5-Cyber (5 minute read)
 
@@ -152,9 +152,9 @@ Patch the Planet: a Daybreak initiative to support open source maintainers (5 mi
 
 (blurb not generated)
 
-IP Crawl: Living atlas of open webcams discovered on the public internet (1 minute read)
+IP Crawl: Living atlas of open webcams discovered on the public internet (5 minute read)
 
-IP Crawl is a public-facing index of internet-exposed webcams, presenting a live atlas of unsecured camera feeds discovered across residential and commercial ISP ranges worldwide. The tool surfaces geolocation, owning network, and live-or-snapshot status for each device, giving defenders a fast way to check whether their own IP ranges expose camera streams that should be firewalled or credentialed.
+(blurb not generated)
 
 IBM, Red Hat, Palo Alto team to secure open-source software (5 minute read)
 
@@ -167,13 +167,21 @@ AI and Liability (5 minute read)
 
 (blurb not generated)
 
-EU to legislate about Chat Control behind closed doors (1 minute read)
+OpenAI and Anthropic Limit New AI Models to Trump-Approved Customers During Cybersecurity Review (1 minute read)
 
-EU governments and Parliament President Roberta Metsola are pushing two simultaneous tracks to revive Chat Control client-side scanning, with the Council meeting Friday to adopt a first-reading position on the expired Chat Control 1.0 regime and final trilogue negotiations on the permanent CSAR regulation (2022/0155) set for Monday, June 29. Both moves would mandate mass scanning of private messages and end anonymous communication, advancing the proposal Parliament rejected in March.
+OpenAI and Anthropic restricted their newest AI models to government-approved customers during a Trump administration cybersecurity review, with OpenAI limiting GPT-5.6 Sol to vetted partners and Anthropic redeploying its Mythos 5 model to a small group of cyber defenders after a Commerce Department ban. The vetting follows a June executive order letting the government assess national-security risks of frontier models for up to 30 days before public release.
+
+EU to legislate about Chat Control behind closed doors (5 minute read)
+
+(blurb not generated)
 
 Accenture to buy Dragos, runZero, and NetRise in $4.2 billion cybersecurity deal (5 minute read)
 
 (blurb not generated)
+
+GPT-5.6 gets better at cybersecurity (1 minute read)
+
+OpenAI began rolling out its GPT-5.6 model series (Sol, Terra, and Luna) in limited preview to trusted partners via API and Codex, coordinating the release with the U.S. government before wider availability. Sol advances long-horizon security tasks like vulnerability research and exploitation but could not complete a full cyberattack autonomously in OpenAI's tests, which paired the model with a layered safety stack that refuses disguised offensive cyber and biology requests.
 
 NSA Lost Access to Powerful AI Model Amid Anthropic Dispute (5 minute read)
 
@@ -187,13 +195,13 @@ OpenAI Previews GPT-5.6 Sol With Restricted Access and Stronger Cyber Safeguards
 
 (blurb not generated)
 
-The KIDS Act would require age checks to get online (1 minute read)
+The KIDS Act would require age checks to get online (5 minute read)
 
-Congress is preparing to vote within the week on the KIDS Act, a package combining a revised KOSA with other internet bills under an expedited process that pressures platforms to age-verify all users. EFF argues KOSA's "knew or should have known" negligence standard for identifying minors will push services toward blanket age-checking, government-directed moderation, and new rules touching encrypted communications, at the cost of privacy and free expression.
+(blurb not generated)
 
-A look at security flaws, police misuse, and other concerns over the 100K+ AI-enabled automated license plate readers installed across the US, mostly from Flock (Max Miller/Engadget) (1 minute read)
+A look at security flaws, police misuse, and other concerns over the 100K+ AI-enabled automated license plate readers installed across the US, mostly from Flock (Max Miller/Engadget) (5 minute read)
 
-Engadget published an investigation into the 100,000+ AI-enabled automated license plate readers now deployed across the US, most of them made by Flock, documenting security flaws, exposed devices, and police misuse of the surveillance network. The report details cameras left accessible online and officers running searches outside policy, underscoring how a privately operated tracking system has scaled nationwide with minimal oversight.
+(blurb not generated)
 
 Cloudflare teams up with Chrome, Firefox, and Edge on a privacy-first anti-bot protocol (5 minute read)
 
@@ -207,21 +215,33 @@ Cisco Acquires WideField To Secure AI Agents And Non-Human Identities (5 minute 
 
 (blurb not generated)
 
+US seizes hundreds of FIFA World Cup illegal streaming domains (1 minute read)
+
+The DOJ Criminal Division seized nearly 400 domains streaming 2026 FIFA World Cup matches without authorization, in a coordinated takedown dubbed Operation Offsides spanning Peru, Bulgaria, Croatia, Romania, Poland, and Colombia. Beyond copyright enforcement, officials flagged that illegal sports-streaming sites routinely expose visitors to malware and credential theft, a vector worth noting as the tournament drives traffic to lookalike and pirate domains.
+
 California legislature agrees to upload driver's licenses to national database (5 minute read)
 
 (blurb not generated)
 
-Sycophantic chatbots and the harms that build over many chats (1 minute read)
+Sycophantic chatbots and the harms that build over many chats (5 minute read)
 
-Researchers describe "affective safety," a class of AI chatbot harm that accumulates across many conversations as systems optimize to hold user attention, evading single-turn moderation that only scores one output at a time. Analysis of 391,000 messages from users with poor outcomes found sycophancy in over 70% of responses, a tendency trained into model weights because agreeable answers earn higher reward during RLHF.
+(blurb not generated)
 
 China Has Matched Anthropic in Cybersecurity, Resetting AI Race (5 minute read)
 
 (blurb not generated)
 
-Osney Capital closes oversubscribed £60M debut to become the UK’s first dedicated cyber seed fund (1 minute read)
+Microsoft Edge gets tons of security features, including AI model that can see your screen (1 minute read)
 
-Osney Capital closed an oversubscribed £60M debut fund, becoming the UK's first venture fund dedicated solely to seed-stage cybersecurity, backed by the British Business Bank and accredited by the National Security Strategic Investment Fund. The firm has already deployed into seven pre-seed and seed companies spanning AI security, disinformation detection, and software supply-chain protection, with a target portfolio of 30.
+Microsoft detailed new Edge for Business security controls, including DLP policies that block copy-paste and downloads from unmanaged locations, contractor file isolation to OneDrive, extension installation governance, and native Defender and Purview integration. Edge also added an on-device computer-vision model that watches the screen to block scareware and malicious content in real time without relying on site reputation.
+
+FCC escalates China crackdown by closing equipment import loophole (1 minute read)
+
+The FCC moved to bar imports of Chinese-made network equipment that received authorization before 2022, closing a loophole the agency says could have let Covered List vendors like Huawei and ZTE maintain access to U.S. critical infrastructure. The rules take effect in July and extend Chairman Brendan Carr's China crackdown, which already covers foreign-made routers, blanket carrier authorizations, and subsea cable supply chains following the Salt Typhoon intrusions.
+
+Robot Police Officers (1 minute read)
+
+The Sacramento County Sheriff's Office deployed a drone equipped with a high-powered magnet to disarm a barricaded suspect, using it to pull a knife from the person's hand inside a residence after negotiations failed. The June 22 incident marks an early operational use of remote robotics for direct physical intervention in police standoffs, raising open questions about use-of-force policy and oversight as the tactic spreads.
 
 ⚡
 Quick Links

@@ -1,9 +1,31 @@
 {
   "date": "2026-06-29",
   "newsletter": "tldr_devops",
-  "fetched_at": "2026-06-29T09:13:15.127760+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-06-29T12:07:09.981962+00:00",
+  "tldr_titles": [
+    "The inside scoop on alerting changes in Kubernetes Monitoring",
+    "Alert with SQL in Cloud Monitoring Observability Analytics",
+    "How VictoriaLogs Stores Your Logs in a Columnar Layout",
+    "We have Mythos at Home: GLM 5.2 beats Claude in our Cyber Benchmarks",
+    "Data Access Patterns That Make Your CPU Really Angry",
+    "Optional ephemeral environments using GitHub PR labels",
+    "Introducing Flink's Native S3 FileSystem: Built for Performance, Designed for Production",
+    "Security Profiles Operator v1: Stable APIs, Security Hardened, and Shaping Upstream Kubernetes",
+    "Amazon EKS now supports control plane egress through your VPC",
+    "New Relic Now June 2026 Round-Up"
+  ],
+  "tldr_matched": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -47,6 +69,14 @@
     },
     {
       "rank": 6,
+      "score": 71.0,
+      "title": "OTel and mesh-derived metrics: A 2026 reference",
+      "url": "https://www.cncf.io/blog/2026/06/29/otel-and-mesh-derived-metrics-a-2026-reference/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 7,
       "score": 70.0,
       "title": "How we found a bug in the hyper HTTP library",
       "url": "https://blog.cloudflare.com/hyper-bug/",
@@ -54,7 +84,7 @@
       "similarity": null
     },
     {
-      "rank": 7,
+      "rank": 8,
       "score": 70.0,
       "title": "Making secret scanning more trustworthy: Reducing false positives at scale",
       "url": "https://github.blog/security/making-secret-scanning-more-trustworthy-reducing-false-positives-at-scale/",
@@ -62,7 +92,7 @@
       "similarity": null
     },
     {
-      "rank": 8,
+      "rank": 9,
       "score": 70.0,
       "title": "WAL-RUS: a Rust Rewrite of WAL-G for PostgreSQL Backups",
       "url": "https://clickhouse.com/blog/walrus-postgres-backups-in-rust",
@@ -70,7 +100,7 @@
       "similarity": null
     },
     {
-      "rank": 9,
+      "rank": 10,
       "score": 67.0,
       "title": "Blinding the Watchmen: Abusing Cloud Logging Services for Defense Evasion and Visibility",
       "url": "https://unit42.paloaltonetworks.com/cloud-logging-defense-evasion/",
@@ -78,7 +108,7 @@
       "similarity": null
     },
     {
-      "rank": 10,
+      "rank": 11,
       "score": 66.0,
       "title": "Introducing the Cloudflare One stack: agent-powered deployment",
       "url": "https://blog.cloudflare.com/cloudflare-one-stack/",
@@ -86,7 +116,7 @@
       "similarity": null
     },
     {
-      "rank": 11,
+      "rank": 12,
       "score": 66.0,
       "title": "Unlocking the Cloudflare app ecosystem with OAuth for all",
       "url": "https://blog.cloudflare.com/oauth-for-all/",
@@ -94,7 +124,7 @@
       "similarity": null
     },
     {
-      "rank": 12,
+      "rank": 13,
       "score": 65.0,
       "title": "Bunny Makes DNS Free To Pull More Apps Onto Its Edge Platform",
       "url": "https://bunny.net/blog/were-making-bunny-dns-free/",
@@ -102,7 +132,7 @@
       "similarity": null
     },
     {
-      "rank": 13,
+      "rank": 14,
       "score": 63.0,
       "title": "GitHub Updates actions/checkout to Block Common Pwn Request Attack Patterns",
       "url": "https://thehackernews.com/2026/06/github-updates-actionscheckout-to-block.html",
@@ -110,7 +140,7 @@
       "similarity": null
     },
     {
-      "rank": 14,
+      "rank": 15,
       "score": 63.0,
       "title": "AMD Strix Halo RDMA Cluster Setup Guide",
       "url": "https://github.com/kyuz0/amd-strix-halo-vllm-toolboxes/blob/main/rdma_cluster/setup_guide.md",
@@ -118,7 +148,7 @@
       "similarity": null
     },
     {
-      "rank": 15,
+      "rank": 16,
       "score": 62.0,
       "title": "What you need to know about Lambda MicroVMs",
       "url": "https://theburningmonk.com/2026/06/what-you-need-to-know-about-lambda-microvms/",
@@ -126,7 +156,7 @@
       "similarity": null
     },
     {
-      "rank": 16,
+      "rank": 17,
       "score": 62.0,
       "title": "Amazon ECS introduces new high-resolution metrics for faster service auto scaling",
       "url": "https://aws.amazon.com/blogs/aws/amazon-ecs-introduces-new-high-resolution-metrics-for-faster-service-auto-scaling/",
@@ -134,7 +164,7 @@
       "similarity": null
     },
     {
-      "rank": 17,
+      "rank": 18,
       "score": 60.0,
       "title": "Client-Side Load Balancing at a Million Requests Per Second",
       "url": "https://engineering.zalando.com/posts/2026/06/client-side-load-balancing.html",
@@ -142,7 +172,7 @@
       "similarity": null
     },
     {
-      "rank": 18,
+      "rank": 19,
       "score": 60.0,
       "title": "The HTTP QUERY Method",
       "url": "https://datatracker.ietf.org/doc/rfc10008/",
@@ -150,7 +180,7 @@
       "similarity": null
     },
     {
-      "rank": 19,
+      "rank": 20,
       "score": 58.0,
       "title": "How Cloudflare responded to the \u201cCopy Fail\u201d Linux vulnerability",
       "url": "https://blog.cloudflare.com/copy-fail-linux-vulnerability-mitigation/",
@@ -158,7 +188,7 @@
       "similarity": null
     },
     {
-      "rank": 20,
+      "rank": 21,
       "score": 58.0,
       "title": "Build and Deploy a Remote MCP Server to GKE in 30 Minutes",
       "url": "https://cloud.google.com/blog/topics/developers-practitioners/build-and-deploy-a-remote-mcp-server-to-gke-in-30-minutes/",
@@ -166,7 +196,15 @@
       "similarity": null
     },
     {
-      "rank": 21,
+      "rank": 22,
+      "score": 57.0,
+      "title": "etcd-operator joins Cozystack with a new v1alpha2 API",
+      "url": "https://www.cncf.io/blog/2026/06/29/etcd-operator-joins-cozystack-with-a-new-v1alpha2-api/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 23,
       "score": 57.0,
       "title": "Rethinking cloud operations with agentic observability",
       "url": "https://blogs.microsoft.com/blog/2026/06/23/rethinking-cloud-operations-with-agentic-observability/",
@@ -174,7 +212,7 @@
       "similarity": null
     },
     {
-      "rank": 22,
+      "rank": 24,
       "score": 56.0,
       "title": "GitLab Patches Code Execution, Information Disclosure Vulnerabilities",
       "url": "https://www.securityweek.com/gitlab-patches-code-execution-information-disclosure-vulnerabilities/",
@@ -182,7 +220,7 @@
       "similarity": null
     },
     {
-      "rank": 23,
+      "rank": 25,
       "score": 55.0,
       "title": "Decades-Old Squid Proxy Flaw \u2018Squidbleed' Can Expose User Data",
       "url": "https://www.securityweek.com/decades-old-squid-proxy-flaw-squidbleed-can-expose-user-data/",
@@ -190,7 +228,7 @@
       "similarity": null
     },
     {
-      "rank": 24,
+      "rank": 26,
       "score": 55.0,
       "title": "One vulnerability view: From scanner coverage to AI governance",
       "url": "https://about.gitlab.com/blog/one-vulnerability-view/",
@@ -198,9 +236,43 @@
       "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.0,
+    "25": 0.0,
+    "50": 0.0,
+    "100": 0.0,
+    "26": 0.0
+  },
+  "hits_at": {
+    "10": 0,
+    "25": 0,
+    "50": 0,
+    "100": 0,
+    "26": 0
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://grafana.com/blog/the-inside-scoop-on-alerting-changes-in-kubernetes-monitoring/",
+    "https://cloud.google.com/blog/products/management-tools/alert-with-sql-in-cloud-monitoring-observability-analytics/",
+    "https://victoriametrics.com/blog/victorialogs-internals-columnar-storage-on-disk/",
+    "https://semgrep.dev/blog/2026/we-have-mythos-at-home-glm-52-beats-claude-in-our-cyber-benchmarks/",
+    "https://blog.weineng.me/posts/slowest_add/",
+    "https://octopus.com/blog/optional-ephemeral-environments-gh-label",
+    "https://flink.apache.org/2026/06/26/announcing-native-s3-fs/",
+    "https://www.cncf.io/blog/2026/06/26/security-profiles-operator-v1-stable-apis-security-hardened-and-shaping-upstream-kubernetes/",
+    "https://aws.amazon.com/blogs/containers/amazon-eks-now-supports-control-plane-egress-through-your-vpc/",
+    "https://newrelic.com/blog/news/new-relic-now-june-2026-round-up"
+  ],
+  "tldr_domains": [
+    "grafana.com",
+    "cloud.google.com",
+    "victoriametrics.com",
+    "semgrep.dev",
+    "blog.weineng.me",
+    "octopus.com",
+    "flink.apache.org",
+    "cncf.io",
+    "aws.amazon.com",
+    "newrelic.com"
+  ]
 }

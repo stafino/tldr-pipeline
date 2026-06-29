@@ -22,9 +22,9 @@ Making secret scanning more trustworthy: Reducing false positives at scale (5 mi
 
 (blurb not generated)
 
-WAL-RUS: a Rust Rewrite of WAL-G for PostgreSQL Backups (1 minute read)
+WAL-RUS: a Rust Rewrite of WAL-G for PostgreSQL Backups (5 minute read)
 
-ClickHouse Cloud built WAL-RUS, an open-source Rust reimplementation of WAL-G for Postgres WAL archival and backups, motivated by the unpredictable memory footprint of Go's garbage-collected runtime in resource-constrained environments. The post details how Go's sawtooth GC pattern and reserved virtual memory force operators to over-provision backup infrastructure, and how WAL-RUS delivers WAL-G compatibility with a tighter, more predictable memory profile that simplifies capacity planning.
+(blurb not generated)
 
 RFC 9958 - Post-Quantum Cryptography for Engineers (5 minute read)
 
@@ -34,9 +34,9 @@ How we built an internal data analytics agent (5 minute read)
 
 (blurb not generated)
 
-DLL that was not present in memory despite not being formally unloaded (1 minute read)
+DLL that was not present in memory despite not being formally unloaded (5 minute read)
 
-A Microsoft shell32 team traced a flood of crash reports to a recursive exception-handling death spiral, where RtlLookupFunctionEntry kept faulting during dispatch and restarted the loop until the stack overflowed. The post walks through reading the repeating stack frames in the crash dumps and explains why the bug was misattributed to shell32, which only appeared to be the source of the original exception.
+(blurb not generated)
 
 Using Codex for Long-Running Projects (5 minute read)
 
@@ -57,6 +57,10 @@ p99 0 ms* autocomplete for 240 million domain names (5 minute read)
 The text in Claude Code's “Extended Thinking” output is not authentic (5 minute read)
 
 (blurb not generated)
+
+OTel and mesh-derived metrics: A 2026 reference (1 minute read)
+
+This reference shows how Linkerd's sidecar proxy emits golden metrics for every inbound and outbound request the moment a workload is meshed, with no instrumentation, SDK calls, or image rebuilds, giving you the east-west traffic that application-layer OpenTelemetry never sees. It walks through where mesh metrics overlap with OTel and where they don't, then wires the proxy's Prometheus endpoint into an existing OTel Collector pipeline so both layers land in the same backend.
 
 Don't rely on instructions, use Agent Hooks to enforce guardrails (5 minute read)
 
@@ -82,10 +86,6 @@ Fintech Engineering Handbook (5 minute read)
 
 (blurb not generated)
 
-Metric Semantic Layer: How Lyft Governs and Scales Key Data Definitions (5 minute read)
-
-(blurb not generated)
-
 🧠
 Opinions & Advice
 
@@ -101,13 +101,17 @@ Clean GitHub repo tricks AI coding agents into running malware (5 minute read)
 
 (blurb not generated)
 
+Mozilla warns of indirect prompt injection risk in AI coding agents (1 minute read)
+
+Mozilla's 0DIN team showed that a malicious GitHub repo can compromise a developer's machine via indirect prompt injection, with no malicious code in the repo itself. The proof-of-concept tricks agents like Claude Code into running setup steps that pipe an attacker-controlled DNS TXT record to bash, fetching a reverse shell at runtime that's invisible to code review, static analysis, and the agent reading the repo.
+
 In praise of memcached (5 minute read)
 
 (blurb not generated)
 
-HackerRank open sourced its ATS. My resume scored 90/100. Oh wait 74. No – 88 (1 minute read)
+HackerRank open sourced its ATS. My resume scored 90/100. Oh wait 74. No – 88 (5 minute read)
 
-The author tested HackerRank's open-sourced LLM-based ATS on a single unchanged resume and got scores ranging from 66 to 99 across 100 runs, enough to fail a typical 85-point cutoff 65% of the time. The post traces the variance to subjective categories like projects, where the model's judgment is non-deterministic even at temperature 0, while checklist items like technical skills stay consistent.
+(blurb not generated)
 
 The Flat Curve Society (5 minute read)
 
@@ -131,7 +135,7 @@ I am dreading our LLM-written incident report future (5 minute read)
 
 The Problem is Prompt Debt (5 minute read)
 
-The author argues that hand-tuned natural language prompts accrue "prompt debt," a slow-building liability that caps what AI systems can become. As teams pile edge-case instructions and all-caps threats onto a single prompt, iteration grinds to a halt, the prompt becomes illegible to colleagues, and the application locks to one aging model because hot fixes break on any newer one.
+(blurb not generated)
 
 When I reject AI code even if it works (5 minute read)
 
@@ -160,9 +164,9 @@ Run a vLLM Server on HF Jobs in One Command (5 minute read)
 
 (blurb not generated)
 
-Getting more from each token: How Copilot improves context handling and model routing (1 minute read)
+Getting more from each token: How Copilot improves context handling and model routing (5 minute read)
 
-GitHub Copilot in VS Code now cuts per-turn overhead with prompt caching, which reuses model state for repeated prompt prefixes, and tool search, which loads tool schemas on demand instead of sending every definition every turn. The goal is spending less of each session on recurring context and more on the task, with Auto routing also expanding so Copilot picks the model that fits the work without the developer choosing each time.
+(blurb not generated)
 
 Run isolated sandboxes with full lifecycle control: AWS Lambda introduces MicroVMs (5 minute read)
 
@@ -184,9 +188,9 @@ Accelerating Transformers Fine-Tuning with NVIDIA NeMo AutoModel (5 minute read)
 
 (blurb not generated)
 
-Unlocking the Cloudflare app ecosystem with OAuth for all (1 minute read)
+Unlocking the Cloudflare app ecosystem with OAuth for all (5 minute read)
 
-Cloudflare opened self-managed OAuth to all Developer Platform customers, letting developers create and manage their own OAuth clients for scoped, delegated access to the Cloudflare API instead of relying on harder-to-manage API tokens. The release adds clearer consent screens, dashboard-based revocation, and visible app ownership to curb OAuth phishing, targeting SaaS integrations, internal developer platforms, and agentic tools that need delegated access.
+(blurb not generated)
 
 TypeScript Performance in TanStack Table V9 (5 minute read)
 
@@ -200,13 +204,13 @@ Librepods: AirPods liberated (5 minute read)
 
 (blurb not generated)
 
-Perplexity Bumblebee Review: The Supply Chain Scanner Your Dev Machine Needs (3 minute read)
-
-Perplexity open-sourced Bumblebee, a read-only supply chain scanner that inventories installed packages, editor extensions, MCP configs, and browser extensions and matches them against known-compromised versions without ever invoking a package manager. The single Go binary scanned 847 packages across 9 ecosystems in under 4 seconds and emits NDJSON, positioning it as a fast developer-machine triage tool rather than a CI replacement for Snyk or Socket.
-
 Build real agentic apps using CUGA: two dozen working examples on a lightweight harness (5 minute read)
 
 (blurb not generated)
+
+Herdr: Agent multiplexer that lives in your terminal (1 minute read)
+
+Herdr is a terminal-based multiplexer for managing multiple coding agents, using workspaces, tabs, and panes that you control with the mouse or tmux-style keybindings. Agents keep running after you detach and reattach, and unlike Electron or native GUI wrappers, you interact with each agent's real terminal process rather than a rewritten view of it.
 
 Vercel Launches AI SDK 7 with Enhanced Stream and Tool Orchestration (5 minute read)
 
@@ -220,9 +224,9 @@ Cloudflare teams up with Chrome, Firefox, and Edge on a privacy-first anti-bot p
 
 (blurb not generated)
 
-Wayfinder Router: deterministic routing of queries between local and hosted LLM (1 minute read)
+Wayfinder Router: deterministic routing of queries between local and hosted LLM (5 minute read)
 
-Wayfinder Router decides whether each prompt should go to your small local model or your big cloud one by reading its structure and wording, running offline in microseconds with no API call, classifier, or LLM judge. Cheap prompts stay local while hard ones hit the expensive model, and the decision is deterministic and free, though semantic-only difficulty has no structural tell and lexical cues ship off by default.
+(blurb not generated)
 
 🎁
 Miscellaneous
@@ -235,9 +239,9 @@ A public Sentry key is all it takes to hijack Claude Code, Cursor, and Codex (5 
 
 (blurb not generated)
 
-Hijacked npm and Go Packages Use VS Code Tasks to Deploy Python Infostealer (1 minute read)
+Hijacked npm and Go Packages Use VS Code Tasks to Deploy Python Infostealer (5 minute read)
 
-Researchers at JFrog found two hijacked npm packages and a cluster of Go packages that abuse a hidden VS Code task, configured with runOn folderOpen, to execute disguised JavaScript the moment a project opens in VS Code or Cursor. The loader pulls encrypted payloads from blockchain transaction data and ultimately deploys the InvisibleFerret Python infostealer, part of North Korea's Contagious Interview campaign targeting developers through fake job interviews.
+(blurb not generated)
 
 GLM-5.2 Raises the Bar for Open Models (5 minute read)
 
@@ -247,9 +251,13 @@ GLM-5.2 Is The New Best Open Model (5 minute read)
 
 (blurb not generated)
 
-Public PoC Released for Critical libssh2 CVE-2026-55200 Client-Side SSH Flaw (1 minute read)
+Public PoC Released for Critical libssh2 CVE-2026-55200 Client-Side SSH Flaw (5 minute read)
 
-A public proof-of-concept landed for CVE-2026-55200, a critical libssh2 flaw (CVSS 9.2) where a malicious SSH server triggers an integer overflow in ssh2_transport_read() and an out-of-bounds heap write on the connecting client, with no credentials or interaction required. Because libssh2 is embedded and often statically linked into curl, Git, PHP, backup agents, and firmware updaters, a distro package bump will not patch the copies you do not know are there.
+(blurb not generated)
+
+‘DirtyClone’ Linux Kernel Vulnerability Leads to Root Access (1 minute read)
+
+JFrog published technical details and a proof of concept for DirtyClone (CVE-2026-43503, CVSS 8.8), a Linux kernel local privilege escalation bug that lets any local user gain root by corrupting file-backed page-cache memory through zero-copy socket buffer paths. The fix landed in v7.1-rc5, but only kernels carrying the full DirtyFrag patch chain are protected, leaving Debian, Fedora, and Ubuntu systems with unprivileged user namespaces exposed.
 
 AI was supposed to kill engineering jobs, but new data suggests they're the most resilient (5 minute read)
 
@@ -266,9 +274,17 @@ Will It Mythos? (5 minute read)
 
 (blurb not generated)
 
-EU Open Sources Ten-Year Network Development Planning Tools (1 minute read)
+EU Open Sources Ten-Year Network Development Planning Tools (5 minute read)
 
-Open Energy Transition and ENTSO-E open-sourced Open-TYNDP, a PyPSA-Eur-based toolchain for Europe's ten-year electricity grid planning.
+(blurb not generated)
+
+Google's new hand-wave reCAPTCHA can be bypassed with a stock photo (1 minute read) [flag]
+
+Google's new hand-wave reCAPTCHA, which extracts 21 hand-knuckle coordinates from camera video, can be passed by feeding a stock image through OBS Virtual Camera.
+
+Pong game recompiles its own source code every frame — winning entry at IOCCC29 was generated by a custom compiler (1 minute read)
+
+An IOCCC29-winning Pong recompiles its own source every frame, each run printing the C for the next frame with state baked in.
 
 I Stored a Website in a Favicon (5 minute read)
 
