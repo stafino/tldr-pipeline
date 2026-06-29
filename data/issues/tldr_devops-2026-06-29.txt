@@ -14,13 +14,17 @@ GitHub Updates actions/checkout to Block Common Pwn Request Attack Patterns (5 m
 
 (blurb not generated)
 
-etcd-operator joins Cozystack with a new v1alpha2 API (5 minute read)
+Zuck saves Meta bucks by reusing memory from old servers with a custom CXL ASIC (1 minute read)
 
-(blurb not generated)
+Meta built a custom CXL ASIC that pools DRAM salvaged from decommissioned servers, letting newer hosts borrow that memory over the CXL fabric instead of buying fresh DIMMs. The move targets memory cost and e-waste at hyperscale, extending the useful life of RAM that would otherwise be scrapped and easing capacity pressure on memory-bound workloads like caching and inference.
+
+etcd-operator joins Cozystack with a new v1alpha2 API (1 minute read)
+
+The etcd-operator project was donated to Cozystack and re-implemented from scratch under a new etcd-operator.cozystack.io/v1alpha2 API, dropping the StatefulSet model in favor of driving etcd's native Membership API for MemberAdd, MemberPromote, and MemberRemove directly. The rewrite reconciles each member's Pod and PVC independently and adds learner-mode members one at a time, giving the operator full control over quorum changes during scaling and graceful removal.
 
 Rethinking cloud operations with agentic observability (5 minute read)
 
-Microsoft announced general availability of the Azure Copilot Observability Agent, built on Azure Monitor to correlate logs, metrics, traces, and topology across agents, applications, and infrastructure for faster root-cause analysis. The launch targets a complexity problem Microsoft's own survey quantifies: 84% of organizations report rising cloud complexity, and 69% say it is outpacing their current operating model.
+(blurb not generated)
 
 GitLab Patches Code Execution, Information Disclosure Vulnerabilities (5 minute read)
 
@@ -33,9 +37,9 @@ Decades-Old Squid Proxy Flaw ‘Squidbleed' Can Expose User Data (5 minute read)
 🚀
 Opinions & Tutorials
 
-OTel and mesh-derived metrics: A 2026 reference (5 minute read)
+OTel and mesh-derived metrics: A 2026 reference (1 minute read)
 
-(blurb not generated)
+This CNCF post explains how to combine Linkerd's mesh-derived metrics with an existing OpenTelemetry pipeline, covering the east-west service traffic that application-layer instrumentation misses. Once a workload is meshed, the Linkerd proxy emits golden metrics for every inbound and outbound request on port 4191, with no SDK calls or image rebuilds. The reference shows where mesh metrics overlap with OTel and where they don't, plus a working Collector config and Grafana dashboard to land both layers in the same backend.
 
 How we found a bug in the hyper HTTP library (5 minute read)
 
@@ -49,13 +53,13 @@ Blinding the Watchmen: Abusing Cloud Logging Services for Defense Evasion and Vi
 
 (blurb not generated)
 
-AMD Strix Halo RDMA Cluster Setup Guide (1 minute read)
+AMD Strix Halo RDMA Cluster Setup Guide (5 minute read)
 
-This guide walks through building a two-node AMD Strix Halo cluster wired with Intel E810 NICs over RoCE v2 to run distributed vLLM inference with Tensor Parallelism. The payoff is in the data plane: RDMA lets RCCL write tensors node-to-node directly from memory, cutting per-exchange latency from ~70-100µs over TCP to ~5µs. That matters because TP=2 forces a synchronization after every layer, thousands of times per second, so the kernel-bypass path is what makes two boxes behave like one.
+(blurb not generated)
 
 What you need to know about Lambda MicroVMs (5 minute read)
 
-AWS launched Lambda MicroVMs, giving teams Firecracker-grade isolation with no shared kernel, sub-second snapshot boots, and stateful sessions that persist memory and disk for up to eight hours. The author argues it finally fits the AI-code-sandbox problem that EC2, ECS, and Lambda functions each solved only partially. The model is per-session VMs with dedicated HTTPS endpoints, bearer-token auth, and automatic suspend on idle so you stop paying when traffic stops.
+(blurb not generated)
 
 Client-Side Load Balancing at a Million Requests Per Second (5 minute read)
 
@@ -84,13 +88,21 @@ Run isolated sandboxes with full lifecycle control: AWS Lambda introduces MicroV
 
 (blurb not generated)
 
-Bringing more agent harnesses and frameworks to Cloudflare, starting with Flue (1 minute read)
+NixOS 26.05 (1 minute read)
 
-Cloudflare is moving the durable-execution, sandboxed code execution, and durable-filesystem primitives it built for its Project Think harness down into the Agents SDK, making them available to any agent harness or framework running on its platform. Flue, a new open-source framework from the Astro team built on the Pi harness, shipped its 1.0 beta as the first framework on the SDK, targeting the resume-after-interruption and untrusted-code problems agents hit in production.
+NixOS 26.05 "Yarara" shipped with systemd-based stage 1 initrd as the default, deprecating the old scripted implementation ahead of its removal in 26.11. The release lands 20,442 new packages and ships GCC 15 and GNOME 50, while marking the final Nixpkgs release to support x86_64-darwin before Apple-driven deprecation ends those builds at the close of 2026.
 
-WAL-RUS: a Rust Rewrite of WAL-G for PostgreSQL Backups (1 minute read)
+Bringing more agent harnesses and frameworks to Cloudflare, starting with Flue (5 minute read)
 
-ClickHouse released WAL-RUS, an open-source Rust reimplementation of WAL-G for PostgreSQL WAL archival and backups, built for WAL-G compatibility and predictable memory usage in resource-constrained environments. Rust avoids Go's garbage-collected "sawtooth" memory profile and unpredictable virtual memory reservation, letting operators provision tighter backup budgets and reclaim memory for Postgres queries, shared buffers, and page cache.
+(blurb not generated)
+
+What's new in Git 2.55.0? (3 minute read)
+
+The Git project released Git 2.55.0, adding a `git history fixup` command that amends staged changes into an existing commit and automatically rebases all stacked branches containing it. The release also brings the built-in fsmonitor daemon to Linux via inotify, speeding up `git status` in large monorepos without requiring a third-party tool like Watchman.
+
+WAL-RUS: a Rust Rewrite of WAL-G for PostgreSQL Backups (5 minute read)
+
+(blurb not generated)
 
 Introducing the Cloudflare One stack: agent-powered deployment (5 minute read)
 
@@ -100,13 +112,17 @@ Unlocking the Cloudflare app ecosystem with OAuth for all (5 minute read)
 
 (blurb not generated)
 
-Bunny Makes DNS Free To Pull More Apps Onto Its Edge Platform (1 minute read)
+Bunny Makes DNS Free To Pull More Apps Onto Its Edge Platform (5 minute read)
 
-Bunny.net eliminated all DNS query fees for Bunny DNS, removing per-request billing and query limits while bundling free DNS hosting for up to 500 domains per account. The service already routes nearly 200 billion queries monthly across 300,000 domains, offering latency-based routing, health checks, and JavaScript logic that the now-free tier extends without the risk of unpredictable bills from traffic spikes.
+(blurb not generated)
 
-Amazon ECS introduces new high-resolution metrics for faster service auto scaling (1 minute read)
+A native graphical shell for SSH (1 minute read)
 
-Amazon ECS service auto scaling now supports high-resolution 20-second metrics, cutting the time to trigger scale-out from 363 to 86 seconds and total scale-and-provision time from 386 to 109 seconds in AWS benchmarks. Faster reaction lets teams trim baseline task counts and the preemptive capacity padding that hedges against traffic spikes, lowering compute cost while target tracking replaces the custom step-scaling policies that used to deliver aggressive scaling.
+Outer Shell is an open-source graphical shell that lets servers and edge devices serve browser-based apps over SSH, with each app running as a dependency-free HTTP server bound to a Unix domain socket rather than a localhost port. Encryption is handled at the SSH layer instead of per-app, and apps register capabilities so they can discover each other, turning a remote box into a navigable desktop without a local GUI.
+
+Amazon ECS introduces new high-resolution metrics for faster service auto scaling (5 minute read)
+
+(blurb not generated)
 
 One vulnerability view: From scanner coverage to AI governance (5 minute read)
 

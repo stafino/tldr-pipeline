@@ -25,13 +25,21 @@ The analytics engineer in 2026: system designer, governance owner, AI context pr
 🚀
 Launches & Tools
 
-WAL-RUS: a Rust Rewrite of WAL-G for PostgreSQL Backups (1 minute read)
+WAL-RUS: a Rust Rewrite of WAL-G for PostgreSQL Backups (5 minute read)
 
-ClickHouse released WAL-RUS, an open-source Rust reimplementation of WAL-G that handles Postgres WAL archival and backups while staying wire-compatible with existing WAL-G storage. The motivation is memory predictability: Go's garbage-collected runtime produces a sawtooth memory profile that forces operators to over-reserve RAM, and Rust's fixed footprint frees that budget for Postgres queries, shared buffers, and page cache.
+(blurb not generated)
+
+Synthesize the big picture and analyze trends with BigQuery's AI.AGG function (3 minute read)
+
+BigQuery's new AI.AGG() function, now in preview, lets you summarize or synthesize across millions of rows of unstructured or multimodal data using natural-language instructions inside a single line of SQL. It targets aggregate questions that per-row AI functions can't answer, like surfacing the top feature requests across negative reviews or clustering Spark logs to find memory thrashing and clock drift before anything throws a FATAL error.
 
 Mistral OCR 4: SOTA OCR for Document Intelligence (5 minute read)
 
 (blurb not generated)
+
+Scaling Network Analysis for Fraud Prevention with BigQuery Graph (2 minute read)
+
+Curve, a UK financial super-app, moved its fraud network analysis to BigQuery Graph, using native GQL to run multi-hop queries across millions of users and tens of millions of connections without standing up a separate graph database. Keeping the data in BigQuery avoided a migration to a dedicated graph store, cutting cost while surfacing the shared-device and shared-card links that organized fraud rings use to evade per-transaction models.
 
 AWS enters the context layer race with a graph that learns from agents, not manual curation (5 minute read)
 
