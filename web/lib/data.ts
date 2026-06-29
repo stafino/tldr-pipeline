@@ -229,6 +229,41 @@ function stageOf(r: FundingRound): string {
   return classifyFundingStage(r.round_label).short.toLowerCase();
 }
 
+/** Round to 2 significant figures so $535M and $540M bucket together. */
+function amountBucket(usd: number): number {
+  if (!usd) return 0;
+  const mag = Math.pow(10, Math.floor(Math.log10(Math.abs(usd))) - 1);
+  return Math.round(usd / mag) * mag;
+}
+
+/** True when two company names are identical or one's tokens are a leading
+ *  prefix of the other's (e.g. "stark" vs "stark defence"). */
+function companyPrefixCompatible(a: string, b: string): boolean {
+  if (!a || !b) return false;
+  const ta = a.split(' ');
+  const tb = b.split(' ');
+  const n = Math.min(ta.length, tb.length);
+  for (let i = 0; i < n; i++) if (ta[i] !== tb[i]) return false;
+  return true;
+}
+
+/** Blank stage is a wildcard; two known stages must match. */
+function stageCompatible(a: string, b: string): boolean {
+  return a === b || a === '' || b === '';
+}
+
+/** Canonical survivor of two same-round rows: prefer a known stage, then the
+ *  shorter (core) company name, then the earliest raise. */
+function chooseRep(a: FundingRound, b: FundingRound): FundingRound {
+  const sa = stageOf(a);
+  const sb = stageOf(b);
+  if (!!sa !== !!sb) return sa ? a : b;
+  const la = normCompany(a).length;
+  const lb = normCompany(b).length;
+  if (la !== lb) return la < lb ? a : b;
+  return a.raised_date <= b.raised_date ? a : b;
+}
+
 /**
  * Load every funding row across every scrape file, deduplicated first by
  * story_url, then by round (same company + stage). The second pass collapses
@@ -285,7 +320,45 @@ function loadAllRows(): FundingRound[] {
     const existing = byRound.get(key);
     if (!existing || r.raised_date < existing.raised_date) byRound.set(key, r);
   }
-  return [...byRound.values(), ...anonymous];
+
+  // Pass 3: fuzzy-merge survivors that are the same raise under a different
+  // company spelling - same region, same amount (to 2 sig figs), compatible
+  // stage, and one company name a token-prefix of the other ("Stark" vs
+  // "Stark Defence"). Conservative: requires BOTH the amount match AND the
+  // name-prefix relationship, so genuinely distinct companies never collapse.
+  const groups = new Map<string, FundingRound[]>();
+  const unbucketed: FundingRound[] = []; // no amount → can't fuzzy-match safely
+  for (const r of byRound.values()) {
+    if (r.amount_usd == null) {
+      unbucketed.push(r);
+      continue;
+    }
+    const gk = `${r.region}::${amountBucket(r.amount_usd)}`;
+    let g = groups.get(gk);
+    if (!g) groups.set(gk, (g = []));
+    g.push(r);
+  }
+  const merged: FundingRound[] = [...unbucketed];
+  for (const group of groups.values()) {
+    const used = new Array(group.length).fill(false);
+    for (let i = 0; i < group.length; i++) {
+      if (used[i]) continue;
+      let rep = group[i];
+      used[i] = true;
+      for (let j = i + 1; j < group.length; j++) {
+        if (used[j]) continue;
+        if (
+          companyPrefixCompatible(normCompany(rep), normCompany(group[j])) &&
+          stageCompatible(stageOf(rep), stageOf(group[j]))
+        ) {
+          used[j] = true;
+          rep = chooseRep(rep, group[j]);
+        }
+      }
+      merged.push(rep);
+    }
+  }
+  return [...merged, ...anonymous];
 }
 
 /** Distinct raised_dates across every stored round, newest first. */
