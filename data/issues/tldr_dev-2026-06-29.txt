@@ -22,9 +22,9 @@ Making secret scanning more trustworthy: Reducing false positives at scale (5 mi
 
 (blurb not generated)
 
-WAL-RUS: a Rust Rewrite of WAL-G for PostgreSQL Backups (5 minute read)
+WAL-RUS: a Rust Rewrite of WAL-G for PostgreSQL Backups (1 minute read)
 
-(blurb not generated)
+ClickHouse Cloud built WAL-RUS, an open-source Rust reimplementation of WAL-G for Postgres WAL archival and backups, motivated by the unpredictable memory footprint of Go's garbage-collected runtime in resource-constrained environments. The post details how Go's sawtooth GC pattern and reserved virtual memory force operators to over-provision backup infrastructure, and how WAL-RUS delivers WAL-G compatibility with a tighter, more predictable memory profile that simplifies capacity planning.
 
 RFC 9958 - Post-Quantum Cryptography for Engineers (5 minute read)
 
@@ -34,21 +34,21 @@ How we built an internal data analytics agent (5 minute read)
 
 (blurb not generated)
 
-DLL that was not present in memory despite not being formally unloaded (5 minute read)
+DLL that was not present in memory despite not being formally unloaded (1 minute read)
 
-(blurb not generated)
+A Microsoft shell32 team traced a flood of crash reports to a recursive exception-handling death spiral, where RtlLookupFunctionEntry kept faulting during dispatch and restarted the loop until the stack overflowed. The post walks through reading the repeating stack frames in the crash dumps and explains why the bug was misattributed to shell32, which only appeared to be the source of the original exception.
 
 Using Codex for Long-Running Projects (5 minute read)
 
 (blurb not generated)
 
-WATaBoy: JIT-Ing Game Boy Instructions to WASM Beats a Native Interpreter (1 minute read)
+WATaBoy: JIT-Ing Game Boy Instructions to WASM Beats a Native Interpreter (5 minute read)
 
-A developer building a Game Boy emulator for their final-year project generated WebAssembly bytecode from Game Boy instructions, exploiting the JIT compilation that JavaScriptCore applies to hot Wasm in browsers, the one path around Apple's iOS JIT ban. The JIT-to-Wasm approach stays cycle-accurate by predicting interrupts and falling back to an interpreter, and it beats a natively running interpreter on performance.
+(blurb not generated)
 
-What happens when you run a CUDA kernel? (1 minute read)
+What happens when you run a CUDA kernel? (5 minute read)
 
-This post traces a single CUDA vector-add kernel from source down to the warps that execute it and back, covering how nvcc fans out to multiple compilers (cicc, ptxas, fatbinary) to produce PTX, SASS, and an embedded fatbin. The walkthrough then follows the launch through the driver stack, accounting for the tens of millions of CPU instructions, two device files, ~900 ioctls, and one memory-mapped doorbell register that turn a million float additions into a result.
+(blurb not generated)
 
 ClickHouse Ingestion at Scale: An Open-Source Zepto Engineering Story (5 minute read)
 
@@ -62,17 +62,17 @@ p99 0 ms* autocomplete for 240 million domain names (5 minute read)
 
 (blurb not generated)
 
-Factoring RSA Keys with Many Zeros (1 minute read)
+Factoring RSA Keys with Many Zeros (5 minute read)
 
-Researchers found real-world RSA keys with regularly spaced blocks of all zeros in their moduli, a sparsity pattern that makes them far easier to factor, surfaced by scanning Certificate Transparency logs, TLS/SSH scans, and PGP dumps with the open-source badkeys project. The flaw traces to independent implementations failing the same way, including CompleteFTP's key generation and certificates once issued to Yahoo and Verizon, suggesting cryptanalytic attacks tuned for this failure class are worth building.
+(blurb not generated)
 
 The text in Claude Code's “Extended Thinking” output is not authentic (5 minute read)
 
 (blurb not generated)
 
-OTel and mesh-derived metrics: A 2026 reference (1 minute read)
+OTel and mesh-derived metrics: A 2026 reference (5 minute read)
 
-This reference shows how Linkerd's sidecar proxy emits golden metrics for every inbound and outbound request the moment a workload is meshed, with no instrumentation, SDK calls, or image rebuilds, giving you the east-west traffic that application-layer OpenTelemetry never sees. It walks through where mesh metrics overlap with OTel and where they don't, then wires the proxy's Prometheus endpoint into an existing OTel Collector pipeline so both layers land in the same backend.
+(blurb not generated)
 
 Don't rely on instructions, use Agent Hooks to enforce guardrails (5 minute read)
 
@@ -101,21 +101,21 @@ Clean GitHub repo tricks AI coding agents into running malware (5 minute read)
 
 (blurb not generated)
 
-Mozilla warns of indirect prompt injection risk in AI coding agents (1 minute read)
+Mozilla warns of indirect prompt injection risk in AI coding agents (5 minute read)
 
-Mozilla's 0DIN team showed that a malicious GitHub repo can compromise a developer's machine via indirect prompt injection, with no malicious code in the repo itself. The proof-of-concept tricks agents like Claude Code into running setup steps that pipe an attacker-controlled DNS TXT record to bash, fetching a reverse shell at runtime that's invisible to code review, static analysis, and the agent reading the repo.
+(blurb not generated)
 
-Researchers Demo New Claude Code Attack Using Harmless-Looking Repositories to Hijack Developer Machines (1 minute read)
+Researchers Demo New Claude Code Attack Using Harmless-Looking Repositories to Hijack Developer Machines (5 minute read)
 
-Mozilla's 0Din researchers demonstrated an attack where a clean-looking repository hijacks a developer's machine through Claude Code, with no malicious code in the repo itself. A deliberate install error tells the agent to run `axiom init`, which executes a script that pulls a base64-encoded reverse shell from a DNS TXT record, splitting the payload across three systems no single tool inspects together.
+(blurb not generated)
 
 In praise of memcached (5 minute read)
 
 (blurb not generated)
 
-HackerRank open sourced its ATS. My resume scored 90/100. Oh wait 74. No – 88 (5 minute read)
+HackerRank open sourced its ATS. My resume scored 90/100. Oh wait 74. No – 88 (1 minute read)
 
-(blurb not generated)
+The author tested HackerRank's open-sourced LLM-based ATS on a single unchanged resume and got scores ranging from 66 to 99 across 100 runs, enough to fail a typical 85-point cutoff 65% of the time. The post traces the variance to subjective categories like projects, where the model's judgment is non-deterministic even at temperature 0, while checklist items like technical skills stay consistent.
 
 The Flat Curve Society (5 minute read)
 
@@ -125,13 +125,13 @@ The Minimum Viable Unit of Saleable Software (5 minute read)
 
 (blurb not generated)
 
-Qwen 3.6 27B is the sweet spot for local development (1 minute read)
+Qwen 3.6 27B is the sweet spot for local development (5 minute read)
 
-The author argues Qwen 3.6 27B is the first local model practical enough to serve as a general-purpose coding assistant, citing a hexagonal minesweeper it built correctly from a single prompt with proper pnpm packaging. The dense 27B variant runs locally via llama.cpp at Q8_0 quantization and outperforms the faster 35B A3B mixture-of-experts version on instruction-following, at the cost of speed and a hot machine.
+(blurb not generated)
 
-Inside the Advisory Database and what happens when vulnerability volume breaks records (1 minute read)
+Inside the Advisory Database and what happens when vulnerability volume breaks records (5 minute read)
 
-The GitHub Advisory Database published 1,560 reviewed advisories in May 2026, five times its typical output and still not enough as private vulnerability reports climbed from ~550 to over 3,000 per week. GitHub argues review times will stay longer until submitters carry more of the load by filing complete data and requesting CVEs only when they intend to publish.
+(blurb not generated)
 
 Suspicious Discontinuities (2020) (5 minute read)
 
@@ -147,7 +147,7 @@ I am dreading our LLM-written incident report future (5 minute read)
 
 The Problem is Prompt Debt (5 minute read)
 
-(blurb not generated)
+The author argues that hand-tuned natural language prompts accrue "prompt debt," a slow-building liability that caps what AI systems can become. As teams pile edge-case instructions and all-caps threats onto a single prompt, iteration grinds to a halt, the prompt becomes illegible to colleagues, and the application locks to one aging model because hot fixes break on any newer one.
 
 When I reject AI code even if it works (5 minute read)
 
@@ -164,9 +164,9 @@ Deno Desktop (5 minute read)
 
 (blurb not generated)
 
-What's new in Git 2.55.0? (3 minute read)
+What's new in Git 2.55.0? (5 minute read)
 
-Git 2.55.0 adds a `git history fixup <commit-id>` subcommand that stages and amends changes into an existing commit in one step, automatically rebasing any stacked branches that contain it instead of requiring an interactive autosquash rebase. The release also extends the built-in fsmonitor daemon to Linux via inotify, speeding up `git status` in large monorepos without a third-party tool like Watchman.
+(blurb not generated)
 
 Temporary Cloudflare Accounts for AI agents (5 minute read)
 
@@ -176,25 +176,29 @@ Lighthouse agentic browsing scoring (5 minute read)
 
 (blurb not generated)
 
-A native graphical shell for SSH (1 minute read)
+Microsoft finally launches WSL Containers in public preview (1 minute read)
 
-Outer Shell is an open-source graphical shell for SSH, where each app is a minimal HTTP server exposed over a Unix domain socket rather than a localhost port, with encryption handled at the SSH layer instead of in the app. The shell provides a home screen of apps plus an API for inter-app lookups, so a text-editor app can register itself and open files double-clicked elsewhere.
+Microsoft launched WSL Containers in public preview, letting developers run Linux containers natively on Windows without Docker Desktop through a new `wslc.exe` CLI and programmable API that integrates into MSBuild and CMake project files. The CLI mirrors Docker commands, supports GPU passthrough via `--gpus all` for PyTorch workloads, and isolates each container in its own lightweight Hyper-V utility VM rather than a shared WSL distribution.
+
+A native graphical shell for SSH (5 minute read)
+
+(blurb not generated)
 
 Run a vLLM Server on HF Jobs in One Command (5 minute read)
 
 (blurb not generated)
 
-NixOS 26.05 (1 minute read)
-
-NixOS 26.05 "Yarara" ships from 2842 contributors and 59703 commits, updating Nixpkgs with 20442 new packages and bumping GNOME to 50 and GCC to 15. Stage 1 initrd now defaults to systemd with the scripted implementation deprecated for removal in 26.11, and this is the final release to support x86_64-darwin following Apple's platform deprecation.
-
-Highlights from Git 2.55 (1 minute read)
-
-Git 2.55 shipped with contributions from over 100 developers, headlined by `git repack --write-midx=incremental`, which writes incremental multi-pack index chains directly instead of rewriting a single MIDX over every pack. The append-only mode lets large repositories index newly created packs by adding a layer to the chain, avoiding the expensive full-file rewrite that single-MIDX maintenance forces on each small update.
-
-Getting more from each token: How Copilot improves context handling and model routing (5 minute read)
+NixOS 26.05 (5 minute read)
 
 (blurb not generated)
+
+Highlights from Git 2.55 (5 minute read)
+
+(blurb not generated)
+
+Getting more from each token: How Copilot improves context handling and model routing (1 minute read)
+
+GitHub Copilot in VS Code now cuts per-turn overhead with prompt caching, which reuses model state for repeated prompt prefixes, and tool search, which loads tool schemas on demand instead of sending every definition every turn. The goal is spending less of each session on recurring context and more on the task, with Auto routing also expanding so Copilot picks the model that fits the work without the developer choosing each time.
 
 Run isolated sandboxes with full lifecycle control: AWS Lambda introduces MicroVMs (5 minute read)
 
@@ -204,9 +208,9 @@ Announcing DuckDB 1.5.4 (5 minute read)
 
 (blurb not generated)
 
-Deno update streamlines creation of desktop apps (2 minute read)
+Deno update streamlines creation of desktop apps (5 minute read)
 
-Deno Land released Deno 2.9 with an experimental deno desktop feature that compiles a script or web framework project into a single self-contained binary, running the UI in a webview and the logic in Deno via the same machinery as deno compile. The release also cuts hello-world cold start from 34ms to 17ms, holds resident memory flat near 62MB under load, and advances Node.js compatibility to version 26.
+(blurb not generated)
 
 Bringing more agent harnesses and frameworks to Cloudflare, starting with Flue (5 minute read)
 
@@ -216,40 +220,36 @@ DeepReinforce releases Ornith-1.0 open-source coding models (5 minute read)
 
 (blurb not generated)
 
+DeepSeek open sources DSpark, a new framework to speed up LLM inference by up to 85% (3 minute read)
+
+DeepSeek open sourced DSpark, an MIT-licensed speculative decoding framework that speeds up LLM inference by up to 85% without altering model outputs. The release ships a technical paper, model checkpoints, and DeepSpec, a training and evaluation codebase, with tested support spanning DeepSeek-V4-Flash and V4-Pro plus open weights from Qwen and Gemma.
+
 Accelerating Transformers Fine-Tuning with NVIDIA NeMo AutoModel (5 minute read)
 
 (blurb not generated)
 
-Unlocking the Cloudflare app ecosystem with OAuth for all (5 minute read)
+Ornith-1.0: self-improving open-source models for agentic coding (1 minute read)
 
-(blurb not generated)
+Ornith-1.0 is a family of MIT-licensed open-source coding models in 9B and 31B dense plus 35B and 397B MoE variants, post-trained on Gemma 4 and Qwen 3.5 and topping comparable open models on Terminal-Bench 2.1, SWE-Bench, and NL2Repo. Its RL training jointly optimizes the agent scaffold alongside the solution rollouts, so the model learns better search trajectories rather than just better answers within a fixed harness.
 
-Visual Studio Code locks down untrusted code (2 minute read)
+Unlocking the Cloudflare app ecosystem with OAuth for all (1 minute read)
 
-VS Code 1.26 ships Workspace Trust, which now opens unfamiliar project folders in Restricted Mode to block automatic code execution until the developer explicitly trusts the folder. The release also surfaces total cost across an entire chat session rather than per-turn, and lets a single Copilot agent host run multiple chats side-by-side that share the same working context.
+Cloudflare opened self-managed OAuth to all Developer Platform customers, letting developers create and manage their own OAuth clients for scoped, delegated access to the Cloudflare API instead of relying on harder-to-manage API tokens. The release adds clearer consent screens, dashboard-based revocation, and visible app ownership to curb OAuth phishing, targeting SaaS integrations, internal developer platforms, and agentic tools that need delegated access.
 
-TypeScript Performance in TanStack Table V9 (5 minute read)
-
-(blurb not generated)
-
-Cursor releases iPhone and iPad app following recent acquisition by SpaceX (1 minute read)
-
-Cursor released its first iOS app, bringing its agentic coding tools to iPhone and iPad following SpaceX's acquisition of the company earlier this month. The app launches cloud coding agents from anywhere, supports voice conversations, diff inspection, and PR merges, with Remote Control handoffs between local and cloud agents planned next and 75% off Composer 2.5 runs through July 5.
-
-Microsoft launches MAI-Code-1-Flash on GitHub Copilot (5 minute read)
+Visual Studio Code locks down untrusted code (5 minute read)
 
 (blurb not generated)
 
 🎁
 Miscellaneous
 
-The attack that hijacked Claude Code came through Sentry. Datadog, PagerDuty, and Jira have the same exposure. (3 minute read)
+The attack that hijacked Claude Code came through Sentry. Datadog, PagerDuty, and Jira have the same exposure. (5 minute read)
 
-Tenet Security's "agentjacking" disclosure shows that a single crafted Sentry error event, sent through a public DSN that needs no authentication, can inject attacker instructions that Claude Code, Cursor, and Codex execute as trusted diagnostic output with the developer's full privileges. Tenet hit an 85% success rate across 100-plus controlled targets, found 2,388 organizations with exposed DSNs, and warns the same exposure applies to any MCP-connected source like Datadog, PagerDuty, or Jira.
+(blurb not generated)
 
-Pollen tried to remove my article and Google is assisting with it (1 minute read)
+Pollen tried to remove my article and Google is assisting with it (5 minute read)
 
-The Pragmatic Engineer's Gergely Orosz reports that Google delisted his 2022 article on events startup Pollen's $800M collapse after receiving a bogus copyright claim, despite him being the sole copyright holder. The case shows how anyone can file a fraudulent DMCA notice to scrub critical coverage from search results, with Google honoring the takedown by default and leaving the author to appeal.
+(blurb not generated)
 
 7,000 Langflow servers are under attack. LangGraph and LangChain have the same holes (5 minute read)
 
@@ -259,9 +259,9 @@ A public Sentry key is all it takes to hijack Claude Code, Cursor, and Codex (5 
 
 (blurb not generated)
 
-Hijacked npm and Go Packages Use VS Code Tasks to Deploy Python Infostealer (5 minute read)
+Hijacked npm and Go Packages Use VS Code Tasks to Deploy Python Infostealer (1 minute read)
 
-(blurb not generated)
+Researchers at JFrog found two hijacked npm packages and a cluster of Go packages that abuse a hidden VS Code task, configured with runOn folderOpen, to execute disguised JavaScript the moment a project opens in VS Code or Cursor. The loader pulls encrypted payloads from blockchain transaction data and ultimately deploys the InvisibleFerret Python infostealer, part of North Korea's Contagious Interview campaign targeting developers through fake job interviews.
 
 GLM-5.2 Raises the Bar for Open Models (5 minute read)
 
@@ -271,13 +271,17 @@ GLM-5.2 Is The New Best Open Model (5 minute read)
 
 (blurb not generated)
 
-Public PoC Released for Critical libssh2 CVE-2026-55200 Client-Side SSH Flaw (5 minute read)
+Amazon Q VS Extension Flaw Leads to Cloud Credential Theft (1 minute read)
+
+AWS patched a high-severity flaw (CVE-2026-12957) in the Amazon Q Developer extension for VS Code, found by Wiz Research, that let a malicious repository execute arbitrary code and steal AWS credentials, API keys, and SSH agent sockets the moment a developer opened it. The bug came from Amazon Q auto-loading and running MCP server configs from workspace files without approval, and it mirrors similar MCP-execution CVEs disclosed in Claude Code, Cursor, and Windsurf.
+
+Public PoC Released for Critical libssh2 CVE-2026-55200 Client-Side SSH Flaw (1 minute read)
+
+A public proof-of-concept landed for CVE-2026-55200, a critical libssh2 flaw (CVSS 9.2) where a malicious SSH server triggers an integer overflow in ssh2_transport_read() and an out-of-bounds heap write on the connecting client, with no credentials or interaction required. Because libssh2 is embedded and often statically linked into curl, Git, PHP, backup agents, and firmware updaters, a distro package bump will not patch the copies you do not know are there.
+
+‘DirtyClone’ Linux Kernel Vulnerability Leads to Root Access (5 minute read)
 
 (blurb not generated)
-
-‘DirtyClone’ Linux Kernel Vulnerability Leads to Root Access (1 minute read)
-
-JFrog published technical details and a proof of concept for DirtyClone (CVE-2026-43503, CVSS 8.8), a Linux kernel local privilege escalation bug that lets any local user gain root by corrupting file-backed page-cache memory through zero-copy socket buffer paths. The fix landed in v7.1-rc5, but only kernels carrying the full DirtyFrag patch chain are protected, leaving Debian, Fedora, and Ubuntu systems with unprivileged user namespaces exposed.
 
 AI was supposed to kill engineering jobs, but new data suggests they're the most resilient (5 minute read)
 
@@ -294,21 +298,21 @@ Will It Mythos? (5 minute read)
 
 (blurb not generated)
 
-EU Open Sources Ten-Year Network Development Planning Tools (5 minute read)
+EU Open Sources Ten-Year Network Development Planning Tools (1 minute read)
+
+Open Energy Transition and ENTSO-E open-sourced Open-TYNDP, a PyPSA-Eur-based toolchain for Europe's ten-year electricity grid planning.
+
+Google's new hand-wave reCAPTCHA can be bypassed with a stock photo (5 minute read)
 
 (blurb not generated)
 
-Google's new hand-wave reCAPTCHA can be bypassed with a stock photo (1 minute read) [flag]
+Pong game recompiles its own source code every frame — winning entry at IOCCC29 was generated by a custom compiler (5 minute read)
 
-Google's new hand-wave reCAPTCHA, which extracts 21 hand-knuckle coordinates from camera video, can be passed by feeding a stock image through OBS Virtual Camera.
+(blurb not generated)
 
-Pong game recompiles its own source code every frame — winning entry at IOCCC29 was generated by a custom compiler (1 minute read)
+CachyOS June 2026 Release (5 minute read)
 
-An IOCCC29-winning Pong recompiles its own source every frame, each run printing the C for the next frame with state baked in.
-
-CachyOS June 2026 Release (1 minute read)
-
-CachyOS June 2026 release adds a Hyprland Noctalia desktop, DNS-over-QUIC via blocky, extended Python PGO, and GCC branch-misprediction tuning.
+(blurb not generated)
 
 I Stored a Website in a Favicon (5 minute read)
 
