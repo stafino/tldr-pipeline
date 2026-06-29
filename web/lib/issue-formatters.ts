@@ -19,12 +19,17 @@ export interface IssueStory {
   url: string;
   /** Displayed link text (headline) */
   title: string;
-  /** "(N minute read)" suffix */
-  minuteRead: number;
+  /** "(N minute read)" suffix; null/0 omits it (funding raises have no read-time) */
+  minuteRead: number | null;
   /** Body paragraph below the link; null/empty → fallback or omitted */
   blurb: string | null;
   /** Optional sub-line (VC issue: "REGION · firm1 · firm2"); Edition leaves unset */
   meta?: string | null;
+}
+
+/** "(N minute read)" suffix, or empty when read-time is absent. */
+function readSuffix(min: number | null | undefined): string {
+  return min ? ` (${min} minute read)` : '';
 }
 
 export interface IssueSection {
@@ -81,7 +86,7 @@ export function buildPlainTextIssue(doc: IssueDoc, opts: PlainTextOptions): stri
     lines.push('');
     for (let i = 0; i < sec.stories.length; i++) {
       const it = sec.stories[i];
-      lines.push(`${it.title} (${it.minuteRead} minute read)`);
+      lines.push(`${it.title}${readSuffix(it.minuteRead)}`);
       lines.push(it.url);
       lines.push('');
       if (it.blurb) {
@@ -122,7 +127,7 @@ export function buildMarkdownIssue(doc: IssueDoc, opts: MarkdownOptions = {}): s
     lines.push(`## ${sec.emoji} ${sec.name}`);
     lines.push('');
     for (const it of sec.stories) {
-      const titleText = `${it.title} (${it.minuteRead} minute read)`;
+      const titleText = `${it.title}${readSuffix(it.minuteRead)}`;
       lines.push(`**[${titleText}](${it.url})**`);
       lines.push('');
       if (it.blurb) {
@@ -158,7 +163,7 @@ export function buildSemanticHtmlIssue(
     parts.push(`<h2>${escapeHtml(sec.emoji)} ${escapeHtml(sec.name)}</h2>`);
     for (const it of sec.stories) {
       parts.push(
-        `<p><strong><a href="${escapeHtml(it.url)}">${escapeHtml(it.title)} (${it.minuteRead} minute read)</a></strong></p>`,
+        `<p><strong><a href="${escapeHtml(it.url)}">${escapeHtml(it.title)}${readSuffix(it.minuteRead)}</a></strong></p>`,
       );
       if (it.blurb) {
         parts.push(`<p>${escapeHtml(it.blurb)}</p>`);
@@ -252,7 +257,7 @@ export function buildEmailHtmlIssue(doc: IssueDoc, opts: EmailHtmlOptions): stri
     );
     for (let i = 0; i < sec.stories.length; i++) {
       const it = sec.stories[i];
-      const linkText = `<span style="color:#111;">${escapeHtml(it.title)} (${it.minuteRead} minute read)</span>`;
+      const linkText = `<span style="color:#111;">${escapeHtml(it.title)}${readSuffix(it.minuteRead)}</span>`;
       const link = `<a href="${escapeHtml(it.url)}" style="color:#111;font-weight:700;text-decoration:underline;">${linkText}</a>`;
       parts.push(`<p style="${P}padding:0 0 ${opts.storyLinkPaddingBottom}px;">${link}</p>`);
 

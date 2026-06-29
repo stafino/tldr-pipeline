@@ -221,24 +221,26 @@ function listScrapeDates(): string[] {
   return Array.from(dates).sort().reverse();
 }
 
-/**
- * Stable key for "the same funding round": normalized company + classified
- * stage. Returns null when the company is unknown, so anonymous rows are
- * never collapsed into each other.
- */
-function roundKey(r: FundingRound): string | null {
-  const company = (r.company || '').trim().toLowerCase().replace(/\s+/g, ' ');
-  if (!company) return null;
-  const stage = classifyFundingStage(r.round_label).short.toLowerCase();
-  return `${company}::${stage}`;
+function normCompany(r: FundingRound): string {
+  return (r.company || '').trim().toLowerCase().replace(/\s+/g, ' ');
+}
+
+function stageOf(r: FundingRound): string {
+  return classifyFundingStage(r.round_label).short.toLowerCase();
 }
 
 /**
  * Load every funding row across every scrape file, deduplicated first by
  * story_url, then by round (same company + stage). The second pass collapses
  * the same raise covered by different sources on different days - e.g. Alan's
- * Series A reported by Sifted and another outlet a day apart. Keeps the
- * earliest raised_date (the original announcement); later re-coverage is dropped.
+ * Series G reported by Sifted and tech.eu a day apart. Keeps the earliest
+ * raised_date (the original announcement); later re-coverage is dropped.
+ *
+ * Stage is taken from the classified round label. When one source omits the
+ * stage, its blank stage is treated as a wildcard and folds into the company's
+ * single known stage (e.g. Nearfield "" + Nearfield "Series D" -> one round).
+ * Companies with two or more distinct known stages keep blank-stage rows
+ * separate, since we can't tell which round they belong to.
  */
 function loadAllRows(): FundingRound[] {
   const byUrl = new Map<string, FundingRound>();
@@ -254,14 +256,32 @@ function loadAllRows(): FundingRound[] {
     }
   }
 
+  // Per company, the set of distinct non-blank stages seen. Used to resolve a
+  // blank-stage row to the one known stage when there's exactly one.
+  const knownStages = new Map<string, Set<string>>();
+  for (const r of byUrl.values()) {
+    const company = normCompany(r);
+    const stage = stageOf(r);
+    if (!company || !stage) continue;
+    let set = knownStages.get(company);
+    if (!set) knownStages.set(company, (set = new Set()));
+    set.add(stage);
+  }
+
   const byRound = new Map<string, FundingRound>();
   const anonymous: FundingRound[] = [];
   for (const r of byUrl.values()) {
-    const key = roundKey(r);
-    if (!key) {
-      anonymous.push(r);
+    const company = normCompany(r);
+    if (!company) {
+      anonymous.push(r); // unknown company: never collapse into another
       continue;
     }
+    let stage = stageOf(r);
+    if (!stage) {
+      const known = knownStages.get(company);
+      if (known && known.size === 1) stage = [...known][0];
+    }
+    const key = `${company}::${stage}`;
     const existing = byRound.get(key);
     if (!existing || r.raised_date < existing.raised_date) byRound.set(key, r);
   }
