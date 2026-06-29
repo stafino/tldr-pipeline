@@ -10,6 +10,7 @@ import type {
   FundingRound,
   VcArticle,
 } from './types';
+import { classifyFundingStage } from './formatters';
 
 // Data location: prefer ./_embedded (created by scripts/embed.mjs for CLI
 // deploys), then ../ (local dev + GitHub-integration deploy where the whole
@@ -220,7 +221,25 @@ function listScrapeDates(): string[] {
   return Array.from(dates).sort().reverse();
 }
 
-/** Load every funding row across every scrape file, deduplicated by story_url. */
+/**
+ * Stable key for "the same funding round": normalized company + classified
+ * stage. Returns null when the company is unknown, so anonymous rows are
+ * never collapsed into each other.
+ */
+function roundKey(r: FundingRound): string | null {
+  const company = (r.company || '').trim().toLowerCase().replace(/\s+/g, ' ');
+  if (!company) return null;
+  const stage = classifyFundingStage(r.round_label).short.toLowerCase();
+  return `${company}::${stage}`;
+}
+
+/**
+ * Load every funding row across every scrape file, deduplicated first by
+ * story_url, then by round (same company + stage). The second pass collapses
+ * the same raise covered by different sources on different days - e.g. Alan's
+ * Series A reported by Sifted and another outlet a day apart. Keeps the
+ * earliest raised_date (the original announcement); later re-coverage is dropped.
+ */
 function loadAllRows(): FundingRound[] {
   const byUrl = new Map<string, FundingRound>();
   for (const d of listScrapeDates()) {
@@ -234,7 +253,19 @@ function loadAllRows(): FundingRound[] {
       byUrl.set(fixed.story_url, fixed);
     }
   }
-  return Array.from(byUrl.values());
+
+  const byRound = new Map<string, FundingRound>();
+  const anonymous: FundingRound[] = [];
+  for (const r of byUrl.values()) {
+    const key = roundKey(r);
+    if (!key) {
+      anonymous.push(r);
+      continue;
+    }
+    const existing = byRound.get(key);
+    if (!existing || r.raised_date < existing.raised_date) byRound.set(key, r);
+  }
+  return [...byRound.values(), ...anonymous];
 }
 
 /** Distinct raised_dates across every stored round, newest first. */
