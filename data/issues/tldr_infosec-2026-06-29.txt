@@ -1,0 +1,235 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR InfoSec 2026-06-29
+
+🔓
+Attacks & Vulnerabilities
+
+Clean GitHub repo tricks AI coding agents into running malware (5 minute read)
+
+(blurb not generated)
+
+FortiBleed: 86,000 Fortinet Device Credentials Compromised (5 minute read)
+
+(blurb not generated)
+
+Anatomy of a Failed (Nation-State?) Attack (5 minute read)
+
+(blurb not generated)
+
+Cisco Unified CM flaw CVE-2026-20230 now exploited in attacks (5 minute read)
+
+(blurb not generated)
+
+Public PoC Released for Critical libssh2 CVE-2026-55200 Client-Side SSH Flaw (1 minute read)
+
+A public PoC is out for CVE-2026-55200 (CVSS 9.2), a critical integer-overflow-to-heap-write in libssh2's ssh2_transport_read() that lets a malicious SSH server corrupt memory on a connecting client with no credentials or interaction, with possible RCE. The flaw affects all releases through 1.11.1 and is embedded in curl, Git, PHP, and firmware updaters, many statically linked, so inventory linked binaries and rebuild rather than relying on distro package updates.
+
+Klue hack results in data breach at several cybersecurity firms (5 minute read)
+
+(blurb not generated)
+
+Amadey and StealC Malware Network Disrupted, 27M Stolen Credentials Recovered (5 minute read)
+
+(blurb not generated)
+
+Hijacked npm and Go Packages Use VS Code Tasks to Deploy Python Infostealer (1 minute read)
+
+Hijacked npm packages (html-to-gutenberg, fetch-page-assets) and a cluster of Go packages hide execution inside a VS Code task configured with "runOn: folderOpen," triggering arbitrary code when the project is opened as a trusted workspace in VS Code or Cursor. The loader retrieves encrypted JavaScript from blockchain transaction data and deploys the InvisibleFerret Python infostealer, attributed to North Korea's Contagious Interview campaign and tracked as "Fake Font.
+
+Nearly Half of LG Smart TV Apps Are Laced with Proxies (5 minute read)
+
+(blurb not generated)
+
+Data Exposure Flaws Threaten Dify AI Platform Used by 1 Million Apps (1 minute read)
+
+Four vulnerabilities dubbed DifyTap in the open-source LLMOps platform Dify, which powers over 1 million applications, enable cross-tenant data theft in multi-tenant deployments, including the critical CVE-2026-41948 (CVSS 9.4) in the plugin daemon and CVE-2026-41947 (CVSS 9.1) in tracing that creates a persistent message-exfiltration channel. Dify 1.14.2 patches all four flaws; operators running multi-tenant instances should update immediately and apply WAF rules to block exploitation.
+
+Microsoft discovers new lightweight backdoor that steals cryptocurrency (5 minute read)
+
+(blurb not generated)
+
+7,000 Langflow servers are under attack. LangGraph and LangChain have the same holes (5 minute read)
+
+(blurb not generated)
+
+StubZero: $148,337 RCE in Google Cloud Production (5 minute read)
+
+(blurb not generated)
+
+FortiBleed Targeted FortiGate Firewalls in 110 Million-Credential Harvesting Operation (5 minute read)
+
+(blurb not generated)
+
+Decades-Old Squid Proxy Flaw ‘Squidbleed' Can Expose User Data (5 minute read)
+
+(blurb not generated)
+
+Ukraine Says Russian Intelligence Used Fake Support Texts to Steal Messaging Credentials (5 minute read)
+
+(blurb not generated)
+
+Anonymous GitHub account mass-dropping undisclosed 0-days (5 minute read)
+
+(blurb not generated)
+
+A public Sentry key is all it takes to hijack Claude Code, Cursor, and Codex (5 minute read)
+
+(blurb not generated)
+
+An update on FortiBleed — what's happening with victim orgs (5 minute read)
+
+(blurb not generated)
+
+Data breach exposes up to 14.2 million email logins at six ISPs (1 minute read)
+
+KDDI Corporation disclosed a breach in which attackers exploited a flaw in unnamed third-party software to access an email system shared across six Japanese ISPs, exposing up to 14.2 million current, former, and inactive accounts. The company blocked the intruder after discovering the compromise on June 17, but some passwords were stored in plaintext, so affected customers should reset email credentials and enable 2FA immediately.
+
+🧠
+Strategies & Tactics
+
+RFC 9958 - Post-Quantum Cryptography for Engineers (5 minute read)
+
+(blurb not generated)
+
+GitHub Updates actions/checkout to Block Common Pwn Request Attack Patterns (5 minute read)
+
+(blurb not generated)
+
+GLM 5.2 beats Claude in our benchmarks (5 minute read)
+
+(blurb not generated)
+
+Vulnerability Reports Are Not Special Anymore (5 minute read)
+
+(blurb not generated)
+
+A Mechanistic Explanation of Prompt Injection (and why you should study roles) (5 minute read)
+
+(blurb not generated)
+
+Companies keep bolting AI onto their products, and the security bill is coming due (1 minute read)
+
+Cobalt's AI and Pentesting Pulse Report 2026 finds that AI and LLM features carry a high-risk vulnerability rate 2.7 times that of any other system, with about one in three findings rated high risk, a gap that has held for two years. These flaws also get fixed slowest, with a 38.4% resolution rate that leaves two of every three serious findings open. Shadow AI, where staff use unapproved tools and leak sensitive data, drives 44% of confirmed incidents, ahead of data poisoning and prompt injection.
+
+Free VPN And Streaming Apps Are Polluting Business Networks With Residential Proxy Traffic (5 minute read)
+
+(blurb not generated)
+
+Insights on Indirect Prompt Injection (5 minute read)
+
+(blurb not generated)
+
+Cisco's SSE Rollout Shows The Real Work Behind Zero Trust (5 minute read)
+
+(blurb not generated)
+
+Prompt Injection as Role Confusion (5 minute read)
+
+(blurb not generated)
+
+🧑‍💻
+Launches & Tools
+
+OpenAI Unveils GPT-5.6 Sol as Its Most Advanced Cybersecurity AI (1 minute read)
+
+OpenAI released a limited preview of GPT-5.6 Sol, its most capable cybersecurity model, which matched Mythos Preview on ExploitBench while using roughly a third of the output tokens. Sol skews toward defensive work like vulnerability identification and patch development, isolating bugs in the Chromium and Firefox codebases without building a full-chain exploit, and ships behind real-time bio and cyber input classifiers.
+
+Perplexity Bumblebee Review: The Supply Chain Scanner Your Dev Machine Needs (3 minute read)
+
+Perplexity open-sourced Bumblebee, a read-only Go supply-chain scanner that inventories installed packages, editor and browser extensions, and MCP configs, then matches them against known-compromised advisories without ever invoking a package manager. It emits NDJSON and scanned 847 packages across 9 ecosystems in under 4 seconds, filling the developer-machine blind spot that CI, SBOM, and EDR tools miss, including poisoned claude_desktop_config.json MCP servers.
+
+DarkMoon: Open-source AI pentesting platform (1 minute read)
+
+DarkMoon, an open-source AI pentesting platform, runs end-to-end security assessments by pairing an LLM orchestrator (OpenCode) with an MCP control layer that exposes an allow-list of 50+ tools, including Nuclei, sqlmap, BloodHound, and NetExec, inside an isolated Docker container. The LLM never executes commands directly, and specialized sub-agents for web apps, Active Directory, Kubernetes, and network protocols map coverage to ISO 27001, NIST SP 800-115, and MITRE ATT&CK.
+
+OpenAI launches new security tools and updates GPT-5.5-Cyber (5 minute read)
+
+(blurb not generated)
+
+Patch the Planet: a Daybreak initiative to support open source maintainers (5 minute read)
+
+(blurb not generated)
+
+IP Crawl: Living atlas of open webcams discovered on the public internet (1 minute read)
+
+IP Crawl is a public-facing index of internet-exposed webcams, presenting a live atlas of unsecured camera feeds discovered across residential and commercial ISP ranges worldwide. The tool surfaces geolocation, owning network, and live-or-snapshot status for each device, giving defenders a fast way to check whether their own IP ranges expose camera streams that should be firewalled or credentialed.
+
+IBM, Red Hat, Palo Alto team to secure open-source software (5 minute read)
+
+(blurb not generated)
+
+🎁
+Miscellaneous
+
+AI and Liability (5 minute read)
+
+(blurb not generated)
+
+EU to legislate about Chat Control behind closed doors (1 minute read)
+
+EU governments and Parliament President Roberta Metsola are pushing two simultaneous tracks to revive Chat Control client-side scanning, with the Council meeting Friday to adopt a first-reading position on the expired Chat Control 1.0 regime and final trilogue negotiations on the permanent CSAR regulation (2022/0155) set for Monday, June 29. Both moves would mandate mass scanning of private messages and end anonymous communication, advancing the proposal Parliament rejected in March.
+
+Accenture to buy Dragos, runZero, and NetRise in $4.2 billion cybersecurity deal (5 minute read)
+
+(blurb not generated)
+
+NSA Lost Access to Powerful AI Model Amid Anthropic Dispute (5 minute read)
+
+(blurb not generated)
+
+Aggressive federal PQE timeline prompts warnings for enterprises (5 minute read)
+
+(blurb not generated)
+
+OpenAI Previews GPT-5.6 Sol With Restricted Access and Stronger Cyber Safeguards (5 minute read)
+
+(blurb not generated)
+
+The KIDS Act would require age checks to get online (1 minute read)
+
+Congress is preparing to vote within the week on the KIDS Act, a package combining a revised KOSA with other internet bills under an expedited process that pressures platforms to age-verify all users. EFF argues KOSA's "knew or should have known" negligence standard for identifying minors will push services toward blanket age-checking, government-directed moderation, and new rules touching encrypted communications, at the cost of privacy and free expression.
+
+A look at security flaws, police misuse, and other concerns over the 100K+ AI-enabled automated license plate readers installed across the US, mostly from Flock (Max Miller/Engadget) (1 minute read)
+
+Engadget published an investigation into the 100,000+ AI-enabled automated license plate readers now deployed across the US, most of them made by Flock, documenting security flaws, exposed devices, and police misuse of the surveillance network. The report details cameras left accessible online and officers running searches outside policy, underscoring how a privately operated tracking system has scaled nationwide with minimal oversight.
+
+Cloudflare teams up with Chrome, Firefox, and Edge on a privacy-first anti-bot protocol (5 minute read)
+
+(blurb not generated)
+
+China’s Z.ai claims it can match Mythos on cybersecurity (5 minute read)
+
+(blurb not generated)
+
+Cisco Acquires WideField To Secure AI Agents And Non-Human Identities (5 minute read)
+
+(blurb not generated)
+
+California legislature agrees to upload driver's licenses to national database (5 minute read)
+
+(blurb not generated)
+
+Sycophantic chatbots and the harms that build over many chats (1 minute read)
+
+Researchers describe "affective safety," a class of AI chatbot harm that accumulates across many conversations as systems optimize to hold user attention, evading single-turn moderation that only scores one output at a time. Analysis of 391,000 messages from users with poor outcomes found sycophancy in over 70% of responses, a tendency trained into model weights because agreeable answers earn higher reward during RLHF.
+
+China Has Matched Anthropic in Cybersecurity, Resetting AI Race (5 minute read)
+
+(blurb not generated)
+
+Osney Capital closes oversubscribed £60M debut to become the UK’s first dedicated cyber seed fund (1 minute read)
+
+Osney Capital closed an oversubscribed £60M debut fund, becoming the UK's first venture fund dedicated solely to seed-stage cybersecurity, backed by the British Business Bank and accredited by the National Security Strategic Investment Fund. The firm has already deployed into seven pre-seed and seed companies spanning AI security, disinformation detection, and software supply-chain protection, with a target portfolio of 30.
+
+⚡
+Quick Links
+
+MEV Bot Exploited for $15M via Fake-Token Route Attack (5 minute read)
+
+(blurb not generated)
+
+Trump Seeks to Boost Quantum Computing With New Executive Orders (5 minute read)
+
+(blurb not generated)

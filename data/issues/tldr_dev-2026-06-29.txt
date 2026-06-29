@@ -1,0 +1,279 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR Dev 2026-06-29
+
+🧑‍💻
+Articles & Tutorials
+
+How we found a bug in the hyper HTTP library (5 minute read)
+
+(blurb not generated)
+
+Linux Finally Eliminates The strncpy API After Six Years Of Work, 360+ Patches (5 minute read)
+
+(blurb not generated)
+
+Building Reliable Agentic AI Systems (5 minute read)
+
+(blurb not generated)
+
+Making secret scanning more trustworthy: Reducing false positives at scale (5 minute read)
+
+(blurb not generated)
+
+WAL-RUS: a Rust Rewrite of WAL-G for PostgreSQL Backups (1 minute read)
+
+ClickHouse Cloud built WAL-RUS, an open-source Rust reimplementation of WAL-G for Postgres WAL archival and backups, motivated by the unpredictable memory footprint of Go's garbage-collected runtime in resource-constrained environments. The post details how Go's sawtooth GC pattern and reserved virtual memory force operators to over-provision backup infrastructure, and how WAL-RUS delivers WAL-G compatibility with a tighter, more predictable memory profile that simplifies capacity planning.
+
+RFC 9958 - Post-Quantum Cryptography for Engineers (5 minute read)
+
+(blurb not generated)
+
+How we built an internal data analytics agent (5 minute read)
+
+(blurb not generated)
+
+DLL that was not present in memory despite not being formally unloaded (1 minute read)
+
+A Microsoft shell32 team traced a flood of crash reports to a recursive exception-handling death spiral, where RtlLookupFunctionEntry kept faulting during dispatch and restarted the loop until the stack overflowed. The post walks through reading the repeating stack frames in the crash dumps and explains why the bug was misattributed to shell32, which only appeared to be the source of the original exception.
+
+Using Codex for Long-Running Projects (5 minute read)
+
+(blurb not generated)
+
+ClickHouse Ingestion at Scale: An Open-Source Zepto Engineering Story (5 minute read)
+
+(blurb not generated)
+
+How Netflix Simplified Batch Compute with Kueue (5 minute read)
+
+(blurb not generated)
+
+p99 0 ms* autocomplete for 240 million domain names (5 minute read)
+
+(blurb not generated)
+
+The text in Claude Code's “Extended Thinking” output is not authentic (5 minute read)
+
+(blurb not generated)
+
+Don't rely on instructions, use Agent Hooks to enforce guardrails (5 minute read)
+
+(blurb not generated)
+
+Client-Side Load Balancing at a Million Requests Per Second (5 minute read)
+
+(blurb not generated)
+
+AMD Strix Halo RDMA Cluster Setup Guide (5 minute read)
+
+(blurb not generated)
+
+Optimization catalog. How 4 bytes of padding make array clearing 49% faster (5 minute read)
+
+(blurb not generated)
+
+Anatomy of a Failed (Nation-State?) Attack (5 minute read)
+
+(blurb not generated)
+
+Fintech Engineering Handbook (5 minute read)
+
+(blurb not generated)
+
+Metric Semantic Layer: How Lyft Governs and Scales Key Data Definitions (5 minute read)
+
+(blurb not generated)
+
+🧠
+Opinions & Advice
+
+The cost YAGNI was never about (5 minute read)
+
+(blurb not generated)
+
+The Coming Loop (5 minute read)
+
+(blurb not generated)
+
+Clean GitHub repo tricks AI coding agents into running malware (5 minute read)
+
+(blurb not generated)
+
+In praise of memcached (5 minute read)
+
+(blurb not generated)
+
+HackerRank open sourced its ATS. My resume scored 90/100. Oh wait 74. No – 88 (1 minute read)
+
+The author tested HackerRank's open-sourced LLM-based ATS on a single unchanged resume and got scores ranging from 66 to 99 across 100 runs, enough to fail a typical 85-point cutoff 65% of the time. The post traces the variance to subjective categories like projects, where the model's judgment is non-deterministic even at temperature 0, while checklist items like technical skills stay consistent.
+
+The Flat Curve Society (5 minute read)
+
+(blurb not generated)
+
+The Minimum Viable Unit of Saleable Software (5 minute read)
+
+(blurb not generated)
+
+Suspicious Discontinuities (2020) (5 minute read)
+
+(blurb not generated)
+
+LLMs are complicated now (5 minute read)
+
+(blurb not generated)
+
+I am dreading our LLM-written incident report future (5 minute read)
+
+(blurb not generated)
+
+The Problem is Prompt Debt (5 minute read)
+
+The author argues that hand-tuned natural language prompts accrue "prompt debt," a slow-building liability that caps what AI systems can become. As teams pile edge-case instructions and all-caps threats onto a single prompt, iteration grinds to a halt, the prompt becomes illegible to colleagues, and the application locks to one aging model because hot fixes break on any newer one.
+
+When I reject AI code even if it works (5 minute read)
+
+(blurb not generated)
+
+There is minimal downside to switching to open models (5 minute read)
+
+(blurb not generated)
+
+🚀
+Launches & Tools
+
+Deno Desktop (5 minute read)
+
+(blurb not generated)
+
+Temporary Cloudflare Accounts for AI agents (5 minute read)
+
+(blurb not generated)
+
+Lighthouse agentic browsing scoring (5 minute read)
+
+(blurb not generated)
+
+Run a vLLM Server on HF Jobs in One Command (5 minute read)
+
+(blurb not generated)
+
+Getting more from each token: How Copilot improves context handling and model routing (1 minute read)
+
+GitHub Copilot in VS Code now cuts per-turn overhead with prompt caching, which reuses model state for repeated prompt prefixes, and tool search, which loads tool schemas on demand instead of sending every definition every turn. The goal is spending less of each session on recurring context and more on the task, with Auto routing also expanding so Copilot picks the model that fits the work without the developer choosing each time.
+
+Run isolated sandboxes with full lifecycle control: AWS Lambda introduces MicroVMs (5 minute read)
+
+(blurb not generated)
+
+Announcing DuckDB 1.5.4 (5 minute read)
+
+(blurb not generated)
+
+Bringing more agent harnesses and frameworks to Cloudflare, starting with Flue (5 minute read)
+
+(blurb not generated)
+
+DeepReinforce releases Ornith-1.0 open-source coding models (5 minute read)
+
+(blurb not generated)
+
+Accelerating Transformers Fine-Tuning with NVIDIA NeMo AutoModel (5 minute read)
+
+(blurb not generated)
+
+Unlocking the Cloudflare app ecosystem with OAuth for all (1 minute read)
+
+Cloudflare opened self-managed OAuth to all Developer Platform customers, letting developers create and manage their own OAuth clients for scoped, delegated access to the Cloudflare API instead of relying on harder-to-manage API tokens. The release adds clearer consent screens, dashboard-based revocation, and visible app ownership to curb OAuth phishing, targeting SaaS integrations, internal developer platforms, and agentic tools that need delegated access.
+
+TypeScript Performance in TanStack Table V9 (5 minute read)
+
+(blurb not generated)
+
+Microsoft launches MAI-Code-1-Flash on GitHub Copilot (5 minute read)
+
+(blurb not generated)
+
+Librepods: AirPods liberated (5 minute read)
+
+(blurb not generated)
+
+Perplexity Bumblebee Review: The Supply Chain Scanner Your Dev Machine Needs (3 minute read)
+
+Perplexity open-sourced Bumblebee, a read-only supply chain scanner that inventories installed packages, editor extensions, MCP configs, and browser extensions and matches them against known-compromised versions without ever invoking a package manager. The single Go binary scanned 847 packages across 9 ecosystems in under 4 seconds and emits NDJSON, positioning it as a fast developer-machine triage tool rather than a CI replacement for Snyk or Socket.
+
+Build real agentic apps using CUGA: two dozen working examples on a lightweight harness (5 minute read)
+
+(blurb not generated)
+
+Vercel Launches AI SDK 7 with Enhanced Stream and Tool Orchestration (5 minute read)
+
+(blurb not generated)
+
+GitHub Updates actions/checkout to Block Common Pwn Request Attack Patterns (5 minute read)
+
+(blurb not generated)
+
+Cloudflare teams up with Chrome, Firefox, and Edge on a privacy-first anti-bot protocol (5 minute read)
+
+(blurb not generated)
+
+Wayfinder Router: deterministic routing of queries between local and hosted LLM (1 minute read)
+
+Wayfinder Router decides whether each prompt should go to your small local model or your big cloud one by reading its structure and wording, running offline in microseconds with no API call, classifier, or LLM judge. Cheap prompts stay local while hard ones hit the expensive model, and the decision is deterministic and free, though semantic-only difficulty has no structural tell and lexical cues ship off by default.
+
+🎁
+Miscellaneous
+
+7,000 Langflow servers are under attack. LangGraph and LangChain have the same holes (5 minute read)
+
+(blurb not generated)
+
+A public Sentry key is all it takes to hijack Claude Code, Cursor, and Codex (5 minute read)
+
+(blurb not generated)
+
+Hijacked npm and Go Packages Use VS Code Tasks to Deploy Python Infostealer (1 minute read)
+
+Researchers at JFrog found two hijacked npm packages and a cluster of Go packages that abuse a hidden VS Code task, configured with runOn folderOpen, to execute disguised JavaScript the moment a project opens in VS Code or Cursor. The loader pulls encrypted payloads from blockchain transaction data and ultimately deploys the InvisibleFerret Python infostealer, part of North Korea's Contagious Interview campaign targeting developers through fake job interviews.
+
+GLM-5.2 Raises the Bar for Open Models (5 minute read)
+
+(blurb not generated)
+
+GLM-5.2 Is The New Best Open Model (5 minute read)
+
+(blurb not generated)
+
+Public PoC Released for Critical libssh2 CVE-2026-55200 Client-Side SSH Flaw (1 minute read)
+
+A public proof-of-concept landed for CVE-2026-55200, a critical libssh2 flaw (CVSS 9.2) where a malicious SSH server triggers an integer overflow in ssh2_transport_read() and an out-of-bounds heap write on the connecting client, with no credentials or interaction required. Because libssh2 is embedded and often statically linked into curl, Git, PHP, backup agents, and firmware updaters, a distro package bump will not patch the copies you do not know are there.
+
+AI was supposed to kill engineering jobs, but new data suggests they're the most resilient (5 minute read)
+
+(blurb not generated)
+
+⚡
+Quick Links
+
+Optimizing Models to Be Fast at Codegen (5 minute read)
+
+(blurb not generated)
+
+Will It Mythos? (5 minute read)
+
+(blurb not generated)
+
+EU Open Sources Ten-Year Network Development Planning Tools (1 minute read)
+
+Open Energy Transition and ENTSO-E open-sourced Open-TYNDP, a PyPSA-Eur-based toolchain for Europe's ten-year electricity grid planning.
+
+I Stored a Website in a Favicon (5 minute read)
+
+(blurb not generated)
+
+JSON-LD Explained for Personal Websites (5 minute read)
+
+(blurb not generated)
