@@ -14,21 +14,29 @@ An Interview with Figma CEO Dylan Field About Design and AI (5 minute read)
 
 (blurb not generated)
 
-WhatsApp introduces usernames so you can chat without phone numbers (1 minute read)
+WhatsApp introduces usernames so you can chat without phone numbers (5 minute read)
 
-WhatsApp is adding usernames so people can message contacts without exchanging phone numbers, opening reservations this week ahead of a full rollout in the coming months. The move follows Signal's 2024 launch of the same feature and adds an optional username key, giving product teams building on WhatsApp a more privacy-friendly identity layer for business and creator accounts across its three billion users.
+(blurb not generated)
 
 Mark Zuckerberg Directed Meta to Create a Prediction Markets App (5 minute read)
 
 (blurb not generated)
 
+Booking.com still runs on the internal A/B testing framework its engineers wrote in Amsterdam in the mid-2000s, with no major rewrite since, and at any given moment it is running more than 1,000 live experiments on the same booking page you’re looking at (1 minute read)
+
+Booking.com still routes its entire site through an in-house experimentation platform its Amsterdam team built in the mid-2000s and never replaced, running more than 1,000 concurrent A/B tests on live production pages at any moment. The takeaway for PMs is that durable experimentation infrastructure, not a vendor tool, is what lets hundreds of squads ship overlapping tests against the same conversion funnel without contaminating each other's results.
+
 Gemini will now take notes for you in Google Meet for you, if you the minimum $20 AI tax (5 minute read)
 
 (blurb not generated)
 
-YouTube Shorts Dislike Data Stops Updating by Month’s End as Platform Overhauls Viewer Feedback Layer (1 minute read)
+Instagram Tests New Ways to Surface ‘Your Algorithm’ Controls (1 minute read)
 
-YouTube will stop updating Shorts dislike counts in YouTube Studio by the end of June, pointing creators instead toward Likes and a views-to-swipe-aways ratio as the primary performance signals. The change adds a sub-layer to the viewer "Not Interested" option, where specific dismissal reasons now feed the recommendation engine, so PMs tracking Shorts performance will need to rebuild dashboards around engagement metrics rather than dislikes.
+Instagram is testing new entry points for "Your Algorithm," its feed-customization tool, including pull-down menus and per-Reel buttons that let users dial topics up or down without digging into settings. Head Adam Mosseri framed the goal as making interest controls central to the app, part of a broader industry shift to explicit interest modeling that pushes creators and brands to compete on monetization and audience ownership rather than distribution.
+
+YouTube Shorts Dislike Data Stops Updating by Month’s End as Platform Overhauls Viewer Feedback Layer (5 minute read)
+
+(blurb not generated)
 
 🚀
 Opinions & Tutorials
@@ -45,6 +53,14 @@ How product management can fix your AI integration problems (5 minute read)
 
 (blurb not generated)
 
-Using Large Language Models as Low-Cost Statistical Estimators for Human-Response Data (1 minute read)
+How top PMs increase their leverage with AI (1 minute read)
 
-This paper proves that under squared loss, a well-calibrated LLM can match the Bayes-optimal risk for any inference that depends on data only through the conditional mean, making it a low-cost stand-in for human-subject experiments. The authors formalize the LLM as a misspecified estimator, decompose its error into representation bias and optimization error, and provide finite-sample bounds plus a calibration protocol with explicit decision rules. For PMs, it sets out the conditions under which synthetic user data can substitute for real research, and where it cannot.
+Lenny argues the PM role is shifting away from coordinating and aligning people toward hands-on building, with the strongest PMs now prototyping in real code, querying data conversationally through MCP, and running coding agents directly. The piece doubles as a pitch for a new "AI-Native Builder" course, but the underlying claim is the takeaway for PMs: leverage increasingly comes from doing the technical work yourself rather than handing it off, using tools like Claude Code, Codex, and Cursor inside discovery and shipping.
+
+Using Large Language Models as Low-Cost Statistical Estimators for Human-Response Data (5 minute read)
+
+(blurb not generated)
+
+10x Coding Speed Won't 10x Revenue (1 minute read)
+
+The author argues that 10x faster coding won't translate into 10x revenue, because product success has always been gated by the market, not engineering speed. If teams ship 100 products where they used to ship 10, the same ~4 will win, dropping the success rate from 4-in-10 to roughly 4-in-100 since software budgets and the broader economy aren't growing 10x to match. The takeaway for PMs: cheap code shifts the real bottleneck to go-to-market, so prioritize finding real buyers with real pain over raw output.

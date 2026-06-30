@@ -16,7 +16,7 @@ RFC 9958 - Post-Quantum Cryptography for Engineers (5 minute read)
 
 How we used DSPy to turn AI evaluations into better responses in Dash chat (5 minute read)
 
-Dropbox used DSPy to build a two-stage feedback loop for its Dash chat agent, first calibrating LLM-as-judge evaluations against human-labeled examples, then using those tuned judges to optimize the agent's system prompt. The post walks through the judge-calibration setup and DSPy optimizers like GEPA and MIPROv2, with the result being significantly fewer incomplete answers and lower token usage without degrading answer quality.
+(blurb not generated)
 
 DLL that was not present in memory despite not being formally unloaded (5 minute read)
 
@@ -26,45 +26,45 @@ Using Codex for Long-Running Projects (5 minute read)
 
 (blurb not generated)
 
-WATaBoy: JIT-Ing Game Boy Instructions to WASM Beats a Native Interpreter (1 minute read)
+What happens when you run a CUDA kernel? (5 minute read)
 
-A developer building a Game Boy emulator for their final-year project generated WebAssembly bytecode from Game Boy instructions, exploiting the JIT compilation that JavaScriptCore applies to hot Wasm in browsers, the one path around Apple's iOS JIT ban. The JIT-to-Wasm approach stays cycle-accurate by predicting interrupts and falling back to an interpreter, and it beats a natively running interpreter on performance.
+(blurb not generated)
 
-What happens when you run a CUDA kernel? (1 minute read)
+WATaBoy: JIT-Ing Game Boy Instructions to WASM Beats a Native Interpreter (5 minute read)
 
-This post traces a single CUDA vector-add kernel from source down to the warps that execute it and back, covering how nvcc fans out to multiple compilers (cicc, ptxas, fatbinary) to produce PTX, SASS, and an embedded fatbin. The walkthrough then follows the launch through the driver stack, accounting for the tens of millions of CPU instructions, two device files, ~900 ioctls, and one memory-mapped doorbell register that turn a million float additions into a result.
+(blurb not generated)
 
-MCP Server Architecture Patterns for LLM-Integrated Applications (1 minute read)
+MCP Server Architecture Patterns for LLM-Integrated Applications (5 minute read)
 
-This industry experience paper catalogues five recurring MCP server patterns observed across 15 production and public servers: Resource Gateway, Tool Orchestrator, Stateful Session Server, Proxy Aggregator, and Domain-Specific Adapter, each documented with four anti-patterns and cross-cutting auth, versioning, and observability concerns. A tool-count study found selection accuracy drops below 90% at 10 to 15 tools per context for Claude Haiku 4.5 and 20 to 30 for Sonnet 4.
+(blurb not generated)
 
 How Netflix Simplified Batch Compute with Kueue (5 minute read)
 
 (blurb not generated)
 
-Memory Safe Context Switching (1 minute read)
+Memory Safe Context Switching (5 minute read)
 
-Fil-C implements longjmp/setjmp and the ucontext coroutine APIs (getcontext, setcontext, makecontext, swapcontext) so that no misuse can corrupt the stack or escape its capability model. Restoring a returned-from or freed stack, swapping into the currently executing context, or running on a dangling stack all become clean panics instead of the unprintable, exploitable crashes those same bugs produce in ordinary C.
+(blurb not generated)
 
 14x faster embeddings: how we rebuilt the ONNX path in Manticore (5 minute read)
 
-Manticore Search 27.1.5 replaces its SentenceTransformers/Candle embedding path with an ONNX Runtime backend that runs ~14x faster on the same hardware, model, and weights, lifting throughput from 5-11 docs/sec to 70-230 docs/sec across the full thread and batch grid. The engineering log covers the two changes that mattered most, turning off intra-op spinning and parallelizing inside each call so a single client thread with batch sizes of 32-128 maximizes ingest.
+(blurb not generated)
 
 p99 0 ms* autocomplete for 240 million domain names (5 minute read)
 
 (blurb not generated)
 
-Factoring RSA Keys with Many Zeros (1 minute read)
+Factoring RSA Keys with Many Zeros (5 minute read)
 
-Researchers found real-world RSA keys with regularly spaced blocks of all zeros in their moduli, a sparsity pattern that makes them far easier to factor, surfaced by scanning Certificate Transparency logs, TLS/SSH scans, and PGP dumps with the open-source badkeys project. The flaw traces to independent implementations failing the same way, including CompleteFTP's key generation and certificates once issued to Yahoo and Verizon, suggesting cryptanalytic attacks tuned for this failure class are worth building.
+(blurb not generated)
 
 The text in Claude Code's “Extended Thinking” output is not authentic (5 minute read)
 
 (blurb not generated)
 
-OTel and mesh-derived metrics: A 2026 reference (1 minute read)
+OTel and mesh-derived metrics: A 2026 reference (5 minute read)
 
-This reference shows how Linkerd's sidecar proxy emits golden metrics for every inbound and outbound request the moment a workload is meshed, with no instrumentation, SDK calls, or image rebuilds, giving you the east-west traffic that application-layer OpenTelemetry never sees. It walks through where mesh metrics overlap with OTel and where they don't, then wires the proxy's Prometheus endpoint into an existing OTel Collector pipeline so both layers land in the same backend.
+(blurb not generated)
 
 Client-Side Load Balancing at a Million Requests Per Second (5 minute read)
 
@@ -80,11 +80,11 @@ Optimization catalog. How 4 bytes of padding make array clearing 49% faster (5 m
 
 How we built SmithDB's inverted index for full-text search (5 minute read)
 
-LangChain's second post on SmithDB full-text search covers how the inverted index is constructed, compacted, and queried, with construction done inline during ingestion so new runs are searchable within seconds. To speed sorting, the team interns each unique term to an integer ID so comparison cost scales with distinct terms rather than occurrences, cutting construction time roughly 2.2x in their benchmark.
+(blurb not generated)
 
 Turning Scattered Data Into Queryable Segments at Scale: How Razorpay Built Its Customer Data Platform (5 minute read)
 
-Razorpay built an in-house Customer Data Platform that resolves identities across devices and payment instruments, then serves audience segments across 500M+ user profiles in under 30ms. The post details how the consent-native design keeps PII isolated to source systems to satisfy India's DPDPA, replacing a workflow where a custom Spark job once took 2-3 days to return a single segment.
+(blurb not generated)
 
 🧠
 Opinions & Advice
@@ -99,19 +99,15 @@ The Coming Loop (5 minute read)
 
 NSA's SIGINT Enabling Project Pushes Weakened TLS Post-Quantum Standard (5 minute read)
 
-The author argues that NSA's SIGINT Enabling Project is steering the IETF toward "ietf-tls-mlkem," a post-quantum TLS standard weaker than the hybrid "ietf-tls-ecdhe-mlkem" alternative, swapping honest "NSA wants this" arguments for fake technical ones. After losing the working-group vote, NSA called another and is packing the room, and the post asks readers to email the TLS mailing list opposing draft-ietf-tls-mlkem-08 before 7 July 2026.
+(blurb not generated)
 
-What can you confidently guarantee about your software? (1 minute read)
+What can you confidently guarantee about your software? (5 minute read)
 
-The author argues that most engineers can name what their software is supposed to do but rarely state what it actually guarantees under failure, load, or malformed input. The piece pushes teams to write down explicit, testable invariants rather than relying on informal confidence, since unstated assumptions are where production incidents originate.
+(blurb not generated)
 
-Researchers Demo New Claude Code Attack Using Harmless-Looking Repositories to Hijack Developer Machines (1 minute read)
+Working With AI: A concrete example (5 minute read)
 
-Mozilla's 0Din researchers demonstrated an attack where a clean-looking repository hijacks a developer's machine through Claude Code, with no malicious code in the repo itself. A deliberate install error tells the agent to run `axiom init`, which executes a script that pulls a base64-encoded reverse shell from a DNS TXT record, splitting the payload across three systems no single tool inspects together.
-
-Working With AI: A concrete example (1 minute read)
-
-Carson Gross walks through a hyperscript parser regression where Claude correctly found the root cause of an `as JSON` binding conflict but proposed a fix that would have papered over the real grammar ambiguity. He frames the episode as a near-miss with the Sorcerer's Apprentice problem, where leaning on AI without understanding the system leaves a maintainer unable to properly fix the issues it surfaces.
+(blurb not generated)
 
 In praise of memcached (5 minute read)
 
@@ -125,21 +121,25 @@ The Minimum Viable Unit of Saleable Software (5 minute read)
 
 (blurb not generated)
 
-Qwen 3.6 27B is the sweet spot for local development (1 minute read)
+Qwen 3.6 27B is the sweet spot for local development (5 minute read)
 
-The author argues Qwen 3.6 27B is the first local model practical enough to serve as a general-purpose coding assistant, citing a hexagonal minesweeper it built correctly from a single prompt with proper pnpm packaging. The dense 27B variant runs locally via llama.cpp at Q8_0 quantization and outperforms the faster 35B A3B mixture-of-experts version on instruction-following, at the cost of speed and a hot machine.
+(blurb not generated)
 
-New Enterprise-Ready MCP Specification Brings New Security Challenges (1 minute read)
+New Enterprise-Ready MCP Specification Brings New Security Challenges (5 minute read)
 
-MCP's 2026-07-28 revision makes the protocol stateless at the layer, closing off session hijacking and unsolicited server prompts while tightening authentication, with legacy versions deprecated over a 12-month window. Akamai's analysis warns the rewrite shifts risk onto implementations: predictable tracking IDs and state objects open the door to cross-tenant workflow hijacking, and new MCP HTTP headers introduce desync attacks and secret leakage if developers map API keys or PII into them.
+(blurb not generated)
 
-AI coding agents can be tricked into installing malware via 'clean' GitHub repositories — Mozilla's 0din team shows how Claude Code can be exploited by its own helpfulness (1 minute read)
+AI coding agents can be tricked into installing malware via 'clean' GitHub repositories — Mozilla's 0din team shows how Claude Code can be exploited by its own helpfulness (5 minute read)
 
-Mozilla's 0din team showed that Claude Code and similar agents can be tricked into running malware by initializing a project from a clean-looking GitHub repo, where a failing Axiom setup script nudges the agent into a "fix it" command that fetches a payload from a domain's DNS TXT record. The author's point is that the exploit weaponizes the agent's helpfulness through three layers of innocuous steps, bypassing local, remote, and built-in security checks.
+(blurb not generated)
 
-Inside the Advisory Database and what happens when vulnerability volume breaks records (1 minute read)
+Inside the Advisory Database and what happens when vulnerability volume breaks records (5 minute read)
 
-The GitHub Advisory Database published 1,560 reviewed advisories in May 2026, five times its typical output and still not enough as private vulnerability reports climbed from ~550 to over 3,000 per week. GitHub argues review times will stay longer until submitters carry more of the load by filing complete data and requesting CVEs only when they intend to publish.
+(blurb not generated)
+
+The end of the AArch64 desktop experiment (1 minute read)
+
+After eleven months running an Ampere Altra system as his daily desktop, the author ended the experiment, citing an Altra PCIe erratum (PCIE_65) that corrupts MMIO writes to AMD GPUs and forced a self-built kernel rebuilt on every package update. His conclusion is that AArch64 on the desktop still fails on hardware meant for servers, where short QVLs and GPU incompatibilities turn ordinary use into ongoing maintenance.
 
 The Problem is Prompt Debt (5 minute read)
 
@@ -152,29 +152,29 @@ Deno Desktop (5 minute read)
 
 (blurb not generated)
 
-What's new in Git 2.55.0? (3 minute read)
+What's new in Git 2.55.0? (5 minute read)
 
-Git 2.55.0 adds a `git history fixup <commit-id>` subcommand that stages and amends changes into an existing commit in one step, automatically rebasing any stacked branches that contain it instead of requiring an interactive autosquash rebase. The release also extends the built-in fsmonitor daemon to Linux via inotify, speeding up `git status` in large monorepos without a third-party tool like Watchman.
+(blurb not generated)
 
-A native graphical shell for SSH (1 minute read)
+A native graphical shell for SSH (5 minute read)
 
-Outer Shell is an open-source graphical shell for SSH, where each app is a minimal HTTP server exposed over a Unix domain socket rather than a localhost port, with encryption handled at the SSH layer instead of in the app. The shell provides a home screen of apps plus an API for inter-app lookups, so a text-editor app can register itself and open files double-clicked elsewhere.
+(blurb not generated)
 
-Meituan open sources LongCat-2.0, the 1.6T, near-frontier agentic coding model that's been leading OpenRouter — trained entirely on Chinese chips (3 minute read)
+Meituan open sources LongCat-2.0, the 1.6T, near-frontier agentic coding model that's been leading OpenRouter — trained entirely on Chinese chips (5 minute read)
 
-Meituan open sourced LongCat-2.0, a 1.6-trillion-parameter MoE coding model under an MIT license, revealing it as "Owl Alpha," the stealth model that has topped OpenRouter's developer charts for two months. The model ships a native 1M-token context window, charges nothing for context-cache hits, and was trained entirely on Chinese chips, with promotional pricing at $0.30/$1.20 per million input/output tokens.
+(blurb not generated)
 
 Run a vLLM Server on HF Jobs in One Command (5 minute read)
 
 (blurb not generated)
 
-NixOS 26.05 (1 minute read)
+NixOS 26.05 (5 minute read)
 
-NixOS 26.05 "Yarara" ships from 2842 contributors and 59703 commits, updating Nixpkgs with 20442 new packages and bumping GNOME to 50 and GCC to 15. Stage 1 initrd now defaults to systemd with the scripted implementation deprecated for removal in 26.11, and this is the final release to support x86_64-darwin following Apple's platform deprecation.
+(blurb not generated)
 
-Highlights from Git 2.55 (1 minute read)
+Highlights from Git 2.55 (5 minute read)
 
-Git 2.55 shipped with contributions from over 100 developers, headlined by `git repack --write-midx=incremental`, which writes incremental multi-pack index chains directly instead of rewriting a single MIDX over every pack. The append-only mode lets large repositories index newly created packs by adding a layer to the chain, avoiding the expensive full-file rewrite that single-MIDX maintenance forces on each small update.
+(blurb not generated)
 
 Getting more from each token: How Copilot improves context handling and model routing (5 minute read)
 
@@ -184,21 +184,21 @@ Run isolated sandboxes with full lifecycle control: AWS Lambda introduces MicroV
 
 (blurb not generated)
 
-WSL containers now build and run Linux workloads on Windows (1 minute read)
+WSL containers now build and run Linux workloads on Windows (5 minute read)
 
-Microsoft shipped WSL containers in public preview (WSL build 2.9.3), adding a wslc.exe CLI and a C/C++/C# API so developers can build, run, and debug Linux containers on Windows without third-party runtimes like Docker Desktop. The API hooks into MSBuild and CMake to fold container build and deploy steps into a project file, while Intune adds admin controls including a registry allowlist for permitted images.
+(blurb not generated)
 
-Deno update streamlines creation of desktop apps (2 minute read)
+Deno update streamlines creation of desktop apps (5 minute read)
 
-Deno Land released Deno 2.9 with an experimental deno desktop feature that compiles a script or web framework project into a single self-contained binary, running the UI in a webview and the logic in Deno via the same machinery as deno compile. The release also cuts hello-world cold start from 34ms to 17ms, holds resident memory flat near 62MB under load, and advances Node.js compatibility to version 26.
+(blurb not generated)
 
 Bringing more agent harnesses and frameworks to Cloudflare, starting with Flue (5 minute read)
 
 (blurb not generated)
 
-Cursor releases its iOS app for vibe coding on the go (1 minute read)
+Cursor releases its iOS app for vibe coding on the go (5 minute read)
 
-Cursor released a native iOS app in public beta for paid plans that turns the phone into a control surface for its coding agents, letting developers launch agents, select frontier models, inspect diffs, leave follow-up instructions, and merge pull requests from an iPhone. It supports Remote Control for agents running on a local machine and runs cloud agents in isolated VMs, so a session started at the desk can continue without keeping a laptop open.
+(blurb not generated)
 
 DeepReinforce releases Ornith-1.0 open-source coding models (5 minute read)
 
@@ -220,9 +220,9 @@ Unlocking the Cloudflare app ecosystem with OAuth for all (5 minute read)
 
 (blurb not generated)
 
-Visual Studio Code locks down untrusted code (2 minute read)
+Visual Studio Code locks down untrusted code (5 minute read)
 
-VS Code 1.26 ships Workspace Trust, which now opens unfamiliar project folders in Restricted Mode to block automatic code execution until the developer explicitly trusts the folder. The release also surfaces total cost across an entire chat session rather than per-turn, and lets a single Copilot agent host run multiple chats side-by-side that share the same working context.
+(blurb not generated)
 
 TypeScript Performance in TanStack Table V9 (5 minute read)
 
@@ -231,13 +231,13 @@ TypeScript Performance in TanStack Table V9 (5 minute read)
 🎁
 Miscellaneous
 
-The attack that hijacked Claude Code came through Sentry. Datadog, PagerDuty, and Jira have the same exposure. (3 minute read)
+The attack that hijacked Claude Code came through Sentry. Datadog, PagerDuty, and Jira have the same exposure. (5 minute read)
 
-Tenet Security's "agentjacking" disclosure shows that a single crafted Sentry error event, sent through a public DSN that needs no authentication, can inject attacker instructions that Claude Code, Cursor, and Codex execute as trusted diagnostic output with the developer's full privileges. Tenet hit an 85% success rate across 100-plus controlled targets, found 2,388 organizations with exposed DSNs, and warns the same exposure applies to any MCP-connected source like Datadog, PagerDuty, or Jira.
+(blurb not generated)
 
-Pollen tried to remove my article and Google is assisting with it (1 minute read)
+Pollen tried to remove my article and Google is assisting with it (5 minute read)
 
-The Pragmatic Engineer's Gergely Orosz reports that Google delisted his 2022 article on events startup Pollen's $800M collapse after receiving a bogus copyright claim, despite him being the sole copyright holder. The case shows how anyone can file a fraudulent DMCA notice to scrub critical coverage from search results, with Google honoring the takedown by default and leaving the author to appeal.
+(blurb not generated)
 
 7,000 Langflow servers are under attack. LangGraph and LangChain have the same holes (5 minute read)
 
@@ -267,21 +267,21 @@ Public PoC Released for Critical libssh2 CVE-2026-55200 Client-Side SSH Flaw (5 
 
 (blurb not generated)
 
-‘DirtyClone’ Linux Kernel Vulnerability Leads to Root Access (1 minute read)
-
-JFrog published technical details and a proof of concept for DirtyClone (CVE-2026-43503, CVSS 8.8), a Linux kernel local privilege escalation bug that lets any local user gain root by corrupting file-backed page-cache memory through zero-copy socket buffer paths. The fix landed in v7.1-rc5, but only kernels carrying the full DirtyFrag patch chain are protected, leaving Debian, Fedora, and Ubuntu systems with unprivileged user namespaces exposed.
-
 Amazon Q Developer Flaw Could Let Malicious Repos Run Code via MCP Configs (5 minute read)
 
 (blurb not generated)
 
-No more Java refills for Intel Macs after JDK 27, says Oracle (1 minute read)
+No more Java refills for Intel Macs after JDK 27, says Oracle (5 minute read)
 
-Oracle will stop shipping Java builds for Intel-based Macs after JDK 27, pushing remaining x86 Mac developers toward Apple Silicon or third-party OpenJDK distributions. The move follows Apple's own wind-down of Intel Mac support and adds JDK 27, due in late 2026, as the last LTS release that will get official Oracle binaries for the architecture.
+(blurb not generated)
 
-Vulnerability reports are arriving faster than GitHub can review them (1 minute read)
+Meta is telling engineers to handle Claude Code and Codex with care (1 minute read)
 
-GitHub's Advisory Database published 1,560 reviewed advisories in May 2026, its highest monthly output ever, yet still fell behind a surge of inbound reports that pushed private submissions past 3,000 a week. Review times have stretched from days to several weeks for many advisories, widening the unpatched window for projects that depend on its automated alerts across more than 1.7 million repositories.
+Meta has placed strict limits on how engineers in its applied AI division use Anthropic's Claude Code and OpenAI's Codex, per The Information, fearing that the rivals' output could leak into training data for its own MetaCode tool and constitute inadvertent distillation. The restrictions, which paused some tasks outright, underscore both Anthropic's growing leverage over the firms that depend on it and the industry-wide push to cut spending on outside coding tools.
+
+Vulnerability reports are arriving faster than GitHub can review them (5 minute read)
+
+(blurb not generated)
 
 AI was supposed to kill engineering jobs, but new data suggests they're the most resilient (5 minute read)
 
@@ -290,22 +290,18 @@ AI was supposed to kill engineering jobs, but new data suggests they're the most
 ⚡
 Quick Links
 
-Linux for the Sega MegaDrive (1 minute read)
+Linux for the Sega MegaDrive (5 minute read)
 
-Linux for the Sega MegaDrive runs a real m68k kernel via a Mega EverDrive cartridge, with a QEMU fork included for testing without hardware.
+(blurb not generated)
 
 Will It Mythos? (5 minute read)
 
 (blurb not generated)
 
-EU Open Sources Ten-Year Network Development Planning Tools (5 minute read)
+Pong game recompiles its own source code every frame — winning entry at IOCCC29 was generated by a custom compiler (5 minute read)
 
 (blurb not generated)
 
-Pong game recompiles its own source code every frame — winning entry at IOCCC29 was generated by a custom compiler (1 minute read)
+CachyOS June 2026 Release (5 minute read)
 
-An IOCCC29-winning Pong recompiles its own source every frame, each run printing the C for the next frame with state baked in.
-
-CachyOS June 2026 Release (1 minute read)
-
-CachyOS June 2026 release adds a Hyprland Noctalia desktop, DNS-over-QUIC via blocky, extended Python PGO, and GCC branch-misprediction tuning.
+(blurb not generated)
