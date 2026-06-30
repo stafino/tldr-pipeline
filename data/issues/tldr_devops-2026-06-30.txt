@@ -1,0 +1,140 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR DevOps 2026-06-30
+
+📱
+News & Trends
+
+Google hits 50% IPv6 (5 minute read)
+
+(blurb not generated)
+
+GitHub Updates actions/checkout to Block Common Pwn Request Attack Patterns (5 minute read)
+
+(blurb not generated)
+
+Zuck saves Meta bucks by reusing memory from old servers with a custom CXL ASIC (1 minute read)
+
+Meta built a custom CXL ASIC that pools DRAM salvaged from decommissioned servers, letting newer hosts borrow that memory over the CXL fabric instead of buying fresh DIMMs. The move targets memory cost and e-waste at hyperscale, extending the useful life of RAM that would otherwise be scrapped and easing capacity pressure on memory-bound workloads like caching and inference.
+
+etcd-operator joins Cozystack with a new v1alpha2 API (1 minute read)
+
+The etcd-operator project was donated to Cozystack and re-implemented from scratch under a new etcd-operator.cozystack.io/v1alpha2 API, dropping the StatefulSet model in favor of driving etcd's native Membership API for MemberAdd, MemberPromote, and MemberRemove directly. The rewrite reconciles each member's Pod and PVC independently and adds learner-mode members one at a time, giving the operator full control over quorum changes during scaling and graceful removal.
+
+Rethinking cloud operations with agentic observability (5 minute read)
+
+(blurb not generated)
+
+GitLab Patches Code Execution, Information Disclosure Vulnerabilities (5 minute read)
+
+(blurb not generated)
+
+Decades-Old Squid Proxy Flaw ‘Squidbleed' Can Expose User Data (5 minute read)
+
+(blurb not generated)
+
+AWS Weekly Roundup: Agentic CX designer for Amazon Connect Customer, EC2 AMI Watermarks, Open Governance for MySQL, and more (June 29, 2026) (1 minute read)
+
+AWS Lambda MicroVMs led this week's roundup, adding a serverless primitive that gives each user or job VM-level isolation on Firecracker with near-instant launch and the ability to suspend and resume execution for up to 8 hours. The same drop shipped EC2 AMI Watermarks, which embed identifiers that carry forward to every derived AMI across copies, Regions, and accounts, plus an Agentic CX designer preview in Amazon Connect for no-code customer-experience flows.
+
+🚀
+Opinions & Tutorials
+
+OTel and mesh-derived metrics: A 2026 reference (1 minute read)
+
+This CNCF post explains how to combine Linkerd's mesh-derived metrics with an existing OpenTelemetry pipeline, covering the east-west service traffic that application-layer instrumentation misses. Once a workload is meshed, the Linkerd proxy emits golden metrics for every inbound and outbound request on port 4191, with no SDK calls or image rebuilds. The reference shows where mesh metrics overlap with OTel and where they don't, plus a working Collector config and Grafana dashboard to land both layers in the same backend.
+
+How we found a bug in the hyper HTTP library (5 minute read)
+
+(blurb not generated)
+
+AMD Strix Halo RDMA Cluster Setup Guide (5 minute read)
+
+(blurb not generated)
+
+What you need to know about Lambda MicroVMs (5 minute read)
+
+(blurb not generated)
+
+Client-Side Load Balancing at a Million Requests Per Second (5 minute read)
+
+(blurb not generated)
+
+How Cloudflare responded to the “Copy Fail” Linux vulnerability (5 minute read)
+
+(blurb not generated)
+
+Build and Deploy a Remote MCP Server to GKE in 30 Minutes (5 minute read)
+
+(blurb not generated)
+
+A Multi-Dataset Benchmark for Evaluating LLM Agents in Microservice Failure Diagnosis (1 minute read)
+
+This paper introduces two expert-labeled datasets, AIOps2025 and RCA100, for benchmarking LLM agents on microservice failure diagnosis over multimodal observability data. Unlike prior benchmarks that score only the final answer, it grades the reasoning process along three axes: localization (where the fault is), identification (what type), and whether the trace is grounded in real evidence. The 500-plus cases span resource, network, runtime, database, and application-logic faults across HipsterShop and the OpenTelemetry Demo Store, and were validated through competitions with over 6,000 teams.
+
+⚒️
+Launches & Tools
+
+Run isolated sandboxes with full lifecycle control: AWS Lambda introduces MicroVMs (5 minute read)
+
+(blurb not generated)
+
+NixOS 26.05 (1 minute read)
+
+NixOS 26.05 "Yarara" shipped with systemd-based stage 1 initrd as the default, deprecating the old scripted implementation ahead of its removal in 26.11. The release lands 20,442 new packages and ships GCC 15 and GNOME 50, while marking the final Nixpkgs release to support x86_64-darwin before Apple-driven deprecation ends those builds at the close of 2026.
+
+Bringing more agent harnesses and frameworks to Cloudflare, starting with Flue (5 minute read)
+
+(blurb not generated)
+
+What's new in Git 2.55.0? (3 minute read)
+
+The Git project released Git 2.55.0, adding a `git history fixup` command that amends staged changes into an existing commit and automatically rebases all stacked branches containing it. The release also brings the built-in fsmonitor daemon to Linux via inotify, speeding up `git status` in large monorepos without requiring a third-party tool like Watchman.
+
+Security Profiles Operator v1: Stable APIs, Security Hardened, and Shaping Upstream Kubernetes (5 minute read)
+
+(blurb not generated)
+
+Unlocking the Cloudflare app ecosystem with OAuth for all (5 minute read)
+
+(blurb not generated)
+
+Bunny Makes DNS Free To Pull More Apps Onto Its Edge Platform (5 minute read)
+
+(blurb not generated)
+
+A native graphical shell for SSH (1 minute read)
+
+Outer Shell is an open-source graphical shell that lets servers and edge devices serve browser-based apps over SSH, with each app running as a dependency-free HTTP server bound to a Unix domain socket rather than a localhost port. Encryption is handled at the SSH layer instead of per-app, and apps register capabilities so they can discover each other, turning a remote box into a navigable desktop without a local GUI.
+
+Amazon ECS introduces new high-resolution metrics for faster service auto scaling (5 minute read)
+
+(blurb not generated)
+
+WSL containers now build and run Linux workloads on Windows (1 minute read)
+
+Microsoft shipped WSL containers in public preview (WSL build 2.9.3), adding a wslc.exe CLI and a C/C++/C# API so Windows developers can build, run, and debug Linux containers, including GPU workloads, without third-party tooling. Enterprise controls land alongside it, with Intune-managed allowlists for permitted container registries and Defender for Endpoint now reading Linux container events across distributions.
+
+Apache Flink 2.3.0 Release Announcement (5 minute read)
+
+The Apache Flink PMC released Flink 2.3.0, which adds SQL changelog operators (FROM_CHANGELOG and TO_CHANGELOG), a redesigned native S3 filesystem built on AWS SDK v2, and application-level lifecycle management across 15 implemented FLIPs. Adaptive partition selection and improved watermark alignment cut backpressure and speed backlog processing, while a reworked SinkUpsertMaterializer lifts performance for some SQL workloads in production deployments.
+
+Introducing Package Proxy: Supply-Chain Safety Checks Without Client-Side Software (5 minute read)
+
+Thinkst released Package Proxy, a Cloudflare Workers-based proxy that runs inline supply-chain checks for npm, pip, uv, and cargo without installing any client-side software on developer machines. The tool blocks packages that fall inside the risky window for known attack patterns, such as recently published versions tied to surreptitious back-doors and low-install typo-squats, and deploys from its GitHub repo straight into Cloudflare.
+
+The "Akrites" vulnerability-mitigation project launches (5 minute read)
+
+Akrites launched as a vulnerability-mitigation project that fixes flaws upstream and confidentially, measuring success by patch deployment rather than publication on the premise that public patches let adversaries reverse-engineer exploits before fixes land. The program keeps undisclosed flaws embargoed, routes fixes through each project's own maintainers, and commits to serve as maintainer of last resort for unmaintained but critical packages.
+
+Google Antigravity agents get full context with GitLab Orbit (3 minute read)
+
+GitLab released Orbit, a lifecycle context graph that Google Antigravity developers can install from the Antigravity MCP Store to give coding agents structured access to projects, pipelines, merge requests, vulnerabilities, and source across a GitLab instance. Orbit indexes the instance into a knowledge graph queried through two MCP tools, and GitLab's internal tests reported agents responding up to 11x faster, using 4.5x fewer tokens, and producing 45x fewer hallucinations.
+
+⚡
+Quick Links
+
+The HTTP QUERY Method (5 minute read)
+
+(blurb not generated)

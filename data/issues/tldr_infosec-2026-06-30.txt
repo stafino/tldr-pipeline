@@ -1,0 +1,307 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR InfoSec 2026-06-30
+
+🔓
+Attacks & Vulnerabilities
+
+CISA: Windows BlueHammer flaw now exploited by ransomware gangs (1 minute read)
+
+CISA flagged BlueHammer (CVE-2026-33825), a Microsoft Defender privilege-escalation flaw, as now exploited by ransomware gangs, escalating from earlier zero-day abuse that surfaced after a researcher leaked PoC code in April. Local attackers can read the SAM database to grab local password hashes and pivot to SYSTEM; Microsoft patched it on April 14, so unpatched Windows hosts should be remediated and local credentials rotated immediately.
+
+Factoring RSA Keys with Many Zeros (1 minute read)
+
+Researchers analyzing badkeys data found a class of weak RSA keys with regularly spaced blocks of all zeros, including certificates issued to Yahoo, Verizon, and NetApp devices, plus SSH hosts running EnterpriseDT's CompleteFTP (RSA keys from v10.0.0-12.0.0, DSA keys from v10.0.0-23.0.4). The sparse moduli are factorable, and the recurrence of the same failure across independent implementations suggests more vulnerable products remain undiscovered and worth scanning for.
+
+Nissan discloses employee data breach linked to Oracle zero-day attacks (5 minute read)
+
+(blurb not generated)
+
+Critical SimpleHelp flaw exploited to deploy new stealer malware (1 minute read)
+
+Attackers are exploiting CVE-2026-48558, a critical authentication-bypass in SimpleHelp's OIDC configuration that lets unauthenticated users create privileged technician accounts, to push the TaskWeaver loader and the previously undocumented Djinn Stealer across Windows, macOS, and Linux. Roughly 1,000 internet-exposed SimpleHelp servers ran the vulnerable config at disclosure, so MSPs and IT teams running RMM on the edge should patch immediately and rotate developer, cloud, Git, SSH, and infrastructure credentials.
+
+Researchers Demo New Claude Code Attack Using Harmless-Looking Repositories to Hijack Developer Machines (1 minute read) [flag]
+
+Mozilla's 0Din researchers demonstrated an indirect prompt-injection attack against Claude Code in which a benign-looking repository's setup notes trigger an install error whose message instructs the agent to run a recovery command that executes setup.sh, which fetches a base64-encoded payload from a DNS TXT record and spawns a reverse shell. The payload never lives in the repo and leaves no plaintext reverse-shell signature, so static analysis, network monitoring, and the agent each see only benign activity while attackers exfiltrate credentials and deploy persistent backdoors.
+
+Cisco Unified CM flaw CVE-2026-20230 now exploited in attacks (5 minute read)
+
+(blurb not generated)
+
+New BioShocking Attack Tricks AI Browsers Into Leaking User Credentials (1 minute read)
+
+Researchers at LayerX disclosed BioShocking, an indirect prompt-injection technique that frames a malicious web page as a game and coaxes agentic AI browsers into exfiltrating user credentials, defeating OpenAI's ChatGPT Atlas, Perplexity's Comet, Anthropic's Claude extension, and three others in testing. Vendor response was uneven: OpenAI patched Atlas, Perplexity closed the report without action, Anthropic's fix reportedly failed, and Fellou, Genspark, and Sigma did not respond.
+
+Public PoC Released for Critical libssh2 CVE-2026-55200 Client-Side SSH Flaw (5 minute read)
+
+(blurb not generated)
+
+The attack that hijacked Claude Code came through Sentry. Datadog, PagerDuty, and Jira have the same exposure. (3 minute read) [flag]
+
+Tenet Security's "agentjacking" disclosure shows a single crafted Sentry error event, sent via a public DSN that needs no authentication, can inject attacker instructions that Claude Code, Cursor, and Codex execute with developer privileges, succeeding in 85% of 100-plus controlled tests against the 2,388 orgs with exposed DSNs. The same exposure hits any agent pulling from Datadog, PagerDuty, or Jira, so the fix is restricting what shell-capable agents do with returned data, not revoking the intentionally public DSN.
+
+‘DirtyClone’ Linux Kernel Vulnerability Leads to Root Access (1 minute read)
+
+JFrog published technical details and a PoC for DirtyClone (CVE-2026-43503, CVSS 8.8), a Linux kernel local privilege escalation flaw in the networking stack's socket-buffer handling that lets any local user gain root. The bug is a variant of the DirtyFrag/Fragnesia family affecting Debian, Fedora, and Ubuntu with unprivileged user namespaces enabled; only kernels updated to v7.1-rc5 with the complete fix chain are protected, so partially patched LTS branches remain exposed.
+
+AirDrop and Quick Share vulnerabilities affect protocols on five billion devices as fixes begin (1 minute read)
+
+Researchers at CISPA disclosed six vulnerabilities in Apple AirDrop and Google/Samsung Quick Share spanning macOS, iOS, Android, and Windows, affecting the proximity file-sharing protocols on more than five billion active devices. A proximity attacker within wireless range can trigger pre-authentication crashes in Apple's sharingd daemon, taking down AirDrop, AirPlay, Handoff, Universal Clipboard, and Continuity Camera together, and a looped request holds the service down; fixes are rolling out.
+
+Apple Patches 30+ iOS, macOS, Safari Flaws, Including AI-Discovered WebKit Bugs (1 minute read)
+
+Apple released security updates for iOS, iPadOS, macOS Tahoe, and Safari 26.5.2, patching over 30 flaws including four WebKit memory-corruption and use-after-free bugs (CVE-2026-43707, -43716, -43745, -43715) found with AI tools from OpenAI Codex and Anthropic Claude. None are reported as actively exploited, but Apple says it shipped fixes earlier than usual to shrink the discovery-to-weaponization window as AI accelerates exploit development.
+
+Oracle E-Business Suite Flaw CVE-2026-46817 Actively Exploited in the Wild (1 minute read)
+
+Oracle E-Business Suite is under active exploitation via CVE-2026-46817 (CVSS 9.8), an improper-privilege-management and authentication flaw in Oracle Payments that lets an unauthenticated attacker take over instances over HTTP. Oracle patched it in last month's Critical Patch Update for versions 12.2.3 through 12.2.15, and Defused Cyber observed exploitation on its honeypots over the weekend despite no public PoC, so patch immediately.
+
+Hackers now exploit critical Oracle E-Business flaw in attacks (1 minute read)
+
+Attackers are actively exploiting CVE-2026-46817 (CVSS 9.8), an unauthenticated, low-complexity RCE in the File Transmission component of Oracle E-Business Suite's Payments product that allows full system takeover over HTTP. Oracle patched it in its May 2026 Critical Patch Update, but Shadowserver tracks over 450 exposed EBS instances, so operators should apply the fix immediately and hunt for compromise.
+
+Klue hack results in data breach at several cybersecurity firms (5 minute read)
+
+(blurb not generated)
+
+Amadey and StealC Malware Network Disrupted, 27M Stolen Credentials Recovered (5 minute read)
+
+(blurb not generated)
+
+Progress Kemp LoadMaster Flaw Could Let Attackers Run Root Commands Pre-Auth (1 minute read)
+
+Progress Kemp LoadMaster contains a critical command-injection flaw (CVE-2026-8037, CVSS 9.8) that lets an unauthenticated attacker run arbitrary commands as root by sending a crafted JSON request to the /accessv2 API endpoint. Progress patched GA v7.2.63.2 and LTSF v7.2.54.18 on June 4 with no reported in-the-wild exploitation, but watchTowr published a full exploit chain on June 29, so edge appliances with the API enabled should be updated now.
+
+Hijacked npm and Go Packages Use VS Code Tasks to Deploy Python Infostealer (5 minute read)
+
+(blurb not generated)
+
+NAIC says public data stolen in ShinyHunters' PeopleSoft breach (5 minute read)
+
+(blurb not generated)
+
+Insurance Regulators Group NAIC Hit in Oracle PeopleSoft Hack (1 minute read)
+
+NAIC confirmed attackers exploited an Oracle PeopleSoft zero-day (CVE-2026-35273, unauthenticated RCE) to access its systems on June 11, exfiltrating statutory financial reporting data, credit rating agency records, and outdated logs and configuration files, though it says PII and payment data were untouched. ShinyHunters is behind the broader campaign against 100-plus organizations and listed NAIC on its leak site, making the insurance regulator the first victim to publicly confirm compromised data.
+
+🧠
+Strategies & Tactics
+
+RFC 9958 - Post-Quantum Cryptography for Engineers (5 minute read)
+
+(blurb not generated)
+
+GitHub Updates actions/checkout to Block Common Pwn Request Attack Patterns (5 minute read)
+
+(blurb not generated)
+
+The Bear Necessities: A Look at the Drivers, Dynamics, and Applications of the Pro-Russia Influence Ecosystem (2 minute read)
+
+Google Threat Intelligence Group reports that the pro-Russia influence ecosystem has matured from a wartime tool into a global strategic asset, pivoting from Ukraine-specific goals back toward the EU, NATO, and other long-standing Kremlin targets. The group expects influence operations and hacktivism to intensify outside Ukraine, increasingly powered by generative AI for planning, research, and content creation. Defenders should treat the ecosystem as resilient to narrow takedowns, since its interconnected components survive limited-scope disruption.
+
+A Lightweight Post-Quantum Authentication Framework for 5G Base Station Bootstrapping (1 minute read)
+
+This paper introduces EMULSION, a symmetric-key framework for authenticating 5G base station SIB broadcasts, which 5G leaves unprotected and open to fake base station attacks, MITM interception, and spoofed emergency alerts. It uses a TESLA-style HMAC chain anchored by a per-epoch MAYO post-quantum signature, fitting authentication into a single SIB packet with no fragmentation while covering SIB1 through SIB21. On an over-the-air testbed it ran 33x faster than ML-DSA and 12x faster than FN-DSA, both of which exceed 5G packet-size limits.
+
+Inside the Advisory Database and what happens when vulnerability volume breaks records (1 minute read)
+
+GitHub's Advisory Database published 1,560 reviewed advisories in May 2026, more than 5x its typical monthly output and the highest on record. Private vulnerability reports jumped from ~550/week in January to over 3,000/week, and GitHub CNA CVE requests hit nearly 4,000 in May, roughly 10x year-over-year. Review times are now longer, but advisories remain human-validated. Defenders can help by submitting complete vulnerability data, coordinating with maintainers, and requesting CVEs only with clear intent to publish.
+
+On the Internet, Nobody Knows You're an LLM Bot: Unmasking Web Agents with Multi-Layer Fingerprinting (1 minute read)
+
+Researchers deployed honeysites guarded by CAPTCHAs, proof-of-work, and Cloudflare's anti-bot defenses, then pointed six LLM-based web agents at them, finding that some bypassed every mechanism tested. Multi-layer fingerprinting across the network, HTTP, and browser layers reliably separated the agents from humans and from each other. The counterintuitive takeaway for defenders: stealth and anti-detection add-ons usually raise an agent's detectability rather than lower it, so layered fingerprinting beats blocklists for spotting LLM-driven traffic.
+
+A Multi-task Mixture of Experts Framework for Malware Classification, Packing Detection, and Family Attribution (1 minute read)
+
+This paper proposes a multi-task Mixture of Experts framework that handles malware-versus-benign detection, packed-versus-unpacked detection, and family attribution in one model, training on both EMBER feature sets and raw PE byte arrays. The Multi-Gate MoE variant scored a 0.9744 combined detection rate with a 2.56% failure rate and held up better than single-model baselines under mutation-induced distribution shifts, pointing to expert routing as a path to more robust classifiers against obfuscated and rare samples.
+
+A Hybrid Framework For Crypto-Ransomware Detection In Enterprise Shared Storage (1 minute read)
+
+This paper proposes a hybrid framework for detecting crypto-ransomware that spreads from compromised clients to enterprise network drives and shared file servers, where endpoint detection that watches only local behavior misses the encryption happening remotely. The approach uses a Region of Interest technique to extract IoCs from network traffic, feeding both a signature ruleset for existing EDR/IDS tools and an ML model that the authors report catches evasive variants at 99.64% precision with a 0% false-negative rate and early detection before significant damage.
+
+Vulnerability Reports Are Not Special Anymore (5 minute read)
+
+(blurb not generated)
+
+Words Speak Louder Than Code: Investigating Cognitive Heuristics in LLM-Based Code Vulnerability Detection (1 minute read)
+
+This paper shows that LLM-based vulnerability detectors are susceptible to the same cognitive heuristics that bias humans, with susceptibility holding code fixed and varying only surrounding context. Across eight models and three languages, framing effects (via task objectives) flipped verdicts 33.2% of the time, anchoring 23.5%, and author-attribution halo 18.4%, with semantic-reasoning bugs more affected than pattern-matchable ones. A black-box cognitive attack suppressed up to 97% of previously detected vulnerabilities, so treat LLM scanner context as an untrusted, manipulable input.
+
+COHORT: Collaborative Orchestration for Hardening via Offensive Replay on Emulated Topologies (1 minute read)
+
+COHORT is a multi-agent LLM framework that automates enterprise network mitigation, a task that normally takes analysts weeks of expert work. It proposes mitigations as real device commands on a GNS3 emulator running vendor firmware, then validates each via offensive replay, re-executing the original adversary against the mitigated network and checking that legitimate connectivity survives. Across three topologies and four attack scenarios, 46.7% of generated mitigations both disrupted the attack and preserved connectivity, 4.4x the single-agent baseline.
+
+Multi-Level Distributional Entropy for Explainable Network Intrusion Detection (1 minute read)
+
+This paper introduces Multi-Level Distributional Entropy (MDE), a framework that derives interpretable entropy features from flow-level summary statistics without raw packet access or training data, matching conventional IDS features (weighted F1 0.708-0.989) across four benchmarks. Full metric reporting exposes failure modes that aggregate F1 hides: on CICIDS-2018, F1=0.74 conceals a 0.48 detection rate, and under temporal shift fixed thresholds collapse to DR=0.082. Defenders should track detection rate, not just F1, when validating ML detectors.
+
+SurrogateShield: Beyond Redaction for High-Utility, Privacy-Preserving LLM Interactions (1 minute read)
+
+SurrogateShield is a client-side proxy that swaps detected PII for locally generated, type-consistent surrogate values before queries hit third-party LLM APIs, then restores the originals in the response so no real PII crosses the network. A three-stage detection cascade covering 22 PII types hit 98.87% F1, and surrogate substitution preserved far more semantic utility than placeholder redaction, raising BERTScore from 81.59% to 94.85%. Surrogate-to-original mappings stay in an AES-256-GCM ShadowMap that never leaves the device.
+
+Uncovering Similar but Different Packages in PyPI and Potential Security Threats (1 minute read)
+
+A large-scale study of 200K PyPI packages (one-third of the repository) found widespread package replication, where new packages duplicate most of an existing codebase under a different maintainer. The authors identified 256 previously unknown replicated vulnerable packages that current detection tools miss, plus seven new malicious packages that cloned popular projects and added code injection. Defenders should treat replication as a supply-chain blind spot and extend dependency scanning to flag near-duplicate packages, not just known-bad names.
+
+GLM 5.2 beats Claude in our benchmarks (5 minute read)
+
+(blurb not generated)
+
+We have Mythos at Home: GLM 5.2 beats Claude in our Cyber Benchmarks (5 minute read)
+
+(blurb not generated)
+
+Hephaestus: Toward a Cybersecurity AI Scientist (1 minute read)
+
+This paper proposes the "Cybersecurity AI Scientist," a framework for automating security research the way existing AI-scientist systems automate stable scientific domains. The authors argue cybersecurity is a distinct research object, since its units of study are security events and interaction traces rather than static assets, its tooling is non-stationary, and credible evaluation requires digital twins and cyber ranges rather than a single benchmark. They outline a modular multi-agent architecture coordinating threat modeling, tool generation, controlled experimentation, and governance, oriented toward AI-native defense.
+
+What happened after 2,000 people tried to hack my AI assistant (5 minute read)
+
+(blurb not generated)
+
+Forensic Trajectory Signatures for Agent Memory Poisoning Detection (1 minute read)
+
+Researchers studying LLM agents under persistent memory poisoning found a behavioral invariant: successful exfiltration requires a memory_recall_fact call before email_send_email, a transition benign sessions rarely produce. A Random Forest over 19 trajectory features hits AUC 0.9904 and generalizes to GPT-4.1 and GPT-4o without retraining. For defenders, this means tool-call logs alone can flag memory-channel attacks and distinguish them from prompt injection, which leaves a separate trajectory signature.
+
+Proofs of Ownership for Machine Learning Models (1 minute read)
+
+This paper formalizes proofs of ownership for stolen ML models as a three-party game among an owner, a thief, and a judge, where the owner perturbs a model and attaches a proof, and the judge decides whether a suspect model derives from it. The authors prove a dichotomy for black-box classifiers: under standard cryptographic assumptions, ownership is provable if and only if the concept class is not self-correctable. The result gives a precise boundary for when model-theft attribution is achievable.
+
+🧑‍💻
+Launches & Tools
+
+Kali Linux 2026.2 released with 9 new tools, NetHunter updates (1 minute read)
+
+Kali Linux 2026.2 shipped with nine new tools, including legba (a multiprotocol credential bruteforcer and password sprayer), penelope (a shell handler), and tookie-osint for social-media account discovery, plus a re-added hydra-gtk GUI. The release upgrades to kernel 6.19 and strips graphics firmware from pre-built VM images, cutting the initrd to 60 MB and roughly tripling VM boot speed.
+
+OpenAI launches new security tools and updates GPT-5.5-Cyber (5 minute read)
+
+(blurb not generated)
+
+Kali Linux 2026.2 trims VM boot times, refreshes its desktops (1 minute read)
+
+Kali Linux 2026.2 omits graphics firmware from pre-built VM images and skips it during installs that detect a virtual machine, shrinking the initrd from roughly 200 MB to 60 MB and cutting QEMU boot time to about a third. The release also updates GNOME to 50 and KDE Plasma to 6.6, standardizes tool-start and tool-stop service helper scripts across packages, and retires the legacy /etc/apt/sources.list format.
+
+Patch the Planet: a Daybreak initiative to support open source maintainers (5 minute read)
+
+(blurb not generated)
+
+Hottest cybersecurity open-source tools of the month: June 2026 (1 minute read)
+
+Help Net Security's June 2026 roundup highlights open-source tools for securing AI agents, including OWASP Agent Memory Guard, a runtime layer that screens every read and write to an agent's memory store, and Agent Threat Rules, an open detection format for prompt injection and tool poisoning. The list also covers AgentGG, an agentic SAST scanner, and DockSec, an OWASP project that wraps Trivy, Hadolint, and Docker Scout with a 0-100 scoring layer.
+
+Security Profiles Operator v1: Stable APIs, Security Hardened, and Shaping Upstream Kubernetes (5 minute read)
+
+(blurb not generated)
+
+OASIF: An Efficient Obfuscation-Aware Self-Improving Framework for LLM-Based Assembly Code Instruction Following and Comprehension (1 minute read)
+
+OASIF is a framework that trains LLMs to comprehend commercial-grade obfuscated assembly, pairing a token-efficient assembly encoder with a three-phase pipeline of feature alignment, instruction fine-tuning, and self-evolving reinforcement learning that adapts with minimal manual verification. On VMISA-Bench, it lifted Qwen2.5-Coder-14B success rates by 15.9, 5.8, and 16.9 points against Code Virtualizer, Themida, and VMProtect while preserving general coding and decompilation performance.
+
+IBM, Red Hat, Palo Alto team to secure open-source software (5 minute read)
+
+(blurb not generated)
+
+🎁
+Miscellaneous
+
+U.S. offers $10 million for hackers targeting WhatsApp, Signal users (1 minute read)
+
+The U.S. State Department is offering up to $10M through its Rewards for Justice program for information identifying members of UNC5792 and UNC4221, two groups tied to Russia's FSB and military intelligence. The actors run phishing campaigns against Signal and WhatsApp accounts of U.S. and NATO officials, impersonating Signal support to steal backup recovery keys and compromising thousands of accounts without breaking the platforms' encryption.
+
+AI and Liability (5 minute read)
+
+(blurb not generated)
+
+Scattered Spider Hackers Plead Guilty on Day 1 of Trial (5 minute read)
+
+(blurb not generated)
+
+Supreme Court delivers ‘major win’ for tech privacy in Chatrie ruling (1 minute read)
+
+The Supreme Court ruled 6-3 in Chatrie v. United States that collecting phone location data from a geographic area constitutes a Fourth Amendment search, extending the Carpenter precedent to geofence warrants. The decision means law enforcement requests for bulk location data from providers like Google now face Fourth Amendment scrutiny, though the court declined to rule on whether Chatrie's specific warrant was valid.
+
+Supreme Court rules cops need a warrant to vacuum up phone location data (5 minute read)
+
+(blurb not generated)
+
+In major privacy win, Supreme Court rules geofence warrants are protected by privacy rights (1 minute read)
+
+The Supreme Court ruled 6-3 that geofence warrants fall under Fourth Amendment protection, holding that individuals have a reasonable expectation of privacy in their cell-phone location data and that police must obtain a search warrant to compel companies like Google to hand it over. The court declined to ban geofence warrants outright, instead requiring law enforcement to narrow these "reverse" search requests rather than sweeping up the location records of every nearby user.
+
+EU to legislate about Chat Control behind closed doors (5 minute read)
+
+(blurb not generated)
+
+The Supreme Court just made it harder for police to track your phone (1 minute read)
+
+The US Supreme Court ruled 6-3 in Chatrie v. United States that geofence searches of phone-location data constitute a Fourth Amendment search, requiring a warrant backed by probable cause. The decision extends the 2018 Carpenter precedent and does not ban geofence warrants outright, but it forces police to name a specific basis and narrow requests rather than sweeping every device in an area.
+
+NSA Lost Access to Powerful AI Model Amid Anthropic Dispute (5 minute read)
+
+(blurb not generated)
+
+미 국방부, 양자내성암호 전환 속도전…가트너 “기업도 지금 준비 시작해야” (2 minute read)
+
+The US Department of Defense formalized its post-quantum cryptography push, building a centralized oversight structure, adding PQC requirements to CMMC, and following a federal executive order mandating NIST PQC standards for contractors by end of 2030 (key establishment) and 2031 (digital signatures). Gartner warns enterprises to start now, building PQC asset inventories in 2026, since fewer than 10% have migrated high-value systems and delaying pilots past 2027 could raise total transition costs by 200%.
+
+The KIDS Act would require age checks to get online (5 minute read)
+
+(blurb not generated)
+
+What the Saga Over Anthropic’s Mythos Tells Us About the Cyber Risks From AI (1 minute read)
+
+Anthropic has restricted its Mythos model to 200 partner organizations, saying its ability to find software vulnerabilities is too dangerous for general release. The company warned that broad access could let attackers more easily steal data or disrupt critical infrastructure, framing the limited rollout as a guardrail against offensive misuse.
+
+Warner bill would create federally vetted list for secure, trustworthy AI agents (5 minute read)
+
+(blurb not generated)
+
+SCOTUS says detailed cellphone location data is protected by the Fourth Amendment (1 minute read)
+
+The Supreme Court ruled 6-3 that obtaining a person's detailed cellphone location history from a tech company is a Fourth Amendment search, meaning police generally need a warrant backed by probable cause and particularized scope before accessing such records. The decision does not ban geofence warrants and is not company-specific, so the protection could extend to comparable location data held by Apple and others.
+
+Cloudflare teams up with Chrome, Firefox, and Edge on a privacy-first anti-bot protocol (5 minute read)
+
+(blurb not generated)
+
+Microsoft to assist European Commission in defense of EU-US data-sharing agreement (1 minute read)
+
+Microsoft agreed to support the European Commission's legal defense of the EU-US Data Privacy Framework, the transatlantic agreement that lets companies move Europeans' personal data to US servers under approved safeguards. A court strike-down would invalidate the legal basis many cloud and SaaS providers rely on for EU-to-US transfers, forcing security and compliance teams back to standard contractual clauses and fresh transfer-risk assessments.
+
+Cisco Acquires WideField To Secure AI Agents And Non-Human Identities (5 minute read)
+
+(blurb not generated)
+
+Can Clothes Make You Invisible to Facial Recognition? (5 minute read)
+
+(blurb not generated)
+
+US seizes hundreds of FIFA World Cup illegal streaming domains (1 minute read)
+
+The DOJ Criminal Division seized nearly 400 domains streaming 2026 FIFA World Cup matches without authorization, in a coordinated takedown dubbed Operation Offsides spanning Peru, Bulgaria, Croatia, Romania, Poland, and Colombia. Beyond copyright enforcement, officials flagged that illegal sports-streaming sites routinely expose visitors to malware and credential theft, a vector worth noting as the tournament drives traffic to lookalike and pirate domains.
+
+California legislature agrees to upload driver's licenses to national database (5 minute read)
+
+(blurb not generated)
+
+⚡
+Quick Links
+
+Rethinking Forgery Attacks on Semantic Watermarks in Black-Box Settings: A Geometric Distortion Perspective (1 minute read)
+
+A rate-distortion analysis of black-box semantic-watermark forgery, proposing a scheme-agnostic detector that flags forged samples before verification.
+
+Authentication in Quantum Networks (1 minute read)
+
+A review of quantum-network authentication argues it's not an intrinsic limitation, and surveys quantum-secure schemes for classical messages, quantum messages, and entity authentication.
+
+Trump Seeks to Boost Quantum Computing With New Executive Orders (5 minute read)
+
+(blurb not generated)
+
+Robust secret storage in networks (1 minute read)
+
+This paper introduces a formal framework for distributed secret storage that optimizes for both network survivability and resistance to adversarial compromise.

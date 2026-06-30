@@ -1,0 +1,95 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR Data 2026-06-30
+
+🧠
+Deep Dives & Analysis
+
+I wrote a 70x faster SQL parser while barely looking at the code (5 minute read)
+
+(blurb not generated)
+
+How Far Do On-Prem Open LLMs Get on Text-to-SQL? A Cross-Family Size x Technique Frontier on BIRD (1 minute read) [flag]
+
+This paper benchmarks on-prem open-weight LLMs on Text-to-SQL using BIRD's dev split, testing Qwen2.5-Coder, CodeLlama, and Llama-3.x under one matched protocol with McNemar significance tests. Model generation beats raw size: Qwen2.5-Coder 7B scores 39.1 vs CodeLlama's 20.9, while Llama-3.3-70B hits 49.2. Self-correction is a near-free accuracy win, but schema linking does nothing even with 96.5% gold-table recall, and self-consistency adds 0.13 points for roughly 5x the tokens.
+
+(78 words)
+
+SemJoin: Semantic Join Optimization (1 minute read)
+
+SemJoin tackles the cost problem in semantic joins, where matching two tables on a natural-language predicate naively requires O(M×N) LLM calls. The paper proposes an LLM advisor that routes each join to one of two strategies: a Cluster Join that prunes candidates via embedding clustering, or a Classifier for predicates reducible to a shared label set. Across IMDb reviews, email contradictions, and Stack Overflow tags, the routing beats adaptive block join by 20-33 F1 points at lower token cost.
+
+Building Jaeger's ClickHouse backend: 8.6× compression on 10 million spans (5 minute read)
+
+(blurb not generated)
+
+CLIP: Lightweight Cosine-Law-Based Inverted-List Pruning for IVF-Based Vector Search (1 minute read)
+
+CLIP is a pruning technique for IVF-based vector search that cuts the cluster and vector scans those indexes normally do exhaustively, eliminating irrelevant clusters in O(1) time and filtering vector batches in logarithmic time using cosine-law lower bounds. The paper reports up to 78% pruning and 69% higher query efficiency over static IVF baselines, plus an LSM-inspired variant that defers index maintenance to background compaction for 141% higher throughput on dynamic workloads.
+
+Field Order Should Not Matter: Permutation-Invariant Embedding Model Fine-Tuning for Structured Metadata Retrieval (1 minute read)
+
+This paper shows that the field order chosen when serializing structured records into a string silently controls retrieval quality. A standard fine-tune loses 7.4 nDCG@10 points when the index is rebuilt under a different order, because the encoder reads position instead of field labels. The authors propose permutation-invariant fine-tuning, a two-line data-loader change that samples a fresh field order with random dropout per record, cutting the penalty to 0.2 points.
+
+Exploring Differences Between Tabular Enterprise Data and Public Benchmarks (1 minute read)
+
+This paper analyzes how enterprise tabular data differs from the public benchmarks that tabular ML models are tuned against, profiling data statistics and testing models like TabPFN, TabICL, and ConTextTab. The authors find enterprise tables diverge sharply from standard benchmarks, and a model that tops benchmark leaderboards can fail on real business data and vice versa. The takeaway is that benchmark rankings are a weak guide to production performance, and the field needs benchmarks built from enterprise-grade characteristics.
+
+MaDI-Bench: An End-to-End Data Integration Benchmark (1 minute read)
+
+MaDI-Bench is the first benchmark to evaluate data integration end-to-end across the full pipeline of schema matching, value normalization, entity blocking, entity matching, and data fusion, rather than scoring each step in isolation. The authors validate it against human-engineered, best-of-breed, and LLM-based pipelines, and include a method for generating task variants to slow benchmark saturation as systems improve. It measures both step-wise and end-to-end performance, with all artifacts public.
+
+Mandol: An Agglomerative Agent Memory System for Long-Term Conversations (1 minute read)
+
+This paper introduces Mandol, an agent memory system that replaces the usual mix of separate vector and graph databases with a single memory-native store, fusing key-value, vector, and graph structures behind unified hybrid retrieval operators. By keeping LLMs out of the retrieval path and adding query-adaptive routing, denoising, and token-constrained context generation, it cuts cross-database I/O. The authors report best overall accuracy on LoCoMo and LongMemEval, plus a 5.4x retrieval and 4.8x insertion speedup under 10 QPS on consumer hardware.
+
+Experience Graphs: The Data Foundation for Self-Improving Agents (1 minute read)
+
+This paper argues that long-horizon agents produce a structured "experience graph" of artifacts, tool outputs, rewards, and causal lineage that most frameworks throw away as JSON checkpoints and session logs. The authors propose Trellis, a database that treats that graph as queryable, governed state, recasting frontier selection as a query, cross-session reuse as vector-seeded graph retrieval, and training-data extraction as a materialized view. In Meta's KernelEvolve kernel optimizer, that reuse hit target speedups roughly 10x faster at 52% lower token cost.
+
+CADENZA: Compiling Natural-Language Intent into Task-Specific Operator DAGs for Semantic Query Processing (1 minute read)
+
+CADENZA is a research engine that compiles each natural-language semantic operator into a plan space of typed task DAGs, then selects an executable plan under user-specified quality, latency, and cost trade-offs. Its task-extended relational algebra exposes each operator's intermediate outputs as a relational object the optimizer can filter, reorder, route, and threshold, with Bayesian optimization tuning backend routing and relational cutpoints jointly. On SemBench, the authors report up to 165.7x lower latency and 310.3x lower cost versus prior semantic-query optimizers.
+
+CORTEX: High-Quality Cross-Domain Organization of Web-Scale Corpora through Ontological Corpus Graph (1 minute read)
+
+This paper introduces Cortex, a framework that organizes web-scale training corpora into an Ontological Corpus Graph rather than the flat document collections most pipelines produce. The three-layer structure pairs a quality-refined content layer with an LLM-built hierarchical ontology and a cross-domain alignment layer, letting teams associate data across domains at any taxonomic resolution. The authors are releasing the code, a 24.14B-token refined corpus with its graph, and CortexBench, a cross-domain search-and-reasoning benchmark tested on eight frontier LLMs.
+
+Making Multimodal LLMs Reliable Chart Data Extractors: A Benchmark and Training Framework (1 minute read)
+
+This paper benchmarks how well multimodal LLMs reverse-engineer data tables from chart images without visible value labels, and finds they reconstruct table structure reliably but miss on precise numeric values. The authors then train a model using a progressive, human-like chart-reading process, reaching state-of-the-art numerical accuracy with just a 7B-parameter model and supporting mixed-initiative extraction workflows. For data teams, it points to a cheaper path for turning published charts back into queryable tables.
+
+🚀
+Launches & Tools
+
+Introducing Flink's Native S3 FileSystem: Built for Performance, Designed for Production (5 minute read)
+
+Apache Flink 2.3 introduced flink-s3-fs-native, a Hadoop-free S3 filesystem built specifically for Flink that ships as an experimental opt-in plugin and supports both RecoverableWriter for exactly-once sinks and a fast read path for checkpointing. The native plugin ends the long-standing choice between the Hadoop and Presto plugins, drops the hadoop-common dependency tree and AWS SDK v1, and delivers measurable performance gains already running in production at scale.
+
+Synthesize the big picture and analyze trends with BigQuery's AI.AGG function (3 minute read)
+
+BigQuery's new AI.AGG() function, now in preview, lets you summarize or synthesize across millions of rows of unstructured or multimodal data using natural-language instructions inside a single line of SQL. It targets aggregate questions that per-row AI functions can't answer, like surfacing the top feature requests across negative reviews or clustering Spark logs to find memory thrashing and clock drift before anything throws a FATAL error.
+
+Mistral OCR 4: SOTA OCR for Document Intelligence (5 minute read)
+
+(blurb not generated)
+
+Scaling Network Analysis for Fraud Prevention with BigQuery Graph (2 minute read)
+
+Curve, a UK financial super-app, moved its fraud network analysis to BigQuery Graph, using native GQL to run multi-hop queries across millions of users and tens of millions of connections without standing up a separate graph database. Keeping the data in BigQuery avoided a migration to a dedicated graph store, cutting cost while surfacing the shared-device and shared-card links that organized fraud rings use to evade per-transaction models.
+
+⚡
+Quick Links
+
+Historical memory prices 1960-2026 (1 minute read)
+
+An interactive Stanford dataset charting DRAM, NAND, and HBM prices per gigabyte from 1960 to 2026, with downloadable raw data.
+
+Memory Prices report from Stanford (1 minute read)
+
+An interactive Stanford dataset charting DRAM, NAND, and HBM prices per gigabyte from 1960 to 2026, with downloadable raw data.
+
+British Columbia, Time Zones, and Postgres (5 minute read)
+
+(blurb not generated)
