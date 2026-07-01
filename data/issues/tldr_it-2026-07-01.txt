@@ -6,11 +6,11 @@ TLDR IT 2026-07-01
 🚀
 News & Trends
 
+DHS confirms hackers breached HSIN info-sharing platform (1 minute read)
+
+DHS confirmed that an unknown threat actor breached the Homeland Security Information Network, an unclassified platform federal, state, local, and private-sector partners use to share sensitive incident and threat data, sometime between late May and early June. DHS says it isolated the affected systems and found no impact to classified networks, but the timing raises concern given the agency is coordinating World Cup security across the country.
+
 Amazon EKS now supports control plane egress through your VPC (5 minute read)
-
-AWS added customer-routed control plane egress to Amazon EKS, letting teams route Kubernetes API Server outbound traffic—admission webhook callbacks, OIDC discovery lookups, and aggregate API server requests—through an ENI in their own VPC under existing security group, endpoint policy, and Network Firewall controls. The feature targets regulated buyers in government, financial services, and healthcare, and supports org-wide enforcement via AWS Organizations Service Control Policies using the eks:controlPlaneEgressMode condition key.
-
-Nissan says Oracle PeopleSoft break-in may have spilled payroll records, SSNs (5 minute read)
 
 (blurb not generated)
 
@@ -22,92 +22,88 @@ Cisco Unified CM flaw CVE-2026-20230 now exploited in attacks (5 minute read)
 
 (blurb not generated)
 
-Over 900 Oracle E-Business instances exposed to ongoing attacks (1 minute read)
-
-Attackers are actively exploiting CVE-2026-46817, a CVSS 9.8 unauthenticated takeover flaw in Oracle E-Business Suite's Payments component, with roughly 950 instances still exposed online and no public patch-adoption data. Oracle shipped a fix in its May 2026 Critical Patch Update, but the ongoing campaign follows Clop and ShinyHunters intrusions into Oracle EBS and PeopleSoft, making immediate patching an urgent priority for enterprise IT teams.
-
-AWS funnels $1B into forward deployed engineering hub (5 minute read)
+Over 900 Oracle E-Business instances exposed to ongoing attacks (5 minute read)
 
 (blurb not generated)
+
+Hackers target Microsoft 365 accounts with 81 million login attempts (1 minute read)
+
+A password-spraying campaign generated more than 81 million Microsoft 365 login attempts over two weeks, using breached credentials to authenticate through Azure CLI's ROPC OAuth flow, which bypasses MFA where Conditional Access policies don't cover it. Huntress observed 78 accounts compromised across 64 organizations between June 12 and 26, exposing how narrowly scoped MFA policies leave legacy auth flows unprotected in enterprise tenants.
+
+AWS funnels $1B into forward deployed engineering hub (1 minute read)
+
+AWS committed $1B to a forward deployed engineering organization that embeds five-to-six-person pods into customer AWS accounts on 45-day sprints, pairing human engineers with AI agents that stay running long-term. The move matches Google Cloud's and Microsoft-plus-Accenture's FDE pushes and deepens vendor lock-in through a semantic layer and knowledge graph deployed directly into the customer's account, with Cox Automotive, the NBA, and the NFL already onboard.
 
 Retirement of Azure DevOps issuer in Workload identity federation service connections (5 minute read)
 
 (blurb not generated)
 
-In Less Than 24 Hours, Attackers Weaponize Cisco CUCM Flaw (1 minute read)
+Sources: Meta plans a cloud infrastructure business that will sell access to AI compute and models, to compete with AWS, Azure, and Google Cloud; META jumps 9% (Bloomberg) (1 minute read)
 
-Attackers began exploiting CVE-2026-20230, a critical SSRF flaw in Cisco Unified Communications Manager that grants unauthenticated remote attackers root access, less than 24 hours after SSD Secure Disclosure published a full exploit chain. CUCM serves roughly 30 million users globally, and Cisco shipped fixed versions on June 3, urging admins to patch deployments running the optional WebDialer service rather than wait on the 8.6 CVSS score.
+Meta plans to launch a cloud infrastructure business selling access to its AI compute and models, putting it in direct competition with AWS, Azure, and Google Cloud, according to Bloomberg sources; the stock jumped 9% on the report. The move would let Meta monetize its massive GPU buildout as a third-party provider, opening a new front in the enterprise cloud market where the three incumbents control the bulk of spend.
 
-Google Patches 382 Chrome Vulnerabilities (5 minute read)
-
-(blurb not generated)
-
-Microsoft previews Linux containers that run in Windows (5 minute read)
+In Less Than 24 Hours, Attackers Weaponize Cisco CUCM Flaw (5 minute read)
 
 (blurb not generated)
 
-India’s central bank mandated use of .bank domains to enhance trust – but its registry leaked sensitive info (5 minute read)
+Google Patches 382 Chrome Vulnerabilities (1 minute read)
+
+Google released Chrome 151 with patches for 382 vulnerabilities, 358 of which it discovered internally in a months-long surge the company attributes to AI without naming the tools involved. Fifteen flaws are rated critical and 67 high severity, many affecting the renderer process where crafted web content could enable arbitrary code execution or sandbox escape, though Google reports no in-the-wild exploitation.
+
+Microsoft previews Linux containers that run in Windows (1 minute read)
+
+Microsoft released a preview of native Linux container support in Windows, letting developers run Linux workloads without a separate WSL2 or Docker Desktop virtualization layer. The move tightens Windows Server and desktop integration with the container ecosystem enterprises already run on Linux, potentially trimming the tooling and licensing overhead IT teams maintain to bridge the two operating systems.
+
+India’s central bank mandated use of .bank domains to enhance trust – but its registry leaked sensitive info (1 minute read)
+
+India's Reserve Bank mandated that regulated banks migrate to .bank.in domains to curb phishing and boost consumer trust, but the registry it stands up exposed sensitive applicant data including PAN numbers and internal documents. The leak undercuts the trust premise of the program and hands enterprise security teams a fresh third-party risk to audit before onboarding to the new domain regime.
+
+Researchers spot exploitation of another critical Oracle defect (1 minute read)
+
+Attackers began exploiting CVE-2026-46817, a 9.8-severity flaw in the payments feature of Oracle E-Business Suite that Oracle patched in late May, with threat-intel firm Defused logging six hits on its honeypots before any public proof-of-concept existed. Shadowserver counts roughly 950 exposed EBS instances, over half in the US, and the same suite was mass-exploited by Clop last year, raising the odds of a broader campaign.
+
+Microsoft Adds New Teams Controls to Block Unauthorized AI Bots From Meetings (1 minute read)
+
+Microsoft added a new Teams admin policy that detects external AI bots, routes them to the lobby, and requires explicit organizer confirmation before they can join meetings. IT admins can now scope the control to specific users or groups from the Teams Admin Center, ISVs can register bots for self-identification, and the change retires the older CAPTCHA verification.
+
+Anthropic reactivates Fable, Mythos after securing government approval (1 minute read)
+
+Anthropic reactivated its Fable and Mythos frontier models for government customers after clearing a federal approval process that had kept them offline. The models return to regulated deployments even as underlying vetting concerns stay unresolved, leaving agencies and enterprise buyers to weigh renewed access to Anthropic's top-tier capabilities against compliance questions the approval did not fully settle.
+
+BlueHammer Vulnerability Exploited in Ransomware Attacks (5 minute read)
 
 (blurb not generated)
-
-BlueHammer Vulnerability Exploited in Ransomware Attacks (1 minute read)
-
-CISA updated its Known Exploited Vulnerabilities catalog to confirm that BlueHammer (CVE-2026-33825), a Microsoft Defender privilege-escalation flaw, is now being used in ransomware campaigns, though Microsoft's advisory still stops short of confirming in-the-wild exploitation. The bug was one of several dropped early by a researcher feuding with Microsoft over its patch handling, and Huntress observed zero-day exploitation before the April 14 fix shipped.
 
 Amadey and StealC Malware Network Disrupted, 27M Stolen Credentials Recovered (5 minute read)
 
 (blurb not generated)
 
-Microsoft Removes 119 Edge Extensions That Hid Malware in Images and Fonts (5 minute read)
+ChocoPoc malware delivered via trojanized exploits on GitHub (1 minute read)
 
-(blurb not generated)
+Sekoia identified at least seven trojanized proof-of-concept exploit repositories on GitHub delivering ChocoPoC, a Python-based RAT that runs shell commands, steals browser credentials, and exfiltrates data through abused Mapbox datasets. Rather than embedding malware in the exploit code, the campaign hides it in PyPI dependencies named frint and skytext, the latter pulled 2,400 times and aimed at security researchers testing trending CVEs.
 
-FortiBleed Targeted FortiGate Firewalls in 110 Million-Credential Harvesting Operation (5 minute read)
+Microsoft Removes 119 Edge Extensions That Hid Malware in Images and Fonts (1 minute read)
 
-(blurb not generated)
-
-Microsoft to assist European Commission in defense of EU-US data-sharing agreement (5 minute read)
-
-(blurb not generated)
-
-AWS launches forward-deployed engineering team to speed enterprise agentic AI adoption (5 minute read)
-
-(blurb not generated)
-
-How the Senate’s AI AGENT Act could reshape enterprise AI governance (5 minute read)
-
-(blurb not generated)
-
-IBM claims world's first sub-1 nanometer chip technology (5 minute read)
-
-(blurb not generated)
-
-AirDrop and Quick Share Flaws Let Nearby Attackers Trigger Crashes and Bypass Checks (5 minute read)
-
-(blurb not generated)
+Microsoft removed 119 malicious Edge extensions tied to a single threat actor it calls StegoAd, which hid payloads inside PNG, WebP, and WOFF2 files using steganography to evade scanners before stealing credentials and running ad fraud. The campaign had been live since 2021 across a 2.6 million install base, exposing how thinly the Edge Add-ons store vets the ad blockers, VPNs, and translators enterprise users sideload onto managed browsers.
 
 🧠
 Analysis & Opinions
 
-What the post-quantum executive order really demands of CISOs (5 minute read)
+How is AI changing datacenter network fabrics? (1 minute read)
+
+The Register examines how AI training and inference workloads are reshaping datacenter networking, as dense GPU clusters push east-west traffic and lossless, high-bandwidth fabrics to the center of infrastructure design. The piece argues that the old spine-leaf assumptions no longer hold, with 400/800GbE, RoCE, and InfiniBand now gating cluster performance. For IT buyers, the takeaway is that network fabric, not just compute, is becoming a primary constraint and line item in AI buildouts.
+
+Infosec professionals sour on automated pentesting tools (1 minute read)
+
+Security professionals have turned sharply against fully autonomous penetration testing, with the share willing to hand pentests entirely to automated tools falling from 29% last year to 9% now. The reversal signals that early enthusiasm for AI-driven offensive security has run into accuracy and trust limits, and vendors selling autonomous pentesting are likely to face longer procurement cycles as buyers insist on human oversight in the loop.
+
+How to Govern Autonomous Agents in Enterprise AI Factories (1 minute read)
+
+NVIDIA published its Secure Agent Workspace Reference Design, which moves agent execution off the employee's laptop, browser, or IDE and into a managed VM where identity, credentials, network access, runtime policy, and audit are enforced centrally. The argument for IT leaders is that always-on agents touching internal systems need the same governed perimeter as any privileged workload, with the endpoint reduced to a presentation layer and the VM as the isolation boundary.
+
+Preventing agent-generated infrastructure bloat through spec-driven governance (5 minute read)
 
 (blurb not generated)
-
-How is AI changing datacenter network fabrics? (5 minute read)
-
-(blurb not generated)
-
-Infosec professionals sour on automated pentesting tools (5 minute read)
-
-(blurb not generated)
-
-How to Govern Autonomous Agents in Enterprise AI Factories (5 minute read)
-
-(blurb not generated)
-
-Preventing agent-generated infrastructure bloat through spec-driven governance (2 minute read)
-
-The author argues that autonomous engineering agents will industrialize infrastructure inefficiency at the same scale they deliver software, provisioning oversized clusters and bloated containers across every environment because the spec never told them otherwise. With more than a quarter of new code already AI-generated and Gartner projecting just 30% of large enterprises will embed sustainability in requirements by 2027, the fix is spec-driven policy checks in the pipeline, since post-deploy remediation no longer scales.
 
 🤝
 Launches & Partnerships
@@ -120,84 +116,84 @@ Production-Ready Autonomous Incident Resolution with AWS DevOps Agent (now GA) a
 
 (blurb not generated)
 
-Work with delegated Gmail accounts from mobile devices (5 minute read)
+Work with delegated Gmail accounts from mobile devices (1 minute read)
 
-(blurb not generated)
+Google Workspace extended Gmail delegation to Android and iOS, letting users switch between their own inbox and delegated accounts, view unread counts, and see mail intermingled in an "All inboxes" view. The feature follows existing web delegation settings with no separate admin control, rolling out to all Workspace tiers, Individual subscribers, and personal accounts by late July.
 
-Create fully native and editable presentations with Gemini in Google Slides (5 minute read)
+Create fully native and editable presentations with Gemini in Google Slides (2 minute read)
 
-(blurb not generated)
+Google added Gemini-powered presentation generation to Google Slides, letting users produce full, multi-slide, fully editable decks from a single prompt grounded in Drive files and matched to an existing deck's style. The feature is available on Business Standard and Plus, Enterprise Standard and Plus, and consumer AI Pro and Ultra tiers, with promotional higher usage limits through August 1 before per-user caps take effect.
+
+AWS aims to lower log analytics costs with new analytics engine for managed OpenSearch (2 minute read)
+
+AWS launched a new log-analytics engine for its managed Amazon OpenSearch Service, storing data in Apache Parquet while keeping Lucene indexes, and claims it cuts storage costs by 70% without changing the existing console, APIs, or security model. The move targets enterprises drowning in AI-driven telemetry, where Dynatrace found log volumes up 93% year-over-year, though analysts warn migration effort and missing query support could slow adoption.
 
 Assign mobile device management admin privileges based on organizational unit (5 minute read)
 
 (blurb not generated)
 
-Automate public TLS certificate issuance with ACME support in AWS Certificate Manager (5 minute read)
+Upgrade Amazon EKS clusters with confidence using Kubernetes version rollbacks (1 minute read)
 
-(blurb not generated)
+AWS added Kubernetes version rollbacks to Amazon EKS, letting cluster administrators reverse a control plane upgrade within seven days and return to the previously validated version, one minor version at a time. The feature removes the one-way-door risk that pushed regulated teams to delay upgrades, and EKS cluster insights automatically checks rollback readiness for node compatibility and add-on dependencies before proceeding.
 
-Amazon EC2 C9g and C9gd instances powered by AWS Graviton5 processors are now available (5 minute read)
+Automate public TLS certificate issuance with ACME support in AWS Certificate Manager (1 minute read)
 
-(blurb not generated)
+AWS Certificate Manager now provides a fully managed ACME server endpoint that works with any ACMEv2-compatible client, including Certbot, cert-manager, and acme.sh, letting teams issue public TLS certificates from Amazon Trust Services without external CAs. PKI administrators get centralized control through IAM-bound ACME accounts, endpoint-level domain scoping, and CloudTrail logging, consolidating certificates that previously lived in fragmented external tools ahead of the CA/Browser Forum's 47-day validity mandate in 2029.
 
-Microsoft builds a bouncer to keep bots out of Teams meetings (5 minute read)
+Amazon EC2 C9g and C9gd instances powered by AWS Graviton5 processors are now available (1 minute read)
 
-(blurb not generated)
+AWS made its EC2 C9g and C9gd instances, powered by new Graviton5 processors, generally available, delivering up to 25% higher performance per vCPU than C8g and the fastest memory of any cloud instance via DDR5 8800MT/s DIMMs. The C9gd variant adds local NVMe SSD storage, and both target CPU-bound and agentic AI workloads across 11 sizes plus bare metal, giving enterprises a lower-cost alternative to x86 compute.
 
-New instances bring AWS’ Graviton5 CPUs to high-performance cloud workloads (5 minute read)
+Microsoft builds a bouncer to keep bots out of Teams meetings (1 minute read)
 
-(blurb not generated)
+Microsoft added controls to Teams that let organizers block unauthorized AI bots and notetakers from joining meetings, requiring third-party meeting assistants to be explicitly admitted rather than silently recording. The move gives IT and compliance teams a native lever over which agents capture meeting content, reducing the data-governance gaps created by employees bringing their own transcription tools into calls.
 
-AWS expands compute-optimized Graviton5 instances with C9g and C9gd VMs (5 minute read)
+New instances bring AWS’ Graviton5 CPUs to high-performance cloud workloads (1 minute read)
 
-(blurb not generated)
+AWS launched its EC2 C9g and C9gd instances, powered by Graviton5 CPUs that deliver up to 25% higher performance per vCPU than Graviton4-based C8g and pair DDR5 8800MT/s memory with five times the L3 cache. The compute-optimized instances target video encoding, scientific modeling, and agentic AI workloads, giving enterprises on AWS a cheaper Arm-based path than x86 for data-heavy jobs without leaving the EC2 stack.
 
-AI Overviews in Drive now available on mobile (5 minute read)
+AWS expands compute-optimized Graviton5 instances with C9g and C9gd VMs (1 minute read)
 
-(blurb not generated)
+AWS made its compute-optimized C9g and C9gd instances generally available, powered by Graviton5 CPUs with double the core count and 33% lower inter-core latency, claiming up to 25% higher performance per vCPU over C8g. The instances target agentic workloads and are the first compute-optimized line with the Nitro Isolation Engine, giving enterprises running orchestration and in-memory analytics a cheaper Arm alternative to x86 fleets.
 
-Ask Gemini in Drive now available on mobile (5 minute read)
+AI Overviews in Drive now available on mobile (1 minute read)
 
-(blurb not generated)
+Google made AI Overviews in Drive available in the Android and iOS apps, extending the Gemini-powered search summaries that reached general availability on the web in April. The feature is on by default wherever Gemini for Workspace in Drive is enabled, covering Business Standard and Plus, Enterprise Standard and Plus, and Google AI Pro and Ultra tiers, with a rollout across English and 28 additional languages over the coming weeks.
+
+Ask Gemini in Drive now available on mobile (1 minute read)
+
+Google extended Ask Gemini in Drive to the Android and iOS apps, adding the mobile version of the immersive assistant it made generally available on the web in April. The feature supports multi-turn conversations grounded in specific files and folders, honors existing access permissions, DLP, and IRM controls, and is included at no extra cost for Business and Enterprise Standard and Plus customers with Gemini for Workspace enabled.
 
 Educators and students can now share Gemini Canvas creations directly to Google Classroom (5 minute read)
 
 (blurb not generated)
 
-Accelerate your infrastructure deployments by up to 4x with AWS CloudFormation Express mode (5 minute read)
+AWS turbocharges log analytics in Amazon OpenSearch Service at no extra cost (1 minute read)
 
-(blurb not generated)
+AWS launched a purpose-built log analytics engine for Amazon OpenSearch Service at no additional cost, cutting storage costs by roughly 70% on average and doubling ingestion throughput by storing data in columnar Apache Parquet instead of inverted indexes. Available as a selectable mode within existing domains, it lets DevOps teams absorb 30-40% annual log growth without adding a secondary database or deleting unanalyzed data.
 
-ServiceNow, Accenture team up to target enterprise security (5 minute read)
+Accelerate your infrastructure deployments by up to 4x with AWS CloudFormation Express mode (1 minute read)
 
-(blurb not generated)
+AWS announced CloudFormation Express mode, a deployment option that completes stacks once resource configuration is applied rather than waiting for full stabilization checks, cutting deployment time by up to 4x. The mode targets iterative development and AI-assisted infrastructure workflows, dropping an SQS-with-DLQ deploy from 64 seconds to 10 and a Lambda deletion from 20-30 minutes to 10, with automatic retries for dependent resources.
 
-Microsoft MCP server gives AI assistants access to MSBuild logs (5 minute read)
+Get started with the Claude apps gateway for Google Cloud (3 minute read)
 
-(blurb not generated)
+Anthropic and Google Cloud launched the Claude apps gateway, a self-hosted service shipped with the Claude binary that sits between local Claude Code clients and Google Cloud Vertex AI. It centralizes identity, RBAC policy, telemetry, and spend caps that developers and platform admins otherwise manage per-laptop, routing logins through Google Workspace or any OIDC provider and attributing token usage to verified users for enterprise governance.
 
-IBM, Red Hat, Palo Alto team to secure open-source software (5 minute read)
+Scaling LLM Inference: Multi-Node KV Cache Offloading with GKE & Managed Lustre (2 minute read)
 
-(blurb not generated)
+Google Cloud detailed an architecture for offloading LLM KV caches to Managed Lustre, a dedicated parallel filesystem, integrated with GKE and the llm-d offloading stack for multi-node inference. Google reports over 50% TCO savings and nearly 60% fewer GPU-hours for Llama-3.3-70B on a six-node A3 Mega cluster, driven by a 95% cache hit rate on shared prefilled caches.
 
-Conversational analytics in BigQuery brings trusted agentic reasoning to everyone (5 minute read)
+ServiceNow, Accenture team up to target enterprise security (1 minute read)
 
-(blurb not generated)
-
-Anomaly detection using dynamic thresholds and two-year-long alerts in Cloud Monitoring (5 minute read)
-
-(blurb not generated)
-
-Microsoft adds smarter bot protection to Teams meetings (5 minute read)
-
-(blurb not generated)
+ServiceNow and Accenture partnered to launch a joint enterprise security offering aimed at hardening legacy implementations as agentic AI spreads across more business functions. The tie-up pairs ServiceNow's workflow and security operations tooling with Accenture's deployment services, giving joint customers a single channel to address agent-driven attack surface without assembling the integration themselves.
 
 🎁
 Miscellaneous
 
-The Bear Necessities: A Look at the Drivers, Dynamics, and Applications of the Pro-Russia Influence Ecosystem (5 minute read)
+The Bear Necessities: A Look at the Drivers, Dynamics, and Applications of the Pro-Russia Influence Ecosystem (2 minute read)
 
-(blurb not generated)
+Google's Threat Intelligence Group reported that the pro-Russia influence ecosystem is pivoting from Ukraine-focused operations back toward broader targeting of the EU, NATO, and other strategic priorities, with growing use of generative AI for planning, research, and content creation. The report warns that the ecosystem's interconnected structure makes it resilient to narrow takedowns, so enterprise security teams should plan for coordinated disruption rather than single-point mitigations.
 
 ⚡
 Quick Links
@@ -206,10 +202,10 @@ Cloudflare Collaborates With Leading Browsers to Develop a Privacy-First Protoco
 
 (blurb not generated)
 
+VEIL#DROP Malware Chain Uses Blogger Platform to Deliver PureLogs Stealer (1 minute read)
+
+Securonix flagged VEIL#DROP, a malware chain abusing Google's Blogger to stage PureLogs stealer and evade reputation-based defenses.
+
 The inside scoop on alerting changes in Kubernetes Monitoring (5 minute read)
-
-Grafana Cloud is consolidating on Grafana-managed alerts as its single alerting platform, which may break notifications after a Kubernetes Monitoring reinstall.
-
-Kali Linux 2026.2 released with 9 new tools, NetHunter updates (5 minute read)
 
 (blurb not generated)

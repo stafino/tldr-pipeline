@@ -29,17 +29,17 @@ No Figma. No Jira. No docs. How Gusto built a new product line with Claude Code 
 
 (blurb not generated)
 
-Sonnet 5 review: I ran 64 generations to find out if it's worth it (5 minute read)
+Sonnet 5 review: I ran 64 generations to find out if it's worth it (1 minute read)
 
-(blurb not generated)
+Claire Vo built a repeatable eval harness, the How I AI Bench, and ran Sonnet 5 blind against Sonnet 4.6, Opus 4.8, GPT-5.5, and Gemini 3 Pro across PRD quality, prototype generation, agentic tasks, and agent personality. Scores combined human vibe rating (70%) with LLM-as-judge (30%), and the takeaway is a per-task recommendation rather than a single winner, so PMs know which model to reach for by job.
 
 How top PMs increase their leverage with AI (5 minute read)
 
 (blurb not generated)
 
-Using Large Language Models as Low-Cost Statistical Estimators for Human-Response Data (5 minute read)
+Using Large Language Models as Low-Cost Statistical Estimators for Human-Response Data (1 minute read)
 
-(blurb not generated)
+This paper proves that under squared loss, a well-calibrated LLM can match the Bayes-optimal risk for any inference that depends on data only through the conditional mean, making it a low-cost stand-in for human-subject experiments. The authors formalize the LLM as a misspecified estimator, decompose its error into representation bias and optimization error, and provide finite-sample bounds plus a calibration protocol with explicit decision rules. For PMs, it sets out the conditions under which synthetic user data can substitute for real research, and where it cannot.
 
 10x Coding Speed Won't 10x Revenue (5 minute read)
 
@@ -47,12 +47,12 @@ Using Large Language Models as Low-Cost Statistical Estimators for Human-Respons
 
 How ChatGPT Actually Picks Sources (I Read the Network Traffic, Not the Outputs) (5 minute read)
 
-An analyst read two days of ChatGPT's raw network traffic to document how it actually picks sources, pulling the engine's own internal labels like result_source (serp, labrador, bright, oxylabs) and turn_use_case rather than inferring machinery from finished answers. The structural findings hold because a field only has to appear once to be real, but the author flags all percentages as directional, drawn from one logged-in Pro account and roughly 1,240 source records across mostly SaaS queries.
-
-39 principles for designing human-AI interaction (5 minute read)
-
 (blurb not generated)
 
-Great Products, Bad Companies (5 minute read)
+39 principles for designing human-AI interaction (2 minute read)
 
-(blurb not generated)
+The author distills research from human-AI interaction, mixed-initiative systems, and trust-in-automation into 39 applied principles for designing AI interfaces that support appropriate reliance, user control, and transparency. The core argument is that product quality isn't set by model capability alone: the same model can feel useful or dangerous depending on when the system suggests versus acts, how it surfaces uncertainty, and what evidence backs a generated answer. Newer principles pull directly from OpenAI's Model Spec and Anthropic's Claude Constitution on honesty and preserving human oversight.
+
+Great Products, Bad Companies (1 minute read)
+
+Marty Cagan argues that great products are necessary but not sufficient for great companies, because a proven product-making company becomes an attractive target for people who infiltrate boards, replace missionary founders, and strip-mine the culture for a fast financial win. He points to Eric Ries's new book Incorruptible as a reason to stop treating that fate as unavoidable, and to start designing governance that protects long-term value the way product teams protect customer trust.
