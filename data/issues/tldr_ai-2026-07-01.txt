@@ -1,0 +1,115 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR AI 2026-07-01
+
+🚀
+Headlines & Launches
+
+Amazon seeks cheaper AI alternatives as Anthropic shifts to token-based pricing (5 minute read)
+
+(blurb not generated)
+
+Figma's design agent, now with custom tools and greater context (5 minute read)
+
+Figma expanded its on-canvas design agent with custom tools, richer team context, and skills that let designers prompt it to build reusable generative plugins, shader effects, and fills. Built on PropsKit so the plugins look native to Figma, the agent keeps work directly on the canvas, while classic plugins remain the route for AI services or third-party APIs.
+
+US Government allows Anthropic limited release of AI model that sparked cybersecurity concerns (5 minute read)
+
+The US government cleared Anthropic to redeploy Mythos 5, its strongest cybersecurity model, to a small group of trusted cyber defenders and infrastructure providers after an export block earlier in June over national security concerns. The revised license does not yet cover Fable 5, the weaker variant, which remains suspended while Anthropic continues negotiating with the Commerce Department to restore general access.
+
+Asian AI startups launch Mythos-like models as Anthropic's export ban drags on (5 minute read)
+
+(blurb not generated)
+
+Sakana Fugu Launches With 93.2 LiveCodeBench Score After Claude Ban (5 minute read)
+
+(blurb not generated)
+
+🧠
+Deep Dives & Analysis
+
+What Happened After 2,000 People Tried to Hack My AI Assistant (5 minute read)
+
+Fernando Irarrázaval ran a public challenge where roughly 2,000 people made 6,000 attempts to make his OpenClaw test instance, running on Opus 4.6, leak a secret via inbound email. None succeeded, despite $500 in token spend and a Google account suspension from the email volume. The author reads this as evidence that frontier labs' anti-injection training is working, but cautions that 6,000 failed attempts is no guarantee against a more sophisticated attacker and still advises against production systems where prompt injection could cause irreversible damage.
+
+Tokenmaxxing is dead, long live tokenmaxxing (5 minute read)
+
+(blurb not generated)
+
+“It's Hard to Eval” Is a Product Smell (5 minute read)
+
+The author argues that "our product is hard to eval" is a product smell, since artifacts that are hard for you to verify are usually hard for users too, sometimes forcing them to redo the work to check the output. The post walks through three AI products, including an internal data agent, and shows before-and-after designs that add checkable artifacts like intermediate calculations, metric definitions, and the underlying SQL. The core principle is to design for ease of verification before building evals.
+
+AI coding tools are speeding up code, not delivery (5 minute read)
+
+AI coding tools accelerate how fast code gets written, but that speed rarely translates into faster delivery. Apple's Xcode 27, shown at WWDC 2026, leans into agent-driven workflows with an in-editor conversation transcript, a /pl plan command that gathers context before making changes, and DeviceHub for unified simulator and device management. The bottleneck, the piece argues, sits downstream in review, integration, and testing rather than in code generation itself.
+
+How ChatGPT Actually Picks Sources (I Read the Network Traffic, Not the Outputs) (5 minute read)
+
+The author reverse-engineered how ChatGPT selects sources by reading two days of raw network traffic rather than analyzing finished answers, logging roughly 1,240 source records across a few dozen searches. The traffic exposes ChatGPT's internal labels, including the result_source field that stamps each result with providers like SERP, Labrador, Bright Data, and Oxylabs. The author separates high-confidence structural findings about which fields the engine uses from the low-confidence percentages drawn from a small, SaaS-heavy query sample.
+
+⚒️
+Engineering & Research
+
+DeepSeek open sources DSpark, a new framework to speed up LLM inference by up to 85% (5 minute read)
+
+(blurb not generated)
+
+Accelerating Gemini Nano models on Pixel with frozen Multi-Token Prediction (5 minute read)
+
+(blurb not generated)
+
+DiScoFormer: One transformer for density and score, across distributions (5 minute read)
+
+Allen AI introduced DiScoFormer, a transformer that estimates both the density and the score of a distribution from a set of data points in a single forward pass without retraining. The model uses cross-attention to evaluate density and score at any point, with a shared backbone and two output heads that exploit the relationship between score and the gradient of log-density to stay accurate as dimensionality grows.
+
+How we used DSPy to turn AI evaluations into better responses in Dash chat (5 minute read)
+
+Dropbox used DSPy to turn its LLM-as-judge evaluations into a feedback loop that improves its Dash chat agent. The team first calibrated the judges against human-labeled examples using optimization algorithms like GEPA and MIPROv2, then used those judges to optimize the agent's system prompt, cutting incomplete answers and token usage without degrading answer quality.
+
+14x faster embeddings: how we rebuilt the ONNX path in Manticore (5 minute read)
+
+Manticore Search 27.1.5 ships a new ONNX Runtime backend for Auto Embeddings that runs ~14x faster on average than the previous SentenceTransformers/Candle path, measured across a full grid of 1–32 threads and batch sizes 1–128 on the same 16-core box and weights. Throughput rises from the old path's 5–11 docs/sec to 70–230 docs/sec, with single-insert latency dropping to ~14ms from over 200ms.
+
+Qwen 3.6 27B is the sweet spot for local development (1 minute read)
+
+Qwen 3.6 ships in two variants, a mixture-of-experts 35B A3B and a slower but stronger dense 27B, and this post argues the dense 27B is the best local model yet for general-purpose development. The author ran it with llama.cpp on an 8-bit quantization, where it built a hexagonal Minesweeper as a proper pnpm package from a single prompt.
+
+We Ran 250 AI Agent Evals to Find Out if Skills Beat Docs. The Answer Is More Complicated Than We Expected (5 minute read)
+
+Wix ran 250 controlled evaluations comparing how AI agents perform tasks using standard docs, AI-optimized docs, and purpose-built skills. The team found that a slightly stale skill becomes a liability rather than an asset, with well-maintained documentation often outperforming the hand-written skills derived from it.
+
+From Brain Waves to Words: Brain2Qwerty Offers a New Path to Communication Without Surgery (5 minute read)
+
+Meta introduced Brain2Qwerty, a non-invasive system that decodes typed sentences from brain activity recorded with MEG and EEG rather than surgically implanted electrodes. The model reconstructs characters as participants type, reaching a 32% character-error rate with the best MEG recordings, a step toward restoring communication without the risks of implanted devices.
+
+We have Mythos at Home: GLM 5.2 beats Claude in our Cyber Benchmarks (5 minute read)
+
+(blurb not generated)
+
+🎁
+Miscellaneous
+
+Clean GitHub repo tricks AI coding agents into running malware (5 minute read)
+
+(blurb not generated)
+
+New Enterprise-Ready MCP Specification Brings New Security Challenges (5 minute read)
+
+(blurb not generated)
+
+Amazon Q Developer Flaw Could Let Malicious Repos Run Code via MCP Configs (5 minute read)
+
+(blurb not generated)
+
+Sakana AI and 360 Security Launch AI Tools to Fill the Gap Anthropic's Export Ban Created (5 minute read)
+
+Sakana AI and 360 Security launched AI tools positioned as alternatives to Anthropic's Mythos and Fable 5 models, both restricted under the US export ban now in its third week. Tokyo-based Sakana released Fugu, a seven-billion-parameter orchestrator that routes tasks across external models to match Fable 5 benchmarks without training a frontier model, while Beijing's 360 Security introduced Tulongfeng, a vulnerability-discovery tool it claims rivals Mythos.
+
+⚡
+Quick Links
+
+x402 Agentic Commerce Hits 500k Daily Transactions (5 minute read)
+
+Payments using the x402 protocol rose 5x in June to roughly 500k daily transactions, driven mostly by pay-per-use AI inference.

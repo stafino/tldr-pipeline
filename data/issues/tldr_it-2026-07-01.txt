@@ -1,0 +1,38 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR IT 2026-07-01
+
+🚀
+News & Trends
+
+Amazon EKS now supports control plane egress through your VPC (5 minute read)
+
+AWS added customer-routed control plane egress to Amazon EKS, letting teams route Kubernetes API Server outbound traffic—admission webhook callbacks, OIDC discovery lookups, and aggregate API server requests—through an ENI in their own VPC under existing security group, endpoint policy, and Network Firewall controls. The feature targets regulated buyers in government, financial services, and healthcare, and supports org-wide enforcement via AWS Organizations Service Control Policies using the eks:controlPlaneEgressMode condition key.
+
+In Less Than 24 Hours, Attackers Weaponize Cisco CUCM Flaw (1 minute read)
+
+Attackers began exploiting CVE-2026-20230, a critical SSRF flaw in Cisco Unified Communications Manager that grants unauthenticated remote attackers root access, less than 24 hours after SSD Secure Disclosure published a full exploit chain. CUCM serves roughly 30 million users globally, and Cisco shipped fixed versions on June 3, urging admins to patch deployments running the optional WebDialer service rather than wait on the 8.6 CVSS score.
+
+Salesforce employees are confused about why the company is promoting a competitor inside Slack (1 minute read)
+
+Anthropic launched Claude Tag, an always-on AI agent that lives inside Slack channels, and Salesforce promoted it publicly even though it competes directly with Salesforce's own Slackbot and Agentforce. The overlap leaves Slack customers choosing between three agent layers in one workspace, and Salesforce has reason to tolerate it: it expects to spend $300M on Anthropic tokens this year and holds a roughly 1% stake in the lab.
+
+US Federal Insurance Regulator Confirms Data Breach Via Oracle Flaw (5 minute read)
+
+The NAIC confirmed that attackers exploited a zero-day vulnerability in Oracle PeopleSoft to breach its environment and publish credit rating agency data used for insurer investment designations. The incident disrupted NAIC operations enough that some rating agencies paused data feeds and the association suspended assigning investment designations, though personal, payment, and state-system data were not compromised.
+
+You have got to be KDDI-ng – Japanese telco exposes 14.2 million managed email credentials (5 minute read)
+
+(blurb not generated)
+
+New FBI Alert: Russian Intelligence Uses Signal Recovery Keys to Access Messages (5 minute read)
+
+The FBI and CISA updated their March 2026 advisory to warn that FSB-linked groups UNC5792 and UNC4221 have shifted their Signal phishing campaigns from stealing verification codes to eliciting victims' Backup Recovery Keys. Unlike a one-time code, a stolen recovery key unlocks the full historical message archive and stays valid even after the victim creates a new account on the same number, making account takeover persistent.
+
+⚡
+Quick Links
+
+The inside scoop on alerting changes in Kubernetes Monitoring (5 minute read)
+
+Grafana Cloud is consolidating on Grafana-managed alerts as its single alerting platform, which may break notifications after a Kubernetes Monitoring reinstall.

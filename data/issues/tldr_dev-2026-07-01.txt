@@ -1,0 +1,112 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR Dev 2026-07-01
+
+🧑‍💻
+Articles & Tutorials
+
+What Happened After 2,000 People Tried to Hack My AI Assistant (5 minute read)
+
+A developer ran a public challenge inviting 2,000 people to extract secrets from his OpenClaw test instance via email injection, and after 6,000 attempts, $500 in token spend, and a suspended Google account, nobody succeeded. The underlying Opus 4.6 model held its anti-injection system prompt, though the author cautions that surviving 6,000 attempts is no guarantee against a more sophisticated attacker in production.
+
+How we used DSPy to turn AI evaluations into better responses in Dash chat (5 minute read)
+
+Dropbox used DSPy to build a two-stage feedback loop for its Dash chat agent, first calibrating LLM-as-judge evaluations against human-labeled examples, then using those tuned judges to optimize the agent's system prompt. The post walks through the judge-calibration setup and DSPy optimizers like GEPA and MIPROv2, with the result being significantly fewer incomplete answers and lower token usage without degrading answer quality.
+
+A peek into Reddit's anti-spam internals (5 minute read)
+
+A researcher captured screenshots of Reddit's live spam-removal internals in 2021, after a bug briefly swapped the generic "Removed: Auto" text for the full removal reason on their moderation feed. The leaked strings expose the signals Reddit's classifier weighs per action, including a Perspective API spam score, account age, karma, report count, email domain, network org, and a TLS fingerprint.
+
+14x faster embeddings: how we rebuilt the ONNX path in Manticore (5 minute read)
+
+Manticore Search 27.1.5 replaces its SentenceTransformers/Candle embedding path with an ONNX Runtime backend that runs ~14x faster on the same hardware, model, and weights, lifting throughput from 5-11 docs/sec to 70-230 docs/sec across the full thread and batch grid. The engineering log covers the two changes that mattered most, turning off intra-op spinning and parallelizing inside each call so a single client thread with batch sizes of 32-128 maximizes ingest.
+
+Factoring RSA Keys with Many Zeros (1 minute read)
+
+Researchers found real-world RSA keys with regularly spaced blocks of all zeros in their moduli, a sparsity pattern that makes them far easier to factor, surfaced by scanning Certificate Transparency logs, TLS/SSH scans, and PGP dumps with the open-source badkeys project. The flaw traces to independent implementations failing the same way, including CompleteFTP's key generation and certificates once issued to Yahoo and Verizon, suggesting cryptanalytic attacks tuned for this failure class are worth building.
+
+How we built SmithDB's inverted index for full-text search (5 minute read)
+
+LangChain's second post on SmithDB full-text search covers how the inverted index is constructed, compacted, and queried, with construction done inline during ingestion so new runs are searchable within seconds. To speed sorting, the team interns each unique term to an integer ID so comparison cost scales with distinct terms rather than occurrences, cutting construction time roughly 2.2x in their benchmark.
+
+Turning Scattered Data Into Queryable Segments at Scale: How Razorpay Built Its Customer Data Platform (5 minute read)
+
+Razorpay built an in-house Customer Data Platform that resolves identities across devices and payment instruments, then serves audience segments across 500M+ user profiles in under 30ms. The post details how the consent-native design keeps PII isolated to source systems to satisfy India's DPDPA, replacing a workflow where a custom Spark job once took 2-3 days to return a single segment.
+
+We Ran 250 AI Agent Evals to Find Out if Skills Beat Docs. The Answer Is More Complicated Than We Expected (5 minute read)
+
+Wix ran 250 controlled evals comparing AI agents on standard docs, AI-optimized docs, and purpose-built skills, and found that purpose-built skills only win when kept current. A slightly stale skill underperforms the docs it was derived from, since hand-maintained skills drift the moment an API adds a required field or deprecates a method, making well-structured documentation often the better "skill.
+
+Building My Own Self-Hosted dbt Cloud (5 minute read)
+
+A data engineer rebuilt the most-used parts of dbt Cloud as a self-hosted stack, wiring a React/Shadcn front end and FastAPI backend over dbt Core and a self-hosted Prefect API for orchestration. The build targets the three features the author sees used most, a browser IDE, job scheduling, and run history, and starts with the hardest piece: an in-browser editor with git logic and shell-command execution.
+
+Kafka Share Groups - Pathological Fetch Waits with Record_limit (5 minute read)
+
+The author traces why Kafka share groups with share.acquire.mode=record_limit and fewer consumers than partitions consistently stalled out his Dimster throughput tests, isolating the cause to round-robin fetching that polls one broker at a time rather than concurrently. The post shows how this fetch pattern, combined with partition skew, produces pathological wait times that block lag drains, with batch_optimized avoiding the problem by fetching brokers in parallel.
+
+Tokenmaxxing is dead, long live tokenmaxxing (5 minute read)
+
+(blurb not generated)
+
+🧠
+Opinions & Advice
+
+NSA's SIGINT Enabling Project Pushes Weakened TLS Post-Quantum Standard (5 minute read)
+
+The author argues that NSA's SIGINT Enabling Project is steering the IETF toward "ietf-tls-mlkem," a post-quantum TLS standard weaker than the hybrid "ietf-tls-ecdhe-mlkem" alternative, swapping honest "NSA wants this" arguments for fake technical ones. After losing the working-group vote, NSA called another and is packing the room, and the post asks readers to email the TLS mailing list opposing draft-ietf-tls-mlkem-08 before 7 July 2026.
+
+AI coding tools are speeding up code, not delivery (5 minute read)
+
+The author argues that AI coding assistants speed up how fast developers produce code but leave end-to-end delivery times largely unchanged, since review, testing, integration, and deployment remain the real bottlenecks. Faster code generation shifts the constraint downstream rather than removing it, so teams that measure success by output volume will miss where their cycle time actually goes.
+
+Clean GitHub repo tricks AI coding agents into running malware (5 minute read)
+
+(blurb not generated)
+
+Qwen 3.6 27B is the sweet spot for local development (1 minute read)
+
+The author argues Qwen 3.6 27B is the first local model practical enough to serve as a general-purpose coding assistant, citing a hexagonal minesweeper it built correctly from a single prompt with proper pnpm packaging. The dense 27B variant runs locally via llama.cpp at Q8_0 quantization and outperforms the faster 35B A3B mixture-of-experts version on instruction-following, at the cost of speed and a hot machine.
+
+New Enterprise-Ready MCP Specification Brings New Security Challenges (1 minute read)
+
+MCP's 2026-07-28 revision makes the protocol stateless at the layer, closing off session hijacking and unsolicited server prompts while tightening authentication, with legacy versions deprecated over a 12-month window. Akamai's analysis warns the rewrite shifts risk onto implementations: predictable tracking IDs and state objects open the door to cross-tenant workflow hijacking, and new MCP HTTP headers introduce desync attacks and secret leakage if developers map API keys or PII into them.
+
+“It's Hard to Eval” Is a Product Smell (5 minute read)
+
+The author argues that "our product is hard to eval" is a product smell, since artifacts that are hard for you to verify are usually hard for users too, often forcing them to redo the work to check the output. Drawing on three AI products he advised, he shows that designing for verifiability, like exposing checkable artifacts and the underlying SQL in a data agent, should come before building evals.
+
+🚀
+Launches & Tools
+
+DeepSeek open sources DSpark, a new framework to speed up LLM inference by up to 85% (5 minute read)
+
+(blurb not generated)
+
+Apache Flink 2.3.0 Release Announcement (5 minute read)
+
+Apache Flink 2.3.0 expands Flink SQL with new FROM_CHANGELOG and TO_CHANGELOG process table functions that convert between append-only and dynamic changelog tables, plus a redesigned native S3 filesystem built on AWS SDK v2. The release implements 15 FLIPs, adds application-level lifecycle management for production deployments, and reworks SinkUpsertMaterializer for better performance on some SQL workloads.
+
+Introducing Package Proxy: Supply-Chain Safety Checks Without Client-Side Software (5 minute read)
+
+Thinkst released Package Proxy, a Cloudflare-deployed proxy that runs inline supply-chain safety checks for npm, pip, uv, and cargo without any client-side agent. It applies heuristics like flagging very recently published versions and packages with low install counts to catch back-doored or typo-squatted dependencies, and ships as an open-source repo you deploy into your own Cloudflare account.
+
+Introducing Flink's Native S3 FileSystem: Built for Performance, Designed for Production (5 minute read)
+
+Apache Flink 2.3 introduces flink-s3-fs-native, a Hadoop-free S3 filesystem built specifically for Flink that replaces the two existing Hadoop-based plugins on the s3:// scheme. The native plugin supports RecoverableWriter for exactly-once sinks while keeping a fast read path, drops the hadoop-common dependency tree and AWS SDK v1, and ships as an experimental opt-in already running in production at scale.
+
+Build from anywhere with Cursor for iOS (5 minute read)
+
+Cursor launched a native iOS app in public beta that lets developers start and steer coding agents from their phone, either always-on in the cloud or via Remote Control over agents running on their own machine. The app supports any frontier model, voice input, and slash commands, and pushes lock-screen Live Activities plus notifications when an agent finishes, needs input, or has a PR ready to merge.
+
+Google Antigravity agents get full context with GitLab Orbit (3 minute read)
+
+GitLab released Orbit, a lifecycle context graph that installs from the Google Antigravity MCP Store and gives coding agents structured access to projects, pipelines, merge requests, vulnerabilities, and source code across a GitLab instance. Orbit indexes the instance into a knowledge graph exposed through two MCP tools, query_graph and get_graph_schema, and in internal tests cut agent hallucinations by up to 45x while using up to 4.5x fewer tokens.
+
+🎁
+Miscellaneous
+
+Amazon Q Developer Flaw Could Let Malicious Repos Run Code via MCP Configs (5 minute read)
+
+(blurb not generated)
