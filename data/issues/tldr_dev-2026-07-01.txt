@@ -6,107 +6,306 @@ TLDR Dev 2026-07-01
 🧑‍💻
 Articles & Tutorials
 
-What Happened After 2,000 People Tried to Hack My AI Assistant (5 minute read)
+How we found a bug in the hyper HTTP library (5 minute read)
 
-A developer ran a public challenge inviting 2,000 people to extract secrets from his OpenClaw test instance via email injection, and after 6,000 attempts, $500 in token spend, and a suspended Google account, nobody succeeded. The underlying Opus 4.6 model held its anti-injection system prompt, though the author cautions that surviving 6,000 attempts is no guarantee against a more sophisticated attacker in production.
+(blurb not generated)
+
+I ported Kubernetes to the browser (1 minute read)
+
+A developer ported Kubernetes to TypeScript as webernetes, a partial reimplementation that runs an entire cluster in the browser with pod lifecycles, cluster DNS and networking, container garbage collection, IP allocation, and Deployment and ReplicaSet tracking. Rather than compiling Kubernetes to WebAssembly, which would ship megabytes and fails on unavailable system APIs, the project reimplements the control plane in ~140KiB gzipped and defines images through a TypeScript API backed by an in-browser registry.
+
+Core dump epidemiology: fixing an 18-year-old bug (1 minute read)
+
+OpenAI traced a batch of "impossible" C++ crashes in its Rockset data infrastructure, where functions returned to bogus addresses or ran with a %rsp misaligned by 8 bytes, by building a population-level dataset of every crash and reasoning about it like an epidemiologist. The symptoms turned out to be two unrelated causes discovered at once: silent CPU corruption on one Azure host, and an 18-year-old race condition in GNU libunwind.
+
+Looking Ahead to Postgres 19 (1 minute read)
+
+Postgres 19 enters beta with REPACK CONCURRENTLY landing in core, giving operators a lock-light way to reclaim table bloat and rewrite tables without the exclusive lock that VACUUM FULL or CLUSTER demands. The release also adds partition merge and split, SQL property graph queries, and more complete logical replication, alongside incremental gains across VACUUM, EXPLAIN, COPY, and the planner.
 
 How we used DSPy to turn AI evaluations into better responses in Dash chat (5 minute read)
 
-Dropbox used DSPy to build a two-stage feedback loop for its Dash chat agent, first calibrating LLM-as-judge evaluations against human-labeled examples, then using those tuned judges to optimize the agent's system prompt. The post walks through the judge-calibration setup and DSPy optimizers like GEPA and MIPROv2, with the result being significantly fewer incomplete answers and lower token usage without degrading answer quality.
+(blurb not generated)
+
+WATaBoy: JIT-Ing Game Boy Instructions to WASM Beats a Native Interpreter (1 minute read)
+
+A developer building a Game Boy emulator for their final-year project generated WebAssembly bytecode from Game Boy instructions, exploiting the JIT compilation that JavaScriptCore applies to hot Wasm in browsers, the one path around Apple's iOS JIT ban. The JIT-to-Wasm approach stays cycle-accurate by predicting interrupts and falling back to an interpreter, and it beats a natively running interpreter on performance.
 
 A peek into Reddit's anti-spam internals (5 minute read)
 
-A researcher captured screenshots of Reddit's live spam-removal internals in 2021, after a bug briefly swapped the generic "Removed: Auto" text for the full removal reason on their moderation feed. The leaked strings expose the signals Reddit's classifier weighs per action, including a Perspective API spam score, account age, karma, report count, email domain, network org, and a TLS fingerprint.
+(blurb not generated)
+
+MCP Server Architecture Patterns for LLM-Integrated Applications (1 minute read)
+
+This industry experience paper catalogues five recurring MCP server patterns observed across 15 production and public servers: Resource Gateway, Tool Orchestrator, Stateful Session Server, Proxy Aggregator, and Domain-Specific Adapter, each documented with four anti-patterns and cross-cutting auth, versioning, and observability concerns. A tool-count study found selection accuracy drops below 90% at 10 to 15 tools per context for Claude Haiku 4.5 and 20 to 30 for Sonnet 4.
+
+How Netflix Simplified Batch Compute with Kueue (5 minute read)
+
+(blurb not generated)
+
+Memory Safe Context Switching (1 minute read)
+
+Fil-C implements longjmp/setjmp and the ucontext coroutine APIs (getcontext, setcontext, makecontext, swapcontext) so that no misuse can corrupt the stack or escape its capability model. Restoring a returned-from or freed stack, swapping into the currently executing context, or running on a dangling stack all become clean panics instead of the unprintable, exploitable crashes those same bugs produce in ordinary C.
 
 14x faster embeddings: how we rebuilt the ONNX path in Manticore (5 minute read)
 
-Manticore Search 27.1.5 replaces its SentenceTransformers/Candle embedding path with an ONNX Runtime backend that runs ~14x faster on the same hardware, model, and weights, lifting throughput from 5-11 docs/sec to 70-230 docs/sec across the full thread and batch grid. The engineering log covers the two changes that mattered most, turning off intra-op spinning and parallelizing inside each call so a single client thread with batch sizes of 32-128 maximizes ingest.
+(blurb not generated)
 
-Factoring RSA Keys with Many Zeros (1 minute read)
+Factoring RSA Keys with Many Zeros (5 minute read)
 
-Researchers found real-world RSA keys with regularly spaced blocks of all zeros in their moduli, a sparsity pattern that makes them far easier to factor, surfaced by scanning Certificate Transparency logs, TLS/SSH scans, and PGP dumps with the open-source badkeys project. The flaw traces to independent implementations failing the same way, including CompleteFTP's key generation and certificates once issued to Yahoo and Verizon, suggesting cryptanalytic attacks tuned for this failure class are worth building.
+(blurb not generated)
+
+OTel and mesh-derived metrics: A 2026 reference (1 minute read)
+
+This reference shows how Linkerd's sidecar proxy emits golden metrics for every inbound and outbound request the moment a workload is meshed, with no instrumentation, SDK calls, or image rebuilds, giving you the east-west traffic that application-layer OpenTelemetry never sees. It walks through where mesh metrics overlap with OTel and where they don't, then wires the proxy's Prometheus endpoint into an existing OTel Collector pipeline so both layers land in the same backend.
+
+AdaTrans: Automated C to Rust Transformation via Error-Adaptive Repair (1 minute read)
+
+AdaTrans is a framework for automated C-to-Rust translation that maps compiler errors to targeted repairs through a strategy-driven RAG mechanism, an error-stratified transformation strategy, and a multi-stage validation pipeline that checks both compilation and functional equivalence. On 104 algorithmic problems it hits a 95.51% mean compilation pass rate and an 81.09% solve rate while keeping the unsafe-file rate at 1.19%.
+
+Client-Side Load Balancing at a Million Requests Per Second (5 minute read)
+
+(blurb not generated)
 
 How we built SmithDB's inverted index for full-text search (5 minute read)
 
-LangChain's second post on SmithDB full-text search covers how the inverted index is constructed, compacted, and queried, with construction done inline during ingestion so new runs are searchable within seconds. To speed sorting, the team interns each unique term to an integer ID so comparison cost scales with distinct terms rather than occurrences, cutting construction time roughly 2.2x in their benchmark.
+(blurb not generated)
 
 Turning Scattered Data Into Queryable Segments at Scale: How Razorpay Built Its Customer Data Platform (5 minute read)
 
-Razorpay built an in-house Customer Data Platform that resolves identities across devices and payment instruments, then serves audience segments across 500M+ user profiles in under 30ms. The post details how the consent-native design keeps PII isolated to source systems to satisfy India's DPDPA, replacing a workflow where a custom Spark job once took 2-3 days to return a single segment.
+(blurb not generated)
 
-We Ran 250 AI Agent Evals to Find Out if Skills Beat Docs. The Answer Is More Complicated Than We Expected (5 minute read)
-
-Wix ran 250 controlled evals comparing AI agents on standard docs, AI-optimized docs, and purpose-built skills, and found that purpose-built skills only win when kept current. A slightly stale skill underperforms the docs it was derived from, since hand-maintained skills drift the moment an API adds a required field or deprecates a method, making well-structured documentation often the better "skill.
-
-Building My Own Self-Hosted dbt Cloud (5 minute read)
-
-A data engineer rebuilt the most-used parts of dbt Cloud as a self-hosted stack, wiring a React/Shadcn front end and FastAPI backend over dbt Core and a self-hosted Prefect API for orchestration. The build targets the three features the author sees used most, a browser IDE, job scheduling, and run history, and starts with the hardest piece: an in-browser editor with git logic and shell-command execution.
-
-Kafka Share Groups - Pathological Fetch Waits with Record_limit (5 minute read)
-
-The author traces why Kafka share groups with share.acquire.mode=record_limit and fewer consumers than partitions consistently stalled out his Dimster throughput tests, isolating the cause to round-robin fetching that polls one broker at a time rather than concurrently. The post shows how this fetch pattern, combined with partition skew, produces pathological wait times that block lag drains, with batch_optimized avoiding the problem by fetching brokers in parallel.
-
-Tokenmaxxing is dead, long live tokenmaxxing (5 minute read)
+Decades-Old Bash Tricks Expose AI Coding Agents to Supply Chain Attacks (5 minute read)
 
 (blurb not generated)
+
+Fintech Engineering Handbook (5 minute read)
+
+(blurb not generated)
+
+The Shifting Line Between CSS States and JavaScript Events (1 minute read)
+
+This post maps the CSS pseudo-classes that behave like JavaScript event listeners, including :hover, :active, :focus, :focus-visible, and :focus-within, explaining why each tracks state rather than firing on events. It then walks through the proposed event-trigger from the Animation Triggers spec, an unsupported feature that would let CSS respond to events directly and drive animations without JavaScript.
 
 🧠
 Opinions & Advice
 
+The Coming Loop (5 minute read)
+
+(blurb not generated)
+
 NSA's SIGINT Enabling Project Pushes Weakened TLS Post-Quantum Standard (5 minute read)
 
-The author argues that NSA's SIGINT Enabling Project is steering the IETF toward "ietf-tls-mlkem," a post-quantum TLS standard weaker than the hybrid "ietf-tls-ecdhe-mlkem" alternative, swapping honest "NSA wants this" arguments for fake technical ones. After losing the working-group vote, NSA called another and is packing the room, and the post asks readers to email the TLS mailing list opposing draft-ietf-tls-mlkem-08 before 7 July 2026.
+(blurb not generated)
+
+What can you confidently guarantee about your software? (1 minute read)
+
+The author argues that most engineers can name what their software is supposed to do but rarely state what it actually guarantees under failure, load, or malformed input. The piece pushes teams to write down explicit, testable invariants rather than relying on informal confidence, since unstated assumptions are where production incidents originate.
 
 AI coding tools are speeding up code, not delivery (5 minute read)
 
-The author argues that AI coding assistants speed up how fast developers produce code but leave end-to-end delivery times largely unchanged, since review, testing, integration, and deployment remain the real bottlenecks. Faster code generation shifts the constraint downstream rather than removing it, so teams that measure success by output volume will miss where their cycle time actually goes.
+(blurb not generated)
 
 Clean GitHub repo tricks AI coding agents into running malware (5 minute read)
 
 (blurb not generated)
 
-Qwen 3.6 27B is the sweet spot for local development (1 minute read)
+Working With AI: A concrete example (1 minute read)
 
-The author argues Qwen 3.6 27B is the first local model practical enough to serve as a general-purpose coding assistant, citing a hexagonal minesweeper it built correctly from a single prompt with proper pnpm packaging. The dense 27B variant runs locally via llama.cpp at Q8_0 quantization and outperforms the faster 35B A3B mixture-of-experts version on instruction-following, at the cost of speed and a hot machine.
+Carson Gross walks through a hyperscript parser regression where Claude correctly found the root cause of an `as JSON` binding conflict but proposed a fix that would have papered over the real grammar ambiguity. He frames the episode as a near-miss with the Sorcerer's Apprentice problem, where leaning on AI without understanding the system leaves a maintainer unable to properly fix the issues it surfaces.
 
-New Enterprise-Ready MCP Specification Brings New Security Challenges (1 minute read)
+HackerRank open sourced its ATS. My resume scored 90/100. Oh wait 74. No – 88 (5 minute read)
 
-MCP's 2026-07-28 revision makes the protocol stateless at the layer, closing off session hijacking and unsolicited server prompts while tightening authentication, with legacy versions deprecated over a 12-month window. Akamai's analysis warns the rewrite shifts risk onto implementations: predictable tracking IDs and state objects open the door to cross-tenant workflow hijacking, and new MCP HTTP headers introduce desync attacks and secret leakage if developers map API keys or PII into them.
+(blurb not generated)
+
+Parse, Don't Validate – In a Language That Doesn't Want You To (1 minute read)
+
+The author argues that TypeScript's structural typing lets validation lie: a function like `isValidUser` returns a boolean, and the type system immediately forgets what was checked, leaving `email` as a plain `string` three calls deeper. Following Alexis King's "parse, don't validate," the fix is to parse inputs into precise types like `EmailAddress` so the guarantee is encoded once and the rest of the program never re-checks it.
+
+Qwen 3.6 27B is the sweet spot for local development (5 minute read)
+
+(blurb not generated)
+
+GuardFall Exposes Open-Source AI Coding Agents to Decades-Old Shell Injection Risks (1 minute read)
+
+Adversa AI's GuardFall research shows that ten of eleven popular open-source coding agents can be tricked into running blocked commands, because their blocklists match commands as plain text while bash rewrites that text before execution, so `r''m` sails past a filter watching for `rm`. The authors frame this as a class of problems rather than a patchable bug, since the gap opens whenever an agent auto-executes shell commands with full account access against untrusted repos or packages.
+
+282 iOS AI Apps Leak API Keys and Open AI Proxy Access in Network Traffic Study (1 minute read)
+
+Wake Forest researchers tested 444 iOS AI chatbot apps and found 282 exposed paid model access in plaintext network traffic, via embedded API keys, replayable tokens, or backends that accept unauthenticated requests. The takeaway for developers is that client-side secrets are not secret, and the fix is routing every model call through an authenticated backend proxy, because three months after disclosure only 28% had patched.
+
+New Enterprise-Ready MCP Specification Brings New Security Challenges (5 minute read)
+
+(blurb not generated)
+
+Inside the Advisory Database and what happens when vulnerability volume breaks records (1 minute read)
+
+The GitHub Advisory Database published 1,560 reviewed advisories in May 2026, five times its typical output and still not enough as private vulnerability reports climbed from ~550 to over 3,000 per week. GitHub argues review times will stay longer until submitters carry more of the load by filing complete data and requesting CVEs only when they intend to publish.
+
+Microsoft Warns Poisoned MCP Tool Descriptions Can Make AI Agents Leak Data (1 minute read)
+
+Microsoft Incident Response and Defender researchers show that a poisoned MCP tool description can turn an AI agent into a data-exfiltration path, since the agent treats the description's hidden instructions as legitimate and every step looks routine enough to trip no alarm. The core weakness is that MCP tools ship with plain-text descriptions the agent trusts, and MCP picks up description changes on the fly, so a third-party tool approved once can go malicious without re-review.
+
+Fake Bug Report Hijacks AI Coding Agents at Scale (1 minute read)
+
+Tenet Security's "agentjacking" research shows attackers can hijack AI coding agents like Claude Code, Cursor, and Codex by planting a single fake error report in a public bug tracker such as Sentry, which the agent retrieves, trusts, and executes with the developer's own access. Because every step is authorized, IAM, EDR, and network controls flag nothing, leaving cloud credentials, GitHub tokens, and CI/CD secrets exposed.
 
 “It's Hard to Eval” Is a Product Smell (5 minute read)
 
-The author argues that "our product is hard to eval" is a product smell, since artifacts that are hard for you to verify are usually hard for users too, often forcing them to redo the work to check the output. Drawing on three AI products he advised, he shows that designing for verifiability, like exposing checkable artifacts and the underlying SQL in a data agent, should come before building evals.
+(blurb not generated)
+
+The Problem is Prompt Debt (5 minute read)
+
+(blurb not generated)
+
+Xsnow "protestware" in Debian (1 minute read)
+
+Debian's xsnow package ships an Easter egg that spawns extra Ukrainian flags on the desktop when the language is set to Russian, and a developer has argued the targeted behavior violates the project's Free Software Guidelines against discrimination. The case tests whether Debian has any grounds to force removal, since the package maintainer also authors xsnow upstream and no rule explicitly bans such conduct-based features.
 
 🚀
 Launches & Tools
+
+Claude Sonnet 5 (1 minute read)
+
+Anthropic released Claude Sonnet 5, its most agentic Sonnet model yet, with performance close to Opus 4.8 on reasoning, tool use, and coding while covering a wider cost-performance range through adjustable effort levels. It ships as the default on Free and Pro plans and in Claude Code, with introductory API pricing of $2 per million input tokens and $10 per million output tokens through August 31, 2026.
+
+What's new in Git 2.55.0? (3 minute read)
+
+Git 2.55.0 adds a `git history fixup <commit-id>` subcommand that stages and amends changes into an existing commit in one step, automatically rebasing any stacked branches that contain it instead of requiring an interactive autosquash rebase. The release also extends the built-in fsmonitor daemon to Linux via inotify, speeding up `git status` in large monorepos without a third-party tool like Watchman.
+
+Zluda 6 release (run unmodified CUDA applications on non-Nvidia GPUs) (1 minute read)
+
+ZLUDA 6 is out, letting unmodified CUDA applications run on non-Nvidia GPUs, with new support for 32-bit PhysX and Blender texture rendering on AMD hardware. The release folds in improved Windows support and better ML workloads, though PhysX remains incomplete, with glitchy fluid simulations and a rough method for loading ZLUDA into Steam games.
+
+Microsoft finally launches WSL Containers in public preview (5 minute read)
+
+(blurb not generated)
+
+A native graphical shell for SSH (1 minute read)
+
+Outer Shell is an open-source graphical shell for SSH, where each app is a minimal HTTP server exposed over a Unix domain socket rather than a localhost port, with encryption handled at the SSH layer instead of in the app. The shell provides a home screen of apps plus an API for inter-app lookups, so a text-editor app can register itself and open files double-clicked elsewhere.
+
+Meituan open sources LongCat-2.0, the 1.6T, near-frontier agentic coding model that's been leading OpenRouter — trained entirely on Chinese chips (3 minute read)
+
+Meituan open sourced LongCat-2.0, a 1.6-trillion-parameter MoE coding model under an MIT license, revealing it as "Owl Alpha," the stealth model that has topped OpenRouter's developer charts for two months. The model ships a native 1M-token context window, charges nothing for context-cache hits, and was trained entirely on Chinese chips, with promotional pricing at $0.30/$1.20 per million input/output tokens.
+
+Run a vLLM Server on HF Jobs in One Command (5 minute read)
+
+(blurb not generated)
+
+NixOS 26.05 (1 minute read)
+
+NixOS 26.05 "Yarara" ships from 2842 contributors and 59703 commits, updating Nixpkgs with 20442 new packages and bumping GNOME to 50 and GCC to 15. Stage 1 initrd now defaults to systemd with the scripted implementation deprecated for removal in 26.11, and this is the final release to support x86_64-darwin following Apple's platform deprecation.
+
+Highlights from Git 2.55 (1 minute read)
+
+Git 2.55 shipped with contributions from over 100 developers, headlined by `git repack --write-midx=incremental`, which writes incremental multi-pack index chains directly instead of rewriting a single MIDX over every pack. The append-only mode lets large repositories index newly created packs by adding a layer to the chain, avoiding the expensive full-file rewrite that single-MIDX maintenance forces on each small update.
+
+Getting more from each token: How Copilot improves context handling and model routing (5 minute read)
+
+(blurb not generated)
+
+Run isolated sandboxes with full lifecycle control: AWS Lambda introduces MicroVMs (5 minute read)
+
+(blurb not generated)
+
+Rust introduces new Range types (2 minute read)
+
+Rust 1.96.0 stabilizes new `core::range` types (Range, RangeFrom, RangeInclusive) that implement `IntoIterator` instead of `Iterator`, letting them also be `Copy` and fixing the long-standing footgun of implementing both traits on one type. The release also adds `assert_matches!` and `debug_assert_matches!` macros, and makes undefined symbols a hard linker error on WebAssembly targets instead of silently converting them to "env" imports.
+
+Deno update streamlines creation of desktop apps (2 minute read)
+
+Deno Land released Deno 2.9 with an experimental deno desktop feature that compiles a script or web framework project into a single self-contained binary, running the UI in a webview and the logic in Deno via the same machinery as deno compile. The release also cuts hello-world cold start from 34ms to 17ms, holds resident memory flat near 62MB under load, and advances Node.js compatibility to version 26.
+
+Anthropic launches Claude Sonnet 5 model on Claude and APIs (1 minute read)
+
+Anthropic released Claude Sonnet 5, available now across all Claude plans, Claude Code, and the Claude API at $2 per million input tokens and $10 per million output tokens until a scheduled increase after August 31, 2026. The model improves on Sonnet 4.6 in reasoning, tool use, and agentic coding, running multi-step tasks across browsers and terminals while closing the benchmark gap with the pricier Opus 4.8.
+
+Anthropic rolls out Sonnet 5 with near-Opus 4.8 performance at a lower price (1 minute read)
+
+Anthropic released Claude Sonnet 5, bringing Opus-class agentic features like multi-step planning and browser and terminal tool use to the cheaper Sonnet tier for the first time. The model closes much of the gap with Opus 4.8 on coding, research, and automation, and is notably better at verifying its own output without being prompted, making it a stronger cost-performance option for long multi-step tasks.
+
+Bringing more agent harnesses and frameworks to Cloudflare, starting with Flue (5 minute read)
+
+(blurb not generated)
+
+Cursor releases its iOS app for vibe coding on the go (1 minute read)
+
+Cursor released a native iOS app in public beta for paid plans that turns the phone into a control surface for its coding agents, letting developers launch agents, select frontier models, inspect diffs, leave follow-up instructions, and merge pull requests from an iPhone. It supports Remote Control for agents running on a local machine and runs cloud agents in isolated VMs, so a session started at the desk can continue without keeping a laptop open.
+
+DeepReinforce releases Ornith-1.0 open-source coding models (5 minute read)
+
+(blurb not generated)
 
 DeepSeek open sources DSpark, a new framework to speed up LLM inference by up to 85% (5 minute read)
 
 (blurb not generated)
 
-Apache Flink 2.3.0 Release Announcement (5 minute read)
+Accelerating Transformers Fine-Tuning with NVIDIA NeMo AutoModel (5 minute read)
 
-Apache Flink 2.3.0 expands Flink SQL with new FROM_CHANGELOG and TO_CHANGELOG process table functions that convert between append-only and dynamic changelog tables, plus a redesigned native S3 filesystem built on AWS SDK v2. The release implements 15 FLIPs, adds application-level lifecycle management for production deployments, and reworks SinkUpsertMaterializer for better performance on some SQL workloads.
-
-Introducing Package Proxy: Supply-Chain Safety Checks Without Client-Side Software (5 minute read)
-
-Thinkst released Package Proxy, a Cloudflare-deployed proxy that runs inline supply-chain safety checks for npm, pip, uv, and cargo without any client-side agent. It applies heuristics like flagging very recently published versions and packages with low install counts to catch back-doored or typo-squatted dependencies, and ships as an open-source repo you deploy into your own Cloudflare account.
-
-Introducing Flink's Native S3 FileSystem: Built for Performance, Designed for Production (5 minute read)
-
-Apache Flink 2.3 introduces flink-s3-fs-native, a Hadoop-free S3 filesystem built specifically for Flink that replaces the two existing Hadoop-based plugins on the s3:// scheme. The native plugin supports RecoverableWriter for exactly-once sinks while keeping a fast read path, drops the hadoop-common dependency tree and AWS SDK v1, and ships as an experimental opt-in already running in production at scale.
-
-Build from anywhere with Cursor for iOS (5 minute read)
-
-Cursor launched a native iOS app in public beta that lets developers start and steer coding agents from their phone, either always-on in the cloud or via Remote Control over agents running on their own machine. The app supports any frontier model, voice input, and slash commands, and pushes lock-screen Live Activities plus notifications when an agent finishes, needs input, or has a PR ready to merge.
-
-Google Antigravity agents get full context with GitLab Orbit (3 minute read)
-
-GitLab released Orbit, a lifecycle context graph that installs from the Google Antigravity MCP Store and gives coding agents structured access to projects, pipelines, merge requests, vulnerabilities, and source code across a GitLab instance. Orbit indexes the instance into a knowledge graph exposed through two MCP tools, query_graph and get_graph_schema, and in internal tests cut agent hallucinations by up to 45x while using up to 4.5x fewer tokens.
+(blurb not generated)
 
 🎁
 Miscellaneous
 
+Pollen tried to remove my article and Google is assisting with it (1 minute read)
+
+The Pragmatic Engineer's Gergely Orosz reports that Google delisted his 2022 article on events startup Pollen's $800M collapse after receiving a bogus copyright claim, despite him being the sole copyright holder. The case shows how anyone can file a fraudulent DMCA notice to scrub critical coverage from search results, with Google honoring the takedown by default and leaving the author to appeal.
+
+Hijacked npm and Go Packages Use VS Code Tasks to Deploy Python Infostealer (5 minute read)
+
+(blurb not generated)
+
+Malicious PyPI packages give hackers control of Telegram bot servers (1 minute read)
+
+Malicious PyPI packages disguised as forks of the popular but abandoned Pyrogram Telegram framework carry a hidden secret.py backdoor that runs attacker-supplied Python or shell commands on infected bot servers. Checkmarx tied at least eight packages, totaling over 25,000 downloads since November 2025, to the campaign, which grants full access to the bot's session, environment variables, and anything the host application can read.
+
+Claude Sonnet 5 boosts coding, reasoning, and tool use (1 minute read)
+
+Anthropic released Claude Sonnet 5 on June 30, a drop-in upgrade over Sonnet 4.6 that improves coding, reasoning, and agentic tool use while approaching Opus 4.8 performance at lower cost. It ships with adaptive thinking on by default, an updated tokenizer, and 400 errors for manual extended thinking and non-default sampling, with introductory API pricing of $2 per million input and $10 per million output tokens through August 31.
+
+Amazon Q VS Extension Flaw Leads to Cloud Credential Theft (5 minute read)
+
+(blurb not generated)
+
+Public PoC Released for Critical libssh2 CVE-2026-55200 Client-Side SSH Flaw (5 minute read)
+
+(blurb not generated)
+
 Amazon Q Developer Flaw Could Let Malicious Repos Run Code via MCP Configs (5 minute read)
 
 (blurb not generated)
+
+Claude Sonnet 5 on GitLab: More reliable, more efficient (2 minute read)
+
+Claude Sonnet 5 is now available on GitLab's Duo Agent Platform across all tiers and deployment models, becoming the first model to complete every task in GitLab's benchmark suite versus 93.8% for Sonnet 4.6. GitLab reports 8.8% more issues resolved, which for teams running Duo agents in production means multi-file refactors and test generation return reviewable output instead of stalling partway through a run.
+
+No more Java refills for Intel Macs after JDK 27, says Oracle (1 minute read)
+
+Oracle will stop shipping Java builds for Intel-based Macs after JDK 27, pushing remaining x86 Mac developers toward Apple Silicon or third-party OpenJDK distributions. The move follows Apple's own wind-down of Intel Mac support and adds JDK 27, due in late 2026, as the last LTS release that will get official Oracle binaries for the architecture.
+
+AI was supposed to kill engineering jobs, but new data suggests they're the most resilient (5 minute read)
+
+(blurb not generated)
+
+⚡
+Quick Links
+
+Linux for the Sega MegaDrive (1 minute read)
+
+Linux for the Sega MegaDrive runs a real m68k kernel via a Mega EverDrive cartridge, with a QEMU fork included for testing without hardware.
+
+Google copybara: moving code between repositories (1 minute read)
+
+Google's internal tool for transforming and syncing code between repositories, keeping one authoritative source of truth via stateless, config-driven Git workflows.
+
+Will It Mythos? (5 minute read)
+
+(blurb not generated)
+
+Pong game recompiles its own source code every frame — winning entry at IOCCC29 was generated by a custom compiler (1 minute read)
+
+An IOCCC29-winning Pong recompiles its own source every frame, each run printing the C for the next frame with state baked in.
+
+CachyOS June 2026 Release (1 minute read)
+
+CachyOS June 2026 release adds a Hyprland Noctalia desktop, DNS-over-QUIC via blocky, extended Python PGO, and GCC branch-misprediction tuning.

@@ -6,51 +6,282 @@ TLDR InfoSec 2026-07-01
 🔓
 Attacks & Vulnerabilities
 
+CISA: Windows BlueHammer flaw now exploited by ransomware gangs (1 minute read)
+
+CISA flagged BlueHammer (CVE-2026-33825), a Microsoft Defender privilege-escalation flaw, as now exploited by ransomware gangs, escalating from earlier zero-day abuse that surfaced after a researcher leaked PoC code in April. Local attackers can read the SAM database to grab local password hashes and pivot to SYSTEM; Microsoft patched it on April 14, so unpatched Windows hosts should be remediated and local credentials rotated immediately.
+
 Clean GitHub repo tricks AI coding agents into running malware (5 minute read)
 
 (blurb not generated)
 
-Factoring RSA Keys with Many Zeros (1 minute read)
-
-Researchers analyzing badkeys data found a class of weak RSA keys with regularly spaced blocks of all zeros, including certificates issued to Yahoo, Verizon, and NetApp devices, plus SSH hosts running EnterpriseDT's CompleteFTP (RSA keys from v10.0.0-12.0.0, DSA keys from v10.0.0-23.0.4). The sparse moduli are factorable, and the recurrence of the same failure across independent implementations suggests more vulnerable products remain undiscovered and worth scanning for.
-
-In Less Than 24 Hours, Attackers Weaponize Cisco CUCM Flaw (1 minute read)
-
-Attackers are exploiting CVE-2026-20230, a critical SSRF flaw in Cisco Unified Communications Manager (CVSS 8.6) that chains to unauthenticated root RCE, with attacks starting less than 24 hours after SSD Secure Disclosure published PoC and a full exploit chain. Cisco patched the bug on June 3; the WebDialer service is off by default, so prioritize patching and disabling WebDialer on any internet-exposed CUCM or Unified CM SME deployments.
-
-Amazon Q Developer Flaw Could Let Malicious Repos Run Code via MCP Configs (5 minute read)
+Factoring RSA Keys with Many Zeros (5 minute read)
 
 (blurb not generated)
 
-New Enterprise-Ready MCP Specification Brings New Security Challenges (5 minute read)
+AirDrop and Quick Share Flaws Let Nearby Attackers Trigger Crashes and Bypass Checks (5 minute read)
 
 (blurb not generated)
 
-You have got to be KDDI-ng – Japanese telco exposes 14.2 million managed email credentials (5 minute read)
+Phantom Squatting Uses AI-Hallucinated Domains for Phishing and Malware (1 minute read)
+
+Palo Alto Networks' Unit 42 disclosed "phantom squatting," a technique where attackers register the nonexistent domains that LLMs hallucinate and stand up phishing kits on them to catch traffic AI tools route their way. Across 685,339 queries about 913 brands, two models produced 2.1M links, 13,229 already flagged malicious and roughly 250,000 invented domains unregistered, and Unit 42 observed an attacker register one predicted domain 23 days later.
+
+Adobe patches seven max severity ColdFusion, Campaign flaws (1 minute read)
+
+Adobe patched seven maximum-severity flaws across ColdFusion (CVE-2026-48276, -48277, -48281, -48282, -48316) and Campaign Classic (CVE-2026-48286), most enabling unauthenticated remote code execution in low-complexity attacks with no user interaction. Adobe reports no in-the-wild exploitation yet but tagged all as priority 1, urging admins to patch within 72 hours; the Campaign flaw affects only on-premises deployments.
+
+Nissan discloses employee data breach linked to Oracle zero-day attacks (5 minute read)
 
 (blurb not generated)
+
+Cisco Unified CM flaw CVE-2026-20230 now exploited in attacks (5 minute read)
+
+(blurb not generated)
+
+New BioShocking Attack Tricks AI Browsers Into Leaking User Credentials (1 minute read)
+
+Researchers at LayerX disclosed BioShocking, an indirect prompt-injection technique that frames a malicious web page as a game and coaxes agentic AI browsers into exfiltrating user credentials, defeating OpenAI's ChatGPT Atlas, Perplexity's Comet, Anthropic's Claude extension, and three others in testing. Vendor response was uneven: OpenAI patched Atlas, Perplexity closed the report without action, Anthropic's fix reportedly failed, and Fellou, Genspark, and Sigma did not respond.
+
+Public PoC Released for Critical libssh2 CVE-2026-55200 Client-Side SSH Flaw (5 minute read)
+
+(blurb not generated)
+
+Oracle E-Business Suite Flaw CVE-2026-46817 Actively Exploited in the Wild (1 minute read)
+
+Oracle E-Business Suite is under active exploitation via CVE-2026-46817 (CVSS 9.8), an improper-privilege-management and authentication flaw in Oracle Payments that lets an unauthenticated attacker take over instances over HTTP. Oracle patched it in last month's Critical Patch Update for versions 12.2.3 through 12.2.15, and Defused Cyber observed exploitation on its honeypots over the weekend despite no public PoC, so patch immediately.
+
+Apple Patches 30+ iOS, macOS, Safari Flaws, Including AI-Discovered WebKit Bugs (1 minute read)
+
+Apple released security updates for iOS, iPadOS, macOS Tahoe, and Safari 26.5.2, patching over 30 flaws including four WebKit memory-corruption and use-after-free bugs (CVE-2026-43707, -43716, -43745, -43715) found with AI tools from OpenAI Codex and Anthropic Claude. None are reported as actively exploited, but Apple says it shipped fixes earlier than usual to shrink the discovery-to-weaponization window as AI accelerates exploit development.
+
+Amadey and StealC Malware Network Disrupted, 27M Stolen Credentials Recovered (5 minute read)
+
+(blurb not generated)
+
+Attackers Exploit SimpleHelp CVE-2026-48558 to Deploy TaskWeaver and Djinn Stealer (5 minute read)
+
+(blurb not generated)
+
+Researcher Analyzes 3,000 Live ClickFix Payloads, Exposing API-Driven Malware Delivery (1 minute read) [flag]
+
+New research from Bert-Jan Pals dissecting roughly 3,000 live ClickFix payloads found the fake-CAPTCHA lures now pull commands from API-driven backend servers that check an access token and return a freshly encrypted script (rotating Base64, AES, TripleDES, Rijndael, and Deflate) on every request, all decrypting to the same in-memory PowerShell runspace. ClickFix has its own ATT&CK entry (T1204.004) and hit 47% of Microsoft Defender Experts' initial-access cases; defenders should hunt on the runspace execution, not the disposable wrapping.
+
+GuardFall Exposes Open-Source AI Coding Agents to Decades-Old Shell Injection Risks (1 minute read)
+
+Adversa AI disclosed GuardFall, a shell-injection bypass that defeats command blocklists in 10 of 11 open-source AI coding agents tested, including opencode, Goose, Cline, Aider, and OpenHands. The agents match commands as plain text while bash rewrites them before execution, so tricks like r''m or base64-piped payloads run destructive commands with full account access; only Continue defended against it.
+
+282 iOS AI Apps Leak API Keys and Open AI Proxy Access in Network Traffic Study (1 minute read)
+
+Researchers at Wake Forest University found that 282 of 444 tested iOS AI chatbot apps leak paid LLM access through network traffic, exposing plaintext API keys (54 apps), keyless open relays to paid accounts (92), or replayable tokens still valid when captured (136), with 28 also leaking their system prompts. The credentials enable LLMjacking that Sysdig estimates could reach $46,000 per day per account, yet only 28% of notified developers had fixed the exposure three months after disclosure.
+
+Progress Kemp LoadMaster Flaw Could Let Attackers Run Root Commands Pre-Auth (1 minute read)
+
+Progress Kemp LoadMaster contains a critical command-injection flaw (CVE-2026-8037, CVSS 9.8) that lets an unauthenticated attacker run arbitrary commands as root by sending a crafted JSON request to the /accessv2 API endpoint. Progress patched GA v7.2.63.2 and LTSF v7.2.54.18 on June 4 with no reported in-the-wild exploitation, but watchTowr published a full exploit chain on June 29, so edge appliances with the API enabled should be updated now.
+
+Hijacked npm and Go Packages Use VS Code Tasks to Deploy Python Infostealer (5 minute read)
+
+(blurb not generated)
+
+Malicious PyPI packages give hackers control of Telegram bot servers (1 minute read)
+
+Checkmarx disclosed Operation Navy Ghost, a campaign that has published at least eight trojanized Pyrogram forks to PyPI since November 2025, each hiding a secret.py backdoor that registers Telegram command handlers to run attacker-supplied Python or shell commands on the bot server. Developers using the unmaintained Pyrogram library should audit dependencies for the named forks and rotate any credentials or session tokens exposed to affected bots.
 
 🧠
 Strategies & Tactics
+
+GitHub Updates actions/checkout to Block Common Pwn Request Attack Patterns (5 minute read)
+
+(blurb not generated)
+
+The Realities of AI Video Surveillance (5 minute read)
+
+(blurb not generated)
+
+The Bear Necessities: A Look at the Drivers, Dynamics, and Applications of the Pro-Russia Influence Ecosystem (2 minute read)
+
+Google Threat Intelligence Group reports that the pro-Russia influence ecosystem has matured from a wartime tool into a global strategic asset, pivoting from Ukraine-specific goals back toward the EU, NATO, and other long-standing Kremlin targets. The group expects influence operations and hacktivism to intensify outside Ukraine, increasingly powered by generative AI for planning, research, and content creation. Defenders should treat the ecosystem as resilient to narrow takedowns, since its interconnected components survive limited-scope disruption.
+
+Securing the AI Agent: A Unified Framework for Multi-Layer Agent Red Teaming (1 minute read)
+
+AI-Infra-Guard is an open-source framework that red teams AI agents by matching a detection paradigm to each layer of the attack surface: infrastructure, protocol/tool, agent behavior, and model. It spans deterministic rule matching over 75+ components and 1,400+ vulnerability rules, LLM-driven auditing of MCP servers and agent-skill packages, multi-turn black-box red teaming, and a jailbreak harness with 26+ attack operators. It also audits the agent-skill supply chain, which most tooling ignores.
+
+An Empirical Study of Security Calibration in Large Language Models for Code (1 minute read)
+
+A new empirical study evaluated security calibration in GPT-4o-mini, Gemini-2.0-Flash, and Qwen3-Coder-Next, testing whether models can tell when the code they generate is insecure. The authors found overconfidence is pervasive, calibration-guided automated repair yields only limited fixes while frequently introducing functional regressions, and architectural gating that helps on controlled benchmarks degrades in realistic repository-level settings. For teams shipping LLM-generated code, model confidence is not a reliable signal of security, so keep independent SAST and review in the loop.
+
+Inside the Advisory Database and what happens when vulnerability volume breaks records (1 minute read)
+
+GitHub's Advisory Database published 1,560 reviewed advisories in May 2026, more than 5x its typical monthly output and the highest on record. Private vulnerability reports jumped from ~550/week in January to over 3,000/week, and GitHub CNA CVE requests hit nearly 4,000 in May, roughly 10x year-over-year. Review times are now longer, but advisories remain human-validated. Defenders can help by submitting complete vulnerability data, coordinating with maintainers, and requesting CVEs only with clear intent to publish.
+
+AI-Generated PowerShell Malware: An Experimental Framework and Dataset (1 minute read)
+
+This paper proposes an experimental framework and sandbox for dynamic analysis of LLM-generated PowerShell malware, and releases a manually curated dataset of real-world PowerShell samples annotated in natural language. Testing permissive open-weight models adapted to malware generation, the authors found AI-generated scripts closely mirror real malware in triggered OS-level malicious events, with a median Jaccard index of 84.5% and complete overlap in 48.4% of cases. Behavioral detections keyed to OS events, rather than static signatures, will hold up better against this generation.
+
+Security--Fidelity Tradeoffs: The Hidden Cost of Prompt Injection Defense (1 minute read)
+
+This paper introduces SecFid, a benchmark showing that indirect prompt injection defenses buy security by suppressing untrusted text, which corrupts tasks like translation and document editing that must preserve it. Across 1,168 examples and 48 configurations, no model or defense wins both: the most secure reach 99.3% security at 71-74% fidelity, while the highest-fidelity model hits 96.5% fidelity at 47.8% security. The right tradeoff depends on deployment, so reporting security without fidelity hides its cost.
+
+A Lifecycle and Application-Stack Survey of Large Language Model Vulnerabilities: Attacks, Risks, Defenses, and Open Problems (1 minute read)
+
+This paper systematizes LLM system vulnerabilities across eight lifecycle stages, from data collection and pretraining through retrieval, tool/agent execution, and deployment, arguing that risk now lives in the full application stack rather than the model weights. The authors map attacks to confidentiality, integrity, availability, safety, and agency-control objectives, emphasizing where trust boundaries fail, how untrusted data becomes executable instruction, and why point defenses rarely compose. They close with a research agenda covering provenance-aware retrieval, tool-call containment, and long-horizon agent evaluation.
+
+Understanding and Evaluating Claw-like Agent Security Through a Computer-Systems Lens (1 minute read)
+
+This paper introduces SafeClawArena, a benchmark of 406 adversarial tasks that tests always-on "Claw-like" agents (OpenClaw, NemoClaw, SeClaw) across skill supply-chain integrity, persistent state exploitation, cross-boundary data flow, and indirect prompt injection. Attack success rates hit 70%, and malicious plugins succeeded 100% of the time regardless of the underlying LLM. SeClaw cut GPT-5.4's rate to 22%, partly via utility tradeoffs, while Claude-Opus-4.6 already sat near that floor everywhere.
+
+Vulnerability Reports Are Not Special Anymore (5 minute read)
+
+(blurb not generated)
+
+Exploring Side-Channel Protections in Hardware Implementations of PQC ML-KEM Verification (1 minute read)
+
+Researchers evaluated side-channel protections for ML-KEM's Fujisaki-Okamoto decapsulation verification across microcontroller and FPGA implementations, testing unprotected, first-order hash-based, and higher-order masked designs. FPGAs leaked more than microcontrollers despite their speed advantage, and the parallelized processing of even higher-order masked designs produced enough first-order leakage for full secret-key recovery. Teams deploying PQC in hardware should not assume masking alone hardens FPGA implementations against power and EM analysis, especially in high-bandwidth configurations.
+
+CVE-TTP KG: Knowledge Graph Linking Software Vulnerabilities to Attack Behaviors (1 minute read)
+
+This paper introduces CVE-TTP KG, a knowledge graph that links CVEs to MITRE ATT&CK tactics and techniques, filling the gap where CVE and NVD entries describe vulnerabilities but not the attacker behaviors that exploit them. A fine-tuned CySecBERT model reaches macro F1 of 87.71% on technique classification and 96.16% on tactics, with the extracted entities and relations loaded into a Neo4j graph for structured threat analysis.
+
+The Decomposition Is the Fingerprint: Per-Component Identity for Agent Skills (1 minute read)
+
+This paper introduces a locality-sensitive fingerprint for agent skills, storing each skill as a per-component triple (prompt, code, tools) in a 120-byte signature compared by Hamming distance. Keeping the components separate lets the fingerprint recover skill-family lineage through paraphrase, renaming, and refactoring, localize which component was reused, and flag tampered copies, hitting 0.974 AUC over 4,950 comparisons. The authors stress it signals identity and lineage for a skill registry, not behavioral safety, and still requires separate behavioral verification.
+
+Mutating the "Immutable": A Large-Scale Study of Git Tag Alterations (1 minute read)
+
+Researchers analyzed 328.4M repositories from Software Heritage and found 10.2M Git tag alterations across 189k repos, disproving the assumption that tags are immutable release anchors. A cross-check against Nixpkgs found 32 packages referencing altered tags, 7 with confirmed build failures, showing that force-pushed tag changes break reproducible builds and supply-chain integrity. Pin dependencies to cryptographic commit hashes rather than tags, and add monitoring for tag mutations as standard practice.
+
+EnclaveX: End-to-End Confidential AI with CPU/GPU TEEs (1 minute read)
+
+This paper presents an end-to-end confidential AI workflow that combines CPU TEEs (Intel TDX, AMD SEV-SNP) with NVIDIA H200 GPU TEEs to keep data and model code confidential from the cloud provider. The authors flag that Kubernetes administrators can still access confidential VM contents, a gap application-level protections must close, and benchmark the performance overhead of running Intel TDX alongside H200 GPUs.
 
 We have Mythos at Home: GLM 5.2 beats Claude in our Cyber Benchmarks (5 minute read)
 
 (blurb not generated)
 
+What happened after 2,000 people tried to hack my AI assistant (5 minute read)
+
+(blurb not generated)
+
+A Mechanistic Explanation of Prompt Injection (and why you should study roles) (5 minute read)
+
+(blurb not generated)
+
+MESA: Prioritizing Vulnerable Communication Channels for Securing Multi-Agent Systems (1 minute read)
+
+MESA is a label-free framework for ranking which communication edges in a multi-agent system are most security-critical, so defenders can harden them before any attack is observed. The authors find channel-level risk is highly concentrated, with a single compromised edge accounting for up to 75% of attack success. Across three scenarios, eight topologies, and five open-source LLMs, monitoring the top 10% of MESA-ranked edges intercepted roughly 3x the attacks of random allocation (mean Spearman ρ=+0.60).
+
 🧑‍💻
 Launches & Tools
 
+Kali Linux 2026.2 released with 9 new tools, NetHunter updates (1 minute read)
+
+Kali Linux 2026.2 shipped with nine new tools, including legba (a multiprotocol credential bruteforcer and password sprayer), penelope (a shell handler), and tookie-osint for social-media account discovery, plus a re-added hydra-gtk GUI. The release upgrades to kernel 6.19 and strips graphics firmware from pre-built VM images, cutting the initrd to 60 MB and roughly tripling VM boot speed.
+
+Nika: Open-source code analysis tool (1 minute read)
+
+PhonePe released Nika, an open-source tool that performs cross-file, inter-procedural taint analysis on Java microservices, tracing attacker-controlled input from sources to security-sensitive sinks like database queries, file operations, and reflection calls. It covers eleven vulnerability classes including SQL injection, SSRF, path traversal, and deserialization flaws, and offers an optional off-by-default AI review step to cut false positives.
+
+Patch the Planet: a Daybreak initiative to support open source maintainers (5 minute read)
+
+(blurb not generated)
+
 Security Profiles Operator v1: Stable APIs, Security Hardened, and Shaping Upstream Kubernetes (5 minute read)
+
+(blurb not generated)
+
+IBM, Red Hat, Palo Alto team to secure open-source software (5 minute read)
+
+(blurb not generated)
+
+Vorlon debuts Guardian to block risky AI agent actions before they complete (5 minute read)
 
 (blurb not generated)
 
 🎁
 Miscellaneous
 
+AI and Liability (5 minute read)
+
+(blurb not generated)
+
+Supreme Court Rules Constitutional Privacy Protections Apply to Cellphone Users’ Location History (5 minute read)
+
+(blurb not generated)
+
 Scattered Spider Hackers Plead Guilty on Day 1 of Trial (5 minute read)
 
 (blurb not generated)
 
-US Government allows Anthropic limited release of AI model that sparked cybersecurity concerns (5 minute read)
+Supreme Court delivers ‘major win’ for tech privacy in Chatrie ruling (1 minute read)
 
-The US government granted Anthropic a limited license to redeploy Claude Mythos 5, its strongest cybersecurity model, to a small group of vetted cyber defenders and infrastructure providers, reversing the export block ordered earlier in June. The reprieve does not cover the less powerful Fable 5, which remains suspended for general use as negotiations continue over the safeguards governing both models.
+The Supreme Court ruled 6-3 in Chatrie v. United States that collecting phone location data from a geographic area constitutes a Fourth Amendment search, extending the Carpenter precedent to geofence warrants. The decision means law enforcement requests for bulk location data from providers like Google now face Fourth Amendment scrutiny, though the court declined to rule on whether Chatrie's specific warrant was valid.
+
+Supreme Court rules cops need a warrant to vacuum up phone location data (5 minute read)
+
+(blurb not generated)
+
+Microsoft accelerates quantum-safe roadmap as risks grow (1 minute read)
+
+Microsoft is accelerating its Quantum Safe Program, committing to transition critical products and services to post-quantum cryptography by 2029 and folding quantum-safe requirements into its Secure Future Initiative. The company cites a shortened risk horizon and "harvest now, decrypt later" threats, and urges organizations to prioritize crypto-agility and TLS 1.3 now rather than waiting for cryptographically relevant quantum computers to arrive.
+
+US offers $10 million for info on group behind Signal and WhatsApp hacking spree (1 minute read)
+
+The US State Department offered up to $10M for information identifying a Russian state group, tracked as UNC5792 and UNC4221, that has compromised thousands of Signal and WhatsApp accounts belonging to US officials, military personnel, and journalists since at least March. The phishing campaign tricks targets into linking attacker devices or surrendering Signal backup passcodes, giving operators access to both incoming and archived encrypted conversations.
+
+NSA Lost Access to Powerful AI Model Amid Anthropic Dispute (5 minute read)
+
+(blurb not generated)
+
+미 국방부, 양자내성암호 전환 속도전…가트너 “기업도 지금 준비 시작해야” (2 minute read)
+
+The US Department of Defense formalized its post-quantum cryptography push, building a centralized oversight structure, adding PQC requirements to CMMC, and following a federal executive order mandating NIST PQC standards for contractors by end of 2030 (key establishment) and 2031 (digital signatures). Gartner warns enterprises to start now, building PQC asset inventories in 2026, since fewer than 10% have migrated high-value systems and delaying pilots past 2027 could raise total transition costs by 200%.
+
+European digital ID wallets rely on safety services of Google and Apple (5 minute read)
+
+(blurb not generated)
+
+Anthropic Restores Claude Fable 5 After U.S. Lifts Jailbreak-Linked Export Controls (1 minute read)
+
+Anthropic restored Claude Fable 5 worldwide on July 1 after the U.S. Commerce Department lifted the emergency export controls it imposed June 12 following an Amazon-reported jailbreak in the model. To lift the order, Anthropic shipped a classifier that blocks the reported technique in over 99% of attempts and agreed to self-hunt for flaws, coordinate on launches, and report malicious use.
+
+Warner bill would create federally vetted list for secure, trustworthy AI agents (5 minute read)
+
+(blurb not generated)
+
+SCOTUS says detailed cellphone location data is protected by the Fourth Amendment (1 minute read)
+
+The Supreme Court ruled 6-3 that obtaining a person's detailed cellphone location history from a tech company is a Fourth Amendment search, meaning police generally need a warrant backed by probable cause and particularized scope before accessing such records. The decision does not ban geofence warrants and is not company-specific, so the protection could extend to comparable location data held by Apple and others.
+
+NIST Enrichment Reductions Impact CVE Coverage, Accuracy (5 minute read)
+
+(blurb not generated)
+
+Claude Sonnet 5 includes safeguards against dangerous cyber use (1 minute read)
+
+Anthropic released Claude Sonnet 5, a general-purpose model with improved reasoning, coding, and agentic tool use, shipping with cybersecurity safeguards enabled by default that detect and block dangerous cyber activity in real time using the same protections as Opus 4.7 and 4.8. Anthropic rates Sonnet 5 as lower cyber risk than its Opus models, cannot develop a working exploit, and points teams needing fewer restrictions to Opus 4.8 or its Cyber Verification Program.
+
+Anthropic says "some routine tasks like coding and debugging" on Fable 5 "will fall back to Opus 4.8" in "the near term" as it works to "reduce false positives" (@anthropicai) (1 minute read)
+
+Anthropic said some routine coding and debugging tasks on Fable 5 will temporarily fall back to Opus 4.8 in the near term while it works to reduce false positives. The company did not specify a timeline for restoring full Fable 5 handling of those tasks.
+
+Infosec professionals sour on automated pentesting tools (1 minute read)
+
+Security professionals have grown sharply more skeptical of fully autonomous pentesting tools, with those open to the idea dropping from 29% last year to 9% now. The reversal reflects concerns about false positives, missed context, and the limits of removing human judgment from offensive testing.
+
+Palo Alto, CrowdStrike both have best quarter ever as AI threats bolster cyber demand (1 minute read)
+
+CrowdStrike and Palo Alto Networks each posted their best quarter on record, rallying 95% and 113% between April and June as Mythos-class models drove enterprises to overhaul cyber defenses. Both firms gained early access to Mythos as Project Glasswing partners and are betting on agentic security and identity, with Palo Alto's $25B CyberArk acquisition and CrowdStrike's SGNL deal underpinning the surge in demand.
+
+DHS to unveil replacement council for critical infrastructure cybersecurity (1 minute read)
+
+DHS is standing up ANCHOR-CI, a CISA-managed council that restores government-to-industry cyber information sharing for critical infrastructure sectors, replacing the Critical Infrastructure Partnership Advisory Council shuttered over a year ago. Unlike its predecessor, ANCHOR-CI is exempt from the Federal Advisory Committee Act, so its meetings on threats, vulnerabilities, and mitigations for water, power, and telecom operators will fall outside public transparency requirements.
+
+Tell HN: Installing Cursor on iOS irreversibly changes your privacy settings (1 minute read)
+
+Installing the Cursor iOS app silently switches accounts off Privacy Mode (Legacy), the "do not store my code" setting, onto Cursor's current Privacy Mode, which permits code retention for Background Agents and other features. Cursor support confirmed the change is triggered by the Cloud Agents setup prompt and cannot be reversed, as the legacy option is no longer available in the app.
+
+⚡
+Quick Links
+
+Authentication in Quantum Networks (1 minute read)
+
+A review of quantum-network authentication argues it's not an intrinsic limitation, and surveys quantum-secure schemes for classical messages, quantum messages, and entity authentication.

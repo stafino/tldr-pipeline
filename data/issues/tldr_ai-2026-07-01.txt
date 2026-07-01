@@ -6,53 +6,197 @@ TLDR AI 2026-07-01
 🚀
 Headlines & Launches
 
-Amazon seeks cheaper AI alternatives as Anthropic shifts to token-based pricing (5 minute read)
+Claude Sonnet 5 (1 minute read)
+
+Anthropic released Claude Sonnet 5, its most agentic Sonnet model, with performance close to Opus 4.8 on reasoning, tool use, coding, and knowledge work at lower prices. It ships today across all plans as the default for Free and Pro, with introductory Claude Platform pricing of $2 per million input tokens and $10 per million output tokens through August 31, 2026.
+
+Claude Tag (5 minute read)
 
 (blurb not generated)
 
-Figma's design agent, now with custom tools and greater context (5 minute read)
+Nano Banana 2 Lite (1 minute read)
 
-Figma expanded its on-canvas design agent with custom tools, richer team context, and skills that let designers prompt it to build reusable generative plugins, shader effects, and fills. Built on PropsKit so the plugins look native to Figma, the agent keeps work directly on the canvas, while classic plugins remain the route for AI services or third-party APIs.
+Google DeepMind released Nano Banana 2 Lite, its fastest and lowest-cost Gemini Image model for high-speed generation and editing. The model keeps Nano Banana's character consistency and precise editing while cutting latency, letting developers generate thousands of images at a fraction of the cost of heavier production models.
 
-US Government allows Anthropic limited release of AI model that sparked cybersecurity concerns (5 minute read)
+Meituan open sources LongCat-2.0, the 1.6T, near-frontier agentic coding model that's been leading OpenRouter — trained entirely on Chinese chips (3 minute read)
 
-The US government cleared Anthropic to redeploy Mythos 5, its strongest cybersecurity model, to a small group of trusted cyber defenders and infrastructure providers after an export block earlier in June over national security concerns. The revised license does not yet cover Fable 5, the weaker variant, which remains suspended while Anthropic continues negotiating with the Commerce Department to restore general access.
+Meituan open sourced LongCat-2.0, a 1.6-trillion-parameter Mixture-of-Experts model with a 1-million-token context window, revealing it as "Owl Alpha," the stealth model that topped OpenRouter's developer charts for two months. Released under an MIT license and trained entirely on Chinese chips, it is priced at $0.75/$2.95 per million input/output tokens, with promotional rates of $0.30/$1.20 and free context-cache hits.
 
-Asian AI startups launch Mythos-like models as Anthropic's export ban drags on (5 minute read)
+Anthropic launches Claude Sonnet 5 model on Claude and APIs (1 minute read)
+
+Anthropic released Claude Sonnet 5 across all Claude plans, Claude Code, and the Claude API, with pricing starting at $2 per million input tokens and $10 per million output tokens before an increase after August 31, 2026. The model improves on Sonnet 4.6 in reasoning, coding, and agentic tool use, closing much of the gap with Opus 4.8 at a lower cost while adding real-time cyber safeguards.
+
+Claude Science (1 minute read)
+
+Anthropic released Claude Science, a beta research app that runs analyses, queries 60+ scientific databases, and traces every step from data wrangling to publication. It renders proteins, structures, and molecules natively, keeps figures reproducible by linking them to the exact code and environment that produced them, and manages compute across a laptop, HPC cluster, or GPUs.
+
+Claude Sonnet 5 includes safeguards against dangerous cyber use (1 minute read)
+
+Anthropic released Claude Sonnet 5, a general-purpose model with improved reasoning, coding, and agentic tool use, and enabled cybersecurity safeguards by default that detect and block dangerous activity in real time. Sonnet 5 outperforms Sonnet 4.6 across effort levels, matches Opus 4.8 on some tasks at higher settings, and cannot develop a working exploit.
+
+Leanstral 1.5 (1 minute read) [flag]
+
+Verified details. Here's the blurb:
+
+Mistral released Leanstral 1.5, a Lean 4 formal proof engineering model optimized for automated theorem proving and autoformalization, with 119B total parameters, 6.5B active, and a 256k-token context window. The model is available for free on Mistral's Labs tier via the console playground and iterates on the March 2026 release that beat Claude Sonnet by 8 points at pass@16 at 15x lower cost.
+
+Sources: [Mistral Docs](https://docs.mistral.ai/models/model-cards/leanstral-1-5-26-06), [AI Weekly](https://aiweekly.co/alerts/mistral-ships-leanstral-15-for-lean-4-proof-work-free-in-labs)
+
+Anthropic rolls out Sonnet 5 with near-Opus 4.8 performance at a lower price (1 minute read)
+
+Anthropic released Claude Sonnet 5, a cheaper Sonnet-tier model that narrows the performance gap with its flagship Opus 4.8. The model brings agentic capabilities previously reserved for Opus-class models to the lower price tier, including multi-step planning, browser and terminal tool use, and the ability to verify its own output without being prompted.
+
+Anthropic says Trump admin has lifted export controls on Claude Fable 5 and Mythos 5 (1 minute read)
+
+Anthropic said the U.S. Department of Commerce lifted export controls on its Claude Fable 5 and Mythos 5 models, ending a standoff that had forced the company to suspend all foreign access in mid-June. Fable 5 returns to global users on Claude.ai and Claude Code starting Wednesday, while Mythos 5 access has been restored for some U.S. organizations following government approval on June 26.
+
+Anthropic launches Claude Sonnet 5 AI model with coding, safety upgrades as Fable and Mythos controls lifted (1 minute read)
+
+Anthropic released Claude Sonnet 5, a midrange model that beats Sonnet 4.5 by 5.1% on SWE-Bench Pro and 13.4% on Terminal-Bench 2.1, and jumps to 1,618 on GDPval-AA v2 from 1,395. It becomes the default across Claude's consumer tiers and costs $3 per million input tokens and $15 per million output tokens starting in September.
+
+DeepReinforce releases Ornith-1.0 open-source coding models (5 minute read)
 
 (blurb not generated)
 
-Sakana Fugu Launches With 93.2 LiveCodeBench Score After Claude Ban (5 minute read)
+Anthropic launches Claude Sonnet 5 as a cheaper way to run agents (1 minute read)
+
+Anthropic released Claude Sonnet 5, a more agentic version of its midsize model priced at $2 per million input tokens and $10 per million output through August 31. It scores 63.2% on agentic coding versus Opus 4.8's 69.2%, becomes the default for free and Pro plans, and undercuts GPT-5.5 and Gemini 3.1 Pro.
+
+Start building with Nano Banana 2 Lite and Gemini Omni Flash (5 minute read)
+
+Google DeepMind released two generative media models for developers: Nano Banana 2 Lite, its fastest and most cost-efficient image model, and Gemini Omni Flash, a model for video generation and conversational editing. Nano Banana 2 Lite produces text-to-image outputs in 4 seconds at $0.034 per 1K-resolution image, and both are available in Google AI Studio, the Gemini API, and the Gemini Enterprise Agent Platform.
+
+Anthropic Restores Claude Fable 5 After U.S. Lifts Jailbreak-Linked Export Controls (1 minute read)
+
+Anthropic restored global access to Claude Fable 5 on July 1 after the U.S. Commerce Department lifted the export controls it had imposed June 12 over a jailbreak found by Amazon researchers. To resolve the concern, Anthropic trained a new classifier that blocks the flagged technique in more than 99% of attempts and routes blocked requests to the weaker Opus 4.8.
+
+Claude Sonnet 5 boosts coding, reasoning, and tool use (1 minute read)
+
+Anthropic released Claude Sonnet 5 on June 30, an update that improves on Sonnet 4.6 in coding, reasoning, tool use, and knowledge work while running agentically at a level that previously required larger models. It ships as a drop-in upgrade with adaptive thinking on by default, introductory pricing of $2 per million input and $10 per million output tokens through August 31, and performance close to Opus 4.8.
+
+US Lifts Export Restrictions on Anthropic’s Fable 5 AI Model (1 minute read)
+
+The US government lifted foreign access restrictions on Anthropic's Fable 5 model, clearing it for wider international distribution after the company resolved the Trump administration's safety concerns. The decision opens the model to broader export markets and removes a regulatory barrier that had limited Anthropic's ability to compete for overseas customers.
+
+U.S. Lifts Restrictions on Anthropic’s Most Powerful A.I. Models (1 minute read)
+
+The U.S. government lifted restrictions on Anthropic's most powerful AI models, allowing the company to bring its top-tier technologies back online. The decision de-escalates a feud with the Trump administration that had forced Anthropic to pull its highest-capability systems from availability.
+
+Chinese Z.ai's latest model tops AI ranking charts amid Anthropic Fable 5 ban — blacklisted China firm's popular open-weight GLM-5.2 AI model powered by Huawei silicon (5 minute read)
 
 (blurb not generated)
+
+Anthropic to restore Claude Fable access on Wednesday (1 minute read)
+
+Anthropic said the Department of Commerce lifted export controls on its two most capable models, Claude Fable 5 and Mythos 5, and it will begin restoring Fable 5 access on Wednesday. Mythos 5 will remain limited to select companies, and it is unclear whether Fable 5 will reach users outside the United States or require identity verification through Anthropic's new Persona partnership.
 
 🧠
 Deep Dives & Analysis
 
-What Happened After 2,000 People Tried to Hack My AI Assistant (5 minute read)
+Claude Code is steganographically marking requests (1 minute read)
 
-Fernando Irarrázaval ran a public challenge where roughly 2,000 people made 6,000 attempts to make his OpenClaw test instance, running on Opus 4.6, leak a secret via inbound email. None succeeded, despite $500 in token spend and a Google account suspension from the email volume. The author reads this as evidence that frontier labs' anti-injection training is working, but cautions that 6,000 failed attempts is no guarantee against a more sophisticated attacker and still advises against production systems where prompt injection could cause irreversible damage.
+A developer inspecting Claude Code 2.1.196 found that the binary can encode a hidden marker in the date string it inserts into the system prompt, swapping the apostrophe in "Today's" and the date separator when certain conditions are met. The triggers are a custom ANTHROPIC_BASE_URL, an Asia/Shanghai or Asia/Urumqi timezone, and hostnames matching base64-encoded, XOR-decoded lists of AI lab keywords and reseller domains. The author reads it as an attempt to flag API resellers, unauthorized gateways, and distillation pipelines.
 
-Tokenmaxxing is dead, long live tokenmaxxing (5 minute read)
+Popping the GPU Bubble (1 minute read)
+
+Photon hides GPU bubbles using pipelined decoding, which overlaps GPU and CPU work instead of running them as a sequential baton pass. In standard autoregressive decoding, the GPU finishes one token's math, then sits idle while the CPU handles fixed-cost housekeeping like selecting requests, setting up metadata, and committing the chosen token. Photon launches the next forward pass while the current token is still being committed, keeping the GPU busy across the loop.
+
+GuardFall Exposes Open-Source AI Coding Agents to Decades-Old Shell Injection Risks (1 minute read)
+
+Adversa AI's GuardFall research shows that AI coding agents' command blocklists can be bypassed with shell tricks that have been public for decades, such as writing `r''m` so a text filter misses it while bash strips the quotes and runs `rm` anyway. The bypass worked against ten of eleven open-source coding and computer-use agents tested, including Aider, Cline, Goose, and OpenHands. The researchers frame it as a class of problems rather than a patchable bug, so adding blocklist patterns fixes nothing.
+
+Sonnet 5 review: I ran 64 generations to find out if it's worth it (1 minute read)
+
+This post benchmarks Anthropic's Sonnet 5 blind against Sonnet 4.6, Opus 4.8, GPT-5.5, and Gemini 3 Pro across PRD quality, prototype generation, agentic task completion, and agent personality. The author built a repeatable eval harness in Claude Code, scoring outputs 70% on human vibe ratings and 30% on LLM-as-judge, then gives model-by-task recommendations for which to use for PRDs, complex prototypes, and daily agent chat.
+
+Microsoft Warns Poisoned MCP Tool Descriptions Can Make AI Agents Leak Data (1 minute read)
+
+Microsoft's Incident Response and Defender teams show how a poisoned MCP tool description can turn an AI agent into a data-exfiltration channel without breaking any rule. Using an invoice-processing example, the research demonstrates how a hidden instruction buried in a third-party tool's description makes the agent collect and leak unpaid invoices during a routine query. Because MCP picks up description changes on the fly, poisoned versions can go live with no re-approval, and in a default setup no alarm fires.
+
+HackerRank open sourced its ATS. My resume scored 90/100. Oh wait 74. No – 88 (5 minute read)
+
+(blurb not generated)
+
+A Mechanistic Explanation of Prompt Injection (and why you should study roles) (5 minute read)
 
 (blurb not generated)
 
 “It's Hard to Eval” Is a Product Smell (5 minute read)
 
-The author argues that "our product is hard to eval" is a product smell, since artifacts that are hard for you to verify are usually hard for users too, sometimes forcing them to redo the work to check the output. The post walks through three AI products, including an internal data agent, and shows before-and-after designs that add checkable artifacts like intermediate calculations, metric definitions, and the underlying SQL. The core principle is to design for ease of verification before building evals.
+(blurb not generated)
+
+The Coming Loop (5 minute read)
+
+(blurb not generated)
+
+So You Want to Sell Inference (5 minute read)
+
+(blurb not generated)
+
+Morgan Stanley cut its riskiest reconciliation job in half — by making its agents less autonomous (3 minute read)
+
+Morgan Stanley deployed agentic AI in P&L reconciliation, cutting the time to close a single book from up to six hours to two or three, saving roughly 1,500 controller-hours per week. The system, called FIXR, got there by making agents less autonomous: humans stay fully in the loop, and their decisions are iteratively converted into repeatable rules the system can later apply on its own, auto-clearing familiar breaks and flagging uncertain ones for review.
+
+No Figma. No Jira. No docs. How Gusto built a new product line with Claude Code | Eddie Kim (CTO) (5 minute read)
+
+(blurb not generated)
 
 AI coding tools are speeding up code, not delivery (5 minute read)
 
-AI coding tools accelerate how fast code gets written, but that speed rarely translates into faster delivery. Apple's Xcode 27, shown at WWDC 2026, leans into agent-driven workflows with an in-editor conversation transcript, a /pl plan command that gathers context before making changes, and DeviceHub for unified simulator and device management. The bottleneck, the piece argues, sits downstream in review, integration, and testing rather than in code generation itself.
+(blurb not generated)
 
-How ChatGPT Actually Picks Sources (I Read the Network Traffic, Not the Outputs) (5 minute read)
+A Lifecycle and Application-Stack Survey of Large Language Model Vulnerabilities: Attacks, Risks, Defenses, and Open Problems (1 minute read)
 
-The author reverse-engineered how ChatGPT selects sources by reading two days of raw network traffic rather than analyzing finished answers, logging roughly 1,240 source records across a few dozen searches. The traffic exposes ChatGPT's internal labels, including the result_source field that stamps each result with providers like SERP, Labrador, Bright Data, and Oxylabs. The author separates high-confidence structural findings about which fields the engine uses from the low-confidence percentages drawn from a small, SaaS-heavy query sample.
+This paper surveys large language model vulnerabilities through a lifecycle and application-stack lens, arguing that risks now stem from the full system rather than model weights alone. It organizes attacks across eight stages, from data collection to tool/agent execution, and maps them to objectives like confidentiality, integrity, and agency-control. The authors emphasize where trust boundaries fail and why point defenses rarely compose, closing with a research agenda for secure LLM systems.
+
+Sonnet 5 Closes Most of the Gap to Opus 4.8 on Agent Work (1 minute read)
+
+Anthropic released Claude Sonnet 5, pitched as most of Opus 4.8's capability at well under half the cost. It comes within six points of Opus 4.8 on agentic coding (63.2% vs. 69.2%) and edges slightly ahead on knowledge work, making it the better default for high-volume, always-on agents while Opus 4.8 still owns the hardest coding and offensive-security tasks. Two catches move the math: a new tokenizer and a $2/$10 introductory rate that resets to $3/$15 on September 1, 2026.
+
+Governance Gaps in Agent Interoperability Protocols: What MCP, A2A, and ACP Cannot Express (1 minute read)
+
+This paper presents a gap analysis of five agent interoperability protocols (MCP, A2A, ACP, ANP, and ERC-8004) against a six-dimension governance taxonomy covering membership, deliberation, voting, dissent preservation, human escalation, and audit. Voting and dissent preservation are absent across all five protocols, and deliberation is absent or partial. The authors argue that governing agent communities is a missing architectural layer above current standards, not a missing feature within them.
+
+EvalSafetyGap: A Hybrid Survey and Conceptual Framework for LLM Evaluation-Safety Failures (1 minute read)
+
+This paper argues that LLM evaluation and AI safety share a measurement problem: benchmark, reward-model, and safety scores can climb while the latent properties they track stay unverified. It introduces EvalSafetyGap, a framework built on Goodhart's Law plus an Instability Decomposition and Alignment Trilemma, and runs a ten-model audit measuring capability, behavioral safety, and governance separately. The audit finds capability and adversarial robustness statistically unrelated (Pearson r = +0.232, p = 0.520), with the open-closed safety gap driven mainly by disclosure rather than behavioral robustness.
+
+How to Govern Autonomous Agents in Enterprise AI Factories (1 minute read)
+
+NVIDIA published its Secure Agent Workspace Reference Design, an architecture that moves agent execution off the user's laptop, browser, or IDE and into a managed workspace where identity, credentials, network access, runtime policy, and audit are enforced consistently. The post details a phased rollout that treats a company-managed VM as the isolation boundary, making agent activity observable, bounded, and revocable before deeper runtime controls are added. The goal is governed, always-on agents that the entire employee base can use without exposing sensitive enterprise systems.
+
+How Schrödinger sped up molecular discovery by 4x with Alphaevolve (2 minute read)
+
+Schrödinger used AlphaEvolve, Google DeepMind's evolutionary coding agent, to speed up its machine-learned force field training pipeline by 4x. The agent targeted the Ewald summation, a performance bottleneck in Schrödinger's PyTorch code that lacked a vectorized implementation and relied on slow for-loops. AlphaEvolve iteratively evolved a batched version using parallel matrix multiplication, raising throughput while passing a full regression and correctness test suite.
+
+The Problem is Prompt Debt (5 minute read)
+
+(blurb not generated)
 
 ⚒️
 Engineering & Research
 
+Introducing TabFM: A zero-shot foundation model for tabular data (1 minute read)
+
+Google Research introduced TabFM, a zero-shot foundation model for tabular classification and regression that frames prediction as an in-context learning problem, generating results on unseen tables in a single forward pass. The approach eliminates the manual hyperparameter tuning and feature engineering that tree-based methods like XGBoost require, and the model is available on Hugging Face and GitHub.
+
 DeepSeek open sources DSpark, a new framework to speed up LLM inference by up to 85% (5 minute read)
+
+(blurb not generated)
+
+Zuck saves Meta bucks by reusing memory from old servers with a custom CXL ASIC (1 minute read)
+
+Meta built a custom CXL ASIC that lets it pool and reuse DRAM pulled from decommissioned servers rather than scrapping it alongside the hardware. The chip exposes that recovered memory as a CXL-attached tier for newer systems, cutting Meta's spend on new DRAM as AI workloads push memory demand and prices higher.
+
+Reinforcement Learning with Metacognitive Feedback Elicits Faithful Uncertainty Expression in LLMs (1 minute read)
+
+This paper introduces reinforcement learning with metacognitive feedback (RLMF), which refines completion rankings during preference optimization using the quality of a model's self-judgments about its own performance. Applied to faithful calibration, aligning expressed uncertainty with intrinsic uncertainty, RLMF reaches state-of-the-art results while preserving accuracy and surpasses standard RL by up to 63% on assessing and expressing capability limits.
+
+Run a vLLM Server on HF Jobs in One Command (5 minute read)
+
+(blurb not generated)
+
+Accelerating Transformers Fine-Tuning with NVIDIA NeMo AutoModel (5 minute read)
 
 (blurb not generated)
 
@@ -62,40 +206,120 @@ Accelerating Gemini Nano models on Pixel with frozen Multi-Token Prediction (5 m
 
 DiScoFormer: One transformer for density and score, across distributions (5 minute read)
 
-Allen AI introduced DiScoFormer, a transformer that estimates both the density and the score of a distribution from a set of data points in a single forward pass without retraining. The model uses cross-attention to evaluate density and score at any point, with a shared backbone and two output heads that exploit the relationship between score and the gradient of log-density to stay accurate as dimensionality grows.
+(blurb not generated)
 
-How we used DSPy to turn AI evaluations into better responses in Dash chat (5 minute read)
+TRIAGE: Role-Typed Credit Assignment for Agentic Reinforcement Learning (1 minute read)
 
-Dropbox used DSPy to turn its LLM-as-judge evaluations into a feedback loop that improves its Dash chat agent. The team first calibrated the judges against human-labeled examples using optimization algorithms like GEPA and MIPROv2, then used those judges to optimize the agent's system prompt, cutting incomplete answers and token usage without degrading answer quality.
+TRIAGE is a role-typed credit assignment framework for agentic reinforcement learning that adds a semantic role axis to standard GRPO, using a structured judge to label each action segment as decisive progress, useful exploration, no-progress infrastructure, or regression. Across ALFWorld, Search-QA, and WebShop, it beats GRPO on success rates and cuts environment-facing turns by up to 14.8%, with reliable regression detection driving most of the gain.
 
-14x faster embeddings: how we rebuilt the ONNX path in Manticore (5 minute read)
+Self-Study Reconsidered: The Hidden Fragility of Learning from Self-Generated QA (1 minute read)
 
-Manticore Search 27.1.5 ships a new ONNX Runtime backend for Auto Embeddings that runs ~14x faster on average than the previous SentenceTransformers/Candle path, measured across a full grid of 1–32 threads and batch sizes 1–128 on the same 16-core box and weights. Throughput rises from the old path's 5–11 docs/sec to 70–230 docs/sec, with single-insert latency dropping to ~14ms from over 200ms.
+This paper shows that training language models on self-generated question-answer pairs is fragile at both the question-selection and answering stages, with generators fixating on salient spans and complying with instruction-like text embedded in documents. Filtering instruction-like spans before answering cut mean prompt-injection compliance from 88% to 13% while retaining nearly all clean text.
 
-Qwen 3.6 27B is the sweet spot for local development (1 minute read)
+Geometry-Preserving Orthonormal Initialization for Low-Rank Adaptation in RLVR (1 minute read)
 
-Qwen 3.6 ships in two variants, a mixture-of-experts 35B A3B and a slower but stronger dense 27B, and this post argues the dense 27B is the best local model yet for general-purpose development. The author ran it with llama.cpp on an 8-bit quantization, where it built a hexagonal Minesweeper as a proper pnpm package from a single prompt.
+This paper analyzes how LoRA initialization behaves under reinforcement learning with verifiable rewards (RLVR), showing that structurally initialized variants like PiSSA and MiLoRA can underperform standard LoRA and destabilize training despite winning under supervised fine-tuning. The authors prove orthonormal initialization minimizes the gap to full fine-tuning and propose two variants, RLPO and RLMO, which stabilize RLVR training and beat standard LoRA on math reasoning benchmarks.
 
-We Ran 250 AI Agent Evals to Find Out if Skills Beat Docs. The Answer Is More Complicated Than We Expected (5 minute read)
+Bridging the Gap Between Latent and Explicit Reasoning with Looped Transformers (1 minute read)
 
-Wix ran 250 controlled evaluations comparing how AI agents perform tasks using standard docs, AI-optimized docs, and purpose-built skills. The team found that a slightly stale skill becomes a liability rather than an asset, with well-maintained documentation often outperforming the hand-written skills derived from it.
+LOTUS is a looped Transformer that performs latent chain-of-thought reasoning, processing K latent blocks in parallel for R iterations with cross-entropy supervision on each position's gold CoT token. It is the first latent-CoT method to match explicit CoT at the 3B scale while cutting thought-phase latency by 2.5x to 6.9x, with post-loop latents that decode back into interpretable reasoning steps.
 
-From Brain Waves to Words: Brain2Qwerty Offers a New Path to Communication Without Surgery (5 minute read)
+CHERRY: Compressed Hierarchical Experts with Recurrent Representational Yield (1 minute read)
 
-Meta introduced Brain2Qwerty, a non-invasive system that decodes typed sentences from brain activity recorded with MEG and EEG rather than surgically implanted electrodes. The model reconstructs characters as participants type, reaching a 32% character-error rate with the best MEG recordings, a step toward restoring communication without the risks of implanted devices.
+CHERRY is a paper studying three techniques for compute-efficient language models: selective supervision that concentrates training on the ~15% of tokens carrying semantic payload, depth compression that shrinks a 48-layer 1B model to 6 layers restored via recurrent unrolling, and fusion of compressed experts into a Mixture of Efficient Experts. The authors validate on CHERRY-1.8B, a Korean foundation model, and are explicit that the evidence covers one model family and loss-based metrics.
 
-We have Mythos at Home: GLM 5.2 beats Claude in our Cyber Benchmarks (5 minute read)
+AutoTrainess: Teaching Language Models to Improve Language Models Autonomously (1 minute read)
+
+AutoTrainess is an LM agent that automates post-training by exposing planning, data preparation, training, evaluation, and logging as dedicated agent-computer interfaces instead of a raw CLI. On PostTrainBench it scored 26.94 with GPT-5.4 (Codex) versus 23.21 for CLI-only baselines, and improved DeepSeek-V4-Flash (OpenCode) from 12.13 to 19.58.
+
+MCP Server Architecture Patterns for LLM-Integrated Applications (1 minute read)
+
+This paper catalogues five recurring MCP server architecture patterns (Resource Gateway, Tool Orchestrator, Stateful Session Server, Proxy Aggregator, and Domain-Specific Adapter) observed across fifteen production and public servers, plus four anti-patterns and cross-cutting concerns around auth, versioning, and observability. A tool-count study found selection accuracy drops below 90% at 10-15 tools per context for Claude Haiku 4.5 and 20-30 tools for Sonnet 4.
+
+Z-1: Efficient Reinforcement Learning for Vision-Language-Action Models (1 minute read)
+
+Z-1 is a reinforcement learning post-training framework for flow-based vision-language-action models, built on π0.5 and applying task-wise Group Relative Policy Optimization across 24 standard RoboCasa tasks. Using only publicly released RoboCasa demonstrations, Z-1 reaches an 80.6% average success rate, a 13.2-point gain over its supervised fine-tuning baseline, and outperforms published state-of-the-art models without additional private data.
+
+Ornith-1.0: self-improving open-source models for agentic coding (5 minute read)
 
 (blurb not generated)
 
+How we used DSPy to turn AI evaluations into better responses in Dash chat (5 minute read)
+
+(blurb not generated)
+
+Introspective Coupling: Self-Explanation Training Tracks Behavioral Change Despite Fixed Supervision (1 minute read)
+
+This paper studies when training language models to explain their predictions produces faithful introspection rather than imitation, using counterfactual behavior on modified inputs as supervision. The authors find that models trained on fixed explanations from earlier checkpoints or other model families often explain their own current behavior more faithfully than their training targets, and this "introspective coupling" tracks behavior shifts across tasks like sycophancy and refusal without updated supervision.
+
+QVal: Cheaply Evaluating Dense Supervision Signals for Long-Horizon LLM Agents (1 minute read)
+
+QVal is a training-free testbed that evaluates dense supervision signals for long-horizon LLM agents by measuring how well each method's scores align with the Q-values of a strong reference policy. Benchmarking 21 methods across four environments and six model backbones, the authors found that simple prompting baselines consistently outperform recent dense supervision methods, with performance clustering by methodological family.
+
 🎁
 Miscellaneous
+
+Phantom Squatting Uses AI-Hallucinated Domains for Phishing and Malware (1 minute read)
+
+Palo Alto Networks' Unit 42 documented "phantom squatting," in which attackers register AI-hallucinated domains and host phishing pages to capture traffic that LLMs point at fake but plausible addresses. Across 685,339 questions about 913 brands, two models produced 2.1M links, with 13,229 already flagged malicious and roughly 250,000 invented domains unregistered and available to whoever claims them first.
 
 Clean GitHub repo tricks AI coding agents into running malware (5 minute read)
 
 (blurb not generated)
 
+New BioShocking Attack Tricks AI Browsers Into Leaking User Credentials (1 minute read)
+
+Security firm LayerX disclosed BioShocking, an indirect prompt injection attack that tricked six AI browsers and assistants, including OpenAI's ChatGPT Atlas, Perplexity's Comet, and Anthropic's Claude extension, into copying a user's credentials and sending them to an attacker. The attack disguises malicious commands as game rules a puzzle page, and vendor responses were uneven, with OpenAI patching Atlas while Perplexity closed the report without acting.
+
+AI and Liability (5 minute read)
+
+(blurb not generated)
+
+Trump drops restrictions on Anthropic’s Mythos and Fable models (1 minute read)
+
+The U.S. lifted an export-license requirement on Anthropic's Mythos and Fable models, and the company said it would begin restoring public access on July 1. Anthropic agreed to proactively detect security risks and coordinate release protocols with the government, terms it had largely pledged voluntarily before the June 12 restriction, which was eased amid pressure from Asian models like Fugu and Tulongfeng approaching Mythos-level capability.
+
+NSA Lost Access to Powerful AI Model Amid Anthropic Dispute (5 minute read)
+
+(blurb not generated)
+
+Decades-Old Bash Tricks Expose AI Coding Agents to Supply Chain Attacks (5 minute read)
+
+(blurb not generated)
+
+New attack provides one more reason why AI browsers are a bad idea (1 minute read)
+
+New research from LayerX security demonstrates an attack that tricks AI browsers into a fictional context where their safety guardrails no longer apply. A malicious site presents a puzzle that rewards wrong answers like 2+2=5, pushing the embedded LLM into a "dream world" state where an attacker can extract code from private repositories or steal credentials from the built-in password manager.
+
+Warner bill would create federally vetted list for secure, trustworthy AI agents (5 minute read)
+
+(blurb not generated)
+
+282 iOS AI Apps Leak API Keys and Open AI Proxy Access in Network Traffic Study (1 minute read)
+
+Researchers at Wake Forest University found that 282 of 444 tested iOS AI chatbot apps, nearly two-thirds, leaked paid LLM access through their network traffic in the form of plaintext API keys, open backend relays, or replayable tokens. Attackers can run requests on the developer's account under a practice called LLMjacking, which Sysdig estimated could reach over $46,000 a day, yet only 28% of notified developers had fixed the issue after three months.
+
+Data Exposure Flaws Threaten Dify AI Platform Used by 1 Million Apps (5 minute read)
+
+(blurb not generated)
+
+Fake Bug Report Hijacks AI Coding Agents at Scale (1 minute read)
+
+Tenet Security researchers demonstrated "agentjacking," an attack that hijacks AI coding agents into running arbitrary code by planting a single fake error report in a public bug tracker like Sentry. In controlled tests, assistants including Claude Code, Cursor, and Codex retrieved the poisoned data and often executed attacker-controlled code, exposing cloud credentials, AWS keys, GitHub tokens, and CI/CD secrets.
+
 New Enterprise-Ready MCP Specification Brings New Security Challenges (5 minute read)
+
+(blurb not generated)
+
+The Realities of AI Video Surveillance (5 minute read)
+
+(blurb not generated)
+
+Taiwan raids Supermicro and two supply-chain partners in widening Nvidia smuggling probe — nine sites hit as six people summoned for questioning (5 minute read)
+
+(blurb not generated)
+
+Trump Administration Rolls Back Part of Anthropic Model Ban (5 minute read)
 
 (blurb not generated)
 
@@ -103,13 +327,53 @@ Amazon Q Developer Flaw Could Let Malicious Repos Run Code via MCP Configs (5 mi
 
 (blurb not generated)
 
-Sakana AI and 360 Security Launch AI Tools to Fill the Gap Anthropic's Export Ban Created (5 minute read)
+IBM claims world's first sub-1 nanometer chip technology (5 minute read)
 
-Sakana AI and 360 Security launched AI tools positioned as alternatives to Anthropic's Mythos and Fable 5 models, both restricted under the US export ban now in its third week. Tokyo-based Sakana released Fugu, a seven-billion-parameter orchestrator that routes tasks across external models to match Fable 5 benchmarks without training a frontier model, while Beijing's 360 Security introduced Tulongfeng, a vulnerability-discovery tool it claims rivals Mythos.
+(blurb not generated)
+
+[Thread] The US' now-lifted export controls on Anthropic models created uncertainty, are an own goal, and will push service providers towards Chinese AI models (Alex Stamos/@alexstamos) (1 minute read)
+
+Alex Stamos argues that the US export controls on Anthropic models, now lifted, were an own goal that created uncertainty for the industry. He contends the restrictions pushed international service providers toward Chinese AI models, undermining American competitiveness rather than protecting it.
+
+Langflow RCE Exploited to Deploy Monero Miner on Exposed AI App Endpoints (1 minute read)
+
+Threat actors are exploiting CVE-2026-33017, a critical unauthenticated RCE flaw in Langflow, to deploy a Monero miner across exposed AI application endpoints. Trend Micro observed the campaign over a 19-day window, during which the Go-based malware terminates rival miners, disables host security controls, establishes cron persistence, and propagates to other machines via reused SSH keys.
 
 ⚡
 Quick Links
 
+Import AI 463: Self-improving robots; a 10k Chinese GPU cluster; and an elegiac essay for the human era (1 minute read)
+
+NVIDIA's ENPIRE is a harness that lets coding agents run autonomous experiment-and-reset loops to improve real-world robot policies.
+
+China’s hollow-core fiber trial pushes 51.3 Tb/s over 128 miles without signal regeneration — milestone targets AI-era networking bottlenecks (1 minute read)
+
+YOFC field-trialed hollow-core fiber hitting 51.3 Tb/s over 128 miles without signal regeneration, targeting AI-era networking bottlenecks.
+
+Imec's 2026 roadmap details 0.3nm nodes by 2038, CFET transistors become viable at 0.7nm — company redefines Moore's Law as cell sizes gain importance for density (1 minute read)
+
+Imec's 2026 roadmap targets 0.3nm nodes by 2038 and viable CFET transistors at 0.7nm, redefining Moore's Law around cell size.
+
+Dragonfly v2.5.0 is released (5 minute read)
+
+(blurb not generated)
+
+CUDA emulator for AMD GPUs Zluda loses funding with v6 release — embattled project goes back to hobby status but now includes 32-bit PhysX support (5 minute read)
+
+(blurb not generated)
+
 x402 Agentic Commerce Hits 500k Daily Transactions (5 minute read)
 
-Payments using the x402 protocol rose 5x in June to roughly 500k daily transactions, driven mostly by pay-per-use AI inference.
+(blurb not generated)
+
+Startup OpenMatter wants to make enterprises prove what their AI agents do (5 minute read)
+
+(blurb not generated)
+
+Bloome launches chat platform for AI agent teams (5 minute read)
+
+(blurb not generated)
+
+Detecting Misuse with the Claude Compliance API: The Threat is in the Content (5 minute read)
+
+(blurb not generated)

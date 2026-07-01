@@ -6,20 +6,125 @@ TLDR Data 2026-07-01
 📊
 News & Trends
 
+Looking Ahead to Postgres 19 (1 minute read)
+
+PostgreSQL 19 entered beta with REPACK CONCURRENTLY landing in core, giving operators a lock-light way to reclaim table bloat without pg_repack, alongside partition merge/split, SQL property graph queries, and steady VACUUM, EXPLAIN, and planner gains. The headline features draw attention, but the in-core REPACK and partition surgery are the changes production teams running Postgres at scale will feel first.
+
+Google pitches Spanner as one database for all AI agents with these new featues (1 minute read)
+
+Google is positioning Spanner as a single database for AI agents, folding relational data, graph relationships, ScaNN vector search over 10B-plus vectors, full-text search, a Cassandra-compatible key-value endpoint, and a columnar engine into one architecture. The pitch targets the fragmentation of separate operational, search, vector, and graph stores, and Spanner Omni extends it beyond Google Cloud to Azure, AWS, on-prem, and edge via a containerized Kubernetes build.
+
 Google Cloud proposes Open Knowledge Format for AI-ready data sharing (5 minute read)
 
 (blurb not generated)
+
+🧠
+Deep Dives & Analysis
+
+From monolith to Lakebase to LTAP: rethinking the database from storage up (1 minute read)
+
+Databricks engineer Reynold Xin walks through Lakebase, the company's serverless Postgres, by decomposing a monolithic database into independent services: the write-ahead log that makes commits fast and the data files that make reads fast, externalized rather than pinned to one machine. The payoff is LTAP, where transactions and analytics run on a single copy of the data in real time, dropping the CDC and mirroring layers most teams bolt on to move OLTP data into the warehouse.
+
+I wrote a 70x faster SQL parser while barely looking at the code (5 minute read)
+
+(blurb not generated)
+
+How Far Do On-Prem Open LLMs Get on Text-to-SQL? A Cross-Family Size x Technique Frontier on BIRD (1 minute read) [flag]
+
+This paper benchmarks on-prem open-weight LLMs on Text-to-SQL using BIRD's dev split, testing Qwen2.5-Coder, CodeLlama, and Llama-3.x under one matched protocol with McNemar significance tests. Model generation beats raw size: Qwen2.5-Coder 7B scores 39.1 vs CodeLlama's 20.9, while Llama-3.3-70B hits 49.2. Self-correction is a near-free accuracy win, but schema linking does nothing even with 96.5% gold-table recall, and self-consistency adds 0.13 points for roughly 5x the tokens.
+
+(78 words)
+
+Building Jaeger's ClickHouse backend: 8.6× compression on 10 million spans (5 minute read)
+
+(blurb not generated)
+
+Large Databases Need Small, Open-Weight Language Models (1 minute read)
+
+This paper argues that closed-source LM APIs are unnecessary for language-model-enhanced database operators, where token-based pricing can push a single set of experiments past $10,000. The authors show that quantized, open-weight models running locally on 16GB of VRAM match or beat proprietary APIs on accuracy at lower latency. Integrated into BlendSQL v0.1.0, the local setup cut costs 390x and latency 3.8x versus a proprietary API.
+
+CLIP: Lightweight Cosine-Law-Based Inverted-List Pruning for IVF-Based Vector Search (1 minute read)
+
+CLIP is a pruning technique for IVF-based vector search that cuts the cluster and vector scans those indexes normally do exhaustively, eliminating irrelevant clusters in O(1) time and filtering vector batches in logarithmic time using cosine-law lower bounds. The paper reports up to 78% pruning and 69% higher query efficiency over static IVF baselines, plus an LSM-inspired variant that defers index maintenance to background compaction for 141% higher throughput on dynamic workloads.
+
+MaDI-Bench: An End-to-End Data Integration Benchmark (1 minute read)
+
+MaDI-Bench is the first benchmark to evaluate data integration end-to-end across the full pipeline of schema matching, value normalization, entity blocking, entity matching, and data fusion, rather than scoring each step in isolation. The authors validate it against human-engineered, best-of-breed, and LLM-based pipelines, and include a method for generating task variants to slow benchmark saturation as systems improve. It measures both step-wise and end-to-end performance, with all artifacts public.
+
+Mandol: An Agglomerative Agent Memory System for Long-Term Conversations (1 minute read)
+
+This paper introduces Mandol, an agent memory system that replaces the usual mix of separate vector and graph databases with a single memory-native store, fusing key-value, vector, and graph structures behind unified hybrid retrieval operators. By keeping LLMs out of the retrieval path and adding query-adaptive routing, denoising, and token-constrained context generation, it cuts cross-database I/O. The authors report best overall accuracy on LoCoMo and LongMemEval, plus a 5.4x retrieval and 4.8x insertion speedup under 10 QPS on consumer hardware.
+
+When LLMs Read Tables Carelessly: Measuring and Reducing Data Referencing Errors (1 minute read)
+
+This paper presents the first systematic evaluation of data referencing errors (DREs) in LLMs reading tables, where models cite or omit cell values incorrectly even when they understand the table structure. The errors show up in every model tested, from 1.7B to 20B parameters, and corrupt intermediate reasoning steps rather than just final answers. Using a lightweight 4B critic to filter and reject-sample outputs lifted answer accuracy by up to 12% and hit a 78.2% F1 at catching the errors.
+
+Experience Graphs: The Data Foundation for Self-Improving Agents (1 minute read)
+
+This paper argues that long-horizon agents produce a structured "experience graph" of artifacts, tool outputs, rewards, and causal lineage that most frameworks throw away as JSON checkpoints and session logs. The authors propose Trellis, a database that treats that graph as queryable, governed state, recasting frontier selection as a query, cross-session reuse as vector-seeded graph retrieval, and training-data extraction as a materialized view. In Meta's KernelEvolve kernel optimizer, that reuse hit target speedups roughly 10x faster at 52% lower token cost.
+
+Making Multimodal LLMs Reliable Chart Data Extractors: A Benchmark and Training Framework (1 minute read)
+
+This paper benchmarks how well multimodal LLMs reverse-engineer data tables from chart images without visible value labels, and finds they reconstruct table structure reliably but miss on precise numeric values. The authors then train a model using a progressive, human-like chart-reading process, reaching state-of-the-art numerical accuracy with just a 7B-parameter model and supporting mixed-initiative extraction workflows. For data teams, it points to a cheaper path for turning published charts back into queryable tables.
+
+Reading the internals of Postgres: Database cluster, databases, and tables (1 minute read)
+
+A developer's working notes from Hironobu Suzuki's "The Internals of PostgreSQL" walk through how Postgres organizes storage: a database cluster is a group of databases managed by one instance, not a set of nodes, and every object is tracked by an OID in system catalogs that are themselves just regular tables. The useful detail is that pg_database is shared cluster-wide while most catalogs are per-database, and user objects start at OID 16384 with the lower range reserved for init objects.
 
 🚀
 Launches & Tools
 
 Introducing Flink's Native S3 FileSystem: Built for Performance, Designed for Production (5 minute read)
 
-Apache Flink 2.3 introduced flink-s3-fs-native, a Hadoop-free S3 filesystem built specifically for Flink that ships as an experimental opt-in plugin and supports both RecoverableWriter for exactly-once sinks and a fast read path for checkpointing. The native plugin ends the long-standing choice between the Hadoop and Presto plugins, drops the hadoop-common dependency tree and AWS SDK v1, and delivers measurable performance gains already running in production at scale.
+(blurb not generated)
+
+Introducing TabFM: A zero-shot foundation model for tabular data (1 minute read)
+
+Google Research released TabFM, a zero-shot foundation model for tabular classification and regression that frames prediction as in-context learning, generating results on unseen tables in a single forward pass without training, hyperparameter tuning, or feature engineering. It targets the XGBoost and random-forest workflows that dominate enterprise churn and fraud prediction, and is available now on Hugging Face and GitHub.
+
+Designing GPU-Accelerated Query Engines with NVIDIA GQE (1 minute read)
+
+NVIDIA published a technical walkthrough of GQE, a reference GPU query engine that runs SQL over large datasets using cuDF and CUDA-X libraries like nvCOMP for decompression and nvSHMEM for data movement. The post details how GQE overlaps CPU-GPU transfers with computation, prunes partitions, and consumes Substrait plans exported from engines like Apache DataFusion, letting teams benchmark GPU execution against an existing database without a rewrite.
+
+Conversational analytics in BigQuery brings trusted agentic reasoning to everyone (2 minute read)
+
+Google made Conversational Analytics in BigQuery generally available, adding an agent built on Gemini that queries data, runs multi-step analyses, and generates visual reports from natural language across BigQuery, Iceberg, and cross-cloud sources like Databricks Unity, AWS Glue, and Salesforce. Teams can build agents grounded in specific datasets inside BigQuery Studio and publish them to Gemini Enterprise, Data Studio, or their own apps via the Conversational Analytics API.
+
+Zilliz has a Loonatic storage engine (5 minute read)
+
+(blurb not generated)
+
+Synthesize the big picture and analyze trends with BigQuery's AI.AGG function (3 minute read)
+
+BigQuery's new AI.AGG() function, now in preview, lets you summarize or synthesize across millions of rows of unstructured or multimodal data using natural-language instructions inside a single line of SQL. It targets aggregate questions that per-row AI functions can't answer, like surfacing the top feature requests across negative reviews or clustering Spark logs to find memory thrashing and clock drift before anything throws a FATAL error.
+
+Mistral OCR 4: SOTA OCR for Document Intelligence (5 minute read)
+
+(blurb not generated)
+
+Scaling Network Analysis for Fraud Prevention with BigQuery Graph (2 minute read)
+
+Curve, a UK financial super-app, moved its fraud network analysis to BigQuery Graph, using native GQL to run multi-hop queries across millions of users and tens of millions of connections without standing up a separate graph database. Keeping the data in BigQuery avoided a migration to a dedicated graph store, cutting cost while surfacing the shared-device and shared-card links that organized fraud rings use to evade per-transaction models.
+
+MongoDB embeds reranking into Atlas as enterprises look to simplify AI stacks for scale (5 minute read)
+
+(blurb not generated)
+
+DA-Studio: An Agentic System for End-to-End Data Analysis (1 minute read)
+
+DA-Studio is a web-based agentic system for end-to-end data analysis that turns raw files and natural-language requests into executable, multi-step workflows, running generated code in a sandboxed workspace with streamed action traces and artifact previews. The pitch for data teams is inspectability: every intermediate result, code edit, and rerun stays visible, so the agent's analysis path can be audited rather than trusted as a black box.
+
+Clean Me If You Can: A Large Collection of Real-World Addresses for Data Cleaning Benchmarking (1 minute read)
+
+This paper releases a large collection of real-world postal addresses paired with ground-truth corrections, aimed at benchmarking data cleaning tools against messy production data rather than synthetic test cases. The authors show that existing cleaning approaches degrade sharply on the dataset and offer guidelines for future work, giving data teams a realistic yardstick for evaluating deduplication and standardization pipelines.
 
 ⚡
 Quick Links
 
-Memory Prices report from Stanford (1 minute read)
+Memory Prices report from Stanford (5 minute read)
 
-An interactive Stanford dataset charting DRAM, NAND, and HBM prices per gigabyte from 1960 to 2026, with downloadable raw data.
+(blurb not generated)
+
+British Columbia, Time Zones, and Postgres (5 minute read)
+
+(blurb not generated)
