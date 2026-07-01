@@ -14,33 +14,33 @@ GitHub Updates actions/checkout to Block Common Pwn Request Attack Patterns (5 m
 
 (blurb not generated)
 
-Microsoft previews Linux containers that run in Windows (1 minute read)
+Microsoft previews Linux containers that run in Windows (5 minute read)
 
-Microsoft opened a public preview of Linux containers that run natively on Windows, replacing the older Docker Desktop VM approach with a lighter Hyper-V-backed runtime that starts containers faster and shares host resources more efficiently. The change targets platform teams running mixed Windows and Linux workloads, cutting the overhead of maintaining a separate Linux VM per developer machine and tightening the local-to-production parity that container tooling promises.
+(blurb not generated)
 
-Zuck saves Meta bucks by reusing memory from old servers with a custom CXL ASIC (1 minute read)
+Zuck saves Meta bucks by reusing memory from old servers with a custom CXL ASIC (5 minute read)
 
-Meta built a custom CXL ASIC that pools DRAM salvaged from decommissioned servers, letting newer hosts borrow that memory over the CXL fabric instead of buying fresh DIMMs. The move targets memory cost and e-waste at hyperscale, extending the useful life of RAM that would otherwise be scrapped and easing capacity pressure on memory-bound workloads like caching and inference.
+(blurb not generated)
 
-New instances bring AWS’ Graviton5 CPUs to high-performance cloud workloads (1 minute read)
+New instances bring AWS’ Graviton5 CPUs to high-performance cloud workloads (5 minute read)
 
-AWS launched its EC2 C9g and C9gd instances, bringing Graviton5 CPUs to compute-intensive workloads like video encoding, scientific modeling, and distributed analytics with up to 25% higher performance per vCPU over Graviton4-based C8g. The chips pair DDR5 8800MT/s memory with 5x the L3 cache of Graviton4, and the C9gd variant adds local NVMe storage for up to 30% higher throughput on I/O-bound jobs.
+(blurb not generated)
 
-AWS expands compute-optimized Graviton5 instances with C9g and C9gd VMs (1 minute read)
+AWS expands compute-optimized Graviton5 instances with C9g and C9gd VMs (5 minute read)
 
-AWS made its compute-optimized Graviton5 instances, C9g and C9gd, generally available in three regions, claiming up to 25% higher per-vCPU performance over the previous C8g line and doubled core counts. Both are the first compute-optimized instances to ship with AWS's Nitro Isolation Engine for mathematically verified VM isolation, with the C9gd adding local NVMe SSD for HPC scratch space and low-latency buffers.
+(blurb not generated)
 
-Claude Sonnet 5 on GitLab: More reliable, more efficient (2 minute read)
+Claude Sonnet 5 on GitLab: More reliable, more efficient (5 minute read)
 
-GitLab made Anthropic's Claude Sonnet 5 available on the Duo Agent Platform across all tiers and deployment models through its AI Gateway, the first model to complete every task in GitLab's internal evaluation suite versus 93.8% for Sonnet 4.6. GitLab reports 8.8% more issues resolved, which for teams running Duo agents in production means multi-file refactors and test generation return reviewable output instead of stalling mid-run.
+(blurb not generated)
 
-DATADOG rachète ADAPTIVE ML pour renforcer son laboratoire d’IA (1 minute read)
+DATADOG rachète ADAPTIVE ML pour renforcer son laboratoire d’IA (5 minute read)
 
-Datadog acquired Adaptive ML, a reinforcement-learning-operations startup, to build out its internal AI research lab and deepen its post-training expertise. The deal is primarily a talent play aimed at turning Datadog's operational telemetry into specialized observability and security models, though the price was undisclosed against Adaptive ML's $20M 2024 raise.
+(blurb not generated)
 
-etcd-operator joins Cozystack with a new v1alpha2 API (1 minute read)
+etcd-operator joins Cozystack with a new v1alpha2 API (5 minute read)
 
-The etcd-operator project was donated to Cozystack and re-implemented from scratch under a new etcd-operator.cozystack.io/v1alpha2 API, dropping the StatefulSet model in favor of driving etcd's native Membership API for MemberAdd, MemberPromote, and MemberRemove directly. The rewrite reconciles each member's Pod and PVC independently and adds learner-mode members one at a time, giving the operator full control over quorum changes during scaling and graceful removal.
+(blurb not generated)
 
 Rethinking cloud operations with agentic observability (5 minute read)
 
@@ -54,32 +54,36 @@ GitLab Patches Code Execution, Information Disclosure Vulnerabilities (5 minute 
 
 (blurb not generated)
 
-AWS Weekly Roundup: Agentic CX designer for Amazon Connect Customer, EC2 AMI Watermarks, Open Governance for MySQL, and more (June 29, 2026) (1 minute read)
+AWS Weekly Roundup: Agentic CX designer for Amazon Connect Customer, EC2 AMI Watermarks, Open Governance for MySQL, and more (June 29, 2026) (5 minute read)
 
-AWS Lambda MicroVMs led this week's roundup, adding a serverless primitive that gives each user or job VM-level isolation on Firecracker with near-instant launch and the ability to suspend and resume execution for up to 8 hours. The same drop shipped EC2 AMI Watermarks, which embed identifiers that carry forward to every derived AMI across copies, Regions, and accounts, plus an Agentic CX designer preview in Amazon Connect for no-code customer-experience flows.
+(blurb not generated)
 
-Aikido acquires Root to patch open-source software without forced upgrades (1 minute read)
+Aikido acquires Root to patch open-source software without forced upgrades (5 minute read)
 
-Aikido Security acquired Root.io to fold its agentic patching into the platform as a feature called Aikido Libraries. Root writes, tests, and ships fixes to vulnerable open-source dependencies at the exact pinned versions teams already run in 15 to 40 minutes, avoiding the rebuilds and breaking changes a full version bump forces.
+(blurb not generated)
 
 🚀
 Opinions & Tutorials
 
-I ported Kubernetes to the browser (1 minute read)
+I ported Kubernetes to the browser (5 minute read)
 
-A developer released webernetes, a partial reimplementation of Kubernetes in TypeScript that runs an entire cluster in the browser, handling pod lifecycles, cluster DNS, IP allocation, container garbage collection, and Deployment/ReplicaSet tracking in roughly 140KiB gzipped. Rather than compiling Kubernetes to WebAssembly, which would ship megabytes and fails on browser-unavailable syscalls, the author rebuilt the control-plane logic and swapped registries for a browser-native image API defined in TypeScript. The project spans nearly 100,000 lines across 629 files, written over two months.
+(blurb not generated)
 
-OTel and mesh-derived metrics: A 2026 reference (1 minute read)
+Understanding dynamic resource allocation in Kubernetes (1 minute read)
 
-This CNCF post explains how to combine Linkerd's mesh-derived metrics with an existing OpenTelemetry pipeline, covering the east-west service traffic that application-layer instrumentation misses. Once a workload is meshed, the Linkerd proxy emits golden metrics for every inbound and outbound request on port 4191, with no SDK calls or image rebuilds. The reference shows where mesh metrics overlap with OTel and where they don't, plus a working Collector config and Grafana dashboard to land both layers in the same backend.
+Dynamic Resource Allocation reached GA in Kubernetes v1.35, and this walkthrough runs GPU scheduling on a live cluster of NVIDIA T10 and A5000 cards to show how DRA replaces the old device-plugin model for claiming hardware. NVIDIA's dra-driver-nvidia-gpu has moved into Kubernetes SIGs and dropped its Beta label, signaling the standard is stabilizing. The post covers labeling GPU nodes, installing the GPU Operator v26.3.1, and wiring up resource claims on Kubernetes v1.35.3.
+
+OTel and mesh-derived metrics: A 2026 reference (5 minute read)
+
+(blurb not generated)
 
 How we found a bug in the hyper HTTP library (5 minute read)
 
 (blurb not generated)
 
-Core dump epidemiology: fixing an 18-year-old bug (1 minute read)
+Core dump epidemiology: fixing an 18-year-old bug (5 minute read)
 
-OpenAI's data-infrastructure team traced a batch of "impossible" C++ crashes in its Rockset service to two unrelated causes: silent hardware corruption on a single Azure host doing math wrong, and an 18-year-old race condition in GNU libunwind. Rather than chase individual stack traces, the team treated the crashes as a population and built a dataset across every occurrence, letting them separate the two signals. The write-up is a useful model for debugging rare, non-reproducible failures at fleet scale, where per-incident analysis breaks down.
+(blurb not generated)
 
 What you need to know about Lambda MicroVMs (5 minute read)
 
@@ -91,7 +95,7 @@ Client-Side Load Balancing at a Million Requests Per Second (5 minute read)
 
 What happens when you run a CUDA kernel (5 minute read)
 
-(blurb not generated)
+A deep technical walkthrough traces a single vector-add CUDA kernel from `nvcc` compilation down through PTX, SASS, and warp scheduling on an RTX 4090, then back up to the result. The author shows that printing one correct answer involves tens of millions of CPU instructions, roughly 900 ioctls, and a memory-mapped doorbell register the driver rings to launch work on the GPU. It is a useful mental model for anyone debugging GPU utilization or CUDA driver overhead in production.
 
 How Cloudflare responded to the “Copy Fail” Linux vulnerability (5 minute read)
 
@@ -101,9 +105,13 @@ Build and Deploy a Remote MCP Server to GKE in 30 Minutes (5 minute read)
 
 (blurb not generated)
 
-How is AI changing datacenter network fabrics? (1 minute read)
+Preventing agent-generated infrastructure bloat through spec-driven governance (2 minute read)
 
-The Register examines how AI training and inference workloads are reshaping datacenter network fabrics, driving the shift toward higher-radix switches, 800GbE links, and lossless RDMA-based topologies built for east-west GPU traffic. The piece argues that traditional oversubscribed leaf-spine designs buckle under synchronized all-to-all collectives, pushing operators toward rail-optimized fabrics and tighter congestion control. For platform teams, the takeaway is that network cost and topology now gate cluster utilization as much as GPU supply does.
+The author argues that AI agents industrialize infrastructure waste at the same scale they ship code, provisioning oversized GKE clusters, inflated pod requests, and bloated base images that run continuously for a service's lifetime. The fix is spec-driven governance: encode sustainability constraints as policy checks against Terraform and YAML inside the pipeline, blocking inefficient patterns pre-deploy rather than right-sizing after the fact, which becomes impractical once agentic pipelines reproduce the same waste across every environment.
+
+How is AI changing datacenter network fabrics? (5 minute read)
+
+(blurb not generated)
 
 ⚒️
 Launches & Tools
@@ -116,33 +124,33 @@ Dragonfly v2.5.0 is released (5 minute read)
 
 (blurb not generated)
 
-Automate public TLS certificate issuance with ACME support in AWS Certificate Manager (1 minute read)
+Automate public TLS certificate issuance with ACME support in AWS Certificate Manager (5 minute read)
 
-AWS Certificate Manager now runs a fully managed ACMEv2 server endpoint for public certificates, letting Certbot, cert-manager, acme.sh, or any ACME client pull TLS certs from Amazon Trust Services without external CAs. PKI teams get centralized control through IAM-bound ACME accounts, endpoint-level domain scoping, and CloudTrail, CloudWatch, and expiry notifications, ahead of the CA/Browser Forum cutting max certificate validity to 47 days by 2029.
+(blurb not generated)
 
-NixOS 26.05 (1 minute read)
+NixOS 26.05 (5 minute read)
 
-NixOS 26.05 "Yarara" shipped with systemd-based stage 1 initrd as the default, deprecating the old scripted implementation ahead of its removal in 26.11. The release lands 20,442 new packages and ships GCC 15 and GNOME 50, while marking the final Nixpkgs release to support x86_64-darwin before Apple-driven deprecation ends those builds at the close of 2026.
+(blurb not generated)
 
 Bringing more agent harnesses and frameworks to Cloudflare, starting with Flue (5 minute read)
 
 (blurb not generated)
 
-What's new in Git 2.55.0? (3 minute read)
+What's new in Git 2.55.0? (5 minute read)
 
-The Git project released Git 2.55.0, adding a `git history fixup` command that amends staged changes into an existing commit and automatically rebases all stacked branches containing it. The release also brings the built-in fsmonitor daemon to Linux via inotify, speeding up `git status` in large monorepos without requiring a third-party tool like Watchman.
+(blurb not generated)
 
-Amazon EC2 C9g and C9gd instances powered by AWS Graviton5 processors are now available (1 minute read)
+Amazon EC2 C9g and C9gd instances powered by AWS Graviton5 processors are now available (5 minute read)
 
-Amazon made its EC2 C9g and C9gd instances generally available, running AWS Graviton5 processors that deliver up to 25% higher performance per vCPU over C8g, DDR5-8800 memory, 5x more L3 cache, and up to 3x faster packet processing than Graviton4. They ship in 11 sizes plus bare metal, with C9gd adding local NVMe SSD storage and free 1-second-granularity I/O latency metrics through CloudWatch or nvme-cli.
+(blurb not generated)
 
 Security Profiles Operator v1: Stable APIs, Security Hardened, and Shaping Upstream Kubernetes (5 minute read)
 
 (blurb not generated)
 
-Accelerate your infrastructure deployments by up to 4x with AWS CloudFormation Express mode (1 minute read)
+Accelerate your infrastructure deployments by up to 4x with AWS CloudFormation Express mode (5 minute read)
 
-AWS announced CloudFormation Express mode, which completes deployments once resource configuration is applied instead of waiting for full stabilization checks, cutting deployment time by up to 4x. AWS benchmarks show an SQS queue with a DLQ dropping from 64 seconds to 10, with CloudFormation auto-retrying dependent resources on transient failures so resources finish stabilizing in the background.
+(blurb not generated)
 
 Unlocking the Cloudflare app ecosystem with OAuth for all (5 minute read)
 
@@ -152,41 +160,41 @@ Bunny Makes DNS Free To Pull More Apps Onto Its Edge Platform (5 minute read)
 
 (blurb not generated)
 
-A native graphical shell for SSH (1 minute read)
+A native graphical shell for SSH (5 minute read)
 
-Outer Shell is an open-source graphical shell that lets servers and edge devices serve browser-based apps over SSH, with each app running as a dependency-free HTTP server bound to a Unix domain socket rather than a localhost port. Encryption is handled at the SSH layer instead of per-app, and apps register capabilities so they can discover each other, turning a remote box into a navigable desktop without a local GUI.
+(blurb not generated)
 
-Anomaly detection using dynamic thresholds and two-year-long alerts in Cloud Monitoring (3 minute read)
+Anomaly detection using dynamic thresholds and two-year-long alerts in Cloud Monitoring (5 minute read)
 
-Google Cloud Monitoring added long-lookback alert policies for PromQL, now in preview, letting policies query up to two years of stored metric data for year-over-year and quarter-over-quarter analysis. The feature enables dynamic thresholds that alert on deviation from a metric's own history, catching anomalies that fall within normal daily ranges and collapsing per-workload static-threshold policies into one.
+(blurb not generated)
 
 Amazon ECS introduces new high-resolution metrics for faster service auto scaling (5 minute read)
 
 (blurb not generated)
 
-Microsoft finally launches WSL Containers in public preview (5 minute read)
+Build agents even faster with Gemini Enterprise Agent Platform’s fully-managed, remote MCP server (5 minute read)
 
 (blurb not generated)
-
-Build agents even faster with Gemini Enterprise Agent Platform’s fully-managed, remote MCP server (2 minute read)
-
-Google Cloud launched a fully-managed, remote MCP server for its Gemini Enterprise Agent Platform, letting external agents built in Claude Code, Antigravity CLI, or other IDEs securely call Model Garden models, pull shared prompt templates, and manage Notebooks inside a Google Cloud project. Connections run entirely within Google Cloud and are governed by native IAM Deny policies, so IT teams can restrict external frameworks to authorized resources without writing custom integration code.
 
 Apache Flink 2.3.0 Release Announcement (5 minute read)
 
-(blurb not generated)
+The Apache Flink PMC released Flink 2.3.0, which adds SQL changelog operators (FROM_CHANGELOG and TO_CHANGELOG), a redesigned native S3 filesystem built on AWS SDK v2, and application-level lifecycle management across 15 implemented FLIPs. Adaptive partition selection and improved watermark alignment cut backpressure and speed backlog processing, while a reworked SinkUpsertMaterializer lifts performance for some SQL workloads in production deployments.
 
 Introducing Package Proxy: Supply-Chain Safety Checks Without Client-Side Software (5 minute read)
 
+Thinkst released Package Proxy, a Cloudflare Workers-based proxy that runs inline supply-chain checks for npm, pip, uv, and cargo without installing any client-side software on developer machines. The tool blocks packages that fall inside the risky window for known attack patterns, such as recently published versions tied to surreptitious back-doors and low-install typo-squats, and deploys from its GitHub repo straight into Cloudflare.
+
+HCP Terraform Powered by Infragraph Limited Availability Launch (5 minute read)
+
 (blurb not generated)
-
-HCP Terraform Powered by Infragraph Limited Availability Launch (1 minute read)
-
-HashiCorp moved HCP Terraform powered by Infragraph into limited availability for Standard and Premium customers on US instances, adding connectors for Azure, GitHub, and Terraform Enterprise to the existing AWS support. The tool builds a live graph of resources, relationships, and state across hybrid and multi-cloud environments, giving platform teams a unified view to track ownership, surface risk, and cut the tool sprawl of siloed infrastructure data.
 
 The "Akrites" vulnerability-mitigation project launches (5 minute read)
 
-(blurb not generated)
+Akrites launched as a vulnerability-mitigation project that fixes flaws upstream and confidentially, measuring success by patch deployment rather than publication on the premise that public patches let adversaries reverse-engineer exploits before fixes land. The program keeps undisclosed flaws embargoed, routes fixes through each project's own maintainers, and commits to serve as maintainer of last resort for unmaintained but critical packages.
+
+Google Antigravity agents get full context with GitLab Orbit (3 minute read)
+
+GitLab released Orbit, a lifecycle context graph that Google Antigravity developers can install from the Antigravity MCP Store to give coding agents structured access to projects, pipelines, merge requests, vulnerabilities, and source across a GitLab instance. Orbit indexes the instance into a knowledge graph queried through two MCP tools, and GitLab's internal tests reported agents responding up to 11x faster, using 4.5x fewer tokens, and producing 45x fewer hallucinations.
 
 ⚡
 Quick Links

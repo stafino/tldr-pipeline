@@ -1,17 +1,47 @@
 {
   "date": "2026-07-01",
   "newsletter": "tldr_dev",
-  "fetched_at": "2026-07-01T09:14:21.296127+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-07-01T14:54:12.594153+00:00",
+  "tldr_titles": [
+    "A peek into Reddit's anti-spam internals",
+    "How we really build production-grade AI agents: beyond models, toward data and API quality",
+    "Quality Assurance Agent: Reimagining Software Quality with AI-Driven Autonomous Testing",
+    "Is AI making your teams better, or just busier?",
+    "Why Specialization Is Inevitable",
+    "AI shouldn't shrink headcount. It should shrink teams",
+    "Expo 57",
+    "Introducing Claude Sonnet 5",
+    "I ported Kubernetes to the browser",
+    "Apple Fixes WebKit Flaws in iOS and macOS, With Help From AI Tools",
+    "Don't Make Gates Optional, Make Them Flexible",
+    "Worse is better",
+    "Microsoft Needs Windows Lite",
+    "The best thing that's ever happened for multiplayer games?"
+  ],
+  "tldr_matched": [
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
   "predictions": [
     {
       "rank": 1,
       "score": 82.0,
       "title": "Claude Sonnet 5",
       "url": "https://www.anthropic.com/news/claude-sonnet-5",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 7,
+      "similarity": 1.0
     },
     {
       "rank": 2,
@@ -26,8 +56,8 @@
       "score": 76.0,
       "title": "I ported Kubernetes to the browser",
       "url": "https://ngrok.com/blog/i-ported-kubernetes-to-the-browser",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 8,
+      "similarity": 1.0
     },
     {
       "rank": 4,
@@ -64,21 +94,13 @@
     {
       "rank": 8,
       "score": 69.0,
-      "title": "Microsoft finally launches WSL Containers in public preview",
-      "url": "https://www.neowin.net/news/microsoft-finally-launches-wsl-containers-in-public-preview/?utm_source=rss",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 9,
-      "score": 69.0,
       "title": "A native graphical shell for SSH",
       "url": "https://probablymarcus.com/blocks/2026/06/28/native-graphical-shell-for-SSH.html",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 10,
+      "rank": 9,
       "score": 68.0,
       "title": "How we used DSPy to turn AI evaluations into better responses in Dash chat",
       "url": "https://dropbox.tech/machine-learning/how-we-turned-ai-evaluations-into-better-responses-in-dash-chat",
@@ -86,7 +108,7 @@
       "similarity": null
     },
     {
-      "rank": 11,
+      "rank": 10,
       "score": 68.0,
       "title": "Meituan open sources LongCat-2.0, the 1.6T, near-frontier agentic coding model that's been leading OpenRouter \u2014 trained entirely on Chinese chips",
       "url": "https://venturebeat.com/technology/meituan-open-sources-longcat-2-0-the-1-6t-near-frontier-agentic-coding-model-thats-been-leading-openrouter-trained-entirely-on-chinese-chips",
@@ -94,7 +116,7 @@
       "similarity": null
     },
     {
-      "rank": 12,
+      "rank": 11,
       "score": 68.0,
       "title": "Run a vLLM Server on HF Jobs in One Command",
       "url": "https://huggingface.co/blog/vllm-jobs",
@@ -102,7 +124,7 @@
       "similarity": null
     },
     {
-      "rank": 13,
+      "rank": 12,
       "score": 68.0,
       "title": "NixOS 26.05",
       "url": "https://nixos.org/blog/announcements/2026/nixos-2605/",
@@ -110,7 +132,7 @@
       "similarity": null
     },
     {
-      "rank": 14,
+      "rank": 13,
       "score": 68.0,
       "title": "Highlights from Git 2.55",
       "url": "https://github.blog/open-source/git/highlights-from-git-2-55/",
@@ -118,7 +140,7 @@
       "similarity": null
     },
     {
-      "rank": 15,
+      "rank": 14,
       "score": 68.0,
       "title": "Getting more from each token: How Copilot improves context handling and model routing",
       "url": "https://github.blog/ai-and-ml/github-copilot/getting-more-from-each-token-how-copilot-improves-context-handling-and-model-routing/",
@@ -126,7 +148,7 @@
       "similarity": null
     },
     {
-      "rank": 16,
+      "rank": 15,
       "score": 68.0,
       "title": "Pollen tried to remove my article and Google is assisting with it",
       "url": "https://blog.pragmaticengineer.com/pollen-tried-to-remove-my-article-about-callum-negus-fancey-and-google-is-assisting-to-it/",
@@ -134,7 +156,7 @@
       "similarity": null
     },
     {
-      "rank": 17,
+      "rank": 16,
       "score": 67.0,
       "title": "WATaBoy: JIT-Ing Game Boy Instructions to WASM Beats a Native Interpreter",
       "url": "https://humphri.es/blog/WATaBoy/",
@@ -142,15 +164,15 @@
       "similarity": null
     },
     {
-      "rank": 18,
+      "rank": 17,
       "score": 66.0,
       "title": "A peek into Reddit's anti-spam internals",
       "url": "https://lyra.horse/blog/2026/06/reddit-spam-internals/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 0,
+      "similarity": 1.0
     },
     {
-      "rank": 19,
+      "rank": 18,
       "score": 66.0,
       "title": "The Coming Loop",
       "url": "https://lucumr.pocoo.org/2026/6/23/the-coming-loop/",
@@ -158,7 +180,7 @@
       "similarity": null
     },
     {
-      "rank": 20,
+      "rank": 19,
       "score": 66.0,
       "title": "Run isolated sandboxes with full lifecycle control: AWS Lambda introduces MicroVMs",
       "url": "https://aws.amazon.com/blogs/aws/run-isolated-sandboxes-with-full-lifecycle-control-aws-lambda-introduces-microvms/",
@@ -166,7 +188,7 @@
       "similarity": null
     },
     {
-      "rank": 21,
+      "rank": 20,
       "score": 66.0,
       "title": "Rust introduces new Range types",
       "url": "https://www.infoworld.com/article/4191267/rust-introduces-new-range-types.html",
@@ -174,7 +196,7 @@
       "similarity": null
     },
     {
-      "rank": 22,
+      "rank": 21,
       "score": 65.0,
       "title": "MCP Server Architecture Patterns for LLM-Integrated Applications",
       "url": "http://arxiv.org/abs/2606.30317v1",
@@ -182,7 +204,7 @@
       "similarity": null
     },
     {
-      "rank": 23,
+      "rank": 22,
       "score": 65.0,
       "title": "How Netflix Simplified Batch Compute with Kueue",
       "url": "https://netflixtechblog.com/how-netflix-simplified-batch-compute-with-kueue-87860682629c",
@@ -190,7 +212,7 @@
       "similarity": null
     },
     {
-      "rank": 24,
+      "rank": 23,
       "score": 65.0,
       "title": "Memory Safe Context Switching",
       "url": "https://fil-c.org/context_switches",
@@ -198,7 +220,7 @@
       "similarity": null
     },
     {
-      "rank": 25,
+      "rank": 24,
       "score": 65.0,
       "title": "14x faster embeddings: how we rebuilt the ONNX path in Manticore",
       "url": "https://manticoresearch.com/blog/onnx-embeddings-speedup/",
@@ -206,7 +228,7 @@
       "similarity": null
     },
     {
-      "rank": 26,
+      "rank": 25,
       "score": 65.0,
       "title": "NSA's SIGINT Enabling Project Pushes Weakened TLS Post-Quantum Standard",
       "url": "https://nsa.2026.action.cr.yp.to/",
@@ -214,7 +236,7 @@
       "similarity": null
     },
     {
-      "rank": 27,
+      "rank": 26,
       "score": 65.0,
       "title": "What can you confidently guarantee about your software?",
       "url": "https://queue.acm.org/detail.cfm?id=3819084",
@@ -222,7 +244,7 @@
       "similarity": null
     },
     {
-      "rank": 28,
+      "rank": 27,
       "score": 65.0,
       "title": "AI coding tools are speeding up code, not delivery",
       "url": "https://www.infoq.com/news/2026/06/xcode-27-agents-device-hub/",
@@ -230,7 +252,7 @@
       "similarity": null
     },
     {
-      "rank": 29,
+      "rank": 28,
       "score": 65.0,
       "title": "Deno update streamlines creation of desktop apps",
       "url": "https://www.infoworld.com/article/4190648/deno-update-streamlines-creation-of-desktop-apps.html",
@@ -238,10 +260,18 @@
       "similarity": null
     },
     {
-      "rank": 30,
+      "rank": 29,
       "score": 63.0,
       "title": "Clean GitHub repo tricks AI coding agents into running malware",
       "url": "https://www.bleepingcomputer.com/news/security/clean-github-repo-tricks-ai-coding-agents-into-running-malware/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 30,
+      "score": 63.0,
+      "title": "Godot will no longer accept AI-authored code contributions",
+      "url": "https://www.pcgamer.com/gaming-industry/open-source-game-engine-godot-will-no-longer-accept-ai-authored-code-contributions-we-cant-trust-heavy-users-of-ai-to-understand-their-code-enough-to-fix-it/",
       "matched_tldr_idx": null,
       "similarity": null
     },
@@ -250,8 +280,8 @@
       "score": 63.0,
       "title": "Anthropic launches Claude Sonnet 5 model on Claude and APIs",
       "url": "https://www.testingcatalog.com/anthropic-launches-claude-sonnet-5-model-on-claude-and-apis/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 7,
+      "similarity": 0.8005855083465576
     },
     {
       "rank": 32,
@@ -288,13 +318,21 @@
     {
       "rank": 36,
       "score": 62.0,
+      "title": "Asahi Linux 7.1 Progress Report",
+      "url": "https://asahilinux.org/2026/06/progress-report-7-1/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 37,
+      "score": 62.0,
       "title": "OTel and mesh-derived metrics: A 2026 reference",
       "url": "https://www.cncf.io/blog/2026/06/29/otel-and-mesh-derived-metrics-a-2026-reference/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 37,
+      "rank": 38,
       "score": 62.0,
       "title": "AdaTrans: Automated C to Rust Transformation via Error-Adaptive Repair",
       "url": "http://arxiv.org/abs/2606.31706v1",
@@ -302,7 +340,7 @@
       "similarity": null
     },
     {
-      "rank": 38,
+      "rank": 39,
       "score": 62.0,
       "title": "Client-Side Load Balancing at a Million Requests Per Second",
       "url": "https://engineering.zalando.com/posts/2026/06/client-side-load-balancing.html",
@@ -310,7 +348,7 @@
       "similarity": null
     },
     {
-      "rank": 39,
+      "rank": 40,
       "score": 62.0,
       "title": "Working With AI: A concrete example",
       "url": "https://htmx.org/essays/working-with-ai/",
@@ -318,7 +356,7 @@
       "similarity": null
     },
     {
-      "rank": 40,
+      "rank": 41,
       "score": 62.0,
       "title": "DeepReinforce releases Ornith-1.0 open-source coding models",
       "url": "https://www.testingcatalog.com/deepreinforce-releases-ornith-1-0-open-source-coding-models/",
@@ -326,7 +364,7 @@
       "similarity": null
     },
     {
-      "rank": 41,
+      "rank": 42,
       "score": 62.0,
       "title": "DeepSeek open sources DSpark, a new framework to speed up LLM inference by up to 85%",
       "url": "https://venturebeat.com/orchestration/deepseek-open-sources-dspark-a-new-framework-to-speed-up-llm-inference-by-up-to-85",
@@ -334,7 +372,7 @@
       "similarity": null
     },
     {
-      "rank": 42,
+      "rank": 43,
       "score": 62.0,
       "title": "Accelerating Transformers Fine-Tuning with NVIDIA NeMo AutoModel",
       "url": "https://huggingface.co/blog/nvidia/accelerating-fine-tuning-nvidia-nemo-automodel",
@@ -342,7 +380,15 @@
       "similarity": null
     },
     {
-      "rank": 43,
+      "rank": 44,
+      "score": 62.0,
+      "title": "Ornith-1.0: self-improving open-source models for agentic coding",
+      "url": "https://github.com/deepreinforce-ai/Ornith-1",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 45,
       "score": 62.0,
       "title": "Linux for the Sega MegaDrive",
       "url": "https://github.com/LinuxMD/linuxmd",
@@ -350,7 +396,7 @@
       "similarity": null
     },
     {
-      "rank": 44,
+      "rank": 46,
       "score": 61.0,
       "title": "How we built SmithDB's inverted index for full-text search",
       "url": "https://www.langchain.com/blog/full-text-search-in-smithdb-constructing-and-querying-our-inverted-index-pt-2",
@@ -358,7 +404,7 @@
       "similarity": null
     },
     {
-      "rank": 45,
+      "rank": 47,
       "score": 61.0,
       "title": "Turning Scattered Data Into Queryable Segments at Scale: How Razorpay Built Its Customer Data Platform",
       "url": "https://engineering.razorpay.com/turning-scattered-data-into-queryable-segments-at-scale-how-razorpay-built-its-customer-data-3937c4b012de",
@@ -366,7 +412,7 @@
       "similarity": null
     },
     {
-      "rank": 46,
+      "rank": 48,
       "score": 61.0,
       "title": "HackerRank open sourced its ATS. My resume scored 90/100. Oh wait 74. No \u2013 88",
       "url": "https://danunparsed.com/p/hackerrank-open-source-ats",
@@ -374,7 +420,7 @@
       "similarity": null
     },
     {
-      "rank": 47,
+      "rank": 49,
       "score": 60.0,
       "title": "Decades-Old Bash Tricks Expose AI Coding Agents to Supply Chain Attacks",
       "url": "https://www.securityweek.com/decades-old-bash-tricks-expose-ai-coding-agents-to-supply-chain-attacks/",
@@ -382,26 +428,10 @@
       "similarity": null
     },
     {
-      "rank": 48,
+      "rank": 50,
       "score": 60.0,
       "title": "Fintech Engineering Handbook",
       "url": "https://w.pitula.me/fintech-engineering-handbook/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 49,
-      "score": 60.0,
-      "title": "The Shifting Line Between CSS States and JavaScript Events",
-      "url": "https://css-tricks.com/css-states-and-javascript-events/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 50,
-      "score": 60.0,
-      "title": "Parse, Don't Validate \u2013 In a Language That Doesn't Want You To",
-      "url": "https://cekrem.github.io/posts/parse-dont-validate-typescript/",
       "matched_tldr_idx": null,
       "similarity": null
     },
@@ -466,8 +496,8 @@
       "score": 58.0,
       "title": "Claude Sonnet 5 boosts coding, reasoning, and tool use",
       "url": "https://www.infoworld.com/article/4191331/claude-sonnet-5-boosts-coding-reasoning-and-tool-use.html",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 7,
+      "similarity": 0.6995550394058228
     },
     {
       "rank": 59,
@@ -512,13 +542,29 @@
     {
       "rank": 64,
       "score": 57.0,
+      "title": "Where Severity Scores Go Wrong: \u201cJust Add Prototype Pollution\u201d",
+      "url": "https://jfrog.com/blog/where-cve-severity-scores-go-wrong/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 65,
+      "score": 57.0,
       "title": "\u201cIt's Hard to Eval\u201d Is a Product Smell",
       "url": "https://hamel.dev/blog/posts/eval-smell/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 65,
+      "rank": 66,
+      "score": 57.0,
+      "title": "Your Scaffold Will Be Gamed",
+      "url": "https://dev.to/talon_agent/your-scaffold-will-be-gamed-211l",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 67,
       "score": 57.0,
       "title": "The Problem is Prompt Debt",
       "url": "https://www.dbreunig.com/2026/06/22/the-problem-is-prompt-debt.html",
@@ -526,7 +572,7 @@
       "similarity": null
     },
     {
-      "rank": 66,
+      "rank": 68,
       "score": 57.0,
       "title": "Public PoC Released for Critical libssh2 CVE-2026-55200 Client-Side SSH Flaw",
       "url": "https://thehackernews.com/2026/06/public-poc-released-for-critical.html",
@@ -534,7 +580,7 @@
       "similarity": null
     },
     {
-      "rank": 67,
+      "rank": 69,
       "score": 57.0,
       "title": "Amazon Q Developer Flaw Could Let Malicious Repos Run Code via MCP Configs",
       "url": "https://thehackernews.com/2026/06/amazon-q-developer-flaw-could-let.html",
@@ -542,7 +588,7 @@
       "similarity": null
     },
     {
-      "rank": 68,
+      "rank": 70,
       "score": 56.0,
       "title": "Claude Sonnet 5 on GitLab: More reliable, more efficient",
       "url": "https://about.gitlab.com/blog/claude-sonnet-5-on-gitlab/",
@@ -550,7 +596,7 @@
       "similarity": null
     },
     {
-      "rank": 69,
+      "rank": 71,
       "score": 56.0,
       "title": "No more Java refills for Intel Macs after JDK 27, says Oracle",
       "url": "https://www.theregister.com/software/2026/06/30/no-more-java-refills-for-intel-macs-after-jdk-27-says-oracle/5263667",
@@ -558,7 +604,7 @@
       "similarity": null
     },
     {
-      "rank": 70,
+      "rank": 72,
       "score": 56.0,
       "title": "Pong game recompiles its own source code every frame \u2014 winning entry at IOCCC29 was generated by a custom compiler",
       "url": "https://www.tomshardware.com/tech-industry/pong-game-that-recompiles-itself-every-frame-wins-the-ioccc29-obfuscated-c-contest",
@@ -566,7 +612,7 @@
       "similarity": null
     },
     {
-      "rank": 71,
+      "rank": 73,
       "score": 55.0,
       "title": "Xsnow \"protestware\" in Debian",
       "url": "https://lwn.net/SubscriberLink/1079385/3d7a57da58b41aa9/",
@@ -574,7 +620,7 @@
       "similarity": null
     },
     {
-      "rank": 72,
+      "rank": 74,
       "score": 55.0,
       "title": "AI was supposed to kill engineering jobs, but new data suggests they're the most resilient",
       "url": "https://techcrunch.com/2026/06/24/ai-was-supposed-to-kill-engineering-jobs-but-new-data-suggests-theyre-the-most-resilient/",
@@ -582,7 +628,7 @@
       "similarity": null
     },
     {
-      "rank": 73,
+      "rank": 75,
       "score": 55.0,
       "title": "CachyOS June 2026 Release",
       "url": "https://cachyos.org/blog/2606-june-release/",
@@ -590,9 +636,51 @@
       "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.14285714285714285,
+    "25": 0.21428571428571427,
+    "50": 0.21428571428571427,
+    "100": 0.21428571428571427,
+    "75": 0.21428571428571427
+  },
+  "hits_at": {
+    "10": 2,
+    "25": 3,
+    "50": 3,
+    "100": 3,
+    "75": 3
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://lyra.horse/blog/2026/06/reddit-spam-internals/",
+    "https://blog.postman.com/how-we-really-build-production-grade-ai-agents-beyond-models-toward-data-and-api-quality/",
+    "https://www.linkedin.com/blog/engineering/ai/qa-agent-reimagining-software-quality-with-ai-driven-autonomous-testing",
+    "https://ably.com/blog/measure-ai-effectiveness-teams",
+    "https://huggingface.co/blog/Dharma-AI/why-specialization-is-inevitable",
+    "https://miguelcarranza.es/small-teams",
+    "https://expo.dev/changelog/sdk-57",
+    "https://www.anthropic.com/news/claude-sonnet-5",
+    "https://ngrok.com/blog/i-ported-kubernetes-to-the-browser",
+    "https://securityaffairs.com/194476/security/apple-fixes-webkit-flaws-in-ios-and-macos-with-help-from-ai-tools.html",
+    "https://wakamoleguy.com/p/flexible-gates",
+    "https://blog.ploeh.dk/2026/06/29/worse-is-better/",
+    "https://philipbohun.com/blog/0011.html",
+    "https://mas-bandwidth.com/the-best-thing-thats-ever-happened-for-multiplayer-games/"
+  ],
+  "tldr_domains": [
+    "lyra.horse",
+    "blog.postman.com",
+    "linkedin.com",
+    "ably.com",
+    "huggingface.co",
+    "miguelcarranza.es",
+    "expo.dev",
+    "anthropic.com",
+    "ngrok.com",
+    "securityaffairs.com",
+    "akamoleguy.com",
+    "blog.ploeh.dk",
+    "philipbohun.com",
+    "mas-bandwidth.com"
+  ]
 }
