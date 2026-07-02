@@ -1,0 +1,144 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR DevOps 2026-07-02
+
+📱
+News & Trends
+
+Unpatched Argo CD Repo-Server Flaw Could Let Attackers Take Over Kubernetes Clusters (5 minute read)
+
+(blurb not generated)
+
+Your site, your rules: new AI traffic options for all customers (5 minute read)
+
+(blurb not generated)
+
+Kepler, re-architected: Improved power accuracy and a community call to action! (5 minute read)
+
+(blurb not generated)
+
+New instances bring AWS’ Graviton5 CPUs to high-performance cloud workloads (5 minute read)
+
+(blurb not generated)
+
+AWS expands compute-optimized Graviton5 instances with C9g and C9gd VMs (5 minute read)
+
+(blurb not generated)
+
+Claude Sonnet 5 on GitLab: More reliable, more efficient (5 minute read)
+
+(blurb not generated)
+
+DATADOG rachète ADAPTIVE ML pour renforcer son laboratoire d’IA (5 minute read)
+
+(blurb not generated)
+
+Meta fights soaring hardware costs by reusing old DDR4 server memory in new DDR5-only servers — custom CXL 2.0 chip marries legacy DDR4-2400 with cutting-edge DDR5-6400 (5 minute read)
+
+(blurb not generated)
+
+GitLab Patches Code Execution, Information Disclosure Vulnerabilities (5 minute read)
+
+(blurb not generated)
+
+AWS aims to lower log analytics costs with new analytics engine for managed OpenSearch (5 minute read)
+
+(blurb not generated)
+
+Aikido acquires Root to patch open-source software without forced upgrades (5 minute read)
+
+(blurb not generated)
+
+🚀
+Opinions & Tutorials
+
+I ported Kubernetes to the browser (5 minute read)
+
+(blurb not generated)
+
+Meta’s AI Storage Blueprint at Scale (5 minute read)
+
+(blurb not generated)
+
+Fixing a kubelet memory leak in Kubernetes 1.36 (1 minute read)
+
+The author traced a kubelet memory leak in Kubernetes 1.36 that surfaced on a 2 GiB DOKS node, where the kubelet process grew unbounded while pod-level metrics stayed flat. Dumping the running process's heap with Go pprof pinned the growth on leaked `context.cancelCtx` objects piling up from cancel-context propagation. The writeup is a clean walkthrough of profiling a core node component in place, useful for anyone debugging memory pressure that `kubectl top` can't explain.
+
+Client-Side Load Balancing at a Million Requests Per Second (5 minute read)
+
+(blurb not generated)
+
+Stochastic Connectivity as the Foundation of a Runtime Model for Microservice Availability Analysis (1 minute read) [flag]
+
+This paper proposes a formal model that estimates microservice endpoint availability from traces and deployment metadata via Monte Carlo simulation, cutting reliance on costly chaos experiments.
+
+What happens when you run a CUDA kernel (5 minute read)
+
+A deep technical walkthrough traces a single vector-add CUDA kernel from `nvcc` compilation down through PTX, SASS, and warp scheduling on an RTX 4090, then back up to the result. The author shows that printing one correct answer involves tens of millions of CPU instructions, roughly 900 ioctls, and a memory-mapped doorbell register the driver rings to launch work on the GPU. It is a useful mental model for anyone debugging GPU utilization or CUDA driver overhead in production.
+
+⚒️
+Launches & Tools
+
+Dragonfly v2.5.0 is released (5 minute read)
+
+(blurb not generated)
+
+Announcing the Monetization Gateway: charge for any resource behind Cloudflare via x402 (1 minute read)
+
+Cloudflare announced the Monetization Gateway, an edge engine that lets customers charge for any protected resource, including web pages, datasets, APIs, and MCP tools. It offers a single control plane for payment policies and access controls while shielding origins from payment volume, with settlement in stablecoins over the x402 protocol backed by a 25-member foundation.
+
+Bringing more agent harnesses and frameworks to Cloudflare, starting with Flue (5 minute read)
+
+(blurb not generated)
+
+Automate public TLS certificate issuance with ACME support in AWS Certificate Manager (5 minute read)
+
+(blurb not generated)
+
+Security Profiles Operator v1: Stable APIs, Security Hardened, and Shaping Upstream Kubernetes (5 minute read)
+
+(blurb not generated)
+
+Unmasking the crawls with Attribution Business Insights (5 minute read)
+
+(blurb not generated)
+
+Unlocking the Cloudflare app ecosystem with OAuth for all (5 minute read)
+
+(blurb not generated)
+
+AWS turbocharges log analytics in Amazon OpenSearch Service at no extra cost (5 minute read)
+
+(blurb not generated)
+
+Bunny Makes DNS Free To Pull More Apps Onto Its Edge Platform (5 minute read)
+
+(blurb not generated)
+
+Apache Flink 2.3.0 Release Announcement (5 minute read)
+
+The Apache Flink PMC released Flink 2.3.0, which adds SQL changelog operators (FROM_CHANGELOG and TO_CHANGELOG), a redesigned native S3 filesystem built on AWS SDK v2, and application-level lifecycle management across 15 implemented FLIPs. Adaptive partition selection and improved watermark alignment cut backpressure and speed backlog processing, while a reworked SinkUpsertMaterializer lifts performance for some SQL workloads in production deployments.
+
+Introducing Package Proxy: Supply-Chain Safety Checks Without Client-Side Software (5 minute read)
+
+Thinkst released Package Proxy, a Cloudflare Workers-based proxy that runs inline supply-chain checks for npm, pip, uv, and cargo without installing any client-side software on developer machines. The tool blocks packages that fall inside the risky window for known attack patterns, such as recently published versions tied to surreptitious back-doors and low-install typo-squats, and deploys from its GitHub repo straight into Cloudflare.
+
+The "Akrites" vulnerability-mitigation project launches (5 minute read)
+
+Akrites launched as a vulnerability-mitigation project that fixes flaws upstream and confidentially, measuring success by patch deployment rather than publication on the premise that public patches let adversaries reverse-engineer exploits before fixes land. The program keeps undisclosed flaws embargoed, routes fixes through each project's own maintainers, and commits to serve as maintainer of last resort for unmaintained but critical packages.
+
+DigitalOcean Evaluations: Production Model and Router Testing for the Inference Stack (5 minute read)
+
+(blurb not generated)
+
+Google Antigravity agents get full context with GitLab Orbit (3 minute read)
+
+GitLab released Orbit, a lifecycle context graph that Google Antigravity developers can install from the Antigravity MCP Store to give coding agents structured access to projects, pipelines, merge requests, vulnerabilities, and source across a GitLab instance. Orbit indexes the instance into a knowledge graph queried through two MCP tools, and GitLab's internal tests reported agents responding up to 11x faster, using 4.5x fewer tokens, and producing 45x fewer hallucinations.
+
+⚡
+Quick Links
+
+The HTTP QUERY Method (5 minute read)
+
+(blurb not generated)

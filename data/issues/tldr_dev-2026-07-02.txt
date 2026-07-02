@@ -1,0 +1,283 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR Dev 2026-07-02
+
+🧑‍💻
+Articles & Tutorials
+
+I ported Kubernetes to the browser (5 minute read)
+
+(blurb not generated)
+
+How we used DSPy to turn AI evaluations into better responses in Dash chat (5 minute read)
+
+Dropbox used DSPy to build a two-stage feedback loop for its Dash chat agent, first calibrating LLM-as-judge evaluations against human-labeled examples, then using those tuned judges to optimize the agent's system prompt. The post walks through the judge-calibration setup and DSPy optimizers like GEPA and MIPROv2, with the result being significantly fewer incomplete answers and lower token usage without degrading answer quality.
+
+A peek into Reddit's anti-spam internals (5 minute read)
+
+A researcher captured screenshots of Reddit's live spam-removal internals in 2021, after a bug briefly swapped the generic "Removed: Auto" text for the full removal reason on their moderation feed. The leaked strings expose the signals Reddit's classifier weighs per action, including a Perspective API spam score, account age, karma, report count, email domain, network org, and a TLS fingerprint.
+
+How Netflix Simplified Batch Compute with Kueue (5 minute read)
+
+(blurb not generated)
+
+Memory Safe Context Switching (5 minute read)
+
+(blurb not generated)
+
+14x faster embeddings: how we rebuilt the ONNX path in Manticore (5 minute read)
+
+Manticore Search 27.1.5 replaces its SentenceTransformers/Candle embedding path with an ONNX Runtime backend that runs ~14x faster on the same hardware, model, and weights, lifting throughput from 5-11 docs/sec to 70-230 docs/sec across the full thread and batch grid. The engineering log covers the two changes that mattered most, turning off intra-op spinning and parallelizing inside each call so a single client thread with batch sizes of 32-128 maximizes ingest.
+
+Cost Attribution in Discord's API (5 minute read)
+
+Discord extended its application profiling tooling to attribute hosting costs by product feature across a unified Python codebase of 1,700+ API endpoints running the same code in hundreds of Kubernetes deployments. Since cloud billing only splits costs by deployment and each worker juggles many features concurrently, the team allocates spend by measuring how much CPU time each deployment spends in feature-related code paths.
+
+Nano Banana 2 Lite (5 minute read)
+
+Google released Nano Banana 2 Lite, also known as Gemini 3.1 Flash Lite Image, positioned as its fastest and cheapest image model built for speed and scale. Simon Willison's test on a Where's Waldo-style prompt beat his April results from earlier Nano Banana models, though the output still misspelled "Forest Festival" two different ways in the same image.
+
+Factoring RSA Keys with Many Zeros (1 minute read)
+
+Researchers found real-world RSA keys with regularly spaced blocks of all zeros in their moduli, a sparsity pattern that makes them far easier to factor, surfaced by scanning Certificate Transparency logs, TLS/SSH scans, and PGP dumps with the open-source badkeys project. The flaw traces to independent implementations failing the same way, including CompleteFTP's key generation and certificates once issued to Yahoo and Verizon, suggesting cryptanalytic attacks tuned for this failure class are worth building.
+
+Asahi Linux 7.1 Progress Report (1 minute read)
+
+The Asahi Linux 7.1 report covers M3 support progress and the fix for macOS 27's Golden Gate beta silently hiding the Asahi boot option, which turned out to be an APFS volume flag that Apple's boot tooling had ignored until this release. New installs now set the bootable flag automatically, and existing users on the beta can restore access by re-running the installer's "Fix" mode.
+
+How We Made IPFS Content Publishing 10x Faster (5 minute read)
+
+(blurb not generated)
+
+Client-Side Load Balancing at a Million Requests Per Second (5 minute read)
+
+(blurb not generated)
+
+How we built SmithDB's inverted index for full-text search (5 minute read)
+
+LangChain's second post on SmithDB full-text search covers how the inverted index is constructed, compacted, and queried, with construction done inline during ingestion so new runs are searchable within seconds. To speed sorting, the team interns each unique term to an integer ID so comparison cost scales with distinct terms rather than occurrences, cutting construction time roughly 2.2x in their benchmark.
+
+Turning Scattered Data Into Queryable Segments at Scale: How Razorpay Built Its Customer Data Platform (5 minute read)
+
+Razorpay built an in-house Customer Data Platform that resolves identities across devices and payment instruments, then serves audience segments across 500M+ user profiles in under 30ms. The post details how the consent-native design keeps PII isolated to source systems to satisfy India's DPDPA, replacing a workflow where a custom Spark job once took 2-3 days to return a single segment.
+
+RepoRescue: An Empirical Study of LLM Agents on Whole-Repository Compatibility Rescue (1 minute read)
+
+RepoRescue benchmarks whether LLM agents can restore old repositories that passed historically but break after dependency and runtime drift, using 193 Python and 122 Java repos that each fail only after modernization. Under runtime blocking that stops agents editing failing tests, Kimi rescues 41.5% of repos and the union of systems hits 62.7%, with cross-file coordination the main failure mode and passing test suites proving only a weak signal of real fixes.
+
+Are Performance-Optimization Benchmarks Reliably Measuring Coding Agents? (1 minute read)
+
+This paper audits three repository-level performance-optimization benchmarks (GSO, SWE-Perf, SWE-fficiency) and finds their leaderboard scores conflate runtime instability, scoring-rule quirks, and task saturation, with reference patches passing cross-machine replay for only 39/102 GSO and 11/140 SWE-Perf tasks. The authors show public rankings flip on 9 of 28 pairwise comparisons depending on the scoring rule, arguing aggregate scores overstate coding-agent progress and hide the real per-task performance gaps.
+
+Fintech Engineering Handbook (5 minute read)
+
+(blurb not generated)
+
+Inside Thinking Machines' Interaction Models (5 minute read)
+
+(blurb not generated)
+
+Antaeus: Hunting Repository-Level Logic Vulnerabilities via Context-Grounded LLM Reasoning (5 minute read)
+
+(blurb not generated)
+
+We Ran 250 AI Agent Evals to Find Out if Skills Beat Docs. The Answer Is More Complicated Than We Expected (5 minute read)
+
+Wix ran 250 controlled evals comparing AI agents on standard docs, AI-optimized docs, and purpose-built skills, and found that purpose-built skills only win when kept current. A slightly stale skill underperforms the docs it was derived from, since hand-maintained skills drift the moment an API adds a required field or deprecates a method, making well-structured documentation often the better "skill.
+
+🧠
+Opinions & Advice
+
+Text AI watermarks will always be trivial to remove (3 minute read)
+
+The author argues that text AI watermarks will always be trivial to strip, because text is too compressed a medium to hide a signature without degrading output quality, unlike images. This matters because the EU AI Act's Article 50 requires all AI output to be detectable as artificially generated by August 2026, a mandate the post contends is technically unenforceable through watermarking alone.
+
+NSA's SIGINT Enabling Project Pushes Weakened TLS Post-Quantum Standard (5 minute read)
+
+The author argues that NSA's SIGINT Enabling Project is steering the IETF toward "ietf-tls-mlkem," a post-quantum TLS standard weaker than the hybrid "ietf-tls-ecdhe-mlkem" alternative, swapping honest "NSA wants this" arguments for fake technical ones. After losing the working-group vote, NSA called another and is packing the room, and the post asks readers to email the TLS mailing list opposing draft-ietf-tls-mlkem-08 before 7 July 2026.
+
+AI coding tools are speeding up code, not delivery (5 minute read)
+
+The author argues that AI coding assistants speed up how fast developers produce code but leave end-to-end delivery times largely unchanged, since review, testing, integration, and deployment remain the real bottlenecks. Faster code generation shifts the constraint downstream rather than removing it, so teams that measure success by output volume will miss where their cycle time actually goes.
+
+Clean GitHub repo tricks AI coding agents into running malware (5 minute read)
+
+(blurb not generated)
+
+Godot will no longer accept AI-authored code contributions (1 minute read)
+
+The Godot Foundation will amend its contribution guidelines to ban AI-authored code, PRs submitted by AI agents, and AI-generated text in human communication, arguing that "AI cannot take responsibility, and we can't trust heavy users of AI to understand their code enough to fix it." The maintainers frame it as a mentorship problem as much as a quality one, since review time spent correcting slop PRs no longer develops the future maintainers the project depends on.
+
+Cheap Code, Costly Judgment: A Case Study on Governable Agentic Software Engineering (5 minute read)
+
+(blurb not generated)
+
+Qwen 3.6 27B is the sweet spot for local development (1 minute read)
+
+The author argues Qwen 3.6 27B is the first local model practical enough to serve as a general-purpose coding assistant, citing a hexagonal minesweeper it built correctly from a single prompt with proper pnpm packaging. The dense 27B variant runs locally via llama.cpp at Q8_0 quantization and outperforms the faster 35B A3B mixture-of-experts version on instruction-following, at the cost of speed and a hot machine.
+
+GuardFall Exposes Open-Source AI Coding Agents to Decades-Old Shell Injection Risks (5 minute read)
+
+(blurb not generated)
+
+282 iOS AI Apps Leak API Keys and Open AI Proxy Access in Network Traffic Study (5 minute read)
+
+(blurb not generated)
+
+New Enterprise-Ready MCP Specification Brings New Security Challenges (1 minute read)
+
+MCP's 2026-07-28 revision makes the protocol stateless at the layer, closing off session hijacking and unsolicited server prompts while tightening authentication, with legacy versions deprecated over a 12-month window. Akamai's analysis warns the rewrite shifts risk onto implementations: predictable tracking IDs and state objects open the door to cross-tenant workflow hijacking, and new MCP HTTP headers introduce desync attacks and secret leakage if developers map API keys or PII into them.
+
+Microsoft Warns Poisoned MCP Tool Descriptions Can Make AI Agents Leak Data (5 minute read)
+
+(blurb not generated)
+
+Where Severity Scores Go Wrong: “Just Add Prototype Pollution” (1 minute read)
+
+JFrog's security team argues that CVSS severity scores routinely overstate real-world risk, citing their 2025 finding that 96% of NVD critical-severity CVEs and 65% of high-severity ones warranted downgrades once exploitation requirements and environmental constraints were factored in. Using JavaScript prototype pollution as the case study, the post shows how vulnerabilities with identical actual impact draw wildly different scores, making the raw number a poor trigger for patching priority.
+
+“It's Hard to Eval” Is a Product Smell (5 minute read)
+
+The author argues that "our product is hard to eval" is a product smell, since artifacts that are hard for you to verify are usually hard for users too, often forcing them to redo the work to check the output. Drawing on three AI products he advised, he shows that designing for verifiability, like exposing checkable artifacts and the underlying SQL in a data agent, should come before building evals.
+
+What to learn to be a graphics programmer (5 minute read)
+
+(blurb not generated)
+
+Local Reasoning for Global Properties (5 minute read)
+
+(blurb not generated)
+
+🚀
+Launches & Tools
+
+Box3D, an open source 3D physics engine (5 minute read)
+
+(blurb not generated)
+
+The <Usermedia> HTML Element (1 minute read)
+
+Chrome 151 ships the `<usermedia>` HTML element, a declarative, user-activated control for camera and microphone access that hands back a MediaStream directly and drops the boilerplate of script-triggered `getUserMedia()` prompts. It follows `<geolocation>` in the Capability Elements suite, and Origin Trial data showed the recovery path helps users who first denied access, with Google Meet reporting a 131% jump in successful permission recovery.
+
+Zluda 6 release (run unmodified CUDA applications on non-Nvidia GPUs) (5 minute read)
+
+(blurb not generated)
+
+FFmpeg 9.1's new AAC encoder (5 minute read)
+
+(blurb not generated)
+
+Kimi K2.7 Code is generally available in GitHub Copilot (1 minute read)
+
+GitHub Copilot added Kimi K2.7 Code, the first open-weight model selectable in the Copilot model picker, hosted by GitHub on Azure and billed at provider list pricing under usage-based billing. It is rolling out to Pro, Pro+, and Max plans in VS Code and other IDEs now, while Business and Enterprise admins must enable the model policy before their teams can select it.
+
+Run a vLLM Server on HF Jobs in One Command (5 minute read)
+
+(blurb not generated)
+
+Getting more from each token: How Copilot improves context handling and model routing (5 minute read)
+
+(blurb not generated)
+
+Safari’s new MCP server lets coding agents inspect and debug websites (1 minute read)
+
+Safari Technology Preview 247 ships the Safari MCP server, which connects coding agents to a live Safari window so they can inspect the DOM, read console logs and network requests, capture screenshots, and interact with page elements. It collapses the browser-prompt-agent debugging loop into a single tool call, giving agents the rendered-page context they previously only got from a developer manually pasting screenshots or logs.
+
+Qualcomm Linux 2.0 (1 minute read)
+
+Qualcomm released Linux 2.0, a unified IoT operating system that collapses the previous Base and Custom variants into a single kernel and rootfs across its Dragonwing SoCs, built on Linux 6.18 LTS and Yocto 6.0 Wrynose. Development now happens in the open on GitHub with public CI and modular meta-qcom overlays for audio, camera, and vision, plus out-of-the-box PREEMPT_RT support that replaces the old configure-it-yourself real-time layer.
+
+Run any Dockerfile on Vercel (5 minute read)
+
+Vercel now deploys any container by adding a `Dockerfile.vercel` to your project, building the image and running it on Fluid compute with autoscaling and no local daemon, registry, or cluster to manage. Any HTTP stack works as long as the server listens on `$PORT`, and active CPU pricing bills only for the time your code actually runs, scaling instances down to zero when traffic stops.
+
+Anthropic launches Claude Sonnet 5 model on Claude and APIs (5 minute read)
+
+(blurb not generated)
+
+Bringing more agent harnesses and frameworks to Cloudflare, starting with Flue (5 minute read)
+
+(blurb not generated)
+
+DeepReinforce releases Ornith-1.0 open-source coding models (5 minute read)
+
+(blurb not generated)
+
+DeepSeek open sources DSpark, a new framework to speed up LLM inference by up to 85% (5 minute read)
+
+(blurb not generated)
+
+Accelerating Transformers Fine-Tuning with NVIDIA NeMo AutoModel (5 minute read)
+
+(blurb not generated)
+
+ZCode – Harness for GLM-5.2 (1 minute read)
+
+ZCode is an agentic coding harness optimized for Z.ai's GLM-5.2, spanning planning, code, review, and deploy across 20+ integrated tools. It supports 20+ coding tools and lets developers start or steer sessions from WeChat, Feishu, or Telegram, with a Goals feature for continuous planning, execution, and verification on longer-running work.
+
+Unlocking the Cloudflare app ecosystem with OAuth for all (5 minute read)
+
+(blurb not generated)
+
+Apache Flink 2.3.0 Release Announcement (5 minute read)
+
+Apache Flink 2.3.0 expands Flink SQL with new FROM_CHANGELOG and TO_CHANGELOG process table functions that convert between append-only and dynamic changelog tables, plus a redesigned native S3 filesystem built on AWS SDK v2. The release implements 15 FLIPs, adds application-level lifecycle management for production deployments, and reworks SinkUpsertMaterializer for better performance on some SQL workloads.
+
+Introducing Package Proxy: Supply-Chain Safety Checks Without Client-Side Software (5 minute read)
+
+Thinkst released Package Proxy, a Cloudflare-deployed proxy that runs inline supply-chain safety checks for npm, pip, uv, and cargo without any client-side agent. It applies heuristics like flagging very recently published versions and packages with low install counts to catch back-doored or typo-squatted dependencies, and ships as an open-source repo you deploy into your own Cloudflare account.
+
+Senior SWE-Bench: open-source benchmark that assesses agents as senior engineers (1 minute read)
+
+Senior SWE-Bench is an open-source benchmark that grades coding agents like senior engineers, scoring them on under-specified feature tasks, runtime-investigation bug fixes, and adherence to unstated codebase conventions rather than pass/fail unit tests. Claude Opus 4.8 tops the leaderboard at just 24%, with every frontier model failing more than 75% of tasks on correctness and taste.
+
+🎁
+Miscellaneous
+
+Critical Cursor Flaws Could Let Prompt Injection Escape Sandbox and Run Commands (5 minute read)
+
+(blurb not generated)
+
+Opening up 'Zero-Knowledge Proof' technology to promote privacy in age assurance (1 minute read)
+
+Google open sourced its Zero-Knowledge Proof libraries (longfellow-zk) to support EU age assurance, letting users prove a claim like being over 18 without disclosing any other data. The release targets the eIDAS regulation taking effect in 2026, giving developers a ready cryptographic implementation to build into the European Digital Identity Wallet and other privacy-focused ID systems.
+
+New ChocoPoC RAT Targets Vulnerability Researchers via Fake PoC Exploit Repos (1 minute read)
+
+Malware researchers YesWeHack and Sekoia disclosed ChocoPoC, a remote access trojan hidden in fake GitHub proof-of-concept repos that target vulnerability researchers racing to test fresh CVEs. The visible PoC looks clean while the payload hides in a transitively pulled Python dependency that only detonates when it detects a real PoC file, letting it slip past quick code review and bare sandboxes while it steals browser credentials, cookies, and files and opens a shell.
+
+Amazon Q Developer Flaw Could Let Malicious Repos Run Code via MCP Configs (5 minute read)
+
+(blurb not generated)
+
+Claude Sonnet 5 on GitLab: More reliable, more efficient (5 minute read)
+
+(blurb not generated)
+
+AI was supposed to kill engineering jobs, but new data suggests they're the most resilient (5 minute read)
+
+(blurb not generated)
+
+⚡
+Quick Links
+
+Petrify: Petri-net Based Analysis of Concurrency Properties in Java Bytecode (1 minute read)
+
+Petrify encodes Java bytecode into Petri nets for model-checking concurrency properties like deadlock, working across any Java version and some Kotlin.
+
+Google copybara: moving code between repositories (5 minute read)
+
+(blurb not generated)
+
+SWE-Doctor: Guiding Software Engineering Agents with Runtime Diagnosis from Multi-Faceted Bug Reproduction Tests (1 minute read)
+
+SWE-Doctor is a software issue resolution agent that guides patch generation with runtime diagnoses built from multi-faceted bug reproduction tests, addressing the finding that fail-to-pass BRTs often cover only one manifestation of an issue and yield partial patches. It generates BRTs for each behavioral requirement, debugs them into diagnosis records, and reaches 75.7% resolution on SWE-bench Verified and 59.4% on SWE-bench Pro, beating baselines by 8 points on Pro.
+
+Skills Are Not Islands: Measuring Dependency and Risk in Agent Skill Supply Chains (5 minute read)
+
+(blurb not generated)
+
+The GNU Emacs Architecture: Unlocking the Core [pdf] (5 minute read)
+
+(blurb not generated)

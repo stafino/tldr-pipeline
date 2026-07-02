@@ -1,0 +1,283 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR InfoSec 2026-07-02
+
+🔓
+Attacks & Vulnerabilities
+
+A new Android malware from Google (1 minute read)
+
+F-Droid published a polemic reframing Google's mandatory Android Developer Verification (ADV) program as device-wide malware, arguing the "Android Developer Verifier" system service that will gate app installs on Android 8+ functions as unremovable, centrally-controlled root-level control over what code users can run. The piece contends ADV does little to stop malware recidivism and instead entrenches Google as a chokepoint, pointing to federated-verifier alternatives as less draconian fixes.
+
+AI Agent Exploits Langflow RCE to Automate Database Ransomware Attack (1 minute read)
+
+Sysdig's Threat Research Team attributes what it calls the first fully AI-agent-driven ransomware attack to JADEPUFFER, which exploited CVE-2025-3248, a missing-authentication RCE in Langflow, to gain a foothold. The LLM then autonomously harvested credentials, pivoted via CVE-2021-29441 and a default Nacos signing key to a root MySQL login, and encrypted 1,342 Nacos configs before dropping a Bitcoin ransom note.
+
+Clean GitHub repo tricks AI coding agents into running malware (5 minute read)
+
+(blurb not generated)
+
+Unpatched Argo CD Repo-Server Flaw Could Let Attackers Take Over Kubernetes Clusters (5 minute read)
+
+(blurb not generated)
+
+AirDrop and Quick Share Flaws Let Nearby Attackers Trigger Crashes and Bypass Checks (5 minute read)
+
+(blurb not generated)
+
+Factoring RSA Keys with Many Zeros (1 minute read)
+
+Researchers analyzing badkeys data found a class of weak RSA keys with regularly spaced blocks of all zeros, including certificates issued to Yahoo, Verizon, and NetApp devices, plus SSH hosts running EnterpriseDT's CompleteFTP (RSA keys from v10.0.0-12.0.0, DSA keys from v10.0.0-23.0.4). The sparse moduli are factorable, and the recurrence of the same failure across independent implementations suggests more vulnerable products remain undiscovered and worth scanning for.
+
+Phantom Squatting Uses AI-Hallucinated Domains for Phishing and Malware (5 minute read)
+
+(blurb not generated)
+
+‘BioShocking’ Attack Tricks AI Browsers Into Stealing Credentials (5 minute read)
+
+(blurb not generated)
+
+SharePoint RCE CVE-2026-45659 Added to CISA KEV After Active Exploitation (1 minute read)
+
+CISA added CVE-2026-45659 (CVSS 8.8), a deserialization-of-untrusted-data RCE in Microsoft SharePoint Server, to its KEV catalog after confirming active exploitation. Any authenticated attacker with Site Member permissions can trigger it, so FCEB agencies must apply Microsoft's May 2026 patch by July 4 across Subscription Edition, 2019, and 2016 servers.
+
+Critical Cursor Flaws Could Let Prompt Injection Escape Sandbox and Run Commands (5 minute read)
+
+(blurb not generated)
+
+Cisco Confirms In-the-Wild Exploitation of Unified CM Vulnerability (1 minute read)
+
+Cisco confirmed active in-the-wild exploitation of CVE-2026-20230 (CVSS 8.6), an SSRF flaw in Unified CM and Unified CM SME that lets attackers write arbitrary files to the underlying OS and escalate to root. Only appliances with the non-default WebDialer service enabled are affected; patch to 14SU6 now, since public PoC code exists and 15SU5 won't ship until September.
+
+CISA Warns of Actively Exploited Microsoft SharePoint Vulnerability (1 minute read)
+
+CISA added CVE-2026-45659 (CVSS 8.8), a deserialization-of-untrusted-data RCE in Microsoft SharePoint Server, to its Known Exploited Vulnerabilities catalog after confirming active exploitation. The flaw lets an authenticated attacker with only Site Member permissions run arbitrary code, was patched out-of-band in late May, and now carries a three-day federal remediation deadline under BOD 26-04 for the Subscription Edition, 2019, and 2016 releases.
+
+AI-Generated Browser Ransomware Abuses Chromium API on Windows, Linux, macOS, Android (5 minute read)
+
+(blurb not generated)
+
+Citrix Patches NetScaler Vulnerabilities, Including New ‘HTTP/2 Bomb’ Attack (1 minute read)
+
+Citrix patched six vulnerabilities in NetScaler ADC and Gateway, including CVE-2026-8451 (CVSS 8.8), a CitrixBleed-series XML parser out-of-bounds read that can leak restricted memory from appliances configured as SAML IDP. Exploitation requires specific preconditions and can be chained with a memory corruption bug for full device compromise, so self-managed deployments should apply the fixed versions (14.1-72.61, 13.1-63.18) immediately.
+
+Oracle E-Business Suite Flaw CVE-2026-46817 Actively Exploited in the Wild (5 minute read)
+
+(blurb not generated)
+
+Amadey and StealC Malware Network Disrupted, 27M Stolen Credentials Recovered (5 minute read)
+
+(blurb not generated)
+
+Attackers Exploit SimpleHelp CVE-2026-48558 to Deploy TaskWeaver and Djinn Stealer (5 minute read)
+
+(blurb not generated)
+
+Progress Kemp LoadMaster Pre-Auth RCE Flaw Faces Active Exploitation Attempts (5 minute read)
+
+(blurb not generated)
+
+Researcher Analyzes 3,000 Live ClickFix Payloads, Exposing API-Driven Malware Delivery (5 minute read)
+
+(blurb not generated)
+
+GuardFall Exposes Open-Source AI Coding Agents to Decades-Old Shell Injection Risks (5 minute read)
+
+(blurb not generated)
+
+🧠
+Strategies & Tactics
+
+Catching ransomware on the wire before it locks the file server (1 minute read)
+
+Researchers at La Trobe University built a ransomware detection framework that reads SMB file-sharing traffic on the wire rather than relying on endpoint agents, closing the blind spot where a compromised client encrypts files on a remote server. The method segments traffic using fixed-size SMB control packets, such as the 260-byte directory enumeration and 410-byte new-file response, to reconstruct client file operations and fingerprint ransomware families by note size, without inspecting packet contents or touching endpoints.
+
+What the AI patch gap means for enterprise security (1 minute read)
+
+Tuskira analyzed findings from Anthropic's Claude Mythos Preview, which verified 1,596 vulnerabilities across hundreds of open-source projects in nine weeks at a 90.8% true-positive rate. Discovery ran at roughly 25 verified bugs a day while credited fixes moved at about 1.5, a 16.5-to-1 deficit that widens the open-issue backlog daily. Some 95% of disclosures had no public advisory at snapshot, so defenders should track upstream commits directly and operate at discovery cadence rather than waiting on advisory feeds.
+
+Where Severity Scores Go Wrong: “Just Add Prototype Pollution” (1 minute read)
+
+JFrog's Security Research team found that CVSS severity scores routinely overstate real-world risk, reassessing 2025 NVD data and downgrading 96% of critical and 65% of high-severity CVEs after weighing practical exploitation requirements. Prototype pollution is the case study: the 10 CVEs Axios has disclosed since April 2026 all require a separate, pre-existing prototype pollution flaw in the process to exploit, yet carry inflated scores that ignore that dependency. Prioritize patching against actual exploitability and environmental constraints, not headline CVSS numbers.
+
+Detecting Adversarial Evasion Attacks Against Autoencoder-Based Network Intrusion Detection Systems (1 minute read)
+
+This paper proposes two complementary detectors for adversarial evasion attacks against autoencoder-based network intrusion detection systems, targeting PANDA-style attacks that convert packet sequences into invertible grayscale images to run masked FGSM against NIDS anomaly scoring. The Residual Localisation Detector tracks spatial concentration of reconstruction errors in the inter-arrival time region, while the Feature-Space Perturbation Consistency Detector checks packet-level timing features directly. Both hit F1 ≥ 0.99 against adversarial traffic across IoT devices in the UQ-IoT dataset.
+
+SoK: Attack and Defense Landscape of Mobile On-device AI Systems (1 minute read)
+
+This paper presents the first systematization of knowledge (SoK) on security for mobile on-device AI (MoAI) systems, which run inference locally instead of in the cloud and thereby expose models to attacks stemming from local storage. The authors map the attack and defense landscape across MoAI security pillars, then flag unresolved gaps for teams shipping on-device inference to reason about model extraction, tampering, and other risks that don't exist in cloud-hosted deployments.
+
+A Lifecycle and Application-Stack Survey of Large Language Model Vulnerabilities: Attacks, Risks, Defenses, and Open Problems (5 minute read)
+
+(blurb not generated)
+
+Exploring Side-Channel Protections in Hardware Implementations of PQC ML-KEM Verification (5 minute read)
+
+(blurb not generated)
+
+SessionBound: Turning Enterprise Task Approval into Budgeted Database Sessions (1 minute read)
+
+SessionBound converts approved enterprise tasks into short-lived, budgeted database sessions for AI agents, so an agent can generate SQL freely but every query must execute inside a signed task token's boundary. Its SessionBoundDB runtime enforces safe views, row scope, denied fields, and query and disclosure budgets at the database layer rather than trusting an LLM to judge safety. A PostgreSQL prototype cleared a 24-scenario suite with p50 overhead of roughly 1.4ms.
+
+HARC: Coupling Harmfulness and Refusal Directions for Robust Safety Alignment (1 minute read)
+
+This paper introduces HARC (Harmfulness-And-Refusal Coupling), a fine-tuning method that pairs an LLM's separable harmfulness and refusal directions across both prompt and response token positions to harden safety alignment. The authors show jailbreaks work by suppressing one direction before generation, and that models often recognize harmful content mid-response even after missing it at the prompt. HARC beat six training-time and inference-time baselines on the robustness-capability-usability trade-off, and the directions transferred across five model families and two scales without architecture-specific tuning.
+
+Knowledge-Enhanced Agentic Vulnerability Repair (1 minute read)
+
+KeaRepair is an agentic automated vulnerability repair system that grounds patch generation in verified program facts and knowledge mined from historical vulnerability-patch pairs. A tool-augmented agent runs ReAct-style diagnosis, then generates patches validated through a closed loop of compilation, PoC replay, and test-suite execution. Paired with Gemini-3.1-Pro, it repaired 46 of 55 reproducible C/C++ vulnerabilities (83.64%), including six that no baseline could fix, signaling that remediation is closing the gap on AI-accelerated discovery.
+
+Minos: A Multi-Agent Collaborative Framework for Provenance-Based Backward Tracking (1 minute read)
+
+This paper introduces Minos, a multi-agent framework that reframes provenance-based backward tracking for APT forensics as an LLM-driven reasoning process, coordinating four specialized agents under a finite state machine to prune the search space instead of exhaustive graph traversal. Across 14 attack scenarios in five public datasets, it reached 0.92 recall and 0.64 precision while producing attack subgraphs 49% more compact than prior methods, and it emits interpretable reasoning traces to support forensic auditing.
+
+Federated Sovereign Transport Protocol (FSTP): Verifiable Coordination Without Disclosure (1 minute read)
+
+This paper introduces the Federated Sovereign Transport Protocol (FSTP), a federation transport layer that makes data confinement a structural property rather than an operator policy. A synchronization agent with a formally closed output type set prevents raw internal data from appearing in any federation message, enforced by the Rust type system at compile time instead of runtime checks. A contextual identity model derives unlinkable per-relationship identifiers to block cross-context correlation, and a Blocklace event substrate provides tamper-evident partial ordering that supports erasure without breaking the hash chain.
+
+Distill to Detect: Exposing Stealth Biases in LLMs through Cartridge Distillation (1 minute read)
+
+New method distills the logit-distribution gap between a suspect LLM and its base to surface stealth preferential biases invisible to text inspection.
+
+Know Thy Neighbor: Cross-TEE Mutual Attestation (1 minute read)
+
+This paper introduces Hema, a formally-verified protocol for mutual attestation between trusted-application instances running on the same or different TEE types. The current default requires each TEE to embed the full attestation software stack of every other TEE it talks to (SGX carrying TrustZone's stack and vice versa), which Hema replaces with a single cross-TEE handshake. For teams running confidential-computing workloads across heterogeneous enclaves, this cuts the attestation surface each TEE must trust and verify.
+
+What happened after 2,000 people tried to hack my AI assistant (5 minute read)
+
+(blurb not generated)
+
+No Country for Old Privacy: The Evolving Challenges of Anonymity in Bitcoin (1 minute read)
+
+A longitudinal study of Bitcoin's second-generation anonymization protocols (CoinJoin, CoinSwap, CoinShuffle, Stealth Addresses) found detectable privacy usage stays below 1% of network transactions, with sharp declines following key regulatory events. The authors identified 5.94M CoinJoin and 23.3M CoinSwap transactions via heuristic filters but found no standardized Stealth Address adoption, suggesting privacy-seeking users have migrated to less detectable methods rather than abandoning anonymity. For chain-analysis and threat-intel teams, on-chain visibility of these protocols understates real obfuscation activity.
+
+A Mechanistic Explanation of Prompt Injection (and why you should study roles) (5 minute read)
+
+(blurb not generated)
+
+Digital signature schemes based on code equivalence and syndrome decoding from restricted errors (5 minute read)
+
+(blurb not generated)
+
+Robocalls: A Worldwide or US-only Problem? Analyzing Spam and Fraud in International Phone Calls (5 minute read)
+
+(blurb not generated)
+
+🧑‍💻
+Launches & Tools
+
+Opening up 'Zero-Knowledge Proof' technology to promote privacy in age assurance (1 minute read)
+
+Google open sourced its Zero-Knowledge Proof libraries (github.com/google/longfellow-zk), letting developers build age-assurance and digital-ID systems that prove a claim like "over 18" without disclosing any other data. The release targets EU eIDAS and EUDI Wallet integration, giving Member States and relying parties a performant ZKP implementation to embed privacy-preserving verification rather than harvesting identity attributes.
+
+Antaeus: Hunting Repository-Level Logic Vulnerabilities via Context-Grounded LLM Reasoning (1 minute read)
+
+Antaeus is a framework for detecting repository-level logic vulnerabilities that grounds LLM reasoning in whole-repo context, prioritizing functions with lightweight security signals before running costly analysis on security-sensitive sinks and their safety conditions. Across 28 repositories with confirmed logic bugs, it detected and explained 15 vulnerabilities, outperforming function-level and agentic baselines at comparable token usage and cost.
+
+Microsoft Adds New Teams Controls to Block Unauthorized AI Bots From Meetings (5 minute read)
+
+(blurb not generated)
+
+Opera blocks ClickFix attacks with new clipboard protection feature (5 minute read)
+
+(blurb not generated)
+
+GitHub’s new tool helps prevent costly open-source license violations (1 minute read)
+
+GitHub released License Compliance, now in public preview for GitHub Advanced Security customers, which scans dependencies added in pull requests and flags those whose licenses violate organizational policy. Teams define an allowlist of acceptable licenses (MIT, Apache 2.0, BSD-3-Clause), then run it in Evaluate mode to annotate PRs without blocking merges before enforcing exceptions per package.
+
+Opera’s new Paste Protect feature stops the clipboard attack your antivirus can’t catch (1 minute read)
+
+Opera released Paste Protect, a browser-native defense against ClickFix and clipboard-hijacking attacks that screens clipboard content in real time and blocks the copy when it matches known malicious-script patterns on Windows, macOS, and Linux. ClickFix, which tricks users into pasting attacker-supplied commands into a terminal, drove over 53% of malware loader incidents last year per Huntress, and no major browser previously shipped a native defense.
+
+Security Profiles Operator v1: Stable APIs, Security Hardened, and Shaping Upstream Kubernetes (5 minute read)
+
+(blurb not generated)
+
+IBM, Red Hat, Palo Alto team to secure open-source software (5 minute read)
+
+(blurb not generated)
+
+🎁
+Miscellaneous
+
+AI and Liability (5 minute read)
+
+(blurb not generated)
+
+Scattered Spider Hackers Plead Guilty on Day 1 of Trial (5 minute read)
+
+(blurb not generated)
+
+Microsoft Accelerates Post-Quantum Cryptography Shift to 2029 (1 minute read)
+
+Microsoft accelerated its Quantum Safe Program timeline, targeting migration of critical products and services to post-quantum cryptography by 2029, with priorities including TLS 1.3 adoption, crypto-agility for stored data, and PQC-secured trust chains like code signing and certificate issuance. The move follows a Trump executive order setting hard PQC deadlines for federal agencies, signaling that quantum-safe migration is becoming a near-term compliance requirement rather than a long-horizon planning exercise.
+
+The Rise and Fall of Google's Privacy Sandbox (1 minute read)
+
+Google retired most Privacy Sandbox APIs on October 17, 2025, ending nearly five years of work on a privacy-preserving alternative to cross-site tracking. This paper's consent-aware crawls of the top 10,000 sites show adoption had already stagnated before the announcement, with only CHIPS still in use and the challenge of privacy-preserving interest-based advertising left unresolved.
+
+US lifting export control restrictions on Anthropic’s Mythos, Fable (1 minute read)
+
+The U.S. Commerce Department lifted export controls on Anthropic's Fable 5 and Mythos 5 after the company agreed to deploy new guardrails and jailbreak classifiers, restoring foreign and domestic access. The controls followed an Amazon threat-intel report on jailbreaking Fable's cyber capabilities, though Anthropic's testing found ChatGPT 5.5, Claude Opus 4.8, and Kimi K2.7 could identify the same vulnerabilities and produce equivalent proof-of-concept code.
+
+Anthropic Restores Claude Fable 5 After U.S. Lifts Jailbreak-Linked Export Controls (5 minute read)
+
+(blurb not generated)
+
+Anthropic restores Claude Fable 5 as US lifts export controls — single filter now blocks prompt that could identify software vulnerabilities and write code to exploit them (1 minute read)
+
+Anthropic restored global access to Claude Fable 5 on July 1, a day after the U.S. Department of Commerce withdrew the June 12 export controls that had barred foreign nationals, including Anthropic's own non-citizen staff, from using it. The fix was a single classifier that blocks the Amazon-reported prompt-to-exploit technique in over 99% of cases by rerouting flagged requests to Opus 4.8, after CAISI review confirmed weaker models could do the same thing.
+
+Google testing controversial webcam-based reCAPTCHA that asks for a hand scan to prove you're human — testers beat it with a stock photo (1 minute read)
+
+Google is testing a webcam-based reCAPTCHA that activates the user's camera and asks for an open-palm gesture, mapping 21 hand-landmark points to decide whether a real person is present. Testers defeated it within days by feeding a static stock photo through OBS Virtual Camera, clearing the challenge with no live person or video and adding user friction without meaningful bot resistance.
+
+Palo Alto, CrowdStrike both have best quarter ever as AI threats bolster cyber demand (5 minute read)
+
+(blurb not generated)
+
+DHS to unveil replacement council for critical infrastructure cybersecurity (5 minute read)
+
+(blurb not generated)
+
+Tell HN: Installing Cursor on iOS irreversibly changes your privacy settings (5 minute read)
+
+(blurb not generated)
+
+19-Year-Old Scattered Spider Suspect Extradited to Face U.S. Hacking Charges (5 minute read)
+
+(blurb not generated)
+
+Trump budget boss Russell Vought open to re-staffing CISA (5 minute read)
+
+(blurb not generated)
+
+US Government allows Anthropic limited release of AI model that sparked cybersecurity concerns (5 minute read)
+
+The US government granted Anthropic a limited license to redeploy Claude Mythos 5, its strongest cybersecurity model, to a small group of vetted cyber defenders and infrastructure providers, reversing the export block ordered earlier in June. The reprieve does not cover the less powerful Fable 5, which remains suspended for general use as negotiations continue over the safeguards governing both models.
+
+Microsoft builds a bouncer to keep bots out of Teams meetings (5 minute read)
+
+(blurb not generated)
+
+Aikido acquires Root to patch open-source software without forced upgrades (5 minute read)
+
+(blurb not generated)
+
+⚡
+Quick Links
+
+A Non-Line-of-Sight, Multi-Modality-based Side-Channel IP Theft Attack on Additive Manufacturing Using Dual Smartphones (1 minute read)
+
+Researchers demonstrated a non-line-of-sight side-channel attack that reconstructs a 3D printer's G-code at 98.89% command-level accuracy using two smartphones placed 60 cm away to capture acoustic and magnetic emissions. The technique steals additive-manufacturing IP without specialized hardware and transfers across printers and environments, so operators should treat printer acoustic and electromagnetic emanations as a leakage channel and physically isolate or shield production machines.
+
+Forensic-Oriented Intrusion Detection Using Synthetic Network Traffic Data and Explainable Artificial Intelligence (1 minute read)
+
+This paper trains intrusion detection on synthetic network traffic, achieving F1-macro 0.96 on CICIDS2017 while keeping evidence court-defensible.
+
+Cross-Domain Generalization Failure in Lightweight Intrusion Detection Models for IIoT Networks (5 minute read)
+
+(blurb not generated)

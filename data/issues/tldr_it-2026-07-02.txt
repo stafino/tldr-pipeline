@@ -1,0 +1,172 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR IT 2026-07-02
+
+🚀
+News & Trends
+
+Amazon EKS now supports control plane egress through your VPC (5 minute read)
+
+AWS added customer-routed control plane egress to Amazon EKS, letting teams route Kubernetes API Server outbound traffic—admission webhook callbacks, OIDC discovery lookups, and aggregate API server requests—through an ENI in their own VPC under existing security group, endpoint policy, and Network Firewall controls. The feature targets regulated buyers in government, financial services, and healthcare, and supports org-wide enforcement via AWS Organizations Service Control Policies using the eks:controlPlaneEgressMode condition key.
+
+CISA Warns of Actively Exploited Microsoft SharePoint Vulnerability (1 minute read)
+
+CISA added CVE-2026-45659, a high-severity SharePoint Server deserialization bug patched out-of-band in late May, to its Known Exploited Vulnerabilities catalog, giving federal agencies three days to patch under BOD 26-04. The flaw lets an authenticated attacker with only Site Member permissions run arbitrary code, and it affects Subscription Edition, 2019, and 2016 servers that anchor enterprise document sharing and intranets.
+
+Enterprise Tech In, Shell Out (Progress Kemp LoadMaster Uninitialized Heap to Pre-Auth RCE CVE-2026-8037) (5 minute read)
+
+Progress disclosed CVE-2026-8037, a pre-authentication remote code execution flaw in Kemp LoadMaster, its edge load balancer and application delivery controller, exploitable by any unauthenticated attacker who can reach the API on GA builds v7.2.63.1 and older or LTSF v7.2.54.17 and older. Progress, the vendor behind the widely exploited MoveIt breaches, has patched the issue, and enterprises running LoadMaster at the network edge should update immediately or disable the API.
+
+SharePoint RCE CVE-2026-45659 Added to CISA KEV After Active Exploitation (1 minute read)
+
+CISA added SharePoint Server flaw CVE-2026-45659 (CVSS 8.8), a deserialization remote-code-execution bug, to its Known Exploited Vulnerabilities catalog after confirming active exploitation, and set a July 4 patch deadline for federal agencies. Microsoft fixed the flaw in May 2026 for Subscription Edition, Server 2019, and Enterprise Server 2016, but any authenticated user with Site Member permissions can trigger it, so on-prem SharePoint operators should prioritize the update.
+
+In Less Than 24 Hours, Attackers Weaponize Cisco CUCM Flaw (1 minute read)
+
+Attackers began exploiting CVE-2026-20230, a critical SSRF flaw in Cisco Unified Communications Manager that grants unauthenticated remote attackers root access, less than 24 hours after SSD Secure Disclosure published a full exploit chain. CUCM serves roughly 30 million users globally, and Cisco shipped fixed versions on June 3, urging admins to patch deployments running the optional WebDialer service rather than wait on the 8.6 CVSS score.
+
+Introducing Claude Sonnet 5 (5 minute read)
+
+Anthropic released Claude Sonnet 5, its most agentic Sonnet model, with performance close to Opus 4.8 at introductory API pricing of $2 per million input tokens and $10 per million output tokens through August 31, 2026. Sonnet 5 is now the default on Free and Pro plans and available to Max, Team, and Enterprise users, giving IT buyers Opus-tier agentic capability at a lower cost tier.
+
+Researchers spot exploitation of another critical Oracle defect (5 minute read)
+
+(blurb not generated)
+
+Microsoft Adds New Teams Controls to Block Unauthorized AI Bots From Meetings (5 minute read)
+
+(blurb not generated)
+
+Cisco Confirms In-the-Wild Exploitation of Unified CM Vulnerability (1 minute read)
+
+Cisco confirmed active in-the-wild exploitation of CVE-2026-20230, an 8.6-severity SSRF flaw in Unified Communications Manager and Unified CM SME that can drop arbitrary files and escalate to root on affected appliances. Only systems with the non-default WebDialer service enabled are exposed, and Cisco urges upgrading to the patched 14SU6 release now, with fixes landing in 15SU5 in September.
+
+Amadey and StealC Malware Network Disrupted, 27M Stolen Credentials Recovered (5 minute read)
+
+(blurb not generated)
+
+FortiBleed Targeted FortiGate Firewalls in 110 Million-Credential Harvesting Operation (5 minute read)
+
+(blurb not generated)
+
+Apple Fixes WebKit Flaws in iOS and macOS, With Help From AI Tools (5 minute read)
+
+(blurb not generated)
+
+AWS launches forward-deployed engineering team to speed enterprise agentic AI adoption (5 minute read)
+
+(blurb not generated)
+
+IBM claims world's first sub-1 nanometer chip technology (5 minute read)
+
+(blurb not generated)
+
+AirDrop and Quick Share Flaws Let Nearby Attackers Trigger Crashes and Bypass Checks (5 minute read)
+
+(blurb not generated)
+
+Citrix Patches NetScaler Vulnerabilities, Including New ‘HTTP/2 Bomb’ Attack (1 minute read)
+
+Citrix released NetScaler ADC and NetScaler Gateway updates patching six vulnerabilities, including four high-severity out-of-bounds read and memory bugs and the new HTTP/2 Bomb DoS flaw. IT teams running self-managed NetScaler, Gateway, or Secure Private Access Hybrid deployments should patch now, prioritizing CVE-2026-8451, which watchTowr flags as the latest CitrixBleed defect and a path to full device compromise.
+
+Oracle E-Business Suite Flaw CVE-2026-46817 Actively Exploited in the Wild (5 minute read)
+
+(blurb not generated)
+
+Progress Kemp LoadMaster Pre-Auth RCE Flaw Faces Active Exploitation Attempts (5 minute read)
+
+(blurb not generated)
+
+Azure CLI Password Spray Hits at Least 78 Microsoft Accounts in 81M+ Attempts (5 minute read)
+
+(blurb not generated)
+
+Meta fights soaring hardware costs by reusing old DDR4 server memory in new DDR5-only servers — custom CXL 2.0 chip marries legacy DDR4-2400 with cutting-edge DDR5-6400 (5 minute read)
+
+(blurb not generated)
+
+🧠
+Analysis & Opinions
+
+가트너 “에이전틱 AI에 SaaS 시장 재편…기존 업체는 위기, 서비스 기업은 기회” (2 minute read)
+
+Gartner forecasts that "agentic arbitrage" will reshape up to $234B in enterprise application spending through 2030, roughly 20% of projected SaaS outlays, as AI agents execute work across systems and bypass the user interfaces vendors monetize. The report argues this breaks the link between seat growth and revenue, threatening dashboard- and per-user pricing models. Gartner's read: incumbents must shift from interface value to outcome value, while service firms and agentic-platform startups capture the freed budget.
+
+What Meta, Oracle moves say about data center economics (3 minute read)
+
+Oracle's latest 10-K and Meta's reported plan to resell excess compute signal that hyperscalers are shifting from an AI capacity land grab to managing the financial risk of the buildout. Oracle's filing details how supply-chain delays, permitting limits, and third-party defaults could inflate the cost of commitments like its $300B Stargate deal with OpenAI. With the top four hyperscalers set to spend up to $725B on AI infrastructure this year, the pressure is now on return, not just scale.
+
+Mapping out your unknown: A threat hunter's guide to Salesforce (5 minute read)
+
+Datadog's Security Research team published the first part of a threat-hunting guide for Salesforce, documenting how recent campaigns abuse OAuth connected apps, compromised third-party integrations, and hijacked SSO sessions to enumerate and exfiltrate data. The post maps each attacker step to a MITRE ATT&CK tactic and provides audit-log queries tuned to Salesforce's logging tiers, from Event Log Files to Real-Time Event Monitoring. For enterprises with dozens of connected apps per Salesforce tenant, it is a practical baseline for detection coverage most teams currently lack.
+
+SessionBound: Turning Enterprise Task Approval into Budgeted Database Sessions (5 minute read)
+
+(blurb not generated)
+
+🤝
+Launches & Partnerships
+
+Production-Ready Autonomous Incident Resolution with AWS DevOps Agent (now GA) and Datadog MCP Server (5 minute read)
+
+(blurb not generated)
+
+Work with delegated Gmail accounts from mobile devices (5 minute read)
+
+(blurb not generated)
+
+Create fully native and editable presentations with Gemini in Google Slides (5 minute read)
+
+(blurb not generated)
+
+Automate public TLS certificate issuance with ACME support in AWS Certificate Manager (5 minute read)
+
+(blurb not generated)
+
+New instances bring AWS’ Graviton5 CPUs to high-performance cloud workloads (5 minute read)
+
+(blurb not generated)
+
+AWS expands compute-optimized Graviton5 instances with C9g and C9gd VMs (5 minute read)
+
+(blurb not generated)
+
+AI Overviews in Drive now available on mobile (5 minute read)
+
+(blurb not generated)
+
+Ask Gemini in Drive now available on mobile (5 minute read)
+
+(blurb not generated)
+
+Microsoft builds a bouncer to keep bots out of Teams meetings (5 minute read)
+
+(blurb not generated)
+
+AWS turbocharges log analytics in Amazon OpenSearch Service at no extra cost (5 minute read)
+
+(blurb not generated)
+
+GitHub’s new tool helps prevent costly open-source license violations (1 minute read)
+
+GitHub released License Compliance in public preview for GitHub Advanced Security customers, adding automated scanning that flags open-source dependencies in pull requests whose licenses need review against an organization's policy. Enterprise Cloud teams with an active GHAS Code Security license can run it in Evaluate mode to annotate PRs without blocking merges, then tighten to approvals and package-specific exceptions as their license policy matures.
+
+IBM, Red Hat, Palo Alto team to secure open-source software (5 minute read)
+
+(blurb not generated)
+
+⚡
+Quick Links
+
+VEIL#DROP Malware Chain Uses Blogger Platform to Deliver PureLogs Stealer (5 minute read)
+
+(blurb not generated)
+
+The inside scoop on alerting changes in Kubernetes Monitoring (5 minute read)
+
+Grafana Cloud is consolidating on Grafana-managed alerts as its single alerting platform, which may break notifications after a Kubernetes Monitoring reinstall.
+
+Anonymous Researcher Drops 0-day 'Exploitarium' Repo (5 minute read)
+
+(blurb not generated)

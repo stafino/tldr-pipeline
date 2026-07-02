@@ -1,0 +1,100 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR Data 2026-07-02
+
+📊
+News & Trends
+
+TabFM: A zero-shot foundation model for tabular data (5 minute read)
+
+(blurb not generated)
+
+Conversational Analytics in BigQuery is now GA (5 minute read)
+
+(blurb not generated)
+
+Google Cloud proposes Open Knowledge Format for AI-ready data sharing (5 minute read)
+
+(blurb not generated)
+
+🧠
+Deep Dives & Analysis
+
+I wrote a 70x faster SQL parser while barely looking at the code (5 minute read)
+
+(blurb not generated)
+
+Exploring the Semantic Gap in Agentic Data Systems: A Formative Study of Operationalization Failures in Analytical Workflows (1 minute read)
+
+A cross-domain study of LLM-generated analytical workflows found that 153 of 236 analytical intents failed to operationalize correctly even when the workflow generated and executed cleanly, across finance, HR, and public safety domains. The authors group the failures into five classes, including comparative grounding, quantitative reasoning, and policy grounding, arguing that schemas and data values alone don't carry the semantic information needed to map user intent to correct computation. The implication is that agentic data systems will need richer semantic layers, not just better query generation.
+
+Generative Retrieval for Table Union Search (1 minute read)
+
+GenTUS reframes table union search as constrained generation, assigning each data-lake table a compact unionability-aware identifier and training a model to emit the identifiers of unionable tables directly from a query. This drops the standard encode-search-rerank pipeline, whose quality is capped by candidate-pool recall and whose latency and storage grow with the lake. Across seven public TUS benchmarks it posts the best average rank, 1.05 versus 2.57 for the strongest baseline, while cutting online latency, retrieval-artifact storage, and incremental update cost.
+
+Building Jaeger's ClickHouse backend: 8.6× compression on 10 million spans (5 minute read)
+
+(blurb not generated)
+
+Query-Centric Optimization of AI Workflows via Approximate Query Processing and Proxy Models (1 minute read)
+
+This paper reframes expensive AI workflows, from LLM post-training to agentic reasoning, as declarative queries whose costly predicate is a large model, then applies two classic database tricks to cut invocations. Approximate query processing samples records and stops early once a confidence interval stabilizes, hitting 10-15% of oracle calls on TPC-DS with under 10% error; a CPU-resident decision tree pre-filters confident cases, cutting reward-model scoring time up to 19x on structured tasks with under 10% accuracy loss.
+
+Large Databases Need Small, Open-Weight Language Models (5 minute read)
+
+(blurb not generated)
+
+From Single to Multiple Attributes: Experimental Insights on Sampling-Based Distinct Combination Estimation in GROUP-BY Queries (5 minute read)
+
+(blurb not generated)
+
+Approximate Nearest Neighbor Search with Graph Range Filters (1 minute read)
+
+This paper tackles filtered ANN search where the constraint is graph proximity, requiring retrieved vectors to fall within a set distance of the query node in a predefined filter graph rather than a numeric range or category match. The proposed DLH index uses distance-aware labeling sets with Bloom filter compression to speed up the set intersections these queries need, and a memoized variant, DLH-M, caches the query node's hashing index. Across datasets, the two lift throughput by up to 70.3% while holding recall above 98.5%.
+
+RACORN-1: Adaptive Recall-Preserving Speedup for Low-Selectivity Filtered Vector Search (1 minute read)
+
+RACORN-1 extends ACORN-1, the filtered-vector-search method that reuses an existing HNSW index, to fix the recall collapse that hits below 1% selectivity. Its Adaptive Search Fallback repurposes filter-failing nodes as temporary bridges around severed graph paths, recovering recall from as low as 0.03 back to 0.77-0.98 while keeping a 9-26x latency edge over HNSW. A RACORN-1+ variant adds exact fallback to hit perfect recall at extreme selectivity, making filtered search over RAG metadata predicates viable without rebuilding the index.
+
+When to Repair a Graph ANN Index: Navigability-Signal-Triggered Local Repair Protects Tail Recall Under Bursty Churn (1 minute read)
+
+This paper argues that graph ANN indexes like HNSW and DiskANN should trigger repair on a measured navigability-degradation signal rather than a fixed "consolidate every X operations" clock. At matched repair budget on SIFT-128 and Fashion-MNIST, signal-triggered repair Pareto-dominates fixed-cadence, lifting worst-case recall@10 by +0.014 to +0.050 while mean recall barely moves. The gain concentrates on sparse, fragile graphs at scarce budget and fades to parity when the index is robust.
+
+🚀
+Launches & Tools
+
+Introducing Flink's Native S3 FileSystem: Built for Performance, Designed for Production (5 minute read)
+
+Apache Flink 2.3 introduced flink-s3-fs-native, a Hadoop-free S3 filesystem built specifically for Flink that ships as an experimental opt-in plugin and supports both RecoverableWriter for exactly-once sinks and a fast read path for checkpointing. The native plugin ends the long-standing choice between the Hadoop and Presto plugins, drops the hadoop-common dependency tree and AWS SDK v1, and delivers measurable performance gains already running in production at scale.
+
+Zilliz has a Loonatic storage engine (5 minute read)
+
+(blurb not generated)
+
+Clean Me If You Can: A Large Collection of Real-World Addresses for Data Cleaning Benchmarking (1 minute read)
+
+This paper releases a large collection of real-world postal addresses paired with ground-truth clean values, targeting the shortage of dirty datasets for benchmarking data cleaning methods. The authors show that existing error-detection and correction approaches degrade sharply on the messy addresses, and they use those failures to lay out guidelines for future cleaning research.
+
+DA-Studio: An Agentic System for End-to-End Data Analysis (5 minute read)
+
+(blurb not generated)
+
+⚡
+Quick Links
+
+Memory Prices report from Stanford (1 minute read)
+
+An interactive Stanford dataset charting DRAM, NAND, and HBM prices per gigabyte from 1960 to 2026, with downloadable raw data.
+
+British Columbia, Time Zones, and Postgres (5 minute read)
+
+(blurb not generated)
+
+The Decode-Work Law: Margin-Governed, Provably-Exact Spatial Joins over Compressed Geometry (1 minute read)
+
+This paper models a cost that filter-and-refine spatial joins have always ignored: the bytes spent decompressing candidate pairs that survive the filter. Running provably-exact polygon intersection joins over a Douglas-Peucker LOD ladder on TIGER water polygons, the certificate decodes a median 5.9x fewer vertices than decompress-then-refine, with zero correctness violations. The core finding, the "decode-work law," is that decode cost tracks each pair's distance from the predicate-flip boundary, independent of object size.
+
+TVA: A Version-aware Temporal Graph Storage System for Real-time Analytics (1 minute read)
+
+This paper introduces TVA, a temporal graph storage system that separates version metadata from property values so queries can locate valid versions and dereference the data directly. Tailored structures, a temporal table and hopscotch-based hashing, keep adjacent version metadata compact to cut random I/O during neighborhood scans, while a version-skipping strategy reuses temporal information across scans. The authors report up to 9.9x lower query latency and 2.2x lower storage overhead than state-of-the-art temporal graph stores.
