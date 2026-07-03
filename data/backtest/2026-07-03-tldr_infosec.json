@@ -1,9 +1,37 @@
 {
   "date": "2026-07-03",
   "newsletter": "tldr_infosec",
-  "fetched_at": "2026-07-03T09:14:40.350137+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-07-03T14:01:51.957592+00:00",
+  "tldr_titles": [
+    "Pacemaker manufacturer Medtronic warns patients cybercrooks may have swiped health data",
+    "DuneSlide: Two Critical RCE vulnerabilities via Zero-Click Prompt Injection in Cursor IDE",
+    "SharePoint RCE CVE-2026-45659 Added to CISA KEV After Active Exploitation",
+    "Soatok's Informal Guide to Threat Models",
+    "It's 37oC, And All We Can Think About Is ColdFusion",
+    "Phantom Squatting: AI-Hallucinated Domains as a Software Supply Chain Vector",
+    "Signal and Cloudflare Deploy Post-Quantum Cryptography to Preempt Quantum Threats",
+    "Google Disrupts NetNut Residential Proxy Network Spanning 2 Million Home Devices",
+    "US government says it got hacked \u2014 again",
+    "Hardware-Rooted AI Security That Won't Slow You Down",
+    "Car Tracking Features for 'Convenience Not Security' Warns Kia",
+    "New CitrixBleed Vulnerability Exploited Immediately After Public Disclosure",
+    "Microsoft Accelerates Post-Quantum Cryptography Shift to 2029"
+  ],
+  "tldr_matched": [
+    false,
+    true,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true,
+    true
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -48,13 +76,21 @@
     {
       "rank": 6,
       "score": 82.0,
+      "title": "European Parliament Member Investigating Spyware Was Hacked With Pegasus",
+      "url": "https://thehackernews.com/2026/07/european-parliament-member.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 7,
+      "score": 82.0,
       "title": "Phantom Squatting Uses AI-Hallucinated Domains for Phishing and Malware",
       "url": "https://thehackernews.com/2026/07/phantom-squatting-uses-ai-hallucinated.html",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 7,
+      "rank": 8,
       "score": 81.0,
       "title": "FBI Seizes NetNut Proxy Platform, Popa Botnet",
       "url": "https://krebsonsecurity.com/2026/07/fbi-seizes-netnut-proxy-platform-popa-botnet/",
@@ -62,39 +98,39 @@
       "similarity": null
     },
     {
-      "rank": 8,
-      "score": 80.0,
-      "title": "SharePoint RCE CVE-2026-45659 Added to CISA KEV After Active Exploitation",
-      "url": "https://thehackernews.com/2026/07/sharepoint-rce-cve-2026-45659-added-to.html",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
       "rank": 9,
-      "score": 80.0,
-      "title": "Critical Cursor Flaws Could Let Prompt Injection Escape Sandbox and Run Commands",
-      "url": "https://thehackernews.com/2026/07/critical-cursor-flaws-could-let-prompt.html",
+      "score": 81.0,
+      "title": "Agentic AI Used to Conduct Ransomware Attack via Langflow",
+      "url": "https://www.securityweek.com/agentic-ai-used-to-conduct-ransomware-attack-via-langflow/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
       "rank": 10,
       "score": 80.0,
-      "title": "CISA: Microsoft SharePoint RCE flaw now actively exploited",
-      "url": "https://www.bleepingcomputer.com/news/security/cisa-microsoft-sharepoint-rce-flaw-now-actively-exploited/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "title": "SharePoint RCE CVE-2026-45659 Added to CISA KEV After Active Exploitation",
+      "url": "https://thehackernews.com/2026/07/sharepoint-rce-cve-2026-45659-added-to.html",
+      "matched_tldr_idx": 2,
+      "similarity": 1.0
     },
     {
       "rank": 11,
       "score": 80.0,
-      "title": "\u2018BioShocking\u2019 Attack Tricks AI Browsers Into Stealing Credentials",
-      "url": "https://www.securityweek.com/bioshocking-attack-tricks-ai-browsers-into-stealing-credentials/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "title": "Critical Cursor Flaws Could Let Prompt Injection Escape Sandbox and Run Commands",
+      "url": "https://thehackernews.com/2026/07/critical-cursor-flaws-could-let-prompt.html",
+      "matched_tldr_idx": 1,
+      "similarity": 0.7155798673629761
     },
     {
       "rank": 12,
+      "score": 80.0,
+      "title": "CISA: Microsoft SharePoint RCE flaw now actively exploited",
+      "url": "https://www.bleepingcomputer.com/news/security/cisa-microsoft-sharepoint-rce-flaw-now-actively-exploited/",
+      "matched_tldr_idx": 2,
+      "similarity": 0.6703066825866699
+    },
+    {
+      "rank": 13,
       "score": 79.0,
       "title": "AI-Generated Browser Ransomware Abuses Chromium API on Windows, Linux, macOS, Android",
       "url": "https://thehackernews.com/2026/07/ai-generated-browser-ransomware-abuses.html",
@@ -102,20 +138,12 @@
       "similarity": null
     },
     {
-      "rank": 13,
+      "rank": 14,
       "score": 79.0,
       "title": "New CitrixBleed Vulnerability Exploited Immediately After Public Disclosure",
       "url": "https://www.securityweek.com/new-citrixbleed-vulnerability-exploited-immediately-after-public-disclosure/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 14,
-      "score": 79.0,
-      "title": "CISA Warns of Actively Exploited Microsoft SharePoint Vulnerability",
-      "url": "https://www.securityweek.com/cisa-warns-of-actively-exploited-microsoft-sharepoint-vulnerability/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 11,
+      "similarity": 1.0
     },
     {
       "rank": 15,
@@ -130,8 +158,8 @@
       "score": 78.0,
       "title": "Microsoft said exploitation was 'less likely' ... but CISA just added SharePoint RCE to KEV list",
       "url": "https://www.theregister.com/security/2026/07/02/microsoft-said-exploitation-was-less-likely-but-cisa-just-added-sharepoint-rce-to-kev-list/5265886",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 2,
+      "similarity": 0.777424693107605
     },
     {
       "rank": 17,
@@ -159,14 +187,22 @@
     },
     {
       "rank": 20,
-      "score": 76.0,
-      "title": "Progress Kemp LoadMaster Pre-Auth RCE Flaw Faces Active Exploitation Attempts",
-      "url": "https://thehackernews.com/2026/07/latest-progress-kemp-loadmaster-pre.html",
+      "score": 77.0,
+      "title": "Researchers say an AI agent just ran a ransomware attack from start to finish, with no human at the keyboard",
+      "url": "https://thenextweb.com/news/ai-agent-first-end-to-end-ransomware-attack",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
       "rank": 21,
+      "score": 74.0,
+      "title": "Flock Cameras Can Surveil Cars Without License Plates",
+      "url": "https://www.schneier.com/blog/archives/2026/07/flock-cameras-can-surveil-cars-without-license-plates.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 22,
       "score": 73.0,
       "title": "AI and Liability",
       "url": "https://www.schneier.com/blog/archives/2026/06/ai-and-liability.html",
@@ -174,7 +210,7 @@
       "similarity": null
     },
     {
-      "rank": 22,
+      "rank": 23,
       "score": 72.0,
       "title": "Has This Checkpoint Been Abliterated? A Two-Signal Audit and Its Failure Map",
       "url": "http://arxiv.org/abs/2607.01854v1",
@@ -182,7 +218,7 @@
       "similarity": null
     },
     {
-      "rank": 23,
+      "rank": 24,
       "score": 72.0,
       "title": "Scattered Spider Hackers Plead Guilty on Day 1 of Trial",
       "url": "https://krebsonsecurity.com/2026/06/scattered-spider-hackers-plead-guilty-on-day-1-of-trial/",
@@ -190,7 +226,7 @@
       "similarity": null
     },
     {
-      "rank": 24,
+      "rank": 25,
       "score": 71.0,
       "title": "Hackers shoveled snow for company, were rewarded with network admin access",
       "url": "https://www.theregister.com/security/2026/07/02/hackers-shoveled-snow-for-company-were-rewarded-with-network-admin-access/5265240",
@@ -198,7 +234,7 @@
       "similarity": null
     },
     {
-      "rank": 25,
+      "rank": 26,
       "score": 71.0,
       "title": "Non-interactive SSH attacks dominate after login",
       "url": "https://www.helpnetsecurity.com/2026/07/03/research-non-interactive-ssh-attacks/",
@@ -206,7 +242,7 @@
       "similarity": null
     },
     {
-      "rank": 26,
+      "rank": 27,
       "score": 70.0,
       "title": "Anthropic's AI Finds Bugs. IBM Bets $5B It Can Fix Them.",
       "url": "https://www.darkreading.com/vulnerabilities-threats/anthropic-s-ai-finds-bugs-ibm-bets-5b-it-can-fix-them-",
@@ -214,7 +250,7 @@
       "similarity": null
     },
     {
-      "rank": 27,
+      "rank": 28,
       "score": 69.0,
       "title": "Opera rolls out Paste Protect feature to fight ClickFix attacks",
       "url": "https://www.bleepingcomputer.com/news/security/opera-rolls-out-paste-protect-feature-to-fight-clickfix-attacks/",
@@ -222,7 +258,7 @@
       "similarity": null
     },
     {
-      "rank": 28,
+      "rank": 29,
       "score": 68.0,
       "title": "How GitHub used secret scanning to reach inbox zero",
       "url": "https://github.blog/security/application-security/how-github-used-secret-scanning-to-reach-inbox-zero/",
@@ -230,7 +266,7 @@
       "similarity": null
     },
     {
-      "rank": 29,
+      "rank": 30,
       "score": 68.0,
       "title": "Behind the Refusal: Determining Guardrail Activation via Behavioral Monitoring",
       "url": "http://arxiv.org/abs/2607.02121v1",
@@ -238,20 +274,12 @@
       "similarity": null
     },
     {
-      "rank": 30,
+      "rank": 31,
       "score": 68.0,
       "title": "Microsoft Accelerates Post-Quantum Cryptography Shift to 2029",
       "url": "https://thehackernews.com/2026/07/microsoft-accelerates-post-quantum.html",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 31,
-      "score": 67.0,
-      "title": "Microsoft Adds New Teams Controls to Block Unauthorized AI Bots From Meetings",
-      "url": "https://www.securityweek.com/microsoft-adds-new-teams-controls-to-block-unauthorized-ai-bots-from-meetings/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 12,
+      "similarity": 1.0
     },
     {
       "rank": 32,
@@ -343,14 +371,6 @@
     },
     {
       "rank": 43,
-      "score": 62.0,
-      "title": "Alleged longstanding member of Scattered Spider extradited to US",
-      "url": "https://cyberscoop.com/scattered-spider-peter-stokes-cybercrime-extradition/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 44,
       "score": 61.0,
       "title": "Trust Boundary Semantic Gaps: A Multi-dimensional Analysis and Mitigation for Security-by-Design",
       "url": "http://arxiv.org/abs/2607.01711v1",
@@ -358,7 +378,7 @@
       "similarity": null
     },
     {
-      "rank": 45,
+      "rank": 44,
       "score": 61.0,
       "title": "Understanding Build Reproducibility in the F-Droid Ecosystem",
       "url": "http://arxiv.org/abs/2607.01890v1",
@@ -366,7 +386,7 @@
       "similarity": null
     },
     {
-      "rank": 46,
+      "rank": 45,
       "score": 61.0,
       "title": "SessionBound: Turning Enterprise Task Approval into Budgeted Database Sessions",
       "url": "http://arxiv.org/abs/2607.00751v1",
@@ -374,7 +394,7 @@
       "similarity": null
     },
     {
-      "rank": 47,
+      "rank": 46,
       "score": 61.0,
       "title": "Papa Johns Surveillance-Based Advertising",
       "url": "https://www.schneier.com/blog/archives/2026/07/papa-johns-surveillance-based-advertising.html",
@@ -382,7 +402,7 @@
       "similarity": null
     },
     {
-      "rank": 48,
+      "rank": 47,
       "score": 60.0,
       "title": "SkillFuzz: Fuzzing Skill Composition for Implicit Intents Discovery in Open Skill Marketplaces",
       "url": "http://arxiv.org/abs/2607.02345v1",
@@ -390,7 +410,7 @@
       "similarity": null
     },
     {
-      "rank": 49,
+      "rank": 48,
       "score": 60.0,
       "title": "kNNGuard: Turning LLM Hidden Activations into a Training-Free Configurable Guardrail",
       "url": "http://arxiv.org/abs/2607.02072v1",
@@ -398,7 +418,7 @@
       "similarity": null
     },
     {
-      "rank": 50,
+      "rank": 49,
       "score": 60.0,
       "title": "Anthropic Restores Claude Fable 5 After U.S. Lifts Jailbreak-Linked Export Controls",
       "url": "https://thehackernews.com/2026/07/anthropic-restores-claude-fable-5-after.html",
@@ -406,7 +426,7 @@
       "similarity": null
     },
     {
-      "rank": 51,
+      "rank": 50,
       "score": 60.0,
       "title": "Trump Administration Lifts Restrictions on Anthropic\u2019s Claude Models After Cybersecurity Alarm",
       "url": "https://www.securityweek.com/trump-administration-lifts-restrictions-on-anthropics-claude-models-after-cybersecurity-alarm/",
@@ -414,7 +434,7 @@
       "similarity": null
     },
     {
-      "rank": 52,
+      "rank": 51,
       "score": 60.0,
       "title": "File-Level Copying Is an Implicit Dependency in Open Source",
       "url": "http://arxiv.org/abs/2607.02059v1",
@@ -422,7 +442,7 @@
       "similarity": null
     },
     {
-      "rank": 53,
+      "rank": 52,
       "score": 59.0,
       "title": "6 security settings every GitHub maintainer should enable this week",
       "url": "https://github.blog/security/6-security-settings-every-github-maintainer-should-enable-this-week/",
@@ -430,7 +450,7 @@
       "similarity": null
     },
     {
-      "rank": 54,
+      "rank": 53,
       "score": 59.0,
       "title": "What happened after 2,000 people tried to hack my AI assistant",
       "url": "https://www.fernandoi.cl/posts/hackmyclaw/",
@@ -438,7 +458,7 @@
       "similarity": null
     },
     {
-      "rank": 55,
+      "rank": 54,
       "score": 58.0,
       "title": "Mitigating Package Hallucinations in Large Language Models via Model Editing",
       "url": "http://arxiv.org/abs/2607.02052v1",
@@ -446,7 +466,7 @@
       "similarity": null
     },
     {
-      "rank": 56,
+      "rank": 55,
       "score": 58.0,
       "title": "Fedora 45 could get Shadow Stack support to prevent ROP attacks",
       "url": "https://www.neowin.net/news/fedora-45-could-get-shadow-stack-support-to-prevent-rop-attacks/?utm_source=rss",
@@ -454,7 +474,7 @@
       "similarity": null
     },
     {
-      "rank": 57,
+      "rank": 56,
       "score": 58.0,
       "title": "HTTP REST API Structure Learning",
       "url": "http://arxiv.org/abs/2607.02442v1",
@@ -462,7 +482,7 @@
       "similarity": null
     },
     {
-      "rank": 58,
+      "rank": 57,
       "score": 58.0,
       "title": "Knowledge Over Parameters: Evolving Smart Contract Vulnerability Detection",
       "url": "http://arxiv.org/abs/2607.01742v1",
@@ -470,15 +490,7 @@
       "similarity": null
     },
     {
-      "rank": 59,
-      "score": 58.0,
-      "title": "From Forgeries to Foundation Models: A Systematic Survey of Identity Document Attack and Detection",
-      "url": "http://arxiv.org/abs/2607.01442v1",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 60,
+      "rank": 58,
       "score": 58.0,
       "title": "Security Profiles Operator v1: Stable APIs, Security Hardened, and Shaping Upstream Kubernetes",
       "url": "https://www.cncf.io/blog/2026/06/26/security-profiles-operator-v1-stable-apis-security-hardened-and-shaping-upstream-kubernetes/",
@@ -486,7 +498,7 @@
       "similarity": null
     },
     {
-      "rank": 61,
+      "rank": 59,
       "score": 58.0,
       "title": "Anthropic restores Claude Fable 5 as US lifts export controls \u2014 single filter now blocks prompt that could identify software vulnerabilities and write code to exploit them",
       "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropic-restores-claude-fable-5-as-us-lifts-export-controls",
@@ -494,7 +506,7 @@
       "similarity": null
     },
     {
-      "rank": 62,
+      "rank": 60,
       "score": 58.0,
       "title": "Google testing controversial webcam-based reCAPTCHA that asks for a hand scan to prove you're human \u2014 testers beat it with a stock photo",
       "url": "https://www.tomshardware.com/tech-industry/googles-camera-based-recaptcha-asks-for-a-hand-scan-to-prove-youre-human",
@@ -502,7 +514,7 @@
       "similarity": null
     },
     {
-      "rank": 63,
+      "rank": 61,
       "score": 58.0,
       "title": "ChatControl 1.0 mass scanning is to be sneaked through via a 3rd vote next week",
       "url": "https://digitalcourage.social/@echo_pbreyer/116849906752825989",
@@ -510,7 +522,15 @@
       "similarity": null
     },
     {
-      "rank": 64,
+      "rank": 62,
+      "score": 57.0,
+      "title": "Palo Alto Networks opens the vault to unmanaged devices with Secure Agentless Access launch",
+      "url": "https://www.sdxcentral.com/news/palo-alto-networks-opens-the-vault-to-unmanaged-devices-with-secure-agentless-access-launch/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 63,
       "score": 57.0,
       "title": "IBM, Red Hat, Palo Alto team to secure open-source software",
       "url": "https://www.networkworld.com/article/4189077/ibm-red-hat-palo-alto-team-to-secure-open-source-software.html",
@@ -518,7 +538,7 @@
       "similarity": null
     },
     {
-      "rank": 65,
+      "rank": 64,
       "score": 57.0,
       "title": "iOS 27 helps apps detect when a user may be getting scammed in real time",
       "url": "https://9to5mac.com/2026/07/02/ios-27-helps-apps-detect-when-a-user-may-be-getting-scammed-in-real-time/",
@@ -526,25 +546,73 @@
       "similarity": null
     },
     {
+      "rank": 65,
+      "score": 57.0,
+      "title": "19-Year-Old Scattered Spider Suspect Extradited to Face U.S. Hacking Charges",
+      "url": "https://thehackernews.com/2026/07/19-year-old-scattered-spider-suspect.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
       "rank": 66,
       "score": 57.0,
-      "title": "Alibaba to ban Claude Code over alleged backdoor risk, source says",
-      "url": "https://thenextweb.com/news/alibaba-bans-claude-code-alleged-backdoor-risk",
+      "title": "Chinese LLMs Broaden the Gap Between Attackers &amp; Defenders",
+      "url": "https://www.darkreading.com/cyber-risk/chinese-llms-broaden-gap-between-attackers-and-defenders",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
       "rank": 67,
       "score": 57.0,
-      "title": "19-Year-Old Scattered Spider Suspect Extradited to Face U.S. Hacking Charges",
-      "url": "https://thehackernews.com/2026/07/19-year-old-scattered-spider-suspect.html",
+      "title": "India gives WhatsApp three days to defend username rollout amid security fears",
+      "url": "https://www.theregister.com/security/2026/07/02/india-writes-to-whatsapp-over-usernames-security-concerns/5265744",
       "matched_tldr_idx": null,
       "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.07692307692307693,
+    "25": 0.23076923076923078,
+    "50": 0.3076923076923077,
+    "100": 0.3076923076923077,
+    "67": 0.3076923076923077
+  },
+  "hits_at": {
+    "10": 1,
+    "25": 3,
+    "50": 4,
+    "100": 4,
+    "67": 4
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://www.theregister.com/security/2026/07/02/pacemaker-manufacturer-medtronic-warns-patients-cybercrooks-may-have-swiped-health-data/5265768",
+    "https://www.catonetworks.com/blog/duneslide-two-critical-rce-vulnerabilities/",
+    "https://thehackernews.com/2026/07/sharepoint-rce-cve-2026-45659-added-to.html",
+    "https://soatok.blog/2026/06/30/soatoks-informal-guide-to-threat-models/",
+    "https://labs.watchtowr.com/its-37oc-and-all-we-can-think-about-is-coldfusion-adobe-coldfusion-security-bulletin-apsb26-68-cve-bonanza/",
+    "https://unit42.paloaltonetworks.com/phantom-squatting-hallucinated-web-domains/",
+    "https://www.reddit.com/r/cryptography/comments/1ukw963/we_just_saw_this_one_massive_exposure_how_signal/",
+    "https://thehackernews.com/2026/07/google-disrupts-netnut-residential.html",
+    "https://techcrunch.com/2026/07/02/us-government-says-it-got-hacked-again/",
+    "https://developer.nvidia.com/blog/hardware-rooted-ai-security-that-wont-slow-you-down/",
+    "https://www.bbc.com/news/articles/cp8r1798kp7o",
+    "https://www.securityweek.com/new-citrixbleed-vulnerability-exploited-immediately-after-public-disclosure/",
+    "https://thehackernews.com/2026/07/microsoft-accelerates-post-quantum.html"
+  ],
+  "tldr_domains": [
+    "theregister.com",
+    "catonetworks.com",
+    "thehackernews.com",
+    "soatok.blog",
+    "labs.watchtowr.com",
+    "unit42.paloaltonetworks.com",
+    "reddit.com",
+    "thehackernews.com",
+    "techcrunch.com",
+    "developer.nvidia.com",
+    "bbc.com",
+    "securityweek.com",
+    "thehackernews.com"
+  ]
 }
