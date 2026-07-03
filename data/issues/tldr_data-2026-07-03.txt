@@ -1,0 +1,116 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR Data 2026-07-03
+
+📊
+News & Trends
+
+Forecasting at the speed of modern retail (5 minute read)
+
+(blurb not generated)
+
+Beyond dashboards: Introducing Decision Execution Platforms (5 minute read)
+
+(blurb not generated)
+
+Google Cloud proposes Open Knowledge Format for AI-ready data sharing (5 minute read)
+
+(blurb not generated)
+
+🧠
+Deep Dives & Analysis
+
+How we keep GPUs reliable across Databricks AI (5 minute read)
+
+(blurb not generated)
+
+Granular Usage Attribution for dbt Pipelines with Query Tags (5 minute read)
+
+(blurb not generated)
+
+Exploring the Semantic Gap in Agentic Data Systems: A Formative Study of Operationalization Failures in Analytical Workflows (5 minute read)
+
+(blurb not generated)
+
+Generative Retrieval for Table Union Search (5 minute read)
+
+(blurb not generated)
+
+Building Jaeger's ClickHouse backend: 8.6× compression on 10 million spans (5 minute read)
+
+(blurb not generated)
+
+From Single to Multiple Attributes: Experimental Insights on Sampling-Based Distinct Combination Estimation in GROUP-BY Queries (1 minute read)
+
+This paper tackles distinct-combination cardinality estimation for multi-attribute GROUP-BY queries, a case existing estimators mostly ignore since prior work targets SPJ queries or single-attribute distinct-value counts. The authors build a workload generator for filtered and non-filtered GROUP-BY queries, test sampling-based and learned methods across four real datasets and TPC-H, and trace how estimation errors propagate into PostgreSQL's plan choices. The takeaway is that sample joint-distribution info alone is often insufficient, and current methods underuse single-attribute signals they could exploit.
+
+Approximate Nearest Neighbor Search with Graph Range Filters (5 minute read)
+
+(blurb not generated)
+
+Postgres transactions are a distributed systems superpower (1 minute read)
+
+The DBOS team argues that workflow state and application data should live in the same Postgres database, not separate stores, because co-location lets both be updated in a single transaction. That eliminates partial failures: idempotency problems like double-crediting a bank account disappear when a step's side effect and its checkpoint commit atomically, removing the need for application-level bookkeeping tables like applied_payments. The pitch is that Postgres transactions do the hard distributed-systems work for free.
+
+HNSW with Accuracy Guarantees Using Graph Spanners -- A Technical Report (1 minute read)
+
+This paper proposes "Certify-then-Rectify," a framework that keeps HNSW's fast greedy search but adds a distribution-free statistical certifier to flag low-quality results and escalate to exact recovery only when needed. To make that fallback affordable, the authors reinterpret the HNSW graph as a geometric spanner and use Extreme Value Theory to bound the true nearest-neighbor distance. The result gives HNSW's average-case speed with worst-case correctness guarantees that vector search has historically lacked.
+
+AgenticDataBench: A Comprehensive Benchmark for Data Agents (1 minute read)
+
+AgenticDataBench introduces a benchmark for LLM-based data agents, spanning 15 vertical domains and including five real-world B2B tasks from a fintech company, with fine-grained ground-truth labels scored at the level of individual data science skills. Those skills are recurring operational patterns mined from Stack Overflow solutions via hierarchical clustering, which lets the authors quantify coverage and report where state-of-the-art agents actually break down rather than a single pass-rate number.
+
+RACORN-1: Adaptive Recall-Preserving Speedup for Low-Selectivity Filtered Vector Search (5 minute read)
+
+(blurb not generated)
+
+Self-Gating Attention for Efficient Time Series Forecasting (1 minute read)
+
+This paper proposes Self-Gating Attention (SGA), a plug-and-play replacement for self-attention in time series forecasting that drops the query and key projections in favor of a shared learnable matrix plus an input-dependent residual. The result is linear time and memory in look-back length instead of quadratic, since attention maps across timestamps turn out to be highly redundant in real-world series. Across nine datasets spanning electricity, finance, weather, and climate, SGA cuts inference cost while matching state-of-the-art forecasting accuracy.
+
+The Decode-Work Law: Margin-Governed, Provably-Exact Spatial Joins over Compressed Geometry (5 minute read)
+
+(blurb not generated)
+
+When Classic Cache Policies Fail: Learning-Augmented Replacement for Semantic Retrieval Buffers (5 minute read)
+
+(blurb not generated)
+
+When to Repair a Graph ANN Index: Navigability-Signal-Triggered Local Repair Protects Tail Recall Under Bursty Churn (5 minute read)
+
+(blurb not generated)
+
+CADENZA in Action: Breaking the Monolith with Intent-Dependent Plan Spaces for Semantic Queries (1 minute read)
+
+CADENZA is a semantic query optimizer that compiles a natural-language intent into decomposed steps, picks a physical implementation for each, and tunes parameters against user-set quality, latency, and cost targets. Instead of treating an LLM or embedding model as a monolithic operator, it breaks the intent into a plan space where cheaper components can handle sub-steps that don't need a full model call. The demo lets users watch how different preference weightings produce different winning plans over multimodal databases.
+
+🚀
+Launches & Tools
+
+Introducing Flink's Native S3 FileSystem: Built for Performance, Designed for Production (5 minute read)
+
+(blurb not generated)
+
+Introducing TabFM: A zero-shot foundation model for tabular data (5 minute read)
+
+(blurb not generated)
+
+Show HN: ZeroFS – A log-structured filesystem for S3 (1 minute read)
+
+ZeroFS is a log-structured filesystem that serves S3-compatible buckets as POSIX filesystems over NFS and 9P, and as raw block devices over NBD, all from a single userspace process. Writes upload as immutable segments that are compressed and encrypted, warm reads come from local cache, and the project ships tested against 8,662 pjdfstest cases plus xfstests, kernel builds, and Jepsen histories.
+
+Conversational Analytics in BigQuery is now GA (5 minute read)
+
+(blurb not generated)
+
+⚡
+Quick Links
+
+Memory Prices report from Stanford (5 minute read)
+
+(blurb not generated)
+
+TVA: A Version-aware Temporal Graph Storage System for Real-time Analytics (5 minute read)
+
+(blurb not generated)
