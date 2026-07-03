@@ -10,17 +10,17 @@ I ported Kubernetes to the browser (5 minute read)
 
 (blurb not generated)
 
-AI Writes Faster Than Humans Can Review: A Longitudinal Study of an Enterprise 2x Mandate (1 minute read)
+60% Fable cost cut by converting code to images and having the model OCR it (1 minute read)
 
-A longitudinal study of an enterprise "2x" mandate tracked 802 developers and 196,212 pull requests from January 2024 to April 2026, finding per-capita merged-PR throughput reached 2.09x the pre-mandate baseline, with a staggered difference-in-differences design tying most of the gain to AI adoption and accumulated usage rather than the mandate itself. Automated review overtook human review as per-reviewer load roughly doubled, while merge and revert rates held steady.
+pxpipe is a local proxy that renders the bulky, token-dense parts of a Claude Code request (system prompt, tool docs, older history) into compact PNGs and appends an OCR instruction, exploiting the fact that an image's token cost scales with pixel dimensions rather than character count. On dense content it packs roughly 3.1 chars per image-token versus 1 per text-token, cutting input tokens enough to land a 59-70% lower bill at current Fable prices.
 
 How we used DSPy to turn AI evaluations into better responses in Dash chat (5 minute read)
 
 (blurb not generated)
 
-Decoupling Code Complexity from Newcomer Participation: A Causal Study of AI Coding Agent Adoption in OSS (1 minute read)
+Jamesob's guide to running SOTA LLMs locally (1 minute read)
 
-A causal study of 1,888 GitHub projects that adopted an AI coding agent finds no evidence that tools like Cursor and Claude Code crowd out newcomers, with newcomer inflow, onboarding, and retention unchanged after adoption. Adoption did raise per-function complexity (about +11% on a cognitive metric for Python, +3 to 4% cyclomatic across languages), but in the subsets where complexity rose, newcomer participation held steady.
+Jamesob documents his home rig for running state-of-the-art LLMs locally, from a $2k dual RTX 3090 build running Qwen3.6-27B to a $40k 4x RTX Pro 6000 setup with 384GB of VRAM approaching Claude Opus quality. The guide covers his hardware BOM, the use of PCIe4 switches to speed the allreduce step in tensor parallelism without paying for PCIe5, and ready-to-run Docker configs for inference and local Whisper speech-to-text.
 
 A peek into Reddit's anti-spam internals (5 minute read)
 
@@ -40,15 +40,15 @@ Why an idempotency key isn’t an idempotency guarantee (5 minute read)
 
 How OpenAI Delivers Low-Latency Voice AI for 900M Users (5 minute read)
 
-OpenAI serves voice AI to 900M weekly users on WebRTC, splitting the stack into a stateless edge relay for packet routing and a stateful transceiver that owns the heavy WebRTC state. The relay reads the ICE ufrag off the first packet as a routing key, sidestepping the standard SFU model since nearly all traffic is one user talking to one model rather than multiparty calls.
+(blurb not generated)
 
-Program-as-Weights: A Programming Paradigm for Fuzzy Functions (1 minute read)
+Program-as-Weights: A Programming Paradigm for Fuzzy Functions (5 minute read)
 
-This paper proposes fuzzy-function programming, which compiles a natural-language spec into a small locally-executable neural artifact instead of routing every call to an LLM API. A 4B compiler trained on the released 10M-example FuzzyBench emits adapters for a frozen 0.6B Qwen3 interpreter that matches Qwen3-32B prompting at roughly one fiftieth the inference memory, running at 30 tokens/s on a MacBook M3.
+(blurb not generated)
 
-Postgres transactions are a distributed systems superpower (1 minute read)
+Postgres transactions are a distributed systems superpower (5 minute read)
 
-The DBOS team argues that co-locating your durable workflow state in the same Postgres database as your application data lets both be updated in a single transaction, eliminating partial failures. The post shows how this collapses hard problems like idempotency and atomicity into ordinary transactional steps, dropping the usual application-level bookkeeping such as a separate applied_payments table used to guard against double-crediting on retry.
+(blurb not generated)
 
 Nano Banana 2 Lite (5 minute read)
 
@@ -60,7 +60,7 @@ Cost Attribution in Discord's API (5 minute read)
 
 Too many tables are bad for you (5 minute read)
 
-The Cybertec team benchmarks how a Postgres schema with tens of thousands of tables degrades performance, tracing the slowdown to bloated system catalogs, autovacuum churning through every relation, and slower planning as the catalog cache thrashes. The post quantifies the hit across connection startup, `pg_dump`, and autovacuum cycles, and argues that partitioning sprawl or multi-tenant table-per-tenant designs are the usual culprits worth consolidating.
+(blurb not generated)
 
 Factoring RSA Keys with Many Zeros (5 minute read)
 
@@ -69,10 +69,6 @@ Factoring RSA Keys with Many Zeros (5 minute read)
 Asahi Linux 7.1 Progress Report (5 minute read)
 
 (blurb not generated)
-
-Regression Accumulation in Multi-Turn LLM Programming Conversations (1 minute read)
-
-This paper studies regression accumulation in multi-turn LLM coding sessions, where later suggestions break requirements from earlier turns. Across 26,016 turn instances on six models, 40% to 73% of tasks lost previously correct behavior over an 8-turn chain, with cross-turn conflict the dominant failure class and a verification gate that rolls back against prior tests the only fix that consistently helped, lifting DeepSeek-V3 from 75.8% to 87.9%.
 
 How We Made IPFS Content Publishing 10x Faster (5 minute read)
 
@@ -84,7 +80,11 @@ Client-Side Load Balancing at a Million Requests Per Second (5 minute read)
 
 How To Corrupt An SQLite Database File (5 minute read)
 
-The SQLite documentation catalogs the concrete ways a database file goes corrupt despite SQLite's automatic rollback, from processes overwriting the file with garbage to stale file descriptors leaking writes into a reopened database. A notable case hit the Fossil DVCS repository when stderr was closed before sqlite3_open_v2(), leaving fd 2 pointing at the database so a later assert() error message wrote directly into it, which motivated SQLite 3.8.1 refusing low-numbered file descriptors.
+(blurb not generated)
+
+How we built SmithDB's inverted index for full-text search (5 minute read)
+
+(blurb not generated)
 
 🧠
 Opinions & Advice
@@ -92,10 +92,6 @@ Opinions & Advice
 Text AI watermarks will always be trivial to remove (5 minute read)
 
 (blurb not generated)
-
-Adoption and Impact of Command-Line AI Coding Agents: A Study of Microsoft's Early 2026 Rollout of Claude Code and GitHub Copilot CLI (1 minute read)
-
-A study of tens of thousands of Microsoft engineers during its early-2026 rollout of Claude Code and Copilot CLI found that adopters merged roughly 24% more pull requests, a lift that held across a four-month window. First use spread mainly through social networks and retention tracked coding activity rather than demographics, leading the authors to argue that organizations should treat visible peer use as central to rollout strategy.
 
 NSA's SIGINT Enabling Project Pushes Weakened TLS Post-Quantum Standard (5 minute read)
 
@@ -109,13 +105,13 @@ Clean GitHub repo tricks AI coding agents into running malware (5 minute read)
 
 (blurb not generated)
 
-The short leash AI coding method for beating Fable (1 minute read)
+The short leash AI coding method for beating Fable (5 minute read)
 
-The author argues that expert developers should keep AI agents on a "short leash," reviewing and steering every step rather than delegating to orchestrated fleets of parallel agents that produce unreadable, inefficient code. The piece contends that vibe-coding workflows make it impossible to build real understanding of a codebase, and that for security-critical software, tight human oversight beats even frontier-model review.
+(blurb not generated)
 
-Steerability via constraints: a substrate for scalable oversight of coding agents (1 minute read)
+Steerability via constraints: a substrate for scalable oversight of coding agents (5 minute read)
 
-The authors argue that the decades-old playbook for managing large human engineering teams (access control, network policies, tooling-enforced conventions) transfers directly to coding agents and costs fewer tokens than elaborate agentic scaffolding. In their controlled test, a small Gemma 4 reviewer caught 90.9% of 11 inserted Python backdoors under a constrained substrate plus a ~200-LoC docs CLI, up from 54.5% unconstrained, with substrate and tooling contributing independently.
+(blurb not generated)
 
 Qwen 3.6 27B is the sweet spot for local development (5 minute read)
 
@@ -129,21 +125,21 @@ New Enterprise-Ready MCP Specification Brings New Security Challenges (5 minute 
 
 (blurb not generated)
 
-Reasoning effort, not tool access, buys first-try reliability in agentic code generation: an observational study (1 minute read)
+Reasoning effort, not tool access, buys first-try reliability in agentic code generation: an observational study (5 minute read)
 
-An observational study ran 90 agent builds of the same app from one spec and found capability tier, not extra tooling, drove first-try reliability. Raising reasoning effort from High to xHigh lifted perfect first runs from 28% to 89% for 9-29% more cost, while a browser testing tool added 42-68% cost without improving function.
+(blurb not generated)
 
-The primary purpose of code review is to find code that will be hard to maintain (1 minute read)
+Memorizing session transcripts isn't useful (1 minute read)
 
-The author argues that code review's main value is catching code that will be hard to maintain, not finding bugs or verifying correctness, since maintainability is the thing authors are worst at judging about their own work. Bugs surface through tests and production, but a reviewer reading the code cold is uniquely positioned to flag what a future maintainer will struggle to understand.
+The author argues that giving agents search access to their own past session transcripts yields zero measurable benefit on SWE tasks, and may even degrade performance, once agents already have access to commit messages, PR descriptions, and docs. The takeaway is to distill what matters from a session into durable artifacts rather than warehousing raw transcripts behind vector, elastic, or SQL search layers.
 
-No LLM Code in Dependencies (1 minute read)
+The primary purpose of code review is to find code that will be hard to maintain (5 minute read)
 
-The maintainer of git-annex spent about 100 hours over the past month verifying the project can build without dependencies containing LLM-generated code, citing reverted large-scale changes, an incoherent 1,489-line commit message, and prompts that copied code from other projects. The author argues the practice forces ongoing manual review of the entire dependency tree and is reconsidering participation in communities that won't police AI-generated contributions.
+(blurb not generated)
 
-Vercel's Andrew Qu on why agents are a new kind of software (1 minute read)
+Vercel's Andrew Qu on why agents are a new kind of software (5 minute read)
 
-In this Latent Space interview, Vercel's Andrew Qu argues that agents are a new kind of software, born from the paper cuts his team hit building v0: model switching, provider fallbacks, and resumable runs that existing tooling did not handle. He explains how those fixes hardened into eve, Vercel's agent framework, and why skills, sandboxes, and agent-readable websites now shape how software gets built.
+(blurb not generated)
 
 Where Severity Scores Go Wrong: “Just Add Prototype Pollution” (5 minute read)
 
@@ -153,28 +149,24 @@ Where Severity Scores Go Wrong: “Just Add Prototype Pollution” (5 minute rea
 
 (blurb not generated)
 
-In defense of AI mandates (xpost) (1 minute read)
+Godot’s New Contributing Policy Adds Barriers for AI Slop (1 minute read)
 
-Charity Majors argues that AI mandates, despised as they are, function as a legitimate funding mechanism for coordinated change, since they give managers explicit cover for slipped deadlines and lower quality while teams build new skills. Her point is that refusing to mandate is the same as telling engineers the shift is not a priority and must happen in their spare time, leaving the change unfunded and unowned.
-
-Godot’s New Contributing Policy Adds Barriers for AI Slop (5 minute read)
-
-(blurb not generated)
-
-You Shall Not Pass! Where and Why Developers Draw The Line on AI Autonomy (5 minute read)
-
-(blurb not generated)
+Godot updated its contribution policy to ban autonomous AI agents, substantial AI-generated code, and AI-generated text in human-to-human communication, while requiring every PR to be human-reviewed before merging. The move responds to a flood of low-quality AI PRs that waste volunteer reviewers' time and demoralize them, echoing stricter stances from Mesa, NetBSD, and the Linux kernel.
 
 Local Reasoning for Global Properties (5 minute read)
 
-The author argues that current AI generates strong local code but stumbles on tasks requiring global program understanding, showing up as a proliferation of defensive checks that explode the number of states future readers must reason about. The post asks whether programming language design, which lets local reasoning guarantee surprising global properties, could once again help if that limitation proves durable.
+(blurb not generated)
+
+Godot says bye bye AI, bans vibe-coded contributions (5 minute read)
+
+(blurb not generated)
 
 🚀
 Launches & Tools
 
-crustc: entirety of `rustc`, translated to C (1 minute read)
+crustc: entirety of `rustc`, translated to C (5 minute read)
 
-crustc translates the entire `rustc` compiler to C, producing a functional Rust compiler you can build with GCC and make against a local LLVM library. It is a showcase for the author's cilly toolchain, which compiles arbitrary Rust to compiler-specific C by generating witness programs that probe what each target's C compiler supports, aimed at old or obscure hardware with no LLVM or GCC backend.
+(blurb not generated)
 
 Box3D, an open source 3D physics engine (5 minute read)
 
@@ -184,13 +176,13 @@ Claude Sonnet 5 (5 minute read)
 
 (blurb not generated)
 
-The Safari MCP server for web developers (5 minute read)
+The Safari MCP server for web developers (1 minute read)
+
+Safari Technology Preview 247 ships the Safari MCP server, which connects any MCP-compatible agent to a live Safari window for access to the DOM, network requests, screenshots, and console output. The agent can inspect how code actually renders and debug from the terminal, cutting the browser-to-prompt-to-agent loop and making it easier to catch Safari-specific layout and compatibility bugs.
+
+Vite+ Beta (5 minute read)
 
 (blurb not generated)
-
-Vite+ Beta (1 minute read)
-
-VoidZero released the beta of Vite+, a unified web toolchain that wraps Vite 8, Vitest, Rolldown, tsdown, Oxlint, and Oxfmt behind one MIT-licensed CLI with commands like vp dev, vp check, and vp build. It adds a monorepo-aware task runner with caching and manages the runtime and package manager, so tool versions and CI commands stay aligned across a codebase without teams maintaining their own internal platform.
 
 Introducing the 'usermedia' HTML element (5 minute read)
 
@@ -200,13 +192,13 @@ Go-based TypeScript 7.0 reaches release candidate stage (5 minute read)
 
 (blurb not generated)
 
-CursorBench 3.1 (1 minute read)
+CursorBench 3.1 (5 minute read)
 
-Cursor released CursorBench 3.1, a benchmark that evaluates coding agents on ambiguous, multi-file tasks pulled from real Cursor sessions, scored on both accuracy and average cost per task. Version 3.1 adds problems targeting codebase understanding, bug-finding, planning, and code review, expanding beyond the edit, refactor, and bugfix tasks in the original 3.0 set.
+(blurb not generated)
 
 Vulnerability and Malware Checks in uv (5 minute read)
 
-Astral added two preview security features to uv: `uv audit`, a native alternative to `pip-audit` that scans dependencies for known vulnerabilities and deprecated packages while running 4x to 10x faster by reusing uv's locked resolutions, and an opt-in OSV malware lookup on every sync. The malware check runs on `uv add` and `uv sync` when you set `UV_MALWARE_CHECK=1`, flagging previously-resolved malicious packages before they land in your environment.
+(blurb not generated)
 
 Miles: A PyTorch-Native Stack for Large-Scale LLM RL Post-Training (5 minute read)
 
@@ -215,6 +207,10 @@ Miles: A PyTorch-Native Stack for Large-Scale LLM RL Post-Training (5 minute rea
 FFmpeg 9.1's new AAC encoder (5 minute read)
 
 (blurb not generated)
+
+Wordgard: In-browser rich-text editor from the creator of ProseMirror (1 minute read)
+
+Wordgard is a new in-browser rich-text editor library from Marijn Haverbeke, creator of ProseMirror, built for semantic content editing where you define exactly which content types are supported rather than editing free-form HTML. Its main selling point is a programming interface aimed at building highly customized editors, positioning it as a foundation for complex, demanding editing use cases.
 
 Run any Dockerfile on Vercel (5 minute read)
 
@@ -228,13 +224,9 @@ Kimi K2.7 Code is generally available in GitHub Copilot (5 minute read)
 
 (blurb not generated)
 
-Wordgard: The new in-browser rich-text editor from the creator of ProseMirror (5 minute read)
+Lightning Memory-Mapped Database Manager (LMDB) 1.0 (5 minute read)
 
 (blurb not generated)
-
-Lightning Memory-Mapped Database Manager (LMDB) 1.0 (1 minute read)
-
-LMDB 1.0 shipped, a Btree-based embedded key/value store that exposes the entire database as a memory map so reads return pointers directly with no malloc, memcpy, or page cache layer. It offers full ACID transactions with lockless readers via multi-version copy-on-write, requires no write-ahead log or compaction, and reuses free pages so the file does not grow without bound.
 
 Getting more from each token: How Copilot improves context handling and model routing (5 minute read)
 
@@ -244,9 +236,9 @@ Safari’s new MCP server lets coding agents inspect and debug websites (5 minut
 
 (blurb not generated)
 
-Podman v6.0.0 (1 minute read)
+Podman v6.0.0 (5 minute read)
 
-Podman v6.0.0 modernizes its networking stack, transitioning from slirp4netns and iptables to Netavark, Pasta, and nftables, and adds experimental Pasta rootless port forwarding that preserves source IPs on custom networks. The release also overhauls Quadlet with REST API support and expanded .volume units, upgrades podman machine with multi-provider support and an os update command, and refines Docker API compatibility to ease migration.
+(blurb not generated)
 
 Bringing more agent harnesses and frameworks to Cloudflare, starting with Flue (5 minute read)
 
@@ -259,21 +251,25 @@ Critical Cursor Flaws Could Let Prompt Injection Escape Sandbox and Run Commands
 
 (blurb not generated)
 
-Critical Cursor AI Code Editor Flaws Could Lead to OS-Level Remote Code Execution (1 minute read)
+Critical Cursor AI Code Editor Flaws Could Lead to OS-Level Remote Code Execution (5 minute read)
 
-Cato Networks disclosed two critical vulnerabilities in Cursor, dubbed DuneSlide (CVE-2026-50548 and CVE-2026-50549, CVSS 9.8), that let a prompt-injected payload escape the IDE sandbox and achieve OS-level remote code execution. Both bugs abuse Cursor's auto-run terminal execution to overwrite the cursorsandbox executable, one via a working_directory allow-list flaw and the other via a symlink path-canonicalization bypass, and were patched in Cursor 3.0.
+(blurb not generated)
 
-Since Linux 6.9, LUKS suspend stopped wiping disk-encryption keys from memory (1 minute read)
+Since Linux 6.9, LUKS suspend stopped wiping disk-encryption keys from memory (5 minute read)
 
-A regression introduced in Linux 6.9 broke `cryptsetup luksSuspend`, which is supposed to flush disk-encryption keys from kernel memory but silently stopped doing so. The bug leaves LUKS keys recoverable from RAM on suspended machines, defeating the exact threat model laptop users rely on suspend-and-lock to cover, and it went unnoticed across multiple stable releases.
+(blurb not generated)
 
 NSA tries to weaken mlkem standardisation? (5 minute read)
 
 (blurb not generated)
 
-Android Developer Verification: Threat masquerading as protection (1 minute read)
+Android Developer Verification: Threat masquerading as protection (5 minute read)
 
-F-Droid published a sharply critical piece arguing that Google's Android Developer Verification program, which will require all Android developers to register centrally, functions as a control mechanism rather than the anti-malware measure Google frames it as. The post contends that ADV does nothing to stop a bad actor from distributing malware in the first place, and that its real effect is blocking installation of apps from developers Google hasn't approved.
+(blurb not generated)
+
+North Korea-Linked npm Packages Mimic Rollup Polyfills to Steal Developer Secrets (1 minute read)
+
+Researchers at JFrog linked North Korea to a fresh batch of malicious npm packages, including "rollup-packages-polyfill-core" and "rollup-runtime-polyfill-core," that mimic the legitimate "rollup-plugin-polyfill-node" down to its metadata and package shape before pulling second-stage payloads for credential theft and remote access. The layered install-time execution fetches and evals a JSON field from JSONKeeper, skips cloud IDEs and sandboxes to dodge analysis, and matches prior Lazarus-linked campaigns.
 
 New ChocoPoC RAT Targets Vulnerability Researchers via Fake PoC Exploit Repos (5 minute read)
 
@@ -287,9 +283,9 @@ Amazon Q Developer Flaw Could Let Malicious Repos Run Code via MCP Configs (5 mi
 
 (blurb not generated)
 
-Fedora 45 could get Shadow Stack support to prevent ROP attacks (1 minute read)
+Fedora 45 could get Shadow Stack support to prevent ROP attacks (5 minute read)
 
-Fedora 45 may ship with Shadow Stack enabled by default, adding hardware-backed protection against return-oriented programming attacks on CPUs that support the feature. Shadow Stack keeps a protected copy of return addresses and traps any mismatch, blocking the ROP technique of chaining existing code gadgets to bypass non-executable memory defenses.
+(blurb not generated)
 
 AI was supposed to kill engineering jobs, but new data suggests they're the most resilient (5 minute read)
 
@@ -298,6 +294,10 @@ AI was supposed to kill engineering jobs, but new data suggests they're the most
 ⚡
 Quick Links
 
+Valve open-source the Steam Machine e-ink screen so you can make your own (1 minute read)
+
+Valve open-sourced the Steam Machine e-ink front panel, now called "Inkterface," under MIT on GitLab with a full parts list and build guide.
+
 Top 1 Million Analysis – June 2026: Ten Years of Web Security (5 minute read)
 
 (blurb not generated)
@@ -305,11 +305,3 @@ Top 1 Million Analysis – June 2026: Ten Years of Web Security (5 minute read)
 Beyond Static Prompts: Building Scale-Proof, Polymorphic Multi-Agent Systems with Google's ADK (5 minute read)
 
 (blurb not generated)
-
-Understanding Software Defect Prediction: A Large-scale Empirical Study Across Uncertainty Quantification and Performance Evaluation (1 minute read)
-
-Large-scale study finds software defect prediction uncertainty metrics are context-dependent and rarely transfer across projects.
-
-The GNU Emacs Architecture: Unlocking the Core [pdf] (1 minute read)
-
-A master's thesis dissecting GNU Emacs internals, covering its Lisp interpreter core, buffer model, and the C-to-Elisp boundary that makes it endlessly extensible.
