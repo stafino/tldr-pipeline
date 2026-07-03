@@ -1,27 +1,26 @@
 {
   "date": "2026-07-03",
   "newsletter": "tldr_infosec",
-  "fetched_at": "2026-07-03T14:01:51.957592+00:00",
+  "fetched_at": "2026-07-03T15:55:08.680514+00:00",
   "tldr_titles": [
+    "SharePoint RCE CVE-2026-45659 Added to CISA KEV After Active Exploitation",
     "Pacemaker manufacturer Medtronic warns patients cybercrooks may have swiped health data",
     "DuneSlide: Two Critical RCE vulnerabilities via Zero-Click Prompt Injection in Cursor IDE",
-    "SharePoint RCE CVE-2026-45659 Added to CISA KEV After Active Exploitation",
-    "Soatok's Informal Guide to Threat Models",
-    "It's 37oC, And All We Can Think About Is ColdFusion",
     "Phantom Squatting: AI-Hallucinated Domains as a Software Supply Chain Vector",
+    "It's 37oC, And All We Can Think About Is ColdFusion",
+    "Soatok's Informal Guide to Threat Models",
     "Signal and Cloudflare Deploy Post-Quantum Cryptography to Preempt Quantum Threats",
     "Google Disrupts NetNut Residential Proxy Network Spanning 2 Million Home Devices",
     "US government says it got hacked \u2014 again",
     "Hardware-Rooted AI Security That Won't Slow You Down",
-    "Car Tracking Features for 'Convenience Not Security' Warns Kia",
     "New CitrixBleed Vulnerability Exploited Immediately After Public Disclosure",
+    "Car Tracking Features for 'Convenience Not Security' Warns Kia",
     "Microsoft Accelerates Post-Quantum Cryptography Shift to 2029"
   ],
   "tldr_matched": [
-    false,
-    true,
     true,
     false,
+    true,
     false,
     false,
     false,
@@ -30,6 +29,7 @@
     false,
     false,
     true,
+    false,
     true
   ],
   "predictions": [
@@ -110,7 +110,7 @@
       "score": 80.0,
       "title": "SharePoint RCE CVE-2026-45659 Added to CISA KEV After Active Exploitation",
       "url": "https://thehackernews.com/2026/07/sharepoint-rce-cve-2026-45659-added-to.html",
-      "matched_tldr_idx": 2,
+      "matched_tldr_idx": 0,
       "similarity": 1.0
     },
     {
@@ -118,7 +118,7 @@
       "score": 80.0,
       "title": "Critical Cursor Flaws Could Let Prompt Injection Escape Sandbox and Run Commands",
       "url": "https://thehackernews.com/2026/07/critical-cursor-flaws-could-let-prompt.html",
-      "matched_tldr_idx": 1,
+      "matched_tldr_idx": 2,
       "similarity": 0.7155798673629761
     },
     {
@@ -126,7 +126,7 @@
       "score": 80.0,
       "title": "CISA: Microsoft SharePoint RCE flaw now actively exploited",
       "url": "https://www.bleepingcomputer.com/news/security/cisa-microsoft-sharepoint-rce-flaw-now-actively-exploited/",
-      "matched_tldr_idx": 2,
+      "matched_tldr_idx": 0,
       "similarity": 0.6703066825866699
     },
     {
@@ -142,11 +142,19 @@
       "score": 79.0,
       "title": "New CitrixBleed Vulnerability Exploited Immediately After Public Disclosure",
       "url": "https://www.securityweek.com/new-citrixbleed-vulnerability-exploited-immediately-after-public-disclosure/",
-      "matched_tldr_idx": 11,
+      "matched_tldr_idx": 10,
       "similarity": 1.0
     },
     {
       "rank": 15,
+      "score": 78.0,
+      "title": "ARToken PhaaS exposes EvilTokens' Microsoft 365 phishing toolkit",
+      "url": "https://www.bleepingcomputer.com/news/security/artoken-phaas-exposes-eviltokens-microsoft-365-phishing-toolkit/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 16,
       "score": 78.0,
       "title": "DHS confirms hackers breached HSIN info-sharing platform",
       "url": "https://www.bleepingcomputer.com/news/security/dhs-confirms-hackers-breached-hsin-info-sharing-platform/",
@@ -154,15 +162,15 @@
       "similarity": null
     },
     {
-      "rank": 16,
+      "rank": 17,
       "score": 78.0,
       "title": "Microsoft said exploitation was 'less likely' ... but CISA just added SharePoint RCE to KEV list",
       "url": "https://www.theregister.com/security/2026/07/02/microsoft-said-exploitation-was-less-likely-but-cisa-just-added-sharepoint-rce-to-kev-list/5265886",
-      "matched_tldr_idx": 2,
+      "matched_tldr_idx": 0,
       "similarity": 0.777424693107605
     },
     {
-      "rank": 17,
+      "rank": 18,
       "score": 78.0,
       "title": "Since Linux 6.9, LUKS suspend stopped wiping disk-encryption keys from memory",
       "url": "https://mathstodon.xyz/@iblech/116769502749142438",
@@ -170,7 +178,7 @@
       "similarity": null
     },
     {
-      "rank": 18,
+      "rank": 19,
       "score": 78.0,
       "title": "Android Developer Verification: Threat masquerading as protection",
       "url": "https://f-droid.org/2026/07/01/adv-malware.html",
@@ -178,18 +186,10 @@
       "similarity": null
     },
     {
-      "rank": 19,
+      "rank": 20,
       "score": 78.0,
       "title": "Amadey and StealC Malware Network Disrupted, 27M Stolen Credentials Recovered",
       "url": "https://thehackernews.com/2026/06/amadey-and-stealc-malware-network.html",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 20,
-      "score": 77.0,
-      "title": "Researchers say an AI agent just ran a ransomware attack from start to finish, with no human at the keyboard",
-      "url": "https://thenextweb.com/news/ai-agent-first-end-to-end-ransomware-attack",
       "matched_tldr_idx": null,
       "similarity": null
     },
@@ -291,6 +291,14 @@
     },
     {
       "rank": 33,
+      "score": 66.0,
+      "title": "Virginia bans sale of precise geolocation data",
+      "url": "https://www.hunton.com/privacy-and-cybersecurity-law-blog/virginia-bans-sale-of-geolocation-data",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 34,
       "score": 65.0,
       "title": "Where Severity Scores Go Wrong: \u201cJust Add Prototype Pollution\u201d",
       "url": "https://jfrog.com/blog/where-cve-severity-scores-go-wrong/",
@@ -298,7 +306,7 @@
       "similarity": null
     },
     {
-      "rank": 34,
+      "rank": 35,
       "score": 65.0,
       "title": "Opening up 'Zero-Knowledge Proof' technology to promote privacy in age assurance",
       "url": "https://blog.google/innovation-and-ai/technology/safety-security/opening-up-zero-knowledge-proof-technology-to-promote-privacy-in-age-assurance/",
@@ -306,7 +314,7 @@
       "similarity": null
     },
     {
-      "rank": 35,
+      "rank": 36,
       "score": 65.0,
       "title": "Refploit: Facilitating Exploit Construction via Code-Agent Trajectory Repair",
       "url": "http://arxiv.org/abs/2607.01760v1",
@@ -314,7 +322,7 @@
       "similarity": null
     },
     {
-      "rank": 36,
+      "rank": 37,
       "score": 64.0,
       "title": "Cybersecurity Mission Creep in the US",
       "url": "https://www.schneier.com/blog/archives/2026/07/cybersecurity-mission-creep-in-the-us.html",
@@ -322,7 +330,7 @@
       "similarity": null
     },
     {
-      "rank": 37,
+      "rank": 38,
       "score": 63.0,
       "title": "ElephantAgent: Contextual State Continuity in Agentic Systems",
       "url": "http://arxiv.org/abs/2607.01919v1",
@@ -330,18 +338,10 @@
       "similarity": null
     },
     {
-      "rank": 38,
+      "rank": 39,
       "score": 63.0,
       "title": "US lifting export control restrictions on Anthropic\u2019s Mythos, Fable",
       "url": "https://cyberscoop.com/us-lifting-export-control-restrictions-anthropic-mythos-fable/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 39,
-      "score": 63.0,
-      "title": "Virginia bans sale of geolocation data",
-      "url": "https://www.hunton.com/privacy-and-cybersecurity-law-blog/virginia-bans-sale-of-geolocation-data",
       "matched_tldr_idx": null,
       "similarity": null
     },
@@ -548,13 +548,21 @@
     {
       "rank": 65,
       "score": 57.0,
+      "title": "While you\u2019re watching the World Cup, the feds may be watching you",
+      "url": "https://www.theverge.com/policy/961004/world-cup-america-250-surveillance-drones-cameras",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 66,
+      "score": 57.0,
       "title": "19-Year-Old Scattered Spider Suspect Extradited to Face U.S. Hacking Charges",
       "url": "https://thehackernews.com/2026/07/19-year-old-scattered-spider-suspect.html",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 66,
+      "rank": 67,
       "score": 57.0,
       "title": "Chinese LLMs Broaden the Gap Between Attackers &amp; Defenders",
       "url": "https://www.darkreading.com/cyber-risk/chinese-llms-broaden-gap-between-attackers-and-defenders",
@@ -562,10 +570,18 @@
       "similarity": null
     },
     {
-      "rank": 67,
-      "score": 57.0,
-      "title": "India gives WhatsApp three days to defend username rollout amid security fears",
-      "url": "https://www.theregister.com/security/2026/07/02/india-writes-to-whatsapp-over-usernames-security-concerns/5265744",
+      "rank": 68,
+      "score": 56.0,
+      "title": "In Other News: Canadian Hacker Jailed, Open Source Zero-Days, Two Sentenced for ATM Jackpotting",
+      "url": "https://www.securityweek.com/in-other-news-canadian-hacker-jailed-open-source-zero-days-two-sentenced-for-atm-jackpotting/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 69,
+      "score": 55.0,
+      "title": "This Week in Security: Windows 10 Gets Another Year, SmartTV Botnets, Hiding Payloads, and LastPass Customer Leak",
+      "url": "https://hackaday.com/2026/07/03/this-week-in-security-windows-10-gets-another-year-smarttv-botnets-hiding-payloads-and-lastpass-customer-leak/",
       "matched_tldr_idx": null,
       "similarity": null
     }
@@ -575,44 +591,44 @@
     "25": 0.23076923076923078,
     "50": 0.3076923076923077,
     "100": 0.3076923076923077,
-    "67": 0.3076923076923077
+    "69": 0.3076923076923077
   },
   "hits_at": {
     "10": 1,
     "25": 3,
     "50": 4,
     "100": 4,
-    "67": 4
+    "69": 4
   },
   "available": true,
   "tldr_urls": [
+    "https://thehackernews.com/2026/07/sharepoint-rce-cve-2026-45659-added-to.html",
     "https://www.theregister.com/security/2026/07/02/pacemaker-manufacturer-medtronic-warns-patients-cybercrooks-may-have-swiped-health-data/5265768",
     "https://www.catonetworks.com/blog/duneslide-two-critical-rce-vulnerabilities/",
-    "https://thehackernews.com/2026/07/sharepoint-rce-cve-2026-45659-added-to.html",
-    "https://soatok.blog/2026/06/30/soatoks-informal-guide-to-threat-models/",
-    "https://labs.watchtowr.com/its-37oc-and-all-we-can-think-about-is-coldfusion-adobe-coldfusion-security-bulletin-apsb26-68-cve-bonanza/",
     "https://unit42.paloaltonetworks.com/phantom-squatting-hallucinated-web-domains/",
+    "https://labs.watchtowr.com/its-37oc-and-all-we-can-think-about-is-coldfusion-adobe-coldfusion-security-bulletin-apsb26-68-cve-bonanza/",
+    "https://soatok.blog/2026/06/30/soatoks-informal-guide-to-threat-models/",
     "https://www.reddit.com/r/cryptography/comments/1ukw963/we_just_saw_this_one_massive_exposure_how_signal/",
     "https://thehackernews.com/2026/07/google-disrupts-netnut-residential.html",
     "https://techcrunch.com/2026/07/02/us-government-says-it-got-hacked-again/",
     "https://developer.nvidia.com/blog/hardware-rooted-ai-security-that-wont-slow-you-down/",
-    "https://www.bbc.com/news/articles/cp8r1798kp7o",
     "https://www.securityweek.com/new-citrixbleed-vulnerability-exploited-immediately-after-public-disclosure/",
+    "https://www.bbc.com/news/articles/cp8r1798kp7o",
     "https://thehackernews.com/2026/07/microsoft-accelerates-post-quantum.html"
   ],
   "tldr_domains": [
+    "thehackernews.com",
     "theregister.com",
     "catonetworks.com",
-    "thehackernews.com",
-    "soatok.blog",
-    "labs.watchtowr.com",
     "unit42.paloaltonetworks.com",
+    "labs.watchtowr.com",
+    "soatok.blog",
     "reddit.com",
     "thehackernews.com",
     "techcrunch.com",
     "developer.nvidia.com",
-    "bbc.com",
     "securityweek.com",
+    "bbc.com",
     "thehackernews.com"
   ]
 }

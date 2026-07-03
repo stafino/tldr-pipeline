@@ -18,29 +18,29 @@ Unpatched Argo CD Repo-Server Flaw Could Let Attackers Take Over Kubernetes Clus
 
 (blurb not generated)
 
-Critical Cursor AI Code Editor Flaws Could Lead to OS-Level Remote Code Execution (5 minute read)
+Critical Cursor AI Code Editor Flaws Could Lead to OS-Level Remote Code Execution (1 minute read)
 
-(blurb not generated)
+Two critical flaws in the Cursor AI code editor, tracked as CVE-2026-50548 and CVE-2026-50549 (CVSS 9.8) and dubbed DuneSlide, allow prompt-injection payloads to escape the IDE sandbox and achieve OS-level RCE via working-directory allow-list abuse and a symlink path-canonicalization bypass. Cato Networks reported the bugs in February and Cursor patched both in version 3.0, released April 2, so teams should confirm developer endpoints are upgraded past that build.
 
 Factoring RSA Keys with Many Zeros (5 minute read)
 
 (blurb not generated)
 
-European Parliament Member Investigating Spyware Was Hacked With Pegasus (1 minute read)
+European Parliament Member Investigating Spyware Was Hacked With Pegasus (5 minute read)
 
-Citizen Lab found former MEP Stelios Kouloglou, a member of the European Parliament's PEGA committee investigating spyware abuse, was infected with Pegasus at least three times between October 2022 and March 2023 via Apple's PWNYOURHOME zero-click HomeKit exploit. The infections remain unattributed but overlap with a campaign against exiled Russian and Belarusian journalists, and Apple patched the exploit in iOS 16.3.1.
+(blurb not generated)
 
 Phantom Squatting Uses AI-Hallucinated Domains for Phishing and Malware (5 minute read)
 
 (blurb not generated)
 
-FBI Seizes NetNut Proxy Platform, Popa Botnet (5 minute read)
+FBI Seizes NetNut Proxy Platform, Popa Botnet (1 minute read)
+
+The FBI seized hundreds of domains tied to NetNut, a residential proxy service run by Israeli firm Alarum Technologies (NASDAQ: ALAR), which security firms linked to the Popa botnet of at least two million compromised smart TVs, streaming boxes, and other home devices. Defenders should treat NetNut exit-node IPs as hostile, since Google's GTIG observed 316 distinct threat-actor clusters using them for password spraying and origin masking in a single week in June 2026.
+
+Agentic AI Used to Conduct Ransomware Attack via Langflow (5 minute read)
 
 (blurb not generated)
-
-Agentic AI Used to Conduct Ransomware Attack via Langflow (1 minute read)
-
-Threat actor JadePuffer exploited CVE-2025-3248 (CVSS 9.8), a critical missing-authentication flaw in the Langflow LLM framework, to gain arbitrary Python code execution on an internet-exposed instance, then used the LLM itself to run reconnaissance, harvest credentials, and pivot to a production server before deploying ransomware. CISA flagged the bug as exploited in May, so patch exposed Langflow instances and rotate any secrets reachable from them.
 
 SharePoint RCE CVE-2026-45659 Added to CISA KEV After Active Exploitation (5 minute read)
 
@@ -50,29 +50,33 @@ Critical Cursor Flaws Could Let Prompt Injection Escape Sandbox and Run Commands
 
 (blurb not generated)
 
-CISA: Microsoft SharePoint RCE flaw now actively exploited (5 minute read)
+CISA: Microsoft SharePoint RCE flaw now actively exploited (1 minute read)
 
-(blurb not generated)
+CISA added CVE-2026-45659, a high-severity deserialization RCE in Microsoft SharePoint Server, to its KEV catalog after confirming active exploitation. The low-complexity flaw lets any authenticated user with Site Member permissions execute code remotely without user interaction; Microsoft patched it on May 21, and FCEB agencies must remediate by Saturday under BOD 26-04, with Shadowserver tracking over 10,000 exposed servers.
 
 AI-Generated Browser Ransomware Abuses Chromium API on Windows, Linux, macOS, Android (5 minute read)
 
 (blurb not generated)
 
-New CitrixBleed Vulnerability Exploited Immediately After Public Disclosure (5 minute read)
+New CitrixBleed Vulnerability Exploited Immediately After Public Disclosure (1 minute read)
 
-(blurb not generated)
+A new CitrixBleed-style flaw in NetScaler ADC and Gateway (CVE-2026-8451, CVSS 8.8), an out-of-bounds read in the XML parser that leaks memory via the NSC_TASS cookie on appliances configured as SAML IDP, was exploited within 24 hours of its June 30 disclosure and watchTowr's technical writeup. Patch immediately or disable SAML IDP, and hunt for exploitation by inspecting /saml/login traffic and NSC_TASS cookie values in logs.
+
+ARToken PhaaS exposes EvilTokens' Microsoft 365 phishing toolkit (1 minute read)
+
+Cisco Talos discovered ARToken, a phishing-as-a-service platform tied to EvilTokens that abuses Microsoft's OAuth 2.0 device code authentication flow to steal Microsoft 365 tokens, mint Primary Refresh Tokens for persistence, and bypass MFA. Researchers found an exposed React management panel with 80+ API endpoints supporting mailbox, SharePoint, and OneDrive access plus Cloudflare Workers-based infrastructure deployment and automated BEC operations.
 
 DHS confirms hackers breached HSIN info-sharing platform (5 minute read)
 
 (blurb not generated)
 
-Microsoft said exploitation was 'less likely' ... but CISA just added SharePoint RCE to KEV list (5 minute read)
+Microsoft said exploitation was 'less likely' ... but CISA just added SharePoint RCE to KEV list (1 minute read)
 
-(blurb not generated)
+CISA added a Microsoft SharePoint remote code execution flaw to its Known Exploited Vulnerabilities catalog, confirming active in-the-wild exploitation despite Microsoft's original assessment that abuse was "less likely." On-prem SharePoint remains the exposure: Redmond's initial patch failed to fully remediate the bug, leaving internet-facing servers open to unauthenticated RCE, so defenders should apply the follow-up fix and hunt for compromise rather than assume patched appliances are clean.
 
-Since Linux 6.9, LUKS suspend stopped wiping disk-encryption keys from memory (5 minute read)
+Since Linux 6.9, LUKS suspend stopped wiping disk-encryption keys from memory (1 minute read)
 
-(blurb not generated)
+A regression introduced in Linux 6.9 broke `cryptsetup luksSuspend`, which since then no longer wipes LUKS disk-encryption master keys from kernel memory as intended. The failure leaves keys recoverable in RAM while a laptop is suspended, defeating the cold-boot and evil-maid protections that luksSuspend exists to provide and exposing full-disk encryption on any affected machine seized in a suspended state.
 
 Android Developer Verification: Threat masquerading as protection (5 minute read)
 
@@ -82,68 +86,64 @@ Amadey and StealC Malware Network Disrupted, 27M Stolen Credentials Recovered (5
 
 (blurb not generated)
 
-Researchers say an AI agent just ran a ransomware attack from start to finish, with no human at the keyboard (1 minute read)
-
-Sysdig documented what it calls the first end-to-end ransomware attack run entirely by an AI agent, tracked as JADEPUFFER, which breached a network via a patched year-old Langflow RCE, harvested credentials, deployed a backdoor, and encrypted a production database. The LLM generated its encryption key, printed it once, and never saved or exfiltrated it, so paying the Bitcoin ransom recovers nothing; patch exposed Langflow instances and rotate any API keys or cloud credentials stored on them.
-
 🧠
 Strategies & Tactics
 
-Flock Cameras Can Surveil Cars Without License Plates (1 minute read)
-
-Flock's "Vehicle Fingerprint" lets police identify and track cars using decals, bumper stickers, roof racks, and temporary tags rather than plates, and its "multi geo search" surfaces vehicles that habitually travel together. The technique predates AI and mirrors NSA cell-phone co-location tracking Snowden disclosed. For defenders, the takeaway is that plate-obfuscation offers little protection, and anyone with broad location-data access, not just law enforcement, can build the same movement graphs.
-
-Has This Checkpoint Been Abliterated? A Two-Signal Audit and Its Failure Map (5 minute read)
+Flock Cameras Can Surveil Cars Without License Plates (5 minute read)
 
 (blurb not generated)
+
+Has This Checkpoint Been Abliterated? A Two-Signal Audit and Its Failure Map (1 minute read)
+
+This paper introduces a pre-deployment audit that detects whether an open-weight checkpoint has had its refusal mechanism abliterated, combining an activation refusal-gap signal with a base-to-candidate weight-recovery energy. Across a 273-checkpoint registry spanning Qwen, Llama, and Gemma, the z-sum separates 57 abliterations from 37 benign fine-tunes at AUROC 0.95, transferring to held-out families at 0.89 balanced accuracy. The authors note it is triage, not tamper-proofing: a spoofed reference evades both signals.
 
 Hackers shoveled snow for company, were rewarded with network admin access (5 minute read)
 
 (blurb not generated)
 
-Non-interactive SSH attacks dominate after login (5 minute read)
+Non-interactive SSH attacks dominate after login (1 minute read)
 
-(blurb not generated)
+A Czech Technical University study of 11 SSH honeypots in Frankfurt logged 177,622 authenticated sessions over 15 days, and 99.23% were non-interactive: a client logs in, runs a single command, and disconnects in under a second, versus 0.10% interactive shells. Most of that traffic is automated reconnaissance, with the ten most common commands covering 41.59% of sessions. Defenders should tune SSH detection and honeypots around single-command exec requests rather than the interactive shell sessions Cowrie-style fields were built to capture.
 
-How GitHub used secret scanning to reach inbox zero (5 minute read)
+How GitHub used secret scanning to reach inbox zero (1 minute read)
 
-(blurb not generated)
+GitHub Security cleared 20,000+ secret scanning alerts across 15,000+ repositories in nine months, reaching zero open alerts. The team found that just five repositories accounted for roughly 18,000 alerts, all inactive test fixtures and fake-but-valid credentials, leaving about 2,000 alerts of potential live secrets to triage, assign ownership, and rotate. Their playbook: filter noise first, then build remediation workflows that account for secrets living in support tickets and other non-code locations.
 
-Behind the Refusal: Determining Guardrail Activation via Behavioral Monitoring (5 minute read)
+Behind the Refusal: Determining Guardrail Activation via Behavioral Monitoring (1 minute read)
 
-(blurb not generated)
+This paper introduces the first black-box guardrail reconnaissance method, detecting whether a target AI system runs a guardrail by monitoring HTTP, lexical, and timing signals with zero prior knowledge. It flags guardrail presence with 100% accuracy, identifies which content categories the guardrail blocks, and distinguishes guardrail blocks from LLM refusals at 98% F1. Defenders should assume attackers can fingerprint guardrails and normalize timing and error responses to reduce this side channel.
 
-Black-Box Inference of LLM Architectural Properties with Restrictive API Access (5 minute read)
+Black-Box Inference of LLM Architectural Properties with Restrictive API Access (1 minute read)
 
-(blurb not generated)
+NightVision, a new black-box attack, recovers LLM architectural details from the restrictive APIs most commercial providers now use, which expose only a single logit per token and no logit bias. Using a common-set prompting technique with spectral analysis plus time-to-first-token measurements, it estimated hidden dimension within 23% average error (9% on MoE) and depth and parameter count within 53% across 32 open-source models, suggesting current API restrictions don't fully obfuscate proprietary architectures.
 
 Where Severity Scores Go Wrong: “Just Add Prototype Pollution” (5 minute read)
 
 (blurb not generated)
 
-ElephantAgent: Contextual State Continuity in Agentic Systems (5 minute read)
+ElephantAgent: Contextual State Continuity in Agentic Systems (1 minute read)
 
-(blurb not generated)
+This paper introduces ElephantAgent, a protocol that defends agentic systems against tool and memory poisoning by enforcing what the authors call Contextual State Continuity. Before each query, it recomputes a digest of the security-critical contextual state (tool state and memory) and verifies it against an authorized digest held in a linearizable ledger backed by replicated trusted hardware, flagging out-of-band tampering. For in-band semantic abuse, it adds Historical Traceability for post-hoc audit and recovery to a known-good prior state.
 
-Trust Boundary Semantic Gaps: A Multi-dimensional Analysis and Mitigation for Security-by-Design (5 minute read)
+Trust Boundary Semantic Gaps: A Multi-dimensional Analysis and Mitigation for Security-by-Design (1 minute read)
 
-(blurb not generated)
+This paper introduces the Trust Boundary Semantic Gap (TBSG): an artifact passes correctly implemented syntactic validation (format, protocol, signature) yet still fails to satisfy the receiving domain's semantic security requirements, so a signed update or authenticated token can be accepted and still enable compromise. Analyzing 75 incidents from 2014-2025, the authors organize these gaps along four dimensions (Identity, Spatial, Temporal, Interpretation) and propose TBSAM, a design-time framework that traces gaps to their originating boundary and maps each to architectural controls, demonstrated on a SolarWinds/SUNBURST reconstruction.
 
-Understanding Build Reproducibility in the F-Droid Ecosystem (5 minute read)
+Understanding Build Reproducibility in the F-Droid Ecosystem (1 minute read)
 
-(blurb not generated)
+Researchers published the first empirical study of build reproducibility decay in F-Droid, rebuilding 18,904 Android app versions that F-Droid had previously confirmed bitwise reproducible between September 2018 and February 2026. Only 83% still rebuilt successfully, with missing dependencies causing 76% of failures; of those that did rebuild, 94% remained bitwise identical. The takeaway for defenders relying on reproducible builds for supply-chain verification: rebuildability decays over time, so archived toolchains and pinned dependencies matter more than a one-time reproducibility check at publish.
 
 SessionBound: Turning Enterprise Task Approval into Budgeted Database Sessions (5 minute read)
 
 (blurb not generated)
 
-SkillFuzz: Fuzzing Skill Composition for Implicit Intents Discovery in Open Skill Marketplaces (5 minute read)
+SkillFuzz: Fuzzing Skill Composition for Implicit Intents Discovery in Open Skill Marketplaces (1 minute read)
 
-(blurb not generated)
+This paper reframes implicit-intent discovery in open LLM skill marketplaces as a fuzzing problem, where individually benign skills combine to redirect an agent toward unintended objectives that isolated audits miss. SkillFuzz extracts structured skill contracts and uses contract-guided Monte Carlo Tree Search to prioritize conflicting compositions without execution, surfacing over 1,000 distinct implicit intents and confirming 80% of its highest-risk flags at execution time. For teams running skill marketplaces, audit compositions, not just individual skills.
 
-kNNGuard: Turning LLM Hidden Activations into a Training-Free Configurable Guardrail (5 minute read)
+kNNGuard: Turning LLM Hidden Activations into a Training-Free Configurable Guardrail (1 minute read)
 
-(blurb not generated)
+kNNGuard is a training-free LLM guardrail that classifies unsafe, off-topic, or adversarial prompts from a model's hidden activations, using multi-layer kNN over a bank of just 50 labeled safe and unsafe examples. Across six topical and security domains it matches or beats fine-tuned state-of-the-art classifiers on F1 while running 2.7x faster than the best comparable guardrail and 10x faster than a fine-tuned safety model. Domain adaptation means swapping the labeled bank, buildable in under 10 seconds, with no gradient updates.
 
 6 security settings every GitHub maintainer should enable this week (5 minute read)
 
@@ -153,28 +153,28 @@ What happened after 2,000 people tried to hack my AI assistant (5 minute read)
 
 (blurb not generated)
 
-Mitigating Package Hallucinations in Large Language Models via Model Editing (5 minute read)
+Mitigating Package Hallucinations in Large Language Models via Model Editing (1 minute read)
 
-(blurb not generated)
+This paper introduces BOUND, a localized model-editing framework that curbs package hallucinations, where LLMs suggest non-existent package names that attackers can pre-register as malicious dependencies (slopsquatting). BOUND locates hallucination-related modules and applies LoRA adapters with a boundary-aware objective, cutting package-level hallucination rates by 79.9% on edit prompts and 65.4% on unseen ones, with smaller gains carrying over to code generation and pip-install recommendation.
 
-Fedora 45 could get Shadow Stack support to prevent ROP attacks (5 minute read)
+Fedora 45 could get Shadow Stack support to prevent ROP attacks (1 minute read)
 
-(blurb not generated)
+Fedora 45 may ship with hardware Shadow Stack enabled by default, using Intel CET and AMD Shadow Stack to protect return addresses against return-oriented programming (ROP) attacks. The mitigation requires supporting CPUs and is enforced at the kernel and glibc level, so defenders running Fedora fleets should plan compatibility testing for statically linked or older binaries that may break under enforcement.
 
-HTTP REST API Structure Learning (5 minute read)
+HTTP REST API Structure Learning (1 minute read)
 
-(blurb not generated)
+This paper introduces HRAL, an unsupervised anomaly-detection approach that learns REST API structure and behavior directly from network traffic, flagging deviations without predefined rules or OpenAPI documentation. It reports 82.07% recall and an 87.24% F1-score, outperforming alternatives when documentation is sparse and reaching 100% detection when paired with signature rules like the OWASP ModSecurity CRS. The approach targets partially documented API environments, where traffic-derived models fill gaps that rule- and schema-based defenses miss.
 
-Knowledge Over Parameters: Evolving Smart Contract Vulnerability Detection (5 minute read)
+Knowledge Over Parameters: Evolving Smart Contract Vulnerability Detection (1 minute read)
 
-(blurb not generated)
+This paper introduces EvoVuln, a framework that detects smart contract logic bugs by evolving procedural detection rules from as few as five vulnerable and five safe examples per vulnerability type, without any model fine-tuning. An Inversion of Control runtime compiles rules into executable policies that separate deterministic control flow from LLM reasoning, hitting a 71% macro-average F1 across five vulnerability types. The evolved rules transfer across models for a one-time cost under $50, letting a lightweight model beat a larger zero-shot one by 19 points.
 
 🧑‍💻
 Launches & Tools
 
-Anthropic's AI Finds Bugs. IBM Bets $5B It Can Fix Them. (5 minute read)
+Anthropic's AI Finds Bugs. IBM Bets $5B It Can Fix Them. (1 minute read)
 
-(blurb not generated)
+IBM and Red Hat committed $5B to Project Lightwell, a subscription-based patching service that hardens business-critical open-source components enterprises can't afford to update in production. The launch responds to Anthropic's Mythos scanning under Project Glasswing, which has disclosed 1,596 vetted vulnerabilities across 281 projects with only 6% patched, a discovery-to-fix gap that's overwhelming maintainers working on human-speed timelines.
 
 Opera rolls out Paste Protect feature to fight ClickFix attacks (5 minute read)
 
@@ -184,17 +184,17 @@ Opening up 'Zero-Knowledge Proof' technology to promote privacy in age assurance
 
 (blurb not generated)
 
-Refploit: Facilitating Exploit Construction via Code-Agent Trajectory Repair (5 minute read)
+Refploit: Facilitating Exploit Construction via Code-Agent Trajectory Repair (1 minute read)
 
-(blurb not generated)
+Refploit is an LLM-based trajectory-repair framework that turns incomplete public exploit references into runnable Java exploits, using differential execution to catch fake reproductions that swap out vulnerable APIs rather than triggering the actual vulnerable logic. Across 172 exploit references for 143 vulnerabilities under DeepSeek-V4-Flash, it reproduced 138 exploits (80.2%), beating PoCGen and Codex with GPT-5.4.
 
 Security Profiles Operator v1: Stable APIs, Security Hardened, and Shaping Upstream Kubernetes (5 minute read)
 
 (blurb not generated)
 
-Palo Alto Networks opens the vault to unmanaged devices with Secure Agentless Access launch (1 minute read)
+Palo Alto Networks opens the vault to unmanaged devices with Secure Agentless Access launch (5 minute read)
 
-Palo Alto Networks rebranded its Privileged Remote Access product as Secure Agentless Access (SAA), extending clientless access to private web apps alongside RDP and terminal sessions through any HTML5 browser, with traffic isolated in an air-gapped cloud container. SAA lets unmanaged and BYOD endpoints reach internal resources without software installs while enforcing data controls like blocked copy-paste, printing, and file transfer, part of Palo Alto's identity push following its $25B CyberArk acquisition.
+(blurb not generated)
 
 IBM, Red Hat, Palo Alto team to secure open-source software (5 minute read)
 
@@ -215,29 +215,29 @@ Microsoft Accelerates Post-Quantum Cryptography Shift to 2029 (5 minute read)
 
 (blurb not generated)
 
-Cybersecurity Mission Creep in the US (5 minute read)
+Virginia bans sale of precise geolocation data (1 minute read)
 
-(blurb not generated)
+Virginia enacted S.B. 388, amending the Virginia Consumer Data Protection Act to prohibit the sale of geolocation data, with the ban taking effect July 1, 2026. Virginia's narrower "sale" definition covers only exchanges for monetary consideration, unlike Maryland and Oregon, which also bar transfers for other valuable consideration.
+
+Cybersecurity Mission Creep in the US (1 minute read)
+
+A new paper, "Cybersecurity Mission Creep," argues that policymakers increasingly reframe unrelated issues, from misinformation to child safety laws to antitrust, as cybersecurity threats to invoke the politics of urgency and exceptionalism. The authors warn this "cybersecuritization" oversimplifies complex governance problems, defers decisions to purported specialists, and erodes public trust by making policy choices more opaque.
 
 US lifting export control restrictions on Anthropic’s Mythos, Fable (5 minute read)
 
 (blurb not generated)
 
-Virginia bans sale of geolocation data (5 minute read)
+Scattered Spider suspect extradited over $8 million ransom scheme (1 minute read)
 
-(blurb not generated)
+Peter Stokes, a 19-year-old dual U.S.-Estonian citizen and suspected Scattered Spider (UNC3944) member, was extradited from Finland to the U.S. on conspiracy, computer intrusion, and fraud charges tied to an $8 million ransom demand against a luxury jewelry retailer. The DOJ links the group, which uses social engineering to hijack employee accounts, to over 100 intrusions and more than $100 million in ransom payments.
 
-Scattered Spider suspect extradited over $8 million ransom scheme (5 minute read)
+Apple Reverses Age-Old Patch Policy to Keep Up With AI (1 minute read)
 
-(blurb not generated)
+Apple abandoned its long-standing practice of bundling security fixes with major OS releases, shipping out-of-band updates for iPhone, iPad, Mac, and Safari on June 29 to shorten the window between disclosure and deployment. The company cited AI-accelerated exploit development as the driver, noting none of the fixes addressed actively exploited flaws, as Mandiant data shows attackers now routinely weaponize bugs before patches go public.
 
-Apple Reverses Age-Old Patch Policy to Keep Up With AI (5 minute read)
+Startup sues Palo Alto Networks' Koi Security, saying an AI-hallucinated report falsely linked it to Chinese espionage (1 minute read)
 
-(blurb not generated)
-
-Startup sues Palo Alto Networks' Koi Security, saying an AI-hallucinated report falsely linked it to Chinese espionage (5 minute read)
-
-(blurb not generated)
+A startup sued Palo Alto Networks and its Koi Security unit, alleging a security report generated with AI hallucinated details that falsely tied the company to Chinese state espionage. The suit tests vendor liability for AI-assisted threat research, where fabricated attribution can inflict reputational and commercial harm before the underlying claims are ever verified.
 
 Papa Johns Surveillance-Based Advertising (5 minute read)
 
@@ -247,13 +247,13 @@ Anthropic Restores Claude Fable 5 After U.S. Lifts Jailbreak-Linked Export Contr
 
 (blurb not generated)
 
-Trump Administration Lifts Restrictions on Anthropic’s Claude Models After Cybersecurity Alarm (5 minute read)
+Trump Administration Lifts Restrictions on Anthropic’s Claude Models After Cybersecurity Alarm (1 minute read)
 
-(blurb not generated)
+The Trump administration lifted its ban on Anthropic's Claude models, making Fable 5 widely available again while restoring Mythos 5 only to a government-approved set of US organizations. The Commerce Department had blocked both on June 12 after Amazon researchers found a method to bypass Fable 5's safeguards for vulnerability discovery; OpenAI similarly limited GPT-5.6 Sol to vetted customers under Trump's 30-day AI-review order.
 
-File-Level Copying Is an Implicit Dependency in Open Source (5 minute read)
+File-Level Copying Is an Implicit Dependency in Open Source (1 minute read)
 
-(blurb not generated)
+A new study using World of Code found that file-level copying across open-source repositories strips the provenance, maintenance, security, and license signals a package manager provides, and dependency scanners reading declared metadata can't see any of it. The authors identified 17,314 CVE-risk copy commits, 88% in vendored dependencies with 80% scoring CVSS 7.0 or higher, plus 41,777 license-risk candidates concentrated in direct source-code reuse.
 
 Anthropic restores Claude Fable 5 as US lifts export controls — single filter now blocks prompt that could identify software vulnerabilities and write code to exploit them (5 minute read)
 
@@ -263,22 +263,33 @@ Google testing controversial webcam-based reCAPTCHA that asks for a hand scan to
 
 (blurb not generated)
 
-ChatControl 1.0 mass scanning is to be sneaked through via a 3rd vote next week (5 minute read)
+ChatControl 1.0 mass scanning is to be sneaked through via a 3rd vote next week (1 minute read)
 
-(blurb not generated)
+Former MEP Patrick Breyer warned that the EU's ChatControl proposal, which would mandate mass scanning of private messages for CSAM, is set for a third Council vote next week after prior attempts failed to reach a qualified majority. The measure would require client-side scanning of communications, which security researchers argue undermines end-to-end encryption and builds a standing surveillance capability open to abuse.
 
-iOS 27 helps apps detect when a user may be getting scammed in real time (5 minute read)
+iOS 27 helps apps detect when a user may be getting scammed in real time (1 minute read)
 
-(blurb not generated)
+Apple is adding a framework called Trust Insights to iOS 27 that lets apps detect when a user may be getting coached through a social-engineering scam in real time. The mostly on-device system scores behavioral signals across five operation categories, including payments and account changes, and returns a medium or high risk level so apps can add warnings, delays, or extra verification.
+
+While you’re watching the World Cup, the feds may be watching you (1 minute read)
+
+US cities hosting the 2026 World Cup, along with Washington, DC ahead of the America250 and July Fourth events, have expanded surveillance capabilities including biometric camera networks and counter-drone systems. DHS designated both the National Mall fireworks and the July 19 World Cup final as National Special Security Events, and privacy advocates warn much of the newly deployed infrastructure will outlast the summer's celebrations.
 
 19-Year-Old Scattered Spider Suspect Extradited to Face U.S. Hacking Charges (5 minute read)
 
 (blurb not generated)
 
-Chinese LLMs Broaden the Gap Between Attackers &amp; Defenders (1 minute read)
-
-Two Chinese firms released AI models that outperform US frontier models on vulnerability discovery: Zhipu AI's open-weight GLM 5.2 beats Anthropic's Opus and OpenAI's GPT-5.5 on some bug-finding benchmarks at $0.17 per vulnerability found, and 360 Security Technology's Tulongfeng claims 3,400-plus vulnerabilities discovered. Cheap, capable commodity models widen the offense-defense gap, pushing defenders to inventory their architecture and patch known weaknesses faster than automated discovery can weaponize them.
-
-India gives WhatsApp three days to defend username rollout amid security fears (5 minute read)
+Chinese LLMs Broaden the Gap Between Attackers &amp; Defenders (5 minute read)
 
 (blurb not generated)
+
+⚡
+Quick Links
+
+In Other News: Canadian Hacker Jailed, Open Source Zero-Days, Two Sentenced for ATM Jackpotting (1 minute read)
+
+SecurityWeek's weekly roundup: Anonymous hacker Cottle jailed 18 months, KDDI breach hits 14M, macOS PamStealer stealer detailed.
+
+This Week in Security: Windows 10 Gets Another Year, SmartTV Botnets, Hiding Payloads, and LastPass Customer Leak (1 minute read)
+
+Nearly half of LG smart TV apps bundle proxy SDKs, turning sets into residential proxy nodes; Amazon and Roku ban them, LG doesn't.
