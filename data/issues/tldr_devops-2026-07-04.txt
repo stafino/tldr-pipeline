@@ -1,0 +1,140 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR DevOps 2026-07-04
+
+📱
+News & Trends
+
+Kepler, re-architected: Improved power accuracy and a community call to action! (5 minute read)
+
+(blurb not generated)
+
+Meta reuses old RAM in new servers with custom bridge chip (5 minute read)
+
+(blurb not generated)
+
+Argo CD flaw shows why GitOps infrastructure should be treated as tier zero (2 minute read)
+
+Synacktiv disclosed an unpatched Argo CD vulnerability in the repo-server's unauthenticated GenerateManifest gRPC endpoint, letting an attacker who compromises a single pod abuse Kustomize's Helm build options to run arbitrary commands and, with Auto Sync enabled, push malicious manifests cluster-wide. The network policies that would block this are shipped but off by default in Helm deployments, so operators should enforce strict policies isolating the repo-server and Redis ports until a fix lands.
+
+🚀
+Opinions & Tutorials
+
+I ported Kubernetes to the browser (5 minute read)
+
+(blurb not generated)
+
+PostgreSQL and the OOM killer: Why we use strict memory overcommit (5 minute read)
+
+(blurb not generated)
+
+How we keep GPUs reliable across Databricks AI (5 minute read)
+
+(blurb not generated)
+
+Open source maintainership in the age of AI (5 minute read)
+
+(blurb not generated)
+
+Non-interactive SSH attacks dominate after login (1 minute read)
+
+A study from Czech Technical University in Prague ran eleven SSH honeypots in Frankfurt for fifteen days and logged 177,622 authenticated sessions, of which 99.23% were non-interactive: a single command through an SSH exec request, then disconnect, all in under a second. Interactive shells, what the honeypot field was built to study, made up 0.10%. The pattern held on an independent CZ.NIC Cowrie dataset, where 92.67% of command-bearing sessions carried exactly one, most of it machine-speed reconnaissance.
+
+Performance per dollar is getting faster and cheaper (1 minute read) [flag]
+
+Wafer engineers detailed how they served GLM5.2 on AMD MI355X hardware from TensorWave at 2626 tok/s/node and 213 tok/s single stream, at over 2x lower cost than NVIDIA Blackwell. They quantized the bf16 model to MXFP4 with AMD Quark (lossless on GPQA-Diamond, tau2, and GSM8K) and served it on sglang after vLLM and ATOM fell short. The bet is that agent-driven kernel optimization is closing ROCm's day-0 support gap, making AMD the performance-per-dollar play as Blackwell supply tightens and NVIDIA prices climb.
+
+KRCA: An Efficient Root Cause Analysis System in Hyper-Scale Microservice Systems via Agentic AI (1 minute read)
+
+KRCA is an end-to-end root cause analysis system for hyper-scale microservice systems, combining an API-level drilldown, a skeleton-based causal graph, and a memory-augmented multi-agent framework to localize failing services and classify failure types. It hits AC@1 scores of 0.88 for service localization and 0.79 for failure classification, beating the strongest baseline by at least 31% in absolute gains. Running in Kuaishou's production environment for over six months, it has cut average diagnosis time by 77.3%.
+
+Coding Agents Are Guessing: Measuring Action-Boundary Violations in Underspecified DevOps Instructions (1 minute read)
+
+UnderSpecBench tests how LLM coding agents (Claude Code, Codex, OpenCode) behave when DevOps instructions are benign but underspecified, using 2,208 prompt variants grounded in real incidents, CVEs, and tool behavior. The finding is that vague instructions do not make agents fail, they make them guess: 55.8-67.8% of runs violated at least one action boundary, hitting the wrong target or overscoping. The authors argue completion-focused benchmarks overstate how safely these agents can run on production infrastructure.
+
+Slack AI: The Path to Multi-Cloud (5 minute read)
+
+Slack's engineering team documented their three-year evolution from single-cloud LLM serving on AWS SageMaker to a multi-cloud orchestration architecture, driven by regional-outage resilience and chronic A100/H100 scarcity. The SageMaker approach delivered FedRAMP compliance and zero-knowledge escrow VPCs but taxed the team with slow scaling latency, over-provisioned idle GPUs, and a feature lag as Anthropic models shipped on Bedrock weeks ahead of their custom serving stack. The takeaway: enterprise LLM serving is a capacity-and-vendor problem, not a model problem.
+
+Client-Side Load Balancing at a Million Requests Per Second (5 minute read)
+
+(blurb not generated)
+
+How data sovereignty is changing cloud native infrastructure design (5 minute read)
+
+(blurb not generated)
+
+Meta's AI Storage Blueprint at Scale (5 minute read)
+
+(blurb not generated)
+
+What happens when you run a CUDA kernel (5 minute read)
+
+(blurb not generated)
+
+Caught in the Octopus Trap: Unauthenticated RCE in Argo CD with CodeQL (5 minute read)
+
+Synacktiv used CodeQL to find an unauthenticated remote code execution flaw in Argo CD's repo-server, the component that renders manifests from Git and runs with broad cluster privileges. The writeup walks through the static-analysis path to the bug and the exploit chain that turns it into full Kubernetes cluster takeover, and ships a tool that automates the attack. Given Argo CD's near-universal use in GitOps shops, the blast radius is every app it deploys.
+
+Don’t waste your next cloud outage (5 minute read)
+
+(blurb not generated)
+
+What do AI observability tools actually do? (5 minute read)
+
+(blurb not generated)
+
+⚒️
+Launches & Tools
+
+Podman v6.0.0 (1 minute read)
+
+Podman v6.0.0 shipped, transitioning the networking stack from slirp4netns and iptables to Netavark, Pasta, and nftables, with experimental rootless port forwarding that preserves source IPs on custom networks. The release also overhauls Quadlets with REST API support, adds a podman machine os update command for VM providers, and refines Docker API compatibility to ease migrations off Docker.
+
+Dragonfly v2.5.0 is released (5 minute read)
+
+(blurb not generated)
+
+Automate public TLS certificate issuance with ACME support in AWS Certificate Manager (5 minute read)
+
+(blurb not generated)
+
+Security Profiles Operator v1: Stable APIs, Security Hardened, and Shaping Upstream Kubernetes (5 minute read)
+
+(blurb not generated)
+
+Vulnerability and Malware Checks in uv (5 minute read)
+
+Astral added two preview security features to uv: `uv audit`, a native alternative to `pip-audit` that scans dependencies for known vulnerabilities and deprecated packages 4x to 10x faster by reusing uv's locked resolutions, and an opt-in OSV-based malware check on every `uv add` or `uv sync`. Both are unstable and off by default, with the malware lookup gated behind the `UV_MALWARE_CHECK=1` environment variable.
+
+Go-based TypeScript 7.0 reaches release candidate stage (1 minute read)
+
+Microsoft released a release candidate of TypeScript 7.0, the Go-based compiler port that runs about 10x faster than the JavaScript-based TypeScript 6.0 by using native code and shared-memory parallelism across parsing, type checking, and emitting. A stable stable release ships within the month, and a `@typescript/typescript6` compatibility package exposes a `tsc6` binary so teams can run 7.0 side-by-side with 6.0 without tooling conflicts.
+
+Apache Flink 2.3.0 Release Announcement (5 minute read)
+
+(blurb not generated)
+
+Introducing Package Proxy: Supply-Chain Safety Checks Without Client-Side Software (5 minute read)
+
+(blurb not generated)
+
+The "Akrites" vulnerability-mitigation project launches (5 minute read)
+
+(blurb not generated)
+
+(re)introducing kpt: Your toolchain for infrastructure automation (1 minute read)
+
+The CNCF reintroduced kpt, a package-centric CLI toolchain for authoring, validating, and delivering bundles of Kubernetes Resource Model (KRM) manifests through GitOps pipelines. It manipulates declarative Configuration as Data, letting platform teams specialize and reconcile parameterized packages across hundreds of sites without external templates or out-of-band mutation.
+
+Google Antigravity agents get full context with GitLab Orbit (5 minute read)
+
+(blurb not generated)
+
+⚡
+Quick Links
+
+To Reduce Electrical Grid Strain Amid Heat Wave, Data Centers Are Ordered to Use Backup Power (1 minute read)
+
+The Trump administration is ordering data centers to run on backup power during the heat wave to ease grid strain.
