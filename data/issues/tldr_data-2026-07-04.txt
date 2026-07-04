@@ -27,27 +27,27 @@ PostgreSQL and the OOM killer: Why we use strict memory overcommit (5 minute rea
 
 Meta's AI Storage Blueprint at Scale (5 minute read)
 
-(blurb not generated)
+Meta detailed how its BLOB-storage architecture evolved to keep GPUs fed during AI training, running hundreds of exabyte-scale clusters on Tectonic, a regional block layer that erasure-codes data and tiers it across HDD and flash. The core problem: compute performance roughly triples every two years while storage and interconnect lag, making storage stalls a primary cause of idle GPUs. Meta's fixes target two goals, maximizing GPU utilization and speeding research velocity as datasets grow and training goes geo-distributed.
 
-Postgres transactions are a distributed systems superpower (5 minute read)
+Postgres transactions are a distributed systems superpower (1 minute read)
 
-(blurb not generated)
+The DBOS team argues that workflow state and application data should live in the same Postgres database, not separate stores, because co-location lets both be updated in a single transaction. That eliminates partial failures: idempotency problems like double-crediting a bank account disappear when a step's side effect and its checkpoint commit atomically, removing the need for application-level bookkeeping tables like applied_payments. The pitch is that Postgres transactions do the hard distributed-systems work for free.
 
-HNSW with Accuracy Guarantees Using Graph Spanners -- A Technical Report (5 minute read)
+HNSW with Accuracy Guarantees Using Graph Spanners -- A Technical Report (1 minute read)
 
-(blurb not generated)
+This paper proposes "Certify-then-Rectify," a framework that keeps HNSW's fast greedy search but adds a distribution-free statistical certifier to flag low-quality results and escalate to exact recovery only when needed. To make that fallback affordable, the authors reinterpret the HNSW graph as a geometric spanner and use Extreme Value Theory to bound the true nearest-neighbor distance. The result gives HNSW's average-case speed with worst-case correctness guarantees that vector search has historically lacked.
 
-AgenticDataBench: A Comprehensive Benchmark for Data Agents (5 minute read)
+AgenticDataBench: A Comprehensive Benchmark for Data Agents (1 minute read)
 
-(blurb not generated)
+AgenticDataBench introduces a benchmark for LLM-based data agents, spanning 15 vertical domains and including five real-world B2B tasks from a fintech company, with fine-grained ground-truth labels scored at the level of individual data science skills. Those skills are recurring operational patterns mined from Stack Overflow solutions via hierarchical clustering, which lets the authors quantify coverage and report where state-of-the-art agents actually break down rather than a single pass-rate number.
 
-Self-Gating Attention for Efficient Time Series Forecasting (5 minute read)
+Self-Gating Attention for Efficient Time Series Forecasting (1 minute read)
 
-(blurb not generated)
+This paper proposes Self-Gating Attention (SGA), a plug-and-play replacement for self-attention in time series forecasting that drops the query and key projections in favor of a shared learnable matrix plus an input-dependent residual. The result is linear time and memory in look-back length instead of quadratic, since attention maps across timestamps turn out to be highly redundant in real-world series. Across nine datasets spanning electricity, finance, weather, and climate, SGA cuts inference cost while matching state-of-the-art forecasting accuracy.
 
-The Semantic Layer Blackhole: From Initial Build to Perpetual Governance (5 minute read)
+The Semantic Layer Blackhole: From Initial Build to Perpetual Governance (1 minute read)
 
-(blurb not generated)
+The author argues that building a semantic layer is finite, bounded work, while maintaining one is a different category of problem that compounds combinatorially as the business changes underneath it. Redefining a shared entity like "customer" ripples across every metric built on it, so N metrics over M shared entities create roughly N×M relationships a single change can touch, with both growing every quarter. The hardest part is social, not technical: getting teams to delete their local KPI hacks once a shared definition exists.
 
 To weigh a watermelon (5 minute read)
 
