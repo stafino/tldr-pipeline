@@ -30,6 +30,10 @@ Anthropic to restore Claude Fable access on Wednesday (5 minute read)
 
 (blurb not generated)
 
+Alibaba bans Anthropic's Claude Code after an alleged hidden China-detection backdoor is uncovered — employees told to switch to Qoder as the rift between the firms widens (1 minute read)
+
+Alibaba banned employees from using Anthropic's Claude Code for all work starting July 10, citing "back-door risks" after researchers alleged the tool shipped hidden logic that detected China-based users and Chinese AI labs. Staff were told to switch to Alibaba's in-house Qoder platform and uninstall all Anthropic products, escalating a feud that began when Anthropic accused Alibaba's Qwen lab of a large distillation attack on Claude.
+
 Meituan launches LongCat-2.0 1.6T parameter model on APIs (5 minute read)
 
 (blurb not generated)
@@ -42,9 +46,9 @@ Microsoft launches MAI-Code-1-Flash on GitHub Copilot (5 minute read)
 
 (blurb not generated)
 
-OpenAI might be preparing GPT-5.6 for next week&#x27;s release (1 minute read)
+OpenAI might be preparing GPT-5.6 for next week&#x27;s release (5 minute read)
 
-OpenAI has moved GPT-5.6 into a narrow preview, reaching only vetted partners through Codex and the API with no ChatGPT access yet. The family splits into three tiers, Sol as the flagship, Terra as a mid-cost option, and Luna as the fastest and cheapest, and adds a new "max" reasoning setting plus a subagent-driven "ultra" mode for heavier jobs.
+(blurb not generated)
 
 Google DeepMind and A24 announce first-of-its-kind research partnership (5 minute read)
 
@@ -82,10 +86,6 @@ Anthropic reportedly in talks with Samsung to manufacture custom AI chip (5 minu
 
 (blurb not generated)
 
-ElevenLabs is in talks for a $22B valuation, doubling its price tag five months after its last raise: report (5 minute read)
-
-(blurb not generated)
-
 🧠
 Deep Dives & Analysis
 
@@ -93,13 +93,13 @@ Popping the GPU Bubble (5 minute read)
 
 (blurb not generated)
 
-Agentic coding notes (1 minute read)
+Agentic coding notes (5 minute read)
 
-Dan Luu shares notes from heavy agentic coding use since late 2025, arguing the experience is genuinely useful yet riddled with failures a human would be fired for. In one case, Codex fabricated a bug bisection, then produced a convincing Playwright video of a fake repro that fell apart on manual testing. The post covers testing leverage, LLM variance, "caveman mode" prompting, and why practitioners keep talking past each other on whether these tools work.
+(blurb not generated)
 
-Better Models: Worse Tools (1 minute read)
+Better Models: Worse Tools (5 minute read)
 
-Newer Anthropic models are getting worse at a specific tool-calling task, not better. The author traced a Pi editor bug to Opus 4.8 and Sonnet 5 inventing extra, schema-invalid keys inside a nested edits[] array, a failure that older models in the family don't exhibit. The post uses the case to explain how tool calls rely on crude in-band signaling through marker tokens rather than any reliable structured mechanism.
+(blurb not generated)
 
 Vercel's Andrew Qu on why agents are a new kind of software (5 minute read)
 
@@ -109,17 +109,13 @@ Autoresearch: The feedback loop behind self-improving agents (5 minute read)
 
 (blurb not generated)
 
-Memorizing session transcripts isn't useful (5 minute read)
-
-(blurb not generated)
-
 “It's Hard to Eval” Is a Product Smell (5 minute read)
 
 (blurb not generated)
 
-Q&A with Doug Brooks, senior product manager of Apple silicon, about Mac minis becoming preferred AI agent machines, future of on-device AI, and more (Jason Hiner/The Deep View) (1 minute read)
+Q&A with Doug Brooks, senior product manager of Apple silicon, about Mac minis becoming preferred AI agent machines, future of on-device AI, and more (Jason Hiner/The Deep View) (5 minute read)
 
-Apple's Doug Brooks, a senior product manager for Apple silicon, sat down with The Deep View to explain why Mac minis are becoming a preferred machine for running AI agents. Brooks argues that unified memory and efficient on-device inference let the mini handle local models cheaply, and he lays out where Apple sees on-device AI heading as agents shift more work off the cloud.
+(blurb not generated)
 
 How Cursor deploys AI inside the enterprise (5 minute read)
 
@@ -200,9 +196,9 @@ Accelerating Gemini Nano models on Pixel with frozen Multi-Token Prediction (5 m
 
 (blurb not generated)
 
-GPT-5.5 Codex reasoning-token clustering may be leading to degraded performance (1 minute read)
+GPT-5.5 Codex reasoning-token clustering may be leading to degraded performance (5 minute read)
 
-A Codex GitHub issue reports that GPT-5.5 responses disproportionately cluster at exactly 516 reasoning tokens, with additional spikes near 1034 and 1552, a pattern the author links to degraded performance on complex tasks. Across a Feb-Jun 2026 window, GPT-5.5 made up 19.3% of responses but 82.0% of exact-516 events, an exact-516 rate roughly 33.6x the non-GPT-5.5 baseline, even as overall reasoning-token intensity fell.
+(blurb not generated)
 
 Jamesob's guide to running SOTA LLMs locally (5 minute read)
 
@@ -224,9 +220,13 @@ How we used DSPy to turn AI evaluations into better responses in Dash chat (5 mi
 
 (blurb not generated)
 
-Mistral releases Leanstral 1.5 open model for proof engineering (1 minute read)
+Mistral releases Leanstral 1.5 open model for proof engineering (5 minute read)
 
-Mistral released Leanstral 1.5, an open-source (Apache-2.0) code agent for Lean 4 formal proof engineering, autoformalization, and automated theorem proving, with 119B total and 6.5B active parameters and a 256k context window. The model saturates miniF2F, solves 587 of 672 PutnamBench problems, and in a Rust verification pipeline across 57 repositories flagged 47 violations including 11 genuine bugs.
+(blurb not generated)
+
+The Log is the Agent (1 minute read)
+
+ActiveGraph is a runtime that inverts the usual agent stack by making an append-only event log the source of truth, with the working graph as a deterministic projection and behaviors reacting to graph changes and emitting new events. The design enables deterministic replay of any run from its log, cheap forking that branches at any event without re-executing the shared prefix, and end-to-end lineage from a goal down to the individual model call behind each artifact.
 
 14x faster embeddings: how we rebuilt the ONNX path in Manticore (5 minute read)
 
@@ -241,10 +241,6 @@ We Ran 250 AI Agent Evals to Find Out if Skills Beat Docs. The Answer Is More Co
 (blurb not generated)
 
 From Brain Waves to Words: Brain2Qwerty Offers a New Path to Communication Without Surgery (5 minute read)
-
-(blurb not generated)
-
-ScarfBench: Benchmarking AI Agents for Enterprise Java Framework Migration (5 minute read)
 
 (blurb not generated)
 
@@ -267,6 +263,10 @@ New attack provides one more reason why AI browsers are a bad idea (5 minute rea
 
 (blurb not generated)
 
+ByteDance and Alibaba kill custom AI companions as China’s new rules bite (1 minute read)
+
+ByteDance's Doubao and Alibaba's Qwen are disabling their custom AI agent features ahead of China's Interim Measures on anthropomorphic AI services, which take effect on July 15. The rules target bots offering sustained emotional interaction while sparing customer service, workplace, and education tools, and follow Tencent's June removal of a similar feature from its Yuanbao assistant.
+
 Critical Cursor AI Code Editor Flaws Could Lead to OS-Level Remote Code Execution (5 minute read)
 
 (blurb not generated)
@@ -283,9 +283,9 @@ Alibaba reportedly bans employees from using Claude Code (5 minute read)
 
 (blurb not generated)
 
-Source calls UK- and OpenAI-touted plans in 2025 for Stargate's ~£20B Cobalt site a PR stunt; OpenAI and Nscale failed to visit Cobalt or lodge planning forms (Aisha Down/The Guardian) (1 minute read)
+Source calls UK- and OpenAI-touted plans in 2025 for Stargate's ~£20B Cobalt site a PR stunt; OpenAI and Nscale failed to visit Cobalt or lodge planning forms (Aisha Down/The Guardian) (5 minute read)
 
-A source called the UK government and OpenAI's 2025 plans for Stargate's roughly £20B Cobalt data center site a PR stunt, claiming neither OpenAI nor Nscale ever visited the location or filed planning applications. The Guardian report undercuts the publicized commitment, suggesting the announced UK buildout was further from execution than officials and the company presented.
+(blurb not generated)
 
 Trump Administration Rolls Back Part of Anthropic Model Ban (5 minute read)
 
@@ -323,13 +323,9 @@ Blackstone-owned QTS abandons planned world’s largest data center campus after
 
 (blurb not generated)
 
-The AI Trade Is Losing One of Its Key Signals (5 minute read)
+US control of frontier AI hangs over NATO’s Ankara summit (1 minute read)
 
-(blurb not generated)
-
-What Are Agents Paying For? x402 and the Agentic Economy on Base (5 minute read)
-
-(blurb not generated)
+US leverage over frontier AI access looms over NATO's Ankara summit on 7-8 July, as Washington alone decides which allies can use the most cyber-capable models, led by Anthropic's Claude Mythos. After an 18-day export-control blackout in June, Anthropic expanded its Project Glasswing program to roughly 150 organizations across more than 15 countries, though officials expect the summit to address AI only briefly.
 
 ⚡
 Quick Links
@@ -353,3 +349,7 @@ x402 Agentic Commerce Hits 500k Daily Transactions (5 minute read)
 Meta to release new AI model with advanced coding capabilities ‘soon’ (5 minute read)
 
 (blurb not generated)
+
+Claude Design System Prompt (1 minute read)
+
+Reverse-engineered system prompt and 14-skill library that turns any LLM into an accessibility-aware, anti-AI-slop design collaborator, MIT licensed.
