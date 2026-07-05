@@ -41,10 +41,6 @@ Performance per dollar is getting faster and cheaper (5 minute read)
 
 (blurb not generated)
 
-Sandboxing untrusted agent code with gVisor costs ~200ms per cold start. Blocking syscalls instead of emulating them costs ~8ms (3 minute read)
-
-The author argues that gVisor's userspace-kernel approach to sandboxing untrusted agent code carries real cost: 5-250x syscall overhead, ~200ms cold starts, and ~50MB per container. As an alternative, they built zviz, an OCI-compatible runtime in Zig that filters syscalls with BPF instead of emulating them, allowing most to hit the host at native speed, denying dangerous ones with EPERM, and brokering a few, cutting cold starts to ~8ms. The trade-off is strictness over compatibility, since denial breaks workloads that emulation would have kept running.
-
 Slack AI: The Path to Multi-Cloud (5 minute read)
 
 (blurb not generated)

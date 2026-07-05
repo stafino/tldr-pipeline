@@ -74,9 +74,9 @@ How ethical hackers with just a $3,000 server found a flaw that could've put $70
 
 (blurb not generated)
 
-North Korean Hackers Publish 108 Malicious Packages and Extensions in PolinRider Campaign (5 minute read)
+North Korean Hackers Publish 108 Malicious Packages and Extensions in PolinRider Campaign (1 minute read)
 
-(blurb not generated)
+North Korean threat actors behind the Contagious Interview campaign published 108 malicious packages and browser extensions across npm, Packagist, Go, and Chrome in an active operation tracked as PolinRider, spanning 162 release artifacts including 61 Go modules and 19 npm libraries. The campaign has compromised 1,951 GitHub repositories across 1,047 owners via maintainer-account takeovers and TaskJacker VS Code task files that auto-execute on folder open, so audit dependency provenance and disable IDE folderOpen task triggers.
 
 North Korea-Linked npm Packages Mimic Rollup Polyfills to Steal Developer Secrets (5 minute read)
 
@@ -93,9 +93,9 @@ Flock Cameras Can Surveil Cars Without License Plates (5 minute read)
 
 (blurb not generated)
 
-Confidential computing's core trust mechanism is broken. The fix may not exist (5 minute read)
+Confidential computing's core trust mechanism is broken. The fix may not exist (1 minute read)
 
-(blurb not generated)
+Researchers at TU Dresden formally verified attested TLS, the remote attestation protocol underpinning confidential computing, and found diversion attacks against two state-of-the-art implementations. A connection meant for one TEE can be silently redirected to a different compromised machine running identical software, because the protocol proves the software's integrity but not its location. A follow-up paper tested seven ways of binding attestation evidence to the TLS handshake and found none of them sufficient.
 
 More details on Fable 5's cyber safeguards and our jailbreak framework (5 minute read)
 
@@ -104,10 +104,6 @@ More details on Fable 5's cyber safeguards and our jailbreak framework (5 minute
 Non-interactive SSH attacks dominate after login (5 minute read)
 
 (blurb not generated)
-
-Sandboxing untrusted agent code with gVisor costs ~200ms per cold start. Blocking syscalls instead of emulating them costs ~8ms (3 minute read)
-
-zviz, an OCI-compatible container runtime written in Zig, isolates untrusted agent code by selectively denying dangerous syscalls with seccomp/Landlock rather than emulating them like gVisor's userspace kernel. The tradeoff is compatibility for speed: gVisor safely emulates dangerous syscalls at roughly 200ms cold starts and 5-250x syscall overhead, while zviz denies them outright with EPERM for ~8ms cold starts and near-native throughput. Ordering matters operationally: capabilities drop and Landlock apply before seccomp loads, so the runtime doesn't block itself while arming.
 
 What happened after 2,000 people tried to hack my AI assistant (5 minute read)
 
@@ -147,25 +143,25 @@ Microsoft Accelerates Post-Quantum Cryptography Shift to 2029 (5 minute read)
 
 (blurb not generated)
 
-EU Council forces Chat Control via fast-track (1 minute read)
-
-The EU Council adopted a position via written procedure to reactivate the expired Chat Control 1.0 regulation, using a fast-track legal maneuver to authorize voluntary AI and hash-matching scans of messenger, webmail, and VoIP content. Critics argue the move sidesteps Parliament and the E-Privacy Directive's confidentiality protections, reviving suspicionless client-side scanning of encrypted communications ahead of the summer break.
-
-Alleged Scattered Spider Hacker Extradited to US (5 minute read)
+EU Council forces Chat Control via fast-track (5 minute read)
 
 (blurb not generated)
 
-Alibaba bans Anthropic's Claude Code after an alleged hidden China-detection backdoor is uncovered — employees told to switch to Qoder as the rift between the firms widens (1 minute read)
+Alleged Scattered Spider Hacker Extradited to US (1 minute read)
 
-Alibaba banned employees from using Anthropic's Claude Code for work starting July 10, after researchers alleged the coding agent shipped obfuscated logic that fingerprints China-based users by checking system timezone and proxy URLs against a hardcoded list of Chinese AI labs, then exfiltrates the result steganographically. The ban, which extends to all Anthropic products and redirects staff to Alibaba's in-house Qoder, follows Anthropic's June accusation that Qwen-linked operators ran the largest known distillation attack against Claude.
+Peter Stokes, 19, a dual US-Estonian citizen known as "Bouquet," was extradited from Finland to the US on conspiracy, computer intrusion, and fraud charges tied to Scattered Spider (UNC3944). Prosecutors allege he helped hack a luxury jewelry retailer in May 2025 and demand an $8M ransom, part of a group that has hit at least 100 organizations and collected over $100M in ransoms.
+
+Alibaba bans Anthropic's Claude Code after an alleged hidden China-detection backdoor is uncovered — employees told to switch to Qoder as the rift between the firms widens (5 minute read)
+
+(blurb not generated)
 
 Chinese LLMs Broaden the Gap Between Attackers &amp; Defenders (5 minute read)
 
 (blurb not generated)
 
-Windows 11 identifier code used to track Scattered Spider perp after Microsoft shared info with FBI — 19-year-old US-Estonian hacker arrested over alleged ties to infamous extortion group (1 minute read)
+Windows 11 identifier code used to track Scattered Spider perp after Microsoft shared info with FBI — 19-year-old US-Estonian hacker arrested over alleged ties to infamous extortion group (5 minute read)
 
-The DOJ arrested Peter Stokes, a 19-year-old dual US-Estonian citizen, at Helsinki airport over alleged ties to Scattered Spider, using Microsoft's Global Device Identifier telemetry to link his hardware to specific internet activity and locations. Stokes faces conspiracy, cyber intrusion, and fraud charges tied to a May 2025 social-engineering attack on a US jewelry dealer, part of a syndicate the DOJ says extorted over $100M.
+(blurb not generated)
 
 US Government allows Anthropic limited release of AI model that sparked cybersecurity concerns (5 minute read)
 
