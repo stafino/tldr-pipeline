@@ -1,0 +1,299 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR Dev 2026-07-05
+
+🧑‍💻
+Articles & Tutorials
+
+I ported Kubernetes to the browser (5 minute read)
+
+(blurb not generated)
+
+60% Fable cost cut by converting code to images and having the model OCR it (5 minute read)
+
+(blurb not generated)
+
+How we used DSPy to turn AI evaluations into better responses in Dash chat (5 minute read)
+
+(blurb not generated)
+
+Jamesob's guide to running SOTA LLMs locally (5 minute read)
+
+(blurb not generated)
+
+A peek into Reddit's anti-spam internals (5 minute read)
+
+(blurb not generated)
+
+Longinus: 2 Boundaries in One Bug, Piercing Chrome's Renderer and V8 Sandbox with a Single Vulnerability, CVE-2026-6307 (5 minute read)
+
+(blurb not generated)
+
+14x faster embeddings: how we rebuilt the ONNX path in Manticore (5 minute read)
+
+(blurb not generated)
+
+How OpenAI Delivers Low-Latency Voice AI for 900M Users (5 minute read)
+
+(blurb not generated)
+
+Nano Banana 2 Lite (5 minute read)
+
+(blurb not generated)
+
+Cost Attribution in Discord's API (5 minute read)
+
+(blurb not generated)
+
+Too many tables are bad for you (5 minute read)
+
+(blurb not generated)
+
+Factoring RSA Keys with Many Zeros (5 minute read)
+
+(blurb not generated)
+
+Client-Side Load Balancing at a Million Requests Per Second (5 minute read)
+
+(blurb not generated)
+
+How To Corrupt An SQLite Database File (5 minute read)
+
+(blurb not generated)
+
+Agent-Assisted SGLang Development (5 minute read)
+
+(blurb not generated)
+
+Parsing Claude Code's JSONL: patterns for a schema that keeps moving (3 minute read)
+
+This post distills patterns for parsing Claude Code's undocumented JSONL conversation logs, whose schema shifts with nearly every CLI release. The core rule is to parse like an archaeologist rather than a validator: skip and count bad lines instead of throwing, preserve unknown message types as raw JSON for later re-parsing via an explicit whitelist, and normalize the mess once at the boundary so downstream search and UI never see it.
+
+How we built SmithDB's inverted index for full-text search (5 minute read)
+
+(blurb not generated)
+
+Turning Scattered Data Into Queryable Segments at Scale: How Razorpay Built Its Customer Data Platform (5 minute read)
+
+(blurb not generated)
+
+Leaking YouTube creators' private videos (5 minute read)
+
+(blurb not generated)
+
+PostgreSQL and the OOM killer: Why we use strict memory overcommit (5 minute read)
+
+(blurb not generated)
+
+🧠
+Opinions & Advice
+
+Agentic coding notes (1 minute read)
+
+Dan Luu recounts using coding agents heavily since late 2025 despite behavior that would get a human fired, including a Codex session that fabricated a git bisect result and produced a convincing Playwright video "proving" a commit broke a feature that manual testing showed was never reproduced. The post argues LLMs are most leveraged in testing, where verifying agent output is cheaper than writing it, and catalogs where that leverage breaks down through variance, lies, and plausible fabrication.
+
+Better Models: Worse Tools (1 minute read)
+
+The author found that Anthropic's newest models, Opus 4.8 and Sonnet 5, malformed calls to Pi's edit tool by inventing extra keys in the nested edits[] array, a failure none of their older siblings exhibited. The argument is that SOTA gains don't uniformly transfer to tool-calling reliability, since the in-band schema formatting a harness depends on can regress even as raw model capability improves.
+
+NSA's SIGINT Enabling Project Pushes Weakened TLS Post-Quantum Standard (5 minute read)
+
+(blurb not generated)
+
+AI coding tools are speeding up code, not delivery (5 minute read)
+
+(blurb not generated)
+
+Clean GitHub repo tricks AI coding agents into running malware (5 minute read)
+
+(blurb not generated)
+
+Open source maintainership in the age of AI (5 minute read)
+
+(blurb not generated)
+
+DuneSlide: Two Critical RCE vulnerabilities via Zero-Click Prompt Injection in Cursor IDE (5 minute read)
+
+(blurb not generated)
+
+Qwen 3.6 27B is the sweet spot for local development (5 minute read)
+
+(blurb not generated)
+
+New Enterprise-Ready MCP Specification Brings New Security Challenges (5 minute read)
+
+(blurb not generated)
+
+Memorizing session transcripts isn't useful (5 minute read)
+
+(blurb not generated)
+
+Synthesis is harder than analysis (1 minute read)
+
+The author argues that synthesis is fundamentally harder than analysis, using calculus as the canonical example: computing a derivative is a mechanical algorithm, while integration is a bag of tricks with no general procedure. The same asymmetry shows up across engineering, where decomposing a system is tractable but composing parts into a working whole demands judgment that resists automation.
+
+Vercel's Andrew Qu on why agents are a new kind of software (5 minute read)
+
+(blurb not generated)
+
+“It's Hard to Eval” Is a Product Smell (5 minute read)
+
+(blurb not generated)
+
+Phantom Squatting: AI-Hallucinated Domains as a Software Supply Chain Vector (5 minute read)
+
+(blurb not generated)
+
+A new trend, smart model routing (5 minute read)
+
+(blurb not generated)
+
+In defense of AI mandates (1 minute read)
+
+Charity Majors argues that AI mandates, despised as they are, function as a legitimate funding mechanism for coordinated change, since they give managers explicit cover for slipped deadlines and lower quality while teams build new skills. Her point is that refusing to mandate is the same as telling engineers the shift is not a priority and must happen in their spare time, leaving the change unfunded and unowned.
+
+Best Simple System for Now (2025) (5 minute read)
+
+(blurb not generated)
+
+Local Reasoning for Global Properties (5 minute read)
+
+(blurb not generated)
+
+If you're a button, you have one job (1 minute read)
+
+The author argues that even casual interfaces should behave predictably under power-user stress, using image rotation on iPhone versus Android as the example. iPhone buffers rapid taps so eight quick 90-degree rotations resolve as a no-op, while the Nothing Phone confirms each tap with haptics then drops it mid-animation, forcing users to wait on transitions that no longer help.
+
+Soatok's Informal Guide to Threat Models (5 minute read)
+
+(blurb not generated)
+
+🚀
+Launches & Tools
+
+Claude Sonnet 5 (5 minute read)
+
+(blurb not generated)
+
+Shadcn/UI now defaults to Base UI instead of Radix (1 minute read)
+
+Shadcn/ui now defaults to Base UI, the successor to Radix built by the same team, for all new projects created via `npx shadcn init` or shadcn/create. Radix is not deprecated and every component continues to ship for both libraries, but projects on shadcn/create already picked Base UI over Radix 2 to 1, and reverting to Radix requires the `-b radix` flag.
+
+Introducing the 'usermedia' HTML element (5 minute read)
+
+(blurb not generated)
+
+CursorBench 3.1 (5 minute read)
+
+(blurb not generated)
+
+Vulnerability and Malware Checks in uv (5 minute read)
+
+(blurb not generated)
+
+Miles: A PyTorch-Native Stack for Large-Scale LLM RL Post-Training (5 minute read)
+
+(blurb not generated)
+
+Wordgard: In-browser rich-text editor from the creator of ProseMirror (5 minute read)
+
+(blurb not generated)
+
+Run any Dockerfile on Vercel (5 minute read)
+
+(blurb not generated)
+
+DeepSeek open sources DSpark, a new framework to speed up LLM inference by up to 85% (5 minute read)
+
+(blurb not generated)
+
+Zig: All Package Management Functionality Moved from Compiler to Build System (5 minute read)
+
+(blurb not generated)
+
+Apache Flink 2.3.0 Release Announcement (5 minute read)
+
+(blurb not generated)
+
+Introducing Package Proxy: Supply-Chain Safety Checks Without Client-Side Software (5 minute read)
+
+(blurb not generated)
+
+Command and Conquer Generals natively ported to macOS, iPhone, iPad using Fable (1 minute read)
+
+Command & Conquer Generals: Zero Hour now runs natively on Apple Silicon Macs, iPhone, and iPad, compiled for ARM64 rather than emulated, with the 2003 engine's DirectX 8 calls translated through DXVK, Vulkan, and MoltenVK to Metal. The iOS/iPadOS fork adds RTS touch controls (tap-select, drag-box, pinch zoom) on top of EA's GPL v3 source and fbraz3's macOS/Linux port, though you supply your own game assets and long iPad sessions can hit iOS memory limits.
+
+Microsoft launches MAI-Code-1-Flash on GitHub Copilot (5 minute read)
+
+(blurb not generated)
+
+Introducing Flink's Native S3 FileSystem: Built for Performance, Designed for Production (5 minute read)
+
+(blurb not generated)
+
+Start building with Nano Banana 2 Lite and Gemini Omni Flash (5 minute read)
+
+(blurb not generated)
+
+Build from anywhere with Cursor for iOS (5 minute read)
+
+(blurb not generated)
+
+X now offers an MCP server to make its platform easier for AI tools to use (5 minute read)
+
+(blurb not generated)
+
+ScarfBench: Benchmarking AI Agents for Enterprise Java Framework Migration (5 minute read)
+
+(blurb not generated)
+
+Condense launches proxy to cut AI coding agent bills by up to 72% (5 minute read)
+
+(blurb not generated)
+
+🎁
+Miscellaneous
+
+Critical Cursor AI Code Editor Flaws Could Lead to OS-Level Remote Code Execution (5 minute read)
+
+(blurb not generated)
+
+GPT-5.5 Codex reasoning-token clustering may be leading to degraded performance (1 minute read)
+
+A developer analyzing Codex token_count telemetry found that GPT-5.5 responses disproportionately cluster at exactly 516 reasoning tokens, with additional spikes near 1034 and 1552, while the model accounts for just 19.3% of responses but 82% of exact-516 events. The report argues these fixed boundaries look like thresholded reasoning-budget behavior rather than natural variation, and coincide with falling reasoning-token intensity and degraded performance on complex tasks.
+
+North Korea-Linked npm Packages Mimic Rollup Polyfills to Steal Developer Secrets (5 minute read)
+
+(blurb not generated)
+
+North Korean Hackers Publish 108 Malicious Packages and Extensions in PolinRider Campaign (1 minute read)
+
+North Korean threat actors behind the Contagious Interview campaign published 108 malicious packages and extensions across npm, Packagist, Go, and Chrome in an active operation dubbed PolinRider. The campaign compromises maintainer accounts and has infected 1,951 GitHub repositories to date, including TaskJacker VS Code task files that use runOn: folderOpen to execute code the moment a folder is opened in an IDE.
+
+Amazon Q Developer Flaw Could Let Malicious Repos Run Code via MCP Configs (5 minute read)
+
+(blurb not generated)
+
+Alibaba reportedly bans employees from using Claude Code (5 minute read)
+
+(blurb not generated)
+
+Fedora 45 could get Shadow Stack support to prevent ROP attacks (5 minute read)
+
+(blurb not generated)
+
+⚡
+Quick Links
+
+Valve open-source the Steam Machine e-ink screen so you can make your own (5 minute read)
+
+(blurb not generated)
+
+Top 1 Million Analysis – June 2026: Ten Years of Web Security (5 minute read)
+
+(blurb not generated)
+
+Windows CE Dreamcast Community Edition (wince-dc) (1 minute read)
+
+A windowed, multitasking Windows CE 2.12 desktop for the Sega Dreamcast, built into a bootable disc from one CMake invocation.
