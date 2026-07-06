@@ -1,0 +1,279 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR Dev 2026-07-06
+
+🧑‍💻
+Articles & Tutorials
+
+I ported Kubernetes to the browser (5 minute read)
+
+(blurb not generated)
+
+Does code cleanliness affect coding agents? A controlled minimal-pair study (1 minute read)
+
+A controlled minimal-pair study of Claude Code across 660 trials found that code cleanliness has no effect on an agent's pass rate. It does change the operational footprint, with cleaner repositories cutting token usage by 7 to 8% and reducing file revisitations by 34%, putting maintainability alongside model choice, harness, and prompting as a factor in agent cost and navigation efficiency.
+
+How we used DSPy to turn AI evaluations into better responses in Dash chat (5 minute read)
+
+(blurb not generated)
+
+A peek into Reddit's anti-spam internals (5 minute read)
+
+(blurb not generated)
+
+Longinus: 2 Boundaries in One Bug, Piercing Chrome's Renderer and V8 Sandbox with a Single Vulnerability, CVE-2026-6307 (5 minute read)
+
+(blurb not generated)
+
+14x faster embeddings: how we rebuilt the ONNX path in Manticore (5 minute read)
+
+(blurb not generated)
+
+How OpenAI Delivers Low-Latency Voice AI for 900M Users (5 minute read)
+
+(blurb not generated)
+
+Nano Banana 2 Lite (5 minute read)
+
+(blurb not generated)
+
+Cost Attribution in Discord's API (5 minute read)
+
+(blurb not generated)
+
+Too many tables are bad for you (5 minute read)
+
+(blurb not generated)
+
+Factoring RSA Keys with Many Zeros (5 minute read)
+
+(blurb not generated)
+
+Client-Side Load Balancing at a Million Requests Per Second (5 minute read)
+
+(blurb not generated)
+
+How To Corrupt An SQLite Database File (5 minute read)
+
+(blurb not generated)
+
+Agent-Assisted SGLang Development (5 minute read)
+
+(blurb not generated)
+
+How we built SmithDB's inverted index for full-text search (5 minute read)
+
+(blurb not generated)
+
+Turning Scattered Data Into Queryable Segments at Scale: How Razorpay Built Its Customer Data Platform (5 minute read)
+
+(blurb not generated)
+
+Leaking YouTube creators' private videos (5 minute read)
+
+(blurb not generated)
+
+Fintech Engineering Handbook (5 minute read)
+
+(blurb not generated)
+
+Inside Thinking Machines' Interaction Models (5 minute read)
+
+(blurb not generated)
+
+We Ran 250 AI Agent Evals to Find Out if Skills Beat Docs. The Answer Is More Complicated Than We Expected (5 minute read)
+
+(blurb not generated)
+
+🧠
+Opinions & Advice
+
+Agentic coding notes (5 minute read)
+
+(blurb not generated)
+
+Better Models: Worse Tools (5 minute read)
+
+(blurb not generated)
+
+NSA's SIGINT Enabling Project Pushes Weakened TLS Post-Quantum Standard (5 minute read)
+
+(blurb not generated)
+
+AI coding tools are speeding up code, not delivery (5 minute read)
+
+(blurb not generated)
+
+Clean GitHub repo tricks AI coding agents into running malware (5 minute read)
+
+(blurb not generated)
+
+Open source maintainership in the age of AI (5 minute read)
+
+(blurb not generated)
+
+DuneSlide: Two Critical RCE vulnerabilities via Zero-Click Prompt Injection in Cursor IDE (5 minute read)
+
+(blurb not generated)
+
+Qwen 3.6 27B is the sweet spot for local development (5 minute read)
+
+(blurb not generated)
+
+New Enterprise-Ready MCP Specification Brings New Security Challenges (5 minute read)
+
+(blurb not generated)
+
+Synthesis is harder than analysis (5 minute read)
+
+(blurb not generated)
+
+“It's Hard to Eval” Is a Product Smell (5 minute read)
+
+(blurb not generated)
+
+Phantom Squatting: AI-Hallucinated Domains as a Software Supply Chain Vector (5 minute read)
+
+(blurb not generated)
+
+A new trend, smart model routing (5 minute read)
+
+(blurb not generated)
+
+In defense of AI mandates (5 minute read)
+
+(blurb not generated)
+
+Local Reasoning for Global Properties (5 minute read)
+
+(blurb not generated)
+
+If you're a button, you have one job (5 minute read)
+
+(blurb not generated)
+
+Web-based cryptography is always snake oil (1 minute read)
+
+The author argues that all web-based end-to-end encryption is inherently broken, coining the rule that a cryptosystem is incoherent when its implementation is distributed by the same entity it claims to secure against. Because a website serves the client-side JavaScript, a malicious operator can always push modified code, and the author extends the same critique to Signal and WhatsApp for banning third-party clients.
+
+The LLM API Failure Policy I Wish I Had Before My First Production Incident (2 minute read)
+
+The author argues that HTTP status codes and SDK exception handling are too shallow for LLM API failures, since a single 429 can mean requests-per-minute, tokens-per-minute, daily quota, concurrency, or provider overload, each demanding a different response. The proposed fix is a failure policy layer near the LLM client that maps provider-specific errors into internal categories and actions like retry, queue, switch models, degrade, or page someone.
+
+Soatok's Informal Guide to Threat Models (5 minute read)
+
+(blurb not generated)
+
+🚀
+Launches & Tools
+
+Claude Sonnet 5 (5 minute read)
+
+(blurb not generated)
+
+Shadcn/UI now defaults to Base UI instead of Radix (5 minute read)
+
+(blurb not generated)
+
+Introducing the 'usermedia' HTML element (5 minute read)
+
+(blurb not generated)
+
+CursorBench 3.1 (5 minute read)
+
+(blurb not generated)
+
+Vulnerability and Malware Checks in uv (5 minute read)
+
+(blurb not generated)
+
+Miles: A PyTorch-Native Stack for Large-Scale LLM RL Post-Training (5 minute read)
+
+(blurb not generated)
+
+Run any Dockerfile on Vercel (5 minute read)
+
+(blurb not generated)
+
+OpenPrinter (1 minute read)
+
+OpenPrinter is an open-source, repairable printer/plotter built from standard components, with refillable cartridges and independent black and color channels so an empty color tank no longer blocks black printing. It supports roll or sheet paper up to A3 via an integrated cutter for banners and custom formats, and is designed to be assembled, maintained, and repaired to extend the life of both the machine and its consumables.
+
+DeepSeek open sources DSpark, a new framework to speed up LLM inference by up to 85% (5 minute read)
+
+(blurb not generated)
+
+Zig: All Package Management Functionality Moved from Compiler to Build System (5 minute read)
+
+(blurb not generated)
+
+Apache Flink 2.3.0 Release Announcement (5 minute read)
+
+(blurb not generated)
+
+Introducing Package Proxy: Supply-Chain Safety Checks Without Client-Side Software (5 minute read)
+
+(blurb not generated)
+
+Command and Conquer Generals natively ported to macOS, iPhone, iPad using Fable (5 minute read)
+
+(blurb not generated)
+
+Microsoft launches MAI-Code-1-Flash on GitHub Copilot (5 minute read)
+
+(blurb not generated)
+
+🤗 Kernels: Major Updates (5 minute read)
+
+Hugging Face redesigned its Kernels project, adding a first-class "kernel" repository type on the Hub that surfaces supported accelerators, operating systems, and backend versions for each compute kernel. Because kernels run native code with the same privileges as the loading Python process, the update ships reproducible Nix builds, embedded Git SHA1 provenance, code signing, and trusted-publisher defaults that block untrusted kernels unless you pass trust_remote_code.
+
+Introducing Flink's Native S3 FileSystem: Built for Performance, Designed for Production (5 minute read)
+
+(blurb not generated)
+
+The future of Flipper Zero development (1 minute read)
+
+Flipper Zero's team reversed course on winding down firmware development, committing dedicated resources to maintain the project and process community contributions. New rules govern the workflow: feature requests are prioritized by voting in GitHub Discussions, pull requests follow clearer guidelines, and all contributions must pass mandatory integration testing before merge.
+
+Start building with Nano Banana 2 Lite and Gemini Omni Flash (5 minute read)
+
+(blurb not generated)
+
+Build from anywhere with Cursor for iOS (5 minute read)
+
+(blurb not generated)
+
+X now offers an MCP server to make its platform easier for AI tools to use (5 minute read)
+
+(blurb not generated)
+
+🎁
+Miscellaneous
+
+GPT-5.5 Codex reasoning-token clustering may be leading to degraded performance (5 minute read)
+
+(blurb not generated)
+
+North Korean Hackers Publish 108 Malicious Packages and Extensions in PolinRider Campaign (5 minute read)
+
+(blurb not generated)
+
+Amazon Q Developer Flaw Could Let Malicious Repos Run Code via MCP Configs (5 minute read)
+
+(blurb not generated)
+
+Alibaba reportedly bans employees from using Claude Code (5 minute read)
+
+(blurb not generated)
+
+⚡
+Quick Links
+
+Top 1 Million Analysis – June 2026: Ten Years of Web Security (5 minute read)
+
+(blurb not generated)
+
+Windows CE Dreamcast Community Edition (wince-dc) (5 minute read)
+
+(blurb not generated)

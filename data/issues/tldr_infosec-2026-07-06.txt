@@ -1,0 +1,156 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR InfoSec 2026-07-06
+
+🔓
+Attacks & Vulnerabilities
+
+JadePuffer ransomware used AI agent to automate entire attack (5 minute read)
+
+(blurb not generated)
+
+Clean GitHub repo tricks AI coding agents into running malware (5 minute read)
+
+(blurb not generated)
+
+Researchers document JadePuffer, the first known "agentic ransomware", which adapts in real time and retries steps to execute an end-to-end extortion operation (Bill Toulas/BleepingComputer) (1 minute read)
+
+Researchers documented JadePuffer, described as the first "agentic ransomware," which uses an LLM to adapt its behavior mid-attack and retry failed steps across a full extortion chain from initial access to data exfiltration and encryption. The self-correcting logic lets a single sample handle varied environments without operator intervention, so defenders should expect higher success rates against hosts that rely on static, signature-based detection.
+
+Potential session/cache leakage between workspace instances or consumer accounts (5 minute read)
+
+(blurb not generated)
+
+Factoring RSA Keys with Many Zeros (5 minute read)
+
+(blurb not generated)
+
+SharePoint RCE CVE-2026-45659 Added to CISA KEV After Active Exploitation (5 minute read)
+
+(blurb not generated)
+
+New CitrixBleed Vulnerability Exploited Immediately After Public Disclosure (5 minute read)
+
+(blurb not generated)
+
+Leaking YouTube creators' private videos (5 minute read)
+
+(blurb not generated)
+
+MSI Center – How to gain SYSTEM privileges in seconds (5 minute read)
+
+(blurb not generated)
+
+How ethical hackers with just a $3,000 server found a flaw that could've put $70 billion in crypto at risk (5 minute read)
+
+(blurb not generated)
+
+SkillCloak Lets Malicious AI Agent Skills Evade Static Scanners with Self-Extracting Packing (1 minute read)
+
+Researchers at Hong Kong University of Science and Technology released SkillCloak, a technique that rewrites malicious AI-agent skills to slip past static scanners while preserving their behavior, with its self-extracting packing variant evading all eight tested scanners over 90% of the time by hiding payloads in skipped directories like .git/. The same team built a runtime checker that catches most of the disguised skills, since pre-install file scanning alone fails to stop packed or obfuscated payloads.
+
+North Korean Hackers Publish 108 Malicious Packages and Extensions in PolinRider Campaign (5 minute read)
+
+(blurb not generated)
+
+In Less Than 24 Hours, Attackers Weaponize Cisco CUCM Flaw (5 minute read)
+
+(blurb not generated)
+
+Amazon Q Developer Flaw Could Let Malicious Repos Run Code via MCP Configs (5 minute read)
+
+(blurb not generated)
+
+Azure CLI Password Spray Hits at Least 78 Microsoft Accounts in 81M+ Attempts (5 minute read)
+
+(blurb not generated)
+
+AI agent exploits Langflow RCE to automate database ransomware attack (5 minute read)
+
+(blurb not generated)
+
+Opera GX Flaw Let Malicious Sites Auto-Install Mods to Steal Data From Visited Pages (1 minute read) [flag]
+
+Researchers disclosed a no-click flaw in Opera GX that let a malicious website silently auto-install a GX Mod, then abuse its CSS as a universal injection to exfiltrate page data via attribute-selector XS-Leaks, reconstructing a signed-in user's Gmail address from one visit. Opera patched it in GX 130.0.5847.89 (no CVE, rated P1) and found no in-the-wild abuse; there was no workaround short of updating, so verify your build at opera://about.
+
+New Enterprise-Ready MCP Specification Brings New Security Challenges (5 minute read)
+
+(blurb not generated)
+
+New ClamAV security patch closes seven scanner bugs dating back two decades (1 minute read)
+
+ClamAV 1.5.3 and 1.4.5 patch seven flaws in the Cisco Talos scanner, most in PE unpacking code including CVE-2026-20213, a heap overflow write triggered by malformed Aspack-packed files, and CVE-2026-20214, an FSG unpacker underflow present since 2004. Additional fixes cover 7z, ALZ, InstallShield, and 32-bit DMG parsers plus a quarantine TOCTOU race, so patch any gateway or endpoint running ClamAV against hostile input.
+
+New attack provides one more reason why AI browsers are a bad idea (5 minute read)
+
+(blurb not generated)
+
+🧠
+Strategies & Tactics
+
+Confidential computing's core trust mechanism is broken. The fix may not exist (5 minute read)
+
+(blurb not generated)
+
+More details on Fable 5's cyber safeguards and our jailbreak framework (5 minute read)
+
+(blurb not generated)
+
+What happened after 2,000 people tried to hack my AI assistant (5 minute read)
+
+(blurb not generated)
+
+Web-based cryptography is always snake oil (1 minute read)
+
+The author argues that all web-based "end-to-end" encryption is incoherent, because the code implementing the cryptosystem is distributed by the same server operator it claims to secure against, who could simply push malicious JavaScript at any time. The proposed rule: a cryptosystem is incoherent if its implementation is distributed by the entity it purports to secure against. The critique extends beyond the browser to any service that both distributes the client and bans third-party clients, including Signal and WhatsApp.
+
+A sociotechnical threat model for AI-driven smart home devices (1 minute read)
+
+This paper builds a sociotechnical threat model for AI-driven smart home devices, drawn from interviews with 18 UK-based domestic workers monitored in employers' homes. Using Communication Privacy Management, the authors extend threat models past abstract adversaries to cover AI analytics, residual data logs, and cross-household data flows, and they identify staffing agencies as institutional adversaries. The takeaway for defenders: real-world privacy risk maps across interconnected households and opaque data retention, not single-device threat surfaces.
+
+🧑‍💻
+Launches & Tools
+
+The future of Flipper Zero development (1 minute read)
+
+Flipper Zero's team reversed course on halting firmware development, allocating dedicated resources to maintain the project and formalizing community contributions. New rules govern participation: feature requests get voted on in GitHub Discussions, pull requests follow clearer guidelines, and integration testing is now mandatory before code merges.
+
+Security Profiles Operator v1: Stable APIs, Security Hardened, and Shaping Upstream Kubernetes (5 minute read)
+
+(blurb not generated)
+
+Boundary 1.0 releases RDP session recording and improved management (5 minute read)
+
+(blurb not generated)
+
+🎁
+Miscellaneous
+
+Scattered Spider Hackers Plead Guilty on Day 1 of Trial (5 minute read)
+
+(blurb not generated)
+
+Microsoft Accelerates Post-Quantum Cryptography Shift to 2029 (5 minute read)
+
+(blurb not generated)
+
+EU Council forces Chat Control via fast-track (1 minute read)
+
+The EU Council adopted a position via written procedure to reactivate the expired Chat Control 1.0 regulation, using a fast-track legal maneuver to authorize voluntary AI and hash-matching scans of messenger, webmail, and VoIP content. Critics argue the move sidesteps Parliament and the E-Privacy Directive's confidentiality protections, reviving suspicionless client-side scanning of encrypted communications ahead of the summer break.
+
+Alibaba bans Anthropic's Claude Code after an alleged hidden China-detection backdoor is uncovered — employees told to switch to Qoder as the rift between the firms widens (1 minute read)
+
+Alibaba banned employees from using Anthropic's Claude Code for work starting July 10, after researchers alleged the coding agent shipped obfuscated logic that fingerprints China-based users by checking system timezone and proxy URLs against a hardcoded list of Chinese AI labs, then exfiltrates the result steganographically. The ban, which extends to all Anthropic products and redirects staff to Alibaba's in-house Qoder, follows Anthropic's June accusation that Qwen-linked operators ran the largest known distillation attack against Claude.
+
+Windows 11 identifier code used to track Scattered Spider perp after Microsoft shared info with FBI — 19-year-old US-Estonian hacker arrested over alleged ties to infamous extortion group (1 minute read)
+
+The DOJ arrested Peter Stokes, a 19-year-old dual US-Estonian citizen, at Helsinki airport over alleged ties to Scattered Spider, using Microsoft's Global Device Identifier telemetry to link his hardware to specific internet activity and locations. Stokes faces conspiracy, cyber intrusion, and fraud charges tied to a May 2025 social-engineering attack on a US jewelry dealer, part of a syndicate the DOJ says extorted over $100M.
+
+US Government allows Anthropic limited release of AI model that sparked cybersecurity concerns (5 minute read)
+
+(blurb not generated)
+
+Microsoft builds a bouncer to keep bots out of Teams meetings (5 minute read)
+
+(blurb not generated)
