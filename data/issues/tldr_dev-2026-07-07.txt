@@ -1,0 +1,283 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR Dev 2026-07-07
+
+🧑‍💻
+Articles & Tutorials
+
+Hunting a 16-year-old SQLite bug with TLA+: is dqlite affected? (5 minute read)
+
+The dqlite team at Canonical used TLA+ to model the 16-year-old SQLite WAL checkpoint bug that can corrupt a database, building a formal spec of the lock and shared-memory sequence that triggers corruption. They then modeled how dqlite drives SQLite and checked the spec to determine whether dqlite's usage pattern can reach the same faulty state.
+
+I ported Kubernetes to the browser (5 minute read)
+
+(blurb not generated)
+
+PostgreSQL and the OOM Killer: Why We Use Strict Memory Overcommit (5 minute read)
+
+(blurb not generated)
+
+Does code cleanliness affect coding agents? A controlled minimal-pair study (5 minute read)
+
+(blurb not generated)
+
+Agentic test processes, LLM benchmarks, and other notes on agentic coding from Galapagos Island (5 minute read)
+
+(blurb not generated)
+
+Road to Elm 1.0 (1 minute read)
+
+Elm 0.19.2 cuts parser allocations to speed up compilation, hitting 20% lower GC copying, 10% lower peak memory, and 7% faster builds overall, with one 351-module project dropping from 4.981s to 2.595s from scratch. Evan Czaplicki frames the release as the first step toward Elm 1.0, a planned series of small non-breaking releases that will fold in compiler and language ideas like equatable and hashable types from his Acadia work.
+
+A peek into Reddit's anti-spam internals (5 minute read)
+
+(blurb not generated)
+
+Longinus: 2 Boundaries in One Bug, Piercing Chrome's Renderer and V8 Sandbox with a Single Vulnerability, CVE-2026-6307 (5 minute read)
+
+(blurb not generated)
+
+jamesob's guide to running SOTA LLMs locally (5 minute read)
+
+(blurb not generated)
+
+How OpenAI Delivers Low-Latency Voice AI for 900M Users (5 minute read)
+
+(blurb not generated)
+
+Prompting Claude Fable 5 (5 minute read)
+
+Anthropic's guide documents the prompting and scaffolding changes needed to move from Claude Opus 4.8 to Claude Fable 5, which targets long-running, ambiguous, end-to-end tasks that take a person hours to weeks. It covers behavioral differences that require prompt tuning, adaptive-thinking API changes, and configuring automatic fallback to Opus 4.8 when safety classifiers return a refusal stop reason.
+
+Nano Banana 2 Lite (5 minute read)
+
+(blurb not generated)
+
+Cost Attribution in Discord's API (5 minute read)
+
+(blurb not generated)
+
+Too many tables are bad for you (5 minute read)
+
+(blurb not generated)
+
+Rebuilding Cognition's Agentic MapReduce (5 minute read)
+
+The author reverse-engineered Cognition's security-focused Agentic MapReduce into a general-purpose loop for research, coding, and review, using git branches and merges as the primary agent-to-agent communication layer. Subagents shard across the codebase by folder and commit to their own branches, a reducer agent dedupes and merges compatible findings into a candidate branch, and each mapping iteration decides whether to continue from a candidate, a prior worker branch, or a fresh shard.
+
+Factoring RSA Keys with Many Zeros (5 minute read)
+
+(blurb not generated)
+
+Client-Side Load Balancing at a Million Requests Per Second (5 minute read)
+
+(blurb not generated)
+
+How To Corrupt An SQLite Database File (5 minute read)
+
+(blurb not generated)
+
+Agent-Assisted SGLang Development (5 minute read)
+
+(blurb not generated)
+
+Inside Thinking Machines' Interaction Models (5 minute read)
+
+(blurb not generated)
+
+🧠
+Opinions & Advice
+
+Agentic loops (5 minute read)
+
+(blurb not generated)
+
+Better Models: Worse Tools (5 minute read)
+
+(blurb not generated)
+
+AI coding tools are speeding up code, not delivery (5 minute read)
+
+(blurb not generated)
+
+Clean GitHub repo tricks AI coding agents into running malware (5 minute read)
+
+(blurb not generated)
+
+Open source maintainership in the age of AI (5 minute read)
+
+(blurb not generated)
+
+Let Fable use its own judgement rather than dictating how it should work (5 minute read)
+
+The author argues that instructing coding agents to use their own judgement produces better results than dictating explicit rules, citing advice from the Claude Code team to let the model decide when tests are warranted rather than encoding rigid thresholds. Extending the idea to cost, he prompts the agent to delegate implementation to a lower-power model in a subagent while keeping design and review on the main loop, which stretched his token allowance further.
+
+DuneSlide: Two Critical RCE vulnerabilities via Zero-Click Prompt Injection in Cursor IDE (5 minute read)
+
+(blurb not generated)
+
+Qwen 3.6 27B is the sweet spot for local development (5 minute read)
+
+(blurb not generated)
+
+“It's Hard to Eval” Is a Product Smell (5 minute read)
+
+(blurb not generated)
+
+Phantom Squatting: AI-Hallucinated Domains as a Software Supply Chain Vector (5 minute read)
+
+(blurb not generated)
+
+A new trend, smart model routing (5 minute read)
+
+(blurb not generated)
+
+In defense of AI mandates (5 minute read)
+
+(blurb not generated)
+
+Accessibility is the first-class interface for AI agents (3 minute read)
+
+The author argues that AI browser agents should navigate through the accessibility tree rather than screenshots, since the web has exposed a machine-readable interface of roles, labels, and states for decades. Switching from screenshot-based to DOM-native execution cut per-action latency from 2-5 seconds to under 500ms and dropped token cost by an order of magnitude, though the tree still handles discovery, not execution contracts.
+
+On the risk of coding before testing: An empirical study on LLM-based test generation workflow (1 minute read)
+
+This paper challenges the assumption behind test-first and agentic LLM workflows: that a model's generated tests act as independent oracles. The authors show error propagation is prevalent, with faulty code biasing subsequent test generation and dropping fault-detection rates from 25% to 14%, since incorrect implementations and their tests become mutually consistent and mask the defect rather than expose it.
+
+Local Reasoning for Global Properties (5 minute read)
+
+(blurb not generated)
+
+If you're a button, you have one job (5 minute read)
+
+(blurb not generated)
+
+Web-based cryptography is always snake oil (5 minute read)
+
+(blurb not generated)
+
+Soatok's Informal Guide to Threat Models (5 minute read)
+
+(blurb not generated)
+
+AI has torched the market for junior programmers (5 minute read)
+
+Developer employment for workers aged 22 to 25 is down 19% from its late-2022 peak while every cohort over 30 grew, with entry-level postings off 28% and CS graduates now facing 6.1% unemployment. The author argues agentic coding assistants, not ChatGPT, drove the collapse, since the decline accelerated in 2024 as tools shifted from autocompleting lines to completing tickets, and Stanford's controls rule out the ZIRP unwind and Section 174 as the cause.
+
+🚀
+Launches & Tools
+
+Claude Sonnet 5 (5 minute read)
+
+(blurb not generated)
+
+Shadcn/UI now defaults to Base UI instead of Radix (5 minute read)
+
+(blurb not generated)
+
+Introducing the 'usermedia' HTML element (5 minute read)
+
+(blurb not generated)
+
+CursorBench 3.1 (5 minute read)
+
+(blurb not generated)
+
+ECMAScript 2026 specification approved (1 minute read)
+
+ECMA International approved ECMAScript 2026, the 17th edition of the JavaScript spec, on June 30. New additions include Math.sumPrecise for low-error summation, Array.fromAsync for building arrays from async iterables, Error.isError for reliable error detection, Uint8Array hex and base64 conversion methods, and Map getOrInsert helpers for default values on missing keys.
+
+Apple Container: Open-source tool for Linux containers on the Mac (1 minute read)
+
+Apple released Container 1.0.0, an open-source Swift tool that runs each Linux workload as its own lightweight VM on Apple silicon, using OCI-compatible images so developers can pull from and push to any standard registry. The release adds a container machine command for persistent Linux environments, a container cp command for host-to-container file transfers, and moves configuration to a config.toml file, a breaking change that requires macOS 26.
+
+Python 3.14 compiled to metal – no interpreter (1 minute read)
+
+pon is a JIT and AoT native compiler and runtime for Python 3.14, written in Rust with no interpreter or bytecode: it parses modules with the ruff parser, lowers them to one shared IR, and compiles to machine code through Cranelift, either in-process or into a standalone executable. It swaps reference counting for a Green Tea garbage collector and enforces correctness with a byte-exact differential harness against CPython 3.14.0.
+
+Vulnerability and Malware Checks in uv (5 minute read)
+
+(blurb not generated)
+
+Your Worker can now have its own cache in front of it (1 minute read)
+
+Cloudflare launched Workers Cache, a tiered cache that sits in front of a Worker, enabled with a single `cache: { enabled: true }` block in Wrangler and driven by the standard Cache-Control and Cache-Tag headers you already use. On a cache hit the Worker never runs, so you skip the CPU billing, and the cache follows the Worker across custom domains, workers.dev, service bindings, and previews, with per-entrypoint control and programmatic purge by tag or path prefix.
+
+Miles: A PyTorch-Native Stack for Large-Scale LLM RL Post-Training (5 minute read)
+
+(blurb not generated)
+
+Run any Dockerfile on Vercel (5 minute read)
+
+(blurb not generated)
+
+Ternlight – 7 MB embedding model that runs in browser (WASM) (1 minute read)
+
+Ternlight is a text embedding model that ships as a single npm package and runs entirely in the browser on CPU via WASM, with engine plus weights totaling 7 MB and a 5 MB mini variant. It embeds text in roughly 5 ms with no model download step, no GPU, and no server calls, letting you run semantic search and similarity ranking fully client-side.
+
+thundersnap 0.01: an undo button for everything (5 minute read)
+
+thundersnap is an open source tool from apenwarr that makes replicating, forking, sharing, and running container snapshots fast across cloud and personal hardware, using Tailscale to stitch bare-metal machines and rented boxes into a single mesh. The 0.01 release pitches itself as an undo button for both humans and AI agents, trading ephemeral containers for persistent disk, portable snapshots, and the freedom to move workloads to whichever provider offers the cheapest hardware.
+
+OpenPrinter (5 minute read)
+
+(blurb not generated)
+
+OpenSSH 10.4/10.4p1 Released (1 minute read)
+
+OpenSSH 10.4 adds experimental support for a composite post-quantum signature scheme combining ML-DSA 44 and Ed25519, generated via `ssh-keygen -t mldsa44-ed25519` and off by default. The release also patches several client-side flaws, including SFTP downloads that malicious servers could redirect, SCP remote-to-remote copies that could write to parent directories, and a use-after-free during key reexchange when a server changes host keys.
+
+DeepSeek open sources DSpark, a new framework to speed up LLM inference by up to 85% (5 minute read)
+
+(blurb not generated)
+
+Kani: A Model Checker for Rust (1 minute read)
+
+Kani is an open-source bounded model checker for Rust that compiles proof harnesses from MIR into CBMC's verification engine, checking safety properties like unsafe soundness, functional correctness, and panic-freedom with no annotations required. Function and loop contracts extend it from bounded to unbounded verification, and it runs in production CI at over 16,000 harnesses per code change in the Rust standard library campaign, where it uncovered six previously unknown bugs.
+
+Microsoft launches MAI-Code-1-Flash on GitHub Copilot (5 minute read)
+
+(blurb not generated)
+
+🤗 Kernels: Major Updates (5 minute read)
+
+(blurb not generated)
+
+The future of Flipper Zero development (5 minute read)
+
+(blurb not generated)
+
+🎁
+Miscellaneous
+
+Rust language rises to top 10 in Tiobe popularity index (1 minute read)
+
+Rust cracked the top 10 in Tiobe's programming language popularity index for the first time, ranking 10th at a 1.34% rating in the July 2026 edition. Tiobe attributed the climb to Rust's memory safety guarantees and fast codegen, positioning it against C and C++, which sit second and third but continue to draw scrutiny over manual memory management.
+
+North Korean Hackers Target Open Source Developers in Supply Chain Attacks (1 minute read)
+
+Socket disclosed PolinRider, a North Korean supply chain campaign running since December 2025 that compromises maintainer accounts across NPM, Packagist, Go modules, and Chrome extensions to push the DEV#POPPER RAT and OmniStealer via obfuscated JavaScript loaders. Socket has found 162 malicious release artifacts across 108 packages, with attackers rewriting Git history to age the changes and pulling encrypted payloads from blockchain RPC infrastructure.
+
+Gemini Code Assist will shut down on July 17 (5 minute read)
+
+Google is sunsetting the consumer version of Gemini Code Assist on GitHub, with installations blocked starting June 18 and all automated code review activity ending July 17. The enterprise version is unaffected, so teams relying on the free consumer app for PR reviews will need to migrate to the paid tier or swap in another tool before the shutdown date.
+
+⚡
+Quick Links
+
+Fable turned reMarkable into Tom Riddle's diary from Harry Potter (1 minute read)
+
+Fable turns a reMarkable Paper Pro into an ink-only LLM interface: write with the pen, and a handwritten reply appears on the page.
+
+Linux on the Atari Jaguar (1 minute read)
+
+Someone ported Linux to the Atari Jaguar, exploiting the console's Motorola 68000 and m68k's MMU-less uClinux support.
+
+Top 1 Million Analysis – June 2026: Ten Years of Web Security (5 minute read)
+
+(blurb not generated)
+
+Why low-latency Java still requires discipline? (1 minute read)
+
+Low-latency Java demands manual discipline around GC pauses, allocation, and warmup, since the JVM's defaults optimize for throughput over predictable tail latency.

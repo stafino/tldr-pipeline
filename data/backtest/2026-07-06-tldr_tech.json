@@ -1,9 +1,39 @@
 {
   "date": "2026-07-06",
   "newsletter": "tldr_tech",
-  "fetched_at": "2026-07-06T08:10:01.313008+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-07-07T16:37:17.273267+00:00",
+  "tldr_titles": [
+    "Amazon has deployed enough satellites to launch Leo service later this year",
+    "Nvidia taps AI cloud providers to expand compute access for startups",
+    "The Quest to Make Humanoid Robots Safe Enough for Humans",
+    "The AI Superforecasters Are Here",
+    "A Field Guide to Fable: Finding Your Unknowns",
+    "Agentic Autonomy Levels",
+    "AI has torched the market for junior programmers",
+    "Threads, Meta's \u2018Twitter Killer,' Finds Its People",
+    "Better Models: Worse Tools",
+    "WordPress Drops to 41.5% Market Share, but Three Datasets Tell Different Stories About What's Going On",
+    "Agentic loops",
+    "Does a URL in a prompt steer an LLM's output toward its content?",
+    "Apple plans five new iPhones through 2027, eyes Chinese-made chips amid foldable push",
+    "Some new agentic patterns"
+  ],
+  "tldr_matched": [
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true,
+    false,
+    true,
+    false,
+    false,
+    false
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -314,16 +344,16 @@
       "score": 65.0,
       "title": "Better Models: Worse Tools",
       "url": "https://lucumr.pocoo.org/2026/7/4/better-models-worse-tools/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 8,
+      "similarity": 1.0
     },
     {
       "rank": 40,
       "score": 65.0,
       "title": "Agentic coding notes",
       "url": "https://danluu.com/ai-coding/#appendix-agentic-loops-and-writing-this-post",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 10,
+      "similarity": 1.0
     },
     {
       "rank": 41,
@@ -682,16 +712,16 @@
       "score": 57.0,
       "title": "How companies like Nvidia and Neura Robotics are building safety systems for humanoid robots to minimize risks like a bipedal robot losing stability (John Keilman/Wall Street Journal)",
       "url": "https://www.techmeme.com/260705/p13#a260705p13",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 2,
+      "similarity": 0.632584810256958
     },
     {
       "rank": 86,
       "score": 57.0,
       "title": "The Quest to Make Humanoid Robots Safe Enough for Humans",
       "url": "https://www.wsj.com/tech/the-quest-to-make-humanoid-robots-safe-enough-for-humans-4887c123?mod=rss_Technology",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 2,
+      "similarity": 1.0
     },
     {
       "rank": 87,
@@ -806,9 +836,49 @@
       "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.0,
+    "25": 0.0,
+    "50": 0.14285714285714285,
+    "100": 0.21428571428571427
+  },
+  "hits_at": {
+    "10": 0,
+    "25": 0,
+    "50": 2,
+    "100": 3
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://www.cnbc.com/2026/07/02/amazon-has-deployed-enough-satellites-to-launch-leo-service-this-year.html",
+    "https://www.cnbc.com/2026/07/02/nvidia-plans-to-offer-start-up-customers-access-to-revenue-sharing-deals.html",
+    "https://www.wsj.com/tech/the-quest-to-make-humanoid-robots-safe-enough-for-humans-4887c123",
+    "https://www.astralcodexten.com/p/the-ai-superforecasters-are-here",
+    "https://x.com/trq212/status/2073100352921215386",
+    "https://x.com/addyosmani/status/2072885435312042327",
+    "https://seldo.com/posts/ai-has-torched-the-market-for-junior-programmers/",
+    "https://www.nytimes.com/2026/07/05/technology/threads-meta-twitter-x.html",
+    "https://lucumr.pocoo.org/2026/7/4/better-models-worse-tools/",
+    "https://www.therepository.email/wordpress-market-share-series-data",
+    "https://danluu.com/ai-coding/#appendix-agentic-loops-and-writing-this-post",
+    "https://aifoc.us/influencing-model-output-with-urls/",
+    "https://www.cnbc.com/2026/07/02/apple-foldable-iphone-production-memory-shortage-china-chipmakers-cxmt-ymtc.html",
+    "https://blog.fsck.com/2026/07/05/new-patterns/"
+  ],
+  "tldr_domains": [
+    "cnbc.com",
+    "cnbc.com",
+    "sj.com",
+    "astralcodexten.com",
+    "x.com",
+    "x.com",
+    "seldo.com",
+    "nytimes.com",
+    "lucumr.pocoo.org",
+    "therepository.email",
+    "danluu.com",
+    "aifoc.us",
+    "cnbc.com",
+    "blog.fsck.com"
+  ]
 }

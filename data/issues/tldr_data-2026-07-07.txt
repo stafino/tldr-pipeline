@@ -1,0 +1,105 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR Data 2026-07-07
+
+📊
+News & Trends
+
+Google Cloud proposes Open Knowledge Format for AI-ready data sharing (5 minute read)
+
+(blurb not generated)
+
+🧠
+Deep Dives & Analysis
+
+How we keep GPUs reliable across Databricks AI (5 minute read)
+
+(blurb not generated)
+
+Variance Reduction Below the Randomization Grain (5 minute read)
+
+Instacart's data science team tackles a marketplace experimentation problem: interference between orders forces coarse cluster-level randomization, which slashes statistical power and slows down testing. The post shows that outcomes are predictable at fine grains even when treatment is assigned at the regional or switchback level, and that predictability can be exploited to cut the variance of aggregate metrics. The payoff is shorter experiments and more throughput as AI pushes build velocity past testing capacity.
+
+Parallel $\mathcal O(\sqrt n)$ Overhead LSD Radix Sort (1 minute read)
+
+Radsort, a new variant of LSD radix sort, sorts data with only O(√n) additional space while staying stable, simple, and easy to parallelize. Conventional out-of-place LSD radix sort needs a full second copy of the array, so the memory savings matter most for large in-memory sorts inside analytics engines. Above roughly 2 MiB, Radsort beats the standard out-of-place approach on throughput, making the space win effectively free at the sizes data pipelines actually hit.
+
+The context engineering playbook (5 minute read)
+
+On the dbt Labs podcast, nao Labs co-founder Claire Gouze lays out a practical playbook for building a context layer agents can query reliably, arguing context engineering is just analytics engineering in a new medium. The job is unchanged: capture tacit business knowledge and make it structured and trustworthy, now in markdown and files rather than only dbt models. Her pragmatic point is that the biggest reliability gains come from unglamorous work, not fancy context sources, plus concrete guidance on writing evals for what you build.
+
+Meta's AI Storage Blueprint at Scale (5 minute read)
+
+(blurb not generated)
+
+Migrating Counter Service storage: Design choices and learnings (5 minute read)
+
+Grab migrated its Counter Service, the anti-fraud system answering time-windowed count questions at tens of thousands of QPS and roughly a billion requests per day, from a wide-column database to Aerospike. The team used the switch to decouple storage from business logic and rework the read-modify-write data model, which previously cost four network round-trips per counter event across separate 15-minute, hourly, and daily tables. The write-up covers the reader-side safety work and the gradual rollout.
+
+PostgreSQL and the OOM Killer: Why We Use Strict Memory Overcommit (5 minute read)
+
+(blurb not generated)
+
+A guide to implementing AI data pipelines (1 minute read)
+
+dbt's 2026 State of Analytics Engineering report found 72% of teams prioritize AI-assisted agentic coding for data work, but only 24% prioritize AI for pipeline management. The author argues the gap is about accessibility: AI coding is self-driven and individual, while wiring agents into production orchestration is a team-level effort that needs approvals and alignment. The takeaway is that AI layers over the existing ELT stack rather than replacing it, the same way dbt sits over the warehouse.
+
+PRX Part 4: Our Data Strategy (5 minute read)
+
+Photoroom's Part 4 on PRX details how the team built the pre-training corpus for its 7B image model: a mix of public and internal datasets, re-captioned with a VLM into long, faithful descriptions and packed into a streamable format. The core argument is that pre-training should optimize for breadth and coverage rather than aesthetics, leaning on existing quality-filtered, deduplicated sources instead of rebuilding curation from scratch. Polish is deferred to fine-tuning and preference alignment on small, tightly curated sets.
+
+GORIO: GPU-Centered Remote I/O for Graph ANNS over NVMe-oF (1 minute read) [flag]
+
+GORIO is a GPU-centered remote I/O substrate for graph-based approximate nearest neighbor search over NVMe-oF, keeping query evolution, page-miss generation, and resume decisions on the GPU while the CPU acts only as a transport proxy. On a SIFT1M DiskANN-style workload, it runs 1.31x faster than the state-of-the-art remote-I/O path and 3.73x faster than direct remote page-cache access. The bet is that when the next data access is discovered inside GPU traversal, the CPU should stop gating when compute resumes.
+
+Exploiting Structural Properties for Efficient Constraint-Aware HNSW Hyperparameter Tuning (1 minute read)
+
+This paper tackles HNSW hyperparameter tuning, the knobs that govern the recall-latency trade-off in the vector indexes behind RAG systems. The authors show HNSW's configuration space has exploitable structure, with monotonic and unimodal relationships that let their framework, CHAT, prune resource-infeasible configs before building the index rather than treating tuning as a black box. Against strong baselines, CHAT reaches up to 45% higher throughput or 11% higher recall and converges up to 44x faster, all while respecting constraints on accuracy, latency, build time, and index size.
+
+Time-Series LLMs, Explained with t0-alpha (5 minute read)
+
+A walkthrough of time-series foundation models, using t0-alpha, a 102M-parameter probabilistic forecaster from The Forecasting Company released in June 2026 with open Apache-2.0 weights. The model patches a numerical sequence, runs it through a causal transformer, and emits quantiles rather than point forecasts. The author reproduced its GIFT-Eval headline numbers exactly (0.4941 CRPS, 0.7240 MASE), and argues the usual foundation-model intuition is weaker here since time series lack the shared structure that text and images have.
+
+TabPack: Efficient Hyperparameter Ensembles for Tabular Deep Learning (1 minute read)
+
+TabPack is an MLP ensemble for tabular deep learning that trains many networks with different hyperparameters in parallel during a single run, selecting ensemble members on the fly, so users specify sampling ranges instead of exact values. With default settings it matches extensively tuned prior methods on medium-to-large datasets while cutting the compute and effort needed. The authors report that default TabPack on a modern MacBook finished faster than tuning some baselines on an industry-grade GPU.
+
+Dashboard2Code: Evaluating Multimodal Models on Reconstructing Interactive Dashboards (1 minute read)
+
+This paper introduces Dashboard2Code, a task that has multimodal models actively click and filter through an interactive dashboard, then generate the Plotly and Dash code to reproduce it. The authors release DashboardMimic, a 180-pair benchmark across three difficulty levels and eight interaction patterns, plus an evaluation framework that combines code semantic analysis with dynamic interaction testing. Even the strongest models struggle on high-complexity dashboards, and a substantial gap remains between open- and closed-source systems.
+
+Scaling Security Alert Triage With Specialized Agents on Databricks (1 minute read)
+
+Databricks rebuilt its security alert triage pipeline around 17 source-specific agents plus a shared threat-intelligence agent, after a single foundation model reading every alert in one prompt escalated 50% of them and produced noise rather than triage. The lesson is that accurate triage is a context problem: false-positive patterns, behavioral baselines, and enrichment are specific to each detection source, so one generalist agent lacks the grounding to tell normal from abnormal. Splitting the work by source let the team investigate low-severity alerts it previously skipped.
+
+🚀
+Launches & Tools
+
+Introducing TabFM: A zero-shot foundation model for tabular data (5 minute read)
+
+(blurb not generated)
+
+Automatic Upgrades: best practice features for your lakehouse tables (1 minute read)
+
+Databricks launched Auto Upgrades for Unity Catalog managed tables, which observes how each table's clients access it over a rolling window, verifies compatibility, and then applies best-practice features like Row Tracking through a background ALTER TABLE with no manual work. Every change is reversible per table, and once all existing tables in a schema pass verification, the feature becomes a default that new tables inherit automatically.
+
+Show HN: Pulpie – Models for Cleaning the Web (1 minute read)
+
+Pulpie, an open-source family of models for extracting main content from HTML, hit Hugging Face, with the 210M-parameter pulpie-orange-small scoring 0.862 ROUGE-5 F1 on WebMainBench against leading extractor Dripper's 0.864 at a third the size. On an NVIDIA L4, it cleans 1 billion pages for $7,900 versus Dripper's $159,000, a 20x cost cut aimed at pre-training corpora and inference-time context.
+
+Contextual Policies in Omnigent: Using session state to better govern AI agents (1 minute read)
+
+Databricks added contextual policies to Omnigent, its open-source meta-harness, letting governance rules track what an agent session has already done before allowing the next action. The session state enables per-task spending caps and guardrails that tighten as risk accumulates, and applies across any wrapped agent including Claude Code and Codex.
+
+Eiger: An Efficient Library for GPU-based Data Analytics (1 minute read)
+
+Eiger is a GPU data analytics library that adds runtime workload adaptivity, offering multiple implementation variants per operator and using lightweight statistics like HyperLogLog++ sketches to pick implementations, tune knobs, and compress data mid-query. Across the full TPC-H benchmark at scale factor 100, it cuts total runtime by up to 1.8x versus cuDF, with individual queries running up to 6.1x faster.
+
+Reimagining Data Modeling on the Lakehouse: Introducing Vibe Data Modeling (1 minute read)
+
+Databricks introduced Vibe Data Modeling, an LLM agent that turns a plain-English business description into a governed, deployable Silver-layer data model in Unity Catalog, shipping as a single notebook with four widgets and one run. It replaces the six-month-to-three-year hand-build or the nine-to-twelve-month template rewire, using a multi-model ensemble that designs top-down and lets you refine the output in plain English until it fits.
+
+Conversational Analytics in BigQuery is now GA (5 minute read)
+
+(blurb not generated)

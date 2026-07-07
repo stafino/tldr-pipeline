@@ -1,0 +1,196 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR DevOps 2026-07-07
+
+📱
+News & Trends
+
+16-Year-Old Linux KVM Flaw Lets Guest VMs Escape to Host on Intel and AMD x86 Systems (1 minute read)
+
+A 16-year-old use-after-free bug in Linux KVM's shadow MMU, dubbed Januscape (CVE-2026-53359), lets a guest VM with root corrupt host kernel memory on both Intel and AMD, the first known guest-to-host escape working on both. The public proof-of-concept panics the host and takes every co-tenant VM down; a fix landed in mainline on June 19, and cloud operators should prioritize patching multi-tenant hosts.
+
+Linux Kernel Vulnerability Allows VM Escape on Intel and AMD Systems (1 minute read)
+
+Security researcher Hyunwoo Kim disclosed Januscape (CVE-2026-53359), a use-after-free bug in KVM's shadow MMU that allows guest-to-host VM escape on both Intel and AMD, the first KVM exploit to work on both architectures. It threatens multi-tenant public clouds running untrusted guests, letting a single rented instance panic the host or gain root RCE over every co-located tenant; it was patched in mainline on June 19 after 16 years dormant.
+
+Kepler, re-architected: Improved power accuracy and a community call to action! (5 minute read)
+
+(blurb not generated)
+
+New Januscape Linux flaw allows VM escape on Intel, AMD devices (1 minute read)
+
+Security researcher Hyunwoo Kim disclosed Januscape (CVE-2026-53359), a use-after-free bug in KVM/x86 shadow MMU emulation that lets an attacker with root inside a guest VM execute code on the host or panic the kernel, taking down every co-tenant VM on the same machine. It is the first guest-to-host escape that triggers on both Intel and AMD, and multi-tenant operators should confirm patch commit 81ccda30b4e8 is applied to their host kernels.
+
+Threat Actors Probe Gitea Docker Flaw CVE-2026-20896 13 Days After Disclosure (1 minute read)
+
+Sysdig detected the first in-the-wild exploitation attempt against CVE-2026-20896, a CVSS 9.8 flaw in Gitea's official Docker images that hard-code REVERSE_PROXY_TRUSTED_PROXIES to a wildcard, letting any client that reaches the container spoof an X-WEBAUTH-USER header and authenticate as admin. Gitea 1.26.3 removes the wildcard and makes reverse-proxy auth opt-in, but roughly 6,200 internet-facing instances remain exposed 13 days after disclosure.
+
+Proof-of-Concept Exploit Released for Linux ‘Bad Epoll’ Root Access Vulnerability (1 minute read)
+
+A proof-of-concept exploit is now public for Bad Epoll (CVE-2026-46242), a use-after-free race condition in the Linux kernel's epoll facility that lets unprivileged processes escalate to root on distros running kernel 6.4 or newer, including Pixel 10 phones. The PoC leaks kernel memory and hijacks an indirect call via a ROP chain, and a correct maintainer patch landed only two months after the initial report.
+
+Automatic Upgrades: best practice features for your lakehouse tables (1 minute read)
+
+Databricks released Auto Upgrades for Unity Catalog managed tables, which observes client access patterns over a rolling window, verifies workload compatibility, and then applies best-practice features like Row Tracking via a background ALTER TABLE job with no manual effort. Every change is reversible per table, and once all existing tables in a schema pass verification the feature becomes a default that new tables inherit automatically.
+
+Meta: Recycling memory is magic solution to RAM supply misery (1 minute read)
+
+Meta detailed Vistara, a CXL-based ASIC that exposes DDR4 modules pulled from decommissioned servers as an extra NUMA node on newer DDR5 hosts, letting memory-capacity-bound machines reuse RAM that outlives the servers it shipped in. In Meta's numbers the bridge cut server count by up to 25% for disaggregated ML inference, dropped distributed-cache latency 29%, and reduced job-failure frequency 33%, validating CXL against the AI-driven memory crunch.
+
+🚀
+Opinions & Tutorials
+
+I ported Kubernetes to the browser (5 minute read)
+
+(blurb not generated)
+
+How we keep GPUs reliable across Databricks AI (5 minute read)
+
+(blurb not generated)
+
+Open source maintainership in the age of AI (5 minute read)
+
+(blurb not generated)
+
+Performance per dollar is getting faster and cheaper (5 minute read)
+
+(blurb not generated)
+
+Meta rebuilds its AI storage stack from the ground up to stop GPUs sitting idle (1 minute read)
+
+Meta rebuilt the BLOB storage layer on top of its Tectonic fabric to keep AI training GPUs fed, cutting cross-region data-move times by up to 97%. The engineers collapsed fragmented metadata into a single ZippyDB-backed schema for near-instant path lookups, replaced the dataplane proxy with a fat client that streams bytes straight from storage servers, and colocated storage regionally with the GPUs that consume it. Meta claims the redesign added zero overhead on Tectonic while staying inside its power budget.
+
+PostgreSQL and the OOM Killer: Why We Use Strict Memory Overcommit (5 minute read)
+
+(blurb not generated)
+
+Why sandboxing your agent is not enough (1 minute read)
+
+Two CNCF-adjacent projects tackle secure AI-agent execution on Kubernetes differently. Agent-sandbox, under SIG Apps, wraps agents in Sandbox CRDs with strong identities, persistent storage, and pod-lifecycle isolation. Agent-substrate goes further for scale: agents run in secure worker pods for short bursts, suspend when idle, and resume on any available worker, decoupling the agent actor from the pod and packing more agents onto the same infrastructure.
+
+Slack AI: The Path to Multi-Cloud (5 minute read)
+
+(blurb not generated)
+
+Reduce CDN log costs with searchable archives (5 minute read)
+
+The Datadog post lays out a pattern for retaining high-volume CDN edge logs without indexing every event, which at streaming scale can reach tens of terabytes per day. Observability Pipelines routes raw logs to object storage while forwarding high-signal events for alerting, and Archive Search queries the archived data from Datadog rather than a separate S3-plus-Athena environment. The trade-off it targets is the fragmentation of moving historical investigations into a second query language and access-control model.
+
+Can LLMs Really Recover Microservice Failures? A Recovery-Aware Evaluation of Diagnosis-to-Action Reasoning (1 minute read)
+
+This paper introduces R2Act, a benchmark of 302 quality-audited Kubernetes incidents that evaluates whether LLMs can move from diagnosis to a valid recovery action, not just name a root cause. The strongest RAG-based models hit 91.4%–99.7% root-cause accuracy but only 36.8%–60.3% recovery validity, and they pick invalid actions for up to 62% of incidents they diagnosed correctly. The gap sits in translating evidence into an admissible fix, which is the part that matters for autonomous incident response.
+
+Client-Side Load Balancing at a Million Requests Per Second (5 minute read)
+
+(blurb not generated)
+
+How data sovereignty is changing cloud native infrastructure design (5 minute read)
+
+(blurb not generated)
+
+Meta's AI Storage Blueprint at Scale (5 minute read)
+
+(blurb not generated)
+
+What happens when you run a CUDA kernel (5 minute read)
+
+(blurb not generated)
+
+Caught in the Octopus Trap: Unauthenticated RCE in Argo CD with CodeQL (5 minute read)
+
+(blurb not generated)
+
+Beyond Compliance: A Large Scale Study on the Completeness and Consistency of the GitHub SBOMs (1 minute read)
+
+This paper evaluates GitHub's auto-generated SBOMs against Syft, Trivy, and the Microsoft SBOM Tool across 10,000 repositories spanning ten language ecosystems. GitHub's SBOMs fail NTIA compliance but reliably carry core metadata, and they match the Microsoft tool while often beating Syft and Trivy on version and license coverage. The catch for anyone using SBOMs for vulnerability or license analysis is that completeness swings hard by ecosystem, driven by how each language manages dependencies.
+
+Event-driven plumbing. When plain SQS + Lambda beats EventBridge Pipes (3 minute read)
+
+The author argues that for SQS-to-Lambda-to-SQS enrichment, plain SQS plus Lambda beats EventBridge Pipes, which charge $0.40 per million requests and bill every 64KB payload chunk as a separate request. Pipes earn their keep for low-code HTTP API enrichment on an event stream, but when your enrichment is already a Lambda, you pay in both money and lost failure granularity for handling your serverless primitives do better. The post walks through a multi-million-document S3 enrichment job to make the case.
+
+Configure Azure Pipelines app in ghe.com (5 minute read)
+
+A developer documenting how to install the Azure Pipelines GitHub app on ghe.com (GitHub Enterprise Managed Users with Data Residency), a step Azure DevOps's service-connection UI assumes exists but never explains. The fix is an undocumented URL, `https://{slug}.ghe.com/apps/external-app/azure-pipelines`, reverse-engineered from the Azure Boards app path after GitHub and Microsoft contacts came up empty. From there the service connection authorizes cleanly and pipelines rewire from Azure Repos to GitHub.
+
+Migrating Counter Service storage: Design choices and learnings (5 minute read)
+
+Grab's anti-fraud team migrated its Counter Service, which handles ~1 billion requests per day at tens of thousands of QPS, off a wide-column store onto Aerospike while decoupling storage from business logic. The writeup covers the reader-side safety scaffolding built for a gradual rollout, a redesigned writer-side data model that collapsed the original four network round-trips per event, and the optimizations surfaced by revisiting access patterns. The decoupling is framed as the reusable payoff, cutting the effort for any future storage swap.
+
+Your Scanner Doesn't Know What Time It Is (3 minute read)
+
+The author argues that cloud security scanners produce compound findings by splicing config snapshots captured minutes apart, asserting a system state that may never have existed at any single moment. A scanner reporting "this IAM role can reach 47 S3 buckets" can be wrong if the policy changed inside the collection window, and nothing flags the inconsistency. The post applies Lamport's 1978 causal-ordering work to argue scanners need consistent-snapshot semantics, not just point-in-time reads.
+
+⚒️
+Launches & Tools
+
+Your Worker can now have its own cache in front of it (1 minute read)
+
+Cloudflare launched Workers Cache, a tiered cache that sits in front of any Worker, enabled with a single line of Wrangler config and driven by the standard Cache-Control and Cache-Tag headers you already use. Cache hits skip Worker execution entirely, so you stop paying CPU time for repeat requests, and per-entrypoint control lets you slot cache stages anywhere in a chain of internal entrypoints, not just the public one.
+
+Upgrade Amazon EKS clusters with confidence using Kubernetes version rollbacks (5 minute read)
+
+(blurb not generated)
+
+Dragonfly v2.5.0 is released (5 minute read)
+
+(blurb not generated)
+
+Cloudflare announces Monetization Gateway (5 minute read)
+
+(blurb not generated)
+
+Announcing the Monetization Gateway: charge for any resource behind Cloudflare via x402 (5 minute read)
+
+(blurb not generated)
+
+Automate public TLS certificate issuance with ACME support in AWS Certificate Manager (5 minute read)
+
+(blurb not generated)
+
+See your serverless: introducing the Headlamp plugin for Knative (2 minute read)
+
+The Knative SIG released a Headlamp plugin that consolidates KService management, traffic splitting, autoscaling config, and resource mapping into a single UI, replacing the constant jumping between the kn CLI, kubectl, and the dashboard. Operators can edit traffic splits for canary rollouts, restart pods, and view logs inline, with every action gated by the user's existing RBAC permissions.
+
+Apple Container: Open-source tool for Linux containers on the Mac (1 minute read)
+
+Apple released Container 1.0.0, an open-source Swift tool that runs each Linux workload in its own lightweight VM on Apple silicon Macs and works with any OCI-compatible registry. The release adds long-lived container machine environments and a container cp command, but moves config to a TOML file and drops the v0 XPC interface, both breaking changes that require macOS 26 and updated scripts.
+
+Accelerate your infrastructure deployments by up to 4x with AWS CloudFormation Express mode (5 minute read)
+
+(blurb not generated)
+
+thundersnap 0.01: an undo button for everything (5 minute read)
+
+Apenwarr released thundersnap 0.01, an open-source tool that makes container snapshots fast to replicate, fork, share, and run across cloud providers and personal hardware, using Tailscale to knit bare-metal boxes and rented Hetzner or OVH nodes into a single mesh. It pitches persistent snapshots with an undo button as a better substrate than ephemeral containers for both humans and AI agents who want unlimited disk, fast CPUs, and provider portability.
+
+Vulnerability and Malware Checks in uv (5 minute read)
+
+(blurb not generated)
+
+HCP Terraform Powered by Infragraph Limited Availability Launch (5 minute read)
+
+HashiCorp moved HCP Terraform powered by Infragraph into limited availability for Standard and Premium customers on US instances, adding Azure, GitHub, and Terraform Enterprise connectors alongside AWS to build a live graph of resources, relationships, and state. The unified view targets the multi-cloud data silos that make ownership, security patching, and cost tracking hard, letting platform teams query infrastructure instead of stitching inventories together by hand.
+
+OpenSSH 10.4/10.4p1 Released (1 minute read)
+
+The OpenSSH project released 10.4/10.4p1, patching five security issues including SFTP downloads that could land files in unexpected locations, SCP remote-to-remote writes escaping to parent directories, and a pre-auth GSSAPI denial of service. The release also adds an opt-in post-quantum signature scheme combining ML-DSA-44 and Ed25519, plus stricter transport enforcement that disconnects peers sending non-key-exchange messages during rekey to curb memory exhaustion.
+
+Securing agentic AI with perimeter guardrails: What's new in VPC Service Controls (5 minute read)
+
+(blurb not generated)
+
+(re)introducing kpt: Your toolchain for infrastructure automation (5 minute read)
+
+(blurb not generated)
+
+DNSGlobe – Rust TUI to watch DNS propagate around the world (1 minute read)
+
+DNSGlobe is a Rust terminal UI that queries 34 public DNS resolvers worldwide in parallel, compares their answers, and renders record propagation on a live world map with a watch mode that re-polls until every server agrees. Each resolver is queried directly with no cache, EDNS0, and TCP fallback, and anycast POPs like Cloudflare, Google, and Quad9 are probed to reveal which site is actually serving your queries.
+
+⚡
+Quick Links
+
+To Reduce Electrical Grid Strain Amid Heat Wave, Data Centers Are Ordered to Use Backup Power (5 minute read)
+
+(blurb not generated)

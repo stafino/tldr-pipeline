@@ -1,9 +1,37 @@
 {
   "date": "2026-07-06",
   "newsletter": "tldr_fintech",
-  "fetched_at": "2026-07-06T08:10:07.561506+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-07-07T16:50:19.273485+00:00",
+  "tldr_titles": [
+    "Plaid talks with banks about potential IPO",
+    "World Cup sends prediction market volumes soaring to record highs",
+    "Tech and finance sectors losing 28,000 jobs monthly show AI impact on labor",
+    "Where Robinhood's 7% yield comes from",
+    "The coin nobody owns",
+    "Apple Pay will let shoppers check out using American Express points",
+    "Square introduces ChatGPT and Claude integrations for AI-powered discovery",
+    "Robinhood launches blockchain designed for real-world assets",
+    "Meta, like SpaceX, looks to turn excess AI compute into cash",
+    "TikTok to settle teen plaintiff's case before California social media trial",
+    "Kraken platform Payward acquires payments firm Reap",
+    "Meta considered buying Kalshi before developing its own prediction market app",
+    "Robinhood accelerates global expansion with chain mainnet, stock tokens, agentic trading, and DeFi products"
+  ],
+  "tldr_matched": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true,
+    true
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -18,8 +46,8 @@
       "score": 69.0,
       "title": "Robinhood Chain Mainnet Goes Live With Stock Tokens",
       "url": "https://threadreaderapp.com/thread/2072391688564191320.html",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 12,
+      "similarity": 0.6921731233596802
     },
     {
       "rank": 3,
@@ -194,8 +222,8 @@
       "score": 57.0,
       "title": "Kalshi and Polymarket combined hit $45B in prediction market volume",
       "url": "https://www.theblock.co/post/406983/kalshi-polymarket-volume-45-billion",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 11,
+      "similarity": 0.6421265006065369
     },
     {
       "rank": 25,
@@ -222,9 +250,49 @@
       "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.07692307692307693,
+    "25": 0.15384615384615385,
+    "50": 0.15384615384615385,
+    "100": 0.15384615384615385,
+    "27": 0.15384615384615385
+  },
+  "hits_at": {
+    "10": 1,
+    "25": 2,
+    "50": 2,
+    "100": 2,
+    "27": 2
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://www.pymnts.com/news/investment-tracker/ipo/2026/plaid-talks-with-banks-about-potential-ipo/",
+    "https://www.cnbc.com/2026/07/04/2026-fifa-world-cup-boosts-prediction-market-volumes.html",
+    "https://www.insurancejournal.com/news/national/2026/07/02/875989.htm",
+    "https://www.fintechbrainfood.com/p/robinhood-earn",
+    "https://www.fintechbrainfood.com/p/the-coin-nobody-owns",
+    "https://www.bloomberg.com/news/articles/2026-06-30/apple-pay-will-let-shoppers-check-out-using-american-express-points",
+    "https://squareup.com/us/en/press/claude-chatgpt-integrations",
+    "https://www.pymnts.com/blockchain/2026/robinhood-launches-blockchain-designed-for-real-world-assets/",
+    "https://techcrunch.com/2026/07/01/meta-like-spacex-looks-to-turn-excess-ai-compute-into-cash/",
+    "https://www.carriermanagement.com/news/2026/07/02/289708.htm",
+    "https://www.pymnts.com/cryptocurrency/2026/kraken-platform-payward-acquires-payments-firm-reap/",
+    "https://www.npr.org/2026/06/30/nx-s1-5875468/meta-kalshi-prediction-market-acquisition-talks",
+    "https://robinhood.com/us/en/newsroom/robinhood-accelerates-global-expansion-robinhood-chain-mainnet-stock-tokens-agentic-trading/"
+  ],
+  "tldr_domains": [
+    "pymnts.com",
+    "cnbc.com",
+    "insurancejournal.com",
+    "fintechbrainfood.com",
+    "fintechbrainfood.com",
+    "bloomberg.com",
+    "squareup.com",
+    "pymnts.com",
+    "techcrunch.com",
+    "carriermanagement.com",
+    "pymnts.com",
+    "npr.org",
+    "robinhood.com"
+  ]
 }

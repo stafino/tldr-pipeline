@@ -1,9 +1,35 @@
 {
   "date": "2026-07-06",
   "newsletter": "tldr_dev",
-  "fetched_at": "2026-07-06T08:10:02.844745+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-07-07T16:42:48.961183+00:00",
+  "tldr_titles": [
+    "Agentic test processes, LLM benchmarks, and other notes on agentic coding from Galapagos Island",
+    "PostgreSQL and the OOM Killer: Why We Use Strict Memory Overcommit",
+    "Hunting a 16-year-old SQLite bug with TLA+: is dqlite affected?",
+    "Write code, not specs",
+    "Some new agentic patterns",
+    "Better Models: Worse Tools",
+    "State of CLI Coding Agents, Mid-2026",
+    "Performance per dollar is getting faster and cheaper",
+    "Rebuilding Cognition's Agentic MapReduce",
+    "jamesob's guide to running SOTA LLMs locally",
+    "If you're a button, you have one job",
+    "What ORMs have taught me: just learn SQL"
+  ],
+  "tldr_matched": [
+    true,
+    false,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    true,
+    false
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -74,8 +100,8 @@
       "score": 70.0,
       "title": "Agentic coding notes",
       "url": "https://danluu.com/ai-coding/#appendix-agentic-loops-and-writing-this-post",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 0,
+      "similarity": 1.0
     },
     {
       "rank": 10,
@@ -98,8 +124,8 @@
       "score": 68.0,
       "title": "Better Models: Worse Tools",
       "url": "https://lucumr.pocoo.org/2026/7/4/better-models-worse-tools/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 5,
+      "similarity": 1.0
     },
     {
       "rank": 13,
@@ -490,8 +516,8 @@
       "score": 55.0,
       "title": "If you're a button, you have one job",
       "url": "https://unsung.aresluna.org/if-youre-a-button-you-have-one-job/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 10,
+      "similarity": 1.0
     },
     {
       "rank": 62,
@@ -526,9 +552,47 @@
       "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.08333333333333333,
+    "25": 0.16666666666666666,
+    "50": 0.16666666666666666,
+    "100": 0.25,
+    "65": 0.25
+  },
+  "hits_at": {
+    "10": 1,
+    "25": 2,
+    "50": 2,
+    "100": 3,
+    "65": 3
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://danluu.com/ai-coding/",
+    "https://www.ubicloud.com/blog/postgresql-and-the-oom-killer-why-we-use-strict-memory-overcommit",
+    "https://ubuntu.com/blog/hunting-a-16-year-old-sqlite-bug-with-tla-is-dqlite-affected",
+    "https://softwaredoug.com/blog/2026/07/04/write-code-not-specs.html",
+    "https://blog.fsck.com/2026/07/05/new-patterns/",
+    "https://lucumr.pocoo.org/2026/7/4/better-models-worse-tools/",
+    "https://blog.arcbjorn.com/state-of-cli-coding-agents-2026",
+    "https://www.wafer.ai/blog/glm52-amd",
+    "https://blog.matt-rickard.com/p/rebuilding-cognitions-agentic-mapreduce",
+    "https://github.com/jamesob/local-llm",
+    "https://unsung.aresluna.org/if-youre-a-button-you-have-one-job/",
+    "https://wozniak.ca/blog/2014/08/03/1/index.html"
+  ],
+  "tldr_domains": [
+    "danluu.com",
+    "ubicloud.com",
+    "ubuntu.com",
+    "softwaredoug.com",
+    "blog.fsck.com",
+    "lucumr.pocoo.org",
+    "blog.arcbjorn.com",
+    "afer.ai",
+    "blog.matt-rickard.com",
+    "github.com",
+    "unsung.aresluna.org",
+    "ozniak.ca"
+  ]
 }

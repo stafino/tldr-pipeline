@@ -1,17 +1,43 @@
 {
   "date": "2026-07-06",
   "newsletter": "tldr_infosec",
-  "fetched_at": "2026-07-06T08:10:04.416480+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-07-07T16:45:34.430024+00:00",
+  "tldr_titles": [
+    "Medtronic Data Breach Impacts 3.8 Million People",
+    "Newly discovered PamStealer isn't your typical macOS malware",
+    "JadePuffer ransomware used AI agent to automate entire attack",
+    "The Blind Spot in the Watchtower: Detections for When Someone Attacks Your Sentinel",
+    "Dissecting Apple's Sparse Image Format (ASIF)",
+    "Claude Mythos and SaaS Security: What You Need to Know",
+    "Falcon Cloud Security June 2026 Release: Updates for Azure and Google Cloud",
+    "Anthropic Accuses Alibaba of Claude Distillation/Cloning Attack",
+    "China's Cybersecurity Standard on AI Agent Deployment",
+    "New Avalon Malware Framework Packs CrownX Ransomware Capabilities",
+    "US government body paid $1M to hackers who never locked a single file",
+    "Dev says Google warned him about account hijack \u2013 then charged him $11,000 anyway"
+  ],
+  "tldr_matched": [
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
   "predictions": [
     {
       "rank": 1,
       "score": 88.0,
       "title": "JadePuffer ransomware used AI agent to automate entire attack",
       "url": "https://www.bleepingcomputer.com/news/security/jadepuffer-ransomware-used-ai-agent-to-automate-entire-attack/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 2,
+      "similarity": 1.0
     },
     {
       "rank": 2,
@@ -26,8 +52,8 @@
       "score": 83.0,
       "title": "Researchers document JadePuffer, the first known \"agentic ransomware\", which adapts in real time and retries steps to execute an end-to-end extortion operation (Bill Toulas/BleepingComputer)",
       "url": "https://www.techmeme.com/260706/p1#a260706p1",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 2,
+      "similarity": 0.7939843535423279
     },
     {
       "rank": 4,
@@ -130,8 +156,8 @@
       "score": 74.0,
       "title": "AI agent exploits Langflow RCE to automate database ransomware attack",
       "url": "https://thehackernews.com/2026/07/ai-agent-exploits-langflow-rce-to.html",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 2,
+      "similarity": 0.7391865849494934
     },
     {
       "rank": 17,
@@ -286,9 +312,47 @@
       "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.08333333333333333,
+    "25": 0.08333333333333333,
+    "50": 0.08333333333333333,
+    "100": 0.08333333333333333,
+    "35": 0.08333333333333333
+  },
+  "hits_at": {
+    "10": 1,
+    "25": 1,
+    "50": 1,
+    "100": 1,
+    "35": 1
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://www.securityweek.com/medtronic-data-breach-impacts-3-8-million-people/",
+    "https://arstechnica.com/security/2026/07/new-pamstealer-macos-malware-uses-clever-tradecraft-to-remain-stealthy/",
+    "https://www.bleepingcomputer.com/news/security/jadepuffer-ransomware-used-ai-agent-to-automate-entire-attack/",
+    "https://detect.fyi/the-blind-spot-in-the-watchtower-detections-for-when-someone-attacks-your-sentinel-897709f0dcd9",
+    "https://schamper.dev/dissecting-apples-sparse-image-format-asif/",
+    "https://www.reco.ai/blog/claude-mythos-saas-security-risks",
+    "https://www.crowdstrike.com/en-us/blog/new-in-falcon-cloud-security-expanding-multi-cloud-coverage/",
+    "https://arstechnica.com/tech-policy/2026/06/anthropic-claims-alibaba-defied-trump-to-attack-claude-and-steal-capabilities/",
+    "https://www.geopolitechs.org/p/chinas-cybersecurity-standard-on",
+    "https://thehackernews.com/2026/07/new-avalon-malware-framework-packs.html",
+    "https://thenextweb.com/news/kairos-data-extortion-million-payment",
+    "https://www.theregister.com/cyber-crime/2026/07/03/dev-says-google-warned-him-about-account-hijack-then-charged-him-11000-anyway/5266234"
+  ],
+  "tldr_domains": [
+    "securityweek.com",
+    "arstechnica.com",
+    "bleepingcomputer.com",
+    "detect.fyi",
+    "schamper.dev",
+    "reco.ai",
+    "crowdstrike.com",
+    "arstechnica.com",
+    "geopolitechs.org",
+    "thehackernews.com",
+    "thenextweb.com",
+    "theregister.com"
+  ]
 }

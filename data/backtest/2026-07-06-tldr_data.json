@@ -1,9 +1,33 @@
 {
   "date": "2026-07-06",
   "newsletter": "tldr_data",
-  "fetched_at": "2026-07-06T08:10:03.404648+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-07-07T16:43:18.471883+00:00",
+  "tldr_titles": [
+    "Meta's AI Storage Blueprint at Scale",
+    "Migrating Counter Service storage: Design choices and learnings",
+    "Time-Series LLMs, Explained with t0-alpha",
+    "Better Models: Worse Tools",
+    "Vercel Took a 10-Person SDR Team Down to 1. The Whole Thing Costs $5,000 a Year",
+    "The context engineering playbook",
+    "Comparing the Best Open Source Vector databases",
+    "Claude Science, an AI Workbench for Scientists, Is Now Available",
+    "How an AI Token Travels Through a Data Center",
+    "Variance Reduction Below the Randomization Grain",
+    "Bridging the Gap: Blending Structured Data Auditing with Unstructured Policy Intelligence"
+  ],
+  "tldr_matched": [
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -42,8 +66,8 @@
       "score": 62.0,
       "title": "Meta's AI Storage Blueprint at Scale",
       "url": "https://engineering.fb.com/2026/07/01/data-infrastructure/metas-ai-storage-blueprint-at-scale/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 0,
+      "similarity": 1.0
     },
     {
       "rank": 6,
@@ -62,9 +86,45 @@
       "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.09090909090909091,
+    "25": 0.09090909090909091,
+    "50": 0.09090909090909091,
+    "100": 0.09090909090909091,
+    "7": 0.09090909090909091
+  },
+  "hits_at": {
+    "10": 1,
+    "25": 1,
+    "50": 1,
+    "100": 1,
+    "7": 1
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://engineering.fb.com/2026/07/01/data-infrastructure/metas-ai-storage-blueprint-at-scale/",
+    "https://engineering.grab.com/counter-service-storage-migration",
+    "https://towardsdatascience.com/time-series-llms-explained-with-t0-alpha/",
+    "https://lucumr.pocoo.org/2026/7/4/better-models-worse-tools/",
+    "https://www.saastr.com/vercel-took-a-10-person-sdr-team-down-to-1-the-whole-thing-costs-5000-a-year-with-vercels-coo-jeanne-dewitt-grosser/",
+    "https://roundup.getdbt.com/p/the-context-engineering-playbook",
+    "https://redis.io/blog/best-open-source-vector-databases-comparison/",
+    "https://www.anthropic.com/news/claude-science-ai-workbench",
+    "https://www.datagravity.dev/p/how-an-ai-token-travels-through-a",
+    "https://tech.instacart.com/variance-reduction-below-the-randomization-grain-31719f87a7d2",
+    "https://blog.gopenai.com/bridging-the-gap-blending-structured-data-auditing-with-unstructured-policy-intelligence-17710e04c8de"
+  ],
+  "tldr_domains": [
+    "engineering.fb.com",
+    "engineering.grab.com",
+    "towardsdatascience.com",
+    "lucumr.pocoo.org",
+    "saastr.com",
+    "roundup.getdbt.com",
+    "redis.io",
+    "anthropic.com",
+    "datagravity.dev",
+    "tech.instacart.com",
+    "blog.gopenai.com"
+  ]
 }

@@ -1,0 +1,191 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR IT 2026-07-07
+
+🚀
+News & Trends
+
+New Januscape Linux flaw allows VM escape on Intel, AMD devices (1 minute read)
+
+Researchers disclosed Januscape (CVE-2026-53359), a 16-year-old use-after-free flaw in KVM/x86's shadow MMU that lets an attacker with root in a guest VM escape to the host and run code across every tenant on the same server. The bug hits both Intel and AMD hosts and was patched in June 2026, so multi-tenant KVM operators should confirm commit 81ccda30b4e8 is applied.
+
+Nvidia pushes Kyber release to 2028 following manufacturing concerns: report (1 minute read)
+
+Nvidia delayed its Kyber NVL144 rack architecture to 2028, more than a year past its 2027 target, after PCB midplane manufacturing problems and a scrapped back-to-back Oberon workaround, SemiAnalysis reported. The slip leaves hyperscalers without a proven way to scale up Rubin Ultra clusters and likely pushes out the related NVL576 system, complicating data-center buildout roadmaps that assumed 2027 availability of the 600kW liquid-cooled racks.
+
+Enterprise Tech In, Shell Out (Progress Kemp LoadMaster Uninitialized Heap to Pre-Auth RCE CVE-2026-8037) (5 minute read)
+
+(blurb not generated)
+
+SharePoint RCE CVE-2026-45659 Added to CISA KEV After Active Exploitation (5 minute read)
+
+(blurb not generated)
+
+Fake IT bods on Microsoft Teams coax workers into installing malware (1 minute read)
+
+Attackers are impersonating internal IT staff over Microsoft Teams to social-engineer employees into installing remote-access malware, exploiting the platform's default that lets external tenants message users directly. IT leaders should audit Teams external-access and federation settings, since the attack sidesteps email filtering entirely and lands in a channel most staff trust as an internal help-desk line.
+
+Linux Kernel Vulnerability Allows VM Escape on Intel and AMD Systems (1 minute read)
+
+Security researchers disclosed CVE-2026-53359, a use-after-free flaw in the KVM hypervisor's shadow MMU code, dubbed Januscape, that lets an attacker with root on a guest VM escape to the host and run code as root or crash every tenant on the same machine. It is the first KVM VM-escape known to work on both Intel and AMD, sat dormant for 16 years, and was patched in the mainline kernel on June 19.
+
+Fake IT support calls on Microsoft Teams push EtherRAT malware (1 minute read)
+
+Attackers are impersonating corporate IT support over Microsoft Teams voice calls to trick employees into granting remote control and installing EtherRAT, a Node.js remote-access trojan that hands over full system control, per Palo Alto Networks' Unit 42. The campaign chains phishing emails, legitimate tools like AnyDesk and HopToDesk, and Ethereum smart contracts for resilient C2, and follows a wave of Teams-based intrusions pushing Microsoft to add new tenant-level protections.
+
+Microsoft to enable Windows settings backup by default for orgs (1 minute read)
+
+Microsoft will switch the Windows settings backup policy from disabled to enabled by default on Entra-joined and Entra hybrid-joined systems running Windows 11 26H2, excluding EU DMA-regulated regions and sovereign cloud environments. Admins keep full control through Intune or Group Policy, where explicit enable or disable settings override the default, and restore behavior still requires manual configuration.
+
+Microsoft testing new Cloud Rebuild Windows 11 recovery feature (1 minute read)
+
+Microsoft began testing Cloud Rebuild in Windows 11 Insider Experimental builds, a recovery option that performs a full OS reinstall from Windows Update, pulling both the target image and device drivers so a machine returns to a known-good state even when it won't boot. It joins Point-in-Time Restore and Quick Machine Recovery under Microsoft's Windows Resiliency Initiative, cutting the need for USB media, custom images, or on-site IT access to recover fleet devices.
+
+Microsoft scrambles to secure AI talent, guts Xbox workforce (1 minute read)
+
+Microsoft is redeploying 6,000 industry and engineering experts under its new Frontier Company initiative while cutting Xbox headcount to fund the AI push. The reshuffle signals that enterprise buyers should expect Microsoft to prioritize Copilot and agent-platform engineering over consumer gaming, concentrating its roadmap investment where it sees enterprise revenue.
+
+MPs tell Brit government: Sort out your tech sovereignty or get left out in the cold (1 minute read)
+
+A UK parliamentary committee warned the government that its dependence on US and Chinese hyperscalers leaves critical public-sector systems exposed and urged a coordinated push on domestic cloud, compute, and AI capacity. The report puts procurement pressure on Whitehall to favor sovereign and European providers, a shift that could reshape framework agreements currently dominated by Microsoft, AWS, and Google Cloud.
+
+Max severity Adobe ColdFusion flaw now exploited in attacks (1 minute read)
+
+Attackers are exploiting a maximum-severity Adobe ColdFusion vulnerability, CVE-2026-48282, that lets unauthenticated actors gain remote code execution on unpatched systems running versions 2025.9, 2023.20, and earlier. KEVIntel recorded in-the-wild exploitation within two hours of Adobe's Tuesday disclosure, and with Shadowserver tracking nearly 800 exposed instances online, admins should apply the patches immediately.
+
+New CitrixBleed Vulnerability Exploited Immediately After Public Disclosure (5 minute read)
+
+(blurb not generated)
+
+BeyondTrust warns of critical flaws in remote access software (1 minute read)
+
+BeyondTrust warned customers to patch two critical authentication-bypass flaws (CVE-2026-40138 and CVE-2026-40139) in its Remote Support and Privileged Remote Access products, which let unauthenticated attackers reach appliances and elevated accounts under certain configurations. Cloud instances were patched by April 21, but self-hosted customers must apply the rollup or upgrade to 25.3.3, with Shadowserver tracking nearly 2,000 exposed instances online.
+
+Azure CLI Password Spray Hits at Least 78 Microsoft Accounts in 81M+ Attempts (5 minute read)
+
+(blurb not generated)
+
+New Avalon Malware Framework Packs CrownX Ransomware Capabilities (5 minute read)
+
+(blurb not generated)
+
+Microsoft Accelerates Post-Quantum Cryptography Shift to 2029 (5 minute read)
+
+(blurb not generated)
+
+SAP’s Senior Reshuffle Follows AI-Induced Stock Rout (1 minute read)
+
+SAP replaced senior leadership after its stock fell 46% under CEO Christian Klein, as investors punished the slow payoff from its AI pivot and cloud-migration push. The reshuffle signals pressure on SAP to prove its Business AI and RISE with SAP bets can defend margins against a broader repricing of enterprise-software valuations.
+
+Microsoft betting that enterprise AI needs engineers, not bigger sales teams (3 minute read)
+
+Microsoft cut roughly 4,800 jobs this week, about 2.1% of its workforce, mostly in commercial sales and Xbox, days after launching Frontier Company to embed its engineers alongside customers deploying AI. The move signals Microsoft is betting on engineering expertise over traditional account management for AI adoption, which reshapes how CIOs get implementation support and pressures the systems integrators that once owned that work.
+
+Meta: Recycling memory is magic solution to RAM supply misery (1 minute read)
+
+Meta detailed Vistara, a CXL-based ASIC that lets decommissioned DDR4 modules serve as expanded memory in DDR5 servers, addressing the roughly 40% of its fleet that is memory-capacity bound amid AI-driven RAM shortages. Meta reports up to a 25% reduction in server count for disaggregated ML inference, 29% lower average latency for distributed caches, and 33% fewer job failures, giving hyperscalers a real-world validation of CXL for memory reuse.
+
+🧠
+Analysis & Opinions
+
+With AI, a wrong answer is a bug. A wrong action is an incident (3 minute read)
+
+The author argues that banking AI has crossed from reading and summarizing into taking autonomous actions, which turns a wrong answer from a quality bug into a reportable incident and makes overprivileged agents the leading security risk. The Five Eyes cyber agencies named privilege the top agentic risk in their April 2026 joint guidance and called strict least privilege critical. For CISOs, that shifts least-privilege scoping of agents from best practice to expected practice on a compressed timeline.
+
+How data sovereignty is changing cloud native infrastructure design (5 minute read)
+
+(blurb not generated)
+
+Securing AI agents: When AI tools move from reading to acting (5 minute read)
+
+(blurb not generated)
+
+Agentic AI to disrupt $234B in SaaS spending: Gartner (1 minute read)
+
+Gartner projects that agentic AI will disrupt $234B in SaaS spending as AI agents replace traditional software interfaces, undercutting the per-seat licensing model that underpins most enterprise SaaS. For IT buyers, the shift threatens vendors whose value sits in dashboards and manual workflows rather than the underlying data and systems of record. The near-term question is whether incumbents like Salesforce and ServiceNow reprice around outcomes before agents route around their UIs entirely.
+
+Mapping out your unknown: A threat hunter's guide to Salesforce (5 minute read)
+
+(blurb not generated)
+
+How to Govern Autonomous Agents in Enterprise AI Factories (5 minute read)
+
+(blurb not generated)
+
+🤝
+Launches & Partnerships
+
+IBM debuts compact z17 mainframes and LinuxONE servers for on-premises enterprise AI (1 minute read)
+
+IBM released smaller z17 mainframes in a 19-inch rack-mount form factor and lower-priced LinuxONE 5 Express and Rockhopper 5 servers, targeting regulated enterprises that need to run AI workloads on-premises. The compact z17 packs up to 82 cores and 18TB of memory on the Telum II processor, while IBM pitches Rockhopper 5 as replacing 23 x86 servers with up to 83% lower power draw.
+
+New analytics and cost controls are available for Claude Enterprise (5 minute read)
+
+(blurb not generated)
+
+Amazon Bedrock Managed Knowledge Base (1 minute read)
+
+AWS released Amazon Bedrock Managed Knowledge Base, a managed primitive that abstracts the full RAG stack—storage, embeddings, re-ranking, and foundation model selection—plus six pre-built connectors that pull data and permissions from SaaS sources. Enterprise teams already on Bedrock can stand up agentic AI applications against proprietary data without building or maintaining custom RAG pipelines, removing a procurement and infrastructure dependency on standalone vector and retrieval vendors.
+
+Upgrade Amazon EKS clusters with confidence using Kubernetes version rollbacks (5 minute read)
+
+(blurb not generated)
+
+Automate public TLS certificate issuance with ACME support in AWS Certificate Manager (5 minute read)
+
+(blurb not generated)
+
+Join video conferences on Google Meet hardware via SIP through Pexip (1 minute read)
+
+Google Meet hardware can now join meetings on any SIP-compatible platform through a Pexip interop gateway, including DTMF controls for navigating IVR prompts and entering numeric passcodes, on both Android and ChromeOS room devices. The feature is off by default and available to all Workspace customers with Meet hardware, though it requires a separate Pexip subscription and rolls out gradually starting July 6.
+
+Microsoft builds a bouncer to keep bots out of Teams meetings (5 minute read)
+
+(blurb not generated)
+
+Microsoft wants to keep your AI agents from going rogue (1 minute read)
+
+Microsoft introduced Microsoft Execution Containers (MXC), a policy-driven runtime layer that sandboxes AI agents on Windows and WSL, now in early preview with process and session isolation. Agent 365 integrates the SDK natively and uses Entra and Intune to enforce per-agent constraints, letting IT teams apply least-privilege controls, audit agent activity, and match isolation to each workload's risk.
+
+thundersnap 0.01: an undo button for everything (5 minute read)
+
+Apenwarr released thundersnap 0.01, an open-source tool that replicates, forks, and shares container snapshots across cloud and personal hardware, using Tailscale to mesh bare-metal, Hetzner, and OVH machines into a single fabric with fast local disk and rollback. The pitch reframes ephemeral containers as the wrong primitive for both humans and AI agents, favoring portable snapshots that move to whichever provider offers the best hardware at the best price.
+
+Accelerate your infrastructure deployments by up to 4x with AWS CloudFormation Express mode (5 minute read)
+
+(blurb not generated)
+
+Verifiable, private AI: Google Cloud expands Confidential Computing frontiers (5 minute read)
+
+(blurb not generated)
+
+Google tests new Gemini Inbox section for Workspace triage (5 minute read)
+
+(blurb not generated)
+
+Securing agentic AI with perimeter guardrails: What's new in VPC Service Controls (5 minute read)
+
+(blurb not generated)
+
+HCP Terraform Powered by Infragraph Limited Availability Launch (5 minute read)
+
+HashiCorp launched HCP Terraform powered by Infragraph into limited availability for Standard and Premium customers on US instances, adding a live graph view that maps resources, relationships, and state across environments. The release expands connectors to Azure, GitHub, and Terraform Enterprise alongside AWS, giving platform teams a unified inventory to track resource ownership, surface risk, and prioritize security patching without stitching together separate tools.
+
+Boundary 1.0 releases RDP session recording and improved management (5 minute read)
+
+(blurb not generated)
+
+🎁
+Miscellaneous
+
+Anonymous Researcher Drops 0-day 'Exploitarium' Repo (5 minute read)
+
+(blurb not generated)
+
+⚡
+Quick Links
+
+Hardware-Rooted AI Security That Won't Slow You Down (5 minute read)
+
+(blurb not generated)
