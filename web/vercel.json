@@ -3,5 +3,6 @@
   "buildCommand": "npm run build",
   "installCommand": "npm install",
   "framework": "nextjs",
-  "outputDirectory": ".next"
+  "outputDirectory": ".next",
+  "ignoreCommand": "git log -1 --pretty=%B | grep -q '\\[deploy\\]' && exit 1; git diff --quiet HEAD^ HEAD -- ':(top)web' ':(top)config'"
 }

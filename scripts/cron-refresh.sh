@@ -125,13 +125,27 @@ run_stage "tweet" uv run python scripts/tweet_funding.py
 # if blurbs crashed.
 echo
 echo "── COMMIT & PUSH ────────────────────────────"
+# Data-only commits are skipped by Vercel's ignoreCommand (web/vercel.json) to
+# save build minutes. Once per UTC day we tag the commit with [deploy] so the
+# site rebuilds with fresh data exactly once daily. The stamp file lives under
+# data/ but is never staged (we only add specific subdirs), so it stays local.
+DEPLOY_STAMP="data/.last-deploy-build"
+DEPLOY_DAY="$(date -u +%Y-%m-%d)"
+DEPLOY_TAG=""
+if [[ "$(cat "$DEPLOY_STAMP" 2>/dev/null)" != "$DEPLOY_DAY" ]]; then
+  DEPLOY_TAG=" [deploy]"
+fi
+
 git add data/scored data/blurbs data/issues data/funding data/vc data/backtest 2>/dev/null || true
 if [[ -n "$(git diff --cached --name-only)" ]]; then
-  git -c user.email="${GIT_AUTHOR_EMAIL:-oliverstaf1@gmail.com}" \
-      -c user.name="${GIT_AUTHOR_NAME:-stafino}" \
-      commit -m "cron: refresh $(date -u +%Y-%m-%dT%H:%M:%SZ)" \
-      && git push \
-      || echo "✗ commit/push failed (will retry next run)"
+  if git -c user.email="${GIT_AUTHOR_EMAIL:-oliverstaf1@gmail.com}" \
+         -c user.name="${GIT_AUTHOR_NAME:-stafino}" \
+         commit -m "cron: refresh $(date -u +%Y-%m-%dT%H:%M:%SZ)${DEPLOY_TAG}" \
+      && git push; then
+    [[ -n "$DEPLOY_TAG" ]] && echo "$DEPLOY_DAY" > "$DEPLOY_STAMP"
+  else
+    echo "✗ commit/push failed (will retry next run)"
+  fi
 else
   echo "▸ no data changes; nothing to commit"
 fi
