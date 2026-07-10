@@ -209,18 +209,28 @@ def rank_stories(stories: list[Story], use_cache: bool = True) -> list[ScoredSto
         "(No learned preferences yet - they populate after the first backtest cycle.)"
     )
 
-    # Build a "TLDR already published this URL in the last 14 days" set.
     from common.already_covered import _canonical_url, build_covered_set
-    from datetime import date as _date
-    covered = build_covered_set(_date.today(), lookback_days=14)
-
-    # Fetch HN engagement signal for every story (cached for 6h).
     from common.engagement import batch_fetch as fetch_engagement
-    log.info("Fetching engagement signal for %d stories (HN/Algolia)...", len(stories))
-    eng_signals = fetch_engagement([s.url for s in stories], concurrency=8)
-    log.info("Engagement signals: %d found, %d empty",
-             sum(1 for s in eng_signals.values() if s.found),
-             sum(1 for s in eng_signals.values() if not s.found))
+    from datetime import date as _date
+
+    # Engagement + covered-set are only consumed when building an LLM prompt for
+    # an UNcached story; cached stories return early in _score_one and never
+    # touch them. So restrict this work (HTTP calls + reading the backtest dir)
+    # to the uncached subset - a re-run where everything is cached does neither.
+    uncached = [
+        s for s in stories if not (use_cache and _cache_key(s, family_version).exists())
+    ]
+    covered: dict = {}
+    eng_signals: dict = {}
+    if uncached:
+        covered = build_covered_set(_date.today(), lookback_days=14)
+        log.info("Fetching engagement signal for %d uncached stories (HN/Algolia)...", len(uncached))
+        eng_signals = fetch_engagement([s.url for s in uncached], concurrency=8)
+        log.info("Engagement signals: %d found, %d empty",
+                 sum(1 for s in eng_signals.values() if s.found),
+                 sum(1 for s in eng_signals.values() if not s.found))
+    else:
+        log.info("All %d stories already ranked (cache hit); skipping engagement + covered-set.", len(stories))
 
     system = SYSTEM_TEMPLATE.format(
         rubric=rubric, family=_format_family(nls),

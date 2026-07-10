@@ -44,18 +44,19 @@ def build_covered_set(target_date: date, lookback_days: int = 14) -> dict[str, l
 
     cutoff = target_date - timedelta(days=lookback_days)
     for f in BACKTEST_DIR.glob("*.json"):
-        # filename: YYYY-MM-DD-tldr_<id>.json
+        # filename: YYYY-MM-DD-tldr_<id>.json - cheap date gate on the name so
+        # we only open files inside the lookback window (dir grows unbounded).
+        try:
+            file_date = date.fromisoformat(f.stem[:10])
+        except Exception:
+            continue
+        if not (cutoff <= file_date <= target_date):
+            continue
         try:
             d = json.loads(f.read_text())
         except Exception:
             continue
         if not d.get("available"):
-            continue
-        try:
-            file_date = date.fromisoformat(d.get("date", ""))
-        except Exception:
-            continue
-        if not (cutoff <= file_date <= target_date):
             continue
         nl = d.get("newsletter", "")
         urls = d.get("tldr_urls", [])

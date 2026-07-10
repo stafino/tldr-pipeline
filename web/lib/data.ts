@@ -51,7 +51,7 @@ export function listAvailableDates(): string[] {
  * Used to power the "Filter by date" dropdown - picks the day a story was
  * published, not the day the scraper happened to fetch it.
  */
-export function listPublishedDates(): string[] {
+export const listPublishedDates = memoZeroArg(function listPublishedDatesImpl(): string[] {
   const scrapeDates = listAvailableDates();
   const dates = new Set<string>();
   for (const d of scrapeDates) {
@@ -63,7 +63,7 @@ export function listPublishedDates(): string[] {
     }
   }
   return Array.from(dates).sort().reverse();
-}
+});
 
 /**
  * Sliding-window date filter: keeps stories whose UTC publish date is in
@@ -98,7 +98,18 @@ export function filterBlurbsByStoryUrls<T extends { story_url: string }>(
   return blurbs.filter((b) => urls.has(b.story_url));
 }
 
+// Data files are baked into the deploy bundle and never change within a running
+// process (a new deploy = new build = new process), so parsed results are cached
+// permanently. This turns the per-request 28 MB read+JSON.parse into a one-time
+// cost per warm function instance. Dev bypasses the cache so edits stay live.
+const _isDev = process.env.NODE_ENV === 'development';
+const _jsonlCache = new Map<string, unknown[]>();
+
 function readJsonl<T>(filePath: string): T[] {
+  if (!_isDev) {
+    const hit = _jsonlCache.get(filePath);
+    if (hit) return hit as T[];
+  }
   if (!fs.existsSync(filePath)) return [];
   const text = fs.readFileSync(filePath, 'utf-8');
   const out: T[] = [];
@@ -111,7 +122,32 @@ function readJsonl<T>(filePath: string): T[] {
       // skip malformed lines
     }
   }
+  if (!_isDev) _jsonlCache.set(filePath, out);
   return out;
+}
+
+// Memoize a zero-arg loader for the life of the process (prod only).
+function memoZeroArg<T>(fn: () => T): () => T {
+  let cached: { v: T } | null = null;
+  return () => {
+    if (_isDev) return fn();
+    if (!cached) cached = { v: fn() };
+    return cached.v;
+  };
+}
+
+// Memoize a loader by a string key derived from its args (prod only).
+function memoKeyed<A extends unknown[], T>(
+  fn: (...args: A) => T,
+  keyOf: (...args: A) => string,
+): (...args: A) => T {
+  const cache = new Map<string, T>();
+  return (...args: A) => {
+    if (_isDev) return fn(...args);
+    const k = keyOf(...args);
+    if (!cache.has(k)) cache.set(k, fn(...args));
+    return cache.get(k) as T;
+  };
 }
 
 function loadScored(date: string): ScoredStory[] {
@@ -123,27 +159,33 @@ function loadBlurbs(date: string): Blurb[] {
 }
 
 /** Load every day's scored data, deduplicated by URL (best score wins). */
-export function loadScoredAll(dates: string[]): ScoredStory[] {
-  const byUrl = new Map<string, ScoredStory>();
-  for (const d of dates) {
-    for (const ss of loadScored(d)) {
-      const existing = byUrl.get(ss.story.url);
-      if (!existing || ss.score > existing.score) byUrl.set(ss.story.url, ss);
+export const loadScoredAll = memoKeyed(
+  function loadScoredAllImpl(dates: string[]): ScoredStory[] {
+    const byUrl = new Map<string, ScoredStory>();
+    for (const d of dates) {
+      for (const ss of loadScored(d)) {
+        const existing = byUrl.get(ss.story.url);
+        if (!existing || ss.score > existing.score) byUrl.set(ss.story.url, ss);
+      }
     }
-  }
-  return Array.from(byUrl.values());
-}
+    return Array.from(byUrl.values());
+  },
+  (dates) => dates.join(','),
+);
 
-export function loadBlurbsAll(dates: string[]): Blurb[] {
-  const byKey = new Map<string, Blurb>();
-  for (const d of dates) {
-    for (const b of loadBlurbs(d)) {
-      const key = `${b.story_url}||${b.newsletter}`;
-      if (!byKey.has(key)) byKey.set(key, b);
+export const loadBlurbsAll = memoKeyed(
+  function loadBlurbsAllImpl(dates: string[]): Blurb[] {
+    const byKey = new Map<string, Blurb>();
+    for (const d of dates) {
+      for (const b of loadBlurbs(d)) {
+        const key = `${b.story_url}||${b.newsletter}`;
+        if (!byKey.has(key)) byKey.set(key, b);
+      }
     }
-  }
-  return Array.from(byKey.values());
-}
+    return Array.from(byKey.values());
+  },
+  (dates) => dates.join(','),
+);
 
 /** Index blurbs by (story_url, newsletter) for fast lookup. */
 export function indexBlurbs(blurbs: Blurb[]): Map<string, Blurb> {
@@ -152,11 +194,7 @@ export function indexBlurbs(blurbs: Blurb[]): Map<string, Blurb> {
   return m;
 }
 
-let _newslettersCache: { id: string; data: Record<string, Newsletter>; ts: number } | null = null;
-
-export function loadNewsletters(): Record<string, Newsletter> {
-  // Lightweight 1-second cache so a single page render doesn't re-parse the YAML
-  if (_newslettersCache && Date.now() - _newslettersCache.ts < 1000) return _newslettersCache.data;
+export const loadNewsletters = memoZeroArg(function loadNewslettersImpl(): Record<string, Newsletter> {
   if (!fs.existsSync(NEWSLETTERS_PATH)) return {};
   const parsed = yaml.load(fs.readFileSync(NEWSLETTERS_PATH, 'utf-8')) as Record<string, any>;
   const out: Record<string, Newsletter> = {};
@@ -181,9 +219,8 @@ export function loadNewsletters(): Record<string, Newsletter> {
       edition_size: Number(r.edition_size ?? 12),
     };
   }
-  _newslettersCache = { id: 'snapshot', data: out, ts: Date.now() };
   return out;
-}
+});
 
 export function defaultNewsletterId(): string {
   if (!fs.existsSync(NEWSLETTERS_PATH)) return 'tldr_tech';
@@ -277,7 +314,7 @@ function chooseRep(a: FundingRound, b: FundingRound): FundingRound {
  * Companies with two or more distinct known stages keep blank-stage rows
  * separate, since we can't tell which round they belong to.
  */
-function loadAllRows(): FundingRound[] {
+const loadAllRows = memoZeroArg(function loadAllRowsImpl(): FundingRound[] {
   const byUrl = new Map<string, FundingRound>();
   for (const d of listScrapeDates()) {
     const file = path.join(FUNDING_DIR, `${d}.jsonl`);
@@ -359,7 +396,7 @@ function loadAllRows(): FundingRound[] {
     }
   }
   return [...merged, ...anonymous];
-}
+});
 
 /** Distinct raised_dates across every stored round, newest first. */
 export function listFundingDates(): string[] {
@@ -384,7 +421,7 @@ function listVcDates(): string[] {
   return Array.from(dates).sort().reverse();
 }
 
-function loadVcRows(): VcArticle[] {
+const loadVcRows = memoZeroArg(function loadVcRowsImpl(): VcArticle[] {
   const byUrl = new Map<string, VcArticle>();
   for (const d of listVcDates()) {
     for (const r of readJsonl<VcArticle>(path.join(VC_DIR, `${d}.jsonl`))) {
@@ -392,7 +429,7 @@ function loadVcRows(): VcArticle[] {
     }
   }
   return Array.from(byUrl.values());
-}
+});
 
 export { listVcDates };
 

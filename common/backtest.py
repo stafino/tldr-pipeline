@@ -11,6 +11,7 @@ import json
 import logging
 import re
 from dataclasses import asdict, dataclass, field
+from functools import lru_cache
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -216,16 +217,22 @@ def fetch_tldr_stories(newsletter_id: str, date: str) -> list[tuple[str, str]]:
 # ────────────────────────────────────────────────────────────────────────────
 # Matching via title embeddings
 # ────────────────────────────────────────────────────────────────────────────
+@lru_cache(maxsize=2)
+def _get_model(model_name: str):
+    from sentence_transformers import SentenceTransformer
+
+    return SentenceTransformer(model_name)
+
+
 def _embed(texts: list[str]) -> np.ndarray:
     import os
-
-    from sentence_transformers import SentenceTransformer
 
     model_name = os.environ.get(
         "SENTENCE_TRANSFORMER_MODEL", "sentence-transformers/all-MiniLM-L6-v2"
     )
-    model = SentenceTransformer(model_name)
-    return np.asarray(model.encode(texts, normalize_embeddings=True))
+    # Model is loaded once per process, not per call (backtest_cache calls this
+    # ~90x/run). torch model construction is the dominant cost here.
+    return np.asarray(_get_model(model_name).encode(texts, normalize_embeddings=True))
 
 
 def compute_matches(

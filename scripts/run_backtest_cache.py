@@ -21,7 +21,7 @@ _REPO_ROOT = Path(__file__).resolve().parent.parent
 if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 
-from common.backtest import compute_backtest, save  # noqa: E402
+from common.backtest import compute_backtest, load_cached, save  # noqa: E402
 from common.newsletters import load_newsletters  # noqa: E402
 
 log = logging.getLogger(__name__)
@@ -44,7 +44,14 @@ def main() -> None:
     ap.add_argument("--start", default=None, help="range start (inclusive)")
     ap.add_argument("--end", default=None, help="range end (inclusive)")
     ap.add_argument("--newsletter", default="all", help="specific newsletter id or 'all'")
+    ap.add_argument(
+        "--force",
+        action="store_true",
+        help="recompute every date, even past ones already cached as available",
+    )
     args = ap.parse_args()
+
+    today = _date.today().isoformat()
 
     if args.start and args.end:
         dates = _date_range(args.start, args.end)
@@ -61,8 +68,17 @@ def main() -> None:
 
     n_done = 0
     n_available = 0
+    n_skipped = 0
     for d in dates:
         for nid in nl_ids:
+            # Past dates whose TLDR archive was already captured are immutable:
+            # both TLDR's published issue and our frozen predictions won't change.
+            # Only today (evolving predictions) and not-yet-published dates recompute.
+            if not args.force and d < today:
+                cached = load_cached(nid, d)
+                if cached is not None and cached.available:
+                    n_skipped += 1
+                    continue
             try:
                 result = compute_backtest(nid, d)
                 save(result)
@@ -80,8 +96,8 @@ def main() -> None:
                 log.warning("  %s/%s: %r", d, nid, e)
                 n_done += 1
 
-    log.info("done: %d/%d entries written (%d had a published TLDR issue to compare)",
-             n_done, total, n_available)
+    log.info("done: %d/%d entries written (%d had a published TLDR issue to compare); %d immutable dates skipped",
+             n_done, total, n_available, n_skipped)
 
 
 if __name__ == "__main__":
