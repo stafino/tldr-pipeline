@@ -1,13 +1,12 @@
 from __future__ import annotations
 
 import logging
-import os
-from functools import lru_cache
 from urllib.parse import urlparse
 
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 
+from common.embeddings import embed
 from common.story import Story
 
 log = logging.getLogger(__name__)
@@ -46,20 +45,10 @@ def _domain(url: str) -> str:
         return ""
 
 
-@lru_cache(maxsize=2)
-def _get_model(model_name: str):
-    from sentence_transformers import SentenceTransformer
-
-    return SentenceTransformer(model_name)
-
-
 def embed_titles(titles: list[str]) -> np.ndarray:
-    """Embed titles with sentence-transformers. Lazy import to keep cold-start fast.
-    Model is cached per process so repeated calls don't reload torch."""
-    model_name = os.environ.get(
-        "SENTENCE_TRANSFORMER_MODEL", "sentence-transformers/all-MiniLM-L6-v2"
-    )
-    return np.asarray(_get_model(model_name).encode(titles, normalize_embeddings=True))
+    """Embed titles via the shared, disk-cached embedder (model loaded once per
+    process; per-title vectors reused across runs)."""
+    return embed(titles)
 
 
 def cluster_stories(stories: list[Story], threshold: float = 0.82) -> list[Story]:

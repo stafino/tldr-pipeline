@@ -5,10 +5,10 @@ import Nav from '@/components/Nav';
 import { canonFirm, dedupCanon } from '@/lib/vc-aliases';
 import type { VcSector, VcType } from '@/lib/types';
 
-// Edge-cache each unique URL for 10 minutes. Curtails bandwidth
-// vs the previous force-dynamic mode that re-read every JSONL on
-// every visitor + bot crawl.
-export const revalidate = 600;
+// Fully static: the JSONL data is baked into the deploy and only changes on a
+// new build, so ISR revalidation would just re-render identical output. Serve
+// from the CDN until the next deploy.
+export const revalidate = false;
 
 /**
  * Public-facing pitch page. Shareable URL: trylede.com/vc/preview

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import logging
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 
 import requests
@@ -53,13 +54,20 @@ def pull_hn(
         log.warning("HN top fetch failed: %s", e)
         return []
 
+    # The firebase item API is one request per id; fetch them concurrently
+    # instead of serially (was ~300 blocking round-trips).
+    def _fetch_item(sid: int) -> dict | None:
+        try:
+            return requests.get(HN_ITEM.format(id=sid), timeout=10).json()
+        except Exception:
+            return None
+
+    with ThreadPoolExecutor(max_workers=16) as pool:
+        items = list(pool.map(_fetch_item, top_ids))
+
     stories: list[Story] = []
 
-    for sid in top_ids:
-        try:
-            item = requests.get(HN_ITEM.format(id=sid), timeout=10).json()
-        except Exception:
-            continue
+    for sid, item in zip(top_ids, items):
         if not item or item.get("type") != "story":
             continue
         if (item.get("score") or 0) < min_score:

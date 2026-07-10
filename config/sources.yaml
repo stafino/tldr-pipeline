@@ -10,7 +10,6 @@ rss:
   - { name: huggingface_blog,   url: https://huggingface.co/blog/feed.xml,                                    topics: [ai, ml] }
   - { name: import_ai,          url: https://importai.substack.com/feed,                                      topics: [ai] }
   - { name: latent_space,       url: https://www.latent.space/feed,                                           topics: [ai, programming] }
-  - { name: ai_snake_oil,       url: https://www.aisnakeoil.com/feed,                                         topics: [ai] }
   - { name: nvidia_dev_blog,    url: https://developer.nvidia.com/blog/feed,                                  topics: [ai, ml] }
   - { name: oneuseful_ethan,    url: https://www.oneusefulthing.org/feed,                                     topics: [ai, founders] }
   - { name: dwarkesh,           url: https://www.dwarkesh.com/feed,                                           topics: [ai, founders] }
@@ -36,7 +35,6 @@ rss:
   - { name: dark_reading,       url: https://www.darkreading.com/rss.xml,                                     topics: [infosec] }
   - { name: bleeping_computer,  url: https://www.bleepingcomputer.com/feed/,                                  topics: [infosec, it] }
   - { name: troy_hunt,          url: https://www.troyhunt.com/rss/,                                           topics: [infosec] }
-  - { name: googleprojectzero,  url: https://googleprojectzero.blogspot.com/feeds/posts/default,              topics: [infosec] }
 
   # ─── Enterprise IT ──────────────────────────────────────────────────────
   - { name: cio_dive,           url: https://www.ciodive.com/feeds/news/,                                     topics: [it, fintech] }
@@ -66,7 +64,6 @@ rss:
   - { name: dev_to,             url: https://dev.to/feed,                                                     topics: [programming] }
   - { name: stripe_blog,        url: https://stripe.com/blog/feed.rss,                                        topics: [programming, fintech, founders] }
   - { name: martin_fowler,      url: https://martinfowler.com/feed.atom,                                      topics: [programming, devops] }
-  - { name: julia_evans,        url: https://jvns.ca/atom.xml,                                                topics: [programming] }
 
   # ─── Data Engineering / Analytics ──────────────────────────────────────
   - { name: benn_substack,      url: https://benn.substack.com/feed,                                          topics: [data] }
@@ -124,7 +121,6 @@ rss:
   - { name: neilpatel,          url: https://neilpatel.com/feed/,                                              topics: [marketing] }
   - { name: foundationinc,      url: https://foundationinc.co/feed/,                                           topics: [marketing] }
   - { name: ahrefs_blog,        url: https://ahrefs.com/blog/feed/,                                            topics: [marketing] }
-  - { name: backlinko,          url: https://backlinko.com/feed,                                               topics: [marketing] }
 
   # Design specialty
   - { name: creativebloq,       url: https://www.creativebloq.com/rss.xml,                                     topics: [design] }
@@ -151,26 +147,19 @@ rss:
   - { name: a16z_news           , url: https://a16z.news/feed/, topics: [tech, founders] }  # 19× cited
   - { name: 9to5mac_com         , url: https://9to5mac.com/feed/, topics: [tech, design] }  # 19× cited
   - { name: zed_dev             , url: https://zed.dev/blog.rss, topics: [tech] }  # 19× cited
-  - { name: mohkohn_co_uk       , url: https://mohkohn.co.uk/rss, topics: [tech] }  # 18× cited
   - { name: networkworld_com    , url: https://networkworld.com/feed/, topics: [tech, it] }  # 17× cited
   - { name: testingcatalog_com  , url: https://testingcatalog.com/feed/, topics: [ai, tech] }  # 16× cited
   - { name: saastr_com          , url: https://saastr.com/feed/, topics: [tech, founders, it] }  # 15× cited
   - { name: engadget_com        , url: https://engadget.com/feed/, topics: [tech, ai, design] }  # 13× cited
   - { name: seangoedecke_com    , url: https://seangoedecke.com/rss.xml, topics: [tech, programming, ai] }  # 13× cited
-  - { name: engineering_atspotify_com, url: https://engineering.atspotify.com/feed/, topics: [tech, data] }  # 11× cited
   - { name: dpereira_substack_com, url: https://dpereira.substack.com/feed/, topics: [tech, product] }  # 11× cited
   - { name: neowin_net          , url: https://www.neowin.net/news/rss/, topics: [tech, design, infosec] }  # 11× cited
-  - { name: saranormous_substack_com, url: https://saranormous.substack.com/feed/, topics: [tech] }  # 10× cited
-  - { name: brew_sh             , url: https://brew.sh/atom.xml, topics: [tech] }  # 10× cited
   - { name: xebia_com           , url: https://xebia.com/feed/, topics: [tech, data] }  # 10× cited
   - { name: newsletter_manager_dev, url: https://newsletter.manager.dev/feed, topics: [tech, programming] }  # 10× cited
   - { name: wheresyoured_at     , url: https://wheresyoured.at/feed/, topics: [tech, ai] }  # 10× cited
   - { name: nytimes_com         , url: https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml, topics: [tech, ai] }  # 10× cited
-  - { name: brutecat_com        , url: https://brutecat.com/rss.xml, topics: [tech, infosec] }  # 10× cited
-  - { name: vincentschmalbach_com, url: https://vincentschmalbach.com/feed/, topics: [tech, marketing] }  # 10× cited
   - { name: tomshardware_com    , url: https://tomshardware.com/rss, topics: [tech] }  # 10× cited
   - { name: blog_ravi_mehta_com , url: https://blog.ravi-mehta.com/feed/, topics: [tech, product] }  # 10× cited
-  - { name: news_theuncommonexecutive_com, url: https://news.theuncommonexecutive.com/feed/, topics: [tech, product] }  # 10× cited
   - { name: netinfluencer_com   , url: https://netinfluencer.com/feed/, topics: [tech, marketing] }  # 10× cited
   - { name: builder_io          , url: https://www.builder.io/blog/feed/xml, topics: [tech, programming] }  # 10× cited
   - { name: cockroachlabs_com   , url: https://cockroachlabs.com/rss.xml, topics: [tech] }  # 9× cited
@@ -181,16 +170,11 @@ rss:
   - { name: blocksandfiles_com  , url: https://blocksandfiles.com/feed/, topics: [tech] }  # 9× cited
   - { name: brainlabsdigital_com, url: https://brainlabsdigital.com/feed/, topics: [tech] }  # 9× cited
   - { name: raisedonsocial_substack_com, url: https://raisedonsocial.substack.com/feed/, topics: [tech] }  # 9× cited
-  - { name: codingwithjesse_com , url: https://codingwithjesse.com/blog/feed, topics: [tech] }  # 9× cited
   - { name: newsletter_weskao_com, url: https://newsletter.weskao.com/feed/, topics: [tech] }  # 9× cited
-  - { name: aprildunford_substack_com, url: https://aprildunford.substack.com/feed/, topics: [tech] }  # 9× cited
   - { name: theengineeringmanager_substack_c, url: https://theengineeringmanager.substack.com/feed/, topics: [tech] }  # 9× cited
   - { name: sdxcentral_com      , url: https://sdxcentral.com/blog/rss, topics: [tech] }  # 9× cited
-  - { name: reecegriffiths_substack_com, url: https://reecegriffiths.substack.com/feed/, topics: [tech] }  # 9× cited
   - { name: newsletter_posthog_com, url: https://newsletter.posthog.com/feed/, topics: [tech] }  # 9× cited
   - { name: thevccorner_com     , url: https://thevccorner.com/feed/, topics: [tech] }  # 9× cited
-  - { name: cilium_io           , url: https://cilium.io/blog/rss.xml, topics: [tech] }  # 9× cited
-  - { name: courageous_careers_com, url: https://www.courageous-careers.com/blog-feed.xml, topics: [tech] }  # 9× cited
   - { name: about_gitlab_com    , url: https://about.gitlab.com/atom.xml, topics: [devops, programming] }  # 4× cited
   - { name: implicator_ai       , url: https://www.implicator.ai/latest/rss/, topics: [ai] }  # 4× cited
   - { name: workspaceupdates_googleblog_com, url: https://workspaceupdates.googleblog.com/rss.xml, topics: [it] }  # 4× cited

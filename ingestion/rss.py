@@ -1,8 +1,11 @@
 from __future__ import annotations
 
+import hashlib
+import json
 import logging
 import socket
 from datetime import datetime, timezone
+from pathlib import Path
 
 import feedparser
 import requests
@@ -17,6 +20,52 @@ FEED_TIMEOUT = 15
 socket.setdefaulttimeout(FEED_TIMEOUT)
 
 log = logging.getLogger(__name__)
+
+RSS_CACHE_DIR = Path("data/rss_cache")
+
+
+def _cache_paths(url: str) -> tuple[Path, Path]:
+    h = hashlib.sha1(url.encode()).hexdigest()
+    return RSS_CACHE_DIR / f"{h}.meta.json", RSS_CACHE_DIR / f"{h}.body"
+
+
+def _fetch_feed_bytes(name: str, url: str) -> bytes | None:
+    """GET the feed with conditional headers. On a 304 (unchanged since last
+    run) re-serve the cached body instead of re-downloading. Output stories are
+    identical either way - the raw file is overwritten each run, so we must
+    still return every in-window entry, we just skip the wire transfer."""
+    meta_path, body_path = _cache_paths(url)
+    headers = {"User-Agent": "Mozilla/5.0 (compatible; lede/1.0)"}
+    meta: dict = {}
+    if meta_path.exists():
+        try:
+            meta = json.loads(meta_path.read_text())
+        except Exception:
+            meta = {}
+    if meta.get("etag"):
+        headers["If-None-Match"] = meta["etag"]
+    if meta.get("last_modified"):
+        headers["If-Modified-Since"] = meta["last_modified"]
+
+    resp = requests.get(url, timeout=FEED_TIMEOUT, headers=headers)
+    if resp.status_code == 304 and body_path.exists():
+        log.info("RSS %s: 304 not-modified, serving cached body", name)
+        return body_path.read_bytes()
+    resp.raise_for_status()
+    content = resp.content
+
+    try:
+        RSS_CACHE_DIR.mkdir(parents=True, exist_ok=True)
+        body_path.write_bytes(content)
+        new_meta: dict = {}
+        if resp.headers.get("ETag"):
+            new_meta["etag"] = resp.headers["ETag"]
+        if resp.headers.get("Last-Modified"):
+            new_meta["last_modified"] = resp.headers["Last-Modified"]
+        meta_path.write_text(json.dumps(new_meta))
+    except Exception as e:
+        log.debug("RSS cache write failed for %s: %r", name, e)
+    return content
 
 
 def pull_rss(
@@ -35,13 +84,10 @@ def pull_rss(
     # Pre-fetch with requests so we get a deterministic timeout, then hand
     # the raw bytes to feedparser. Avoids feedparser's hang-forever default.
     try:
-        resp = requests.get(
-            url,
-            timeout=FEED_TIMEOUT,
-            headers={"User-Agent": "Mozilla/5.0 (compatible; lede/1.0)"},
-        )
-        resp.raise_for_status()
-        parsed = feedparser.parse(resp.content)
+        content = _fetch_feed_bytes(name, url)
+        if not content:
+            return []
+        parsed = feedparser.parse(content)
     except Exception as e:
         log.warning("RSS pull failed for %s: %s", name, e)
         return []

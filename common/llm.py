@@ -59,10 +59,13 @@ class APIBackend(LLMBackend):
 
     @retry(stop=stop_after_attempt(3), wait=wait_exponential(min=1, max=10), reraise=True)
     def complete(self, system: str, user: str, model: str, max_tokens: int = 1024) -> str:
+        # The system prompt (rubric/family/prefs) is identical across every call
+        # in a stage, so cache it: subsequent calls read cached input tokens at
+        # ~1/10th the cost. cache_control on the system block, 5-min TTL.
         resp = self.client.messages.create(
             model=model,
             max_tokens=max_tokens,
-            system=system,
+            system=[{"type": "text", "text": system, "cache_control": {"type": "ephemeral"}}],
             messages=[{"role": "user", "content": user}],
         )
         return "".join(b.text for b in resp.content if getattr(b, "type", "") == "text").strip()
