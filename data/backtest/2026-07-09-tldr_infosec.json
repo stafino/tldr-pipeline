@@ -1,9 +1,35 @@
 {
   "date": "2026-07-09",
   "newsletter": "tldr_infosec",
-  "fetched_at": "2026-07-09T12:07:22.527451+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-07-10T11:05:42.147711+00:00",
+  "tldr_titles": [
+    "Ill Bloom Vulnerability Drains $3.1M From Crypto Wallets",
+    "Accenture Confirms Data Breach After Hacker Claims Source Code Theft",
+    "15-Year-Old GhostLock Linux Kernel Vulnerability Enables Root Access and Container Escape",
+    "Skills Registry Threat Models",
+    "The \u2018Ghost' in the Database: Recovering Active ADFS Signing Keys via Machine DPAPI",
+    "Microsoft Windows Installer Folder Delete Privilege Escalation",
+    "Cotool Research: AI for the blue team",
+    "Hackers can use 9 of the most popular AI tools to assemble massive botnets",
+    "Lone Attacker Uses AI to Breach AWS Cloud Environment in 72 Hours",
+    "GitHub Copilot Refuses Harmful Requests in Chat, Then Writes Them in Code",
+    "Another massive data breach exposed millions of driver's license numbers",
+    "China tells devs to ditch Claude Code over \u2018backdoor code' fears"
+  ],
+  "tldr_matched": [
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    true
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -50,8 +76,8 @@
       "score": 82.0,
       "title": "15-Year-Old GhostLock Flaw Enables Root and Container Escape on Most Linux Distros",
       "url": "https://thehackernews.com/2026/07/15-year-old-ghostlock-flaw-enables-root.html",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 2,
+      "similarity": 0.9189211130142212
     },
     {
       "rank": 7,
@@ -138,8 +164,8 @@
       "score": 76.0,
       "title": "New HalluSquatting Attack Could Trick AI Coding Assistants Into Installing Botnet Malware",
       "url": "https://thehackernews.com/2026/07/new-hallusquatting-attack-could-trick.html",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 7,
+      "similarity": 0.6474161148071289
     },
     {
       "rank": 18,
@@ -250,8 +276,8 @@
       "score": 65.0,
       "title": "China tells devs to ditch Claude Code over 'backdoor code' fears",
       "url": "https://www.theregister.com/security/2026/07/08/china-ditch-older-claude-versions-with-backdoor-code/5268371",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 11,
+      "similarity": 1.0
     },
     {
       "rank": 32,
@@ -550,9 +576,47 @@
       "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.08333333333333333,
+    "25": 0.16666666666666666,
+    "50": 0.25,
+    "100": 0.25,
+    "68": 0.25
+  },
+  "hits_at": {
+    "10": 1,
+    "25": 2,
+    "50": 3,
+    "100": 3,
+    "68": 3
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://beincrypto.com/ill-bloom-vulnerability-crypto-wallets/",
+    "https://www.securityweek.com/accenture-confirms-data-breach-after-hacker-claims-source-code-theft/",
+    "https://gbhackers.com/15-year-old-ghostlock-linux-kernel-vulnerability/",
+    "https://nesbitt.io/2026/06/03/skills-registry-threat-models.html",
+    "https://cloud.google.com/blog/topics/threat-intelligence/recovering-active-adfs-signing-keys-machine-dpapi/",
+    "https://blog.exodusintel.com/2026/07/06/microsoft-windows-installer-folder-delete-privilege-escalation/",
+    "https://www.cotool.ai/research",
+    "https://arstechnica.com/security/2026/07/hackers-can-use-9-of-the-most-popular-ai-tools-to-assemble-massive-botnets/",
+    "https://www.darkreading.com/cloud-security/lone-attacker-ai-breach-aws-cloud-environment",
+    "https://thehackernews.com/2026/07/github-copilot-refuses-harmful-requests.html",
+    "https://techcrunch.com/2026/07/08/another-massive-data-breach-exposed-millions-of-drivers-license-numbers/",
+    "https://www.theregister.com/security/2026/07/08/china-ditch-older-claude-versions-with-backdoor-code/5268371"
+  ],
+  "tldr_domains": [
+    "beincrypto.com",
+    "securityweek.com",
+    "gbhackers.com",
+    "nesbitt.io",
+    "cloud.google.com",
+    "blog.exodusintel.com",
+    "cotool.ai",
+    "arstechnica.com",
+    "darkreading.com",
+    "thehackernews.com",
+    "techcrunch.com",
+    "theregister.com"
+  ]
 }

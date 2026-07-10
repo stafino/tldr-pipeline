@@ -2,3 +2,298 @@ Sign Up | Advertise | View Online
 TLDR
 
 TLDR Dev 2026-07-10
+
+🧑‍💻
+Articles & Tutorials
+
+Rewriting Bun in Rust (5 minute read)
+
+(blurb not generated)
+
+Hunting a 16-year-old SQLite bug with TLA+: is dqlite affected? (5 minute read)
+
+(blurb not generated)
+
+Benchmarking Coding Agents on Databricks’ Multi-Million Line Codebase (5 minute read)
+
+(blurb not generated)
+
+GitHub 'Verified' Commits Can Be Rewritten Into New Hashes Without Breaking Signatures (5 minute read)
+
+(blurb not generated)
+
+Introducing Meerkat: an experiment in global consensus (5 minute read)
+
+(blurb not generated)
+
+Cloudflare Meerkat - Globally distributed consensus (5 minute read)
+
+(blurb not generated)
+
+PostgreSQL and the OOM Killer: Why We Use Strict Memory Overcommit (5 minute read)
+
+(blurb not generated)
+
+Agentic test processes, LLM benchmarks, and other notes on agentic coding from Galapagos Island (5 minute read)
+
+(blurb not generated)
+
+Experiences with local models for coding (5 minute read)
+
+(blurb not generated)
+
+Why we built yet another Postgres connection pooler (5 minute read)
+
+(blurb not generated)
+
+Decoding the obfuscated bash script on a Uniqlo t-shirt (5 minute read)
+
+(blurb not generated)
+
+jamesob's guide to running SOTA LLMs locally (5 minute read)
+
+(blurb not generated)
+
+Prompting Claude Fable 5 (5 minute read)
+
+(blurb not generated)
+
+How GitHub gave every repository a durable owner (1 minute read)
+
+GitHub validated durable ownership for every active repository across its 14,000-repo internal org in under 45 days, archiving roughly 8,000 unused repos and making ownership mandatory at creation time. The post details how a service-to-repo mapping in their Service Catalog left team, docs, and one-off repos unowned, which blocked secret-scanning remediation because rotating a secret without a known owner risked disrupting unknown consumers.
+
+Automating cross-repo documentation with GitHub Agentic Workflows (5 minute read)
+
+(blurb not generated)
+
+Rebuilding Cognition's Agentic MapReduce (5 minute read)
+
+(blurb not generated)
+
+Breaking Database Lock-in: Agentic Regeneration of High Performance Storage Readers for Database Bypass (5 minute read)
+
+(blurb not generated)
+
+Agents Work Better with Conventional CLIs (5 minute read)
+
+(blurb not generated)
+
+Building a real-time AI tutor for 5-year-olds (1 minute read)
+
+Ello's team details the architecture behind an AI tutor that teaches math and reading to kids ages 4-9 with sub-second responses on every turn. They scrapped the standard tool loop, whose 2-3 second first-token latency and 30 tokens-per-second decode left 3-4 seconds of dead air per turn, long enough for a child's attention to wander and, in playtests, to train kids to tune the tutor out.
+
+Unicode's transliteration rules are Turing-complete (5 minute read)
+
+(blurb not generated)
+
+🧠
+Opinions & Advice
+
+Agentic loops (5 minute read)
+
+(blurb not generated)
+
+Better Models: Worse Tools (5 minute read)
+
+(blurb not generated)
+
+My thoughts on the Bun Rust rewrite (5 minute read)
+
+(blurb not generated)
+
+You shouldn't trust Trusted Publishing (5 minute read)
+
+The author argues that debates over whether Trusted Publishing is worth trusting rest on a category error, since the scheme secures machine-to-machine authentication between CI/CD and package indexes, not human judgment about a maintainer. Built on OIDC federation and now adopted by npm, RubyGems, crates.io, and NuGet, it swaps long-lived, over-scoped tokens for short-lived, minimally scoped credentials, which the author calls a net win despite its complex data model and per-provider handling.
+
+Open source maintainership in the age of AI (5 minute read)
+
+(blurb not generated)
+
+Let Fable use its own judgement rather than dictating how it should work (5 minute read)
+
+(blurb not generated)
+
+Postgres Is Enough (5 minute read)
+
+(blurb not generated)
+
+DuneSlide: Two Critical RCE vulnerabilities via Zero-Click Prompt Injection in Cursor IDE (5 minute read)
+
+(blurb not generated)
+
+Separating signal from noise in coding evaluations (5 minute read)
+
+(blurb not generated)
+
+Stop being the code review bottleneck (1 minute read)
+
+PostHog argues that as agents write code faster than any human can review, the fix is to review less code yourself rather than review faster, delegating first-pass reviews to a pipeline of agents. The post details engineer Paul D'Ambra's qa-swarm setup, where four reviewer agents with distinct instructions and models flag issues that a triage step sorts into actionable, nits, or ambiguous, escalating only the last to a human.
+
+A road to Lisp: Why Lisp (1 minute read)
+
+The author argues that learning Lisp makes you a better programmer because its macro system lets you extend the language itself, growing it toward your problem rather than bending your problem to fit the language. Framing the difficulty through Paul Graham's Blub paradox, the piece walks through macros, the REPL, and conditions and restarts to show the capabilities that lower-power languages leave you unable to even perceive.
+
+Why AI Infrastructure must evolve for Agent Experience — Akshat Bubna, Modal CTO (5 minute read)
+
+(blurb not generated)
+
+Biased or Personalized? The Impact of Personal Information on AI-driven Development (5 minute read)
+
+(blurb not generated)
+
+Phantom Squatting: AI-Hallucinated Domains as a Software Supply Chain Vector (5 minute read)
+
+(blurb not generated)
+
+Not all model upgrades are upgrades (5 minute read)
+
+(blurb not generated)
+
+A new trend, smart model routing (5 minute read)
+
+(blurb not generated)
+
+In defense of AI mandates (5 minute read)
+
+(blurb not generated)
+
+If you're a button, you have one job (5 minute read)
+
+(blurb not generated)
+
+Soatok's Informal Guide to Threat Models (5 minute read)
+
+(blurb not generated)
+
+AI has torched the market for junior programmers (5 minute read)
+
+(blurb not generated)
+
+🚀
+Launches & Tools
+
+Postgres rewritten in Rust, now passing 100% of the Postgres regression tests (5 minute read)
+
+(blurb not generated)
+
+Revving up Microsoft’s 10x faster TypeScript 7 (5 minute read)
+
+(blurb not generated)
+
+CursorBench 3.1 (5 minute read)
+
+(blurb not generated)
+
+Your Worker can now have its own cache in front of it (5 minute read)
+
+(blurb not generated)
+
+Show HN: Microsoft releases Flint, a visualization language for AI agents (5 minute read)
+
+(blurb not generated)
+
+Speedier type checks in TypeScript 7.0 as first stable Go release ships (1 minute read)
+
+Microsoft shipped the first stable release of TypeScript 7.0, the compiler rewritten from JavaScript to Go, delivering roughly 10x faster type checking and project load times on large codebases. The native port keeps the existing type system and syntax intact, so the speedup lands without requiring changes to existing TypeScript projects.
+
+thundersnap 0.01: an undo button for everything (5 minute read)
+
+(blurb not generated)
+
+Show HN: Getting GLM 5.2 running on my slow computer (1 minute read)
+
+Colibrì runs GLM-5.2, a 744B-parameter MoE model, on a consumer machine with about 25GB of RAM by keeping the ~17B dense params resident at int4 and streaming the 21,504 routed experts from disk with a per-layer LRU cache. The engine is a single ~2,400-line C file with no BLAS, Python, or GPU required, and uses GLM-5.2's own int8 MTP head for lossless speculative decoding at 39-59% draft acceptance.
+
+Chatto is now open source (5 minute read)
+
+(blurb not generated)
+
+Cloudflare Drop (5 minute read)
+
+(blurb not generated)
+
+Ubuntu emphasizes Arm64 support – and gets Rustier (5 minute read)
+
+(blurb not generated)
+
+Show HN: FableCut – A browser video editor AI agents can drive (zero deps) (1 minute read)
+
+FableCut is a Premiere-style non-linear video editor that runs entirely in the browser and exposes its whole timeline as a single project.json describing media, clips, tracks, effects, and keyframes. Any process that can write JSON can cut video, so an agent speaking MCP or REST edits the timeline while the open UI hot-reloads via server-sent events in about 150ms, with zero npm dependencies.
+
+SpaceXAI launches Grok 4.5 model on Grok Build and APIs (5 minute read)
+
+(blurb not generated)
+
+SpaceXAI launches Grok 4.5, touts lower coding-task costs than AI rivals (5 minute read)
+
+(blurb not generated)
+
+SWE-1.7 Reach Near GPT 5.5 and Opus Intelligence (5 minute read)
+
+(blurb not generated)
+
+SWE-1.7: Frontier Intelligence at a Fraction of the Cost (5 minute read)
+
+(blurb not generated)
+
+Safely run AI-generated code in Cloud Run sandboxes (2 minute read)
+
+Google Cloud Run sandboxes are in public preview, giving developers a native runtime that spawns millisecond-latency isolated execution boundaries inside existing Cloud Run instances for running AI-generated code, untrusted binaries, and agent workloads. Enabling it takes a single deployment flag, and a benchmark spun up 1,000 sandboxes that start, execute, and stop with an average of 500ms latency, replacing hand-built container clusters or third-party microVM runtimes.
+
+Launch HN: Context.dev (YC S26) – API to get structured data from any website (1 minute read)
+
+Context.dev launched a single API that scrapes, crawls, and extracts structured data from any website via a JSON schema, alongside brand data, company classification, and image pulls. It replaces the internal crawlers, cutoff-frozen agent knowledge, and multi-vendor stacks teams stitch together, with Mintlify using it to turn a GitHub repo URL into a branded docs site in under 10 minutes of integration.
+
+Google has introduced new rules for Chrome extensions (5 minute read)
+
+(blurb not generated)
+
+How GitHub Copilot enables zero DNS configuration for GitHub Pages (5 minute read)
+
+(blurb not generated)
+
+🎁
+Miscellaneous
+
+New HalluSquatting Attack Could Trick AI Coding Assistants Into Installing Botnet Malware (5 minute read)
+
+(blurb not generated)
+
+AI coding tool hole illustrates a big problem with human in the loop (3 minute read)
+
+Wiz disclosed GhostApproval, a vulnerability pattern in six AI coding assistants (Amazon Q Developer, Claude Code, Augment, Cursor, Google Antigravity, and Windsurf) where a malicious repository uses symlinks to escape the workspace sandbox while the approval prompt hides the dangerous target from the developer. The agent's own reasoning often flags the sensitive file, but the CWE-451 UI misrepresentation means users approve what looks like a harmless local edit, potentially yielding remote code execution.
+
+Fake Paysafe, Skrill SDKs on NPM and PyPi steal credentials (5 minute read)
+
+(blurb not generated)
+
+npm 12 Disables Install Scripts by Default to Reduce Supply Chain Risk (1 minute read)
+
+npm 12 ships with install scripts disabled by default, so lifecycle hooks (preinstall, install, postinstall) and implicit node-gyp builds no longer run unless developers opt in via npm approve-scripts and commit an allowlist to package.json. The release also deprecates 2FA-bypass granular access tokens, stripping their ability to publish directly and forcing automated publishing toward trusted publishing (OIDC) or staged publishing with human approval.
+
+Better Auth Joins Vercel (3 minute read)
+
+Better Auth, the open source framework-agnostic auth library that took over Auth.js and NextAuth.js, is joining Vercel to keep building auth in the open with more resources behind it. The team plans to focus on auth for AI agents, where apps need to grant secure, revocable access to act on a user's behalf.
+
+Interview with Mitchell Hashimoto about Ghostty and Zig (1 minute read)
+
+Mitchell Hashimoto, creator of Terraform, Vault, and the rest of the HashiCorp stack, discussed why he built Ghostty, a fast, feature-rich, natively cross-platform terminal emulator, in Zig. He started it to relearn GPU and desktop systems programming after years on distributed systems, and argues against turning terminals into general application platforms since the monospaced-grid model is good at something the browser and desktop are not.
+
+Injective SDK on npm infected with cryptocurrency wallet stealer (1 minute read)
+
+Attackers compromised a legitimate contributor's GitHub account for the Injective Labs SDK and published a malicious version 1.20.21 of the @injectivelabs/sdk-ts npm package that steals wallet private keys and seed phrases when key-generation functions are called. The package pulls 50,000 weekly downloads and was fetched 310 times before deprecation, with stolen secrets base64-encoded and exfiltrated to an Injective public endpoint to blend in with legitimate traffic.
+
+Gemini Code Assist will shut down on July 17 (5 minute read)
+
+(blurb not generated)
+
+Former GitHub CEO launches competitor designed for the age of vibe coding (5 minute read)
+
+(blurb not generated)
+
+⚡
+Quick Links
+
+Gemma 4 Technical Report (5 minute read)
+
+(blurb not generated)

@@ -2,3 +2,195 @@ Sign Up | Advertise | View Online
 TLDR
 
 TLDR IT 2026-07-10
+
+🚀
+News & Trends
+
+Microsoft Patches RoguePlanet Defender Flaw That Can Grant SYSTEM Privileges (1 minute read)
+
+Microsoft patched RoguePlanet (CVE-2026-50656, CVSS 7.8), a race-condition privilege-escalation flaw in the Defender malware protection engine that could spawn a SYSTEM-level shell, nearly a month after the researcher Chaotic Eclipse disclosed it publicly. The fix ships automatically via engine version 1.1.26060.3008 with no admin action required, but the exploit worked on fully June-patched Windows regardless of whether real-time protection was enabled.
+
+NetNut cracked as Google and FBI target 2 million-device botnet (5 minute read)
+
+(blurb not generated)
+
+FFmpeg fixes PixelSmash flaw in widely used video decoder (5 minute read)
+
+(blurb not generated)
+
+Microsoft patches RoguePlanet Defender zero-day vulnerability (1 minute read)
+
+Microsoft patched a Microsoft Defender zero-day tracked as CVE-2026-50656, dubbed RoguePlanet, which let attackers win a race condition to spawn a SYSTEM-level command prompt on fully updated Windows 10 and 11 machines. The fix ships automatically through Malware Protection Engine version 1.1.26060.3008 rather than a manual patch, but it landed amid a public feud with the researcher who disclosed it and whom Microsoft has threatened with legal action.
+
+SAP makes it easier for customers to shop for legacy product support, ending EU antitrust probe (1 minute read)
+
+SAP agreed to loosen the terms tying customers to its own maintenance for legacy products, resolving a European Commission antitrust investigation into whether the vendor locked out third-party support rivals. Enterprises running older SAP systems gain more room to shop maintenance contracts with providers like Rimini Street, which lowers the switching cost of staying on legacy software rather than migrating to S/4HANA.
+
+Ubuntu emphasizes Arm64 support – and gets Rustier (1 minute read)
+
+Canonical is elevating Arm64 to first-class status in Ubuntu and swapping more core utilities for memory-safe Rust reimplementations, signaling where its LTS base is headed. For enterprise fleets, the Arm64 commitment strengthens the case for Ampere and Graviton deployments, while the Rust shift means shops standardized on GNU coreutils should test compatibility before the next LTS lands.
+
+AT&T, T-Mobile US, and Verizon ditch SMS for network-based authentication (1 minute read)
+
+AT&T, T-Mobile US, and Verizon launched a network-based authentication service through the Aduna venture, using a single API to verify a mobile number against its carrier, device, and SIM and replace SMS one-time passcodes. The move targets OTP interception and SIM-swap fraud tied to $15.9B in U.S. consumer losses last year, while giving developers one integration across all three carriers instead of per-operator deals.
+
+SharePoint RCE CVE-2026-45659 Added to CISA KEV After Active Exploitation (5 minute read)
+
+(blurb not generated)
+
+SAP loosens ERP maintenance and support rules (1 minute read)
+
+SAP agreed to European Commission commitments that let on-premises ERP customers buy maintenance and support from third-party providers, clarify original licensing terms, and terminate license and support fees in defined scenarios, with the changes binding globally for 10 years. The concessions apply only to on-premises ERP, not SAP's cloud offerings, but they weaken the lock-in that pushed third-party maintenance rivals like Rimini Street out of accounts and give enterprises more leverage on renewal costs.
+
+Entra passkey enrollment vishing targets Microsoft 365 users (1 minute read)
+
+A threat actor tracked by Okta as O-UNC-066, tied to the Pink extortion operation, is calling Microsoft 365 users and convincing them to enroll an attacker-controlled Entra passkey, abusing the passkey registration campaign capability Microsoft opened to admins in May. The real-time PHP phishing kit relays credentials and adapts to each victim's MFA method, giving enterprises a fresh identity-attack surface to lock down as they roll out passkeys.
+
+Intel and AMD systems at risk from virtualization vulnerability (1 minute read)
+
+Security researchers disclosed Januscape (CVE-2026-53359), a 16-year-old KVM hypervisor flaw that lets a single rented VM escape to the x86 host and either crash or take root control of every other tenant on the same physical machine. The bug has been patched, but it hits Intel and AMD hosts across public clouds while sparing Arm64 KVM, giving IT teams another urgent hypervisor-patching cycle to schedule.
+
+GPT-5.6 is now the preferred model in Microsoft 365 Copilot (1 minute read)
+
+OpenAI announced GPT-5.6 and Microsoft will make it the preferred model across Microsoft 365 Copilot, spanning Word, Excel, PowerPoint, Chat, and Cowork, served both natively and through the OpenAI API. For enterprise buyers, the update lands inside tools they already license, so the improved per-token efficiency reaches productivity workflows without new procurement, while deepening Microsoft's dependence on OpenAI's flagship line.
+
+Allstate Insurance quits Broadcom, alleges vengeful license audit on the way out (1 minute read)
+
+Allstate Insurance is leaving Broadcom's VMware platform and alleges the vendor retaliated with a punitive license audit on its way out. The dispute highlights the mounting friction enterprises face under Broadcom's subscription-only VMware licensing, where audit threats and steep renewal costs are pushing large customers toward Nutanix, Proxmox, and other virtualization alternatives.
+
+Proof-of-Concept Exploit Released for Linux ‘Bad Epoll' Root Access Vulnerability (5 minute read)
+
+Researchers published a working proof-of-concept for Bad Epoll (CVE-2026-46242, CVSS 7.8), a use-after-free race condition in the Linux kernel's epoll facility that lets unprivileged processes gain root on servers, desktops, and Android devices running kernel 6.4 or newer. The exploit was confirmed on Pixel 10 hardware, and a complete fix landed only two months after the initial report, leaving enterprise Linux fleets exposed to patch-management urgency.
+
+AI Coding Agents Found Triggering Endpoint Security Rules Built to Catch Attackers (1 minute read)
+
+Sophos analyzed a week of its own June 2026 endpoint telemetry and found AI coding agents including Claude Code, Cursor, and OpenAI Codex tripping behavioral detection rules built to catch human intruders, with credential access making up 56.2% of blocked activity. The agents were doing ordinary developer work, but actions like DPAPI browser-credential decryption and living-off-the-land payload fetches are indistinguishable from attacks, leaving security teams to tune endpoint policy for legitimate agent behavior.
+
+Microsoft is rewriting Windows patch guidance because of AI (1 minute read)
+
+Microsoft is advising organizations to shorten Windows update deployment timelines, warning that attackers now use AI to find and exploit vulnerabilities within days of a patch release. The company recommends deferral periods under three days, one-day deadlines, and Hotpatch for reboot-free installs, backed by a new Windows Autopatch report in Intune that flags devices still exposed after updates ship.
+
+Suspected Chinese snoops caught breaking into universities' Roundcube mailservers (1 minute read)
+
+Suspected Chinese threat actors exploited vulnerabilities in Roundcube webmail servers to break into email accounts at multiple universities, exfiltrating messages and credentials for espionage. Institutions running self-hosted Roundcube instances should patch immediately and audit for compromised accounts, as unpatched open-source mail infrastructure remains a soft target for state-backed intrusion against research and academic networks.
+
+Telstra outage: Failed emergency services calls, train chaos, payment systems down (1 minute read)
+
+Telstra suffered a major network outage that knocked out Triple Zero emergency calls, disrupted train services, and took down payment terminals across parts of Australia. The failure underscores the concentration risk enterprises carry when critical operations depend on a single carrier, and it will sharpen scrutiny of Telstra's resilience commitments and push affected businesses toward redundant connectivity and failover arrangements.
+
+Tech divorce from Walmart cost Brit retail giant Asda £1.22B (1 minute read)
+
+Asda spent £1.22B disentangling its IT systems from former parent Walmart, the cost of a multi-year "Project Future" migration to stand up independent ERP, payroll, and e-commerce platforms after its 2021 buyout. The overrun shows how deeply enterprise stacks fuse to a parent's infrastructure, leaving carve-out buyers to fund a full replatform before they can operate standalone.
+
+Microsoft to enable Windows settings backup by default for orgs (5 minute read)
+
+(blurb not generated)
+
+🧠
+Analysis & Opinions
+
+Relearning cloud lessons from runaway AI token costs (2 minute read)
+
+The author argues that enterprises are hitting the same wall with generative AI that they hit with cloud, as token costs run 10 to 20 times over projections and AI agents consume roughly 50 times the compute of a chatbot per task. The fix is the discipline they already built: cloud finops playbooks applied to per-token spend before CFOs kill the business case.
+
+How data sovereignty is changing cloud native infrastructure design (5 minute read)
+
+(blurb not generated)
+
+Practical challenges in managing Kubernetes at enterprise scale (3 minute read)
+
+The author argues that Kubernetes doesn't eliminate operational complexity at enterprise scale, it relocates it from engineering to governance. The hardest problem isn't manifests or Helm charts but standardization across hundreds of engineers, and the fix is a "paved road" of approved templates, default security controls, and observability that lets application teams self-serve without becoming Kubernetes experts. RBAC alone won't cover the governance gap.
+
+How to Govern Autonomous Agents in Enterprise AI Factories (5 minute read)
+
+(blurb not generated)
+
+🤝
+Launches & Partnerships
+
+Streamline identity lifecycle management in Google Workspace with new inbound SCIM support (1 minute read)
+
+Google Workspace reached general availability for its inbound SCIM APIs, letting admins sync the Workspace directory in real time with any SCIM-compatible identity provider, HR system, or custom app instead of building custom integrations on the directory APIs. Provisioning, updates, and instant deprovisioning now propagate to downstream apps like Gemini Enterprise, closing the orphaned-account gap and easing compliance audits across Business and Enterprise tiers.
+
+Slack’s Slackbot can now pull your CRM data, generate charts, and send DocuSigns — all from a chat message. (3 minute read)
+
+Slack connected Slackbot, the AI agent in every workspace, to the full Salesforce platform through dedicated MCP servers, letting users query CRM records, pull live Tableau charts, and trigger DocuSign approvals from a single chat prompt. The integration is Salesforce's answer to Microsoft Teams and Copilot, and its pitch to buyers is that 25 years of CRM data locked in the platform is an asset no vibe-coded Claude replacement can match.
+
+New analytics and cost controls are available for Claude Enterprise (5 minute read)
+
+(blurb not generated)
+
+Amazon Bedrock Managed Knowledge Base (5 minute read)
+
+(blurb not generated)
+
+Upgrade Amazon EKS clusters with confidence using Kubernetes version rollbacks (5 minute read)
+
+(blurb not generated)
+
+C4N, now GA: Delivering cloud’s highest per vCPU network and block storage I/O for x86 workloads (2 minute read)
+
+Google Cloud made C4N generally available, its first network- and block-storage-optimized Compute Engine instance built on the custom Titanium offload architecture and 5th Gen Intel Xeon processors. C4N delivers up to 400 Gbps of network bandwidth, 95 million packets per second, and 25 GiB/s of storage throughput, targeting virtual appliances, large-scale databases, and CPU-based AI inference where I/O over-provisioning drives up TCO.
+
+thundersnap 0.01: an undo button for everything (5 minute read)
+
+(blurb not generated)
+
+Accelerate your infrastructure deployments by up to 4x with AWS CloudFormation Express mode (5 minute read)
+
+(blurb not generated)
+
+IBM Bob expands beyond code generation to orchestrate the entire SDLC (2 minute read)
+
+IBM expanded its Bob agentic development platform beyond code generation with multi-agent workflows, parallel tool calling, built-in cost and usage analytics, and specialized modernization workflows for Java, IBM i, and IBM Z mainframes. The move positions Bob as a full-SDLC governance layer that routes tasks across models like IBM Granite and Anthropic's Claude, targeting enterprises standardizing AI delivery rather than buying another point coding assistant.
+
+JetBrains seeks to unify fragmented AI-based software development with governance suite (2 minute read)
+
+JetBrains launched AI for Teams and Organizations, a suite that adds a governance and control layer over most coding assistants, CLIs, and IDEs, including Claude, Codex, Gemini, Junie, and its own JetBrains IDEs, with VS Code support coming. The bundle spans JetBrains Central for access control and usage management, JetBrains Context for shared project understanding, and cloud agents for long-running tasks, letting engineering leaders track who uses what and at what cost without forcing developers off preferred tools.
+
+IBM targets AI cost optimization with updates to Bob developer tool (1 minute read)
+
+IBM shipped its first major update to Bob, its agentic development tool, adding multi-agent orchestration and a "Bobalytics" dashboard that tracks AI token consumption across developer teams. The features target enterprises facing runaway inference bills, positioning IBM against Cursor and GitHub Copilot on cost governance rather than raw coding capability.
+
+Barracuda strengthens identity security capabilities with Evo Security acquisition (1 minute read)
+
+Barracuda Networks acquired identity and access management specialist Evo Security, folding its combined IAM and privileged access management technology into the BarracudaONE platform. The deal targets MSPs, giving them a single multi-tenant environment to manage authentication, access policies, and identity threat detection across thousands of customer environments rather than stitching together separate point solutions.
+
+IBM targets data center efficiency gains with new z17 and LinuxONE offerings (1 minute read)
+
+IBM launched the z17 and LinuxONE 5 mainframe series, offering rackmount configurations alongside single-frame systems for the first time and supporting up to 82 cores and 18TB of memory per two-drawer setup, a 20% core increase over prior generations. The rackmount option lets customers co-locate IBM Z components with third-party hardware in industry-standard racks, targeting data center consolidation and energy efficiency for shops that previously couldn't fit full-frame mainframes.
+
+Salesforce turns Slackbot into an agentic workflow hub (5 minute read)
+
+Slack connected Slackbot, its built-in AI agent, to the full Salesforce platform through dedicated MCP servers, letting users pull CRM records, generate live Tableau charts, update Data 360 profiles, and trigger DocuSign approvals from a single chat prompt. The integration deepens Salesforce's five-year, $27.7B Slack bet as Microsoft Teams and Copilot pressure the workspace, and positions Slack's locked-in customer data as its defense against Claude-built CRM replacements.
+
+Hugging Face Models on Foundry Managed Compute (5 minute read)
+
+Microsoft added Hugging Face open-source models to Foundry Managed Compute, its managed GPU platform-as-a-service that handles container updates, runtime upgrades, and security patches across vLLM, SGLang, TensorRT-LLM, and other runtimes without redeploying models. Open-source and custom weights now share the same endpoint, SDKs, authentication, observability, and single bill as frontier models, letting enterprises mix model types in one agent without standing up separate GPU infrastructure.
+
+Verifiable, private AI: Google Cloud expands Confidential Computing frontiers (5 minute read)
+
+Google Cloud moved its Confidential G4 VMs and Confidential GKE Nodes, which pair AMD SEV-secured 5th-gen EPYC Turin CPUs with NVIDIA RTX PRO 6000 Blackwell GPUs, into preview across every region where standard G4 runs, with On Demand, Reservations, DWS Flex Start, and Spot pricing. The setup keeps AI inference and fine-tuning data encrypted inside hardware TEEs, including in transit between CPU and GPU, giving regulated buyers verifiable privacy guarantees without leaving their existing GCP footprint.
+
+Safely run AI-generated code in Cloud Run sandboxes (2 minute read)
+
+Google Cloud released Cloud Run sandboxes in public preview, a native runtime for executing AI-generated code and untrusted binaries in isolated environments that spin up in milliseconds within existing Cloud Run services. Enabled with a single deployment flag, the feature removes the need to build custom container-cluster sandboxing or pay for third-party microVM runtimes, and targets LLM code interpreters, headless-browser agents, and user-submitted code execution.
+
+Google tests new Gemini Inbox section for Workspace triage (5 minute read)
+
+(blurb not generated)
+
+Securing agentic AI with perimeter guardrails: What's new in VPC Service Controls (5 minute read)
+
+(blurb not generated)
+
+CloudWatch Application Signals now automatically captures errors, performance anomalies, and deployment events (5 minute read)
+
+AWS added Service Events to Amazon CloudWatch Application Signals, which automatically captures exception and latency snapshots, function-level performance data, and deployment events from instrumented services with no code changes. Teams already running Application Signals via the ADOT SDKs or the EKS add-on can now trace new exceptions back to a specific deployment in the console, at standard CloudWatch pricing across all commercial regions for Java, Python, and JavaScript.
+
+⚡
+Quick Links
+
+Hardware-Rooted AI Security That Won't Slow You Down (5 minute read)
+
+(blurb not generated)

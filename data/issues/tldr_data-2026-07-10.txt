@@ -2,3 +2,87 @@ Sign Up | Advertise | View Online
 TLDR
 
 TLDR Data 2026-07-10
+
+📊
+News & Trends
+
+Running Low-Latency Analytical Workloads with GPU-Accelerated Presto on NVIDIA GB200 NVL72 (5 minute read)
+
+(blurb not generated)
+
+Benchmarking Coding Agents on Databricks’ Multi-Million Line Codebase (5 minute read)
+
+(blurb not generated)
+
+🧠
+Deep Dives & Analysis
+
+GitLake: Git-for-data for the agentic lakehouse (1 minute read)
+
+GitLake proposes a Git-for-data layer that lifts single-table Iceberg snapshots into lakehouse-wide commits, branches, and merges, so agents can work on isolated branches while humans review and publish. Pipelines run on temporary branches and land through a final merge, making all outputs visible atomically or not at all. The paper also reports production lessons and correctness findings from an Alloy model of the core branch-and-merge abstractions.
+
+Breaking Database Lock-in: Agentic Regeneration of High Performance Storage Readers for Database Bypass (5 minute read)
+
+(blurb not generated)
+
+Variance Reduction Below the Randomization Grain (5 minute read)
+
+(blurb not generated)
+
+From Custom-Fit to Portable: Bridging the Gap Between Synthesized and Engineered GPU Query Execution (5 minute read)
+
+(blurb not generated)
+
+The context engineering playbook (5 minute read)
+
+(blurb not generated)
+
+Have you heard? Clickhouse is winning the observability wars! (5 minute read)
+
+(blurb not generated)
+
+Meta's AI Storage Blueprint at Scale (5 minute read)
+
+(blurb not generated)
+
+Migrating Counter Service storage: Design choices and learnings (5 minute read)
+
+(blurb not generated)
+
+PostgreSQL and the OOM Killer: Why We Use Strict Memory Overcommit (5 minute read)
+
+(blurb not generated)
+
+Postgres Is Enough (5 minute read)
+
+(blurb not generated)
+
+Benchmark Engineering as a Design Instrument for Heterogeneous Information Systems (5 minute read)
+
+(blurb not generated)
+
+Synthetic Data Generation for Financial AI Research with NVIDIA NeMo (1 minute read)
+
+NVIDIA published a walkthrough of an iterative pipeline that generated 502,536 unique financial news headlines across 13 topic categories, using NeMo Data Designer for synthesis and NeMo Curator for semantic deduplication. A naive 50,000-headline run lost 65% to near-duplicates, so the workflow loops generation, global dedup, and farthest-from-centroid few-shot selection to force diversity. The full corpus took 82 iterations and roughly 6 days on a single 8-way B200 node.
+
+Time-Series LLMs, Explained with t0-alpha (5 minute read)
+
+(blurb not generated)
+
+🚀
+Launches & Tools
+
+Why we built yet another Postgres connection pooler (5 minute read)
+
+(blurb not generated)
+
+ImputeViz: A Visual Analytics Dashboard for Diagnosing Missing Data and Comparing Imputation Methods (1 minute read)
+
+ImputeViz is a visual analytics dashboard for diagnosing missing data and comparing imputation methods, bringing MICE, Random Forest, XGBoost, and kNN into one interactive environment with heatmaps, co-missingness summaries, and MCAR/MAR/MNAR diagnostics. It reports MAE, RMSE, Delta RMSE, and runtime per method on a shared target and mask, and adds gKNN, a geographically informed kNN variant that exposes which regions drive each estimate.
+
+⚡
+Quick Links
+
+Postgres rewritten in Rust, now passing 100% of the Postgres regression tests (5 minute read)
+
+(blurb not generated)

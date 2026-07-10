@@ -2,3 +2,271 @@ Sign Up | Advertise | View Online
 TLDR
 
 TLDR InfoSec 2026-07-10
+
+🔓
+Attacks & Vulnerabilities
+
+JadePuffer ransomware used AI agent to automate entire attack (5 minute read)
+
+(blurb not generated)
+
+AI coding tool hole illustrates a big problem with human in the loop (3 minute read)
+
+Wiz disclosed GhostApproval (CWE-451), a symlink-based pattern affecting six AI coding assistants including Amazon Q Developer, Claude Code, Cursor, Google Antigravity, Augment, and Windsurf, where a malicious repository escapes the workspace sandbox and can achieve RCE by hiding the true write target from the human approval prompt. AWS, Cursor, Google, and Anthropic have patched, while Augment and Windsurf acknowledged the report but have not confirmed fixes.
+
+Tenda firmware (multiple versions) contains hidden authentication backdoor (5 minute read)
+
+(blurb not generated)
+
+FFmpeg fixes PixelSmash flaw in widely used video decoder (5 minute read)
+
+(blurb not generated)
+
+GhostApproval Symlink Flaws Could Let Malicious Repos Run Code in AI Coding Agents (5 minute read)
+
+(blurb not generated)
+
+15-Year-Old GhostLock Flaw Enables Root and Container Escape on Most Linux Distros (5 minute read)
+
+(blurb not generated)
+
+Januscape: 16-Year-Old Linux KVM Bug Enables Cloud VM Escape Attacks (5 minute read)
+
+(blurb not generated)
+
+GitHub 'Verified' Commits Can Be Rewritten Into New Hashes Without Breaking Signatures (5 minute read)
+
+(blurb not generated)
+
+SharePoint RCE CVE-2026-45659 Added to CISA KEV After Active Exploitation (5 minute read)
+
+(blurb not generated)
+
+Microsoft patches RoguePlanet Defender zero-day vulnerability (5 minute read)
+
+(blurb not generated)
+
+OpenBSD has a use-after-free allowing local privilege escalation to root (5 minute read)
+
+(blurb not generated)
+
+New CitrixBleed Vulnerability Exploited Immediately After Public Disclosure (5 minute read)
+
+(blurb not generated)
+
+Attackers Exploit 'Ill Bloom' Vulnerability to Drain $3.1 Million From Cryptocurrency Wallets (1 minute read)
+
+Coinspect disclosed a cryptocurrency wallet flaw it calls Ill Bloom, in which affected software generated recovery phrases with weak randomness, shrinking the seed-phrase space enough for attackers to derive keys and drain funds. A coordinated May 27 sweep drained roughly $3.1M from 431 wallets, with confirmed losses now past $5M; hardware and mainstream software wallets are unaffected, but users of older or lesser-known apps should check illbloom.org and rotate funds.
+
+Microsoft Patches RoguePlanet Defender Flaw That Can Grant SYSTEM Privileges (5 minute read)
+
+(blurb not generated)
+
+AI Coding Agents Found Triggering Endpoint Security Rules Built to Catch Attackers (5 minute read)
+
+(blurb not generated)
+
+Google pays $250K for Linux vulnerability allowing guest VM escapes (5 minute read)
+
+(blurb not generated)
+
+New HalluSquatting Attack Could Trick AI Coding Assistants Into Installing Botnet Malware (5 minute read)
+
+(blurb not generated)
+
+Medtronic Data Breach Impacts 3.8 Million People (5 minute read)
+
+(blurb not generated)
+
+SkillCloak Lets Malicious AI Agent Skills Evade Static Scanners with Self-Extracting Packing (5 minute read)
+
+(blurb not generated)
+
+NetNut cracked as Google and FBI target 2 million-device botnet (5 minute read)
+
+(blurb not generated)
+
+🧠
+Strategies & Tactics
+
+The ‘Ghost' in the Database: Recovering Active ADFS Signing Keys via Machine DPAPI (5 minute read)
+
+(blurb not generated)
+
+You shouldn't trust Trusted Publishing (5 minute read)
+
+Trusted Publishing isn't a scheme humans are meant to trust, the author argues; it's machine-to-machine authentication built on OIDC federation, so evaluating it as something you personally can or can't trust is a category error. Adopted across PyPI, npm, RubyGems, crates.io, and NuGet, it shrinks the number of long-lived, over-scoped credentials maintainers hold by issuing short-lived, minimally scoped publishing tokens tied to CI/CD identity. It still isn't foolproof, since a credential lives somewhere in the flow.
+
+Microsoft is rewriting Windows patch guidance because of AI (1 minute read)
+
+Microsoft is advising organizations to shorten Windows update deployment timelines, warning that AI is cutting the time attackers need to weaponize vulnerabilities after a patch ships. The recommended settings are aggressive: quality update deferrals under three days, deadlines of zero to one day, and grace periods of no more than two. Defenders can use the new Windows Autopatch report in Intune to surface still-exposed devices, enable Hotpatch for reboot-free fixes, and enforce update compliance through Conditional Access.
+
+Why we cannot wait for better post-quantum signature algorithms (1 minute read)
+
+Cloudflare is moving forward with ML-DSA for its post-quantum signature migration rather than waiting for better schemes, targeting full PQ security by 2029. ML-DSA carries real costs, being much larger on the wire and incompatible with optimizations RSA and ECC allowed, but successors like FN-DSA and NIST's nine on-ramp candidates will not be ready in time. Deploy the algorithm you have now; harvest-now-decrypt-later already threatens authentication, not just encryption.
+
+More details on Fable 5's cyber safeguards and our jailbreak framework (5 minute read)
+
+(blurb not generated)
+
+Cybersecurity and the Gap Between Skill and Ability (5 minute read)
+
+(blurb not generated)
+
+npm 12 Disables Install Scripts by Default to Reduce Supply Chain Risk (1 minute read)
+
+npm 12 ships with install scripts disabled by default, so dependency lifecycle hooks (preinstall, install, postinstall) and implicit node-gyp builds no longer run unless explicitly allowlisted via npm approve-scripts. Git and remote-URL dependencies are also opt-in now, closing the most common paths for supply-chain compromise. GitHub is also deprecating 2FA-bypass GATs: they lose sensitive account actions in early August and direct publishing in January 2027, pushing automated releases toward trusted publishing (OIDC) or staged human-approved publishes.
+
+Beware What You Autocomplete: Forensic Attribution of Backdoored Code Completions (1 minute read)
+
+This paper introduces CodeTracer, a forensic framework that traces backdoored LLM code completions back to the specific malicious fine-tuning samples that caused them, using only the fine-tuning corpus and the reported miscompletion event. It extracts a behavioral fingerprint from the unsafe output, narrows to semantically relevant training samples, and uses LLM-based reasoning for attribution. Across three vulnerability cases, ten backdoor attacks, and sixteen baselines, the authors report high attribution accuracy, low false-identification rates, and robustness against adaptive attacks.
+
+Skills Registry Threat Models (5 minute read)
+
+Skills registries for AI agents are a strict superset of package-manager clients: installing one skill can trigger install commands across npm, pip, cargo, brew, and more from a manifest the user never read, while the skill body joins the agent's system prompt as a prompt-injection vector and inherits the session's existing bash, file, and network grants. This analysis walks the loader, registry, and runtime, showing that the worst exposures are deliberate design decisions that pass every static scanner rather than flaggable bad lines.
+
+From Legacy Documentation to OSCAL: An MCP-Based Agent Pipeline for Threat-Informed Continuous Compliance in Critical Infrastructure (1 minute read)
+
+This paper introduces an MCP-grounded multi-agent pipeline that turns natural-language system descriptions of OT environments into audit-ready NIST OSCAL artifacts, decoupling LLM reasoning from deterministic retrieval against threat-intel sources to curb hallucinated CVEs and attack paths. On a synthetic water-utility scenario it hit 0.90 CVE recall and perfect D3FEND recall, but errors shifted upstream: a single misextracted asset yields real-but-irrelevant CVEs, making manual review the remaining control point.
+
+Out of Sight: Compression-Aware Content Protection against Agentic Crawlers (1 minute read)
+
+This paper introduces CAPE, a framework that protects textual content from LLM agent crawlers by injecting human-invisible perturbations that survive rendering but corrupt the context-compression step agents use to fit their token budgets. Targeting compression rather than access controls or visible injection, CAPE raised agent information loss by up to 75.8% over the strongest baseline and transferred to LangGraph workflows and GitHub Copilot while leaving content visually identical to the original.
+
+Prismata: Confining Cross-Site Prompt Injection in Web Agents (1 minute read)
+
+Prismata introduces contextual least privilege for autonomous web agents, dynamically deriving per-content trust labels that constrain what an agent can see and do to contain cross-site prompt injection. Its confinement guarantees bound any mislabeling so permissions can only decrease in privilege, and it redacts untrusted content and restricts capabilities without developer annotations. Across recent published web-agent attacks, including adaptive variants, the authors report substantially reduced attack success while preserving benign task utility.
+
+AT&T, T-Mobile US, and Verizon ditch SMS for network-based authentication (5 minute read)
+
+(blurb not generated)
+
+Most data brokers won’t tell you what happened to your deletion request (1 minute read)
+
+A UC Irvine study sent deletion and opt-out requests to every reachable broker on California's public registry in fall 2025, roughly 322 deletion and 360 opt-out requests, and found that about 70% never reported the outcome of a deletion despite the 45-day CCPA deadline. Around 22% demanded identity verification on opt-outs, which the CCPA prohibits, and overall response rates sat between 26% and 38%, meaning the privacy rights consumers use most see the least compliance.
+
+TRACE: A Two-Channel Robust Attribution Watermark via Complementary Embeddings for LLM-Agent Trajectories (1 minute read)
+
+TRACE is a watermarking scheme that lets developers prove attribution of LLM-agent trajectories even when a reseller has full read/write access to the trajectory logs. It embeds two complementary channels: a distortion-free selection channel keyed on local content that resynchronizes after deletions, and a tally channel keyed on the log's structure that survives arbitrary rewriting. On ToolBench and ALFWorld it matched unwatermarked success rates while staying detectable under 70% step deletion, making log corruption the only way to strip attribution.
+
+Mini-Programs, Mega-Problems: Unveiling OAuth-based Authentication Misuses in Mini-Programs via Dynamic Analysis (1 minute read) [flag]
+
+Researchers introduced MINIAUTH, a dynamic-analysis framework that pinpoints and executes OAuth login flows in super-app mini-programs to find runtime authentication misuses that static tools miss. Scanning 44,273 WeChat and 2,721 Baidu mini-programs, it surfaced 1,834 misuse cases, including client-side identity forgery via exposed credentials, auth bypass through static or plaintext identifiers, and a cryptographic flaw in Baidu's OBA APIs that permits brute-forcing session keys. Findings drew CNVD/CNNVD IDs, underscoring the need for platform-level OAuth safeguards over reliance on third-party developers.
+
+Vulnerability Reports Are Not Special Anymore (5 minute read)
+
+(blurb not generated)
+
+Some Notes on Lambda MicroVMs (5 minute read)
+
+(blurb not generated)
+
+Woodruff: You shouldn't trust trusted publishing (5 minute read)
+
+(blurb not generated)
+
+TLS certificates for internal services done right (1 minute read)
+
+The author argues that split-horizon DNS is the cleaner way to secure internal-only services, avoiding the operational drag of self-signed certificates. A single domain (e.g. grafana.tuxnet.dev) resolves to a public IP for outside resolvers and an internal IP over the VPN, letting a public CA like Let's Encrypt issue valid certs while a WAF rejects non-VPN traffic. The tradeoff: one WAF rule on the reverse proxy replaces distributing a private CA to every client or telling users to ignore TLS errors.
+
+🧑‍💻
+Launches & Tools
+
+Finding and Understanding Miscompilation Bugs in the Solidity Compiler (5 minute read)
+
+(blurb not generated)
+
+Thinking More, Harnessing Better: State Machine Guided Harness Automatic Generation with Project Digestion and Workflow Decomposition (5 minute read)
+
+(blurb not generated)
+
+Multi-Agent Firewall Architecture for Privacy Protection of Sensitive Data in Interactions with Language Models (1 minute read)
+
+This paper introduces an open-source, user-facing firewall that intercepts both web and programmatic LLM traffic across HTTP(S) and WebSocket to prevent sensitive-data and proprietary-code leakage. It pairs a browser extension and proxy with a multi-agent pipeline combining deterministic detectors and LLM-driven semantic analysis, reaching F1 scores up to 94.93% in optimal configurations.
+
+Boundary 1.0 releases RDP session recording and improved management (5 minute read)
+
+(blurb not generated)
+
+🎁
+Miscellaneous
+
+Microsoft Accelerates Post-Quantum Cryptography Shift to 2029 (5 minute read)
+
+(blurb not generated)
+
+Felons, Fraudsters Flog Offensive Cybersecurity Startup (5 minute read)
+
+(blurb not generated)
+
+China tells devs to ditch Claude Code over 'backdoor code' fears (5 minute read)
+
+(blurb not generated)
+
+EU now one step away from reviving private message scanning rules (5 minute read)
+
+(blurb not generated)
+
+EU 'Chat Control' snoopfest returns after vote to kill it falls short (1 minute read)
+
+The EU's controversial 'Chat Control' regulation, which would mandate client-side scanning of encrypted messages, revived after MEPs failed to secure enough votes to block it. The proposal now heads back into negotiation, keeping mandatory content-scanning of private communications on the table for encrypted messaging platforms operating in the bloc.
+
+Decoding the obfuscated bash script on a Uniqlo t-shirt (5 minute read)
+
+(blurb not generated)
+
+Anthropic Accuses Alibaba of Claude Distillation/Cloning Attack (5 minute read)
+
+(blurb not generated)
+
+EU Parliament greenlights Chat Control 1.0 (1 minute read)
+
+The European Parliament passed the interim "Chat Control 1.0" regulation, extending permission for suspicionless mass scanning of private communications until 2028, despite 314 of 607 voting MEPs opposing it. The rejection motion failed to reach the required absolute majority of 361 votes, and a symbolic carve-out for encrypted communications changes little since providers do not scan those messages anyway.
+
+Meta's New AI Image Tool Lets Others Use Your Public Instagram Photos in AI Images (5 minute read)
+
+(blurb not generated)
+
+Ransomware Negotiator Gets 70 Months in Prison for Aiding BlackCat Attacks (1 minute read)
+
+A federal court sentenced Angelo Martino, a former ransomware negotiator, to 70 months in prison for feeding BlackCat operators his clients' confidential negotiating positions and insurance limits to inflate ransom demands across five victims. Two co-conspirators from DigitalMint and Sygnia, Ryan Goldberg and Kevin Martin, each received four-year sentences in May for deploying BlackCat, and law enforcement has seized $10M tied to the scheme.
+
+Microsoft expects more Windows security updates from AI-discovered flaws (1 minute read)
+
+Microsoft said Windows customers should expect more security updates per Patch Tuesday as its MDASH agentic scanning harness, which validates candidate flaws across multiple AI models before a Windows-specific false-positive pipeline, accelerates vulnerability discovery in critical binaries. Human engineers still review and validate all proposed fixes before release, and Microsoft is updating its Secure Development Lifecycle to account for AI-enabled attack techniques.
+
+Scot NHS Trust probes email stuffup involving maternity patients' data (1 minute read)
+
+NHS Greater Glasgow and Clyde launched an investigation after a misdirected email exposed maternity patients' personal data to unintended recipients. The trust has referred the incident to the UK Information Commissioner's Office, which can levy GDPR penalties for healthcare data breaches, and is notifying affected patients as it reviews how the disclosure occurred.
+
+UK Government Rolls Out Agentic AI Defense Plan Alongside Industry Pledge (1 minute read)
+
+The UK's NCSC launched Cyber Shield, a national-scale agentic cyber defense program that pairs frontier AI red and blue teams to discover, contain, and automatically remediate vulnerabilities across government and CNI boundaries. NCSC is soliciting partners from academia, critical infrastructure, and frontier labs to build six core capabilities, though critics note autonomous-AI defense does little against the credential and configuration failures that compromise most organizations today.
+
+Former DigitalMint ransomware negotiator who duped clients sentenced to 70 months in jail (1 minute read)
+
+Former DigitalMint ransomware negotiator Angelo John Martino III was sentenced to 70 months for sharing clients' negotiating positions and insurance limits with BlackCat affiliates to extort $75.3 million from five U.S. companies he was hired to defend. The case exposes insider risk in incident-response supply chains: firms retaining third-party negotiators should compartmentalize victim data and audit who can access ransom ceilings and insurance details mid-engagement.
+
+Working with the enemy: Ransomware negotiator-turned cyber criminal jailed after working with hackers to extort clients (1 minute read)
+
+Angelo Martino, a ransomware negotiator at incident-response firm DigitalMint, was sentenced to 70 months in prison for secretly feeding BlackCat operators his clients' negotiating positions and insurance details to inflate ransoms. The DOJ seized over $10M in proceeds and charged two co-conspirators, including a Sygnia incident-response manager, underscoring insider risk within the IR and negotiation firms victims are supposed to trust.
+
+The NCSC wants to build an AI-powered 'Cyber Shield' to protect the UK from hackers – here’s how it’ll work (5 minute read)
+
+(blurb not generated)
+
+Police arrests 5,800 suspects in global anti-fraud crackdown (5 minute read)
+
+(blurb not generated)
+
+Barracuda strengthens identity security capabilities with Evo Security acquisition (1 minute read)
+
+Barracuda Networks acquired Evo Security, a Texas-based IAM and privileged access management specialist built for MSPs, and will fold its technology into the BarracudaONE platform. The integration adds access management, identity protection, and identity threat detection and response to BarracudaONE, letting partners manage authentication and access policies across multiple customer tenants from a single console.
+
+QIZ Security raises $17M seed round for post-quantum readiness platform (1 minute read)
+
+QIZ Security raised $17M in seed funding for a platform that inventories enterprise cryptographic assets over APIs and flags weak or outdated encryption ahead of the post-quantum migration. The raise lands weeks after a June 22 executive order pulled federal post-quantum deadlines forward to 2030-2031, sharpening the "harvest now, decrypt later" risk for organizations that can't yet map where their own cryptography runs.
+
+QIZ Security Raises $17 Million for Cryptographic Governance Platform (1 minute read)
+
+QIZ Security raised $17M in seed funding, led by Bessemer Venture Partners and Merlin Ventures, for a platform that governs cryptographic posture and post-quantum readiness across on-premises, cloud, and hybrid environments. The system uses API-based integration to discover cryptographic assets, flag weak cipher suites and outdated protocols, and generate prioritized remediation plans ahead of Q-Day.

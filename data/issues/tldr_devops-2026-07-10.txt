@@ -2,3 +2,203 @@ Sign Up | Advertise | View Online
 TLDR
 
 TLDR DevOps 2026-07-10
+
+📱
+News & Trends
+
+Announcing etcd v3.7.0 (2 minute read)
+
+SIG etcd released etcd v3.7.0, headlined by RangeStream, which streams large range results in chunks instead of buffering the full set in memory on both server and client. The release also boots entirely from v3store, completes a protobuf overhaul, and cuts etcd CPU usage on the Kubernetes control plane, with RangeStream reaching k8s v1.37 behind the EtcdRangeStream feature gate.
+
+Google pays $250K for Linux vulnerability allowing guest VM escapes (1 minute read)
+
+Google paid a $250K bounty for CVE-2026-53359, a use-after-free in KVM's shadow MMU emulation that lets a guest VM escape isolation and gain root on the host across both AMD and Intel processors. The 16-year-old flaw lets a single rented cloud instance panic the host kernel to take down every co-tenant VM or run arbitrary code on the hypervisor, and a proof-of-concept crash exploit is already public.
+
+Proof-of-Concept Exploit Released for Linux ‘Bad Epoll' Root Access Vulnerability (5 minute read)
+
+(blurb not generated)
+
+15-Year-Old GhostLock Flaw Enables Root and Container Escape on Most Linux Distros (1 minute read)
+
+Nebula Security disclosed GhostLock (CVE-2026-43499), a 15-year-old use-after-free in the Linux kernel that lets any logged-in user gain root and escape containers with 97% reliability, using only ordinary threading calls no elevated permissions required. The flaw ships by default in nearly every distribution since 2011 and scores 7.8, but with working exploit code now public, teams should install their distribution's latest kernel rather than the first patched build.
+
+Januscape: 16-Year-Old Linux KVM Bug Enables Cloud VM Escape Attacks (5 minute read)
+
+Security researcher Hyunwoo Kim disclosed Januscape (CVE-2026-53359), a 16-year-old use-after-free bug in KVM's x86 shadow MMU that lets guest-side actions alone corrupt host kernel memory and break guest-host isolation across both Intel and AMD. The public proof-of-concept reliably panics the host, taking down every co-tenant VM, and it directly threatens multi-tenant public clouds like GCP and AWS that expose nested virtualization.
+
+Introducing Meerkat: an experiment in global consensus (1 minute read)
+
+Cloudflare's Research team introduced Meerkat, an experimental global consensus service built on the leaderless QuePaxa algorithm from EPFL, in what it calls the first industrial deployment of QuePaxa at scale. Unlike Raft, every replica can write at any time and progress never stalls on timeouts, addressing the unavailable-leader incidents Cloudflare has hit across its 330-plus data centers, though the service stays internal-only for now.
+
+Cloudflare Meerkat - Globally distributed consensus (1 minute read)
+
+Cloudflare's Research team introduced Meerkat, an experimental global consensus service built on the leaderless QuePaxa algorithm from EPFL, in what it calls the first industrial deployment of QuePaxa at scale. Unlike Raft, every replica can write at any time and progress never stalls on timeouts, addressing the unavailable-leader incidents Cloudflare has hit across its 330-plus data centers, though the service stays internal-only for now.
+
+The CNCF Data Storage in Cloud Native AI White Paper (1 minute read)
+
+The CNCF's TAG Infrastructure released a white paper on running data-heavy AI/ML workloads on Kubernetes, cataloging where traditional storage breaks down under GPU-scale demands like the small-file metadata trap, compute-storage disaggregation overhead, and low accelerator utilization. It maps concrete tooling across the data lifecycle, including Fluid for distributed caching, the COSI object-storage interface, and vector databases like Milvus for RAG retrieval.
+
+Cyber researchers sound alarm over a 15-year-old Linux kernel flaw – 'GhostLock' could let hackers seize unpatched machines in just five seconds (1 minute read)
+
+Researchers at Nebula Security disclosed GhostLock (CVE-2026-43499), a Linux kernel flaw dating to 2.6.39 in 2011 that lets any logged-in user gain root in about five seconds, with a 97% reliable public exploit that also escapes containers. Every mainstream distribution has shipped the bug by default, so platform teams running unpatched kernels face a low-effort local privilege escalation that treats shared container hosts as a single blast radius.
+
+Intel and AMD systems at risk from virtualization vulnerability (1 minute read)
+
+Researchers disclosed Januscape (CVE-2026-53359), a use-after-free flaw in the shadow MMU of KVM hypervisors that lets a compromised guest VM escape onto x86 Intel and AMD hosts using only guest-side actions. A single rented cloud instance can panic the host kernel to take down every co-tenant VM or gain root RCE on the host, though Arm64 KVM is unaffected and the 16-year-dormant bug is now patched.
+
+C4N, now GA: Delivering cloud’s highest per vCPU network and block storage I/O for x86 workloads (2 minute read)
+
+Google Cloud made C4N generally available, its first network- and block-storage-optimized Compute Engine instance, built on the custom Titanium offload architecture and 5th Gen Intel Xeon processors. C4N delivers up to 400 Gbps of network bandwidth, 95 million packets per second, and up to 25 GiB/s and 1M IOPS on Hyperdisk Extreme, targeting virtual appliances, telco 5G UPF, large databases, and CPU-based AI/ML inference.
+
+Infoblox acquires Kentik, adding network observability to its DNS and DDI platform (3 minute read)
+
+Infoblox acquired Kentik to pair its authoritative DNS, DHCP, and IPAM data with Kentik's real-time network observability, giving Infoblox flow, routing, and device telemetry across data centers, cloud, WAN, and the public internet. The deal answers a longstanding customer ask to integrate the two platforms directly, letting Infoblox correlate which IPs it hands out with who is actually talking to whom; financial terms were not disclosed.
+
+🚀
+Opinions & Tutorials
+
+Have you heard? Clickhouse is winning the observability wars! (1 minute read)
+
+Charity Majors amplifies Mat Duggan's argument that ClickHouse is the only observability backend that stays operationally flat as ingest scales. Her point is that columnar storage, not ClickHouse specifically, is a different class of tool than the three-pillars stack: at 10TB/day, Elastic, LGTM, and Datadog hit performance cliffs and schema lock-in, while ClickHouse at 10TB looks like ClickHouse at 1TB with more shards. The upfront setup tax buys high-cardinality queries and no messy migrations later.
+
+Open source maintainership in the age of AI (5 minute read)
+
+(blurb not generated)
+
+Network boundary for AI agents using NGINX and OpenTelemetry (1 minute read)
+
+The author builds a network boundary for AI agents from two components already common in cloud native stacks: NGINX as an enforced traffic control plane and OpenTelemetry as the audit plane. NGINX proxies inbound and outbound traffic while iptables drops all other egress, making the boundary an architectural property rather than a policy the agent must honor. The native OTEL module emits a span per request, so every external call an agent makes is correlated to a user interaction and persisted to Jaeger, Grafana, or a SIEM.
+
+TLS certificates for internal services done right (1 minute read)
+
+The author argues that public-CA TLS with split-horizon DNS beats self-signed certificates for internal services, since managing one WAF is easier than distributing a private CA to every client. The walkthrough resolves an app like grafana.tuxnet.dev to a public IP for outside resolvers and an internal IP over the VPN, letting Let's Encrypt issue a valid cert. The stack is NetBird for split-horizon DNS, acme.sh for issuance, and nginx as the WAF rejecting non-VPN traffic.
+
+You shouldn't trust Trusted Publishing (5 minute read)
+
+The author argues that debating whether you can trust PyPI's Trusted Publishing is a category error, since the scheme is machine-to-machine authentication built on OIDC federation, not something a human vouches for. The real win is operational: it swaps long-lived, over-scoped API tokens for short-lived, minimally scoped credentials issued to a CI/CD identity, shrinking the pool of standing secrets a maintainer can leak. The post notes the trade-offs, including a complex data model and per-provider OIDC handling.
+
+Navigating the ingress-NGINX retirement (1 minute read)
+
+The CNCF published a guide to the community ingress-nginx controller reaching end of life after March 2026, clarifying that the Kubernetes Ingress API itself stays supported. Teams choose between a lift-and-shift to an Envoy-based controller like Contour, which keeps existing Ingress YAML but breaks every nginx.ingress.kubernetes.io/* annotation, or migrating to the Gateway API. The post recommends auditing annotation debt, automating translation with ingress2gateway, and rolling out incrementally on non-critical workloads first.
+
+Performance per dollar is getting faster and cheaper (5 minute read)
+
+(blurb not generated)
+
+How we used AI agents to migrate GitLab rate limiting (3 minute read)
+
+A three-person GitLab pod documented using the Duo Agent Platform to migrate the company's legacy rate-limiting system, unifying an application-level limiter with 121 keys and a separate Rack-level path onto a single labkit-ruby implementation. Agents drafted specs, wrote tests, and pre-reviewed merge requests inside a strict loop capped at two adversarial-review rounds before human escalation, shipping 14 specs and 30-plus merge requests. The team's takeaway: the pod, the loop, and observability mattered more than the agents themselves.
+
+PostgreSQL and the OOM Killer: Why We Use Strict Memory Overcommit (5 minute read)
+
+(blurb not generated)
+
+Reduce CDN log costs with searchable archives (5 minute read)
+
+(blurb not generated)
+
+Some Notes on Lambda MicroVMs (5 minute read)
+
+AWS launched Lambda MicroVMs, and this post documents the operational quirks the author hit in the first day of use. MicroVMs run any code in a fresh VM within seconds for up to 8 hours, support full OS capabilities including nested Docker, and offer a first-class shell via the CreateMicrovmShellAuthToken API. The gotchas are networking: outbound UDP is blocked by default so container DNS needs `--dns 169.254.169.253`, and Lambda network connectors create ENIs that stay hidden unless you pass `IncludeManagedResources=true`.
+
+Why we cannot wait for better post-quantum signature algorithms (1 minute read)
+
+Cloudflare argues the industry cannot wait for better post-quantum signature schemes and must migrate now with ML-DSA, the NIST-standardized scheme available today. The trade-off is real: ML-DSA is far larger on the wire than RSA or ECC and breaks many optimizations teams relied on, but successors like FN-DSA and the nine schemes NIST advanced to its signatures on-ramp won't be ready in time. Cloudflare is targeting 2029 to be fully post-quantum secure, with most of its traffic already on ML-KEM encryption.
+
+How data sovereignty is changing cloud native infrastructure design (5 minute read)
+
+(blurb not generated)
+
+Autopilot Clusters with GKE managed DRANET: GPUs and TPUs (2 minute read)
+
+Google's GKE blog walks through enabling managed DRANET on Autopilot clusters to attach GPU and TPU networking without hand-configuring the underlying interfaces. Autopilot handles node provisioning, scaling, and security, while DRANET provisions RDMA-capable interfaces for GPUs and TPU networking through a ComputeClass and ResourceClaimTemplate. The trade-off is less control than a standard cluster in exchange for Google managing the accelerator networking setup.
+
+Meta's AI Storage Blueprint at Scale (5 minute read)
+
+(blurb not generated)
+
+How GitHub gave every repository a durable owner (1 minute read)
+
+GitHub validated durable ownership for every active repository across its 11,000-plus non-archived internal repos in under 45 days, archiving roughly 8,000 dormant ones and making ownership mandatory at repository creation. The gap surfaced during secret scanning remediation, where rotating a secret without a known owner risked disruptive breakage and left no way to route the work. Ownership now anchors incident response, on-call routing, and compliance scoping.
+
+Automating cross-repo documentation with GitHub Agentic Workflows (1 minute read)
+
+The Aspire team documented how they use GitHub Agentic Workflows to turn merged product changes into SME-reviewed documentation pull requests across separate repos, without granting agents broad write-everywhere tokens. For Aspire 13.3 and 13.4, 82 feature-docs pull requests merged at a median of 44.8 hours after the product PR, each reviewed by the engineer who shipped the feature, with no added headcount. The writeup focuses on cross-repo automation, the sharp part most same-repo setups never hit.
+
+Woodruff: You shouldn't trust trusted publishing (5 minute read)
+
+William Woodruff argues that Trusted Publishing is authentication, not a quality signal, and should not be read as any indication that a package is safe or good. It establishes a trust relationship between a CI/CD identity and a project on a registry like PyPI, confirming only that an upload was authenticated. PyPI deliberately refuses to render it as a green checkmark to stop teams from misusing it as a proxy for package trust.
+
+How to teach SRE AI agents to fail safely and earn your team’s trust (2 minute read)
+
+The author argues that trust in agentic SRE is an engineering outcome, not a marketing claim, earned during real failures rather than clean demos. The proposed architecture separates reasoning from actuation: the agent investigates, forms ranked hypotheses, and stages remediation plans, but every change routes through a deterministic safety layer that validates permissions, risk, production state, and blast radius first. Autonomy expands only after sustained proof of safe behavior, mirroring Google's progressive-authorization model.
+
+Practical challenges in managing Kubernetes at enterprise scale (3 minute read)
+
+The author argues that Kubernetes at enterprise scale is a governance problem, not an engineering one, since the platform moves operational headaches around rather than eliminating them. The hard part isn't manifests or Helm charts but standardization across hundreds of engineers who each drift into their own templates, naming conventions, and resource settings. The fix is a paved road: approved templates, default observability and security controls, and self-service that lets app teams ship without becoming Kubernetes experts.
+
+⚒️
+Launches & Tools
+
+Your Worker can now have its own cache in front of it (5 minute read)
+
+(blurb not generated)
+
+Upgrade Amazon EKS clusters with confidence using Kubernetes version rollbacks (5 minute read)
+
+(blurb not generated)
+
+Announcing the Monetization Gateway: charge for any resource behind Cloudflare via x402 (5 minute read)
+
+(blurb not generated)
+
+See your serverless: introducing the Headlamp plugin for Knative (5 minute read)
+
+(blurb not generated)
+
+Cloudflare Drop (1 minute read)
+
+Cloudflare released Drop, a zero-config static hosting service that pushes a dragged-in folder or zip onto its global anycast network in seconds, no build step or account wiring required. It targets the throwaway-demo and quick-deploy niche that Netlify Drop and Vercel own, trading pipeline control for speed and putting Cloudflare's CDN and edge caching in front of a site with a single upload.
+
+Accelerate your infrastructure deployments by up to 4x with AWS CloudFormation Express mode (5 minute read)
+
+(blurb not generated)
+
+thundersnap 0.01: an undo button for everything (5 minute read)
+
+(blurb not generated)
+
+Safely run AI-generated code in Cloud Run sandboxes (2 minute read)
+
+Google Cloud released Cloud Run sandboxes in public preview, giving teams a native way to execute AI-generated code, untrusted binaries, and agent workloads in isolated boundaries that spin up in milliseconds within existing Cloud Run instances. The launch flag replaces the container-cluster plumbing or third-party microVM runtimes teams previously stood up, with a demo running 1,000 sandboxes at 500ms average start-to-stop latency.
+
+HCP Terraform Powered by Infragraph Limited Availability Launch (5 minute read)
+
+(blurb not generated)
+
+Scale Faster with Managed Weaviate: Now in Public Preview on DigitalOcean (2 minute read)
+
+DigitalOcean launched Managed Weaviate in public preview, provisioning production vector-database clusters from the control panel with automated backups, security patching, version upgrades, high availability, and storage autoscaling. It runs the unmodified open-source engine (currently 1.37.1) with full GraphQL, REST, and gRPC compatibility, and prices flat at $20/month with no per-query or per-dimension surcharges.
+
+Securing agentic AI with perimeter guardrails: What's new in VPC Service Controls (5 minute read)
+
+(blurb not generated)
+
+CloudWatch Application Signals now automatically captures errors, performance anomalies, and deployment events (5 minute read)
+
+AWS added Service Events to CloudWatch Application Signals, which automatically captures exception and latency snapshots, function-level performance data, and deployment events from instrumented services with no code changes. Teams can now trace a regression to a specific deploy from the Errors view, though it requires ADOT SDK or the EKS observability add-on instrumentation and currently supports only Java, Python, and JavaScript.
+
+(re)introducing kpt: Your toolchain for infrastructure automation (5 minute read)
+
+(blurb not generated)
+
+GitLab Patch Release: 19.1.2, 19.0.4, 18.11.7 (5 minute read)
+
+GitLab shipped patch releases 19.1.2, 19.0.4, and 18.11.7 for Community and Enterprise Edition, fixing a CVSS 8.7 stored XSS in the vulnerability evidence table renderer and an HTML injection flaw in wiki markup rendering. GitLab.com and Dedicated are already patched, but all self-managed installations should upgrade immediately since the affected versions reach back to 13.11.
+
+🎁
+Miscellaneous
+
+The open source library holding up your stack might have one maintainer (1 minute read)
+
+A new paper sorts open source software into fourteen sub-genres defined by who starts and funds a project, arguing that a lone-maintainer utility and a foundation-governed platform behave differently in production despite sharing the "open source" label. The typology, drawn from a screen of nearly 4,000 papers, flags funding and governance as the predictors of whether critical dependencies like OpenSSL, curl, and log4j hold up under load.
