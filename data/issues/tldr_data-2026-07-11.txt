@@ -1,0 +1,77 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR Data 2026-07-11
+
+🧠
+Deep Dives & Analysis
+
+GitLake: Git-for-data for the agentic lakehouse (5 minute read)
+
+(blurb not generated)
+
+Variance Reduction Below the Randomization Grain (5 minute read)
+
+(blurb not generated)
+
+How to achieve pruning when querying by non-partitioned columns in PostgreSQL (5 minute read)
+
+Partition pruning normally only works when you filter by the partition key, which makes key selection a high-stakes decision. This walkthrough shows how to get PostgreSQL to prune partitions even when querying on non-key columns, using a session/event table partitioned by timestamp as the running example. The trick is exploiting correlations in the data so the planner can still derive a timestamp predicate and skip whole partitions.
+
+Google's TabFM skips per-dataset training and still predicts on tables it's never seen (2 minute read)
+
+Google Research introduced TabFM, a tabular foundation model that reframes prediction as in-context learning, generating results for an unseen table in a single forward pass with no per-dataset training. It targets the operational debt of the gradient-boosted-tree workflow, where every dataset means its own feature engineering, hyperparameter search, and drift-driven retraining pipeline. The pitch for data teams is collapsing weeks of that pipeline work into an API call, though production reliability against a tuned XGBoost baseline remains the open question.
+
+The context engineering playbook (5 minute read)
+
+(blurb not generated)
+
+Meta's AI Storage Blueprint at Scale (5 minute read)
+
+(blurb not generated)
+
+Migrating Counter Service storage: Design choices and learnings (5 minute read)
+
+(blurb not generated)
+
+PostgreSQL and the OOM Killer: Why We Use Strict Memory Overcommit (5 minute read)
+
+(blurb not generated)
+
+Postgres Is Enough (5 minute read)
+
+(blurb not generated)
+
+Be a winner, or join one? (1 minute read)
+
+The author frames a career question through a college basketball recruit weighing offers: do you bet on becoming a winner yourself, or attach yourself to an organization already winning. For data professionals eyeing startups versus established platforms, the essay argues the choice is less about talent than about which risk you can stomach. The strongest point is that "joining a winner" quietly cedes the upside that made the bet worth taking.
+
+Synthetic Data Generation for Financial AI Research with NVIDIA NeMo (5 minute read)
+
+(blurb not generated)
+
+Time-Series LLMs, Explained with t0-alpha (5 minute read)
+
+(blurb not generated)
+
+🚀
+Launches & Tools
+
+Introducing Feature Views (1 minute read)
+
+Databricks released Feature Views in Public Preview, a managed framework for authoring an ML feature once and letting the platform serve it across experimentation, batch training, and real-time inference. A single definition computes both training and serving values, closing the train-serve skew gap that breaks most real-time ML, and switching a feature between batch and streaming sources takes only a few lines of code.
+
+Why we built yet another Postgres connection pooler (5 minute read)
+
+(blurb not generated)
+
+ImputeViz: A Visual Analytics Dashboard for Diagnosing Missing Data and Comparing Imputation Methods (5 minute read)
+
+(blurb not generated)
+
+⚡
+Quick Links
+
+Postgres rewritten in Rust, now passing 100% of the Postgres regression tests (5 minute read)
+
+(blurb not generated)

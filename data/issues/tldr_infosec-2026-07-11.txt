@@ -1,0 +1,271 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR InfoSec 2026-07-11
+
+🔓
+Attacks & Vulnerabilities
+
+JadePuffer ransomware used AI agent to automate entire attack (5 minute read)
+
+(blurb not generated)
+
+AI coding tool hole illustrates a big problem with human in the loop (5 minute read)
+
+(blurb not generated)
+
+FFmpeg fixes PixelSmash flaw in widely used video decoder (5 minute read)
+
+(blurb not generated)
+
+GhostApproval Symlink Flaws Could Let Malicious Repos Run Code in AI Coding Agents (5 minute read)
+
+(blurb not generated)
+
+Januscape: 16-Year-Old Linux KVM Bug Enables Cloud VM Escape Attacks (5 minute read)
+
+(blurb not generated)
+
+GhostLock, a stack-UAF that has existed in ALL Linux distributions for 15 years (1 minute read)
+
+GhostLock (CVE-2026-43499) is a Linux kernel stack use-after-free in the rtmutex PI code that has shipped in every major distribution since kernel 2.6.39 in 2011, exploitable by an unprivileged local user with only CONFIG_FUTEX_PI and standard threading syscalls. VEGA built a 97% reliable privilege escalation and container escape from it; the fix landed in Linux 7.1, so unpatched hosts should upgrade to the latest LTS.
+
+Researcher Details WhatsApp-to-Host Attack Chain Using Three OpenClaw Flaws (1 minute read)
+
+A researcher chained three now-patched OpenClaw flaws (GHSA-hjr6-g723-hmfm and GHSA-9969-8g9h-rxwm, both CVSS 8.8; GHSA-575v-8hfq-m3mc, CVSS 8.4) to achieve host code execution from a single external WhatsApp message, with no prior foothold required. The path-traversal bug lets a container bind-mount /home to bypass denylisted directories and read every user's SSH keys, so operators should upgrade to version 2026.6.6 and rotate exposed credentials.
+
+Microsoft Patches RoguePlanet Defender Flaw That Can Grant SYSTEM Privileges (5 minute read)
+
+(blurb not generated)
+
+Hackers exploit critical auth bypass in Gitea Docker image (1 minute read)
+
+Attackers are actively exploiting CVE-2026-20896, a critical authentication bypass in Gitea's official Docker image that trusts the X-WEBAUTH-USER header from any source IP because it ships REVERSE_PROXY_TRUSTED_PROXIES=*, letting an unauthenticated client impersonate any user, including admins. Upgrade to 1.26.4 immediately; if patching isn't possible, restrict REVERSE_PROXY_TRUSTED_PROXIES to trusted proxy IPs, as roughly 6,200 instances sit exposed on the public web.
+
+Injective Labs GitHub Compromise Pushes Wallet-Key-Stealing npm Packages (1 minute read)
+
+Attackers compromised the Injective Labs SDK GitHub repo via commits from an established contributor's account, publishing malicious @injectivelabs/sdk-ts@1.20.21 to npm that steals cryptocurrency wallet private keys and mnemonic seed phrases through a fake trackKeyDerivation() telemetry function. The poisoned version was pinned across 17 additional @injectivelabs packages to hit transitive users, and while npm has deprecated it, the release artifacts remain downloadable from GitHub, so audit lockfiles and rotate any keys derived on affected versions.
+
+Medtronic Data Breach Impacts 3.8 Million People (5 minute read)
+
+(blurb not generated)
+
+SkillCloak Lets Malicious AI Agent Skills Evade Static Scanners with Self-Extracting Packing (5 minute read)
+
+(blurb not generated)
+
+NetNut cracked as Google and FBI target 2 million-device botnet (5 minute read)
+
+(blurb not generated)
+
+Attackers Exploit 'Ill Bloom' Vulnerability to Drain Over $5 Million From Cryptocurrency Wallets (5 minute read)
+
+(blurb not generated)
+
+Top AI Agents Built to Catch Malicious Code Can Be Tricked Into Running It (5 minute read)
+
+(blurb not generated)
+
+New MODBEACON RAT Uses gRPC Streaming for Encrypted C2 Traffic (1 minute read)
+
+QiAnXin attributed a new Rust-based modular RAT called MODBEACON to the China-linked Silver Fox ecosystem, which propagates it via counterfeit software installers pushed through SEO poisoning against technology, education, and state-owned enterprises across Asia. The memory-resident implant runs a plugin-based beacon and tunnels encrypted C2 over gRPC streaming borrowed from the Xray/V2Ray anti-censorship proxy, with infrastructure fronted on Amazon and Cloudflare CDNs to blend into normal traffic.
+
+New GigaWiper Windows Backdoor Bundles Disk Wiping, Fake Ransomware, and Spyware (5 minute read)
+
+(blurb not generated)
+
+Injective SDK on npm infected with cryptocurrency wallet stealer (5 minute read)
+
+(blurb not generated)
+
+Dormant GitHub Accounts Help Attackers Blend In While Mapping Corporate Orgs (5 minute read)
+
+(blurb not generated)
+
+Fake 7-Zip Installers Turn Devices Into Residential Proxy Nodes (5 minute read)
+
+(blurb not generated)
+
+🧠
+Strategies & Tactics
+
+The ‘Ghost' in the Database: Recovering Active ADFS Signing Keys via Machine DPAPI (5 minute read)
+
+(blurb not generated)
+
+You shouldn't trust Trusted Publishing (5 minute read)
+
+(blurb not generated)
+
+Microsoft is rewriting Windows patch guidance because of AI (5 minute read)
+
+(blurb not generated)
+
+Why we cannot wait for better post-quantum signature algorithms (5 minute read)
+
+(blurb not generated)
+
+npm 12 Disables Install Scripts by Default to Reduce Supply Chain Risk (5 minute read)
+
+(blurb not generated)
+
+Beware What You Autocomplete: Forensic Attribution of Backdoored Code Completions (5 minute read)
+
+(blurb not generated)
+
+Skills Registry Threat Models (5 minute read)
+
+(blurb not generated)
+
+From Legacy Documentation to OSCAL: An MCP-Based Agent Pipeline for Threat-Informed Continuous Compliance in Critical Infrastructure (5 minute read)
+
+(blurb not generated)
+
+Out of Sight: Compression-Aware Content Protection against Agentic Crawlers (5 minute read)
+
+(blurb not generated)
+
+Prismata: Confining Cross-Site Prompt Injection in Web Agents (5 minute read)
+
+(blurb not generated)
+
+An update on residential proxies and the scraper situation (1 minute read)
+
+LWN reports that AI training scrapers now hammer sites from residential-proxy networks spanning millions of unique IPs per hour, each with spoofed user-agents and only a few hits per address, making IP-based blocking ineffective. The traffic rides on malware-compromised home and mobile devices, increasingly media-streaming hardware, directed by central command-and-control nodes. Google's takedown of the IPIDEA proxy botnet cut LWN's scraper load for months, but the reprieve ended, pointing defenders toward behavioral signals over IP blocklists.
+
+AT&T, T-Mobile US, and Verizon ditch SMS for network-based authentication (5 minute read)
+
+(blurb not generated)
+
+Most data brokers won’t tell you what happened to your deletion request (5 minute read)
+
+(blurb not generated)
+
+TRACE: A Two-Channel Robust Attribution Watermark via Complementary Embeddings for LLM-Agent Trajectories (5 minute read)
+
+(blurb not generated)
+
+Mini-Programs, Mega-Problems: Unveiling OAuth-based Authentication Misuses in Mini-Programs via Dynamic Analysis (5 minute read)
+
+(blurb not generated)
+
+Vulnerability Reports Are Not Special Anymore (5 minute read)
+
+(blurb not generated)
+
+Some Notes on Lambda MicroVMs (5 minute read)
+
+(blurb not generated)
+
+Woodruff: You shouldn't trust trusted publishing (5 minute read)
+
+(blurb not generated)
+
+TLS certificates for internal services done right (5 minute read)
+
+(blurb not generated)
+
+CrowdStrike identifies five new AI prompt injection threats (1 minute read)
+
+CrowdStrike added five new prompt injection techniques to its taxonomy, including Trigger-Activated Rule Addition, Cognitive Token Suppression, Algorithmic Payload Decomposition, Special Token Injection, and Unwitting User Context-Data Injection. Several stage a payload across multiple innocuous-looking inputs or hide instructions inside uploaded documents and forwarded emails, defeating single-prompt filtering. CrowdStrike recommends threat modeling every source of model context, expanding testing, and extending detection engineering to cover composite attacks.
+
+🧑‍💻
+Launches & Tools
+
+Multi-Agent Firewall Architecture for Privacy Protection of Sensitive Data in Interactions with Language Models (5 minute read)
+
+(blurb not generated)
+
+🎁
+Miscellaneous
+
+EU 'Chat Control' snoopfest returns after vote to kill it falls short (5 minute read)
+
+(blurb not generated)
+
+Chat Control 1.0 sneaks through the EU Parliament, letting companies scan user data without warrants — legal tactic used to force a majority-required re-vote on eve of Parliament break (1 minute read)
+
+The EU Parliament let Chat Control 1.0 survive a forced re-vote that required an absolute majority to reject, keeping the law in effect until 2028 and giving communications platforms a legal mechanism to scan user data for CSAM without a warrant. Scanning stays voluntary and end-to-end-encrypted services like WhatsApp remain exempt after two amendments, but providers like Gmail, iCloud, Discord, and Slack now have the door open to mass-scan non-encrypted messages.
+
+Anthropic Accuses Alibaba of Claude Distillation/Cloning Attack (5 minute read)
+
+(blurb not generated)
+
+EU Parliament greenlights Chat Control 1.0 (5 minute read)
+
+(blurb not generated)
+
+Meta's New AI Image Tool Lets Others Use Your Public Instagram Photos in AI Images (5 minute read)
+
+(blurb not generated)
+
+Ransomware Negotiator Gets 70 Months in Prison for Aiding BlackCat Attacks (5 minute read)
+
+(blurb not generated)
+
+Ryuk ransomware member pleads guilty in the US, faces 15 years in prison (1 minute read)
+
+Karen Serobovich Vardanyan, a 34-year-old Armenian extradited from Ukraine, pleaded guilty in federal court to deploying Ryuk ransomware on hundreds of servers at U.S. companies between 2019 and 2020, with his crew collecting roughly 1,610 BTC (about $15 million at the time). He faces up to 15 years, $250,000 in fines, and has agreed to pay over $1.1 million in restitution ahead of a September 2026 sentencing.
+
+Microsoft expects more Windows security updates from AI-discovered flaws (5 minute read)
+
+(blurb not generated)
+
+Scot NHS Trust probes email stuffup involving maternity patients' data (5 minute read)
+
+(blurb not generated)
+
+US cybersecurity agency CISA had to build its incident playbook during the incident, agency reveals (1 minute read)
+
+CISA disclosed in a Friday postmortem that it had no prepared incident-response playbook when notified in May that a contractor had exposed government-system credentials in a public GitHub repo, forcing staff to build one mid-incident. The agency revoked and replaced the leaked credentials, said no mission data was exposed, and has since tightened its researcher-disclosure channels amid a leaderless tenure and roughly one-third workforce reduction.
+
+Florida ransomware negotiator convicted for helping ransomware gang extort US companies (1 minute read)
+
+A federal court sentenced Florida resident Angelo Martino to over five years in prison for conspiring with the BlackCat/ALPHV gang to deploy ransomware against US companies while employed as a ransomware negotiator at a cybersecurity firm. Martino is the third insider convicted in the scheme, which extorted victims throughout 2023 and prompted the DOJ to seize more than $10M in cryptocurrency and assets, including a luxury fishing boat.
+
+Ransomware negotiator hired to represent victims was working for the attackers (1 minute read)
+
+A former DigitalMint ransomware negotiator, Angelo Martino, was sentenced to 70 months in prison for feeding BlackCat affiliates confidential negotiation data to inflate the ransoms his own clients paid. Five victims paid over $75 million, some of it likely inflated by Martino's leaks, and he must forfeit crypto proceeds already spent on Florida houses, a boat, and vehicles.
+
+Third US Security Expert Sentenced to Prison for Helping Ransomware Gang (1 minute read)
+
+A US ransomware negotiator, Angelo Martino of Florida, was sentenced to 70 months in prison for feeding BlackCat/Alphv operators his employer's clients' negotiating positions in exchange for a cut of the ransoms, helping extort at least five victims from April 2023. He is the third security-firm employee convicted in the case, and authorities seized $10M in assets including cryptocurrency, vehicles, and a fishing boat.
+
+UK Government Rolls Out Agentic AI Defense Plan Alongside Industry Pledge (5 minute read)
+
+(blurb not generated)
+
+CISA looks to remedy ailments from big May credential leak (1 minute read)
+
+CISA released a forensic report on the May incident in which a contractor leaked privileged AWS GovCloud keys to a public GitHub repository, an exposure the discovering researcher called one of the worst he had seen. Log analysis found none of the leaked credentials were used outside CISA, but the agency rotated all secrets, added EDR monitoring of public-repo uploads, and is building incident playbooks it lacked mid-response.
+
+Former DigitalMint ransomware negotiator who duped clients sentenced to 70 months in jail (5 minute read)
+
+(blurb not generated)
+
+Working with the enemy: Ransomware negotiator-turned cyber criminal jailed after working with hackers to extort clients (5 minute read)
+
+(blurb not generated)
+
+Cybercriminals Flock to Healthcare Businesses as Attacks Surge (1 minute read)
+
+Cyberattacks on healthcare service providers more than doubled in the first half of 2026, jumping 110% year-over-year, as attackers pivot from individual hospitals to third-party vendors whose single breach exposes dozens of downstream clients, per Comparitech data. Recent incidents underscore the scale: German billing provider Unimed lost health data for tens of thousands of patients, while TriZetto and QualDerm breaches together affected 6.5 million people across their customers' facilities.
+
+Barracuda strengthens identity security capabilities with Evo Security acquisition (5 minute read)
+
+(blurb not generated)
+
+QIZ Security raises $17M seed round for post-quantum readiness platform (5 minute read)
+
+(blurb not generated)
+
+⚡
+Quick Links
+
+In Other News: DHS Database Hacked, Adobe Boosts Patch Cadence, Canada Disrupts Ransomware Ops (1 minute read)
+
+Canada's CSE disclosed it hacked into ransomware, drug-trafficking, and extremist infrastructure over the past year to degrade their command-and-control operations.
+
+Armenian national pleads guilty to Ryuk ransomware attacks (1 minute read)
+
+Karen Vardanyan pleaded guilty to deploying Ryuk ransomware against three US organizations, agreeing to $1.2M restitution and facing up to 15 years.

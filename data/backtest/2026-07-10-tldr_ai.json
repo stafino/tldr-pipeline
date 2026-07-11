@@ -1,17 +1,51 @@
 {
   "date": "2026-07-10",
   "newsletter": "tldr_ai",
-  "fetched_at": "2026-07-10T12:57:47.101876+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-07-11T11:27:23.530524+00:00",
+  "tldr_titles": [
+    "OpenAI Retired Atlas",
+    "Muse Spark 1.1",
+    "GPT-5.6: Frontier intelligence that scales with your ambition",
+    "GPT-5.6 Series",
+    "Evolving Windows vulnerability management to meet the speed of AI-powered discovery",
+    "GPT-5.6 Review",
+    "Z.ai's Stable Asynchronous RL",
+    "Flexible Video Diffusion",
+    "ChatGPT Work",
+    "OpenAI's No. 2 Executive to Step Down in Latest Leadership Shake-Up",
+    "OpenAI may have made a fatal misstep in copyright fight with news orgs",
+    "Meta's new AI chips will begin production in September",
+    "Mercor is in talks for a $20B valuation",
+    "Elon Musk praises Mythos/Fable, promises not to \u2018cut off' Anthropic",
+    "Anthropic appoints former Fed Chair Ben Bernanke to its independent trust",
+    "Inviting hard questions"
+  ],
+  "tldr_matched": [
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
   "predictions": [
     {
       "rank": 1,
       "score": 92.0,
       "title": "GPT-5.6",
       "url": "https://openai.com/index/gpt-5-6/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 2,
+      "similarity": 1.0
     },
     {
       "rank": 2,
@@ -42,8 +76,8 @@
       "score": 84.0,
       "title": "GPT-5.6: Frontier intelligence that scales with your ambition",
       "url": "https://openai.com/index/gpt-5-6",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 2,
+      "similarity": 1.0
     },
     {
       "rank": 6,
@@ -106,8 +140,8 @@
       "score": 78.0,
       "title": "ChatGPT is now a partner for your most ambitious work",
       "url": "https://openai.com/index/chatgpt-for-your-most-ambitious-work",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 8,
+      "similarity": 0.7782912254333496
     },
     {
       "rank": 14,
@@ -694,9 +728,55 @@
       "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.0625,
+    "25": 0.125,
+    "50": 0.125,
+    "100": 0.125,
+    "86": 0.125
+  },
+  "hits_at": {
+    "10": 1,
+    "25": 2,
+    "50": 2,
+    "100": 2,
+    "86": 2
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://techcrunch.com/2026/07/09/openai-is-shutting-down-atlas-but-its-ai-browser-ambitions-are-still-growing/",
+    "https://ai.meta.com/blog/introducing-muse-spark-meta-model-api/",
+    "https://openai.com/index/gpt-5-6/",
+    "https://arcprize.org/results/openai-gpt-5-6",
+    "https://blogs.windows.com/windowsexperience/2026/07/09/evolving-windows-vulnerability-management-to-meet-the-speed-of-ai-powered-discovery/",
+    "https://signals.forwardfuture.com/gpt-5-6-review/",
+    "https://arxiv.org/abs/2607.07508",
+    "https://research.nvidia.com/labs/genair/flex-forcing/",
+    "https://openai.com/chatgpt-work/",
+    "https://www.wsj.com/tech/openai-top-executive-fidji-simo-to-step-down-c3daca47",
+    "https://arstechnica.com/tech-policy/2026/07/openai-faked-inability-to-search-training-data-hid-billions-of-logs-nyt-says/",
+    "https://techcrunch.com/2026/07/09/metas-new-ai-chips-will-begin-production-in-september/",
+    "https://techcrunch.com/2026/07/09/mercor-is-in-talks-for-a-20b-valuation/",
+    "https://techcrunch.com/2026/07/09/elon-musk-praises-mythos-fable-promises-not-to-cut-off-anthropic/",
+    "https://www.cnbc.com/2026/07/09/anthropic-fed-chair-bernanke-independent-trust.html",
+    "https://www.anthropic.com/news/hard-questions"
+  ],
+  "tldr_domains": [
+    "techcrunch.com",
+    "ai.meta.com",
+    "openai.com",
+    "arcprize.org",
+    "blogs.windows.com",
+    "signals.forwardfuture.com",
+    "arxiv.org",
+    "research.nvidia.com",
+    "openai.com",
+    "sj.com",
+    "arstechnica.com",
+    "techcrunch.com",
+    "techcrunch.com",
+    "techcrunch.com",
+    "cnbc.com",
+    "anthropic.com"
+  ]
 }

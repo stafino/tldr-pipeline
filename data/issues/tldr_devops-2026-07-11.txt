@@ -1,0 +1,180 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR DevOps 2026-07-11
+
+📱
+News & Trends
+
+Introducing Meerkat: an experiment in global consensus (5 minute read)
+
+(blurb not generated)
+
+Announcing etcd v3.7.0 (5 minute read)
+
+(blurb not generated)
+
+Proof-of-Concept Exploit Released for Linux ‘Bad Epoll' Root Access Vulnerability (5 minute read)
+
+(blurb not generated)
+
+Januscape: 16-Year-Old Linux KVM Bug Enables Cloud VM Escape Attacks (5 minute read)
+
+(blurb not generated)
+
+Cyber researchers sound alarm over a 15-year-old Linux kernel flaw – 'GhostLock' could let hackers seize unpatched machines in just five seconds (5 minute read)
+
+(blurb not generated)
+
+GhostLock, a stack-UAF that has existed in ALL Linux distributions for 15 years (1 minute read)
+
+Security researchers at VEGA disclosed GhostLock (CVE-2026-43499), a stack use-after-free in the Linux kernel's rtmutex PI code that has shipped in every major distribution since Linux 2.6.39 in 2011 and requires no special config or privileges to trigger. The team turned it into a 97% stable local privilege escalation and container escape, earning $92,337 through Google's kernelCTF, and urge unpatched hosts to move to the latest LTS.
+
+Hackers exploit critical auth bypass in Gitea Docker image (1 minute read)
+
+Attackers are actively exploiting CVE-2026-20896, a critical auth bypass in Gitea's official Docker image that ships `REVERSE_PROXY_TRUSTED_PROXIES=*`, letting any client that reaches the container's HTTP port set an `X-WEBAUTH-USER` header and impersonate any user, including admins. Gitea released 1.26.3 and 1.26.4 to fix it, and operators who can't upgrade should scope the trusted-proxies setting to specific reverse-proxy IPs across the roughly 6,200 exposed instances.
+
+Six New U-Boot Flaws Could Let Malicious Images Crash Devices or Run Code at Boot (1 minute read)
+
+Binarly disclosed six flaws in U-Boot's FIT image verification, two of which let a malicious image run attacker code before the bootloader checks its signature, and four that crash the device. Most of the vulnerable code has shipped since v2013.07 across 50-plus stable releases and the many vendor firmwares built on U-Boot, from home routers to data-center BMCs, and no CVEs have been assigned yet.
+
+🚀
+Opinions & Tutorials
+
+TLS certificates for internal services done right (5 minute read)
+
+(blurb not generated)
+
+You shouldn't trust Trusted Publishing (5 minute read)
+
+(blurb not generated)
+
+Navigating the ingress-NGINX retirement (5 minute read)
+
+(blurb not generated)
+
+Performance per dollar is getting faster and cheaper (5 minute read)
+
+(blurb not generated)
+
+PostgreSQL and the OOM Killer: Why We Use Strict Memory Overcommit (5 minute read)
+
+(blurb not generated)
+
+Reduce CDN log costs with searchable archives (5 minute read)
+
+(blurb not generated)
+
+Some Notes on Lambda MicroVMs (5 minute read)
+
+(blurb not generated)
+
+Why we cannot wait for better post-quantum signature algorithms (5 minute read)
+
+(blurb not generated)
+
+How data sovereignty is changing cloud native infrastructure design (5 minute read)
+
+(blurb not generated)
+
+Autopilot Clusters with GKE managed DRANET: GPUs and TPUs (5 minute read)
+
+(blurb not generated)
+
+An update on residential proxies and the scraper situation (1 minute read)
+
+LWN's follow-up on the AI scraper problem reports that request floods now span millions of unique residential and mobile IPs, each hitting a site two or three times with fabricated user-agent strings before rotating away. The traffic comes from malware-infected home devices, increasingly media-streaming boxes, coordinated by command-and-control nodes, which makes IP-based blocking useless. Google's takedown of the IPIDEA proxy network cut LWN's scraper load for a few months, but the reprieve has already ended.
+
+Meta's AI Storage Blueprint at Scale (5 minute read)
+
+(blurb not generated)
+
+How GitHub gave every repository a durable owner (5 minute read)
+
+(blurb not generated)
+
+Woodruff: You shouldn't trust trusted publishing (5 minute read)
+
+(blurb not generated)
+
+Automating cross-repo documentation with GitHub Agentic Workflows (5 minute read)
+
+(blurb not generated)
+
+How to teach SRE AI agents to fail safely and earn your team’s trust (5 minute read)
+
+(blurb not generated)
+
+Practical challenges in managing Kubernetes at enterprise scale (5 minute read)
+
+(blurb not generated)
+
+Green DevOps: Why carbon measurement belongs in your CI/CD pipeline (5 minute read)
+
+(blurb not generated)
+
+GitLake: Git-for-data for the agentic lakehouse (5 minute read)
+
+(blurb not generated)
+
+Postgres Is Enough (5 minute read)
+
+(blurb not generated)
+
+⚒️
+Launches & Tools
+
+Your Worker can now have its own cache in front of it (5 minute read)
+
+(blurb not generated)
+
+Upgrade Amazon EKS clusters with confidence using Kubernetes version rollbacks (5 minute read)
+
+(blurb not generated)
+
+Announcing the Monetization Gateway: charge for any resource behind Cloudflare via x402 (5 minute read)
+
+(blurb not generated)
+
+See your serverless: introducing the Headlamp plugin for Knative (5 minute read)
+
+(blurb not generated)
+
+Accelerate your infrastructure deployments by up to 4x with AWS CloudFormation Express mode (5 minute read)
+
+(blurb not generated)
+
+thundersnap 0.01: an undo button for everything (5 minute read)
+
+(blurb not generated)
+
+Safely run AI-generated code in Cloud Run sandboxes (5 minute read)
+
+(blurb not generated)
+
+Improving Smart Tiered Cache for Public Cloud Regions (1 minute read)
+
+Cloudflare shipped Smart Tiered Cache for Public Cloud Regions, letting customers pass a cloud region hint so Cloudflare can map anycast or regional-unicast origins to the right region and pick optimal primary and fallback upper tiers. This restores single-closest-tier cache efficiency for public cloud origins, where ambiguous IPs previously forced a fallback to multiple upper tiers and eroded hit ratios.
+
+HCP Terraform Powered by Infragraph Limited Availability Launch (5 minute read)
+
+(blurb not generated)
+
+Scale Faster with Managed Weaviate: Now in Public Preview on DigitalOcean (5 minute read)
+
+(blurb not generated)
+
+Securing agentic AI with perimeter guardrails: What's new in VPC Service Controls (5 minute read)
+
+(blurb not generated)
+
+CloudWatch Application Signals now automatically captures errors, performance anomalies, and deployment events (5 minute read)
+
+(blurb not generated)
+
+🎁
+Miscellaneous
+
+The open source library holding up your stack might have one maintainer (5 minute read)
+
+(blurb not generated)

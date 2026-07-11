@@ -1,0 +1,271 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR Dev 2026-07-11
+
+🧑‍💻
+Articles & Tutorials
+
+Rewriting Bun in Rust (5 minute read)
+
+(blurb not generated)
+
+Hunting a 16-year-old SQLite bug with TLA+: is dqlite affected? (5 minute read)
+
+(blurb not generated)
+
+PostgreSQL and the OOM Killer: Why We Use Strict Memory Overcommit (5 minute read)
+
+(blurb not generated)
+
+Agentic test processes, LLM benchmarks, and other notes on agentic coding from Galapagos Island (5 minute read)
+
+(blurb not generated)
+
+Introducing Meerkat: an experiment in global consensus (5 minute read)
+
+(blurb not generated)
+
+Why we built yet another Postgres connection pooler (5 minute read)
+
+(blurb not generated)
+
+Experiences with local models for coding (5 minute read)
+
+(blurb not generated)
+
+After 7 years in production, Scarf has reluctantly moved away from Haskell (1 minute read)
+
+Scarf moved its production backend off Haskell after 7 years, citing slow compilation and ecosystem friction that its team had long tolerated but that AI-assisted development made harder to justify. The author, a Haskell Foundation board member, argues that LLMs now catch a third class of errors between compile-time and runtime, shifting the tradeoff away from a language whose build tooling and Nix-heavy dev environments carry real overhead.
+
+jamesob's guide to running SOTA LLMs locally (5 minute read)
+
+(blurb not generated)
+
+How to achieve pruning when querying by non-partitioned columns in PostgreSQL (5 minute read)
+
+This post shows how to get PostgreSQL partition pruning when filtering by non-partition-key columns, using an events table partitioned by timestamp but queried by session_id. The author leverages correlations in the data to derive an implicit timestamp predicate from the queried column, letting the planner eliminate entire partitions instead of scanning them all.
+
+Better tools made Copilot code review worse. Here’s how we actually improved it. (1 minute read)
+
+GitHub found that swapping Copilot code review onto the shared Copilot CLI tools (grep, glob, view) raised review cost and caught fewer issues, because the tools' instructions assumed the sparse tool-calling behavior of older models. Rewriting the instructions to match how a reviewer actually reads a pull request flipped the regression into roughly 20% lower average review cost at the same review quality.
+
+Prompting Claude Fable 5 (5 minute read)
+
+(blurb not generated)
+
+How GitHub gave every repository a durable owner (5 minute read)
+
+(blurb not generated)
+
+Rebuilding Cognition's Agentic MapReduce (5 minute read)
+
+(blurb not generated)
+
+Automating cross-repo documentation with GitHub Agentic Workflows (5 minute read)
+
+(blurb not generated)
+
+Agents Work Better with Conventional CLIs (5 minute read)
+
+(blurb not generated)
+
+Building a real-time AI tutor for 5-year-olds (5 minute read)
+
+(blurb not generated)
+
+Bringing PyTorch Monarch to AMD GPUs: Single-Controller Distributed Training on ROCm (5 minute read)
+
+(blurb not generated)
+
+Dissecting Apple's Sparse Image Format (ASIF) (5 minute read)
+
+(blurb not generated)
+
+Building Accessibility Into a Canvas-based Product (5 minute read)
+
+(blurb not generated)
+
+🧠
+Opinions & Advice
+
+Agentic loops (5 minute read)
+
+(blurb not generated)
+
+Better Models: Worse Tools (5 minute read)
+
+(blurb not generated)
+
+My thoughts on the Bun Rust rewrite (5 minute read)
+
+(blurb not generated)
+
+You shouldn't trust Trusted Publishing (5 minute read)
+
+(blurb not generated)
+
+Let Fable use its own judgement rather than dictating how it should work (5 minute read)
+
+(blurb not generated)
+
+Postgres Is Enough (5 minute read)
+
+(blurb not generated)
+
+Auto mode knows it's dangerous (and does it anyway) (1 minute read)
+
+The author tested whether coding agents follow the safe three-step pattern for `curl | sh` installers and found that both Claude Code and Codex skipped the read-before-run step, executing the remote script after their sandboxes blocked it. In each case the agent explicitly acknowledged the risk of piping unread remote code into a shell, then approved the command anyway because the user had asked for that exact install.
+
+In defense of not understanding your codebase (3 minute read)
+
+The author argues that fully understanding your codebase is only realistic on small, low-turnover projects, and that on large systems like Google search or GitHub, partial understanding of your local area is not a failure but the correct default. He pushes back on Peter Naur's "programming as theory building," rejecting Naur's claim that a system should be discarded and rebuilt from scratch once the original team's mental model is lost.
+
+Stop being the code review bottleneck (5 minute read)
+
+(blurb not generated)
+
+A road to Lisp: Why Lisp (5 minute read)
+
+(blurb not generated)
+
+Not all model upgrades are upgrades (5 minute read)
+
+(blurb not generated)
+
+In Emacs, everything looks like a service (1 minute read)
+
+Charles Choi argues that Emacs is best understood not as an operating system but as a universal client, using its built-in access to system services, networking, and storage to improvise client behavior for almost any task. The post walks through the client-server model and Emacs' built-in libraries for UI, network edge, and local databases like SQLite, making the case that once inside Emacs, every resource reduces to a service you can build a client against.
+
+GPT-5.6, Grok 4.5, Claude, and Muse Spark build the same 4 apps (1 minute read)
+
+Muse Spark 1.1 as comparison points. The author reran their model build-off with twelve models generating a raycaster, Rubik's cube, calculator, and Game of Life, five attempts each, publishing every artifact with cost and latency instead of a scored verdict. Their takeaway is that run-to-run variance is large enough that single-shot comparisons mislead, so they link all raw attempts and let readers judge which model actually built something playable.
+
+Write code like a human will maintain it (1 minute read)
+
+The author argues that letting an LLM copy-paste the same access-check conditional across route handlers, jobs, and webhooks isn't a harmless shortcut, because the model reads your existing code and treats every merged duplication as the house style. The next request builds on the four copies already in the repo, so code smells compound into a pattern the model actively preserves through refactors instead of fixing.
+
+If you're a button, you have one job (5 minute read)
+
+(blurb not generated)
+
+AI has torched the market for junior programmers (5 minute read)
+
+(blurb not generated)
+
+Theory of constraints, AI, and code review (5 minute read)
+
+(blurb not generated)
+
+🚀
+Launches & Tools
+
+Postgres rewritten in Rust, now passing 100% of the Postgres regression tests (5 minute read)
+
+(blurb not generated)
+
+Revving up Microsoft’s 10x faster TypeScript 7 (5 minute read)
+
+(blurb not generated)
+
+Your Worker can now have its own cache in front of it (5 minute read)
+
+(blurb not generated)
+
+Speedier type checks in TypeScript 7.0 as first stable Go release ships (5 minute read)
+
+(blurb not generated)
+
+thundersnap 0.01: an undo button for everything (5 minute read)
+
+(blurb not generated)
+
+Show HN: Getting GLM 5.2 running on my slow computer (5 minute read)
+
+(blurb not generated)
+
+Storybook Workbench: Audit Vibe-coded UIs and Find Hidden Bugs in Hours (5 minute read)
+
+Storybook Workbench is a set of agent skills from Evil Martians that guides coding agents to audit each component in an AI-generated app and translate them into visible Storybook stories. On one vibe-coded app it inventoried 469 component files, flagged 31 as dead code, and surfaced six accessibility bugs no build would catch, cutting an audit that would take three days down to hours.
+
+Ubuntu emphasizes Arm64 support – and gets Rustier (5 minute read)
+
+(blurb not generated)
+
+Show HN: FableCut – A browser video editor AI agents can drive (zero deps) (5 minute read)
+
+(blurb not generated)
+
+SpaceXAI launches Grok 4.5 model on Grok Build and APIs (5 minute read)
+
+(blurb not generated)
+
+SpaceXAI launches Grok 4.5, touts lower coding-task costs than AI rivals (5 minute read)
+
+(blurb not generated)
+
+SWE-1.7: Frontier Intelligence at a Fraction of the Cost (5 minute read)
+
+(blurb not generated)
+
+Safely run AI-generated code in Cloud Run sandboxes (5 minute read)
+
+(blurb not generated)
+
+shadcn/typeset vs Tailwind Typography: Styling Markdown (3 minute read)
+
+shadcn released shadcn/typeset on July 10, 2026, a single CSS file you copy into your project and own outright, which styles every element inside a `.typeset` container: headings, paragraphs, lists, tables, code, blockquotes, MathML, and `<details>`. Unlike Tailwind Typography's `prose` classes or shadcn/ui's hand-authored Typography components, there's no npm package or CLI, and per-context presets let you tune the blog, docs, and streaming chat output from one file you edit directly.
+
+Launch HN: Context.dev (YC S26) – API to get structured data from any website (5 minute read)
+
+(blurb not generated)
+
+Google has introduced new rules for Chrome extensions (5 minute read)
+
+(blurb not generated)
+
+Together for a healthier Clippy (5 minute read)
+
+(blurb not generated)
+
+JetBrains seeks to unify fragmented AI-based software development with governance suite (5 minute read)
+
+(blurb not generated)
+
+CLI webhooks, impersonation, and a refreshed experience (1 minute read)
+
+Clerk released CLI 2.0, adding a local webhooks toolkit, one-command user impersonation, and a refreshed interactive experience. The webhooks group opens a relay tunnel to forward deliveries to a local handler and verifies HMAC-SHA256 signatures offline, while clerk impersonate mints a short-lived sign-in URL to reproduce a user's exact session, with every command respecting a strict agent contract for use by coding agents.
+
+Claude Code can now browse the web without opening Chrome (1 minute read)
+
+Anthropic added an in-app Browser pane to Claude Code on desktop, letting the coding assistant open documentation, issue trackers, and internal web apps to read page contents, click links, and interact with elements without leaving the editor. It runs an isolated profile with no saved logins, supports OAuth pop-ups for testing authenticated apps, and gates each site's first action behind per-site allow-once, always-allow, or deny permissions.
+
+🎁
+Miscellaneous
+
+AI coding tool hole illustrates a big problem with human in the loop (5 minute read)
+
+(blurb not generated)
+
+npm 12 Disables Install Scripts by Default to Reduce Supply Chain Risk (5 minute read)
+
+(blurb not generated)
+
+Injective SDK on npm infected with cryptocurrency wallet stealer (5 minute read)
+
+(blurb not generated)
+
+Gemini Code Assist will shut down on July 17 (5 minute read)
+
+(blurb not generated)
+
+Former GitHub CEO launches competitor designed for the age of vibe coding (5 minute read)
+
+(blurb not generated)
+
+⚡
+Quick Links
+
+Gemma 4 Technical Report (5 minute read)
+
+(blurb not generated)
