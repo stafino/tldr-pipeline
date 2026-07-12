@@ -37,13 +37,17 @@ Six New U-Boot Flaws Could Let Malicious Images Crash Devices or Run Code at Boo
 🚀
 Opinions & Tutorials
 
-We scaled PgBouncer to 4x throughput (1 minute read)
+We scaled PgBouncer to 4x throughput (5 minute read)
 
-ClickHouse's Managed Postgres team describes running a fleet of PgBouncer processes bound to the same port with so_reuseport, since PgBouncer is single-threaded and pins one core no matter how many the box has. On a 16-vCPU c7i.4xlarge, the fleet hit roughly 336k transactions/sec against a single process's 87k peak, about 4x. The write-up covers the operational catch: cancel requests can land on the wrong process, fixed by peering, with the connection budget split across the fleet so Postgres is never oversubscribed.
+(blurb not generated)
 
 You shouldn't trust Trusted Publishing (5 minute read)
 
 (blurb not generated)
+
+Lowering your DNS TTL will not speed up your failover, and here is the data showing why (3 minute read)
+
+A final-year dissertation measured multi-cloud DNS failover across nine kills and three TTL settings, and found that lowering TTL barely moves your RTO. Failover splits into detection time, a near-constant ~48s governed by Route 53's health-check interval and failure threshold rather than TTL, and propagation time, which is resolver-dependent: at TTL=300 Cloudflare's resolver oscillated for over 325s while Google DNS stabilized quickly. The takeaway for on-call teams is to tune health-check intervals and thresholds, not just crank TTL down.
 
 Performance per dollar is getting faster and cheaper (5 minute read)
 
@@ -136,9 +140,9 @@ HCP Terraform Powered by Infragraph Limited Availability Launch (5 minute read)
 
 (blurb not generated)
 
-ZeroFS vs. Amazon S3 Files (1 minute read)
+ZeroFS vs. Amazon S3 Files (5 minute read)
 
-ZeroFS and Amazon S3 Files both expose POSIX filesystems over object storage, but split on whether the bucket stays usable as plain S3. S3 Files preserves one-file, one-object identity and exports asynchronously after 60 seconds of inactivity, while ZeroFS packs, compresses, and client-side encrypts extents into opaque segments, trading direct S3 access for cheaper small-file writes.
+(blurb not generated)
 
 Securing agentic AI with perimeter guardrails: What's new in VPC Service Controls (5 minute read)
 
@@ -152,9 +156,9 @@ Scale Faster with Managed Weaviate: Now in Public Preview on DigitalOcean (5 min
 
 (blurb not generated)
 
-Mesh LLM: distributed AI computing on iroh (1 minute read)
+Mesh LLM: distributed AI computing on iroh (5 minute read)
 
-Mesh LLM pools GPUs across the machines a team already owns and exposes them as one OpenAI-compatible API, routing each request to run locally, hand off to a peer with the model loaded, or split a too-large model across several boxes as a pipeline. Built on iroh endpoints with a pluggable plugin architecture, it ships a catalog of 40+ models spanning laptop-sized 500M weights up to 235B mixture-of-experts giants.
+(blurb not generated)
 
 🎁
 Miscellaneous

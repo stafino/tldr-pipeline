@@ -14,6 +14,10 @@ Hunting a 16-year-old SQLite bug with TLA+: is dqlite affected? (5 minute read)
 
 (blurb not generated)
 
+A dock that wakes up reliably (1 minute read)
+
+After years of Thunderbolt docks (CalDigit TS3 and TS4) sporadically failing to wake a docked MacBook Pro M1 Max and ThinkPad X1 Carbon, the author found the problem vanished only after swapping the monitor to an ASUS ROG Swift PG27UCDM. The post documents the full working configuration and concedes the root cause is unknown, likely buggy display firmware or a wake-timeout in the old BenQ, with wake now consistently under a second.
+
 PostgreSQL and the OOM Killer: Why We Use Strict Memory Overcommit (5 minute read)
 
 (blurb not generated)
@@ -25,6 +29,10 @@ Agentic test processes, LLM benchmarks, and other notes on agentic coding from G
 Introducing Meerkat: an experiment in global consensus (5 minute read)
 
 (blurb not generated)
+
+Lowering your DNS TTL will not speed up your failover, and here is the data showing why (3 minute read)
+
+Testing multi-cloud DNS failover across nine kills and three TTL settings, the author found detection time held constant at ~48 seconds regardless of TTL, because Route 53's health-check polling and quorum logic govern it, not the record's TTL. Lowering TTL only affects propagation, which turned out to be resolver-dependent: at TTL=300 Cloudflare's resolver oscillated for over 325 seconds after failover while Google DNS stabilized far faster.
 
 Why we built yet another Postgres connection pooler (5 minute read)
 
@@ -38,9 +46,9 @@ After 7 years in production, Scarf has reluctantly moved away from Haskell (5 mi
 
 (blurb not generated)
 
-We scaled PgBouncer to 4x throughput (1 minute read)
+We scaled PgBouncer to 4x throughput (5 minute read)
 
-ClickHouse ran a fleet of PgBouncer processes behind one port using so_reuseport, letting the kernel load-balance connections across all 16 cores instead of pinning connection pooling to a single core. On identical 16-vCPU EC2 hardware, the fleet hit roughly 336k transactions/sec versus 87k for one process, about 4x, and used peering to forward query-cancel requests to whichever process actually owns the session.
+(blurb not generated)
 
 jamesob's guide to running SOTA LLMs locally (5 minute read)
 
@@ -50,9 +58,9 @@ How to achieve pruning when querying by non-partitioned columns in PostgreSQL (5
 
 (blurb not generated)
 
-Your code is fast if you're lucky (1 minute read)
+Your code is fast if you're lucky (5 minute read)
 
-The author found that Clang only compiles a sort's comparison into branch-free conditional-move instructions when the code is written in a specific style, so functionally identical implementations can differ sharply in speed. The post uses a branchless Quicksort built on sorting networks to show which patterns the compiler reliably vectorizes, and why relying on the optimizer to guess your intent leaves performance to chance.
+(blurb not generated)
 
 Better tools made Copilot code review worse. Here’s how we actually improved it. (5 minute read)
 
@@ -77,14 +85,6 @@ Automating cross-repo documentation with GitHub Agentic Workflows (5 minute read
 Agents Work Better with Conventional CLIs (5 minute read)
 
 (blurb not generated)
-
-Networking and the Internet, from First Principles (1 minute read)
-
-This post explains how the internet works from first principles, tracing a message from Wi-Fi radio waves through copper, fiber, and undersea glass to the software on the other end. It frames packet switching, TCP, DNS, and TLS not as a finished blueprint but as successive patches for concrete limitations, each deployed decades after the network already worked.
-
-What xAI's Grok Build CLI Actually Sends to xAI (1 minute read)
-
-A researcher's teardown of xAI's official Grok Build CLI shows that on a normal consumer login it uploads the entire repository, including full git history and files the agent was explicitly told not to read, to a Google Cloud Storage bucket named grok-code-session-traces via POST /v1/storage. Findings are backed by captured artifacts and SHA-256 hashes, and the author notes the upload stays active by default even after disabling "Improve the model.
 
 🧠
 Opinions & Advice
@@ -137,9 +137,9 @@ Write code like a human will maintain it (5 minute read)
 
 (blurb not generated)
 
-'Ghostcommit' hides prompt injection in images to fool AI agents, steal secrets (1 minute read)
+'Ghostcommit' hides prompt injection in images to fool AI agents, steal secrets (5 minute read)
 
-Researchers demonstrated "Ghostcommit," an attack that hides prompt-injection instructions inside a PNG so text-based AI code reviewers like CodeRabbit and Bugbot skip the image entirely and merge a poisoned AGENTS.md convention file. A coding agent later follows the pointer, reads .env byte by byte, and writes the repo's secrets into source as an innocuous integer constant, exploiting a review gap where 73% of merged PRs reach the default branch with no substantive human or bot review.
+(blurb not generated)
 
 If you're a button, you have one job (5 minute read)
 
@@ -160,37 +160,37 @@ Your Worker can now have its own cache in front of it (5 minute read)
 
 (blurb not generated)
 
-Show HN: Ant – A JavaScript runtime and ecosystem (1 minute read)
+Show HN: Ant – A JavaScript runtime and ecosystem (5 minute read)
 
-Ant is a new JavaScript runtime that bundles its own toolchain and package ecosystem, positioning itself against Node.js, Deno, and Bun rather than slotting into the existing npm stack. The Show HN pitch is an integrated environment instead of a runtime plus a pile of separate tools, though adopting it means betting on a young ecosystem outside the established npm compatibility path.
+(blurb not generated)
 
 thundersnap 0.01: an undo button for everything (5 minute read)
 
 (blurb not generated)
 
-ZeroFS vs. Amazon S3 Files (1 minute read)
+ZeroFS vs. Amazon S3 Files (5 minute read)
 
-ZeroFS and Amazon S3 Files both mount a POSIX filesystem on top of object storage, but they invert the bucket's role: S3 Files (built on EFS) keeps a one-file, one-object mapping so images/cat.jpg exports back to the same S3 key, while ZeroFS packs compressed, client-side-encrypted extents into opaque immutable segments. The trade-off is direct S3 interoperability, since a ZeroFS pathname can never be fetched with GetObject and recovery requires the encryption password.
+(blurb not generated)
 
 Storybook Workbench: Audit Vibe-coded UIs and Find Hidden Bugs in Hours (5 minute read)
 
 (blurb not generated)
 
-Mesh LLM: distributed AI computing on iroh (1 minute read)
+Mesh LLM: distributed AI computing on iroh (5 minute read)
 
-Mesh LLM pools GPUs and memory across machines you already own and exposes them as a single OpenAI-compatible API at localhost:9337, routing each request to run locally, on a peer that has the model loaded, or split across boxes as a pipeline. The pluggable runtime ships a catalog of 40+ models spanning from sub-billion-parameter models that fit on a laptop to 235B mixture-of-experts giants, communicating over iroh endpoints.
+(blurb not generated)
 
 SWE-1.7: Frontier Intelligence at a Fraction of the Cost (5 minute read)
 
 (blurb not generated)
 
-A pure scheme web programming tool (1 minute read)
+Show HN: Learn by rebuilding Redis, Git, a database from scratch (5 minute read)
 
-Goeteia is a self-hosted Scheme-to-WebAssembly compiler that ships as a ~70 KB gzipped Wasm blob and recompiles source in the browser in about 15 ms per Run, with no server involved. It handles fixnums as unboxed i31refs, does every tail call as a return_call so a 100M-iteration loop runs in constant stack in ~150 ms, and includes a reactive web stack for DOM, Three.js, raw WebGL, and s-expression RPC.
+(blurb not generated)
 
-Show HN: Learn by rebuilding Redis, Git, a database from scratch (1 minute read)
+A pure scheme web programming tool (5 minute read)
 
-ShipThatCode offers 80+ build-from-scratch courses that teach systems like Redis, Git, databases, and container runtimes by having you implement them in one of nine languages, with each lesson structured as choose, write, then run. The platform also bundles courses into sequenced career paths for roles including backend, frontend, DevOps, and data science, and the free tier requires no credit card.
+(blurb not generated)
 
 Google has introduced new rules for Chrome extensions (5 minute read)
 
@@ -215,13 +215,13 @@ npm 12 Disables Install Scripts by Default to Reduce Supply Chain Risk (5 minute
 
 (blurb not generated)
 
-Compromised jscrambler 8.14.0 npm Release Drops Rust Infostealer During Install (1 minute read)
+Compromised jscrambler 8.14.0 npm Release Drops Rust Infostealer During Install (5 minute read)
 
-The jscrambler npm package's 8.14.0 release was compromised, shipping a preinstall hook that drops a Rust infostealer for Windows, macOS, and Linux and runs it during install. The payload sweeps for AWS, Azure, and GCP credentials, crypto wallets, browser secrets, and config files for AI coding tools like Claude Desktop, Cursor, and Zed, with the Linux build able to load an eBPF program into the kernel.
+(blurb not generated)
 
-Fake Go DNS scanner spread malware through over 200 GitHub repos — 'Operation Muck and Load' has published 700 malicious modules since January (1 minute read)
+Fake Go DNS scanner spread malware through over 200 GitHub repos — 'Operation Muck and Load' has published 700 malicious modules since January (5 minute read)
 
-Socket traced a Go module posing as a DNS and subdomain scanner to a network of 222 GitHub repositories across 190 accounts, where it acted as a first-stage Windows malware loader staging Vidar, RATs, and XMRig miners. Dubbed "Operation Muck and Load," the campaign published over 700 malicious versions since January before the Go security team blocked it from the module proxy.
+(blurb not generated)
 
 Gemini Code Assist will shut down on July 17 (5 minute read)
 
@@ -237,3 +237,7 @@ Quick Links
 Gemma 4 Technical Report (5 minute read)
 
 (blurb not generated)
+
+FFmpeg chromakey Filter: Remove Green Screen Backgrounds (3 minute read)
+
+FFmpeg's chromakey filter keys out green screen backgrounds in YUV space, tuned via similarity and blend, with output to alpha-capable WebM or MOV.

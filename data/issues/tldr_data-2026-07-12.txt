@@ -6,9 +6,9 @@ TLDR Data 2026-07-12
 🧠
 Deep Dives & Analysis
 
-We scaled PgBouncer to 4x throughput (1 minute read)
+We scaled PgBouncer to 4x throughput (5 minute read)
 
-ClickHouse ran a fleet of PgBouncer processes bound to the same port with so_reuseport, letting the kernel load-balance connections across all cores instead of pinning connection pooling to a single one. On a 16-vCPU box, this pushed throughput from a single process's 87k transactions/sec peak to roughly 336k, about 4x. The hard part was query cancellation: cancel requests arrive on new connections the kernel can route to the wrong process, so the pooler processes peer with each other to forward cancels to the session's real owner.
+(blurb not generated)
 
 Variance Reduction Below the Randomization Grain (5 minute read)
 
@@ -50,9 +50,9 @@ Time-Series LLMs, Explained with t0-alpha (5 minute read)
 
 (blurb not generated)
 
-Prefer strict tables in SQLite (1 minute read)
+Prefer strict tables in SQLite (5 minute read)
 
-SQLite's STRICT tables enforce rigid column typing, rejecting inserts and updates that put the wrong datatype in a column instead of silently coercing them the way default tables do. The author argues they should be the default choice: appending STRICT to a table definition also blocks bogus column types like JSON, UUID, or DATETIME at creation time, while still allowing lossless conversions such as '123' into an INTEGER column.
+(blurb not generated)
 
 🚀
 Launches & Tools

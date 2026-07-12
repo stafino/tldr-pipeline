@@ -50,17 +50,17 @@ Attackers Exploit 'Ill Bloom' Vulnerability to Drain Over $5 Million From Crypto
 
 (blurb not generated)
 
-Compromised jscrambler 8.14.0 npm Release Drops Rust Infostealer During Install (1 minute read)
+Compromised jscrambler 8.14.0 npm Release Drops Rust Infostealer During Install (5 minute read)
 
-A compromised jscrambler 8.14.0 npm release, pushed July 11 under a legitimate maintainer account and absent from the project's GitHub source, uses a preinstall hook to drop and run a native Rust infostealer built for Windows, macOS, and Linux. The payload sweeps cloud credentials, crypto wallets, browser secrets, and AI coding-tool configs holding API keys and MCP credentials, and on Linux can load an eBPF program directly into the kernel.
+(blurb not generated)
 
 New MODBEACON RAT Uses gRPC Streaming for Encrypted C2 Traffic (5 minute read)
 
 (blurb not generated)
 
-'Ghostcommit' hides prompt injection in images to fool AI agents, steal secrets (1 minute read)
+'Ghostcommit' hides prompt injection in images to fool AI agents, steal secrets (5 minute read)
 
-Researchers disclosed "Ghostcommit," an attack that hides prompt-injection instructions inside a PNG so AI code reviewers, which treat images as opaque binary blobs, wave the malicious pull request through. Once merged, an AGENTS.md convention points a coding agent to the image, which instructs it to read .env and emit the repository's secrets as an encoded integer constant; CodeRabbit, Bugbot, and Cursor driving Claude Sonnet all missed or executed it.
+(blurb not generated)
 
 GitHub Copilot Refuses Harmful Requests in Chat, Then Writes Them in Code (5 minute read)
 
@@ -145,9 +145,9 @@ An off switch for dual use knowledge in AI models (5 minute read)
 
 (blurb not generated)
 
-Forget typosquatting; slopsquatting is the software supply chain threat created by AI coding tools (2 minute read)
+Forget typosquatting; slopsquatting is the software supply chain threat created by AI coding tools (5 minute read)
 
-Slopsquatting is a supply-chain attack that weaponizes LLM hallucinations: AI coding assistants invent plausible-sounding package names, attackers register those names on public registries and populate them with malware. Because these are novel invented names rather than misspellings of real libraries, registry typosquatting defenses like blocking "crossenv" against "cross-env" don't catch them. Defenders should pin and vet AI-suggested dependencies before install, and validate that every package an assistant recommends actually exists and is legitimately maintained.
+(blurb not generated)
 
 The open source library holding up your stack might have one maintainer (5 minute read)
 
@@ -165,9 +165,9 @@ AI Agents Are a Strong Bug-Finding Tool, Not an Oracle (5 minute read)
 
 (blurb not generated)
 
-The Hotel Upgrade Hack: Mass Assignment Vulnerabilities in APIs (2 minute read)
+Your next insider threat doesn’t have a badge. It has an API token (5 minute read)
 
-Mass assignment vulnerabilities let attackers set fields the server never intended to expose by adding extra keys to an API request, binding user input directly to internal models. The canonical case is Egor Homakov's 2012 GitHub exploit, where he injected an organization_id into a profile-update POST to add himself to the rails/rails org without approval. Defenders should enforce explicit allow-lists for bindable fields (Rails strong parameters, DTO schemas, or per-endpoint field whitelists) rather than passing req.body straight into create or update calls.
+(blurb not generated)
 
 🎁
 Miscellaneous
@@ -180,9 +180,9 @@ Anthropic Accuses Alibaba of Claude Distillation/Cloning Attack (5 minute read)
 
 (blurb not generated)
 
-How members of the extremist group Boko Haram are using AI chatbots to design explosives, fix or upgrade weapons, and brainstorm attack ideas (New York Times) (1 minute read)
+How members of the extremist group Boko Haram are using AI chatbots to design explosives, fix or upgrade weapons, and brainstorm attack ideas (New York Times) (5 minute read)
 
-The New York Times reported that members of Boko Haram are using consumer AI chatbots to design explosives, repair and upgrade weapons, and brainstorm attack plans. The activity underscores the limits of model guardrails against jailbroken or open-weight tooling, raising pressure on vendors and regulators to address dual-use misuse by designated terrorist organizations.
+(blurb not generated)
 
 Ransomware Negotiator Gets 70 Months in Prison for Aiding BlackCat Attacks (5 minute read)
 
