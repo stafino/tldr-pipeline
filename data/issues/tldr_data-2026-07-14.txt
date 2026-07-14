@@ -1,0 +1,101 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR Data 2026-07-14
+
+📊
+News & Trends
+
+How Unity Catalog managed tables bring interoperability, performance, and unified governance to the Lakehouse (1 minute read)
+
+Databricks moved external access to Unity Catalog managed Delta tables into Public Preview, letting engines like Spark, Flink, Starburst, and DuckDB read and write a single governed copy of data. Managed tables now pair that multi-engine access with Predictive Optimization and catalog-coordinated commits, which Databricks says cut storage costs up to 50% and speed queries up to 20x versus external tables with no governance guarantees.
+
+🧠
+Deep Dives & Analysis
+
+The four horsemen behind thousands of Postgres outages (5 minute read)
+
+The author, building pgrust as a reimplementation of Postgres, argues that a handful of well-known failure modes cause most production Postgres outages, especially on teams without a dedicated DBA. Chief among them is VACUUM: the background job that reclaims space from soft-deleted rows competes with query I/O when aggressive and falls behind when throttled, and if it lags on reclaiming 32-bit transaction IDs, Postgres shuts the database down to avoid wraparound corruption.
+
+Modern Data Warehousing at Scale: Arcesium's Migration to DuckDB and Iceberg (5 minute read)
+
+Arcesium's engineering team documents how it rebuilt its data warehouse around DuckDB as the query engine and Iceberg as the table format, replacing a setup that struggled to scale for a firm handling large financial datasets. The write-up covers why decoupling storage from compute mattered, how Iceberg in object storage became the single source of truth, and where DuckDB's embedded engine handles analytical workloads without a heavyweight cluster. It is a concrete look at the storage-compute split most data teams are now weighing.
+
+AutoSLO: Practical Latency SLOs on Cloud Data Warehouses -- Extended Version (1 minute read)
+
+AutoSLO is a workload-management framework for multi-cluster cloud warehouses that keeps queries within latency SLOs while cutting compute cost by a mean of 26.4% versus the next-best baseline on Redbench. It works across three timescales: a Policy Tuner that plans proactive scaling from forecasts, an SLO-aware Autoscaler that reacts to forecast drift, and a concurrency-aware Query Router that places live queries. The Autoscaler and Router alone cut SLO violation rates by 93.7% and 47.8% against their alternatives.
+
+How to achieve pruning when querying by non-partitioned columns in PostgreSQL (5 minute read)
+
+(blurb not generated)
+
+Re-architecting Affirm's Upfunnel Platform: How We Cut Experiment Cycle Time from Months to Days (5 minute read)
+
+Affirm migrated its upfunnel surface, the "As Low As $X/mo" messaging shown across its 500K+ merchant partnerships, out of a Python monolith into a standalone Kotlin microservice without touching a single merchant integration. Experiment setup dropped from roughly two months to four days, P99 latency fell about 47%, and a configuration table of hundreds of millions of mostly-unread rows collapsed into a rule engine of a few million. The write-up walks through migrating live traffic when the caller can't help you.
+
+Lakekeeper Generic Table API Design (5 minute read)
+
+Lakekeeper's Generic Table API, shipped in v0.13.0, lets a catalog govern non-Iceberg assets like Lance datasets without forcing them into an Iceberg schema. The author, who wrote the feature, frames it as a governance boundary rather than a query abstraction: the catalog owns identity, access, and lifecycle while each format's native reader handles the bytes. The takeaway is that treating table format and governance as separate concerns is mostly, and unsurprisingly, generic.
+
+OptFSST: Optimized FSST String Compression (1 minute read)
+
+OptFSST reworks FSST string compression by replacing its greedy encoding with dynamic-programming-optimal encoding against a given symbol table, plus a frequency counter and pruning pass to build better tables. Across 92 real-world string datasets, it improves compression factors by an average 7.3% over FSST and 17.0% over FSST12 while keeping per-string random-access decompression, and OptFSST12 decompresses 1.2x faster than FSST12. The authors also prove the generalized symbol-table selection problem is NP-hard, which is why table construction stays heuristic.
+
+The benchmark grading every text-to-SQL model has wrong answers in its key (5 minute read)
+
+sqlsure pointed a deterministic semantic checker at the gold queries behind BIRD and Spider, the benchmarks used to rank every text-to-SQL model, and found provable errors in the answer key. BIRD dev question #571 is off by 8x: its gold query fans out a votes-posts join into a cartesian product, returning 3.0 instead of the correct 0.375. A follow-up audit found 8.2% of joins in BIRD's 9,428 training queries unbacked by any declared key relationship.
+
+We benchmarked coding agents on our own internal tasks at Databricks and learned a lot! (5 minute read)
+
+Databricks benchmarked coding agents against real internal engineering tasks instead of SWE-Bench, whose public numbers teams often over-tune for. Several open-source models are now top-tier, with GLM 5.2 competitive across a messy Scala, Go, Rust, and Protobuf codebase. The bigger lesson is economic: the simple Pi harness matched vendor harnesses at half the cost by sending smaller inputs, and cheaper-per-token models like Sonnet 5 burned more tokens, ending up pricier and worse than Opus 4.8.
+
+Beyond Redaction: Anatomy of a Privacy-Safe Data Platform (5 minute read)
+
+This piece argues that privacy engineering is about governing data in use, not hiding it, and that the right question for any privacy platform is which property a recipient must retain, for what permitted purpose, and what evidence proves the control ran. It maps controls to jobs: purpose-bound deterministic tokenization for approved internal joins, aggregation or clean-room workflows for external partners. A key caveat is that deterministic tokens are usually pseudonymous, not anonymous, so "PII-free" often overstates the guarantee.
+
+Postgres Is Enough (5 minute read)
+
+(blurb not generated)
+
+The Nuts and Bolts of Natural Language to SQL Translation: A Systematic Analysis of Model Pipeline Optimisation Approaches and their Interactions (1 minute read)
+
+This paper studies how to build lightweight NL2SQL pipelines by combining components like the NatSQL intermediate representation, synthetic-data fine-tuning, and a novel reranker, then measures each part's contribution with an ablation and Shapley analysis across the SmBoP and RASAT backbones. The key finding is that stacking every optimization doesn't yield the best model. Each extension's value depends on its interactions with the baseline and with the other components, which argues against treating pipeline tricks as independently additive.
+
+Lightning Fast Matching Dependency Discovery with Desbordante (1 minute read)
+
+Desbordante, an open-source data profiler, ships a reworked implementation of HyMD, the state-of-the-art algorithm for discovering matching dependencies, the fuzzy generalization of functional dependencies that power entity resolution and deduplication. Three optimizations, a new sampling technique, faster generalization lookups, and a leaner dependency representation, deliver an average 40x speedup over the prior implementation and past 170x in some cases. It exposes bidirectional Python bindings, so teams can call the C++ core and supply their own similarity functions.
+
+The Data Anarchy Tax: Why your team is firefighting 45% of the time. (5 minute read)
+
+A June 2026 pulse survey of 212 data engineers found that while 85% of teams have a clear owner for infrastructure, 74.5% have no dedicated owner for the data products stakeholders actually use, and a quarter said their dashboards and models are pure anarchy. The author argues that this ownership gap, not legacy systems, is the real bottleneck, with "lack of leadership direction" and "poor requirements" driving teams to spend 45% of their time firefighting.
+
+How I Eliminated 19,494 Duplicate MongoDB Records (And What I'd Do Differently Today) (3 minute read)
+
+A frontend dev handed full ownership of a job platform traced 7,000ms API response times to a MongoDB write pattern that fanned out "country" and "worldwide" job listings into one record per city, generating 19,494 duplicates that differed only by _id and location. The write-side denormalization made every read scan a bloated collection. The fix and the retrospective show why scope should live in a query filter, not in duplicated rows.
+
+Show HN: I implemented a neural network in SQL (1 minute read)
+
+A developer implemented a full neural network, including forward and backward passes, in SQL, training it on MNIST through recursive queries and joins rather than any Python ML framework. The exercise reframes gradient descent as set-based relational operations, showing the warehouse can express far more than aggregation. It is a curiosity rather than a production pattern, but a useful reminder of how much compute already lives inside the query engine most data teams treat as read-only.
+
+How Data Narratives Go Wrong: A Taxonomy of Issues Across the Data Communication Process (1 minute read)
+
+This paper introduces TIC, a Taxonomy of Issues in Data Communication, built from qualitative annotation of 700 real-world data narratives from fact-checking sites, research datasets, and controversial media. It organizes recurring failures across six dimensions - data, analysis, visual encoding, text, reasoning, and interpretation - and maps them onto the full pipeline from analysis to audience reception. The authors ship the taxonomy alongside an annotated case corpus and an interactive browser for diagnosing where a narrative breaks down.
+
+🚀
+Launches & Tools
+
+ClickHouse on Docker Hardened Images (5 minute read)
+
+ClickHouse is now available as Docker Hardened Images, stripped-down builds of the server, ClickHouse Keeper, the Kubernetes Operator, its Helm chart, and the metrics exporter that ship only the packages each component needs to run. The database behaves identically, but dropping the Ubuntu base removes unused packages like wget and Perl that carry unpatched CVEs, so images clear Trivy, Grype, and ECR scans that block enterprise deployments.
+
+Introducing Feature Views (5 minute read)
+
+(blurb not generated)
+
+Why we built yet another Postgres connection pooler (5 minute read)
+
+(blurb not generated)
+
+YouTrackDB is a general-use object-oriented graph database (1 minute read)
+
+JetBrains open-sourced YouTrackDB, an object-oriented graph database that traverses links in O(1) with no runtime JOINs and runs every transaction under snapshot isolation by default. It ships two query paths, Gremlin via the TinkerPop API and its own SQL-based YQL that uses dot notation for link traversal, and works in schema-less, schema-mixed, or schema-full modes with encryption at rest.

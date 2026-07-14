@@ -1,0 +1,137 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR DevOps 2026-07-14
+
+📱
+News & Trends
+
+Introducing Meerkat: an experiment in global consensus (5 minute read)
+
+(blurb not generated)
+
+Announcing etcd v3.7.0 (5 minute read)
+
+(blurb not generated)
+
+Proof-of-Concept Exploit Released for Linux ‘Bad Epoll' Root Access Vulnerability (5 minute read)
+
+(blurb not generated)
+
+Januscape: 16-Year-Old Linux KVM Bug Enables Cloud VM Escape Attacks (5 minute read)
+
+(blurb not generated)
+
+Improving Smart Tiered Cache for public cloud regions (5 minute read)
+
+(blurb not generated)
+
+RabbitMQ Vulnerability Threatens Enterprise Systems (1 minute read)
+
+Miggo disclosed CVE-2026-57219 (CVSS 8.7) in RabbitMQ, an obsolete management endpoint that hands the broker's OAuth client secret to any unauthenticated caller who can reach the management port, letting an attacker mint an admin token and take over users, queues, and settings. Deployments using an OIDC provider like Keycloak or Entra ID should patch to 4.2.6 or 3.13.15 and rotate the secret immediately.
+
+Your Azure DevOps pipelines have a 2027 deadline, and the clock has just started (5 minute read)
+
+Microsoft deprecated the Azure DevOps issuer for workload identity federation on July 1, 2026, giving teams until July 1, 2027 before Service Connections built on the old vstoken.dev.azure.com issuer stop authenticating to Azure. The portal migrates connections one at a time in a couple of minutes each, so orgs running hundreds will need the undocumented MigrateToEntraIssuer REST call, and only single-tenant Entra apps and Managed Identities in the public cloud are affected.
+
+Apple acquires observability startup SigScalr (1 minute read)
+
+Apple acquired certain assets of SigScalr and hired its team, the startup behind SigLens, an open-source observability platform pitched as a cheaper alternative to Splunk, Datadog, and Elasticsearch for logs, metrics, and traces. SigScalr's site is offline and the SigLens repo has been archived read-only under Apache 2.0, leaving teams that adopted it to fork or migrate off.
+
+🚀
+Opinions & Tutorials
+
+Modernizing the Meta Ads Service With an Open-Source Kernel Scheduler (1 minute read)
+
+Meta's Ads and Linux Kernel teams replaced the general-purpose EEVDF scheduler with a workload-aware policy built on sched_ext, the BPF-based extensible scheduling framework that landed in kernel v6.12. By encoding thread priority directly into the scheduler so latency-critical work runs first, they cut ads-retrieval p99 latency 28%, saved 3.28MW of power, and ranked 1.1% more ads. The move also cleared technical debt from ad hosts stuck on the older v6.4 kernel to dodge an EEVDF latency regression.
+
+The four horsemen behind thousands of Postgres outages (5 minute read)
+
+The author argues that most Postgres outages trace back to a handful of predictable failure modes, starting with vacuum and transaction ID wraparound. Because Postgres marks deleted rows rather than removing them, the background vacuum must reclaim space and old transaction IDs, competing with query I/O; fall too far behind and Postgres shuts the database down to avoid corruption. He is prototyping fixes in pgrust, a Postgres reimplementation.
+
+Operating OpenTelemetry at scale with OpAMP (1 minute read)
+
+OpAMP, the Open Agent Management Protocol, gives observability teams a standardized way to remotely configure, update, and health-check fleets of OpenTelemetry Collectors from a central backend. In this OpenObservability Talks episode, BindPlane's Andy Keller explains why in-house management protocols kept fragmenting across HTTP polling, WebSockets, and protobufs, and how OpAMP replaces them for deployments ranging from a few gateways to millions of collectors on embedded and point-of-sale devices.
+
+You shouldn't trust Trusted Publishing (5 minute read)
+
+(blurb not generated)
+
+Code review is theater now (5 minute read)
+
+The author argues that code review has become theater in the era of AI-generated code, since agents produce PRs faster than any human can meaningfully evaluate whether the code should exist, not just whether it compiles. Reviewers end up checking syntax and structure while missing patterns the model copied from training data that don't fit the problem, and atomizing a 40,000-line change into hundreds of small diffs doesn't fix the underlying scale mismatch.
+
+Kubernetes Dashboard to Headlamp: A Step-by-Step Guide (3 minute read)
+
+The Kubernetes blog published a step-by-step guide for migrating from Kubernetes Dashboard to Headlamp, framing the shift as moving from a cluster-bound web app to a kubeconfig-driven client that follows your identity. The operational trade-offs: login moves from pasted service-account tokens to kubeconfig and SSO, resource creation shifts from forms to apply-YAML, and multi-cluster views become the default rather than one Dashboard per cluster. The guide includes a pre-migration checklist to prove RBAC and access parity before decommissioning Dashboard.
+
+Some Notes on Lambda MicroVMs (5 minute read)
+
+(blurb not generated)
+
+TerraRepair: A Tool-Grounded LLM Agent for Infrastructure-as-Code Repair (1 minute read)
+
+TerraRepair is a tool-grounded LLM agent that repairs Terraform misconfigurations flagged by scanners like Checkov and Trivy, retrieving dependency context and provider schemas and re-running the scanner before returning a fix. On combined AWS benchmarks it lifted scanner-verified fix rates from 26.6% to 78.4% on Checkov and 44.8% to 72.4% on Trivy versus a one-shot baseline. When deployment-specific context is missing, the agent escalates to a human instead of fabricating a plausible fix or silently suppressing the warning.
+
+Woodruff: You shouldn't trust trusted publishing (5 minute read)
+
+(blurb not generated)
+
+How GitHub gave every repository a durable owner (5 minute read)
+
+(blurb not generated)
+
+Automating cross-repo documentation with GitHub Agentic Workflows (5 minute read)
+
+(blurb not generated)
+
+Postgres Is Enough (5 minute read)
+
+(blurb not generated)
+
+How to protect your MCP Server with Fastly (5 minute read)
+
+Fastly documented an architecture for putting MCP servers behind its edge network, built after a global publisher asked it to secure the MCP backbone connecting AI agents to real-time financial data. The prototype enforces MCP-specific controls that conventional API protection misses, blocking unexpected content types like XML and restricting HTTP methods at ingress, while holding sub-100ms latency and 100Mbps throughput across mixed IP, token, and mTLS auth. It reads as a reference for teams treating MCP as a new, dynamic attack surface rather than deterministic API traffic.
+
+⚒️
+Launches & Tools
+
+Your Worker can now have its own cache in front of it (5 minute read)
+
+(blurb not generated)
+
+Securing the AI supply chain on GKE: Introducing k8s-aibom for automated AI BOMs (2 minute read)
+
+Google open-sourced k8s-aibom, an unprivileged Kubernetes controller that watches the cluster API to detect running AI runtimes like vLLM and Triton and generate CycloneDX 1.6 ML-BOMs without sidecars, eBPF, or pod-spec edits. It routes the resulting bill of materials to an in-cluster custom resource and optional sinks like Cloud Storage, giving security teams audit-grade visibility into shadow AI workloads that skip formal registration.
+
+Operating AI/ML Workloads on Kubernetes: A Headlamp Plugin for Kubeflow (2 minute read)
+
+The Kubernetes SIG UI team released a Headlamp plugin for Kubeflow that surfaces Kubeflow CRDs like TrainJob, Katib Experiments, and pipeline Runs directly inside Headlamp's general-purpose Kubernetes UI. It reads straight from the API server to show Pod conditions and failure reasons such as ImagePullBackOff or OOMKilled, sparing operators the drop back to kubectl when an ML notebook or training run stalls.
+
+CloudWatch Application Signals now automatically captures errors, performance anomalies, and deployment events (5 minute read)
+
+(blurb not generated)
+
+Scale Faster with Managed Weaviate: Now in Public Preview on DigitalOcean (5 minute read)
+
+(blurb not generated)
+
+Introducing Smart Retry: Safer retries for transient Jenkins failures. (5 minute read)
+
+Jenkins released Smart Retry, a Pipeline step that classifies a failed build into deterministic categories like AGENT_LOST, SCM_TRANSIENT, or COMPILATION_FAILURE before deciding whether to rerun it. Configurable profiles keep retries conservative by default, recovering from transient infrastructure faults while failing fast on real code errors and user aborts, so teams cut wasted reruns without masking genuine breakage.
+
+Show HN: Clawk – Give coding agents a disposable Linux VM, not your laptop (1 minute read)
+
+Clawk gives coding agents their own disposable Linux VM instead of your laptop, mounting your repo with root in the guest and no permission prompts while your keychain and host files stay unreachable. A network allow-list blocks connections to unknown servers, and clawk destroy && clawk rebuilds a fresh VM against the same repo with --resume restoring the conversation after an agent wrecks the box.
+
+ClickHouse on Docker Hardened Images (5 minute read)
+
+ClickHouse is now available as Docker Hardened Images, security-stripped builds of the server, ClickHouse Keeper, the Kubernetes Operator and Helm chart, and the metrics exporter that ship only what each component needs to run. The hardened images drop the Ubuntu base packages like wget and Perl that trigger unfixable CVEs in Trivy, Grype, and ECR scans, clearing the security gate without changing how the database runs.
+
+Introducing GuardDog 3.0: A new rules engine, transparent sandboxing, and more (5 minute read)
+
+Datadog released GuardDog 3.0, an open-source scanner for malicious PyPI, npm, and Go packages that swaps Semgrep for YARA via yara-python, cutting memory use and per-file process spawning on large packages. The release adds a risk-scoring engine that correlates heuristics into a single maliciousness confidence rather than dumping one unranked finding per rule match.
+
+Cloudflare launches Precursor to catch bots by watching entire sessions (1 minute read)
+
+Cloudflare made Precursor generally available, a bot-detection system that scores visitor behavior across an entire session rather than running a single point-in-time CAPTCHA at arrival. A one-click script logs mouse movement, scroll rhythm, and typing cadence as timing patterns, then flags contradictions like pointer activity on a hidden tab, and a running Bot Score follows the visitor so a page reload no longer wipes the automated signature.

@@ -1,0 +1,291 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR InfoSec 2026-07-14
+
+🔓
+Attacks & Vulnerabilities
+
+FFmpeg fixes PixelSmash flaw in widely used video decoder (5 minute read)
+
+(blurb not generated)
+
+Januscape: 16-Year-Old Linux KVM Bug Enables Cloud VM Escape Attacks (5 minute read)
+
+(blurb not generated)
+
+Compromised Injective SDK npm Package Exfiltrates Wallet Keys and Mnemonics (5 minute read)
+
+Socket detected a malicious @injectivelabs/sdk-ts@1.20.21 npm release that records wallet private keys and mnemonic phrases through fake telemetry before exfiltrating them, and the compromise spread to 17 additional @injectivelabs-scoped packages that pinned the poisoned version, exposing transitive users. The package pulls roughly 50,000 weekly downloads and shipped via a trusted maintainer's compromised GitHub account; it has been deprecated but not yet removed from npm.
+
+Cavern Manticore: Exposing Iran-Linked Modular C2 Framework (5 minute read)
+
+Check Point Research linked a new modular .NET command-and-control framework, dubbed Cavern, to Cavern Manticore, an Iran MOIS-nexus APT tied to OilRig's Lyceum subgroup that targets Israeli IT providers and government bodies. The operators abused SysAid's legitimate software-deployment feature (no SysAid vulnerability was involved) to sideload the Cavern Agent via a trojanized WinDirStat DLL, and compile components into three .NET binary formats to force analysts across multiple reverse-engineering toolsets.
+
+Grok Build Uploads Entire Git Repositories to xAI Storage, Not Just Files It Reads (1 minute read)
+
+Researcher cereblab found that xAI's Grok Build coding CLI (v0.2.93) uploads entire Git repositories, full commit history included, to an xAI-controlled GCS bucket named grok-code-session-traces, not just the files a task touches. Captures showed a 12 GB repo moving 5.10 GiB over a separate /v1/storage channel and recovered an unread canary file plus an unredacted tracked .env; disabling "Improve the model" did not stop the upload.
+
+Microsoft Maps Three Salesforce Attack Paths Tied to a Year of ShinyHunters Activity (1 minute read)
+
+Microsoft mapped a year of Salesforce data-extortion activity, attributed to ShinyHunters (UNC6040/UNC6240), to three abuse paths that exploit no platform flaw: vishing employees into approving malicious OAuth connected apps, stolen OAuth tokens from compromised vendors, and misconfigured guest access. Because the access rides trusted connected apps and real user consent, authentication logs barely register it, so Microsoft and Salesforce shipped new detection and OAuth governance tooling to surface post-consent app behavior.
+
+SkillCloak Lets Malicious AI Agent Skills Evade Static Scanners with Self-Extracting Packing (5 minute read)
+
+(blurb not generated)
+
+NetNut cracked as Google and FBI target 2 million-device botnet (5 minute read)
+
+(blurb not generated)
+
+When checking the URL isn't enough: a Device Code Phishing attack via a Microsoft website (5 minute read)
+
+Kaspersky's Securelist documented an active Device Code Phishing campaign that abuses Microsoft's OAuth 2.0 Device Authorization Grant flow, tricking victims into entering an attacker-generated user_code on the legitimate login.microsoftonline.com page, which yields the attacker a valid access token. Because the credential entry happens on a trusted Microsoft domain, URL-inspection advice fails; defenders should restrict the device code flow via Conditional Access and alert on unexpected devicecode authentications.
+
+RabbitMQ Vulnerability Threatens Enterprise Systems (1 minute read)
+
+RabbitMQ contains an unauthenticated OAuth secret disclosure (CVE-2026-57219, CVSS 8.7) in an obsolete management-interface endpoint, letting anyone who reaches the management port fetch the broker's confidential client secret and impersonate it to the identity provider for an admin token. It affects deployments using an OAuth2/OIDC client secret; patch to 4.3.0, 4.2.6, 4.1.11, 4.0.20, or 3.13.15, restrict the management port, and rotate the secret.
+
+CISA warns of actively exploited RCE flaws in Joomla extensions (1 minute read)
+
+CISA added two Joomla extension flaws to its KEV catalog, CVE-2026-48939 in iCagenda and CVE-2026-56291 in Balbooa Forms, both arbitrary file upload bugs that allow attackers to upload PHP web shells and achieve RCE for full site takeover. Both were exploited in automated attacks before patches shipped, with the Balbooa Forms flaw hit as a zero-day since July 8; administrators should update to iCagenda 4.0.8 or Balbooa Forms 2.4.1 immediately.
+
+The US government warns that Russia state hackers are coming after your router (1 minute read)
+
+CISA and allied agencies from Australia, Denmark, New Zealand, and the UK warned that Russian FSB Center 16 actors (Berserk Bear, Energetic Bear, Static Tundra) are mass-compromising home and small-office routers to proxy operations against critical infrastructure. The primary vector is scanning for SNMP agents with default or common credentials, then using spoofed traffic to run malware, so operators should disable internet-facing SNMP and rotate default community strings.
+
+Rethinking MCP Security: A Large-Scale Study of Runtime MCP Servers and Security Scanner Reliability (1 minute read)
+
+A large-scale study introduces MCPZoo, a runtime collection of 64,611 unique MCP servers, and uses it to test the reliability of MCP security scanners at ecosystem scale. Although existing scanners flag 96.89% of servers as risky, manual validation found fewer than 50% of sampled alerts were true positives and scanner outputs disagreed with one another, indicating current MCP scanning practices overstate exposure and shouldn't be trusted for triage.
+
+GitHub Copilot Refuses Harmful Requests in Chat, Then Writes Them in Code (5 minute read)
+
+(blurb not generated)
+
+Google and Microsoft Pull ModHeader With 1.6 Million Installs After Dormant Collector Found (1 minute read)
+
+Google and Microsoft pulled ModHeader, a header-editing extension with roughly 1.6 million Chrome and Edge installs, after Stripe OLT found a dormant browsing-history collector shipped inside the signed store build, gated behind an empty allow-list. The pipeline already carries a hardcoded key, fingerprinting, and a daily beacon to api.stanfordstudies[.]com, so populating that list to activate collection would take only a routine update with no new permissions.
+
+Writer AI Flaw Could Let Agent Previews Leak Session Tokens Across Tenants (5 minute read)
+
+(blurb not generated)
+
+Forg365 PhaaS Targets Microsoft 365 with Device Code and AitM Session Theft (1 minute read)
+
+Forg365, a new phishing-as-a-service kit sold on Telegram for $400/month, targets Microsoft 365 with device-code phishing and AitM session theft, using Amazon SES and SendGrid to blend lures into legitimate email traffic. Its device-auth branch pushes victims through a real Microsoft Authentication Broker flow so the authorized session lands with the attacker, defeating standard MFA.
+
+'GodDamn' Ransomware Uses BYOVD to Smite US Companies (5 minute read)
+
+(blurb not generated)
+
+148 npm Packages Disguised as Student Proxies Turned Browsers Into a DDoS Botnet (1 minute read)
+
+JFrog found 148 npm packages disguised as student web proxies that turned visitors' browsers into a Wisp-protocol DDoS botnet for roughly two weeks in May, using the registry as free hosting rather than targeting developers at install time. The proxy sites carried no lifecycle hooks or build scripts but loaded a swappable remote code loader and WebSocket flood generator, conscripting any student who opened a page into the swarm.
+
+Attacker Uses Suspected AI-Generated PowerShell Script to Map Active Directory (1 minute read)
+
+Huntress attributed a June 2026 intrusion to an attacker who ran a suspected AI-generated PowerShell script for Active Directory enumeration, entering via RDP with pre-compromised credentials and staging tools in C:\ProgramData. The script harvested users, computers, groups, OUs, and trusts into CSVs before exfiltration, with telltale LLM signs like the title "100% Working AD Information Gathering Script - FULLY FIXED" and noisy, over-engineered fallback logic.
+
+🧠
+Strategies & Tactics
+
+The ‘Ghost' in the Database: Recovering Active ADFS Signing Keys via Machine DPAPI (5 minute read)
+
+(blurb not generated)
+
+Lessons Learned from CISA’s Recent GitHub Leak (1 minute read)
+
+CISA published a postmortem on a contractor who left 844 MB of internal data, including administrative AWS GovCloud keys and plaintext credentials for dozens of systems, in a public GitHub repo for nearly six months. The agency took over 48 hours to rotate the exposed secrets, citing system complexity, and admitted its lack of clear reporting channels forced the researcher to escalate through the contractor, its VDP, and eventually a journalist. The lessons: maintain tested key-rotation capabilities and publish distinct intake channels for incidents affecting your own organization.
+
+Researchers detail "context bombing", where defenders use prompt injections to trigger guardrails of attackers' LLMs, cutting AI hacking success rates by ~90% (Dan Goodin/Ars Technica) (1 minute read)
+
+Researchers detailed "context bombing," a defensive technique that plants prompt injections in web content and files to trip the safety guardrails of attackers' LLMs, refusing malicious requests mid-operation. In testing, the method cut AI-driven hacking success rates by roughly 90%, turning agentic attackers' own alignment training into a mitigation defenders can seed across likely targets.
+
+You shouldn't trust Trusted Publishing (5 minute read)
+
+(blurb not generated)
+
+Now, defenders are embracing the prompt injection, too (1 minute read)
+
+Researchers at Tracebit disclosed "context bombing," a defensive technique that plants prompt injections inside decoy AWS secrets to trigger refusal mechanisms in attacking LLM agents, causing them to shut down when they enumerate the planted strings. Across 152 runs against five models, a single decoy string cut full-account admin takeover from 57% to 5% and persistent compromise from 36% to 1%; Opus 4.8 dropped from admin access in 93% of runs to zero. Defenders can seed honeytokens with forbidden-content prompts to disrupt autonomous AI intrusions.
+
+Graph-Based Structural Evaluation of LLM-Translated Adversary Emulation Procedures (1 minute read)
+
+This paper introduces Graph-Based Structural Evaluation (GBSE), a method that models each adversary emulation procedure as a directed attributed graph and scores LLM cross-platform translations by normalized Graph Edit Distance across technique, tactic, telemetry, and Sigma logsource layers. Applied to a 29-step ALPHV/BlackCat Windows-to-Linux plan, it caught structural drift that binary scoring misses: technique and tactic structure were fully preserved, but telemetry similarity fell to 0.897 and technical realism scored 0.43, keeping the plan below the 0.80 deployment threshold.
+
+npm 12 Disables Install Scripts by Default to Reduce Supply Chain Risk (5 minute read)
+
+(blurb not generated)
+
+Skills Registry Threat Models (5 minute read)
+
+(blurb not generated)
+
+Microsoft Entra ID authentication overhaul to start in September 2026 (1 minute read)
+
+Microsoft will make passkeys the default authentication experience for Entra ID in the public cloud starting September 1, 2026, auto-enabling passkey registration for tenants that use SMS or voice MFA. From February 1, 2027, SMS and voice users must register a passkey to sign in, with no tenant opt-out, and Microsoft will retire native SMS and voice delivery entirely. Organizations still requiring telecom-based MFA for regulatory reasons must contract third-party providers through the Microsoft Security Store and absorb the costs.
+
+Since Chromium 148, Math.tanh is now fingerprintable to link underlying OS (1 minute read)
+
+Since Chromium 148, browsers leak the host OS through floating-point math bits. `Math.tanh`, CSS trig functions, and the Web Audio compressor all route through the platform libm, and libraries like glibc, Apple's libsystem_m, and Windows UCRT round certain inputs differently by one ULP. A single `Math.tanh(0.8)` call now returns per-OS signatures that contradict a spoofed User-Agent, so anti-bot systems and defenders can flag automation whose math bits disagree with its claimed platform.
+
+Your Browser Does Math Differently on Every OS, and Anti-Bot Systems Read the Bits (1 minute read)
+
+Since Chromium 148, browsers leak the host OS through floating-point math bits. `Math.tanh`, CSS trig functions, and the Web Audio compressor all route through the platform libm, and libraries like glibc, Apple's libsystem_m, and Windows UCRT round certain inputs differently by one ULP. A single `Math.tanh(0.8)` call now returns per-OS signatures that contradict a spoofed User-Agent, so anti-bot systems and defenders can flag automation whose math bits disagree with its claimed platform.
+
+GNSS Spoofing Detection in TDD Networks: A 3GPP Standards-Based Security Framework (1 minute read)
+
+This paper proposes a framework for detecting GNSS spoofing against TDD mobile networks, where spoofed timing on GNSS-disciplined grandmaster clocks can corrupt synchronization across downstream base stations. It works within existing 3GPP management structures, adding timing alarms and performance counters (TS 28.111, TS 28.552), topology-aware correlation that groups gNB-DUs by serving grandmaster, and a bridge to SECHAND incident handling. Monte Carlo simulation shows over 95% detection for drift above 0.5 ns/s with under 1% false positives.
+
+FlowArk: Boosting Agentic Data-flow Analysis for Android Apps via Context-Aware Knowledge Reuse (1 minute read)
+
+FlowArk is a knowledge-reuse system that cuts the cost of batch agentic data-flow analysis on Android apps by distilling completed analyses into matchable knowledge entries and injecting them into later, context-isolated agent instances. Evaluated on 4,685 source-to-sink tasks across 50 open-source apps atop OpenCode, it held analysis quality steady while cutting end-to-end API cost 26.83%, and completed 36.66% more tasks under a fixed $100 budget (1,060 vs. 776).
+
+AMT-X: Phase-Structured Multi-Turn Red-Teaming with Checklist-Gated Evaluation (1 minute read)
+
+AMT-X is a multi-turn red-teaming framework that models LLM jailbreaks as a reproducible state machine driven by the victim model's own semantic signals, and scores success with a multi-role jury whose phase-conditioned checklists gate on actionable harm rather than a single judge. Across six frontier models under default alignment, it hit 97.6-100% attack success under a lenient threshold but 66.7-78.6% when requiring complete, operational detail. The 33-point gap argues for scoring evals on operational completeness, not binary refusal.
+
+Understanding the Impact of AI Code Assistants on Security API Usage: An Empirical Study (1 minute read)
+
+A study of 44 professional developers found that GitHub Copilot improves functional correctness and marginally reduces some insecure patterns, but does not significantly improve secure use of security APIs. Developers rarely raised security concerns while working with Copilot, and many failed to recognize that their final implementations remained insecure. The authors recommend pairing AI assistants with dedicated security review, since correct-looking output masks vulnerable API usage that developers won't catch on their own.
+
+Vulnerability Reports Are Not Special Anymore (5 minute read)
+
+(blurb not generated)
+
+Some Notes on Lambda MicroVMs (5 minute read)
+
+(blurb not generated)
+
+Woodruff: You shouldn't trust trusted publishing (5 minute read)
+
+(blurb not generated)
+
+New tutorials on underground hacking forums have roughly doubled (1 minute read)
+
+Radware analyzed 8,870 tutorial posts across 24 deep- and dark-web forums, finding that new hacking guides roughly doubled from ~45 per month in 2024 to 110-140 in 2026. Carding overtook black-hat SEO as the top category, rising to 38% of tutorials, and many guides now pair account-takeover techniques with cash-out methods to hand readers a complete fraud playbook. Telecom and social media were the most-referenced targets, reflecting their role in OTP interception and verified-account abuse.
+
+Cross-Layer Misalignment Detection in Agent Skills: A Progressive Loading-Aware Contrastive Learning Approach (1 minute read)
+
+This paper introduces PL-HCL, a contrastive-learning framework that detects "cross-layer misalignment" in LLM Agent Skills, where a skill's metadata description doesn't match its actual instructions or execution-time behavior. Trained on 264,000 open-source skills plus a human-verified challenge set, it lifts Macro-F1 from roughly 0.45 for unadapted baselines to 0.87-0.89 across backbones. For teams pulling third-party skills from open marketplaces, it offers a screening tool to flag deceptive or inconsistent skills before agents load them.
+
+🧑‍💻
+Launches & Tools
+
+Securing the AI supply chain on GKE: Introducing k8s-aibom for automated AI BOMs (2 minute read)
+
+Google open-sourced k8s-aibom, an unprivileged Kubernetes controller that continuously watches the cluster API to detect running AI runtimes like vLLM, Triton, and TGI and generate OWASP CycloneDX 1.6 ML-BOMs. It deploys as a single unprivileged Deployment with no sidecars, eBPF, or privileged DaemonSets, giving security teams runtime visibility into shadow AI workloads that evade traditional scanners.
+
+Introducing Precursor: detecting agentic behavior with continuous client-side signals (1 minute read)
+
+Cloudflare launched Precursor, a client-side, session-based verification system that injects JavaScript to continuously collect behavioral signals and distinguish human traffic from automated or agentic traffic in real time. An optional complement to Turnstile within Enterprise Bot Management, it scores behavior across the full user journey rather than a single checkpoint, catching automation that passes individual CAPTCHAs but cannot sustain consistent human behavior over a session.
+
+Precursor (1 minute read)
+
+Cloudflare launched Precursor, a client-side, session-based verification system that injects JavaScript to continuously collect behavioral signals and distinguish human traffic from automated or agentic traffic in real time. An optional complement to Turnstile within Enterprise Bot Management, it scores behavior across the full user journey rather than a single checkpoint, catching automation that passes individual CAPTCHAs but cannot sustain consistent human behavior over a session.
+
+Introducing GuardDog 3.0: A new rules engine, transparent sandboxing, and more (5 minute read)
+
+Datadog released GuardDog 3.0, an open-source scanner for malicious PyPI, npm, and Go packages that replaces its Semgrep source-code heuristics with YARA rules run via yara-python for faster, lower-memory scanning at scale. The release adds a risk-scoring engine that correlates weak heuristic signals (unusual metadata, install-script execution vectors, GitHub-to-registry manifest mismatches) into a confidence-weighted maliciousness verdict rather than emitting one unprioritized finding per rule match.
+
+Turning the Tables on Email Scammers With 'ScamBuster' (1 minute read)
+
+Filigran principal engineer Laurent Giovannoni released ScamBuster, an open-source, AI-driven system that engages phishing scammers with victim personas to collect intelligence on attacker infrastructure, financial details, and related campaigns. The inbound-only system, in production since November 2025 and set for a Black Hat USA 2026 reveal, never initiates contact and answers only incoming scam emails to gather data for defenders and law enforcement.
+
+Cloudflare launches Precursor to catch bots by watching entire sessions (1 minute read)
+
+Cloudflare made Precursor generally available, a bot detection system that scores mouse movement, scroll rhythm, typing cadence, and tab visibility across an entire browsing session rather than at a single arrival challenge. The continuous Bot Score follows visitors through a site and flags internal contradictions like pointer activity while a page is hidden, closing the page-reload evasion that resets per-request CAPTCHA checks.
+
+Mako: A Self-Evolving Agentic Operating System (SE-AOS) for Autonomous Web Exploitation (1 minute read)
+
+Researchers introduced Mako, the first "self-evolving agentic operating system," an autonomous web-exploitation engine from LaunchSafe that observes its own failures, synthesizes new exploit capabilities at runtime, and hot-loads them back into itself. It drove all 104 targets on the public XBOW validation benchmark (26 vulnerability classes) to emit fresh per-build flags, but the authors withheld the payloads, exploit chains, and tool source as dual-use research of concern.
+
+Google Credential Provider for Windows (GCPW) now supports FIDO2-compliant physical security keys as a second factor for authentication (1 minute read)
+
+Google updated Google Credential Provider for Windows (GCPW) to support FIDO2-compliant physical security keys as a second factor, letting admins enforce hardware-key 2SV at the Windows login screen. The feature also accepts passkeys from nearby Bluetooth-connected mobile devices, is available to all Workspace customers, and began a gradual rollout on July 13 with no end-user configuration required.
+
+Cloudflare now studies your mouse clicks in CAPTCHA bot gambit (1 minute read)
+
+Cloudflare released Precursor, a session-based bot management tool that uses client-side JavaScript to continuously analyze behavioral signals like mouse paths, corrections, overshoots, and timing variations to distinguish humans from bots in real time. Session scoping prevents bots from resetting their behavioral signature by refreshing the page or requesting a new CAPTCHA, and Cloudflare says the signals aren't exposed to dashboards or linked to user identities.
+
+🎁
+Miscellaneous
+
+EU and UK officially blame Russian spies for cyberattack on Poland's power grid (1 minute read)
+
+The EU and UK formally attributed a cyberattack on Poland's power grid to Russian state-backed operators, marking the first coordinated Western attribution of a Russian intrusion into an EU member's energy infrastructure. The joint statement escalates diplomatic pressure without naming specific sanctions, and utilities across the bloc should treat grid-facing OT systems as active targets for the same actors.
+
+Europe strikes out against Russia’s Turla over espionage, ‘destructive attacks’ (1 minute read)
+
+The EU, its member states, and the UK sanctioned dozens of Russian individuals and entities over a Turla (Secret Blizzard) espionage campaign running since 2010 and FSB Center 16-directed attacks, including December's strike on Poland's energy grid that cut heat to 500,000 people. The UK's first EU-coordinated cyber sanctions named GRU leaders and operators behind Lumma Stealer, signaling a push to unmask the proxy networks Moscow uses to obscure state attribution.
+
+EU sanctions Russian GRU military hackers over cyberattacks (1 minute read)
+
+The EU and UK jointly sanctioned dozens of Russian individuals and entities, including GRU intelligence officers and cybercriminals, and publicly attributed control of several threat groups, including Turla, to the FSB's 16th Centre. The package targets operators behind years of cyberespionage against government and critical-infrastructure networks across Europe, alongside individuals tied to the Lumma Stealer operation and Rybar disinformation efforts.
+
+Valarian Raises $50 Million for Sovereign Infrastructure Control Layer (1 minute read)
+
+Valarian raised $50M in Series A funding led by New Enterprise Associates, adding to $20M in prior seed capital, to expand its ACRA sovereign infrastructure control layer. ACRA sits atop Kubernetes to place each AI model, agent, or workload in its own enclave with workload identity, default-deny segmentation, short-lived secrets, and customer-held encryption keys, running identically across public cloud, on-prem, and air-gapped networks.
+
+Pentagon Suspends CMMC Phase 2 as It Rethinks Contractor Cybersecurity Rules (1 minute read)
+
+The Pentagon suspended CMMC 2.0 phase two, which would have required third-party Level 2 certification for new defense contracts starting November 2026, pending a 60-day review citing a shortage of approved assessors. A new task force will collect industry feedback and recommend scaled-back requirements to ease compliance costs for small contractors, though phase one self-assessments and existing FCI and CUI handling rules remain in force.
+
+Cybersecurity M&A Roundup: 37 Deals Announced in June 2026 (1 minute read)
+
+SecurityWeek counted 37 cybersecurity M&A deals announced in June 2026, led by Accenture's $4.175B acquisition of a majority stake in Dragos plus full ownership of runZero and NetRise to build an integrated OT security platform. Other notable moves include 1Password buying Apono for $250M to $300M, Databricks acquiring Panther Labs, and Cisco picking up WideField Security to bolster Splunk's identity threat detection.
+
+EU Targets Russian Intelligence Officers Accused of Running a Yearslong Cyber Spying Campaign (1 minute read)
+
+The EU sanctioned nine individuals and four entities tied to Russian military intelligence over a cyber espionage and sabotage campaign running since 2010, centering its measures on the FSB's 16th Centre for controlling multiple cyber threat groups. The activity spans at least nine member states, including infrastructure sabotage against heating and power plants and rail systems in Poland, with France set to summon the Russian ambassador.
+
+Officials once again warn defenders that Russian hackers are targeting network devices (1 minute read)
+
+The US, UK, and 12 other countries issued a joint advisory warning that Russia's FSB Center 16 (Berserk Bear, Static Tundra) is compromising critical infrastructure by exploiting weakly configured routers and old Cisco flaws, including CVE-2018-0171 and CVE-2008-4128. Defenders should disable Cisco Smart Install, enforce stronger authentication, and monitor for anomalous logins using local accounts, as the EU tied the group to Poland's December 2025 grid attack.
+
+EU and UK blacklist Russia’s cyber operators over efforts to destabilize Europe (1 minute read)
+
+The EU and UK jointly sanctioned dozens of Russian individuals and entities, attributing years of cyber espionage and sabotage against European critical infrastructure to the FSB's 16th Centre, which directs threat groups including Turla. The measures name actors behind a December 2025 OT-focused wiper campaign against Polish energy sites and individuals tied to Lumma Stealer, an infostealer Russia used to source credentials for espionage operations.
+
+NSA revives 'Tailored Access Operations' name for elite hacking unit (5 minute read)
+
+The NSA renamed its Office of Computer Network Operations back to Tailored Access Operations (TAO), the elite offensive unit behind Stuxnet, reversing a 2016 reorganization that had split developers and operators into broader directorates. The change, led by Deputy Director Tim Kosiba, recombines tool development and operations under one roof at Fort Meade to speed up network intrusions against targets in China, Russia, and elsewhere.
+
+Ransomware negotiator hired to represent victims was working for the attackers (5 minute read)
+
+(blurb not generated)
+
+European "age verification" "app" forcing everyone to use Android or iOS (1 minute read)
+
+The EU's age-verification app reference implementation requires Google Play Integrity attestation, meaning devices must run a Google- or Apple-approved OS build to pass verification and excluding de-Googled Android, custom ROMs, and Linux phones. A GitHub discussion pushing back on the requirement has drawn nearly 600 comments arguing the mandate hands two US platform vendors gatekeeping power over access to EU digital identity.
+
+Weak Security Continues to Fuel Russian Cyberattacks (1 minute read)
+
+The UK and EU jointly sanctioned 24 Russian individuals and entities for cyberattacks, election interference, and disinformation, the first such coordinated action between the two, while a joint advisory from US and allied agencies attributed ongoing compromises of weakly protected routers to FSB Center 16. Defense, energy, financial, government, and healthcare organizations are most at risk, and the NSA is urging basic router hygiene to blunt the state-level access.
+
+LAPD lets contract with surveillance giant Flock expire, citing ‘serious concerns’ over civil liberties and privacy (1 minute read)
+
+The LAPD, the third-largest US police department and one of Flock Safety's largest government customers, is letting its three-year contract with the license-plate-tracking firm expire on Saturday, citing "serious concerns" over civil liberties, privacy, and data collection. The move follows similar cancellations by Mountain View, California and South Portland, Maine over fears that federal immigration officials used Flock's 80,000-camera network to track people in violation of sanctuary-city policies.
+
+Microsoft Entra ID authentication getting major shakeup with default passkeys very soon (1 minute read)
+
+Microsoft is making passkeys the default sign-in method for new Entra ID users, shifting cloud-identity authentication away from passwords toward phishing-resistant credentials. Admins should confirm their tenants support passkey registration and update conditional-access and enrollment policies before the change rolls out to align onboarding flows with the new default.
+
+UK charges five persons linked to fraud platform behind more than a million scam calls (1 minute read)
+
+The UK's National Crime Agency charged five London residents linked to Russian Coms, a caller ID spoofing platform that generated more than 1.3 million scam calls to 500,000 UK numbers between 2021 and 2024. The service, shut down in March 2024, let fraudsters impersonate banks and law enforcement to steal from an estimated 170,000 victims, with reported losses averaging over £9,400 each.
+
+A ransomware negotiator who colluded with attackers to scam victims was sentenced to 70 months in prison (1 minute read)
+
+A federal court sentenced Angelo Martino, a DigitalMint ransomware negotiator, to 70 months in prison for secretly feeding BlackCat (ALPHV) affiliates the confidential negotiating positions of five clients he was hired to represent, inflating ransoms across a scheme that netted over $75M. Prosecutors say Martino and two co-conspirators also deployed ransomware themselves, underscoring insider risk in the third-party IR and negotiation firms defenders routinely trust during active extortion.
+
+OFAC Sanctions 134 ISIS-K Crypto Wallet Addresses as Tether Freezes Funds (5 minute read)
+
+(blurb not generated)
+
+⚡
+Quick Links
+
+TFTP Honey Pot Results (1 minute read) [flag]
+
+A month-long TFTP honeypot on a $5 VPS logged 20-50 packets daily, nearly all benign scans from seven infosec firms including Shodan and Censys.

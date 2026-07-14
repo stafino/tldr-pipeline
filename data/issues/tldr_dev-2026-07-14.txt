@@ -1,0 +1,255 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR Dev 2026-07-14
+
+🧑‍💻
+Articles & Tutorials
+
+Rewriting Bun in Rust (5 minute read)
+
+(blurb not generated)
+
+The four horsemen behind thousands of Postgres outages (5 minute read)
+
+The author identifies four recurring Postgres failure modes behind production outages, starting with vacuum and transaction ID wraparound. Because Postgres marks deleted rows rather than removing them, the vacuum competes with query I/O, and if it falls behind reclaiming the 32-bit transaction IDs, Postgres shuts down the database to avoid data corruption. The post frames these as targets for pgrust, the author's Postgres reimplementation.
+
+Quadrupling code performance with a "useless" if (1 minute read)
+
+The author traces a pointer-chasing loop in a domain-specific compressor, `j = next_j[i][j]`, whose single dependent load serializes every iteration and starves the CPU of instruction-level parallelism. Adding a seemingly useless `if` breaks the loop-carried dependency chain so the processor can speculate ahead across iterations, quadrupling throughput despite executing more instructions.
+
+Introducing Meerkat: an experiment in global consensus (5 minute read)
+
+(blurb not generated)
+
+Why we built yet another Postgres connection pooler (5 minute read)
+
+(blurb not generated)
+
+Experiences with local models for coding (5 minute read)
+
+(blurb not generated)
+
+HTTP gets a QUERY method so complex searches can stop pretending to be POST (1 minute read)
+
+The IETF standardized a new HTTP QUERY method that combines GET's semantics, safe and idempotent with cacheable results, with a request body, so complex searches no longer have to be shoehorned into POST or crammed into URL length limits. The method solves the long-standing problem of encoding rich filter payloads, GraphQL queries, and multi-parameter searches, though adoption depends on servers, proxies, and caches recognizing it rather than treating it as an unknown verb.
+
+How to achieve pruning when querying by non-partitioned columns in PostgreSQL (5 minute read)
+
+(blurb not generated)
+
+The art and engineering of Sega CD Silpheed (1 minute read)
+
+Fabien Sanglard reverse engineered the FMV format that let Sega CD's Silpheed stream near-fullscreen cutscenes on a 12.5MHz 68000 with only 16 colors and 8 KiB per frame at 15fps. The writeup breaks down the codec tricks that fit the video into a single-speed CD-ROM's 150 KiB/s pipe, and notes he did the whole thing without writing a line of code, driving an AI framework he plans to open-source next month.
+
+Apple's new SpeechAnalyzer API, benchmarked against Whisper and its predecessor (1 minute read)
+
+Apple's SpeechAnalyzer API, benchmarked in Inscribe against three Whisper models and the legacy SFSpeechRecognizer, posted the lowest word error rate of any on-device engine tested, hitting 2.12% on clean LibriSpeech and 4.56% on noisy speech while running roughly 3x faster than Whisper Small. It cuts error rates 3.5 to 4x over the SFSpeechRecognizer it replaces, though Whisper still wins on language coverage and cross-platform support.
+
+What xAI's Grok build CLI sends to xAI: A wire-level analysis (1 minute read)
+
+A researcher's teardown of xAI's official Grok Build CLI shows that on a normal consumer login it uploads the entire repository, including full git history and files the agent was explicitly told not to read, to a Google Cloud Storage bucket named grok-code-session-traces via POST /v1/storage. Findings are backed by captured artifacts and SHA-256 hashes, and the author notes the upload stays active by default even after disabling "Improve the model.
+
+The git history command (1 minute read)
+
+Git 2.54 and 2.55 introduced an experimental `git history` command with three subcommands (fixup, reword, split) that rewrite old commits and autorebase every local branch descended from them, going further than `rebase --update-refs`. All operations are atomic and refuse anything that could produce a conflict, delivering much of jj's history-editing ergonomics without leaving the core git distribution or handling merge commits.
+
+Claude Code sends 33k tokens before reading the prompt; OpenCode sends 7k (1 minute read)
+
+A benchmark on the same model and machine found Claude Code sends roughly 33k tokens of system prompt, tool schemas, and scaffolding before the user's prompt arrives, against OpenCode's 7k, and rewrites prompt-cache tokens mid-session at up to 54x OpenCode's rate. The gap widens with a 72KB CLAUDE.md, MCP servers, and subagent fan-out, though Claude Code's tool-call batching sometimes wins the whole-task total by paying its higher baseline fewer times.
+
+How GitHub gave every repository a durable owner (5 minute read)
+
+(blurb not generated)
+
+Automating cross-repo documentation with GitHub Agentic Workflows (5 minute read)
+
+(blurb not generated)
+
+Claude Code Is Way More Token-Hungry Than OpenCode. We Measured Exactly How Much (1 minute read)
+
+A benchmark on the same model and machine found Claude Code sends roughly 33k tokens of system prompt, tool schemas, and scaffolding before the user's prompt arrives, against OpenCode's 7k, and rewrites prompt-cache tokens mid-session at up to 54x OpenCode's rate. The gap widens with a 72KB CLAUDE.md, MCP servers, and subagent fan-out, though Claude Code's tool-call batching sometimes wins the whole-task total by paying its higher baseline fewer times.
+
+Agents Work Better with Conventional CLIs (5 minute read)
+
+(blurb not generated)
+
+Building and shipping Mac and iOS apps without opening Xcode (1 minute read)
+
+The author explains how to build, sign, notarize, and deploy Mac and iOS apps entirely from the shell, since `xcodebuild`, `notarytool`, `stapler`, and `devicectl` all live inside Xcode.app and run headlessly. After a one-time GUI setup for Apple ID sign-in, a Developer ID certificate, and a stored notarization password, a single `release.sh` script chains archive, sign, notarize, staple, and install with no secrets in the repo.
+
+Networking and the Internet, from First Principles (1 minute read)
+
+This post explains how the internet works from first principles, tracing a message from Wi-Fi radio waves through copper, fiber, and undersea glass to the software on the other end. It frames packet switching, TCP, DNS, and TLS not as a finished blueprint but as successive patches for concrete limitations, each deployed decades after the network already worked.
+
+Migrating a production AI agent to GPT-5.6: 2.2x faster, 27% cheaper (1 minute read)
+
+Ploy migrated its production website-building agent from Claude Opus 4.8 to OpenAI's GPT-5.6 Sol, landing builds in under half the wall-clock time at 27% lower cost while scoring at or above the incumbent. Despite running on Vercel's provider-agnostic AI SDK, the switch surfaced one eval failure at a time that tool-argument filling, prompt caching, and reasoning replay are provider-specific behaviors the whole stack had quietly specialized around.
+
+🧠
+Opinions & Advice
+
+Old and new apps, via modern coding agents (1 minute read)
+
+Mathematician Terry Tao used a modern coding agent to port two dozen aging Java 1.0 math applets to JavaScript in hours, restoring visualizations that had broken when browsers dropped Java support. He found only one minor bug across the ported code, while the agent surfaced two pre-existing bugs he had missed, and he also finally built a Minkowski-space relativity tool he had abandoned in 1999.
+
+Don't you mean extinct? (1 minute read)
+
+Using Phil Tippett's "I feel extinct" moment from Jurassic Park's shift to CGI, the author argues that programmers fearing obsolescence from LLMs are facing the same recurring disruption every generation of developers has weathered, from the early web to mobile-first. The advice is to treat LLMs as another tool worth mastering rather than a threat, and the post points to Andrej Karpathy's 25-hour video series as the best resource for learning how they actually work.
+
+You shouldn't trust Trusted Publishing (5 minute read)
+
+(blurb not generated)
+
+Fragments: July 13 (3 minute read)
+
+Fowler's retreat notes argue that "harness engineering" around coding agents still pays off, primarily through tighter context management like keeping agents.md files under 200 lines and stronger validation via property-based testing and readable formal specifications. Attendees also reported growing interest in self-hosting open-weight models, driven less by token cost than by a desire for independence from frontier labs and the ability to keep sensitive data in-house.
+
+Control the Ideas, Not the Code (1 minute read)
+
+antirez argues that once you control your software's ideas and design, reviewing the code line by line is suboptimal, because LLMs generate more code than anyone can meaningfully review and are already strong at locally optimal implementation. His advice is to steer at the level of design and intent, interrogating how a component works rather than scanning function by function, while rejecting pure vibe coding where you only ask for the final product.
+
+Postgres Is Enough (5 minute read)
+
+(blurb not generated)
+
+Explaining to business people why building software is still hard (1 minute read)
+
+The author argues that non-technical stakeholders misjudge software difficulty because the hard part isn't writing code, it's managing accumulating complexity, and LLM tools like Lovable make this worse by hiding it. Recounting a hackathon where an app went from 90% done to barely usable overnight, he shows how AI codegen accelerates the promising start while deferring the infra work and quality ownership that determine whether software actually holds together.
+
+Why Vanilla JS (1 minute read)
+
+The author argues that building web apps in plain JavaScript, without a framework, avoids the churn of dependency upgrades, build tooling, and abstraction layers that outlive their usefulness. The case rests on longevity and control: code written against browser APIs directly keeps working for years, while the trade-off is writing more of the plumbing that React or Vue would otherwise hand you.
+
+Stop being the code review bottleneck (5 minute read)
+
+(blurb not generated)
+
+Software Has Changed (5 minute read)
+
+The author argues that AI-assisted development has reshaped the job overnight, trading flow states for "thinking..." states and making experiments cheap enough to throw code away without a second thought. The upside is that good engineers now spend their freed-up energy reviewing, refactoring, and killing technical debt before it lands in main, and the open question is whether how code gets written matters once you've reviewed and trust the result.
+
+Code review is theater now (5 minute read)
+
+The author argues that code review has become theater in the era of AI-generated code, since agents can produce 40,000-line PRs faster than any human can meaningfully evaluate them. Reviewers end up checking syntax and structure rather than whether the code should exist at all, and splitting massive changes into hundreds of tiny diffs does not fix the underlying mismatch between agent output speed and human review capacity.
+
+Not all model upgrades are upgrades (5 minute read)
+
+(blurb not generated)
+
+Theory of constraints, AI, and code review (5 minute read)
+
+(blurb not generated)
+
+🚀
+Launches & Tools
+
+Show HN: DOM-docx – HTML to native, editable Word docs (MIT) (1 minute read)
+
+DOM-docx converts semantic HTML fragments into native, editable Word documents (OOXML), mapping paragraphs, runs, lists, tables, and images to real docx structures rather than screenshots or layout hacks. The MIT-licensed library ships with a browser path that pulls only docx, cheerio, and fflate, keeping Playwright and LibreOffice as optional dependencies used solely for the computed-style path and its visual regression test harness.
+
+Your Worker can now have its own cache in front of it (5 minute read)
+
+(blurb not generated)
+
+Highlights from Git 2.55 (5 minute read)
+
+(blurb not generated)
+
+Show HN: Clawk – Give coding agents a disposable Linux VM, not your laptop (1 minute read)
+
+Clawk gives a coding agent its own disposable Linux VM instead of your host, mounting your repo in and running Claude Code, Codex, or a shell as root with no permission prompts. A network allow-list blocks connections to unknown servers while a forwarded ssh-agent still lets the agent push to pre-allowed hosts like github.com, and `clawk destroy && clawk --resume` rebuilds a fresh VM with the conversation intact.
+
+Storybook Workbench: Audit Vibe-coded UIs and Find Hidden Bugs in Hours (5 minute read)
+
+(blurb not generated)
+
+YouTrackDB is a general-use object-oriented graph database (1 minute read)
+
+JetBrains open-sourced YouTrackDB, an object-oriented graph database that traverses links in O(1) time by storing physical record pointers instead of running JOINs. It runs snapshot isolation by default, supports schema-less through schema-full modes, and speaks TinkerPop, Gremlin, and its own SQL-based YQL with dot-notation link traversal and a MATCH statement for graph pattern matching.
+
+Show HN: Mindwalk – Replay coding-agent sessions on a 3D map of your codebase (1 minute read)
+
+Mindwalk is a Go tool that replays coding-agent sessions as light moving across a 3D map of your repository, glowing where the agent searched, read, and edited so its understanding of the task becomes visible at a glance. A single local binary parses Claude Code and Codex session logs into terrain and timeline views with scrubable playback, touch states, and friction signals like error rate and edits after the last verify, with no session data leaving your machine.
+
+Tiny Emulators (1 minute read)
+
+Tiny8bit is a collection of cycle-accurate 8-bit machine emulators compiled to WebAssembly, covering the C64, ZX Spectrum, Amstrad CPC, VIC-20, KC85, and Robotron systems directly in the browser. Each machine ships with a debugger UI and a library of playable games and demoscene productions, alongside Visual 6502 and Z80 remixes that trace signals at the transistor level.
+
+SWE-1.7: Frontier Intelligence at a Fraction of the Cost (5 minute read)
+
+(blurb not generated)
+
+Linux 0.11 rewritten in idiomatic Rust, boots in QEMU (1 minute read)
+
+linux-0.11-rs rewrites the 1991 Linux 0.11 kernel from scratch in idiomatic Rust, keeping the original semantics while adding stronger types and clearer module boundaries. It boots on emulated i386 in QEMU with processes, demand-paged virtual memory, CoW fork, the Minix v1 filesystem, and an 80+ coreutils userland, plus a one-command script to build a bootable disk image.
+
+Show HN: Jacquard, a programming language for AI-written, human-reviewed code (1 minute read)
+
+Jacquard is a research programming language for AI-written, human-reviewed code, shipping a v0.1 release candidate with an OCaml checker, a CPS interpreter, a C-emitting AOT backend, and a Warp test framework. Function signatures expose which effects code may perform, so the runtime rejects unhandled effects without explicit `--allow` authority and lets one program run against real, faked, recorded, or probabilistic worlds by swapping handlers.
+
+AgentCheck: A Reproduce-Intervene-Mitigate Workbench for LLM Agents over MCP (1 minute read)
+
+AgentCheck is an open-source web workbench that turns an MCP server into a fault-injection surface, recording an agent's real tool responses and replaying them with 12 fault types like timeouts, stale data, and poisoned descriptions. Developers get a reproduce-intervene-confirm loop to toggle a mitigation and re-run against the identical fault, exposing the silent, confident use of bad tool outputs that usually goes uncaught before deployment.
+
+Logseq 2.0 Beta (DB version) is here (1 minute read)
+
+Logseq released the first beta of Logseq 2.0, which moves the note-taking app from Markdown files to a database-backed storage engine. The DB version reworks how blocks and pages are stored to support faster queries and richer structured data, though it ships as an early beta with rough edges and requires backing up existing graphs before testing.
+
+Together for a healthier Clippy (5 minute read)
+
+(blurb not generated)
+
+JetBrains seeks to unify fragmented AI-based software development with governance suite (5 minute read)
+
+(blurb not generated)
+
+Build agentic full-stack apps with Genkit (5 minute read)
+
+Genkit is an open-source framework for building full-stack, agentic AI apps across TypeScript, Go, Dart, and Python, now with a preview Agents API that packages message history, the tool loop, streaming, and persistence behind one interface. You define an agent on the server with a name and system prompt, then drive it through the same chat() API whether it runs in-process, streams a turn, or persists sessions via a pluggable store.
+
+Ghostel.el: Terminal emulator powered by libghostty (1 minute read)
+
+Ghostel.el is an Emacs terminal emulator built on libghostty-vt, the same VT engine behind the Ghostty terminal, with a native Zig dynamic module handling terminal state, rendering, and PTY I/O while Elisp manages buffers, keymaps, and remote process integration. Following emacs-libvterm's two-layer design, it adds capabilities libvterm lacks, including the Kitty keyboard and graphics protocols, OSC 8 hyperlinks, rich underline styles, and synchronized output, with the native module downloaded automatically on first use.
+
+🎁
+Miscellaneous
+
+npm 12 Disables Install Scripts by Default to Reduce Supply Chain Risk (5 minute read)
+
+(blurb not generated)
+
+Zig creator calls Bun’s Claude Rust rewrite ‘unreviewed slop’ (1 minute read)
+
+Zig creator Andrew Kelley publicly criticized Bun's Claude-assisted Rust rewrite as "unreviewed slop," arguing that shipping large volumes of AI-generated code without human review erodes maintainability. The dispute crystallizes a growing rift among systems maintainers over whether LLM-driven rewrites belong in foundational runtimes and toolchains that thousands of projects depend on.
+
+Compromised Injective SDK npm Package Exfiltrates Wallet Keys and Mnemonics (5 minute read)
+
+A malicious @injectivelabs/sdk-ts@1.20.21 release published to npm exfiltrated wallet private keys and mnemonic phrases through fake telemetry code, in a package that draws roughly 50,000 weekly downloads. The attacker pushed the same version across 17 additional @injectivelabs scoped packages that pinned the compromised SDK, exposing transitive users before the real maintainer reverted the change and shipped a clean release within an hour.
+
+148 npm Packages Disguised as Student Proxies Turned Browsers Into a DDoS Botnet (1 minute read)
+
+JFrog found 148 npm packages disguised as student web proxies that quietly conscripted visitors' browsers into a DDoS botnet for about two weeks in May, using the registry as free hosting rather than targeting developers at install time. The packages carried no lifecycle hooks or build scripts, instead serving a booby-trapped proxy that loaded a swappable remote code loader and a WebSocket flood generator once a student opened the page.
+
+Multiple Jscrambler Packages Impacted by Supply Chain Attack (1 minute read)
+
+Attackers used stolen NPM publishing credentials to push malicious versions of Jscrambler's package starting July 11, planting a preinstall hook that dropped Rust-based information stealers targeting credentials, cloud secrets, crypto wallets, and MCP server configs across Linux, macOS, and Windows. The bad versions were downloaded 1,479 times before deprecation, and the compromise cascaded to dependent packages including Jscrambler-webpack-plugin, gulp-jscrambler, and grunt-jscrambler.
+
+Alibaba reportedly bans employees from using Claude Code (5 minute read)
+
+(blurb not generated)
+
+Former GitHub CEO launches competitor designed for the age of vibe coding (5 minute read)
+
+(blurb not generated)
+
+⚡
+Quick Links
+
+Gemma 4 Technical Report (5 minute read)
+
+(blurb not generated)
+
+TIL - Algolia Makes Creating an MCP Server Stupid Easy (5 minute read)
+
+Algolia's dashboard can now turn any search index into a hosted MCP server in a few clicks, exposing it to Claude, Cursor, and other agents.

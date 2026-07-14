@@ -1,0 +1,149 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR IT 2026-07-14
+
+🚀
+News & Trends
+
+NetNut cracked as Google and FBI target 2 million-device botnet (5 minute read)
+
+(blurb not generated)
+
+FFmpeg fixes PixelSmash flaw in widely used video decoder (1 minute read)
+
+FFmpeg patched PixelSmash (CVE-2026-8461), a high-severity heap out-of-bounds write in the MagicYUV decoder that JFrog used to achieve remote code execution on a Jellyfin media server through its normal library-scan pipeline. Any application built on libavcodec is exposed, including Kodi, OBS Studio, Nextcloud, PhotoPrism, and Linux desktop thumbnail generators, so IT teams should prioritize updating FFmpeg across self-hosted media and file-preview infrastructure.
+
+SAP makes it easier for customers to shop for legacy product support, ending EU antitrust probe (5 minute read)
+
+(blurb not generated)
+
+Proof-of-Concept Exploit Released for Linux ‘Bad Epoll' Root Access Vulnerability (5 minute read)
+
+(blurb not generated)
+
+Microsoft Entra ID authentication overhaul to start in September 2026 (1 minute read)
+
+Microsoft will make passkeys the default authentication method for Entra ID in the public cloud on September 1, 2026, and starting February 1, 2027, users on SMS or voice MFA must register a passkey to sign in, with no tenant opt-out. Microsoft will also retire its native SMS and voice delivery, pushing organizations that still need it to contract and pay for third-party telecom providers through the Microsoft Security Store.
+
+Deluxe Corporation beats the odds with mainframe migration using AI (3 minute read)
+
+Deluxe Corporation migrated off a 50-year-old mainframe to the cloud in about 12 months, using AI to rewrite legacy code, generate documentation, and build test cases for a projected $4.9M in annual savings. The result runs against Gartner's forecast that over 70% of 2026 mainframe-exit projects will fail from overreliance on gen AI, with Deluxe treating the tooling as one component rather than the whole migration.
+
+Microsoft to enable Windows settings backup by default for orgs (5 minute read)
+
+(blurb not generated)
+
+Writer AI Flaw Could Let Agent Previews Leak Session Tokens Across Tenants (5 minute read)
+
+(blurb not generated)
+
+Lessons Learned from CISA’s Recent GitHub Leak (1 minute read)
+
+CISA published a postmortem on a leak in which a contractor left dozens of internal credentials, including AWS GovCloud administrative keys and plaintext passwords, in a public GitHub repository for nearly six months before a researcher flagged it. The agency took over 48 hours to rotate the exposed keys and now recommends teams maintain well-tested key management and publish clear, redundant reporting channels for outside researchers.
+
+'GodDamn' Ransomware Uses BYOVD to Smite US Companies (5 minute read)
+
+(blurb not generated)
+
+Lone Attacker Uses AI to Breach AWS Cloud Environment in 72 Hours (5 minute read)
+
+(blurb not generated)
+
+Januscape: 16-Year-Old Linux KVM Bug Enables Cloud VM Escape Attacks (5 minute read)
+
+(blurb not generated)
+
+The ‘Ghost' in the Database: Recovering Active ADFS Signing Keys via Machine DPAPI (5 minute read)
+
+(blurb not generated)
+
+Microsoft Maps Three Salesforce Attack Paths Tied to a Year of ShinyHunters Activity (1 minute read)
+
+Microsoft published research on July 13 mapping a year of Salesforce intrusions, tied to methods matching the extortion group ShinyHunters, to three techniques: vishing employees into approving malicious OAuth apps, stolen tokens from compromised vendors, and misconfigured guest access. None exploited a platform flaw, so Microsoft and Salesforce rolled out new detection and governance tooling to catch abuse that authentication logs miss.
+
+When checking the URL isn't enough: a Device Code Phishing attack via a Microsoft website (5 minute read)
+
+Attackers are running phishing campaigns that exploit Microsoft's legitimate Device Authorization Grant flow, tricking victims into entering an attacker-generated device code at the real login.microsoftonline.com and handing over live session tokens. Because the victim authenticates on a trusted Microsoft domain, standard "check the URL" guidance and many detection tools miss the attack, leaving Entra ID tenants exposed unless admins restrict the device code flow via Conditional Access.
+
+The US government warns that Russia state hackers are coming after your router (1 minute read)
+
+CISA and allied cyber agencies from the UK, Australia, Denmark, and New Zealand warned that Russia's FSB Center 16 group is mass-compromising poorly configured routers, exploiting SNMP agents with default or common credentials to enroll edge devices into proxy botnets. The advisory names critical-infrastructure operators as targets, putting pressure on IT teams to audit SNMP exposure and rotate default credentials on home, small-office, and network-edge hardware.
+
+US and allies warn of Russian critical infrastructure attacks (1 minute read)
+
+Nineteen cybersecurity agencies from the US, UK, and seven other countries jointly attributed a campaign against critical infrastructure routers to Russia's FSB Center 16, which scans for devices with default or weak SNMP strings and exploits the 2018 Cisco Smart Install flaw CVE-2018-0171. IT teams in energy, communications, healthcare, and government are urged to move to SNMPv3, disable Smart Install, block TFTP at the edge, and replace end-of-life devices.
+
+New York becomes the first state to enact a data center moratorium (1 minute read)
+
+New York became the first state to enact a data center moratorium, with Governor Kathy Hochul signing an executive action that blocks new environmental permits for facilities over 50 megawatts for up to a year. The pause gives the Department of Public Service time to draft standards for energy and water impact, and puts hyperscale expansion by AWS, Microsoft, and Google on hold in a major market while a stricter 20-megawatt legislative bill awaits her signature.
+
+EU and UK officially blame Russian spies for cyberattack on Poland's power grid (1 minute read)
+
+The EU and UK formally attributed the cyberattack on Poland's power grid to Russian state-backed hackers, marking the first coordinated bloc-level attribution over an energy-sector intrusion. The move sets up potential sanctions and raises compliance pressure on European utilities and their critical-infrastructure suppliers to meet NIS2 resilience requirements.
+
+Progress orders emergency ShareFile server shutdown over mystery security threat (1 minute read)
+
+Progress Software ordered customers to immediately shut down on-prem ShareFile servers over an undisclosed security threat, without publishing details of the flaw or a patch. The blind directive lands as Progress is still repairing its reputation from the 2023 MOVEit mass-exploitation, and enterprises running ShareFile for regulated file transfer now face unplanned downtime with no timeline for a fix.
+
+🧠
+Analysis & Opinions
+
+Microsoft is losing the battle to protect license lucre. It better get used to the feeling (1 minute read)
+
+The author argues Microsoft can no longer defend the high-margin licensing revenue that has anchored its business, as customers shift toward AI tooling, open ecosystems, and consumption-based models it doesn't control. For enterprise buyers, the takeaway is leverage: the pricing power that made Windows and Office seat licenses non-negotiable is eroding, and the piece contends Microsoft will have to accept thinner license lock-in as the new baseline.
+
+CIOs must rethink operating models to unlock AI at scale (3 minute read)
+
+The AI arrow is racing ahead of the organizations, people, and data meant to support it, and this analysis argues the readiness gap is operational, not technical. It cites Lopez Research finding 83% of firms name data quality as their top AI challenge and 74% struggle to show ROI, while only 21% report a mature agent governance model per Deloitte. The takeaway for CIOs: fix data foundations, operating models, and governance yourself rather than waiting for vendors to close the gap.
+
+Up the Stack: How AI's Escape From the Commodity Trap Risks Enterprise Lock-in (5 minute read)
+
+The authors argue the AI bubble debate misses the point: inference is a commodity business with low switching costs and undifferentiated models, so the leading labs are migrating up the stack to escape it. That move lets them build defensible margins but reintroduces the enterprise concerns buyers thought AI had priced away. For IT leaders, the takeaway is that today's cheap, swappable model APIs are a transitional phase, not the long-run cost structure.
+
+🤝
+Launches & Partnerships
+
+Google Credential Provider for Windows (GCPW) now supports FIDO2-compliant physical security keys as a second factor for authentication (1 minute read)
+
+Google Workspace added FIDO2-compliant hardware security key support to Google Credential Provider for Windows, letting admins enforce 2-Step Verification with physical keys at the Windows login screen. The update, available to all Workspace customers with no end-user setup, also accepts passkeys from nearby Bluetooth-connected mobile devices and gives Windows-heavy shops phishing-resistant MFA without a third-party identity provider.
+
+Introducing Precursor: detecting agentic behavior with continuous client-side signals (1 minute read)
+
+Cloudflare launched Precursor, a client-side session-based verification system that injects JavaScript to continuously collect behavioral signals and separate human traffic from bots and AI agents across the full user journey. It ships as an optional complement to Turnstile within Enterprise Bot Management, extending detection beyond login and checkout endpoints to the entire application without adding friction for legitimate users.
+
+Precursor (1 minute read)
+
+Cloudflare launched Precursor, a client-side session-based verification system that injects JavaScript to continuously collect behavioral signals and separate human traffic from bots and AI agents across the full user journey. It ships as an optional complement to Turnstile within Enterprise Bot Management, extending detection beyond login and checkout endpoints to the entire application without adding friction for legitimate users.
+
+Securing the AI supply chain on GKE: Introducing k8s-aibom for automated AI BOMs (2 minute read)
+
+Google open-sourced k8s-aibom, a lightweight unprivileged Kubernetes controller for GKE that continuously scans cluster workloads to detect running AI runtimes like vLLM and Triton and auto-generate CycloneDX 1.6 ML-BOMs. The tool ships with no sidecars, eBPF modules, or privileged DaemonSets, giving security teams audit-grade visibility into shadow AI without adding developer integration friction or requiring pod-spec changes.
+
+Salesforce turns Slackbot into an agentic workflow hub (5 minute read)
+
+(blurb not generated)
+
+JetBrains seeks to unify fragmented AI-based software development with governance suite (5 minute read)
+
+(blurb not generated)
+
+IBM Bob expands beyond code generation to orchestrate the entire SDLC (5 minute read)
+
+(blurb not generated)
+
+Cloudflare launches Precursor to catch bots by watching entire sessions (1 minute read)
+
+Cloudflare made Precursor generally available, a bot-detection system that scores visitor behavior across an entire browsing session rather than running a single point-of-entry CAPTCHA. Enterprise customers already routing traffic through Cloudflare enable it with one click and no code changes, and its continuous Bot Score closes the page-reload evasion that resets per-request challenges, extending Cloudflare's bot-management stack against automation it pegs at 57% of web requests.
+
+Hugging Face Models on Foundry Managed Compute (5 minute read)
+
+(blurb not generated)
+
+BitTitan expands MigrationWiz with Microsoft Teams private chat migrations (5 minute read)
+
+BitTitan added Microsoft Teams private chat migration to its MigrationWiz platform, letting IT teams move one-on-one and group chat histories alongside mailboxes, files, and channel data during Microsoft 365 tenant-to-tenant moves. The addition closes a common gap in merger, acquisition, and divestiture migrations, where preserving Teams chat continuity previously required manual workarounds or third-party tools outside the MigrationWiz workflow.
+
+CloudWatch Application Signals now automatically captures errors, performance anomalies, and deployment events (5 minute read)
+
+(blurb not generated)
