@@ -18,9 +18,9 @@ Januscape: 16-Year-Old Linux KVM Bug Enables Cloud VM Escape Attacks (5 minute r
 
 (blurb not generated)
 
-TS-2026-009: Insecure argument handling in Tailscale SSH permitted root access (1 minute read)
+TS-2026-009: Insecure argument handling in Tailscale SSH permitted root access (5 minute read)
 
-Tailscale patched TS-2026-009 in version 1.98.9, a flaw where Tailscale SSH passed usernames with leading dashes straight into getent(1) on Linux, letting an attacker connect as "-i" to dump the passwd file and open an interactive root session in violation of tailnet ACLs. The same release fixes TS-2026-008, an unbounded path walk in Serve and Funnel that let one malformed HTTP request pin a CPU core indefinitely.
+(blurb not generated)
 
 Improving Smart Tiered Cache for public cloud regions (5 minute read)
 
@@ -28,31 +28,27 @@ Improving Smart Tiered Cache for public cloud regions (5 minute read)
 
 mariadb-server: Upgrading to 10.11.18-0+deb12u1 enables systemd socket activation unconditionally (5 minute read)
 
-A Debian stable security update to mariadb-server 10.11.18-0+deb12u1 flips on systemd socket activation unconditionally, overriding operators' existing service configuration on upgrade. The change can restart the database or bind listeners in ways teams didn't opt into, turning a routine patch-level bump into an unexpected connection-handling and blast-radius risk on production hosts running Debian 12.
+(blurb not generated)
 
-A broken DNSSEC rollover took down .AL. Now 1.1.1.1 tells you when validation is bypassed (1 minute read)
+A broken DNSSEC rollover took down .AL. Now 1.1.1.1 tells you when validation is bypassed (5 minute read)
 
-A botched DNSSEC key rollover at Albania's .AL registry on July 3 broke validation across the entire TLD, leaving government, bank, and media sites unreachable on every validating resolver until Cloudflare applied a Negative Trust Anchor to suspend validation on 1.1.1.1. For the first time, 1.1.1.1 also returned a new Extended DNS Error code on affected responses, signaling clients that an answer was served unvalidated rather than restoring resolution silently.
+(blurb not generated)
 
-Full Broker Takeover, No Login Required: Miggo Discovers Critical RabbitMQ Vulnerabilities Putting Application Data at Risk (5 minute read) [flag]
+Full Broker Takeover, No Login Required: Miggo Discovers Critical RabbitMQ Vulnerabilities Putting Application Data at Risk (5 minute read)
 
-Miggo disclosed two access-control flaws in RabbitMQ, the most widely deployed open-source message broker, including CVE-2026-57219, an unauthenticated endpoint that leaks the broker's OAuth client secret and hands an attacker a path to full admin takeover under standard Auth0, Entra ID, and Keycloak setups. Both bugs date to release 3.13.0 and are patched in 4.3.0, 4.2.6, 4.1.11, 4.0.20, and 3.13.15, with no evidence of exploitation in the wild.
+(blurb not generated)
 
-RabbitMQ Flaws Could Leak OAuth Secrets and Expose Cross-Tenant Queue Metadata (1 minute read) [flag]
+RabbitMQ Flaws Could Leak OAuth Secrets and Expose Cross-Tenant Queue Metadata (5 minute read)
 
-Miggo's security team disclosed two access-control flaws in RabbitMQ, present since early 2024 in release lines 3.13.0 and later, one leaking the broker's OAuth client secret to an unauthenticated attacker (CVE-2026-57219, CVSS 8.7) and one letting any logged-in user read cross-tenant queue metadata (CVE-2026-57221). Patch to 4.3.0, 4.2.6, 4.1.11, 4.0.20, or 3.13.15, rotate exposed OAuth secrets, and lock port 15672 to trusted networks.
+(blurb not generated)
 
 Your Azure DevOps pipelines have a 2027 deadline, and the clock has just started (5 minute read)
 
 (blurb not generated)
 
-Bulkhead: Automated Semantic Detection and Remediation of Container Escape Vulnerabilities (1 minute read)
+Bulkhead: Automated Semantic Detection and Remediation of Container Escape Vulnerabilities (5 minute read)
 
-This paper introduces Bulkhead, a framework that pairs LLMs with formal verification to detect and patch container path-traversal flaws that let workloads escape filesystem isolation, a class of bug that has grown as clusters mount shared GPUs and agent workspaces into containers for AI jobs. It locates cross-boundary call chains, generates proof-of-concept exploits to confirm each vulnerability, then produces patches checked against model-checking templates to keep remediation from breaking system calls.
-
-Apple scoops up observability player SigScalr for Splunk beating prowess (1 minute read)
-
-Apple acquired the assets of observability startup SigScalr in an acqui-hire, gaining SigLens, a single-binary database for logs, metrics, and traces that ingests OpenTelemetry, Elastic, Loki, and Splunk HEC formats and answers SPL, SQL, and Elastic queries. The move deepens Apple's in-house telemetry stack for iCloud and Apple Pay, which already runs on Linux and Kubernetes across geographically dispersed data centers with a provider-agnostic tool mix.
+(blurb not generated)
 
 Six New U-Boot Flaws Could Let Malicious Images Crash Devices or Run Code at Boot (5 minute read)
 
@@ -62,16 +58,16 @@ Apple acquires observability startup SigScalr (5 minute read)
 
 (blurb not generated)
 
-Microsoft announces Trusted Launch for virtual machines in Windows Server Insider Preview (1 minute read)
+Microsoft announces Trusted Launch for virtual machines in Windows Server Insider Preview (5 minute read)
 
-Microsoft added Trusted Launch to virtual machines in the Windows Server Insider Preview, bringing Secure Boot, vTPM, and measured boot to guest VMs to block rootkits and boot-level tampering. The preview ships incomplete, with several expected Trusted Launch capabilities still missing, so platform teams should treat it as evaluation-only rather than a path to hardening production Hyper-V hosts yet.
+(blurb not generated)
 
 🚀
 Opinions & Tutorials
 
-Building a Custom Metrics Exporter for Kubernetes (2 minute read)
+Building a Custom Metrics Exporter for Kubernetes (5 minute read)
 
-This Kubernetes blog tutorial walks through building a custom Prometheus metrics exporter from scratch, packaging it as a container, and wiring it into a cluster so the HorizontalPodAutoscaler can scale on signals that CPU and memory miss, like queue depth, batch-job duration, or active WebSocket connections. It covers when to instrument the app directly versus running a standalone exporter, and how to pick the right Prometheus metric type: counters for monotonic totals, gauges for values that rise and fall, and histograms for latency percentiles.
+(blurb not generated)
 
 Modernizing the Meta Ads Service With an Open-Source Kernel Scheduler (5 minute read)
 
@@ -89,13 +85,13 @@ You shouldn't trust Trusted Publishing (5 minute read)
 
 (blurb not generated)
 
-Is a Pod the right deployment unit for an AI agent? (1 minute read)
+Is a Pod the right deployment unit for an AI agent? (5 minute read)
 
-The kagent team argues that the Kubernetes Pod, their first answer for isolating AI agents, is the wrong lifecycle abstraction as fleets scale. A Pod cleanly delivers per-agent identity via ServiceAccounts, network policy enforcement, and observability attribution, but agents run for seconds and sit idle, making a dedicated always-on Pod per agent wasteful. The post pushes toward a lighter execution model that fits bursty, ephemeral, subagent-spawning workloads without abandoning Kubernetes-native security and scheduling.
+(blurb not generated)
 
-Taming the Drift: Context-aware Repair of Dockerfile Drift during Software Evolution (1 minute read)
+Taming the Drift: Context-aware Repair of Dockerfile Drift during Software Evolution (5 minute read)
 
-This paper introduces Cadre, a context-aware framework for repairing Dockerfile drift, the divergence between a Dockerfile and its evolving source that breaks CI/CD builds. Cadre builds a dependency graph mapping each instruction to its file-level and inter-instruction dependencies, then patches only the context causally relevant to a failure. On a 1,040-instance benchmark it hits a 35.22% repair rate, 1.24x the best LLM baseline, while keeping 95% of prompts under 30k tokens and avoiding the overflow failures that sink diff-only methods.
+(blurb not generated)
 
 Code review is theater now (5 minute read)
 
@@ -111,7 +107,7 @@ Some Notes on Lambda MicroVMs (5 minute read)
 
 OVS and OVN Explained: The Networking Stack Behind OpenStack (5 minute read)
 
-This tutorial explains the two-layer networking stack behind OpenStack Neutron: Open vSwitch provides the high-performance dataplane on each hypervisor, while Open Virtual Network adds the distributed control plane that programs it. It walks through the OVS-versus-OVN split, tunnel encapsulation with Geneve and VXLAN, and how to trace a packet from instance to instance. The practical payoff is debugging cross-host connectivity failures, where same-node pings succeed but traffic dies between compute nodes because of logical flow denials rather than dataplane bugs.
+(blurb not generated)
 
 Woodruff: You shouldn't trust trusted publishing (5 minute read)
 
@@ -127,7 +123,7 @@ Automating cross-repo documentation with GitHub Agentic Workflows (5 minute read
 
 How Microsoft Ships Thousands of Production AI Agents (5 minute read)
 
-Microsoft's Marco Casalaina walks through what it takes to run production AI agents on Foundry, where more than 80,000 enterprises now build. The core lesson is that the model is rarely what breaks; failures come from the surrounding harness, retrieval, tool calls, and quality drift as the world changes. Foundry's answers include retrieval-as-a-subagent, per-agent identity, and rubric-based evals with an auto-improvement loop.
+(blurb not generated)
 
 Postgres Is Enough (5 minute read)
 
@@ -152,9 +148,9 @@ Operating AI/ML Workloads on Kubernetes: A Headlamp Plugin for Kubeflow (5 minut
 
 (blurb not generated)
 
-Dependabot version updates introduce default package cooldown (1 minute read)
+Dependabot version updates introduce default package cooldown (5 minute read)
 
-Dependabot now waits three days after a package release lands on its registry before opening a version-update pull request, a default that applies across all supported ecosystems on github.com and ships in GitHub Enterprise Server 3.23. The cooldown narrows the supply-chain window where a compromised or broken release reaches your dependency updates before the community flags it, while security updates still open immediately and the window stays tunable via the cooldown option in dependabot.yml.
+(blurb not generated)
 
 CloudWatch Application Signals now automatically captures errors, performance anomalies, and deployment events (5 minute read)
 
@@ -177,9 +173,5 @@ ClickHouse on Docker Hardened Images (5 minute read)
 (blurb not generated)
 
 Introducing GuardDog 3.0: A new rules engine, transparent sandboxing, and more (5 minute read)
-
-(blurb not generated)
-
-Cloudflare launches Precursor to catch bots by watching entire sessions (5 minute read)
 
 (blurb not generated)

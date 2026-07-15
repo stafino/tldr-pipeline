@@ -1,9 +1,31 @@
 {
   "date": "2026-07-15",
   "newsletter": "tldr_devops",
-  "fetched_at": "2026-07-15T08:12:12.912015+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-07-15T15:45:54.844933+00:00",
+  "tldr_titles": [
+    "Introducing Precursor: detecting agentic behavior with continuous client-side signals",
+    "A broken DNSSEC rollover took down .AL. Now 1.1.1.1 tells you when validation is bypassed",
+    "Argo CD 2026 User Survey Results",
+    "Terraform MCP Server Explained: Setup and Use Cases",
+    "When branchless binary search is slower",
+    "Job queues are deceptively tricky",
+    "Building Service Topology at Scale: Architecture, Challenges, and Lessons Learned",
+    "Amazon SQS turns 20: Two decades of reliable messaging at scale",
+    "5 pitfalls to avoid when measuring DevEx in the AI era",
+    "Develop like you deploy: closing the Kubernetes local-to-cluster gap"
+  ],
+  "tldr_matched": [
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -170,8 +192,8 @@
       "score": 60.0,
       "title": "A broken DNSSEC rollover took down .AL. Now 1.1.1.1 tells you when validation is bypassed",
       "url": "https://blog.cloudflare.com/dnssec-nta-ede-33/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 1,
+      "similarity": 1.0
     },
     {
       "rank": 22,
@@ -240,21 +262,13 @@
     {
       "rank": 30,
       "score": 57.0,
-      "title": "Apple scoops up observability player SigScalr for Splunk beating prowess",
-      "url": "https://www.sdxcentral.com/news/apple-scoops-up-observability-player-sigscalr-for-splunk-beating-prowess/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 31,
-      "score": 57.0,
       "title": "Woodruff: You shouldn't trust trusted publishing",
       "url": "https://lwn.net/Articles/1081690/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 32,
+      "rank": 31,
       "score": 57.0,
       "title": "How GitHub gave every repository a durable owner",
       "url": "https://github.blog/security/application-security/how-github-gave-every-repository-a-durable-owner/",
@@ -262,7 +276,7 @@
       "similarity": null
     },
     {
-      "rank": 33,
+      "rank": 32,
       "score": 57.0,
       "title": "Automating cross-repo documentation with GitHub Agentic Workflows",
       "url": "https://github.blog/ai-and-ml/github-copilot/automating-cross-repo-documentation-with-github-agentic-workflows/",
@@ -270,7 +284,7 @@
       "similarity": null
     },
     {
-      "rank": 34,
+      "rank": 33,
       "score": 57.0,
       "title": "Show HN: Clawk \u2013 Give coding agents a disposable Linux VM, not your laptop",
       "url": "https://github.com/clawkwork/clawk",
@@ -278,7 +292,7 @@
       "similarity": null
     },
     {
-      "rank": 35,
+      "rank": 34,
       "score": 57.0,
       "title": "ClickHouse on Docker Hardened Images",
       "url": "https://clickhouse.com/blog/docker-hardened-images",
@@ -286,7 +300,7 @@
       "similarity": null
     },
     {
-      "rank": 36,
+      "rank": 35,
       "score": 56.0,
       "title": "Six New U-Boot Flaws Could Let Malicious Images Crash Devices or Run Code at Boot",
       "url": "https://thehackernews.com/2026/07/six-new-u-boot-flaws-could-let.html",
@@ -294,7 +308,7 @@
       "similarity": null
     },
     {
-      "rank": 37,
+      "rank": 36,
       "score": 56.0,
       "title": "Apple acquires observability startup SigScalr",
       "url": "https://9to5mac.com/2026/07/13/apple-acquires-observability-startup-sigscalr/",
@@ -302,7 +316,7 @@
       "similarity": null
     },
     {
-      "rank": 38,
+      "rank": 37,
       "score": 56.0,
       "title": "Microsoft announces Trusted Launch for virtual machines in Windows Server Insider Preview",
       "url": "https://www.neowin.net/news/microsoft-announces-trusted-launch-for-virtual-machines-in-windows-server-insider-preview/?utm_source=rss",
@@ -310,7 +324,7 @@
       "similarity": null
     },
     {
-      "rank": 39,
+      "rank": 38,
       "score": 56.0,
       "title": "How Microsoft Ships Thousands of Production AI Agents",
       "url": "https://blog.bytebytego.com/p/how-microsoft-ships-ai-agents-at",
@@ -318,7 +332,7 @@
       "similarity": null
     },
     {
-      "rank": 40,
+      "rank": 39,
       "score": 56.0,
       "title": "Postgres Is Enough",
       "url": "https://postgresisenough.dev/",
@@ -326,7 +340,7 @@
       "similarity": null
     },
     {
-      "rank": 41,
+      "rank": 40,
       "score": 56.0,
       "title": "How to protect your MCP Server with Fastly",
       "url": "https://www.fastly.com/blog/how-to-protect-your-mcp-server-with-fastly",
@@ -334,25 +348,51 @@
       "similarity": null
     },
     {
-      "rank": 42,
+      "rank": 41,
       "score": 56.0,
       "title": "Introducing GuardDog 3.0: A new rules engine, transparent sandboxing, and more",
       "url": "https://securitylabs.datadoghq.com/articles/guarddog-3-0-release/",
       "matched_tldr_idx": null,
       "similarity": null
-    },
-    {
-      "rank": 43,
-      "score": 56.0,
-      "title": "Cloudflare launches Precursor to catch bots by watching entire sessions",
-      "url": "https://siliconangle.com/2026/07/13/cloudflare-launches-precursor-catch-bots-watching-entire-sessions/",
-      "matched_tldr_idx": null,
-      "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.0,
+    "25": 0.1,
+    "50": 0.1,
+    "100": 0.1,
+    "41": 0.1
+  },
+  "hits_at": {
+    "10": 0,
+    "25": 1,
+    "50": 1,
+    "100": 1,
+    "41": 1
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://blog.cloudflare.com/introducing-precursor/",
+    "https://blog.cloudflare.com/dnssec-nta-ede-33/",
+    "https://blog.argoproj.io/argo-cd-2026-user-survey-results-dcffc9a8e48e",
+    "https://spacelift.io/blog/terraform-mcp-server",
+    "https://pythonspeed.com/articles/branchless-binary-search/",
+    "https://typesanitizer.com/blog/job-queues.html",
+    "https://netflixtechblog.com/building-service-topology-at-scale-architecture-challenges-and-lessons-learned-f4b792f3f0d8",
+    "https://aws.amazon.com/blogs/aws/amazon-sqs-turns-20-two-decades-of-reliable-messaging-at-scale/",
+    "https://www.datadoghq.com/blog/devex-measurement-pitfalls-ai-era/",
+    "https://thenewstack.io/krumware-epinio-kubernetes-mcp/"
+  ],
+  "tldr_domains": [
+    "blog.cloudflare.com",
+    "blog.cloudflare.com",
+    "blog.argoproj.io",
+    "spacelift.io",
+    "pythonspeed.com",
+    "typesanitizer.com",
+    "netflixtechblog.com",
+    "aws.amazon.com",
+    "datadoghq.com",
+    "thenewstack.io"
+  ]
 }

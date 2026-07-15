@@ -1,28 +1,46 @@
 {
   "date": "2026-07-15",
   "newsletter": "tldr_infosec",
-  "fetched_at": "2026-07-15T08:12:11.887400+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-07-15T15:44:48.564542+00:00",
+  "tldr_titles": [
+    "OAuth Client ID Spoofing Lets Attackers Validate Stolen Microsoft Entra Credentials",
+    "Lifeline Confirms Data Breach",
+    "SonicWall Warns of SMA1000 Flaws Exploited in Zero-Day Attacks",
+    "Context Bombs: stopping AI attackers in their tracks",
+    "Defending SaaS-based applications against ShinyHunters OAuth abuse",
+    "Smashing the ServiceNow Sandbox \u2013 Pre Authentication RCE",
+    "Synopsys Finds No Evidence of Data Breach Amid Bosch Hack Claims",
+    "Now, Defenders Are Embracing the Prompt Injection Too",
+    "The US government warns that Russian state hackers are coming after your router",
+    "Microsoft discloses 'the mother of all' vulnerability loads, tripling June's previous record",
+    "Tego AI Finds Claude Tag Slack Integration Can Trigger Unauthorized Enterprise Actions",
+    "Inmate charged with stealing seized cryptocurrency while serving prison sentence"
+  ],
+  "tldr_matched": [
+    true,
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false,
+    false
+  ],
   "predictions": [
     {
       "rank": 1,
       "score": 92.0,
       "title": "Two SonicWall SMA 1000 Zero-Days Exploited, One Could Enable Admin Commands",
       "url": "https://thehackernews.com/2026/07/two-sonicwall-sma-1000-zero-days.html",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 2,
+      "similarity": 0.7047041654586792
     },
     {
       "rank": 2,
-      "score": 88.0,
-      "title": "Grok Build was uploading entire Git repositories to xAI\u2019s cloud, including committed secrets",
-      "url": "https://thenextweb.com/news/grok-build-uploaded-entire-git-repositories-secrets",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 3,
       "score": 88.0,
       "title": "TS-2026-009: Insecure argument handling in Tailscale SSH permitted root access",
       "url": "https://tailscale.com/security-bulletins",
@@ -30,7 +48,7 @@
       "similarity": null
     },
     {
-      "rank": 4,
+      "rank": 3,
       "score": 85.0,
       "title": "Grok Build Uploaded Entire Git Repositories to xAI Storage, Not Just Files It Read",
       "url": "https://thehackernews.com/2026/07/grok-build-uploads-entire-git.html",
@@ -38,15 +56,15 @@
       "similarity": null
     },
     {
-      "rank": 5,
+      "rank": 4,
       "score": 83.0,
       "title": "SonicWall warns of SMA1000 flaws exploited in zero-day attacks, patch now",
       "url": "https://www.bleepingcomputer.com/news/security/sonicwall-warns-of-sma1000-flaws-exploited-in-zero-day-attacks-patch-now/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 2,
+      "similarity": 1.0
     },
     {
-      "rank": 6,
+      "rank": 5,
       "score": 83.0,
       "title": "The \u2018Ghost' in the Database: Recovering Active ADFS Signing Keys via Machine DPAPI",
       "url": "https://cloud.google.com/blog/topics/threat-intelligence/recovering-active-adfs-signing-keys-machine-dpapi/",
@@ -54,7 +72,7 @@
       "similarity": null
     },
     {
-      "rank": 7,
+      "rank": 6,
       "score": 82.0,
       "title": "Januscape: 16-Year-Old Linux KVM Bug Enables Cloud VM Escape Attacks",
       "url": "https://securityaffairs.com/194868/security/januscape-16-year-old-linux-kvm-bug-enables-cloud-vm-escape-attacks.html",
@@ -62,7 +80,7 @@
       "similarity": null
     },
     {
-      "rank": 8,
+      "rank": 7,
       "score": 80.0,
       "title": "Progress confirms ShareFile zero-day flaw behind Storage Zone shutdown",
       "url": "https://www.bleepingcomputer.com/news/security/progress-confirms-sharefile-zero-day-flaw-behind-storage-zone-shutdown/",
@@ -70,23 +88,7 @@
       "similarity": null
     },
     {
-      "rank": 9,
-      "score": 80.0,
-      "title": "Unpatched Claude for Chrome Flaw Lets Extensions Read Gmail, Calendar",
-      "url": "https://www.securityweek.com/unpatched-claude-for-chrome-flaw-lets-extensions-read-gmail-calendar/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 10,
-      "score": 80.0,
-      "title": "AI used to help plan the break-in, now it\u2019s doing the break-in",
-      "url": "https://www.helpnetsecurity.com/2026/07/15/check-point-ai-security-report-2026/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 11,
+      "rank": 8,
       "score": 80.0,
       "title": "Cursor 0day: When Full Disclosure Becomes the Only Protection Left",
       "url": "https://mindgard.ai/blog/cursor-0day-when-full-disclosure-becomes-the-only-protection-left",
@@ -94,7 +96,7 @@
       "similarity": null
     },
     {
-      "rank": 12,
+      "rank": 9,
       "score": 79.0,
       "title": "SAP Patches CVSS 9.9 NetWeaver ABAP Flaw That Could Expose or Modify Data",
       "url": "https://thehackernews.com/2026/07/sap-patches-cvss-99-netweaver-abap-flaw.html",
@@ -102,7 +104,7 @@
       "similarity": null
     },
     {
-      "rank": 13,
+      "rank": 10,
       "score": 79.0,
       "title": "Lessons Learned from CISA\u2019s Recent GitHub Leak",
       "url": "https://krebsonsecurity.com/2026/07/lessons-learned-from-cisas-recent-github-leak/",
@@ -110,7 +112,7 @@
       "similarity": null
     },
     {
-      "rank": 14,
+      "rank": 11,
       "score": 78.0,
       "title": "11 Old Microsoft-Signed Linux UEFI Shims Could Let Attackers Bypass Secure Boot",
       "url": "https://thehackernews.com/2026/07/11-old-microsoft-signed-linux-uefi.html",
@@ -118,15 +120,15 @@
       "similarity": null
     },
     {
-      "rank": 15,
+      "rank": 12,
       "score": 78.0,
       "title": "OAuth Client ID Spoofing Lets Attackers Validate Stolen Microsoft Entra Credentials",
       "url": "https://thehackernews.com/2026/07/oauth-client-id-spoofing-lets-attackers.html",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 0,
+      "similarity": 1.0
     },
     {
-      "rank": 16,
+      "rank": 13,
       "score": 78.0,
       "title": "Microsoft\u2019s Secure Boot has been broken for a decade and no one noticed until now",
       "url": "https://arstechnica.com/security/2026/07/microsoft-secure-boot-has-been-broken-for-most-of-its-existence/",
@@ -134,15 +136,7 @@
       "similarity": null
     },
     {
-      "rank": 17,
-      "score": 78.0,
-      "title": "New macOS malware steals passwords by posing as Apple\u2019s crash-reporting tool",
-      "url": "https://www.helpnetsecurity.com/2026/07/14/crashstealer-macos-infostealer-password-theft/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 18,
+      "rank": 14,
       "score": 78.0,
       "title": "Compromised Injective SDK npm Package Exfiltrates Wallet Keys and Mnemonics",
       "url": "https://socket.dev/blog/compromised-injective-sdk-npm-package",
@@ -150,7 +144,7 @@
       "similarity": null
     },
     {
-      "rank": 19,
+      "rank": 15,
       "score": 78.0,
       "title": "Cavern Manticore: Exposing Iran-Linked Modular C2 Framework",
       "url": "https://research.checkpoint.com/2026/cavern-manticore-exposing-iran-linked-modular-c2-framework/",
@@ -158,7 +152,7 @@
       "similarity": null
     },
     {
-      "rank": 20,
+      "rank": 16,
       "score": 76.0,
       "title": "Microsoft Maps Three Salesforce Attack Paths Tied to a Year of ShinyHunters Activity",
       "url": "https://thehackernews.com/2026/07/microsoft-maps-year-long-shinyhunters.html",
@@ -166,7 +160,7 @@
       "similarity": null
     },
     {
-      "rank": 21,
+      "rank": 17,
       "score": 76.0,
       "title": "Microsoft July 2026 Patch Tuesday fixes massive 570 flaws, 3 zero-days",
       "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-july-2026-patch-tuesday-fixes-massive-570-flaws-3-zero-days/",
@@ -174,18 +168,50 @@
       "similarity": null
     },
     {
-      "rank": 22,
+      "rank": 18,
       "score": 76.0,
-      "title": "SonicWall SMA appliances targeted in zero-day attacks (CVE-2026-15409, CVE-2026-15410)",
-      "url": "https://www.helpnetsecurity.com/2026/07/14/sonicwall-sma-attacks-via-cve-2026-15409-cve-2026-15410/",
+      "title": "When checking the URL isn't enough: a Device Code Phishing attack via a Microsoft website",
+      "url": "https://securelist.com/microsoft-device-code-phishing-attack/120350/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 19,
+      "score": 76.0,
+      "title": "Full Broker Takeover, No Login Required: Miggo Discovers Critical RabbitMQ Vulnerabilities Putting Application Data at Risk",
+      "url": "https://www.miggo.io/post/full-broker-takeover-no-login-required-miggo-discovers-critical-rabbitmq-vulnerabilities-putting-application-data-at-risk",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 20,
+      "score": 75.0,
+      "title": "You shouldn't trust Trusted Publishing",
+      "url": "https://blog.yossarian.net/2026/07/07/You-shouldnt-trust-trusted-publishing",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 21,
+      "score": 74.0,
+      "title": "Microsoft Patches a Record 570 Security Flaws",
+      "url": "https://krebsonsecurity.com/2026/07/microsoft-patches-a-record-570-security-flaws/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 22,
+      "score": 74.0,
+      "title": "Researchers Say Claude for Chrome Flaw Lets Rogue Extensions Trigger Gmail Reads",
+      "url": "https://thehackernews.com/2026/07/claude-for-chrome-flaw-lets-other.html",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
       "rank": 23,
-      "score": 75.0,
-      "title": "You shouldn't trust Trusted Publishing",
-      "url": "https://blog.yossarian.net/2026/07/07/You-shouldnt-trust-trusted-publishing",
+      "score": 74.0,
+      "title": "RabbitMQ Flaws Could Leak OAuth Secrets and Expose Cross-Tenant Queue Metadata",
+      "url": "https://thehackernews.com/2026/07/rabbitmq-flaws-could-leak-oauth-secrets.html",
       "matched_tldr_idx": null,
       "similarity": null
     },
@@ -264,21 +290,13 @@
     {
       "rank": 33,
       "score": 68.0,
-      "title": "SingGuard-NSFA: Open-source guardrails for agentic AI",
-      "url": "https://www.helpnetsecurity.com/2026/07/15/singguard-nsfa-open-source-agentic-ai-guardrails/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 34,
-      "score": 68.0,
       "title": "Introducing GuardDog 3.0: A new rules engine, transparent sandboxing, and more",
       "url": "https://securitylabs.datadoghq.com/articles/guarddog-3-0-release/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 35,
+      "rank": 34,
       "score": 67.0,
       "title": "Skills Registry Threat Models",
       "url": "https://nesbitt.io/2026/06/03/skills-registry-threat-models.html",
@@ -286,7 +304,7 @@
       "similarity": null
     },
     {
-      "rank": 36,
+      "rank": 35,
       "score": 66.0,
       "title": "A broken DNSSEC rollover took down .AL. Now 1.1.1.1 tells you when validation is bypassed",
       "url": "https://blog.cloudflare.com/dnssec-nta-ede-33/",
@@ -294,7 +312,7 @@
       "similarity": null
     },
     {
-      "rank": 37,
+      "rank": 36,
       "score": 66.0,
       "title": "Your Browser Does Math Differently on Every OS, and Anti-Bot Systems Read the Bits",
       "url": "https://scrapfly.dev/posts/browser-math-os-fingerprint/",
@@ -302,7 +320,7 @@
       "similarity": null
     },
     {
-      "rank": 38,
+      "rank": 37,
       "score": 66.0,
       "title": "EU and UK officially blame Russian spies for cyberattack on Poland's power grid",
       "url": "https://www.theregister.com/security/2026/07/13/uk-eu-officially-pin-poland-energy-cyberattack-on-russia/5270458",
@@ -310,7 +328,7 @@
       "similarity": null
     },
     {
-      "rank": 39,
+      "rank": 38,
       "score": 66.0,
       "title": "Europe strikes out against Russia\u2019s Turla over espionage, \u2018destructive attacks\u2019",
       "url": "https://cyberscoop.com/eu-uk-russian-cyberespionage-sanctions/",
@@ -318,23 +336,15 @@
       "similarity": null
     },
     {
-      "rank": 40,
+      "rank": 39,
       "score": 63.0,
       "title": "Microsoft Entra ID gets passkeys default authentication starting September",
       "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-entra-id-gets-passkeys-default-authentication-starting-september/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 0,
+      "similarity": 0.6225445866584778
     },
     {
-      "rank": 41,
-      "score": 63.0,
-      "title": "\u201cContext bombs\u201d can frustrate AI-driven attacks, researchers found",
-      "url": "https://www.helpnetsecurity.com/2026/07/14/context-bombs-for-defensive-prompt-injection/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 42,
+      "rank": 40,
       "score": 63.0,
       "title": "MindReader: Using LLMs to Encourage Memorable and Secure Password Replacement",
       "url": "http://arxiv.org/abs/2607.12148v1",
@@ -342,7 +352,7 @@
       "similarity": null
     },
     {
-      "rank": 43,
+      "rank": 41,
       "score": 63.0,
       "title": "Some Notes on Lambda MicroVMs",
       "url": "https://awsteele.com/blog/2026/06/23/some-notes-on-lambda-microvms.html",
@@ -350,7 +360,7 @@
       "similarity": null
     },
     {
-      "rank": 44,
+      "rank": 42,
       "score": 63.0,
       "title": "Woodruff: You shouldn't trust trusted publishing",
       "url": "https://lwn.net/Articles/1081690/",
@@ -358,7 +368,7 @@
       "similarity": null
     },
     {
-      "rank": 45,
+      "rank": 43,
       "score": 62.0,
       "title": "ClickFix's Mushrooming Ecosystem Demands New Defense Tactics",
       "url": "https://www.darkreading.com/cyberattacks-data-breaches/clickfixs-ecosystem-demands-new-defense",
@@ -366,7 +376,7 @@
       "similarity": null
     },
     {
-      "rank": 46,
+      "rank": 44,
       "score": 62.0,
       "title": "Open-Source Intelligence for Code Provenance and the Security Patterns that Separate Human and Large-Language-Model Implementations of Common Programming Tasks",
       "url": "http://arxiv.org/abs/2607.12524v1",
@@ -374,7 +384,7 @@
       "similarity": null
     },
     {
-      "rank": 47,
+      "rank": 45,
       "score": 62.0,
       "title": "Cross-Cutting Security Analysis of LLM-Generated Code via Metamorphic Testing and Association Rule Mining",
       "url": "http://arxiv.org/abs/2607.12089v1",
@@ -382,7 +392,15 @@
       "similarity": null
     },
     {
-      "rank": 48,
+      "rank": 46,
+      "score": 62.0,
+      "title": "Mystra: Declarative Dynamic Taint Analysis via Shadow Virtual Machine",
+      "url": "http://arxiv.org/abs/2607.12308v1",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 47,
       "score": 60.0,
       "title": "Turning the Tables on Email Scammers With 'ScamBuster'",
       "url": "https://www.darkreading.com/cyberattacks-data-breaches/turning-tables-email-scammers-scambuster",
@@ -390,15 +408,7 @@
       "similarity": null
     },
     {
-      "rank": 49,
-      "score": 60.0,
-      "title": "Cloudflare launches Precursor to catch bots by watching entire sessions",
-      "url": "https://siliconangle.com/2026/07/13/cloudflare-launches-precursor-catch-bots-watching-entire-sessions/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 50,
+      "rank": 48,
       "score": 60.0,
       "title": "Hands off our VPNs, privacy groups tell UK ministers",
       "url": "https://www.theregister.com/networks/2026/07/14/hands-off-our-vpns-privacy-groups-tell-uk-ministers/5271070",
@@ -406,7 +416,7 @@
       "similarity": null
     },
     {
-      "rank": 51,
+      "rank": 49,
       "score": 58.0,
       "title": "Fortinet expands FortiEndpoint with AI monitoring and data controls",
       "url": "https://siliconangle.com/2026/07/14/fortinet-expands-fortiendpoint-ai-monitoring-data-controls/",
@@ -414,15 +424,7 @@
       "similarity": null
     },
     {
-      "rank": 52,
-      "score": 58.0,
-      "title": "Google adds FIDO2 keys and phone passkeys to Windows login via GCPW",
-      "url": "https://www.helpnetsecurity.com/2026/07/14/security-key-windows-login-google-workspace/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 53,
+      "rank": 50,
       "score": 58.0,
       "title": "Spanish Police take down \u20ac140 million cyber fraud ring, arrest four",
       "url": "https://www.bleepingcomputer.com/news/security/spanish-police-take-down-140-million-cyber-fraud-ring-arrest-four/",
@@ -430,7 +432,7 @@
       "similarity": null
     },
     {
-      "rank": 54,
+      "rank": 51,
       "score": 58.0,
       "title": "Cribl buys AI-native threat detection engineering startup CardinalOps",
       "url": "https://siliconangle.com/2026/07/14/cribl-buys-ai-native-threat-detection-engineering-startup-cardinalops/",
@@ -438,15 +440,7 @@
       "similarity": null
     },
     {
-      "rank": 55,
-      "score": 58.0,
-      "title": "Valarian Raises $50 Million for Sovereign Infrastructure Control Layer",
-      "url": "https://www.securityweek.com/valarian-raises-50-million-for-sovereign-infrastructure-control-layer/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 56,
+      "rank": 52,
       "score": 58.0,
       "title": "White House details \u2018Gold Eagle\u2019 clearinghouse for AI cyber threats",
       "url": "https://cyberscoop.com/trump-gold-eagle-ai-cyber-clearinghouse/",
@@ -454,15 +448,15 @@
       "similarity": null
     },
     {
-      "rank": 57,
+      "rank": 53,
       "score": 58.0,
       "title": "Officials once again warn defenders that Russian hackers are targeting network devices",
       "url": "https://cyberscoop.com/russian-fsb-cisco-joint-cybersecurity-advisory/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 8,
+      "similarity": 0.7122728824615479
     },
     {
-      "rank": 58,
+      "rank": 54,
       "score": 58.0,
       "title": "NSA revives 'Tailored Access Operations' name for elite hacking unit",
       "url": "https://therecord.media/nsa-revives-tao-name-for-elite-hacking-unit",
@@ -470,7 +464,7 @@
       "similarity": null
     },
     {
-      "rank": 59,
+      "rank": 55,
       "score": 58.0,
       "title": "Ransomware negotiator hired to represent victims was working for the attackers",
       "url": "https://arstechnica.com/tech-policy/2026/07/ransomware-negotiator-helped-attackers-extort-his-own-clients-gets-6-year-sentence/",
@@ -478,7 +472,7 @@
       "similarity": null
     },
     {
-      "rank": 60,
+      "rank": 56,
       "score": 58.0,
       "title": "TFTP Honey Pot Results",
       "url": "https://bruceediger.com/posts/tftp-honeypot-results/",
@@ -486,7 +480,7 @@
       "similarity": null
     },
     {
-      "rank": 61,
+      "rank": 57,
       "score": 57.0,
       "title": "European \"age verification\" \"app\" forcing everyone to use Android or iOS",
       "url": "https://github.com/eu-digital-identity-wallet/av-doc-technical-specification/discussions/19",
@@ -494,7 +488,7 @@
       "similarity": null
     },
     {
-      "rank": 62,
+      "rank": 58,
       "score": 57.0,
       "title": "Weak Security Continues to Fuel Russian Cyberattacks",
       "url": "https://www.darkreading.com/endpoint-security/weak-security-fuel-russian-cyberattacks",
@@ -502,7 +496,7 @@
       "similarity": null
     },
     {
-      "rank": 63,
+      "rank": 59,
       "score": 57.0,
       "title": "Lumen and Palo Alto Networks launch network threat integration",
       "url": "https://www.sdxcentral.com/news/lumen-and-palo-alto-networks-launch-network-threat-integration/",
@@ -510,7 +504,15 @@
       "similarity": null
     },
     {
-      "rank": 64,
+      "rank": 60,
+      "score": 56.0,
+      "title": "Google Credential Provider for Windows (GCPW) now supports FIDO2-compliant physical security keys as a second factor for authentication",
+      "url": "http://workspaceupdates.googleblog.com/2026/07/google-credential-provider-for-windows-now-supports-FIDO2-compliant-physical-security-keys-as-a-second-factor-for-authentication.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 61,
       "score": 56.0,
       "title": "AWS Security Hub expands coverage to Microsoft Azure and beefs up AI protections",
       "url": "https://siliconangle.com/2026/07/14/aws-security-hub-expands-coverage-microsoft-azure-beefs-ai-protections/",
@@ -518,25 +520,55 @@
       "similarity": null
     },
     {
-      "rank": 65,
+      "rank": 62,
       "score": 56.0,
       "title": "OpenAI hides Codex agent instructions behind encryption, leaving developers in the dark",
       "url": "https://www.theregister.com/ai-and-ml/2026/07/15/openai-hides-codex-agent-instructions-behind-encryption-leaving-developers-in-the-dark/5271484",
       "matched_tldr_idx": null,
       "similarity": null
-    },
-    {
-      "rank": 66,
-      "score": 56.0,
-      "title": "Microsoft\u2019s biggest ever patch Tuesday lets you hold off updating for longer",
-      "url": "https://www.theverge.com/tech/965643/microsoft-windows-11-july-2026-patch-tuesday-updates",
-      "matched_tldr_idx": null,
-      "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.08333333333333333,
+    "25": 0.16666666666666666,
+    "50": 0.16666666666666666,
+    "100": 0.25,
+    "62": 0.25
+  },
+  "hits_at": {
+    "10": 1,
+    "25": 2,
+    "50": 2,
+    "100": 3,
+    "62": 3
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://thehackernews.com/2026/07/oauth-client-id-spoofing-lets-attackers.html",
+    "https://ia.acs.org.au/article/2026/lifeline-confirms-data-breach-.html",
+    "https://www.bleepingcomputer.com/news/security/sonicwall-warns-of-sma1000-flaws-exploited-in-zero-day-attacks-patch-now/",
+    "https://agentic.tracebit.com/context-bombs/",
+    "https://www.microsoft.com/en-us/security/blog/2026/07/13/defending-saas-based-applications-against-shinyhunters-oauth-abuse/",
+    "https://slcyber.io/research-center/smashing-the-servicenow-sandbox-pre-authentication-rce/",
+    "https://www.securityweek.com/synopsys-finds-no-evidence-of-data-breach-following-bosch-hack-claims/",
+    "https://arstechnica.com/security/2026/07/now-defenders-are-embracing-the-prompt-injection-too/",
+    "https://arstechnica.com/security/2026/07/the-us-government-warns-that-russia-state-hackers-are-coming-after-your-router/",
+    "https://cyberscoop.com/microsoft-patch-tuesday-july-2026/",
+    "https://hackread.com/tego-ai-finds-claude-tag-slack-integration-can-trigger-unauthorized-enterprise-actions/",
+    "https://www.scworld.com/brief/inmate-charged-with-stealing-seized-cryptocurrency-while-serving-prison-sentence"
+  ],
+  "tldr_domains": [
+    "thehackernews.com",
+    "ia.acs.org.au",
+    "bleepingcomputer.com",
+    "agentic.tracebit.com",
+    "microsoft.com",
+    "slcyber.io",
+    "securityweek.com",
+    "arstechnica.com",
+    "arstechnica.com",
+    "cyberscoop.com",
+    "hackread.com",
+    "scworld.com"
+  ]
 }
