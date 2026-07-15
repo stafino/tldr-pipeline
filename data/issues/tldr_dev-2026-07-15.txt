@@ -1,0 +1,299 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR Dev 2026-07-15
+
+🧑‍💻
+Articles & Tutorials
+
+Rewriting Bun in Rust (5 minute read)
+
+(blurb not generated)
+
+The four horsemen behind thousands of Postgres outages (5 minute read)
+
+(blurb not generated)
+
+The Same TypeScript Costs 73% More Tokens on Claude Than GPT (5 minute read)
+
+The post measures how many tokens each frontier vendor's tokenizer produces from identical files and finds Anthropic's newest tokenizer (Sonnet 5, Opus 4.8, Fable 5) emits 1.36–1.73x GPT's count on the same bytes, with TypeScript the worst case at 1.73x. Because list prices are fixed per token, that gap turns Opus 4.8's advertised $5/$25 into an effective $7.50/$37.50 on identical input, measuring input tokenization alone before output verbosity and caching.
+
+Introducing Meerkat: an experiment in global consensus (5 minute read)
+
+(blurb not generated)
+
+DSLs Enable Reliable Use of LLMs (1 minute read)
+
+Martin Fowler argues that domain-specific languages and abstractions give LLMs the clear boundaries they need to generate exactly the intended code, acting as a harness that constrains output from the start. Using Tickloom, a DSL for modeling distributed system behavior, he shows a two-phase workflow: partner with the LLM to iteratively build the DSL, then use natural language to drive it, with the DSL itself serving as the source of truth.
+
+How I use HTMX with Go (1 minute read)
+
+Alex Edwards walks through his patterns for using HTMX with Go's html/template package, focusing on structuring templates to return both partial and full-page HTML responses. The post covers handling redirects and errors over HTMX, the standard configuration settings he applies, and builds a small user-filtering app to illustrate keeping interactivity server-rendered with minimal JavaScript.
+
+Building and Shipping Mac and iOS Apps Without Ever Opening Xcode (5 minute read)
+
+(blurb not generated)
+
+Why we built yet another Postgres connection pooler (5 minute read)
+
+(blurb not generated)
+
+Experiences with local models for coding (5 minute read)
+
+(blurb not generated)
+
+HTTP gets a QUERY method so complex searches can stop pretending to be POST (5 minute read)
+
+(blurb not generated)
+
+How to achieve pruning when querying by non-partitioned columns in PostgreSQL (5 minute read)
+
+(blurb not generated)
+
+The art and engineering of Sega CD Silpheed (5 minute read)
+
+(blurb not generated)
+
+Show HN: Beautiful Type Erasure with C++26 Reflection (1 minute read)
+
+rjk::duck uses C++26 reflection to implement type erasure from a single interface declaration, replacing the 100+ lines of hand-written boilerplate or heavyweight libraries like Boost.TypeErasure and Folly.Poly. The single-header library supports owning and non-owning semantics, operators, interface composition, and third-party adapters, and the post walks through the tag generation, vtable codegen, and overload resolution that make it work, though it currently builds only on gcc with -std=c++26 -freflection.
+
+The git history command (5 minute read)
+
+(blurb not generated)
+
+How GitHub gave every repository a durable owner (5 minute read)
+
+(blurb not generated)
+
+Automating cross-repo documentation with GitHub Agentic Workflows (5 minute read)
+
+(blurb not generated)
+
+Claude Code Is Way More Token-Hungry Than OpenCode. We Measured Exactly How Much (5 minute read)
+
+(blurb not generated)
+
+Agents Work Better with Conventional CLIs (5 minute read)
+
+(blurb not generated)
+
+Networking and the Internet, from First Principles (5 minute read)
+
+(blurb not generated)
+
+What xAI Grok Build CLI actually sends to xAI (5 minute read)
+
+(blurb not generated)
+
+🧠
+Opinions & Advice
+
+Control the ideas, not the code (5 minute read)
+
+(blurb not generated)
+
+Old and new apps, via modern coding agents (5 minute read)
+
+(blurb not generated)
+
+You shouldn't trust Trusted Publishing (5 minute read)
+
+(blurb not generated)
+
+Fragments: July 13 (5 minute read)
+
+(blurb not generated)
+
+In defense of polyfills (5 minute read)
+
+Lea Verou defends polyfills as a net positive for the web after WHATWG editor Anne van Kesteren called them harmful in a mutation-observer proposal meeting. She frames the debate as cost-benefit rather than absolute, arguing that rare cases where a polyfill got too popular too soon and constrained a native API's design space are post-mortem material, not grounds to discourage polyfilling wholesale.
+
+Postgres Is Enough (5 minute read)
+
+(blurb not generated)
+
+The Tower Keeps Rising (1 minute read)
+
+Using Bruegel's Tower of Babel as a frame, the author argues that AI agents make individual developers dramatically faster at changing a codebase, but large projects have never been bottlenecked by code output. They are limited by shared understanding of a system's concepts, boundaries, and invariants, and much of that understanding was previously maintained by the friction of code review and cross-team conversation that agents now let developers bypass.
+
+How Claude's values vary by model and language (5 minute read)
+
+Anthropic studied how the values Claude expresses shift across different models and languages, compressing 3,000-plus observed values into four axes such as Deference vs. Caution and Warmth vs. Rigor. The analysis quantifies how character training and fine-tuning decisions move a model along each axis, and shows Claude's responses vary measurably across the top 20 languages used on Claude.ai.
+
+Trust but Verify? Uncovering the Security Debt of Autonomous Coding Agents (1 minute read)
+
+An empirical study of 4,022 agent-generated pull requests found that 38.9% contain at least one security smell, with supply chain integrity issues making up 82.3% and hard-coded credentials accounting for 99.6% of critical-severity findings. The authors note that human collaborators introduced 67.6% of genuine leaked secrets and that existing automated and manual reviews missed 81.1% of them before merge, pointing to eroding developer vigilance in AI-assisted workflows.
+
+Codex starts encrypting sub-agent prompts (1 minute read)
+
+A merged change (#26210) encrypts Codex's MultiAgentV2 message payloads, storing only ciphertext and leaving the human-readable task and message fields empty in local rollout history and parent-side traces. The regression report argues privacy hardening shouldn't erase auditability, proposing a separate unencrypted audit copy so engineers can still answer what task a spawn_agent call gave a child agent when debugging after the fact.
+
+Explaining to business people why building software is still hard (5 minute read)
+
+(blurb not generated)
+
+Code Yellow, Code Red (1 minute read)
+
+The author recounts declaring the first Code Yellow at Provet after months of infrastructure degradation eroded customer trust, setting a target of zero downtime for eight consecutive weeks and hitting it with only one brief incident. The post defines Code Yellow and Code Red, traces the terms back to Google, and offers a template for running one: how to structure the work, when to call and escalate, and the failure modes to watch for.
+
+Stop being the code review bottleneck (5 minute read)
+
+(blurb not generated)
+
+Why Vanilla JS (5 minute read)
+
+(blurb not generated)
+
+Software Has Changed (5 minute read)
+
+(blurb not generated)
+
+Code review is theater now (5 minute read)
+
+(blurb not generated)
+
+Not all model upgrades are upgrades (5 minute read)
+
+(blurb not generated)
+
+Software Supply Chains are Dead: Use-Case-Oriented Regeneration (1 minute read)
+
+The authors argue that generative AI and supply chain attacks have inverted the build-vs-reuse calculus, proposing "use-case-oriented regeneration" that synthesizes only the slice of a dependency a repository actually exercises. Across 180 repository-dependency pairs, an agentic workflow preserved 99.8% of observed behavior while cutting the exported API surface by 93%, trading external trust for locally verifiable, repo-specific code.
+
+With AI Agents, Attention is the New Bottleneck (5 minute read)
+
+AI agents removed execution as the constraint on shipping software, but the author argues that just exposed the next bottleneck: the human work of deciding what to build, judging output, and catching which parallel task is about to fail. The fix is to manage cognitive load deliberately by automating low-stakes decisions through lint rules, defaults, and agent instructions, and by estimating attention cost per task the way teams already estimate points.
+
+Part 1: Why I Rarely Use useEffect Anymore (and what I use instead) (2 minute read)
+
+The author argues that most useEffect calls are unnecessary, since the hook is meant only for synchronizing with external systems like network requests, timers, and subscriptions. Deriving values, syncing props into state, and filtering lists should happen during render or in a useMemo, avoiding the double-render and dual-source-of-truth bugs that effects introduce.
+
+🚀
+Launches & Tools
+
+Show HN: DOM-docx – HTML to native, editable Word docs (MIT) (5 minute read)
+
+(blurb not generated)
+
+Dependabot version updates introduce default package cooldown (1 minute read)
+
+Dependabot version updates now wait until a new release has been on its registry for three days before opening an update PR, a default that applies across all supported ecosystems on github.com with no configuration required. The cooldown gives supply-chain signals time to surface before a bad release merges, and it skips security updates entirely so critical fixes still open immediately. Set a custom window or opt out via the cooldown option in dependabot.yml.
+
+Your Worker can now have its own cache in front of it (5 minute read)
+
+(blurb not generated)
+
+Highlights from Git 2.55 (5 minute read)
+
+(blurb not generated)
+
+Show HN: Clawk – Give coding agents a disposable Linux VM, not your laptop (5 minute read)
+
+(blurb not generated)
+
+Storybook Workbench: Audit Vibe-coded UIs and Find Hidden Bugs in Hours (5 minute read)
+
+(blurb not generated)
+
+YouTrackDB is a general-use object-oriented graph database (5 minute read)
+
+(blurb not generated)
+
+Bonsai 27B: A 27B-Class model that runs on a phone (1 minute read)
+
+Prism ML released Bonsai 27B, a 27B-class multimodal model based on Qwen3.6 that ships in ternary (5.9GB) and 1-bit (3.9GB) variants under Apache 2.0, with the 1-bit build fitting an iPhone 17 Pro. The low-bit weights run end to end with a 262K context and retain 90-95% of the full-precision baseline across a 15-benchmark suite.
+
+SWE-1.7: Frontier Intelligence at a Fraction of the Cost (5 minute read)
+
+(blurb not generated)
+
+Linux 0.11 rewritten in idiomatic Rust, boots in QEMU (5 minute read)
+
+(blurb not generated)
+
+Show HN: Jacquard, a programming language for AI-written, human-reviewed code (5 minute read)
+
+(blurb not generated)
+
+Together for a healthier Clippy (5 minute read)
+
+(blurb not generated)
+
+Line-Anchored Feedback Cuts Token Costs and Improves Correctness in AI Code Editing (1 minute read)
+
+FileMark is a VSCodium extension that exports inline code comments as structured, line-anchored feedback to guide AI code edits, replacing holistic prompts. In a paired experiment it cut generated tokens by 22% on Claude Opus and 58% on Claude Sonnet, reaching 24-80% on files over 100 lines, while lifting correctness by 2 points pooled and tripling local-model accuracy on large files when the harness applies patches.
+
+JetBrains seeks to unify fragmented AI-based software development with governance suite (5 minute read)
+
+(blurb not generated)
+
+Build agentic full-stack apps with Genkit (5 minute read)
+
+(blurb not generated)
+
+Your Dropbox is now a skill server (5 minute read)
+
+sx 2.0 shipped as a native desktop app for Mac, Windows, and Linux that distributes AI skills through a shared folder in Dropbox, Google Drive, OneDrive, or iCloud, with no git or terminal required. Its new vault format v2 stores each asset as plain markdown on disk with version history alongside, and the app syncs skills natively into Claude Code, Cursor, Copilot, Codex, Gemini, Cline, and Kiro.
+
+MorphoHDL: A minimalistic language for growing circuits (1 minute read)
+
+MorphoHDL is a minimalistic hardware description language that specifies circuits through local growth rules rather than explicit gate-by-gate wiring, letting a structure develop outward from a seed. The project page pairs the language with interactive demos that let you grow, pause, and re-grow circuits step by step, framing morphogenesis as an alternative to conventional static netlist descriptions.
+
+WebMCP for Documentation (5 minute read)
+
+WorkOS added WebMCP support to its documentation site, exposing structured tools through `document.modelContext` so AI agents can call the page's own search, navigation, and code samples directly instead of scraping rendered HTML and guessing. The approach avoids standing up a separate MCP server, which would duplicate the docs' content and drift out of sync, since WebMCP annotates the live DOM agents and humans already share.
+
+🎁
+Miscellaneous
+
+Cursor 0day: When Full Disclosure Becomes the Only Protection Left (1 minute read)
+
+Mindgard disclosed a Cursor zero-day that gives arbitrary code execution on Windows when a developer opens any repository containing a malicious git.exe in the project root, with no clicks, prompts, or warnings. The firm reported it in December 2025, but more than six months and 197+ releases later it remains unpatched, leaving VMs, Windows Sandbox, or AppLocker deny rules as the only mitigations.
+
+npm 12 Disables Install Scripts by Default to Reduce Supply Chain Risk (5 minute read)
+
+(blurb not generated)
+
+Zig creator calls Bun’s Claude Rust rewrite ‘unreviewed slop’ (5 minute read)
+
+(blurb not generated)
+
+Compromised Injective SDK npm Package Exfiltrates Wallet Keys and Mnemonics (5 minute read)
+
+(blurb not generated)
+
+Cursor IDE Auto-Executes Malicious Code in Poisoned Repos (1 minute read)
+
+Mindgard disclosed a vulnerability in Cursor that auto-executes a malicious git.exe planted at a repository root, running arbitrary code with the developer's privileges the moment the poisoned project is opened. The firm reported the flaw in December and repeatedly since, but Cursor never accepted or fixed it, leaving the path-resolution behavior exploitable in poisoned-repo attacks against the latest tested version.
+
+148 npm Packages Disguised as Student Proxies Turned Browsers Into a DDoS Botnet (5 minute read)
+
+(blurb not generated)
+
+Upwind links compromise of multiple AsyncAPI npm packages to coordinated attack on software release process (1 minute read)
+
+Upwind published findings from an investigation into a coordinated supply-chain campaign that compromised multiple official AsyncAPI npm packages through two separate GitHub repositories, several release branches, and abused OIDC publishing identities. Rather than the usual preinstall or postinstall hooks, the malicious code ran during normal package imports, evading tools that focus on monitoring installation.
+
+A broken DNSSEC rollover took down .AL. Now 1.1.1.1 tells you when validation is bypassed (1 minute read)
+
+A failed DNSSEC key rollover on Albania's .AL ccTLD on July 3 broke validation and made every .AL domain unreachable through validating resolvers like Cloudflare's 1.1.1.1, which spec-compliantly returned SERVFAIL until an NTA was applied to suspend validation. This time Cloudflare also attached a new Extended DNS Error code to every affected response, so clients can finally tell when an answer was served without DNSSEC validation rather than being spoofed.
+
+mariadb-server: Upgrading to 10.11.18-0+deb12u1 enables systemd socket activation unconditionally (5 minute read)
+
+A Debian security update to mariadb-server 10.11.18-0+deb12u1 turns on systemd socket activation unconditionally, overriding operators who had deliberately disabled it. The change can restart or reconfigure the listener on upgrade, so admins running MariaDB on non-default sockets or with hardened network settings should audit their unit files before applying the patch.
+
+Former GitHub CEO launches competitor designed for the age of vibe coding (5 minute read)
+
+(blurb not generated)
+
+⚡
+Quick Links
+
+Gemma 4 Technical Report (5 minute read)
+
+(blurb not generated)
+
+TIL - Algolia Makes Creating an MCP Server Stupid Easy (5 minute read)
+
+(blurb not generated)

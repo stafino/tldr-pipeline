@@ -1,17 +1,41 @@
 {
   "date": "2026-07-14",
   "newsletter": "tldr_ai",
-  "fetched_at": "2026-07-14T10:16:22.720183+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-07-15T08:01:43.034613+00:00",
+  "tldr_titles": [
+    "Today, we are releasing verifiers v1",
+    "Smart Cellular Bricks: Towards Collective Intelligence for the Physical World",
+    "What xAI Grok Build CLI actually sends to xAI",
+    "Making Fable Cheaper Than Opus",
+    "Video Generators as General-Purpose Vision Models",
+    "How Microsoft Ships Thousands of Production AI Agents",
+    "Better Call Sol: The Workhorse",
+    "The Most Human Technology Ever Made",
+    "Open-Weight Models Reached 29% of AI Gateway Usage",
+    "Introducing Auto-Publish: Build Once, Ship Continuously",
+    "Tom Blomfield is taking a leave of absence from YC to join Anthropic"
+  ],
+  "tldr_matched": [
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
   "predictions": [
     {
       "rank": 1,
       "score": 88.0,
       "title": "Grok 4.5",
       "url": "https://x.ai/news/grok-4-5",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 2,
+      "similarity": 0.7662865519523621
     },
     {
       "rank": 2,
@@ -64,13 +88,21 @@
     {
       "rank": 8,
       "score": 74.0,
+      "title": "Bonsai 27B: A 27B-Class model that runs on a phone",
+      "url": "https://prismml.com/news/bonsai-27b",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 9,
+      "score": 74.0,
       "title": "GPT-5.6 Series",
       "url": "https://arcprize.org/results/openai-gpt-5-6",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 9,
+      "rank": 10,
       "score": 74.0,
       "title": "An off switch for dual use knowledge in AI models",
       "url": "https://www.anthropic.com/research/off-switch-dual-use",
@@ -78,7 +110,7 @@
       "similarity": null
     },
     {
-      "rank": 10,
+      "rank": 11,
       "score": 74.0,
       "title": "Z.ai's Stable Asynchronous RL",
       "url": "https://arxiv.org/abs/2607.07508",
@@ -86,7 +118,7 @@
       "similarity": null
     },
     {
-      "rank": 11,
+      "rank": 12,
       "score": 73.0,
       "title": "Flexible Video Diffusion",
       "url": "https://research.nvidia.com/labs/genair/flex-forcing/",
@@ -94,7 +126,23 @@
       "similarity": null
     },
     {
-      "rank": 12,
+      "rank": 13,
+      "score": 72.0,
+      "title": "Grok Build was uploading entire Git repositories to xAI\u2019s cloud, including committed secrets",
+      "url": "https://thenextweb.com/news/grok-build-uploaded-entire-git-repositories-secrets",
+      "matched_tldr_idx": 2,
+      "similarity": 0.6359367966651917
+    },
+    {
+      "rank": 14,
+      "score": 72.0,
+      "title": "Grok Build Uploaded Entire Git Repositories to xAI Storage, Not Just Files It Read",
+      "url": "https://thehackernews.com/2026/07/grok-build-uploads-entire-git.html",
+      "matched_tldr_idx": 2,
+      "similarity": 0.6536633968353271
+    },
+    {
+      "rank": 15,
       "score": 72.0,
       "title": "Robostral Navigate: single-camera AI navigation",
       "url": "https://mistral.ai/news/robostral-navigate/",
@@ -102,7 +150,7 @@
       "similarity": null
     },
     {
-      "rank": 13,
+      "rank": 16,
       "score": 72.0,
       "title": "OpenAI launches GPT-5.6 Sol, Terra, and Luna on apps and API",
       "url": "https://www.testingcatalog.com/openai-launches-gpt-5-6-sol-terra-and-luna-on-apps-and-api/",
@@ -110,7 +158,23 @@
       "similarity": null
     },
     {
-      "rank": 14,
+      "rank": 17,
+      "score": 72.0,
+      "title": "How I Turned AI to the Dark Side",
+      "url": "https://spectrum.ieee.org/jailbreaking-llms",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 18,
+      "score": 72.0,
+      "title": "Show HN: I RL-trained an agent that trains models with RL (for ~$1.3k)",
+      "url": "https://github.com/Danau5tin/ai-trains-ai",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 19,
       "score": 72.0,
       "title": "Apple's new SpeechAnalyzer API, benchmarked against Whisper and its predecessor",
       "url": "https://get-inscribe.com/blog/apple-speech-api-benchmark.html",
@@ -118,15 +182,15 @@
       "similarity": null
     },
     {
-      "rank": 15,
+      "rank": 20,
       "score": 72.0,
       "title": "What xAI's Grok build CLI sends to xAI: A wire-level analysis",
       "url": "https://gist.github.com/cereblab/dc9a40bc26120f4540e4e09b75ffb547",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 2,
+      "similarity": 1.0
     },
     {
-      "rank": 16,
+      "rank": 21,
       "score": 72.0,
       "title": "MiniMax M3: How Sparse Attention Makes Long-Horizon Agents Practical",
       "url": "https://x.com/omarsar0/status/2074494774292148726",
@@ -134,7 +198,15 @@
       "similarity": null
     },
     {
-      "rank": 17,
+      "rank": 22,
+      "score": 71.0,
+      "title": "The Tower Keeps Rising",
+      "url": "https://lucumr.pocoo.org/2026/7/13/the-tower-keeps-rising/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 23,
       "score": 71.0,
       "title": "Interaction Scaling: Grounding the Third Axis of Test-Time Compute",
       "url": "http://arxiv.org/abs/2607.11598v1",
@@ -142,7 +214,7 @@
       "similarity": null
     },
     {
-      "rank": 18,
+      "rank": 24,
       "score": 71.0,
       "title": "Reducing Doom Loops with Final Token Preference Optimization",
       "url": "https://www.liquid.ai/blog/antidoom",
@@ -150,7 +222,15 @@
       "similarity": null
     },
     {
-      "rank": 19,
+      "rank": 25,
+      "score": 70.0,
+      "title": "Blocking Slow-Burn Attacks: Contextual Policies in Omnigent",
+      "url": "https://www.databricks.com/blog/blocking-slow-burn-attacks-contextual-policies-omnigent",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 26,
       "score": 70.0,
       "title": "When Does Restricting a Coding Agent to execute_code Help? A Regime $\\times$ Agent-Design Ablation",
       "url": "http://arxiv.org/abs/2607.10569v1",
@@ -158,7 +238,7 @@
       "similarity": null
     },
     {
-      "rank": 20,
+      "rank": 27,
       "score": 70.0,
       "title": "Data for Agents",
       "url": "https://huggingface.co/blog/nvidia/open-data-for-agents",
@@ -166,7 +246,7 @@
       "similarity": null
     },
     {
-      "rank": 21,
+      "rank": 28,
       "score": 69.0,
       "title": "GLM 5.2 and the coming AI margin collapse (part 1)",
       "url": "https://martinalderson.com/posts/the-upcoming-ai-margin-collapse-part-1-glm-5-2/",
@@ -174,7 +254,7 @@
       "similarity": null
     },
     {
-      "rank": 22,
+      "rank": 29,
       "score": 69.0,
       "title": "Migrating a production AI agent to GPT-5.6: 2.2x faster, 27% cheaper",
       "url": "https://ploy.ai/blog/migrating-a-production-ai-agent-to-gpt-5-6",
@@ -182,15 +262,47 @@
       "similarity": null
     },
     {
-      "rank": 23,
+      "rank": 30,
       "score": 68.0,
-      "title": "New York becomes the first state to enact a data center moratorium",
-      "url": "https://www.theverge.com/policy/965110/new-york-ai-data-center-moratorium",
+      "title": "DeepSeek reportedly in talks to raise $1.5B, then IPO",
+      "url": "https://techcrunch.com/2026/07/14/deepseek-reportedly-in-talks-to-raise-1-5b-then-ipo/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 24,
+      "rank": 31,
+      "score": 68.0,
+      "title": "New York bans data center construction for a year, rattling AI industry",
+      "url": "https://arstechnica.com/tech-policy/2026/07/new-york-is-the-first-state-to-impose-a-data-center-moratorium/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 32,
+      "score": 68.0,
+      "title": "Sources: OpenAI's first device will be a moveable, screen-free smart speaker with a camera and sensors, meant to serve as a humanlike AI companion (Mark Gurman/Bloomberg)",
+      "url": "https://www.techmeme.com/260714/p46#a260714p46",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 33,
+      "score": 68.0,
+      "title": "PrismML launches Bonsai 27B, a model based on Qwen3.6 27B that it says runs natively on Apple devices via MLX; its CEO says Apple is evaluating the tech (MacKenzie Sigalos/CNBC)",
+      "url": "https://www.techmeme.com/260714/p39#a260714p39",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 34,
+      "score": 68.0,
+      "title": "Apple in talks with startup that shrinks AI models to run on an iPhone",
+      "url": "https://www.cnbc.com/2026/07/14/apple-prismml-ai-compression-iphone.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 35,
       "score": 68.0,
       "title": "Tencent in Talks to Take Big Manus Stake After Meta Deal Unwound",
       "url": "https://www.bloomberg.com/news/articles/2026-07-10/tencent-in-talks-to-become-largest-holder-of-manus-ft-reports-mrectviz",
@@ -198,7 +310,7 @@
       "similarity": null
     },
     {
-      "rank": 25,
+      "rank": 36,
       "score": 68.0,
       "title": "GitHub Copilot Refuses Harmful Requests in Chat, Then Writes Them in Code",
       "url": "https://thehackernews.com/2026/07/github-copilot-refuses-harmful-requests.html",
@@ -206,15 +318,15 @@
       "similarity": null
     },
     {
-      "rank": 26,
+      "rank": 37,
       "score": 68.0,
-      "title": "Anthropic research based on ~310K anonymized Claude conversations shows how Claude's expressed values and behaviors vary across models and languages (Jason Nelson/Decrypt)",
-      "url": "https://www.techmeme.com/260713/p34#a260713p34",
+      "title": "The OpenAI Super App, ChatGPT = Codex, Whither Chat",
+      "url": "https://stratechery.com/2026/the-openai-super-app-chatgpt-codex-whither-chat/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 27,
+      "rank": 38,
       "score": 68.0,
       "title": "The Economics of Recursive Self-Improvement [pdf]",
       "url": "https://elasticity.institute/rsi-paper.pdf",
@@ -222,7 +334,15 @@
       "similarity": null
     },
     {
-      "rank": 28,
+      "rank": 39,
+      "score": 68.0,
+      "title": "Post-Train NVIDIA Cosmos 3 in One Day Using Agent Skills",
+      "url": "https://developer.nvidia.com/blog/post-train-nvidia-cosmos-3-in-one-day-using-agent-skills/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 40,
       "score": 68.0,
       "title": "Extreme Event Likelihoods with Guided Generative Models",
       "url": "https://developer.nvidia.com/blog/extreme-event-likelihoods-with-guided-generative-models/",
@@ -230,7 +350,7 @@
       "similarity": null
     },
     {
-      "rank": 29,
+      "rank": 41,
       "score": 68.0,
       "title": "Agent Hacks Agent: Autoresearch for Production-Agent Red-Teaming",
       "url": "http://arxiv.org/abs/2607.11698v1",
@@ -238,7 +358,7 @@
       "similarity": null
     },
     {
-      "rank": 30,
+      "rank": 42,
       "score": 68.0,
       "title": "An Exact Instrument for State Usage in Selective State-Space Models, and the Input-Driven Migration It Reveals",
       "url": "http://arxiv.org/abs/2607.11796v1",
@@ -246,7 +366,7 @@
       "similarity": null
     },
     {
-      "rank": 31,
+      "rank": 43,
       "score": 68.0,
       "title": "When Local Monitors Miss Compositional Harm: Diagnosing Distributed Backdoors in Multi-Agent Systems",
       "url": "http://arxiv.org/abs/2607.11751v1",
@@ -254,47 +374,39 @@
       "similarity": null
     },
     {
-      "rank": 32,
+      "rank": 44,
       "score": 68.0,
-      "title": "AdvancedMathBench: A Benchmark Suite for Advanced Mathematical Proof Generation and Verification",
-      "url": "http://arxiv.org/abs/2607.11849v1",
+      "title": "New York becomes the first state to impose a data center moratorium",
+      "url": "https://www.reuters.com/world/new-york-becomes-first-state-impose-data-center-moratorium-2026-07-14/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 33,
-      "score": 68.0,
-      "title": "Proactive Memory for Long-Horizon Agents",
-      "url": "https://arxiv.org/abs/2607.08716",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 34,
-      "score": 67.0,
-      "title": "Agents Work Better with Conventional CLIs",
-      "url": "https://developer.microsoft.com/blog/dont-rewrite-your-cli-for-agents",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 35,
+      "rank": 45,
       "score": 66.0,
-      "title": "Singapore-based and Alibaba-backed video generation startup PixVerse says it closed a Series C extension to raise $439M total for the round, valuing it at $2B+ (Ivan Mehta/TechCrunch)",
-      "url": "https://www.techmeme.com/260713/p35#a260713p35",
+      "title": "Unpatched Claude for Chrome Flaw Lets Extensions Read Gmail, Calendar",
+      "url": "https://www.securityweek.com/unpatched-claude-for-chrome-flaw-lets-extensions-read-gmail-calendar/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 36,
+      "rank": 46,
       "score": 66.0,
-      "title": "Sources: the Trump admin and industry groups discuss streamlining the releases of US open models of equal or lesser capability than leading Chinese open models (Benjamin Guggenheim/Washington Post)",
-      "url": "https://www.techmeme.com/260713/p32#a260713p32",
+      "title": "SpaceXAI&#8217;s Grok programming tool was uploading its users&#8217; entire codebase to cloud storage",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/965600/spacexai-grok-build-repository-upload",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 37,
+      "rank": 47,
+      "score": 66.0,
+      "title": "Sources: DeepSeek has started planning for an IPO in China and may file as soon as this year, allowing it to debut in 2027 (Lulu Yilun Chen/Bloomberg)",
+      "url": "https://www.techmeme.com/260714/p45#a260714p45",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 48,
       "score": 66.0,
       "title": "GPT\u2011Live",
       "url": "https://simonwillison.net/2026/Jul/8/introducing-gptlive/#atom-everything",
@@ -302,7 +414,7 @@
       "similarity": null
     },
     {
-      "rank": 38,
+      "rank": 49,
       "score": 66.0,
       "title": "ByteDance debuts Seedream 5.0 Pro with advanced reasoning",
       "url": "https://www.testingcatalog.com/bytedance-debuts-seedream-5-0-pro-with-advanced-reasoning/",
@@ -310,15 +422,7 @@
       "similarity": null
     },
     {
-      "rank": 39,
-      "score": 66.0,
-      "title": "SWE-1.7: Frontier Intelligence at a Fraction of the Cost",
-      "url": "https://cognition.com/blog/swe-1-7",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 40,
+      "rank": 50,
       "score": 66.0,
       "title": "Fragments: July 13",
       "url": "https://martinfowler.com/fragments/2026-07-13.html",
@@ -326,7 +430,7 @@
       "similarity": null
     },
     {
-      "rank": 41,
+      "rank": 51,
       "score": 66.0,
       "title": "Playful AI in Professional Email: A Field Experiment on Tone and Recipient Engagement",
       "url": "http://arxiv.org/abs/2607.11749v1",
@@ -334,7 +438,7 @@
       "similarity": null
     },
     {
-      "rank": 42,
+      "rank": 52,
       "score": 66.0,
       "title": "The Pulse: Interesting AI coding stats from Cursor",
       "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-interesting-ai-coding-stats",
@@ -342,23 +446,7 @@
       "similarity": null
     },
     {
-      "rank": 43,
-      "score": 65.0,
-      "title": "GPT-Realtime-2.1-mini is now available in the API",
-      "url": "https://threadreaderapp.com/thread/2074255408013955466.html",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 44,
-      "score": 65.0,
-      "title": "SpaceX and Cursor are set to release their first jointly developed AI model as soon as Wednesday",
-      "url": "https://threadreaderapp.com/thread/2074621759891132710.html",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 45,
+      "rank": 53,
       "score": 64.0,
       "title": "Ways to think about token pricing",
       "url": "https://www.ben-evans.com/benedictevans/2026/7/9/ways-to-think-about-token-pricing",
@@ -366,23 +454,7 @@
       "similarity": null
     },
     {
-      "rank": 46,
-      "score": 63.0,
-      "title": "Chinese AI Startup DFSX Releases Chip to Take on the West",
-      "url": "https://www.wsj.com/tech/ai/chinese-ai-startup-dfsx-releases-chip-to-take-on-the-west-ffc71526?mod=rss_Technology",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 47,
-      "score": 63.0,
-      "title": "Facing US export controls, China's DeepSeek plans to make its own chips",
-      "url": "https://arstechnica.com/ai/2026/07/facing-us-export-controls-chinas-deepseek-plans-to-make-its-own-chips/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 48,
+      "rank": 54,
       "score": 63.0,
       "title": "DeepSeek cut prices 75%. The 100x problem remains",
       "url": "https://venturebeat.com/orchestration/deepseek-cut-prices-75-the-100x-problem-remains",
@@ -390,7 +462,7 @@
       "similarity": null
     },
     {
-      "rank": 49,
+      "rank": 55,
       "score": 63.0,
       "title": "What's really slowing down the AI buildout",
       "url": "https://www.worksinprogress.news/p/ai-is-bottlenecked-by-the-grid",
@@ -398,31 +470,31 @@
       "similarity": null
     },
     {
-      "rank": 50,
-      "score": 62.0,
-      "title": "Hermes agent maker Nous Research in talks for new funding at $1.5B valuation",
-      "url": "https://techcrunch.com/2026/07/13/hermes-agent-maker-nous-research-in-talks-for-new-funding-at-1-5b-valuation/",
+      "rank": 56,
+      "score": 63.0,
+      "title": "IBM Loses $69 Billion of Market Value in One Day in Latest AI-Fueled Selloff",
+      "url": "https://www.wsj.com/tech/ai/ibm-stock-profit-warning-earnings-software-8652c06e?mod=rss_Technology",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 51,
-      "score": 62.0,
-      "title": "TeraWulf jumps on $19 billion data center lease deal with Anthropic",
-      "url": "https://www.investors.com/news/anthropic-terawulf-ai-data-center-lease-neocloud-coreweave-iren/",
+      "rank": 57,
+      "score": 63.0,
+      "title": "New York becomes first state to halt datacenter buildouts",
+      "url": "https://www.theregister.com/ai-and-ml/2026/07/14/new-york-becomes-first-state-to-halt-datacenter-buildouts/5271377",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 52,
-      "score": 62.0,
-      "title": "Researchers detail \"context bombing\", where defenders use prompt injections to trigger guardrails of attackers' LLMs, cutting AI hacking success rates by ~90% (Dan Goodin/Ars Technica)",
-      "url": "https://www.techmeme.com/260714/p2#a260714p2",
+      "rank": 58,
+      "score": 63.0,
+      "title": "OpenAI\u2019s Growing Challenges Narrow Its IPO Window",
+      "url": "https://www.wsj.com/tech/ai/openais-growing-challenges-narrow-its-ipo-window-8ad8f734?mod=rss_Technology",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 53,
+      "rank": 59,
       "score": 62.0,
       "title": "Automation Without Understanding",
       "url": "https://arxiv.org/abs/2607.06377",
@@ -430,15 +502,23 @@
       "similarity": null
     },
     {
-      "rank": 54,
+      "rank": 60,
       "score": 62.0,
-      "title": "Grok Build Uploads Entire Git Repositories to xAI Storage, Not Just Files It Reads",
-      "url": "https://thehackernews.com/2026/07/grok-build-uploads-entire-git.html",
+      "title": "Cursor 0day: When Full Disclosure Becomes the Only Protection Left",
+      "url": "https://mindgard.ai/blog/cursor-0day-when-full-disclosure-becomes-the-only-protection-left",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 55,
+      "rank": 61,
+      "score": 62.0,
+      "title": "New York enacts one-year data center ban on projects larger than 50 megawatts \u2014 first US state to implement moratorium; will also pursue repealing tax exemptions",
+      "url": "https://www.tomshardware.com/tech-industry/data-centers/new-york-enacts-one-year-data-center-ban-on-projects-larger-than-50-megawatts-first-us-state-to-implement-moratorium-will-also-pursue-repealing-tax-exemptions",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 62,
       "score": 62.0,
       "title": "Hackers can use 9 of the most popular AI tools to assemble massive botnets",
       "url": "https://arstechnica.com/security/2026/07/hackers-can-use-9-of-the-most-popular-ai-tools-to-assemble-massive-botnets/",
@@ -446,15 +526,7 @@
       "similarity": null
     },
     {
-      "rank": 56,
-      "score": 62.0,
-      "title": "New York Set to Temporarily Ban Large New Data Centers",
-      "url": "https://www.wsj.com/us-news/new-york-set-to-temporarily-ban-large-new-data-centers-3755924c?mod=rss_Technology",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 57,
+      "rank": 63,
       "score": 62.0,
       "title": "Alibaba reportedly bans employees from using Claude Code",
       "url": "https://techcrunch.com/2026/07/04/alibaba-reportedly-bans-employees-from-using-claude-code/",
@@ -462,15 +534,7 @@
       "similarity": null
     },
     {
-      "rank": 58,
-      "score": 61.0,
-      "title": "Video-generation startup PixVerse raises $439M, valuation soars past $2B",
-      "url": "https://techcrunch.com/2026/07/13/video-generation-startup-pixverse-raises-439m-valuation-soars-past-2b/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 59,
+      "rank": 64,
       "score": 61.0,
       "title": "Price per 1M tokens is meaningless",
       "url": "https://janilowski.pl/en/blog/2026/price-per-m-tokens/",
@@ -478,7 +542,7 @@
       "similarity": null
     },
     {
-      "rank": 60,
+      "rank": 65,
       "score": 61.0,
       "title": "Grok CLI uploaded the whole home directory to GCS",
       "url": "https://twitter.com/a_green_being/status/2076598897779020159",
@@ -486,7 +550,7 @@
       "similarity": null
     },
     {
-      "rank": 61,
+      "rank": 66,
       "score": 60.0,
       "title": "I love LLMs, I hate hype",
       "url": "https://geohot.github.io//blog/jekyll/update/2026/07/12/i-love-llms.html",
@@ -494,7 +558,7 @@
       "similarity": null
     },
     {
-      "rank": 62,
+      "rank": 67,
       "score": 60.0,
       "title": "Small AI Models Gain Traction Around the World",
       "url": "https://spectrum.ieee.org/small-language-models-ai-pharmaceuticals",
@@ -502,7 +566,7 @@
       "similarity": null
     },
     {
-      "rank": 63,
+      "rank": 68,
       "score": 60.0,
       "title": "Own the Outer Loop",
       "url": "https://x.com/addyosmani/status/2074927530482835916",
@@ -510,15 +574,7 @@
       "similarity": null
     },
     {
-      "rank": 64,
-      "score": 60.0,
-      "title": "Philippine Outsourcing Group Cuts Revenue and Jobs Forecasts on AI",
-      "url": "https://www.bloomberg.com/news/articles/2026-07-14/philippine-outsourcing-group-cuts-revenue-jobs-forecasts-on-ai",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 65,
+      "rank": 69,
       "score": 59.0,
       "title": "Writer AI Flaw Could Let Agent Previews Leak Session Tokens Across Tenants",
       "url": "https://thehackernews.com/2026/07/writer-ai-flaw-could-let-agent-previews.html",
@@ -526,7 +582,7 @@
       "similarity": null
     },
     {
-      "rank": 66,
+      "rank": 70,
       "score": 58.0,
       "title": "Distributed Denial of Science: How Indirect Data Poisoning of AI Systems Can Industrialize Scientific Fraud",
       "url": "http://arxiv.org/abs/2607.10712v1",
@@ -534,23 +590,31 @@
       "similarity": null
     },
     {
-      "rank": 67,
+      "rank": 71,
       "score": 58.0,
-      "title": "Understanding the Impact of AI Code Assistants on Security API Usage: An Empirical Study",
-      "url": "http://arxiv.org/abs/2607.11348v1",
+      "title": "Researchers Say Claude for Chrome Flaw Lets Rogue Extensions Trigger Gmail Reads",
+      "url": "https://thehackernews.com/2026/07/claude-for-chrome-flaw-lets-other.html",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 68,
+      "rank": 72,
       "score": 58.0,
-      "title": "Now, defenders are embracing the prompt injection, too",
-      "url": "https://arstechnica.com/security/2026/07/now-defenders-are-embracing-the-prompt-injection-too/",
+      "title": "Cursor IDE Auto-Executes Malicious Code in Poisoned Repos",
+      "url": "https://www.darkreading.com/application-security/cursor-ide-malicious-code-poisoned-repos",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 69,
+      "rank": 73,
+      "score": 58.0,
+      "title": "'The bots are alive!' Jailbroken Gemini spun up new C2 server for Russian fraudster in just 6 minutes",
+      "url": "https://www.theregister.com/research/2026/07/14/the-bots-are-alive-jailbroken-gemini-spun-up-new-c2-server-for-russian-fraudster-in-just-6-minutes/5270131",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 74,
       "score": 58.0,
       "title": "Rogue Agent: How a Single Code Block Could Hijack Your AI Conversations in Google's DialogFlow",
       "url": "https://www.varonis.com/blog/rogue-agent-dialogflow-attack",
@@ -558,7 +622,15 @@
       "similarity": null
     },
     {
-      "rank": 70,
+      "rank": 75,
+      "score": 58.0,
+      "title": "Lawsuit claims Meta's layoff decisions were made by AI, not humans",
+      "url": "https://arstechnica.com/tech-policy/2026/07/lawsuit-claims-metas-layoff-decisions-were-made-by-ai-not-humans/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 76,
       "score": 58.0,
       "title": "Cloudflare's new policy pushes AI companies to pay for publishers' content",
       "url": "https://techcrunch.com/2026/07/01/cloudflares-new-policy-pushes-ai-companies-to-pay-for-publishers-content/",
@@ -566,7 +638,7 @@
       "similarity": null
     },
     {
-      "rank": 71,
+      "rank": 77,
       "score": 58.0,
       "title": "Agentic AI adoption is on fire at Uber",
       "url": "https://threadreaderapp.com/thread/2074605343439810922.html",
@@ -574,7 +646,7 @@
       "similarity": null
     },
     {
-      "rank": 72,
+      "rank": 78,
       "score": 58.0,
       "title": "Apple\u2019s \u2018Thermonuclear\u2019 Response to the OpenAI Threat",
       "url": "https://www.wsj.com/tech/ai/apples-thermonuclear-response-to-the-openai-threat-8d51c814?mod=rss_Technology",
@@ -582,7 +654,7 @@
       "similarity": null
     },
     {
-      "rank": 73,
+      "rank": 79,
       "score": 58.0,
       "title": "Meta admits its first \u2018superintelligence\u2019 was too stupid to survive for three days",
       "url": "https://www.theregister.com/ai-and-ml/2026/07/13/meta-admits-its-first-superintelligence-was-too-stupid-to-survive-for-three-days/5270234",
@@ -590,63 +662,31 @@
       "similarity": null
     },
     {
-      "rank": 74,
-      "score": 58.0,
-      "title": "Anthropic starts localizing Claude pricing for India, its biggest market after the US",
-      "url": "https://techcrunch.com/2026/07/13/anthropic-starts-localizing-claude-pricing-for-india-its-biggest-market-after-the-us/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 75,
-      "score": 58.0,
-      "title": "OpenAI\u2019s Feud With xAI Carries On as Apple Secrets Fight Revs Up",
-      "url": "https://www.bloomberg.com/news/articles/2026-07-14/openai-s-feud-with-xai-carries-on-as-apple-secrets-fight-revs-up",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 76,
-      "score": 58.0,
-      "title": "Prominent economists, tech executives call for new regulatory approach to AI",
-      "url": "https://siliconangle.com/2026/07/13/prominent-economists-tech-executives-call-new-regulatory-approach-ai/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 77,
-      "score": 58.0,
-      "title": "Apple lawsuit reveals how many of its former employees now work at OpenAI",
-      "url": "https://9to5mac.com/2026/07/13/apple-lawsuit-reveals-how-many-former-employees-now-work-at-openai/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 78,
-      "score": 58.0,
-      "title": "Palo Alto Networks CEO Says AI Token Costs Must Fall Up to 90%",
-      "url": "https://www.implicator.ai/palo-alto-networks-ceo-says-ai-token-costs-must-fall-up-to-90/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 79,
-      "score": 58.0,
-      "title": "China May Restrict Access to Its Most Powerful AI Models",
-      "url": "https://time.com/article/2026/07/07/china-ai-models-alibaba-bytedance/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
       "rank": 80,
       "score": 58.0,
-      "title": "OpenAI may have made a fatal misstep in copyright fight with news orgs",
-      "url": "https://arstechnica.com/tech-policy/2026/07/openai-faked-inability-to-search-training-data-hid-billions-of-logs-nyt-says/",
+      "title": "Google faces another AI training lawsuit from major publishers",
+      "url": "https://techcrunch.com/2026/07/14/google-faces-another-ai-training-lawsuit-from-major-publishers/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
       "rank": 81,
+      "score": 58.0,
+      "title": "OpenAI\u2019s first hardware product sounds more like a companion than a speaker",
+      "url": "https://www.digitaltrends.com/cool-tech/openais-first-hardware-product-sounds-more-like-a-companion-than-a-speaker/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 82,
+      "score": 58.0,
+      "title": "How to stop Claude from saying load-bearing",
+      "url": "https://jola.dev/posts/how-to-stop-claude-from-saying-load-bearing",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 83,
       "score": 58.0,
       "title": "Introducing a way to reflect on how you use Claude",
       "url": "https://www.anthropic.com/news/reflect-with-claude",
@@ -654,7 +694,31 @@
       "similarity": null
     },
     {
-      "rank": 82,
+      "rank": 84,
+      "score": 57.0,
+      "title": "Demis Hassabis has a plan to harness AI safely",
+      "url": "https://twitter.com/demishassabis/status/2076957440109625718",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 85,
+      "score": 56.0,
+      "title": "Claude at scale on Google Cloud: Frontier AI, built for enterprise production",
+      "url": "https://cloud.google.com/blog/products/ai-machine-learning/claude-at-scale-on-google-cloud-frontier-ai-built-for-enterprise-production/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 86,
+      "score": 56.0,
+      "title": "Anthropic commits $10 million to Canadian AI research across eight institutions",
+      "url": "https://thenextweb.com/news/anthropic-10-million-canadian-ai-research-institutes",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 87,
       "score": 56.0,
       "title": "Anthropic confirms Claude acts differently depending on your language and which model you pick",
       "url": "https://www.digitaltrends.com/computing/anthropic-confirms-claude-acts-differently-depending-on-your-language-and-which-model-you-pick/",
@@ -662,7 +726,7 @@
       "similarity": null
     },
     {
-      "rank": 83,
+      "rank": 88,
       "score": 56.0,
       "title": "The Robots Are Here",
       "url": "https://www.chinatalk.media/p/the-robots-are-here",
@@ -670,7 +734,7 @@
       "similarity": null
     },
     {
-      "rank": 84,
+      "rank": 89,
       "score": 55.0,
       "title": "Show HN: Jacquard, a programming language for AI-written, human-reviewed code",
       "url": "https://github.com/jbwinters/jacquard-lang",
@@ -678,7 +742,7 @@
       "similarity": null
     },
     {
-      "rank": 85,
+      "rank": 90,
       "score": 55.0,
       "title": "TIL - Algolia Makes Creating an MCP Server Stupid Easy",
       "url": "https://www.raymondcamden.com/2026/07/11/til-algolia-makes-creating-an-mcp-server-stupid-easy",
@@ -686,9 +750,45 @@
       "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.09090909090909091,
+    "25": 0.09090909090909091,
+    "50": 0.09090909090909091,
+    "100": 0.09090909090909091,
+    "90": 0.09090909090909091
+  },
+  "hits_at": {
+    "10": 1,
+    "25": 1,
+    "50": 1,
+    "100": 1,
+    "90": 1
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://threadreaderapp.com/thread/2076447247693402301.html",
+    "https://sakana.ai/smart-cellular-bricks/",
+    "https://gist.github.com/cereblab/dc9a40bc26120f4540e4e09b75ffb547",
+    "https://x.com/joon_h_lee/status/2076714221837173097",
+    "https://genception.github.io/",
+    "https://blog.bytebytego.com/p/how-microsoft-ships-ai-agents-at",
+    "https://thezvi.wordpress.com/2026/07/13/better-call-sol-the-workhorse/",
+    "https://a16z.com/the-most-human-technology-ever-made/",
+    "https://vercel.com/blog/ai-gateway-production-index-july-2026",
+    "https://manus.im/blog/manus-auto-publish",
+    "https://threadreaderapp.com/thread/2076580921398931788.html"
+  ],
+  "tldr_domains": [
+    "threadreaderapp.com",
+    "sakana.ai",
+    "gist.github.com",
+    "x.com",
+    "genception.github.io",
+    "blog.bytebytego.com",
+    "thezvi.wordpress.com",
+    "a16z.com",
+    "vercel.com",
+    "manus.im",
+    "threadreaderapp.com"
+  ]
 }

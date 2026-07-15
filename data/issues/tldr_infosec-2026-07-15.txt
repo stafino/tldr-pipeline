@@ -1,0 +1,283 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR InfoSec 2026-07-15
+
+🔓
+Attacks & Vulnerabilities
+
+Two SonicWall SMA 1000 Zero-Days Exploited, One Could Enable Admin Commands (1 minute read)
+
+SonicWall warned of active exploitation of two SMA 1000 zero-days: CVE-2026-15409 (CVSS 10.0), an unauthenticated SSRF, and CVE-2026-15410 (CVSS 7.2), a post-auth code injection in the Appliance Management Console that lets an authenticated attacker run OS commands as administrator. Patch to 12.4.3-03453 or 12.5.0-02835 and check extraweb_access.log for /__api__/login and /wsproxy requests; CISA's KEV deadline for FCEB agencies is July 17.
+
+Grok Build was uploading entire Git repositories to xAI’s cloud, including committed secrets (1 minute read)
+
+A security researcher publishing as cereblab showed on July 12 that xAI's Grok Build CLI (v0.2.93) uploaded developers' entire tracked repositories, including full Git history, committed secrets, and API keys, to a Google Cloud Storage bucket despite a privacy toggle marketed as blocking all transmission. Musk confirmed the uploads and said prior data would be deleted, but no independent audit has verified the deletion or the newly added zero-retention policy.
+
+TS-2026-009: Insecure argument handling in Tailscale SSH permitted root access (1 minute read)
+
+Tailscale patched TS-2026-009, an insecure argument-handling flaw in Tailscale SSH that let a user with SSH access to a Linux node escalate to root in violation of ACLs by connecting with a username beginning with a dash. Because these usernames were passed to getent(1), a login as `-i` was parsed as a flag that dumped the passwd file and opened an interactive root session; upgrade to version 1.98.9 or newer.
+
+Grok Build Uploaded Entire Git Repositories to xAI Storage, Not Just Files It Read (5 minute read)
+
+(blurb not generated)
+
+SonicWall warns of SMA1000 flaws exploited in zero-day attacks, patch now (1 minute read)
+
+SonicWall confirmed active zero-day exploitation of two SMA1000 flaws, led by CVE-2026-15409, a critical (CVSS 10.0) unauthenticated SSRF in the Appliance Work Place interface, alongside CVE-2026-15410, a post-auth (CVSS 7.2) OS command injection in the Management Console. Patch affected 6210, 7210, and 8200v appliances to hotfix 12.4.3-03453 or 12.5.0-02835, then hunt the published IOCs for rogue /__api__/login routes in extraweb_access.log and conf.json.
+
+Januscape: 16-Year-Old Linux KVM Bug Enables Cloud VM Escape Attacks (5 minute read)
+
+(blurb not generated)
+
+Progress confirms ShareFile zero-day flaw behind Storage Zone shutdown (1 minute read)
+
+Progress Software confirmed that a high-severity path traversal zero-day in ShareFile Storage Zone Controller (versions 5.x and 6.x) triggered last week's emergency shutdown, allowing an authenticated admin to read arbitrary files, write attacker-controlled content, and enumerate the server filesystem. Progress released versions 5.12.5 and 6.0.2 and patched the flaw before public disclosure; a reserved CVE will publish in two weeks, and no customer breach has been identified.
+
+Unpatched Claude for Chrome Flaw Lets Extensions Read Gmail, Calendar (1 minute read)
+
+Manifold disclosed two unpatched vulnerabilities in Claude for Chrome, Anthropic's agentic browser extension, that let a malicious extension forge user clicks and drive Claude into reading a victim's Gmail, Google Docs, and calendar without genuine approval. The flaws survive an earlier ClaudeBleed mitigation across all eight releases since the May 21 report, including 1.0.80, and run silently for users who enabled the extension's autonomous "Act without asking" mode.
+
+AI used to help plan the break-in, now it’s doing the break-in (1 minute read)
+
+Check Point's AI Security Report 2026 documented intrusions over the past year in which AI ran exploitation workflows autonomously, generating thousands of commands across dozens of sessions with minimal human direction. The report also flags a persistent jailbreak vector against coding agents: malicious instructions planted in auto-loaded files like CLAUDE.md stay active every session until the file is removed, while exploit development now lands within hours of public disclosure.
+
+Cursor 0day: When Full Disclosure Becomes the Only Protection Left (1 minute read)
+
+An unpatched zero-day in Cursor lets a malicious git.exe planted in a repository root execute automatically on Windows when a developer opens the project, with no clicks, prompts, or warnings, yielding arbitrary code execution that repeats on a cadence. Mindgard reported it on December 15, 2025, but it remains present 197+ versions later, so treat untrusted repos as hostile and open them only in Windows Sandbox or a disposable VM until Cursor ships a fix.
+
+SAP Patches CVSS 9.9 NetWeaver ABAP Flaw That Could Expose or Modify Data (1 minute read)
+
+SAP patched CVE-2026-44747 (CVSS 9.9), an out-of-bounds write in NetWeaver Application Server ABAP that lets an authenticated attacker trigger memory corruption to read, modify, or take systems offline. The July release also fixed CVE-2026-44761 (CVSS 9.1), default OAuth credentials in Commerce Cloud that grant unauthenticated API access; patch now or apply Onapsis's SICF ICF-node workaround where full patching isn't yet feasible.
+
+11 Old Microsoft-Signed Linux UEFI Shims Could Let Attackers Bypass Secure Boot (1 minute read)
+
+ESET disclosed 11 old Microsoft-signed Linux UEFI shim bootloaders (mostly shim 0.9 and earlier) that let an attacker execute untrusted code during boot, bypassing Secure Boot on any system trusting the Microsoft Corporation UEFI CA 2011 certificate regardless of installed OS. Microsoft revoked the affected shims in its June 2026 Patch Tuesday update, so apply the DBX revocations to block deployment of bootkits like BlackLotus, Bootkitty, and HybridPetya.
+
+OAuth Client ID Spoofing Lets Attackers Validate Stolen Microsoft Entra Credentials (1 minute read)
+
+Proofpoint disclosed OAuth client ID spoofing, an evasion technique used by at least two threat actors, including UNK_CustomCloak, to enumerate accounts and validate stolen credentials against Microsoft Entra ID without generating a successful sign-in event. Attackers send ROPC-flow requests with syntactically valid but unregistered client IDs to the OAuth token endpoint, reading AADSTS error codes to confirm usernames and passwords while leaving only an application ID and no app name in sign-in logs.
+
+Microsoft’s Secure Boot has been broken for a decade and no one noticed until now (1 minute read)
+
+ESET researchers found 11 UEFI Secure Boot shims, at least one dating to 2013, that Microsoft signed but never revoked despite known flaws, letting an attacker with a copy of any old shim bypass Secure Boot without a new exploit. The unrevoked binaries affect both Windows and Linux devices and enable persistent bootkits that survive OS reinstalls and drive swaps, so defenders should apply the updated UEFI revocation (DBX) lists.
+
+New macOS malware steals passwords by posing as Apple’s crash-reporting tool (1 minute read)
+
+Jamf Threat Labs disclosed CrashStealer, a native C++ macOS infostealer that impersonates Apple's crash-reporting tool to harvest browser credentials, Keychain data, password-manager stores, and cryptocurrency wallets before exfiltrating them AES-GCM-encrypted over libcurl. Delivery uses a notarized, Developer ID-signed DMG ("Werkbit Setup," team Emil Grigorov / WWB7JA7AQV) that passes Gatekeeper, so defenders should revoke trust for that signing identity and hunt for the werkbit[.]io domain and hidden bundle-copy persistence.
+
+Compromised Injective SDK npm Package Exfiltrates Wallet Keys and Mnemonics (5 minute read)
+
+(blurb not generated)
+
+Cavern Manticore: Exposing Iran-Linked Modular C2 Framework (5 minute read)
+
+(blurb not generated)
+
+Microsoft Maps Three Salesforce Attack Paths Tied to a Year of ShinyHunters Activity (5 minute read)
+
+(blurb not generated)
+
+Microsoft July 2026 Patch Tuesday fixes massive 570 flaws, 3 zero-days (1 minute read)
+
+Microsoft's July 2026 Patch Tuesday addresses a record 570 flaws, including three zero-days, two of them actively exploited and one publicly disclosed. Prioritize CVE-2026-56155, an actively exploited Active Directory Federation Services elevation-of-privilege bug that grants administrative access, alongside the 59 critical vulnerabilities (48 of them RCE) before working through the remaining 254 elevation-of-privilege fixes.
+
+SonicWall SMA appliances targeted in zero-day attacks (CVE-2026-15409, CVE-2026-15410) (1 minute read)
+
+SonicWall patched two actively exploited zero-days in its SMA 1000 Series appliances: CVE-2026-15409, an unauthenticated SSRF in the Work Place interface, and CVE-2026-15410, an admin-authenticated code injection in the Management Console, which attackers are chaining for RCE. Patching alone is insufficient; if IOCs are present, SonicWall advises re-imaging or redeploying appliances, rotating all user and admin passwords, and resetting TOTP tokens.
+
+🧠
+Strategies & Tactics
+
+The ‘Ghost' in the Database: Recovering Active ADFS Signing Keys via Machine DPAPI (5 minute read)
+
+(blurb not generated)
+
+Lessons Learned from CISA’s Recent GitHub Leak (5 minute read)
+
+(blurb not generated)
+
+You shouldn't trust Trusted Publishing (5 minute read)
+
+(blurb not generated)
+
+Trust but Verify? Uncovering the Security Debt of Autonomous Coding Agents (1 minute read)
+
+A large-scale study using the AIDev dataset found that 38.9% of agent-generated pull requests contain at least one security smell, with supply-chain integrity issues making up 82.3% and hard-coded credentials accounting for 99.6% of critical-severity findings. Notably, human collaborators introduced 67.6% of genuine leaked secrets, and existing review processes missed 81.1% before merge. The authors argue for context-aware guardrails at the point of human-AI collaboration.
+
+Accelerating EDR Evasion with LLM-Driven Analysis (5 minute read)
+
+SpecterOps researchers detailed using LLMs to accelerate reverse-engineering of the "big 5" EDR products, driving disassembly and debugging to surface on-host evasion techniques far faster than manual analysis. The post argues LLM-driven analysis is systematically breaking on-host detections and urges vendors and defenders to assume their endpoint controls are more evadable than believed. Red teams should expect these bypasses to become public rather than trade-secret, shifting defensive weight toward behavioral and network telemetry that survives host-level evasion.
+
+Antiproof: Synthesizing Vulnerability Detectors and Proofs of Exploitability (1 minute read)
+
+Antiproof is an end-to-end vulnerability discovery system that pairs neuro-symbolic detector synthesis for high recall with proof-of-exploitability oracles that validate candidates by executing concrete attacker capabilities. It detected 64 of 66 vulnerabilities on BountyBench and KEVBench, over 60 points better recall than baselines, and surfaced several hundred unknown bugs across 50 systems. The authors have 12 CVE assignments so far, including RCE in Ray, SGLang, vLLM, and LiteLLM.
+
+AutoTrace: From Patches to Triggers via Agentic Interprocedural Exploration (1 minute read)
+
+AutoTrace is an agentic pipeline that localizes vulnerability triggers by walking a code property graph layer by layer, using LLM agents to decide where to look while deterministic admissibility gates require graph-backed evidence before any trigger is reported. It hit 75.0% VulnHit and 80.8% FuncHit on the InterPVD benchmark, beating prior state of the art, and the authors released SinkTrace-Bench, 1,542 balanced source-to-sink samples on which even frontier LLMs struggle to separate matched vulnerable and patched pairs.
+
+Blocking Slow-Burn Attacks: Contextual Policies in Omnigent (1 minute read)
+
+Databricks demonstrates a contextual policy in Omnigent that blocks indirect prompt-injection "slow-burn" attacks, where a malicious goal is split into individually benign steps (read a doc, read another, summarize, send) that no single-action guardrail catches. The stateful policy tracks accumulated risk across the whole session and blocks the outbound step once the agent has read too much sensitive material. The guard is tamper-resistant: the agent has no tool to disable it, adding policies requires human approval, and any denial wins when policies combine.
+
+npm 12 Disables Install Scripts by Default to Reduce Supply Chain Risk (5 minute read)
+
+(blurb not generated)
+
+Skills Registry Threat Models (5 minute read)
+
+(blurb not generated)
+
+A broken DNSSEC rollover took down .AL. Now 1.1.1.1 tells you when validation is bypassed (1 minute read)
+
+A broken DNSSEC key rollover at Albania's .AL registry on July 3 caused validation failures that rendered every .AL domain, including government, banking, and media sites, unreachable to validating resolvers. Cloudflare restored resolution on 1.1.1.1 by installing a Negative Trust Anchor to bypass DNSSEC for .AL, the same fix it used for .DE two months earlier. This time it also returned a new Extended DNS Error code on affected responses, so clients can tell when an answer was served unvalidated rather than silently trusting it.
+
+Your Browser Does Math Differently on Every OS, and Anti-Bot Systems Read the Bits (5 minute read)
+
+(blurb not generated)
+
+Microsoft Entra ID gets passkeys default authentication starting September (1 minute read)
+
+Microsoft will make passkeys the default authentication method for Entra ID starting September 2026, auto-enrolling users currently on SMS and voice MFA before retiring Microsoft-provided telephony delivery for those methods on February 1, 2027. Admins should run the Entra SMS/Voice Policy Scanner PowerShell script to identify affected users and migrate them to phishing-resistant methods now, since threat actors like ShinyHunters have heavily targeted Entra SSO accounts and AI-driven phishing is hitting 54% click-through rates against phishable second factors.
+
+“Context bombs” can frustrate AI-driven attacks, researchers found (1 minute read)
+
+Tracebit researchers found that planting "context bombs" — short text designed to trip the safety guardrails of offensive AI agents — inside canary secrets sharply degraded autonomous attacks across five leading models over 152 runs. Opus 4.8 reached full admin in 93% of clean runs but failed every time once a bomb was present, and Gemini 3.1 Pro lost its 60% admin-plus-persistence rate. The tactic turns decoy credentials into a defense that stalls AI agents long enough for responders to react.
+
+MindReader: Using LLMs to Encourage Memorable and Secure Password Replacement (1 minute read)
+
+MindReader is a tool that uses LLMs to help users pick forced-replacement passwords that are harder to guess but still memorable, by inferring the meaning behind an old password's components and suggesting semantically related but syntactically unrelated substitutes. In a user study, MindReader passwords resisted online guessing better than both self-chosen replacements and originals, even against an attacker who knew the old password and the tool's full implementation, while remaining comparably memorable a week later.
+
+Some Notes on Lambda MicroVMs (5 minute read)
+
+(blurb not generated)
+
+Woodruff: You shouldn't trust trusted publishing (5 minute read)
+
+(blurb not generated)
+
+ClickFix's Mushrooming Ecosystem Demands New Defense Tactics (1 minute read)
+
+ReversingLabs reports that ClickFix has industrialized into a malware-as-a-service ecosystem, with rentable attack kits that push info-stealers like Lumma via user-pasted PowerShell commands, generating few of the signals AV and EDR are tuned to catch. Because execution runs through legitimate tools and trusted user behavior, the researchers recommend YARA-based structural analysis of the HTML delivery pages as the most reliable detection point, and published a rule defenders can deploy.
+
+Open-Source Intelligence for Code Provenance and the Security Patterns that Separate Human and Large-Language-Model Implementations of Common Programming Tasks (1 minute read)
+
+This paper builds a fully reproducible, open-source pipeline that collects human and LLM implementations of 31 security-sensitive tasks, including OAuth PKCE, JWT verification, and password hashing, then trains a classifier that recovers human-versus-model provenance at 93% accuracy. The two sources diverge on security patterns in every language tested. A repair case study hit a 77% fix rate but repeatedly showed models stripping the insecure pattern without adding the correct defense, leaving code superficially clean but still exposed.
+
+Cross-Cutting Security Analysis of LLM-Generated Code via Metamorphic Testing and Association Rule Mining (1 minute read)
+
+This paper tests security in LLM-generated code using metamorphic relations plus association rule mining, applying nine relations across major CWE categories to 3,700 snippets from five open models. 68.8% violated at least one relation, led by hard-coded credentials (79.1%) and command injection (74.4%), and violations cluster: XSS plus weak crypto predicts hard-coded credentials with 82.5% confidence. The takeaway for defenders is cluster-aware verification, since database- and auth-related prompts reliably produce broad cross-cutting insecurity.
+
+🧑‍💻
+Launches & Tools
+
+Securing the AI supply chain on GKE: Introducing k8s-aibom for automated AI BOMs (5 minute read)
+
+(blurb not generated)
+
+Introducing Precursor: detecting agentic behavior with continuous client-side signals (5 minute read)
+
+(blurb not generated)
+
+Precursor (5 minute read)
+
+(blurb not generated)
+
+SingGuard-NSFA: Open-source guardrails for agentic AI (1 minute read)
+
+SingGuard-NSFA is an open-source guardrail framework for agentic AI, shipping four Qwen3.5-based models (0.8B to 9B) that classify agent inputs and outputs against a 185-variant risk taxonomy spanning prompt injection, tool abuse, and data leakage. Its real-time mode runs per-domain classification heads in 45 to 57 milliseconds per sample, and teams can add new risk categories by training lightweight heads on the frozen backbone without retraining.
+
+Introducing GuardDog 3.0: A new rules engine, transparent sandboxing, and more (5 minute read)
+
+(blurb not generated)
+
+Turning the Tables on Email Scammers With 'ScamBuster' (5 minute read)
+
+(blurb not generated)
+
+Cloudflare launches Precursor to catch bots by watching entire sessions (5 minute read)
+
+(blurb not generated)
+
+Fortinet expands FortiEndpoint with AI monitoring and data controls (1 minute read)
+
+Fortinet expanded its FortiEndpoint platform with AI monitoring, built-in data loss prevention, and FortiAI-Assist, giving administrators a single view of sanctioned and unsanctioned AI apps, agents, and web tools running on company devices, plus the ability to allow, restrict, or block them. The DLP inspects data moving to AI services and flags PII, IP, and financial records before it leaves the endpoint, with risk signals feeding access decisions across the Fortinet Security Fabric.
+
+Google adds FIDO2 keys and phone passkeys to Windows login via GCPW (1 minute read)
+
+Google began rolling out FIDO2 hardware security key and Bluetooth phone passkey support as a second factor in Google Credential Provider for Windows (GCPW) for all Workspace customers. Admins enforce it via a 2SV policy in the Admin console under Security > Authentication, scoped to organizational units; there is no end-user toggle, so phishing-resistant MFA now applies at the Windows sign-in screen.
+
+AWS Security Hub expands coverage to Microsoft Azure and beefs up AI protections (1 minute read)
+
+AWS made Security Hub's multicloud management generally available for Microsoft Azure, letting it natively discover and evaluate Azure VMs, containers, function apps, and identities for misconfigurations, vulnerabilities, and internet exposure against the CIS Azure Foundations Benchmark. AWS also added GuardDuty AI Protection and an AI asset inventory, surfacing Azure findings in the same format, automation, and response workflows as AWS alerts.
+
+🎁
+Miscellaneous
+
+EU and UK officially blame Russian spies for cyberattack on Poland's power grid (5 minute read)
+
+(blurb not generated)
+
+Europe strikes out against Russia’s Turla over espionage, ‘destructive attacks’ (5 minute read)
+
+(blurb not generated)
+
+Hands off our VPNs, privacy groups tell UK ministers (1 minute read)
+
+Privacy and civil-liberties groups urged UK ministers to abandon proposals that would restrict or ban consumer VPNs, warning the measures would weaken encryption and undermine online privacy for legitimate users. The pushback follows Online Safety Act age-verification rules that have driven a spike in VPN adoption, with campaigners arguing that curbing the tools would harm security without stopping the harms regulators cite.
+
+Spanish Police take down €140 million cyber fraud ring, arrest four (1 minute read)
+
+Spanish police dismantled a cybercrime and money-laundering ring that netted €140M ($160M) from investment fraud and business email compromise, arresting four suspects in Spain, Portugal, and Panama. Investigators traced €94M through a network of over 800 bank accounts and 67 money mules, froze €3M for victims, and seized 15 computers and 170 smartphones used to run thousands of fraudulent transfers.
+
+Cribl buys AI-native threat detection engineering startup CardinalOps (1 minute read)
+
+Cribl acquired AI-native detection engineering startup CardinalOps for an undisclosed sum, adding automated detection rule generation and coverage-gap analysis to its telemetry management platform. The deal positions Cribl to offer an open alternative to traditional SIEM stacks by pairing CardinalOps' MITRE ATT&CK-mapped detection layer with Cribl's data pipeline, targeting teams struggling to convert telemetry into actionable alerts without runaway costs.
+
+Valarian Raises $50 Million for Sovereign Infrastructure Control Layer (5 minute read)
+
+(blurb not generated)
+
+White House details ‘Gold Eagle’ clearinghouse for AI cyber threats (1 minute read)
+
+The White House detailed "Gold Eagle," a federal clearinghouse created by executive order to share AI-discovered vulnerability intelligence between government and the private sector, managed by Treasury with CISA, DHS, and DoD support. It uses closed-source frontier models including Anthropic's Mythos to find vulnerabilities and routes third-party reports through a new Carnegie Mellon SEI platform called VINTS, which officials say is already collecting intel and prioritizing patches.
+
+Officials once again warn defenders that Russian hackers are targeting network devices (5 minute read)
+
+(blurb not generated)
+
+NSA revives 'Tailored Access Operations' name for elite hacking unit (5 minute read)
+
+(blurb not generated)
+
+Ransomware negotiator hired to represent victims was working for the attackers (5 minute read)
+
+(blurb not generated)
+
+European "age verification" "app" forcing everyone to use Android or iOS (5 minute read)
+
+(blurb not generated)
+
+Weak Security Continues to Fuel Russian Cyberattacks (5 minute read)
+
+(blurb not generated)
+
+OpenAI hides Codex agent instructions behind encryption, leaving developers in the dark (1 minute read)
+
+OpenAI began encrypting its Codex agent's internal MultiAgentV2 instructions, hiding the messages agents pass between one another from the developers running them. The change strips visibility that teams relied on for debugging and auditing agent behavior, leaving no way to inspect what the model was actually told before it acted.
+
+Microsoft’s biggest ever patch Tuesday lets you hold off updating for longer (1 minute read)
+
+Microsoft's July 2026 Patch Tuesday fixed at least 570 security holes, nearly triple last month's record and its largest release ever, with the company crediting AI-assisted vulnerability discovery for the surge. The same build (KB5101650) adds an option to pause updates for up to 35 days and extend indefinitely, giving defenders a longer patch-deferral window on a month with an unusually large remediation backlog.
+
+⚡
+Quick Links
+
+TFTP Honey Pot Results (5 minute read)
+
+(blurb not generated)
+
+Lumen and Palo Alto Networks launch network threat integration (1 minute read)
+
+Lumen launched Defender AMDR, integrating Black Lotus Labs network threat intelligence into Palo Alto Networks Cortex XSIAM for co-managed and fully managed SOC operations.
