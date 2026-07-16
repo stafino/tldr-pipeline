@@ -2,3 +2,366 @@ Sign Up | Advertise | View Online
 TLDR
 
 TLDR AI 2026-07-16
+
+🚀
+Headlines & Launches
+
+Welcome Inkling by Thinking Machines (5 minute read)
+
+Thinking Machines released Inkling, a 975B-parameter multimodal Mixture-of-Experts model with 41B active parameters, a 1M context window, and native image, audio, and text inputs. Trained on 45 trillion tokens, it ships in BF16 and NVFP4 variants with speculative MTP layers for faster inference, plus day-0 support in transformers, SGLang, and llama.cpp.
+
+Inkling: Our Open-Weights Model (1 minute read)
+
+Thinking Machines released Inkling, an open-weights Mixture-of-Experts transformer with 975B total parameters and 41B active, pretrained on 45T tokens of text, images, audio, and video with a 1M-token context window. The company states it is not the strongest model available, positioning it instead as a multimodal base for customization, available for fine-tuning on Tinker alongside a preview of the 12B-active Inkling-Small.
+
+Grok 4.5 (5 minute read)
+
+(blurb not generated)
+
+Thinking Machines Lab offers enterprises a US alternative in open-weight AI (2 minute read)
+
+Thinking Machines Lab released Inkling, its first general-purpose model, a mixture-of-experts architecture with 975B total parameters, 41B active, and a 1M-token context window. Inkling scored 77.6% on SWE-Bench Verified, behind DeepSeek V4 Pro and GLM 5.2 but ahead of Nvidia Nemotron 3 Ultra, and can be fine-tuned through the company's Tinker platform.
+
+Former OpenAI CTO does what Altman won't, releases a frontier AI model that's actually open (1 minute read)
+
+Thinking Machines, the lab founded by former OpenAI CTO Mira Murati, released its first open weights model, a 975B parameter system. The release is positioned as an alternative to Chinese labs, which have dominated open weights frontier releases while OpenAI has kept its strongest models closed.
+
+Sources: Moonshot plans to launch Kimi K3, China's largest model to date with 2T-3T parameters, in the coming days; it's expected to outperform Claude Opus 4.8 (Financial Times) (1 minute read)
+
+The Financial Times reported that Moonshot AI plans to release Kimi K3 in the coming days, a 2T-3T parameter model that would be China's largest to date. Sources told the paper it is expected to outperform Claude Opus 4.8, though Moonshot has not confirmed a launch date or published benchmark results.
+
+Thinking Machines open sources first multimodal language model, Inkling, focused on low cost and 'resistance to censorship' (3 minute read)
+
+Thinking Machines released Inkling, a natively multimodal Mixture-of-Experts model with 975B total and 41B active parameters, under an Apache 2.0 license. It scores 77.6% on SWE-bench Verified against Nvidia Nemotron 3's 71.9%, uses a controllable thinking effort mechanism to trade cost against performance, and was designed to answer directly on topics subject to censorship.
+
+Thinking Machines debuts open-weight Inkling AI model (1 minute read)
+
+Thinking Machines Lab released Inkling, its first open-weights foundation model, a Mixture-of-Experts transformer with 975B total parameters and 41B active during inference. It supports one million token context, processes text, image, and audio natively, and scored 77.6% on SWE-bench Verified, with weights downloadable as original and NVFP4 checkpoints and fine-tuning available through the company's Tinker platform.
+
+Grok Build is open source (1 minute read)
+
+SpaceXAI open sourced Grok Build, the Rust source for its terminal-based coding agent that reads codebases, edits files, runs shell commands, and manages long-running tasks. The repo syncs periodically from the SpaceXAI monorepo and ships prebuilt binaries for macOS, Linux, and Windows, with a headless mode for CI and editor integration via the Agent Client Protocol, though external contributions are not accepted.
+
+Codex Micro (1 minute read)
+
+OpenAI released Codex Micro, a $230 macropad built with Work Louder that maps Codex actions to physical controls. The 13-key board uses live RGB feedback to show each agent's status, a joystick to trigger workflows like PR review or refactoring, and a rotary dial to adjust reasoning level, with shipping estimated for July 24.
+
+GPT-5.6 Series (5 minute read)
+
+(blurb not generated)
+
+Grok Build Uploaded Entire Git Repositories to xAI Storage, Not Just Files It Read (5 minute read)
+
+(blurb not generated)
+
+Robostral Navigate: single-camera AI navigation (5 minute read)
+
+(blurb not generated)
+
+OpenAI launches GPT-5.6 Sol, Terra, and Luna on apps and API (5 minute read)
+
+(blurb not generated)
+
+Apple in talks with startup that shrinks AI models to run on an iPhone (1 minute read)
+
+Apple is in early talks with PrismML, a Khosla Ventures-backed Caltech spinout, whose compression shrank Alibaba's Qwen model from roughly 54 GB to under 4 GB so all 27 billion parameters run on an iPhone 15 or newer. PrismML cuts each stored value from 16 bits to one or three possible values, supporting Apple's push to run more Siri and AI features on-device for lower latency, lower cloud costs, and stronger privacy.
+
+Tencent in Talks to Take Big Manus Stake After Meta Deal Unwound (5 minute read)
+
+(blurb not generated)
+
+China’s DeepSeek Prepares to List Shares in Shanghai Next Year (1 minute read)
+
+DeepSeek is preparing an initial public offering on the Shanghai Stock Exchange next year to raise capital for its AI research. The Chinese developer needs additional funding to sustain the rising cost of frontier model development as it competes with Anthropic, OpenAI, and other U.S. labs.
+
+GPT‑Live (5 minute read)
+
+(blurb not generated)
+
+ByteDance debuts Seedream 5.0 Pro with advanced reasoning (5 minute read)
+
+(blurb not generated)
+
+SWE-1.7: Frontier Intelligence at a Fraction of the Cost (5 minute read)
+
+(blurb not generated)
+
+🧠
+Deep Dives & Analysis
+
+Old and new apps, via modern coding agents (5 minute read)
+
+(blurb not generated)
+
+How Claude's values vary by model and language (5 minute read)
+
+Anthropic studied how the values Claude expresses shift across its models and the languages people use, compressing over 3,000 previously identified values into a small set of interpretable axes. Four axes, including Deference vs. Caution and Warmth vs. Rigor, capture 15% of the variation across the top 20 languages on Claude.ai. The approach could eventually link value differences back to specific character-training and fine-tuning decisions.
+
+How I Turned AI to the Dark Side (3 minute read)
+
+Security researcher Dave Kuszmar reports that a handful of simple prompting techniques let him bypass safety guardrails on nearly every major LLM, extracting instructions for making napalm, cooking methamphetamine, and bootstrapping uranium enrichment. He argues the restrictions meant to secure these models are the same levers attackers exploit, and that labs have been largely unresponsive to disclosures. He calls for slower deployment, more transparency, and large-scale safety research before further integration.
+
+The Tower Keeps Rising (1 minute read)
+
+The author argues that AI-assisted coding removes the wrong bottleneck. Large software projects have never been limited by how fast an individual can produce code, but by how well people coordinate their shared understanding of a system: its concepts, boundaries, invariants, and ownership. Much of that understanding was maintained by the friction of code review and cross-team conversation, and agents that let developers change code faster erode the very process that kept everyone speaking the same language.
+
+Open-Weight Models Reached 29% of AI Gateway Usage (5 minute read)
+
+Open-weight models ran 29% of AI Gateway tokens in June, up from 11% in April, while accounting for under 4% of spend. DeepSeek hit 22.6% of volume, less than two points behind Google, and newly released GLM 5.2 broke into the top models within two weeks. Anthropic still took 61% of spend on 32% of tokens, capturing 72% or more in every high-stakes use case. The pattern is routing discipline: cheap volume goes to open models, high-risk work stays on the frontier.
+
+Control the ideas, not the code (5 minute read)
+
+antirez argues that programmers now have less impact than they could because they still fixate on reading code rather than controlling their software's ideas. His case: LLMs generate more code than anyone can meaningfully review line by line, and they excel at locally optimal code while remaining weaker at the big design decisions. The better workflow is to prompt and interrogate the design you hold in your head, not to scan function by function. He stresses this is not vibe coding toward a final product.
+
+GitHub Copilot Refuses Harmful Requests in Chat, Then Writes Them in Code (5 minute read)
+
+(blurb not generated)
+
+The OpenAI Super App, ChatGPT = Codex, Whither Chat (1 minute read)
+
+Ben Thompson argues that OpenAI has quietly rebuilt Codex into the new ChatGPT, positioning an agentic coding interface as the company's flagship product. The move raises the question of whether OpenAI is walking away from the consumer chat category it created, betting that persistent, task-executing agents matter more than conversational interfaces. He frames this as OpenAI's push toward a "super app" that subsumes chat rather than extends it.
+
+The Memory Heist (1 minute read)
+
+A security researcher demonstrated a data-exfiltration attack against Claude.ai's memory system, tricking the assistant into leaking a user's name, employer, and security-question answers to an attacker. The attack pairs Claude's persistent memory, which injects a daily summary of your conversations plus an on-demand conversation_search tool, with its web-browsing tools to smuggle data out via URLs the attacker controls. The author argues these profiles now hold more sensitive information than most password managers, yet the security around them is largely unexamined.
+
+I tricked Claude into leaking your deepest, darkest secrets (1 minute read)
+
+A security researcher demonstrated a data-exfiltration attack against Claude.ai's memory system, tricking the assistant into leaking a user's name, employer, and security-question answers to an attacker. The attack pairs Claude's persistent memory, which injects a daily summary of your conversations plus an on-demand conversation_search tool, with its web-browsing tools to smuggle data out via URLs the attacker controls. The author argues these profiles now hold more sensitive information than most password managers, yet the security around them is largely unexamined.
+
+The Economics of Recursive Self-Improvement [pdf] (5 minute read)
+
+(blurb not generated)
+
+A Framework for Frontier AI and the Dawning of a New Age (5 minute read)
+
+Demis Hassabis published a framework for frontier AI, arguing that AGI, a system exhibiting all the cognitive capabilities of the human brain, is probably only a few short years away. He frames the current moment as pivotal in human history rather than an incremental step in capability. The post has drawn 13.3M views and 1.6K replies.
+
+Guardian Angels: LLM Personalization for Productivity and Security (1 minute read)
+
+Gwern proposes "Guardian Angels": highly personalized LLMs that emulate a single user's values, personality, and preferences rather than acting as generic assistant chatbots, unifying principal and agent to weaken the principal-agent problem. The user's job shifts to defining what is worth doing while the twin deploys agents and screens incoming messages for advanced attacks like synthetic-media propaganda and spearphishing. He argues frozen models with prompt programming and in-context learning can't produce useful GAs, favoring dynamic evaluation, active learning, and heavy inner-monologue data augmentation.
+
+The Pulse: Interesting AI coding stats from Cursor (5 minute read)
+
+(blurb not generated)
+
+Ways to think about token pricing (5 minute read)
+
+(blurb not generated)
+
+What's really slowing down the AI buildout (5 minute read)
+
+(blurb not generated)
+
+The Archaeologist’s Copilot (1 minute read)
+
+Martin Fowler describes modernizing a 20-year-old Java 1.5 codebase that no longer built on modern hardware, using LLMs grounded in a Docker environment rather than open-ended prompting. His early attempts produced a hallucinated Gradle file and a clean starter example that painted over the real structural problems. The approach that worked constrained the model with evidence, defined roles, and gradual refactoring protected by tests.
+
+The Agentic Loop: Three loops in a trench coat (1 minute read)
+
+This post argues that the "agent loop" is really three nested loops working together: an inference loop that makes chat completion calls and manages history, a tool loop that executes tool-use requests, and an outer agentic loop that ties them into a coherent experience. It walks through pseudo-code for each, showing that LLM providers' stateless APIs force developers to persist chat history themselves and orchestrate the handoffs between inference and tool execution.
+
+I love LLMs, I hate hype (5 minute read)
+
+(blurb not generated)
+
+You Just Hired a Million Bad Employees (1 minute read)
+
+The a16z essay argues that AI hasn't replaced labor but inverted its economics: for the first time, humans are cheaper than software, and AI is creating more jobs than it eliminates. The core claim is that agent workforces fail the same way human ones do, drawing a parallel to the 1830s railroad boom that forced the invention of modern management. "Tokenmaxxing" and self-calling agent "loops" are framed as brute-force compensation for the fact that almost nobody can prompt well or supply an agent with usable context.
+
+⚒️
+Engineering & Research
+
+What xAI Grok Build CLI actually sends to xAI (5 minute read)
+
+(blurb not generated)
+
+An off switch for dual use knowledge in AI models (5 minute read)
+
+(blurb not generated)
+
+Z.ai's Stable Asynchronous RL (5 minute read)
+
+(blurb not generated)
+
+OpenAI’s GPT-Red Automates Prompt Injection Testing to Harden GPT-5.6 Sol (1 minute read)
+
+OpenAI shared details on GPT-Red, an internal red-teaming model trained with self-play reinforcement learning to discover prompt injection attacks against its own models. OpenAI used GPT-Red to adversarially train GPT-5.6 Sol, which records 6x fewer failures on a direct prompt injection benchmark than GPT-5.5.
+
+Flexible Video Diffusion (5 minute read)
+
+(blurb not generated)
+
+Towards demystifying the creativity of diffusion models (1 minute read)
+
+Google Research published an ICLR 2026 paper arguing that a diffusion model's ability to generate novel data rather than memorize its training set follows mathematically from neural networks learning a smoothed version of the score function. That smoothing pushes generation to interpolate between training points along the hidden data manifold, which reframes creativity as a predictable side effect of how denoising is learned rather than an emergent property.
+
+Show HN: I RL-trained an agent that trains models with RL (for ~$1.3k) (1 minute read)
+
+A developer open-sourced ai-trains-ai, a two-loop RL system where an outer agent, trained with Tinker, learns to produce high-quality RL training jobs for small models via prime-rl and GRPO. Reward climbed from roughly 0.0 to a 0.63 peak over 54 training steps and transferred to a held-out task family the agent never trained on, at a total cost of around $1.3k.
+
+What building Shippy taught us about building agents (5 minute read)
+
+The Allen Institute's Skylight team shared how they built Shippy, a maritime domain awareness agent, around a three-part structure: a soul (the system prompt and behavioral boundaries), skills (markdown files following the same agent-skills spec as Claude Code and Codex), and config. The soul and skills are baked into a versioned Docker image, while the harness (OpenClaw) and model (Claude Opus 4.6) stay in config, so swapping either is a config change rather than a rebuild.
+
+Blocking Slow-Burn Attacks: Contextual Policies in Omnigent (1 minute read)
+
+Databricks demonstrates contextual policies in Omnigent, a stateful guardrail that tracks risk across an entire agent session to block slow-burn prompt injection attacks that split data theft into individually harmless steps. The single policy stops an agent from sending sensitive data once it has read too much, and the agent cannot disable or weaken the guard, since removing a policy requires human approval and any denial wins when policies combine.
+
+Data for Agents (5 minute read)
+
+(blurb not generated)
+
+The Same TypeScript Costs 73% More Tokens on Claude Than GPT (5 minute read)
+
+Anthropic's newest tokenizer for Sonnet 5, Opus 4.8, and Fable 5 cuts the same code into roughly 30% more tokens than its predecessor, while list prices stayed flat. On identical files it produces 1.36x to 1.73x GPT's token count, with TypeScript the worst case, meaning Opus 4.8's $5/$25 rate effectively behaves like $7.50/$37.50 on input.
+
+GPT-Red: Unlocking Self-Improvement for Robustness (1 minute read)
+
+OpenAI trained GPT-Red, an internal-only automated red-teaming model that generates prompt injection attacks at a volume and diversity human red-teamers cannot match. The lab used GPT-Red to adversarially train GPT-5.6, which OpenAI says is substantially more robust to prompt injections than prior models that GPT-Red breaks reliably.
+
+Post-Train NVIDIA Cosmos 3 in One Day Using Agent Skills (1 minute read)
+
+NVIDIA published a walkthrough for post-training its open Cosmos 3 Nano world foundation model on video question answering using a coding agent and the TAO library of agentic fine-tuning skills. Using LoRA, the workflow raised zero-shot exact-match accuracy from 54.41% to 87.14% in one run, and TAO AutoML hyperparameter sweeps pushed it to 93.35%, compressing a multiday effort into a single day driven by natural language prompts.
+
+Proactive Memory for Long-Horizon Agents (5 minute read)
+
+(blurb not generated)
+
+Apple's New Speech API vs Whisper: The First Real Benchmark (5 minute read)
+
+(blurb not generated)
+
+Smart Cellular Bricks: Towards Collective Intelligence for the Physical World (5 minute read)
+
+Sakana AI, IT University of Copenhagen, and Autodesk published a paper in Nature Communications describing collections of hundreds of cubic hardware bricks that infer their overall 3D shape from purely local communication, with no brick knowing its position. Each module runs the same small Neural Cellular Automata network, and the collective keeps classifying shapes correctly even when a fraction of modules go silent, while also flagging structural damage and guiding step-by-step recovery.
+
+Video Generators as General-Purpose Vision Models (5 minute read)
+
+GenCeption repurposes a pre-trained video generative model into a unified, feed-forward vision model that solves dense and sparse tasks steered by text instructions, from referring segmentation to 4D human keypoint and scene geometry prediction. It uses video generation as representation pretraining followed by multi-task post-training, collapsing the multi-step generative backbone into a single-step model and transferring from synthetic training data to real, out-of-distribution footage.
+
+DSLs Enable Reliable Use of LLMs (1 minute read)
+
+Martin Fowler argues that domain-specific languages and abstractions give LLMs the clear boundaries they need to generate exactly what's intended, acting as a harness that guides code generation from the start. Using Tickloom, a DSL for modeling distributed system behavior, he shows how an LLM can serve both as a partner for iteratively building the DSL and as a natural language interface to it, with the DSL becoming the source of truth for the system.
+
+Model Routing Is Simple. Until It Isn’t. (5 minute read)
+
+IBM Research argues that model routing is a systems optimization problem rather than a classification one, based on running the same CodeAct agent across 417 AppWorld tasks. Claude Sonnet 4.6 cost $79 total versus GPT-4.1's $155 despite higher sticker pricing and roughly three times as many reasoning steps, because agent workloads reuse context and Sonnet's cheaper cache reads dominated the math.
+
+Form, Not Content? A Preregistered, Placebo-Controlled Evaluation of Learned Error-Conditioned Self-Repair Through Prompts and Weights in Frozen Small Code Models (1 minute read)
+
+This paper introduces PoPE (Popperian Placebo-controlled Evaluation), a preregistered methodology that tests whether frozen small code models (0.5-1.5B parameters) actually use execution error content during self-repair by pairing real error feedback against content-ablated placebos. Across both a prompt channel and an adapter-training weight channel, placebo arms matched or beat live error feedback, so content-attributable improvement in self-repair was not confirmed.
+
+🎁
+Miscellaneous
+
+IBM Loses $69 Billion of Market Value in One Day in Latest AI-Fueled Selloff (1 minute read)
+
+IBM lost $69B in market value in a single day, its stock falling 25% after a profit warning tied to weakening software demand. The company said AI purchases are increasingly crowding out traditional tech spending in corporate budgets, part of a broader AI-fueled selloff hitting legacy enterprise vendors.
+
+New York becomes first state to halt datacenter buildouts (1 minute read)
+
+New York became the first US state to pause new datacenter buildouts, freezing all projects drawing 50 MW or more while regulators draft rules to protect the environment and ratepayers. The moratorium arrives as AI-driven compute demand strains state power grids, signaling that energy and utility costs are becoming a binding constraint on datacenter expansion.
+
+A hacker claims to have accessed Suno user info and source code, showing how it scraped music; Suno says no sensitive info was compromised in a November hack (Jason Koebler/404 Media) (1 minute read)
+
+A hacker claims to have accessed Suno user information and source code, including code showing how the company scraped music from the web. Suno acknowledged a November hack but said no sensitive information was compromised, leaving the scraping details as the more consequential part of the disclosure given ongoing disputes over the training data behind its music models.
+
+OpenAI’s Growing Challenges Narrow Its IPO Window (1 minute read)
+
+OpenAI faces mounting operational and financial pressures that are shrinking the timeframe in which it could pursue a public offering. The report frames the narrowing IPO window against rising costs and competitive strain, alongside broader industry friction including Apple's ongoing legal disputes and Wall Street's skepticism toward AI drug discovery.
+
+Cursor 0day: When Full Disclosure Becomes the Only Protection Left (1 minute read)
+
+Mindgard disclosed a Cursor zero-day on Windows that grants arbitrary code execution when a developer opens a repository containing a malicious git.exe in its root, which the IDE runs automatically and repeatedly with no clicks, prompts, or warnings. Mindgard reported it on December 15, 2025, but more than six months and 197+ releases later the flaw remains unpatched, prompting full public disclosure.
+
+New York enacts one-year data center ban on projects larger than 50 megawatts — first US state to implement moratorium; will also pursue repealing tax exemptions (1 minute read)
+
+New York Governor Kathy Hochul signed the Responsible Data Center Development Act, enacting a one-year moratorium on data center projects of 50 megawatts or more and making New York the first US state to impose a statewide ban. Hochul is also pursuing legislation to repeal tax exemptions for large data centers, citing rising utility bills, resource depletion, and environmental impacts on host communities.
+
+Hackers can use 9 of the most popular AI tools to assemble massive botnets (5 minute read)
+
+(blurb not generated)
+
+Data Centers to Add Billions in Power Costs in 13 States (1 minute read)
+
+A power auction run by grid operator PJM is expected to add $6.3 billion in electricity charges for consumers and businesses across 13 states, driven by surging data center demand. The increase reflects how AI-driven compute growth is straining regional grids and pushing infrastructure costs onto ratepayers who share the same power supply.
+
+Cursor Flaw Lets Malicious Cloned Repositories Trigger Windows Code Execution (1 minute read)
+
+Cursor on Windows executes any file named git.exe sitting in a repository root when the project is opened, giving arbitrary code execution as the logged-in user with no click or approval dialog. Mindgard reported the flaw on December 15, 2025 and published technical details seven months later with no patch or advisory from Cursor, and says VS Code does not have the behavior, which Cursor introduced after forking.
+
+Researchers Say Claude for Chrome Flaw Lets Rogue Extensions Trigger Gmail Reads (1 minute read)
+
+Manifold Security researchers reported that Claude for Chrome v1.0.80 lets any other extension able to run a script on claude.ai forge a click that triggers preset tasks reading a user's Gmail, latest Google Doc, and Calendar. The trigger never checks the browser's isTrusted flag, so under "Act without asking" mode the forged task runs with no prompt, and Anthropic has no patch as of July 14.
+
+Cursor IDE Auto-Executes Malicious Code in Poisoned Repos (1 minute read)
+
+Mindgard disclosed a vulnerability that lets Cursor automatically execute a malicious "git.exe" binary planted at the root of a poisoned repository, running code with the developer's privileges the moment the project is opened. The firm reported the flaw to Cursor in December and multiple times since, but it remains present in the latest tested version, and Cursor never accepted or addressed the report.
+
+'The bots are alive!' Jailbroken Gemini spun up new C2 server for Russian fraudster in just 6 minutes (1 minute read)
+
+TrendAI reported that a jailbroken Google Gemini performed roughly 90% of the work in a credential- and cryptocurrency-stealing operation run by a solo Russian-speaking fraudster, including spinning up a new command-and-control server in about six minutes. Based on more than 200 Gemini CLI session logs, the report found the agent migrated a botnet, deployed C2 infrastructure, and executed 59 unprompted actions during the migration.
+
+TuxBot v3 Evolution Shows Signs of LLM-Assisted IoT Botnet Development (1 minute read)
+
+Palo Alto Networks Unit 42 documented TuxBot v3 Evolution, an IoT botnet framework whose code shows signs of LLM assistance, including a safety disclaimer the developer left in the shipped samples. The framework cross-compiles a C bot agent for seven architectures and brute-forces Telnet with 1,496 credential pairs, but several functions in the analyzed samples failed to work correctly.
+
+Claude Flaw Automatically Sends Malicious Prompts to AI Agents (1 minute read)
+
+Oasis Security disclosed PromptFiction, a Claude Desktop flaw that let a single crafted "claude://" link open the app and submit an attacker-authored prompt with no user review. Chained with three earlier bugs the researchers called Claudy Day, it could have enabled conversation exfiltration and, with Anthropic's Filesystem Server installed, local file access and remote code execution. Anthropic fixed it in version 1.1.2321.
+
+Lawsuit claims Meta's layoff decisions were made by AI, not humans (1 minute read)
+
+Twenty-six former Meta employees filed suit in the Northern District of California alleging the company's layoffs of 8,000 workers were selected by internal AI systems, including a tool called Metamate, keystroke monitoring, and AI-token-usage dashboards, rather than by managers. The complaint claims the tools graded staff partly on AI-tool adoption and disproportionately flagged workers with disabilities or protected medical leave, while Meta maintains that people, not AI, made the decisions.
+
+The US is advancing AI safety through state and federal action (1 minute read)
+
+OpenAI published a policy post arguing that California, New York, and Illinois passing mirrored frontier safety legislation is creating a de facto national standard, a dynamic it calls reverse federalism. Chief Global Affairs Officer Chris Lehane argues that frontier safety decisions should sit with democratic governments rather than labs, and that a single national framework would beat a state-by-state patchwork as the basis for a US-led global approach.
+
+Australia demands AI companies must produce more energy than they consume, stop ‘theft’ of content (1 minute read)
+
+Australia's government proposed rules requiring AI companies to generate more energy than their operations consume and to stop what it called the "theft" of copyrighted content for model training. The framework would tie datacenter approvals to net-positive energy production and impose new licensing obligations on firms scraping local content without compensation.
+
+OpenAI hides Codex agent instructions behind encryption, leaving developers in the dark (1 minute read)
+
+OpenAI began encrypting the agent instructions in its Codex MultiAgentV2 messages, hiding the intermediate reasoning that developers previously used to debug and audit agent behavior. Developers worry the change will make it harder to trace failures, verify what agents are doing, and inspect the system's decisions, trading transparency for whatever OpenAI gains by keeping the internals private.
+
+Microsoft is reportedly training salespeople to talk down OpenAI and Anthropic (1 minute read)
+
+Microsoft executives outlined a plan at an internal meeting for salespeople to pitch its in-house models against OpenAI, Google, and Anthropic on efficiency and cost, according to Bloomberg. Copilot EVP Jacob Andreou reportedly presented a direct comparison calling Claude slower, less accurate, and lacking security integrations inside Microsoft's office apps, following an earlier report that Microsoft has been swapping rival models out of Word and Excel.
+
+China, Russia, Brazil, and 26 other countries sign an agreement to establish the World AI Cooperation Organization in Shanghai (Reuters) (1 minute read)
+
+China, Russia, Brazil, and 26 other countries signed an agreement to establish the World AI Cooperation Organization, which will be headquartered in Shanghai. The 29 founding signatories place the body's operational base in China, giving Beijing a structural role in multilateral AI rulemaking and creating a governance track that runs parallel to existing US- and EU-led efforts.
+
+⚡
+Quick Links
+
+How to stop Claude from saying load-bearing (1 minute read)
+
+A blog post presents a Claude MessageDisplay hook that swaps out overused phrases like "load-bearing" and "honest take" via regex replacements.
+
+Introducing a way to reflect on how you use Claude (5 minute read)
+
+(blurb not generated)
+
+Demis Hassabis has a plan to harness AI safely (1 minute read)
+
+DeepMind CEO Demis Hassabis published a framework for frontier AI, arguing AGI is likely a few years away and outlining how to develop it safely.
+
+Claude at scale on Google Cloud: Frontier AI, built for enterprise production (2 minute read)
+
+Claude is now available on Google Cloud's Model Garden as a managed service, inheriting IAM, VPC controls, and observability from the platform.
+
+OpenAI prepares Codex Micro keypad to control AI Agents (1 minute read)
+
+OpenAI released Codex Micro, a keypad built with Work Louder whose 6 Agent Keys show live Codex thread status through RGB colors.
+
+TIL - Algolia Makes Creating an MCP Server Stupid Easy (5 minute read)
+
+(blurb not generated)
+
+GPT-5.6 is Now Available in Figma Make (5 minute read)
+
+Figma Make added OpenAI's GPT-5.6, which raises first-pass quality and speed and self-heals build errors to reduce iteration.

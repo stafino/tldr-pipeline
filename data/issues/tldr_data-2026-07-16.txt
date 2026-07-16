@@ -2,3 +2,116 @@ Sign Up | Advertise | View Online
 TLDR
 
 TLDR Data 2026-07-16
+
+📊
+News & Trends
+
+Introducing Apache Spark 4.2 (1 minute read)
+
+Databricks released Apache Spark 4.2, adding metric views for a native semantic layer in Spark SQL, vector and top-K retrieval primitives, first-class change data capture, and an Arrow-first Python path. Metric views are the notable piece for data teams, making dimensions and measures first-class objects so non-additive measures like ratios and retention keep their intended aggregation semantics across BI, SQL, and agents. Available now in Databricks Runtime 19 Beta.
+
+Inkling model from Thinking Machines Lab now on Databricks (1 minute read)
+
+Databricks became a day-zero launch partner for Thinking Machines Lab's first open-weights model, Inkling, which handles coding and agentic reasoning workflows with multi-modal inputs and is available now through Unity AI Gateway via REST API, with SQL querying to follow. Routing it through the gateway means the same permissions, audit logging, and budget controls already applied to proprietary models, and teams can fine-tune on their own codebases instead of paying per-token API pricing.
+
+How Unity Catalog managed tables bring interoperability, performance, and unified governance to the Lakehouse (5 minute read)
+
+(blurb not generated)
+
+🧠
+Deep Dives & Analysis
+
+The four horsemen behind thousands of Postgres outages (5 minute read)
+
+(blurb not generated)
+
+Modern Data Warehousing at Scale: Arcesium's Migration to DuckDB and Iceberg (5 minute read)
+
+(blurb not generated)
+
+Making 768 servers look like 1 (1 minute read)
+
+PlanetScale walks through scaling Postgres from a single node to 768 servers holding a petabyte, using sharding as the only viable path past a few terabytes. The piece grounds the argument in the Universal Scalability Law: resource contention makes vertical scaling sub-linear, and past a point incoherence degrades performance outright, which caps how far a bigger box and read replicas can carry you. The operational goal is keeping that fleet addressable as one logical database.
+
+How to achieve pruning when querying by non-partitioned columns in PostgreSQL (5 minute read)
+
+(blurb not generated)
+
+Re-architecting Affirm's Upfunnel Platform: How We Cut Experiment Cycle Time from Months to Days (5 minute read)
+
+(blurb not generated)
+
+Lakekeeper Generic Table API Design (5 minute read)
+
+(blurb not generated)
+
+GRAFT: Graph-Matched Retrieval and Fusion of Tables in Data Lakes (1 minute read)
+
+GRAFT reframes table retrieval in data lakes as a graph-matching problem, pairing a query-derived intent graph against a heterogeneous lake graph so that joinable and unionable tables are pulled together rather than scored in isolation. The authors argue that point-wise retrieval hands downstream data agents fragmented evidence they cannot integrate. On Spider and BIRD adapted to the tabular lake setting, GRAFT reports 7.8% higher F1 and 10.6% higher Sufficiency than the strongest baseline while keeping search efficient.
+
+The benchmark grading every text-to-SQL model has wrong answers in its key (5 minute read)
+
+(blurb not generated)
+
+We benchmarked coding agents on our own internal tasks at Databricks and learned a lot! (5 minute read)
+
+(blurb not generated)
+
+Beyond Redaction: Anatomy of a Privacy-Safe Data Platform (5 minute read)
+
+(blurb not generated)
+
+Postgres Is Enough (5 minute read)
+
+(blurb not generated)
+
+Data-Native AI Agents: Why Agents Must Move to Your Data (1 minute read)
+
+The authors argue that enterprise AI agents should run inside the lakehouse rather than in a parallel AI stack wired back to it, since exporting data to external vector databases and SaaS LLMs forces governance to be rebuilt on the side. Their sharpest point is that output-layer filtering fails once agents compute on data. An aggregation over row-level-secured rows already encodes restricted values before any redaction runs.
+
+The Data Anarchy Tax: Why your team is firefighting 45% of the time. (5 minute read)
+
+(blurb not generated)
+
+On-prem DBaaS in 2026: Platforms, standards, and gaps (1 minute read)
+
+The author argues that database provisioning is still the unsolved piece of platform engineering, with teams forced to choose between running Postgres, MariaDB, or Redis themselves on Kubernetes operators or depending on a platform team's Crossplane compositions that provision cloud-managed services like RDS underneath. Neither pattern delivers a consistent on-prem experience, so organizations keep rebuilding the same DBaaS layer. The piece surveys where current platforms and standards fall short.
+
+Policy-Conditioned Constrained Decoding for Column-Level Access Control in Text-to-SQL (1 minute read)
+
+This paper introduces PCC-SQL, a text-to-SQL system that enforces column-level access policies during decoding rather than by refusing queries after the fact. It defines policy over how a column is used (output, filter, aggregation) and applies a per-token logits mask that deterministically blocks violations in a single pass. Across three benchmarks and three open models, it hit a 0% leakage rate and up to 88.7% coverage on Spider-CU while staying within 10% of direct-prompting token cost.
+
+Let's Build PlanetScale from Scratch: Infrastructure (1 minute read)
+
+The author is building Homescale, an open-source clone of PlanetScale's branching model that creates writable database instances and point-in-time branches from immutable snapshots without copying the underlying files. The design borrows Docker's image/container split: an immutable image, a writable container cloned from it, and branches forked from a container's current state. Engine-specific logic sits behind an adapter, so the storage model works for any database that keeps durable state on a block device.
+
+GraphPolaris: A System for Query, Analysis, and Visualization of Graph Databases (1 minute read)
+
+GraphPolaris is a no-code visual analytics system for querying and visualizing graph databases, built around GPQL, a formal query grammar that generates valid, database-agnostic queries from user interactions rather than hand-written Cypher or Gremlin. The authors position it as the graph equivalent of Tableau or Looker, targeting fraud detection, supply-chain, and social-network analysis where tabular BI can't reason over nodes and edges. Evaluation spans telecom and supply-chain case studies and a 22-month formative study with analysts.
+
+🚀
+Launches & Tools
+
+Bridging the gap between SQL and Python with BigQuery and the %%bqsql magic (2 minute read)
+
+Google released the `%%bqsql` IPython cell magic, letting you run BigQuery SQL directly in any Jupyter notebook and pass results between SQL and Python cells without staging data through temp tables or in-memory round trips. It extends Colab Enterprise's SQL cells to the open-source stack via BigFrames and pandas, and works against the free BigQuery sandbox without a credit card.
+
+ClickHouse on Docker Hardened Images (5 minute read)
+
+(blurb not generated)
+
+Introducing Feature Views (5 minute read)
+
+(blurb not generated)
+
+YouTrackDB is a general-use object-oriented graph database (5 minute read)
+
+(blurb not generated)
+
+How to solve PostgreSQL multilingual full-text search limitations with AlloyDB AI (2 minute read)
+
+AlloyDB AI Functions now let you call Gemini directly from SQL to tokenize continuous text, fixing PostgreSQL full-text search for Chinese, Japanese, and Korean where whitespace-based parsers collapse whole sentences into one useless lexeme. The pitch is skipping the ETL layer entirely, since row-wise Gemini API calls over large tables were the fragile part, and segmentation now happens inline before to_tsvector builds the index.
+
+Regatta launches its unified OLTP, OLAP and vector database (5 minute read)
+
+Regatta shipped RegattaDB into general availability, a distributed SQL database that runs OLTP, OLAP, and vector workloads on one serializable concurrency model and drops in as a Postgres replacement. The company benchmarked a distributed JOIN across 20B rows on 50 commodity nodes in three minutes while sustaining 50,000 ACID updates per second on the same dataset, which is the pitch for cutting the ETL hop between operational stores and the warehouse.

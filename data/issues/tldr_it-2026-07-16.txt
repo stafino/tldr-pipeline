@@ -2,3 +2,193 @@ Sign Up | Advertise | View Online
 TLDR
 
 TLDR IT 2026-07-16
+
+🚀
+News & Trends
+
+Airbus migrating 70 critical apps from AWS to France's Scaleway amid digital sovereignty push (1 minute read)
+
+Airbus is moving 70 business-critical applications off AWS to French provider Scaleway, part of a digital sovereignty push across its European operations. The migration gives Scaleway a marquee aerospace reference customer and signals that EU sovereignty requirements are now weighing heavily enough to override hyperscaler switching costs for regulated workloads.
+
+CISA sounds alarm over trio of exploited SharePoint flaws (1 minute read)
+
+CISA added three actively exploited SharePoint Server flaws to its Known Exploited Vulnerabilities catalog, including CVE-2026-45659, an 8.8-severity remote code execution bug, alongside a spoofing flaw and a privilege escalation issue from July's Patch Tuesday. Every supported on-prem version is affected, and attackers are stealing IIS machine keys for persistence, so patching alone won't evict them without key rotation and threat hunting.
+
+Sheetz is quitting VMware, migrating 11,000 virtual machines (1 minute read)
+
+Sheetz is migrating roughly 11,000 virtual machines across its 838 convenience stores from VMware vSphere to StorMagic's SvHCI, with more than 600 stores already cut over at about 200 per month and completion expected in four months. The chain cited Broadcom's elimination of perpetual licenses, mandatory subscription bundles, and a five-year commitment as budget risks, and it is moving on existing Dell hardware without on-site technician visits.
+
+SAP makes it easier for customers to shop for legacy product support, ending EU antitrust probe (5 minute read)
+
+(blurb not generated)
+
+EU competition decision hands SAP customers more leverage in contract talks (1 minute read) [flag]
+
+SAP settled the European Commission's antitrust investigation into its maintenance practices by agreeing to abolish reinstatement fees, cut back-maintenance fees, and clarify that customers can mix support from multiple providers. ECC shops weighing third-party maintenance against the December 2027 mainstream support deadline can now cite the commitments to resist renewal increases and negotiate extended maintenance on better terms.
+
+Flag: the `Context` passed in was The Register's "most popular" sidebar, not the article body — nothing about SAP or the EU decision in it. I fetched the URL to get the actual facts (reinstatement fees, back-maintenance, ECC 2027/2030 dates). If that's systematic, the scraper is grabbing the wrong DOM node for theregister and every blurb built from context alone is being invented.
+
+IBM's mainframe sales get mugged by AI hardware panic, stock sheds more than a quarter of its value (1 minute read)
+
+IBM's stock shed more than a quarter of its value after Q2 mainframe revenue fell short, with CEO Arvind Krishna saying customers had already drained their Z budgets on servers and storage ahead of expected price spikes. The pull-forward leaves IBM's highest-margin hardware line facing a weak second half, and signals that AI-driven infrastructure buying is now crowding out traditional mainframe refresh cycles in enterprise budgets.
+
+Microsoft Patches a Record 570 Security Flaws (1 minute read)
+
+Microsoft patched a record 570 security flaws in this month's Patch Tuesday, nearly triple last month's total, and attributed the surge to AI-accelerated vulnerability discovery across its codebase. The batch fixes three zero-days, two already exploited in the wild, roughly 60 critical bugs, and a 9.6-CVSS remote code execution flaw in Copilot, signaling a heavier ongoing patch cadence for enterprise Windows fleets.
+
+Microsoft has released software updates to plug at least 570 security holes (1 minute read)
+
+Microsoft patched a record 570 security flaws in this month's Patch Tuesday, nearly triple last month's total, and attributed the surge to AI-accelerated vulnerability discovery across its codebase. The batch fixes three zero-days, two already exploited in the wild, roughly 60 critical bugs, and a 9.6-CVSS remote code execution flaw in Copilot, signaling a heavier ongoing patch cadence for enterprise Windows fleets.
+
+Salesforce's Agentforce isn't winning over clients, KeyBanc analysts claim (1 minute read)
+
+KeyBanc analysts said their CIO survey found more respondents plan to deprioritize Salesforce in IT budgets over the next 12 months than increase it, citing unready customer data and an Agentforce product that "just isn't there" while Salesforce pushes aggressive price increases. Salesforce countered that Agentforce is its fastest-growing product ever, but the stock is down 36% year-to-date and Bernstein separately called adoption early-stage.
+
+Deluxe Corporation beats the odds with mainframe migration using AI (5 minute read)
+
+(blurb not generated)
+
+Microsoft to enable Windows settings backup by default for orgs (5 minute read)
+
+(blurb not generated)
+
+Microsoft’s Secure Boot has been broken for a decade and no one noticed until now (1 minute read)
+
+ESET researchers found that Microsoft left 11 vulnerable UEFI Secure Boot shims signed and unrevoked for up to 13 years, letting a novice attacker bypass the boot protection on both Windows and Linux devices using nothing but an old, still-trusted binary. Because the flaw lets bootkits persist through OS reinstalls and drive swaps, IT teams relying on Secure Boot as a firmware-integrity baseline now need to audit revocation lists and push UEFI dbx updates across their fleets.
+
+IBM Suffers Biggest Share Drop in Its History (1 minute read)
+
+IBM shares sank as much as 25%, the biggest intraday drop in the company's history, after it issued a profit warning tied to customers redirecting spend from software toward AI hardware and memory chips. The shift undercuts IBM's software-led margin story and signals that enterprise budgets are flowing to GPU and memory suppliers rather than the platform vendors betting on recurring license revenue.
+
+Microsoft: Some Dell PCs shut down after recent Windows updates (1 minute read)
+
+Microsoft blocked the KB5101650 Windows 11 security update on some Dell devices after a conflict between the new Windows USB-C Connection Manager interface and Intel's IPF Processor Participant driver caused unexpected shutdowns, thermal issues, and battery drain. Affected 24H2 and 25H2 fleets stay unpatched until Microsoft and Dell ship a fix, which the company says is due in the coming days.
+
+Microsoft cancels Patch Tuesday for some Dell users over surprise shutdowns, overheating devices (1 minute read)
+
+Microsoft placed a compatibility hold on KB5101650 for Windows 11 24H2 and 25H2 on Dell machines carrying Intel's Innovation Platform Framework Processor Participant driver, after the update triggered unexpected shutdowns, overheating, and battery drain through the new USB-C Connection Manager interface. Neither vendor named the affected models, so IT teams running mixed Dell fleets have to scope their own exposure while Microsoft and Dell prepare a fix expected in the coming days.
+
+Apple says former employee exploited ‘rare' bug to download confidential files after leaving for OpenAI (5 minute read)
+
+Apple sued OpenAI for trade-secret theft, alleging that former electrical engineer Chang Liu exploited a zero-day authentication bug to siphon dozens of confidential files on unreleased products from Apple's shared network folders weeks after leaving for OpenAI. The case underscores the offboarding gap for IT and security teams, where undecommissioned credentials and unreturned corporate hardware leave sensitive data exposed long after an employee departs.
+
+IBM stock tumbles after Q2 infrastructure revenue warning (1 minute read)
+
+IBM stock fell after the company warned that Q2 infrastructure revenue would come in below expectations. The shortfall points to CIOs redirecting budget toward securing scarce compute capacity rather than refreshing on-prem hardware, which puts IBM's infrastructure line in direct competition with cloud GPU spend rather than with its usual server-replacement cycle.
+
+Two SonicWall SMA 1000 Zero-Days Exploited, One Could Enable Admin Commands (1 minute read)
+
+SonicWall confirmed active exploitation of two SMA 1000 zero-days, including CVE-2026-15409, a maximum-severity 10.0 SSRF flaw, and CVE-2026-15410, a post-authentication bug that lets attackers run OS commands as administrator. CISA added both to its Known Exploited Vulnerabilities catalog, giving federal agencies until July 17 to patch, and SonicWall is urging customers to apply fixes and run forensic checks for compromise indicators.
+
+TS-2026-009: Insecure argument handling in Tailscale SSH permitted root access (1 minute read)
+
+Tailscale disclosed TS-2026-009, a flaw in which Tailscale SSH accepted usernames with leading dashes that Linux passed to getent(1) as flags, letting an attacker connecting as `-i` dump the passwd file and open an interactive root session in violation of ACLs. Nodes running Tailscale SSH on versions before 1.98.9 are affected, and IT teams should upgrade to 1.98.9 or newer to close it.
+
+SAP Patches CVSS 9.9 NetWeaver ABAP Flaw That Could Expose or Modify Data (1 minute read)
+
+SAP patched CVE-2026-44747, a CVSS 9.9 out-of-bounds write flaw in NetWeaver Application Server ABAP that lets an authenticated attacker corrupt memory to read, modify, or take down SAP systems. The July update also fixes two CVSS 9.1 critical bugs, including default OAuth credentials in Commerce Cloud that an unauthenticated attacker can use to pull a valid token and alter data.
+
+🧠
+Analysis & Opinions
+
+IBM Misses, IBM’s Mainframe Moat, IBM’s Many AI Problems (1 minute read)
+
+IBM's preliminary results missed expectations and dragged down enterprise software stocks broadly. The author argues the mainframe franchise remains IBM's durable moat, while its AI positioning is the weak point of the story. For IT buyers, the read is that mainframe lock-in keeps renewals safe regardless of the print, but IBM's AI roadmap is not the reason to expand the contract.
+
+Your service vendors are being rebuilt around AI (3 minute read)
+
+Venture-backed firms are buying up the fragmented support, finance-ops, and managed-services providers enterprises depend on, then re-platforming them around AI agents and returning at renewal with outcome-based pricing. The author argues the risk is who defines the outcome: headline resolution rates often mask auto-closed tickets and abandoned users, and Gartner expects over 40% of agentic AI projects to be canceled by end of 2027. IT leaders should treat any resolution metric as marketing until validated on their own accounts.
+
+A cloud deal too good to be true (5 minute read)
+
+(blurb not generated)
+
+The hidden cost of sovereign AI: What control really buys you, and what it breaks (5 minute read)
+
+(blurb not generated)
+
+5 ways for CIOs to avoid AI bill shock (5 minute read)
+
+(blurb not generated)
+
+Where Meta’s WhatsApp agent can actually win (3 minute read)
+
+Meta made its WhatsApp Business AI agent generally available on June 3, a bot bundled into premium tiers that answers questions, books appointments, and qualifies leads across a network of 3B users. The author argues its real advantage is local services and bookings, not physical retail, since Meta lacks the demand-generating feed and fulfillment layer that let Douyin, not messaging-first WeChat, win Chinese commerce. For IT buyers, the practical fit is appointment-driven and service businesses, not order-and-deliver retail.
+
+Up the Stack: How AI's Escape From the Commodity Trap Risks Enterprise Lock-in (5 minute read)
+
+(blurb not generated)
+
+The trillion-dollar question: When should legacy applications make way for AI? (5 minute read)
+
+(blurb not generated)
+
+The hidden AI cost driver: Harness design can make or break enterprise agent economics (5 minute read)
+
+(blurb not generated)
+
+🤝
+Launches & Partnerships
+
+Oracle expands AI Agent Studio for Fusion Applications with pro-code tools (5 minute read)
+
+(blurb not generated)
+
+How to Analyze and Govern Gemini Enterprise App Usage at Scale with BigQuery (5 minute read)
+
+(blurb not generated)
+
+Claude at scale on Google Cloud: Frontier AI, built for enterprise production (2 minute read)
+
+Anthropic's Claude models are now available as a fully managed Model-as-a-Service through Google Cloud's Agent Platform Model Garden, invoked via the AnthropicVertex client over standard REST endpoints with the same IAM policies, VPC Service Controls, and Cloud Logging observability as any other Google Cloud service. Enterprises already standardized on Google Cloud get frontier reasoning, global endpoints, and in-region data-sovereignty controls without provisioning inference clusters or adding a separate vendor to their procurement stack.
+
+1Password moves into AI cost management, betting that token spend is the next enterprise budget crisis (3 minute read)
+
+1Password launched AI Spend and Consumption Management, a public-preview capability inside its SaaS Manager platform that pulls token-level usage daily from vendor admin APIs and normalizes spend across Anthropic, OpenAI, and Cursor into one dashboard. IT and finance teams get vendor-level spend limits, threshold alerts via Slack and email, and usage broken down by team, user, and model, with broad availability planned for fall 2026.
+
+Atlassian evolves Jira into an orchestration hub for developers and AI agents (5 minute read)
+
+(blurb not generated)
+
+AWS extends its cloud security service across the aisle to Microsoft Azure (1 minute read)
+
+AWS extended its Security Hub to monitor Microsoft Azure resources, evaluating Azure VMs, container images, and function apps for vulnerabilities and misconfigurations alongside AWS workloads. The move gives security teams a single console and shared automation across both hyperscalers, and AWS paired it with general availability of Security Hub AI inventory, which discovers and catalogs AI workloads across an AWS environment.
+
+Improvement to in-room problem reporting for Google Meet hardware (2 minute read)
+
+Google added user-reported device feedback to the Google Meet hardware section of the Admin console, replacing background telemetry with two sortable columns showing each device's last feedback timestamp and its cumulative report count over a rolling 28-day window. The redesigned in-room menus now collect context-specific problem reports, and a new "With feedback in last 7 days" filter lets admins surface and prioritize recurring faulty rooms without leaving the device list.
+
+Salesforce turns Slackbot into an agentic workflow hub (5 minute read)
+
+(blurb not generated)
+
+JetBrains seeks to unify fragmented AI-based software development with governance suite (5 minute read)
+
+(blurb not generated)
+
+IBM Bob expands beyond code generation to orchestrate the entire SDLC (5 minute read)
+
+(blurb not generated)
+
+Google Cloud expands partnership with Samsung to accelerate agentic AI (5 minute read)
+
+Google Cloud expanded its partnership with Samsung to deploy Gemini Enterprise across Samsung's Device eXperience Division worldwide, its largest enterprise agentic AI rollout in Korea to date. The system runs in a dedicated Google Cloud tenant exclusive to the DX Division for data sovereignty, and will add low-code and no-code tools so HR, marketing, and engineering teams can build their own custom agents.
+
+Hugging Face Models on Foundry Managed Compute (5 minute read)
+
+(blurb not generated)
+
+BitTitan expands MigrationWiz with Microsoft Teams private chat migrations (5 minute read)
+
+(blurb not generated)
+
+Fortinet expands FortiEndpoint with AI monitoring and data controls (1 minute read)
+
+Fortinet expanded FortiEndpoint with AI visibility controls, built-in data loss prevention, and FortiAI-Assist, letting security teams monitor sanctioned and unsanctioned AI tools and block sensitive data from leaking into them. Delivered through Fortinet's single agent, console, and license and tied into the Security Fabric, the update pitches FortiEndpoint as one product to replace separate endpoint protection, remote access, and data security tools.
+
+🎁
+Miscellaneous
+
+23andMe to pay $18 million in new genetics data breach settlement (1 minute read)
+
+23andMe agreed to pay $18 million to settle claims from 43 state attorneys general that it failed to protect customer genetic data in the 2023 breach. The settlement sets a reference price for multistate AG actions over sensitive data, and the coalition size signals that state enforcement, not federal, is where breach liability is being priced.

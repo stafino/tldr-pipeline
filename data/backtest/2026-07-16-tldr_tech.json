@@ -1,13 +1,866 @@
 {
   "date": "2026-07-16",
   "newsletter": "tldr_tech",
-  "fetched_at": "2026-07-16T08:24:10.229413+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
-  "predictions": [],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "fetched_at": "2026-07-16T16:58:42.162760+00:00",
+  "tldr_titles": [
+    "Stripe and Private-Equity Firm Advent Offer to Buy PayPal",
+    "Uber and Waymo Are Sparring. The Robotaxi Future Has Arrived",
+    "Alzheimer's Blood Tests Offer New Promise to Diagnose and Predict the Disease",
+    "The Fight Over Humanoid Robots Has Shut Down a Car Factory for the First Time",
+    "The Marginal Cost of Correctness",
+    "Why we stopped using SDKs",
+    "Mira Murati's AI Startup Releases First Model in Bid to Loosen AI Giants' Grip",
+    "Third-party app stores coming to Google Play next week as Epic settlement withdrawn",
+    "You only need the frontier model for one single edit",
+    "OpenAI launches a physical keypad for controlling agents",
+    "SpaceX unveils Starlink next-gen V5 kit: here's what's new",
+    "Airbnb's Cost of Market Creation and Regulatory Survival",
+    "China Wants More Babies\u2014So It's Cracking Down on Chatbot Love Affairs"
+  ],
+  "tldr_matched": [
+    true,
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
+  "predictions": [
+    {
+      "rank": 1,
+      "score": 83.0,
+      "title": "Rewriting Bun in Rust",
+      "url": "https://bun.com/blog/bun-in-rust",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 2,
+      "score": 82.0,
+      "title": "Inkling: Our Open-Weights Model",
+      "url": "https://thinkingmachines.ai/news/introducing-inkling/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 3,
+      "score": 82.0,
+      "title": "Grok 4.5",
+      "url": "https://x.ai/news/grok-4-5",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 4,
+      "score": 82.0,
+      "title": "Introducing Meerkat: an experiment in global consensus",
+      "url": "https://blog.cloudflare.com/meerkat-introduction/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 5,
+      "score": 78.0,
+      "title": "Welcome Inkling by Thinking Machines",
+      "url": "https://huggingface.co/blog/thinkingmachines-inkling",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 6,
+      "score": 77.0,
+      "title": "Miami-based City Labs achieves a first for commercial nuclear power in space",
+      "url": "https://arstechnica.com/space/2026/07/miami-based-city-labs-achieves-a-first-for-commercial-nuclear-power-in-space/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 7,
+      "score": 76.0,
+      "title": "Thinking Machines Lab offers enterprises a US alternative in open-weight AI",
+      "url": "https://www.infoworld.com/article/4197743/thinking-machines-offers-enterprises-a-us-alternative-in-open-weight-ai.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 8,
+      "score": 74.0,
+      "title": "Google ordered to open Android and Search to rivals in Europe",
+      "url": "https://www.theverge.com/policy/966438/eu-google-android-ai-interoperability-search-data-dma",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 9,
+      "score": 74.0,
+      "title": "You Don't Know Jack About Formal Verification",
+      "url": "https://queue.acm.org/detail.cfm",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 10,
+      "score": 70.0,
+      "title": "OpenAI\u2019s GPT-Red Automates Prompt Injection Testing to Harden GPT-5.6 Sol",
+      "url": "https://thehackernews.com/2026/07/openais-gpt-red-automates-prompt.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 11,
+      "score": 70.0,
+      "title": "Grok Build is open source",
+      "url": "https://github.com/xai-org/grok-build",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 12,
+      "score": 68.0,
+      "title": "Former OpenAI CTO does what Altman won't, releases a frontier AI model that's actually open",
+      "url": "https://www.theregister.com/ai-and-ml/2026/07/16/former-openai-cto-does-what-altman-wont-releases-a-frontier-ai-model-thats-actually-open/5272177",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 13,
+      "score": 68.0,
+      "title": "Sources: Moonshot plans to launch Kimi K3, China's largest model to date with 2T-3T parameters, in the coming days; it's expected to outperform Claude Opus 4.8 (Financial Times)",
+      "url": "https://www.techmeme.com/260716/p33#a260716p33",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 14,
+      "score": 68.0,
+      "title": "Thinking Machines open sources first multimodal language model, Inkling, focused on low cost and 'resistance to censorship'",
+      "url": "https://venturebeat.com/technology/thinking-machines-open-sources-first-multimodal-language-model-inkling-focused-on-low-cost-and-resistance-to-censorship",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 15,
+      "score": 68.0,
+      "title": "Apple Intelligence approved for launch in China with Alibaba and Baidu",
+      "url": "https://techcrunch.com/2026/07/16/apple-intelligence-approved-for-launch-in-china-with-alibabas-qwen-ai/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 16,
+      "score": 68.0,
+      "title": "IBM Loses $69 Billion of Market Value in One Day in Latest AI-Fueled Selloff",
+      "url": "https://www.wsj.com/tech/ai/ibm-stock-profit-warning-earnings-software-8652c06e?mod=rss_Technology",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 17,
+      "score": 68.0,
+      "title": "IBM Suffers Biggest Share Drop in Its History",
+      "url": "https://www.wsj.com/finance/stocks/ibm-shares-sink-18-on-earnings-warning-d115d564?mod=rss_Technology",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 18,
+      "score": 68.0,
+      "title": "New York enacts one-year data center ban on projects larger than 50 megawatts \u2014 first US state to implement moratorium; will also pursue repealing tax exemptions",
+      "url": "https://www.tomshardware.com/tech-industry/data-centers/new-york-enacts-one-year-data-center-ban-on-projects-larger-than-50-megawatts-first-us-state-to-implement-moratorium-will-also-pursue-repealing-tax-exemptions",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 19,
+      "score": 68.0,
+      "title": "GPT-5.6: Frontier intelligence that scales with your ambition",
+      "url": "https://openai.com/index/gpt-5-6/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 20,
+      "score": 68.0,
+      "title": "Is x86 ready to ACE it?",
+      "url": "https://chipsandcheese.com/p/is-x86-ready-to-ace-it",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 21,
+      "score": 68.0,
+      "title": "Making 768 servers look like 1",
+      "url": "https://planetscale.com/blog/making-768-servers-look-like-1",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 22,
+      "score": 68.0,
+      "title": "Auditing the Reliability of Coding Benchmarks",
+      "url": "https://openai.com/index/separating-signal-from-noise-coding-evaluations/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 23,
+      "score": 68.0,
+      "title": "Separating signal from noise in coding evaluations",
+      "url": "https://openai.com/index/separating-signal-from-noise-coding-evaluations/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 24,
+      "score": 68.0,
+      "title": "The Tower Keeps Rising",
+      "url": "https://lucumr.pocoo.org/2026/7/13/the-tower-keeps-rising/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 25,
+      "score": 66.0,
+      "title": "Humanoid robots controlled by surgeons did world-first operation on live pigs",
+      "url": "https://arstechnica.com/ai/2026/07/humanoid-robots-controlled-by-surgeons-did-world-first-operation-on-live-pigs/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 26,
+      "score": 65.0,
+      "title": "Apple in talks with startup that shrinks AI models to run on an iPhone",
+      "url": "https://www.cnbc.com/2026/07/14/apple-prismml-ai-compression-iphone.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 27,
+      "score": 64.0,
+      "title": "A Framework for Frontier AI and the Dawning of a New Age",
+      "url": "https://x.com/demishassabis/status/2076957440109625718",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 28,
+      "score": 63.0,
+      "title": "Stripe\u2019s Acquisition Pace Has Accelerated In The Past Five Years, But Nothing Comes Close To Its Reported $53B PayPal Bet",
+      "url": "https://news.crunchbase.com/ma/stripe-acquisition-pace-accelerates-paypal/",
+      "matched_tldr_idx": 0,
+      "similarity": 0.7076746225357056
+    },
+    {
+      "rank": 29,
+      "score": 63.0,
+      "title": "OpenAI launches GPT-5.6 Sol, Terra, and Luna on apps and API",
+      "url": "https://www.testingcatalog.com/openai-launches-gpt-5-6-sol-terra-and-luna-on-apps-and-api/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 30,
+      "score": 63.0,
+      "title": "China\u2019s DeepSeek Prepares to List Shares in Shanghai Next Year",
+      "url": "https://www.wsj.com/tech/ai/chinas-deepseek-prepares-to-list-shares-in-shanghai-next-year-a85bf00f?mod=rss_Technology",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 31,
+      "score": 63.0,
+      "title": "As General Fusion makes historic Nasdaq debut, report shows global funding surged to $4.5B",
+      "url": "https://www.geekwire.com/2026/as-general-fusion-makes-historic-nasdaq-debut-report-shows-global-funding-surged-to-4-5b/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 32,
+      "score": 63.0,
+      "title": "The Pulse: Interesting AI coding stats from Cursor",
+      "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-interesting-ai-coding-stats",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 33,
+      "score": 63.0,
+      "title": "Measuring Input Latency on Linux: X11 vs. Wayland, VRR, and DXVK",
+      "url": "https://marco-nett.de/blog/measuring-input-latency-on-linux-x11-vs-wayland-vrr-dxvk/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 34,
+      "score": 63.0,
+      "title": "Apache Kafka performance #1 - linger.ms",
+      "url": "https://jack-vanlightly.com/blog/2026/7/7/apache-kafka-performance-1-lingerms",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 35,
+      "score": 62.0,
+      "title": "China\u2019s first recovered booster returns to port as LandSpace aims for first land recovery",
+      "url": "https://www.nasaspaceflight.com/2026/07/china-update-20261507/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 36,
+      "score": 62.0,
+      "title": "Intel becomes the first company to ship high-volume logic chips made with ASML's High NA EUV \u2014 select Panther Lake layers on 18A are now dual-qualified for 0.55 NA scanners",
+      "url": "https://www.tomshardware.com/tech-industry/semiconductors/intel-becomes-the-first-company-to-ship-high-volume-logic-chips-made-with-asmls-high-na-euv-select-panther-lake-layers-on-18a-are-now-dual-qualified-for-0-55-na-scanners",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 37,
+      "score": 62.0,
+      "title": "The git history command",
+      "url": "https://lalitm.com/post/git-history/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 38,
+      "score": 62.0,
+      "title": "YouTrackDB is a general-use object-oriented graph database",
+      "url": "https://github.com/JetBrains/youtrackdb",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 39,
+      "score": 62.0,
+      "title": "Old and new apps, via modern coding agents",
+      "url": "https://terrytao.wordpress.com/2026/07/11/old-and-new-apps-via-modern-coding-agents/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 40,
+      "score": 62.0,
+      "title": "The OpenAI Super App, ChatGPT = Codex, Whither Chat",
+      "url": "https://stratechery.com/2026/the-openai-super-app-chatgpt-codex-whither-chat/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 41,
+      "score": 61.0,
+      "title": "Smart Cellular Bricks: Towards Collective Intelligence for the Physical World",
+      "url": "https://sakana.ai/smart-cellular-bricks/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 42,
+      "score": 61.0,
+      "title": "Indian scientists produce most detailed 3D atlas of the human brainstem",
+      "url": "https://www.bbc.com/news/articles/cg53l737v1qo",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 43,
+      "score": 61.0,
+      "title": "Experiences with local models for coding",
+      "url": "https://martinfowler.com/articles/exploring-gen-ai/local-models-for-coding-experiences.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 44,
+      "score": 61.0,
+      "title": "GitHub Copilot Refuses Harmful Requests in Chat, Then Writes Them in Code",
+      "url": "https://thehackernews.com/2026/07/github-copilot-refuses-harmful-requests.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 45,
+      "score": 60.0,
+      "title": "Apple overhauls RAW photo processing with iOS 27, showcases impressive results",
+      "url": "https://9to5mac.com/2026/07/06/apple-overhauls-raw-photo-processing-with-ios-27-showcases-impressive-results/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 46,
+      "score": 60.0,
+      "title": "Show HN: I RL-trained an agent that trains models with RL (for ~$1.3k)",
+      "url": "https://github.com/Danau5tin/ai-trains-ai",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 47,
+      "score": 60.0,
+      "title": "Your Browser Does Math Differently on Every OS, and Anti-Bot Systems Read the Bits",
+      "url": "https://scrapfly.dev/posts/browser-math-os-fingerprint/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 48,
+      "score": 60.0,
+      "title": "Solving 20 Erd\u0151s Problems with 20 Codex Accounts Running in Parallel",
+      "url": "https://www.starfleetmath.com/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 49,
+      "score": 60.0,
+      "title": "Building the AI Retrieval Infrastructure Behind 20 Billion+ Vectors at HubSpot",
+      "url": "https://product.hubspot.com/blog/building-the-ai-retrieval-infrastructure-behind-20-billion-vectors-at-hubspot",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 50,
+      "score": 60.0,
+      "title": "The Economics of Recursive Self-Improvement [pdf]",
+      "url": "https://elasticity.institute/rsi-paper.pdf",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 51,
+      "score": 60.0,
+      "title": "Hackers can use 9 of the most popular AI tools to assemble massive botnets",
+      "url": "https://arstechnica.com/security/2026/07/hackers-can-use-9-of-the-most-popular-ai-tools-to-assemble-massive-botnets/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 52,
+      "score": 60.0,
+      "title": "The art and engineering of Sega CD Silpheed",
+      "url": "https://fabiensanglard.net/silpheed/index.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 53,
+      "score": 60.0,
+      "title": "Data Centers to Add Billions in Power Costs in 13 States",
+      "url": "https://www.nytimes.com/2026/07/14/business/energy-environment/pjm-electricity-prices-data-centers.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 54,
+      "score": 60.0,
+      "title": "European \"age verification\" \"app\" forcing everyone to use Android or iOS",
+      "url": "https://github.com/eu-digital-identity-wallet/av-doc-technical-specification/discussions/19",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 55,
+      "score": 59.0,
+      "title": "Show HN: misa77 - a codec that decodes 2x faster than LZ4 (at better ratios)",
+      "url": "https://github.com/welcome-to-the-sunny-side/misa77",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 56,
+      "score": 59.0,
+      "title": "The Variant Type in Apache Iceberg: How Shredding Turns Messy JSON Into Fast Analytics",
+      "url": "https://iceberglakehouse.com/posts/iceberg-v3-variant-type-ai-json-payloads/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 57,
+      "score": 59.0,
+      "title": "Announcing etcd v3.7.0",
+      "url": "https://kubernetes.io/blog/2026/07/08/announcing-etcd-3.7/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 58,
+      "score": 58.0,
+      "title": "Unpatched Shark Vacuum Flaw Could Let Attackers Control Other Vacuums Region-Wide",
+      "url": "https://thehackernews.com/2026/07/unpatched-shark-vacuum-flaw-could-let.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 59,
+      "score": 58.0,
+      "title": "How hard is it to build orbital data centers, actually?",
+      "url": "https://arstechnica.com/space/2026/07/how-hard-is-it-to-build-orbital-data-centers-actually/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 60,
+      "score": 58.0,
+      "title": "These painted e-tattoos could be the future of wearable biosensors",
+      "url": "https://arstechnica.com/science/2026/07/these-painted-e-tattoos-could-be-the-future-of-wearable-biosensors/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 61,
+      "score": 58.0,
+      "title": "GOES-19 Goes Down, NOAA Investigating",
+      "url": "https://hackaday.com/2026/07/16/goes-19-goes-down-noaa-investigating/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 62,
+      "score": 58.0,
+      "title": "BMW elevates its AI humanoid robot strategy to include logistics",
+      "url": "https://www.cio.com/article/4193455/bmw-brings-ai-robots-into-logistics.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 63,
+      "score": 58.0,
+      "title": "SpaceX is gearing up for Starship's 13th test flight later this week",
+      "url": "https://arstechnica.com/space/2026/07/spacex-is-gearing-up-for-starships-13th-test-flight-later-this-week/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 64,
+      "score": 58.0,
+      "title": "Intel's EMIB packaging gains traction as chip designers look to skirt TSMC's CoWoS constraints \u2014 Google's reported decision for 9th-gen TPUs highlights Intel's attractive alternative",
+      "url": "https://www.tomshardware.com/tech-industry/semiconductors/intels-emib-packaging-gains-traction-as-chip-designers-look-to-skirt-tsmcs-cowos-constraints-googles-reported-decision-for-9th-gen-tpus-highlights-intels-attractive-alternative",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 65,
+      "score": 58.0,
+      "title": "Ukraine conducts record drone strike of 2,500km after 12-hour flight \u2014 $55,000 unit made of plywood halts operations at Russia's largest gasoline producer",
+      "url": "https://www.tomshardware.com/tech-industry/drones/ukraines-55000-plywood-drone-flew-2500-km-and-shut-down-russias-largest-oil-refinery",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 66,
+      "score": 58.0,
+      "title": "Researchers create programmable material that can steer heat and remember its state without power \u2014 breakthrough could eventually aid AI chip cooling and silicon photonics",
+      "url": "https://www.tomshardware.com/tech-industry/manufacturing/researchers-create-programmable-material-that-can-steer-heat-and-remember-its-state-without-power-breakthrough-could-eventually-aid-ai-chip-cooling-and-silicon-photonics",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 67,
+      "score": 58.0,
+      "title": "Show HN: Firefox in WebAssembly",
+      "url": "https://developer.puter.com/labs/firefox-wasm/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 68,
+      "score": 58.0,
+      "title": "Japan develops a method to recover up to 90% of lithium from used EV batteries",
+      "url": "https://tech.supercarblondie.com/japan-recovers-up-to-90-of-lithium-from-used-ev-batteries/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 69,
+      "score": 58.0,
+      "title": "CISA sounds alarm over trio of exploited SharePoint flaws",
+      "url": "https://www.theregister.com/security/2026/07/15/cisa-sounds-alarm-over-trio-of-exploited-sharepoint-flaws/5271814",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 70,
+      "score": 58.0,
+      "title": "Microsoft\u2019s Secure Boot has been broken for a decade and no one noticed until now",
+      "url": "https://arstechnica.com/security/2026/07/microsoft-secure-boot-has-been-broken-for-most-of-its-existence/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 71,
+      "score": 58.0,
+      "title": "How I Turned AI to the Dark Side",
+      "url": "https://spectrum.ieee.org/jailbreaking-llms",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 72,
+      "score": 58.0,
+      "title": "IBM Misses, IBM\u2019s Mainframe Moat, IBM\u2019s Many AI Problems",
+      "url": "https://stratechery.com/2026/ibm-misses-ibms-mainframe-moat-ibms-many-ai-problems/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 73,
+      "score": 58.0,
+      "title": "New York becomes first state to halt datacenter buildouts",
+      "url": "https://www.theregister.com/ai-and-ml/2026/07/14/new-york-becomes-first-state-to-halt-datacenter-buildouts/5271377",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 74,
+      "score": 58.0,
+      "title": "A hacker claims to have accessed Suno user info and source code, showing how it scraped music; Suno says no sensitive info was compromised in a November hack (Jason Koebler/404 Media)",
+      "url": "https://www.techmeme.com/260716/p35#a260716p35",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 75,
+      "score": 58.0,
+      "title": "What's really slowing down the AI buildout",
+      "url": "https://www.worksinprogress.news/p/ai-is-bottlenecked-by-the-grid",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 76,
+      "score": 58.0,
+      "title": "Tesla driver in fatal Texas crash overrode FSD by pressing accelerator &#8216;100 percent,&#8217; investigators confirm",
+      "url": "https://www.theverge.com/transportation/966563/tesla-texas-crash-ntsb-investigation",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 77,
+      "score": 58.0,
+      "title": "How Terrorist Groups Are Using A.I. to Gain an Edge in Battle",
+      "url": "https://www.nytimes.com/2026/07/10/us/politics/ai-terrorism-boko-haram-nigeria.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 78,
+      "score": 58.0,
+      "title": "1-in-2 Phones Sold in Africa Exfiltrate Telemetry to China",
+      "url": "https://www.nowsecure.com/blog/2026/07/08/what-the-transsion-telemetry-research-means-for-mobile-security/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 79,
+      "score": 58.0,
+      "title": "Google and Microsoft Pull ModHeader With 1.6 Million Installs After Dormant Collector Found",
+      "url": "https://thehackernews.com/2026/07/google-and-microsoft-pull-modheader.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 80,
+      "score": 58.0,
+      "title": "DOOM runs (slowly) in a IBM PC-Compatible CSS Sheet",
+      "url": "https://hackaday.com/2026/07/15/doom-runs-slowly-in-a-ibm-pc-compatible-css-sheet/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 81,
+      "score": 58.0,
+      "title": "OpenAI selling $230 Codex Micro hardware product",
+      "url": "https://9to5mac.com/2026/07/15/openai-selling-230-codex-micro-hardware-product/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 82,
+      "score": 58.0,
+      "title": "Lessons Learned from CISA's Recent GitHub Leak",
+      "url": "https://krebsonsecurity.com/2026/07/lessons-learned-from-cisas-recent-github-leak/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 83,
+      "score": 57.0,
+      "title": "Free the Icons",
+      "url": "https://weblog.rogueamoeba.com/2026/06/26/free-the-icons/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 84,
+      "score": 57.0,
+      "title": "I love LLMs, I hate hype",
+      "url": "https://geohot.github.io//blog/jekyll/update/2026/07/12/i-love-llms.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 85,
+      "score": 57.0,
+      "title": "The Fight Over Humanoid Robots Has Shut Down a Car Factory for the First Time",
+      "url": "https://www.wsj.com/business/autos/the-fight-over-humanoid-robots-has-shut-down-a-car-factory-for-the-first-time-d45ac3e1?mod=rss_Technology",
+      "matched_tldr_idx": 3,
+      "similarity": 1.0
+    },
+    {
+      "rank": 86,
+      "score": 57.0,
+      "title": "See how content from social and video platforms performs on Google Search",
+      "url": "https://developers.google.com/search/blog/2026/07/search-console-social-video-platforms",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 87,
+      "score": 57.0,
+      "title": "SAP makes it easier for customers to shop for legacy product support, ending EU antitrust probe",
+      "url": "https://www.theregister.com/software/2026/07/09/sap-makes-it-easier-for-customers-to-shop-for-legacy-product-support-ending-eu-antitrust-probe/5269437",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 88,
+      "score": 56.0,
+      "title": "Zoom Patches Critical Windows Flaw That Could Enable Account Takeover",
+      "url": "https://thehackernews.com/2026/07/zoom-patches-critical-windows-flaw-that.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 89,
+      "score": 56.0,
+      "title": "Microsoft Patches a Record 570 Security Flaws",
+      "url": "https://krebsonsecurity.com/2026/07/microsoft-patches-a-record-570-security-flaws/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 90,
+      "score": 56.0,
+      "title": "Microsoft has released software updates to plug at least 570 security holes",
+      "url": "https://krebsonsecurity.com/2026/07/microsoft-patches-a-record-570-security-flaws/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 91,
+      "score": 56.0,
+      "title": "Windows 0-day drops the same day Microsoft releases record number of patches",
+      "url": "https://arstechnica.com/security/2026/07/windows-0-day-drops-the-same-day-microsoft-releases-record-number-of-patches/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 92,
+      "score": 56.0,
+      "title": "'GodDamn' Ransomware Uses BYOVD to Smite US Companies",
+      "url": "https://www.darkreading.com/cyberattacks-data-breaches/goddamn-ransomware-byovd-smite-companies",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 93,
+      "score": 56.0,
+      "title": "Trump blasts New York AI data center moratorium, says state should change policy 'immediately'",
+      "url": "https://www.cnbc.com/2026/07/15/trump-blasts-new-york-gov-hochul-over-ai-data-center-moratorium.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 94,
+      "score": 56.0,
+      "title": "Mysteries of Telegram Data Centers (2022)",
+      "url": "https://dev.moe/en/3025",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 95,
+      "score": 56.0,
+      "title": "iOS 27 public beta is here with Siri AI, iPhone speed upgrades, and more",
+      "url": "https://9to5mac.com/2026/07/13/ios-27-public-beta/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 96,
+      "score": 55.0,
+      "title": "Researchers Say Claude for Chrome Flaw Lets Rogue Extensions Trigger Gmail Reads",
+      "url": "https://thehackernews.com/2026/07/claude-for-chrome-flaw-lets-other.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 97,
+      "score": 55.0,
+      "title": "AWS CloudFront outage serves errors instead of websites",
+      "url": "https://www.theregister.com/off-prem/2026/07/16/aws-cloudfront-outage-serves-errors-instead-of-websites/5272421",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 98,
+      "score": 55.0,
+      "title": "1Password launches a new Claude integration for Mac that lets Anthropic's AI agent sign in to websites without seeing the user's password or 2FA code (Zac Hall/9to5Mac)",
+      "url": "https://www.techmeme.com/260716/p29#a260716p29",
+      "matched_tldr_idx": null,
+      "similarity": null
+    }
+  ],
+  "recall_at": {
+    "10": 0.0,
+    "25": 0.0,
+    "50": 0.07692307692307693,
+    "100": 0.15384615384615385,
+    "98": 0.15384615384615385
+  },
+  "hits_at": {
+    "10": 0,
+    "25": 0,
+    "50": 1,
+    "100": 2,
+    "98": 2
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://www.wsj.com/business/deals/stripe-and-private-equity-firm-advent-offer-to-buy-paypal-534c72aa",
+    "https://www.bloomberg.com/opinion/articles/2026-07-15/uber-and-waymo-are-sparring-the-robotaxi-future-has-arrived",
+    "https://www.nytimes.com/2026/07/15/well/mind/alzheimers-disease-blood-tests-symptoms.html",
+    "https://www.wsj.com/business/autos/the-fight-over-humanoid-robots-has-shut-down-a-car-factory-for-the-first-time-d45ac3e1",
+    "https://x.com/benglickenhaus/status/2077040218905964560",
+    "https://x.com/alvinsng/status/2077114275412512868",
+    "https://www.wsj.com/tech/ai/mira-muratis-ai-startup-releases-first-model-in-bid-to-loosen-ai-giants-grip-e042bb2b",
+    "https://arstechnica.com/gadgets/2026/07/third-party-app-stores-coming-to-google-play-next-week-as-epic-settlement-withdrawn/",
+    "https://stencil.so/blog/prewalk",
+    "https://www.engadget.com/2215952/openai-launches-a-physical-keypad-for-controlling-agents/",
+    "https://www.teslarati.com/spacex-starlink-unveils-next-gen-v5-kit-whats-new/",
+    "https://www.mbi-deepdives.com/abnb_ban/",
+    "https://www.wsj.com/tech/ai/china-wants-more-babiesso-its-cracking-down-on-chatbot-love-affairs-65cd6c82"
+  ],
+  "tldr_domains": [
+    "sj.com",
+    "bloomberg.com",
+    "nytimes.com",
+    "sj.com",
+    "x.com",
+    "x.com",
+    "sj.com",
+    "arstechnica.com",
+    "stencil.so",
+    "engadget.com",
+    "teslarati.com",
+    "mbi-deepdives.com",
+    "sj.com"
+  ]
 }
