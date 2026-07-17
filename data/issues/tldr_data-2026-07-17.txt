@@ -2,3 +2,128 @@ Sign Up | Advertise | View Online
 TLDR
 
 TLDR Data 2026-07-17
+
+📊
+News & Trends
+
+Introducing Apache Spark 4.2 (5 minute read)
+
+(blurb not generated)
+
+Inkling model from Thinking Machines Lab now on Databricks (5 minute read)
+
+(blurb not generated)
+
+How Unity Catalog managed tables bring interoperability, performance, and unified governance to the Lakehouse (5 minute read)
+
+(blurb not generated)
+
+NetApp buys DataPelago to become full-stack AI data infrastructure provider (5 minute read)
+
+NetApp acquired DataPelago and its Nucleus engine, which uses open source Gluten, Velox, and Substrait to accelerate Spark and Trino by processing data at the storage layer instead of shipping it to external compute. The pitch is embedding query acceleration directly into NetApp's storage footprint, with DataPelago claiming up to 10.5x faster project operations than Nvidia's cuDF and no data migration or lock-in for existing lakehouse stacks.
+
+🧠
+Deep Dives & Analysis
+
+The four horsemen behind thousands of Postgres outages (5 minute read)
+
+(blurb not generated)
+
+Modern Data Warehousing at Scale: Arcesium's Migration to DuckDB and Iceberg (5 minute read)
+
+(blurb not generated)
+
+Making 768 servers look like 1 (5 minute read)
+
+(blurb not generated)
+
+How to achieve pruning when querying by non-partitioned columns in PostgreSQL (5 minute read)
+
+(blurb not generated)
+
+Re-architecting Affirm's Upfunnel Platform: How We Cut Experiment Cycle Time from Months to Days (5 minute read)
+
+(blurb not generated)
+
+Lakekeeper Generic Table API Design (5 minute read)
+
+(blurb not generated)
+
+The benchmark grading every text-to-SQL model has wrong answers in its key (5 minute read)
+
+(blurb not generated)
+
+We benchmarked coding agents on our own internal tasks at Databricks and learned a lot! (5 minute read)
+
+(blurb not generated)
+
+Beyond Redaction: Anatomy of a Privacy-Safe Data Platform (5 minute read)
+
+(blurb not generated)
+
+Postgres Is Enough (5 minute read)
+
+(blurb not generated)
+
+Unified context: The missing layer for enterprise AI coworkers (1 minute read)
+
+Databricks argues that enterprise AI assistants fail at real decisions because the context they need is scattered across CRMs, dashboards, and spreadsheets with no shared definitions. The fix is a "unified context" layer: a trusted, connected map of how the business works, so a forecast call can tie pipeline to product usage, support issues, and account history in one view. General-purpose assistants retrieve what's easiest to access, not what makes the number correct.
+
+Data-Native AI Agents: Why Agents Must Move to Your Data (5 minute read)
+
+(blurb not generated)
+
+From Interpretation to Compilation: Compilation-Based Execution of Semantic Operators [Vision] (1 minute read)
+
+This paper proposes compilation-based execution for semantic operators, invoking an LLM once at compile time to generate deterministic code for semantic filters, maps, and joins rather than calling it per row. The shift moves expensive LLM calls out of the data-processing loop, and preliminary results show large drops in execution time and API calls while preserving most output quality. The authors frame the LLM as a semantic compiler that emits efficient query plans, not a runtime interpreter invoked on every record.
+
+Guide to data tools landscape for developers (1 minute read)
+
+A software engineer who joined a data company with no data background wrote a field guide to the data-tools landscape for developers who suddenly need to understand what their data team is talking about. It walks the data lifecycle end to end, ingestion, storage, transformation, and BI, mapping each tool class to the stage and problem it solves rather than teaching how to configure any single one. The framing distinguishes analytical from scientific data work, useful context for engineers building products for either audience.
+
+The Data Anarchy Tax: Why your team is firefighting 45% of the time. (5 minute read)
+
+(blurb not generated)
+
+On-prem DBaaS in 2026: Platforms, standards, and gaps (5 minute read)
+
+(blurb not generated)
+
+Let's Build PlanetScale from Scratch: Infrastructure (5 minute read)
+
+(blurb not generated)
+
+We're Building Postgres in Rust. Using the LLVM of Databases (1 minute read)
+
+Turso announced it's building a modern, from-scratch Postgres-compatible database in Rust on top of its existing SQLite rewrite, positioning Turso as "the LLVM of databases": one MVCC core with multiple database frontends compiled onto it, SQLite first and Postgres next. The pitch is architectural, not a 1:1 port. No per-connection processes, embeddable in the browser or as a file, and self-updating materialized views that refresh live instead of relying on REFRESH cron jobs or trigger hacks.
+
+🚀
+Launches & Tools
+
+Bridging the gap between SQL and Python with BigQuery and the %%bqsql magic (5 minute read)
+
+(blurb not generated)
+
+ClickHouse on Docker Hardened Images (5 minute read)
+
+(blurb not generated)
+
+Introducing Feature Views (5 minute read)
+
+(blurb not generated)
+
+How to solve PostgreSQL multilingual full-text search limitations with AlloyDB AI (5 minute read)
+
+(blurb not generated)
+
+Zilliz launches Milvus vector lakebase (5 minute read)
+
+Milvus 3.0 adds lake-native storage to Zilliz's open-source vector database, letting teams build production indexes over vectors that stay in open formats on object storage instead of a separate copy. The release also pushes ranking, aggregation, sparse search, and multi-vector retrieval into the engine, collapsing the usual split between one dataset for real-time retrieval and another for offline processing.
+
+Building a soccer coaching app on Databricks (1 minute read)
+
+Databricks published a walkthrough of Coach's Corner, a national-team bench app that turns 51 million rows of match tracking data, captured at 25fps across 19 feeds, into a sub-second 2D/3D replay with xG maps, pass networks, and pitch control overlays. The build spans the full platform, from Lakeflow ingestion to Genie scouting and a Tactical Agent that generates on-demand opponent dossiers.
+
+Regatta launches its unified OLTP, OLAP and vector database (5 minute read)
+
+(blurb not generated)

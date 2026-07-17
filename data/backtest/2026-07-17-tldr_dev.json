@@ -1,13 +1,642 @@
 {
   "date": "2026-07-17",
   "newsletter": "tldr_dev",
-  "fetched_at": "2026-07-17T07:03:28.950179+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
-  "predictions": [],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "fetched_at": "2026-07-17T18:11:22.582942+00:00",
+  "tldr_titles": [
+    "What can we learn from Bun's rapid Rust rewrite with AI?",
+    "Shipyard: How We Built Slack's Next-Generation EC2 Platform",
+    "Engineering High-Performance Parsers with Data-Oriented Design",
+    "How do you stay familiar with the code when it's written by an LLM?",
+    "The LLM Critics Are Right. I Use LLMs Anyway",
+    "Contract-Driven Development: Write the Truth Once",
+    "Use cases for aria-expanded",
+    "Guide to data tools landscape for developers",
+    "The Insights Factory: how we run deep data investigations with LLM agents",
+    "Don't Neglect the Operational Groundwork",
+    "You are not too big for a job",
+    "AI products generate more signal than teams know how to use",
+    "The Agentic Web Summer"
+  ],
+  "tldr_matched": [
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
+  "predictions": [
+    {
+      "rank": 1,
+      "score": 76.0,
+      "title": "How Our Rust-to-Zig Rewrite Is Going",
+      "url": "https://rtfeldman.com/rust-to-zig",
+      "matched_tldr_idx": 0,
+      "similarity": 0.6662001013755798
+    },
+    {
+      "rank": 2,
+      "score": 76.0,
+      "title": "Control the ideas, not the code",
+      "url": "https://antirez.com/news/169",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 3,
+      "score": 74.0,
+      "title": "The four horsemen behind thousands of Postgres outages",
+      "url": "https://malisper.me/the-four-horsemen-behind-thousands-of-postgres-outages/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 4,
+      "score": 74.0,
+      "title": "The Archaeologist\u2019s Copilot",
+      "url": "https://martinfowler.com/articles/archaeologist-copilot.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 5,
+      "score": 72.0,
+      "title": "The Same TypeScript Costs 73% More Tokens on Claude Than GPT",
+      "url": "https://playcode.io/blog/real-price-of-frontier-models",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 6,
+      "score": 69.0,
+      "title": "Telegram Serverless",
+      "url": "https://core.telegram.org/bots/serverless",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 7,
+      "score": 68.0,
+      "title": "DSLs Enable Reliable Use of LLMs",
+      "url": "https://martinfowler.com/articles/llm-and-dsls.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 8,
+      "score": 68.0,
+      "title": "Building and Shipping Mac and iOS Apps Without Ever Opening Xcode",
+      "url": "https://scottwillsey.com/building-and-shipping-mac-and-ios-apps-without-ever-opening-xcode/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 9,
+      "score": 68.0,
+      "title": "The human-in-the-loop is tired",
+      "url": "https://pydantic.dev/articles/the-human-in-the-loop-is-tired",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 10,
+      "score": 68.0,
+      "title": "Grok Build is open source",
+      "url": "https://github.com/xai-org/grok-build",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 11,
+      "score": 68.0,
+      "title": "Highlights from Git 2.55",
+      "url": "https://github.blog/open-source/git/highlights-from-git-2-55/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 12,
+      "score": 67.0,
+      "title": "Old and new apps, via modern coding agents",
+      "url": "https://terrytao.wordpress.com/2026/07/11/old-and-new-apps-via-modern-coding-agents/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 13,
+      "score": 66.0,
+      "title": "If you want to create a button from scratch, you must first create the universe",
+      "url": "https://madcampos.dev/blog/2026/07/accessibility-from-scratch/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 14,
+      "score": 66.0,
+      "title": "Show HN: misa77 - a codec that decodes 2x faster than LZ4 (at better ratios)",
+      "url": "https://github.com/welcome-to-the-sunny-side/misa77",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 15,
+      "score": 65.0,
+      "title": "How to achieve pruning when querying by non-partitioned columns in PostgreSQL",
+      "url": "https://hakibenita.com/postgresql-partition-pruning",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 16,
+      "score": 65.0,
+      "title": "The art and engineering of Sega CD Silpheed",
+      "url": "https://fabiensanglard.net/silpheed/index.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 17,
+      "score": 63.0,
+      "title": "When It Makes Sense To \u201cBlock\u201d The Main Thread",
+      "url": "https://smashingmagazine.com/2026/07/when-makes-sense-block-main-thread/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 18,
+      "score": 63.0,
+      "title": "How GitHub gave every repository a durable owner",
+      "url": "https://github.blog/security/application-security/how-github-gave-every-repository-a-durable-owner/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 19,
+      "score": 63.0,
+      "title": "Automating cross-repo documentation with GitHub Agentic Workflows",
+      "url": "https://github.blog/ai-and-ml/github-copilot/automating-cross-repo-documentation-with-github-agentic-workflows/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 20,
+      "score": 63.0,
+      "title": "Claude Code Is Way More Token-Hungry Than OpenCode. We Measured Exactly How Much",
+      "url": "https://systima.ai/blog/claude-code-vs-opencode-token-overhead",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 21,
+      "score": 63.0,
+      "title": "Job queues are deceptively tricky",
+      "url": "https://typesanitizer.com/blog/job-queues.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 22,
+      "score": 63.0,
+      "title": "The cost of saying yes has changed",
+      "url": "https://github.blog/engineering/the-cost-of-saying-yes-has-changed/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 23,
+      "score": 63.0,
+      "title": "SQLite should have (Rust-style) editions",
+      "url": "https://mort.coffee/home/sqlite-editions/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 24,
+      "score": 63.0,
+      "title": "Storybook Workbench: Audit Vibe-coded UIs and Find Hidden Bugs in Hours",
+      "url": "https://evilmartians.com/chronicles/storybook-workbench-audit-vibe-coded-uis-and-find-hidden-bugs-in-hours",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 25,
+      "score": 62.0,
+      "title": "When branchless binary search is slower",
+      "url": "https://pythonspeed.com/articles/branchless-binary-search/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 26,
+      "score": 62.0,
+      "title": "In defense of polyfills",
+      "url": "https://lea.verou.me/blog/2026/polyfills/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 27,
+      "score": 62.0,
+      "title": "Cursor Flaw Lets Malicious Cloned Repositories Trigger Windows Code Execution",
+      "url": "https://thehackernews.com/2026/07/cursor-flaw-lets-malicious-cloned.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 28,
+      "score": 61.0,
+      "title": "Networking and the Internet, from First Principles",
+      "url": "https://fazamhd.com/mental-models/networking/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 29,
+      "score": 61.0,
+      "title": "What 80% AI-written test pipelines actually cost",
+      "url": "https://www.infoworld.com/article/4196873/what-80-ai-written-test-pipelines-actually-cost.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 30,
+      "score": 61.0,
+      "title": "Postgres Is Enough",
+      "url": "https://postgresisenough.dev/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 31,
+      "score": 60.0,
+      "title": "The Prover Is the Judge: Verified Security Software from AI Coding Agents in Ada/SPARK",
+      "url": "http://arxiv.org/abs/2607.14340v1",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 32,
+      "score": 60.0,
+      "title": "What xAI Grok Build CLI actually sends to xAI",
+      "url": "https://gist.github.com/cereblab/dc9a40bc26120f4540e4e09b75ffb547",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 33,
+      "score": 60.0,
+      "title": "How I Cut an AI Agent's Token Use by 94%",
+      "url": "https://vivekhaldar.com/articles/compiling-an-ai-agent-skill/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 34,
+      "score": 60.0,
+      "title": "Are you telling me a readonly property is wrecking my performance?",
+      "url": "https://shub.club/writings/2026/july/check-your-scrollheight/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 35,
+      "score": 60.0,
+      "title": "The Tower Keeps Rising",
+      "url": "https://lucumr.pocoo.org/2026/7/13/the-tower-keeps-rising/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 36,
+      "score": 60.0,
+      "title": "Own the Outer Loop",
+      "url": "https://addyosmani.com/blog/own-the-outer-loop/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 37,
+      "score": 58.0,
+      "title": "How Claude's values vary by model and language",
+      "url": "https://www.anthropic.com/research/claude-values-models-languages",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 38,
+      "score": 58.0,
+      "title": "Claude Code: Anatomy of a Misfeature",
+      "url": "https://www.olafalders.com/2026/07/17/claude-code-anatomy-of-a-misfeature/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 39,
+      "score": 58.0,
+      "title": "The Tokio/Rayon Trap and Why Async/Await Fails Concurrency",
+      "url": "https://pmbanugo.me/blog/why-async-await-complect-concurrency",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 40,
+      "score": 58.0,
+      "title": "Stop being the code review bottleneck",
+      "url": "https://newsletter.posthog.com/p/code-review-tips",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 41,
+      "score": 58.0,
+      "title": "Why Vanilla JS",
+      "url": "https://guseyn.com/html/posts/why-vanilla-js.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 42,
+      "score": 58.0,
+      "title": "Software Has Changed",
+      "url": "https://www.abeautifulsite.net/posts/software-has-changed/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 43,
+      "score": 58.0,
+      "title": "Code Yellow, Code Red",
+      "url": "https://theengineeringmanager.substack.com/p/code-yellow-code-red",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 44,
+      "score": 58.0,
+      "title": "Welcome Inkling by Thinking Machines",
+      "url": "https://huggingface.co/blog/thinkingmachines-inkling",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 45,
+      "score": 58.0,
+      "title": "Microsoft releases .NET 11 Preview 6",
+      "url": "https://www.infoworld.com/article/4197485/microsoft-releases-net-11-preview-6.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 46,
+      "score": 58.0,
+      "title": "Minikotlin",
+      "url": "https://minikotlin.run",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 47,
+      "score": 58.0,
+      "title": "Show HN: Leaves \u2013 A text-UI disk usage treemap visualizer",
+      "url": "https://github.com/patonw/leaves",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 48,
+      "score": 58.0,
+      "title": "Brainless: Shadcn components that look like Claude Code, Codex and Grok",
+      "url": "https://brainless.swerdlow.dev",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 49,
+      "score": 58.0,
+      "title": "Cursor 0day: When Full Disclosure Becomes the Only Protection Left",
+      "url": "https://mindgard.ai/blog/cursor-0day-when-full-disclosure-becomes-the-only-protection-left",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 50,
+      "score": 58.0,
+      "title": "npm 12 Disables Install Scripts by Default to Reduce Supply Chain Risk",
+      "url": "https://thehackernews.com/2026/07/npm-12-disables-install-scripts-by.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 51,
+      "score": 58.0,
+      "title": "GPT-5.6 Codex is deleting files from home directories in a \"handful\" of cases",
+      "url": "https://www.neowin.net/news/gpt-56-codex-is-deleting-files-from-home-directories-in-a-handful-of-cases/?utm_source=rss",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 52,
+      "score": 58.0,
+      "title": "TIL - Algolia Makes Creating an MCP Server Stupid Easy",
+      "url": "https://www.raymondcamden.com/2026/07/11/til-algolia-makes-creating-an-mcp-server-stupid-easy",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 53,
+      "score": 57.0,
+      "title": "Code review is theater now",
+      "url": "https://octopus.com/blog/code-review-is-theater-now",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 54,
+      "score": 57.0,
+      "title": "With AI Agents, Attention is the New Bottleneck",
+      "url": "https://spin.atomicobject.com/ai-agents-attention-bottleneck/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 55,
+      "score": 57.0,
+      "title": "Bring GitLab Duo Agent Platform to your terminal",
+      "url": "https://about.gitlab.com/blog/gitlab-duo-cli-generally-available/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 56,
+      "score": 57.0,
+      "title": "Show HN: Firefox in WebAssembly",
+      "url": "https://developer.puter.com/labs/firefox-wasm/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 57,
+      "score": 56.0,
+      "title": "Prompt injection is becoming the XSS of the web agent era",
+      "url": "https://www.helpnetsecurity.com/2026/07/17/xss-web-agent-prompt-injection/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 58,
+      "score": 56.0,
+      "title": "Bridging the gap between SQL and Python with BigQuery and the %%bqsql magic",
+      "url": "https://cloud.google.com/blog/products/data-analytics/bridge-sql-and-python-with-bigquery/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 59,
+      "score": 56.0,
+      "title": "Atlassian evolves Jira into an orchestration hub for developers and AI agents",
+      "url": "https://siliconangle.com/2026/07/15/atlassian-evolves-jira-orchestration-hub-developers-ai-agents/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 60,
+      "score": 56.0,
+      "title": "LM Studio expands beyond chat with Bionic, a new AI agent app for open models",
+      "url": "https://9to5mac.com/2026/07/16/lm-studio-expands-beyond-chat-with-bionic-a-new-ai-agent-app-for-open-models/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 61,
+      "score": 56.0,
+      "title": "AI Prototyper: A Figma Plugin for Decomposition-Based GUI Prototyping with LLMs",
+      "url": "http://arxiv.org/abs/2607.14830v1",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 62,
+      "score": 56.0,
+      "title": "LM Studio Bionic: the AI agent for open models",
+      "url": "https://lmstudio.ai/blog/introducing-lm-studio-bionic",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 63,
+      "score": 56.0,
+      "title": "Open-source memory for coding agents, synced over SSH",
+      "url": "https://github.com/vshulcz/deja-vu/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 64,
+      "score": 56.0,
+      "title": "JetBrains seeks to unify fragmented AI-based software development with governance suite",
+      "url": "https://www.infoworld.com/article/4195002/jetbrains-seeks-to-unify-fragmented-ai-based-software-development-with-governance-suite.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 65,
+      "score": 56.0,
+      "title": "Build agentic full-stack apps with Genkit",
+      "url": "https://developers.googleblog.com/build-agentic-full-stack-apps-with-genkit/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 66,
+      "score": 56.0,
+      "title": "Compromised Injective SDK npm Package Exfiltrates Wallet Keys and Mnemonics",
+      "url": "https://socket.dev/blog/compromised-injective-sdk-npm-package",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 67,
+      "score": 56.0,
+      "title": "Compromised AsyncAPI npm Packages Deliver Multi-Stage Botnet Malware",
+      "url": "https://thehackernews.com/2026/07/compromised-asyncapi-npm-packages.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 68,
+      "score": 56.0,
+      "title": "A broken DNSSEC rollover took down .AL. Now 1.1.1.1 tells you when validation is bypassed",
+      "url": "https://blog.cloudflare.com/dnssec-nta-ede-33/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 69,
+      "score": 56.0,
+      "title": "mariadb-server: Upgrading to 10.11.18-0+deb12u1 enables systemd socket activation unconditionally",
+      "url": "https://bugs.debian.org/cgi-bin/bugreport.cgi",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 70,
+      "score": 56.0,
+      "title": "2-Click Cursor Exploit Enables Dev Environment Takeover",
+      "url": "https://www.darkreading.com/application-security/2-click-cursor-exploit-dev-environment-takeover",
+      "matched_tldr_idx": null,
+      "similarity": null
+    }
+  ],
+  "recall_at": {
+    "10": 0.07692307692307693,
+    "25": 0.07692307692307693,
+    "50": 0.07692307692307693,
+    "100": 0.07692307692307693,
+    "70": 0.07692307692307693
+  },
+  "hits_at": {
+    "10": 1,
+    "25": 1,
+    "50": 1,
+    "100": 1,
+    "70": 1
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://blog.pragmaticengineer.com/the-pulse-what-can-we-learn-from-buns-rapid-rust-rewrite-with-ai/",
+    "https://slack.engineering/shipyard-how-we-built-slacks-next-generation-ec2-platform/",
+    "https://arshad.fyi/writings/engineering-high-performance-parsers",
+    "https://www.aha.io/engineering/articles/staying-familiar-with-the-code-when-its-written-by-an-llm",
+    "https://www.theocharis.dev/blog/llm-critics-are-right-i-use-llms-anyway/",
+    "https://benhowdle.im/contract-driven-development.html",
+    "https://piccalil.li/blog/use-cases-for-aria-expanded/",
+    "https://sinja.io/blog/data-landscape-guide-for-developers",
+    "https://www.photoroom.com/inside-photoroom/the-insights-factory-how-we-run-deep-data-investigations-with-llm-agents",
+    "https://www.oreilly.com/radar/dont-neglect-the-operational-groundwork/",
+    "https://x.com/opeawo/status/2077441540587192422",
+    "https://www.armank.dev/thoughts/2",
+    "https://nekuda.substack.com/p/the-agentic-web-summer"
+  ],
+  "tldr_domains": [
+    "blog.pragmaticengineer.com",
+    "slack.engineering",
+    "arshad.fyi",
+    "aha.io",
+    "theocharis.dev",
+    "benhowdle.im",
+    "piccalil.li",
+    "sinja.io",
+    "photoroom.com",
+    "oreilly.com",
+    "x.com",
+    "armank.dev",
+    "nekuda.substack.com"
+  ]
 }

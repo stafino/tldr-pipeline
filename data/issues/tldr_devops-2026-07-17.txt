@@ -2,3 +2,176 @@ Sign Up | Advertise | View Online
 TLDR
 
 TLDR DevOps 2026-07-17
+
+📱
+News & Trends
+
+Announcing etcd v3.7.0 (5 minute read)
+
+(blurb not generated)
+
+HAMi becomes a CNCF incubating project (1 minute read)
+
+The CNCF Technical Oversight Committee voted to promote HAMi, an open source GPU virtualization middleware for Kubernetes, to incubating status, roughly two years after it entered the Sandbox. HAMi lets platform teams slice a physical GPU or other accelerator by memory, core, or device count with hard runtime isolation and topology-aware scheduling, and its multi-vendor design already backs deployments like DaoCloud's 10,000-GPU fleet across 10-plus data centers.
+
+TS-2026-009: Insecure argument handling in Tailscale SSH permitted root access (5 minute read)
+
+(blurb not generated)
+
+Improving Smart Tiered Cache for public cloud regions (5 minute read)
+
+(blurb not generated)
+
+mariadb-server: Upgrading to 10.11.18-0+deb12u1 enables systemd socket activation unconditionally (5 minute read)
+
+(blurb not generated)
+
+A broken DNSSEC rollover took down .AL. Now 1.1.1.1 tells you when validation is bypassed (1 minute read)
+
+A botched DNSSEC key rollover at Albania's .AL registry on July 3 broke validation across the entire TLD, leaving government, bank, and media sites unreachable on every validating resolver until Cloudflare applied a Negative Trust Anchor to suspend validation on 1.1.1.1. For the first time, 1.1.1.1 also returned a new Extended DNS Error code on affected responses, signaling clients that an answer was served unvalidated rather than restoring resolution silently.
+
+Full Broker Takeover, No Login Required: Miggo Discovers Critical RabbitMQ Vulnerabilities Putting Application Data at Risk (5 minute read)
+
+(blurb not generated)
+
+Airbus migrating 70 critical apps from AWS to France's Scaleway amid digital sovereignty push (1 minute read)
+
+Airbus is migrating 70 critical applications off AWS to French provider Scaleway, part of a broader digital sovereignty push to keep sensitive workloads under EU jurisdiction and outside US CLOUD Act reach. The move trades hyperscaler breadth for regional control and adds re-platforming toil, a bet European operators are increasingly willing to make as sovereignty requirements harden into procurement rules.
+
+Your Azure DevOps pipelines have a 2027 deadline, and the clock has just started (5 minute read)
+
+(blurb not generated)
+
+Amazon fixing bug that billed some AWS customers billions of dollars (1 minute read)
+
+Amazon confirmed a bug in its AWS billing computation subsystem that generated wildly inaccurate estimates late Thursday, with some customers seeing charges from a few million to close to $2.5 billion for usage they never incurred. A rollback of the triggering change failed to fix the issue, but Amazon says the estimates do not reflect actual charges and expects resolution within several hours.
+
+Level Up Your Column-level Security: Using IAM Data Governance Tags in BigQuery (3 minute read)
+
+Google Cloud released a preview of IAM data governance tags for BigQuery column-level security, replacing regional-only policy tags with globally scoped tags built on Resource Manager that can nest up to five levels deep. The tags replicate automatically to secondary regions during failover and can classify columns before access policies are attached, letting platform teams fold BigQuery column controls into a central org-wide governance strategy.
+
+Six New U-Boot Flaws Could Let Malicious Images Crash Devices or Run Code at Boot (5 minute read)
+
+(blurb not generated)
+
+AWS CloudFront outage serves errors instead of websites (1 minute read)
+
+Amazon's CloudFront CDN suffered an outage that returned HTTP errors instead of cached content, breaking sites that route their edge traffic through the service until AWS restored normal delivery. The incident is another reminder that a single CDN sits in the critical path for a huge swath of the web, and teams without a multi-CDN or origin-failover strategy had no way to shed the blast radius.
+
+Red Hat OpenShift 4.22 tackles cloud costs, AI workloads (1 minute read)
+
+Red Hat shipped OpenShift 4.22 to general availability, adding a GA build of Karpenter for autoscaling right-sizing, EC2 Spot Instance support for fault-tolerant workloads on ROSA hosted control planes, and a JobSet operator to coordinate distributed LLM training runs. The release also lands confidential AI as a tech preview, running sensitive models inside cryptographically isolated memory and CPU, alongside a minimal UBI that trims the container attack surface.
+
+AI workloads shake up observability market (2 minute read)
+
+Gartner's latest Magic Quadrant for Observability Platforms names Chronosphere, Coralogix, Datadog, Dynatrace, Elastic, Grafana Labs, IBM, and New Relic as Leaders, and flags AI observability as the category's emerging differentiator. Vendors are now racing to add visibility into token consumption, model latency, hallucination rates, and agent behavior, alongside cost-management features, as enterprises push observability past traditional logs, metrics, and traces.
+
+GitLab 19.2 released (5 minute read)
+
+GitLab 19.2 shipped with the GitLab Duo CLI and custom flows both reaching general availability, bringing the Duo Agent Platform to the terminal and letting teams define YAML-based, multi-agent automation that runs directly in GitLab CI/CD. The CLI ships with interactive and headless CI/CD modes, MCP connections, and admin on/off controls, while custom flows add human-in-the-loop checkpoints and native triggers on pipeline and merge request events.
+
+🚀
+Opinions & Tutorials
+
+The four horsemen behind thousands of Postgres outages (5 minute read)
+
+(blurb not generated)
+
+Code review is theater now (5 minute read)
+
+(blurb not generated)
+
+Running a self-hosted LLM in Kubernetes with vLLM (1 minute read)
+
+This CNCF tutorial documents standing up self-hosted LLM inference on Kubernetes, using vLLM for serving and LINSTOR for replicated persistent storage of model weights. Because vLLM exposes an OpenAI-compatible REST API, existing LangChain or OpenAI-SDK code repoints with a URL change, making a hybrid setup practical for cost predictability, latency control, and data-residency requirements. The walkthrough runs Llama-3.2-1B on CPU, so GPU-less labs can reproduce it.
+
+On-prem DBaaS in 2026: Platforms, standards, and gaps (1 minute read)
+
+This CNCF post maps the state of on-prem Database-as-a-Service in 2026, arguing that database provisioning remains fragmented even as platform engineering and Kubernetes adoption have matured. Teams still face a tradeoff between running their own operators (Patroni, MariaDB, key-value) and centralizing behind Crossplane compositions that provision cloud-managed services like RDS. The author's point is that both approaches force organizations to reinvent DBaaS, and no standard yet delivers a consistent self-service experience across on-prem and cloud environments.
+
+Making 768 servers look like 1 (1 minute read)
+
+PlanetScale walks through scaling a relational database from a single node to 768 servers storing a petabyte, arguing that sharding is the only durable answer once a Postgres or MySQL instance exceeds a few terabytes. The post grounds the case in the Universal Scalability Law, showing why read-replicas and bigger boxes hit CPU and IOPS ceilings that vertical scaling and replication cannot clear. It then traces the path from four shards to 768, treating the fleet as one logical database.
+
+OVS and OVN Explained: The Networking Stack Behind OpenStack (5 minute read)
+
+(blurb not generated)
+
+How GitHub gave every repository a durable owner (5 minute read)
+
+(blurb not generated)
+
+Automating cross-repo documentation with GitHub Agentic Workflows (5 minute read)
+
+(blurb not generated)
+
+Demystifying AI Exploits: A Blueprint for AI-Assisted Vulnerability Management (2 minute read)
+
+Mandiant published a blueprint for safely integrating LLM agents into vulnerability management workflows, citing an M-Trends 2026 finding that mean time-to-exploit has fallen to -7 days, so bugs are often exploited a week before a patch exists. The guidance wraps privileged AI agents in deterministic controls: block access to PII and PHI, run discovery in non-production environments with synthetic data, and keep humans on remediation decisions. It maps the approach to NIST AI RMF, the OWASP Top 10 for LLMs, and Google's SAIF.
+
+The Risk of Exposed Cloud Functions and How to Harden (2 minute read)
+
+Mandiant's Corné de Jong walks through how publicly exposed serverless functions become initial access points, since unauthenticated Cloud Run services and functions running third-party code are frequent targets for command injection and file-inclusion attacks that hand attackers control of the container. The post lays out concrete hardening steps for functions that must stay public, and notes the risk is growing as generative AI workflows push more teams onto serverless.
+
+How Microsoft Ships Thousands of Production AI Agents (5 minute read)
+
+(blurb not generated)
+
+Postgres Is Enough (5 minute read)
+
+(blurb not generated)
+
+LLM Networking with MikroTik (1 minute read)
+
+The author describes using LLMs, including Claude Code with permission-skipping, to configure MikroTik networks over the past few months, covering one migration and two greenfield builds. The takeaway is that LLMs handle RouterOS config and general networking competently but still go off-path, so the coding-world discipline applies: keep a tight leash, distrust, and verify each change against the device.
+
+Node.js security starts before CI (3 minute read)
+
+The author argues Node.js dependency security has to move upstream of CI, to the moment a developer decides to trust a package, since every npm install and transitive dependency is an unreviewed trust decision. Recent supply-chain incidents make the case: compromised Axios versions with install-time payloads in March 2026, and 84 malicious versions across 42 packages shipped through TanStack's own release pipeline in May. Post-merge scanners catch these too late.
+
+Securing AI at Enterprise Scale: The Google Kubernetes Engine Blueprint (2 minute read)
+
+Google shared a blueprint for securing AI workloads on GKE, organizing controls across three layers: infrastructure, model, and application. The infrastructure layer leans on Confidential GKE Nodes to extend hardware memory encryption and attestation to H100 GPUs and TPUs, plus Workload Identity Federation to fetch model weights from Cloud Storage without long-lived keys. The model layer adds supply-chain provenance so what you train matches what you serve, addressing prompt injection and weight-integrity gaps that traditional SBOMs miss.
+
+How to protect your MCP Server with Fastly (5 minute read)
+
+(blurb not generated)
+
+⚒️
+Launches & Tools
+
+Bring GitLab Duo Agent Platform to your terminal (3 minute read)
+
+GitLab made Duo CLI generally available in GitLab 19.2, bringing its agentic chat into the terminal with built-in awareness of your projects, pipelines, permissions, and existing agent setup. It runs interactively or headless inside CI jobs, authenticates through `glab duo cli`, and gives platform teams the same admin controls, identity model, and MCP diagnostics they govern the rest of GitLab with.
+
+When a version bump breaks your build, GitLab fixes it (2 minute read)
+
+GitLab launched Dependency Scanning Auto-Remediation in beta, which opens a merge request to upgrade a vulnerable package, then uses AI to fix any build-breaking changes and iterates until the pipeline passes. Every fix runs through existing approval gates and audit trails, with each MR attributed to a dedicated service account, targeting the roughly one in eight dependency updates that introduce a breaking change.
+
+Introducing Precursor: detecting agentic behavior with continuous client-side signals (5 minute read)
+
+Cloudflare launched Precursor, a client-side verification system that injects JavaScript to continuously collect behavioral signals across a full session, feeding them into Enterprise Bot Management in real time to separate human traffic from automated and agentic bots. It extends detection beyond one-off Turnstile challenges at login or checkout to the entire user journey, targeting automation that can pass individual CAPTCHAs but cannot fake consistent human behavior over time.
+
+Turn multi-step software delivery into agentic flows you can trust (3 minute read)
+
+GitLab made Custom Flows in the Duo Agent Platform generally available in GitLab 19.2, letting teams define multi-step delivery workflows once, trigger them from native GitLab events, and run them inside CI/CD pipelines with human-in-the-loop checkpoints at sensitive steps. The 19.2 release adds a "work item status changed" trigger, bulk enablement across up to 100 projects, and flow recommendations surfaced directly in Duo Agentic Chat.
+
+GitLab Duo Security Review spots logic flaws scanners miss (2 minute read)
+
+GitLab launched Security Review Flow in public beta, an AI-driven flow on the Duo Agent Platform that reasons about code intent to catch authorization gaps, data-exposure bugs, and business-logic race conditions during merge-request review. It targets the flaws static scanners miss, like broken object-level authorization, because the code is valid and only violates domain context the scanner never sees, previously catchable only through expensive manual review.
+
+Scale Faster with Managed Weaviate: Now in Public Preview on DigitalOcean (5 minute read)
+
+(blurb not generated)
+
+Introducing Smart Retry: Safer retries for transient Jenkins failures. (5 minute read)
+
+(blurb not generated)
+
+ClickHouse on Docker Hardened Images (5 minute read)
+
+(blurb not generated)
+
+Introducing GuardDog 3.0: A new rules engine, transparent sandboxing, and more (5 minute read)
+
+(blurb not generated)

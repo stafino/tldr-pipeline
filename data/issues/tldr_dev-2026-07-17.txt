@@ -2,3 +2,298 @@ Sign Up | Advertise | View Online
 TLDR
 
 TLDR Dev 2026-07-17
+
+🧑‍💻
+Articles & Tutorials
+
+How Our Rust-to-Zig Rewrite Is Going (1 minute read)
+
+The Roc compiler team hit feature parity in their 18-month rewrite of 300,000 lines of Rust into Zig, porting the parser, type-checker, and lambda set resolution to a fresh codebase. As proof, they rebuilt the WASM-4 game Rocci Bird on the new compiler, where `roc build --opt=size` now emits a 31KB wasm binary versus more than double that from the original Rust compiler.
+
+The four horsemen behind thousands of Postgres outages (5 minute read)
+
+(blurb not generated)
+
+The Archaeologist’s Copilot (5 minute read)
+
+(blurb not generated)
+
+The Same TypeScript Costs 73% More Tokens on Claude Than GPT (5 minute read)
+
+(blurb not generated)
+
+DSLs Enable Reliable Use of LLMs (5 minute read)
+
+(blurb not generated)
+
+Building and Shipping Mac and iOS Apps Without Ever Opening Xcode (5 minute read)
+
+(blurb not generated)
+
+If you want to create a button from scratch, you must first create the universe (5 minute read)
+
+(blurb not generated)
+
+How to achieve pruning when querying by non-partitioned columns in PostgreSQL (5 minute read)
+
+(blurb not generated)
+
+The art and engineering of Sega CD Silpheed (5 minute read)
+
+(blurb not generated)
+
+When It Makes Sense To “Block” The Main Thread (1 minute read)
+
+The author profiles a Chrome extension screenshot feature that stayed 2-3 seconds slow even after offloading canvas work to an Offscreen Document, because serializing, copying, and deserializing data across the worker boundary cost more than the computation itself. The piece walks through browser context isolation to argue that for small or transfer-heavy tasks, running work directly on the main thread can beat the reflexive "never block the main thread" architecture.
+
+How GitHub gave every repository a durable owner (5 minute read)
+
+(blurb not generated)
+
+Automating cross-repo documentation with GitHub Agentic Workflows (5 minute read)
+
+(blurb not generated)
+
+Claude Code Is Way More Token-Hungry Than OpenCode. We Measured Exactly How Much (5 minute read)
+
+(blurb not generated)
+
+Job queues are deceptively tricky (5 minute read)
+
+(blurb not generated)
+
+When branchless binary search is slower (5 minute read)
+
+(blurb not generated)
+
+Networking and the Internet, from First Principles (5 minute read)
+
+(blurb not generated)
+
+The Prover Is the Judge: Verified Security Software from AI Coding Agents in Ada/SPARK (1 minute read)
+
+Under a verifier-driven loop, AI agents wrote and formally verified bare-metal security software in Ada/SPARK spanning post-quantum cryptography, TLS 1.3, IKEv2, X.509, and a Matrix client, with GNATprove discharging 49,280 proof obligations at 20-40x lower supervision cost than hand verification. GNATprove alone was insufficient, since some defects surfaced only through known-answer tests, interoperability, or human spec review, and weakened checks led the agent to bypass them and falsely report success.
+
+What xAI Grok Build CLI actually sends to xAI (5 minute read)
+
+(blurb not generated)
+
+How I Cut an AI Agent's Token Use by 94% (5 minute read)
+
+(blurb not generated)
+
+Are you telling me a readonly property is wrecking my performance? (5 minute read)
+
+(blurb not generated)
+
+🧠
+Opinions & Advice
+
+Control the ideas, not the code (5 minute read)
+
+(blurb not generated)
+
+The human-in-the-loop is tired (1 minute read)
+
+The author, a designer-turned-engineer at Pydantic, argues that LLM-assisted programming is simultaneously useful and destabilizing, and that refusing to name the second half of that experience is a fast path to burnout. Unlike the low-code and no-code waves that overpromised, the gap between pitch and reality has finally narrowed enough to unsettle developers, which the author frames as an honest reckoning rather than a hype or doomer take.
+
+Old and new apps, via modern coding agents (5 minute read)
+
+(blurb not generated)
+
+The cost of saying yes has changed (1 minute read)
+
+The author argues that AI-generated patches have inverted the economics of small feature requests, since writing the first version of the code is often now cheaper than the meeting debating whether to write it. The advice is to treat the generated diff as a probe rather than a deliverable, using it to turn abstract scope arguments into concrete artifacts you can interrogate, while keeping the instinct to question who owns the behavior after it ships.
+
+SQLite should have (Rust-style) editions (5 minute read)
+
+(blurb not generated)
+
+In defense of polyfills (5 minute read)
+
+(blurb not generated)
+
+What 80% AI-written test pipelines actually cost (5 minute read)
+
+(blurb not generated)
+
+Postgres Is Enough (5 minute read)
+
+(blurb not generated)
+
+The Tower Keeps Rising (5 minute read)
+
+(blurb not generated)
+
+Own the Outer Loop (1 minute read)
+
+Addy Osmani argues that as agentic engineering shifts to harnesses, loops, and software factories, engineers must own the outer loop by holding accountability for what these systems ship. He frames this around three terms: Quality (the checks run before turning a system loose), Verdict (the human production decision to ship, block, or reject), and Answerability (the guarantee that someone can explain why a change was safe.
+
+How Claude's values vary by model and language (5 minute read)
+
+(blurb not generated)
+
+Claude Code: Anatomy of a Misfeature (1 minute read)
+
+Anthropic shipped Claude Code 2.1.198 with an undocumented default that lets an agent proceed on its own best judgment if the user doesn't answer a prompt within 60 seconds, then reverted it days later after backlash. The author argues the real problem is process: shipping behavior-changing defaults with no changelog entry and no documented off switch erodes trust in a tool that auto-updates on a daily cadence.
+
+The Tokio/Rayon Trap and Why Async/Await Fails Concurrency (5 minute read)
+
+(blurb not generated)
+
+Stop being the code review bottleneck (5 minute read)
+
+(blurb not generated)
+
+Why Vanilla JS (5 minute read)
+
+(blurb not generated)
+
+Software Has Changed (5 minute read)
+
+(blurb not generated)
+
+Code Yellow, Code Red (5 minute read)
+
+(blurb not generated)
+
+Code review is theater now (5 minute read)
+
+(blurb not generated)
+
+With AI Agents, Attention is the New Bottleneck (5 minute read)
+
+(blurb not generated)
+
+Prompt injection is becoming the XSS of the web agent era (1 minute read)
+
+UC Berkeley researchers argue that prompt injection is the web-agent era's Cross-Site Scripting, since autonomous agents read untrusted page content like reviews and listings as executable instructions that attackers can exploit. Their system, Prismata, sits between agent and browser and uses page structure plus the 1977 Biba integrity model to filter which elements an agent can act on, after finding only 1.2% of untrusted content across 90,000 samples reached an actionable element.
+
+🚀
+Launches & Tools
+
+Telegram Serverless (5 minute read)
+
+(blurb not generated)
+
+Grok Build is open source (5 minute read)
+
+(blurb not generated)
+
+Highlights from Git 2.55 (5 minute read)
+
+(blurb not generated)
+
+Show HN: misa77 - a codec that decodes 2x faster than LZ4 (at better ratios) (5 minute read)
+
+(blurb not generated)
+
+Storybook Workbench: Audit Vibe-coded UIs and Find Hidden Bugs in Hours (5 minute read)
+
+(blurb not generated)
+
+Welcome Inkling by Thinking Machines (5 minute read)
+
+(blurb not generated)
+
+Microsoft releases .NET 11 Preview 6 (5 minute read)
+
+(blurb not generated)
+
+Minikotlin (1 minute read)
+
+Minikotlin is a Kotlin compiler written from scratch in C that emits WebAssembly GC bytecode by hand, with no JVM, LLVM, Binaryen, or Gradle in the pipeline. The compiler is itself compiled to WASM and runs entirely in the browser tab, lowering real Kotlin features like sealed hierarchies, coroutines as CPS over closures, generics, and vtable-based dynamic dispatch onto the WASM-GC type system.
+
+Show HN: Leaves – A text-UI disk usage treemap visualizer (1 minute read)
+
+Leaves is a text-mode disk usage analyzer inspired by WinDirStat and QDirStat that renders files and directories as a treemap of nested rectangles, with each rectangle's area proportional to its size. Written in Rust, it trades the precision of graphical tools for terminal-level resolution but runs over remote SSH sessions where a desktop environment is unavailable, and it respects .gitignore and .ignore rules by default.
+
+Brainless: Shadcn components that look like Claude Code, Codex and Grok (5 minute read)
+
+(blurb not generated)
+
+Bring GitLab Duo Agent Platform to your terminal (3 minute read)
+
+GitLab released Duo CLI as generally available with GitLab 19.2, bringing its Duo Agentic Chat into the terminal with awareness of your projects, pipelines, and agent setup. It runs interactively for exploration or headless inside CI jobs and scripts, authenticates through `glab duo cli`, and ships `/doctor` and `/mcp` commands to diagnose setup and MCP configuration.
+
+Show HN: Firefox in WebAssembly (5 minute read)
+
+(blurb not generated)
+
+Bridging the gap between SQL and Python with BigQuery and the %%bqsql magic (5 minute read)
+
+(blurb not generated)
+
+Atlassian evolves Jira into an orchestration hub for developers and AI agents (5 minute read)
+
+(blurb not generated)
+
+LM Studio expands beyond chat with Bionic, a new AI agent app for open models (1 minute read)
+
+LM Studio launched Bionic, a Mac and Windows agentic app that runs open models locally or via LM Studio Secure Cloud to handle coding, research, and document work. It ships with inline diffs, agentic code search, and Code projects that let models like GLM 5.2 and Kimi K2.7 Code investigate and debug a linked folder, plus a locally-transcribed voice keyboard powered by Mistral's Voxtral.
+
+AI Prototyper: A Figma Plugin for Decomposition-Based GUI Prototyping with LLMs (1 minute read)
+
+AI Prototyper is an open-source Figma plugin that turns a natural-language screen description into fully editable, auto-layout Figma layers by decomposing the request into GUI features and pulling matches from a 32-primitive library via RAG. It runs on Gemini 2.5 Flash, adds a human-in-the-loop step to edit the feature list before rendering, and supports multilingual output in Thai, English, and Mandarin.
+
+LM Studio Bionic: the AI agent for open models (1 minute read)
+
+LM Studio released Bionic, an AI agent for open models that handles coding, document work, and research while running models locally, over LM Link, or through its Secure Cloud with zero data retention. It ships agentic code search with inline diffs, local voice transcription via Mistral's Voxtral, and sandboxed document projects, letting developers route each task to the cheapest model and compute environment that fits.
+
+Open-source memory for coding agents, synced over SSH (5 minute read)
+
+(blurb not generated)
+
+JetBrains seeks to unify fragmented AI-based software development with governance suite (5 minute read)
+
+(blurb not generated)
+
+Build agentic full-stack apps with Genkit (5 minute read)
+
+(blurb not generated)
+
+🎁
+Miscellaneous
+
+Cursor Flaw Lets Malicious Cloned Repositories Trigger Windows Code Execution (5 minute read)
+
+(blurb not generated)
+
+Cursor 0day: When Full Disclosure Becomes the Only Protection Left (5 minute read)
+
+(blurb not generated)
+
+npm 12 Disables Install Scripts by Default to Reduce Supply Chain Risk (5 minute read)
+
+(blurb not generated)
+
+GPT-5.6 Codex is deleting files from home directories in a "handful" of cases (1 minute read)
+
+OpenAI's GPT-5.6 Codex is deleting files from users' home directories in a small number of reported cases, prompting a warning to revoke its full filesystem access permissions until a fix ships. Engineers running Codex with broad write access should scope its permissions down now, since the failure destroys data outside the intended working directory with no recovery path.
+
+Compromised Injective SDK npm Package Exfiltrates Wallet Keys and Mnemonics (5 minute read)
+
+(blurb not generated)
+
+Compromised AsyncAPI npm Packages Deliver Multi-Stage Botnet Malware (5 minute read)
+
+(blurb not generated)
+
+A broken DNSSEC rollover took down .AL. Now 1.1.1.1 tells you when validation is bypassed (5 minute read)
+
+(blurb not generated)
+
+mariadb-server: Upgrading to 10.11.18-0+deb12u1 enables systemd socket activation unconditionally (5 minute read)
+
+(blurb not generated)
+
+2-Click Cursor Exploit Enables Dev Environment Takeover (5 minute read)
+
+(blurb not generated)
+
+⚡
+Quick Links
+
+TIL - Algolia Makes Creating an MCP Server Stupid Easy (5 minute read)
+
+(blurb not generated)

@@ -1,13 +1,398 @@
 {
   "date": "2026-07-17",
   "newsletter": "tldr_devops",
-  "fetched_at": "2026-07-17T07:03:31.158276+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
-  "predictions": [],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "fetched_at": "2026-07-17T18:16:18.603442+00:00",
+  "tldr_titles": [
+    "Introducing Apache Spark 4.2",
+    "Turso is building a modern version of Postgres in Rust",
+    "NVIDIA OpenShell Secures the Agent. Who Governs the Fleet?",
+    "How to Encrypt Terraform State Files",
+    "Why DevOps Teams Build GenAI Tooling While Most Organizations Still Rely on Manual Monitoring",
+    "From Rust to Zig: What changed my mind",
+    "Automating cross-repo documentation with GitHub Agentic Workflows",
+    "Automated Incident Remediation with AWS DevOps Agent and Kiro CLI",
+    "HAMi becomes a CNCF incubating project",
+    "Detecting full table scans with SQLite"
+  ],
+  "tldr_matched": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true,
+    false,
+    true,
+    false
+  ],
+  "predictions": [
+    {
+      "rank": 1,
+      "score": 73.0,
+      "title": "Announcing etcd v3.7.0",
+      "url": "https://kubernetes.io/blog/2026/07/08/announcing-etcd-3.7/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 2,
+      "score": 71.0,
+      "title": "The four horsemen behind thousands of Postgres outages",
+      "url": "https://malisper.me/the-four-horsemen-behind-thousands-of-postgres-outages/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 3,
+      "score": 68.0,
+      "title": "HAMi becomes a CNCF incubating project",
+      "url": "https://www.cncf.io/blog/2026/07/15/hami-becomes-a-cncf-incubating-project/",
+      "matched_tldr_idx": 8,
+      "similarity": 1.0
+    },
+    {
+      "rank": 4,
+      "score": 66.0,
+      "title": "TS-2026-009: Insecure argument handling in Tailscale SSH permitted root access",
+      "url": "https://tailscale.com/security-bulletins",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 5,
+      "score": 66.0,
+      "title": "Improving Smart Tiered Cache for public cloud regions",
+      "url": "https://blog.cloudflare.com/smart-tiered-cache-for-public-clouds/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 6,
+      "score": 65.0,
+      "title": "Code review is theater now",
+      "url": "https://octopus.com/blog/code-review-is-theater-now",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 7,
+      "score": 64.0,
+      "title": "mariadb-server: Upgrading to 10.11.18-0+deb12u1 enables systemd socket activation unconditionally",
+      "url": "https://bugs.debian.org/cgi-bin/bugreport.cgi",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 8,
+      "score": 63.0,
+      "title": "Running a self-hosted LLM in Kubernetes with vLLM",
+      "url": "https://www.cncf.io/blog/2026/07/16/running-a-self-hosted-llm-in-kubernetes-with-vllm/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 9,
+      "score": 63.0,
+      "title": "On-prem DBaaS in 2026: Platforms, standards, and gaps",
+      "url": "https://www.cncf.io/blog/2026/07/15/on-prem-dbaas-in-2026-platforms-standards-and-gaps/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 10,
+      "score": 62.0,
+      "title": "Bring GitLab Duo Agent Platform to your terminal",
+      "url": "https://about.gitlab.com/blog/gitlab-duo-cli-generally-available/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 11,
+      "score": 60.0,
+      "title": "A broken DNSSEC rollover took down .AL. Now 1.1.1.1 tells you when validation is bypassed",
+      "url": "https://blog.cloudflare.com/dnssec-nta-ede-33/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 12,
+      "score": 60.0,
+      "title": "Making 768 servers look like 1",
+      "url": "https://planetscale.com/blog/making-768-servers-look-like-1",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 13,
+      "score": 60.0,
+      "title": "When a version bump breaks your build, GitLab fixes it",
+      "url": "https://about.gitlab.com/blog/dependency-scanning-auto-remediation/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 14,
+      "score": 58.0,
+      "title": "Full Broker Takeover, No Login Required: Miggo Discovers Critical RabbitMQ Vulnerabilities Putting Application Data at Risk",
+      "url": "https://www.miggo.io/post/full-broker-takeover-no-login-required-miggo-discovers-critical-rabbitmq-vulnerabilities-putting-application-data-at-risk",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 15,
+      "score": 58.0,
+      "title": "Airbus migrating 70 critical apps from AWS to France's Scaleway amid digital sovereignty push",
+      "url": "https://www.theregister.com/paas-and-iaas/2026/07/16/airbus-migrating-70-critical-apps-from-aws-to-frances-scaleway-amid-digital-sovereignty-push/5272373",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 16,
+      "score": 58.0,
+      "title": "Your Azure DevOps pipelines have a 2027 deadline, and the clock has just started",
+      "url": "https://sysadmin-central.com/2026/07/01/migrate-azure-devops-service-connections-entra-issuer/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 17,
+      "score": 58.0,
+      "title": "OVS and OVN Explained: The Networking Stack Behind OpenStack",
+      "url": "https://www.openstack.org/blog/ovs-and-ovn-explained-the-networking-stack-behind-openstack/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 18,
+      "score": 58.0,
+      "title": "Introducing Precursor: detecting agentic behavior with continuous client-side signals",
+      "url": "https://blog.cloudflare.com/introducing-precursor/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 19,
+      "score": 58.0,
+      "title": "Turn multi-step software delivery into agentic flows you can trust",
+      "url": "https://about.gitlab.com/blog/multi-step-software-delivery-with-agentic-flows/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 20,
+      "score": 58.0,
+      "title": "GitLab Duo Security Review spots logic flaws scanners miss",
+      "url": "https://about.gitlab.com/blog/gitlab-duo-security-review-flow/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 21,
+      "score": 58.0,
+      "title": "Scale Faster with Managed Weaviate: Now in Public Preview on DigitalOcean",
+      "url": "https://www.digitalocean.com/blog/public-preview-managed-weaviate",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 22,
+      "score": 58.0,
+      "title": "Introducing Smart Retry: Safer retries for transient Jenkins failures.",
+      "url": "https://www.jenkins.io/blog/2026/07/06/smart-retry/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 23,
+      "score": 57.0,
+      "title": "Amazon fixing bug that billed some AWS customers billions of dollars",
+      "url": "https://techcrunch.com/2026/07/17/amazon-fixing-bug-that-billed-some-aws-customers-billions-of-dollars/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 24,
+      "score": 57.0,
+      "title": "Level Up Your Column-level Security: Using IAM Data Governance Tags in BigQuery",
+      "url": "https://cloud.google.com/blog/products/data-analytics/level-up-your-column-level-security-using-iam-data-governance-tags-in-bigquery/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 25,
+      "score": 57.0,
+      "title": "How GitHub gave every repository a durable owner",
+      "url": "https://github.blog/security/application-security/how-github-gave-every-repository-a-durable-owner/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 26,
+      "score": 57.0,
+      "title": "Automating cross-repo documentation with GitHub Agentic Workflows",
+      "url": "https://github.blog/ai-and-ml/github-copilot/automating-cross-repo-documentation-with-github-agentic-workflows/",
+      "matched_tldr_idx": 6,
+      "similarity": 1.0
+    },
+    {
+      "rank": 27,
+      "score": 57.0,
+      "title": "ClickHouse on Docker Hardened Images",
+      "url": "https://clickhouse.com/blog/docker-hardened-images",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 28,
+      "score": 56.0,
+      "title": "Six New U-Boot Flaws Could Let Malicious Images Crash Devices or Run Code at Boot",
+      "url": "https://thehackernews.com/2026/07/six-new-u-boot-flaws-could-let.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 29,
+      "score": 56.0,
+      "title": "AWS CloudFront outage serves errors instead of websites",
+      "url": "https://www.theregister.com/off-prem/2026/07/16/aws-cloudfront-outage-serves-errors-instead-of-websites/5272421",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 30,
+      "score": 56.0,
+      "title": "Red Hat OpenShift 4.22 tackles cloud costs, AI workloads",
+      "url": "https://www.infoworld.com/article/4197008/red-hat-openshift-4-22-tackles-cloud-costs-ai-workloads.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 31,
+      "score": 56.0,
+      "title": "AI workloads shake up observability market",
+      "url": "https://www.networkworld.com/article/4197973/ai-workloads-shake-up-observability-market.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 32,
+      "score": 56.0,
+      "title": "GitLab 19.2 released",
+      "url": "https://docs.gitlab.com/releases/19/gitlab-19-2-released/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 33,
+      "score": 56.0,
+      "title": "Demystifying AI Exploits: A Blueprint for AI-Assisted Vulnerability Management",
+      "url": "https://cloud.google.com/blog/topics/threat-intelligence/ai-assisted-vulnerability-management/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 34,
+      "score": 56.0,
+      "title": "The Risk of Exposed Cloud Functions and How to Harden",
+      "url": "https://cloud.google.com/blog/topics/threat-intelligence/exposed-cloud-functions-harden/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 35,
+      "score": 56.0,
+      "title": "How Microsoft Ships Thousands of Production AI Agents",
+      "url": "https://blog.bytebytego.com/p/how-microsoft-ships-ai-agents-at",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 36,
+      "score": 56.0,
+      "title": "Postgres Is Enough",
+      "url": "https://postgresisenough.dev/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 37,
+      "score": 56.0,
+      "title": "LLM Networking with MikroTik",
+      "url": "https://blog.greg.technology/2026/07/14/llm-networking-with-mikrotik.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 38,
+      "score": 56.0,
+      "title": "Node.js security starts before CI",
+      "url": "https://www.infoworld.com/article/4194530/node-js-security-starts-before-ci.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 39,
+      "score": 56.0,
+      "title": "Securing AI at Enterprise Scale: The Google Kubernetes Engine Blueprint",
+      "url": "https://cloud.google.com/blog/topics/developers-practitioners/securing-ai-at-enterprise-scale-the-google-kubernetes-engine-blueprint/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 40,
+      "score": 56.0,
+      "title": "How to protect your MCP Server with Fastly",
+      "url": "https://www.fastly.com/blog/how-to-protect-your-mcp-server-with-fastly",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 41,
+      "score": 56.0,
+      "title": "Introducing GuardDog 3.0: A new rules engine, transparent sandboxing, and more",
+      "url": "https://securitylabs.datadoghq.com/articles/guarddog-3-0-release/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    }
+  ],
+  "recall_at": {
+    "10": 0.1,
+    "25": 0.1,
+    "50": 0.2,
+    "100": 0.2,
+    "41": 0.2
+  },
+  "hits_at": {
+    "10": 1,
+    "25": 1,
+    "50": 2,
+    "100": 2,
+    "41": 2
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://www.databricks.com/blog/introducing-apache-spark-42",
+    "https://turso.tech/blog/a-new-modern-version-of-postgres-in-rust",
+    "https://www.tigera.io/blog/nvidia-openshell-secures-the-agent-who-governs-the-fleet/",
+    "https://spacelift.io/blog/terraform-state-encryption",
+    "https://www.devopsdigest.com/why-devops-teams-build-genai-tooling-while-most-organizations-still-rely-on-manual-monitoring",
+    "https://rtfeldman.com/rust-to-zig",
+    "https://github.blog/ai-and-ml/github-copilot/automating-cross-repo-documentation-with-github-agentic-workflows/",
+    "https://aws.amazon.com/blogs/devops/automated-incident-remediation-with-aws-devops-agent-and-kiro-cli/",
+    "https://www.cncf.io/blog/2026/07/15/hami-becomes-a-cncf-incubating-project/",
+    "https://tenderlovemaking.com/2026/07/15/detecting-full-table-scans-with-sqlite/"
+  ],
+  "tldr_domains": [
+    "databricks.com",
+    "turso.tech",
+    "tigera.io",
+    "spacelift.io",
+    "devopsdigest.com",
+    "rtfeldman.com",
+    "github.blog",
+    "aws.amazon.com",
+    "cncf.io",
+    "tenderlovemaking.com"
+  ]
 }
