@@ -1,0 +1,283 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR InfoSec 2026-07-18
+
+🔓
+Attacks & Vulnerabilities
+
+New wp2shell WordPress Core Flaw Lets Unauthenticated Attackers Run Code (1 minute read)
+
+WordPress shipped 6.9.5 and 7.0.2 on July 17 to close a pre-auth RCE in core (branded wp2shell by Assetnote's Adam Kues) that an anonymous HTTP request can trigger against a default install with no plugins, affecting 6.9.0 through 6.9.4 and 7.0.0 through 7.0.1. No CVE or CVSS has been assigned yet, so verify your running version directly rather than trusting the forced auto-update to have landed.
+
+Inc Ransomware Exploits SonicWall SMA Zero-Days (1 minute read)
+
+Inc ransomware is exploiting two SonicWall SMA 1000 zero-days, CVE-2026-15409 (unauthenticated SSRF, CVSS 10.0) and CVE-2026-15410 (authenticated command injection, CVSS 7.2), chaining them for unauthenticated RCE and root-level command execution to harvest credentials ahead of ransomware deployment. SonicWall published an advisory on July 14 and CISA added both to its KEV catalog, so patch SMA 1000 appliances immediately and rotate exposed credentials, as a PoC for the SSRF flaw is already public.
+
+Fake Coding Tests Deliver OtterCookie-Aligned Malware Hidden in SVG Flag Images (5 minute read)
+
+(blurb not generated)
+
+Unpatched Shark Vacuum Flaw Could Let Attackers Control Other Vacuums Region-Wide (5 minute read)
+
+(blurb not generated)
+
+Zoom Patches Critical Windows Flaw That Could Enable Account Takeover (5 minute read)
+
+(blurb not generated)
+
+CISA Adds Exploited SharePoint RCE Zero-Day CVE-2026-58644 to KEV (5 minute read)
+
+(blurb not generated)
+
+Daxin Resurfaces in Taiwan Alongside Stupig Pre-Login SYSTEM Backdoor (5 minute read)
+
+(blurb not generated)
+
+HollowByte DDoS flaw bloats OpenSSL server memory with 11-byte payload (1 minute read)
+
+HollowByte, a DoS flaw disclosed by Okta's Red Team, lets an unauthenticated attacker send an 11-byte TLS handshake message with an oversized length field, forcing vulnerable OpenSSL versions to allocate the declared buffer before validating the payload and leaving worker threads blocked on data that never arrives. Repeated connections fragment the heap so RSS stays bloated until restart; OpenSSL silently patched and backported the fix with no identifier, so upgrade the embedded library across NGINX, Apache, and language runtimes.
+
+CISA urges immediate action on actively exploited Fortinet flaws (5 minute read)
+
+(blurb not generated)
+
+Attackers target critical FortiSandbox flaws as CISA issues patch order (5 minute read)
+
+(blurb not generated)
+
+Fresh SharePoint Vulnerability Exploited Soon After Disclosure (5 minute read)
+
+(blurb not generated)
+
+Setup Complete, Now You Are Compromised: Weaponizing Setup Instructions Against AI Coding Agents (5 minute read)
+
+(blurb not generated)
+
+Robot vacuum flaw lets one stolen certificate run root commands on other Shark robovacs in the same AWS region — unpatched flaw exposes live camera feeds, stored home maps, and Wi-Fi credentials (5 minute read)
+
+(blurb not generated)
+
+New GoSerpent Malware Targets Southeast Asian Governments and Diplomats for Espionage (5 minute read)
+
+(blurb not generated)
+
+OpenSSL HollowByte Flaw Could Freeze Server Memory with 11-Byte TLS Requests (1 minute read) [flag]
+
+OpenSSL's HollowByte flaw, disclosed by Okta's Red Team, lets 11-byte TLS handshake messages force an unpatched server to pre-allocate up to 131 KB per connection for a body that never arrives, and on glibc systems heap fragmentation keeps that memory frozen after the attacker disconnects. OpenSSL shipped fixes on June 9 (4.0.1, 3.6.3, 3.5.7, 3.4.6, 3.0.21) with no CVE or advisory, so upgrade to those releases rather than relying on connection limits.
+
+Prompt injection is becoming the XSS of the web agent era (5 minute read)
+
+(blurb not generated)
+
+New NadMesh Botnet Hunts Exposed AI Services for Cloud Keys and Kubernetes Tokens (1 minute read)
+
+NadMesh, a Go botnet detailed by QiAnXin's XLab, scans Shodan for exposed AI services like ComfyUI, Ollama, n8n, and Open WebUI, then steals cloud keys from environment variables, k8s service-account tokens, and files like ~/.aws/config and .env. It prioritizes unauthenticated MCP servers, using a JSON-RPC tools/call to execute_command, and distinct source IPs pushing it climbed from near zero in late June to roughly 139 a day.
+
+Claude Chrome extension flaw lets malicious extensions trigger AI actions (5 minute read)
+
+(blurb not generated)
+
+Seven Malicious Vite npm Packages Use Blockchain C2 to Deliver a RAT (1 minute read)
+
+Checkmarx disclosed ViteVenom, a cluster of seven malicious npm packages using scoped names to impersonate the "@vitejs/*" namespace and deliver a RAT capable of reverse shells, credential harvesting, file exfiltration, and backdoor injection. Attributed to threat actor SuccessKey, the loader executes at import rather than install time to evade endpoint detection and pulls later stages from a four-tier blockchain C2 spanning Tron, Aptos, and Binance Smart Chain that resists takedown.
+
+GoldenEyeDog Subgroup Linked to DigiCert Breach and Code-Signing Certificate Theft (1 minute read)
+
+Expel attributed the April 2026 DigiCert breach to CylindricalCanine, a subgroup of the Chinese cybercrime group GoldenEyeDog (APT-Q-27, Dragon Breath), which used a modified Gh0st RAT variant called Golden Gh0st RAT to compromise a support employee's device and steal code-signing certificates intended for DigiCert customers. Organizations that received DigiCert certificates in that window should treat them as potentially compromised, monitor for binaries signed with stolen certs, and prioritize revocation and reissuance.
+
+🧠
+Strategies & Tactics
+
+OpenAI’s GPT-Red Automates Prompt Injection Testing to Harden GPT-5.6 Sol (5 minute read)
+
+(blurb not generated)
+
+Demystifying AI Exploits: A Blueprint for AI-Assisted Vulnerability Management (5 minute read)
+
+(blurb not generated)
+
+A Measurement Study of AI-Environment Realism Gaps in Malware-Analysis Sandboxes (5 minute read)
+
+(blurb not generated)
+
+The script, not the voice, is what makes AI voice phishing work (5 minute read)
+
+(blurb not generated)
+
+The agent security gap: 54% of enterprises have already had an AI agent incident, and most still let agents share credentials (5 minute read)
+
+(blurb not generated)
+
+Fully Automated End-to-End Adversary Emulation from MITRE ATT\&CK Based Cyber Threat Intelligence Using LLMs (5 minute read)
+
+(blurb not generated)
+
+Inside the Search for "Clean" Residential Proxies for Carding (5 minute read)
+
+(blurb not generated)
+
+Beyond Success Rate: Cost-Aware Evaluation of Offensive and Defensive Security Agents (5 minute read)
+
+(blurb not generated)
+
+Democratizing Agent Deployment Safety: A Structural Monitoring Approach (5 minute read)
+
+(blurb not generated)
+
+FirmPilot: Evidence-Guided Multi-Agent Environment Recovery for IoT Firmware Rehosting (5 minute read)
+
+(blurb not generated)
+
+The Distributed Open-Source Vulnerability Ecosystem (5 minute read)
+
+(blurb not generated)
+
+FlowGuard: From Signals to Evidence for MCP Security Detection (5 minute read)
+
+(blurb not generated)
+
+Pretraining Data Can Be Poisoned through Computational Propaganda (5 minute read)
+
+(blurb not generated)
+
+DataShield: Uncovering Risky Fine-Tuning Data Across LLMs Through Consensus Subspace Alignment (5 minute read)
+
+(blurb not generated)
+
+Brex built its AI agent policy by watching what agents actually do, not by writing rules first (3 minute read)
+
+Brex open-sourced CrabTrap, an HTTP/HTTPS proxy that intercepts all agent network traffic and uses an LLM-as-a-judge to approve or deny each request against policy, rather than relying on scoped tokens or model guardrails that prompt injection can bypass. The company built its agent policies by observing real in-the-wild behavior instead of writing rules upfront. The takeaway for security teams: treat the network layer as a centralized enforcement point for agent governance, since every outbound request is an interceptable policy decision.
+
+Protecting Privacy in an AI Era (5 minute read)
+
+(blurb not generated)
+
+Sharp rise in AI adoption for cyber defense exposes major governance gap (5 minute read)
+
+(blurb not generated)
+
+Beware of exposed serverless cloud functions, Mandiant warns (5 minute read)
+
+(blurb not generated)
+
+Why Your AI Agent Has an Identity Problem (1 minute read)
+
+AI agents deployed to production typically run under shared service accounts with over-broad permissions, no distinct identity, and no audit trail that can reconstruct what they accessed or why. The author argues traditional IAM breaks because it assumes a human actor, while an agent may make 40 API calls in 30 seconds, touch 500 customer records for one task, and delegate to other agents no human approves. Provisioning per-agent identity early cuts both audit-failure risk and the cost of scaling agentic systems.
+
+Automated Template-free Synthesis of Instruction-Centric Leakage Contracts for Black-Box CPUs (5 minute read)
+
+(blurb not generated)
+
+🧑‍💻
+Launches & Tools
+
+Capital One releases VulnHunter, an open-source AI tool that finds software flaws before hackers do (2 minute read)
+
+Capital One released VulnHunter, an open-source (Apache 2.0) agentic tool that scans source code using "attacker-first forward analysis," reasoning from real entry points like APIs and file uploads to confirm exploit paths survive existing defenses. A built-in falsification engine tries to disprove each finding before it reaches a reviewer, cutting the false positives that plague reverse scanners; it currently runs on Claude Opus 4.8 inside Claude Code.
+
+1Password teams up with Anthropic to give Claude access to your credentials (5 minute read)
+
+(blurb not generated)
+
+When a version bump breaks your build, GitLab fixes it (5 minute read)
+
+(blurb not generated)
+
+Google Bets 'Agentic Defense' Strategy Can Outpace Attackers (5 minute read)
+
+(blurb not generated)
+
+GitLab Duo Security Review spots logic flaws scanners miss (5 minute read)
+
+(blurb not generated)
+
+"1Password for Claude" is trying to make your passwords secure from agentic AI (5 minute read)
+
+(blurb not generated)
+
+Ledger launches Agent Stack to keep AI agents away from crypto keys (5 minute read)
+
+(blurb not generated)
+
+🎁
+Miscellaneous
+
+Scattered Spider members behind TfL hack get five years in prison (5 minute read)
+
+(blurb not generated)
+
+Armenia Detains Russian Tourist on U.S. Warrant for REvil Hacker, Lawyers Say Wrong Man (5 minute read)
+
+(blurb not generated)
+
+Two Scattered Spider Hackers Get 5.5 Years Each for £29 Million TfL Hack (5 minute read)
+
+(blurb not generated)
+
+Police Disrupt a €140M Cyber Fraud Ring in Spain (5 minute read)
+
+(blurb not generated)
+
+23andMe to pay $18 million in new genetics data breach settlement (5 minute read)
+
+(blurb not generated)
+
+SpaceX open sources Grok Build in same week company was found beaming users' repos to the cloud (5 minute read)
+
+(blurb not generated)
+
+Telegram shortlinks knocked offline over sanctioned VPN connection (5 minute read)
+
+(blurb not generated)
+
+Risk Ledger Raises $32 Million in Series B Funding (5 minute read)
+
+(blurb not generated)
+
+Two Scattered Spider Hackers Sentenced to Jail in UK (5 minute read)
+
+(blurb not generated)
+
+Leading members of Scattered Spider sentenced in UK to 66 months in jail (5 minute read)
+
+(blurb not generated)
+
+Scattered Spider members jailed over Transport for London hack that cost £29 million (5 minute read)
+
+(blurb not generated)
+
+Gold Eagle Clearinghouse Targets Security Gap, but How Is Unclear (5 minute read)
+
+(blurb not generated)
+
+Passkeys will soon be the default authentication method in Microsoft Entra ID – here's what it means for users and when the changes come into effect (5 minute read)
+
+(blurb not generated)
+
+Musk pledges ‘total transparency’ after xAI’s coding agent exposed entire repositories (5 minute read)
+
+(blurb not generated)
+
+Risk Ledger secures £24m to scale supply chain security network (5 minute read)
+
+(blurb not generated)
+
+Program to rotate cyber personnel through federal agencies saw little use (5 minute read)
+
+(blurb not generated)
+
+NTP server that traveled back in time caused massive Aussie mobile outage (5 minute read)
+
+(blurb not generated)
+
+⚡
+Quick Links
+
+Show HN: Watch bots interact with an SSH honeypot in real time (1 minute read)
+
+A live dashboard streaming real-time SSH honeypot telemetry: source IPs, credential attempts, commands, and client fingerprints from inbound attacker connections.
+
+In Other News: Iran Tracks US Military Phones, CrashStealer macOS Malware, CVD Blueprint (5 minute read)
+
+(blurb not generated)

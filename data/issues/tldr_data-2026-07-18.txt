@@ -1,0 +1,72 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR Data 2026-07-18
+
+📊
+News & Trends
+
+Introducing Apache Spark 4.2 (5 minute read)
+
+(blurb not generated)
+
+How Unity Catalog managed tables bring interoperability, performance, and unified governance to the Lakehouse (5 minute read)
+
+(blurb not generated)
+
+NetApp buys DataPelago to become full-stack AI data infrastructure provider (5 minute read)
+
+(blurb not generated)
+
+Meta’s Spark Muse 1.1 is now available on Databricks, fully governed by Unity AI Gateway (1 minute read)
+
+Databricks added Meta's Muse Spark 1.1 to Unity AI Gateway through new Model Provider Services, letting teams register providers like OpenAI, Anthropic, and Bedrock once in Unity Catalog and query any model on day one under existing permissions. The pitch to platform teams is centralized governance over model sprawl, with encrypted credentials, per-team rate limits, and automatic tracking of token usage, latency, and cost attribution across every provider.
+
+🧠
+Deep Dives & Analysis
+
+Making 768 servers look like 1 (5 minute read)
+
+(blurb not generated)
+
+Unified context: The missing layer for enterprise AI coworkers (5 minute read)
+
+(blurb not generated)
+
+Guide to data tools landscape for developers (5 minute read)
+
+(blurb not generated)
+
+Learning a few things about running SQLite (1 minute read)
+
+Julia Evans documents operating SQLite as a real production database for a Django site, learning that "SQLite is fine for small sites" glosses over the operational work databases still demand. Running ANALYZE cut a 4000-row FTS5 query from 5 seconds to 0.05 by giving the planner statistics to work with. The sharper lesson is concurrency: a slow bulk DELETE held a write lock long enough for another worker to hit its 5-second timeout and crash the VM.
+
+Let's Build PlanetScale from Scratch: Infrastructure (5 minute read)
+
+(blurb not generated)
+
+We're Building Postgres in Rust. Using the LLVM of Databases (5 minute read)
+
+(blurb not generated)
+
+🚀
+Launches & Tools
+
+Bridging the gap between SQL and Python with BigQuery and the %%bqsql magic (5 minute read)
+
+(blurb not generated)
+
+Zilliz launches Milvus vector lakebase (5 minute read)
+
+(blurb not generated)
+
+Building a soccer coaching app on Databricks (5 minute read)
+
+(blurb not generated)
+
+🎁
+Miscellaneous
+
+Is "jobs" a four-letter word? (1 minute read)
+
+The author argues that headcount was once Silicon Valley's default scoreboard for ambition, with founders measuring success by how many people they planned to hire rather than by revenue or product. That norm has quietly inverted, and the piece traces how "jobs" became something startups now brag about avoiding, with hiring reframed as a cost to minimize rather than a signal of momentum.

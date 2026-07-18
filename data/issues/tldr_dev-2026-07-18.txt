@@ -1,0 +1,123 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR Dev 2026-07-18
+
+🧑‍💻
+Articles & Tutorials
+
+Learning a few things about running SQLite (1 minute read)
+
+Julia Evans documents operational lessons from running SQLite in production behind a Django ORM, starting with a FTS5 query on a 4000-row table that dropped from 5 seconds to 0.05 seconds after running ANALYZE to give the query planner real statistics. She also covers how slow bulk DELETE statements collide with the 5-second busy timeout, crashing concurrent writer workers when a cleanup transaction holds the database too long.
+
+How Our Rust-to-Zig Rewrite Is Going (5 minute read)
+
+(blurb not generated)
+
+The Archaeologist’s Copilot (5 minute read)
+
+(blurb not generated)
+
+If you want to create a button from scratch, you must first create the universe (5 minute read)
+
+(blurb not generated)
+
+When It Makes Sense To “Block” The Main Thread (5 minute read)
+
+(blurb not generated)
+
+Setup Complete, Now You Are Compromised: Weaponizing Setup Instructions Against AI Coding Agents (5 minute read)
+
+(blurb not generated)
+
+Leaf: An Instrumentation-based Dynamic Analysis Framework for Rust (5 minute read)
+
+(blurb not generated)
+
+Let's Build PlanetScale from Scratch: Infrastructure (5 minute read)
+
+(blurb not generated)
+
+Swarming Claude Code and Codex in Parallel: Running Multiple Agents at Once with tmux and Git Worktrees (2 minute read)
+
+The author runs multiple Claude Code and Codex agents in parallel using a three-layer protocol, where a plan.json declares workers that an orchestrator script expands into isolated git worktrees launched inside a tmux session. Separating each agent onto its own branch drops merge-conflict risk to zero and removes the serial bottleneck where one job's commits change the preconditions for the next, at the cost of managing seed-path copying and artifact consolidation across sessions.
+
+We're Building Postgres in Rust. Using the LLVM of Databases (5 minute read)
+
+(blurb not generated)
+
+Guide to data tools landscape for developers (5 minute read)
+
+(blurb not generated)
+
+Proof-or-Stop: Don't Trust the Agent, Trust the Evidence -- Loop Engineering for Verifiable Evidence-Gated Lifecycle Control (5 minute read)
+
+(blurb not generated)
+
+🧠
+Opinions & Advice
+
+The human-in-the-loop is tired (5 minute read)
+
+(blurb not generated)
+
+The cost of saying yes has changed (5 minute read)
+
+(blurb not generated)
+
+Claude Code: Anatomy of a Misfeature (5 minute read)
+
+(blurb not generated)
+
+Guide to AI Tokenomics: Eleven Principles for Token Efficient Software Engineering (3 minute read)
+
+Google Cloud engineers lay out eleven principles for token-efficient AI coding, arguing that context bloat is the main driver of latency, hallucination, and cost as agents write more of the code. Their tactics include starting with a balanced default model, packaging reusable skills in SKILL.md files, delegating output-heavy work to sub-agents, and checkpointing often so sessions can restart from a clean, low-token state.
+
+Prompt injection is becoming the XSS of the web agent era (5 minute read)
+
+(blurb not generated)
+
+🚀
+Launches & Tools
+
+Giving an AI assistant read-only access to Microsoft Loop — without breaking permissions (3 minute read)
+
+loop-reader-mcp is an open-source (MIT) MCP server that gives an AI assistant read-only access to Microsoft Loop pages, which have no content API and store data in SharePoint Embedded containers that only accept app-only tokens. It avoids permission-flattening by splitting discovery from retrieval, running security-trimmed Graph Search under the user's delegated token via OAuth On-Behalf-Of and using the app identity only to download content the user can already see.
+
+Show HN: Leaves – A text-UI disk usage treemap visualizer (5 minute read)
+
+(blurb not generated)
+
+Bridging the gap between SQL and Python with BigQuery and the %%bqsql magic (5 minute read)
+
+(blurb not generated)
+
+LM Studio expands beyond chat with Bionic, a new AI agent app for open models (5 minute read)
+
+(blurb not generated)
+
+AI Prototyper: A Figma Plugin for Decomposition-Based GUI Prototyping with LLMs (5 minute read)
+
+(blurb not generated)
+
+LM Studio Bionic: the AI agent for open models (5 minute read)
+
+(blurb not generated)
+
+Turn multi-step software delivery into agentic flows you can trust (5 minute read)
+
+(blurb not generated)
+
+🎁
+Miscellaneous
+
+GPT-5.6 Codex is deleting files from home directories in a "handful" of cases (5 minute read)
+
+(blurb not generated)
+
+⚡
+Quick Links
+
+Seven Malicious Vite npm Packages Use Blockchain C2 to Deliver a RAT (1 minute read)
+
+Seven malicious npm packages typosquat the @vitejs/* namespace, delivering a RAT via blockchain-based C2 that resists takedown.

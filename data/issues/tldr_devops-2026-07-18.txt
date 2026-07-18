@@ -1,0 +1,81 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR DevOps 2026-07-18
+
+📱
+News & Trends
+
+Airbus migrating 70 critical apps from AWS to France's Scaleway amid digital sovereignty push (5 minute read)
+
+(blurb not generated)
+
+Amazon fixing bug that billed some AWS customers billions of dollars (5 minute read)
+
+(blurb not generated)
+
+Cloudflare WAF protects WordPress applications from two high-severity vulnerabilities (1 minute read)
+
+Cloudflare deployed WAF rules protecting all plan tiers, including free, against two high-severity WordPress flaws: an unauthenticated RCE in the REST API batch endpoint (CVE-2026-63030, critical) and a related SQL injection (CVE-2026-60137, high). The rules buy time but are not a substitute for patching, and WordPress is force-pushing automatic updates through fixes in 7.0.2, 6.9.5, and 6.8.6.
+
+Level Up Your Column-level Security: Using IAM Data Governance Tags in BigQuery (5 minute read)
+
+(blurb not generated)
+
+OpenSSL HollowByte Flaw Could Freeze Server Memory with 11-Byte TLS Requests (1 minute read)
+
+Okta's Red Team disclosed HollowByte, a denial-of-service flaw where an unpatched OpenSSL server allocates up to 131 KB per TLS handshake header before any body arrives, and glibc's chunk-caching keeps that memory frozen after the attacker disconnects. OpenSSL patched it quietly on June 9 with no CVE or advisory, so scanners can't flag it, and Okta's NGINX tests froze 25% of a 16 GB server without hitting connection limits.
+
+AWS CloudFront outage serves errors instead of websites (5 minute read)
+
+(blurb not generated)
+
+AI workloads shake up observability market (5 minute read)
+
+(blurb not generated)
+
+GitLab 19.2 released (5 minute read)
+
+(blurb not generated)
+
+🚀
+Opinions & Tutorials
+
+Learning a few things about running SQLite (1 minute read)
+
+Julia Evans documents operational lessons from running SQLite in production behind a Django site, starting with the discovery that a 4000-row FTS5 query dropped from 5 seconds to 0.05 seconds after running ANALYZE to give the query planner table statistics. The write-up also covers a failure mode where slow bulk DELETEs hold a transaction long enough that concurrent workers hit the 5-second busy timeout and crash, a reminder that "SQLite is fine for small sites" still means operating a real database.
+
+Running a self-hosted LLM in Kubernetes with vLLM (5 minute read)
+
+(blurb not generated)
+
+Making 768 servers look like 1 (5 minute read)
+
+(blurb not generated)
+
+Demystifying AI Exploits: A Blueprint for AI-Assisted Vulnerability Management (5 minute read)
+
+(blurb not generated)
+
+Node.js security starts before CI (5 minute read)
+
+(blurb not generated)
+
+Securing AI at Enterprise Scale: The Google Kubernetes Engine Blueprint (5 minute read)
+
+(blurb not generated)
+
+⚒️
+Launches & Tools
+
+When a version bump breaks your build, GitLab fixes it (5 minute read)
+
+(blurb not generated)
+
+Turn multi-step software delivery into agentic flows you can trust (5 minute read)
+
+(blurb not generated)
+
+GitLab Duo Security Review spots logic flaws scanners miss (5 minute read)
+
+(blurb not generated)
