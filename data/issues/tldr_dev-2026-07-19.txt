@@ -2,3 +2,226 @@ Sign Up | Advertise | View Online
 TLDR
 
 TLDR Dev 2026-07-19
+
+🧑‍💻
+Articles & Tutorials
+
+Learning a few things about running SQLite (5 minute read)
+
+(blurb not generated)
+
+Claude Code uses Bun written in Rust now (1 minute read)
+
+Claude Code v2.1.181 and later ship the Rust port of Bun, which Jarred Sumner says made startup 10% faster on Linux with no other user-visible change. The author confirmed it locally by running strings on the Claude binary, which reports Bun v1.4.0 and lists 563 Rust source paths including src/bundler/bundle_v2.rs, a version that only exists in Bun canary.
+
+The four horsemen behind thousands of Postgres outages (5 minute read)
+
+(blurb not generated)
+
+The Same TypeScript Costs 73% More Tokens on Claude Than GPT (5 minute read)
+
+(blurb not generated)
+
+Building and Shipping Mac and iOS Apps Without Ever Opening Xcode (5 minute read)
+
+(blurb not generated)
+
+Regressive JPEGs (1 minute read)
+
+The author abused JPEG's progressive mode, where a file is split into scans that each fill in a spectral range, to concatenate multiple same-resolution images into one file that animates as it downloads over a slow connection. The trick caps out fast because most decoders stop after roughly nine scans as a zip-bomb guard, and baseline single-scan frames fail since progressive scans cannot mix DC and AC coefficients.
+
+The art and engineering of Sega CD Silpheed (5 minute read)
+
+(blurb not generated)
+
+When It Makes Sense To “Block” The Main Thread (5 minute read)
+
+(blurb not generated)
+
+Claude Code Is Way More Token-Hungry Than OpenCode. We Measured Exactly How Much (5 minute read)
+
+(blurb not generated)
+
+How GitHub gave every repository a durable owner (5 minute read)
+
+(blurb not generated)
+
+Job queues are deceptively tricky (5 minute read)
+
+(blurb not generated)
+
+From Rust to Zig: What changed my mind (5 minute read)
+
+(blurb not generated)
+
+Automating cross-repo documentation with GitHub Agentic Workflows (5 minute read)
+
+(blurb not generated)
+
+Setting up your spare Mac for Claude Code to control, a step-by-step guide (1 minute read)
+
+The guide walks through configuring a spare Mac as an always-on host for Claude Code with computer use enabled, reachable from the Claude mobile app or over SSH from a main machine. The setup trades container isolation for full macOS access, letting the agent drive Mac-only apps like Unity and run with `--dangerously-skip-permissions` on hardware that has nothing worth losing.
+
+Static search trees: 40x faster than binary search (2024) (1 minute read)
+
+The author implements a static B+ tree over sorted 32-bit integers and optimizes it to roughly 40x the throughput of binary search, reporting results in ns per query. The post works through manual SIMD node search, batching and prefetching to hide memory latency, pointer arithmetic that removes instructions from the inner loop, and prefix partitioning to cut cache misses on the upper levels, with all benchmark code in the repo.
+
+When branchless binary search is slower (5 minute read)
+
+(blurb not generated)
+
+Networking and the Internet, from First Principles (5 minute read)
+
+(blurb not generated)
+
+What xAI Grok Build CLI actually sends to xAI (5 minute read)
+
+(blurb not generated)
+
+How I Cut an AI Agent's Token Use by 94% (5 minute read)
+
+(blurb not generated)
+
+Are you telling me a readonly property is wrecking my performance? (5 minute read)
+
+(blurb not generated)
+
+🧠
+Opinions & Advice
+
+Control the ideas, not the code (5 minute read)
+
+(blurb not generated)
+
+Old and new apps, via modern coding agents (5 minute read)
+
+(blurb not generated)
+
+The cost of saying yes has changed (5 minute read)
+
+(blurb not generated)
+
+SQLite should have (Rust-style) editions (5 minute read)
+
+(blurb not generated)
+
+In defense of polyfills (5 minute read)
+
+(blurb not generated)
+
+The Tower Keeps Rising (5 minute read)
+
+(blurb not generated)
+
+How Claude's values vary by model and language (5 minute read)
+
+(blurb not generated)
+
+Guide to AI Tokenomics: Eleven Principles for Token Efficient Software Engineering (5 minute read)
+
+(blurb not generated)
+
+Why Vanilla JS (5 minute read)
+
+(blurb not generated)
+
+Software Has Changed (5 minute read)
+
+(blurb not generated)
+
+Code Yellow, Code Red (5 minute read)
+
+(blurb not generated)
+
+Code review is theater now (5 minute read)
+
+(blurb not generated)
+
+With AI Agents, Attention is the New Bottleneck (5 minute read)
+
+(blurb not generated)
+
+Prompt injection is becoming the XSS of the web agent era (5 minute read)
+
+(blurb not generated)
+
+Why your Cursor rules never fire: globs, alwaysApply, and description explained (3 minute read)
+
+The author explains why `.cursor/rules` files silently never attach: each of Cursor's four rule types is gated by a different frontmatter field, and a rule with no `alwaysApply`, `globs`, or `description` quietly defaults to Manual. The three failure modes are writing `globs` as a YAML array or quoted string instead of a bare comma-separated one, using `.md` instead of `.mdc`, and omitting the description that Agent-Requested rules match against.
+
+How to stop Claude from saying load-bearing (5 minute read)
+
+(blurb not generated)
+
+You only need the frontier model for one single edit (5 minute read)
+
+(blurb not generated)
+
+🚀
+Launches & Tools
+
+Topcoat: The full full-stack framework for Rust (1 minute read)
+
+Topcoat is a server-rendered fullstack Rust framework from the Tokio team that lets async components query the database directly, removing the separate API layer. Its `$(...)` expressions are type-checked Rust that compile to both server-side render code and JavaScript, so client interactivity runs without a wasm bundle or client build step. The project is early-stage and expects breaking changes.
+
+Highlights from Git 2.55 (5 minute read)
+
+(blurb not generated)
+
+Thinking Machines Releases First Open Model (5 minute read)
+
+(blurb not generated)
+
+Inkling: Our Open-Weights Model (5 minute read)
+
+(blurb not generated)
+
+Transcribe.cpp (1 minute read)
+
+Transcribe.cpp is a ggml-based speech-to-text library covering 16 ASR families and 60+ models, with acceleration via Vulkan, Metal, CUDA, and TinyBLAS. The author, who maintains the Handy desktop app, built it as a near drop-in whisper.cpp replacement after hitting the limits of ONNX's CPU-only performance, and every model ships numerically validated and WER tested against its reference implementation.
+
+Turso is building a modern version of Postgres in Rust (5 minute read)
+
+(blurb not generated)
+
+Build agentic full-stack apps with Genkit (5 minute read)
+
+(blurb not generated)
+
+Your Dropbox is now a skill server (5 minute read)
+
+(blurb not generated)
+
+WebMCP for Documentation (5 minute read)
+
+(blurb not generated)
+
+🎁
+Miscellaneous
+
+Cursor 0day: When Full Disclosure Becomes the Only Protection Left (5 minute read)
+
+(blurb not generated)
+
+Compromised Injective SDK npm Package Exfiltrates Wallet Keys and Mnemonics (5 minute read)
+
+(blurb not generated)
+
+A broken DNSSEC rollover took down .AL. Now 1.1.1.1 tells you when validation is bypassed (5 minute read)
+
+(blurb not generated)
+
+mariadb-server: Upgrading to 10.11.18-0+deb12u1 enables systemd socket activation unconditionally (5 minute read)
+
+(blurb not generated)
+
+⚡
+Quick Links
+
+TIL - Algolia Makes Creating an MCP Server Stupid Easy (5 minute read)
+
+(blurb not generated)
+
+Seven Malicious Vite npm Packages Use Blockchain C2 to Deliver a RAT (5 minute read)
+
+(blurb not generated)

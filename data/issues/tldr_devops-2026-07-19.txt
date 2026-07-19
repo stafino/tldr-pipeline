@@ -2,3 +2,120 @@ Sign Up | Advertise | View Online
 TLDR
 
 TLDR DevOps 2026-07-19
+
+📱
+News & Trends
+
+HAMi becomes a CNCF incubating project (5 minute read)
+
+(blurb not generated)
+
+Improving Smart Tiered Cache for public cloud regions (5 minute read)
+
+(blurb not generated)
+
+mariadb-server: Upgrading to 10.11.18-0+deb12u1 enables systemd socket activation unconditionally (5 minute read)
+
+(blurb not generated)
+
+A broken DNSSEC rollover took down .AL. Now 1.1.1.1 tells you when validation is bypassed (5 minute read)
+
+(blurb not generated)
+
+Full Broker Takeover, No Login Required: Miggo Discovers Critical RabbitMQ Vulnerabilities Putting Application Data at Risk (5 minute read)
+
+(blurb not generated)
+
+Your Azure DevOps pipelines have a 2027 deadline, and the clock has just started (5 minute read)
+
+(blurb not generated)
+
+Amazon fixing bug that billed some AWS customers billions of dollars (5 minute read)
+
+(blurb not generated)
+
+Cloudflare WAF protects WordPress applications from two high-severity vulnerabilities (5 minute read)
+
+(blurb not generated)
+
+Level Up Your Column-level Security: Using IAM Data Governance Tags in BigQuery (5 minute read)
+
+(blurb not generated)
+
+OpenSSL HollowByte Flaw Could Freeze Server Memory with 11-Byte TLS Requests (5 minute read)
+
+(blurb not generated)
+
+Six New U-Boot Flaws Could Let Malicious Images Crash Devices or Run Code at Boot (5 minute read)
+
+(blurb not generated)
+
+AWS CloudFront outage serves errors instead of websites (5 minute read)
+
+(blurb not generated)
+
+AI workloads shake up observability market (5 minute read)
+
+(blurb not generated)
+
+🚀
+Opinions & Tutorials
+
+The four horsemen behind thousands of Postgres outages (5 minute read)
+
+(blurb not generated)
+
+Learning a few things about running SQLite (5 minute read)
+
+(blurb not generated)
+
+Code review is theater now (5 minute read)
+
+(blurb not generated)
+
+OVS and OVN Explained: The Networking Stack Behind OpenStack (5 minute read)
+
+(blurb not generated)
+
+Shipyard: How We Built Slack's Next-Generation EC2 Platform (5 minute read)
+
+Slack's infrastructure team detailed Shipyard, the EC2 platform that replaced continuous Chef convergence on long-lived instances with immutable, deployable artifacts and progressive rollouts. The team hit the limits of configuration management across tens of thousands of instances, where drift was inevitable and service-level deploys required coordinating changes across multiple layers. Shipyard pushes that responsibility into build pipelines and automated safety checks, giving EC2 workloads that could not containerize the same rollout guarantees as app delivery.
+
+How GitHub gave every repository a durable owner (5 minute read)
+
+(blurb not generated)
+
+Automating cross-repo documentation with GitHub Agentic Workflows (5 minute read)
+
+(blurb not generated)
+
+How Microsoft Ships Thousands of Production AI Agents (5 minute read)
+
+(blurb not generated)
+
+The dual-write bug you probably have in production (and the outbox pattern that fixes it) (2 minute read)
+
+The author walks through the transactional outbox pattern in Go, arguing that saving to Postgres and then publishing to Kafka has no atomicity and silently drifts state when a process dies between the two calls. The fix is to write the event into the same database transaction as the state change and let a separate relay process publish it. The post covers the full implementation, including having the aggregate emit its own domain events rather than the service layer.
+
+How to protect your MCP Server with Fastly (5 minute read)
+
+(blurb not generated)
+
+⚒️
+Launches & Tools
+
+Introducing Precursor: detecting agentic behavior with continuous client-side signals (5 minute read)
+
+(blurb not generated)
+
+Introducing Smart Retry: Safer retries for transient Jenkins failures. (5 minute read)
+
+(blurb not generated)
+
+ClickHouse on Docker Hardened Images (5 minute read)
+
+(blurb not generated)
+
+Introducing GuardDog 3.0: A new rules engine, transparent sandboxing, and more (5 minute read)
+
+(blurb not generated)
