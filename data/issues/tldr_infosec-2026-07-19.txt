@@ -10,9 +10,13 @@ New wp2shell WordPress Core Flaw Lets Unauthenticated Attackers Run Code (5 minu
 
 (blurb not generated)
 
-WordPress Core "wp2shell" RCE flaws get public exploits, patch now (1 minute read)
+WordPress Core "wp2shell" RCE flaws get public exploits, patch now (5 minute read)
 
-Public proof-of-concept exploits are out for wp2shell, a chain of CVE-2026-63030 (REST API batch-route confusion) and CVE-2026-60137 (SQL injection in WP_Query's author__not_in) that gives pre-auth RCE on stock WordPress 6.9.0-6.9.4 and 7.0.0-7.0.1. WordPress forced auto-updates to 7.0.2 and 6.9.5; sites with auto-update disabled should patch and hunt for webshells now.
+(blurb not generated)
+
+SonicWall SMA Zero-Days Exploited Before Disclosure to Gain Root Access (1 minute read)
+
+Volexity attributed exploitation of two SonicWall SMA 1000 zero-days, CVE-2026-15409 (CVSS 10.0) and CVE-2026-15410 (CVSS 7.2), to a new threat actor tracked as UTA0533, which chained them for root command execution starting June 22. The actor deployed a setuid ROOTRUN binary, the KNUCKLEBALL Python loader, Suo5, and an ORANGETAIL web shell, plus tcpdump capture of cleartext LDAP credentials. SonicWall patched both this week.
 
 Inc Ransomware Exploits SonicWall SMA Zero-Days (5 minute read)
 
@@ -26,9 +30,9 @@ Cursor 0day: When Full Disclosure Becomes the Only Protection Left (5 minute rea
 
 (blurb not generated)
 
-TP-Link Kasa cameras leaked home GPS via unauthenticated UDP for 6 years (1 minute read)
+TP-Link Kasa cameras leaked home GPS via unauthenticated UDP for 6 years (5 minute read)
 
-TP-Link Kasa EC71 cameras responded to unauthenticated UDP probes on the local network with device details including the owner's GPS coordinates, a flaw that shipped in the firmware for roughly six years before disclosure. Any attacker on the same network segment, or an app with local network permission, could geolocate a household without credentials. TP-Link has not published a fix, so segment the cameras onto an isolated VLAN.
+(blurb not generated)
 
 CISA Adds Exploited SharePoint RCE Zero-Day CVE-2026-58644 to KEV (5 minute read)
 
@@ -50,9 +54,9 @@ Fresh SharePoint Vulnerability Exploited Soon After Disclosure (5 minute read)
 
 (blurb not generated)
 
-Two new high severity WordPress vulnerabilities, patch immediately! (1 minute read)
+Two new high severity WordPress vulnerabilities, patch immediately! (5 minute read)
 
-WordPress patched two SQL injection flaws, CVE-2026-60137 and CVE-2026-63030, the latter a REST API batch-route confusion issue that chains to remote code execution on 6.9 and the 7.1 beta. Fixes ship in 6.9.5, 6.8.6, and 7.1 beta2; sites that cannot update immediately should block anonymous access to /wp-json/batch/v1 and ?rest_route=/batch/v1 at the WAF as a temporary measure.
+(blurb not generated)
 
 Compromised Injective SDK npm Package Exfiltrates Wallet Keys and Mnemonics (5 minute read)
 
@@ -79,10 +83,6 @@ Full Broker Takeover, No Login Required: Miggo Discovers Critical RabbitMQ Vulne
 (blurb not generated)
 
 Microsoft Maps Three Salesforce Attack Paths Tied to a Year of ShinyHunters Activity (5 minute read)
-
-(blurb not generated)
-
-New GoSerpent Malware Targets Southeast Asian Governments and Diplomats for Espionage (5 minute read)
 
 (blurb not generated)
 
@@ -121,9 +121,9 @@ Why Your AI Agent Has an Identity Problem (5 minute read)
 
 (blurb not generated)
 
-Qubes OS Security in the Public Record (1 minute read)
+Qubes OS Security in the Public Record (5 minute read)
 
-A longitudinal analysis of 109 Qubes Security Bulletins (2011-2025) and the project's Xen Security Advisory tracker found that 87 of 109 QSBs (79.8%) trace to Xen, CPU/microarchitectural, or other upstream components rather than Qubes-core logic, with 113 of 464 XSAs affecting Qubes. Post-2018 annual disclosure rates are statistically flat, and S-shaped vulnerability discovery models did not beat a rolling-mean baseline on short-horizon forecasts. The measurable risk in compartmentalized architectures sits in the upstream trust anchors, not the isolation layer.
+(blurb not generated)
 
 Attested TLS Was Supposed to Be the Last Trust Boundary. It Isn't. Formal Methods Show How (5 minute read)
 
@@ -148,9 +148,9 @@ Introducing Precursor: detecting agentic behavior with continuous client-side si
 
 (blurb not generated)
 
-VulnHunter: Capital One's agentic AI code security tool (1 minute read)
+VulnHunter: Capital One's agentic AI code security tool (5 minute read)
 
-Capital One open-sourced VulnHunter, an agentic AI code security tool that analyzes source from an attacker perspective to identify exploitable defects, map attack paths, and propose targeted remediations. It runs an agentic reasoning workflow rather than pattern-matching like a traditional SAST scanner, and is built to sit in the developer workflow to cut triage burden on findings before they reach production.
+(blurb not generated)
 
 Google Bets 'Agentic Defense' Strategy Can Outpace Attackers (5 minute read)
 
@@ -160,11 +160,7 @@ Fortinet expands FortiEndpoint with AI monitoring and data controls (5 minute re
 
 (blurb not generated)
 
-Claude can now sign into websites with 1Password without exposing your credentials (1 minute read)
-
-1Password released 1Password for Claude, a beta integration that lets Claude Desktop on macOS complete authenticated browser tasks without secrets entering the model's context window or Anthropic's infrastructure. Credentials are filled through a 1Password-managed channel gated on biometric approval per task, and a new Agentic Mode locks the browser extension down to the approved credential while hiding the rest of the vault from the agent.
-
-"1Password for Claude" is trying to make your passwords secure from agentic AI (5 minute read)
+Claude can now sign into websites with 1Password without exposing your credentials (5 minute read)
 
 (blurb not generated)
 
