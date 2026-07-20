@@ -1,9 +1,33 @@
 {
   "date": "2026-07-20",
   "newsletter": "tldr_infosec",
-  "fetched_at": "2026-07-20T12:09:09.209425+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-07-20T21:26:40.916386+00:00",
+  "tldr_titles": [
+    "WP2Shell: Pre-Authentication RCE in WordPress Core",
+    "OpenSSL HollowByte Flaw Could Freeze Server Memory with 11-Byte TLS Requests",
+    "Abbott probes two cyber incidents amid extortion claims",
+    "Forging the government's lottery: China's civic apps run on a shared reward backend with no real secret",
+    "Detecting Cobalt Strike HTTP(S) Beacons with a Simple Method",
+    "Bind Link Abuse: One Windows Feature, Many Ways to Blind Your EDR",
+    "Files Related to India's Largest Power Plant Exposed in Data Breach",
+    "The Pressure",
+    "Researcher poisons open-weight AI model for under $100",
+    "Coca-Cola suspended production at its Fairlife dairy after a ransomware attack",
+    "MetaMask code was open to a North Korea-linked contractor for a month before Consensys halted releases"
+  ],
+  "tldr_matched": [
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -15,6 +39,14 @@
     },
     {
       "rank": 2,
+      "score": 88.0,
+      "title": "ServiceNow pre-auth RCE exploited in the wild (CVE-2026-6875)",
+      "url": "https://www.helpnetsecurity.com/2026/07/20/servicenow-cve-2026-6875-exploited/",
+      "matched_tldr_idx": 0,
+      "similarity": 0.6218612194061279
+    },
+    {
+      "rank": 3,
       "score": 85.0,
       "title": "Exploit brokers pay $500k for WordPress RCEs. I found one with GPT5.6 and $25",
       "url": "https://slcyber.io/research-center/exploit-brokers-pay-500000-for-a-wordpress-rce-i-found-one-with-gpt5-6/",
@@ -22,7 +54,23 @@
       "similarity": null
     },
     {
-      "rank": 3,
+      "rank": 4,
+      "score": 83.0,
+      "title": "HollowGraph Malware Hides C2 and Stolen Files in Microsoft 365 Events Dated 2050",
+      "url": "https://thehackernews.com/2026/07/hollowgraph-malware-hides-c2-and-stolen.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 5,
+      "score": 83.0,
+      "title": "Russian Intelligence Hacks IP Cameras to Spy on Military Logistics Across NATO States and Ukraine",
+      "url": "https://thehackernews.com/2026/07/russian-intelligence-hacks-ip-cameras.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 6,
       "score": 83.0,
       "title": "Critical NGINX Vulnerability Can Crash Workers and May Allow Remote Code Execution",
       "url": "https://thehackernews.com/2026/07/critical-nginx-vulnerability-can-crash.html",
@@ -30,7 +78,7 @@
       "similarity": null
     },
     {
-      "rank": 4,
+      "rank": 7,
       "score": 83.0,
       "title": "SonicWall SMA Zero-Days Exploited Before Disclosure to Gain Root Access",
       "url": "https://thehackernews.com/2026/07/sonicwall-sma-zero-days-exploited.html",
@@ -38,7 +86,7 @@
       "similarity": null
     },
     {
-      "rank": 5,
+      "rank": 8,
       "score": 83.0,
       "title": "Critical ServiceNow code execution flaw now exploited in attacks",
       "url": "https://www.bleepingcomputer.com/news/security/critical-servicenow-code-execution-flaw-now-exploited-in-attacks/",
@@ -46,7 +94,23 @@
       "similarity": null
     },
     {
-      "rank": 6,
+      "rank": 9,
+      "score": 83.0,
+      "title": "Safety guardrails blocked Hugging Face's defenders, not the attacker, when an AI agent breached its systems",
+      "url": "https://venturebeat.com/security/safety-guardrails-blocked-hugging-faces-defenders-not-the-attacker-when-an-ai-agent-breached-its-systems",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 10,
+      "score": 83.0,
+      "title": "SonicWall Zero-Days Exploited to Deliver Custom Malware for Weeks Before Patch",
+      "url": "https://www.securityweek.com/sonicwall-zero-days-exploited-to-deliver-custom-malware-for-weeks-before-patch/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 11,
       "score": 80.0,
       "title": "Cursor 0day: When Full Disclosure Becomes the Only Protection Left",
       "url": "https://mindgard.ai/blog/cursor-0day-when-full-disclosure-becomes-the-only-protection-left",
@@ -54,7 +118,7 @@
       "similarity": null
     },
     {
-      "rank": 7,
+      "rank": 12,
       "score": 78.0,
       "title": "World's Largest AI Model Repository Hugging Face Breached by Autonomous AI Agent",
       "url": "https://thehackernews.com/2026/07/worlds-largest-ai-model-repository.html",
@@ -62,15 +126,23 @@
       "similarity": null
     },
     {
-      "rank": 8,
+      "rank": 13,
       "score": 78.0,
-      "title": "Two new high severity WordPress vulnerabilities, patch immediately!",
-      "url": "https://www.helpnetsecurity.com/2026/07/18/wordpress-vulnerabilities-wp2shell-cve-2026-60137-cve-2026-60137/",
+      "title": "Microsoft 365 calendars become spy drop boxes in HOLLOWGRAPH campaign",
+      "url": "https://www.theregister.com/security/2026/07/20/microsoft-365-calendars-become-spy-drop-boxes-in-hollowgraph-campaign/5274982",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 9,
+      "rank": 14,
+      "score": 78.0,
+      "title": "HOLLOWGRAPH malware turns Microsoft 365 calendars into an espionage channel",
+      "url": "https://www.helpnetsecurity.com/2026/07/20/hollowgraph-malware-microsoft-365-calendar/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 15,
       "score": 78.0,
       "title": "Compromised Injective SDK npm Package Exfiltrates Wallet Keys and Mnemonics",
       "url": "https://socket.dev/blog/compromised-injective-sdk-npm-package",
@@ -78,7 +150,7 @@
       "similarity": null
     },
     {
-      "rank": 10,
+      "rank": 16,
       "score": 78.0,
       "title": "Cavern Manticore: Exposing Iran-Linked Modular C2 Framework",
       "url": "https://research.checkpoint.com/2026/cavern-manticore-exposing-iran-linked-modular-c2-framework/",
@@ -86,7 +158,7 @@
       "similarity": null
     },
     {
-      "rank": 11,
+      "rank": 17,
       "score": 78.0,
       "title": "OAuth Client ID Spoofing Lets Attackers Validate Stolen Microsoft Entra Credentials",
       "url": "https://thehackernews.com/2026/07/oauth-client-id-spoofing-lets-attackers.html",
@@ -94,7 +166,15 @@
       "similarity": null
     },
     {
-      "rank": 12,
+      "rank": 18,
+      "score": 76.0,
+      "title": "ServiceNow\u2019s sandbox escape RCE hole now exploited in the wild",
+      "url": "https://www.cio.com/article/4199009/servicenows-sandbox-escape-rce-hole-now-exploited-in-the-wild-2.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 19,
       "score": 76.0,
       "title": "When checking the URL isn't enough: a Device Code Phishing attack via a Microsoft website",
       "url": "https://securelist.com/microsoft-device-code-phishing-attack/120350/",
@@ -102,7 +182,7 @@
       "similarity": null
     },
     {
-      "rank": 13,
+      "rank": 20,
       "score": 76.0,
       "title": "Full Broker Takeover, No Login Required: Miggo Discovers Critical RabbitMQ Vulnerabilities Putting Application Data at Risk",
       "url": "https://www.miggo.io/post/full-broker-takeover-no-login-required-miggo-discovers-critical-rabbitmq-vulnerabilities-putting-application-data-at-risk",
@@ -110,31 +190,7 @@
       "similarity": null
     },
     {
-      "rank": 14,
-      "score": 76.0,
-      "title": "Microsoft Maps Three Salesforce Attack Paths Tied to a Year of ShinyHunters Activity",
-      "url": "https://thehackernews.com/2026/07/microsoft-maps-year-long-shinyhunters.html",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 15,
-      "score": 75.0,
-      "title": "Hugging Face Breached Through a Malicious Dataset: What the Patches Reveal",
-      "url": "https://dev.to/szybnev/hugging-face-breached-through-a-malicious-dataset-what-the-patches-reveal-4dob",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 16,
-      "score": 74.0,
-      "title": "'The bots are alive!' Jailbroken Gemini spun up new C2 server for Russian fraudster in just 6 minutes",
-      "url": "https://www.theregister.com/research/2026/07/14/the-bots-are-alive-jailbroken-gemini-spun-up-new-c2-server-for-russian-fraudster-in-just-6-minutes/5270131",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 17,
+      "rank": 21,
       "score": 74.0,
       "title": "Capital One Open Sources AI-Powered \u2018VulnHunter\u2019 Security Tool",
       "url": "https://www.securityweek.com/capital-one-open-sources-ai-powered-vulnhunter-security-tool/",
@@ -142,7 +198,7 @@
       "similarity": null
     },
     {
-      "rank": 18,
+      "rank": 22,
       "score": 72.0,
       "title": "Accelerating EDR Evasion with LLM-Driven Analysis",
       "url": "https://specterops.io/blog/2026/06/29/llm-powered-edr-analysis/",
@@ -150,42 +206,10 @@
       "similarity": null
     },
     {
-      "rank": 19,
+      "rank": 23,
       "score": 72.0,
       "title": "Meet Dusseldorf, Microsoft\u2019s open-source out-of-band security platform",
       "url": "https://www.helpnetsecurity.com/2026/07/20/microsoft-dusseldorf-out-of-band-application-security-testing-oast-platform/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 20,
-      "score": 71.0,
-      "title": "WP2Shell WordPress Vulnerabilities Exploited in the Wild",
-      "url": "https://www.securityweek.com/wp2shell-wordpress-vulnerabilities-exploited-in-the-wild/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 21,
-      "score": 71.0,
-      "title": "Google and Microsoft Pull ModHeader With 1.6 Million Installs After Dormant Collector Found",
-      "url": "https://thehackernews.com/2026/07/google-and-microsoft-pull-modheader.html",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 22,
-      "score": 70.0,
-      "title": "Russian-Speaking Hacker Uses Google Gemini CLI to Control Botnet of Eight Dental Clinic PCs",
-      "url": "https://thehackernews.com/2026/07/russian-speaking-hacker-uses-google.html",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 23,
-      "score": 70.0,
-      "title": "New CrashStealer Malware Poses as Apple Crash Reporting Tool",
-      "url": "https://www.bleepingcomputer.com/news/security/new-crashstealer-malware-poses-as-apple-crash-reporting-tool/",
       "matched_tldr_idx": null,
       "similarity": null
     },
@@ -240,13 +264,21 @@
     {
       "rank": 30,
       "score": 58.0,
+      "title": "Remediating Vulnerabilities With LLMs: Inside Ivanti's Automation Push",
+      "url": "https://www.darkreading.com/cybersecurity-operations/remediating-vulnerabilities-llms-ivanti-automation",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 31,
+      "score": 58.0,
       "title": "Qubes OS Security in the Public Record",
       "url": "https://arxiv.org/abs/2607.14587",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 31,
+      "rank": 32,
       "score": 58.0,
       "title": "Attested TLS Was Supposed to Be the Last Trust Boundary. It Isn't. Formal Methods Show How",
       "url": "https://hackernoon.com/attested-tls-was-supposed-to-be-the-last-trust-boundary-it-isnt-formal-methods-show-how",
@@ -254,7 +286,7 @@
       "similarity": null
     },
     {
-      "rank": 32,
+      "rank": 33,
       "score": 58.0,
       "title": "Secure Sandboxes for Agents",
       "url": "https://www.perplexity.ai/hub/blog/secure-sandboxes-for-agents",
@@ -262,7 +294,7 @@
       "similarity": null
     },
     {
-      "rank": 33,
+      "rank": 34,
       "score": 58.0,
       "title": "Fortinet expands FortiEndpoint with AI monitoring and data controls",
       "url": "https://siliconangle.com/2026/07/14/fortinet-expands-fortiendpoint-ai-monitoring-data-controls/",
@@ -270,7 +302,15 @@
       "similarity": null
     },
     {
-      "rank": 34,
+      "rank": 35,
+      "score": 58.0,
+      "title": "Chicago-based Empirical Security, which uses AI to help companies predict threats by monitoring exploited vulnerabilities, raised a $25M Series A (Chris Metinko/Axios)",
+      "url": "https://www.techmeme.com/260720/p29#a260720p29",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 36,
       "score": 58.0,
       "title": "New Index Tracks Material Breaches \u2014 And Refuses to Add Up the Losses",
       "url": "https://www.securityweek.com/new-index-tracks-material-breaches-and-refuses-to-add-up-the-losses/",
@@ -278,7 +318,15 @@
       "similarity": null
     },
     {
-      "rank": 35,
+      "rank": 37,
+      "score": 58.0,
+      "title": "Italy fines WINDTRE \u20ac1.7 million over security flaws behind two data breaches",
+      "url": "https://www.helpnetsecurity.com/2026/07/20/italy-windtre-1-7-million-fine/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 38,
       "score": 58.0,
       "title": "NSA revives 'Tailored Access Operations' name for elite hacking unit",
       "url": "https://therecord.media/nsa-revives-tao-name-for-elite-hacking-unit",
@@ -286,7 +334,7 @@
       "similarity": null
     },
     {
-      "rank": 36,
+      "rank": 39,
       "score": 58.0,
       "title": "Ransomware negotiator hired to represent victims was working for the attackers",
       "url": "https://arstechnica.com/tech-policy/2026/07/ransomware-negotiator-helped-attackers-extort-his-own-clients-gets-6-year-sentence/",
@@ -294,7 +342,7 @@
       "similarity": null
     },
     {
-      "rank": 37,
+      "rank": 40,
       "score": 58.0,
       "title": "Police Disrupt a \u20ac140M Cyber Fraud Ring in Spain",
       "url": "https://www.darkreading.com/threat-intelligence/police-disrupt-140m-euro-cyber-fraud-ring-spain",
@@ -302,7 +350,7 @@
       "similarity": null
     },
     {
-      "rank": 38,
+      "rank": 41,
       "score": 58.0,
       "title": "UK cops say arrest of two young hackers disrupted the operations of an infamous hacking group",
       "url": "https://techcrunch.com/2026/07/16/uk-cops-say-arrest-of-two-young-hackers-disrupted-the-operations-of-an-infamous-hacking-group/",
@@ -310,17 +358,85 @@
       "similarity": null
     },
     {
-      "rank": 39,
+      "rank": 42,
+      "score": 57.0,
+      "title": "OpenAI paused internal access to an unreleased model that disproved the Erd\u0151s unit distance conjecture after it repeatedly found ways to act outside its sandbox (OpenAI)",
+      "url": "https://www.techmeme.com/260720/p33#a260720p33",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 43,
       "score": 56.0,
       "title": "The Windows 10 hangover is becoming a security problem",
       "url": "https://www.helpnetsecurity.com/2026/07/20/windows-10-support-risks-report/",
       "matched_tldr_idx": null,
       "similarity": null
+    },
+    {
+      "rank": 44,
+      "score": 56.0,
+      "title": "Pay up or not? Ransomware surge has victims facing tough choices.",
+      "url": "https://arstechnica.com/security/2026/07/pay-up-or-not-ransomware-surge-has-victims-facing-tough-choices/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 45,
+      "score": 56.0,
+      "title": "Neo Security bags $100M to build the secure control layer for enterprise AI agents",
+      "url": "https://siliconangle.com/2026/07/20/neo-security-bags-100m-build-secure-control-layer-enterprise-ai-agents/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 46,
+      "score": 56.0,
+      "title": "Neo Emerges From Stealth With $100M to Control and Secure Enterprise AI Software",
+      "url": "https://www.securityweek.com/neo-emerges-from-stealth-with-100m-to-control-and-secure-enterprise-ai-software/",
+      "matched_tldr_idx": null,
+      "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.09090909090909091,
+    "25": 0.09090909090909091,
+    "50": 0.09090909090909091,
+    "100": 0.09090909090909091,
+    "46": 0.09090909090909091
+  },
+  "hits_at": {
+    "10": 1,
+    "25": 1,
+    "50": 1,
+    "100": 1,
+    "46": 1
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://slcyber.io/research-center/wp2shell-pre-authentication-rce-in-wordpress-core/",
+    "https://thehackernews.com/2026/07/openssl-hollowbyte-flaw-could-freeze.html",
+    "https://www.bleepingcomputer.com/news/security/abbott-laboratories-probes-two-cyber-incidents-amid-extortion-claims/",
+    "https://neurowinter.com/security/2026/07/16/forging-the-government-lottery/",
+    "https://academy.bluraven.io/blog/detecting-cobalt-strike-https-beacons-with-simple-method",
+    "https://www.bitdefender.com/en-us/blog/businessinsights/bind-link-abuses-windows-feature-edr-evasion-technique",
+    "https://www.reuters.com/world/india/files-relating-indias-largest-nuclear-power-plant-kudankulam-exposed-data-breach-2026-07-15/",
+    "https://daniel.haxx.se/blog/2026/05/26/the-pressure/",
+    "https://www.theregister.com/ai-and-ml/2026/07/16/researcher-poisons-open-weight-ai-model-for-under-100/5273880",
+    "https://techcrunch.com/2026/07/16/coca-cola-suspended-production-at-its-fairlife-dairy-after-a-ransomware-attack/",
+    "https://cryptoslate.com/metamask-code-was-open-to-a-north-korea-linked-contractor-for-a-month-before-consensys-halted-releases/"
+  ],
+  "tldr_domains": [
+    "slcyber.io",
+    "thehackernews.com",
+    "bleepingcomputer.com",
+    "neurowinter.com",
+    "academy.bluraven.io",
+    "bitdefender.com",
+    "reuters.com",
+    "daniel.haxx.se",
+    "theregister.com",
+    "techcrunch.com",
+    "cryptoslate.com"
+  ]
 }

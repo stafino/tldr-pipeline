@@ -10,9 +10,9 @@ HAMi becomes a CNCF incubating project (5 minute read)
 
 (blurb not generated)
 
-Critical NGINX Vulnerability Can Crash Workers and May Allow Remote Code Execution (1 minute read) [flag]
+Critical NGINX Vulnerability Can Crash Workers and May Allow Remote Code Execution (5 minute read)
 
-F5 patched CVE-2026-42533, a heap buffer overflow in nginx's script engine that a remote unauthenticated attacker can trigger with crafted HTTP requests, crashing workers and potentially allowing remote code execution. Fixes landed in nginx 1.30.4, 1.31.3, and NGINX Plus 37.0.3.1, but exposure depends on config: only a regex-based map referenced after an earlier capture is affected, and F5 has not yet listed fixed builds for Ingress Controller, Gateway Fabric, App Protect WAF, or Instance Manager.
+(blurb not generated)
 
 Improving Smart Tiered Cache for public cloud regions (5 minute read)
 
@@ -30,19 +30,25 @@ Full Broker Takeover, No Login Required: Miggo Discovers Critical RabbitMQ Vulne
 
 (blurb not generated)
 
+Sheetz replaces VMware at more than 830 stores (1 minute read)
+
+Sheetz is replacing VMware across more than 830 convenience stores with StorMagic's SvHCI hyperconverged stack, one of the larger publicly announced VMware exits since Broadcom's acquisition reshaped licensing. The migration runs entirely remotely on the chain's existing Dell PowerEdge R440 and R450 servers, with 600-plus stores already cut over at roughly 200 conversions per month and no hardware refresh or on-site visits required.
+
 Your Azure DevOps pipelines have a 2027 deadline, and the clock has just started (5 minute read)
 
 (blurb not generated)
+
+Malicious cloud customers can bring down the power grid (1 minute read)
+
+Researchers at Zhejiang University showed that malicious cloud tenants can weaponize normal GPU training workloads, timing power swings at synchronization points like checkpointing to push oscillations past 6,000 Hz and match critical grid frequencies. Their Bit2Watt attack drove 46.8% total harmonic distortion and a negative damping ratio on a simulated 1-MW grid, and stays covert because it runs entirely inside authorized workload paths that cloud-provider monitoring is unlikely to flag.
 
 Six New U-Boot Flaws Could Let Malicious Images Crash Devices or Run Code at Boot (5 minute read)
 
 (blurb not generated)
 
-Airbus takes flight from AWS. What happens next is critical (1 minute read) [flag]
+Airbus takes flight from AWS. What happens next is critical (5 minute read)
 
-Airbus is moving workloads off AWS, and the author argues the execution matters more than the decision itself. Repatriation at that scale means rebuilding managed-service dependencies, identity, and networking on infrastructure the team now runs itself, and the cost case only holds if utilization stays high enough to beat what the hyperscaler was charging.
-
-Note: the supplied context is The Register's "most popular" sidebar, not the article body — no details on Airbus's target platform, timeline, or scale. Blurb is written from the headline only. Pull the article text if you want specifics in it.
+(blurb not generated)
 
 AWS CloudFront outage serves errors instead of websites (5 minute read)
 
@@ -55,9 +61,9 @@ The four horsemen behind thousands of Postgres outages (5 minute read)
 
 (blurb not generated)
 
-Why goodput matters more than throughput for LLM serving (1 minute read)
+Why goodput matters more than throughput for LLM serving (5 minute read)
 
-The author argues that throughput is the wrong headline metric for LLM serving, since requests per second can climb while TTFT and TPOT quietly blow past targets. Goodput counts only completed requests that meet those latency SLOs, making it the number worth tuning against. The walkthrough serves Qwen2.5-7B on vLLM on a single A10G in EKS, driving load with GuideLLM and instrumenting through Prometheus, Grafana, and NVIDIA's DCGM exporter, with the Kubernetes manifests published for reuse against your own traffic.
+(blurb not generated)
 
 Code review is theater now (5 minute read)
 
@@ -69,7 +75,11 @@ OVS and OVN Explained: The Networking Stack Behind OpenStack (5 minute read)
 
 Shipyard: How We Built Slack's Next-Generation EC2 Platform (5 minute read)
 
-Slack's infrastructure team detailed Shipyard, the EC2 platform that replaced continuous Chef convergence on long-lived instances with immutable, deployable artifacts and progressive rollouts. The team hit the limits of configuration management across tens of thousands of instances, where drift was inevitable and service-level deploys required coordinating changes across multiple layers. Shipyard pushes that responsibility into build pipelines and automated safety checks, giving EC2 workloads that could not containerize the same rollout guarantees as app delivery.
+(blurb not generated)
+
+Branching databases like code: a CI/CD pattern for Lakebase, in production at Glaspoort (1 minute read)
+
+Glaspoort, a Dutch fiber operator, documented how it ships schema changes to Lakebase, the serverless Postgres OLTP that backs its project-management app, by branching a production-like database for every PR. Each pull request spins up an ephemeral, isolated copy so reviewers can test against fresh data without stepping on each other, with migrations held as the single source of truth. The trade-off is more short-lived databases to provision and reap, absorbed by treating them as disposable IaC alongside the app's CI/CD.
 
 How GitHub gave every repository a durable owner (5 minute read)
 
@@ -83,6 +93,10 @@ How Microsoft Ships Thousands of Production AI Agents (5 minute read)
 
 (blurb not generated)
 
+One login to rule them all: centralized auth for internal tools with Caddy (3 minute read)
+
+The author walks through putting internal tools behind a single Caddy reverse proxy with the caddy-security (AuthCrunch) plugin, authenticating against the company's existing Azure AD tenant over OAuth2/OIDC so each new tool needs only two lines of config and no separate user database. Caddy's automatic Let's Encrypt handling removes certbot cron jobs and expired-cert incidents, and the post covers the two rough edges that needed extra attention to get the OIDC flow working.
+
 How to protect your MCP Server with Fastly (5 minute read)
 
 (blurb not generated)
@@ -90,9 +104,21 @@ How to protect your MCP Server with Fastly (5 minute read)
 ⚒️
 Launches & Tools
 
+Making highly available, multi-region Cloud Run services just got easier (2 minute read)
+
+Google Cloud added readiness probes and service health aggregation to Cloud Run, giving multi-region services instance-level health checks that automatically fail traffic away from unhealthy regions within seconds via a global external load balancer. The capabilities cut the manual incident response that regional failover previously required, and service health works with both single- and multi-region deployments across public internet and VPC-internal traffic.
+
+Cloudflare Internal DNS is now generally available (1 minute read)
+
+Cloudflare made Internal DNS generally available, providing authoritative and recursive private DNS on the same global network and control plane customers already use for public DNS and Zero Trust. It runs on the infrastructure behind 1.1.1.1 with no appliances to rack, folds split-horizon resolution into shared zones with per-view resolver policies, and comes at no additional charge for Enterprise customers on Cloudflare Gateway.
+
 Introducing Precursor: detecting agentic behavior with continuous client-side signals (5 minute read)
 
 (blurb not generated)
+
+Automate work item assignment with a "Work item created" trigger (3 minute read)
+
+GitLab added a "Work item created" trigger to its Duo Agent Platform, firing flows automatically the moment an issue is created instead of requiring a manual UI action like a mention or assignment. The event-driven trigger lets triage and routing flows weigh team capacity and availability to assign work in seconds, removing the human handoff that previously gated every Duo Flow.
 
 Introducing Smart Retry: Safer retries for transient Jenkins failures. (5 minute read)
 

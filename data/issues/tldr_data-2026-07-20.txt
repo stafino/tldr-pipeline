@@ -21,6 +21,10 @@ Modern Data Warehousing at Scale: Arcesium's Migration to DuckDB and Iceberg (5 
 
 (blurb not generated)
 
+Branching databases like code: a CI/CD pattern for Lakebase, in production at Glaspoort (1 minute read)
+
+Glaspoort, a Dutch fiber operator, describes how its data team applies application-grade CI/CD to Lakebase, the serverless Postgres OLTP database behind its internal project-management app. Every environment branches from production, each pull request spins up an ephemeral database that mirrors prod without fresh data loss, and migrations become the single source of truth. The pattern collapses the wall between the analytical lakehouse and an operational front-end, letting the team ship database changes with the same rigor as code.
+
 Re-architecting Affirm's Upfunnel Platform: How We Cut Experiment Cycle Time from Months to Days (5 minute read)
 
 (blurb not generated)
@@ -28,6 +32,10 @@ Re-architecting Affirm's Upfunnel Platform: How We Cut Experiment Cycle Time fro
 Lakekeeper Generic Table API Design (5 minute read)
 
 (blurb not generated)
+
+Scaling document classification to 100k+ labels (1 minute read)
+
+Databricks engineers describe a two-stage system for mapping freeform text to taxonomies of 100k+ labels, combining AI Classify with vector search to shortlist candidate labels before the model reasons over them. The approach sidesteps the two failure modes of naive LLM classification at this scale: taxonomies that overflow the context window, and models that hallucinate labels outside the taxonomy. They report higher accuracy and lower cost than passing the full label set to a frontier model, while dropping the regex rules and retrained classifiers that break on taxonomy drift.
 
 The benchmark grading every text-to-SQL model has wrong answers in its key (5 minute read)
 
@@ -47,7 +55,7 @@ Guide to data tools landscape for developers (5 minute read)
 
 The Database Is Not the Data Model (5 minute read)
 
-The author argues that schema design and data modeling are different disciplines, and that the industry collapsed them because DDL was visible, executable, and committable while conceptual models were not. The piece traces the drift from Codd's data independence and Chen's ER modeling through ORMs shipping `models.py` and dbt calling a SELECT statement a model. The result is that "model" now means an ERD, a table definition, a SQL transform, and a transformer, which leaves teams arguing about implementation before they have agreed on what the entities mean.
+(blurb not generated)
 
 The Data Anarchy Tax: Why your team is firefighting 45% of the time. (5 minute read)
 

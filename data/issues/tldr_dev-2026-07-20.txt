@@ -6,9 +6,9 @@ TLDR Dev 2026-07-20
 🧑‍💻
 Articles & Tutorials
 
-Claude Code uses Bun written in Rust now (1 minute read)
+Claude Code uses Bun written in Rust now (5 minute read)
 
-Claude Code v2.1.181 and later ship the Rust port of Bun, which Jarred Sumner says made startup 10% faster on Linux with no other user-visible change. The author confirmed it locally by running strings on the Claude binary, which reports Bun v1.4.0 and lists 563 Rust source paths including src/bundler/bundle_v2.rs, a version that only exists in Bun canary.
+(blurb not generated)
 
 The four horsemen behind thousands of Postgres outages (5 minute read)
 
@@ -22,9 +22,9 @@ Building and Shipping Mac and iOS Apps Without Ever Opening Xcode (5 minute read
 
 (blurb not generated)
 
-Regressive JPEGs (1 minute read)
+Regressive JPEGs (5 minute read)
 
-The author abused JPEG's progressive mode, where a file is split into scans that each fill in a spectral range, to concatenate multiple same-resolution images into one file that animates as it downloads over a slow connection. The trick caps out fast because most decoders stop after roughly nine scans as a zip-bomb guard, and baseline single-scan frames fail since progressive scans cannot mix DC and AC coefficients.
+(blurb not generated)
 
 The art and engineering of Sega CD Silpheed (5 minute read)
 
@@ -50,9 +50,9 @@ Automating cross-repo documentation with GitHub Agentic Workflows (5 minute read
 
 (blurb not generated)
 
-Setting up your spare Mac for Claude Code to control, a step-by-step guide (1 minute read)
+Setting up your spare Mac for Claude Code to control, a step-by-step guide (5 minute read)
 
-The guide walks through configuring a spare Mac as an always-on host for Claude Code with computer use enabled, reachable from the Claude mobile app or over SSH from a main machine. The setup trades container isolation for full macOS access, letting the agent drive Mac-only apps like Unity and run with `--dangerously-skip-permissions` on hardware that has nothing worth losing.
+(blurb not generated)
 
 When branchless binary search is slower (5 minute read)
 
@@ -97,6 +97,10 @@ Old and new apps, via modern coding agents (5 minute read)
 
 (blurb not generated)
 
+Annoying and alarming things about OpenCode (1 minute read)
+
+The author argues that OpenCode, the most popular open-source AI coding agent at 161k GitHub stars, is a fundamentally unsafe `llm | bash` pipe whose web-stack design leaves users trivially exploitable or one wrong tool call away from a wiped machine. Working from source at git version baef5cd4, the post separates merely annoying failures like quadratic upload cost and double-JSON-encoded tool calls from the alarming security posture, and concludes everyone using it should stop.
+
 SQLite should have (Rust-style) editions (5 minute read)
 
 (blurb not generated)
@@ -129,17 +133,17 @@ Code review is theater now (5 minute read)
 
 (blurb not generated)
 
-Harness Engineering (5 minute read)
-
-(blurb not generated)
-
 With AI Agents, Attention is the New Bottleneck (5 minute read)
 
 (blurb not generated)
 
-Beyond grep: The case for a context-rich AI coding harness (1 minute read)
+That post never existed. Stop listening to that thing (1 minute read)
 
-Claude Code's product team argues for a "lean harness," deliberately shipping fewer opinionated tools rather than pre-building structured context indexes over a codebase. Head of product Cat Wu says evals show no measurable gain from advance codebase indexing, and that models improve fast enough that opinionated tooling built around today's limitations becomes dead weight, leaving developers to add their own context tools when they want them.
+The author recounts being sent traffic and questions about a blog post they never wrote, traced back to an AI assistant confidently citing a source that does not exist. The argument is that hallucinated references now leak into real inboxes and search results, and that treating a chatbot's citations as load-bearing without verifying them wastes the time of the people it invents work for.
+
+Beyond grep: The case for a context-rich AI coding harness (5 minute read)
+
+(blurb not generated)
 
 How to stop Claude from saying load-bearing (5 minute read)
 
@@ -164,17 +168,21 @@ Inkling: Our Open-Weights Model (5 minute read)
 
 (blurb not generated)
 
-Transcribe.cpp (1 minute read)
+Transcribe.cpp (5 minute read)
 
-Transcribe.cpp is a ggml-based speech-to-text library covering 16 ASR families and 60+ models, with acceleration via Vulkan, Metal, CUDA, and TinyBLAS. The author, who maintains the Handy desktop app, built it as a near drop-in whisper.cpp replacement after hitting the limits of ONNX's CPU-only performance, and every model ships numerically validated and WER tested against its reference implementation.
+(blurb not generated)
 
 Turso is building a modern version of Postgres in Rust (5 minute read)
 
 (blurb not generated)
 
-UnifiedIR for Julia (1 minute read)
+Jelly UI: Soft-body physics for native HTML form controls (1 minute read)
 
-A WIP PR proposes UnifiedIR, a new top-level Julia package that replaces SyntaxTree, SyntaxGraph, CodeInfo, and IRCode with a single dialect-aware, region-based IR in the style of MLIR. The core structure is extensible with per-statement columns and layered views, including an IncrementalCompact-style one-pass rewrite view and an LLVM-like linked-list view that uses an order maintenance algorithm to avoid quadratic behavior on large functions.
+Jelly UI is a dependency-free Web Components library that wraps native HTML form controls in soft-body physics for a tactile feel. It ships with dark mode, right-to-left support, and WCAG AA color tokens built in, so the animation layer sits on real form elements rather than replacing them with custom widgets.
+
+UnifiedIR for Julia (5 minute read)
+
+(blurb not generated)
 
 Build agentic full-stack apps with Genkit (5 minute read)
 
@@ -184,9 +192,13 @@ Your Dropbox is now a skill server (5 minute read)
 
 (blurb not generated)
 
-LoRA Speedrun – a public wall-clock leaderboard for fine-tuning techniques (1 minute read)
+LoRA Speedrun – a public wall-clock leaderboard for fine-tuning techniques (5 minute read)
 
-LoRA Speedrun is a public wall-clock leaderboard for LoRA fine-tuning, with two frozen tracks: Qwen2.5-1.5B to 57% on GSM8K, and a SQuAD task, both on a single L40S. Records are re-run 3x with fresh seeds on identical hardware before they count, and timing runs on a Modal sandbox covered by free monthly credits, so anyone can verify any record with one command.
+(blurb not generated)
+
+Nativ: Run frontier open models locally on your Mac (1 minute read)
+
+Nativ is an open-source, MIT-licensed macOS app that downloads and runs open models from Google, Cohere, and Liquid AI locally on Apple Silicon, built on MLX-VLM and tuned for M-series unified memory and Metal. It recommends a model for your hardware, exposes live tokens/sec, memory pressure, thermal state, and time-to-first-token, and serves a local endpoint so existing coding agents can point at on-device models.
 
 WebMCP for Documentation (5 minute read)
 
@@ -203,13 +215,9 @@ Compromised Injective SDK npm Package Exfiltrates Wallet Keys and Mnemonics (5 m
 
 (blurb not generated)
 
-Hugging Face Breached Through a Malicious Dataset: What the Patches Reveal (2 minute read)
+SleeperGem Uses Three Malicious RubyGems Packages to Target Developer Machines (5 minute read)
 
-Hugging Face disclosed a compromise of part of its production infrastructure that started with a malicious dataset abusing a remote-code loader and jinja2 template injection in a dataset config, then escalated to node-level access and lateral movement across internal clusters. Public dataset-viewer commits show the response: an fsspec protocol allowlist, worker pods stripped of ServiceAccount tokens and Linux capabilities, and static S3 and Mongo credentials replaced with IRSA auth.
-
-SleeperGem Uses Three Malicious RubyGems Packages to Target Developer Machines (1 minute read)
-
-StepSecurity flagged three malicious RubyGems packages, dubbed SleeperGem, that impersonate Microsoft's Git Credential Manager or revive gems dormant since 2019. The loader checks roughly 30 CI environment variables from GitHub Actions, GitLab, CircleCI, and Jenkins, exiting if any are found, so it only drops its native daemon and persistence on developer machines rather than ephemeral runners.
+(blurb not generated)
 
 A broken DNSSEC rollover took down .AL. Now 1.1.1.1 tells you when validation is bypassed (5 minute read)
 
@@ -219,9 +227,17 @@ mariadb-server: Upgrading to 10.11.18-0+deb12u1 enables systemd socket activatio
 
 (blurb not generated)
 
+OpenAI’s Codex context reduction for GPT 5.6 sparks dissatisfaction among developers (2 minute read)
+
+OpenAI reduced the default input context window for GPT-5.6 in the Codex CLI to 272,000 tokens from 372,000, prompting complaints from developers who say long-running sessions now trigger context compaction sooner. Analysts note the change mainly affects large codebases, repository-wide refactoring, and extended sessions, where the agent must summarize or reload context more often and developers spend more time re-establishing state than writing code.
+
 ⚡
 Quick Links
 
 TIL - Algolia Makes Creating an MCP Server Stupid Easy (5 minute read)
 
 (blurb not generated)
+
+Hyprland 0.55 announced the switch to Lua for its config files (1 minute read)
+
+Hyprland 0.55 switches its config format to Lua, adding a Layout API for user-defined per-workspace and per-monitor layouts.

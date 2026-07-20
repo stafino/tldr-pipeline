@@ -6,92 +6,92 @@ TLDR IT 2026-07-20
 🚀
 News & Trends
 
-WordPress Core "wp2shell" RCE flaws get public exploits, patch now (1 minute read)
+WordPress Core "wp2shell" RCE flaws get public exploits, patch now (5 minute read)
 
-Public proof-of-concept exploits are now available for "wp2shell," a chain of two WordPress Core flaws (CVE-2026-63030 and CVE-2026-60137) that gives unauthenticated attackers remote code execution on stock installs running 6.9.0-6.9.4 and 7.0.0-7.0.1. WordPress has forced auto-updates to 7.0.2 and 6.9.5, but IT teams running self-hosted or version-pinned instances need to patch manually across an estimated 500M sites.
+(blurb not generated)
 
-Critical ServiceNow code execution flaw now exploited in attacks (1 minute read)
+Critical ServiceNow code execution flaw now exploited in attacks (5 minute read)
 
-Attackers are exploiting CVE-2026-6875, a pre-auth sandbox-escape RCE in the ServiceNow AI Platform, days after ServiceNow patched hosted instances and shipped fixes for self-hosted deployments on July 13th. ServiceNow's advisory still says it is unaware of active exploitation, so self-hosted customers running the platform that serves 85% of the Fortune 500 should patch on their own timeline rather than the vendor's.
+(blurb not generated)
 
-Major glitch in Matrix as UK government projects watchdog rates shared services cluster red (1 minute read)
+Sheetz replaces VMware at more than 830 stores (1 minute read)
 
-The UK government's projects watchdog gave a red rating to Matrix, the shared services cluster consolidating back-office ERP and HR systems across multiple Whitehall departments, meaning delivery appears unachievable without a reset of scope, schedule, or budget. Multi-department ERP consolidation is the same pattern vendors sell to large enterprises, and the red flag lands on the delivery model rather than the software itself.
+Sheetz is replacing VMware across more than 830 convenience-store locations with StorMagic's SvHCI hyperconverged stack, in one of the larger publicly disclosed VMware migrations to date. The chain has already converted over 600 stores remotely at roughly 200 per month, avoiding hardware upgrades and on-site visits by keeping its existing Dell PowerEdge servers, a signal of how Broadcom's VMware pricing is pushing enterprises toward alternatives.
+
+Major glitch in Matrix as UK government projects watchdog rates shared services cluster red (5 minute read)
+
+(blurb not generated)
+
+Microsoft will use AMD’s AI-optimized Helios racks in Azure (1 minute read)
+
+Microsoft will deploy AMD's Helios rack design in Azure, powering a new ND MI455X v7 instance family plus two other AMD-silicon-based series, with each rack packing 72 Instinct MI455 GPUs alongside Venice EPYC CPUs and Pensando DPUs. The move deepens Microsoft's multi-vendor accelerator strategy, giving Azure buyers an Nvidia alternative for inference workloads as AMD begins shipping the racks to customers later this year.
 
 Salesforce's Agentforce isn't winning over clients, KeyBanc analysts claim (5 minute read)
 
 (blurb not generated)
 
-Microsoft confirms WSUS service degradation impacting all versions of Windows (1 minute read)
+ServiceNow pre-auth RCE exploited in the wild (CVE-2026-6875) (1 minute read)
 
-Microsoft confirmed a service degradation in Windows Server Update Services affecting all supported Windows versions, disrupting the patch-distribution path many enterprises still rely on for managed update rollouts. Admins running on-premises WSUS rather than Intune or Autopatch face delayed security updates until Microsoft ships a fix, which strengthens the case for the cloud update management Microsoft has been steering customers toward.
+Attackers are actively exploiting CVE-2026-6875, a critical pre-authentication code-injection flaw in the ServiceNow AI Platform that lets unauthenticated attackers escape the script sandbox and fully compromise an instance and connected proxy servers. Self-hosted customers who have not applied the July 13 patch are exposed, though ServiceNow says its own hosted instances show no evidence of related activity.
+
+EU's AI labeling rules take effect next month (1 minute read)
+
+The EU's transparency rules requiring AI-generated content to be machine-readably labeled take effect next month, extending the AI Act's disclosure obligations to any provider serving EU users. Enterprise IT teams deploying generative systems now need labeling and watermarking baked into their pipelines before the deadline, adding a compliance workstream that touches every customer-facing model in the stack.
+
+Microsoft confirms WSUS service degradation impacting all versions of Windows (5 minute read)
+
+(blurb not generated)
 
 Apple says former employee exploited ‘rare' bug to download confidential files after leaving for OpenAI (5 minute read)
 
 (blurb not generated)
 
+Windows Server Update Services buckle under Microsoft's metadata mountain (1 minute read)
+
+Microsoft's Windows Server Update Services is straining under the volume of update metadata it has to sync, with admins reporting failed synchronizations, bloated databases, and timeouts across on-prem WSUS deployments. The problem sharpens Microsoft's push toward cloud-based patching via Windows Autopatch and Intune, leaving shops that still rely on on-prem WSUS to either tune around the load or start planning a migration off the deprecated service.
+
+ServiceNow’s sandbox escape RCE hole now exploited in the wild (3 minute read)
+
+A pre-auth sandbox-escape vulnerability in ServiceNow (CVE-2026-6875) that enables remote code execution is now under active exploitation in the wild, threat-intel firm Defused reported, though ServiceNow says it has seen no evidence affecting its hosted instances. Attackers are already varying their technique past the original proof of concept, so signature-based defenses may miss variants and self-hosted customers should apply ServiceNow's patch immediately.
+
 Coca-Cola says Fairlife ransomware attack halts US dairy production (5 minute read)
 
 (blurb not generated)
 
-AI ops tools will create console sprawl and break IT more often: Gartner (1 minute read)
+AI ops tools will create console sprawl and break IT more often: Gartner (5 minute read)
 
-Gartner warned that the wave of vendor-specific AI ops tools will add consoles rather than consolidate them, leaving IT teams with more surfaces to watch and more frequent outages as agents act across systems. Buyers evaluating AIOps add-ons from incumbent monitoring and ITSM vendors should weigh integration and consolidation terms now, before each platform ships its own agent dashboard into the stack.
+(blurb not generated)
 
-Critical NGINX Vulnerability Can Crash Workers and May Allow Remote Code Execution (1 minute read)
+HollowGraph Malware Hides C2 and Stolen Files in Microsoft 365 Events Dated 2050 (1 minute read)
 
-F5 patched CVE-2026-42533, a heap buffer overflow in nginx's script engine that lets an unauthenticated attacker crash worker processes with crafted HTTP requests and, where ASLR can be bypassed, potentially execute code. Fixes landed in nginx 1.30.4, 1.31.3, and NGINX Plus 37.0.3.1, but F5 has not yet published fixed builds for Ingress Controller, Gateway Fabric, App Protect WAF, or Instance Manager.
+Group-IB detailed HollowGraph, an espionage implant that hijacks a compromised Microsoft 365 mailbox's calendar as a two-way command channel, planting tasking and exfiltrating encrypted files as attachments on events dated to 2050 so all traffic rides legitimate Microsoft Graph API calls. Because the activity mimics ordinary Microsoft 365 chatter and never contacts an attacker-owned server for payloads, network controls keyed to known-bad destinations have nothing to flag.
+
+Critical NGINX Vulnerability Can Crash Workers and May Allow Remote Code Execution (5 minute read)
+
+(blurb not generated)
 
 SonicWall SMA Zero-Days Exploited Before Disclosure to Gain Root Access (5 minute read)
 
 (blurb not generated)
 
-Two new high severity WordPress vulnerabilities, patch immediately! (1 minute read)
+SonicWall Zero-Days Exploited to Deliver Custom Malware for Weeks Before Patch (1 minute read)
 
-WordPress patched two vulnerabilities in 6.9.5 and 6.8.6, including CVE-2026-63030, a REST API batch-route confusion and SQL injection flaw that allows remote code execution on 6.9 installs. Teams that cannot patch immediately can block anonymous access to /wp-json/batch/v1 at the WAF level, though Searchlight Cyber warns this may break legitimate traffic and should stay temporary.
+Two SonicWall SMA1000 zero-days, CVE-2026-15409 and CVE-2026-15410, were exploited by threat actor UTA0533 for roughly three weeks before SonicWall issued hotfixes on July 14, per Volexity, which found the group deploying custom KnuckleBall malware alongside a Java webshell and open-source proxy. CISA has added both flaws to its KEV catalog, bringing SonicWall's total to 17, and enterprises running the remote-access appliances should apply the hotfixes and hunt for the published IoCs.
 
-OAuth Client ID Spoofing Lets Attackers Validate Stolen Microsoft Entra Credentials (5 minute read)
+Microsoft 365 calendars become spy drop boxes in HOLLOWGRAPH campaign (1 minute read)
 
-(blurb not generated)
+Attackers in the HOLLOWGRAPH campaign are abusing Microsoft 365 calendar entries as covert dead drops, hiding stolen data and command-and-control instructions inside event fields that blend into normal Graph API traffic. The technique lets exfiltration ride legitimate Microsoft 365 channels that most enterprise security tooling trusts by default, forcing IT teams to treat Graph API activity and calendar writes as monitored surfaces rather than benign background noise.
 
-When checking the URL isn't enough: a Device Code Phishing attack via a Microsoft website (5 minute read)
+HOLLOWGRAPH malware turns Microsoft 365 calendars into an espionage channel (1 minute read)
 
-(blurb not generated)
-
-Microsoft Maps Three Salesforce Attack Paths Tied to a Year of ShinyHunters Activity (5 minute read)
-
-(blurb not generated)
-
-URGENT - Progress Tells ShareFile Customers to Shut Down Storage Zone Controllers Over Security Threat (5 minute read)
-
-(blurb not generated)
-
-US and allies warn of Russian critical infrastructure attacks (5 minute read)
-
-(blurb not generated)
-
-Microsoft confirms Windows Server Update Services sync delays (1 minute read)
-
-Microsoft confirmed a WSUS synchronization bug affecting Windows 10 1607 and later and Windows Server 2012 and later, with sync timeouts starting July 13 and blocking update deployment through WSUS and Configuration Manager. Saturday's mitigation restored new and rebuilt WSUS installations, but previously affected servers still need manual removal of the bad metadata, and Microsoft has not shipped those steps yet.
-
-Windows KB5121767 OOB update fixes shutdowns on some Dell PCs (1 minute read)
-
-Microsoft released out-of-band updates KB5121767 and KB5121768 to fix unexpected shutdowns, thermal throttling, and battery drain on Dell PCs running Windows 11 25H2, 24H2, and Enterprise LTSC 2024, caused by a conflict between the new Windows USB-C Connection Manager and Intel's IPF Processor Participant driver. Autopatch fleets with hotpatching get the fix automatically, while everyone else needs to pull it manually and only on affected devices.
-
-Auditors tell UK government to do the math before banking on £45B AI savings (1 minute read)
-
-The UK's National Audit Office told the government it lacks the baseline data and measurement framework to verify the £45B in annual savings ministers have projected from AI adoption across public services. The finding lands as departments negotiate AI contracts with Microsoft, Google, and other vendors, and it raises the odds that procurement teams get asked to justify spend against benchmarks nobody has actually established.
-
-High hardware costs see Red Hat offer a two-server edge rig, no mini-PC required (1 minute read)
-
-Red Hat introduced a two-server edge configuration for OpenShift, dropping the third control-plane node that its compact cluster deployments previously required as hardware costs climb. IT teams running hundreds of distributed sites can cut per-location server spend without falling back to single-node clusters, which trade away the failover that retail, manufacturing, and telco edge workloads depend on.
+Group-IB researchers documented HOLLOWGRAPH, espionage malware that uses a compromised Microsoft 365 mailbox and the Graph API to hide command-and-control traffic inside calendar events dated to 2050, with DNS tunneling to refresh Entra ID credentials. The campaign hit 12 systems tied to Israeli entities and shows how trusted Microsoft services and legitimate Graph API access can carry data exfiltration past defenses watching for conventional C2 channels.
 
 🧠
 Analysis & Opinions
 
-Airbus takes flight from AWS. What happens next is critical (1 minute read)
+Airbus takes flight from AWS. What happens next is critical (5 minute read)
 
-Airbus is moving off AWS, and the author argues that what follows the decision matters more than the decision itself. Large enterprise cloud exits tend to stall midway, leaving the company paying for the old hyperscaler contract and the new environment at once. For IT leaders weighing a sovereignty- or cost-driven migration, the exit plan deserves the same scrutiny as the original vendor selection.
+(blurb not generated)
 
 Your service vendors are being rebuilt around AI (5 minute read)
 
@@ -105,24 +105,32 @@ Up the Stack: How AI's Escape From the Commodity Trap Risks Enterprise Lock-in (
 
 (blurb not generated)
 
-The audit trail CIOs need before the next cyber crisis (2 minute read)
+OpenAI pushes new yardstick for measuring AI investments (1 minute read)
 
-The author argues that DORA, NIS2, and the SEC's cyber disclosure rules have shifted CIO liability from operating controls to proving, after the fact, that leadership decisions matched the risk evidence available at the time. Green dashboards that mask legacy debt, undocumented service accounts, and shadow cloud instances become evidence against you once regulators and defense counsel start reconstructing the timeline. The recommended output is a documented audit trail of how risks were escalated and decided.
+OpenAI CFO Sarah Friar floated a "useful-intelligence-per-dollar" metric for evaluating AI spend, as enterprises face mounting pressure to prove returns on their deployments. The framing conveniently reorients buyers away from raw token pricing, where OpenAI competes with cheaper rivals, toward outcome-based value that favors its higher-end models. IT leaders should treat vendor-supplied yardsticks skeptically and anchor ROI cases to their own workflow metrics rather than a supplier's preferred denominator.
 
-The 6 kinds of AI agent architectures (3 minute read)
+The audit trail CIOs need before the next cyber crisis (5 minute read)
 
-The author argues that "AI agent" has become meaningless as a procurement term and lays out six architectural archetypes CIOs should be able to identify on sight, starting with the conversational assistant. The practical value is in scoping: a chat-based assistant with persistent memory and citations solves a different problem than an autonomous planning system, and buying the wrong one wastes budget. Deloitte found 38% of organizations report AI is already improving customer relationships.
+(blurb not generated)
+
+The 6 kinds of AI agent architectures (5 minute read)
+
+(blurb not generated)
 
 🤝
 Launches & Partnerships
 
-Meet Dusseldorf, Microsoft’s open-source out-of-band security platform (1 minute read)
+Meet Dusseldorf, Microsoft’s open-source out-of-band security platform (5 minute read)
 
-Microsoft released Dusseldorf, an open-source out-of-band application security testing platform that runs DNS, HTTP, and HTTPS listeners on an operator-controlled domain to catch SSRF, XSS, template injection, and XXE activity at the network edge. Security teams that have been assembling this infrastructure in-house get a self-hosted alternative to commercial OAST tooling, with local Docker Compose and Azure Helm deployment paths.
+(blurb not generated)
 
-NetApp expands storage-layer AI processing with DataPelago deal (1 minute read)
+Cloudflare Internal DNS is now generally available (1 minute read)
 
-NetApp acquired DataPelago, whose Nucleus engine processes data across CPUs and GPUs at the storage layer instead of moving it to external compute clusters, for undisclosed terms. NetApp claims the technology cuts infrastructure costs by up to 80% and removes the copy step between operational systems and AI pipelines, positioning ONTAP customers against Nvidia's GPU-only cuDF framework.
+Cloudflare made Internal DNS generally available, extending its global network to provide authoritative and recursive DNS for private networks on the same control plane customers already use for public DNS and Zero Trust. Enterprise customers get it bundled with Cloudflare Gateway at no extra charge, consolidating split-horizon DNS onto one platform and putting pressure on legacy appliance vendors like Infoblox and cloud-native resolvers.
+
+NetApp expands storage-layer AI processing with DataPelago deal (5 minute read)
+
+(blurb not generated)
 
 IBM Bob expands beyond code generation to orchestrate the entire SDLC (5 minute read)
 
