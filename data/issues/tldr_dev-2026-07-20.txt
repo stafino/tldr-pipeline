@@ -1,0 +1,227 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR Dev 2026-07-20
+
+🧑‍💻
+Articles & Tutorials
+
+Claude Code uses Bun written in Rust now (1 minute read)
+
+Claude Code v2.1.181 and later ship the Rust port of Bun, which Jarred Sumner says made startup 10% faster on Linux with no other user-visible change. The author confirmed it locally by running strings on the Claude binary, which reports Bun v1.4.0 and lists 563 Rust source paths including src/bundler/bundle_v2.rs, a version that only exists in Bun canary.
+
+The four horsemen behind thousands of Postgres outages (5 minute read)
+
+(blurb not generated)
+
+The Same TypeScript Costs 73% More Tokens on Claude Than GPT (5 minute read)
+
+(blurb not generated)
+
+Building and Shipping Mac and iOS Apps Without Ever Opening Xcode (5 minute read)
+
+(blurb not generated)
+
+Regressive JPEGs (1 minute read)
+
+The author abused JPEG's progressive mode, where a file is split into scans that each fill in a spectral range, to concatenate multiple same-resolution images into one file that animates as it downloads over a slow connection. The trick caps out fast because most decoders stop after roughly nine scans as a zip-bomb guard, and baseline single-scan frames fail since progressive scans cannot mix DC and AC coefficients.
+
+The art and engineering of Sega CD Silpheed (5 minute read)
+
+(blurb not generated)
+
+Claude Code Is Way More Token-Hungry Than OpenCode. We Measured Exactly How Much (5 minute read)
+
+(blurb not generated)
+
+How GitHub gave every repository a durable owner (5 minute read)
+
+(blurb not generated)
+
+Job queues are deceptively tricky (5 minute read)
+
+(blurb not generated)
+
+From Rust to Zig: What changed my mind (5 minute read)
+
+(blurb not generated)
+
+Automating cross-repo documentation with GitHub Agentic Workflows (5 minute read)
+
+(blurb not generated)
+
+Setting up your spare Mac for Claude Code to control, a step-by-step guide (1 minute read)
+
+The guide walks through configuring a spare Mac as an always-on host for Claude Code with computer use enabled, reachable from the Claude mobile app or over SSH from a main machine. The setup trades container isolation for full macOS access, letting the agent drive Mac-only apps like Unity and run with `--dangerously-skip-permissions` on hardware that has nothing worth losing.
+
+When branchless binary search is slower (5 minute read)
+
+(blurb not generated)
+
+Networking and the Internet, from First Principles (5 minute read)
+
+(blurb not generated)
+
+What xAI Grok Build CLI actually sends to xAI (5 minute read)
+
+(blurb not generated)
+
+I burned all my tokens researching how to save tokens (5 minute read)
+
+(blurb not generated)
+
+How I Cut an AI Agent's Token Use by 94% (5 minute read)
+
+(blurb not generated)
+
+Are you telling me a readonly property is wrecking my performance? (5 minute read)
+
+(blurb not generated)
+
+Show HN: I replaced a $120k bowling center system with $1,600 in ESP32s (5 minute read)
+
+(blurb not generated)
+
+Your Browser Does Math Differently on Every OS, and Anti-Bot Systems Read the Bits (5 minute read)
+
+(blurb not generated)
+
+🧠
+Opinions & Advice
+
+Control the ideas, not the code (5 minute read)
+
+(blurb not generated)
+
+Old and new apps, via modern coding agents (5 minute read)
+
+(blurb not generated)
+
+SQLite should have (Rust-style) editions (5 minute read)
+
+(blurb not generated)
+
+In defense of polyfills (5 minute read)
+
+(blurb not generated)
+
+The Tower Keeps Rising (5 minute read)
+
+(blurb not generated)
+
+How Claude's values vary by model and language (5 minute read)
+
+(blurb not generated)
+
+Why Vanilla JS (5 minute read)
+
+(blurb not generated)
+
+Software Has Changed (5 minute read)
+
+(blurb not generated)
+
+Code Yellow, Code Red (5 minute read)
+
+(blurb not generated)
+
+Code review is theater now (5 minute read)
+
+(blurb not generated)
+
+Harness Engineering (5 minute read)
+
+(blurb not generated)
+
+With AI Agents, Attention is the New Bottleneck (5 minute read)
+
+(blurb not generated)
+
+Beyond grep: The case for a context-rich AI coding harness (1 minute read)
+
+Claude Code's product team argues for a "lean harness," deliberately shipping fewer opinionated tools rather than pre-building structured context indexes over a codebase. Head of product Cat Wu says evals show no measurable gain from advance codebase indexing, and that models improve fast enough that opinionated tooling built around today's limitations becomes dead weight, leaving developers to add their own context tools when they want them.
+
+How to stop Claude from saying load-bearing (5 minute read)
+
+(blurb not generated)
+
+You only need the frontier model for one single edit (5 minute read)
+
+(blurb not generated)
+
+🚀
+Launches & Tools
+
+Highlights from Git 2.55 (5 minute read)
+
+(blurb not generated)
+
+Thinking Machines Releases First Open Model (5 minute read)
+
+(blurb not generated)
+
+Inkling: Our Open-Weights Model (5 minute read)
+
+(blurb not generated)
+
+Transcribe.cpp (1 minute read)
+
+Transcribe.cpp is a ggml-based speech-to-text library covering 16 ASR families and 60+ models, with acceleration via Vulkan, Metal, CUDA, and TinyBLAS. The author, who maintains the Handy desktop app, built it as a near drop-in whisper.cpp replacement after hitting the limits of ONNX's CPU-only performance, and every model ships numerically validated and WER tested against its reference implementation.
+
+Turso is building a modern version of Postgres in Rust (5 minute read)
+
+(blurb not generated)
+
+UnifiedIR for Julia (1 minute read)
+
+A WIP PR proposes UnifiedIR, a new top-level Julia package that replaces SyntaxTree, SyntaxGraph, CodeInfo, and IRCode with a single dialect-aware, region-based IR in the style of MLIR. The core structure is extensible with per-statement columns and layered views, including an IncrementalCompact-style one-pass rewrite view and an LLVM-like linked-list view that uses an order maintenance algorithm to avoid quadratic behavior on large functions.
+
+Build agentic full-stack apps with Genkit (5 minute read)
+
+(blurb not generated)
+
+Your Dropbox is now a skill server (5 minute read)
+
+(blurb not generated)
+
+LoRA Speedrun – a public wall-clock leaderboard for fine-tuning techniques (1 minute read)
+
+LoRA Speedrun is a public wall-clock leaderboard for LoRA fine-tuning, with two frozen tracks: Qwen2.5-1.5B to 57% on GSM8K, and a SQuAD task, both on a single L40S. Records are re-run 3x with fresh seeds on identical hardware before they count, and timing runs on a Modal sandbox covered by free monthly credits, so anyone can verify any record with one command.
+
+WebMCP for Documentation (5 minute read)
+
+(blurb not generated)
+
+🎁
+Miscellaneous
+
+Cursor 0day: When Full Disclosure Becomes the Only Protection Left (5 minute read)
+
+(blurb not generated)
+
+Compromised Injective SDK npm Package Exfiltrates Wallet Keys and Mnemonics (5 minute read)
+
+(blurb not generated)
+
+Hugging Face Breached Through a Malicious Dataset: What the Patches Reveal (2 minute read)
+
+Hugging Face disclosed a compromise of part of its production infrastructure that started with a malicious dataset abusing a remote-code loader and jinja2 template injection in a dataset config, then escalated to node-level access and lateral movement across internal clusters. Public dataset-viewer commits show the response: an fsspec protocol allowlist, worker pods stripped of ServiceAccount tokens and Linux capabilities, and static S3 and Mongo credentials replaced with IRSA auth.
+
+SleeperGem Uses Three Malicious RubyGems Packages to Target Developer Machines (1 minute read)
+
+StepSecurity flagged three malicious RubyGems packages, dubbed SleeperGem, that impersonate Microsoft's Git Credential Manager or revive gems dormant since 2019. The loader checks roughly 30 CI environment variables from GitHub Actions, GitLab, CircleCI, and Jenkins, exiting if any are found, so it only drops its native daemon and persistence on developer machines rather than ephemeral runners.
+
+A broken DNSSEC rollover took down .AL. Now 1.1.1.1 tells you when validation is bypassed (5 minute read)
+
+(blurb not generated)
+
+mariadb-server: Upgrading to 10.11.18-0+deb12u1 enables systemd socket activation unconditionally (5 minute read)
+
+(blurb not generated)
+
+⚡
+Quick Links
+
+TIL - Algolia Makes Creating an MCP Server Stupid Easy (5 minute read)
+
+(blurb not generated)

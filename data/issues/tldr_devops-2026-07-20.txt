@@ -1,0 +1,107 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR DevOps 2026-07-20
+
+📱
+News & Trends
+
+HAMi becomes a CNCF incubating project (5 minute read)
+
+(blurb not generated)
+
+Critical NGINX Vulnerability Can Crash Workers and May Allow Remote Code Execution (1 minute read) [flag]
+
+F5 patched CVE-2026-42533, a heap buffer overflow in nginx's script engine that a remote unauthenticated attacker can trigger with crafted HTTP requests, crashing workers and potentially allowing remote code execution. Fixes landed in nginx 1.30.4, 1.31.3, and NGINX Plus 37.0.3.1, but exposure depends on config: only a regex-based map referenced after an earlier capture is affected, and F5 has not yet listed fixed builds for Ingress Controller, Gateway Fabric, App Protect WAF, or Instance Manager.
+
+Improving Smart Tiered Cache for public cloud regions (5 minute read)
+
+(blurb not generated)
+
+mariadb-server: Upgrading to 10.11.18-0+deb12u1 enables systemd socket activation unconditionally (5 minute read)
+
+(blurb not generated)
+
+A broken DNSSEC rollover took down .AL. Now 1.1.1.1 tells you when validation is bypassed (5 minute read)
+
+(blurb not generated)
+
+Full Broker Takeover, No Login Required: Miggo Discovers Critical RabbitMQ Vulnerabilities Putting Application Data at Risk (5 minute read)
+
+(blurb not generated)
+
+Your Azure DevOps pipelines have a 2027 deadline, and the clock has just started (5 minute read)
+
+(blurb not generated)
+
+Six New U-Boot Flaws Could Let Malicious Images Crash Devices or Run Code at Boot (5 minute read)
+
+(blurb not generated)
+
+Airbus takes flight from AWS. What happens next is critical (1 minute read) [flag]
+
+Airbus is moving workloads off AWS, and the author argues the execution matters more than the decision itself. Repatriation at that scale means rebuilding managed-service dependencies, identity, and networking on infrastructure the team now runs itself, and the cost case only holds if utilization stays high enough to beat what the hyperscaler was charging.
+
+Note: the supplied context is The Register's "most popular" sidebar, not the article body — no details on Airbus's target platform, timeline, or scale. Blurb is written from the headline only. Pull the article text if you want specifics in it.
+
+AWS CloudFront outage serves errors instead of websites (5 minute read)
+
+(blurb not generated)
+
+🚀
+Opinions & Tutorials
+
+The four horsemen behind thousands of Postgres outages (5 minute read)
+
+(blurb not generated)
+
+Why goodput matters more than throughput for LLM serving (1 minute read)
+
+The author argues that throughput is the wrong headline metric for LLM serving, since requests per second can climb while TTFT and TPOT quietly blow past targets. Goodput counts only completed requests that meet those latency SLOs, making it the number worth tuning against. The walkthrough serves Qwen2.5-7B on vLLM on a single A10G in EKS, driving load with GuideLLM and instrumenting through Prometheus, Grafana, and NVIDIA's DCGM exporter, with the Kubernetes manifests published for reuse against your own traffic.
+
+Code review is theater now (5 minute read)
+
+(blurb not generated)
+
+OVS and OVN Explained: The Networking Stack Behind OpenStack (5 minute read)
+
+(blurb not generated)
+
+Shipyard: How We Built Slack's Next-Generation EC2 Platform (5 minute read)
+
+Slack's infrastructure team detailed Shipyard, the EC2 platform that replaced continuous Chef convergence on long-lived instances with immutable, deployable artifacts and progressive rollouts. The team hit the limits of configuration management across tens of thousands of instances, where drift was inevitable and service-level deploys required coordinating changes across multiple layers. Shipyard pushes that responsibility into build pipelines and automated safety checks, giving EC2 workloads that could not containerize the same rollout guarantees as app delivery.
+
+How GitHub gave every repository a durable owner (5 minute read)
+
+(blurb not generated)
+
+Automating cross-repo documentation with GitHub Agentic Workflows (5 minute read)
+
+(blurb not generated)
+
+How Microsoft Ships Thousands of Production AI Agents (5 minute read)
+
+(blurb not generated)
+
+How to protect your MCP Server with Fastly (5 minute read)
+
+(blurb not generated)
+
+⚒️
+Launches & Tools
+
+Introducing Precursor: detecting agentic behavior with continuous client-side signals (5 minute read)
+
+(blurb not generated)
+
+Introducing Smart Retry: Safer retries for transient Jenkins failures. (5 minute read)
+
+(blurb not generated)
+
+ClickHouse on Docker Hardened Images (5 minute read)
+
+(blurb not generated)
+
+Introducing GuardDog 3.0: A new rules engine, transparent sandboxing, and more (5 minute read)
+
+(blurb not generated)

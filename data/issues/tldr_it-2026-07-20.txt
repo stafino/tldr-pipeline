@@ -1,0 +1,145 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR IT 2026-07-20
+
+🚀
+News & Trends
+
+WordPress Core "wp2shell" RCE flaws get public exploits, patch now (1 minute read)
+
+Public proof-of-concept exploits are now available for "wp2shell," a chain of two WordPress Core flaws (CVE-2026-63030 and CVE-2026-60137) that gives unauthenticated attackers remote code execution on stock installs running 6.9.0-6.9.4 and 7.0.0-7.0.1. WordPress has forced auto-updates to 7.0.2 and 6.9.5, but IT teams running self-hosted or version-pinned instances need to patch manually across an estimated 500M sites.
+
+Critical ServiceNow code execution flaw now exploited in attacks (1 minute read)
+
+Attackers are exploiting CVE-2026-6875, a pre-auth sandbox-escape RCE in the ServiceNow AI Platform, days after ServiceNow patched hosted instances and shipped fixes for self-hosted deployments on July 13th. ServiceNow's advisory still says it is unaware of active exploitation, so self-hosted customers running the platform that serves 85% of the Fortune 500 should patch on their own timeline rather than the vendor's.
+
+Major glitch in Matrix as UK government projects watchdog rates shared services cluster red (1 minute read)
+
+The UK government's projects watchdog gave a red rating to Matrix, the shared services cluster consolidating back-office ERP and HR systems across multiple Whitehall departments, meaning delivery appears unachievable without a reset of scope, schedule, or budget. Multi-department ERP consolidation is the same pattern vendors sell to large enterprises, and the red flag lands on the delivery model rather than the software itself.
+
+Salesforce's Agentforce isn't winning over clients, KeyBanc analysts claim (5 minute read)
+
+(blurb not generated)
+
+Microsoft confirms WSUS service degradation impacting all versions of Windows (1 minute read)
+
+Microsoft confirmed a service degradation in Windows Server Update Services affecting all supported Windows versions, disrupting the patch-distribution path many enterprises still rely on for managed update rollouts. Admins running on-premises WSUS rather than Intune or Autopatch face delayed security updates until Microsoft ships a fix, which strengthens the case for the cloud update management Microsoft has been steering customers toward.
+
+Apple says former employee exploited ‘rare' bug to download confidential files after leaving for OpenAI (5 minute read)
+
+(blurb not generated)
+
+Coca-Cola says Fairlife ransomware attack halts US dairy production (5 minute read)
+
+(blurb not generated)
+
+AI ops tools will create console sprawl and break IT more often: Gartner (1 minute read)
+
+Gartner warned that the wave of vendor-specific AI ops tools will add consoles rather than consolidate them, leaving IT teams with more surfaces to watch and more frequent outages as agents act across systems. Buyers evaluating AIOps add-ons from incumbent monitoring and ITSM vendors should weigh integration and consolidation terms now, before each platform ships its own agent dashboard into the stack.
+
+Critical NGINX Vulnerability Can Crash Workers and May Allow Remote Code Execution (1 minute read)
+
+F5 patched CVE-2026-42533, a heap buffer overflow in nginx's script engine that lets an unauthenticated attacker crash worker processes with crafted HTTP requests and, where ASLR can be bypassed, potentially execute code. Fixes landed in nginx 1.30.4, 1.31.3, and NGINX Plus 37.0.3.1, but F5 has not yet published fixed builds for Ingress Controller, Gateway Fabric, App Protect WAF, or Instance Manager.
+
+SonicWall SMA Zero-Days Exploited Before Disclosure to Gain Root Access (5 minute read)
+
+(blurb not generated)
+
+Two new high severity WordPress vulnerabilities, patch immediately! (1 minute read)
+
+WordPress patched two vulnerabilities in 6.9.5 and 6.8.6, including CVE-2026-63030, a REST API batch-route confusion and SQL injection flaw that allows remote code execution on 6.9 installs. Teams that cannot patch immediately can block anonymous access to /wp-json/batch/v1 at the WAF level, though Searchlight Cyber warns this may break legitimate traffic and should stay temporary.
+
+OAuth Client ID Spoofing Lets Attackers Validate Stolen Microsoft Entra Credentials (5 minute read)
+
+(blurb not generated)
+
+When checking the URL isn't enough: a Device Code Phishing attack via a Microsoft website (5 minute read)
+
+(blurb not generated)
+
+Microsoft Maps Three Salesforce Attack Paths Tied to a Year of ShinyHunters Activity (5 minute read)
+
+(blurb not generated)
+
+URGENT - Progress Tells ShareFile Customers to Shut Down Storage Zone Controllers Over Security Threat (5 minute read)
+
+(blurb not generated)
+
+US and allies warn of Russian critical infrastructure attacks (5 minute read)
+
+(blurb not generated)
+
+Microsoft confirms Windows Server Update Services sync delays (1 minute read)
+
+Microsoft confirmed a WSUS synchronization bug affecting Windows 10 1607 and later and Windows Server 2012 and later, with sync timeouts starting July 13 and blocking update deployment through WSUS and Configuration Manager. Saturday's mitigation restored new and rebuilt WSUS installations, but previously affected servers still need manual removal of the bad metadata, and Microsoft has not shipped those steps yet.
+
+Windows KB5121767 OOB update fixes shutdowns on some Dell PCs (1 minute read)
+
+Microsoft released out-of-band updates KB5121767 and KB5121768 to fix unexpected shutdowns, thermal throttling, and battery drain on Dell PCs running Windows 11 25H2, 24H2, and Enterprise LTSC 2024, caused by a conflict between the new Windows USB-C Connection Manager and Intel's IPF Processor Participant driver. Autopatch fleets with hotpatching get the fix automatically, while everyone else needs to pull it manually and only on affected devices.
+
+Auditors tell UK government to do the math before banking on £45B AI savings (1 minute read)
+
+The UK's National Audit Office told the government it lacks the baseline data and measurement framework to verify the £45B in annual savings ministers have projected from AI adoption across public services. The finding lands as departments negotiate AI contracts with Microsoft, Google, and other vendors, and it raises the odds that procurement teams get asked to justify spend against benchmarks nobody has actually established.
+
+High hardware costs see Red Hat offer a two-server edge rig, no mini-PC required (1 minute read)
+
+Red Hat introduced a two-server edge configuration for OpenShift, dropping the third control-plane node that its compact cluster deployments previously required as hardware costs climb. IT teams running hundreds of distributed sites can cut per-location server spend without falling back to single-node clusters, which trade away the failover that retail, manufacturing, and telco edge workloads depend on.
+
+🧠
+Analysis & Opinions
+
+Airbus takes flight from AWS. What happens next is critical (1 minute read)
+
+Airbus is moving off AWS, and the author argues that what follows the decision matters more than the decision itself. Large enterprise cloud exits tend to stall midway, leaving the company paying for the old hyperscaler contract and the new environment at once. For IT leaders weighing a sovereignty- or cost-driven migration, the exit plan deserves the same scrutiny as the original vendor selection.
+
+Your service vendors are being rebuilt around AI (5 minute read)
+
+(blurb not generated)
+
+5 ways for CIOs to avoid AI bill shock (5 minute read)
+
+(blurb not generated)
+
+Up the Stack: How AI's Escape From the Commodity Trap Risks Enterprise Lock-in (5 minute read)
+
+(blurb not generated)
+
+The audit trail CIOs need before the next cyber crisis (2 minute read)
+
+The author argues that DORA, NIS2, and the SEC's cyber disclosure rules have shifted CIO liability from operating controls to proving, after the fact, that leadership decisions matched the risk evidence available at the time. Green dashboards that mask legacy debt, undocumented service accounts, and shadow cloud instances become evidence against you once regulators and defense counsel start reconstructing the timeline. The recommended output is a documented audit trail of how risks were escalated and decided.
+
+The 6 kinds of AI agent architectures (3 minute read)
+
+The author argues that "AI agent" has become meaningless as a procurement term and lays out six architectural archetypes CIOs should be able to identify on sight, starting with the conversational assistant. The practical value is in scoping: a chat-based assistant with persistent memory and citations solves a different problem than an autonomous planning system, and buying the wrong one wastes budget. Deloitte found 38% of organizations report AI is already improving customer relationships.
+
+🤝
+Launches & Partnerships
+
+Meet Dusseldorf, Microsoft’s open-source out-of-band security platform (1 minute read)
+
+Microsoft released Dusseldorf, an open-source out-of-band application security testing platform that runs DNS, HTTP, and HTTPS listeners on an operator-controlled domain to catch SSRF, XSS, template injection, and XXE activity at the network edge. Security teams that have been assembling this infrastructure in-house get a self-hosted alternative to commercial OAST tooling, with local Docker Compose and Azure Helm deployment paths.
+
+NetApp expands storage-layer AI processing with DataPelago deal (1 minute read)
+
+NetApp acquired DataPelago, whose Nucleus engine processes data across CPUs and GPUs at the storage layer instead of moving it to external compute clusters, for undisclosed terms. NetApp claims the technology cuts infrastructure costs by up to 80% and removes the copy step between operational systems and AI pipelines, positioning ONTAP customers against Nvidia's GPU-only cuDF framework.
+
+IBM Bob expands beyond code generation to orchestrate the entire SDLC (5 minute read)
+
+(blurb not generated)
+
+Google Cloud expands partnership with Samsung to accelerate agentic AI (5 minute read)
+
+(blurb not generated)
+
+1Password moves into AI cost management, betting that token spend is the next enterprise budget crisis (5 minute read)
+
+(blurb not generated)
+
+BitTitan expands MigrationWiz with Microsoft Teams private chat migrations (5 minute read)
+
+(blurb not generated)
+
+Fortinet expands FortiEndpoint with AI monitoring and data controls (5 minute read)
+
+(blurb not generated)
