@@ -2,3 +2,80 @@ Sign Up | Advertise | View Online
 TLDR
 
 TLDR Data 2026-07-21
+
+📊
+News & Trends
+
+Introducing Apache Spark 4.2 (5 minute read)
+
+(blurb not generated)
+
+Announcing the Public Preview of Discover and Domains, powered by Unity Catalog (1 minute read)
+
+Databricks put Domains and the Discover page into public preview, organizing Unity Catalog tables, dashboards, notebooks, metric views, and Genie Agents by business area instead of by catalog and schema. The same domain metadata feeds Genie Ontology, so agents inherit the business context that decides which table is the source of truth, making discovery governance a prerequisite for trustworthy agent output rather than a nice-to-have.
+
+Databricks is Raising a Strategic Round of Funding at a $188 Billion Valuation (5 minute read)
+
+Databricks signed a term sheet for a strategic round at a $188B valuation, led by existing investor Coatue and expected to close later this summer. The capital goes toward Unity AI Gateway for governing multi-model AI spend, Genie, and Lakebase, its serverless Postgres for agents, plus future acquisitions, positioning the lakehouse as the governance layer for enterprise AI budgets rather than just storage and compute.
+
+How Dow Built a Carbon Footprint Ledger on Databricks to Accelerate Sustainability at Scale (1 minute read)
+
+Dow built a Carbon Footprint Ledger on Databricks that computes product-level CO2e across upstream ingredients and issues auditable carbon certificates to customers, third-party assured against ISO 14067 and the GHG Protocol Product Standard. The write-up is a useful reference for teams facing CSRD reporting, where emissions data has to survive an external audit and the pipeline needs the same lineage and reconciliation guarantees as financial reporting.
+
+🧠
+Deep Dives & Analysis
+
+Branching databases like code: a CI/CD pattern for Lakebase, in production at Glaspoort (5 minute read)
+
+(blurb not generated)
+
+Terascale Query Processing in the Browser: Rethinking GPU Acceleration (1 minute read)
+
+This paper introduces WGLog, a WebGPU-based engine that runs compute-bound recursive queries entirely inside the browser. The authors replace hash-table joins with atomic-free sorted-array joins to avoid the serialization hit on skewed graphs, and use WebGPU indirect dispatch to drop per-iteration GPU-host syncs. Reported results are a 1.48x to 4.68x speedup over native GPU systems and orders of magnitude over CPU and WebAssembly.
+
+Scaling document classification to 100k+ labels (5 minute read)
+
+(blurb not generated)
+
+Extending Elle for Transaction Workloads with Duplicate Values (1 minute read)
+
+Elle, the black-box isolation checker behind most Jepsen-style database tests, only works soundly when every written value is unique, which rules out the duplicate-value workloads where many isolation bugs actually surface. This paper extends it with a finer-grained dependency model that reasons about individual operations rather than whole values, with soundness and completeness proofs and a working prototype. For teams validating transactional guarantees in Postgres, CockroachDB, or a homegrown OLTP layer, it closes a gap between synthetic test traffic and production write patterns.
+
+From Blind Search to Memory-Aware Evolution: Efficient DBMS Tuning via Collaborative Diagnosis and Utility-Aware Retrieval (1 minute read)
+
+This paper introduces EvoTune, a framework that tunes DBMS knobs, query hints, and indexes together by narrowing to a query-specific high-impact subspace instead of searching the full combinatorial space. It pairs lightweight pattern learning with LLM reasoning and retrieves past tuning observations by their long-term performance payoff rather than similarity, with feedback stored in a hierarchical memory that needs no fine-tuning. The authors report up to 44.5% better performance at the same tuning budget and 3.9x faster convergence to baseline-best results.
+
+Why R&D Data Belongs in the Lakehouse - and Why Agents Need It There (1 minute read)
+
+cellcentric, the Daimler Truck and Volvo Group hydrogen fuel cell JV, described four years of building a governed context layer on Databricks with Unity Catalog, Lakehouse Federation, and Delta Sharing, now exposed through one UI for employees and an MCP server for agents. The anchor example is the Fuel Cell Passport, a data product joining SAP S/4HANA, two MES systems, a lab database, and IoT telemetry across seven hierarchy levels with daily quality checks. The argument is that agent readiness is a data engineering problem, solved before model selection.
+
+Panache: One-Pass Motif Discovery at Every Window Length (1 minute read)
+
+This paper introduces Panache, a one-pass streaming algorithm for z-normalized pan matrix profile motif discovery that replaces one quadratic self-join per window length with a single near-linear scan. It maintains each subsequence's Fourier spectrum online, hashes on that state, and uses a Parseval bound to reject most candidate pairs before exact computation. On a 5M-sample series across 51 window lengths, it emits exact motifs in 6 minutes against 7.95 hours for the fastest exact CPU baseline.
+
+Guide to data tools landscape for developers (5 minute read)
+
+(blurb not generated)
+
+The Database Is Not the Data Model (5 minute read)
+
+The author argues that schema design and data modeling are different disciplines, and that the industry collapsed them because DDL was visible, executable, and committable while conceptual models were not. The piece traces the drift from Codd's data independence and Chen's ER modeling through ORMs shipping `models.py` and dbt calling a SELECT statement a model. The result is that "model" now means an ERD, a table definition, a SQL transform, and a transformer, which leaves teams arguing about implementation before they have agreed on what the entities mean.
+
+Learning a few things about running SQLite (5 minute read)
+
+(blurb not generated)
+
+SAGA: Synthetic Agentic Graph Architecture for Temporal Benchmark Generation (1 minute read)
+
+This paper introduces SAGA, a pipeline that generates synthetic temporal graphs by separating structure from semantics: an O(1)-per-edge generator builds power-law skeletons, then LLM agents inject domain rules via RAG across finance/AML, network IDS, cyber, and transportation. Anomaly labels fall out of the state alignment step rather than needing manual annotation. On one H100 with vLLM batching, SAGA produces 500K temporal edges across 100K nodes in under 90 minutes, which makes GNN benchmark data cheap enough to generate instead of license.
+
+🚀
+Launches & Tools
+
+Supercharging pgvector: 4x faster HNSW vector search with AlloyDB (2 minute read)
+
+AlloyDB added columnar engine acceleration for pgvector's HNSW index in preview, delivering up to 4x higher QPS than standard PostgreSQL HNSW at comparable recall. The in-memory columnar cache is what does the work, so teams already running RAG workloads on Postgres get the speedup without migrating off pgvector or rewriting queries, and ScaNN remains the alternative index for workloads that favor it.
+
+Turso is building a modern version of Postgres in Rust (5 minute read)
+
+(blurb not generated)

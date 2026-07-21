@@ -2,3 +2,179 @@ Sign Up | Advertise | View Online
 TLDR
 
 TLDR IT 2026-07-21
+
+🚀
+News & Trends
+
+Critical SharePoint RCE flaw exploited to steal machine keys (1 minute read)
+
+Attackers are actively exploiting CVE-2026-50522, a critical unauthenticated deserialization flaw in on-premise SharePoint, to steal ASP.NET machine keys and forge authentication tokens that survive patching. Microsoft shipped a fix in July's updates, but watchTowr recorded successful compromises within hours of a public PoC, so patched servers still need machine-key rotation and credential rollover to close the door.
+
+Sheetz replaces VMware at more than 830 stores (5 minute read)
+
+(blurb not generated)
+
+Major glitch in Matrix as UK government projects watchdog rates shared services cluster red (1 minute read)
+
+The UK government's projects watchdog gave a red rating to Matrix, the shared services cluster consolidating back-office ERP and HR systems across multiple Whitehall departments, meaning delivery appears unachievable without a reset of scope, schedule, or budget. Multi-department ERP consolidation is the same pattern vendors sell to large enterprises, and the red flag lands on the delivery model rather than the software itself.
+
+Microsoft will use AMD’s AI-optimized Helios racks in Azure (5 minute read)
+
+(blurb not generated)
+
+Salesforce's Agentforce isn't winning over clients, KeyBanc analysts claim (5 minute read)
+
+(blurb not generated)
+
+Critical SharePoint RCE CVE-2026-50522 Under Active Exploitation After Public PoC (1 minute read)
+
+Attackers are actively exploiting CVE-2026-50522, a critical deserialization flaw in on-premises SharePoint Server rated CVSS 9.8, following the release of a public proof-of-concept exploit days after Microsoft's July 2026 Patch Tuesday. watchTowr reports attackers are pulling SharePoint machine keys in a single request for persistent access, so IT teams need to rotate credentials on exposed servers rather than treating the patch as sufficient.
+
+Critical ServiceNow AI Platform Flaw Exploited for Unauthenticated Code Execution (1 minute read)
+
+Threat intelligence firm Defused Cyber reported in-the-wild exploitation of CVE-2026-6875, a 9.5-severity sandbox escape in the ServiceNow AI Platform that allows unauthenticated code execution and full instance compromise, though ServiceNow says it has seen no evidence of exploitation on instances it hosts. Patches shipped throughout June across the Brazil, Australia, Zurich, and Yokohama release lines, and self-hosted customers carry the exposure until they apply them.
+
+Oracle faces $100M annual bill to back Wisconsin datacenter power promises (1 minute read)
+
+Oracle will pay roughly $100M a year to guarantee the power commitments behind its Wisconsin datacenter buildout, a cost tied to the utility infrastructure its AI capacity expansion requires. The figure puts a concrete number on the energy overhead baked into hyperscale AI hosting, which is the kind of expense that eventually surfaces in OCI pricing for enterprise customers.
+
+EU's AI labeling rules take effect next month (5 minute read)
+
+(blurb not generated)
+
+Microsoft to deploy AMD Helios rackscale solution to support inference workloads and Azure services (1 minute read)
+
+Microsoft will deploy AMD's Helios rackscale systems, which pair MI455X GPUs with Zen 6 EPYC Venice CPUs for 2.9 exaflops of FP4 per rack, to run inference for internal and customer workloads starting in the second half of 2026. The expanded partnership also adds two Venice-powered VM series, HDv2 for agentic AI and HXv2 for chip design, giving Azure buyers a non-Nvidia option for inference capacity.
+
+Apple says former employee exploited ‘rare' bug to download confidential files after leaving for OpenAI (5 minute read)
+
+(blurb not generated)
+
+Windows Server Update Services buckle under Microsoft's metadata mountain (5 minute read)
+
+(blurb not generated)
+
+AWS standardizes more AI billing data to simplify cost analysis (2 minute read)
+
+AWS added standardized Amazon Bedrock metadata to AWS Data Exports, giving cost and usage reports normalized fields for model provider, model name, inference type, inference mode, billing unit, and Bedrock product family. FinOps teams can now attribute AI spend by model and compare providers without maintaining model ID registries or regex against usage type strings, which cuts the pipeline maintenance that broke every time AWS added models or changed Bedrock pricing.
+
+'WP2Shell' Opens Millions of WordPress Sites to Remote Takeover (1 minute read)
+
+Attackers are chaining two critical WordPress flaws, CVE-2026-60137 and CVE-2026-63030, into an unauthenticated remote code execution exploit that Searchlight Cyber dubbed WP2Shell, hitting default installs three days after disclosure. Patching alone is not enough given the exploitation pace, so IT teams running WordPress should audit instances for new administrator accounts, unfamiliar plugins, and other backdoor artifacts.
+
+ServiceNow’s sandbox escape RCE hole now exploited in the wild (5 minute read)
+
+(blurb not generated)
+
+Coca-Cola says Fairlife ransomware attack halts US dairy production (5 minute read)
+
+(blurb not generated)
+
+AI ops tools will create console sprawl and break IT more often: Gartner (1 minute read)
+
+Gartner warned that the wave of vendor-specific AI ops tools will add consoles rather than consolidate them, leaving IT teams with more surfaces to watch and more frequent outages as agents act across systems. Buyers evaluating AIOps add-ons from incumbent monitoring and ITSM vendors should weigh integration and consolidation terms now, before each platform ships its own agent dashboard into the stack.
+
+Helios marks AMD’s biggest AI infrastructure push yet (3 minute read)
+
+AMD launched Helios, a rack-scale AI system pairing 72 Instinct MI455X GPUs with EPYC Venice CPUs, Pensando networking, and ROCm, with Microsoft signed on as an early Azure deployment. The rack carries 31TB of HBM4 and roughly 50% more memory than Nvidia's competing Vera Rubin design, and it runs on open standards like UALink and OCP rather than proprietary interconnect, giving buyers a second-source option in AI infrastructure procurement.
+
+WordPress wp2shell Exploitation Grows as Public Exploit Fuels Mass Scanning (1 minute read)
+
+Attackers are actively chaining two WordPress flaws, CVE-2026-63030 and CVE-2026-60137, for unauthenticated remote code execution on stock installs running any version released since December 2025. The SQL injection affects 6.8 and later while the RCE hits 6.9 and up, so any team hosting WordPress for marketing or customer sites should patch now and audit for exfiltrated credential hashes.
+
+HollowGraph Malware Hides C2 and Stolen Files in Microsoft 365 Events Dated 2050 (5 minute read)
+
+(blurb not generated)
+
+🧠
+Analysis & Opinions
+
+Airbus takes flight from AWS. What happens next is critical (1 minute read)
+
+Airbus is moving off AWS, and the author argues that what follows the decision matters more than the decision itself. Large enterprise cloud exits tend to stall midway, leaving the company paying for the old hyperscaler contract and the new environment at once. For IT leaders weighing a sovereignty- or cost-driven migration, the exit plan deserves the same scrutiny as the original vendor selection.
+
+Your service vendors are being rebuilt around AI (5 minute read)
+
+(blurb not generated)
+
+Google Cloud outage shows it’s still hard to understand hyperscalers’ real resilience regimes (1 minute read)
+
+The author argues that Google Cloud's latest outage exposed how little enterprise buyers actually know about hyperscaler resilience, since published SLAs and region diagrams don't describe how failure domains really behave under stress. Contracted availability numbers say nothing about blast radius or recovery sequencing, leaving architects to design multi-region strategies against vendor claims they cannot independently verify.
+
+5 ways for CIOs to avoid AI bill shock (5 minute read)
+
+(blurb not generated)
+
+OpenAI pushes new yardstick for measuring AI investments (5 minute read)
+
+(blurb not generated)
+
+The latest Chinese AI models may indeed work for enterprises, but only in a handful of specific applications (2 minute read)
+
+Alibaba's Qwen3.8 Max and Moonshot's Kimi K3 are cheap and fast enough that enterprises are reconsidering Chinese models, but the analysts quoted here scope them to coding, multilingual processing, high-volume document analysis, and synthetic-data generation. The argument is to treat jurisdiction, provenance, and licensing as ordinary supply-chain diligence rather than a blanket ban, while keeping the models away from regulated data and un-supervised customer-facing work where a hallucination creates legal exposure.
+
+The AI allocation trap: Record spend, vanishing returns (3 minute read)
+
+The author argues that the widely cited 95% AI failure rate is an allocation problem, not a technology one, and offers CIOs a portfolio framework and board scorecard to replace failure-rate tracking. Supporting data: S&P Global found the share of companies abandoning most AI initiatives rose from 17% to 42% in a year, and Gartner expects over 40% of agentic AI projects to be canceled by the end of 2027. MIT's own researchers traced the gap to integration and learning, not model quality.
+
+The audit trail CIOs need before the next cyber crisis (2 minute read)
+
+The author argues that DORA, NIS2, and the SEC's cyber disclosure rules have shifted CIO liability from operating controls to proving, after the fact, that leadership decisions matched the risk evidence available at the time. Green dashboards that mask legacy debt, undocumented service accounts, and shadow cloud instances become evidence against you once regulators and defense counsel start reconstructing the timeline. The recommended output is a documented audit trail of how risks were escalated and decided.
+
+Generosity Under Conditions: Hardening Google Cloud Access Management (2 minute read)
+
+Google Cloud published a guide to using IAM conditions to constrain broad roles that can't be scoped by resource binding alone, including limiting roles/iam.admin to specific role grants and gating access to AI integrations. The argument is that predefined roles plus Allow and Deny policies leave real gaps wherever a project's resources are shared across teams or workloads. For Google Cloud shops, this is a case for auditing existing admin grants rather than assuming hierarchy-level policy is sufficient.
+
+🤝
+Launches & Partnerships
+
+Securing the AI supply chain on GKE: Introducing k8s-aibom for automated AI BOMs (5 minute read)
+
+(blurb not generated)
+
+Cloudflare Internal DNS is now generally available (5 minute read)
+
+(blurb not generated)
+
+Box adds security controls to govern AI agents working with enterprise content (1 minute read)
+
+Box introduced security controls that govern AI agents working with enterprise content, covering both agents built in Box and external tools connected through its MCP server, including Claude, ChatGPT, and Gemini. The controls sit at the content layer rather than as a separate product, adding label-based access limits, prompt injection screening, human-in-the-loop approval for high-impact actions, and audit trails for compliance.
+
+WekaIO revamps its AI data storage platform and unveils its first hardware for agentic workloads (1 minute read)
+
+WekaIO released NeuralMesh 6 alongside WEKApod Nitro, Prime, and Prime Max, its first custom storage appliances built for AI inference rather than training. The software's augmented memory grid holds KV cache in NVMe to extend GPU memory, which WekaIO benchmarks at 10x token throughput and targets buyers whose data center space and power budgets are already capped.
+
+AMD adds Microsoft to its growing roster of Helios customers as firm launches three new VMs for Azure users (1 minute read)
+
+Microsoft will deploy AMD's Helios rack-scale system on Azure and is launching three EPYC-powered VM families: HDv2 for large-scale data processing, HCx2 for silicon design and simulation, and ND MI455X v7 for production-scale AI inference. Azure customers standardized on Nvidia-backed instances now get an AMD path for inference and HPC, and the deal adds Microsoft to the roster of hyperscalers committing to Helios.
+
+Certinia acquires AI services company Moonnox (2 minute read)
+
+Certinia acquired Moonnox, an AI-native automation platform for professional services, and folded its agents into Veda, Certinia's system of action. The deal adds context capture across Salesforce, Microsoft 365, G-Suite, Jira, Confluence, and Zoom, plus agents that draft proposals and statements of work, convert requirements into project blueprints, and run scope scans for delivery risk.
+
+NetApp expands storage-layer AI processing with DataPelago deal (1 minute read)
+
+NetApp acquired DataPelago, whose Nucleus engine processes data across CPUs and GPUs at the storage layer instead of moving it to external compute clusters, for undisclosed terms. NetApp claims the technology cuts infrastructure costs by up to 80% and removes the copy step between operational systems and AI pipelines, positioning ONTAP customers against Nvidia's GPU-only cuDF framework.
+
+Google Cloud expands partnership with Samsung to accelerate agentic AI (5 minute read)
+
+(blurb not generated)
+
+1Password moves into AI cost management, betting that token spend is the next enterprise budget crisis (5 minute read)
+
+(blurb not generated)
+
+Ivanti adds predictive remediation to get ahead of the patch backlog (1 minute read)
+
+Ivanti introduced predictive remediation across its Autonomous Endpoint Management line, a Neurons-based capability that forecasts which patches will miss compliance deadlines and flags the blockers stalling them before service-level windows close. The pitch to IT buyers is governance rather than autonomy, with actions confined to administrator-defined guardrails, positioning Ivanti against vendors selling AI agents that patch production systems unsupervised.
+
+Fortinet expands FortiEndpoint with AI monitoring and data controls (5 minute read)
+
+(blurb not generated)
+
+⚡
+Quick Links
+
+Nvidia has shipped 'hundreds of thousands of Grace standalone servers’ — GPU firm pivots messaging as CPUs take center stage in agentic data centers (1 minute read)
+
+Nvidia says it has shipped hundreds of thousands of standalone Grace CPU servers as agentic workloads shift GPU-to-CPU ratios toward one-to-one.

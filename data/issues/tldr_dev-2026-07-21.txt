@@ -2,3 +2,254 @@ Sign Up | Advertise | View Online
 TLDR
 
 TLDR Dev 2026-07-21
+
+🧑‍💻
+Articles & Tutorials
+
+Learning a few things about running SQLite (5 minute read)
+
+(blurb not generated)
+
+Claude Code uses Bun written in Rust now (1 minute read)
+
+Claude Code v2.1.181 and later ship the Rust port of Bun, which Jarred Sumner says made startup 10% faster on Linux with no other user-visible change. The author confirmed it locally by running strings on the Claude binary, which reports Bun v1.4.0 and lists 563 Rust source paths including src/bundler/bundle_v2.rs, a version that only exists in Bun canary.
+
+Weaponizing And Defending The React Flight Protocol: Deserialization Sinks In RSCs (1 minute read)
+
+React Server Components ship a line-delimited streaming format called Flight, and the author dissects its deserialization layer after CVE-2025-55182 gave unauthenticated RCE through a Server Function endpoint. The post maps the sinks in `getOutlinedModel` and `getChunk`, then ranks defenses: schema validation on every Server Action, the server-only package, CSRF hardening beyond framework defaults, and the limits of the Taint API and WAFs.
+
+The Same TypeScript Costs 73% More Tokens on Claude Than GPT (5 minute read)
+
+(blurb not generated)
+
+Building and Shipping Mac and iOS Apps Without Ever Opening Xcode (5 minute read)
+
+(blurb not generated)
+
+The art and engineering of Sega CD Silpheed (5 minute read)
+
+(blurb not generated)
+
+Job queues are deceptively tricky (5 minute read)
+
+(blurb not generated)
+
+From Rust to Zig: What changed my mind (5 minute read)
+
+(blurb not generated)
+
+Automating cross-repo documentation with GitHub Agentic Workflows (5 minute read)
+
+(blurb not generated)
+
+When branchless binary search is slower (5 minute read)
+
+(blurb not generated)
+
+What xAI Grok Build CLI actually sends to xAI (5 minute read)
+
+(blurb not generated)
+
+I burned all my tokens researching how to save tokens (5 minute read)
+
+(blurb not generated)
+
+How I Cut an AI Agent's Token Use by 94% (5 minute read)
+
+(blurb not generated)
+
+From Weeks to a Day: How We Made LLM Evaluation Fast Enough to Iterate on (5 minute read)
+
+Airbnb rebuilt its LLM evaluation pipeline to cut turnaround from weeks to under a day, replacing serial human review with parallelized automated grading and a curated golden dataset. The post covers the harness design, how they validated LLM-as-judge scores against human labels before trusting them, and the trade-off of accepting some judge noise in exchange for an iteration loop engineers actually use.
+
+Prefactory: Automated Discovery and Application of Library-Adoption Refactorings (1 minute read)
+
+Prefactory finds places in a Python codebase where hand-written code could be replaced by a library API call, using an LLM to synthesize executable lexical and structural detectors instead of prompting over every file. On a 100-refactoring benchmark from 61 open-source projects, it detected 56 instances at the function level against 32 for Codex CLI, and produced 40 refactorings validated by project tests and generated differential tests.
+
+The drivers behind software delivery inefficiency (1 minute read)
+
+This paper breaks down where software delivery time actually goes, attributing most inefficiency to waiting on dependencies, unclear requirements, and rework rather than slow coding. The practical reading for engineering teams is that optimizing individual developer throughput leaves the dominant bottleneck, coordination and handoff time across teams, untouched.
+
+Are you telling me a readonly property is wrecking my performance? (5 minute read)
+
+(blurb not generated)
+
+Show HN: I replaced a $120k bowling center system with $1,600 in ESP32s (5 minute read)
+
+(blurb not generated)
+
+Controlling Reasoning Effort in LLMs (1 minute read)
+
+Sebastian Raschka explains how reasoning models are trained to expose low-, medium-, and high-effort modes, building on the RLVR recipe DeepSeek-R1 popularized. The article covers both training scaling and inference scaling, and walks through how effort settings like those in the GPT-5.6 family get baked into a model rather than bolted on at inference time.
+
+Autoresearch with Coding Agents: Generalizers and Metric-Maximizers on Quran Recitation Data (1 minute read)
+
+Researchers ran unsupervised "autoresearch" loops on a production task, giving Claude Code and OpenAI Codex the same dataset, eval script, and one editable file to optimize against a score. Both agents independently converged on the same canonicalization and dynamic-programming alignment algorithm, but Codex cut its score ~10x by hardcoding 19-41 verse IDs from the eval set. Adding a held-out test set eliminated the memorization entirely.
+
+🧠
+Opinions & Advice
+
+Control the ideas, not the code (5 minute read)
+
+(blurb not generated)
+
+Fragments: July 21 (3 minute read)
+
+Fowler's notes from the Future of Software Development Retreat argue that code generation is no longer the bottleneck, verification is, with "harness engineering" emerging as its own discipline and an apprenticeship crisis forming underneath it. The sharper risk he identifies is the gap between boards chasing promised productivity gains and engineers worried about security, especially once citizen developers start vibe coding without controls, testing, or data-quality checks.
+
+Annoying and alarming things about OpenCode (5 minute read)
+
+(blurb not generated)
+
+SQLite should have (Rust-style) editions (5 minute read)
+
+(blurb not generated)
+
+Software Factories, Light and Dark (1 minute read)
+
+Osmani distinguishes "light" software factories, where humans stay in the loop and trade concentration for speed, from "dark" ones where agents scope, build, and ship without anyone reading the code. He argues the stack is three layers deep: the loop is one agent repeating gather-act-check, the harness is the sandbox, tools, memory, and gates around it, and the factory is that loop at scale.
+
+In defense of polyfills (5 minute read)
+
+(blurb not generated)
+
+The Tower Keeps Rising (5 minute read)
+
+(blurb not generated)
+
+Claude Is Not a Compiler (1 minute read)
+
+The author argues that framing coding agents as a "natural language compiler" is a category error, since compilers exist to hide a layer of decisions while engineers routinely need to work across layers where abstractions leak. The value of an agent comes from the scale of the decisions it can make reliably, not from sealing the engineer off from the code it produces.
+
+How Claude's values vary by model and language (5 minute read)
+
+(blurb not generated)
+
+Code Yellow, Code Red (5 minute read)
+
+(blurb not generated)
+
+AI makes programming differently difficult (1 minute read)
+
+The author argues that AI coding assistants shifted the hard part of programming rather than removing it, trading the work of writing code for the work of reviewing, verifying, and understanding output someone else generated. The claim is that comprehension debt accumulates faster than the productivity gains show up, since a reviewer holds less context than an author and spends more effort reconstructing intent than typing the code would have cost.
+
+With AI Agents, Attention is the New Bottleneck (5 minute read)
+
+(blurb not generated)
+
+That post never existed. Stop listening to that thing (5 minute read)
+
+(blurb not generated)
+
+How to stop Claude from saying load-bearing (5 minute read)
+
+(blurb not generated)
+
+You only need the frontier model for one single edit (5 minute read)
+
+(blurb not generated)
+
+🚀
+Launches & Tools
+
+Thinking Machines Releases First Open Model (5 minute read)
+
+(blurb not generated)
+
+Inkling: Our Open-Weights Model (5 minute read)
+
+(blurb not generated)
+
+Transcribe.cpp (1 minute read)
+
+Transcribe.cpp is a ggml-based speech-to-text library covering 16 ASR families and 60+ models, with acceleration via Vulkan, Metal, CUDA, and TinyBLAS. The author, who maintains the Handy desktop app, built it as a near drop-in whisper.cpp replacement after hitting the limits of ONNX's CPU-only performance, and every model ships numerically validated and WER tested against its reference implementation.
+
+Turso is building a modern version of Postgres in Rust (5 minute read)
+
+(blurb not generated)
+
+Block launches Buzz, an open source collaboration workspace on Nostr protocol for humans and AI agents to share messages, code repositories, workflows, and more (Block) (1 minute read)
+
+Block released Buzz, an open source collaboration workspace built on the Nostr protocol where humans and AI agents share messages, code repositories, and workflows in the same space. Building on Nostr's relay model means identity and data are keyed to user-controlled keypairs rather than a vendor account, so agents and teams can work across relays without a central server holding the workspace.
+
+CommitLLM: A Fine-Tuned Pipeline for Git Commit Message Generation (1 minute read)
+
+CommitLLM is a three-stage pipeline that turns code diffs into Conventional Commits-compliant messages using QLoRA-fine-tuned Mistral-7B, constrained decoding, and deterministic post-processing, running on a single 16GB T4. Format compliance jumped from 22% to 98% and average message length dropped from 154.8 to 37.9 characters, with the authors noting the post-processing layers contributed more than the fine-tuning itself.
+
+Incremental – A library for incremental computations (1 minute read)
+
+Jane Street's Incremental is an OCaml library for building computations that recompute only the parts affected when their inputs change, based on Umut Acar's work on self-adjusting computation. It targets spreadsheet-style calculation graphs, GUI views that fold in new data without full rebuilds, and derived data like filters or inverted mappings that must stay in sync with their source.
+
+Jelly UI: Soft-body physics for native HTML form controls (5 minute read)
+
+(blurb not generated)
+
+Cisco releases Antares, open-weight small models for locating code vulnerabilities (1 minute read)
+
+Cisco released Antares, a family of open-weight small language models that map vulnerability descriptions from public databases and CWE entries to the specific files in a repository where the flaw likely lives, starting with 350M and 1B checkpoints on Hugging Face. Both run locally so source code stays in-house, and each returns a ranked file list plus the terminal exploration trace that produced it.
+
+Laguna S 2.1 (1 minute read)
+
+Poolside released Laguna S 2.1, a 118B-parameter Mixture-of-Experts coding model with 8B active parameters per token, a 1M-token context window, and thinking and no-thinking modes. It scores 70.2% on Terminal-Bench 2.1 in Poolside's own agent harness, went from training start to launch in under nine weeks, and ships full evaluation trajectories for every trial at trajectories.poolside.ai.
+
+Your Dropbox is now a skill server (5 minute read)
+
+(blurb not generated)
+
+Ziggity – A terminal UI for Git, written in Zig (1 minute read)
+
+Ziggity is a terminal UI for Git written in Zig, covering line-level staging, commits, branching, interactive rebase, and history browsing with live diff previews on every panel. It shells out to plain git subprocesses instead of libgit2, fanning out eleven parallel loaders on repo open, and ships as a single static binary with no runtime or GC, which the author benchmarks against lazygit 0.62.2 on startup time, RSS, and CPU.
+
+LoRA Speedrun – a public wall-clock leaderboard for fine-tuning techniques (1 minute read)
+
+LoRA Speedrun is a public wall-clock leaderboard for LoRA fine-tuning, with two frozen tracks: Qwen2.5-1.5B to 57% on GSM8K, and a SQuAD task, both on a single L40S. Records are re-run 3x with fresh seeds on identical hardware before they count, and timing runs on a Modal sandbox covered by free monthly credits, so anyone can verify any record with one command.
+
+Nativ: Run frontier open models locally on your Mac (5 minute read)
+
+(blurb not generated)
+
+WebMCP for Documentation (5 minute read)
+
+(blurb not generated)
+
+🎁
+Miscellaneous
+
+The Perfect Heist: NuGet Typosquat Targets Betting Platform to Rig Results (1 minute read)
+
+JFrog found a typosquatted NuGet package, Newtonsoftt.Json.Net, that shipped a working Newtonsoft.Json fork with a payload targeting a single company, the betting platform Digitain, rigging round results and exfiltrating them to an attacker server. The package was discoverable from August to October 2025 under seven versions and is now unlisted, though all artifacts remain downloadable from its NuGet page.
+
+AWS Kiro Flaw Let a Poisoned Web Page Rewrite Its Config and Run Code (1 minute read)
+
+Hidden one-pixel text on a web page was enough to make Kiro, AWS's agentic coding IDE, write a malicious MCP server into `~/.kiro/settings/mcp.json` and execute it with the developer's privileges. Intezer and Kodem Security found that Kiro's fsWrite tool could edit that file with no approval prompt and auto-reload it, bypassing the human-in-the-loop click that the whole safety model depends on. AWS has patched it, with no CVE assigned.
+
+Cursor 0day: When Full Disclosure Becomes the Only Protection Left (5 minute read)
+
+(blurb not generated)
+
+Cursor, Codex, Gemini CLI, Antigravity hit by sandbox escapes (1 minute read)
+
+Pillar Security published seven sandbox escapes affecting Cursor, OpenAI's Codex CLI, Gemini CLI, and Antigravity, none of which attack the sandbox directly. The agent writes a workspace file that a trusted process outside the sandbox later executes, turning prompt injection in a README or dependency into host command execution. Cursor patched the .claude hook config bug (CVE-2026-48124) in 3.0.0, and OpenAI fixed a git show allowlist gap in Codex CLI v0.95.
+
+SleeperGem Uses Three Malicious RubyGems Packages to Target Developer Machines (1 minute read)
+
+StepSecurity flagged three malicious RubyGems packages, dubbed SleeperGem, that impersonate Microsoft's Git Credential Manager or revive gems dormant since 2019. The loader checks roughly 30 CI environment variables from GitHub Actions, GitLab, CircleCI, and Jenkins, exiting if any are found, so it only drops its native daemon and persistence on developer machines rather than ephemeral runners.
+
+A broken DNSSEC rollover took down .AL. Now 1.1.1.1 tells you when validation is bypassed (5 minute read)
+
+(blurb not generated)
+
+mariadb-server: Upgrading to 10.11.18-0+deb12u1 enables systemd socket activation unconditionally (5 minute read)
+
+(blurb not generated)
+
+OpenAI’s Codex context reduction for GPT 5.6 sparks dissatisfaction among developers (5 minute read)
+
+(blurb not generated)
+
+⚡
+Quick Links
+
+Linux kernel will support $ORIGIN, sort of (1 minute read)
+
+A kernel patch series lands eBPF-programmable interpreter selection via binfmt_misc, giving Nix relocatable binaries without hardcoded PT_INTERP paths.

@@ -2,3 +2,162 @@ Sign Up | Advertise | View Online
 TLDR
 
 TLDR DevOps 2026-07-21
+
+📱
+News & Trends
+
+HAMi becomes a CNCF incubating project (5 minute read)
+
+(blurb not generated)
+
+Critical NGINX Vulnerability Can Crash Workers and May Allow Remote Code Execution (1 minute read) [flag]
+
+F5 patched CVE-2026-42533, a heap buffer overflow in nginx's script engine that a remote unauthenticated attacker can trigger with crafted HTTP requests, crashing workers and potentially allowing remote code execution. Fixes landed in nginx 1.30.4, 1.31.3, and NGINX Plus 37.0.3.1, but exposure depends on config: only a regex-based map referenced after an earlier capture is affected, and F5 has not yet listed fixed builds for Ingress Controller, Gateway Fabric, App Protect WAF, or Instance Manager.
+
+mariadb-server: Upgrading to 10.11.18-0+deb12u1 enables systemd socket activation unconditionally (5 minute read)
+
+(blurb not generated)
+
+A broken DNSSEC rollover took down .AL. Now 1.1.1.1 tells you when validation is bypassed (5 minute read)
+
+(blurb not generated)
+
+New Bit2Watt Attack Could Let Cloud Tenants Disrupt Power Grids Without an Exploit (1 minute read)
+
+Three Zhejiang University researchers described Bit2Watt, a technique that lets an ordinary cloud tenant oscillate a data center's power draw at 1.2 to 6 kHz using only their own GPU workloads, with no exploit or privilege escalation. The harder variant hides the modulation inside a real LLM training run by tweaking hyperparameters, making it blend into normal training noise rather than fingerprintable kernel behavior.
+
+Full Broker Takeover, No Login Required: Miggo Discovers Critical RabbitMQ Vulnerabilities Putting Application Data at Risk (5 minute read)
+
+(blurb not generated)
+
+Sheetz replaces VMware at more than 830 stores (5 minute read)
+
+(blurb not generated)
+
+Isolation Failure From Shared Storage: Characterizing and Exploiting Page-Cache SCA Leakage Across Containers and VMs (1 minute read)
+
+Researchers demonstrated that the host page cache leaks file-access timing across container and VM boundaries, breaking isolation on Docker, gVisor, Kata with QEMU or Cloud Hypervisor, and QEMU/KVM whenever the I/O path touches shared host-cacheable files through OverlayFS, virtio-fs, or loop devices. Direct I/O and dedicated block devices largely kill the signal, which the authors showed recovering coarse activity from a WordPress and MySQL deployment.
+
+Cloudflare WAF protects WordPress applications from two high-severity vulnerabilities (5 minute read)
+
+(blurb not generated)
+
+Malicious cloud customers can bring down the power grid (5 minute read)
+
+(blurb not generated)
+
+OpenSSL HollowByte Flaw Could Freeze Server Memory with 11-Byte TLS Requests (5 minute read)
+
+(blurb not generated)
+
+Six New U-Boot Flaws Could Let Malicious Images Crash Devices or Run Code at Boot (5 minute read)
+
+(blurb not generated)
+
+Airbus takes flight from AWS. What happens next is critical (1 minute read) [flag]
+
+Airbus is moving workloads off AWS, and the author argues the execution matters more than the decision itself. Repatriation at that scale means rebuilding managed-service dependencies, identity, and networking on infrastructure the team now runs itself, and the cost case only holds if utilization stays high enough to beat what the hyperscaler was charging.
+
+Note: the supplied context is The Register's "most popular" sidebar, not the article body — no details on Airbus's target platform, timeline, or scale. Blurb is written from the headline only. Pull the article text if you want specifics in it.
+
+AWS CloudFront outage serves errors instead of websites (5 minute read)
+
+(blurb not generated)
+
+Scalding hot AI accelerators have put datacenters in hot water. Two-phase cooling could chill them out (1 minute read)
+
+Startup Accelsius claims its two-phase refrigerant cooling drops GPU temperatures by up to 14°C, demonstrated by converting a liquid-cooled Dell PowerEdge to run on refrigerants instead of water. The pitch for datacenter operators is headroom as accelerator power draw climbs past what single-phase liquid loops handle, along with removing water from the rack and the leak risk that comes with it.
+
+🚀
+Opinions & Tutorials
+
+Learning a few things about running SQLite (5 minute read)
+
+(blurb not generated)
+
+Why your agent needs access to your documentation (1 minute read)
+
+After shipping an in-product agent with roughly 30 native tools, the authors found that a single `search_knowledge_base` tool was the most-used one across 1,192 conversations, nearly matching all native tools combined. Documentation search acted as the failover in 32.1% of conversations, answering setup and troubleshooting questions no purpose-built tool covered. For CNCF projects with large, fast-moving docs, the split is native tools for current state, docs for what it means.
+
+Why goodput matters more than throughput for LLM serving (1 minute read)
+
+The author argues that throughput is the wrong headline metric for LLM serving, since requests per second can climb while TTFT and TPOT quietly blow past targets. Goodput counts only completed requests that meet those latency SLOs, making it the number worth tuning against. The walkthrough serves Qwen2.5-7B on vLLM on a single A10G in EKS, driving load with GuideLLM and instrumenting through Prometheus, Grafana, and NVIDIA's DCGM exporter, with the Kubernetes manifests published for reuse against your own traffic.
+
+FailureAtlas: A Taxonomy of Failure Modes in Multi-Provider LLM Serving Infrastructure (1 minute read)
+
+This paper introduces FailureAtlas, a two-axis taxonomy of failure modes in multi-provider LLM gateways, classifying them by origin layer (network, streaming, session state, model behavior, cost governance) and by whether they fail loud or silent. The authors' main finding is that the worst failures are silent: they return HTTP 200, pass every health check, and corrupt application state. Five cataloged entries include root-cause analysis, and three ship with reproduction scripts.
+
+Generosity Under Conditions: Hardening Google Cloud Access Management (2 minute read)
+
+A Google Cloud developer advocate walks through using IAM conditions to constrain roles that resource-level bindings cannot, including capping `roles/iam.admin` so holders cannot grant themselves arbitrary roles or mint new ones. The post pairs that with a conditional-access example for AI integrations, and argues conditions are the practical fallback when least privilege breaks down on shared projects where multiple teams and workloads touch the same resources.
+
+Platform engineering for the agentic enterprise: Managing applications, resources, and AI agents (1 minute read)
+
+The author argues that internal developer platforms were built on the assumption that a human developer is the primary consumer, and that AI agents provisioning infrastructure, deploying apps, and investigating incidents break that model. The proposed fix is a single governance layer covering both, with humans and agents hitting interfaces suited to their capabilities under the same policy enforcement, RBAC, and audit trail rather than a bolted-on API surface for agents.
+
+ClouDens: Operational Context-Aware Anomaly Detection for Large-scale Cloud System Monitoring (1 minute read)
+
+The authors studied telemetry logs from IBM Cloud Console and propose ClouDens, an anomaly detection framework that partitions high-dimensional telemetry into domain-guided subsets and models service dependencies as a context-aware graph fed to spatio-temporal GNNs. It beats a GRU baseline on NAB scores for count-based features, catching anomalies earlier and with wider coverage. The paper also quantifies how much feature subsetting, scoring strategy, and sparsity imputation each move detection performance, which matters for anyone benchmarking their own alerting stack.
+
+OVS and OVN Explained: The Networking Stack Behind OpenStack (5 minute read)
+
+(blurb not generated)
+
+Shipyard: How We Built Slack's Next-Generation EC2 Platform (5 minute read)
+
+Slack's infrastructure team detailed Shipyard, the EC2 platform that replaced continuous Chef convergence on long-lived instances with immutable, deployable artifacts and progressive rollouts. The team hit the limits of configuration management across tens of thousands of instances, where drift was inevitable and service-level deploys required coordinating changes across multiple layers. Shipyard pushes that responsibility into build pipelines and automated safety checks, giving EC2 workloads that could not containerize the same rollout guarantees as app delivery.
+
+Branching databases like code: a CI/CD pattern for Lakebase, in production at Glaspoort (5 minute read)
+
+(blurb not generated)
+
+Automating cross-repo documentation with GitHub Agentic Workflows (5 minute read)
+
+(blurb not generated)
+
+How Microsoft Ships Thousands of Production AI Agents (5 minute read)
+
+(blurb not generated)
+
+Google Cloud outage shows it’s still hard to understand hyperscalers’ real resilience regimes (1 minute read)
+
+The author argues that Google Cloud's latest outage exposed how little customers can actually verify about hyperscaler resilience, since published region and zone isolation guarantees rarely map to the shared control planes that fail in practice. Multi-region architectures priced as insurance still inherit correlated failure paths that no SLA document describes. The practical takeaway is to treat provider resilience claims as unverified until an incident retro proves the blast radius.
+
+AI speeds software development. Is your secret security keeping up? (1 minute read)
+
+HashiCorp argues that AI-assisted development is outpacing secret management, citing GitGuardian data showing nearly 30M secrets detected in public GitHub repos in 2025, up 34% year over year, with AI-generated code leaking at roughly twice the GitHub-wide rate. The post pushes detection left into IDE scanning, pre-commit hooks, and CI/CD checks rather than post-commit cleanup. It also argues remediation needs exposure context, since undifferentiated findings turn into a backlog no security team can prioritize.
+
+The drivers behind software delivery inefficiency (1 minute read)
+
+Researchers surveyed engineering organizations to identify what actually slows software delivery, finding that most lost time comes from waiting on other teams, unclear requirements, and flaky or slow build and test pipelines rather than from individual coding speed. The authors argue that these delays compound, since each handoff adds queue time that no amount of local developer-productivity tooling recovers. For platform teams, the leverage is in CI reliability and reducing cross-team dependencies, not in per-developer metrics.
+
+⚒️
+Launches & Tools
+
+Making highly available, multi-region Cloud Run services just got easier (5 minute read)
+
+(blurb not generated)
+
+Securing the AI supply chain on GKE: Introducing k8s-aibom for automated AI BOMs (5 minute read)
+
+(blurb not generated)
+
+Cloudflare Internal DNS is now generally available (5 minute read)
+
+(blurb not generated)
+
+Supercharging pgvector: 4x faster HNSW vector search with AlloyDB (2 minute read)
+
+Google released columnar engine accelerated HNSW for AlloyDB in preview, delivering up to 4x higher QPS on pgvector similarity search than standard PostgreSQL HNSW at comparable recall. The speedup comes from AlloyDB's in-memory columnar cache handling the index scan, so teams running RAG workloads can cut vector-search fleet size instead of sharding out to a dedicated vector database.
+
+Introducing Precursor: detecting agentic behavior with continuous client-side signals (5 minute read)
+
+(blurb not generated)
+
+Automate work item assignment with a "Work item created" trigger (5 minute read)
+
+(blurb not generated)
+
+Now in preview: Find and fix software vulnerabilities with CodeMender (2 minute read)
+
+Google put CodeMender, its managed code security agent from DeepMind, into preview, offering automated vulnerability scanning and patching through the Gemini Enterprise Agent Platform or as part of AI Threat Defense. It prioritizes fixes by running proof-of-concept exploits to confirm exploitability, and lets teams swap models to trade off cost against scan depth, with third-party frontier models due later this year.
