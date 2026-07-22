@@ -1,9 +1,31 @@
 {
   "date": "2026-07-22",
   "newsletter": "tldr_devops",
-  "fetched_at": "2026-07-22T08:19:50.009087+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-07-22T16:02:37.608974+00:00",
+  "tldr_titles": [
+    "Announcing General Availability of New Relic Notebooks",
+    "Cloudflare Internal DNS is now generally available",
+    "Argo Rollouts 1.10 Release Candidate",
+    "Deploy OpenTelemetry Gateway on AWS: Monitoring Your Observability Pipeline",
+    "Keeping the KV cache warm: Measuring prompt cache eviction across Anthropic, OpenAI, and Google",
+    "AI Coding Agent Horror Stories: The Agent That Deleted Production",
+    "OpenAI and Hugging Face disclose unprecedented AI-driven security incident",
+    "Why goodput matters more than throughput for LLM serving",
+    "Building an end-to-end reliability testing strategy with Grafana Cloud",
+    "Upcoming GPU Pricing Updates"
+  ],
+  "tldr_matched": [
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -24,21 +46,29 @@
     {
       "rank": 3,
       "score": 68.0,
-      "title": "Why your agent needs access to your documentation",
-      "url": "https://www.cncf.io/blog/2026/07/21/why-your-agent-needs-access-to-your-documentation/",
+      "title": "Multi-Cluster databases on Kubernetes: Architecture and deployment",
+      "url": "https://www.cncf.io/blog/2026/07/22/multi-cluster-databases-on-kubernetes-architecture-and-deployment/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
       "rank": 4,
       "score": 68.0,
-      "title": "Why goodput matters more than throughput for LLM serving",
-      "url": "https://www.cncf.io/blog/2026/07/20/why-goodput-matters-more-than-throughput-for-llm-serving/",
+      "title": "Why your agent needs access to your documentation",
+      "url": "https://www.cncf.io/blog/2026/07/21/why-your-agent-needs-access-to-your-documentation/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
       "rank": 5,
+      "score": 68.0,
+      "title": "Why goodput matters more than throughput for LLM serving",
+      "url": "https://www.cncf.io/blog/2026/07/20/why-goodput-matters-more-than-throughput-for-llm-serving/",
+      "matched_tldr_idx": 7,
+      "similarity": 1.0
+    },
+    {
+      "rank": 6,
       "score": 68.0,
       "title": "Making highly available, multi-region Cloud Run services just got easier",
       "url": "https://cloud.google.com/blog/products/serverless/cloud-run-multi-region-services-enhanced-for-high-availability/",
@@ -46,7 +76,7 @@
       "similarity": null
     },
     {
-      "rank": 6,
+      "rank": 7,
       "score": 66.0,
       "title": "Securing the AI supply chain on GKE: Introducing k8s-aibom for automated AI BOMs",
       "url": "https://cloud.google.com/blog/products/identity-security/introducing-k8s-aibom-on-gke-for-automated-ai-bills-of-materials/",
@@ -54,15 +84,31 @@
       "similarity": null
     },
     {
-      "rank": 7,
-      "score": 62.0,
-      "title": "Cloudflare Internal DNS is now generally available",
-      "url": "https://blog.cloudflare.com/internal-dns/",
+      "rank": 8,
+      "score": 63.0,
+      "title": "I made a policy engine think it was in production",
+      "url": "https://www.cncf.io/blog/2026/07/22/i-made-a-policy-engine-think-it-was-in-production/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 8,
+      "rank": 9,
+      "score": 63.0,
+      "title": "One service, many doors: Multi-port services in Consul",
+      "url": "https://www.hashicorp.com/blog/one-service-many-doors-multi-port-services-in-consul",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 10,
+      "score": 62.0,
+      "title": "Cloudflare Internal DNS is now generally available",
+      "url": "https://blog.cloudflare.com/internal-dns/",
+      "matched_tldr_idx": 1,
+      "similarity": 1.0
+    },
+    {
+      "rank": 11,
       "score": 60.0,
       "title": "A broken DNSSEC rollover took down .AL. Now 1.1.1.1 tells you when validation is bypassed",
       "url": "https://blog.cloudflare.com/dnssec-nta-ede-33/",
@@ -70,7 +116,15 @@
       "similarity": null
     },
     {
-      "rank": 9,
+      "rank": 12,
+      "score": 58.0,
+      "title": "Hackers Exploit Windmill Flaw to Read Arbitrary Server Files Without Authentication",
+      "url": "https://thehackernews.com/2026/07/hackers-exploit-windmill-flaw-to-read.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 13,
       "score": 58.0,
       "title": "New Bit2Watt Attack Could Let Cloud Tenants Disrupt Power Grids Without an Exploit",
       "url": "https://thehackernews.com/2026/07/new-bit2watt-attack-could-let-cloud.html",
@@ -78,7 +132,7 @@
       "similarity": null
     },
     {
-      "rank": 10,
+      "rank": 14,
       "score": 58.0,
       "title": "They'll Verify. They Just Won't Act. How Authority Framing and Laundered Code Turn a Trusted Agentic CI/CD Pipeline Into an Attack Surface",
       "url": "http://arxiv.org/abs/2607.19267v1",
@@ -86,7 +140,7 @@
       "similarity": null
     },
     {
-      "rank": 11,
+      "rank": 15,
       "score": 58.0,
       "title": "Sheetz replaces VMware at more than 830 stores",
       "url": "https://www.networkworld.com/article/4198988/sheetz-replaces-vmware-at-more-than-830-stores.html",
@@ -94,7 +148,7 @@
       "similarity": null
     },
     {
-      "rank": 12,
+      "rank": 16,
       "score": 58.0,
       "title": "Generosity Under Conditions: Hardening Google Cloud Access Management",
       "url": "https://cloud.google.com/blog/topics/developers-practitioners/generosity-under-conditions-hardening-google-cloud-access-management/",
@@ -102,7 +156,7 @@
       "similarity": null
     },
     {
-      "rank": 13,
+      "rank": 17,
       "score": 58.0,
       "title": "Platform engineering for the agentic enterprise: Managing applications, resources, and AI agents",
       "url": "https://www.cncf.io/blog/2026/07/21/platform-engineering-for-the-agentic-enterprise-managing-applications-resources-and-ai-agents/",
@@ -110,7 +164,7 @@
       "similarity": null
     },
     {
-      "rank": 14,
+      "rank": 18,
       "score": 58.0,
       "title": "Shipyard: How We Built Slack's Next-Generation EC2 Platform",
       "url": "https://slack.engineering/shipyard-how-we-built-slacks-next-generation-ec2-platform/",
@@ -118,7 +172,7 @@
       "similarity": null
     },
     {
-      "rank": 15,
+      "rank": 19,
       "score": 58.0,
       "title": "Supercharging pgvector: 4x faster HNSW vector search with AlloyDB",
       "url": "https://cloud.google.com/blog/products/databases/supercharge-pgvector-4x-faster-hnsw-with-alloydb/",
@@ -126,7 +180,7 @@
       "similarity": null
     },
     {
-      "rank": 16,
+      "rank": 20,
       "score": 58.0,
       "title": "Introducing Precursor: detecting agentic behavior with continuous client-side signals",
       "url": "https://blog.cloudflare.com/introducing-precursor/",
@@ -134,7 +188,7 @@
       "similarity": null
     },
     {
-      "rank": 17,
+      "rank": 21,
       "score": 58.0,
       "title": "Automate work item assignment with a \"Work item created\" trigger",
       "url": "https://about.gitlab.com/blog/how-to-use-a-work-item-created-trigger/",
@@ -142,7 +196,7 @@
       "similarity": null
     },
     {
-      "rank": 18,
+      "rank": 22,
       "score": 57.0,
       "title": "Cloudflare WAF protects WordPress applications from two high-severity vulnerabilities",
       "url": "https://blog.cloudflare.com/wordpress-vulnerabilities/",
@@ -150,7 +204,7 @@
       "similarity": null
     },
     {
-      "rank": 19,
+      "rank": 23,
       "score": 57.0,
       "title": "Malicious cloud customers can bring down the power grid",
       "url": "https://www.theregister.com/ai-and-ml/2026/07/20/malicious-cloud-customers-can-bring-down-the-power-grid/5275193",
@@ -158,7 +212,7 @@
       "similarity": null
     },
     {
-      "rank": 20,
+      "rank": 24,
       "score": 57.0,
       "title": "Branching databases like code: a CI/CD pattern for Lakebase, in production at Glaspoort",
       "url": "https://www.databricks.com/blog/branching-databases-code-cicd-pattern-lakebase-production-glaspoort",
@@ -166,7 +220,7 @@
       "similarity": null
     },
     {
-      "rank": 21,
+      "rank": 25,
       "score": 57.0,
       "title": "Automating cross-repo documentation with GitHub Agentic Workflows",
       "url": "https://github.blog/ai-and-ml/github-copilot/automating-cross-repo-documentation-with-github-agentic-workflows/",
@@ -174,7 +228,7 @@
       "similarity": null
     },
     {
-      "rank": 22,
+      "rank": 26,
       "score": 57.0,
       "title": "Now in preview: Find and fix software vulnerabilities with CodeMender",
       "url": "https://cloud.google.com/blog/products/identity-security/find-and-fix-software-vulnerabilities-with-codemender/",
@@ -182,7 +236,7 @@
       "similarity": null
     },
     {
-      "rank": 23,
+      "rank": 27,
       "score": 56.0,
       "title": "Microsoft Azure DevOps MCP Flaw Lets Hidden PR Comments Hijack AI Review Agents",
       "url": "https://thehackernews.com/2026/07/microsoft-azure-devops-mcp-flaw-lets.html",
@@ -190,7 +244,7 @@
       "similarity": null
     },
     {
-      "rank": 24,
+      "rank": 28,
       "score": 56.0,
       "title": "OpenSSL HollowByte Flaw Could Freeze Server Memory with 11-Byte TLS Requests",
       "url": "https://thehackernews.com/2026/07/openssl-hollowbyte-flaw-could-freeze.html",
@@ -198,7 +252,7 @@
       "similarity": null
     },
     {
-      "rank": 25,
+      "rank": 29,
       "score": 56.0,
       "title": "Airbus takes flight from AWS. What happens next is critical",
       "url": "https://www.theregister.com/columnists/2026/07/20/airbus-takes-flight-from-aws-what-happens-next-is-critical/5274109",
@@ -206,7 +260,7 @@
       "similarity": null
     },
     {
-      "rank": 26,
+      "rank": 30,
       "score": 56.0,
       "title": "AWS CloudFront outage serves errors instead of websites",
       "url": "https://www.theregister.com/off-prem/2026/07/16/aws-cloudfront-outage-serves-errors-instead-of-websites/5272421",
@@ -214,7 +268,7 @@
       "similarity": null
     },
     {
-      "rank": 27,
+      "rank": 31,
       "score": 56.0,
       "title": "Google Cloud outage shows it\u2019s still hard to understand hyperscalers\u2019 real resilience regimes",
       "url": "https://www.theregister.com/off-prem/2026/07/21/google-cloud-outage-shows-its-still-hard-to-understand-hyperscalers-real-resilience-regimes/5275405",
@@ -222,7 +276,15 @@
       "similarity": null
     },
     {
-      "rank": 28,
+      "rank": 32,
+      "score": 56.0,
+      "title": "From maintenance to innovation: Checking in on Checkout.com\u2019s Cloud Composer 3 migration",
+      "url": "https://cloud.google.com/blog/products/data-analytics/how-checkout-com-tallies-data-with-cloud-composer-3/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 33,
       "score": 56.0,
       "title": "AI speeds software development. Is your secret security keeping up?",
       "url": "https://www.hashicorp.com/blog/ai-speeds-software-development-is-your-secret-security-keeping-up",
@@ -230,7 +292,23 @@
       "similarity": null
     },
     {
-      "rank": 29,
+      "rank": 34,
+      "score": 56.0,
+      "title": "Cloudflare private domain name service aims to defrag network sprawl and drift",
+      "url": "https://www.sdxcentral.com/news/cloudflare-private-domain-name-service-aims-to-defrag-network-sprawl-and-drift/",
+      "matched_tldr_idx": 1,
+      "similarity": 0.7149930596351624
+    },
+    {
+      "rank": 35,
+      "score": 55.0,
+      "title": "Data centers forecast to use 20% of US power by 2035 \u2014 analysts estimate usage will rocket to 194 gigawatts, 83% more than forecast seven months ago",
+      "url": "https://www.tomshardware.com/tech-industry/data-centers/bnef-nearly-doubles-its-us-data-center-power-forecast-to-194gw",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 36,
       "score": 55.0,
       "title": "Scalding hot AI accelerators have put datacenters in hot water. Two-phase cooling could chill them out",
       "url": "https://www.theregister.com/systems/2026/07/21/scalding-hot-ai-accelerators-have-put-datacenters-in-hot-water-two-phase-cooling-could-chill-them-out/5275293",
@@ -238,7 +316,7 @@
       "similarity": null
     },
     {
-      "rank": 30,
+      "rank": 37,
       "score": 55.0,
       "title": "The drivers behind software delivery inefficiency",
       "url": "https://dl.acm.org/doi/10.1145/3800646.3800650",
@@ -246,7 +324,15 @@
       "similarity": null
     },
     {
-      "rank": 31,
+      "rank": 38,
+      "score": 55.0,
+      "title": "Reselling unused cloud instances is no longer easy",
+      "url": "https://www.infoworld.com/article/4199215/reselling-unused-cloud-instances.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 39,
       "score": 55.0,
       "title": "Exclusive: Fig launches AI agent and brings CI/CD to security operations",
       "url": "https://siliconangle.com/2026/07/21/exclusive-fig-launches-figaro-ai-agent-brings-ci-cd-security-operations/",
@@ -254,9 +340,43 @@
       "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.2,
+    "25": 0.2,
+    "50": 0.2,
+    "100": 0.2,
+    "39": 0.2
+  },
+  "hits_at": {
+    "10": 2,
+    "25": 2,
+    "50": 2,
+    "100": 2,
+    "39": 2
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://newrelic.com/blog/news/announcing-general-availability-of-new-relic-notebooks",
+    "https://blog.cloudflare.com/internal-dns/",
+    "https://blog.argoproj.io/argo-rollouts-1-10-release-candidate-24c9edc69abe",
+    "https://aws.amazon.com/blogs/mt/deploy-opentelemetry-gateway-on-aws-monitoring-your-observability-pipeline/",
+    "https://blog.mempko.com/keeping-the-kv-cache-warm-measuring-prompt-cache-eviction-across-anthropic-openai-and-google/",
+    "https://www.docker.com/blog/coding-agent-horror-stories-the-agent-that-deleted-production/",
+    "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+    "https://www.cncf.io/blog/2026/07/20/why-goodput-matters-more-than-throughput-for-llm-serving/",
+    "https://grafana.com/blog/building-an-end-to-end-reliability-testing-strategy-with-grafana-cloud/",
+    "https://www.digitalocean.com/blog/price-changes-gpus"
+  ],
+  "tldr_domains": [
+    "newrelic.com",
+    "blog.cloudflare.com",
+    "blog.argoproj.io",
+    "aws.amazon.com",
+    "blog.mempko.com",
+    "docker.com",
+    "openai.com",
+    "cncf.io",
+    "grafana.com",
+    "digitalocean.com"
+  ]
 }
