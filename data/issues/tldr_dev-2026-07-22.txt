@@ -1,0 +1,219 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR Dev 2026-07-22
+
+🧑‍💻
+Articles & Tutorials
+
+Learning a few things about running SQLite (5 minute read)
+
+(blurb not generated)
+
+Weaponizing And Defending The React Flight Protocol: Deserialization Sinks In RSCs (5 minute read)
+
+(blurb not generated)
+
+Job queues are deceptively tricky (5 minute read)
+
+(blurb not generated)
+
+From Rust to Zig: What changed my mind (5 minute read)
+
+(blurb not generated)
+
+Automating cross-repo documentation with GitHub Agentic Workflows (5 minute read)
+
+(blurb not generated)
+
+When branchless binary search is slower (5 minute read)
+
+(blurb not generated)
+
+Small teams are the heaviest users of AI coding agents (1 minute read)
+
+Researchers at Rochester Institute of Technology sorted 25,264 agentic pull requests from GitHub repos with 100+ stars and found that 78.9% were reviewed, fixed, and merged by a single developer. Repositories with one to five contributors averaged 50.2 agentic PRs each, far above medium and large teams, and even the busiest small repos kept the solo-reviewer workflow rather than distributing review.
+
+I burned all my tokens researching how to save tokens (5 minute read)
+
+(blurb not generated)
+
+From Weeks to a Day: How We Made LLM Evaluation Fast Enough to Iterate on (5 minute read)
+
+(blurb not generated)
+
+The drivers behind software delivery inefficiency (5 minute read)
+
+(blurb not generated)
+
+Controlling Reasoning Effort in LLMs (5 minute read)
+
+(blurb not generated)
+
+Autoresearch with Coding Agents: Generalizers and Metric-Maximizers on Quran Recitation Data (5 minute read)
+
+(blurb not generated)
+
+Test Coverage Analysis of Agentic Pull Requests (5 minute read)
+
+(blurb not generated)
+
+How Agent Skills Fail under Long Contexts: A White-Box Study in Code Auditing (5 minute read)
+
+(blurb not generated)
+
+Perplexity launches SPACE runtime for AI agent tasks (5 minute read)
+
+(blurb not generated)
+
+LM2Alloy: Investigating LLM-Generated Formal Specifications for Automated Test Derivation in Production Software (1 minute read)
+
+This paper has an LLM generate Alloy formal specifications from requirements docs and source code, then derive executable tests from those specs, evaluated on the Flipper feature flag library and the Cerberus validation library. The Alloy intermediate step caught a real bug Flipper's test suite missed, silently accepted duplicate flag names, while a direct LLM baseline hit 68% branch coverage and missed it across all three runs.
+
+AI Engineering for Developers (5 minute read)
+
+(blurb not generated)
+
+Semantic Drift in Bug Resolution: How Behavioral Signals Propagate from Reports to Tests and Patches (1 minute read)
+
+The authors introduce Desc2Fix, a framework that measures how well behavioral signals in bug reports survive into triggering tests and developer patches across 2,857 triplets from Defects4J and SWT-Bench. LLMs extracted structured anchors at up to 90% completeness, but full diffs beat lexical similarity for judging report-patch correspondence, and both GPT-4o and DeepSeek-Chat rated alignment 1-2 points higher than human judges.
+
+DepRepair: LLM-Based Source-Code Repair for Dependency Breaking Changes (5 minute read)
+
+(blurb not generated)
+
+Why your agent needs access to your documentation (5 minute read)
+
+(blurb not generated)
+
+🧠
+Opinions & Advice
+
+Fragments: July 21 (5 minute read)
+
+(blurb not generated)
+
+SQLite should have (Rust-style) editions (5 minute read)
+
+(blurb not generated)
+
+Software Factories, Light and Dark (5 minute read)
+
+(blurb not generated)
+
+The Tower Keeps Rising (5 minute read)
+
+(blurb not generated)
+
+Claude Is Not a Compiler (5 minute read)
+
+(blurb not generated)
+
+Code Yellow, Code Red (5 minute read)
+
+(blurb not generated)
+
+AI makes programming differently difficult (5 minute read)
+
+(blurb not generated)
+
+How to stop Claude from saying load-bearing (5 minute read)
+
+(blurb not generated)
+
+You only need the frontier model for one single edit (5 minute read)
+
+(blurb not generated)
+
+🚀
+Launches & Tools
+
+Thinking Machines Releases First Open Model (5 minute read)
+
+(blurb not generated)
+
+Inkling: Our Open-Weights Model (5 minute read)
+
+(blurb not generated)
+
+Turso is building a modern version of Postgres in Rust (5 minute read)
+
+(blurb not generated)
+
+Poolside drops Laguna S 2.1, an open-weight coding model that beats rivals 10x its size (3 minute read)
+
+Poolside released Laguna S 2.1, a 118B-parameter MoE coding model that activates 8B parameters per token, supports a 1M-token context window, and ships open weights on Hugging Face under the OpenMDW-1.1 license. It scores 70.2% on Terminal-Bench 2.1 and 78.5% on SWE-Bench Multilingual, ahead of DeepSeek-V4-Pro-Max at 1.6T parameters, and was trained on 4,096 H200s in under nine weeks.
+
+PTSan: A Practical Memory Safety Sanitizer for C/C++ with Pointer-Object Authority (1 minute read)
+
+PTSan is an LLVM sanitizer that stores an object ID in each pointer's high bits and its bounds in a fixed-size runtime table, so ordinary dataflow propagates identity without per-pointer metadata instructions. It hits 57.2% geomean overhead on SPEC CPU 2017 on x86-64, roughly a third of prior pointer-based tools, trading a finite live-object budget for optimizer-visible checks and near-native memory use.
+
+Claude Code brings live iOS app testing into its Mac app (1 minute read)
+
+Claude Code Desktop v1.24012.0 adds an interactive iOS Simulator pane that lets Claude build, launch, and tap through an app while you watch alongside the conversation. The pane drives the simulator directly instead of going through computer use, so it never takes over the screen, but it requires Xcode with the iOS platform, a Pro, Max, or Team plan, and a local session.
+
+Visual Studio Code 1.129 introduces dedicated agent host (2 minute read)
+
+Microsoft released VS Code 1.129, which moves agent sessions into a dedicated agent host process that runs Claude, Copilot, and Codex harnesses over the new Agent Host Protocol. Because each session lives in its own process, the same session can be rendered from multiple windows at once, and the release adds a docked editor panel in the Agents window plus `!`-prefixed chat messages that execute as terminal commands.
+
+Incremental – A library for incremental computations (5 minute read)
+
+(blurb not generated)
+
+Jelly UI: Soft-body physics for native HTML form controls (5 minute read)
+
+(blurb not generated)
+
+Cisco releases Antares, open-weight small models for locating code vulnerabilities (5 minute read)
+
+(blurb not generated)
+
+Laguna S 2.1 (5 minute read)
+
+(blurb not generated)
+
+Block launches Buzz, an open-source workspace for humans and AI agents (1 minute read)
+
+Block released Buzz, an open-source workspace that combines team chat, built-in Git hosting, and CI, where AI agents join as full members with their own accounts and permissions. It runs on Nostr, so each agent gets a cryptographic keypair plus a second signature tying it to its human owner, producing an audit trail for every agent action, and works with Claude Code, Codex, and goose through the Agent Client Protocol.
+
+LoRA Speedrun – a public wall-clock leaderboard for fine-tuning techniques (5 minute read)
+
+(blurb not generated)
+
+Nativ: Run frontier open models locally on your Mac (5 minute read)
+
+(blurb not generated)
+
+🎁
+Miscellaneous
+
+The Perfect Heist: NuGet Typosquat Targets Betting Platform to Rig Results (5 minute read)
+
+(blurb not generated)
+
+AWS Kiro Flaw Let a Poisoned Web Page Rewrite Its Config and Run Code (5 minute read)
+
+(blurb not generated)
+
+Cursor 0day: When Full Disclosure Becomes the Only Protection Left (5 minute read)
+
+(blurb not generated)
+
+SleeperGem Uses Three Malicious RubyGems Packages to Target Developer Machines (5 minute read)
+
+(blurb not generated)
+
+A broken DNSSEC rollover took down .AL. Now 1.1.1.1 tells you when validation is bypassed (5 minute read)
+
+(blurb not generated)
+
+OpenAI’s Codex context reduction for GPT 5.6 sparks dissatisfaction among developers (5 minute read)
+
+(blurb not generated)
+
+⚡
+Quick Links
+
+Gemini last models: temperature, top_p, and top_k are deprecated and ignored (1 minute read)
+
+Gemini 3.6 Flash and 3.5 Flash-Lite hit GA, and sampling params like temperature, top_p, and top_k are now ignored.
