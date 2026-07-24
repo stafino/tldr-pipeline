@@ -1,0 +1,144 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR Data 2026-07-24
+
+📊
+News & Trends
+
+Introducing Apache Spark 4.2 (5 minute read)
+
+(blurb not generated)
+
+NetApp snaps up DataPelago to bolster AI data infrastructure portfolio (5 minute read)
+
+(blurb not generated)
+
+Introducing AI spend controls with Unity AI Gateway (1 minute read)
+
+Databricks announced AI Spend Controls in Unity AI Gateway, letting teams set budget alerts and hard spend caps at the user, workspace, use case, or account level, with requests automatically blocked once a limit is hit. It extends the gateway's existing cost visibility to cover foundation model usage across coding agents, production agents, and batch jobs, and ties into Unity Catalog system tables and Databricks budgets for unified AI cost governance.
+
+Databricks is Raising a Strategic Round of Funding at a $188 Billion Valuation (5 minute read)
+
+(blurb not generated)
+
+Databricks and Microsoft expand Azure partnership into the 2030s (1 minute read)
+
+Databricks and Microsoft extended their strategic partnership into the 2030s, with Databricks moving core operations and its unified lakehouse onto Azure and expanding use of Azure Cobalt Arm chips, adopting Cobalt 200 for data-intensive and agentic AI workloads. In return, Microsoft will deepen Databricks integrations across Microsoft 365, Teams, Copilot, Power BI, OneLake, Purview and Foundry, including Genie and Unity AI Gateway for governing agents, models and costs.
+
+From maintenance to innovation: Checkout's migration to Managed Service for Apache Airflow (2 minute read)
+
+Checkout.com migrated its data orchestration from self-hosted Apache Airflow on another cloud to Google Cloud's Managed Service for Apache Airflow (Cloud Composer 3), offloading patching, scaling, and dependency management to cut both maintenance overhead and peak-capacity costs. The old setup provisioned workers for peak load around the clock and took six minutes to sync DAGs after deployment, so the switch to dynamic scaling targets the recurring "Day 2" tax of running your own orchestrator.
+
+🧠
+Deep Dives & Analysis
+
+Optimizing for Almost Sorted Data: Sort Pushdown in Apache DataFusion (5 minute read)
+
+Apache DataFusion now exploits sortedness automatically, even when data is only partially sorted or its ordering was never declared. The engine discovers a global sort order from per-file min/max statistics, deletes redundant sorts at plan time, and biases scan order toward the most-promising files, with dynamic filters driving row-group pruning at runtime. The payoff is ORDER BY ... LIMIT queries that skip the blocking full sort and full scan, cutting latency and peak memory on large tables.
+
+Why A Frontier Data Agent Outperforms General Coding Agents in Quality and Cost (1 minute read)
+
+Databricks benchmarked its Genie Code data agent against three general-purpose coding agents on 401 real internal tasks, each capped at a 20-minute budget, and found Genie Code was both the most accurate and the most cost efficient. The argument is that data agents can't lean on the verifiable tests coding agents use, so semantic catalog search, persistent memory of trusted tables, and enterprise context let Genie Code skip the token-burning random-walk exploration that sinks general agents.
+
+Aurora DSQL: Scalable, Multi-Region OLTP (5 minute read)
+
+Amazon's engineers detail Aurora DSQL, a distributed PostgreSQL-compatible OLTP database that disaggregates compute, transaction commit, and storage into independently scalable layers with active-active multi-region writes. The design leans on optimistic concurrency control and precise EC2 clock synchronization to guarantee strong consistency without a two-phase commit coordinator on the hot path. The bet is that decoupling the write path from storage lets a single database scale horizontally while surviving regional failure, a trade-off that swaps lock-based contention for commit-time conflict aborts.
+
+DuckDB Internals: Why is DuckDB Fast? (Part 2 Vectorized Execution) (5 minute read)
+
+DuckDB's second internals post explains vectorized execution: instead of processing one row at a time, DuckDB pushes batches of values through each operator, keeping the CPU fed rather than stalling on memory waits and instruction dependencies. The payoff is concrete. The 2005 MonetDB/X100 benchmarks it cites clocked MySQL's row-at-a-time engine at 0.8 IPC and ~49 cycles per addition, versus ~2.2 cycles for the batched approach that DuckDB now builds on.
+
+To Every Agent Its Own Database (5 minute read)
+
+Joe Reis inverts the "make the warehouse agent-ready" approach, arguing that scaling shared analytical platforms with bigger clusters and faster semantic layers still assumes an agent is just a very fast analyst on a central plane. His working prototype gives each agent its own embedded engine using DuckDB, DuckLake, Quack, and Malloy, letting agents exchange data products directly. The open question he surfaces: what contracts govern analytical exchange once no single system owns the semantic and computational authority.
+
+How Our Universal Content Processing Platform Riviera Evolved for AI and Beyond (5 minute read)
+
+Dropbox opened Riviera, the content-processing platform that has powered its file previews for roughly a decade, to outside developers via API and MCP tools. What began as an internal preview service now handles transcoding, PDF flattening, and text extraction across Search, Replay, Sign, and Dash, producing the equivalent of 8 years of video daily. The write-up covers the architectural decisions that let a single preview service become shared infrastructure, and why AI document pipelines drove the external release.
+
+Benchmarking the Full Pipeline of Materialized-View-Based Query Rewriting (1 minute read)
+
+This paper benchmarks materialized-view query acceleration as a full pipeline: candidate enumeration, view selection under storage budgets, and optimizer rewriting, rather than studying one stage in isolation. Using a modular framework with controlled ablations and a cross-engine protocol, the authors find strong interaction effects across stages and wide variability in MV usage and realized savings across academic methods and open-source and commercial systems. They also catalog recurring failure modes that explain regressions after rewriting.
+
+If You Think You Can Do Real-World Text-to-SQL (5 minute read)
+
+The author argues that benchmark scores like those on Spider and BIRD wildly overstate how well text-to-SQL works against real production databases, where schemas are sprawling and undocumented, column names are cryptic, and business questions are ambiguous. The post walks through why enterprise schemas with hundreds of joined tables, inconsistent data, and implicit domain rules break models that ace academic benchmarks. The takeaway for data teams is that the hard part is schema semantics and context, not SQL generation itself.
+
+Demonstrating GenDB: Instance-Optimized and Customized Query Processing Code Generation via LLM Agents (1 minute read)
+
+GenDB is a generative query engine that uses LLM agents to write instance-optimized query execution code tailored to specific data, workloads, and hardware, rather than relying on a hand-built engine. It targets repetitive, templated queries where upfront generation cost amortizes across runs, pairing with a traditional DBMS for ad-hoc queries. The prototype beats state-of-the-art engines on TPC-H and a leakage-resistant benchmark, with correctness enforced through fuzz testing.
+
+Worst-Case Optimal BGPs on Temporal Graphs (1 minute read)
+
+This paper presents an index that evaluates basic graph patterns over temporal graphs, where each edge carries an interval of validity, in worst-case-optimal time using O(N) space for N edges. The authors extend Leapfrog Triejoin to handle time-aware quads (subject, property, object, time) under any variable ordering, and get the same guarantees for snapshot, version, and other temporal query variants. On real datasets, realistic queries return in milliseconds with low space overhead.
+
+Auto-Fill: Learning to Predict Missing Values Accurately with Specialist Language Models (1 minute read)
+
+This paper introduces Auto-Fill, an approach to predicting missing cell values in tabular data that post-trains three specialist small language models, each optimized for one capability: world knowledge, text-based reasoning, or code-based reasoning. A calibrated ensemble picks the most confident specialist or abstains, cutting the hallucinated predictions that make frontier reasoning models unreliable for data cleaning. Across 11 benchmarks and 2,200 real tables, it beat o3-pro, Gemini 3 Pro, and DeepSeek R1 on accuracy at under 1% of their cost.
+
+RCC: Speculative Write Versioning with Redo Logs (1 minute read)
+
+This paper introduces RCC, a concurrency control scheme that uses redo logs to let write-write conflicting transactions run speculatively instead of serializing behind each other. Each transaction creates out-of-place speculative versions and installs them only at commit, with commit-time deadlock detection and column-granule logging to avoid false conflicts. On MySQL and PostgreSQL, RCC improves TPC-C throughput and latency by an order of magnitude at 64 threads, and scales to 128 clients on high-contention YCSB where competing schemes stall past 32.
+
+Guide to data tools landscape for developers (5 minute read)
+
+(blurb not generated)
+
+The Database Is Not the Data Model (5 minute read)
+
+(blurb not generated)
+
+Backfilling: the most underrated feature of a data pipeline (5 minute read)
+
+Backfilling gets treated as a throwaway migration script written under pressure, then abandoned in a scripts/ folder to rot. The author argues both forms of backfill, historical ingestion and system-to-system migration, are the same problem and belong inside the production extract-raw-transform pipeline rather than one-off jobs. Running historical loads through the same tested stages as tomorrow's data cuts the time teams spend fighting their own pipeline.
+
+Smart caching with CTE on Spark (5 minute read)
+
+Caching in Spark speeds up repeated computations by holding intermediate results in memory, but this piece argues the win only materializes for medium-sized, frequently reused datasets. Tiny tables gain nothing, and tables too large for memory trigger disk spills or eviction that slow the job down. The practical guidance for CTEs and nested queries: cache only when reuse is guaranteed, and watch the Spark UI storage tab to confirm the cache is actually paying off.
+
+Learning a few things about running SQLite (5 minute read)
+
+(blurb not generated)
+
+Provisioning for the Agentic Era: How Databricks Built a Self-Serve Infrastructure Vending Machine (1 minute read)
+
+Databricks' field engineering team outgrew its shared-workspace model and built FEVM, a self-serve system that provisions governed, Databricks-native environments on demand and tears them down when the work is done. The write-up details why workspaces optimized for a few admins managing many users broke down for an org where nearly everyone needs admin access, and how contention, cost attribution, and observability degraded as GTM headcount passed 7,000. Agents are treated as first-class users of the provisioning flow.
+
+The startup's Postgres survival guide (1 minute read)
+
+The author distills two years of running Postgres in production at Hatchet into a survival guide for startup engineers, organized from schema design and query basics through the query planner, bulk updates, and autovacuum tuning. The core argument is that schemas are the hardest thing to change after deployment, so teams should design them iteratively around actual read/write patterns rather than chasing textbook normal forms. It also flags where ORMs become a ceiling, since many scaling optimizations require dropping to raw SQL through tools like sqlc or Prisma TypedSQL.
+
+DMG: A Scalable and Efficient Memory-Disaggregated Graph Processing System (1 minute read)
+
+DMG is the first graph processing system on disaggregated memory that scales past a single compute and memory node, sidestepping the oversized compute-side caches prior DM designs required. It pairs a DM-friendly graph store with an adaptive update coordinator and a two-stage workload manager for partitioning and runtime rescheduling. Against the prior state-of-the-art, the authors report up to 4.9X better performance while cutting compute-side cache demand by up to 18.9X.
+
+🚀
+Launches & Tools
+
+Turso is building a modern version of Postgres in Rust (5 minute read)
+
+(blurb not generated)
+
+Connect Amazon S3 data to Databricks with Delegated IAM Permissions (1 minute read)
+
+Databricks added a new external location creation flow that connects Amazon S3 to Unity Catalog using temporary AWS IAM delegation, replacing the old process of hand-authoring 140-line trust policies, setting bucket permissions, and deploying CloudFormation across two consoles. After you specify a bucket and access level, Databricks provisions least-privilege IAM roles on your behalf in a single workspace session, and users without sufficient AWS permissions can request them from their admin inline.
+
+Simplify AI agent orchestration with Lakebase Postgres (1 minute read)
+
+CLA and Databricks built a Databricks-native orchestration layer for long-running agentic document processing, using Lakebase Postgres to handle task queueing, retries, cost attribution, and real-time observability without separate infrastructure. Lakebase separates storage from compute, letting compute scale with demand while storage stays durable, which cuts document extraction time from hours to minutes across contracts, invoices, and financial filings.
+
+Hollywood: Towards a Large Movie Dataset for Database Benchmarking (1 minute read)
+
+This paper introduces Hollywood, a synthetic IMDb-compatible benchmark generator that pairs LLM-generated semantic dictionaries with deterministic temporal-graph data generation, unlike the fixed JOB/IMDb dump it replaces. The preliminary Hollywood-200K release ships 19.7M rows and 213 JOB-Light, JOB, and JOB-Complex queries, and induces cardinality estimation errors matching or exceeding the original IMDb dataset on two open systems.
+
+AI Schema Analyzer: Powered by Iceberg and Lakekeeper (5 minute read)
+
+The post walks through building an AI schema-drift analyzer for Iceberg tables, wiring Lakekeeper's REST catalog to emit change events to Kafka the moment a DDL runs, then feeding those events to a FastAPI service that calls the Anthropic SDK for impact analysis. Because Lakekeeper pushes catalog changes directly to Kafka with no metadata scanning, the agent flags breaking downstream dependencies within seconds and posts recommendations to Slack.
+
+🎁
+Miscellaneous
+
+Is "jobs" a four-letter word? (5 minute read)
+
+(blurb not generated)
