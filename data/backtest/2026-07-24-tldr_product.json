@@ -1,9 +1,29 @@
 {
   "date": "2026-07-24",
   "newsletter": "tldr_product",
-  "fetched_at": "2026-07-24T08:49:56.616981+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-07-24T19:05:37.658109+00:00",
+  "tldr_titles": [
+    "What systems thinking looks like for PM'ing AI products",
+    "Most AI rollouts fail due to change management, not technology",
+    "Why Your AI Product Has No Memory",
+    "Want users to stick around? These 5 onboarding teardowns show you how",
+    "Five product management principles for internal developer platforms",
+    "How to become so creative it feels illegal",
+    "Why hasn't AI increased unemployment?",
+    "The AI Productivity Paradox",
+    "Defensible, but not good"
+  ],
+  "tldr_matched": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true,
+    false
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -26,8 +46,8 @@
       "score": 58.0,
       "title": "The AI Productivity Paradox",
       "url": "https://www.svpg.com/the-ai-productivity-paradox/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 7,
+      "similarity": 1.0
     },
     {
       "rank": 4,
@@ -38,9 +58,41 @@
       "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.1111111111111111,
+    "25": 0.1111111111111111,
+    "50": 0.1111111111111111,
+    "100": 0.1111111111111111,
+    "4": 0.1111111111111111
+  },
+  "hits_at": {
+    "10": 1,
+    "25": 1,
+    "50": 1,
+    "100": 1,
+    "4": 1
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://x.com/christinexzhu/status/2079922517469225362",
+    "https://diginomica.com/most-ai-rollouts-fail-due-change-management-not-tech-we-learned",
+    "https://blog.gopenai.com/why-your-ai-product-has-no-memory-and-why-thats-destroying-user-retention-938247376e8a",
+    "https://kristenberman.substack.com/p/want-users-to-stick-around-these",
+    "https://platformengineering.org/blog/five-product-management-principles-for-internal-developer-platforms",
+    "https://x.com/thedankoe/status/2036824811712942576",
+    "https://x.com/PeterMcCrory/status/2079979321607745905",
+    "https://www.svpg.com/the-ai-productivity-paradox/",
+    "https://newsletter.weskao.com/p/defensible-but-not-good"
+  ],
+  "tldr_domains": [
+    "x.com",
+    "diginomica.com",
+    "blog.gopenai.com",
+    "kristenberman.substack.com",
+    "platformengineering.org",
+    "x.com",
+    "x.com",
+    "svpg.com",
+    "newsletter.weskao.com"
+  ]
 }

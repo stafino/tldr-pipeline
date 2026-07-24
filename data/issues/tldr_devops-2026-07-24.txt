@@ -6,100 +6,104 @@ TLDR DevOps 2026-07-24
 📱
 News & Trends
 
+BGP ORIGIN attribute manipulation and its impact on the Internet (1 minute read)
+
+Cloudflare found that ~70% of observed BGP paths carry a different ORIGIN attribute than the originating AS set, despite the spec saying no downstream router should modify it. Because path selection prefers the lower ORIGIN value when Local Preference and AS_PATH length tie, this widespread manipulation quietly reshapes how traffic is forwarded across the Internet.
+
 HAMi becomes a CNCF incubating project (5 minute read)
 
 (blurb not generated)
 
-Minimize idle accelerators: Native RL job interleaving with co-operative time-slicing in llm-d (2 minute read)
+Kimi K3 Agents Found Redis Zero-Days and Built RCE Exploit, Researchers Say (1 minute read)
 
-Google introduced co-operative time-slicing in the llm-d project, which treats RL post-training steps like sampling and gradient training as schedulable units so independent RL jobs can interleave on shared accelerators. Google's benchmarks show aggregate accelerator duty cycles rising from a ~40% baseline to 70% without hurting model convergence, cutting idle-GPU waste and lowering TCO for GRPO-style workloads.
+Redis shipped seven security releases on July 23 after researchers using Kimi K3 agents published authenticated RCE proof-of-concepts against stock Redis 6.2.22, 7.4.9, 8.6.4, and 8.8.0, each chain routing through the RESTORE command. Until you upgrade the deployed branch, revoke RESTORE from accounts that do not strictly need it, since restricting it cuts off both disclosed paths and no in-the-wild exploitation has been reported yet.
 
-Confidential Containers becomes a CNCF incubating project (1 minute read)
+Minimize idle accelerators: Native RL job interleaving with co-operative time-slicing in llm-d (5 minute read)
 
-The CNCF Technical Oversight Committee voted to promote Confidential Containers to incubating status, advancing the project's use of hardware TEEs to encrypt data in use for sensitive Kubernetes workloads on untrusted infrastructure. Backed by Azure, Intel, AMD, IBM, NVIDIA, and Red Hat, the project integrates confidential computing into standard k8s workflows via the Kata Containers runtime and is now being wired into KServe for confidential AI.
+(blurb not generated)
+
+Confidential Containers becomes a CNCF incubating project (5 minute read)
+
+(blurb not generated)
 
 RefluXFS: A Linux Kernel Local Privilege Escalation to Root in XFS (CVE-2026-64600) (5 minute read)
 
-Qualys disclosed CVE-2026-64600, a race condition in the Linux kernel's XFS copy-on-write path that lets any local unprivileged user overwrite protected files at the block layer and escalate to host root, even under SELinux Enforcing. The flaw has existed since kernel 4.11 and ships in default RHEL, Oracle Linux, Amazon Linux, and Fedora installs, with no reliable mitigation short of patching and rebooting.
+(blurb not generated)
 
-Hackers Exploit Windmill Flaw to Read Arbitrary Server Files Without Authentication (1 minute read)
+Hackers Exploit Windmill Flaw to Read Arbitrary Server Files Without Authentication (5 minute read)
 
-Attackers are actively exploiting CVE-2026-29059, an unauthenticated path traversal in the open-source Windmill platform's get_log_file endpoint that lets them read arbitrary server files, including the SUPERADMIN_SECRET that grants remote code execution. VulnCheck found about 170 exposed instances across 24 countries and confirmed exploits against both direct endpoints and Nextcloud proxy paths, with the fix shipped back in Windmill 1.603.3.
+(blurb not generated)
 
-The case for a cooldown: Why Dependabot now waits before issuing version updates (1 minute read)
+Microsoft blames massive Microsoft 365 outage on maintenance bug (1 minute read)
 
-Dependabot now enforces a default three-day cooldown before opening non-security version-update pull requests, giving maintainers, security researchers, and scanners time to catch a malicious release before it reaches your build pipeline. The change targets supply-chain attacks like the September 2025 npm compromise of chalk and debug, where poisoned versions of packages downloaded 2 billion times a week stayed live for two hours, and the cooldown window stays configurable in dependabot.yml.
+Microsoft attributed Thursday's Microsoft 365 and Azure outage to a bug in its automated network maintenance system, which pulled IP routes from more devices than intended in the West US region and cut access to SharePoint, OneDrive, Teams, and Copilot. Downdetector logged 2,403 reports at peak against a baseline of 29, and Microsoft resolved incident MO1437424 by reverting the networking change roughly four hours later.
+
+The case for a cooldown: Why Dependabot now waits before issuing version updates (5 minute read)
+
+(blurb not generated)
+
+CIOs beware: DNS KSK rollover could kick off wave of mysterious outages (3 minute read)
+
+The root zone's Key Signing Key rollover begins signing on Oct. 11, 2026, with the old key retired Jan. 11, 2027, and analysts warn the transition could surface a wave of hard-to-trace DNSSEC resolution failures. The exposure sits in the systems that bypass platform standards, such as hardcoded resolvers, stale container base images, sidecar configs, and untouched partner integrations, where no one has thought to ask vendors about DNS updates.
+
+OpenTelemetry has graduated… Now what? (1 minute read)
+
+OpenTelemetry reached CNCF graduated status, joining Kubernetes and Prometheus and cementing its position as the de facto open standard for traces, metrics, and logs. The project is now the second-highest velocity effort in the CNCF with over 12,000 contributions from 2,800 companies, and graduation signals a stable instrumentation layer that lets teams swap observability vendors without rewriting code.
+
+Default Azure Automation Setting Enables Cross-Tenant Identity Takeover (1 minute read)
+
+Microsoft patched CVE-2025-29827, a CVSS 9.9 flaw in Azure Automation where a public-by-default identity setting let an attacker with their own automation account cross the tenant trust boundary and assume another tenant's managed identity. That access could expose credentials and configuration data and let the attacker create, modify, or delete resources across a victim's cloud workloads, though Microsoft reports no known exploitation and has since changed the default to private.
 
 Cloudflare WAF protects WordPress applications from two high-severity vulnerabilities (5 minute read)
 
 (blurb not generated)
 
-Microsoft fiber foul-up cut off Azure California for almost five hours (1 minute read)
+Microsoft fiber foul-up cut off Azure California for almost five hours (5 minute read)
 
-A cut fiber line took Azure offline across California for nearly five hours, disrupting customer workloads in the affected region until Microsoft rerouted traffic around the damaged path. The outage renews questions about single-path fiber dependencies in cloud regions, where physical-layer failures still translate directly into control-plane and workload downtime despite redundancy claims.
+(blurb not generated)
+
+Cloudflare Internal DNS puts public and private DNS on one policy engine (2 minute read)
+
+Cloudflare launched Internal DNS, which extends its public DNS platform to private zones so both run on one control plane, one API, one audit trail, and a single policy engine. Cloudflare Gateway acts as the resolver ahead of every lookup, evaluating zero-trust policies before routing queries to the right DNS view based on source IP, device posture, or network location, with internal zones never assigned public nameservers.
+
+Microsoft explains why its West US Azure and cloud services failed (1 minute read)
+
+Microsoft published a preliminary post-incident review for its July 23 West US outage, attributing five hours of lost connectivity to automated maintenance systems that pulled IP routes from devices outside the planned isolation scope. Traffic entering or leaving the region failed between 14:44 and 19:41 UTC, marking the second major Azure disruption this year, and Microsoft is now advising mission-critical workloads to adopt a multi-region architecture.
 
 Microsoft Azure DevOps MCP Flaw Lets Hidden PR Comments Hijack AI Review Agents (5 minute read)
 
 (blurb not generated)
 
-Linux XFS has a decade-old race condition allowing full root access (2 minute read)
+Linux XFS has a decade-old race condition allowing full root access (5 minute read)
 
-Qualys disclosed RefluXFS (CVE-2026-64600), a race condition in the Linux kernel's XFS reflink copy-on-write path that lets an unprivileged local user overwrite any readable file at the block layer and escalate to root. The flaw has shipped in every kernel since 4.11 in 2017, affects an estimated 16.4 million enterprise systems including RHEL 8-10, and leaves no kernel log output, with a patch released last week.
-
-US government says Iran-linked hackers are disrupting American water and energy providers (1 minute read)
-
-The FBI, NSA, CISA, and Department of Energy updated an advisory warning that Iran-linked hackers are compromising internet-exposed programmable logic controllers at US water and energy providers, expanding the targeted hardware from Rockwell to include Schneider Electric and Siemens. In at least one intrusion the attackers rewrote controller logic to disable safety shutdowns and alarms, letting processes enter unsafe conditions without alerting operators.
+(blurb not generated)
 
 OpenSSL HollowByte Flaw Could Freeze Server Memory with 11-Byte TLS Requests (5 minute read)
 
 (blurb not generated)
 
-AMD debuts next-generation AI infrastructure for frontier models, agentic workloads and autonomous robots (1 minute read)
-
-AMD announced its Instinct MI400 Series GPUs and sixth-generation EPYC CPUs at Advancing AI 2026, targeting frontier training, high-volume inference, and sovereign HPC with HBM4 memory and encrypted GPU-to-GPU links. The launch extends AMD's push against Nvidia into physical AI, adding the Kria AI Solutions line, Ryzen AI Embedded X100 processors, and a Robotics Partner Network for edge and autonomous workloads.
-
-Microsoft shares some details on Azure outage that blocked Windows 11 update downloads (1 minute read)
-
-Microsoft published a partial post-incident writeup on the recent Azure outage that blocked Windows 11 update downloads and degraded other services. The company detailed the affected components and remediation steps but stopped short of a full root-cause analysis, leaving admins who deferred updates during the window without a clear timeline for when the disruption fully cleared.
-
-Palo Alto Networks targets application observability gains with latest acquisition (1 minute read)
-
-Palo Alto Networks acquired application-monitoring vendor Embrace to add real user monitoring to its observability platform, integrating the capabilities with its Cortex AgentiX service. The deal follows the $3.35B Chronosphere acquisition that closed in January and pairs with a new in-house Synthetics service, giving SRE teams a single view spanning frontend interactions, synthetic checks, and backend infrastructure.
-
-AMD challenges Nvidia’s networking dominance with Helios racks boasting 50% higher bandwidth (1 minute read)
-
-At AMD's Advancing AI event, the company detailed the networking behind Helios, its rack-scale rival to Nvidia's NVL72, built on a single-hop UALink-over-Ethernet fabric, Salina 400G DPUs, and second-gen Pensando "Vulcano" NICs that deliver 43 Tb/s of scale-out bandwidth, 50% more than Vera Rubin NVL72. Anthropic joined the neoclouds and hyperscalers signed on to deploy Helios, betting on Ethernet to break Nvidia's networking lock-in.
-
-AWS CloudFront outage serves errors instead of websites (5 minute read)
+AMD debuts next-generation AI infrastructure for frontier models, agentic workloads and autonomous robots (5 minute read)
 
 (blurb not generated)
-
-Nine-Year-Old RefluXFS Linux Flaw Gives Local Users Root on Default RHEL Installs (1 minute read)
-
-Qualys disclosed RefluXFS (CVE-2026-64600), a nine-year-old XFS race condition that lets an unprivileged local user overwrite root-owned files and win persistent root on default RHEL 8/9/10, Fedora Server, and Amazon Linux 2023 installs. Exploitation needs only a reflink=1 XFS filesystem shared between a readable target and an attacker-writable directory, so patch multi-tenant and CI hosts first and run xfs_info / to check exposure.
-
-Data centers forecast to use 20% of US power by 2035 — analysts estimate usage will rocket to 194 gigawatts, 83% more than forecast seven months ago (1 minute read)
-
-BloombergNEF nearly doubled its 2035 forecast for US data center power demand to 194 GW, projecting the sector will consume 20% of national electricity by 2035, up from 5.9% today. Even sustaining the record 7.1 GW of annual grid connections for a decade would leave a 19 GW shortfall, with nearly half the new capacity serving AI training and inference workloads.
 
 🚀
 Opinions & Tutorials
 
-When Kubeflow meets Cilium: Debugging 60% idle GPUs in Kubernetes (1 minute read)
+When Kubeflow meets Cilium: Debugging 60% idle GPUs in Kubernetes (5 minute read)
 
-The authors trace a class of Kubernetes failure where GPUs sit idle despite green health checks: Kubernetes and Kubeflow schedule pods topology-agnostically, while a CiliumNetworkPolicy drawn for zone isolation silently blocks the training coordinator from reaching workers in another availability zone. Because each system makes an individually correct decision, no single view shows both pod placement and the network boundary. The symptom ranges from an outright connection block to NCCL AllReduce paying cross-zone latency on every gradient sync.
+(blurb not generated)
 
 Characterizing Metastable Faults and Failures (5 minute read)
 
-A June 2026 paper offers the first analytical causal account of metastable failures, the self-sustaining goodput collapses that persist through retry and queue feedback loops even after the original trigger clears. It reframes a metastable fault as a "sin of composition" between individually stable components and ties the recovery mechanism to scheduling. The stakes are concrete: four of AWS's 15 major outages over a decade were metastable, lasting 1.5 to 73 hours, and these emergent failures resist the hardening that already covers obvious faults.
+(blurb not generated)
 
 Learning a few things about running SQLite (5 minute read)
 
 (blurb not generated)
 
-Multi-Cluster databases on Kubernetes: Architecture and deployment (1 minute read)
+Multi-Cluster databases on Kubernetes: Architecture and deployment (5 minute read)
 
-This CNCF post walks through building a multi-cluster MongoDB deployment on Kubernetes that survives regional outages, control-plane corruption, and network partitions, using the open-source Percona Operator as the worked example. All nodes across clusters join a single replica set so cross-cluster voting can elect a new primary automatically, unlocking disaster recovery, live migrations, and zero-downtime maintenance. The post notes similar patterns exist for relational workloads through Vitess and CloudNativePG.
+(blurb not generated)
 
 Why goodput matters more than throughput for LLM serving (5 minute read)
 
@@ -107,31 +111,27 @@ Why goodput matters more than throughput for LLM serving (5 minute read)
 
 Durable Objects are Made for Agents (5 minute read)
 
-The author argues Cloudflare Durable Objects are a near-perfect primitive for building agents, pairing an on-demand V8 isolate with a per-object SQLite instance and ID-based request routing so each agent gets its own addressable, stateful compute. Instead of stateless services talking to a shared database, you model the system as many event-driven objects woken by requests or alarms. The post also catalogs where DOs fall short, alongside a disclosed long position in NET.
+(blurb not generated)
 
-I made a policy engine think it was in production (1 minute read)
+I made a policy engine think it was in production (5 minute read)
 
-A Spring 2026 LFX mentee documents closing a known gap in the Kyverno CLI: policies using GlobalContextEntry references, which resolve live Kubernetes resources at evaluation time, would panic or silently skip rules in CI/CD where no API server exists. The post walks through the fixes, from a fake dynamic client missing List GVK registrations to offline RESTMapping failures, that let policy tests produce reports matching real cluster behavior. Useful for platform teams enforcing Kyverno as code in their pipelines.
+(blurb not generated)
 
 Platform engineering for the agentic enterprise (5 minute read)
 
 (blurb not generated)
 
-Grafana + Prometheus on a Raspberry Pi: Build a Telemetry Dashboard That Actually Stays Up (3 minute read)
+SequenceFI: Non-intrusive Temporal Fault Injection for Microservice Systems (5 minute read)
 
-This tutorial walks through building a Grafana and Prometheus stack on Raspberry Pi hardware to catch the failure modes that constrained ARM nodes hide, chief among them thermal throttling that silently drops clock speed before a crash without firing any alert. The author argues four signals cover most failures on low-power boards: SoC temperature, memory pressure including swap, disk iowait and queue depth, and per-interface network throughput. It ships a Docker Compose stack with real config and does alerting without AlertManager.
-
-Picking the Latest Kubernetes Release on AKS Without Shooting Yourself in the Foot (3 minute read)
-
-The author walks through choosing a Kubernetes version on AKS, explaining Microsoft's sliding N/N-1/N-2 support window and why clusters left on a retired minor keep running but lose security patches and support SLA coverage. The practical core is querying `az aks get-versions` against your actual deployment region, since availability is per-region and a version that's GA in East US may still be preview elsewhere. The takeaway is a defensible upgrade posture that avoids both surprise end-of-life and three-week fire drills.
-
-SequenceFI: Non-intrusive Temporal Fault Injection for Microservice Systems (1 minute read)
-
-This paper introduces SequenceFI, a non-intrusive framework that adds timing control to microservice fault injection, triggering faults only when temporal guards on observed message events are met. It targets timing-dependent failures that where-and-what tools miss: faults after state-changing side effects, order-sensitive concurrent responses, and partial failures across repeated downstream calls. On four Kubernetes benchmarks, it hit 100% temporal accuracy and cut end-to-end search time 95.9% versus H-Random, requiring no application code changes.
+(blurb not generated)
 
 Shipyard: How We Built Slack's Next-Generation EC2 Platform (5 minute read)
 
 (blurb not generated)
+
+ModelExpress: Distributing Model Artifacts at the Speed of Light (1 minute read)
+
+NVIDIA detailed ModelExpress, a system that cuts model-weight startup time by asking whether a compatible copy of the weights already lives on a serving peer before falling back to object storage. When a peer holds the weights in GPU, ModelExpress transfers them GPU-to-GPU over P2P RDMA via NIXL, skipping redundant reads from S3, local disk, and host memory. It moved DeepSeek-V4 Pro weights into a fresh replica in under 10 seconds, dropping cold-start time from 8 minutes to 1 minute 44 seconds.
 
 Automating cross-repo documentation with GitHub Agentic Workflows (5 minute read)
 
@@ -139,15 +139,15 @@ Automating cross-repo documentation with GitHub Agentic Workflows (5 minute read
 
 End-to-End Detection Validation Using Coding Agents (5 minute read)
 
-A team at DNB's Cyber Defense Center repurposed coding agents like Claude Code and Codex to run detection validation end to end, using a custom plugin that writes TTPForge attack simulations, ships them to an isolated lab host over SSH, detonates them, and queries Splunk to confirm the detection fired. The agent rewrites and retries when a step fails, running unattended across a sample of mostly Windows detections. The loop surfaced small, mechanical pipeline issues that had slipped past code review, without a human driving each validation run by hand.
+(blurb not generated)
 
-Reselling unused cloud instances is no longer easy (2 minute read)
+Reselling unused cloud instances is no longer easy (5 minute read)
 
-The author argues the secondary market for reselling unused cloud reserved instances has effectively collapsed, after a client stuck with thousands of dollars in idle AI-training capacity found no way to offload it. AWS once ran a sanctioned Reserved Instances Marketplace that added liquidity to rigid commitments, but that exit path has grown restricted just as AI overprovisioning makes stranded capacity common. The takeaway for platform teams: model reserved-instance commitments as sunk cost, because reselling your way out is no longer a reliable option.
+(blurb not generated)
 
-Modernize Java with Cursor and GitLab (3 minute read)
+Modernize Java with Cursor and GitLab (5 minute read)
 
-This tutorial walks through migrating a Java 8 HTTP metrics collector to Java 21 by pairing Cursor's coding agent with GitLab's Duo Agent Platform, deliberately scoping the agent to one bounded change at a time rather than one giant migration prompt. The argument is that speed inside a boundary is only safe when GitLab's CI/CD, security scanning, code owner approvals, and impact analysis hold every agent-created merge request to the same review standard as human work.
+(blurb not generated)
 
 ⚒️
 Launches & Tools
@@ -156,30 +156,26 @@ Securing the AI supply chain on GKE: Introducing k8s-aibom for automated AI BOMs
 
 (blurb not generated)
 
-One service, many doors: Multi-port services in Consul (1 minute read)
+One service, many doors: Multi-port services in Consul (5 minute read)
 
-Consul 1.22 adds native multi-port services, letting a single service register a list of named ports (http, admin, metrics) under one identity instead of splitting into separate order-http, order-admin, and order-metrics registrations. A default port keeps single-port clients working while newer clients query specific ports by name over DNS, collapsing catalog clutter and aligning Consul registrations with the Kubernetes services and intentions teams already model.
+(blurb not generated)
 
 Cloudflare Internal DNS is now generally available (5 minute read)
 
 (blurb not generated)
 
-Terraform introduces workspaces and Stacks restore, and more (1 minute read)
+Terraform introduces workspaces and Stacks restore, and more (5 minute read)
 
-HashiCorp shipped a quarter of HCP Terraform and Terraform Enterprise updates, headlined by GA workspaces and Stacks restore, which moves deleted workspaces or stacks to a Recoverable Items page for 30 days and lets admins one-click restore state, run history, and config. The batch also includes GA monorepo support for Stacks, a public-beta guided CLI migration from workspaces to Stacks, and project and workspace policy override permissions to tighten governance.
+(blurb not generated)
 
-Introducing Cache Response Rules (1 minute read)
+Introducing Cache Response Rules (5 minute read)
 
-Cloudflare launched Cache Response Rules, a new rule type that runs after the origin replies but before Cloudflare caches, letting teams strip or rewrite Set-Cookie, Cache-Control, and ETag headers that would otherwise force cacheable assets back to origin. It targets cache-eligibility problems that only surface post-response, recovering hit ratio and cutting the origin bandwidth and infrastructure spend that accidental headers leak.
+(blurb not generated)
 
-GitLab previews auto-remediation of vulnerable dependencies (1 minute read)
+GitLab previews auto-remediation of vulnerable dependencies (5 minute read)
 
-GitLab released GitLab 19.2, whose public-beta Dependency Scanning Auto-Remediation uses AI to patch vulnerable dependencies and iterates until the pipeline passes, with every change routed through existing gates and audit trails. The update also adds Security Review Flow to catch authorization gaps and race conditions that static scanners miss, and promotes the GitLab Duo CLI to general availability for running agents without leaving the terminal.
+(blurb not generated)
 
 Introducing Antares: Highly Efficient Open Weight AI Models for Vulnerability Localization (5 minute read)
 
-Cisco released Antares, a family of open-weight security small language models purpose-built to localize known vulnerabilities in a codebase, with Antares-350M and Antares-1B now on Hugging Face. Cisco's benchmarks show the models beating larger closed- and open-weight rivals at a fraction of the inference cost, and they run locally so teams avoid shipping sensitive source to the cloud.
-
-Cloudflare private domain name service aims to defrag network sprawl and drift (1 minute read)
-
-Cloudflare made its Internal DNS service generally available, giving teams one platform to resolve private hostnames, enforce query policies through the Gateway Resolver, and serve authoritative records for internal zones alongside their public DNS. The service targets the drift and blast radius of split-horizon setups and per-cloud DNS silos, and works over Cloudflare WAN without deploying the Cloudflare One Client agent on each device.
+(blurb not generated)

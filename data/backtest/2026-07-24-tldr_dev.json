@@ -1,9 +1,25 @@
 {
   "date": "2026-07-24",
   "newsletter": "tldr_dev",
-  "fetched_at": "2026-07-24T08:49:52.605423+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-07-24T18:58:27.555851+00:00",
+  "tldr_titles": [
+    "Rebuilding FIFA Standings Layout with CSS Subgrid",
+    "Why Software Factories Fail",
+    "Do we need state management libraries anymore?",
+    "An opinionated guide to which AI to use to do stuff",
+    "The Arguments Against Open Source AI are Very Bad",
+    "Which AI actually reads your site? Two months of LLM traffic, measured",
+    "New trend - concern about massive increase in code review load"
+  ],
+  "tldr_matched": [
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -18,8 +34,8 @@
       "score": 75.0,
       "title": "Why Software Factories Fail (or: harness engineering is not enough)",
       "url": "https://github.com/humanlayer/advanced-context-engineering-for-coding-agents/blob/main/wsff.md",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 1,
+      "similarity": 1.0
     },
     {
       "rank": 3,
@@ -111,6 +127,14 @@
     },
     {
       "rank": 14,
+      "score": 62.0,
+      "title": "Buz \u2013 A fork of Bun using modern Zig, with sub-1s incremental builds",
+      "url": "https://ziggit.dev/t/buz-a-drop-in-replacement-for-bun-using-modern-zig-with-sub-1s-incremental-builds/16891",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 15,
       "score": 61.0,
       "title": "Aurora DSQL: Scalable, Multi-Region OLTP",
       "url": "https://arxiv.org/pdf/2607.13276",
@@ -118,7 +142,7 @@
       "similarity": null
     },
     {
-      "rank": 15,
+      "rank": 16,
       "score": 61.0,
       "title": "Sierra MCP Gateway Dev Diary",
       "url": "https://blog.persistent.info/2026/07/sierra-mcp-gateway-dev-diary.html",
@@ -126,7 +150,7 @@
       "similarity": null
     },
     {
-      "rank": 16,
+      "rank": 17,
       "score": 60.0,
       "title": "I burned all my tokens researching how to save tokens",
       "url": "https://quesma.com/blog/custom-deep-research-pipeline/",
@@ -134,7 +158,7 @@
       "similarity": null
     },
     {
-      "rank": 17,
+      "rank": 18,
       "score": 60.0,
       "title": "From Weeks to a Day: How We Made LLM Evaluation Fast Enough to Iterate on",
       "url": "https://medium.com/airbnb-engineering/from-weeks-to-a-day-how-we-made-llm-evaluation-fast-enough-to-iterate-on-14e2d35198b4",
@@ -142,7 +166,7 @@
       "similarity": null
     },
     {
-      "rank": 18,
+      "rank": 19,
       "score": 60.0,
       "title": "Software rendering in 500 lines of bare C++",
       "url": "https://haqr.eu/tinyrenderer/",
@@ -150,7 +174,7 @@
       "similarity": null
     },
     {
-      "rank": 19,
+      "rank": 20,
       "score": 60.0,
       "title": "The startup's Postgres survival guide",
       "url": "https://hatchet.run/blog/postgres-survival-guide",
@@ -158,7 +182,7 @@
       "similarity": null
     },
     {
-      "rank": 20,
+      "rank": 21,
       "score": 60.0,
       "title": "Copilot vs. raw API access: What are you actually paying for?",
       "url": "https://github.blog/ai-and-ml/github-copilot/copilot-vs-raw-api-access-what-are-you-actually-paying-for/",
@@ -166,7 +190,7 @@
       "similarity": null
     },
     {
-      "rank": 21,
+      "rank": 22,
       "score": 60.0,
       "title": "Claude Is Not a Compiler",
       "url": "https://blog.exe.dev/claude-is-not-a-compiler",
@@ -174,7 +198,7 @@
       "similarity": null
     },
     {
-      "rank": 22,
+      "rank": 23,
       "score": 60.0,
       "title": "Not just development, distribution of software may change as well",
       "url": "https://antirez.com/news/170",
@@ -182,7 +206,7 @@
       "similarity": null
     },
     {
-      "rank": 23,
+      "rank": 24,
       "score": 60.0,
       "title": "Show HN: Bento - An entire PowerPoint in one HTML file (edit+view+data+collab)",
       "url": "https://bento.page/slides/",
@@ -190,7 +214,7 @@
       "similarity": null
     },
     {
-      "rank": 24,
+      "rank": 25,
       "score": 58.0,
       "title": "PerfAgent: Profiler-Guided Iterative Refinement for Repository-Level Code Optimization",
       "url": "http://arxiv.org/abs/2607.19653v1",
@@ -198,7 +222,7 @@
       "similarity": null
     },
     {
-      "rank": 25,
+      "rank": 26,
       "score": 58.0,
       "title": "Perplexity launches SPACE runtime for AI agent tasks",
       "url": "https://research.perplexity.ai/articles/making-space-secure-and-efficient-runtimes-for-long-running-agents",
@@ -206,7 +230,7 @@
       "similarity": null
     },
     {
-      "rank": 26,
+      "rank": 27,
       "score": 58.0,
       "title": "How Our Universal Content Processing Platform Riviera Evolved for AI and Beyond",
       "url": "https://dropbox.tech/infrastructure/how-our-universal-content-processing-platform-riviera-evolved-for-ai-and-beyond",
@@ -214,7 +238,7 @@
       "similarity": null
     },
     {
-      "rank": 27,
+      "rank": 28,
       "score": 58.0,
       "title": "Model Context Protocol prepares to break with its stateful past",
       "url": "https://www.theregister.com/devops/2026/07/23/model-context-protocol-prepares-to-break-with-its-stateful-past/5276722",
@@ -222,7 +246,7 @@
       "similarity": null
     },
     {
-      "rank": 28,
+      "rank": 29,
       "score": 58.0,
       "title": "Code Yellow, Code Red",
       "url": "https://theengineeringmanager.substack.com/p/code-yellow-code-red",
@@ -230,7 +254,15 @@
       "similarity": null
     },
     {
-      "rank": 29,
+      "rank": 30,
+      "score": 58.0,
+      "title": "Model Context Protocol is going stateless to make scaling simpler",
+      "url": "https://www.infoworld.com/article/4201254/model-context-protocol-is-going-stateless-to-make-scaling-simpler.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 31,
       "score": 58.0,
       "title": "Show HN: Echo \u2013 Fable-level results at 1/3 the cost using open-weight models",
       "url": "https://news.ycombinator.com/item?id=49026810",
@@ -238,7 +270,7 @@
       "similarity": null
     },
     {
-      "rank": 30,
+      "rank": 32,
       "score": 58.0,
       "title": "Claude Code brings live iOS app testing into its Mac app",
       "url": "https://9to5mac.com/2026/07/21/claude-code-brings-live-ios-app-testing-into-its-mac-app/",
@@ -246,15 +278,15 @@
       "similarity": null
     },
     {
-      "rank": 31,
+      "rank": 33,
       "score": 58.0,
-      "title": "Visual Studio Code 1.130 shines on Agents window",
-      "url": "https://www.infoworld.com/article/4200970/visual-studio-code-1-130-shines-on-agents-window.html",
+      "title": "Visual Studio Code 1.130 dresses up Agents window",
+      "url": "https://www.infoworld.com/article/4200970/visual-studio-code-1-130-improves-agents-window.html",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 32,
+      "rank": 34,
       "score": 58.0,
       "title": "New pip flag fixes longstanding Python frustration",
       "url": "https://www.infoworld.com/article/4200712/new-pip-flag-fixes-longstanding-python-frustration.html",
@@ -262,7 +294,7 @@
       "similarity": null
     },
     {
-      "rank": 33,
+      "rank": 35,
       "score": 58.0,
       "title": "G# language for .NET borrows from Go, Kotlin, and Swift",
       "url": "https://www.infoworld.com/article/4200337/g-sharp-language-for-net-borrows-from-go-kotlin-and-swift.html",
@@ -270,7 +302,7 @@
       "similarity": null
     },
     {
-      "rank": 34,
+      "rank": 36,
       "score": 58.0,
       "title": "Show HN: Palmier Pro \u2013 Open-source macOS video editor built for AI",
       "url": "https://github.com/palmier-io/palmier-pro",
@@ -278,7 +310,7 @@
       "similarity": null
     },
     {
-      "rank": 35,
+      "rank": 37,
       "score": 58.0,
       "title": "JEP 540: Simple JSON API (Now in Incubator)",
       "url": "https://openjdk.org/jeps/540",
@@ -286,7 +318,7 @@
       "similarity": null
     },
     {
-      "rank": 36,
+      "rank": 38,
       "score": 58.0,
       "title": "Cruller: Bun's Zig Runtime, Continued on Zig 0.16",
       "url": "https://ziggit.dev/t/cruller-buns-zig-runtime-continued-on-zig-0-16/16734",
@@ -294,7 +326,7 @@
       "similarity": null
     },
     {
-      "rank": 37,
+      "rank": 39,
       "score": 58.0,
       "title": "Claude Code Can Now Build and Test iOS Apps in Apple's Simulator",
       "url": "https://www.macrumors.com/2026/07/21/claude-code-ios-simulator/",
@@ -302,7 +334,23 @@
       "similarity": null
     },
     {
-      "rank": 38,
+      "rank": 40,
+      "score": 57.0,
+      "title": "Top AIs invent same fake PyPl and npm package names",
+      "url": "https://www.infoworld.com/article/4200884/top-ais-invent-same-fake-pypl-and-npm-package-names.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 41,
+      "score": 57.0,
+      "title": "LLMs reward expertise",
+      "url": "https://seangoedecke.com/llms-reward-expertise/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 42,
       "score": 57.0,
       "title": "The case for a cooldown: Why Dependabot now waits before issuing version updates",
       "url": "https://github.blog/security/supply-chain-security/the-case-for-a-cooldown-why-dependabot-now-waits-before-issuing-version-updates/",
@@ -310,7 +358,7 @@
       "similarity": null
     },
     {
-      "rank": 39,
+      "rank": 43,
       "score": 57.0,
       "title": "Cursor, Codex, Gemini CLI, Antigravity hit by sandbox escapes",
       "url": "https://www.bleepingcomputer.com/news/security/cursor-codex-gemini-cli-antigravity-hit-by-sandbox-escapes/",
@@ -318,7 +366,7 @@
       "similarity": null
     },
     {
-      "rank": 40,
+      "rank": 44,
       "score": 57.0,
       "title": "10 REM\"_(C2SLFF4",
       "url": "https://beej.us/blog/data/mystery-comment/",
@@ -326,15 +374,15 @@
       "similarity": null
     },
     {
-      "rank": 41,
+      "rank": 45,
       "score": 56.0,
       "title": "Software Factories, Light and Dark",
       "url": "https://x.com/addyosmani/status/2079442194449232227",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 1,
+      "similarity": 0.7388544678688049
     },
     {
-      "rank": 42,
+      "rank": 46,
       "score": 56.0,
       "title": "WSL container: A quiet revolution for Windows development",
       "url": "https://www.infoworld.com/article/4200182/wsl-container-a-quiet-revolution-for-windows-development.html",
@@ -342,7 +390,7 @@
       "similarity": null
     },
     {
-      "rank": 43,
+      "rank": 47,
       "score": 56.0,
       "title": "Cisco\u2019s new AI model tells code reviewers where to look for vulnerabilities",
       "url": "https://www.infoworld.com/article/4200143/ciscos-new-ai-model-tells-code-reviewers-where-to-look-for-vulnerabilities.html",
@@ -350,15 +398,7 @@
       "similarity": null
     },
     {
-      "rank": 44,
-      "score": 56.0,
-      "title": "I turned a photo of my handwriting into a real font, then open-sourced the whole pipeline",
-      "url": "https://dev.to/danilo1/i-turned-a-photo-of-my-handwriting-into-a-real-font-then-open-sourced-the-whole-pipeline-m7m",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 45,
+      "rank": 48,
       "score": 56.0,
       "title": "Microsoft lands Visual Studio Code 1.130 with agent rearchitecturing",
       "url": "https://www.neowin.net/news/microsoft-lands-visual-studio-code-1130-with-agent-rearchitecturing/?utm_source=rss",
@@ -366,7 +406,7 @@
       "similarity": null
     },
     {
-      "rank": 46,
+      "rank": 49,
       "score": 56.0,
       "title": "Connect your AI tools to Clerk MCP with one command",
       "url": "https://clerk.com/changelog/2026-07-22-clerk-mcp",
@@ -374,7 +414,7 @@
       "similarity": null
     },
     {
-      "rank": 47,
+      "rank": 50,
       "score": 56.0,
       "title": "Fable just found a 15-30% memory efficiency improvement in Turbopack/Next.js",
       "url": "https://threadreaderapp.com/thread/2080098518535110913.html",
@@ -382,7 +422,15 @@
       "similarity": null
     },
     {
-      "rank": 48,
+      "rank": 51,
+      "score": 56.0,
+      "title": "Opus 5 improves coding, reasoning efficiency, and prompt-cache-friendly tool use, and is priced at $5/1M input tokens and $25/1M output, same as Opus 4.8 (David Gewirtz/ZDNET)",
+      "url": "https://www.techmeme.com/260724/p20#a260724p20",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 52,
       "score": 55.0,
       "title": "You only need the frontier model for one single edit",
       "url": "https://stencil.so/blog/prewalk",
@@ -390,25 +438,45 @@
       "similarity": null
     },
     {
-      "rank": 49,
+      "rank": 53,
       "score": 55.0,
       "title": "Agentic coding goes hands-free as OpenAI brings GPT-Live's full duplex voice control to Codex and ChatGPT on the desktop",
       "url": "https://venturebeat.com/orchestration/agentic-coding-goes-hands-free-as-openai-brings-gpt-lives-full-duplex-voice-control-to-codex-and-chatgpt-on-the-desktop",
       "matched_tldr_idx": null,
       "similarity": null
-    },
-    {
-      "rank": 50,
-      "score": 55.0,
-      "title": "Cursor Router",
-      "url": "https://x.com/cursor_ai/status/2079993729532989500",
-      "matched_tldr_idx": null,
-      "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.14285714285714285,
+    "25": 0.14285714285714285,
+    "50": 0.14285714285714285,
+    "100": 0.14285714285714285,
+    "53": 0.14285714285714285
+  },
+  "hits_at": {
+    "10": 1,
+    "25": 1,
+    "50": 1,
+    "100": 1,
+    "53": 1
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://ishadeed.com/article/fifa-layout/",
+    "https://github.com/humanlayer/advanced-context-engineering-for-coding-agents/blob/main/wsff.md",
+    "https://neciudan.dev/do-we-need-state-management-libraries",
+    "https://www.oneusefulthing.org/p/an-opinionated-guide-to-which-ai-b22",
+    "https://tombedor.dev/arguments-against-open-source-ai-are-very-bad/",
+    "https://evilmartians.com/chronicles/which-ai-actually-reads-your-site-two-months-of-llm-traffic-measured",
+    "https://newsletter.pragmaticengineer.com/p/the-pulse-new-trend-concern-about"
+  ],
+  "tldr_domains": [
+    "ishadeed.com",
+    "github.com",
+    "neciudan.dev",
+    "oneusefulthing.org",
+    "tombedor.dev",
+    "evilmartians.com",
+    "newsletter.pragmaticengineer.com"
+  ]
 }
