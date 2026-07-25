@@ -1,0 +1,161 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR DevOps 2026-07-25
+
+📱
+News & Trends
+
+BGP ORIGIN attribute manipulation and its impact on the Internet (5 minute read)
+
+(blurb not generated)
+
+Kimi K3 Agents Found Redis Zero-Days and Built RCE Exploit, Researchers Say (5 minute read)
+
+(blurb not generated)
+
+Minimize idle accelerators: Native RL job interleaving with co-operative time-slicing in llm-d (2 minute read)
+
+Google introduced co-operative time-slicing in the llm-d project, which treats RL post-training steps like sampling and gradient training as schedulable units so independent RL jobs can interleave on shared accelerators. Google's benchmarks show aggregate accelerator duty cycles rising from a ~40% baseline to 70% without hurting model convergence, cutting idle-GPU waste and lowering TCO for GRPO-style workloads.
+
+Confidential Containers becomes a CNCF incubating project (1 minute read)
+
+The CNCF Technical Oversight Committee voted to promote Confidential Containers to incubating status, advancing the project's use of hardware TEEs to encrypt data in use for sensitive Kubernetes workloads on untrusted infrastructure. Backed by Azure, Intel, AMD, IBM, NVIDIA, and Red Hat, the project integrates confidential computing into standard k8s workflows via the Kata Containers runtime and is now being wired into KServe for confidential AI.
+
+RefluXFS: A Linux Kernel Local Privilege Escalation to Root in XFS (CVE-2026-64600) (5 minute read)
+
+Qualys disclosed CVE-2026-64600, a race condition in the Linux kernel's XFS copy-on-write path that lets any local unprivileged user overwrite protected files at the block layer and escalate to host root, even under SELinux Enforcing. The flaw has existed since kernel 4.11 and ships in default RHEL, Oracle Linux, Amazon Linux, and Fedora installs, with no reliable mitigation short of patching and rebooting.
+
+Microsoft blames massive Microsoft 365 outage on maintenance bug (5 minute read)
+
+(blurb not generated)
+
+The case for a cooldown: Why Dependabot now waits before issuing version updates (1 minute read)
+
+Dependabot now enforces a default three-day cooldown before opening non-security version-update pull requests, giving maintainers, security researchers, and scanners time to catch a malicious release before it reaches your build pipeline. The change targets supply-chain attacks like the September 2025 npm compromise of chalk and debug, where poisoned versions of packages downloaded 2 billion times a week stayed live for two hours, and the cooldown window stays configurable in dependabot.yml.
+
+CIOs beware: DNS KSK rollover could kick off wave of mysterious outages (5 minute read)
+
+(blurb not generated)
+
+OpenTelemetry has graduated… Now what? (5 minute read)
+
+(blurb not generated)
+
+Default Azure Automation Setting Enables Cross-Tenant Identity Takeover (5 minute read)
+
+(blurb not generated)
+
+Cloudflare WAF protects WordPress applications from two high-severity vulnerabilities (5 minute read)
+
+(blurb not generated)
+
+Microsoft fiber foul-up cut off Azure California for almost five hours (1 minute read)
+
+A cut fiber line took Azure offline across California for nearly five hours, disrupting customer workloads in the affected region until Microsoft rerouted traffic around the damaged path. The outage renews questions about single-path fiber dependencies in cloud regions, where physical-layer failures still translate directly into control-plane and workload downtime despite redundancy claims.
+
+Cloudflare Internal DNS puts public and private DNS on one policy engine (5 minute read)
+
+(blurb not generated)
+
+Microsoft explains why its West US Azure and cloud services failed (5 minute read)
+
+(blurb not generated)
+
+Linux XFS has a decade-old race condition allowing full root access (2 minute read)
+
+Qualys disclosed RefluXFS (CVE-2026-64600), a race condition in the Linux kernel's XFS reflink copy-on-write path that lets an unprivileged local user overwrite any readable file at the block layer and escalate to root. The flaw has shipped in every kernel since 4.11 in 2017, affects an estimated 16.4 million enterprise systems including RHEL 8-10, and leaves no kernel log output, with a patch released last week.
+
+OpenSSL HollowByte Flaw Could Freeze Server Memory with 11-Byte TLS Requests (5 minute read)
+
+(blurb not generated)
+
+AMD debuts next-generation AI infrastructure for frontier models, agentic workloads and autonomous robots (1 minute read)
+
+AMD announced its Instinct MI400 Series GPUs and sixth-generation EPYC CPUs at Advancing AI 2026, targeting frontier training, high-volume inference, and sovereign HPC with HBM4 memory and encrypted GPU-to-GPU links. The launch extends AMD's push against Nvidia into physical AI, adding the Kria AI Solutions line, Ryzen AI Embedded X100 processors, and a Robotics Partner Network for edge and autonomous workloads.
+
+Microsoft shares some details on Azure outage that blocked Windows 11 update downloads (1 minute read)
+
+Microsoft published a partial post-incident writeup on the recent Azure outage that blocked Windows 11 update downloads and degraded other services. The company detailed the affected components and remediation steps but stopped short of a full root-cause analysis, leaving admins who deferred updates during the window without a clear timeline for when the disruption fully cleared.
+
+Palo Alto Networks targets application observability gains with latest acquisition (1 minute read)
+
+Palo Alto Networks acquired application-monitoring vendor Embrace to add real user monitoring to its observability platform, integrating the capabilities with its Cortex AgentiX service. The deal follows the $3.35B Chronosphere acquisition that closed in January and pairs with a new in-house Synthetics service, giving SRE teams a single view spanning frontend interactions, synthetic checks, and backend infrastructure.
+
+AMD challenges Nvidia’s networking dominance with Helios racks boasting 50% higher bandwidth (1 minute read)
+
+At AMD's Advancing AI event, the company detailed the networking behind Helios, its rack-scale rival to Nvidia's NVL72, built on a single-hop UALink-over-Ethernet fabric, Salina 400G DPUs, and second-gen Pensando "Vulcano" NICs that deliver 43 Tb/s of scale-out bandwidth, 50% more than Vera Rubin NVL72. Anthropic joined the neoclouds and hyperscalers signed on to deploy Helios, betting on Ethernet to break Nvidia's networking lock-in.
+
+🚀
+Opinions & Tutorials
+
+When Kubeflow meets Cilium: Debugging 60% idle GPUs in Kubernetes (1 minute read)
+
+The authors trace a class of Kubernetes failure where GPUs sit idle despite green health checks: Kubernetes and Kubeflow schedule pods topology-agnostically, while a CiliumNetworkPolicy drawn for zone isolation silently blocks the training coordinator from reaching workers in another availability zone. Because each system makes an individually correct decision, no single view shows both pod placement and the network boundary. The symptom ranges from an outright connection block to NCCL AllReduce paying cross-zone latency on every gradient sync.
+
+Building a Custom Metrics Exporter for Kubernetes (5 minute read)
+
+(blurb not generated)
+
+Characterizing Metastable Faults and Failures (5 minute read)
+
+A June 2026 paper offers the first analytical causal account of metastable failures, the self-sustaining goodput collapses that persist through retry and queue feedback loops even after the original trigger clears. It reframes a metastable fault as a "sin of composition" between individually stable components and ties the recovery mechanism to scheduling. The stakes are concrete: four of AWS's 15 major outages over a decade were metastable, lasting 1.5 to 73 hours, and these emergent failures resist the hardening that already covers obvious faults.
+
+Learning a few things about running SQLite (5 minute read)
+
+(blurb not generated)
+
+Why goodput matters more than throughput for LLM serving (5 minute read)
+
+(blurb not generated)
+
+Multi-Cluster databases on Kubernetes: Architecture and deployment (1 minute read)
+
+This CNCF post walks through building a multi-cluster MongoDB deployment on Kubernetes that survives regional outages, control-plane corruption, and network partitions, using the open-source Percona Operator as the worked example. All nodes across clusters join a single replica set so cross-cluster voting can elect a new primary automatically, unlocking disaster recovery, live migrations, and zero-downtime maintenance. The post notes similar patterns exist for relational workloads through Vitess and CloudNativePG.
+
+Durable Objects are Made for Agents (5 minute read)
+
+The author argues Cloudflare Durable Objects are a near-perfect primitive for building agents, pairing an on-demand V8 isolate with a per-object SQLite instance and ID-based request routing so each agent gets its own addressable, stateful compute. Instead of stateless services talking to a shared database, you model the system as many event-driven objects woken by requests or alarms. The post also catalogs where DOs fall short, alongside a disclosed long position in NET.
+
+Platform engineering for the agentic enterprise (5 minute read)
+
+(blurb not generated)
+
+Postgres LISTEN/NOTIFY actually scales (1 minute read)
+
+The DBOS team pushes back on the widely cited claim that Postgres LISTEN/NOTIFY can't scale, tracing the real bottleneck to a global exclusive lock that NOTIFY takes on every write. Their naive trigger-per-chunk implementation capped out at 2.9K writes per second without saturating CPU, memory, or IOPS. After batching notifications to sidestep the lock, they sustained 60K stream writes per second on a single server with millisecond-scale latency, making Postgres a viable backbone for durable pub/sub and token streaming.
+
+ModelExpress: Distributing Model Artifacts at the Speed of Light (5 minute read)
+
+(blurb not generated)
+
+Demystifying AI Exploits: A Blueprint for AI-Assisted Vulnerability Management (5 minute read)
+
+(blurb not generated)
+
+End-to-End Detection Validation Using Coding Agents (5 minute read)
+
+A team at DNB's Cyber Defense Center repurposed coding agents like Claude Code and Codex to run detection validation end to end, using a custom plugin that writes TTPForge attack simulations, ships them to an isolated lab host over SSH, detonates them, and queries Splunk to confirm the detection fired. The agent rewrites and retries when a step fails, running unattended across a sample of mostly Windows detections. The loop surfaced small, mechanical pipeline issues that had slipped past code review, without a human driving each validation run by hand.
+
+Self-host your mail server (1 minute read)
+
+The author argues that self-hosting a mail server is viable in 2026, contradicting the common warning that email is the one service you should never run yourself. The practical checklist is short: a static, non-blacklisted IPv4 outside CGNAT, a controllable PTR record, and open ports 25/143/465/587/993, after which docker-mailserver, Stalwart, or Mailcow handle the rest. Home hosting survives outages because senders retry failed deliveries, so anything under 40% daily downtime still delivers.
+
+⚒️
+Launches & Tools
+
+Securing the AI supply chain on GKE: Introducing k8s-aibom for automated AI BOMs (5 minute read)
+
+(blurb not generated)
+
+Cloudflare Internal DNS is now generally available (5 minute read)
+
+(blurb not generated)
+
+Introducing Cache Response Rules (1 minute read)
+
+Cloudflare launched Cache Response Rules, a new rule type that runs after the origin replies but before Cloudflare caches, letting teams strip or rewrite Set-Cookie, Cache-Control, and ETag headers that would otherwise force cacheable assets back to origin. It targets cache-eligibility problems that only surface post-response, recovering hit ratio and cutting the origin bandwidth and infrastructure spend that accidental headers leak.
+
+Introducing Antares: Highly Efficient Open Weight AI Models for Vulnerability Localization (5 minute read)
+
+Cisco released Antares, a family of open-weight security small language models purpose-built to localize known vulnerabilities in a codebase, with Antares-350M and Antares-1B now on Hugging Face. Cisco's benchmarks show the models beating larger closed- and open-weight rivals at a fraction of the inference cost, and they run locally so teams avoid shipping sensitive source to the cloud.

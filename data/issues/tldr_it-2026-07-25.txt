@@ -1,0 +1,164 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR IT 2026-07-25
+
+🚀
+News & Trends
+
+Veterans Affairs signs $1.6B deal for an army of Salesforce AI agents (5 minute read)
+
+(blurb not generated)
+
+Microsoft blames massive Microsoft 365 outage on maintenance bug (5 minute read)
+
+(blurb not generated)
+
+EU telcos ask: Huawei going to afford to replace Chinese equipment? (5 minute read)
+
+(blurb not generated)
+
+‘We are now seeing MAI models outperform general-purpose frontier models’: Microsoft CEO Satya Nadella touts in-house models to cut spiralling AI costs – and reduce growing reliance on frontier labs (5 minute read)
+
+(blurb not generated)
+
+CIOs beware: DNS KSK rollover could kick off wave of mysterious outages (5 minute read)
+
+(blurb not generated)
+
+IBM attributes mainframe revenue collapse to delays, not destruction (1 minute read)
+
+IBM CEO Arvind Krishna said the sharp drop in mainframe revenue reflects delayed purchases rather than a structural decline, as customers pulled server budgets forward to beat looming price hikes. Krishna framed the shortfall as timing-driven demand that IBM expects to recover, a read that matters for enterprises weighing whether to keep committing to Z-series infrastructure or accelerate migration off the platform.
+
+Microsoft fiber foul-up cut off Azure California for almost five hours (1 minute read)
+
+A fiber cable failure knocked out Microsoft Azure services across its California region for nearly five hours, disrupting compute, storage, and networking for customers in the West US zone. The incident renews scrutiny of single-region dependency for enterprises that haven't architected multi-region failover on Azure, and adds to Microsoft's recent run of reliability problems weighing on its cloud SLA credibility.
+
+Oracle signs 10-year software contract with Pentagon worth up to $7 billion (1 minute read)
+
+Oracle signed a 10-year Pentagon software contract worth up to $7 billion, covering on-premises database and application licenses, maintenance, and consulting for the military branches, intelligence community, and Coast Guard. The deal, which the DoD says saves taxpayers at least $441 million through consolidated procurement, hands Oracle a durable government revenue anchor as its shares sit down 38% this year on AI-driven concerns about software incumbents.
+
+Databricks and Microsoft expand Azure partnership into the 2030s (1 minute read)
+
+Databricks and Microsoft extended their strategic partnership into the 2030s, with Databricks moving core operations and its lakehouse onto Azure and adopting Microsoft's Arm-based Cobalt 200 chips for agentic AI workloads. Microsoft will deepen Databricks integrations across Microsoft 365, Teams, Copilot, Power BI, OneLake, Purview, and Foundry, embedding Databricks Genie and Unity Catalog governance into its enterprise stack.
+
+Russian hackers exploit Zimbra zero-click flaw for email theft (1 minute read)
+
+CISA warned that Russian state-sponsored group Laundry Bear, also tracked as Void Blizzard, is exploiting a now-patched zero-click Zimbra Collaboration XSS flaw (CVE-2025-66376) to steal 90 days of email, credentials, and 2FA tokens from defense, government, energy, and technology organizations. The attack bypasses MFA by generating Zimbra app passcodes for legacy IMAP and ActiveSync clients, so any organization running unpatched Zimbra servers should patch and audit access immediately.
+
+Linux XFS has a decade-old race condition allowing full root access (2 minute read)
+
+Qualys disclosed RefluXFS (CVE-2026-64600), a decade-old XFS race condition that lets an unprivileged local user overwrite any readable file at the block layer and escalate to root on Linux 4.11 or later with reflink enabled. The flaw affects an estimated 16.4 million systems, including default RHEL 8, 9, and 10 and CentOS Stream deployments, and patches shipped last week.
+
+Default Azure Automation Setting Enables Cross-Tenant Identity Takeover (5 minute read)
+
+(blurb not generated)
+
+OpenAI Presence raises new questions about enterprise automation and jobs (2 minute read)
+
+OpenAI launched Presence, a limited-availability enterprise service for deploying voice and chat agents that resolve customer and employee requests, with integration handled by OpenAI or its systems-integrator partners. OpenAI says the agents resolved 75% of inbound issues without human help in its own support channel, though analysts warn fragmented enterprise systems will cap automation and point to slower hiring rather than immediate cuts.
+
+Microsoft explains why its West US Azure and cloud services failed (5 minute read)
+
+(blurb not generated)
+
+Microsoft shares some details on Azure outage that blocked Windows 11 update downloads (1 minute read)
+
+Microsoft published a partial post-mortem on the recent Azure outage that blocked Windows 11 update downloads and disrupted other services. The disclosure gives enterprise IT teams limited root-cause detail to feed their own incident reviews and reinforces the patch-delivery risk of routing update infrastructure through a single cloud provider.
+
+AMD and Cerebras join forces against Nvidia’s Groq LPUs (1 minute read)
+
+AMD and Cerebras partnered to position their combined inference stack against Nvidia's dominance in high-speed AI serving, pairing AMD's Instinct accelerators with Cerebras wafer-scale systems tuned for low-latency LPU-style workloads. The alliance gives enterprise buyers a credible second source for inference capacity, pressuring Nvidia on both price and lead times as procurement teams look to diversify away from a single AI-silicon vendor.
+
+Bing Images Flaws Let Crafted SVGs Run Commands as SYSTEM on Microsoft's Servers (5 minute read)
+
+(blurb not generated)
+
+Kimi K3 Agents Found Redis Zero-Days and Built RCE Exploit, Researchers Say (5 minute read)
+
+(blurb not generated)
+
+Nine-Year-Old RefluXFS Linux Flaw Gives Local Users Root on Default RHEL Installs (1 minute read)
+
+Qualys disclosed RefluXFS (CVE-2026-64600), a nine-year-old Linux kernel flaw that lets an unprivileged local user overwrite root-owned files on reflink-enabled XFS filesystems and gain persistent root, with default installs of RHEL 8-10, Fedora Server, and Amazon Linux 2023 exposed. The fix merged July 16 and vendors are shipping backported kernels, but IT teams should prioritize multi-tenant and CI hosts where untrusted code runs locally.
+
+Check Point Patches Exploited SmartConsole Flaw Allowing Full Admin Access (1 minute read)
+
+Check Point patched CVE-2026-16232, a CVSS 9.3 authentication bypass in SmartConsole that lets an unauthenticated remote attacker obtain a login token and gain full administrative control of Security Management and Multi-Domain Management servers, and confirmed active exploitation against a small number of customers. Affected shops running R77.30 through R82.10 should apply the July 22 Jumbo hotfix and restrict Trusted Clients, since exploitation requires a management server exposed to the internet without IP restrictions.
+
+🧠
+Analysis & Opinions
+
+Getting a grip on shadow tokens and AI blowouts (5 minute read)
+
+(blurb not generated)
+
+Big tech sovereign AI tools promise control, but drive lock-in (1 minute read)
+
+Sovereign AI tools from Nvidia, Microsoft, and the hyperscalers promise governments and regulated enterprises data residency and local control, but the analysis argues they deepen dependence on the same US vendors buyers are trying to hedge against. Nvidia now derives roughly 14% of revenue from sovereign AI, per a Stanford HAI study, giving procurement teams a familiar tradeoff: sovereignty framed as a feature still runs on proprietary silicon and cloud stacks that raise long-term switching costs.
+
+WSL container: A quiet revolution for Windows development (3 minute read)
+
+Microsoft shipped WSL-native container support at the end of June, letting developers build and run Linux containers on Windows without the Docker Desktop or Hyper-V VM layers that added instability and per-restart rebuild overhead. The move fits Microsoft's Build 2026 push to make Windows a first-class developer platform, a concession that more than 50% of Azure servers run Linux and that cloud-native work has to happen on Linux wherever the developer sits.
+
+Sovereign AI has become the public-sector CIO’s control problem (3 minute read)
+
+Sovereign AI, the author argues, is less about training domestic models than about whether a public-sector CIO keeps enforceable control over the AI stack. The real question is not whether a country can build its own model, but who controls data residency, model validation, infrastructure, operational logging, and vendor exit once AI is embedded in benefits, tax, and policing. A government that cannot reconstruct an AI-assisted decision has lost sovereignty, even inside a domestic data center.
+
+Platform engineering for the agentic enterprise (5 minute read)
+
+The author argues that internal developer platforms must be redesigned around a new consumer: AI agents that provision infrastructure, deploy applications, and run operational workflows alongside human engineers. The implication for platform teams is that agents and humans need to interact through different interfaces but the same governance, policy, and access model, so identity, authorization, and audit become the platform's core responsibility rather than deployment automation alone.
+
+The audit trail CIOs need before the next cyber crisis (5 minute read)
+
+(blurb not generated)
+
+AI agents aren't failing because of context—they're failing because of data (5 minute read)
+
+The author argues that enterprise AI agents fail in production not because of poor context engineering but because of stale or silently incomplete data that standard retrieval pipelines never validate for correctness. A relevance-scored pricing document or a record with a missing field passes every check while being wrong, so dashboards stay green as the model answers confidently. The fix belongs upstream in data engineering: validation layers that test whether retrieved data is still correct, not just present and relevant.
+
+🤝
+Launches & Partnerships
+
+Microsoft and Mistral expand strategic partnership to give enterprises and regulated industries frontier AI they can control (5 minute read)
+
+Microsoft and Mistral expanded their strategic partnership, adding Mistral Medium 3.5 and OCR 4 to Microsoft Foundry and Copilot Studio and committing multiple billions to Mistral's Europe-based GPU capacity. Azure customers can now run Mistral's models across cloud, cloud-connected, and fully disconnected environments, extending Microsoft's Sovereign Cloud pitch to regulated European buyers who need frontier AI without ceding data control.
+
+Microsoft and Databricks target AI business context gains in partnership expansion (5 minute read)
+
+(blurb not generated)
+
+Cloudflare Internal DNS puts public and private DNS on one policy engine (5 minute read)
+
+(blurb not generated)
+
+Securing the AI supply chain on GKE: Introducing k8s-aibom for automated AI BOMs (5 minute read)
+
+(blurb not generated)
+
+Cloudflare Internal DNS is now generally available (5 minute read)
+
+(blurb not generated)
+
+Cisco, AMD bring enterprise-level security, visibility to Ryzen AI Halo systems (5 minute read)
+
+(blurb not generated)
+
+Oracle cloud hybrid-cloud service delivers databases across distributed footprint (1 minute read)
+
+Oracle introduced Base Database Cloud@Customer, a hybrid service that runs its managed Oracle AI Database and Database 19c on an 8RU OCI system inside customer data centers, factories, and remote sites while Oracle handles provisioning, patching, and backup through its cloud control plane. The offering targets mid-sized regulated workloads that must keep data on-premises, positioning it below Exadata Cloud@Customer and letting customers host AI agents and RAG behind their own firewall.
+
+CrowdStrike taps Cerebras Systems AI chips for cybersecurity at speed (1 minute read)
+
+CrowdStrike partnered with Cerebras Systems to run its Falcon AIDR detection and response models on Cerebras's wafer-scale CS-3 inference systems, making CrowdStrike the vendor's first security customer. Cerebras is standardizing on the Falcon platform to protect its own operations, a reciprocal deal that pairs CrowdStrike's real-time threat detection with the low-latency inference security workloads need to act before an attack completes.
+
+AMD expands its software stack with Rocm.ai (1 minute read)
+
+AMD introduced Rocm.ai, an AI-native addition to its ROCm stack that teaches coding agents like Cursor, Claude, and Codex to program and optimize AMD GPUs through three components: a unified Rocm CLI, AMD Skills, and the Hyperloom optimization system. The move lowers the setup and tuning friction that has kept ROCm behind CUDA, giving enterprises weighing AMD accelerators a more agent-driven path to deployment without deep in-house GPU expertise.
+
+🎁
+Miscellaneous
+
+My security camera shipped a GitHub admin token in its login page (5 minute read)
+
+(blurb not generated)

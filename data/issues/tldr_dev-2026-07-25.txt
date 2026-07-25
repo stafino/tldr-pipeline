@@ -1,0 +1,200 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR Dev 2026-07-25
+
+🧑‍💻
+Articles & Tutorials
+
+Learning a few things about running SQLite (5 minute read)
+
+(blurb not generated)
+
+Postgres LISTEN/NOTIFY actually scales (1 minute read)
+
+The authors optimized Postgres LISTEN/NOTIFY-backed streams to sustain 60K writes per second on a single server with millisecond latency, refuting the widely cited claim that the feature does not scale. The bottleneck was the global exclusive lock Postgres takes during every NOTIFY, which capped a naive per-chunk trigger implementation at 2.9K writes per second before the redesign batched notifications to avoid it.
+
+Durable Objects are Made for Agents (5 minute read)
+
+The author makes the case that Cloudflare Durable Objects, which pair an on-demand V8 isolate with a per-object SQLite instance and ID-based request routing, map cleanly onto agent workloads that need per-session state and event-driven execution via alarms. The post covers where the primitive shines for building agents and where it falls short, drawing on several months of building almost exclusively on DOs.
+
+I Inspected My Take-Home Interview Project. It Was a Whole Operation (1 minute read)
+
+A developer accepted a take-home assignment from a LinkedIn recruiter and found a malicious payload hidden in the project's `.git/hooks` directory, disguised behind a clean `requirements.txt` and a legitimate-looking FastAPI codebase. Running `tree -a` surfaced the operation that a casual clone-and-run would have executed silently, a reminder that git hooks fire on standard commands and warrant inspection before you touch an untrusted repo.
+
+Characterizing Metastable Faults and Failures (5 minute read)
+
+This paper offers the first analytical causal account of metastable failures, the self-sustaining goodput collapse that persists via internal feedback loops like retries and queues even after the trigger disappears. It frames a metastable fault as a "sin of composition" between individually stable components wired into a destructive cycle and ties recovery to scheduling, though the author disputes its claim that metastable fault tolerance can be designed through local pairwise reasoning alone.
+
+How MVCC and Transactions Work in RocksDB (5 minute read)
+
+This post explains how RocksDB layers multi-version concurrency control on top of its LSM-tree, where immutable memtables and SST files already keep multiple versions of every key so writers never modify data in-place. It walks through the missing half, showing how snapshots give readers a consistent point-in-time view, how compaction garbage-collects stale versions, and how atomic updates and transactions are built on those primitives.
+
+So Reddit has decided that plain HTML is unsafe (1 minute read)
+
+Reddit now requires a login to view old.reddit.com while leaving the logged-out New Reddit accessible, framing the change as a defense against abusive scraping and automated traffic. The author argues the inconsistency undermines the stated safety rationale and reads instead as an effort to gate human-written content, the same corpus that made appending "site:reddit.com" a reliable way to surface genuine answers in the LLM age.
+
+Aurora DSQL: Scalable, Multi-Region OLTP (5 minute read)
+
+This paper describes Amazon's Aurora DSQL, a distributed SQL database that disaggregates the transaction, journal, and storage layers to scale writes and reads independently while keeping PostgreSQL compatibility. It relies on optimistic concurrency control with a single commit-time conflict check, and provides strongly consistent active-active multi-region deployments backed by a quorum-replicated journal rather than synchronous cross-region locking.
+
+Sierra MCP Gateway Dev Diary (5 minute read)
+
+Sierra's AI acceleration team built an internal MCP gateway to give agents safe, audited access to the SaaS products and internal systems the company runs on, replacing per-team integrations with one shared permissioning and auditing layer. The development diary tracks the project from a single service with one weekly user through the depth that emerged from a supposedly "boring" mature technology, built by roughly one-and-a-half engineers over the spring.
+
+I burned all my tokens researching how to save tokens (5 minute read)
+
+(blurb not generated)
+
+From Weeks to a Day: How We Made LLM Evaluation Fast Enough to Iterate on (5 minute read)
+
+(blurb not generated)
+
+Software rendering in 500 lines of bare C++ (1 minute read)
+
+This tutorial series builds a software renderer in about 500 lines of bare C++, implementing line and triangle rasterization from scratch to show how OpenGL, Vulkan, Metal, and DirectX work under the hood. It uses no third-party graphics libraries, starting from a single TGA image class that can only set individual pixels, with students typically reaching a working renderer in 10 to 20 hours.
+
+The startup's Postgres survival guide (1 minute read)
+
+A Hatchet engineer distilled two years of production Postgres experience into a survival guide for startups, covering schema design, the query planner, bulk updates, autovacuum, and advanced tuning. The doc assumes SQL basics and leans on practical rules of thumb over formal normalization, noting that ORMs block many scaling optimizations unless you can drop to raw SQL via tools like Prisma TypedSQL or sqlc.
+
+Perplexity launches SPACE runtime for AI agent tasks (5 minute read)
+
+(blurb not generated)
+
+How Our Universal Content Processing Platform Riviera Evolved for AI and Beyond (5 minute read)
+
+Dropbox opened up Riviera, the content processing platform that has handled file previews, transcoding, and format conversion across its products for roughly a decade, via a public API and MCP tools. The post covers how Riviera grew from an internal preview service into a shared platform spanning Search, Replay, Sign, and Dash, the architecture behind supporting 300+ file formats, and why it now targets developers preparing documents for AI applications.
+
+Model Context Protocol prepares to break with its stateful past (1 minute read)
+
+The Model Context Protocol is landing its biggest revision since launch, dropping stateful sessions in favor of a stateless request model and cutting several rarely used features. The overhaul simplifies the spec for hosted servers but leaves teams running homebrew implementations facing a substantial migration to keep their integrations working.
+
+How to execute queries in parallel using EF Core (5 minute read)
+
+(blurb not generated)
+
+Getting Clean Text Out of PDF, DOCX, and HTML (3 minute read)
+
+The post argues that text extraction, not generation, is the real engineering bottleneck for any pipeline that turns documents into audio, summaries, or embeddings, since a PDF only stores glyph coordinates with no notion of paragraphs or reading order. It walks through geometric column detection that projects text blocks onto the x-axis to find sustained gaps, run per page rather than per document, plus stripping running heads and page numbers that otherwise splice mid-sentence.
+
+Fil-C: Garbage In, Memory Safety Out [video] (1 minute read)
+
+Fil-C is a memory-safe implementation of C and C++ that compiles existing code without source changes, using garbage collection and pointer capabilities to eliminate use-after-free and buffer overflows. The talk covers how it enforces safety at runtime and the performance cost, which currently runs several times slower than standard C but removes an entire class of memory-corruption vulnerabilities.
+
+Learn WebGPU for C++ (1 minute read)
+
+This documentation teaches you to build native 3D applications in C++ using the WebGPU graphics API, targeting Windows, Linux, and macOS from scratch. Chapters progress from a Hello Triangle through basic 3D rendering, compute, and advanced techniques, with code available in both a C++-styled webgpu.hpp wrapper and the raw C webgpu.h API, backed by either wgpu-native or Dawn.
+
+🧠
+Opinions & Advice
+
+Claude Is Not a Compiler (5 minute read)
+
+(blurb not generated)
+
+Not just development, distribution of software may change as well (5 minute read)
+
+antirez argues that AI coding tools change not just how software is written but how it is distributed, since users can now modify and specialize the code they receive rather than waiting on a polished stable release. He suggests the stable-versus-unstable branch model may give way to repositories treated as templates, where work too unproven for the general public is exactly right for a subset of users tuning it to their own hardware and requirements.
+
+Top AIs invent same fake PyPl and npm package names (5 minute read)
+
+(blurb not generated)
+
+If coding has been solved, why does software keep getting worse? (1 minute read)
+
+The author argues that AI coding tools have raised management's output expectations while software quality keeps degrading, citing a week of failures from banking apps that demand three FaceID logins to a car OS that reboots mid-drive. The point is that faster code generation without corresponding review, testing, and accountability optimizes for volume over the things that actually make software work.
+
+LLMs reward expertise (5 minute read)
+
+(blurb not generated)
+
+Software Factories, Light and Dark (5 minute read)
+
+Addy Osmani argues that AI-assisted development is producing "software factories" whose light and dark sides hinge on whether teams retain control over ideas rather than every line of generated code. His central shift is from tech debt to knowledge debt, where the human role becomes owning the consequences of decisions instead of reviewing output line by line.
+
+WSL container: A quiet revolution for Windows development (3 minute read)
+
+Microsoft shipped WSL-native container support at the end of June, giving Windows a container platform that runs without Docker Desktop, Hyper-V VMs, or the virtualization layers the author found slow and unstable. The new CLI covers the full container lifecycle and reflects a broader Build 2026 push to make Windows a viable developer platform, driven by the reality that over 50% of Azure servers run Linux.
+
+You only need the frontier model for one single edit (5 minute read)
+
+(blurb not generated)
+
+🚀
+Launches & Tools
+
+Buz – A fork of Bun using modern Zig, with sub-1s incremental builds (5 minute read)
+
+(blurb not generated)
+
+The front end framework for correctness: built on Effect, architected like Elm (1 minute read)
+
+Foldkit is a TypeScript frontend framework built on Effect and modeled on The Elm Architecture, giving apps a single immutable model, one update function, and side effects returned as command values rather than fired inside handlers. It ships routing, accessible UI components, submodels, subscriptions, and managed resources as one system, positioning it against React, Vue, Svelte, and Solid, which handle rendering but leave the architecture to you.
+
+Model Context Protocol is going stateless to make scaling simpler (5 minute read)
+
+(blurb not generated)
+
+Show HN: Echo – Fable-level results at 1/3 the cost using open-weight models (5 minute read)
+
+(blurb not generated)
+
+Visual Studio Code 1.130 dresses up Agents window (5 minute read)
+
+(blurb not generated)
+
+New pip flag fixes longstanding Python frustration (1 minute read)
+
+pip 26.2 adds `pip install --only-deps`, which installs a package's runtime dependencies without installing the package itself, closing a years-old gap that previously forced manual dependency extraction or full builds. The flag covers runtime requirements but not build dependencies, and mirrors behavior already available in third-party tools like uv's `uv sync --no-install-project`. It ships by the end of July 2026.
+
+G# language for .NET borrows from Go, Kotlin, and Swift (1 minute read)
+
+G# is a new pre-1.0 language for .NET that brings Go, Kotlin, and Swift ergonomics to the CLR, compiling to managed PE assemblies that work with the standard .NET toolchain. It offers Go-style keywords like func, structs, slices, channels, and select alongside nullable flow, structured concurrency, and direct calls into any BCL, NuGet, or first-party .NET type, with a VS Code extension already shipping syntax highlighting and language server support.
+
+Show HN: Palmier Pro – Open-source macOS video editor built for AI (1 minute read)
+
+Palmier Pro is an open-source macOS video editor written in Swift that exposes an MCP server, letting Claude Code, Codex, or Cursor generate and edit clips directly in the timeline alongside an in-app agent. The editor is free and GPLv3, with generative models like Seedance, Kling, and Nano Banana Pro gated behind a paid login; it runs only on macOS 26 Tahoe on Apple Silicon.
+
+JEP 540: Simple JSON API (Now in Incubator) (1 minute read)
+
+JEP 540 defines a standard JSON parsing and generation API for the JDK, letting developers handle RFC 8259 documents without pulling in Jackson, Gson, or another external library. The incubating API deliberately stays minimal, covering only strict RFC 8259 conformance and skipping data binding, streaming, and syntax extensions, so it complements rather than replaces established libraries for exploratory reads and simple extraction.
+
+Cruller: Bun's Zig Runtime, Continued on Zig 0.16 (1 minute read)
+
+Cruller is a fork of the last Zig-based Bun release, stripped to just the pieces needed to run pre-built production JavaScript servers and ported to vanilla Zig 0.16. It keeps JavaScriptCore, Bun.serve, HTTP/1-3, WebSockets, fetch, and the module resolver while dropping the package manager, bundler, transpiler, test runner, and N-API, yielding an 18% smaller runtime (73.0 MiB vs Bun 1.3.14's 88.5 MiB) at roughly benchmark parity on Linux x64.
+
+Claude Code Can Now Build and Test iOS Apps in Apple's Simulator (5 minute read)
+
+Anthropic released an iOS Simulator integration for Claude Code Desktop on macOS, now in public beta, that lets Claude build, run, and watch apps live in a simulator pane and iterate until the project works. The pane drives the simulator directly rather than through computer use, so it skips the Accessibility and Screen Recording permissions, though it requires Xcode and works in local sessions only.
+
+The case for a cooldown: Why Dependabot now waits before issuing version updates (1 minute read)
+
+Dependabot now waits at least three days after a release is published before opening non-security version update pull requests, a default cooldown you can override in dependabot.yml. The change targets supply chain attacks like September 2025's compromise of chalk, debug, and other packages, where poisoned versions were live for roughly two hours, long enough for update tooling to pull them into build pipelines before anyone caught the malware.
+
+Fable just found a 15-30% memory efficiency improvement in Turbopack/Next.js (5 minute read)
+
+Fable found a 15-30% memory efficiency improvement in Turbopack, Next.js's Rust-based bundler, and documented the fix in a thread walking through the profiling and allocation changes. The gain comes from reducing redundant allocations in the module graph, cutting peak memory during builds without a corresponding change to compile times.
+
+Agentic coding goes hands-free as OpenAI brings GPT-Live's full duplex voice control to Codex and ChatGPT on the desktop (2 minute read)
+
+OpenAI brought GPT-Live's full-duplex voice model to the ChatGPT desktop app on macOS and Windows, letting developers orchestrate Codex jobs, review pull requests, and debug by voice while background models like GPT-5.5 handle the reasoning. The architecture decouples the real-time voice layer from execution, and on macOS adds screen context so ChatGPT Voice can read the frontmost window, local files, and codebase structure while agents run tasks asynchronously.
+
+Cursor Router (5 minute read)
+
+Cursor released Cursor Router, a model router that picks between frontier and price-efficient models per request based on whether the user optimizes for Intelligence, Balance, or Cost. Early-access customers saw no quality drop-off at a lower cost per commit versus routing everything to Opus 4.8, and admins on Teams and Enterprise plans can allow or block specific models and set per-team defaults.
+
+🎁
+Miscellaneous
+
+Codeberg Divides (1 minute read)
+
+Codeberg changed its terms to exclude projects consisting mostly of code written by generative AI tools, drawing a boundary that separates parts of the open source community over LLM use. The author argues the "mostly" threshold is unenforceable in actively developed codebases and delegates too much policy to moderators, and that a democratic host without a clear constitution can be less predictable and neutral than a corporation like GitHub.
+
+Codeberg Bans Cryptocurrency and LLM-Generated Code Projects (1 minute read)
+
+Codeberg's community voted to ban projects whose code is substantially LLM-generated, with the motion passing 358 to 144, alongside a separate rule forbidding the scraping of hosted code to train models. The nonprofit host cited license whitewashing and the externalized hardware costs of AI datacenter growth, which it says have driven up its own infrastructure spending over the past few years.
+
+Cursor, Codex, Gemini CLI, Antigravity hit by sandbox escapes (5 minute read)
+
+(blurb not generated)
