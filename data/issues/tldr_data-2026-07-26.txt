@@ -1,0 +1,100 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR Data 2026-07-26
+
+📊
+News & Trends
+
+Introducing Apache Spark 4.2 (5 minute read)
+
+(blurb not generated)
+
+Microsoft and Databricks target AI business context gains in partnership expansion (5 minute read)
+
+(blurb not generated)
+
+Retiring the dbt Snowflake Native App (5 minute read)
+
+(blurb not generated)
+
+Databricks is Raising a Strategic Round of Funding at a $188 Billion Valuation (5 minute read)
+
+(blurb not generated)
+
+🧠
+Deep Dives & Analysis
+
+Optimizing for Almost Sorted Data: Sort Pushdown in Apache DataFusion (5 minute read)
+
+Apache DataFusion now exploits sortedness automatically, even when data is only partially sorted or its ordering was never declared. The engine discovers a global sort order from per-file min/max statistics, deletes redundant sorts at plan time, and biases scan order toward the most-promising files, with dynamic filters driving row-group pruning at runtime. The payoff is ORDER BY ... LIMIT queries that skip the blocking full sort and full scan, cutting latency and peak memory on large tables.
+
+Aurora DSQL: Scalable, Multi-Region OLTP (5 minute read)
+
+Amazon's engineers detail Aurora DSQL, a distributed PostgreSQL-compatible OLTP database that disaggregates compute, transaction commit, and storage into independently scalable layers with active-active multi-region writes. The design leans on optimistic concurrency control and precise EC2 clock synchronization to guarantee strong consistency without a two-phase commit coordinator on the hot path. The bet is that decoupling the write path from storage lets a single database scale horizontally while surviving regional failure, a trade-off that swaps lock-based contention for commit-time conflict aborts.
+
+DuckDB Internals: Why is DuckDB Fast? (Part 2 Vectorized Execution) (5 minute read)
+
+DuckDB's second internals post explains vectorized execution: instead of processing one row at a time, DuckDB pushes batches of values through each operator, keeping the CPU fed rather than stalling on memory waits and instruction dependencies. The payoff is concrete. The 2005 MonetDB/X100 benchmarks it cites clocked MySQL's row-at-a-time engine at 0.8 IPC and ~49 cycles per addition, versus ~2.2 cycles for the batched approach that DuckDB now builds on.
+
+How MVCC and Transactions Work in RocksDB (5 minute read)
+
+RocksDB implements MVCC on top of its LSM-tree, where writes never modify keys in-place and instead append new versions that compaction later garbage-collects. This post walks through the other half: how snapshots give each reader a consistent view of the data as it existed when the read began, letting readers and writers proceed concurrently without locking. It then builds up atomic updates and transactions on that foundation.
+
+Postgres LISTEN/NOTIFY actually scales (1 minute read)
+
+The authors argue that Postgres LISTEN/NOTIFY's poor scaling reputation is a misdiagnosis, not a hard limit. Their initial trigger-per-chunk streams implementation stalled at 2.9K writes per second, bottlenecked by the global exclusive lock Postgres takes during every NOTIFY rather than any CPU, memory, or IOPS ceiling. After batching notifications to sidestep that lock, they hit 60K writes per second on a single server with millisecond-scale latency, enough to back durable pub/sub and streaming token delivery without reaching for a dedicated queue.
+
+To Every Agent Its Own Database (5 minute read)
+
+Joe Reis inverts the "make the warehouse agent-ready" approach, arguing that scaling shared analytical platforms with bigger clusters and faster semantic layers still assumes an agent is just a very fast analyst on a central plane. His working prototype gives each agent its own embedded engine using DuckDB, DuckLake, Quack, and Malloy, letting agents exchange data products directly. The open question he surfaces: what contracts govern analytical exchange once no single system owns the semantic and computational authority.
+
+How Our Universal Content Processing Platform Riviera Evolved for AI and Beyond (5 minute read)
+
+Dropbox opened Riviera, the content-processing platform that has powered its file previews for roughly a decade, to outside developers via API and MCP tools. What began as an internal preview service now handles transcoding, PDF flattening, and text extraction across Search, Replay, Sign, and Dash, producing the equivalent of 8 years of video daily. The write-up covers the architectural decisions that let a single preview service become shared infrastructure, and why AI document pipelines drove the external release.
+
+Personalization is an infrastructure problem (5 minute read)
+
+The author argues that most personalization failures are architecture problems, not quality problems: personalization is a ranking decision that has to weigh user intent, item quality, history, availability, and business priority for every request in milliseconds. The piece uses Vespa to show why the usual stack struggles, since the ranking layer is often the one place that cannot see all those signals together. Combining them at query time, while the user is still there, is the real bottleneck.
+
+Brute intelligence (5 minute read)
+
+(blurb not generated)
+
+If You Think You Can Do Real-World Text-to-SQL (5 minute read)
+
+The author argues that benchmark scores like those on Spider and BIRD wildly overstate how well text-to-SQL works against real production databases, where schemas are sprawling and undocumented, column names are cryptic, and business questions are ambiguous. The post walks through why enterprise schemas with hundreds of joined tables, inconsistent data, and implicit domain rules break models that ace academic benchmarks. The takeaway for data teams is that the hard part is schema semantics and context, not SQL generation itself.
+
+Backfilling: the most underrated feature of a data pipeline (5 minute read)
+
+Backfilling gets treated as a throwaway migration script written under pressure, then abandoned in a scripts/ folder to rot. The author argues both forms of backfill, historical ingestion and system-to-system migration, are the same problem and belong inside the production extract-raw-transform pipeline rather than one-off jobs. Running historical loads through the same tested stages as tomorrow's data cuts the time teams spend fighting their own pipeline.
+
+Smart caching with CTE on Spark (5 minute read)
+
+Caching in Spark speeds up repeated computations by holding intermediate results in memory, but this piece argues the win only materializes for medium-sized, frequently reused datasets. Tiny tables gain nothing, and tables too large for memory trigger disk spills or eviction that slow the job down. The practical guidance for CTEs and nested queries: cache only when reuse is guaranteed, and watch the Spark UI storage tab to confirm the cache is actually paying off.
+
+Learning a few things about running SQLite (5 minute read)
+
+(blurb not generated)
+
+The startup's Postgres survival guide (1 minute read)
+
+The author distills two years of running Postgres in production at Hatchet into a survival guide for startup engineers, organized from schema design and query basics through the query planner, bulk updates, and autovacuum tuning. The core argument is that schemas are the hardest thing to change after deployment, so teams should design them iteratively around actual read/write patterns rather than chasing textbook normal forms. It also flags where ORMs become a ceiling, since many scaling optimizations require dropping to raw SQL through tools like sqlc or Prisma TypedSQL.
+
+🚀
+Launches & Tools
+
+AI Schema Analyzer: Powered by Iceberg and Lakekeeper (5 minute read)
+
+The post walks through building an AI schema-drift analyzer for Iceberg tables, wiring Lakekeeper's REST catalog to emit change events to Kafka the moment a DDL runs, then feeding those events to a FastAPI service that calls the Anthropic SDK for impact analysis. Because Lakekeeper pushes catalog changes directly to Kafka with no metadata scanning, the agent flags breaking downstream dependencies within seconds and posts recommendations to Slack.
+
+Open Knowledge format v0.2 tackles agentic trust (5 minute read)
+
+(blurb not generated)
+
+🎁
+Miscellaneous
+
+Is "jobs" a four-letter word? (5 minute read)
+
+(blurb not generated)

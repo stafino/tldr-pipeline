@@ -1,0 +1,152 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR DevOps 2026-07-26
+
+📱
+News & Trends
+
+BGP ORIGIN attribute manipulation and its impact on the Internet (5 minute read)
+
+(blurb not generated)
+
+Kimi K3 Agents Found Redis Zero-Days and Built RCE Exploit, Researchers Say (5 minute read)
+
+(blurb not generated)
+
+Confidential Containers becomes a CNCF incubating project (1 minute read)
+
+The CNCF Technical Oversight Committee voted to promote Confidential Containers to incubating status, advancing the project's use of hardware TEEs to encrypt data in use for sensitive Kubernetes workloads on untrusted infrastructure. Backed by Azure, Intel, AMD, IBM, NVIDIA, and Red Hat, the project integrates confidential computing into standard k8s workflows via the Kata Containers runtime and is now being wired into KServe for confidential AI.
+
+Cloudflare's new AI traffic options for customers (1 minute read)
+
+Cloudflare expanded its Content Independence Day controls, replacing the single "block AI bots" toggle with per-use-case rules that let site owners separately manage AI search, training, and agent traffic. The shift moves classification from a binary AI-or-not label to behavior-based questions about what bots store and reshare, giving small sites a way to stay discoverable without automatically feeding model training.
+
+RefluXFS: A Linux Kernel Local Privilege Escalation to Root in XFS (CVE-2026-64600) (5 minute read)
+
+Qualys disclosed CVE-2026-64600, a race condition in the Linux kernel's XFS copy-on-write path that lets any local unprivileged user overwrite protected files at the block layer and escalate to host root, even under SELinux Enforcing. The flaw has existed since kernel 4.11 and ships in default RHEL, Oracle Linux, Amazon Linux, and Fedora installs, with no reliable mitigation short of patching and rebooting.
+
+Microsoft blames massive Microsoft 365 outage on maintenance bug (5 minute read)
+
+(blurb not generated)
+
+CIOs beware: DNS KSK rollover could kick off wave of mysterious outages (5 minute read)
+
+(blurb not generated)
+
+OpenTelemetry has graduated… Now what? (5 minute read)
+
+(blurb not generated)
+
+Default Azure Automation Setting Enables Cross-Tenant Identity Takeover (5 minute read)
+
+(blurb not generated)
+
+Cloudflare WAF protects WordPress applications from two high-severity vulnerabilities (5 minute read)
+
+(blurb not generated)
+
+Microsoft fiber foul-up cut off Azure California for almost five hours (1 minute read)
+
+A cut fiber line took Azure offline across California for nearly five hours, disrupting customer workloads in the affected region until Microsoft rerouted traffic around the damaged path. The outage renews questions about single-path fiber dependencies in cloud regions, where physical-layer failures still translate directly into control-plane and workload downtime despite redundancy claims.
+
+Cloudflare Internal DNS puts public and private DNS on one policy engine (5 minute read)
+
+(blurb not generated)
+
+Microsoft explains why its West US Azure and cloud services failed (5 minute read)
+
+(blurb not generated)
+
+OpenSSL HollowByte Flaw Could Freeze Server Memory with 11-Byte TLS Requests (5 minute read)
+
+(blurb not generated)
+
+Microsoft shares some details on Azure outage that blocked Windows 11 update downloads (1 minute read)
+
+Microsoft published a partial post-incident writeup on the recent Azure outage that blocked Windows 11 update downloads and degraded other services. The company detailed the affected components and remediation steps but stopped short of a full root-cause analysis, leaving admins who deferred updates during the window without a clear timeline for when the disruption fully cleared.
+
+Hetzner is working on LLM Inference (5 minute read)
+
+(blurb not generated)
+
+Microsoft Azure in outage after routine fiber check (5 minute read)
+
+(blurb not generated)
+
+🚀
+Opinions & Tutorials
+
+Building a Custom Metrics Exporter for Kubernetes (5 minute read)
+
+(blurb not generated)
+
+Characterizing Metastable Faults and Failures (5 minute read)
+
+A June 2026 paper offers the first analytical causal account of metastable failures, the self-sustaining goodput collapses that persist through retry and queue feedback loops even after the original trigger clears. It reframes a metastable fault as a "sin of composition" between individually stable components and ties the recovery mechanism to scheduling. The stakes are concrete: four of AWS's 15 major outages over a decade were metastable, lasting 1.5 to 73 hours, and these emergent failures resist the hardening that already covers obvious faults.
+
+Learning a few things about running SQLite (5 minute read)
+
+(blurb not generated)
+
+Why goodput matters more than throughput for LLM serving (5 minute read)
+
+(blurb not generated)
+
+Multi-Cluster databases on Kubernetes: Architecture and deployment (1 minute read)
+
+This CNCF post walks through building a multi-cluster MongoDB deployment on Kubernetes that survives regional outages, control-plane corruption, and network partitions, using the open-source Percona Operator as the worked example. All nodes across clusters join a single replica set so cross-cluster voting can elect a new primary automatically, unlocking disaster recovery, live migrations, and zero-downtime maintenance. The post notes similar patterns exist for relational workloads through Vitess and CloudNativePG.
+
+Durable Objects are Made for Agents (5 minute read)
+
+The author argues Cloudflare Durable Objects are a near-perfect primitive for building agents, pairing an on-demand V8 isolate with a per-object SQLite instance and ID-based request routing so each agent gets its own addressable, stateful compute. Instead of stateless services talking to a shared database, you model the system as many event-driven objects woken by requests or alarms. The post also catalogs where DOs fall short, alongside a disclosed long position in NET.
+
+Platform engineering for the agentic enterprise (5 minute read)
+
+(blurb not generated)
+
+Postgres LISTEN/NOTIFY actually scales (1 minute read)
+
+The DBOS team pushes back on the widely cited claim that Postgres LISTEN/NOTIFY can't scale, tracing the real bottleneck to a global exclusive lock that NOTIFY takes on every write. Their naive trigger-per-chunk implementation capped out at 2.9K writes per second without saturating CPU, memory, or IOPS. After batching notifications to sidestep the lock, they sustained 60K stream writes per second on a single server with millisecond-scale latency, making Postgres a viable backbone for durable pub/sub and token streaming.
+
+Turn And Face The Strange (1 minute read)
+
+Fly.io's founder used a public doubt from Theo Browne about the company's survival as the framing for a strategic reset: the company has raised fresh funding, is refocusing entirely on Sprites (on-demand computers built for coding agents to run in), and is handing the CEO role to Scott Johnston. The essay argues that the AI shift in software development has made Fly.io's original bets on edge deployment and Heroku-grade ergonomics matter less than giving frontier agents a safe place to execute.
+
+ModelExpress: Distributing Model Artifacts at the Speed of Light (5 minute read)
+
+(blurb not generated)
+
+Demystifying AI Exploits: A Blueprint for AI-Assisted Vulnerability Management (5 minute read)
+
+(blurb not generated)
+
+End-to-End Detection Validation Using Coding Agents (5 minute read)
+
+A team at DNB's Cyber Defense Center repurposed coding agents like Claude Code and Codex to run detection validation end to end, using a custom plugin that writes TTPForge attack simulations, ships them to an isolated lab host over SSH, detonates them, and queries Splunk to confirm the detection fired. The agent rewrites and retries when a step fails, running unattended across a sample of mostly Windows detections. The loop surfaced small, mechanical pipeline issues that had slipped past code review, without a human driving each validation run by hand.
+
+How AI drove Shopify back to clean code (5 minute read)
+
+(blurb not generated)
+
+⚒️
+Launches & Tools
+
+Securing the AI supply chain on GKE: Introducing k8s-aibom for automated AI BOMs (5 minute read)
+
+(blurb not generated)
+
+Cloudflare Internal DNS is now generally available (5 minute read)
+
+(blurb not generated)
+
+Introducing Antares: Highly Efficient Open Weight AI Models for Vulnerability Localization (5 minute read)
+
+Cisco released Antares, a family of open-weight security small language models purpose-built to localize known vulnerabilities in a codebase, with Antares-350M and Antares-1B now on Hugging Face. Cisco's benchmarks show the models beating larger closed- and open-weight rivals at a fraction of the inference cost, and they run locally so teams avoid shipping sensitive source to the cloud.
+
+🎁
+Miscellaneous
+
+One fallen power line exposed a growing AI data center problem. Here’s how to fix it. (5 minute read)
+
+(blurb not generated)
