@@ -1,12 +1,52 @@
 {
   "date": "2026-07-27",
   "newsletter": "tldr_ai",
-  "fetched_at": "2026-07-27T10:49:25.867725+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-07-27T17:04:36.115079+00:00",
+  "tldr_titles": [
+    "Claude Opus 5",
+    "Prentis, new AI lab co-founded by Reid Hoffman, Mark Pincus in talks to raise $100M",
+    "More On An Internal OpenAI Model Hacking Into Hugging Face",
+    "How we built the new fastest API for GLM-5.2",
+    "We have proof automation now",
+    "The new rules of context engineering for Claude 5 generation models",
+    "Prompt Caching In Agents",
+    "Nvidia's New Long-Form Video Generation",
+    "Introducing celeris-1",
+    "Open Weights and American AI Leadership",
+    "Brute intelligence",
+    "ModelExpress: Distributing Model Artifacts at the Speed of Light",
+    "Introducing Classifiers, now in beta",
+    "Agentic AI at Two Different Scales: Nanbeige4.2-3B and Laguna S2.1",
+    "The Legora Benchmark for Agentic Reasoning"
+  ],
+  "tldr_matched": [
+    true,
+    false,
+    true,
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
   "predictions": [
     {
       "rank": 1,
+      "score": 89.0,
+      "title": "Kimi-K3 Technical Report [pdf]",
+      "url": "https://github.com/MoonshotAI/Kimi-K3/blob/main/k3_tech_report.pdf",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 2,
       "score": 88.0,
       "title": "Kimi-K3 Releases on HuggingFace 7/27",
       "url": "https://huggingface.co/moonshotai/Kimi-K3",
@@ -14,23 +54,23 @@
       "similarity": null
     },
     {
-      "rank": 2,
+      "rank": 3,
       "score": 86.0,
       "title": "OpenAI's accidental cyberattack against Hugging Face is science fiction that happened",
       "url": "https://simonwillison.net/2026/Jul/22/openai-cyberattack/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 3,
-      "score": 83.0,
-      "title": "The new rules of context engineering for Claude 5 generation models",
-      "url": "https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 2,
+      "similarity": 0.6936915516853333
     },
     {
       "rank": 4,
+      "score": 83.0,
+      "title": "The new rules of context engineering for Claude 5 generation models",
+      "url": "https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models",
+      "matched_tldr_idx": 5,
+      "similarity": 1.0
+    },
+    {
+      "rank": 5,
       "score": 78.0,
       "title": "Xiaomi-Robotics-1",
       "url": "https://robotics.xiaomi.com/xiaomi-robotics-1.html",
@@ -38,15 +78,23 @@
       "similarity": null
     },
     {
-      "rank": 5,
+      "rank": 6,
       "score": 78.0,
       "title": "Anthropic releases \u2018more efficient\u2019 Claude Opus 5",
       "url": "https://www.infoworld.com/article/4201551/anthropic-releases-more-efficient-claude-opus-5.html",
+      "matched_tldr_idx": 0,
+      "similarity": 0.74085533618927
+    },
+    {
+      "rank": 7,
+      "score": 78.0,
+      "title": "Nvidia weighs $250 billion guarantee so OpenAI can lease SoftBank's 10-gigawatt Ohio campus, report claims \u2014 Nvidia also said to be discussing $350 billion deal to finance chips for the site",
+      "url": "https://www.tomshardware.com/tech-industry/data-centers/nvidia-weighs-250-billion-guarantee-so-openai-can-lease-softbanks-10-gigawatt-ohio-campus",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 6,
+      "rank": 8,
       "score": 78.0,
       "title": "AMD and Anthropic Sign Major Chips-and-Investment Deal",
       "url": "https://www.wsj.com/tech/ai/amd-and-anthropic-sign-major-chips-and-investment-deal-4adfdc45",
@@ -54,23 +102,23 @@
       "similarity": null
     },
     {
-      "rank": 7,
-      "score": 78.0,
-      "title": "A detailed recap of the Hugging Face breach by an internal OpenAI model, which repeatedly tried to escape OpenAI's sandbox and should be treated as critical (Zvi Mowshowitz/Don't Worry About the Vase)",
-      "url": "https://www.techmeme.com/260727/p2#a260727p2",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 8,
+      "rank": 9,
       "score": 76.0,
       "title": "Anthropic launches Claude Opus 5 with efficiency, safety improvements",
       "url": "https://siliconangle.com/2026/07/24/anthropic-launches-claude-opus-5-efficiency-safety-improvements/",
+      "matched_tldr_idx": 0,
+      "similarity": 0.6445397138595581
+    },
+    {
+      "rank": 10,
+      "score": 76.0,
+      "title": "Import AI 466: The bitter lesson for robotics, AIs complete week-long programming tasks; and OpenAI's accidental AI hacker",
+      "url": "https://importai.substack.com/p/import-ai-466-the-bitter-lesson-for",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 9,
+      "rank": 11,
       "score": 75.0,
       "title": "Anthropic Says It Deliberately Left Cyber Training Out of Claude Opus 5",
       "url": "https://www.implicator.ai/anthropic-says-it-deliberately-left-cyber-training-out-of-claude-opus-5/",
@@ -78,15 +126,7 @@
       "similarity": null
     },
     {
-      "rank": 10,
-      "score": 74.0,
-      "title": "Anthropic\u2019s Claude Cowork could escape its local VM and read credentials on a Mac",
-      "url": "https://thenextweb.com/news/claude-cowork-sandbox-escape-mac-files-sharedroot",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 11,
+      "rank": 12,
       "score": 74.0,
       "title": "NVIDIA Cosmos-H-Dreams: Bringing Real-Time Generative Simulation to Surgical Robotics",
       "url": "https://huggingface.co/blog/nvidia/cosmos-h-dreams",
@@ -94,15 +134,15 @@
       "similarity": null
     },
     {
-      "rank": 12,
+      "rank": 13,
       "score": 74.0,
-      "title": "China\u2019s Moonshot to Release Breakthrough AI Model for Download",
-      "url": "https://www.bloomberg.com/news/articles/2026-07-27/china-s-moonshot-to-release-breakthrough-ai-model-for-download",
+      "title": "Nvidia to Invest $5 Billion in Ilya Sutskever\u2019s AI Research Lab",
+      "url": "https://www.bloomberg.com/news/articles/2026-07-27/nvidia-makes-substantial-investment-in-sutskever-s-ai-startup",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 13,
+      "rank": 14,
       "score": 74.0,
       "title": "Running a 28.9M parameter LLM on an $8 microcontroller",
       "url": "https://github.com/slvDev/esp32-ai",
@@ -110,7 +150,7 @@
       "similarity": null
     },
     {
-      "rank": 14,
+      "rank": 15,
       "score": 74.0,
       "title": "Why Software Factories Fail",
       "url": "https://github.com/humanlayer/advanced-context-engineering-for-coding-agents/blob/main/wsff.md",
@@ -118,15 +158,23 @@
       "similarity": null
     },
     {
-      "rank": 15,
-      "score": 73.0,
-      "title": "Claude Opus 5 sharpens coding and cybersecurity work on AWS",
-      "url": "https://www.helpnetsecurity.com/2026/07/27/claude-opus-5-aws-coding-cybersecurity-work/",
+      "rank": 16,
+      "score": 72.0,
+      "title": "Moonshot AI releases model weights for Kimi K3 under the \"Kimi K3 License\" (Bloomberg)",
+      "url": "https://www.techmeme.com/260727/p22#a260727p22",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 16,
+      "rank": 17,
+      "score": 72.0,
+      "title": "China\u2019s Moonshot Releases Breakthrough AI Model for Download",
+      "url": "https://www.bloomberg.com/news/articles/2026-07-27/china-s-moonshot-to-release-breakthrough-ai-model-for-download",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 18,
       "score": 72.0,
       "title": "Introducing Cosmos 3 Edge",
       "url": "https://huggingface.co/blog/nvidia/cosmos3edge",
@@ -134,7 +182,7 @@
       "similarity": null
     },
     {
-      "rank": 17,
+      "rank": 19,
       "score": 72.0,
       "title": "Human mathematicians are being outcounterexampled",
       "url": "https://xenaproject.wordpress.com/2026/07/20/human-mathematicians-are-being-outcounterexampled/",
@@ -142,7 +190,7 @@
       "similarity": null
     },
     {
-      "rank": 18,
+      "rank": 20,
       "score": 72.0,
       "title": "Measuring Reward-Seeking by Instilling Contrastive Beliefs",
       "url": "https://alignment.openai.com/measuring-reward-seeking/",
@@ -150,15 +198,23 @@
       "similarity": null
     },
     {
-      "rank": 19,
+      "rank": 21,
       "score": 71.0,
-      "title": "Sources: Nvidia is in talks to provide a ~$250B backstop for OpenAI as part of a 10 GW data center project that SoftBank is developing in Ohio (Wall Street Journal)",
-      "url": "https://www.techmeme.com/260726/p10#a260726p10",
+      "title": "Nvidia says it made a \"substantial\" investment in Safe Superintelligence, which will get access to Nvidia GPUs to up computing power by an \"order of magnitude\" (Keach Hagey/Wall Street Journal)",
+      "url": "https://www.techmeme.com/260727/p14#a260727p14",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 20,
+      "rank": 22,
+      "score": 70.0,
+      "title": "Microsoft introduces MAI-Cyber-1-Flash, an AI model trained for cybersecurity, and launches Perception, an agentic security system to patch vulnerabilities (New York Times)",
+      "url": "https://www.techmeme.com/260727/p23#a260727p23",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 23,
       "score": 68.0,
       "title": "Claude Cowork Flaw Could Let AI Agent Escape Its VM and Access Mac Files",
       "url": "https://thehackernews.com/2026/07/claude-cowork-flaw-could-let-ai-agent.html",
@@ -166,47 +222,47 @@
       "similarity": null
     },
     {
-      "rank": 21,
-      "score": 68.0,
-      "title": "SoftBank\u2019s $40 Billion Loan for OpenAI Stake Gets 21 New Lenders",
-      "url": "https://www.bloomberg.com/news/articles/2026-07-27/softbank-s-40-billion-loan-for-openai-stake-gets-21-new-lenders",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 22,
-      "score": 68.0,
-      "title": "Nvidia and SK Group enter $500 billion AI partnership \u2014 plan to supercharge AI infrastructure with next-gen memory and massive AI factories",
-      "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/nvidia-and-sk-group-enter-usd500-billion-ai-partnership-plan-to-supercharge-ai-infrastructure-with-next-gen-memory-and-massive-ai-factories",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 23,
-      "score": 68.0,
-      "title": "OpenAI Models Escaped and Hacked a Company in Cybersecurity Test Gone Wrong",
-      "url": "https://www.wsj.com/tech/ai/openai-models-escaped-and-hacked-a-company-in-cybersecurity-test-gone-wrong-ee388506",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
       "rank": 24,
       "score": 68.0,
-      "title": "How US companies flipped from \"tokenmaxxing\" to \"thrift-maxxing\", mixing cheaper Chinese models with OpenAI and Anthropic, threatening the labs' IPO valuations (Wall Street Journal)",
-      "url": "https://www.techmeme.com/260726/p12#a260726p12",
+      "title": "Ilya Sutskever\u2019s Safe Superintelligence partners with Nvidia to scale its AI research",
+      "url": "https://techcrunch.com/2026/07/27/ilya-sutskevers-safe-superintelligence-partners-with-nvidia-to-scale-its-ai-research/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
       "rank": 25,
       "score": 68.0,
-      "title": "Open-weight AI is having its Kubernetes moment",
-      "url": "https://tobi.knaup.me/2026-07-25-open-weight-ai-is-having-its-kubernetes-moment/",
+      "title": "Nvidia\u2019s $750 Billion in Deals Reignite Circular AI Fears",
+      "url": "https://www.bloomberg.com/news/articles/2026-07-27/nvidia-s-750-billion-deals-revive-fear-of-ai-circular-financing",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
       "rank": 26,
+      "score": 68.0,
+      "title": "Uh-oh: Some Claude shared conversations and Artifacts appear to be indexed and publicly accessible on Google Search",
+      "url": "https://venturebeat.com/technology/uh-oh-some-claude-shared-conversations-and-artifacts-appear-to-be-indexed-and-publicly-accessible-on-google-search",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 27,
+      "score": 68.0,
+      "title": "No AI model is fully resistant to bioweapon queries, Cisco found. Attack success rates hit 88%.",
+      "url": "https://thenextweb.com/news/ai-chatbots-bioweapon-guardrails-bypass-cisco-five-turns",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 28,
+      "score": 68.0,
+      "title": "Open-weight AI is having its Kubernetes moment",
+      "url": "https://tobi.knaup.me/2026-07-25-open-weight-ai-is-having-its-kubernetes-moment/",
+      "matched_tldr_idx": 9,
+      "similarity": 0.6873974204063416
+    },
+    {
+      "rank": 29,
       "score": 68.0,
       "title": "UK AISI / Caisi Preliminary Assessment of Kimi K3's Cyber Capabilities",
       "url": "https://www.nist.gov/news-events/news/2026/07/uk-aisi-caisi-preliminary-assessment-kimi-k3s-cyber-capabilities",
@@ -214,7 +270,7 @@
       "similarity": null
     },
     {
-      "rank": 27,
+      "rank": 30,
       "score": 68.0,
       "title": "The Kimi K3 Moment",
       "url": "https://stephen.bochinski.dev/blog/2026/07/18/the-kimi-k3-moment/",
@@ -222,7 +278,7 @@
       "similarity": null
     },
     {
-      "rank": 28,
+      "rank": 31,
       "score": 68.0,
       "title": "Introducing Antares: Highly Efficient Open Weight AI Models for Vulnerability Localization",
       "url": "https://blogs.cisco.com/ai/introducing-antares-the-most-efficient-open-weight-ai-models-for-vulnerability-localization",
@@ -230,7 +286,15 @@
       "similarity": null
     },
     {
-      "rank": 29,
+      "rank": 32,
+      "score": 68.0,
+      "title": "NVIDIA Ising Enables Fully Automated Quantum Computer Calibration with Enhanced In-Context Learning",
+      "url": "https://developer.nvidia.com/blog/nvidia-ising-enables-fully-automated-quantum-computer-calibration-with-enhanced-in-context-learning/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 33,
       "score": 68.0,
       "title": "Bringing PyTorch Monarch to AMD GPUs",
       "url": "https://pytorch.org/blog/bringing-pytorch-monarch-to-amd-gpus-single-controller-distributed-training-on-rocm/",
@@ -238,42 +302,10 @@
       "similarity": null
     },
     {
-      "rank": 30,
+      "rank": 34,
       "score": 68.0,
       "title": "Experience Graphs: The Data Foundation for Self-Improving Agents",
       "url": "https://arxiv.org/html/2606.29823v1",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 31,
-      "score": 66.0,
-      "title": "Nvidia locks down memory supply from SK Hynix as part of $500 billion AI deal",
-      "url": "https://www.cnbc.com/2026/07/25/nvidia-locks-down-memory-from-sk-hynix-as-part-of-500-billion-ai-deal.html",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 32,
-      "score": 66.0,
-      "title": "Spain-based Multiverse Computing, which shrinks LLMs to reduce energy and compute costs, raised a $570M Series C at a $1.7B valuation (Amelia Isaacs/Pathfounders)",
-      "url": "https://www.techmeme.com/260727/p5#a260727p5",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 33,
-      "score": 66.0,
-      "title": "Moonshot AI accessed Nvidia's chips despite Chinese export ban, White House official says",
-      "url": "https://www.cnbc.com/2026/07/23/moonshot-kimi-nvidia-ai-chips-export-ban.html",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 34,
-      "score": 66.0,
-      "title": "What OpenAI will show the White House this week",
-      "url": "https://thenextweb.com/news/altman-white-house-openai-model-preview-agents",
       "matched_tldr_idx": null,
       "similarity": null
     },
@@ -391,6 +423,14 @@
     },
     {
       "rank": 49,
+      "score": 63.0,
+      "title": "Nvidia Credit Risk Jumps in Swaps Market on AI Deal Talks",
+      "url": "https://www.bloomberg.com/news/articles/2026-07-27/nvidia-credit-risk-jumps-in-swaps-market-on-ai-deal-talk-reports",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 50,
       "score": 62.0,
       "title": "Are AI labs pelicanmaxxing?",
       "url": "https://dylancastillo.co/posts/pelicanmaxxing.html",
@@ -398,7 +438,7 @@
       "similarity": null
     },
     {
-      "rank": 50,
+      "rank": 51,
       "score": 62.0,
       "title": "From Weeks to a Day: How We Made LLM Evaluation Fast Enough to Iterate on",
       "url": "https://medium.com/airbnb-engineering/from-weeks-to-a-day-how-we-made-llm-evaluation-fast-enough-to-iterate-on-14e2d35198b4",
@@ -406,7 +446,7 @@
       "similarity": null
     },
     {
-      "rank": 51,
+      "rank": 52,
       "score": 62.0,
       "title": "Exploit Brokers Pay $500,000 For A Wordpress Rce. I Found One With Gpt5.6 Sol Ultra And $25",
       "url": "https://slcyber.io/research-center/exploit-brokers-pay-500000-for-a-wordpress-rce-i-found-one-with-gpt5-6/",
@@ -414,7 +454,7 @@
       "similarity": null
     },
     {
-      "rank": 52,
+      "rank": 53,
       "score": 62.0,
       "title": "If You Think You Can Do Real-World Text-to-SQL",
       "url": "https://cacm.acm.org/blogcacm/if-you-think-you-can-do-real-world-text-to-sql/",
@@ -422,23 +462,31 @@
       "similarity": null
     },
     {
-      "rank": 53,
+      "rank": 54,
       "score": 62.0,
       "title": "World's Largest AI Model Repository Hugging Face Breached by Autonomous AI Agent",
       "url": "https://thehackernews.com/2026/07/worlds-largest-ai-model-repository.html",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 54,
-      "score": 61.0,
-      "title": "American AI is locked down and proprietary. It's losing",
-      "url": "https://werd.io/american-ai-is-locked-down-and-proprietary-its-losing/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 2,
+      "similarity": 0.6509854197502136
     },
     {
       "rank": 55,
+      "score": 61.0,
+      "title": "American AI is locked down and proprietary. It's losing",
+      "url": "https://werd.io/american-ai-is-locked-down-and-proprietary-its-losing/",
+      "matched_tldr_idx": 9,
+      "similarity": 0.7297061085700989
+    },
+    {
+      "rank": 56,
+      "score": 61.0,
+      "title": "China Vows Response to US Sanctions Threat Against AI Firms",
+      "url": "https://www.bloomberg.com/news/articles/2026-07-27/china-vows-response-to-us-sanctions-threat-against-ai-firms",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 57,
       "score": 61.0,
       "title": "AI Chatbots Know How to Make Deadly Biological Weapons. Some Will Teach You.",
       "url": "https://www.wsj.com/tech/ai/openai-chatbot-biological-weapons-poison-3d808e6c?mod=rss_Technology",
@@ -446,7 +494,15 @@
       "similarity": null
     },
     {
-      "rank": 56,
+      "rank": 58,
+      "score": 61.0,
+      "title": "Hugging Face is billing OpenAI $100mn for hacking it",
+      "url": "https://thenextweb.com/news/hugging-face-delangue-openai-100m-compute-traces-demand",
+      "matched_tldr_idx": 2,
+      "similarity": 0.7066371440887451
+    },
+    {
+      "rank": 59,
       "score": 60.0,
       "title": "Durable Objects are Made for Agents",
       "url": "https://calv.info/durable-objects-are-made-for-agents",
@@ -454,7 +510,7 @@
       "similarity": null
     },
     {
-      "rank": 57,
+      "rank": 60,
       "score": 60.0,
       "title": "Why goodput matters more than throughput for LLM serving",
       "url": "https://www.cncf.io/blog/2026/07/20/why-goodput-matters-more-than-throughput-for-llm-serving/",
@@ -462,7 +518,15 @@
       "similarity": null
     },
     {
-      "rank": 58,
+      "rank": 61,
+      "score": 60.0,
+      "title": "Meta reinvents AI metadata flow and KV caching",
+      "url": "https://www.blocksandfiles.com/object/2026/07/27/meta-reinvents-ai-metadata-flow-and-kv-caching/5278805",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 62,
       "score": 60.0,
       "title": "Cursor, Codex, Gemini CLI, Antigravity hit by sandbox escapes",
       "url": "https://www.bleepingcomputer.com/news/security/cursor-codex-gemini-cli-antigravity-hit-by-sandbox-escapes/",
@@ -470,7 +534,7 @@
       "similarity": null
     },
     {
-      "rank": 59,
+      "rank": 63,
       "score": 59.0,
       "title": "AI is Oil, Not God",
       "url": "https://www.notboring.co/p/ai-is-oil-not-god",
@@ -478,7 +542,7 @@
       "similarity": null
     },
     {
-      "rank": 60,
+      "rank": 64,
       "score": 59.0,
       "title": "Software Factories, Light and Dark",
       "url": "https://x.com/addyosmani/status/2079442194449232227",
@@ -486,7 +550,7 @@
       "similarity": null
     },
     {
-      "rank": 61,
+      "rank": 65,
       "score": 58.0,
       "title": "To Every Agent Its Own Database",
       "url": "https://joereis.substack.com/p/to-every-agent-its-own-database",
@@ -494,23 +558,23 @@
       "similarity": null
     },
     {
-      "rank": 62,
+      "rank": 66,
       "score": 58.0,
-      "title": "Demystifying AI Exploits: A Blueprint for AI-Assisted Vulnerability Management",
-      "url": "https://cloud.google.com/blog/topics/threat-intelligence/ai-assisted-vulnerability-management/",
+      "title": "Anthropic\u2019s Opus 5 Nears Mythos 5 on Finding Bugs, but Falls Short on Exploits",
+      "url": "https://www.securityweek.com/anthropics-opus-5-nears-mythos-5-on-finding-bugs-but-falls-short-on-exploits/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 63,
+      "rank": 67,
       "score": 58.0,
-      "title": "NVIDIA Nemotron 3 Ultra Leads Open Models on Accuracy and Efficiency in Agentic RTL Coding",
-      "url": "https://developer.nvidia.com/blog/nvidia-nemotron-3-ultra-leads-open-models-on-accuracy-and-efficiency-in-agentic-rtl-coding/",
+      "title": "New ransomware targets AI model weights and can't even collect the ransom",
+      "url": "https://venturebeat.com/security/new-ransomware-targets-ai-model-weights-and-cant-even-collect-the-ransom",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 64,
+      "rank": 68,
       "score": 58.0,
       "title": "Why the first GPU financiers are turning to inference chips in a $400 million deal",
       "url": "https://techcrunch.com/2026/07/17/why-the-first-gpu-financiers-are-turning-to-inference-chips-in-a-400-million-deal/",
@@ -518,7 +582,15 @@
       "similarity": null
     },
     {
-      "rank": 65,
+      "rank": 69,
+      "score": 58.0,
+      "title": "China warns it will take \"all necessary measures\" if the US sanctions Chinese AI companies over allegations they improperly used US models to train their models (Bloomberg)",
+      "url": "https://www.techmeme.com/260727/p11#a260727p11",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 70,
       "score": 58.0,
       "title": "Vallance appointed chair of new PM\u2019s AI taskforce",
       "url": "https://www.uktech.news/government-policy/vallance-appointed-chair-of-new-pms-ai-taskforce-20260727",
@@ -526,7 +598,7 @@
       "similarity": null
     },
     {
-      "rank": 66,
+      "rank": 71,
       "score": 58.0,
       "title": "Vor diesem 34-j\u00e4hrigen Chinesen zittert das Silicon Valley",
       "url": "https://www.businessinsider.de/gruenderszene/moonshot-ai-vor-diesem-34-jaehrigen-chinesen-zittert-jetzt-das-silicon-valley/",
@@ -534,7 +606,15 @@
       "similarity": null
     },
     {
-      "rank": 67,
+      "rank": 72,
+      "score": 58.0,
+      "title": "AI companies spend record sums on Washington lobbying",
+      "url": "https://www.ft.com/content/d8a5f95e-3b6d-463a-a848-c9ef8e2394db",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 73,
       "score": 58.0,
       "title": "What is happening to jobs? Separating AI hype from reality",
       "url": "https://siepr.stanford.edu/publications/policy-brief/what-really-happening-jobs-separating-ai-hype-reality",
@@ -542,7 +622,7 @@
       "similarity": null
     },
     {
-      "rank": 68,
+      "rank": 74,
       "score": 58.0,
       "title": "ARC-AGI Leaderboard",
       "url": "https://arcprize.org/leaderboard",
@@ -550,7 +630,15 @@
       "similarity": null
     },
     {
-      "rank": 69,
+      "rank": 75,
+      "score": 57.0,
+      "title": "Google\u2019s AI search is rapidly becoming the default, new data shows",
+      "url": "https://techcrunch.com/2026/07/27/googles-ai-search-is-rapidly-becoming-the-default-new-data-shows/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 76,
       "score": 57.0,
       "title": "AI music generator Suno breach affects 55M users, per Have I Been Pwned",
       "url": "https://techcrunch.com/2026/07/21/ai-music-generator-suno-breach-affects-55m-users-per-have-i-been-pwned/",
@@ -558,65 +646,93 @@
       "similarity": null
     },
     {
-      "rank": 70,
+      "rank": 77,
       "score": 57.0,
       "title": "OpenAI says Hugging Face was breached by its pre-release models",
       "url": "https://techcrunch.com/2026/07/21/openai-says-hugging-face-was-breached-by-its-pre-release-models/",
+      "matched_tldr_idx": 2,
+      "similarity": 0.8711249828338623
+    },
+    {
+      "rank": 78,
+      "score": 57.0,
+      "title": "Even China\u2019s A.I. Powerhouses Can\u2019t Figure Out How to Profit Off A.I.",
+      "url": "https://www.nytimes.com/2026/07/27/business/china-ai-alibaba-bytedance.html",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 71,
+      "rank": 79,
       "score": 56.0,
-      "title": "Once hailed as an AI visionary, Satya Nadella faces pressure as a compute crunch forces Microsoft to prioritize its own AI products over Azure cloud customers (Ashley Stewart/Business Insider)",
-      "url": "https://www.techmeme.com/260726/p7#a260726p7",
+      "title": "Tech sector pours $1T into AI and sends customers the bill",
+      "url": "https://www.theregister.com/ai-and-ml/2026/07/27/tech-sector-pours-1t-into-ai-and-sends-customers-the-bill/5278845",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 72,
+      "rank": 80,
+      "score": 56.0,
+      "title": "Tech giants form alliance to put open AI in cyber defenders\u2019 hands",
+      "url": "https://www.helpnetsecurity.com/2026/07/27/nvidia-open-secure-ai-alliance/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 81,
       "score": 56.0,
       "title": "TSMC is accelerating Arizona factory build-out to capitalize on AI \u2018megatrend,' CFO says",
       "url": "https://www.cnbc.com/2026/07/20/tsmc-arizona-fab-capacity-ai-chip-demand.html",
       "matched_tldr_idx": null,
       "similarity": null
-    },
-    {
-      "rank": 73,
-      "score": 56.0,
-      "title": "How AI companies are targeting the education market, including making free or cut-price tailored learning tools in partnership with schools and edtech startups (Jamie John/Financial Times)",
-      "url": "https://www.techmeme.com/260726/p9#a260726p9",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 74,
-      "score": 56.0,
-      "title": "A Rogue Hack and China at the Door Spark a Great AI Panic",
-      "url": "https://www.wsj.com/tech/ai/a-rogue-hack-and-china-at-the-door-spark-a-great-ai-panic-4e6d97a5?mod=rss_Technology",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 75,
-      "score": 56.0,
-      "title": "Nvidia, other tech giants caution against open-source AI ban in open letter",
-      "url": "https://siliconangle.com/2026/07/24/nvidia-tech-giants-caution-open-source-ai-ban-open-letter/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 76,
-      "score": 55.0,
-      "title": "The Anthropic-Physical Intelligence rumor roiling AI Twitter",
-      "url": "https://techcrunch.com/2026/07/21/the-anthropic-physical-intelligence-rumor-roiling-ai-twitter/",
-      "matched_tldr_idx": null,
-      "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.2,
+    "25": 0.2,
+    "50": 0.26666666666666666,
+    "100": 0.26666666666666666,
+    "81": 0.26666666666666666
+  },
+  "hits_at": {
+    "10": 3,
+    "25": 3,
+    "50": 4,
+    "100": 4,
+    "81": 4
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://www.anthropic.com/news/claude-opus-5",
+    "https://techcrunch.com/2026/07/24/prentis-new-ai-lab-co-founded-by-reid-hoffman-mark-pincus-in-talks-to-raise-100m/",
+    "https://thezvi.substack.com/p/more-on-an-internal-openai-model",
+    "https://x.com/philipkiely/status/2081207212278706439",
+    "https://www.imperialviolet.org/2026/07/26/zstd-lean.html",
+    "https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models",
+    "https://earendil.com/posts/prompt-caching/",
+    "https://nvlabs.github.io/Sana/Video2/",
+    "https://x.com/celeris_ai/status/2080442996403933630",
+    "https://images.nvidia.com/pdf/Open-Weights-and-American-AI-Leadership.pdf",
+    "https://benn.substack.com/p/brute-intelligence",
+    "https://developer.nvidia.com/blog/modelexpress-distributing-model-artifacts-at-the-speed-of-light/",
+    "https://threadreaderapp.com/thread/2080671145938821414.html",
+    "https://kaitchup.substack.com/p/agentic-ai-at-two-different-scales",
+    "https://legora.com/bar"
+  ],
+  "tldr_domains": [
+    "anthropic.com",
+    "techcrunch.com",
+    "thezvi.substack.com",
+    "x.com",
+    "imperialviolet.org",
+    "claude.com",
+    "earendil.com",
+    "nvlabs.github.io",
+    "x.com",
+    "images.nvidia.com",
+    "benn.substack.com",
+    "developer.nvidia.com",
+    "threadreaderapp.com",
+    "kaitchup.substack.com",
+    "legora.com"
+  ]
 }

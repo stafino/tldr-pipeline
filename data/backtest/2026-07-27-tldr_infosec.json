@@ -1,9 +1,35 @@
 {
   "date": "2026-07-27",
   "newsletter": "tldr_infosec",
-  "fetched_at": "2026-07-27T10:50:17.759654+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-07-27T17:10:19.792592+00:00",
+  "tldr_titles": [
+    "Steam Forum ClickFix Attack Infects Gamers With XMRig Cryptominers",
+    "Golden Chickens Resurfaces With Four New Malware Families and Modular Implants",
+    "Data Breach Confirmed After Australian Energy Giant Origin Is Hacked",
+    "Going depthfirst: Achieving GitLab RCE via Two Ruby Memory Corruption Vulnerabilities",
+    "Jailbreaker: LLM Jailbreak Testing You Can Actually Repeat",
+    "Knossos: Procedurally Generated Decoy Environments",
+    "The hacker who humiliated spyware makers and was never caught",
+    "LG to Ban Residential Proxies from Smart TV Apps",
+    "The OpenAI/Huggingface Incident: How We Should Manage the Imminent Arrival of Autonomous Hacking too Cheap to Meter",
+    "Are Your Passwords in the Green?",
+    "Vatican's Official Prayer App Leaks 700K+ Global Users' PII",
+    "Stadler Rail scoffs at Everst's $12.3M extortion attempts"
+  ],
+  "tldr_matched": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false,
+    false
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -32,13 +58,29 @@
     {
       "rank": 4,
       "score": 83.0,
+      "title": "PTC Windchill Vulnerability Exploited in Ransomware Campaign",
+      "url": "https://www.securityweek.com/ptc-windchill-vulnerability-exploited-in-ransomware-campaign/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 5,
+      "score": 83.0,
+      "title": "PoC exploit released for critical AD CS domain-takeover flaw (CVE-2026-54121)",
+      "url": "https://www.helpnetsecurity.com/2026/07/27/certighost-cve-2026-54121-poc-exploit-released/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 6,
+      "score": 83.0,
       "title": "Russian Intelligence Hacks IP Cameras to Spy on Military Logistics Across NATO States and Ukraine",
       "url": "https://thehackernews.com/2026/07/russian-intelligence-hacks-ip-cameras.html",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 5,
+      "rank": 7,
       "score": 82.0,
       "title": "OpenAI and Hugging Face partner to address security incident during model evaluation",
       "url": "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
@@ -46,15 +88,15 @@
       "similarity": null
     },
     {
-      "rank": 6,
+      "rank": 8,
       "score": 82.0,
       "title": "OpenAI and Hugging Face disclose unprecedented AI-driven security incident",
       "url": "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 8,
+      "similarity": 0.6453923583030701
     },
     {
-      "rank": 7,
+      "rank": 9,
       "score": 82.0,
       "title": "Flaw in Adobe Extension With 300M Installs Enabled WhatsApp Data Theft",
       "url": "https://www.securityweek.com/flaw-in-adobe-extension-with-300m-installs-enabled-whatsapp-data-theft/",
@@ -62,15 +104,15 @@
       "similarity": null
     },
     {
-      "rank": 8,
-      "score": 80.0,
-      "title": "Anthropic\u2019s Claude Cowork could escape its local VM and read credentials on a Mac",
-      "url": "https://thenextweb.com/news/claude-cowork-sandbox-escape-mac-files-sharedroot",
+      "rank": 10,
+      "score": 78.0,
+      "title": "Public Exploit Released for Patched vBulletin Pre-Auth Code Execution Flaw",
+      "url": "https://thehackernews.com/2026/07/public-exploit-released-for-patched.html",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 9,
+      "rank": 11,
       "score": 78.0,
       "title": "Researcher Publishes GitLab RCE PoC Letting Authenticated Users Run Commands as Git",
       "url": "https://thehackernews.com/2026/07/researcher-publishes-gitlab-rce-poc.html",
@@ -78,7 +120,23 @@
       "similarity": null
     },
     {
-      "rank": 10,
+      "rank": 12,
+      "score": 78.0,
+      "title": "New ransomware targets AI model weights and can't even collect the ransom",
+      "url": "https://venturebeat.com/security/new-ransomware-targets-ai-model-weights-and-cant-even-collect-the-ransom",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 13,
+      "score": 78.0,
+      "title": "Claude Cowork escaped sandbox on Mac, gain full access to all files",
+      "url": "https://9to5mac.com/2026/07/27/claude-cowork-escaped-sandbox-on-mac-gain-full-access-to-all-files/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 14,
       "score": 78.0,
       "title": "World's Largest AI Model Repository Hugging Face Breached by Autonomous AI Agent",
       "url": "https://thehackernews.com/2026/07/worlds-largest-ai-model-repository.html",
@@ -86,7 +144,7 @@
       "similarity": null
     },
     {
-      "rank": 11,
+      "rank": 15,
       "score": 78.0,
       "title": "Microsoft 365 calendars become spy drop boxes in HOLLOWGRAPH campaign",
       "url": "https://www.theregister.com/security/2026/07/20/microsoft-365-calendars-become-spy-drop-boxes-in-hollowgraph-campaign/5274982",
@@ -94,7 +152,7 @@
       "similarity": null
     },
     {
-      "rank": 12,
+      "rank": 16,
       "score": 78.0,
       "title": "Cursor, Codex, Gemini CLI, Antigravity hit by sandbox escapes",
       "url": "https://www.bleepingcomputer.com/news/security/cursor-codex-gemini-cli-antigravity-hit-by-sandbox-escapes/",
@@ -102,7 +160,7 @@
       "similarity": null
     },
     {
-      "rank": 13,
+      "rank": 17,
       "score": 78.0,
       "title": "Open-Source Android AI Agents Could Let Invisible Screen Text Run Code on Host PCs",
       "url": "https://thehackernews.com/2026/07/open-source-android-ai-agents-could-let.html",
@@ -110,7 +168,7 @@
       "similarity": null
     },
     {
-      "rank": 14,
+      "rank": 18,
       "score": 78.0,
       "title": "Claude Cowork Flaw Could Let AI Agent Escape Its VM and Access Mac Files",
       "url": "https://thehackernews.com/2026/07/claude-cowork-flaw-could-let-ai-agent.html",
@@ -118,7 +176,7 @@
       "similarity": null
     },
     {
-      "rank": 15,
+      "rank": 19,
       "score": 78.0,
       "title": "Demystifying AI Exploits: A Blueprint for AI-Assisted Vulnerability Management",
       "url": "https://cloud.google.com/blog/topics/threat-intelligence/ai-assisted-vulnerability-management/",
@@ -126,7 +184,7 @@
       "similarity": null
     },
     {
-      "rank": 16,
+      "rank": 20,
       "score": 78.0,
       "title": "Introducing Antares: Highly Efficient Open Weight AI Models for Vulnerability Localization",
       "url": "https://blogs.cisco.com/ai/introducing-antares-the-most-efficient-open-weight-ai-models-for-vulnerability-localization",
@@ -134,7 +192,7 @@
       "similarity": null
     },
     {
-      "rank": 17,
+      "rank": 21,
       "score": 76.0,
       "title": "GrapheneOS protections against data extraction from locked devices",
       "url": "https://discuss.grapheneos.org/d/40700-grapheneos-protections-against-data-extraction-from-locked-devices",
@@ -142,7 +200,7 @@
       "similarity": null
     },
     {
-      "rank": 18,
+      "rank": 22,
       "score": 74.0,
       "title": "OpenSSL HollowByte Flaw Could Freeze Server Memory with 11-Byte TLS Requests",
       "url": "https://thehackernews.com/2026/07/openssl-hollowbyte-flaw-could-freeze.html",
@@ -150,7 +208,7 @@
       "similarity": null
     },
     {
-      "rank": 19,
+      "rank": 23,
       "score": 74.0,
       "title": "GitHub, PyPI add time-based defenses against supply chain attacks",
       "url": "https://www.bleepingcomputer.com/news/security/github-pypi-add-time-absed-defenses-against-supply-chain-attacks/",
@@ -158,7 +216,7 @@
       "similarity": null
     },
     {
-      "rank": 20,
+      "rank": 24,
       "score": 72.0,
       "title": "OpenAI's accidental cyberattack against Hugging Face is science fiction that happened",
       "url": "https://simonwillison.net/2026/Jul/22/openai-cyberattack/",
@@ -166,15 +224,7 @@
       "similarity": null
     },
     {
-      "rank": 21,
-      "score": 72.0,
-      "title": "I Inspected My Take-Home Interview Project. It Was a Whole Operation",
-      "url": "https://citizendot.github.io/articles/fake-job-interview-git-hook-malware/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 22,
+      "rank": 25,
       "score": 72.0,
       "title": "Securing the AI supply chain on GKE: Introducing k8s-aibom for automated AI BOMs",
       "url": "https://cloud.google.com/blog/products/identity-security/introducing-k8s-aibom-on-gke-for-automated-ai-bills-of-materials/",
@@ -182,31 +232,23 @@
       "similarity": null
     },
     {
-      "rank": 23,
-      "score": 68.0,
-      "title": "Malvertising Sends Malware in Pieces, Then Makes the Browser Build the Executable",
-      "url": "https://thehackernews.com/2026/07/malvertising-sends-malware-in-pieces.html",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 24,
-      "score": 68.0,
-      "title": "Malicious sites use JavaScript to build malware in browser memory",
-      "url": "https://www.bleepingcomputer.com/news/security/malicious-sites-use-javascript-to-build-malware-in-browser-memory/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 25,
-      "score": 68.0,
-      "title": "Abbott probes two cyber incidents amid extortion claims",
-      "url": "https://www.bleepingcomputer.com/news/security/abbott-laboratories-probes-two-cyber-incidents-amid-extortion-claims/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
       "rank": 26,
+      "score": 68.0,
+      "title": "Microsoft introduces MAI-Cyber-1-Flash, an AI model trained for cybersecurity, and launches Perception, an agentic security system to patch vulnerabilities (New York Times)",
+      "url": "https://www.techmeme.com/260727/p23#a260727p23",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 27,
+      "score": 67.0,
+      "title": "Exclusive: Cogent Security debuts VR-1, a frontier model built to prove attack paths",
+      "url": "https://siliconangle.com/2026/07/27/exclusive-cogent-security-debuts-vr-1-frontier-model-built-prove-attack-paths/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 28,
       "score": 66.0,
       "title": "Anthropic Says It Deliberately Left Cyber Training Out of Claude Opus 5",
       "url": "https://www.implicator.ai/anthropic-says-it-deliberately-left-cyber-training-out-of-claude-opus-5/",
@@ -214,15 +256,7 @@
       "similarity": null
     },
     {
-      "rank": 27,
-      "score": 66.0,
-      "title": "GitHub delays version updates so malware gets caught first",
-      "url": "https://www.helpnetsecurity.com/2026/07/27/github-dependabot-cooldown/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 28,
+      "rank": 29,
       "score": 66.0,
       "title": "End-to-End Detection Validation Using Coding Agents",
       "url": "https://blog.cauchy.org/blog/detection-validation/",
@@ -230,7 +264,15 @@
       "similarity": null
     },
     {
-      "rank": 29,
+      "rank": 30,
+      "score": 65.0,
+      "title": "New GitHub, PyPI Policies Boost Supply Chain Security",
+      "url": "https://www.securityweek.com/new-github-pypi-policies-boost-supply-chain-security/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 31,
       "score": 63.0,
       "title": "Anthropic\u2019s Opus 5 Nears Mythos 5 on Finding Bugs, but Falls Short on Exploits",
       "url": "https://www.securityweek.com/anthropics-opus-5-nears-mythos-5-on-finding-bugs-but-falls-short-on-exploits/",
@@ -238,7 +280,7 @@
       "similarity": null
     },
     {
-      "rank": 30,
+      "rank": 32,
       "score": 63.0,
       "title": "The relay market powering token resellers and fraud",
       "url": "https://vectoral.com/blog/token-relay-market",
@@ -246,7 +288,7 @@
       "similarity": null
     },
     {
-      "rank": 31,
+      "rank": 33,
       "score": 62.0,
       "title": "UK AISI / Caisi Preliminary Assessment of Kimi K3's Cyber Capabilities",
       "url": "https://www.nist.gov/news-events/news/2026/07/uk-aisi-caisi-preliminary-assessment-kimi-k3s-cyber-capabilities",
@@ -254,7 +296,7 @@
       "similarity": null
     },
     {
-      "rank": 32,
+      "rank": 34,
       "score": 62.0,
       "title": "GitHub Adds 3-Day Dependabot Cooldown to Limit Poisoned Package Adoption",
       "url": "https://thehackernews.com/2026/07/github-adds-3-day-dependabot-cooldown.html",
@@ -262,15 +304,7 @@
       "similarity": null
     },
     {
-      "rank": 33,
-      "score": 62.0,
-      "title": "Nono: Open-source sandbox for AI agents",
-      "url": "https://www.helpnetsecurity.com/2026/07/27/nono-open-source-ai-agent-sandboxing/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 34,
+      "rank": 35,
       "score": 62.0,
       "title": "US citizen charged after GrapheneOS phone wipes during airport search",
       "url": "https://www.techspot.com/news/113236-us-prosecutors-charge-atlanta-man-after-grapheneos-phone.html",
@@ -278,15 +312,15 @@
       "similarity": null
     },
     {
-      "rank": 35,
+      "rank": 36,
       "score": 60.0,
-      "title": "Claude Opus 5 sharpens coding and cybersecurity work on AWS",
-      "url": "https://www.helpnetsecurity.com/2026/07/27/claude-opus-5-aws-coding-cybersecurity-work/",
+      "title": "We\u2019re open sourcing our privacy proxy CLI",
+      "url": "https://blog.cloudflare.com/open-sourcing-our-privacy-proxy-cli/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 36,
+      "rank": 37,
       "score": 59.0,
       "title": "We have proof automation now",
       "url": "https://www.imperialviolet.org/2026/07/26/zstd-lean.html",
@@ -294,15 +328,31 @@
       "similarity": null
     },
     {
-      "rank": 37,
+      "rank": 38,
       "score": 58.0,
-      "title": "Marathon Petroleum\u2019s CISO on\u00a0OT security automation, supply chain risk",
-      "url": "https://www.helpnetsecurity.com/2026/07/27/mary-rose-martinez-marathon-petroleum-ot-security-automation/",
+      "title": "What\u2019s Hiding in Your Mobile Apps? Lookout MSEC Aims to Find Out",
+      "url": "https://www.securityweek.com/whats-hiding-in-your-mobile-apps-lookout-msec-aims-to-find-out/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 38,
+      "rank": 39,
+      "score": 58.0,
+      "title": "7AI expands platform with Federated SIEM and AI workflow builder",
+      "url": "https://www.helpnetsecurity.com/2026/07/27/7ai-expands-platform-with-federated-siem-and-ai-workflow-builder/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 40,
+      "score": 58.0,
+      "title": "Tech giants link hands to praise open AI models after OpenAI - Hugging Face attack",
+      "url": "https://www.theregister.com/ai-and-ml/2026/07/27/tech-giants-link-hands-to-praise-open-ai-models-after-openai-hugging-face-attack/5279061",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 41,
       "score": 58.0,
       "title": "Google goes it alone with a new cybercrime crew taxonomy",
       "url": "https://www.theregister.com/security/2026/07/27/google-goes-it-alone-with-a-new-cybercrime-crew-taxonomy/5278749",
@@ -310,7 +360,39 @@
       "similarity": null
     },
     {
-      "rank": 39,
+      "rank": 42,
+      "score": 58.0,
+      "title": "Activist charged with felony after giving border agent \"duress code\" that wiped his phone",
+      "url": "https://arstechnica.com/gadgets/2026/07/activist-charged-with-felony-after-giving-border-agent-duress-code-that-wiped-his-phone/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 43,
+      "score": 58.0,
+      "title": "Sen. Wyden urges feds to discard older, insecure, public-facing VPNs",
+      "url": "https://cyberscoop.com/wyden-calls-for-federal-legacy-vpn-purge-zero-trust/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 44,
+      "score": 58.0,
+      "title": "Tech giants form alliance to put open AI in cyber defenders\u2019 hands",
+      "url": "https://www.helpnetsecurity.com/2026/07/27/nvidia-open-secure-ai-alliance/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 45,
+      "score": 58.0,
+      "title": "Google changes how it names cyber threat actors",
+      "url": "https://www.helpnetsecurity.com/2026/07/27/google-threat-actors-naming-system/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 46,
       "score": 58.0,
       "title": "India Orders GitHub to Remove Bitchat as Modi Turns to Instagram Reels",
       "url": "https://www.implicator.ai/india-github-bitchat-takedown-modi-reels/",
@@ -318,7 +400,7 @@
       "similarity": null
     },
     {
-      "rank": 40,
+      "rank": 47,
       "score": 57.0,
       "title": "Microsoft 365 profile cards are getting a \"major change\", some IT admins should take action",
       "url": "https://www.neowin.net/news/microsoft-365-profile-cards-are-getting-a-major-change-some-it-admins-should-take-action/?utm_source=rss",
@@ -326,7 +408,7 @@
       "similarity": null
     },
     {
-      "rank": 41,
+      "rank": 48,
       "score": 57.0,
       "title": "Memory safety absolutists",
       "url": "https://itsallaboutthebit.com/memory-safety-absolutists/",
@@ -334,7 +416,7 @@
       "similarity": null
     },
     {
-      "rank": 42,
+      "rank": 49,
       "score": 56.0,
       "title": "Measuring Reward-Seeking by Instilling Contrastive Beliefs",
       "url": "https://alignment.openai.com/measuring-reward-seeking/",
@@ -342,7 +424,15 @@
       "similarity": null
     },
     {
-      "rank": 43,
+      "rank": 50,
+      "score": 56.0,
+      "title": "C1 adds shadow AI discovery to its identity governance platform",
+      "url": "https://www.helpnetsecurity.com/2026/07/27/c1-adds-shadow-ai-discovery-to-its-identity-governance-platform/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 51,
       "score": 56.0,
       "title": "AI Chatbots Know How to Make Deadly Biological Weapons. Some Will Teach You.",
       "url": "https://www.wsj.com/tech/ai/openai-chatbot-biological-weapons-poison-3d808e6c?mod=rss_Technology",
@@ -350,7 +440,23 @@
       "similarity": null
     },
     {
-      "rank": 44,
+      "rank": 52,
+      "score": 56.0,
+      "title": "Nvidia, Microsoft launch open AI security alliance \u2014 without OpenAI, Google, or Anthropic",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/971281/nvidia-open-secure-ai-alliance-cybersecurity",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 53,
+      "score": 56.0,
+      "title": "Nvidia forms the Open Secure AI Alliance, a coalition including CrowdStrike, Hugging Face, and Dell to develop and share tools for AI safety and cybersecurity (Jaspreet Singh/Reuters)",
+      "url": "https://www.techmeme.com/260727/p9#a260727p9",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 54,
       "score": 56.0,
       "title": "Instagram, Facebook Ran AI \u2018Nudify\u2019 Ads from China, NGO Says",
       "url": "https://www.bloomberg.com/news/articles/2026-07-27/instagram-facebook-ran-ai-nudify-ads-from-china-report-says",
@@ -358,7 +464,15 @@
       "similarity": null
     },
     {
-      "rank": 45,
+      "rank": 55,
+      "score": 56.0,
+      "title": "Microsoft Unveils A.I. Cybersecurity Tools",
+      "url": "https://www.nytimes.com/2026/07/27/technology/microsoft-unveils-ai-cybersecurity-tools.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 56,
       "score": 56.0,
       "title": "Weekly Update 514: This Week in Data Breaches",
       "url": "https://www.troyhunt.com/weekly-update-514/",
@@ -366,17 +480,55 @@
       "similarity": null
     },
     {
-      "rank": 46,
+      "rank": 57,
       "score": 55.0,
       "title": "AI arms race in line for a reckoning after OpenAI hacking incident",
       "url": "https://arstechnica.com/ai/2026/07/ai-arms-race-in-line-for-a-reckoning-after-openai-hacking-incident/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 8,
+      "similarity": 0.6924676299095154
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.08333333333333333,
+    "25": 0.08333333333333333,
+    "50": 0.08333333333333333,
+    "100": 0.08333333333333333,
+    "57": 0.08333333333333333
+  },
+  "hits_at": {
+    "10": 1,
+    "25": 1,
+    "50": 1,
+    "100": 1,
+    "57": 1
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://www.bleepingcomputer.com/news/security/steam-forum-clickfix-attacks-infect-gamers-with-xmrig-cryptominers/",
+    "https://thehackernews.com/2026/07/golden-chickens-resurfaces-with-four.html",
+    "https://www.securityweek.com/data-breach-confirmed-after-australian-energy-giant-origin-is-hacked/",
+    "https://depthfirst.com/research/going-depthfirst-achieving-gitlab-rce-via-two-ruby-memory-corruption-vulnerabilities",
+    "https://specterops.io/blog/2026/06/29/llm-jailbreak-testing-with-jailbreaker/",
+    "https://www.praetorian.com/blog/knossos-decoy-environments",
+    "https://techcrunch.com/2026/07/25/the-hacker-who-humiliated-spyware-makers-and-was-never-caught/",
+    "https://krebsonsecurity.com/2026/07/lg-to-ban-residential-proxies-from-smart-tv-apps/",
+    "https://joshuasaxe181906.substack.com/p/the-openaihuggingface-incident-how",
+    "https://www.hivesystems.com/blog/are-your-passwords-in-the-green",
+    "https://www.darkreading.com/vulnerabilities-threats/vatican-official-prayer-app-leaks-700k-pii",
+    "https://www.theregister.com/security/2026/07/23/stadler-rail-scoffs-at-eversts-123m-extortion-attempts/5276922"
+  ],
+  "tldr_domains": [
+    "bleepingcomputer.com",
+    "thehackernews.com",
+    "securityweek.com",
+    "depthfirst.com",
+    "specterops.io",
+    "praetorian.com",
+    "techcrunch.com",
+    "krebsonsecurity.com",
+    "joshuasaxe181906.substack.com",
+    "hivesystems.com",
+    "darkreading.com",
+    "theregister.com"
+  ]
 }
