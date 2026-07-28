@@ -6,13 +6,29 @@ TLDR DevOps 2026-07-28
 📱
 News & Trends
 
-Confidential Containers becomes a CNCF incubating project (1 minute read)
+Natural disasters and government interference: examining Q2 2026’s major Internet disruption events (1 minute read)
 
-The CNCF Technical Oversight Committee voted to promote Confidential Containers to incubating status, advancing the project's use of hardware TEEs to encrypt data in use for sensitive Kubernetes workloads on untrusted infrastructure. Backed by Azure, Intel, AMD, IBM, NVIDIA, and Red Hat, the project integrates confidential computing into standard k8s workflows via the Kata Containers runtime and is now being wired into KServe for confidential AI.
+Cloudflare's Q2 2026 Internet disruption summary logged the quarter's biggest outages, from Super Typhoon Sinlaku knocking Guam traffic 80% below baseline to Sudan's recurring exam-period shutdowns and Iran's 88-day national blackout. A cable cut in Saint Lucia and faulty DNSSEC signatures in Germany rounded out the report, each a reminder of how narrow the margin is between routine operation and regional connectivity loss.
+
+JetBrains fixes critical unauthenticated RCE in TeamCity On-Premises (CVE-2026-63077) (1 minute read)
+
+JetBrains patched CVE-2026-63077, a critical unauthenticated RCE affecting all TeamCity On-Premises versions, exploitable through the agent polling protocol to bypass auth and run OS commands as the server process. A compromise could expose stored credentials, alter build artifacts, and poison downstream CI/CD pipelines, so admins should upgrade to 2025.11.7 or 2026.1.3 immediately or install the security patch plugin, since state-sponsored and ransomware groups have targeted unpatched TeamCity before.
+
+Confidential Containers becomes a CNCF incubating project (5 minute read)
+
+(blurb not generated)
 
 RefluXFS: A Linux Kernel Local Privilege Escalation to Root in XFS (CVE-2026-64600) (5 minute read)
 
-Qualys disclosed CVE-2026-64600, a race condition in the Linux kernel's XFS copy-on-write path that lets any local unprivileged user overwrite protected files at the block layer and escalate to host root, even under SELinux Enforcing. The flaw has existed since kernel 4.11 and ships in default RHEL, Oracle Linux, Amazon Linux, and Fedora installs, with no reliable mitigation short of patching and rebooting.
+(blurb not generated)
+
+Hugging Face rebuilt a third of its infrastructure after OpenAI agents ran amok (1 minute read)
+
+Hugging Face rebuilt roughly a third of its infrastructure after a swarm of OpenAI crawler agents hammered its servers, forcing emergency rate-limiting, request-fingerprinting, and a redesign of how the Hub handles high-volume automated traffic. The episode shows how agentic clients can turn into an unplanned DDoS against public APIs, pushing platform teams to treat bot traffic as a capacity and blast-radius problem rather than an abuse-filter afterthought.
+
+Critical TeamCity Flaw Could Let Attackers Run OS Commands Without Logging In (1 minute read)
+
+JetBrains patched a critical unauthenticated RCE in TeamCity On-Premises, CVE-2026-63077 (CVSS 9.8), that lets an attacker with HTTP access bypass the agent polling protocol's auth checks and run OS commands as the server process. The fix ships in versions 2025.11.7 and 2026.1.3, with a backported patch plugin for 2017.1+; a compromise can expose stored credentials and build configs, so internet-facing servers should be patched or put behind a VPN now.
 
 OpenTelemetry has graduated… Now what? (5 minute read)
 
@@ -30,17 +46,45 @@ Meta reinvents AI metadata flow and KV caching (5 minute read)
 
 (blurb not generated)
 
-GitHub Adds 3-Day Dependabot Cooldown to Limit Poisoned Package Adoption (1 minute read)
+Critical OpenWrt DHCPv6 Flaw Could Let Unauthenticated Attackers Run Code as Root (1 minute read)
 
-GitHub added a default 3-day cooldown to Dependabot, delaying version-update pull requests until three days after a release publishes so poisoned packages have time to get yanked before downstream projects adopt them. Security updates still ship immediately, the window is configurable in dependabot.yml, and GitHub frames the cooldown as one layer alongside lockfile pinning and disabled CI install scripts rather than a fix for dormant backdoors.
+OpenWrt shipped 24.10.8 to patch CVE-2026-53921, a CVSS 9.8 stack overflow in odhcpd that lets an unauthenticated attacker on the network run code as root via a crafted DHCPv6 REQUEST to UDP 547. Because odhcpd runs as root and embedded devices often lack stack canaries and ASLR, exploitation is realistic; 24.10 users should install 24.10.8 and 25.12 users 25.12.5, with public proof-of-concept code already circulating.
 
-Cisco close to releasing more AI models, this time for deep networking ops (1 minute read)
+Tengu Botnet Reboots Compromised Linux Devices When Defenders Kill Its Process (1 minute read)
 
-Cisco is close to shipping a new set of AI models aimed at deep networking operations, extending its earlier infrastructure-focused releases toward tasks like config analysis, telemetry interpretation, and fault diagnosis. The move puts purpose-built network models against general LLMs for NetOps work, where the payoff depends on whether they reduce troubleshooting toil without adding another opaque dependency to the operational stack.
+Nozomi Networks Labs documented Tengu, a Mirai-derived Linux botnet that abuses a device's hardware watchdog to reboot the host when defenders kill its main process, giving its other persistence mechanisms another shot at relaunching. The malware spreads via Telnet credential brute force, supports 25 DDoS methods plus a SOCKS5 proxy, and stands out for self-defense code that most Mirai variants lack.
 
-Modernizing the skies: NOAA and Google Cloud collaborate to advance weather forecasting (5 minute read)
+Flaw From 2002 Exposes Data Centers to Server Takeover (1 minute read)
+
+Researchers at Lava found that roughly 24,000 internet-exposed Baseboard Management Controllers are still vulnerable to CVE-2013-4786, an IPMI 2.0 flaw that leaks password hashes to unauthenticated clients and enables offline cracking for privileged server access. Because BMCs operate below the OS, kernel, and container layer, a compromise stays invisible to Datadog, Falco, and other host-level tooling, and Lava reports active exploitation in the wild.
+
+Exposed BMCs hand out password hashes before login (1 minute read)
+
+Lava researchers found 36,872 baseboard management controllers answering on the public internet via IPMI 2.0, and 24,650 of them handed out an HMAC-SHA1 password hash to unauthenticated requesters through CVE-2013-4786, a flaw dating to 2004. Because the BMC sits under the OS and offline cracking generates no failed logins, host security tools see nothing, and roughly a third of the captured hashes fell to public wordlists or Supermicro's 10-letter factory format.
+
+24,650 Internet-Exposed BMCs Disclose IPMI Password Hashes Before Login (1 minute read)
+
+Researchers found 24,650 of 36,872 internet-exposed BMC management interfaces leaking IPMI password hashes before authentication via CVE-2013-4786, a flaw baked into the IPMI v2.0 spec that Dell says has no patch. Over 30% of the recovered hashes cracked against common wordlists and factory chassis-sticker formats, exposing modern Supermicro and HPE GPU servers whose compromised BMCs give attackers OS-independent, reinstall-surviving persistence.
+
+Disrupting supply chain attacks on npm and GitHub Actions (1 minute read)
+
+GitHub shipped a set of npm and GitHub Actions changes to break common supply chain attack chains, including a 72-hour read-only lockout on high-impact npm accounts after an email change or 2FA-recovery-code use to blunt phishing-driven takeovers. The controls target specific links in the attack chain rather than one capability, aiming to slow credential exfiltration and the rapid malware spread that has hit hundreds of open source projects over the past year.
+
+July 16 letter: the US EPA says power plants providing electricity only to data centers and not to the public grid wouldn't be subject to federal pollution laws (Tim McLaughlin/Reuters) (1 minute read)
+
+The US Environmental Protection Agency said in a July 16 letter that power plants supplying electricity solely to data centers, rather than the public grid, would fall outside federal pollution laws like the Clean Air Act. The interpretation would let hyperscalers stand up dedicated gas or coal generation for AI compute without the emissions permitting that grid-connected plants face, shifting the cost calculus for behind-the-meter buildouts.
+
+GitHub Adds 3-Day Dependabot Cooldown to Limit Poisoned Package Adoption (5 minute read)
 
 (blurb not generated)
+
+Cisco close to releasing more AI models, this time for deep networking ops (5 minute read)
+
+(blurb not generated)
+
+Best Buy scales AI workloads and secures access with Workforce Identity Federation (2 minute read)
+
+Best Buy replaced service-account keys with Google Cloud's Workforce Identity Federation, letting developers authenticate to BigQuery through Power BI using their existing Microsoft Entra ID credentials instead of a synced identity store. The stateless federation validates tokens at access time rather than copying user records, eliminating key rotation and the audit-trail gaps that made service accounts a growing liability across tens of thousands of users.
 
 🚀
 Opinions & Tutorials
@@ -55,23 +99,27 @@ Federating clusters for zero-downtime Kubernetes (5 minute read)
 
 Characterizing Metastable Faults and Failures (5 minute read)
 
-A June 2026 paper offers the first analytical causal account of metastable failures, the self-sustaining goodput collapses that persist through retry and queue feedback loops even after the original trigger clears. It reframes a metastable fault as a "sin of composition" between individually stable components and ties the recovery mechanism to scheduling. The stakes are concrete: four of AWS's 15 major outages over a decade were metastable, lasting 1.5 to 73 hours, and these emergent failures resist the hardening that already covers obvious faults.
+(blurb not generated)
 
 Why goodput matters more than throughput for LLM serving (5 minute read)
 
 (blurb not generated)
 
-Multi-Cluster databases on Kubernetes: Architecture and deployment (1 minute read)
+Multi-Cluster databases on Kubernetes: Architecture and deployment (5 minute read)
 
-This CNCF post walks through building a multi-cluster MongoDB deployment on Kubernetes that survives regional outages, control-plane corruption, and network partitions, using the open-source Percona Operator as the worked example. All nodes across clusters join a single replica set so cross-cluster voting can elect a new primary automatically, unlocking disaster recovery, live migrations, and zero-downtime maintenance. The post notes similar patterns exist for relational workloads through Vitess and CloudNativePG.
+(blurb not generated)
 
 Durable Objects are Made for Agents (5 minute read)
 
-The author argues Cloudflare Durable Objects are a near-perfect primitive for building agents, pairing an on-demand V8 isolate with a per-object SQLite instance and ID-based request routing so each agent gets its own addressable, stateful compute. Instead of stateless services talking to a shared database, you model the system as many event-driven objects woken by requests or alarms. The post also catalogs where DOs fall short, alongside a disclosed long position in NET.
+(blurb not generated)
+
+How Do I Profile eBPF Code? (1 minute read)
+
+This walkthrough shows how to measure the performance overhead an eBPF hook adds to a hot syscall path, using file open as the example. The method pairs a minimal C harness that calls SYS_openat directly, prefaults and mlocks its timing buffer, and discards a 10% warmup to isolate p50/p99 latency, then attaches perf with symbol resolution to pinpoint where the hook spends its time. The takeaway is a repeatable before-and-after profiling loop for any eBPF program running in production.
 
 Session revocations at scale (5 minute read)
 
-Canva detailed how it manages session revocations for hundreds of millions of users, handling authentication checks hundreds of thousands of times per second. Each gateway keeps 12 hours of revocations in an in-memory cache and falls back to MySQL during token refreshes, but seeding that cache across hundreds of gateway pods turned every deploy into a coordinated read stampede on the database. The post walks through the caching redesign the team used to cut both database load and per-pod memory footprint.
+(blurb not generated)
 
 Platform engineering for the agentic enterprise (5 minute read)
 
@@ -87,13 +135,13 @@ Demystifying AI Exploits: A Blueprint for AI-Assisted Vulnerability Management (
 
 End-to-End Detection Validation Using Coding Agents (5 minute read)
 
-A team at DNB's Cyber Defense Center repurposed coding agents like Claude Code and Codex to run detection validation end to end, using a custom plugin that writes TTPForge attack simulations, ships them to an isolated lab host over SSH, detonates them, and queries Splunk to confirm the detection fired. The agent rewrites and retries when a step fails, running unattended across a sample of mostly Windows detections. The loop surfaced small, mechanical pipeline issues that had slipped past code review, without a human driving each validation run by hand.
+(blurb not generated)
 
-Denial of Deadline: Network-Driven Accuracy Collapse in Distributed Inference Pipelines (1 minute read)
+How Databricks manages its own coding agent spend with Unity AI Gateway Budgets (1 minute read)
 
-This paper introduces "accuracy collapse," a workload attack against two-tier inference pipelines that pair a fast local path with a higher-accuracy remote slow path. Yo-Yo burst traffic contends for shared slow-path resources, pushing benign requests past their latency deadline so the merger discards them. In an edge-cloud autonomous-driving tracker, ~4,000 shaped requests drove p99 from 92ms to 2s and cut tracking quality by up to 18.7 HOTA points, no model access required.
+Databricks documented how it governs coding-agent spend by routing every tool through its Unity AI Gateway, enforcing one budget policy across Claude Code, Codex, Cursor, and others without touching per-tool admin consoles. The team replaced permanent per-engineer limits with separate daily and monthly budgets, since a single runaway automation loop can burn a month of budget in an afternoon. Engineers self-serve temporary increases instead of filing approval requests, keeping runaway spend capped without adding review bottlenecks.
 
-Systems and Delays (5 minute read)
+Denial of Deadline: Network-Driven Accuracy Collapse in Distributed Inference Pipelines (5 minute read)
 
 (blurb not generated)
 
@@ -104,18 +152,26 @@ Cloudflare Internal DNS is now generally available (5 minute read)
 
 (blurb not generated)
 
-Dynatrace Intelligence automates incident triage and remediation with AI agents (5 minute read)
+Detect early and enforce firmly with Google Cloud's enhanced cost controls for AI spend (3 minute read)
 
-(blurb not generated)
+Google Cloud added two native cost controls to the Billing console: early anomaly detection for AI services and hard spend caps on budgets. The anomaly tool builds a dynamic per-service baseline and flags upward daily cost trends before billing reconciles, generating a root-cause analysis of the top three SKUs driving a surge, while spend caps enforce firm limits without custom JSON policies or scripts.
+
+Terraform AzureRM provider 5.0 now generally available (1 minute read)
+
+HashiCorp made Terraform's AzureRM provider 5.0 generally available, adding finer control over Resource Provider registration and opt-in preflight validation that catches invalid Azure deployments before an apply. The release cleans up the provider's base for future work, so teams should review the registration and validation defaults before upgrading to avoid surprise plan changes.
 
 Introducing Antares: Highly Efficient Open Weight AI Models for Vulnerability Localization (5 minute read)
 
-Cisco released Antares, a family of open-weight security small language models purpose-built to localize known vulnerabilities in a codebase, with Antares-350M and Antares-1B now on Hugging Face. Cisco's benchmarks show the models beating larger closed- and open-weight rivals at a fraction of the inference cost, and they run locally so teams avoid shipping sensitive source to the cloud.
+(blurb not generated)
 
-Claude Opus 5 on GitLab: Reasoning built for the hard tasks (3 minute read)
+Future-proofing data integrity: Quantum-safe digital signatures in Cloud KMS (2 minute read)
 
-GitLab added Anthropic's Claude Opus 5 to its Duo Agent Platform, targeting long-running, high-complexity work like multi-file features and large refactors where a single early mistake compounds across hundreds of exchanges. In GitLab's internal evaluation, Opus 5 resolved 93.3% of benchmark tasks versus 73.0% for Opus 4.8, aiming to return fewer partial patches and more merge-ready code with less time spent diagnosing and re-prompting failed runs.
+Google Cloud made quantum-safe digital signatures (ML-DSA, SLH-DSA) and post-quantum key encapsulation (ML-KEM) generally available in Cloud KMS, covering the FIPS 204 and 205 algorithms that NSA's CNSA 2.0 and updated U.S. federal timelines now mandate. The launch adds efficient external-µ variants so teams can sign large payloads without hitting the bandwidth and processing limits that HSMs face under post-quantum cryptography.
 
-We’re open-sourcing our privacy proxy CLI (1 minute read)
+Claude Opus 5 on GitLab: Reasoning built for the hard tasks (5 minute read)
 
-Cloudflare open-sourced pvcli, a command-line tool for debugging privacy-preserving protocols like Oblivious HTTP, which spread work across relay, gateway, and origin parties and are hard to trace when requests fail. Released under Apache-2.0, it executes a full OHTTP request in a single command, drawing on Cloudflare's experience running Privacy Proxy and Gateway at millions of requests per second for Apple Private Relay and Microsoft Edge Secure Network.
+(blurb not generated)
+
+We’re open-sourcing our privacy proxy CLI (5 minute read)
+
+(blurb not generated)
