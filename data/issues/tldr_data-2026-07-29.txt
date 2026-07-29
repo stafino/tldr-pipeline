@@ -1,0 +1,97 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR Data 2026-07-29
+
+📊
+News & Trends
+
+Snowflake launches Cortex AI Gateway to control AI agents and prevent runaway enterprise costs (5 minute read)
+
+(blurb not generated)
+
+🧠
+Deep Dives & Analysis
+
+Optimizing for Almost Sorted Data: Sort Pushdown in Apache DataFusion (5 minute read)
+
+Apache DataFusion now exploits sortedness automatically, even when data is only partially sorted or its ordering was never declared. The engine discovers a global sort order from per-file min/max statistics, deletes redundant sorts at plan time, and biases scan order toward the most-promising files, with dynamic filters driving row-group pruning at runtime. The payoff is ORDER BY ... LIMIT queries that skip the blocking full sort and full scan, cutting latency and peak memory on large tables.
+
+Aurora DSQL: Scalable, Multi-Region OLTP (5 minute read)
+
+Amazon's engineers detail Aurora DSQL, a distributed PostgreSQL-compatible OLTP database that disaggregates compute, transaction commit, and storage into independently scalable layers with active-active multi-region writes. The design leans on optimistic concurrency control and precise EC2 clock synchronization to guarantee strong consistency without a two-phase commit coordinator on the hot path. The bet is that decoupling the write path from storage lets a single database scale horizontally while surviving regional failure, a trade-off that swaps lock-based contention for commit-time conflict aborts.
+
+PGSimCity - How PostgreSQL Works (1 minute read)
+
+PGSimCity is an interactive, browser-based model of the PostgreSQL engine that renders the query lifecycle as a running city, walking through the parser, planner, buffer cache, WAL, and executor as connected systems rather than isolated concepts. The author frames it as an early, unreviewed prototype that likely contains inaccuracies, but it works as a mental map of how a page moves from disk to shared buffers to commit. It topped Hacker News at 625 points.
+
+DuckDB Internals: Why is DuckDB Fast? (Part 2 Vectorized Execution) (5 minute read)
+
+DuckDB's second internals post explains vectorized execution: instead of processing one row at a time, DuckDB pushes batches of values through each operator, keeping the CPU fed rather than stalling on memory waits and instruction dependencies. The payoff is concrete. The 2005 MonetDB/X100 benchmarks it cites clocked MySQL's row-at-a-time engine at 0.8 IPC and ~49 cycles per addition, versus ~2.2 cycles for the batched approach that DuckDB now builds on.
+
+How MVCC and Transactions Work in RocksDB (5 minute read)
+
+RocksDB implements MVCC on top of its LSM-tree, where writes never modify keys in-place and instead append new versions that compaction later garbage-collects. This post walks through the other half: how snapshots give each reader a consistent view of the data as it existed when the read began, letting readers and writers proceed concurrently without locking. It then builds up atomic updates and transactions on that foundation.
+
+To Every Agent Its Own Database (5 minute read)
+
+Joe Reis inverts the "make the warehouse agent-ready" approach, arguing that scaling shared analytical platforms with bigger clusters and faster semantic layers still assumes an agent is just a very fast analyst on a central plane. His working prototype gives each agent its own embedded engine using DuckDB, DuckLake, Quack, and Malloy, letting agents exchange data products directly. The open question he surfaces: what contracts govern analytical exchange once no single system owns the semantic and computational authority.
+
+Data Quality Profiling at Scale with Progressive Sampling: A Benchmark for Data-Centric AI Pipelines (1 minute read)
+
+This paper benchmarks nine progressive-sampling strategies for data quality profiling across real datasets up to 7.4M rows, and finds that blind representative samplers beat every proxy-guided method. At a 5% budget, random uniform hit 0.49% mean relative error on NYC 311 while DAG-guided MCMC was roughly 40x worse and ran super-linearly at scale. The takeaway for monitoring pipelines is that representativeness, not domain knowledge, drives sampler quality, so schema-free random uniform or cluster sampling is enough for production profiling.
+
+How Our Universal Content Processing Platform Riviera Evolved for AI and Beyond (5 minute read)
+
+Dropbox opened Riviera, the content-processing platform that has powered its file previews for roughly a decade, to outside developers via API and MCP tools. What began as an internal preview service now handles transcoding, PDF flattening, and text extraction across Search, Replay, Sign, and Dash, producing the equivalent of 8 years of video daily. The write-up covers the architectural decisions that let a single preview service become shared infrastructure, and why AI document pipelines drove the external release.
+
+Personalization is an infrastructure problem (5 minute read)
+
+The author argues that most personalization failures are architecture problems, not quality problems: personalization is a ranking decision that has to weigh user intent, item quality, history, availability, and business priority for every request in milliseconds. The piece uses Vespa to show why the usual stack struggles, since the ranking layer is often the one place that cannot see all those signals together. Combining them at query time, while the user is still there, is the real bottleneck.
+
+Simple and Fast Algorithm for Graph-based Filtered Approximate Nearest Neighbor Search (Full Version) (1 minute read)
+
+This paper tackles filtered approximate nearest neighbor search, where a query pairs a vector with attribute constraints like category, color, or brand, and existing graph indexes stall on arbitrary attribute combinations they never saw at build time. The authors propose a graph-based algorithm that handles any attribute filter without precomputing per-filter indexes, and report faster search across extensive benchmarks. For teams running vector search behind faceted product catalogs, it targets the exact case where a plain ANN index and a metadata filter fight each other.
+
+Brute intelligence (5 minute read)
+
+(blurb not generated)
+
+If You Think You Can Do Real-World Text-to-SQL (5 minute read)
+
+The author argues that benchmark scores like those on Spider and BIRD wildly overstate how well text-to-SQL works against real production databases, where schemas are sprawling and undocumented, column names are cryptic, and business questions are ambiguous. The post walks through why enterprise schemas with hundreds of joined tables, inconsistent data, and implicit domain rules break models that ace academic benchmarks. The takeaway for data teams is that the hard part is schema semantics and context, not SQL generation itself.
+
+AuthentiCity: A Multi-Source Provenance-Aware Knowledge Graph and Benchmark for 3D City Models (1 minute read)
+
+AuthentiCity is a provenance-aware 3D city knowledge graph spanning five cities across three continents, with 180M nodes, 220M edges, and 3.6M buildings integrating authoritative CityGML and OpenStreetMap data alongside machine-learned roof predictions and reconstructed geometry. Its provenance model keeps derived information from overwriting authoritative sources, using confidence-weighted edges to reconcile cross-source conflicts. On the accompanying natural-language-to-query benchmark, a strong commercial LLM hits only 54-69% execution accuracy and a 7B open-weight model 6-19%, which never abstains on unanswerable questions.
+
+TEmBed-T: A Multi-Dimensional Benchmark for Table-Level Embeddings (1 minute read)
+
+This paper extends TEmBed, a testbed for tabular embeddings, into a multi-task benchmark for table-level embeddings across retrieval, data lake discovery, and table classification. The authors find that no single model wins across all tasks, arguing that table-level embedding quality cannot be reduced to retrieval performance alone. For teams building data lake discovery or table search, the takeaway is to benchmark against your actual downstream task rather than trusting a leaderboard tuned on retrieval.
+
+Backfilling: the most underrated feature of a data pipeline (5 minute read)
+
+Backfilling gets treated as a throwaway migration script written under pressure, then abandoned in a scripts/ folder to rot. The author argues both forms of backfill, historical ingestion and system-to-system migration, are the same problem and belong inside the production extract-raw-transform pipeline rather than one-off jobs. Running historical loads through the same tested stages as tomorrow's data cuts the time teams spend fighting their own pipeline.
+
+Smart caching with CTE on Spark (5 minute read)
+
+Caching in Spark speeds up repeated computations by holding intermediate results in memory, but this piece argues the win only materializes for medium-sized, frequently reused datasets. Tiny tables gain nothing, and tables too large for memory trigger disk spills or eviction that slow the job down. The practical guidance for CTEs and nested queries: cache only when reuse is guaranteed, and watch the Spark UI storage tab to confirm the cache is actually paying off.
+
+The startup's Postgres survival guide (1 minute read)
+
+The author distills two years of running Postgres in production at Hatchet into a survival guide for startup engineers, organized from schema design and query basics through the query planner, bulk updates, and autovacuum tuning. The core argument is that schemas are the hardest thing to change after deployment, so teams should design them iteratively around actual read/write patterns rather than chasing textbook normal forms. It also flags where ORMs become a ceiling, since many scaling optimizations require dropping to raw SQL through tools like sqlc or Prisma TypedSQL.
+
+Domain-Specific Data Quality Analysis Using Technology-Independent Query Templates (1 minute read)
+
+This paper introduces the Quality Pattern Model (QPM), a model-driven framework that lets domain experts define data quality checks through templates that compile to different database technologies without writing query languages. The proof-of-concept targets XML, RDF, and Neo4j from a single template definition, avoiding the need to reimplement each check per backend. A qualitative user study in the cultural heritage domain found QPM matched or exceeded the expressiveness of native query languages while letting non-technical experts author quality analyses without IT support.
+
+🚀
+Launches & Tools
+
+AI Schema Analyzer: Powered by Iceberg and Lakekeeper (5 minute read)
+
+The post walks through building an AI schema-drift analyzer for Iceberg tables, wiring Lakekeeper's REST catalog to emit change events to Kafka the moment a DDL runs, then feeding those events to a FastAPI service that calls the Anthropic SDK for impact analysis. Because Lakekeeper pushes catalog changes directly to Kafka with no metadata scanning, the agent flags breaking downstream dependencies within seconds and posts recommendations to Slack.
+
+Show HN: XY – A Fast, composable, GPU-accelerated interactive plotting library (5 minute read)
+
+(blurb not generated)
