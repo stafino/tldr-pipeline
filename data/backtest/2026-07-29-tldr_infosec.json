@@ -1,12 +1,60 @@
 {
   "date": "2026-07-29",
   "newsletter": "tldr_infosec",
-  "fetched_at": "2026-07-29T10:26:21.489856+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-07-29T16:52:26.387299+00:00",
+  "tldr_titles": [
+    "Customer Data from India's Bank of Baroda Leaked Online",
+    "Australia's Origin Energy Flags Possible Data Exposure of About 900K Customers",
+    "Distributed npm Package Cluster Delivers Cross-Platform RAT Targeting Alibaba Developers",
+    "How We Hacked Thousands of Data Centers in Minutes Using a 20-Year-Old Vulnerability",
+    "Inside FakeAgent: How a Claude Desktop Malvertising Campaign Hit 29 Organizations with SectopRAT",
+    "Privacy-focused search engine NeoSearch open-sources code to promote decentralized web search",
+    "OpenAI's Agent Didn't Go Rogue. Its Governance Did",
+    "The Cipher Behind QSYRUPWD: Reconstructing IBM i Password Hashes",
+    "Some People's Chats with Claude AI Found to be Publicly Available Online",
+    "DEF CON bans Meta-style 'pervert glasses'",
+    "Claude AI Just Cracked a Post-Quantum Test Scheme and Found a Faster 7-Round AES Attack"
+  ],
+  "tldr_matched": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true,
+    false,
+    true
+  ],
   "predictions": [
     {
       "rank": 1,
+      "score": 90.0,
+      "title": "OpenAI models used Artifactory zero-days to escape to the internet",
+      "url": "https://www.bleepingcomputer.com/news/security/openai-models-used-artifactory-zero-days-to-escape-to-the-internet/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 2,
+      "score": 88.0,
+      "title": "Three Critical VMware Flaws Allow Auth Bypass, Code Execution, and VM Escape",
+      "url": "https://thehackernews.com/2026/07/three-critical-vmware-flaws-allow-auth.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 3,
+      "score": 88.0,
+      "title": "Coordinated Cyberattack Targets 30+ Minnesota Water Systems as One Plant Goes Offline",
+      "url": "https://thehackernews.com/2026/07/coordinated-cyberattack-targets-30.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 4,
       "score": 88.0,
       "title": "Public PoC Released for Exploited Check Point SmartConsole Authentication Bypass",
       "url": "https://thehackernews.com/2026/07/rapid7-releases-poc-for-exploited-check.html",
@@ -14,7 +62,7 @@
       "similarity": null
     },
     {
-      "rank": 2,
+      "rank": 5,
       "score": 86.0,
       "title": "Attackers Exploit Arista VeloCloud Orchestrator Command Injection Flaw",
       "url": "https://thehackernews.com/2026/07/attackers-exploit-arista-velocloud.html",
@@ -22,7 +70,15 @@
       "similarity": null
     },
     {
-      "rank": 3,
+      "rank": 6,
+      "score": 85.0,
+      "title": "Arista patches actively exploited VeloCloud bug as CISA puts admins on the clock",
+      "url": "https://www.theregister.com/security/2026/07/28/arista-patches-actively-exploited-velocloud-bug-as-cisa-puts-admins-on-the-clock/5279414",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 7,
       "score": 85.0,
       "title": "RefluXFS: A Linux Kernel Local Privilege Escalation to Root in XFS (CVE-2026-64600)",
       "url": "https://blog.qualys.com/vulnerabilities-threat-research/2026/07/22/refluxfs-a-linux-kernel-local-privilege-escalation-to-root-in-xfs-cve-2026-64600",
@@ -30,7 +86,7 @@
       "similarity": null
     },
     {
-      "rank": 4,
+      "rank": 8,
       "score": 84.0,
       "title": "New Gitea RCE Lets Repository Writers Plant a Git Hook to Run Shell Commands",
       "url": "https://thehackernews.com/2026/07/new-gitea-rce-lets-repository-writers.html",
@@ -38,7 +94,7 @@
       "similarity": null
     },
     {
-      "rank": 5,
+      "rank": 9,
       "score": 83.0,
       "title": "JFrog Confirms OpenAI Models Exploited Artifactory Zero-Day Before Hugging Face Breach",
       "url": "https://thehackernews.com/2026/07/jfrog-confirms-openai-models-exploited.html",
@@ -46,15 +102,31 @@
       "similarity": null
     },
     {
-      "rank": 6,
+      "rank": 10,
       "score": 82.0,
-      "title": "Claude AI Just Cracked a Post-Quantum Test Scheme and Found a Faster 7-Round AES Attack",
-      "url": "https://thehackernews.com/2026/07/claude-ai-just-cracked-post-quantum.html",
+      "title": "Long-Lived Vulnerability in Microsoft Secure Boot",
+      "url": "https://www.schneier.com/blog/archives/2026/07/long-lived-vulnerability-in-microsoft-secure-boot.html",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 7,
+      "rank": 11,
+      "score": 82.0,
+      "title": "Ruflo MCP Flaw Lets Unauthenticated Attackers Run Commands and Poison AI Memory",
+      "url": "https://thehackernews.com/2026/07/ruflo-mcp-flaw-lets-unauthenticated.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 12,
+      "score": 82.0,
+      "title": "Claude AI Just Cracked a Post-Quantum Test Scheme and Found a Faster 7-Round AES Attack",
+      "url": "https://thehackernews.com/2026/07/claude-ai-just-cracked-post-quantum.html",
+      "matched_tldr_idx": 10,
+      "similarity": 1.0
+    },
+    {
+      "rank": 13,
       "score": 82.0,
       "title": "OpenAI and Hugging Face partner to address security incident during model evaluation",
       "url": "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
@@ -62,7 +134,7 @@
       "similarity": null
     },
     {
-      "rank": 8,
+      "rank": 14,
       "score": 82.0,
       "title": "OpenAI and Hugging Face disclose unprecedented AI-driven security incident",
       "url": "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
@@ -70,7 +142,7 @@
       "similarity": null
     },
     {
-      "rank": 9,
+      "rank": 15,
       "score": 82.0,
       "title": "Flaw in Adobe Extension With 300M Installs Enabled WhatsApp Data Theft",
       "url": "https://www.securityweek.com/flaw-in-adobe-extension-with-300m-installs-enabled-whatsapp-data-theft/",
@@ -78,7 +150,15 @@
       "similarity": null
     },
     {
-      "rank": 10,
+      "rank": 16,
+      "score": 81.0,
+      "title": "Document-borne AI worms can self-propagate through Copilot for Word",
+      "url": "https://enklypesalt.com/posts/context-collapse-part3-ai-worming-through-word/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 17,
       "score": 80.0,
       "title": "OpenAI Agent Used Exposed Credentials Across Four Services During Hugging Face Breach",
       "url": "https://thehackernews.com/2026/07/openai-agent-used-exposed-credentials.html",
@@ -86,7 +166,7 @@
       "similarity": null
     },
     {
-      "rank": 11,
+      "rank": 18,
       "score": 80.0,
       "title": "Two Compromised joyfill npm Packages Run RAT When Imported Into Node.js",
       "url": "https://thehackernews.com/2026/07/two-compromised-joyfill-npm-packages.html",
@@ -94,15 +174,15 @@
       "similarity": null
     },
     {
-      "rank": 12,
-      "score": 78.0,
-      "title": "OpenAI\u2019s Rogue AI Ventured Beyond Hugging Face",
-      "url": "https://www.securityweek.com/openais-rogue-ai-ventured-beyond-hugging-face/",
+      "rank": 19,
+      "score": 80.0,
+      "title": "AI Agent Drives Espionage Attack on Thai Ministry of Finance",
+      "url": "https://www.darkreading.com/cyberattacks-data-breaches/ai-agent-espionage-attack-thai-ministry-finance",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 13,
+      "rank": 20,
       "score": 78.0,
       "title": "Critical OpenWrt DHCPv6 Flaw Could Let Unauthenticated Attackers Run Code as Root",
       "url": "https://thehackernews.com/2026/07/critical-openwrt-dhcpv6-flaw-could-let.html",
@@ -110,47 +190,7 @@
       "similarity": null
     },
     {
-      "rank": 14,
-      "score": 78.0,
-      "title": "Public Exploit Released for Patched vBulletin Pre-Auth Code Execution Flaw",
-      "url": "https://thehackernews.com/2026/07/public-exploit-released-for-patched.html",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 15,
-      "score": 78.0,
-      "title": "Claude Cowork escaped sandbox on Mac, gain full access to all files",
-      "url": "https://9to5mac.com/2026/07/27/claude-cowork-escaped-sandbox-on-mac-gain-full-access-to-all-files/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 16,
-      "score": 78.0,
-      "title": "Cursor, Codex, Gemini CLI, Antigravity hit by sandbox escapes",
-      "url": "https://www.bleepingcomputer.com/news/security/cursor-codex-gemini-cli-antigravity-hit-by-sandbox-escapes/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 17,
-      "score": 78.0,
-      "title": "Open-Source Android AI Agents Could Let Invisible Screen Text Run Code on Host PCs",
-      "url": "https://thehackernews.com/2026/07/open-source-android-ai-agents-could-let.html",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 18,
-      "score": 78.0,
-      "title": "Claude Cowork Flaw Could Let AI Agent Escape Its VM and Access Mac Files",
-      "url": "https://thehackernews.com/2026/07/claude-cowork-flaw-could-let-ai-agent.html",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 19,
+      "rank": 21,
       "score": 78.0,
       "title": "Demystifying AI Exploits: A Blueprint for AI-Assisted Vulnerability Management",
       "url": "https://cloud.google.com/blog/topics/threat-intelligence/ai-assisted-vulnerability-management/",
@@ -158,26 +198,10 @@
       "similarity": null
     },
     {
-      "rank": 20,
+      "rank": 22,
       "score": 78.0,
       "title": "Introducing Antares: Highly Efficient Open Weight AI Models for Vulnerability Localization",
       "url": "https://blogs.cisco.com/ai/introducing-antares-the-most-efficient-open-weight-ai-models-for-vulnerability-localization",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 21,
-      "score": 76.0,
-      "title": "JFrog Zero-Days Exploited in OpenAI-Hugging Face Hack",
-      "url": "https://www.securityweek.com/jfrog-zero-days-exploited-in-openai-hugging-face-hack/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 22,
-      "score": 76.0,
-      "title": "Tengu Botnet Reboots Compromised Linux Devices When Defenders Kill Its Process",
-      "url": "https://thehackernews.com/2026/07/tengu-botnet-reboots-compromised-linux.html",
       "matched_tldr_idx": null,
       "similarity": null
     },
@@ -199,6 +223,22 @@
     },
     {
       "rank": 25,
+      "score": 74.0,
+      "title": "MAI-Cyber-1-Flash inside MDASH",
+      "url": "https://microsoft.ai/news/introducing-mai-cyber-1-flash-inside-mdash/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 26,
+      "score": 74.0,
+      "title": "Microsoft Introduced a Cybersecurity Model",
+      "url": "https://microsoft.ai/news/introducing-mai-cyber-1-flash-inside-mdash/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 27,
       "score": 73.0,
       "title": "Codex Security",
       "url": "https://github.com/openai/codex-security",
@@ -206,7 +246,7 @@
       "similarity": null
     },
     {
-      "rank": 26,
+      "rank": 28,
       "score": 72.0,
       "title": "Discovering Cryptographic Weaknesses with Claude",
       "url": "https://www.anthropic.com/research/discovering-cryptographic-weaknesses",
@@ -214,7 +254,7 @@
       "similarity": null
     },
     {
-      "rank": 27,
+      "rank": 29,
       "score": 72.0,
       "title": "Visa used Mythos to hunt for bugs in its own payment network, then open-sourced the harness that made it possible",
       "url": "https://venturebeat.com/security/visa-used-mythos-to-hunt-for-bugs-in-its-own-payment-network-then-open-sourced-the-harness-that-made-it-possible",
@@ -222,15 +262,47 @@
       "similarity": null
     },
     {
-      "rank": 28,
-      "score": 71.0,
-      "title": "Microsoft Unveils MAI-Cyber-1-Flash, Its First Cybersecurity AI Model",
-      "url": "https://www.securityweek.com/microsoft-unveils-mai-cyber-1-flash-its-first-cybersecurity-ai-model/",
+      "rank": 30,
+      "score": 68.0,
+      "title": "Measuring LLMs\u2019 Ability to Perform Cryptanalysis",
+      "url": "https://www.schneier.com/blog/archives/2026/07/measuring-llms-ability-to-perform-cryptanalysis.html",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 29,
+      "rank": 31,
+      "score": 68.0,
+      "title": "Hugging Face rebuilt a third of its infrastructure after OpenAI agents ran amok",
+      "url": "https://www.theregister.com/ai-and-ml/2026/07/28/openais-agent-siege-forced-significant-rebuild-at-hugging-face/5279577",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 32,
+      "score": 68.0,
+      "title": "Microsoft and Wiz mind-meld agents catch more than 90% of bugs",
+      "url": "https://www.theregister.com/security/2026/07/28/microsoft-and-wiz-mind-meld-agents-catch-more-than-90-of-bugs/5279914",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 33,
+      "score": 67.0,
+      "title": "US, Australia Release OT Isolation Guidance for Critical Infrastructure",
+      "url": "https://www.securityweek.com/us-australia-release-ot-isolation-guidance-for-critical-infrastructure/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 34,
+      "score": 66.0,
+      "title": "Disrupting supply chain attacks on npm and GitHub Actions",
+      "url": "https://github.blog/security/supply-chain-security/disrupting-supply-chain-attacks-on-npm-and-github-actions/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 35,
       "score": 66.0,
       "title": "Bits and Memories: Measuring Verbatim Extraction Across LLM Quantization",
       "url": "http://arxiv.org/abs/2607.25451v1",
@@ -238,7 +310,7 @@
       "similarity": null
     },
     {
-      "rank": 30,
+      "rank": 36,
       "score": 66.0,
       "title": "SecDrift: Measuring Sector-Conditioned Security Drift in AI-Generated Code",
       "url": "http://arxiv.org/abs/2607.25225v1",
@@ -246,7 +318,7 @@
       "similarity": null
     },
     {
-      "rank": 31,
+      "rank": 37,
       "score": 66.0,
       "title": "End-to-End Detection Validation Using Coding Agents",
       "url": "https://blog.cauchy.org/blog/detection-validation/",
@@ -254,7 +326,7 @@
       "similarity": null
     },
     {
-      "rank": 32,
+      "rank": 38,
       "score": 66.0,
       "title": "Microsoft Says New Cybersecurity AI Model Helps MDASH Score 95.95% at Half the Cost",
       "url": "https://thehackernews.com/2026/07/microsoft-says-new-cybersecurity-ai.html",
@@ -262,7 +334,15 @@
       "similarity": null
     },
     {
-      "rank": 33,
+      "rank": 39,
+      "score": 66.0,
+      "title": "America bans imported robots due to supply chain and security risks",
+      "url": "https://www.theregister.com/security/2026/07/29/america-bans-imported-robots-due-to-supply-chain-and-security-risks/5280145",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 40,
       "score": 65.0,
       "title": "NVIDIA Forms 37-Member Open Secure AI Alliance and Open-Sources NOOA Framework",
       "url": "https://thehackernews.com/2026/07/nvidia-forms-37-member-open-secure-ai.html",
@@ -270,15 +350,15 @@
       "similarity": null
     },
     {
-      "rank": 34,
+      "rank": 41,
       "score": 63.0,
-      "title": "Microsoft\u2019s introduces its first agent-powered cybersecurity model",
-      "url": "https://siliconangle.com/2026/07/27/microsofts-first-cybersecurity-model-powers-new-project-perception-agents/",
+      "title": "Post-quantum authentication to origins is now supported",
+      "url": "https://blog.cloudflare.com/post-quantum-authentication-to-origins/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 35,
+      "rank": 42,
       "score": 62.0,
       "title": "GitHub Adds 3-Day Dependabot Cooldown to Limit Poisoned Package Adoption",
       "url": "https://thehackernews.com/2026/07/github-adds-3-day-dependabot-cooldown.html",
@@ -286,7 +366,23 @@
       "similarity": null
     },
     {
-      "rank": 36,
+      "rank": 43,
+      "score": 62.0,
+      "title": "CISA shares advice on isolating vital systems during cyberattacks",
+      "url": "https://www.bleepingcomputer.com/news/security/cisa-shares-advice-on-isolating-vital-systems-during-cyberattacks/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 44,
+      "score": 62.0,
+      "title": "AI-found bugs aren't proving any easier to exploit despite the hype",
+      "url": "https://www.theregister.com/security/2026/07/28/ai-found-bugs-arent-proving-any-easier-to-exploit-despite-the-hype/5279637",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 45,
       "score": 62.0,
       "title": "AI-assisted security tools are finding more bugs, but the threat level has not changed",
       "url": "https://cyberscoop.com/ai-assisted-security-tools-are-finding-more-bugs-but-the-threat-level-has-not-changed/",
@@ -294,15 +390,7 @@
       "similarity": null
     },
     {
-      "rank": 37,
-      "score": 62.0,
-      "title": "MAI-Cyber-1-Flash inside MDASH",
-      "url": "https://microsoft.ai/news/introducing-mai-cyber-1-flash-inside-mdash/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 38,
+      "rank": 46,
       "score": 62.0,
       "title": "Microsoft escalates the AI security race with \u2018Project Perception\u2019 and a new in-house model",
       "url": "https://www.geekwire.com/2026/microsoft-escalates-the-ai-cybersecurity-race-with-project-perception-and-a-new-in-house-model/",
@@ -310,7 +398,15 @@
       "similarity": null
     },
     {
-      "rank": 39,
+      "rank": 47,
+      "score": 61.0,
+      "title": "Ghost Credentials Expose Cloud Systems to Hidden Identity Risks",
+      "url": "https://www.darkreading.com/cloud-security/non-human-identity-sprawl-creates-a-new-cloud-attack-path",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 48,
       "score": 60.0,
       "title": "Detecting CSAM Text-to-Image LoRAs From Weights",
       "url": "http://arxiv.org/abs/2607.25750v1",
@@ -318,7 +414,15 @@
       "similarity": null
     },
     {
-      "rank": 40,
+      "rank": 49,
+      "score": 60.0,
+      "title": "ShutterGap: Aryon Security finds 3.7M AWS cloud resources exposed beyond CSPM/CNAPP visibility",
+      "url": "https://www.helpnetsecurity.com/2026/07/29/cspm-blind-spot-report/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 50,
       "score": 60.0,
       "title": "Anti-Backdoor Coreset Selection via Cumulative Entropy",
       "url": "http://arxiv.org/abs/2607.25502v1",
@@ -326,79 +430,31 @@
       "similarity": null
     },
     {
-      "rank": 41,
+      "rank": 51,
       "score": 60.0,
-      "title": "Hybrid Analysis for Secure MCP Tool Use in LLM Agents",
-      "url": "http://arxiv.org/abs/2607.25297v1",
+      "title": "Future-proofing data integrity: Quantum-safe digital signatures in Cloud KMS",
+      "url": "https://cloud.google.com/blog/products/identity-security/future-proofing-data-integrity-quantum-safe-digital-signatures-in-cloud-kms/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 42,
-      "score": 59.0,
-      "title": "We have proof automation now",
-      "url": "https://www.imperialviolet.org/2026/07/26/zstd-lean.html",
+      "rank": 52,
+      "score": 60.0,
+      "title": "Cyera agrees to acquire Oasis Security for $1B to safeguard proliferating AI agents",
+      "url": "https://techcrunch.com/2026/07/28/cyera-agrees-to-acquire-oasis-security-for-1b-to-safeguard-proliferating-ai-agents/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 43,
-      "score": 59.0,
-      "title": "Session revocations at scale",
-      "url": "https://www.canva.dev/blog/engineering/session-revocations-at-scale/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 44,
+      "rank": 53,
       "score": 58.0,
-      "title": "BioDisclose: An Actionability-Aware Benchmark for Biomedical Safety under Adversarial Elicitation",
-      "url": "http://arxiv.org/abs/2607.25700v1",
+      "title": "Microsoft launches agentic security platform designed to combat AI-based attacks",
+      "url": "https://www.ciodive.com/news/microsoft-agentic-security-platform-ai-attacks/826370/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 45,
-      "score": 58.0,
-      "title": "Stolen Meta and Google ad accounts are worth more than the money they hold",
-      "url": "https://www.helpnetsecurity.com/2026/07/29/ad-account-theft-meta-google/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 46,
-      "score": 58.0,
-      "title": "The Disruptive Impact of Large Language Models on Capture the Flag Competitions and the Path Toward Fair Play",
-      "url": "http://arxiv.org/abs/2607.25425v1",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 47,
-      "score": 58.0,
-      "title": "SafeFlow: Semantic Information-Flow Control for Blocking Malicious Propagation in Multi-Agent Systems",
-      "url": "http://arxiv.org/abs/2607.25255v1",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 48,
-      "score": 58.0,
-      "title": "Characterizing and Mitigating the Effects of Device Temperature on RF Fingerprinting Accuracy",
-      "url": "http://arxiv.org/abs/2607.25070v1",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 49,
-      "score": 58.0,
-      "title": "DMARC has been public since 2012 but most company domains still don't enforce it",
-      "url": "https://ciphercue.com/blog/dmarc-enforcement-gap-rua-fragmentation-2026",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 50,
+      "rank": 54,
       "score": 58.0,
       "title": "Bugcrowd launches Savant Pathseeker for continuous agentic pentesting",
       "url": "https://siliconangle.com/2026/07/28/bugcrowd-launches-savant-pathseeker-continuous-agentic-pentesting/",
@@ -406,7 +462,7 @@
       "similarity": null
     },
     {
-      "rank": 51,
+      "rank": 55,
       "score": 58.0,
       "title": "1Password aims to cut standing access risks for AI agents",
       "url": "https://siliconangle.com/2026/07/28/1password-launches-privileged-access-cut-standing-access-ai-agents/",
@@ -414,7 +470,7 @@
       "similarity": null
     },
     {
-      "rank": 52,
+      "rank": 56,
       "score": 58.0,
       "title": "Microsoft debuts AI cybersecurity offerings as competition heats up",
       "url": "https://cyberscoop.com/microsoft-ai-cybersecurity-project-perception/",
@@ -422,7 +478,7 @@
       "similarity": null
     },
     {
-      "rank": 53,
+      "rank": 57,
       "score": 58.0,
       "title": "'It delivers world-class performance at 50 percent of the cost of leading models': Microsoft unveils cut-price AI for security with latest in-house model launch",
       "url": "https://www.itpro.com/security/it-delivers-world-class-performance-at-50-percent-of-the-cost-of-leading-models-microsoft-unveils-cut-price-ai-for-security-with-latest-in-house-model-launch",
@@ -430,7 +486,7 @@
       "similarity": null
     },
     {
-      "rank": 54,
+      "rank": 58,
       "score": 58.0,
       "title": "We\u2019re open-sourcing our privacy proxy CLI",
       "url": "https://blog.cloudflare.com/open-sourcing-our-privacy-proxy-cli/",
@@ -438,7 +494,31 @@
       "similarity": null
     },
     {
-      "rank": 55,
+      "rank": 59,
+      "score": 58.0,
+      "title": "NHS England rapped over inaccurate Palantir patient data disclosure",
+      "url": "https://www.theregister.com/public-sector/2026/07/29/nhs-england-rapped-over-inaccurate-palantir-patient-data-disclosure/5280233",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 60,
+      "score": 58.0,
+      "title": "Axon Is Another License Plate Surveillance Company",
+      "url": "https://www.schneier.com/blog/archives/2026/07/axon-is-another-license-plate-surveillance-company.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 61,
+      "score": 58.0,
+      "title": "Tech giants link hands to praise open AI models after OpenAI - Hugging Face attack",
+      "url": "https://www.theregister.com/ai-and-ml/2026/07/27/tech-giants-link-hands-to-praise-open-ai-models-after-openai-hugging-face-attack/5279061",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 62,
       "score": 58.0,
       "title": "Cyera to buy nonhuman identity startup Oasis Security for a reported $1B",
       "url": "https://siliconangle.com/2026/07/28/cyera-buy-nonhuman-identity-startup-oasis-security-reported-1b/",
@@ -446,7 +526,31 @@
       "similarity": null
     },
     {
-      "rank": 56,
+      "rank": 63,
+      "score": 58.0,
+      "title": "US Bans Foreign-Made Humanoid Robots, Targeting China Over National Security",
+      "url": "https://www.securityweek.com/us-bans-foreign-made-humanoid-robots-targeting-china-over-national-security/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 64,
+      "score": 58.0,
+      "title": "Mate Security Raises $35 Million for Agentic SOC",
+      "url": "https://www.securityweek.com/mate-security-raises-35-million-for-agentic-soc/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 65,
+      "score": 58.0,
+      "title": "ThreatLocker Raises $190 Million in Series F Funding",
+      "url": "https://www.securityweek.com/threatlocker-raises-190-million-in-series-f-funding/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 66,
       "score": 58.0,
       "title": "Sen. Wyden urges feds to discard older, insecure, public-facing VPNs",
       "url": "https://cyberscoop.com/wyden-calls-for-federal-legacy-vpn-purge-zero-trust/",
@@ -454,15 +558,23 @@
       "similarity": null
     },
     {
-      "rank": 57,
+      "rank": 67,
       "score": 58.0,
-      "title": "Claude chats exposed in Google searches \u2013 another endorsement of Apple\u2019s privacy approach",
-      "url": "https://9to5mac.com/2026/07/28/claude-chats-exposed-in-google-searches-another-endorsement-of-apples-privacy-approach/",
+      "title": "Cloudflare reveals what\u2019s behind major internet outages",
+      "url": "https://www.helpnetsecurity.com/2026/07/29/cloudflare-q2-2026-internet-outages/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 58,
+      "rank": 68,
+      "score": 58.0,
+      "title": "Claude chats exposed in Google searches \u2013 another endorsement of Apple\u2019s privacy approach",
+      "url": "https://9to5mac.com/2026/07/28/claude-chats-exposed-in-google-searches-another-endorsement-of-apples-privacy-approach/",
+      "matched_tldr_idx": 8,
+      "similarity": 0.7536814212799072
+    },
+    {
+      "rank": 69,
       "score": 58.0,
       "title": "Man charged for wiping GrapheneOS phone using \"duress\" password during airport checks",
       "url": "https://www.neowin.net/news/man-charged-for-wiping-grapheneos-phone-using-duress-password-during-airport-checks/?utm_source=rss",
@@ -470,7 +582,7 @@
       "similarity": null
     },
     {
-      "rank": 59,
+      "rank": 70,
       "score": 58.0,
       "title": "OpenAI, Google, and Anthropic absent from Nvidia-led Open Secure AI Alliance \u2014 30+ companies join security alliance after OpenAI agent breach",
       "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/openai-google-and-anthropic-absent-from-nvidia-led-open-secure-ai-alliance-30-companies-join-security-alliance-after-openai-agent-breach",
@@ -478,7 +590,7 @@
       "similarity": null
     },
     {
-      "rank": 60,
+      "rank": 71,
       "score": 57.0,
       "title": "ZeroFox debuts AI-first HNTR platform, starting with executive protection",
       "url": "https://siliconangle.com/2026/07/28/zerofox-debuts-ai-first-hntr-platform-starting-executive-protection/",
@@ -486,7 +598,7 @@
       "similarity": null
     },
     {
-      "rank": 61,
+      "rank": 72,
       "score": 57.0,
       "title": "Claude, Codex, and other AI tools credited in today\u2019s Apple security releases",
       "url": "https://9to5mac.com/2026/07/27/claude-codex-and-other-ai-tools-credited-in-todays-apple-security-releases/",
@@ -494,7 +606,7 @@
       "similarity": null
     },
     {
-      "rank": 62,
+      "rank": 73,
       "score": 56.0,
       "title": "Snowflake launches Cortex AI Gateway to control AI agents and prevent runaway enterprise costs",
       "url": "https://venturebeat.com/security/snowflake-launches-cortex-ai-gateway-to-control-ai-agents-and-prevent-runaway-enterprise-costs",
@@ -502,15 +614,7 @@
       "similarity": null
     },
     {
-      "rank": 63,
-      "score": 56.0,
-      "title": "Show HN: Let's Seal \u2013 Let's Encrypt for document signing, free and self-hosted",
-      "url": "https://github.com/letsseal/letsseal",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 64,
+      "rank": 74,
       "score": 56.0,
       "title": "Fortinet\u2019s new FortiGate platform converges firewall, SASE technologies",
       "url": "https://www.networkworld.com/article/4202426/fortinets-new-fortigate-platform-converges-firewall-sase-technologies.html",
@@ -518,23 +622,15 @@
       "similarity": null
     },
     {
-      "rank": 65,
+      "rank": 75,
       "score": 56.0,
-      "title": "Torq unveils SOC Brain, a self-learning layer for its AI SOC platform",
-      "url": "https://siliconangle.com/2026/07/28/torq-unveils-soc-brain-self-learning-layer-ai-soc-platform/",
+      "title": "Sweet Security debuts Agentic AI Blocking to stop rogue agents in real time",
+      "url": "https://siliconangle.com/2026/07/29/sweet-security-debuts-agentic-ai-blocking-stop-rogue-agents-real-time/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 66,
-      "score": 56.0,
-      "title": "Skyhawk Security integrates AWS Continuum to rank exploitable cloud flaws",
-      "url": "https://siliconangle.com/2026/07/28/skyhawk-security-integrates-aws-continuum-rank-exploitable-cloud-flaws/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 67,
+      "rank": 76,
       "score": 56.0,
       "title": "Natural disasters and government interference: examining Q2 2026\u2019s major Internet disruption events",
       "url": "https://blog.cloudflare.com/q2-2026-internet-disruption-summary/",
@@ -542,7 +638,7 @@
       "similarity": null
     },
     {
-      "rank": 68,
+      "rank": 77,
       "score": 56.0,
       "title": "AI Seed Investors Flock To Cybersecurity",
       "url": "https://news.crunchbase.com/cybersecurity/seed-trends-ai-security-startup-funding-2026/",
@@ -550,7 +646,7 @@
       "similarity": null
     },
     {
-      "rank": 69,
+      "rank": 78,
       "score": 56.0,
       "title": "Nvidia Leads Defense of Open-Source AI With New Cybersecurity Initiative",
       "url": "https://www.wsj.com/tech/ai/nvidia-other-tech-giants-launch-ai-defense-alliance-following-openai-hacking-incident-a6e71198?mod=rss_Technology",
@@ -558,41 +654,69 @@
       "similarity": null
     },
     {
-      "rank": 70,
+      "rank": 79,
+      "score": 56.0,
+      "title": "Zscaler and Schwarz Digits team up on sovereign cloud security platform",
+      "url": "https://www.itpro.com/security/zscaler-and-schwarz-digits-team-up-on-sovereign-cloud-security-platform",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 80,
+      "score": 56.0,
+      "title": "Bank for charities pulls online services over security fears",
+      "url": "https://www.theregister.com/security/2026/07/28/bank-for-charities-pulls-online-services-over-security-fears/5279615",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 81,
       "score": 56.0,
       "title": "Microsoft Unveils A.I. Cybersecurity Tools",
       "url": "https://www.nytimes.com/2026/07/27/technology/microsoft-unveils-ai-cybersecurity-tools.html",
       "matched_tldr_idx": null,
       "similarity": null
-    },
-    {
-      "rank": 71,
-      "score": 56.0,
-      "title": "Act Security raises $60M to take action against agentic access sprawl at the infrastructure layer",
-      "url": "https://siliconangle.com/2026/07/28/act-security-raises-60m-take-action-agentic-access-sprawl-infrastructure-layer/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 72,
-      "score": 55.0,
-      "title": "AI arms race in line for a reckoning after OpenAI hacking incident",
-      "url": "https://arstechnica.com/ai/2026/07/ai-arms-race-in-line-for-a-reckoning-after-openai-hacking-incident/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 73,
-      "score": 55.0,
-      "title": "OpenAI\u2019s rogue AI agent shows why we need federal rules for autonomous systems",
-      "url": "https://cyberscoop.com/openai-rogue-agent-federal-rules-autonomous-ai/",
-      "matched_tldr_idx": null,
-      "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.0,
+    "25": 0.09090909090909091,
+    "50": 0.09090909090909091,
+    "100": 0.18181818181818182,
+    "81": 0.18181818181818182
+  },
+  "hits_at": {
+    "10": 0,
+    "25": 1,
+    "50": 1,
+    "100": 2,
+    "81": 2
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://www.reuters.com/business/media-telecom/customer-data-indias-bank-baroda-leaked-online-source-researcher-say-2026-07-27/",
+    "https://www.reuters.com/business/energy/australias-origin-energy-flags-possible-data-exposure-about-900000-customers-2026-07-28/",
+    "https://socket.dev/blog/npm-rat-targets-alibaba",
+    "https://lavahq.io/research/bmc-exposure-alert",
+    "https://www.huntress.com/blog/fakeagent-claude-desktop-malvertising-ends-in-dotnet-rat",
+    "https://cyberinsider.com/privacy-focused-search-engine-neosearch-open-sources-code-to-promote-decentralized-web-search/",
+    "https://bindinghook.com/the-openais-agent-didnt-go-rogue-its-governance-did/",
+    "https://blog.silentsignal.eu/2026/07/28/the-cipher-behind-qsyrupwd-reconstructing-ibm-i-password-hashes/",
+    "https://www.bbc.com/news/articles/cly5qgjk5ywo",
+    "https://www.theregister.com/security/2026/07/28/def-con-bans-meta-style-pervert-glasses/5279763",
+    "https://thehackernews.com/2026/07/claude-ai-just-cracked-post-quantum.html"
+  ],
+  "tldr_domains": [
+    "reuters.com",
+    "reuters.com",
+    "socket.dev",
+    "lavahq.io",
+    "huntress.com",
+    "cyberinsider.com",
+    "bindinghook.com",
+    "blog.silentsignal.eu",
+    "bbc.com",
+    "theregister.com",
+    "thehackernews.com"
+  ]
 }

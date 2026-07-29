@@ -1,9 +1,31 @@
 {
   "date": "2026-07-29",
   "newsletter": "tldr_devops",
-  "fetched_at": "2026-07-29T10:26:22.458298+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-07-29T16:54:50.795051+00:00",
+  "tldr_titles": [
+    "Terraform introduces workspaces and Stacks restore, and more",
+    "CNCF Announces Schedule for Debut Observability Summit Europe",
+    "From zero to traces: Choosing the right APM instrumentation method for your stack",
+    "Federating clusters for zero-downtime Kubernetes",
+    "What Even Are Microservices?",
+    "Observability for AWS FinOps Data with Oracle Log Analytics",
+    "Inside Zig's Incremental Compilation",
+    "A new allowlists design for Grafana Cloud IP addresses: What you need to know",
+    "Harness and Kong Expand Strategic Partnership",
+    "Enforce Access Token Expiry Policies in Pulumi Cloud"
+  ],
+  "tldr_matched": [
+    false,
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -15,6 +37,14 @@
     },
     {
       "rank": 2,
+      "score": 72.0,
+      "title": "Federating clusters for zero-downtime Kubernetes",
+      "url": "https://www.cncf.io/blog/2026/07/27/federating-clusters-for-zero-downtime-kubernetes/",
+      "matched_tldr_idx": 3,
+      "similarity": 1.0
+    },
+    {
+      "rank": 3,
       "score": 70.0,
       "title": "Characterizing Metastable Faults and Failures",
       "url": "https://muratbuffalo.blogspot.com/2026/07/characterizing-metastable-faults-and.html",
@@ -22,7 +52,7 @@
       "similarity": null
     },
     {
-      "rank": 3,
+      "rank": 4,
       "score": 68.0,
       "title": "Why goodput matters more than throughput for LLM serving",
       "url": "https://www.cncf.io/blog/2026/07/20/why-goodput-matters-more-than-throughput-for-llm-serving/",
@@ -30,15 +60,15 @@
       "similarity": null
     },
     {
-      "rank": 4,
+      "rank": 5,
       "score": 68.0,
       "title": "Multi-Cluster databases on Kubernetes: Architecture and deployment",
       "url": "https://www.cncf.io/blog/2026/07/22/multi-cluster-databases-on-kubernetes-architecture-and-deployment/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 3,
+      "similarity": 0.7049066424369812
     },
     {
-      "rank": 5,
+      "rank": 6,
       "score": 67.0,
       "title": "Durable Objects are Made for Agents",
       "url": "https://calv.info/durable-objects-are-made-for-agents",
@@ -46,7 +76,7 @@
       "similarity": null
     },
     {
-      "rank": 6,
+      "rank": 7,
       "score": 66.0,
       "title": "Natural disasters and government interference: examining Q2 2026\u2019s major Internet disruption events",
       "url": "https://blog.cloudflare.com/q2-2026-internet-disruption-summary/",
@@ -54,7 +84,15 @@
       "similarity": null
     },
     {
-      "rank": 7,
+      "rank": 8,
+      "score": 66.0,
+      "title": "Your Kubernetes health checks are accidentally waking your services. Here\u2019s the fix.",
+      "url": "https://www.cncf.io/blog/2026/07/29/your-kubernetes-health-checks-are-accidentally-waking-your-services-heres-the-fix/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 9,
       "score": 63.0,
       "title": "How Do I Profile eBPF Code?",
       "url": "https://naveensrinivasan.com/posts/2026-07-22-how-do-i-profile-ebpf-code/",
@@ -62,7 +100,7 @@
       "similarity": null
     },
     {
-      "rank": 8,
+      "rank": 10,
       "score": 63.0,
       "title": "Session revocations at scale",
       "url": "https://www.canva.dev/blog/engineering/session-revocations-at-scale/",
@@ -70,7 +108,7 @@
       "similarity": null
     },
     {
-      "rank": 9,
+      "rank": 11,
       "score": 62.0,
       "title": "Confidential Containers becomes a CNCF incubating project",
       "url": "https://www.cncf.io/blog/2026/07/22/confidential-containers-becomes-a-cncf-incubating-project/",
@@ -78,7 +116,7 @@
       "similarity": null
     },
     {
-      "rank": 10,
+      "rank": 12,
       "score": 62.0,
       "title": "Does Runtime Topology Context Improve LLM-Generated Kubernetes Security Patches?",
       "url": "http://arxiv.org/abs/2607.25995v1",
@@ -86,7 +124,7 @@
       "similarity": null
     },
     {
-      "rank": 11,
+      "rank": 13,
       "score": 62.0,
       "title": "Platform engineering for the agentic enterprise",
       "url": "https://www.cncf.io/blog/2026/07/21/platform-engineering-for-the-agentic-enterprise-managing-applications-resources-and-ai-agents/",
@@ -94,7 +132,7 @@
       "similarity": null
     },
     {
-      "rank": 12,
+      "rank": 14,
       "score": 62.0,
       "title": "Cloudflare Internal DNS is now generally available",
       "url": "https://blog.cloudflare.com/internal-dns/",
@@ -102,7 +140,7 @@
       "similarity": null
     },
     {
-      "rank": 13,
+      "rank": 15,
       "score": 61.0,
       "title": "More Tailscale tricks for your jailbroken Kindle",
       "url": "https://tailscale.com/blog/jailbroken-kindle-proxy-tun-modes",
@@ -110,7 +148,15 @@
       "similarity": null
     },
     {
-      "rank": 14,
+      "rank": 16,
+      "score": 61.0,
+      "title": "Lima v2.2: Windows guests and TPM 2.0 emulation",
+      "url": "https://www.cncf.io/blog/2026/07/28/lima-v2-2-windows-guests-and-tpm-2-0-emulation/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 17,
       "score": 60.0,
       "title": "New Gitea RCE Lets Repository Writers Plant a Git Hook to Run Shell Commands",
       "url": "https://thehackernews.com/2026/07/new-gitea-rce-lets-repository-writers.html",
@@ -118,7 +164,23 @@
       "similarity": null
     },
     {
-      "rank": 15,
+      "rank": 18,
+      "score": 60.0,
+      "title": "Welcome CoHDI to the CNCF: Evolving Kubernetes into composable disaggregated infrastructures",
+      "url": "https://www.cncf.io/blog/2026/07/28/welcome-cohdi-to-the-cncf-evolving-kubernetes-into-composable-disaggregated-infrastructures/",
+      "matched_tldr_idx": 3,
+      "similarity": 0.6580359935760498
+    },
+    {
+      "rank": 19,
+      "score": 58.0,
+      "title": "Three Critical VMware Flaws Allow Auth Bypass, Code Execution, and VM Escape",
+      "url": "https://thehackernews.com/2026/07/three-critical-vmware-flaws-allow-auth.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 20,
       "score": 58.0,
       "title": "RefluXFS: A Linux Kernel Local Privilege Escalation to Root in XFS (CVE-2026-64600)",
       "url": "https://blog.qualys.com/vulnerabilities-threat-research/2026/07/22/refluxfs-a-linux-kernel-local-privilege-escalation-to-root-in-xfs-cve-2026-64600",
@@ -126,7 +188,23 @@
       "similarity": null
     },
     {
-      "rank": 16,
+      "rank": 21,
+      "score": 58.0,
+      "title": "Hugging Face Rebuilt a Third of Its Infrastructure After Agent Intrusion",
+      "url": "https://www.implicator.ai/hugging-face-rebuilt-a-third-of-its-infrastructure-after-agent-intrusion/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 22,
+      "score": 58.0,
+      "title": "Hugging Face rebuilt a third of its infrastructure after OpenAI agents ran amok",
+      "url": "https://www.theregister.com/ai-and-ml/2026/07/28/openais-agent-siege-forced-significant-rebuild-at-hugging-face/5279577",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 23,
       "score": 58.0,
       "title": "Critical TeamCity Flaw Could Let Attackers Run OS Commands Without Logging In",
       "url": "https://thehackernews.com/2026/07/critical-teamcity-flaw-could-let.html",
@@ -134,7 +212,23 @@
       "similarity": null
     },
     {
-      "rank": 17,
+      "rank": 24,
+      "score": 58.0,
+      "title": "Post-quantum authentication to origins is now supported",
+      "url": "https://blog.cloudflare.com/post-quantum-authentication-to-origins/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 25,
+      "score": 58.0,
+      "title": "Kubeflow unveils new cloud native innovations to supercharge AI",
+      "url": "https://www.cncf.io/blog/2026/07/28/kubeflow-unveils-new-cloud-native-innovations-to-supercharge-ai/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 26,
       "score": 58.0,
       "title": "OpenTelemetry has graduated\u2026 Now what?",
       "url": "https://www.cncf.io/blog/2026/07/24/opentelemetry-has-graduated-now-what/",
@@ -142,7 +236,7 @@
       "similarity": null
     },
     {
-      "rank": 18,
+      "rank": 27,
       "score": 58.0,
       "title": "Specification-Driven DevOps for Multi-Service Environments",
       "url": "http://arxiv.org/abs/2607.25141v1",
@@ -150,7 +244,7 @@
       "similarity": null
     },
     {
-      "rank": 19,
+      "rank": 28,
       "score": 58.0,
       "title": "Reality-based Network Operations",
       "url": "https://systemsapproach.org/2026/07/27/reality-based-network-operations/",
@@ -158,7 +252,23 @@
       "similarity": null
     },
     {
-      "rank": 20,
+      "rank": 29,
+      "score": 58.0,
+      "title": "Detect early and enforce firmly with Google Cloud's enhanced cost controls for AI spend",
+      "url": "https://cloud.google.com/blog/topics/cost-management/new-early-anomalies-and-spend-caps-on-google-cloud-budgets/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 30,
+      "score": 58.0,
+      "title": "Terraform AzureRM provider 5.0 now generally available",
+      "url": "https://www.hashicorp.com/blog/terraform-azurerm-provider-50-now-generally-available",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 31,
       "score": 57.0,
       "title": "n8n Sandbox Escape Lets Workflow Editors Run OS Commands as the n8n Process",
       "url": "https://thehackernews.com/2026/07/n8n-sandbox-escape-lets-workflow.html",
@@ -166,7 +276,15 @@
       "similarity": null
     },
     {
-      "rank": 21,
+      "rank": 32,
+      "score": 57.0,
+      "title": "Nokia eyes Ethernet evolution in OpenAI-developed MRC protocol",
+      "url": "https://www.sdxcentral.com/news/nokia-eyes-ethernet-evolution-in-openai-developed-mrc-protocol/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 33,
       "score": 57.0,
       "title": "Meta reinvents AI metadata flow and KV caching",
       "url": "https://www.blocksandfiles.com/object/2026/07/27/meta-reinvents-ai-metadata-flow-and-kv-caching/5278805",
@@ -174,7 +292,7 @@
       "similarity": null
     },
     {
-      "rank": 22,
+      "rank": 34,
       "score": 57.0,
       "title": "Finding bugs in Raft implementations",
       "url": "https://antithesis.com/blog/2026/finding-bugs-in-raft-implementations/",
@@ -182,7 +300,7 @@
       "similarity": null
     },
     {
-      "rank": 23,
+      "rank": 35,
       "score": 57.0,
       "title": "ModelExpress: Distributing Model Artifacts at the Speed of Light",
       "url": "https://developer.nvidia.com/blog/modelexpress-distributing-model-artifacts-at-the-speed-of-light/",
@@ -190,7 +308,7 @@
       "similarity": null
     },
     {
-      "rank": 24,
+      "rank": 36,
       "score": 56.0,
       "title": "Critical OpenWrt DHCPv6 Flaw Could Let Unauthenticated Attackers Run Code as Root",
       "url": "https://thehackernews.com/2026/07/critical-openwrt-dhcpv6-flaw-could-let.html",
@@ -198,7 +316,7 @@
       "similarity": null
     },
     {
-      "rank": 25,
+      "rank": 37,
       "score": 56.0,
       "title": "Tengu Botnet Reboots Compromised Linux Devices When Defenders Kill Its Process",
       "url": "https://thehackernews.com/2026/07/tengu-botnet-reboots-compromised-linux.html",
@@ -206,7 +324,7 @@
       "similarity": null
     },
     {
-      "rank": 26,
+      "rank": 38,
       "score": 56.0,
       "title": "Hugging Face Says OpenAI Agent Reached Cluster Admin in Under 13 Hours",
       "url": "https://www.implicator.ai/hugging-face-openai-agent-cluster-admin-13-hours/",
@@ -214,7 +332,15 @@
       "similarity": null
     },
     {
-      "rank": 27,
+      "rank": 39,
+      "score": 56.0,
+      "title": "Thousands of Data Center Controllers Open to Takeover",
+      "url": "https://www.darkreading.com/cyber-risk/flaw-exposes-data-centers-server-takeover",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 40,
       "score": 56.0,
       "title": "24,650 Internet-Exposed BMCs Disclose IPMI Password Hashes Before Login",
       "url": "https://thehackernews.com/2026/07/24650-internet-exposed-bmcs-disclose.html",
@@ -222,15 +348,7 @@
       "similarity": null
     },
     {
-      "rank": 28,
-      "score": 56.0,
-      "title": "GitHub Adds 3-Day Dependabot Cooldown to Limit Poisoned Package Adoption",
-      "url": "https://thehackernews.com/2026/07/github-adds-3-day-dependabot-cooldown.html",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 29,
+      "rank": 41,
       "score": 56.0,
       "title": "Demystifying AI Exploits: A Blueprint for AI-Assisted Vulnerability Management",
       "url": "https://cloud.google.com/blog/topics/threat-intelligence/ai-assisted-vulnerability-management/",
@@ -238,7 +356,7 @@
       "similarity": null
     },
     {
-      "rank": 30,
+      "rank": 42,
       "score": 56.0,
       "title": "End-to-End Detection Validation Using Coding Agents",
       "url": "https://blog.cauchy.org/blog/detection-validation/",
@@ -246,7 +364,23 @@
       "similarity": null
     },
     {
-      "rank": 31,
+      "rank": 43,
+      "score": 56.0,
+      "title": "How Databricks manages its own coding agent spend with Unity AI Gateway Budgets",
+      "url": "https://www.databricks.com/blog/how-databricks-manages-its-own-coding-agent-spend-unity-ai-gateway-budgets",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 44,
+      "score": 56.0,
+      "title": "Tame Dependabot: Group your updates, slow the cadence, keep security fast",
+      "url": "https://github.blog/security/supply-chain-security/tame-dependabot-group-your-updates-slow-the-cadence-keep-security-fast/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 45,
       "score": 56.0,
       "title": "Introducing Antares: Highly Efficient Open Weight AI Models for Vulnerability Localization",
       "url": "https://blogs.cisco.com/ai/introducing-antares-the-most-efficient-open-weight-ai-models-for-vulnerability-localization",
@@ -254,7 +388,15 @@
       "similarity": null
     },
     {
-      "rank": 32,
+      "rank": 46,
+      "score": 56.0,
+      "title": "Future-proofing data integrity: Quantum-safe digital signatures in Cloud KMS",
+      "url": "https://cloud.google.com/blog/products/identity-security/future-proofing-data-integrity-quantum-safe-digital-signatures-in-cloud-kms/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 47,
       "score": 56.0,
       "title": "Claude Opus 5 on GitLab: Reasoning built for the hard tasks",
       "url": "https://about.gitlab.com/blog/claude-opus-5-on-gitlab-duo-agent-platform/",
@@ -262,7 +404,7 @@
       "similarity": null
     },
     {
-      "rank": 33,
+      "rank": 48,
       "score": 56.0,
       "title": "We\u2019re open-sourcing our privacy proxy CLI",
       "url": "https://blog.cloudflare.com/open-sourcing-our-privacy-proxy-cli/",
@@ -270,9 +412,43 @@
       "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.1,
+    "25": 0.1,
+    "50": 0.1,
+    "100": 0.1,
+    "48": 0.1
+  },
+  "hits_at": {
+    "10": 1,
+    "25": 1,
+    "50": 1,
+    "100": 1,
+    "48": 1
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://www.hashicorp.com/en/blog/terraform-introduces-workspaces-and-stacks-restore-and-more",
+    "https://www.cncf.io/announcements/2026/07/28/cncf-announces-schedule-for-debut-observability-summit-europe/",
+    "https://www.datadoghq.com/blog/choosing-apm-instrumentation/",
+    "https://www.cncf.io/blog/2026/07/27/federating-clusters-for-zero-downtime-kubernetes/",
+    "https://var0.xyz/posts/what-even-are-microservices.html",
+    "https://blogs.oracle.com/observability/observability-aws-finops-data-oracle-log-analytics",
+    "https://mlugg.co.uk/posts/incremental-compilation-internals/",
+    "https://grafana.com/blog/a-new-allowlists-design-for-grafana-cloud-ip-addresses-what-you-need-to-know/",
+    "https://www.devopsdigest.com/harness-and-kong-expand-strategic-partnership",
+    "https://www.pulumi.com/blog/access-token-expiry-policy/"
+  ],
+  "tldr_domains": [
+    "hashicorp.com",
+    "cncf.io",
+    "datadoghq.com",
+    "cncf.io",
+    "var0.xyz",
+    "blogs.oracle.com",
+    "mlugg.co.uk",
+    "grafana.com",
+    "devopsdigest.com",
+    "pulumi.com"
+  ]
 }
