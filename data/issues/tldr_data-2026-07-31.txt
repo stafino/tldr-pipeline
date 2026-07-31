@@ -1,0 +1,109 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR Data 2026-07-31
+
+📊
+News & Trends
+
+New Databricks tool uses AI agents to rewrite legacy SQL at scale (2 minute read)
+
+Databricks added an agentic code converter to its Lakebridge migration toolkit, using Genie Code subagents to analyze, translate, validate, and iteratively retry legacy SQL moving from Teradata, Snowflake, Redshift, and SQL Server. The tool targets the stored procedures, dynamic SQL, and proprietary functions that deterministic transpilers choke on, aiming to cut manual remediation, though the beta caps jobs at 300 files per batch.
+
+The borderless Lakehouse: Bring AWS, Databricks and Snowflake data to your AI agents (5 minute read)
+
+(blurb not generated)
+
+Snowflake launches AI agent governance layer to track activity, control costs (5 minute read)
+
+(blurb not generated)
+
+After rewriting SQLite in Rust, Turso turns its sights on Postgres (5 minute read)
+
+(blurb not generated)
+
+Automate data monitoring and root-cause analysis with Looker Agentic Workflows (5 minute read)
+
+(blurb not generated)
+
+Bringing real-time fraud prevention to government benefits (1 minute read)
+
+Databricks detailed how agencies can run real-time fraud detection on federal benefits programs, scoring transactions with entity resolution, behavioral analysis, and ML before funds are disbursed rather than chasing losses after payment. The pitch reuses the sub-100ms scoring systems Databricks already runs for banks and retailers, aimed at the $233B to $521B in annual federal fraud the GAO estimates, including $186B in improper payments in fiscal 2025.
+
+Snowflake launches Cortex AI Gateway for enterprise agents (5 minute read)
+
+(blurb not generated)
+
+🧠
+Deep Dives & Analysis
+
+Indexing the Data Lake for Online Point Queries (5 minute read)
+
+Spotify's engineering team details Random Access Parquet (RAP), a technique for serving low-latency point queries directly off the GCS data lake instead of copying data into Bigtable or DynamoDB. An external index maps keys to file locations so ranged reads fetch only the needed bytes, skipping the seconds of scheduling overhead that Trino and BigQuery add to single-row lookups. The payoff is storing once: the same Parquet files feed ML pipelines, notebooks, and now interactive serving.
+
+Scaling StreamHub: Transitioning from Kinesis to Kafka for 145 Billion Daily Events (5 minute read)
+
+Atlassian's StreamHub team documents its multi-year migration from Amazon Kinesis to Apache Kafka on AWS MSK after outgrowing Kinesis at 20-30B events per day, with the platform now ingesting 150B events daily and peaking above 3.2M events per second. The key cost lever was Kafka Tiered Storage, which decouples storage from compute and keeps billions of events off expensive EBS volumes while supporting multi-day retention and additional consumer groups without linear cost growth.
+
+Revisiting the Algebraic Foundation of Relational Data (1 minute read)
+
+This paper revives Tarski's Algebra of Relations, a formalism that predates Codd's relational algebra by a century, and argues it is a cleaner foundation for databases given how modern application code and system architecture actually work. To back the claim, the authors build Prela, a compositional query language, and show its queries are more concise and efficient than the SQL-style equivalents. The pitch is that composition, not the flat relational model, is the better primitive for query languages.
+
+Eval-driven development: Lessons from evaluating GenAI at scale (5 minute read)
+
+Airbnb's engineering team argues that evaluation should be treated as a first-class discipline for GenAI features, not a testing afterthought, because LLM outputs are non-deterministic and "correct" is subjective. Teams should expect to spend a meaningful share of total project effort on evals, since a generic "helpfulness" metric can score well while missing the failure mode users actually hit. The starting point stays unglamorous: manually review your data before building any scaled eval pipeline.
+
+A Structured Knowledge Infrastructure for Domain-Specific Data Asset Discovery (1 minute read)
+
+This paper tackles a common enterprise RAG failure: generic retrieval pulls the wrong data asset (Hit@10 of just 19.1%) and offers no usage context to prevent metric misinterpretation. Deployed across Xiaohongshu's 5,300+ Hive tables, the two-layer system pairs a graph-guided retriever with a scene-aware ranker, lifting Hit@10 to 96.6% at sub-6-second latency. Notably, encoding negative knowledge alone accounts for 25 points of that gain.
+
+How MVCC and Transactions Work in RocksDB (5 minute read)
+
+RocksDB implements MVCC on top of its LSM-tree, where writes never modify keys in-place and instead append new versions that compaction later garbage-collects. This post walks through the other half: how snapshots give each reader a consistent view of the data as it existed when the read began, letting readers and writers proceed concurrently without locking. It then builds up atomic updates and transactions on that foundation.
+
+Making Postgres queues scale (1 minute read)
+
+Postgres-backed queues are usually dismissed as unscalable, but this DBOS write-up shows the workarounds that push them to 30K workflow executions per second across thousands of servers. The key primitive is `SELECT ... FOR UPDATE SKIP LOCKED`, which lets thousands of concurrently polling workers each grab distinct rows instead of contending over the same oldest jobs. Without it, worker contention caps throughput around 100 workflows per second, which is where the "just use RabbitMQ or Redis" advice comes from.
+
+Fully Inductive Cardinality Estimation (1 minute read)
+
+FICE is the first learned cardinality estimator for BGP SPARQL queries that generalizes to entirely unseen knowledge graphs, including new relations, with no retraining. Prior learned estimators beat statistics- and sampling-based methods but stayed transductive, so any graph change forced a retrain and blocked triplestore adoption. A GNN encoder over a 2-hop neighborhood produces entity and relation embeddings, and a decoder composes them along the query join topology, cutting median q-error from 13.54 to 5.34 across 10 KGs at sub-millisecond latency.
+
+Personalization is an infrastructure problem (5 minute read)
+
+The author argues that most personalization failures are architecture problems, not quality problems: personalization is a ranking decision that has to weigh user intent, item quality, history, availability, and business priority for every request in milliseconds. The piece uses Vespa to show why the usual stack struggles, since the ranking layer is often the one place that cannot see all those signals together. Combining them at query time, while the user is still there, is the real bottleneck.
+
+Brute intelligence (5 minute read)
+
+(blurb not generated)
+
+Composable canonicals: from tribal data knowledge to versioned artifact (5 minute read)
+
+dltHub's Adrian Brudaru argues the central data team problem is really a knowledge coordination problem: one team owns the warehouse but domain teams own what the data means, and every fix from embedded analysts to data mesh has just been a way to push that meaning back into the domains. His proposed architecture uses dlt to infer schema, an agent to bootstrap an ontology, and versioned "canonical blocks" that compose domain models into a business canonical, turning tribal knowledge into a reviewable, versioned artifact instead of an expensive contract-API.
+
+A Graph-Native Bitemporal Memory Store for Conversational AI Agents (1 minute read)
+
+This paper describes an agent-local memory store for conversational AI, built on a Neo4j property graph with HNSW vector indexes and a full bitemporal model that tracks both valid time and transaction time, so history is never overwritten. On the LongMemEval benchmark, the current-state semantic search path hits 46.7% R@10 overall and 80% on knowledge-update questions, while the time-travel path matches 80% on updates but drops temporal-reasoning recall to 37.5% due to post-filter dilution.
+
+AgenticER: the next frontier in Entity Resolution (1 minute read)
+
+This paper argues that entity resolution should shift from a passive, one-shot similarity-matching paradigm to an agentic one, where autonomous agents plan resolution strategies, gather external evidence, and decide when to query additional sources or humans. The authors frame Agentic ER as a decision-theoretic problem that optimizes trade-offs between accuracy, cost, and latency, targeting messy data lakes with streaming CSV, JSON, RDF, and free-text records. They propose a reference architecture, outline core research challenges, and define new evaluation dimensions tailored to agentic behavior.
+
+Pinner Progression: Better Use-Case Representation Driving Weekly Active User Growth at Pinterest (5 minute read)
+
+Pinterest engineering describes how it rebuilt user representations around explicit use cases, replacing a single engagement signal with a model that captures why each Pinner shows up. The team frames progression through use cases as the driver of weekly active user growth, tying recommendation quality directly to whether the system recognizes and reinforces a user's distinct intents. The write-up covers how they encoded those use cases and measured the lift against WAU.
+
+Wide Column Stores Explained: Cassandra, Bigtable, and ScyllaDB (5 minute read)
+
+Wide column stores like Cassandra, ScyllaDB, HBase, and Bigtable group rows into partitions keyed for placement and clustering for sort order, using LSM trees to turn random writes into cheap sequential appends. This walkthrough covers why they are misunderstood: they are not columnar OLAP engines like ClickHouse, and the golden rule is to model tables around queries, not entities, since joins and ad hoc filtering do not exist. Wide partitions, tombstone pileups, and ALLOW FILTERING are the failure modes that quietly kill a cluster.
+
+How LangChain Built an Agent-First Data Stack (5 minute read)
+
+LangChain's three-person data team rebuilt its stack around agents instead of dashboards, moving from a traditional BI tool to one designed for self-serve analysis and shared context. The key insight is that agents need clear metric definitions, trusted sources, and business logic, not just table access, to produce answers teams can trust. The self-serve data agent now fields roughly 40x the request volume the team could handle directly, shifting their role from answering questions to improving the system.
+
+🚀
+Launches & Tools
+
+Convert proprietary code to open ANSI SQL with Genie Code (1 minute read)
+
+Databricks released an agentic code converter in Genie Code, now in Beta, that translates T-SQL, Snowflake, Redshift, Oracle, BigQuery, and Teradata to open ANSI SQL. It scores each file's migration complexity and maps object lineage across tables, views, and stored procedures, letting teams sequence a warehouse migration by dependency order instead of hand-translating decades-old proprietary code.

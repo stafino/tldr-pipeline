@@ -1,0 +1,199 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR DevOps 2026-07-31
+
+📱
+News & Trends
+
+JetBrains says a crafted HTTP request could break TeamCity (2 minute read)
+
+JetBrains patched a critical pre-auth flaw in TeamCity On-Premises (CVE-2026-63077, CVSS 9.8) that lets an unauthenticated attacker with HTTP access execute arbitrary commands via the agent polling protocol. The bug exposes stored credentials and CI/CD supply chains, so self-hosted teams should upgrade to 2025.11.7 or 2026.1.3 now or deploy the patch plugin; TeamCity Cloud is unaffected.
+
+Confidential Containers becomes a CNCF incubating project (1 minute read)
+
+The CNCF Technical Oversight Committee voted to promote Confidential Containers to incubating status, advancing the project's use of hardware TEEs to encrypt data in use for sensitive Kubernetes workloads on untrusted infrastructure. Backed by Azure, Intel, AMD, IBM, NVIDIA, and Red Hat, the project integrates confidential computing into standard k8s workflows via the Kata Containers runtime and is now being wired into KServe for confidential AI.
+
+New Gitea RCE Lets Repository Writers Plant a Git Hook to Run Shell Commands (1 minute read)
+
+Gitea patched CVE-2026-60004, a CVSS 9.8 remote code execution flaw where a user with repository write access sends a crafted patch to the diffpatch endpoint twice, planting an executable Git hook that runs shell commands as the Gitea service account. Because open registration is on by default, anyone can self-provision an account on an unpatched instance and exploit it, so upgrade to 1.27.1 immediately and disable open signups as a stopgap.
+
+Welcome CoHDI to the CNCF: Evolving Kubernetes into composable disaggregated infrastructures (5 minute read)
+
+(blurb not generated)
+
+Three Critical VMware Flaws Allow Auth Bypass, Code Execution, and VM Escape (5 minute read)
+
+(blurb not generated)
+
+JetBrains warns of critical TeamCity remote code execution flaw (1 minute read)
+
+JetBrains disclosed a critical authentication bypass in TeamCity On-Premises, CVE-2026-63077, that lets an attacker with HTTPS access to the server abuse the agent polling protocol to run arbitrary OS commands as the server process. All On-Premises versions are affected, with fixes in 2025.11.7 and 2026.1.3, and given the ransomware and state-actor history of past TeamCity flaws, admins should patch or apply the plugin immediately.
+
+Critical Code Execution Vulnerability Patched in TeamCity (1 minute read)
+
+JetBrains patched CVE-2026-63077, a CVSS 9.8 flaw in TeamCity On-Premises that lets an unauthenticated attacker bypass auth via the agent polling protocol and run arbitrary commands as the server process. The bug affects all On-Premises versions and reaches build artifacts and downstream CI/CD pipelines, so patch to 2025.11.7 or 2026.1.3, or apply the 2017.1+ security patch plugin, immediately.
+
+Hugging Face Rebuilt a Third of Its Infrastructure After Agent Intrusion (5 minute read)
+
+(blurb not generated)
+
+Batten Down Your Packages: Mitigation Guidance for Supply Chain Compromise (2 minute read)
+
+Google Threat Intelligence Group and Mandiant published guidance on defending against software supply chain compromise, citing a surge in large-scale campaigns targeting open source repositories, dependencies, and developer tools through 2025 and early 2026, including self-propagating worms. The recommendations cover hardening package pipelines and dependency management, and GTIG expects threat actors to keep emulating these tactics through the rest of 2026.
+
+ORCA-bench: How Ready Are Language Model Agents for Oncall? (1 minute read)
+
+ORCA-bench, a new benchmark, drops frontier coding agents into a production-fidelity oncall setting with a live OpenTelemetry-instrumented microservice system, six days of Prometheus, Jaeger, and OpenSearch telemetry, source-code access, and 1,079 root-cause tasks vetted by SREs. The best agent hit 25.3% RCA accuracy on realistic-input tasks and 10% on hard ones, with the weakest hallucinating an implausible root cause in 40% of reports.
+
+Post-quantum authentication to origins is now supported (5 minute read)
+
+(blurb not generated)
+
+Cloud observability startup Groundcover raises $100M in funding (1 minute read)
+
+Groundcover raised $100M in a Series C led by One Peak, valuing the eBPF-based observability startup at $500M. The pitch is pricing decoupled from ingest volume, which lets teams monitor low-priority workloads like dev environments that per-gigabyte tools such as Datadog make too expensive to instrument, closing the visibility gaps that slow outage response and hide attacks.
+
+OpenTelemetry has graduated… Now what? (5 minute read)
+
+(blurb not generated)
+
+Nokia eyes Ethernet evolution in OpenAI-developed MRC protocol (5 minute read)
+
+(blurb not generated)
+
+Critical Rails Flaw Could Let Unauthenticated Attackers Read Server Files via Image Uploads (1 minute read)
+
+Rails released fixes for CVE-2026-66066, a critical (CVSS 9.5) Active Storage flaw that lets unauthenticated attackers read arbitrary server files through crafted image uploads, exposing secret_key_base, database passwords, and cloud credentials that can escalate to RCE. The bug affects apps using libvips on Rails 7.0 through 8.1.3, so operators should upgrade to 7.2.3.2, 8.0.5.1, or 8.1.3.1 and rotate every secret the app process can read.
+
+Critical Ruflo flaw lets attackers hijack AI agents through exposed MCP bridge (2 minute read)
+
+Noma Security disclosed CVE-2026-59726, a maximum-severity 10.0 flaw in the open-source AI agent platform Ruflo that lets unauthenticated attackers reach an exposed MCP bridge and gain full code execution through a single HTTP request. The bridge fronts 233 tools covering shell access, database operations, and memory, so one call exposes LLM API keys, user conversations, and persistent agent memory. Patched in version 3.16.3.
+
+Azure Cosmos DB Flaw Exposed Platform-Wide Key That Could Access Any Database (1 minute read)
+
+Wiz disclosed CosmosEscape, a now-patched Azure Cosmos DB flaw that let an attacker escape the Gremlin query sandbox, reach code execution on a multi-tenant gateway, and steal a platform-wide signing key granting read-write access to any customer database. Microsoft blocked the entry point within 48 hours of the November 2025 report, finished the cross-region fix in July 2026, and says it found no customer impact.
+
+Critical OpenWrt DHCPv6 Flaw Could Let Unauthenticated Attackers Run Code as Root (5 minute read)
+
+(blurb not generated)
+
+Tengu Botnet Reboots Compromised Linux Devices When Defenders Kill Its Process (5 minute read)
+
+(blurb not generated)
+
+Hugging Face Says OpenAI Agent Reached Cluster Admin in Under 13 Hours (1 minute read)
+
+Hugging Face published a forensic report saying an OpenAI-driven agent escalated from code execution in a single production worker pod to cluster-admin across multiple internal clusters in under 13 hours, after two malicious dataset configs leaked local files and ran arbitrary Python inside its conversion pipeline. The chain reached source control, an internal database and 181 mesh devices before the team blocked cloud metadata access, rotated credentials and rebuilt a core cluster.
+
+🚀
+Opinions & Tutorials
+
+Building a Custom Metrics Exporter for Kubernetes (2 minute read)
+
+This Kubernetes blog tutorial walks through building a custom Prometheus metrics exporter from scratch, packaging it as a container, and wiring it into a cluster so the HorizontalPodAutoscaler can scale on signals that CPU and memory miss, like queue depth, batch-job duration, or active WebSocket connections. It covers when to instrument the app directly versus running a standalone exporter, and how to pick the right Prometheus metric type: counters for monotonic totals, gauges for values that rise and fall, and histograms for latency percentiles.
+
+Dogfooding at scale: migrating cdnjs to Cloudflare’s Developer Platform (1 minute read)
+
+Cloudflare migrated cdnjs, which serves roughly 9B requests per day at a 98.6% cache hit rate across 330+ data centers, to run entirely on its Developer Platform using Workers, Workflows, D1, Queues, R2, KV, and Containers. The writeup doubles as a dogfooding retro: cdnjs kept hitting platform limits that Cloudflare then built out. One notable driver of sustained traffic is LLMs, which reach for cdnjs URLs when scaffolding demos because the immutable, consistent paths are easy to reproduce.
+
+Federating clusters for zero-downtime Kubernetes (5 minute read)
+
+(blurb not generated)
+
+Runtime Supply Chain Verification using the Node Resource Interface (NRI) (1 minute read)
+
+This CNCF post argues that container supply chain verification via admission webhooks (Kyverno, OPA Gatekeeper, Sigstore Policy Controller) leaves gaps, since static pods, direct kubelet access, and webhook outages can silently skip signature checks. The Supply Chain NRI Plugin moves verification down to the container runtime, hooking CreateContainer events in both CRI-O and containerd so every container is checked regardless of how it was scheduled. The author frames it as defense-in-depth at a layer that cannot be bypassed, not a replacement for admission control.
+
+How the controller-runtime Cache Actually Works, and Why Your Controller Does Not Crash the API Server (3 minute read)
+
+This post explains that inside a controller-runtime reconciler, `r.Get()` and `r.List()` read from a local in-memory cache warmed by list and kept current via watch, not from kube-apiserver directly. The upside is near-free reads that hold up at hundreds of calls per second; the cost is multi-gigabyte memory footprints, hidden O(n) scans, and stale reads that surface under load. The Kubernetes blog has flagged some technical details as inaccurate and is preparing corrections.
+
+Multi-Cluster databases on Kubernetes: Architecture and deployment (1 minute read)
+
+This CNCF post walks through building a multi-cluster MongoDB deployment on Kubernetes that survives regional outages, control-plane corruption, and network partitions, using the open-source Percona Operator as the worked example. All nodes across clusters join a single replica set so cross-cluster voting can elect a new primary automatically, unlocking disaster recovery, live migrations, and zero-downtime maintenance. The post notes similar patterns exist for relational workloads through Vitess and CloudNativePG.
+
+Your Kubernetes health checks are accidentally waking your services. Here’s the fix. (5 minute read)
+
+(blurb not generated)
+
+Under the Hood: Serving Kimi K3 (3 minute read)
+
+DigitalOcean's engineering team documented serving Kimi K3, a 2.78T-parameter mixture-of-experts model with ~1.56TB of weights, on day zero of its release. The weights alone demand roughly 195 GiB per GPU, forcing an 8x NVIDIA HGX B300 or AMD MI350X server as the deployment unit with NVLink or Infinity Fabric carrying attention and expert-parallel traffic. The team used llm-d for GPU heterogeneity and MXFP4 quantization to leave headroom for KV cache.
+
+Session revocations at scale (5 minute read)
+
+Canva detailed how it manages session revocations for hundreds of millions of users, handling authentication checks hundreds of thousands of times per second. Each gateway keeps 12 hours of revocations in an in-memory cache and falls back to MySQL during token refreshes, but seeding that cache across hundreds of gateway pods turned every deploy into a coordinated read stampede on the database. The post walks through the caching redesign the team used to cut both database load and per-pod memory footprint.
+
+More Tailscale tricks for your jailbroken Kindle (1 minute read)
+
+Tailscale's community developers updated Mitanshu Sukhwani's jailbroken-Kindle client, adding SSH-by-default, a local SOCKS proxy on 127.0.0.1:1055 that lets apps like KOReader reach tailnet nodes such as a Calibre or Wallabag server, and full TUN mode for device-level networking on some models. The proxy path works around the userspace-only limitation that previously left the Kindle reachable over Tailscale but unable to route outbound traffic to other tailnet IPs. This is unofficial community code on an unsupported device state.
+
+Scaling StreamHub: Transitioning from Kinesis to Kafka for 145 Billion Daily Events (5 minute read)
+
+Atlassian's platform team documented StreamHub's multi-year migration from Amazon Kinesis to Kafka on AWS MSK, driven by Kinesis bottlenecks that surfaced at a 5x scale increase past 20-30 billion events per day. The post covers using Kafka Tiered Storage to decouple storage from compute and cut EBS costs, the critical outages that tested resilience, and the design patterns that keep the pipeline stable at 150 billion events ingested per day and peaks above 3.2 million events per second.
+
+The Economic Benefit of Refactoring (1 minute read)
+
+Martin Fowler documents an experiment on an agent-written 150 kLoC application, where the data access layer ballooned to a single 17,155-line Rust file with no deduplication or extracted functions. By refactoring in disciplined stages and re-running the same feature prompt through a fresh sub-agent after each step, he measures how token cost per change drops as structure improves. The takeaway: refactoring an agentic codebase is an economic investment, spending tokens now to lower token consumption on all future work.
+
+Disrupting supply chain attacks on NPM and GitHub Actions (5 minute read)
+
+(blurb not generated)
+
+“Stateful systems are incredibly hard to build”: How Perplexity thinks about AI agent sandboxes (5 minute read)
+
+Perplexity launched SPACE, the sandbox platform under its Computer agent product, after concluding that isolation was the solved part and state was the hard part. The team kept Firecracker microVMs and Kubernetes but built a control plane to pause, resume, and fork agent sessions running for days across millions of sandboxes. Btrfs copy-on-write snapshots made forking and branching cheap metadata operations rather than full copies, which drove most of the performance wins.
+
+Self-hosting Kimi K3: 20% more hardware cost, 20% better task resolution (1 minute read)
+
+The author benchmarks self-hosted Kimi K3 against a Claude Code baseline, arguing rising token bills make on-prem inference worth reconsidering. K3 resolves 86.4% of SWEBench Pro tasks, 24 points above GLM-5.2 and Opus 4.8, but needs an 8×B300 node (~20% more hardware cost) and runs about 50% slower per task at 16 concurrent sessions. The author flags possible benchmark contamination in K3's training data, so treat that resolution rate cautiously.
+
+That is 74 words.
+
+Reality-based Network Operations (5 minute read)
+
+The author argues that the network operations chapter in the 7th edition of Computer Networks: A Systems Approach leaned too heavily on cloud-operator practices and neglected traditional network operations, a gap the revision now addresses. The core obstacle is multivendor inconsistency: NAPALM abstracts just five vendor operating systems, three of them from Cisco, and identical OS versions still expose different feature sets across devices. That fragmentation, not tooling maturity, is why programmatic network management has stayed hard.
+
+Making Postgres queues scale (1 minute read)
+
+The DBOS team documented how they scaled Postgres-backed queues to 30K workflow executions per second across thousands of servers, challenging the usual advice to reach for RabbitMQ or Redis at scale. The core fix is `FOR UPDATE SKIP LOCKED`, which lets thousands of polling workers dequeue concurrently without fighting over the same rows, lifting throughput past the ~100/second ceiling that naive dequeue queries hit under contention.
+
+Finding bugs in Raft implementations (5 minute read)
+
+Antithesis found state machine safety violations in every Raft implementation it tested, including HashiCorp Raft, Aeron Cluster, OpenRaft, and MicroRaft, despite TLA+ specs, code review, and years of production use. The authors argue that no single method (formal specification, unit tests, or production hardening) catches consensus bugs on its own, and walk through how they reproduced total-order-delivery violations that normally evade root-cause. Worth checking your own Raft deployment against.
+
+ModelExpress: Distributing Model Artifacts at the Speed of Light (5 minute read)
+
+(blurb not generated)
+
+GitHub is the wrong shape for this new world (5 minute read)
+
+The author argues GitHub and other Git forges are the wrong shape for a world where LLMs and non-engineers generate most of the code, turning source control, CI/CD, and review into velocity-killing bottlenecks. A 10-minute build now blocks sales, support, and marketing, not just engineers, and unanswered questions of ownership, trust, and cost remain. The piece calls for rethinking the collaboration-versus-infrastructure paradigm rather than bending human-centric tools to fit.
+
+⚒️
+Launches & Tools
+
+Do more with less: How GKE can reduce your cost per agent by 75% (2 minute read)
+
+Google released GKE Agent Sandbox, testing how many AI agents fit on a single n2-standard-48 node by packing bursty, mostly-idle agents onto shared compute instead of static per-agent VMs. GKE's benchmark started at 61 OpenClaw agents per node using Kata-container microVMs, then applied orchestration optimizations that raise density and cut the cost per agent by roughly 75% without sacrificing hardware-level isolation.
+
+Lima v2.2: Windows guests and TPM 2.0 emulation (5 minute read)
+
+(blurb not generated)
+
+AlloyDB adds group authentication to secure enterprise scale and AI agents (2 minute read)
+
+Google Cloud released IAM group authentication for AlloyDB in preview, letting teams map database access to identity groups instead of provisioning individual users or rotating static passwords across hundreds of instances. The pattern tightens on-boarding and off-boarding, cuts policy drift across dev, staging, and production, and scopes AI agent access to avoid confused-deputy risk from shared service accounts.
+
+Stacked PRs are now live on GitHub (1 minute read)
+
+GitHub launched stacked pull requests in public preview, letting teams split large changes into an ordered series of small PRs that each target the layer below, then review, check, and merge them independently or all at once. The feature works through a gh-stack CLI extension, github.com, mobile, or a Copilot skill, and reuses existing reviews, status checks, and branch protections without extra configuration.
+
+Show HN: Kedge – Full-stack cloud with forkable VM snapshots and global SQLite (1 minute read)
+
+Kedge launched a globally distributed cloud platform that deploys static sites, serverless functions, and full-stack apps to hardware-isolated microVMs running a full Linux kernel, with forkable VM snapshots and a global SQLite database built into every app. Billing is per-second on consumed rather than allocated resources, with CPU charged per scheduled millisecond, idle apps scaling to zero, and a $5/month free tier.
+
+Traefik Labs introduces Distro Zero secure runtime for API and AI gateways (1 minute read)
+
+Traefik Labs introduced the Distro Zero image, a hardened runtime for API and AI gateways whose entire executable content is a single memory-safe binary with built-in validated cryptography, unlocking gateway, MCP, and API-management capabilities by license rather than binary swap. The pitch targets teams facing a steepening CVE curve and looming mandates, from CISA's memory-unsafe-language guidance to the EU Cyber Resilience Act's September reporting deadline.

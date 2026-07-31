@@ -1,0 +1,228 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR Dev 2026-07-31
+
+🧑‍💻
+Articles & Tutorials
+
+The Economic Benefit of Refactoring (1 minute read)
+
+Martin Fowler describes an experiment on a 150,000-line agent-built application whose data access layer had ballooned to a single 17,155-line Rust file with no deduplication or extracted functions. By replaying the same feature-change prompt against a fresh agent after each refactoring stage, he measures whether disciplined refactoring lowers the token cost of future edits, treating cleaner structure as an economic investment rather than aesthetics.
+
+We have proof automation now (1 minute read)
+
+The author revisits why dependently-typed languages like Lean and Rocq stayed niche, pointing to proof effort that dwarfs implementation. He cites the seL4 project, which spent roughly 10x as long on proofs as on design and code and ended with more than 20x the lines of proof versus C, then argues that automation has finally made verifying real code like zstd tractable.
+
+SQLite in Production: Optimizing WAL Mode, Concurrency, and VFS Layers (5 minute read)
+
+(blurb not generated)
+
+Postgres LISTEN/NOTIFY Actually Scales (1 minute read)
+
+The authors optimized Postgres LISTEN/NOTIFY-backed streams to sustain 60K writes per second on a single server with millisecond latency, refuting the widely cited claim that the feature does not scale. The bottleneck was the global exclusive lock Postgres takes during every NOTIFY, which capped a naive per-chunk trigger implementation at 2.9K writes per second before the redesign batched notifications to avoid it.
+
+Making Postgres queues scale (1 minute read)
+
+DBOS shows how to scale Postgres-backed queues to 30K workflow executions per second across thousands of workers, arguing you don't need RabbitMQ or Redis to handle demanding queue workloads. The core fix is `FOR UPDATE SKIP LOCKED`, which lets each worker lock and dequeue distinct rows instead of contending over the same oldest workflows, lifting throughput past the ~100/sec ceiling naive polling hits.
+
+Measuring Component Performance with the Container Timing API (5 minute read)
+
+The Container Timing API lets developers annotate a whole region of the DOM and receive performance entries as new contentful parts of it paint, filling the gap between page-level metrics like LCP and single-node Element Timing. Developed by Bloomberg and Igalia and currently in a Chrome origin trial, it targets the components that actually matter to users, such as a product card or quote panel, rather than whatever element happens to be largest.
+
+The new rules of context engineering for Claude 5 generation models (1 minute read)
+
+Anthropic removed over 80% of Claude Code's system prompt for its Claude 5 generation models, including Opus 5 and Fable 5, with no measurable drop on coding evaluations. The post argues that older constraints like conflicting "DO NOT add comments" instructions now overconstrain capable models, and recommends using `/doctor` to trim skills and CLAUDE.md files so the model relies on judgment and context instead.
+
+Disrupting supply chain attacks on NPM and GitHub Actions (5 minute read)
+
+(blurb not generated)
+
+Finding bugs in Raft implementations (5 minute read)
+
+Antithesis found state machine safety violations in every Raft implementation it tested, including HashiCorp Raft, Aeron Cluster, OpenRaft, and MicroRaft, despite each having a formal TLA+ spec, extensive code review, and years of production use. The post argues no single verification approach is adequate for distributed consensus, then walks through the specific total-order-delivery bugs found in one implementation and the deterministic testing method used to reproduce them.
+
+More Tailscale tricks for your jailbroken Kindle (1 minute read)
+
+Open-source contributors updated Mitanshu Sukhwani's Tailscale client for jailbroken Kindles, adding SSH-on-by-default, a full TUN mode that enables device-level tailnet routing on some models, and a proxy mode. The proxy mode runs tailscaled on port 1055 so userspace-locked apps like KOReader can point their proxy settings at 127.0.0.1:1055 and reach tailnet nodes such as a Calibre/OPDS or Wallabag server.
+
+Dogfooding at scale: migrating cdnjs to Cloudflare’s Developer Platform (1 minute read)
+
+Cloudflare migrated cdnjs, which serves 9 billion requests a day at a 48.3% JavaScript CDN market share, to run entirely on its Developer Platform across Workers, Workflows, D1, Queues, R2, KV, and Containers. The post details how cdnjs exposed limits in each building block as it scaled, and notes that LLM scaffolding keeps demand high because tools like ChatGPT and Claude reliably reach for cdnjs's consistent, immutable URL patterns.
+
+“Stateful systems are incredibly hard to build”: How Perplexity thinks about AI agent sandboxes (5 minute read)
+
+Perplexity launched SPACE, the sandbox platform under its Computer agent product, built on Firecracker microVMs and Kubernetes but with the real engineering going into a control plane that pauses, resumes, and forks agent sessions running for days or weeks across millions of sandboxes. The team leaned on Btrfs, the copy-on-write filesystem, to make snapshots and forks cheap metadata operations rather than full copies, treating state management rather than isolation as the hard problem at scale.
+
+From Homegrown to Flink: Migrating a Stateful Ad Event Join at Scale (5 minute read)
+
+Zalando's Ad Platform team replaced a 7-year-old homegrown in-memory stream join with Apache Flink to match sponsored-product interactions against their originating auctions within a 15-minute billing window. The migration halved infrastructure cost and eliminated in-memory state loss on deploys and rescales, which previously forced pod overprovisioning because the old app had no checkpointing and couldn't cleanly partition across both event streams.
+
+New research: The Core Web Vitals thresholds you trust might be wrong for your site (5 minute read)
+
+The author argues that Google's Core Web Vitals thresholds, like the 2.5-second LCP target, are derived from aggregated data across millions of sites and may be the wrong goal for any individual product. Using correlation charts that plot performance against business metrics, the post shows the LCP-to-bounce-rate relationship holds up but the specific threshold where it hurts your conversion is site-dependent, not a universal 2.5-second line.
+
+How ChatGPT Optimizes its Agent Loop: Harness, API, and Inference (5 minute read)
+
+Drawing on interviews with the OpenAI engineers behind Codex and ChatGPT Work, this walkthrough traces an agent request through three layers and the efficiency tricks at each: persistent WebSockets, stable prompt prefixes, and Code Mode in the harness; delta-only tokenization and parallel safety checks in the API. The inference layer covers cache-aware routing, KV cache management, speculative decoding, and splitting prefill from decode to cut cost per successful task.
+
+How MVCC and Transactions Work in RocksDB (5 minute read)
+
+This post explains how RocksDB layers multi-version concurrency control on top of its LSM-tree, where immutable memtables and SST files already keep multiple versions of every key so writers never modify data in-place. It walks through the missing half, showing how snapshots give readers a consistent point-in-time view, how compaction garbage-collects stale versions, and how atomic updates and transactions are built on those primitives.
+
+Going depthfirst: Achieving GitLab RCE via Two Ruby Memory Corruption Vulnerabilities (5 minute read)
+
+depthfirst's automated analysis of Oj, a JSON parser with a large native C extension, surfaced two long-lived memory-corruption bugs (an out-of-bounds write and a heap-pointer disclosure) that had gone unnoticed for nearly five years. Chaining them yields remote code execution on a default GitLab install across CE and EE versions 15.2.0 through 19.0.1, a reminder that memory-safe Ruby often calls into unsafe C gems. GitLab has since patched.
+
+Kuna: Decompiler Development in the Age of Coding Agents (1 minute read)
+
+A researcher released Kuna, an experimental C decompiler whose code was written almost entirely by an LLM, and it now hits perfect control-flow structuring on 44.4% of functions against IDA Pro 9.2's 45.7%. The gains came from autonomous refinement, where the model studies cases it loses on established benchmark metrics and reimplements techniques from IDA, Ghidra, and angr, porting over 20 angr features into a Rust reworking of Ghidra.
+
+Cracking Windows Open: Porting RADV to Win32 (5 minute read)
+
+(blurb not generated)
+
+Logic for Programmers (1 minute read)
+
+Logic for Programmers teaches formal reasoning as a practical tool for writing software, using worked examples like why `all([])` returns True to derive identity elements from the algebraic properties they must preserve. The book covers logic, specifications, and proof techniques aimed at helping engineers catch bugs in their thinking before they reach code.
+
+🧠
+Opinions & Advice
+
+The Orchestrator's Tax (5 minute read)
+
+(blurb not generated)
+
+The cost of saying yes has changed (5 minute read)
+
+(blurb not generated)
+
+GitHub is the wrong shape for this new world (5 minute read)
+
+The author argues that GitHub's paradigm is the wrong shape for a world where anyone across a company can generate code, turning long-standing bottlenecks in source control, CI/CD, review, and deployment into company-wide pain rather than an engineering-team problem. The piece contends that bending human-centric collaboration tools into this new velocity is a mistake, and that it raises unanswered questions about code ownership, trust, and review that current infrastructure primitives cannot answer.
+
+The session you cannot take with you (1 minute read)
+
+The authors argue that inference APIs are drifting away from portable sessions, returning provider-bound state like encrypted reasoning tokens, compacted context, and server-keyed conversation IDs that the transcript on your machine can no longer fully capture. Their portability test is modest: not identical next tokens across models, but a transcript complete enough that another capable model could understand what happened and take over.
+
+Shipping an MCP test agent: The boring parts nobody demos (3 minute read)
+
+The author built an unattended five-agent test pipeline over MCP and argues the runbook, not the architecture, decides whether an agentic pipeline ships or stalls. The costliest failure mode is composition faults, where one agent's correct output is misread by the next, and he insists on answering the boring operational questions first: who owns the ticket an agent opens at 3 a.m. and what cleans up the draft tickets a stuck run leaves behind.
+
+You don't have to be smart if you can think clearly (2 minute read)
+
+The author argues the key engineering skill isn't raw speed of insight but the ability to think clearly at any pace, drawing a line between "smart" engineers who intuit solutions instantly and "strong" engineers who methodically grind when intuition fails. His method is to anchor on invariants, the assumptions that can't be false, and use them as solid ground to test the shakier ones when a problem won't yield to a flash of insight.
+
+Why don't people use formal methods? (2019) (1 minute read)
+
+Hillel Wayne argues that formal methods are unused less because they are too expensive and more because of a fragmented, tiny community, inconsistent terminology, and tooling that never made the leap from academic proof to everyday engineering. He separates code verification, design verification, and their specification counterparts to show that even high-assurance domains like medical devices and aircraft mostly skip full verification, and points to newer lightweight tools as the path to broader adoption.
+
+Why more context can make your coding agents worse (3 minute read)
+
+Feeding a coding agent more context often degrades its output, since it weighs stale decisions, reversed comment threads, and unrelated requirements as if they still apply. The author argues the fix is relevance over volume: a knowledge graph that scopes each task to the requirements, current decisions, and constraints that actually hold, so the agent reasons over the right slice instead of everything ever written down.
+
+🚀
+Launches & Tools
+
+Stacked PRs are now live on GitHub (1 minute read)
+
+GitHub launched stacked pull requests in public preview, letting developers break a large change into an ordered series of small PRs where each targets the layer below it. The included gh-stack CLI extension and stack map let teammates review layers in parallel and merge one, some, or all at once, with existing reviews, checks, and branch protections working unchanged.
+
+JEP 401: Value Objects (Preview) merged to OpenJDK master (1 minute read)
+
+The implementation of JEP 401: Value Objects landed in OpenJDK master as a preview, letting classes drop object identity so the JVM can freely inline, stack-allocate, and flatten them without heap allocation or reference indirection. The same changeset also merges JEP 539: Strict Field Initialization, a dependency that requires strict fields to be assigned before the constructor's super call to keep value objects safe.
+
+JDK 27: The new features of Java 27 (2 minute read)
+
+JDK 27 reaches its first release candidate on August 6, making the Garbage-First (G1) collector the default in all environments alongside eight other features including structured concurrency, primitive types in patterns, post-quantum hybrid key exchange for TLS 1.3, and compact object headers. The feature set is now frozen in rampdown phase 2, with general availability scheduled for September 15 and early-access builds already at jdk.java.net.
+
+Show HN: Open-source engine running Gemma 4 26B in 2 GB RAM on any M-series Mac (5 minute read)
+
+(blurb not generated)
+
+Microsoft updates MCP C# SDK for stateless MCP (1 minute read)
+
+Microsoft released MCP C# SDK v2.0, its official C# SDK for Model Context Protocol servers and clients, implementing the 2026-07-28 spec revision that makes MCP stateless by default. HttpServerTransportOptions.Stateless now defaults to true, standardized Mcp-Method and Mcp-Name headers let ordinary load balancers and proxies route MCP traffic without deep packet inspection, and Multi Round-Trip Requests carry interaction continuity in the payload instead of a live session.
+
+JetBrains open sources KotlinLLM runtime code generator (1 minute read)
+
+JetBrains open sourced KotlinLLM, an experimental IntelliJ IDEA plugin that lets Kotlin/JVM code delegate runtime logic to an LLM through "Smart macros" for code generation, runtime updates, and hot-reloading. Unlike direct runtime delegation, generated behavior is saved as ordinary committable Kotlin source and runs as plain code without further LLM calls once covered, so there is no added latency, cost, or nondeterminism for handled cases.
+
+Visual Studio Code 1.131 zeroes in on subagents (1 minute read)
+
+Microsoft released Visual Studio Code 1.131, which surfaces running subagents' model, elapsed time, and active tool call directly in the Agents window without opening each conversation. The update also previews built-in dictation across chat, editors, and the terminal without the Speech extension, plus a hybrid Markdown editor that lets agents act on in-place edits and comments, both flagged experimental.
+
+Show HN: Kedge – Full-stack cloud with forkable VM snapshots and global SQLite (1 minute read)
+
+Kedge is a globally distributed cloud platform that deploys static sites, serverless functions, full-stack apps, and databases via SSH, Git, or HTTP, with each app getting a built-in global SQLite database and shared filesystem. It runs hardware-isolated VMs with forkable snapshots for instant sandboxes, autoscales instances close to users, scales to zero when idle, and bills per-second on consumed CPU, memory, and storage rather than allocated capacity.
+
+Agent-Manager: A Tmux TUI for Running Claude Code, Codex and OpenCode (1 minute read)
+
+Agent-Manager is a tmux-based TUI that runs Claude Code, Codex, OpenCode, Grok, and Gemini CLI side by side, each in its own persistent tmux session, surfacing every agent's live status in one foldable project tree. You can send a prompt into any session without attaching, revive dead sessions, and open a syntax-highlighted full-file diff whose inline comments go back to the agent as a single review prompt.
+
+New MCP specification addresses the main barrier to enterprise adoption (1 minute read)
+
+The Model Context Protocol shipped its largest update since launch, replacing its stateful bidirectional core with a stateless request/response model so requests no longer bind to a single server instance. The change targets reliability and horizontal scalability for enterprise MCP servers, and the release also adds multi round-trip requests, header-based routing, cacheable list results, authorization hardening, and updated Tier 1 SDKs.
+
+CPU-Friendly Long-Context Encoders (5 minute read)
+
+(blurb not generated)
+
+Show HN: Qwen Scribe – local transcription and dictation for Apple Silicon (1 minute read)
+
+Qwen Scribe is a local transcription and system-wide dictation app for Apple Silicon that runs Qwen3-ASR on the Mac's Metal GPU with no account, API key, or cloud service. It offers drag-and-drop audio and video transcription with word timestamps and SRT export, a push-to-talk key that transcribes and pastes at the cursor in any text field, and a choice of the 1.7B model for accuracy or 0.6B for speed.
+
+Kimi K3-256k (1 minute read)
+
+Kimi Code released k3-256k, a 256k-context variant of its K3 coding model that delivers the same results within that window while consuming roughly half the quota of the full 1M-context k3. It targets everyday Q&A, code completion, and single-file edits, drops video input, and requires a manual compact before switching sessions that already exceed 256k tokens in tools like Claude Code and the Kimi Code CLI.
+
+Run High-Performance Core Math at Scale with NVIDIA nvmath-python (1 minute read)
+
+NVIDIA released nvmath-python v1.0, a Pythonic abstraction layer over CUDA-X and NVPL math libraries like cuFFT, cuBLASLt, cuDSS, and cuTENSOR that exposes optimized GPU routines to NumPy, CuPy, and PyTorch without dropping to C/C++. The same APIs scale from CPU to single GPU to distributed multi-GPU, multi-node systems, and a universal sparse tensor format lets users define custom sparse layouts through a DSL rather than hand-written code.
+
+After rewriting SQLite in Rust, Turso turns its sights on Postgres (5 minute read)
+
+(blurb not generated)
+
+MCP gets its biggest architectural update yet (5 minute read)
+
+(blurb not generated)
+
+Rune 1.1: adds Python, an Emacs editor, a symbol index and is now free (1 minute read)
+
+Rune 1.1 adds Python support, a built-in Emacs editor, and a symbol index for cross-references, and the release drops the previous paid tier to make the tool free. The symbol index enables jump-to-definition and find-references across a codebase, closing part of the gap with established IDEs for teams evaluating Rune as a primary editor.
+
+Agentic coding goes hands-free as OpenAI brings GPT-Live's full duplex voice control to Codex and ChatGPT on the desktop (2 minute read)
+
+OpenAI brought GPT-Live's full-duplex voice model to the ChatGPT desktop app on macOS and Windows, letting developers orchestrate Codex jobs, review pull requests, and debug by voice while background models like GPT-5.5 handle the reasoning. The architecture decouples the real-time voice layer from execution, and on macOS adds screen context so ChatGPT Voice can read the frontmost window, local files, and codebase structure while agents run tasks asynchronously.
+
+Hubble: Open-source notetaking app for you and your agents (1 minute read)
+
+Hubble is an open-source notetaking app that stores notes as Markdown and HTML so both humans and coding agents can read and write them. The app treats agents as first-class editors, letting them append ideas and edit documents directly in the same workspace you use, rather than through a separate chat interface.
+
+🎁
+Miscellaneous
+
+Critical Rails Flaw Could Let Unauthenticated Attackers Read Server Files via Image Uploads (1 minute read)
+
+Rails patched CVE-2026-66066, a critical (CVSS 9.5) Active Storage flaw that lets unauthenticated attackers read arbitrary server files through crafted image uploads, exposing secret_key_base, database passwords, and cloud credentials that can escalate to remote code execution. Only apps using libvips for image processing on Rails 7.0 through 8.1.3 are affected, and operators should upgrade to 7.2.3.2, 8.0.5.1, or 8.1.3.1 and rotate every readable secret.
+
+Two Compromised joyfill npm Packages Run RAT When Imported Into Node.js (1 minute read)
+
+Two npm packages in the @joyfill namespace, layouts and components, were compromised in beta releases to deliver a remote access trojan tied to the DEV#POPPER malware family. The implant runs at import time when Node.js loads the CommonJS entry point, and pulls its encrypted payload through Tron, Aptos, and BNB Smart Chain transactions so operators can swap malware without publishing a new version.
+
+GCC steering committee announces AI policy (1 minute read)
+
+The GCC steering committee adopted a policy that declines any legally significant contribution containing or derived from LLM-generated content, using the GNU Project's threshold of roughly 15 lines of code or text. The rules still permit LLMs for research, bug discovery, and patch review, and allow maintainers to accept AI-generated test cases, with the committee expecting to revisit the policy periodically.
+
+New Gitea RCE Lets Repository Writers Plant a Git Hook to Run Shell Commands (1 minute read)
+
+Gitea patched a critical remote code execution flaw (CVE-2026-60004, CVSS 9.8) that lets any user with repository write access plant a Git hook and run shell commands as the service account. Because default installs leave registration open, an outside visitor can self-register and exploit unpatched servers with no prior credentials; the fix is upgrading to 1.27.1, and public PoC code is already circulating.
+
+Ruflo MCP Flaw Lets Unauthenticated Attackers Run Commands and Poison AI Memory (5 minute read)
+
+(blurb not generated)
+
+GitHub, PyPI add time-based defenses against supply chain attacks (5 minute read)
+
+(blurb not generated)

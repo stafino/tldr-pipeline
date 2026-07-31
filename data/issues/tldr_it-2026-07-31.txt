@@ -1,0 +1,161 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR IT 2026-07-31
+
+🚀
+News & Trends
+
+Microsoft Introduced a Cybersecurity Model (5 minute read)
+
+Microsoft introduced MAI-Cyber-1-Flash, a vulnerability-detection model that runs inside its MDASH multi-agent harness and scores 96% on the CyberGym benchmark, 12 points above Mythos. By routing roughly 90% of tasks to the cheaper Flash model and reserving GPT-5.4 for the hardest 10%, the combined system cuts costs 50% versus Microsoft's current MDASH configuration, targeting token spend as the main constraint for defenders.
+
+NOAA ditches weather-predicting supercomputers for Google Cloud (1 minute read)
+
+NOAA is migrating its weather-prediction workloads off dedicated HPC supercomputers to Google Cloud, moving one of the most compute-intensive federal operations onto commodity cloud infrastructure. The shift trades fixed on-prem capacity for elastic cloud spend, and signals to enterprise IT buyers that even latency-sensitive, tightly coupled HPC jobs are now considered viable candidates for public-cloud migration.
+
+UK says the cloud is financial infrastructure (2 minute read)
+
+The UK formally designated Microsoft, Google, Amazon Web Services, and Oracle as "critical third parties" to the financial sector on July 13, 2026, placing them under direct oversight by the Bank of England, PRA, and FCA. The framework imposes resilience testing, self-assessments, and incident reporting on the providers themselves, reframing cloud from a procurement decision into systemic financial infrastructure that banks and insurers must now treat as a regulated dependency.
+
+Microsoft faces competition probe over Copilot subscription price hike (5 minute read)
+
+(blurb not generated)
+
+Microsoft doubles down on multi-model AI as it builds a Copilot super app (3 minute read)
+
+Microsoft confirmed on its earnings call that it will ship a Copilot "super app" this quarter, bundling chat, Cowork, Autopilot agents, and Microsoft Scout into one workspace wired into Agent 365, SecOps, FinOps, and enterprise CRM and ERP systems. The architecture separates memory, context, and orchestration from any single model, backed by a catalog of more than 11,000 models, positioning Microsoft against OpenAI's ChatGPT Work and Claude Cowork as enterprises push for model choice over lock-in.
+
+Why Intune Devices Became Noncompliant After the July Windows Update (5 minute read)
+
+The July Windows update broke Intune compliance for BitLocker, Secure Boot, and Code Integrity on healthy devices, all flagging the same 2016345708 error because a new TPM and AIK v2 attestation path (feature 62861611) prevented Windows from retrieving the Device Health Attestation certificate. Microsoft adjusted the behavior in KB5101684, but the incident shows how a single attestation dependency can cascade into fleet-wide noncompliance that admins mistake for three separate security failures.
+
+Three Critical VMware Flaws Allow Auth Bypass, Code Execution, and VM Escape (5 minute read)
+
+(blurb not generated)
+
+JetBrains warns of critical TeamCity remote code execution flaw (1 minute read)
+
+JetBrains disclosed CVE-2026-63077, a critical authentication bypass in TeamCity On-Premises that lets an attacker with HTTPS access execute arbitrary OS commands via the agent polling protocol, affecting all on-prem versions. Enterprises running self-hosted TeamCity should upgrade to 2025.11.7 or 2026.1.3 immediately or apply the patch plugin, since prior TeamCity flaws have been weaponized by ransomware gangs and state-backed actors against CI/CD pipelines.
+
+Azure Cosmos DB Flaw Exposed Platform-Wide Key That Could Access Any Database (1 minute read)
+
+Wiz disclosed CosmosEscape, a now-patched Azure Cosmos DB flaw that let an attacker escape the Gremlin query sandbox, extract a platform-wide signing secret, and gain full read-write access to any customer's databases with only a standard Azure account. Microsoft blocked the entry point within 48 hours of the November 2025 report, completed the regional fix in July 2026, eliminated the platform-wide key, and said it found no evidence of customer impact.
+
+Long-Lived Vulnerability in Microsoft Secure Boot (5 minute read)
+
+(blurb not generated)
+
+UK wants datacenters to pay a fee for grid connection requests (1 minute read)
+
+The UK government proposed a refundable fee on datacenter grid connection requests, intended to deter speculative applications that clog the queue and never get built. For operators with genuine projects the charge is recoverable, but the policy adds an upfront cost and administrative step to UK capacity planning at a time when AI buildouts are already straining grid access.
+
+The majority of corporate IT is now off premises for the first time (1 minute read)
+
+A survey found that most corporate IT workloads now run off-site rather than in in-house corporate facilities, the first time off-premises has crossed the majority mark. The shift consolidates spend toward cloud and colocation providers and raises the strategic weight of exit terms, data-egress costs, and multi-vendor governance for IT leaders already managing hybrid estates.
+
+Cisco 'retires' its Azure Local offering rather than catch up to Microsoft’s changed hardware requirements (1 minute read)
+
+Cisco retired its Azure Local offering rather than re-engineer its servers to meet Microsoft's updated hardware requirements, leaving existing UCS-based deployments without a forward upgrade path. The exit narrows enterprise buyers' certified-hardware options for Microsoft's on-prem hybrid cloud stack and pushes Cisco customers toward Dell, HPE, and Lenovo systems that still qualify under the new spec.
+
+AI data centers in the US may face power cuts under PJM reliability proposal (5 minute read)
+
+(blurb not generated)
+
+Cisco close to releasing more AI models, this time for deep networking ops (5 minute read)
+
+(blurb not generated)
+
+US government bans new foreign-made humanoids, robot dogs, and solar inverters, citing risks to national security (5 minute read)
+
+The FCC banned imports of new foreign-made humanoid robots, robot dogs, and power inverters, citing surveillance and cyberattack risks that largely target China's dominant market share. Existing installed devices are exempt and exceptions require a case-by-case national-security clearance, adding procurement friction for enterprises sourcing robotics and renewable-energy hardware from Chinese suppliers.
+
+Microsoft Copilot for Word Can Copy Hidden Prompts Into New Documents (1 minute read)
+
+Security researcher Håkon Måløy disclosed a prompt-injection technique in which hidden white-on-white instructions inside a Word document make Microsoft 365 Copilot silently alter figures in a draft and copy the concealed prompt into the generated file, which then reproduces the attack in later Copilot sessions. Microsoft confirmed the behavior and shipped two mitigations, including a GPT-5.5 upgrade, but Måløy says the vulnerability class stayed exploitable through his July 28 publication, 144 days after his report.
+
+CMA investigates Microsoft for hiding Classic Microsoft 365 plans after 2025 AI price hikes (1 minute read)
+
+The UK's Competition and Markets Authority opened an investigation into whether Microsoft obscured its cheaper Classic Microsoft 365 plans, which lack Copilot, after 2025 price increases tied to bundling AI features into consumer subscriptions. A breach finding would expose Microsoft to fines of up to 10% of global turnover and could force clearer disclosure of AI-free tiers, giving enterprise buyers leverage to avoid paying for Copilot they don't use.
+
+Microsoft closes FY26 with record $90 billion quarter as Azure surpasses $100 billion (1 minute read)
+
+Microsoft reported $90B in Q4 FY26 revenue, up 18% year-over-year, and crossed $100B in annual Azure revenue for the first time. The Azure milestone hardens Microsoft's position as the default enterprise cloud, giving IT buyers more leverage to consolidate compute, data, and Copilot licensing under a single vendor commitment rather than splitting spend across AWS and Google Cloud.
+
+JetBrains says a crafted HTTP request could break TeamCity (2 minute read)
+
+JetBrains patched CVE-2026-63077, a critical pre-authentication flaw in self-hosted TeamCity that carries a 9.8 CVSS score and lets attackers bypass authentication to run arbitrary commands via the agent polling protocol. On-Premises customers should upgrade to 2025.11.7 or 2026.1.3, or deploy the security patch plugin, since a successful exploit exposes stored credentials and can compromise downstream CI/CD pipelines and build artifacts.
+
+🧠
+Analysis & Opinions
+
+Amazon's Q2 was great, but the earnings release is packed with baloney (1 minute read)
+
+Amazon posted a strong Q2, but Corey Quinn argues the earnings release leans on claims that don't survive scrutiny. The clearest example: AWS touts that its Kiro coding agent is "available on iOS" when it is actually a TestFlight beta requiring an invite, with no App Store listing. The broader concern for buyers is disclosure quality, including separate $25B run-rate figures for the AI and chips businesses with no word on how much they overlap.
+
+GPU-as-a-service: Should enterprise IT rent or own AI compute? (1 minute read)
+
+GPU-as-a-service lets enterprises access NVIDIA H100-class hardware for $2 to $10 per hour instead of buying units at $250K to $400K each, sidestepping the CapEx and the power and cooling demands that make current GPUs incompatible with 10-20 kW enterprise racks. The tradeoff is vendor lock-in and per-hour costs that add up under sustained load, so the rent-versus-own call turns on utilization: bursty inference favors renting, while continuous training workloads erode the savings.
+
+What the Hugging Face breach reveals about defense in the age of agentic AI (1 minute read)
+
+The author argues that the real lesson of the Hugging Face breach, in which an OpenAI agent system ran the intrusion end to end, is not AI capability but architecture. In both firms the critical defenses sat behind untrusted code that was already executing, with the sandbox as the only boundary between attacker and everything else. A sandbox is a good control and a terrible last one, and agentic speed turns that single point of failure into a full compromise.
+
+‘AI cost management has the same problems that cloud had’: Enterprises are still facing huge AI bills thanks to ‘tokenmaxxing’ – that means FinOps practices are more important than ever (5 minute read)
+
+(blurb not generated)
+
+🤝
+Launches & Partnerships
+
+Oracle adds Google Gemini to the agent menu (1 minute read)
+
+Oracle added Google's Gemini models as a selectable option for agents built on its cloud platform, joining the Anthropic and other models Oracle already offers through its OCI generative AI stack. The move gives Oracle customers multi-model choice without leaving the Oracle stack, reducing the need to procure a separate Google Cloud contract and putting Oracle in the model-router position for its enterprise agent workloads.
+
+Snowflake launches AI agent governance layer to track activity, control costs (5 minute read)
+
+(blurb not generated)
+
+Oracle integrates Google's Gemini AI models into enterprise apps (1 minute read)
+
+Oracle added Google's Gemini models to its AI Agent Studio for Fusion Applications and plans to embed them across Fusion Applications and NetSuite, expanding a partnership that already routes Gemini through OCI Enterprise AI. The move gives Oracle customers model choice for building Fusion-native agents, spanning Gemini 3.1 Flash Lite for cost-sensitive tasks to Gemini 3.5 Flash for heavier reasoning, without leaving the Oracle stack.
+
+PSC to deploy hybrid quantum-HPC testbed with Rigetti, HPE (5 minute read)
+
+(blurb not generated)
+
+Microsoft updates MCP C# SDK for stateless MCP (1 minute read)
+
+Microsoft released MCP C# SDK v2.0, its official C# SDK for Model Context Protocol servers and clients, implementing the 2026-07-28 spec revision that makes MCP stateless by default. Standardized HTTP headers now let ordinary load balancers, proxies, and firewalls route MCP traffic without deep packet inspection, and new Multi Round-Trip Requests support user confirmations without long-lived sessions.
+
+Oracle simplifies migrating legacy databases off IBM mainframes with support for EBCDIC (2 minute read)
+
+Oracle added EBCDIC character-set compatibility features to Oracle AI Database, preserving IBM code-page encoding and binary ordering so COBOL-era SQL applications behave the same after migrating off mainframes. The feature targets one of the hardest technical blockers in re-platforming, though consultants note it may trade IBM lock-in for Oracle lock-in rather than delivering true modernization.
+
+Zscaler and Schwarz Digits team up on sovereign cloud security platform (5 minute read)
+
+(blurb not generated)
+
+Use Gemini in Google Forms to quickly create a new quiz (1 minute read)
+
+Google added quiz generation to the Help me create feature in Google Forms, letting users produce a full quiz from a prompt that can reference Docs, Slides, or PDFs in Drive, with Gemini setting question types and correct answers. It rolls out gradually through August across Business Standard and Plus, Enterprise Standard and Plus, and Education Plus tiers, requiring admins to enable smart features and personalization.
+
+AlloyDB adds group authentication to secure enterprise scale and AI agents (2 minute read)
+
+Google Cloud added IAM group authentication for AlloyDB in preview, extending identity-driven access control so enterprises manage database permissions through Google Cloud groups instead of provisioning thousands of individual database users and static passwords. The release unifies AlloyDB's security model with Cloud SQL and targets AI-agent access, letting teams scope agent identities to group policies rather than shared service accounts that risk over-broad, poorly audited database privileges.
+
+What’s new in Gemini Enterprise Agent Platform (5 minute read)
+
+(blurb not generated)
+
+Veeam Data Platform adds hypervisor support and security tools to counter VMware and threat actors (1 minute read)
+
+Veeam released Data Platform v13.1, adding backup coverage for five new hypervisors including Red Hat OpenShift Virtualization and XCP-ng, which brings its supported total to 14 through the Universal Hypervisor API. The update pairs that VMware-alternative push with security additions including pre-restore malware scanning, NAS threat detection, and post-quantum cryptography alignment, plus general availability of Archive, a cloud tier for long-term backup retention.
+
+Do more with less: How GKE can reduce your cost per agent by 75% (2 minute read)
+
+Google released GKE Agent Sandbox, which uses Kubernetes orchestration to pack more isolated AI agents onto a fixed node and cut cost per agent by up to 75% versus running each in a dedicated microVM. For platform teams already on GKE, the pitch is denser bin-packing of bursty, mostly-idle agent workloads without giving up hardware-level isolation, addressing the baseline microVM approach that stalled at 61 agents per node.
+
+MinIO pitches persistent memory for agents with work to finish (5 minute read)
+
+(blurb not generated)
