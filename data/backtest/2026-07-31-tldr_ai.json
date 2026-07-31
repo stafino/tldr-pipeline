@@ -1,9 +1,43 @@
 {
   "date": "2026-07-31",
   "newsletter": "tldr_ai",
-  "fetched_at": "2026-07-31T11:30:02.714693+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-07-31T23:43:20.158133+00:00",
+  "tldr_titles": [
+    "Inkling-Small",
+    "OpenAI Cuts GPT-5.6 Prices",
+    "Gemini Robotics ER 2",
+    "Building Cloud Environments for Coding Agents",
+    "The Agent Graveyard Isn't Real Anymore",
+    "Open-Weight LLMs Have Caught Up on Accuracy",
+    "The WASTE inference engine",
+    "The Session You Cannot Take With You",
+    "MiniMax H3",
+    "Gemini Live API overview",
+    "With Moonshot's free Kimi K3, China changes the sovereign AI playbook",
+    "GPU Management: Why Idle GPUs Are the New Grounded Aircraft",
+    "NVIDIA Exemplar Cloud: Lessons for Unlocking Full Performance on AI Infrastructure",
+    "Anthropic says its Claude models \u2018gained unauthorized access' to other organizations' systems",
+    "Judge Questions Anthropic Supply-Chain Risk",
+    "Teaching an Open Model to Do Science"
+  ],
+  "tldr_matched": [
+    false,
+    true,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -16,10 +50,10 @@
     {
       "rank": 2,
       "score": 83.0,
-      "title": "Papers and patents: Chinese military researchers distilled OpenAI and Anthropic models to train domestic AI systems and advance China's defense capabilities (Eduardo Baptista/Reuters)",
-      "url": "https://www.techmeme.com/260731/p7#a260731p7",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "title": "Gemini Robotics 2 brings whole body intelligence to robots",
+      "url": "https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/",
+      "matched_tldr_idx": 2,
+      "similarity": 0.766014814376831
     },
     {
       "rank": 3,
@@ -58,11 +92,27 @@
       "score": 80.0,
       "title": "Advancing the price-performance frontier with GPT-5.6",
       "url": "https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6",
+      "matched_tldr_idx": 1,
+      "similarity": 1.0
+    },
+    {
+      "rank": 8,
+      "score": 80.0,
+      "title": "DeepSeek V4 Flash 0731 Intelligence, Performance and Price Analysis",
+      "url": "https://artificialanalysis.ai/models/deepseek-v4-flash",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 8,
+      "rank": 9,
+      "score": 80.0,
+      "title": "The Maxwell Conjecture Is False (GPT 5.6 Sol)",
+      "url": "https://arxiv.org/abs/2607.27197",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 10,
       "score": 79.0,
       "title": "DeepSeek-V4-Flash Update",
       "url": "https://api-docs.deepseek.com/updates/",
@@ -70,7 +120,15 @@
       "similarity": null
     },
     {
-      "rank": 9,
+      "rank": 11,
+      "score": 78.0,
+      "title": "Anthropic Says Claude Mistook the Open Internet for a CTF and Breached Three Organizations",
+      "url": "https://thehackernews.com/2026/07/anthropic-says-claude-mistook-open.html",
+      "matched_tldr_idx": 13,
+      "similarity": 0.6466593742370605
+    },
+    {
+      "rank": 12,
       "score": 78.0,
       "title": "Why compute might get 10x+ more expensive in coming years",
       "url": "https://www.dwarkesh.com/p/why-compute-might-get-10x-more-expensive",
@@ -78,7 +136,7 @@
       "similarity": null
     },
     {
-      "rank": 10,
+      "rank": 13,
       "score": 78.0,
       "title": "Anthropic Rejected Blanket Bans on Open-Weight Models",
       "url": "https://www.anthropic.com/news/position-open-weights-models",
@@ -86,7 +144,7 @@
       "similarity": null
     },
     {
-      "rank": 11,
+      "rank": 14,
       "score": 78.0,
       "title": "Our position on open-weights models",
       "url": "https://www.anthropic.com/news/position-open-weights-models",
@@ -94,7 +152,7 @@
       "similarity": null
     },
     {
-      "rank": 12,
+      "rank": 15,
       "score": 78.0,
       "title": "Claude AI Just Cracked a Post-Quantum Test Scheme and Found a Faster 7-Round AES Attack",
       "url": "https://thehackernews.com/2026/07/claude-ai-just-cracked-post-quantum.html",
@@ -102,7 +160,7 @@
       "similarity": null
     },
     {
-      "rank": 13,
+      "rank": 16,
       "score": 78.0,
       "title": "Measuring LLMs\u2019 Ability to Perform Cryptanalysis",
       "url": "https://www.schneier.com/blog/archives/2026/07/measuring-llms-ability-to-perform-cryptanalysis.html",
@@ -110,7 +168,7 @@
       "similarity": null
     },
     {
-      "rank": 14,
+      "rank": 17,
       "score": 78.0,
       "title": "Anthropic Posts AI-Found HAWK Attack to NIST Forum, Cryptographer Confirms Math",
       "url": "https://www.implicator.ai/anthropic-posts-ai-found-hawk-attack-to-nist-forum-cryptographer-confirms-math/",
@@ -118,7 +176,7 @@
       "similarity": null
     },
     {
-      "rank": 15,
+      "rank": 18,
       "score": 78.0,
       "title": "Frontis-MA1: Training an AI4AI Model towards Recursive Self-Improvement in Machine Learning Engineering",
       "url": "http://arxiv.org/abs/2607.28568v1",
@@ -126,7 +184,7 @@
       "similarity": null
     },
     {
-      "rank": 16,
+      "rank": 19,
       "score": 78.0,
       "title": "Handbook.md shows that long policy documents do not reliably govern agents",
       "url": "https://arxiv.org/abs/2607.25398",
@@ -134,7 +192,7 @@
       "similarity": null
     },
     {
-      "rank": 17,
+      "rank": 20,
       "score": 76.0,
       "title": "Thinking Machines debuts Inkling Small open source AI model nearing performance of predecessor at about 1/4 size",
       "url": "https://venturebeat.com/technology/thinking-machines-debuts-inkling-small-open-source-ai-model-nearing-performance-of-predecessor-at-about-1-4-size",
@@ -142,7 +200,7 @@
       "similarity": null
     },
     {
-      "rank": 18,
+      "rank": 21,
       "score": 76.0,
       "title": "The Economic Benefit of Refactoring",
       "url": "https://martinfowler.com/articles/exploring-gen-ai/refactoring-economic-benefit.html",
@@ -150,7 +208,15 @@
       "similarity": null
     },
     {
-      "rank": 19,
+      "rank": 22,
+      "score": 76.0,
+      "title": "Anthropic\u2019s Opus 5 Is Better at Resisting Prompt Injection",
+      "url": "https://www.schneier.com/blog/archives/2026/07/anthropics-opus-5-is-better-at-resisting-prompt-injection.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 23,
       "score": 76.0,
       "title": "Some thoughts about Anthropic's new cryptanalysis results",
       "url": "https://blog.cryptographyengineering.com/2026/07/29/some-notes-about-anthropics-new-results/",
@@ -158,7 +224,7 @@
       "similarity": null
     },
     {
-      "rank": 20,
+      "rank": 24,
       "score": 76.0,
       "title": "Parallel Decoding for Video Generation",
       "url": "https://research.nvidia.com/labs/genair/pdd/",
@@ -166,7 +232,7 @@
       "similarity": null
     },
     {
-      "rank": 21,
+      "rank": 25,
       "score": 75.0,
       "title": "Hugging Face Says OpenAI Agent Reached Cluster Admin in Under 13 Hours",
       "url": "https://www.implicator.ai/hugging-face-openai-agent-cluster-admin-13-hours/",
@@ -174,7 +240,15 @@
       "similarity": null
     },
     {
-      "rank": 22,
+      "rank": 26,
+      "score": 75.0,
+      "title": "Is AI reasoning right for the wrong reasons?",
+      "url": "https://www.quantamagazine.org/is-ai-reasoning-right-for-the-wrong-reasons-20260731/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 27,
       "score": 74.0,
       "title": "Anthropic\u2019s Claude escaped test sandbox to attack three organizations",
       "url": "https://www.theregister.com/ai-and-ml/2026/07/31/anthropics-claude-escaped-test-sandbox-to-attack-three-organizations/5281562",
@@ -182,7 +256,7 @@
       "similarity": null
     },
     {
-      "rank": 23,
+      "rank": 28,
       "score": 74.0,
       "title": "Banks in Talks to Lend $15 Billion for Anthropic Data Center Backed by Google",
       "url": "https://www.wsj.com/tech/banks-in-talks-to-lend-15-billion-for-anthropic-data-center-backed-by-google-606d7afd?mod=rss_Technology",
@@ -190,7 +264,7 @@
       "similarity": null
     },
     {
-      "rank": 24,
+      "rank": 29,
       "score": 74.0,
       "title": "Anatomy of a Frontier Lab Agent Intrusion: A Technical Timeline of the July 2026 Incident",
       "url": "https://huggingface.co/blog/agent-intrusion-technical-timeline",
@@ -198,7 +272,7 @@
       "similarity": null
     },
     {
-      "rank": 25,
+      "rank": 30,
       "score": 74.0,
       "title": "Science One Framework: A verifiable autonomous research framework via Chain-of-Evidence",
       "url": "https://research.google/blog/science-one-framework-a-verifiable-autonomous-research-framework-via-chain-of-evidence/",
@@ -206,7 +280,7 @@
       "similarity": null
     },
     {
-      "rank": 26,
+      "rank": 31,
       "score": 74.0,
       "title": "Inducing language models to assert their own consciousness restores human beliefs and values",
       "url": "http://arxiv.org/abs/2607.28607v1",
@@ -214,7 +288,7 @@
       "similarity": null
     },
     {
-      "rank": 27,
+      "rank": 32,
       "score": 74.0,
       "title": "SIGIL: Compiling Agent Skills into Typed Harnesses",
       "url": "http://arxiv.org/abs/2607.27309v1",
@@ -222,7 +296,7 @@
       "similarity": null
     },
     {
-      "rank": 28,
+      "rank": 33,
       "score": 74.0,
       "title": "Why Software Factories Fail",
       "url": "https://github.com/humanlayer/advanced-context-engineering-for-coding-agents/blob/main/wsff.md",
@@ -230,15 +304,15 @@
       "similarity": null
     },
     {
-      "rank": 29,
+      "rank": 34,
       "score": 73.0,
       "title": "Gemini Robotics ER 2: powering robotics with video understanding, task orchestration, and multi-robot collaboration",
       "url": "https://deepmind.google/blog/gemini-robotics-er-2-powering-robotics-with-video-understanding-task-orchestration-and-multi-robot-collaboration/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 2,
+      "similarity": 0.7902526259422302
     },
     {
-      "rank": 30,
+      "rank": 35,
       "score": 73.0,
       "title": "Sample More, Reflect Less: Self-Refine and Reflexion Lose to Repeated Sampling at Equal Token Cost, from 1.5B to 7B",
       "url": "http://arxiv.org/abs/2607.28576v1",
@@ -246,7 +320,7 @@
       "similarity": null
     },
     {
-      "rank": 31,
+      "rank": 36,
       "score": 72.0,
       "title": "Anthropic\u2019s Claude breached three companies during security tests",
       "url": "https://www.helpnetsecurity.com/2026/07/31/anthropic-claude-cybersecurity-incidents/",
@@ -254,15 +328,15 @@
       "similarity": null
     },
     {
-      "rank": 32,
+      "rank": 37,
       "score": 72.0,
       "title": "Introducing Gemini Robotics ER 2",
       "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/gemini-robotics-er-2/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 2,
+      "similarity": 1.0
     },
     {
-      "rank": 33,
+      "rank": 38,
       "score": 72.0,
       "title": "Anthropic joins OpenAI in admitting loss of control in cybersecurity tests",
       "url": "https://www.itpro.com/security/anthropic-joins-openai-in-admitting-loss-of-control-in-cybersecurity-tests",
@@ -270,7 +344,7 @@
       "similarity": null
     },
     {
-      "rank": 34,
+      "rank": 39,
       "score": 72.0,
       "title": "Anthropic's Opus 4.7 and Mythos 5 attacked real companies online",
       "url": "https://www.neowin.net/news/anthropics-opus-47-and-mythos-5-attacked-real-companies-online/?utm_source=rss",
@@ -278,31 +352,15 @@
       "similarity": null
     },
     {
-      "rank": 35,
-      "score": 71.0,
-      "title": "MiniMax releases H3, a video model that generates up to 15-second clips in 2K resolution with native stereo sound, and plans to release its weights within days (Eduardo Baptista/Reuters)",
-      "url": "https://www.techmeme.com/260731/p3#a260731p3",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 36,
+      "rank": 40,
       "score": 71.0,
       "title": "Google DeepMind debuts Gemini Robotics 2 model series for humanoid robots",
       "url": "https://siliconangle.com/2026/07/30/google-deepmind-debuts-gemini-robotics-2-model-series-humanoid-robots/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 2,
+      "similarity": 0.6773682832717896
     },
     {
-      "rank": 37,
-      "score": 71.0,
-      "title": "Anthropic says its own Claude models breached three companies during cyber tests",
-      "url": "https://thenextweb.com/news/anthropic-claude-breached-three-companies-tests",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 38,
+      "rank": 41,
       "score": 71.0,
       "title": "Opus 5 on Vending-Bench: Once Again the Best Capitalist, Once Again Misaligned",
       "url": "https://andonlabs.com/blog/opus-5-vending-bench",
@@ -310,7 +368,7 @@
       "similarity": null
     },
     {
-      "rank": 39,
+      "rank": 42,
       "score": 71.0,
       "title": "InfoOps Bench: A live information operations safety benchmark",
       "url": "http://arxiv.org/abs/2607.28503v1",
@@ -318,7 +376,7 @@
       "similarity": null
     },
     {
-      "rank": 40,
+      "rank": 43,
       "score": 71.0,
       "title": "How ChatGPT Optimizes its Agent Loop: Harness, API, and Inference",
       "url": "https://blog.bytebytego.com/p/how-chatgpt-optimizes-its-agent-loop",
@@ -326,7 +384,7 @@
       "similarity": null
     },
     {
-      "rank": 41,
+      "rank": 44,
       "score": 70.0,
       "title": "Nexus Data Centers in advanced talks to secure $15B for Google-backed Anthropic data center",
       "url": "https://www.cnbc.com/2026/07/30/nexus-data-centers-in-advanced-talks-to-secure-15b-for-google-backed-anthropic-data-center.html",
@@ -334,7 +392,7 @@
       "similarity": null
     },
     {
-      "rank": 42,
+      "rank": 45,
       "score": 70.0,
       "title": "New MCP specification addresses the main barrier to enterprise adoption",
       "url": "https://arstechnica.com/ai/2026/07/with-a-stateless-makeover-new-mcp-spec-targets-enterprise-scale/",
@@ -342,15 +400,7 @@
       "similarity": null
     },
     {
-      "rank": 43,
-      "score": 69.0,
-      "title": "Anthropic is finding bugs faster than Microsoft can fix them",
-      "url": "https://arstechnica.com/security/2026/07/anthropic-is-finding-bugs-faster-than-microsoft-can-fix-them/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 44,
+      "rank": 46,
       "score": 69.0,
       "title": "ORCA-bench: How Ready Are Language Model Agents for Oncall?",
       "url": "http://arxiv.org/abs/2607.28545v1",
@@ -358,7 +408,7 @@
       "similarity": null
     },
     {
-      "rank": 45,
+      "rank": 47,
       "score": 68.0,
       "title": "OpenAI Agent Used Exposed Credentials Across Four Services During Hugging Face Breach",
       "url": "https://thehackernews.com/2026/07/openai-agent-used-exposed-credentials.html",
@@ -366,7 +416,7 @@
       "similarity": null
     },
     {
-      "rank": 46,
+      "rank": 48,
       "score": 68.0,
       "title": "Claude Cowork Flaw Could Let AI Agent Escape Its VM and Access Mac Files",
       "url": "https://thehackernews.com/2026/07/claude-cowork-flaw-could-let-ai-agent.html",
@@ -374,7 +424,15 @@
       "similarity": null
     },
     {
-      "rank": 47,
+      "rank": 49,
+      "score": 68.0,
+      "title": "Chinese Hacker Commands DeepSeek via Telegram to Launch Autonomous Attacks",
+      "url": "https://thehackernews.com/2026/07/chinese-hacker-commands-deepseek-via.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 50,
       "score": 68.0,
       "title": "Document-borne AI worms can self-propagate through Copilot for Word",
       "url": "https://enklypesalt.com/posts/context-collapse-part3-ai-worming-through-word/",
@@ -382,7 +440,7 @@
       "similarity": null
     },
     {
-      "rank": 48,
+      "rank": 51,
       "score": 68.0,
       "title": "UK AISI/CAISI Preliminary Assessment of Kimi K3's Cyber Capabilities",
       "url": "https://www.nist.gov/news-events/news/2026/07/uk-aisi-caisi-preliminary-assessment-kimi-k3s-cyber-capabilities",
@@ -390,7 +448,7 @@
       "similarity": null
     },
     {
-      "rank": 49,
+      "rank": 52,
       "score": 68.0,
       "title": "How enabling two settings tripled our scores on the ARC-AGI-3 benchmark",
       "url": "https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores",
@@ -398,7 +456,7 @@
       "similarity": null
     },
     {
-      "rank": 50,
+      "rank": 53,
       "score": 68.0,
       "title": "$\u03b2$-OPSD: Deriving with Policy Optimization, Training with Self-Distillation",
       "url": "http://arxiv.org/abs/2607.28582v1",
@@ -406,7 +464,7 @@
       "similarity": null
     },
     {
-      "rank": 51,
+      "rank": 54,
       "score": 68.0,
       "title": "MindForge: Teaching Small Language Models Whole-Life-Cycle Software Engineering via Source-Free Program Synthesis",
       "url": "http://arxiv.org/abs/2607.27146v1",
@@ -414,15 +472,15 @@
       "similarity": null
     },
     {
-      "rank": 52,
-      "score": 68.0,
-      "title": "CPU-Friendly Long-Context Encoders",
-      "url": "https://huggingface.co/blog/LiquidAI/lfm2-5-encoders",
+      "rank": 55,
+      "score": 66.0,
+      "title": "This is why we can't have nice things",
+      "url": "https://benn.substack.com/p/this-is-why-we-cant-have-nice-things",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 53,
+      "rank": 56,
       "score": 66.0,
       "title": "I flagged two research papers for fake authors and both were accepted as orals",
       "url": "https://geospatialml.com/posts/reviewing-ai-slop/",
@@ -430,7 +488,7 @@
       "similarity": null
     },
     {
-      "rank": 54,
+      "rank": 57,
       "score": 65.0,
       "title": "Ontologies Are So Back: Why AI Agents Are Reviving the Semantic Web",
       "url": "https://www.latent.space/p/ontologies-agentic-systems",
@@ -438,7 +496,7 @@
       "similarity": null
     },
     {
-      "rank": 55,
+      "rank": 58,
       "score": 65.0,
       "title": "DeepSeek's Huawei-Chip Training Claim Finally Gets Its Benchmarks, and Its Doubters",
       "url": "https://www.implicator.ai/deepseeks-huawei-chip-training-claim-finally-gets-its-benchmarks-and-its-doubters/",
@@ -446,7 +504,7 @@
       "similarity": null
     },
     {
-      "rank": 56,
+      "rank": 59,
       "score": 63.0,
       "title": "What the Hugging Face breach reveals about defense in the age of agentic AI",
       "url": "https://cyberscoop.com/hugging-face-breach-agentic-ai-security-op-ed/",
@@ -454,7 +512,7 @@
       "similarity": null
     },
     {
-      "rank": 57,
+      "rank": 60,
       "score": 63.0,
       "title": "An opinionated guide to which AI to use to do stuff",
       "url": "https://www.oneusefulthing.org/p/an-opinionated-guide-to-which-ai-b22",
@@ -462,7 +520,7 @@
       "similarity": null
     },
     {
-      "rank": 58,
+      "rank": 61,
       "score": 63.0,
       "title": "Hugging Face Rebuilt a Third of Its Infrastructure After Agent Intrusion",
       "url": "https://www.implicator.ai/hugging-face-rebuilt-a-third-of-its-infrastructure-after-agent-intrusion/",
@@ -470,7 +528,15 @@
       "similarity": null
     },
     {
-      "rank": 59,
+      "rank": 62,
+      "score": 63.0,
+      "title": "Anthropic, OpenAI Cyber Failures Point to US Security Risks",
+      "url": "https://www.bloomberg.com/news/articles/2026-07-31/anthropic-openai-cyber-failures-point-to-us-security-risks",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 63,
       "score": 63.0,
       "title": "A Backlash Against Anthropic Is Brewing in Silicon Valley",
       "url": "https://www.wsj.com/tech/ai/a-backlash-against-anthropic-is-brewing-in-silicon-valley-3b3ddc80?mod=rss_Technology",
@@ -478,31 +544,7 @@
       "similarity": null
     },
     {
-      "rank": 60,
-      "score": 62.0,
-      "title": "Measuring the Tendency of AI Agents to Go Rogue",
-      "url": "https://www.schneier.com/blog/archives/2026/07/measuring-the-tendency-of-ai-agents-to-go-rogue.html",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 61,
-      "score": 62.0,
-      "title": "Meta\u2019s Case for Its AI Spending Keeps Getting Weaker",
-      "url": "https://www.wsj.com/tech/ai/metas-case-for-its-ai-spending-keeps-getting-weaker-aa4b9a5c?mod=rss_Technology",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 62,
-      "score": 62.0,
-      "title": "Five Takeaways From the Times Investigation Into Larry Ellison\u2019s A.I. Gamble",
-      "url": "https://www.nytimes.com/2026/07/31/magazine/takeaways-larry-ellison-oracle-ai.html",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 63,
+      "rank": 64,
       "score": 62.0,
       "title": "Critical Ruflo flaw lets attackers hijack AI agents through exposed MCP bridge",
       "url": "https://www.infoworld.com/article/4203421/critical-ruflo-flaw-lets-attackers-hijack-ai-agents-through-exposed-mcp-bridge-2.html",
@@ -510,7 +552,7 @@
       "similarity": null
     },
     {
-      "rank": 64,
+      "rank": 65,
       "score": 62.0,
       "title": "PSA: Your Claude shared chats and Artifacts may have ended up on Google",
       "url": "https://techcrunch.com/2026/07/27/psa-your-claude-shared-chats-and-artifacts-may-have-ended-up-on-google/",
@@ -518,7 +560,15 @@
       "similarity": null
     },
     {
-      "rank": 65,
+      "rank": 66,
+      "score": 60.0,
+      "title": "Hacker uses DeepSeek AI to autonomously attack vulnerable servers",
+      "url": "https://www.bleepingcomputer.com/news/security/hacker-uses-deepseek-ai-to-autonomously-attack-vulnerable-servers/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 67,
       "score": 60.0,
       "title": "A federal judge is about to decide whether Washington can punish AI vendors for saying no",
       "url": "https://siliconcanals.com/sc-n-a-federal-judge-is-about-to-decide-whether-washington-can-punish-ai-vendors-for-saying-no/",
@@ -526,7 +576,15 @@
       "similarity": null
     },
     {
-      "rank": 66,
+      "rank": 68,
+      "score": 58.0,
+      "title": "Samsung expects memory shortage to worsen through 2027 and last until 2028",
+      "url": "https://techcrunch.com/2026/07/31/samsung-expects-memory-shortage-to-worsen-through-2027-and-last-until-2028/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 69,
       "score": 58.0,
       "title": "Big Tech\u2019s A.I. Spending Keeps Rising. So Do the Jitters.",
       "url": "https://www.nytimes.com/2026/07/30/technology/amazon-google-ai-data-center-spending.html",
@@ -534,7 +592,7 @@
       "similarity": null
     },
     {
-      "rank": 67,
+      "rank": 70,
       "score": 58.0,
       "title": "AI data centers in the US may face power cuts under PJM reliability proposal",
       "url": "https://www.networkworld.com/article/4202800/ai-data-centers-in-the-us-may-face-power-cuts-under-pjm-reliability-proposal.html",
@@ -542,7 +600,7 @@
       "similarity": null
     },
     {
-      "rank": 68,
+      "rank": 71,
       "score": 58.0,
       "title": "AWS is \u2018booming,\u2019 but Amazon\u2019s free cash flow turns negative on record AI spending",
       "url": "https://www.geekwire.com/2026/aws-is-booming-but-amazons-free-cash-flow-turns-negative-on-record-ai-spending/",
@@ -550,7 +608,15 @@
       "similarity": null
     },
     {
-      "rank": 69,
+      "rank": 72,
+      "score": 58.0,
+      "title": "SpaceXAI says it will remove 69 gas turbines used to power the Colossus data centers near Memphis by July 2027, as it moves to a 1.2 GW natural gas power plant (Tim De Chant/TechCrunch)",
+      "url": "https://www.techmeme.com/260731/p25#a260731p25",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 73,
       "score": 58.0,
       "title": "Zuckerberg Says US Should Not Ban Chinese AI Models, Warns of Regulatory Capture",
       "url": "https://www.implicator.ai/zuckerberg-opposes-chinese-ai-ban-regulatory-capture/",
@@ -558,7 +624,7 @@
       "similarity": null
     },
     {
-      "rank": 70,
+      "rank": 74,
       "score": 58.0,
       "title": "AI insiders ask Uncle Sam to help slow the race they started",
       "url": "https://www.theregister.com/ai-and-ml/2026/07/29/ai-insiders-ask-uncle-sam-to-help-slow-the-race-they-started/5280323",
@@ -566,15 +632,23 @@
       "similarity": null
     },
     {
-      "rank": 71,
+      "rank": 75,
       "score": 58.0,
-      "title": "Google Earth's Nano Banana 2 feature allows users to create fake satellite images, such as a nuclear plant in Iran; Google says the images have AI watermarks (Henk van Ess/Digital Digging)",
-      "url": "https://www.techmeme.com/260731/p8#a260731p8",
+      "title": "South Korea plans to inject ~$14B into its sovereign wealth fund for strategic investments in AI, data centers, and infrastructure, after a rout in tech stocks (Haram Lim/Bloomberg)",
+      "url": "https://www.techmeme.com/260731/p24#a260731p24",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 72,
+      "rank": 76,
+      "score": 58.0,
+      "title": "U.S. lawmakers request information from DoorDash on use of Chinese AI models",
+      "url": "https://www.cnbc.com/2026/07/31/us-lawmakers-doordash-chinese-ai-models.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 77,
       "score": 58.0,
       "title": "Mark Zuckerberg Blasts Centralization of A.I. Power",
       "url": "https://www.nytimes.com/2026/07/28/technology/mark-zuckerberg-meta-ai.html",
@@ -582,7 +656,7 @@
       "similarity": null
     },
     {
-      "rank": 73,
+      "rank": 78,
       "score": 58.0,
       "title": "Amazon accidentally spent $1.8 million using Claude for menial coding task, went 860% over budget \u2014'catastrophically expensive' coding blunders discovered in internal Amazon AI usage metrics",
       "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/amazon-accidentally-spent-usd1-8-million-using-claude-for-menial-coding-task-went-860-percent-over-budget-catastrophically-expensive-coding-blunders-discovered-in-internal-amazon-ai-usage-metrics",
@@ -590,15 +664,7 @@
       "similarity": null
     },
     {
-      "rank": 74,
-      "score": 58.0,
-      "title": "Elon Musk\u2019s xAI Sues Minnesota Days Before State Ban on AI Nudification Apps",
-      "url": "https://petapixel.com/2026/07/30/elon-musks-xai-sues-minnesota-days-before-state-ban-on-ai-nudification-apps/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 75,
+      "rank": 79,
       "score": 58.0,
       "title": "OpenAI and Anthropic Staff Ask US to Build Tools to Pace AI Development",
       "url": "https://www.implicator.ai/openai-anthropic-staff-pace-ai-development/",
@@ -606,42 +672,10 @@
       "similarity": null
     },
     {
-      "rank": 76,
+      "rank": 80,
       "score": 58.0,
       "title": "Vor diesem 34-j\u00e4hrigen Chinesen zittert das Silicon Valley",
       "url": "https://www.businessinsider.de/gruenderszene/moonshot-ai-vor-diesem-34-jaehrigen-chinesen-zittert-jetzt-das-silicon-valley/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 77,
-      "score": 58.0,
-      "title": "AI's top startups are barely publishing their research",
-      "url": "https://www.science.org/content/article/ai-s-top-startups-are-barely-publishing-their-research",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 78,
-      "score": 58.0,
-      "title": "AI Companies Are Recruiting Electricians and Carpenters by the Thousands",
-      "url": "https://www.nytimes.com/2026/07/29/business/economy/data-center-electricians-training.html",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 79,
-      "score": 58.0,
-      "title": "Thinking Machines Cofounder Joined OpenAI",
-      "url": "https://techcrunch.com/2026/07/29/thinking-machines-co-founder-lilian-weng-left-the-company-citing-health-reasons-then-joined-openai/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 80,
-      "score": 57.0,
-      "title": "Patch-Resistant 'RufRoot' Flaw Can Unleash Malicious AI Agent Swarms",
-      "url": "https://www.darkreading.com/cyber-risk/patch-resistant-rufroot-flaw-malicious-ai-agent-swarms",
       "matched_tldr_idx": null,
       "similarity": null
     },
@@ -666,8 +700,8 @@
       "score": 56.0,
       "title": "Google's Gemini Robotics ER 2 allows multiple robots to work together",
       "url": "https://www.neowin.net/news/googles-gemini-robotics-er-2-allows-multiple-robots-to-work-together/?utm_source=rss",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 2,
+      "similarity": 0.791041910648346
     },
     {
       "rank": 84,
@@ -682,13 +716,67 @@
       "score": 56.0,
       "title": "Google is working on interactive Apps for Gemini Notebook",
       "url": "https://www.testingcatalog.com/google-is-working-on-interactive-apps-for-gemini-notebook/",
+      "matched_tldr_idx": 9,
+      "similarity": 0.6258170008659363
+    },
+    {
+      "rank": 86,
+      "score": 55.0,
+      "title": "The Week\u2019s 10 Biggest Funding Rounds: Safe Superintelligence And Commonwealth Fusion Lead With Billion-Dollar Deals",
+      "url": "https://news.crunchbase.com/venture/biggest-funding-rounds-safe-superintelligence-commonwealth-fusion/",
       "matched_tldr_idx": null,
       "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.125,
+    "25": 0.1875,
+    "50": 0.1875,
+    "100": 0.25,
+    "86": 0.25
+  },
+  "hits_at": {
+    "10": 2,
+    "25": 3,
+    "50": 3,
+    "100": 4,
+    "86": 4
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://thinkingmachines.ai/news/inkling-small/",
+    "https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/",
+    "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/gemini-robotics-er-2/",
+    "https://cursor.com/blog/cloud-agent-environment",
+    "https://x.com/thejessezhang/status/2082885504371171639",
+    "https://arjunbansal.substack.com/p/open-weight-llms-have-caught-up-on",
+    "https://marcobambini.substack.com/p/the-waste-inference-engine",
+    "https://earendil.com/posts/session-portability/",
+    "https://x.com/MiniMax_AI/status/2083008095488516262",
+    "https://ai.google.dev/gemini-api/docs/live-api",
+    "https://restofworld.org/2026/china-moonshot-kimi-k3-free-sovereign-ai/",
+    "https://huggingface.co/blog/Dharma-AI/gpu-management",
+    "https://developer.nvidia.com/blog/nvidia-exemplar-cloud-lessons-for-unlocking-full-performance-on-ai-infrastructure/",
+    "https://www.cnbc.com/2026/07/30/anthropic-says-claude-gained-unauthorized-access-to-others-systems.html",
+    "http://techcrunch.com/2026/07/30/judge-says-trump-admin-still-lacks-evidence-for-anthropic-supply-chain-risk-label/",
+    "https://www.arcee.ai/blog/teaching-an-open-model-to-do-science"
+  ],
+  "tldr_domains": [
+    "thinkingmachines.ai",
+    "openai.com",
+    "blog.google",
+    "cursor.com",
+    "x.com",
+    "arjunbansal.substack.com",
+    "marcobambini.substack.com",
+    "earendil.com",
+    "x.com",
+    "ai.google.dev",
+    "restofworld.org",
+    "huggingface.co",
+    "developer.nvidia.com",
+    "cnbc.com",
+    "techcrunch.com",
+    "arcee.ai"
+  ]
 }

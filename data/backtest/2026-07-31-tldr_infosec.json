@@ -1,9 +1,33 @@
 {
   "date": "2026-07-31",
   "newsletter": "tldr_infosec",
-  "fetched_at": "2026-07-31T11:31:39.017210+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-07-31T23:47:50.490197+00:00",
+  "tldr_titles": [
+    "CosmosEscape: Taking Over Every Database in Azure Cosmos DB",
+    "KindaRails2Shell: CVE-2026-66066, Critical Arbitrary File Read and Possible Remote Code Execution in Ruby on Rails",
+    "Escaping the Apple Sandbox by Spawning an Executable",
+    "The One Chokepoint to Rule Them All: Why I Deleted 50 ClickFix Detection Rules and Replaced Them With One",
+    "Zero Risk Isn't the Job: a CISO's Guide to Agentic AI",
+    "Control Reliability Engineering (CRE): Applying SRE Principles to Cybersecurity Controls",
+    "CISA Sets a New SBOM Baseline",
+    "Some Thoughts About Anthropic's New Cryptanalysis Results",
+    "Linux XMRig Botnet Abuses PAM for Fileless Monero Mining and Persistent Access",
+    "North Korea's Lazarus Group sharing tools with ransomware hackers, South Korean agencies warn",
+    "Chrome Needs Twice-a-Week Patching Thanks to AI Bug Hunting"
+  ],
+  "tldr_matched": [
+    true,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false,
+    true,
+    false,
+    false,
+    true
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -39,6 +63,22 @@
     },
     {
       "rank": 5,
+      "score": 86.0,
+      "title": "Chinese Hacker Commands DeepSeek via Telegram to Launch Autonomous Attacks",
+      "url": "https://thehackernews.com/2026/07/chinese-hacker-commands-deepseek-via.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 6,
+      "score": 85.0,
+      "title": "Anthropic Says Claude Mistook the Open Internet for a CTF and Breached Three Organizations",
+      "url": "https://thehackernews.com/2026/07/anthropic-says-claude-mistook-open.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 7,
       "score": 85.0,
       "title": "Cisco FMC Zero-Day Actively Exploited, Static Credentials Could Expose Sensitive Data",
       "url": "https://thehackernews.com/2026/07/cisco-fmc-zero-day-actively-exploited.html",
@@ -46,7 +86,7 @@
       "similarity": null
     },
     {
-      "rank": 6,
+      "rank": 8,
       "score": 85.0,
       "title": "JetBrains warns of critical TeamCity remote code execution flaw",
       "url": "https://www.bleepingcomputer.com/news/security/jetbrains-warns-of-critical-teamcity-remote-code-execution-flaw/",
@@ -54,7 +94,7 @@
       "similarity": null
     },
     {
-      "rank": 7,
+      "rank": 9,
       "score": 85.0,
       "title": "Russian hackers exploit Exchange OWA zero-day for long-term mailbox access",
       "url": "https://www.bleepingcomputer.com/news/security/russian-hackers-exploit-exchange-owa-zero-day-for-long-term-mailbox-access/",
@@ -62,7 +102,7 @@
       "similarity": null
     },
     {
-      "rank": 8,
+      "rank": 10,
       "score": 85.0,
       "title": "Critical Ruflo flaw lets attackers hijack AI agents through exposed MCP bridge",
       "url": "https://www.infoworld.com/article/4203421/critical-ruflo-flaw-lets-attackers-hijack-ai-agents-through-exposed-mcp-bridge-2.html",
@@ -70,7 +110,15 @@
       "similarity": null
     },
     {
-      "rank": 9,
+      "rank": 11,
+      "score": 85.0,
+      "title": "Tailscale didn't stop the Hugging Face intrusion",
+      "url": "https://tailscale.com/blog/hugging-face-intrusion",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 12,
       "score": 84.0,
       "title": "New Gitea RCE Lets Repository Writers Plant a Git Hook to Run Shell Commands",
       "url": "https://thehackernews.com/2026/07/new-gitea-rce-lets-repository-writers.html",
@@ -78,7 +126,7 @@
       "similarity": null
     },
     {
-      "rank": 10,
+      "rank": 13,
       "score": 84.0,
       "title": "Investigating three real-world incidents in our cybersecurity evaluations",
       "url": "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals",
@@ -86,15 +134,15 @@
       "similarity": null
     },
     {
-      "rank": 11,
+      "rank": 14,
       "score": 83.0,
       "title": "Azure Cosmos DB Flaw Exposed Platform-Wide Key That Could Access Any Database",
       "url": "https://thehackernews.com/2026/07/azure-cosmos-db-flaw-exposed-platform.html",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 0,
+      "similarity": 0.658319890499115
     },
     {
-      "rank": 12,
+      "rank": 15,
       "score": 83.0,
       "title": "Hackers Exploit AnySign4PC via Hacked Korean Sites to Install Backdoors Without Prompts",
       "url": "https://thehackernews.com/2026/07/hackers-exploit-anysign4pc-via-hacked.html",
@@ -102,7 +150,15 @@
       "similarity": null
     },
     {
-      "rank": 13,
+      "rank": 16,
+      "score": 83.0,
+      "title": "Max-severity Exchange server flaw under active exploitation by Kremlin hackers",
+      "url": "https://arstechnica.com/security/2026/07/kremlin-hackers-are-exploiting-exchange-flaw-to-backdoor-unpatched-networks/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 17,
       "score": 82.0,
       "title": "Long-Lived Vulnerability in Microsoft Secure Boot",
       "url": "https://www.schneier.com/blog/archives/2026/07/long-lived-vulnerability-in-microsoft-secure-boot.html",
@@ -110,7 +166,7 @@
       "similarity": null
     },
     {
-      "rank": 14,
+      "rank": 18,
       "score": 82.0,
       "title": "Ruflo MCP Flaw Lets Unauthenticated Attackers Run Commands and Poison AI Memory",
       "url": "https://thehackernews.com/2026/07/ruflo-mcp-flaw-lets-unauthenticated.html",
@@ -118,7 +174,7 @@
       "similarity": null
     },
     {
-      "rank": 15,
+      "rank": 19,
       "score": 82.0,
       "title": "JetBrains says a crafted HTTP request could break TeamCity",
       "url": "https://www.infoworld.com/article/4203879/jetbrains-says-a-crafted-http-request-could-break-teamcity-2.html",
@@ -126,42 +182,10 @@
       "similarity": null
     },
     {
-      "rank": 16,
+      "rank": 20,
       "score": 82.0,
       "title": "Claude AI Just Cracked a Post-Quantum Test Scheme and Found a Faster 7-Round AES Attack",
       "url": "https://thehackernews.com/2026/07/claude-ai-just-cracked-post-quantum.html",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 17,
-      "score": 81.0,
-      "title": "Document-borne AI worms can self-propagate through Copilot for Word",
-      "url": "https://enklypesalt.com/posts/context-collapse-part3-ai-worming-through-word/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 18,
-      "score": 80.0,
-      "title": "OpenAI Agent Used Exposed Credentials Across Four Services During Hugging Face Breach",
-      "url": "https://thehackernews.com/2026/07/openai-agent-used-exposed-credentials.html",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 19,
-      "score": 80.0,
-      "title": "Two Compromised joyfill npm Packages Run RAT When Imported Into Node.js",
-      "url": "https://thehackernews.com/2026/07/two-compromised-joyfill-npm-packages.html",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 20,
-      "score": 80.0,
-      "title": "Critical Flaw Led to Azure Cosmos DB Pwnage",
-      "url": "https://www.securityweek.com/critical-flaw-led-to-azure-cosmos-db-pwnage/",
       "matched_tldr_idx": null,
       "similarity": null
     },
@@ -224,13 +248,21 @@
     {
       "rank": 28,
       "score": 68.0,
+      "title": "Anthropic\u2019s Opus 5 Is Better at Resisting Prompt Injection",
+      "url": "https://www.schneier.com/blog/archives/2026/07/anthropics-opus-5-is-better-at-resisting-prompt-injection.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 29,
+      "score": 68.0,
       "title": "Cybersecurity Detection Classification with Reasoning-enabled Language Models",
       "url": "http://arxiv.org/abs/2607.28460v1",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 29,
+      "rank": 30,
       "score": 68.0,
       "title": "Discovering cryptographic weaknesses with Claude",
       "url": "https://www.anthropic.com/research/discovering-cryptographic-weaknesses",
@@ -238,15 +270,15 @@
       "similarity": null
     },
     {
-      "rank": 30,
+      "rank": 31,
       "score": 66.0,
       "title": "Measuring the Tendency of AI Agents to Go Rogue",
       "url": "https://www.schneier.com/blog/archives/2026/07/measuring-the-tendency-of-ai-agents-to-go-rogue.html",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 4,
+      "similarity": 0.620593249797821
     },
     {
-      "rank": 31,
+      "rank": 32,
       "score": 66.0,
       "title": "CISA unveils a six-step blueprint for isolating critical infrastructure during cyberattacks",
       "url": "https://www.networkworld.com/article/4203146/cisa-unveils-a-six-step-blueprint-for-isolating-critical-infrastructure-during-cyberattacks-2.html",
@@ -254,15 +286,15 @@
       "similarity": null
     },
     {
-      "rank": 32,
+      "rank": 33,
       "score": 63.0,
       "title": "Some thoughts about Anthropic's new cryptanalysis results",
       "url": "https://blog.cryptographyengineering.com/2026/07/29/some-notes-about-anthropics-new-results/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 7,
+      "similarity": 1.0
     },
     {
-      "rank": 33,
+      "rank": 34,
       "score": 63.0,
       "title": "Runtime Supply Chain Verification using the Node Resource Interface (NRI)",
       "url": "https://www.cncf.io/blog/2026/07/30/runtime-supply-chain-verification-using-the-node-resource-interface-nri/",
@@ -270,7 +302,15 @@
       "similarity": null
     },
     {
-      "rank": 34,
+      "rank": 35,
+      "score": 63.0,
+      "title": "AI scammers outperform humans when it comes to building trust",
+      "url": "https://arstechnica.com/security/2026/07/ai-scammers-outperform-humans-when-it-comes-to-building-trust/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 36,
       "score": 63.0,
       "title": "Post-quantum authentication to origins is now supported",
       "url": "https://blog.cloudflare.com/post-quantum-authentication-to-origins/",
@@ -278,7 +318,7 @@
       "similarity": null
     },
     {
-      "rank": 35,
+      "rank": 37,
       "score": 63.0,
       "title": "ThreatForest: Multi-Agent Attack Tree Generation with Pluggable TTP Framework Mapping",
       "url": "http://arxiv.org/abs/2607.27528v1",
@@ -286,7 +326,7 @@
       "similarity": null
     },
     {
-      "rank": 36,
+      "rank": 38,
       "score": 63.0,
       "title": "American Being Prosecuted for Wiping His Phone Before Handing It Over to Border Officials",
       "url": "https://www.schneier.com/blog/archives/2026/07/american-being-prosecuted-for-wiping-his-phone-before-handing-it-over-to-border-officials.html",
@@ -294,7 +334,7 @@
       "similarity": null
     },
     {
-      "rank": 37,
+      "rank": 39,
       "score": 62.0,
       "title": "Granite: A Modular Methodology for Foundational Verification of Hardware-Software Leakage Contracts",
       "url": "http://arxiv.org/abs/2607.27480v1",
@@ -302,15 +342,15 @@
       "similarity": null
     },
     {
-      "rank": 38,
-      "score": 62.0,
-      "title": "Okta buys AI security startup Permiso \u2014 source says for about $200M",
-      "url": "https://techcrunch.com/2026/07/30/okta-buys-ai-security-startup-permiso-source-says-for-about-200m/",
+      "rank": 40,
+      "score": 61.0,
+      "title": "6 Reasons Why Device Code Phishing is the Fastest-Growing Threat of 2026",
+      "url": "https://thehackernews.com/2026/07/6-reasons-why-device-code-phishing-is.html",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 39,
+      "rank": 41,
       "score": 61.0,
       "title": "After the Break-In: What Attackers Do Once They're Already Inside",
       "url": "https://www.bleepingcomputer.com/news/security/after-the-break-in-what-attackers-do-once-theyre-already-inside/",
@@ -318,26 +358,10 @@
       "similarity": null
     },
     {
-      "rank": 40,
+      "rank": 42,
       "score": 60.0,
       "title": "Securing Agents Across Perplexity's Client Endpoints with Numbat",
       "url": "https://research.perplexity.ai/articles/securing-agents-across-perplexity%E2%80%99s-client-endpoints-with-numbat",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 41,
-      "score": 60.0,
-      "title": "Security of World-Model-Based Embodied AI: A Lifecycle of Threats, Defenses, and Evaluation",
-      "url": "http://arxiv.org/abs/2607.28226v1",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 42,
-      "score": 60.0,
-      "title": "Detection Engineering in the Era of Semantic Malware",
-      "url": "https://detect.fyi/detection-engineering-in-the-era-of-semantic-malware-663cee8cda7b",
       "matched_tldr_idx": null,
       "similarity": null
     },
@@ -352,16 +376,16 @@
     {
       "rank": 44,
       "score": 60.0,
-      "title": "Okta to acquire Permiso Security in reported $200M identity security deal",
-      "url": "https://siliconangle.com/2026/07/30/okta-acquire-permiso-security-reported-200m-identity-security-deal/",
+      "title": "Anthropic, OpenAI Cyber Failures Point to US Security Risks",
+      "url": "https://www.bloomberg.com/news/articles/2026-07-31/anthropic-openai-cyber-failures-point-to-us-security-risks",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
       "rank": 45,
-      "score": 59.0,
-      "title": "We have proof automation now",
-      "url": "https://www.imperialviolet.org/2026/07/26/zstd-lean.html",
+      "score": 60.0,
+      "title": "Okta to acquire Permiso Security in reported $200M identity security deal",
+      "url": "https://siliconangle.com/2026/07/30/okta-acquire-permiso-security-reported-200m-identity-security-deal/",
       "matched_tldr_idx": null,
       "similarity": null
     },
@@ -384,29 +408,13 @@
     {
       "rank": 48,
       "score": 58.0,
-      "title": "Papers and patents: Chinese military researchers distilled OpenAI and Anthropic models to train domestic AI systems and advance China's defense capabilities (Eduardo Baptista/Reuters)",
-      "url": "https://www.techmeme.com/260731/p7#a260731p7",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 49,
-      "score": 58.0,
-      "title": "NHS England rapped over inaccurate Palantir patient data disclosure",
-      "url": "https://www.theregister.com/public-sector/2026/07/29/nhs-england-rapped-over-inaccurate-palantir-patient-data-disclosure/5280233",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 50,
-      "score": 58.0,
       "title": "FCC Blocks New Foreign-Produced Robots and Power Inverters Over Cyber Risks",
       "url": "https://thehackernews.com/2026/07/fcc-blocks-new-foreign-produced-robots.html",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 51,
+      "rank": 49,
       "score": 58.0,
       "title": "SE Asian Cybercriminal Syndicates Become a Global Power",
       "url": "https://www.darkreading.com/threat-intelligence/se-asian-cybercriminal-syndicates-global-power",
@@ -414,7 +422,15 @@
       "similarity": null
     },
     {
-      "rank": 52,
+      "rank": 50,
+      "score": 58.0,
+      "title": "EU to Crack Down on AI Deepfakes, Illicit Imagery and Hacking With New Team in Brussels",
+      "url": "https://www.securityweek.com/eu-to-crack-down-on-ai-deepfakes-illicit-imagery-and-hacking-with-new-team-in-brussels/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 51,
       "score": 58.0,
       "title": "Bank of America to Acquire Cybersecurity Firm MDSec",
       "url": "https://www.securityweek.com/bank-of-america-to-acquire-cybersecurity-firm-mdsec/",
@@ -422,15 +438,15 @@
       "similarity": null
     },
     {
-      "rank": 53,
+      "rank": 52,
       "score": 58.0,
-      "title": "DataBahn Raises $40 Million for Agentic Data Pipeline Management",
-      "url": "https://www.securityweek.com/databahn-raises-40-million-for-agentic-data-pipeline-management/",
+      "title": "Okta\u2019s deal for Permiso aims to close gaps in identity threat detection",
+      "url": "https://cyberscoop.com/okta-acquires-permiso-security-ai-identity-threat-detection/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 54,
+      "rank": 53,
       "score": 58.0,
       "title": "AI agents are changing where cybersecurity seed funding lands",
       "url": "https://www.helpnetsecurity.com/2026/07/31/ai-agents-cybersecurity-seed-funding/",
@@ -438,7 +454,7 @@
       "similarity": null
     },
     {
-      "rank": 55,
+      "rank": 54,
       "score": 58.0,
       "title": "IBM: AI-driven attacks increased 56% last year, and data breach costs are up 12%",
       "url": "https://www.networkworld.com/article/4202554/ibm-ai-driven-attacks-increased-56-last-year-and-data-breach-costs-are-up-12.html",
@@ -446,7 +462,7 @@
       "similarity": null
     },
     {
-      "rank": 56,
+      "rank": 55,
       "score": 57.0,
       "title": "Exclusive: Upwind adds context scanning for AI agents as AI DR hits general availability",
       "url": "https://siliconangle.com/2026/07/30/exclusive-upwind-adds-context-scanning-ai-agents-ai-dr-hits-general-availability/",
@@ -454,7 +470,7 @@
       "similarity": null
     },
     {
-      "rank": 57,
+      "rank": 56,
       "score": 57.0,
       "title": "Traefik Labs introduces Distro Zero secure runtime for API and AI gateways",
       "url": "https://www.helpnetsecurity.com/2026/07/31/traefik-labs-distro-zero-image/",
@@ -462,7 +478,7 @@
       "similarity": null
     },
     {
-      "rank": 58,
+      "rank": 57,
       "score": 56.0,
       "title": "PSA: Your Claude shared chats and Artifacts may have ended up on Google",
       "url": "https://techcrunch.com/2026/07/27/psa-your-claude-shared-chats-and-artifacts-may-have-ended-up-on-google/",
@@ -470,15 +486,15 @@
       "similarity": null
     },
     {
-      "rank": 59,
+      "rank": 58,
       "score": 56.0,
       "title": "Google\u2019s AI is digging up Chrome bugs that humans missed for years",
       "url": "https://www.digitaltrends.com/computing/googles-ai-is-digging-up-chrome-bugs-that-humans-missed-for-years/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 10,
+      "similarity": 0.7235544323921204
     },
     {
-      "rank": 60,
+      "rank": 59,
       "score": 56.0,
       "title": "Zscaler and Schwarz Digits team up on sovereign cloud security platform",
       "url": "https://www.itpro.com/security/zscaler-and-schwarz-digits-team-up-on-sovereign-cloud-security-platform",
@@ -486,7 +502,7 @@
       "similarity": null
     },
     {
-      "rank": 61,
+      "rank": 60,
       "score": 56.0,
       "title": "inforcer raises $50M Series C to scale AI security platform for MSPs",
       "url": "https://tech.eu/2026/07/30/inforcer-raises-50m-series-c-to-scale-ai-security-platform-for-msps/",
@@ -494,10 +510,18 @@
       "similarity": null
     },
     {
-      "rank": 62,
+      "rank": 61,
       "score": 56.0,
       "title": "South Korea fines telco giant KT $39 million for customer data breach",
       "url": "https://www.bleepingcomputer.com/news/security/south-korea-fines-telco-giant-kt-39-million-for-customer-data-breach/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 62,
+      "score": 56.0,
+      "title": "This Week in Security: What\u2019s in a name, the AI Bugpocalypse Hits Everyone, OpenWRT flaws, and Duress Passwords",
+      "url": "https://hackaday.com/2026/07/31/this-week-in-security-whats-in-a-name-the-ai-bugpocalypse-hits-everyone-openwrt-flaws-and-duress-passwords/",
       "matched_tldr_idx": null,
       "similarity": null
     },
@@ -542,9 +566,45 @@
       "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.0,
+    "25": 0.09090909090909091,
+    "50": 0.2727272727272727,
+    "100": 0.36363636363636365,
+    "67": 0.36363636363636365
+  },
+  "hits_at": {
+    "10": 0,
+    "25": 1,
+    "50": 3,
+    "100": 4,
+    "67": 4
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://www.wiz.io/blog/cosmosescape-taking-over-every-database-in-azure-cosmos-db",
+    "https://www.rapid7.com/blog/post/etr-kindarails2shell-cve-2026-66066-critical-arbitrary-file-read-and-possible-remote-code-execution-in-ruby-on-rails/",
+    "https://wts.dev/posts/sandbox-spawnattrs-escape/",
+    "https://ddosier-disects.medium.com/the-one-chokepoint-to-rule-them-all-why-i-deleted-50-clickfix-detection-rules-and-replaced-them-7c532206d32d",
+    "https://claude.com/blog/ciso-guide-to-agentic-ai",
+    "https://www.philvenables.com/post/control-reliability-engineering-cre-applying-sre-principles-to-cybersecurity-controls",
+    "https://www.helpnetsecurity.com/2026/07/30/cisa-sbom-guidance-updated/",
+    "https://blog.cryptographyengineering.com/2026/07/29/some-notes-about-anthropics-new-results/",
+    "https://gbhackers.com/linux-xmrig-botnet/",
+    "https://therecord.media/north-korea-hackers-ransomware",
+    "https://www.wired.com/story/chrome-needs-twice-a-week-patching-thanks-to-ai-bug-hunting-for-now/"
+  ],
+  "tldr_domains": [
+    "iz.io",
+    "rapid7.com",
+    "ts.dev",
+    "ddosier-disects.medium.com",
+    "claude.com",
+    "philvenables.com",
+    "helpnetsecurity.com",
+    "blog.cryptographyengineering.com",
+    "gbhackers.com",
+    "therecord.media",
+    "ired.com"
+  ]
 }
