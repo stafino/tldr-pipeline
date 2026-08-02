@@ -1,0 +1,192 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR Dev 2026-08-02
+
+🧑‍💻
+Articles & Tutorials
+
+The Economic Benefit of Refactoring (5 minute read)
+
+(blurb not generated)
+
+Postmortem for Kernel Soundness Bug #14576 (1 minute read)
+
+A soundness bug in the Lean kernel (#14576) let a metaprogram send an ill-typed nested inductive declaration past a missing check, making the kernel accept a proof of False; it was reduced to a minimal repro, fixed one hour after the report, and shipped in new patch releases. The independent nanoda checker missed it too because of a separate projection-check bug, so cross-verification only holds if both implementations are current.
+
+We have proof automation now (5 minute read)
+
+(blurb not generated)
+
+Postgres LISTEN/NOTIFY Actually Scales (5 minute read)
+
+(blurb not generated)
+
+Measuring Component Performance with the Container Timing API (5 minute read)
+
+(blurb not generated)
+
+The new rules of context engineering for Claude 5 generation models (5 minute read)
+
+(blurb not generated)
+
+Don’t stop early: Case-folding source code at memory speed (1 minute read)
+
+GitHub open-sourced casefold, a Rust crate that case-folds source code at over 45 GiB/s per core by sweeping the whole buffer branch-free instead of stopping at the first non-ASCII byte. The post explains why folding differs from lowercasing, why removing the ASCII early-exit optimization made the hot path faster, and how byte-space arithmetic handles the simple 1-to-1 Unicode folds that power Blackbird's 480TB code search index.
+
+Algorithms on billion-scale graph using 10GB RAM: I love DataFusion (1 minute read)
+
+The author implemented graph map-reduce over Apache DataFusion, offloading to disk and relying on bulk scans and sort-merge joins instead of random access, letting DataFusion handle spillover, planning, and execution. The result computes PageRank on a one-billion-edge graph in 5GB of RAM and finds weakly connected components on two billion edges in 10GB, with remaining rough edges around FairSpillPool deadlocks and getting SMJ to reuse on-disk pre-sorting.
+
+Finding bugs in Raft implementations (5 minute read)
+
+(blurb not generated)
+
+“Stateful systems are incredibly hard to build”: How Perplexity thinks about AI agent sandboxes (5 minute read)
+
+(blurb not generated)
+
+PostgreSQL's MVCC Is Bad: So Is Everyone Else's (5 minute read)
+
+The author argues that PostgreSQL's much-criticized MVCC costs, including table bloat, write amplification, and VACUUM babysitting, all trace to four concrete design choices rather than a defect, and reproduces each one on a live PostgreSQL 19 beta2 instance. Every other engine answers the same four questions differently, shifting the bill to the writer, tempdb, the cache, or the compactor, and all of them break when a transaction stays open too long.
+
+Silent Data Loss in Celery + RabbitMQ on Azure Container Apps: A Queue Registration Post-Mortem (2 minute read)
+
+A FastAPI, Celery, and RabbitMQ system on Azure Container Apps silently dropped every write for a subset of operations, returning 202 Accepted while a stale queue registration meant no worker was actually consuming the messages. The author traces the multi-day hunt to a mismatch between the container entry point and the platform resource config, and shows why healthy containers, a healthy broker, and correct code produced no error anywhere in the stack.
+
+Progressive Web Components (1 minute read)
+
+The author open-sources Elena, a 2.6kB library for building Progressive Web Components that render from HTML and CSS first and layer JavaScript on top only for interactivity. The approach splits each custom element into a base layer that works without JavaScript and an enhancement layer, targeting the layout shifts, FOUC, and poor server-side rendering that have long plagued web-component design systems.
+
+From Homegrown to Flink: Migrating a Stateful Ad Event Join at Scale (5 minute read)
+
+(blurb not generated)
+
+New research: The Core Web Vitals thresholds you trust might be wrong for your site (5 minute read)
+
+(blurb not generated)
+
+How ChatGPT Optimizes its Agent Loop: Harness, API, and Inference (5 minute read)
+
+(blurb not generated)
+
+How MVCC and Transactions Work in RocksDB (5 minute read)
+
+(blurb not generated)
+
+Going depthfirst: Achieving GitLab RCE via Two Ruby Memory Corruption Vulnerabilities (5 minute read)
+
+(blurb not generated)
+
+Dogfooding at scale: migrating cdnjs to Cloudflare's Developer Platform (5 minute read)
+
+(blurb not generated)
+
+Go 1.27 Interactive Tour (1 minute read)
+
+Go 1.27's headline feature lets method declarations carry their own type parameters independent of the receiver, so a generic operation like `Map` that transforms `Box[int]` into `Box[string]` can finally live as a method instead of a package-level function. This VictoriaMetrics tour walks the change with runnable examples, and flags the key restriction that interfaces still can't declare generic methods, so a generic method can't satisfy an interface.
+
+🧠
+Opinions & Advice
+
+The Orchestrator's Tax (5 minute read)
+
+(blurb not generated)
+
+The cost of saying yes has changed (1 minute read)
+
+The author argues that AI-generated patches have inverted the economics of small feature requests, since writing the first version of the code is often now cheaper than the meeting debating whether to write it. The advice is to treat the generated diff as a probe rather than a deliverable, using it to turn abstract scope arguments into concrete artifacts you can interrogate, while keeping the instinct to question who owns the behavior after it ships.
+
+GitHub is the wrong shape for this new world (5 minute read)
+
+(blurb not generated)
+
+Authorize, don't authenticate (1 minute read)
+
+The author argues that web apps invert data ownership by making you authenticate to access data they store, and that the fix is to authorize applications against a personal database you control instead. He demonstrates this with ayb, a project where an app has no login screen and instead asks to connect to a user-owned database, shifting control of the data back to the user.
+
+The Conductor Developer (3 minute read)
+
+The author argues AI has moved the scarce resource in software development from writing code to human attention, since agents now handle much of the implementation. The best developers are shifting from long stretches of solo flow to orchestrating multiple agents, shaping the work like a conductor who understands the whole score rather than playing every instrument.
+
+Everyone is building LLM routers, we deprecated ours (1 minute read)
+
+Manifest deprecated its LLM router in June after four months across 7,000 users, arguing that prompt complexity can't be inferred from the prompt alone since tool calls and context discovered later determine the real workload. The author also contends prefix caching cuts costs 75% to 90% and works better than routing, which ends up adding model stickiness and effectively undoing its own job.
+
+The session you cannot take with you (5 minute read)
+
+(blurb not generated)
+
+I don't recommend Tailwind CSS (1 minute read)
+
+The author argues Tailwind's utility-first approach is a poor fit for medium and large projects, citing the ceiling of classes you must internalize and the HTML bloat from stacking dozens of atomic classes per element. He concedes Wathan's rebuttal that separation of concerns doesn't vanish but reverses direction, with HTML depending on CSS instead of the other way around, an argument that holds in component-based codebases where markup and style already share a file.
+
+The development pipeline is a production system (1 minute read)
+
+The author argues that a broken development pipeline—failing builds, a downed QA server, red CI—is a production outage for the team building the software and deserves the same drop-everything urgency. The post reframes IDEs, build tools, package repositories, and CI/CD as production systems in their own right, since a team that can't compile or test can't ship value to customers.
+
+The Risks of Unprotected Agents and How to Mitigate Them (3 minute read)
+
+The author argues that runtime isolation and credential management, not LLM-level input/output filtering, are the controls that keep autonomous agents safe, since filtering measurably fails and systems should stay safe when it does. Opening with a July 2025 incident where Gemini CLI recursively overwrote a project after a silently failed directory creation, the post treats sandboxing and blast-radius reduction as prerequisites for leaving a fleet of agents running unattended.
+
+🚀
+Launches & Tools
+
+Golang proposal: container/: generic collection types (1 minute read)
+
+Go's Collections working group proposed a set of standard-library collection types for Go 1.28, including a hash-based Map that accepts custom hash functions, ordered maps and sets backed by binary trees, and a general set type to replace the map[T]struct{} convention. The APIs build on generics from Go 1.18 and iterators from Go 1.23, aiming to give library-defined containers the same ergonomics as built-in slices and maps.
+
+JEP 401: Value Objects (Preview) merged to OpenJDK master (5 minute read)
+
+(blurb not generated)
+
+qm – Multiplayer agent harness for work (1 minute read)
+
+QM is an open-source multiplayer agent harness that gives each employee an isolated workspace with its own scoped memory, files, permissions, crons, and durable sandbox, accessible from both Slack and a web app. Rather than binding a deployment to one vendor, it lets teams pick and switch between harnesses and models including Pi, OpenCode, Codex, and Claude Code, all driving the same headless core backed by Postgres.
+
+Flint: A Visualization Language for the AI Era (1 minute read)
+
+Flint compiles a single compact chart spec into native output for Vega-Lite, ECharts, Chart.js, Plotly, and Excel, deriving scales, axes, and layout automatically from the data and 70+ semantic types like `Rank` or `Country` so agents skip manual configuration. Microsoft Research ships it as a JavaScript/TypeScript library plus a `flint-chart-mcp` server, letting LLM agents create, validate, and render charts inside chat environments from one human-editable input.
+
+Dev who gave HashiCorp its name returns with a faster terminal multiplexer (1 minute read)
+
+A developer behind HashiCorp's name released a new terminal multiplexer aimed at outperforming incumbents like tmux and screen, with persistent sessions that survive disconnects. The project positions speed as its main differentiator, and the author frames persistent sessions as a starting point rather than the full scope of what the tool will eventually handle.
+
+Solid Queue 1.6.0 now supports fiber workers (1 minute read)
+
+Solid Queue 1.6.0 adds a fiber worker execution mode, letting Rails jobs run on a single Async reactor thread instead of a thread pool. You configure `fibers: 100` per worker instead of a thread count, which suits I/O-bound work like LLM calls at the cost of requiring the Async gem and fiber isolation (`config.active_support.isolation_level = :fiber`).
+
+An API for MoQ: provision your own isolated relays (1 minute read)
+
+Cloudflare released a MoQ provisioning API that lets developers create isolated Media over QUIC relays with separate credentials for publishers and subscribers, available across its 330-city network within seconds and with no servers to deploy or load balance. The service supports draft-14 and draft-16 of the MoQ Transport protocol with authentication, adding the isolation and access controls its earlier unauthenticated open preview lacked, and is free during beta.
+
+Show HN: BitBang – Reach machines behind NAT from a browser, no account (1 minute read)
+
+BitBang is a single static Go binary that gives you SSH-style remote access to machines behind NAT, CGNAT, or locked-down networks with no port forwarding, no daemon, and no account. Run `bitbang serve` on the target and it prints a URL that opens a terminal, file browser, and network proxy in any browser, with the connection end-to-end encrypted and peer-to-peer over WebRTC/DTLS while the signaling server only introduces the two ends.
+
+CPU-Friendly Long-Context Encoders (5 minute read)
+
+(blurb not generated)
+
+MCP gets its biggest architectural update yet (5 minute read)
+
+(blurb not generated)
+
+Get Ready For the Powerful CSS border-shape Property! (1 minute read)
+
+The CSS border-shape property applies clip-path-style values, including the new shape() function, to shape an entire element while letting border, box-shadow, and outline follow that shape rather than the element's rectangular box. Unlike clip-path or mask, which clip the whole element and drop decorations, border-shape preserves borders and shadows along the custom outline, though support is currently Chromium-only.
+
+🎁
+Miscellaneous
+
+Ruby on Rails Patches Critical Vulnerability (1 minute read)
+
+Ruby on Rails patched CVE-2026-66066, a critical (CVSS 9.5) arbitrary file read in Active Storage that lets unauthenticated attackers upload a crafted image to leak files, including the process environment, and escalate to remote code execution. The flaw hits apps using libvips for image processing with untrusted uploads; fixes ship in Active Storage 7.2.3.2, 8.0.5.1, and 8.1.3.1, and maintainers advise rotating any secret readable by the app process.
+
+Rails patches critical Active Storage flaw with RCE potential (1 minute read)
+
+The Rails team patched CVE-2026-66066, a critical Active Storage flaw that lets an unauthenticated attacker upload a crafted image to read arbitrary server files and potentially reach RCE when libvips handles thumbnail generation. Maintainers released fixes for the 7.2, 8.0, and 8.1 branches and urge rotating secret_key_base and other exposed credentials, having disclosed full details early after public PoC exploits appeared.
+
+GitHub, PyPI add time-based defenses against supply chain attacks (5 minute read)
+
+(blurb not generated)
