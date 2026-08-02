@@ -17,9 +17,9 @@ Snowflake launches Cortex AI Gateway for enterprise agents (5 minute read)
 🧠
 Deep Dives & Analysis
 
-Algorithms on billion-scale graph using 10GB RAM: I love DataFusion (1 minute read)
+Algorithms on billion-scale graph using 10GB RAM: I love DataFusion (5 minute read)
 
-An engineer implemented billion-scale graph algorithms on Apache DataFusion, computing PageRank on a one-billion-edge graph in 5GB of RAM and finding weakly connected components on a two-billion-edge graph in 10GB, all on a laptop under a hard memory limit. The trick is offloading to disk and designing around bulk scans instead of random access, letting DataFusion handle spillover, sort-merge joins, and aggregation. The takeaway is that workloads that once demanded Spark and GraphFrames can now run without a cluster.
+(blurb not generated)
 
 Indexing the Data Lake for Online Point Queries (5 minute read)
 
@@ -35,7 +35,7 @@ Eval-driven development: Lessons from evaluating GenAI at scale (5 minute read)
 
 PostgreSQL's MVCC Is Bad: So Is Everyone Else's (5 minute read)
 
-PostgreSQL's MVCC gets blamed for table bloat, write amplification, the 32-bit transaction ID limit, and endless VACUUM babysitting, but this piece argues each cost traces to a deliberate design choice rather than a defect, reproduced live on a PostgreSQL 19 beta2 instance. The author reframes the critique around four questions every MVCC engine must answer, and shows that alternatives like MySQL, Oracle, and SQL Server just send the bill to a different place: the writer, tempdb, the cache, or the compactor.
+(blurb not generated)
 
 How MVCC and Transactions Work in RocksDB (5 minute read)
 
@@ -49,9 +49,9 @@ Composable canonicals: from tribal data knowledge to versioned artifact (5 minut
 
 (blurb not generated)
 
-This is why we can't have nice things (1 minute read)
+This is why we can't have nice things (5 minute read)
 
-The author revisits his 2023 prediction that AI would mirror cloud computing, with a handful of providers like OpenAI and Anthropic becoming invisible infrastructure that every product quietly calls through an API. The essay questions whether that clean analogy holds, noting that unlike AWS or Snowflake, model providers face commoditized outputs, thin switching costs, and no clear path to the durable margins cloud vendors enjoy. For data teams betting their stack on a single model API, the open question is whether any of these companies works as a business yet.
+(blurb not generated)
 
 Pinner Progression: Better Use-Case Representation Driving Weekly Active User Growth at Pinterest (5 minute read)
 
@@ -68,10 +68,10 @@ How LangChain Built an Agent-First Data Stack (5 minute read)
 🚀
 Launches & Tools
 
-Flint: A Visualization Language for the AI Era (1 minute read)
+Flint: A Visualization Language for the AI Era (5 minute read)
 
-Microsoft released Flint, a declarative chart specification language designed to be generated and edited by LLMs rather than hand-written like Vega-Lite or matplotlib. The pitch is that a compact, structured grammar gives models fewer ways to produce broken output, so agents building dashboards or embedding charts in reports can emit valid visualizations more reliably than with imperative plotting code.
+(blurb not generated)
 
-Backstage with Lakebase, part 3 (1 minute read)
+Backstage with Lakebase, part 3 (5 minute read)
 
-Part three of Databricks' Backstage-on-Lakebase series shows a FinOps analyst joining live Backstage Postgres ownership data to Unity Catalog's system.billing.usage table in a single query, with no ETL and zero data movement, because Lakebase isolates compute per workload. The catch is auth: Lakehouse Federation's Postgres connector only supports static credentials, so you create a separate SCRAM-SHA-256 role and manage two auth paths against the same database.
+(blurb not generated)
