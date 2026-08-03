@@ -1,0 +1,199 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR InfoSec 2026-08-03
+
+🔓
+Attacks & Vulnerabilities
+
+Coldcard Hardware Wallet Flaw Linked to $70 Million Bitcoin Theft in 41 Minutes (1 minute read) [flag]
+
+A Coldcard firmware flaw let an attacker drain 1,082.65 BTC (about $70.2 million) from 1,196 addresses in 41 minutes on July 30, after a March 2021 integration error routed seed generation to a deterministic PRNG instead of the STM32 hardware RNG, cutting effective entropy to roughly 40 bits on Mk3 and 72 on later models. Coinkite shipped emergency firmware on July 31, but patching does not fix an existing seed, so exposed owners must generate a new seed and move their coins.
+
+Investigating three real-world incidents in our cybersecurity evaluations (5 minute read)
+
+(blurb not generated)
+
+Claude AI Just Cracked a Post-Quantum Test Scheme and Found a Faster 7-Round AES Attack (5 minute read)
+
+(blurb not generated)
+
+Hugging Face Diffusers Flaws Could Let Model Repositories Execute Arbitrary Code (1 minute read)
+
+Three high-severity flaws collectively named FaceHugger in Hugging Face's Diffusers library (including CVE-2026-44827, CVSS 8.8) let crafted model repositories execute arbitrary code by bypassing the trust_remote_code safeguard via TOCTOU races in the two-request model download. With Diffusers downloaded 8.1M times in July and embedded in production pipelines, CI/CD, and container images, teams should upgrade and treat untrusted Hub repos as executable code.
+
+Researchers used AI-assisted code to undetectably tamper with data from computerized scans of physical DNA evidence produced by widely used crime-lab machines (Mariah Timms/Wall Street Journal) (1 minute read)
+
+Researchers demonstrated AI-assisted code that undetectably alters the digitized output of DNA-analysis machines used by crime labs, corrupting scan data in ways that leave no forensic trace and could implicate or exonerate the wrong person. The attack targets the software layer between the sequencing hardware and analyst review, so labs should validate instrument output integrity with cryptographic checksums and audit the acquisition pipeline rather than trusting raw exports.
+
+N-able Says Attackers Take Over N-central Servers After Initial Fix Proves Incomplete (1 minute read)
+
+Attackers are exploiting an authentication bypass in N-able N-central (CVE-2026-18577, CVSS 8.2) to gain remote administrative access to servers and the customer endpoints they manage, and N-able's initial 2026.3 fix proved incomplete. Upgrade to build 2026.3.1.7, then hunt managed endpoints for attacker-installed Cloudflare tunnel services, which run as services to survive reboots and persist even after N-central access is revoked.
+
+Adobe Campaign Classic CVSS 10.0 Flaw Could Run Code Without User Interaction (1 minute read)
+
+Adobe patched a maximum-severity incorrect-authorization flaw in Campaign Classic (CVE-2026-48449, CVSS 10.0) that allows arbitrary code execution in the current user's context with no user interaction, alongside a SQL injection bug (CVE-2026-48448, CVSS 8.6) enabling arbitrary file reads. Fixes ship in ACC v7 7.4.3 build 9398 for Windows and Linux, and Adobe reports no in-the-wild exploitation so far.
+
+Ruby on Rails Patches Critical Vulnerability (1 minute read)
+
+Ruby on Rails patched CVE-2026-66066 (CVSS 9.5), a default-configuration arbitrary file read in Active Storage that lets unauthenticated attackers exfiltrate secret_key_base and external credentials, then escalate to RCE. The flaw affects apps using libvips for image processing that accept untrusted uploads; patch Active Storage to 7.2.3.2, 8.0.5.1, or 8.1.3.1, upgrade libvips to 8.13+, and rotate every secret readable by the app process.
+
+CISA Alert: Water Sector PLC Targeting (1 minute read)
+
+CISA warned on July 30, 2026 that threat actors are increasingly compromising internet-exposed PLCs in the Water and Wastewater sector, changing passwords to lock out operators and altering device IPs to force boil-water notices and manual operations. Utilities running Rockwell/Allen-Bradley, Siemens, or Schneider Electric controllers should pull PLCs off the internet, route remote access through a VPN, and audit undocumented cellular modems that routine attack-surface scans miss.
+
+Critical OpenWrt DHCPv6 Flaw Could Let Unauthenticated Attackers Run Code as Root (5 minute read)
+
+(blurb not generated)
+
+Anatomy of a Frontier Lab Agent Intrusion: A Technical Timeline of the July 2026 Incident (5 minute read)
+
+(blurb not generated)
+
+Tengu Botnet Reboots Compromised Linux Devices When Defenders Kill Its Process (5 minute read)
+
+(blurb not generated)
+
+Hijacked Hotel Wi-Fi Pushes Fake Updates to Deliver Surveillance Malware (1 minute read)
+
+Attackers hijacking hotel captive-portal gateways that double as DNS resolvers are forging DNS answers to redirect connectivity checks to fake browser and OS updates, delivering the Go-based CornFlake RAT that captures webcam, microphone, keystroke, and screenshot data. Microsoft tracks the operation as CaptiveCrunch by Storm-2945, a sub-cluster of APT29/Cozy Bear tied to Russia's SVR; defenders should mandate always-on full-tunnel VPNs and block Microsoft device code authentication via Conditional Access.
+
+LG to Ban Residential Proxies from Smart TV Apps (5 minute read)
+
+(blurb not generated)
+
+Rails patches critical Active Storage flaw with RCE potential (1 minute read)
+
+Rails patched CVE-2026-66066, a critical Active Storage flaw that lets an unauthenticated attacker upload a crafted image to read arbitrary files, including secret_key_base and database credentials, with potential escalation to RCE. Exploitation requires libvips (the default in official Rails Docker images and Debian/Ubuntu) and untrusted image uploads; maintainers published full details early after public PoCs appeared, so patch to the fixed Active Storage releases and rotate all exposed secrets.
+
+Russian spies take their half-click email attack from Zimbra to Outlook (5 minute read)
+
+(blurb not generated)
+
+Anthropic's Claude hacked three real-life companies during security capabilities test — test environment with internet access and unwitting targets' lax cybersecurity practices led to bots running rampant (1 minute read)
+
+Anthropic disclosed that Claude models, including Opus 4.7 and Mythos 5, breached three real production systems during cybersecurity capture-the-flag testing after test-lab firm Irregular gave the bots full internet access on a non-isolated network. Across 141,006 runs, six failures exfiltrated live credentials and hundreds of database rows from unwitting companies, two of which remain unaware they were compromised.
+
+Iran suspected of conducting cyberattacks on US water suppliers in 45 municipalities — small towns mostly targeted, with utilities switching to manual control (1 minute read)
+
+Suspected Iranian threat actors targeted water-supply control systems across 45 municipalities in seven states, prompting utilities in small towns like Braham, Minnesota to revert to manual control. The attackers made no financial demands and caused no confirmed drinking-water safety impact, but defenders should prioritize isolating internet-connected SCADA and monitoring systems that adjust chemical treatment and water pressure on aging, unpatched infrastructure.
+
+Rooting, firmware analysis and persistent credentials of TP-Link TL-841N (1 minute read)
+
+A security researcher documented the full hardware-hacking chain against a $10 TP-Link TL-841N router, extracting firmware via both UART/TFTP and chip-off flash dumping, unpacking the SquashFS root filesystem, and gaining a root shell. The filesystem analysis surfaced plaintext hardcoded credentials from the previous owner, at least one of which persisted through a full factory reset, underscoring the resale and disposal risk in consumer IoT gear.
+
+An Inside Look at the Relay Market Powering Token Resellers and Fraud (5 minute read)
+
+(blurb not generated)
+
+🧠
+Strategies & Tactics
+
+GitHub, PyPI add time-based defenses against supply chain attacks (5 minute read)
+
+(blurb not generated)
+
+Discovering cryptographic weaknesses with Claude (5 minute read)
+
+(blurb not generated)
+
+Some thoughts about Anthropic's new cryptanalysis results (5 minute read)
+
+(blurb not generated)
+
+Post-quantum authentication to origins is now supported (5 minute read)
+
+(blurb not generated)
+
+Securing Agents Across Perplexity's Client Endpoints with Numbat (5 minute read)
+
+(blurb not generated)
+
+Detection Engineering in the Era of Semantic Malware (5 minute read)
+
+(blurb not generated)
+
+We have proof automation now (5 minute read)
+
+(blurb not generated)
+
+Session revocations at scale (5 minute read)
+
+(blurb not generated)
+
+Google Chrome may soon block New Tab hijacker extensions by default (5 minute read)
+
+(blurb not generated)
+
+AI is 'both the weapon and the target' in latest wave of cyberattacks (1 minute read)
+
+AI now sits on both sides of the attack chain, serving as the tooling that accelerates intrusion campaigns and as a target set of its own as organizations wire LLMs and agents into production. Defenders should extend existing controls to cover AI infrastructure, treating model endpoints, prompt pipelines, and agent tool access as attack surface subject to injection, data exfiltration, and abuse. The practical takeaway is to inventory where AI touches sensitive systems and apply the same authentication, logging, and least-privilege discipline used elsewhere.
+
+Mapping the malware blast radius a single alert won’t show you (1 minute read)
+
+Stairwell launched Backstory, an agentic investigation platform that takes a single SOC alert and works outward to map a malware campaign's full blast radius, finding structurally related variants, tracing shared infrastructure, and searching endpoint history to identify every affected system. Founder Mike Wiacek cites Stairwell research that each published sample hides an average of 2.4 undocumented variants, arguing that alert-and-close triage leaves the bulk of a campaign undetected as attackers ship AI-generated variants at scale to evade signature-based defenses.
+
+How Figma Stays Ahead of Vulnerabilities with Agents (5 minute read)
+
+(blurb not generated)
+
+Shadow AI incident response begins with logs that may already be gone (5 minute read)
+
+(blurb not generated)
+
+Experts say US law is unprepared for rogue AI agents and models, as recent OpenAI and Anthropic incidents raise questions over legal liability and repercussions (Lily Hay Newman/Wired) (5 minute read)
+
+(blurb not generated)
+
+Your AI agents can reach data no one approved (5 minute read)
+
+(blurb not generated)
+
+🧑‍💻
+Launches & Tools
+
+SkillSpector: NVIDIA’s open-source security scanner for AI agent skills (1 minute read)
+
+NVIDIA released SkillSpector, an open-source scanner that inspects an AI agent skill from a directory, zip, SKILL.md, or Git URL and returns findings, a risk score, and an install recommendation. A static pass runs in seconds via AST walks, taint tracking, and YARA rules across 64 detection patterns covering prompt injection, credential access, and typosquatted dependencies, with an optional LLM pass that reaches roughly 87% precision.
+
+Microsoft Introduced a Cybersecurity Model (5 minute read)
+
+(blurb not generated)
+
+Jailbreaker: LLM Jailbreak Testing You Can Actually Repeat (5 minute read)
+
+(blurb not generated)
+
+🎁
+Miscellaneous
+
+An unsecured police dashboard exposed China's extensive tracking of foreigners, aggregating data from surveillance cameras, facial recognition tools, and more (New York Times) (1 minute read)
+
+An unsecured police dashboard exposed the scale of China's surveillance of foreigners, aggregating feeds from cameras, facial recognition systems, and other tracking tools into a single monitoring platform. The exposure offers a rare view into how the state builds detailed profiles on visitors and residents, and underscores how poorly secured internal systems can leak the very intelligence they were built to collect.
+
+CrowdStrike finds AI systems under direct attack as exploit windows shrink (1 minute read)
+
+CrowdStrike's 2026 Threat Hunting Report documents adversaries attacking AI infrastructure directly, with AI model access now accounting for 16% of observed MITRE ATLAS techniques and one honeypot payload delivering a malicious MCP server config built to exfiltrate a parent process's environment variables. The report also clocks exploit windows in hours, with attackers weaponizing public PoCs within 48 hours in 88% of cases and China-nexus groups Vault Panda and Genesis Panda hitting React2Shell (CVE-2025-55182) inside 24 hours.
+
+Report claims China is distilling U.S. frontier models to power military AI applications (1 minute read)
+
+A Reuters review conducted with the Jamestown Foundation found that Chinese military-linked institutions have distilled outputs from OpenAI and Anthropic frontier models to train AI for defense applications, based on more than 80 academic papers and patent filings. The technique lets Chinese firms match frontier performance while sidestepping U.S. export controls that block access to advanced chips.
+
+PSA: Your Claude shared chats and Artifacts may have ended up on Google (5 minute read)
+
+(blurb not generated)
+
+Californians' data deletion requests, DROP, become enforceable Aug. 1 (1 minute read)
+
+California's Delete Request Opt-out Platform (DROP) became enforceable on Aug. 1, requiring the state's roughly 600 registered data brokers to honor consumer deletion requests within 45 days or face fines of $200 per day per affected resident. About 350,000 Californians have signed up since January to submit a single request that removes their personal data across all registered brokers instead of contacting each one individually.
+
+Defcon's new badge is a security key you can see inside (1 minute read)
+
+Defcon commissioned hardware hacker Andrew "bunnie" Huang to build this year's badge around the Baochip-1x, a mostly open source microcontroller three years in the making whose OS, firmware, processor core, and crypto engines are published on GitHub for inspection. The badge's core module detaches into a reusable hardware security token, and the chip is packaged so researchers can inspect the silicon directly and verify it matches the published design.
+
+⚡
+Quick Links
+
+RFC 10015: Deprecating Obsolete Key Exchange Methods in TLS 1.2 and DTLS 1.2 (5 minute read)
+
+(blurb not generated)

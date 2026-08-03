@@ -1,0 +1,89 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR DevOps 2026-08-03
+
+📱
+News & Trends
+
+Post-quantum authentication to origins is now supported (5 minute read)
+
+(blurb not generated)
+
+OpenTelemetry has graduated… Now what? (5 minute read)
+
+(blurb not generated)
+
+Your Azure DevOps pipelines have a 2027 deadline, and the clock has just started (5 minute read)
+
+Microsoft deprecated the Azure DevOps issuer for workload identity federation on July 1, 2026, giving teams until July 1, 2027 before Service Connections built on the old vstoken.dev.azure.com issuer stop authenticating to Azure. The portal migrates connections one at a time in a couple of minutes each, so orgs running hundreds will need the undocumented MigrateToEntraIssuer REST call, and only single-tenant Entra apps and Managed Identities in the public cloud are affected.
+
+Critical OpenWrt DHCPv6 Flaw Could Let Unauthenticated Attackers Run Code as Root (5 minute read)
+
+(blurb not generated)
+
+Tengu Botnet Reboots Compromised Linux Devices When Defenders Kill Its Process (5 minute read)
+
+(blurb not generated)
+
+Cisco close to releasing more AI models, this time for deep networking ops (5 minute read)
+
+(blurb not generated)
+
+🚀
+Opinions & Tutorials
+
+Federating clusters for zero-downtime Kubernetes (5 minute read)
+
+(blurb not generated)
+
+Control Reliability Engineering (CRE): Applying SRE Principles to Cybersecurity Controls (5 minute read)
+
+Phil Venables argues that most breaches trace to security controls that were assumed operational but were actually broken or misconfigured when needed, and proposes Control Reliability Engineering (CRE) to fix it. The framework ports SRE discipline directly onto security controls: SLIs and SLOs to define a healthy control, error budgets to govern acceptable decay, and continuous control monitoring plus root-cause analysis to catch drift before an attacker does.
+
+Session revocations at scale (5 minute read)
+
+(blurb not generated)
+
+Scaling StreamHub: Transitioning from Kinesis to Kafka for 145 Billion Daily Events (5 minute read)
+
+(blurb not generated)
+
+The Economic Benefit of Refactoring (5 minute read)
+
+(blurb not generated)
+
+“Stateful systems are incredibly hard to build”: How Perplexity thinks about AI agent sandboxes (5 minute read)
+
+(blurb not generated)
+
+Reality-based Network Operations (5 minute read)
+
+(blurb not generated)
+
+Finding bugs in Raft implementations (5 minute read)
+
+(blurb not generated)
+
+ModelExpress: Distributing Model Artifacts at the Speed of Light (5 minute read)
+
+(blurb not generated)
+
+GitHub is the wrong shape for this new world (5 minute read)
+
+(blurb not generated)
+
+The development pipeline is a production system (1 minute read)
+
+The author argues that development pipelines deserve the same outage response as customer-facing production systems, since a broken build, failing test suite, or downed QA server stops the team from shipping just as surely as a service failure stops customers. The recommendation is to inventory every step from "customer wants something" to "delivered," from issue trackers and IDEs to CI/CD and package repositories, then treat any break in that chain as a top-priority incident rather than background toil.
+
+Why Intune Devices Became Noncompliant After the July Windows Update (5 minute read)
+
+(blurb not generated)
+
+⚒️
+Launches & Tools
+
+Show HN: NixOS-DGX-Spark – Nix and NixOS on the DGX Spark (1 minute read)
+
+A developer released NixOS-DGX-Spark, an open-source project that brings Nix and NixOS to NVIDIA's DGX Spark and the Asus Ascent GX10, shipping USB images and a NixOS hardware module with a custom NVIDIA-optimized kernel for full GPU and Ethernet support. Teams can run the Nix dev shells and playbooks directly on stock DGX OS via nix-gl-host, or install NixOS outright for reproducible CUDA environments after a required firmware update.

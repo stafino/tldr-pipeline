@@ -1,0 +1,69 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR Data 2026-08-03
+
+📊
+News & Trends
+
+Snowflake launches AI agent governance layer to track activity, control costs (5 minute read)
+
+(blurb not generated)
+
+Snowflake launches Cortex AI Gateway for enterprise agents (5 minute read)
+
+(blurb not generated)
+
+🧠
+Deep Dives & Analysis
+
+Indexing the Data Lake for Online Point Queries (5 minute read)
+
+(blurb not generated)
+
+Scaling StreamHub: Transitioning from Kinesis to Kafka for 145 Billion Daily Events (5 minute read)
+
+(blurb not generated)
+
+Eval-driven development: Lessons from evaluating GenAI at scale (5 minute read)
+
+(blurb not generated)
+
+PostgreSQL's MVCC Is Bad: So Is Everyone Else's (5 minute read)
+
+PostgreSQL's MVCC gets blamed for table bloat, write amplification, the 32-bit transaction ID limit, and endless VACUUM babysitting, but this piece argues each cost traces to a deliberate design choice rather than a defect, reproduced live on a PostgreSQL 19 beta2 instance. The author reframes the critique around four questions every MVCC engine must answer, and shows that alternatives like MySQL, Oracle, and SQL Server just send the bill to a different place: the writer, tempdb, the cache, or the compactor.
+
+How MVCC and Transactions Work in RocksDB (5 minute read)
+
+(blurb not generated)
+
+Brute intelligence (5 minute read)
+
+(blurb not generated)
+
+Composable canonicals: from tribal data knowledge to versioned artifact (5 minute read)
+
+(blurb not generated)
+
+Pinner Progression: Better Use-Case Representation Driving Weekly Active User Growth at Pinterest (5 minute read)
+
+(blurb not generated)
+
+Wide Column Stores Explained: Cassandra, Bigtable, and ScyllaDB (5 minute read)
+
+(blurb not generated)
+
+How LangChain Built an Agent-First Data Stack (5 minute read)
+
+(blurb not generated)
+
+🚀
+Launches & Tools
+
+Flint: A Visualization Language for the AI Era (1 minute read)
+
+Microsoft released Flint, a declarative chart specification language designed to be generated and edited by LLMs rather than hand-written like Vega-Lite or matplotlib. The pitch is that a compact, structured grammar gives models fewer ways to produce broken output, so agents building dashboards or embedding charts in reports can emit valid visualizations more reliably than with imperative plotting code.
+
+Show HN: Syncular – offline-first SQL sync with TypeScript and Rust cores (1 minute read)
+
+Syncular launched as an offline-first SQL sync engine with parity TypeScript and Rust cores, keeping a real local SQLite database on each client (OPFS in the browser, native SQLite elsewhere) while a single ordered commit log on the server stays the source of truth. Writes flow through an optimistic outbox, and a spec-first conformance suite backed by golden vectors holds the two cores in lockstep.

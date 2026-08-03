@@ -1,0 +1,180 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR Dev 2026-08-03
+
+🧑‍💻
+Articles & Tutorials
+
+The Economic Benefit of Refactoring (5 minute read)
+
+(blurb not generated)
+
+Postmortem for Kernel Soundness Bug #14576 (1 minute read)
+
+A soundness bug in the Lean kernel (#14576) let a metaprogram send an ill-typed nested inductive declaration past a missing check, making the kernel accept a proof of False; it was reduced to a minimal repro, fixed one hour after the report, and shipped in new patch releases. The independent nanoda checker missed it too because of a separate projection-check bug, so cross-verification only holds if both implementations are current.
+
+We have proof automation now (5 minute read)
+
+(blurb not generated)
+
+Postgres LISTEN/NOTIFY Actually Scales (5 minute read)
+
+(blurb not generated)
+
+Measuring Component Performance with the Container Timing API (5 minute read)
+
+(blurb not generated)
+
+The new rules of context engineering for Claude 5 generation models (5 minute read)
+
+(blurb not generated)
+
+When random.bytes() runs but doesn't work (5 minute read)
+
+(blurb not generated)
+
+Finding bugs in Raft implementations (5 minute read)
+
+(blurb not generated)
+
+“Stateful systems are incredibly hard to build”: How Perplexity thinks about AI agent sandboxes (5 minute read)
+
+(blurb not generated)
+
+PostgreSQL's MVCC Is Bad: So Is Everyone Else's (5 minute read)
+
+The author argues that PostgreSQL's much-criticized MVCC costs, including table bloat, write amplification, and VACUUM babysitting, all trace to four concrete design choices rather than a defect, and reproduces each one on a live PostgreSQL 19 beta2 instance. Every other engine answers the same four questions differently, shifting the bill to the writer, tempdb, the cache, or the compactor, and all of them break when a transaction stays open too long.
+
+From Homegrown to Flink: Migrating a Stateful Ad Event Join at Scale (5 minute read)
+
+(blurb not generated)
+
+New research: The Core Web Vitals thresholds you trust might be wrong for your site (5 minute read)
+
+(blurb not generated)
+
+How ChatGPT Optimizes its Agent Loop: Harness, API, and Inference (5 minute read)
+
+(blurb not generated)
+
+How MVCC and Transactions Work in RocksDB (5 minute read)
+
+(blurb not generated)
+
+Going depthfirst: Achieving GitLab RCE via Two Ruby Memory Corruption Vulnerabilities (5 minute read)
+
+(blurb not generated)
+
+Dogfooding at scale: migrating cdnjs to Cloudflare's Developer Platform (5 minute read)
+
+(blurb not generated)
+
+Go 1.27 Interactive Tour (1 minute read)
+
+Go 1.27's headline feature lets method declarations carry their own type parameters independent of the receiver, so a generic operation like `Map` that transforms `Box[int]` into `Box[string]` can finally live as a method instead of a package-level function. This VictoriaMetrics tour walks the change with runnable examples, and flags the key restriction that interfaces still can't declare generic methods, so a generic method can't satisfy an interface.
+
+A shell colon does nothing. Use it anyway (5 minute read)
+
+(blurb not generated)
+
+Rooting, firmware analysis and persistent credentials of TP-Link TL-841N (1 minute read)
+
+A developer documents the full teardown of a $10 TP-Link TL-841N router, locating the UART pins, dumping firmware over both UART/tftp and direct GD25Q64 flash chip extraction, then un-squashing the root filesystem for analysis. The post ends by finding the previous owner's plaintext hardcoded credentials still on the device, including one set that survives a full factory reset.
+
+Treat prompt changes like code deploys (5 minute read)
+
+(blurb not generated)
+
+🧠
+Opinions & Advice
+
+The Orchestrator's Tax (5 minute read)
+
+(blurb not generated)
+
+The cost of saying yes has changed (1 minute read)
+
+The author argues that AI-generated patches have inverted the economics of small feature requests, since writing the first version of the code is often now cheaper than the meeting debating whether to write it. The advice is to treat the generated diff as a probe rather than a deliverable, using it to turn abstract scope arguments into concrete artifacts you can interrogate, while keeping the instinct to question who owns the behavior after it ships.
+
+GitHub is the wrong shape for this new world (5 minute read)
+
+(blurb not generated)
+
+Don't be a meat proxy (1 minute read)
+
+The author argues that pasting an LLM's raw output into Slack, PR reviews, or group chats adds no value, since anyone can query the model themselves and control their own context. He contends the actual work is reading, understanding, and validating the output, then rewriting it in your own words, so acting as a "meat proxy" that relays verbose, jargon-dense, often plausibly wrong text just shifts the effort onto the reader.
+
+SwiftUI After 7 Years (1 minute read)
+
+The author argues that seven years on, SwiftUI remains a perpetual beta that trades precise engineering for the illusion of convenience, citing unpredictable layout, ever-churning data flow, and broken backward compatibility that forces developers into endless shims. Evidence includes Apple's own Landmarks tutorial failing to run and UIKit still winning head-to-head performance comparisons, which the author reads as a broader Cupertino shift from Cocoa-era craftsmanship toward "good enough" products.
+
+I don't recommend Tailwind CSS (1 minute read)
+
+The author argues Tailwind's utility-first approach is a poor fit for medium and large projects, citing the ceiling of classes you must internalize and the HTML bloat from stacking dozens of atomic classes per element. He concedes Wathan's rebuttal that separation of concerns doesn't vanish but reverses direction, with HTML depending on CSS instead of the other way around, an argument that holds in component-based codebases where markup and style already share a file.
+
+The development pipeline is a production system (1 minute read)
+
+The author argues that a broken development pipeline—failing builds, a downed QA server, red CI—is a production outage for the team building the software and deserves the same drop-everything urgency. The post reframes IDEs, build tools, package repositories, and CI/CD as production systems in their own right, since a team that can't compile or test can't ship value to customers.
+
+The Session You Cannot Take With You (5 minute read)
+
+(blurb not generated)
+
+🚀
+Launches & Tools
+
+Qwen3.8-Max: A New Bar for Coding and Cowork (1 minute read)
+
+Alibaba's Qwen team released Qwen3.8-Max, a model positioned around coding and agentic "cowork" workflows where the model drives multi-step tasks rather than answering one-shot prompts. The launch post frames it as a step up on code generation and long-horizon tool use, though independent benchmark comparisons against GPT-5.5 and Claude on SWE-Bench aren't in yet.
+
+Flint: A Visualization Language for the AI Era (1 minute read)
+
+Flint compiles a single compact chart spec into native output for Vega-Lite, ECharts, Chart.js, Plotly, and Excel, deriving scales, axes, and layout automatically from the data and 70+ semantic types like `Rank` or `Country` so agents skip manual configuration. Microsoft Research ships it as a JavaScript/TypeScript library plus a `flint-chart-mcp` server, letting LLM agents create, validate, and render charts inside chat environments from one human-editable input.
+
+Show HN: Syncular – offline-first SQL sync with TypeScript and Rust cores (1 minute read)
+
+Syncular is an offline-first SQL sync framework where each client keeps a real local SQLite database (OPFS in the browser, native elsewhere), optimistic writes flow through an outbox, and a single ordered commit log on the server stays authoritative. It ships parallel TypeScript and Rust cores held in lockstep by a spec-first conformance suite, with fault injection at the transport layer and banned test sleeps.
+
+Solid Queue 1.6.0 now supports fiber workers (1 minute read)
+
+Solid Queue 1.6.0 adds a fiber worker execution mode, letting Rails jobs run on a single Async reactor thread instead of a thread pool. You configure `fibers: 100` per worker instead of a thread count, which suits I/O-bound work like LLM calls at the cost of requiring the Async gem and fiber isolation (`config.active_support.isolation_level = :fiber`).
+
+Meshdiff – visually compare two STL versions in the browser, client-side (5 minute read)
+
+(blurb not generated)
+
+Show HN: Fuse – statically typed functional programming language (1 minute read)
+
+Fuse is a statically typed, purely functional language with higher-kinded types and trait-based ad-hoc polymorphism, drawing syntax from Rust, Python, Scala, and Haskell. It compiles through the GRIN whole-program optimizer to LLVM-generated native code, and requires type signatures only on functions, inferring everything else via bidirectional type checking.
+
+CPU-Friendly Long-Context Encoders (5 minute read)
+
+(blurb not generated)
+
+F*: A general-purpose proof-oriented programming language (5 minute read)
+
+(blurb not generated)
+
+MCP gets its biggest architectural update yet (5 minute read)
+
+(blurb not generated)
+
+Show HN: Shitty – fast terminal. Memory-unsafe and faster than yours (1 minute read)
+
+Shitty is a terminal emulator that keeps state on the CPU and renders cells through native GPU backends, Vulkan on Linux and Metal on macOS, aiming for low latency, fast startup, and predictable resource use. It ships as one self-contained binary with embedded fonts, a fuzzed total parser state machine, grapheme-cluster Unicode handling, and over 5,000 conformance tests harvested from kitty, xterm, alacritty, and ghostty suites.
+
+🎁
+Miscellaneous
+
+Ruby on Rails Patches Critical Vulnerability (1 minute read)
+
+Ruby on Rails patched CVE-2026-66066, a critical (CVSS 9.5) arbitrary file read in Active Storage that lets unauthenticated attackers upload a crafted image to leak files, including the process environment, and escalate to remote code execution. The flaw hits apps using libvips for image processing with untrusted uploads; fixes ship in Active Storage 7.2.3.2, 8.0.5.1, and 8.1.3.1, and maintainers advise rotating any secret readable by the app process.
+
+Rails patches critical Active Storage flaw with RCE potential (1 minute read)
+
+The Rails team patched CVE-2026-66066, a critical Active Storage flaw that lets an unauthenticated attacker upload a crafted image to read arbitrary server files and potentially reach RCE when libvips handles thumbnail generation. Maintainers released fixes for the 7.2, 8.0, and 8.1 branches and urge rotating secret_key_base and other exposed credentials, having disclosed full details early after public PoC exploits appeared.
+
+GitHub, PyPI add time-based defenses against supply chain attacks (5 minute read)
+
+(blurb not generated)
