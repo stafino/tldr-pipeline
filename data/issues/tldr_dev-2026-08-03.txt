@@ -10,9 +10,9 @@ The Economic Benefit of Refactoring (5 minute read)
 
 (blurb not generated)
 
-Postmortem for Kernel Soundness Bug #14576 (5 minute read)
+Postmortem for Kernel Soundness Bug #14576 (1 minute read)
 
-(blurb not generated)
+A soundness bug in the Lean kernel (#14576) let a metaprogram send an ill-typed nested inductive declaration past a missing check, making the kernel accept a proof of False; it was reduced to a minimal repro, fixed one hour after the report, and shipped in new patch releases. The independent nanoda checker missed it too because of a separate projection-check bug, so cross-verification only holds if both implementations are current.
 
 We have proof automation now (5 minute read)
 
@@ -22,9 +22,9 @@ Postgres LISTEN/NOTIFY Actually Scales (5 minute read)
 
 (blurb not generated)
 
-Rust project goals: Immobile types and guaranteed destructors (1 minute read)
+Rust project goals: Immobile types and guaranteed destructors (5 minute read)
 
-This Rust project goal proposes new auto-traits (Move, Destruct, Forget) that make relocatability and forgettability explicit per type, letting types opt out rather than assuming every value can be moved or dropped via mem::forget. The change would replace Pin's place-based immovability with type-level !Move for self-referential futures and enable guaranteed destructors for patterns like scoped async spawn, with viability tested against the Linux kernel.
+(blurb not generated)
 
 Measuring Component Performance with the Container Timing API (5 minute read)
 
@@ -48,7 +48,7 @@ Finding bugs in Raft implementations (5 minute read)
 
 PostgreSQL's MVCC Is Bad: So Is Everyone Else's (5 minute read)
 
-(blurb not generated)
+The author argues that PostgreSQL's much-criticized MVCC costs, including table bloat, write amplification, and VACUUM babysitting, all trace to four concrete design choices rather than a defect, and reproduces each one on a live PostgreSQL 19 beta2 instance. Every other engine answers the same four questions differently, shifting the bill to the writer, tempdb, the cache, or the compactor, and all of them break when a transaction stays open too long.
 
 From Homegrown to Flink: Migrating a Stateful Ad Event Join at Scale (5 minute read)
 
@@ -58,13 +58,17 @@ New research: The Core Web Vitals thresholds you trust might be wrong for your s
 
 (blurb not generated)
 
+How we built a realtime system for responsive voice AI in six months (1 minute read)
+
+OpenAI detailed how it built GPT-Live, its third-generation voice system that removes the turn detector from the audio path by using a full-duplex model that listens and speaks simultaneously, delegating to frontier models like GPT-5.5 on a separate async path when reasoning or tools are needed. The post covers the six-month rework of stateful inference, dynamic context management, and media transport that keeps latency low enough for natural turn-taking.
+
 How ChatGPT Optimizes its Agent Loop: Harness, API, and Inference (5 minute read)
 
 (blurb not generated)
 
-AI migrated legacy COBOL programs to Java, bugs included (1 minute read) [flag]
+AI migrated legacy COBOL programs to Java, bugs included (5 minute read)
 
-This paper introduces the "Locksmith Loop," an agentic test-synthesis method that validates COBOL-to-Java migration by running both the source and generated target off-mainframe, searching input mocks to penetrate branches, then applying parity-preserving mutations to reach deeper paths. Across three case studies from 430 to 4,114 lines, it hit near-complete coverage on two open-source programs and 91.90% branch coverage on an internal one, with the Java matching the COBOL under deterministic parity checks.
+(blurb not generated)
 
 How MVCC and Transactions Work in RocksDB (5 minute read)
 
@@ -78,13 +82,9 @@ Dogfooding at scale: migrating cdnjs to Cloudflare's Developer Platform (5 minut
 
 (blurb not generated)
 
-Go 1.27 Interactive Tour (5 minute read)
+Go 1.27 Interactive Tour (1 minute read)
 
-(blurb not generated)
-
-A shell colon does nothing. Use it anyway (5 minute read)
-
-(blurb not generated)
+Go 1.27's headline feature lets method declarations carry their own type parameters independent of the receiver, so a generic operation like `Map` that transforms `Box[int]` into `Box[string]` can finally live as a method instead of a package-level function. This VictoriaMetrics tour walks the change with runnable examples, and flags the key restriction that interfaces still can't declare generic methods, so a generic method can't satisfy an interface.
 
 🧠
 Opinions & Advice
@@ -93,96 +93,104 @@ The Orchestrator's Tax (5 minute read)
 
 (blurb not generated)
 
-The cost of saying yes has changed (5 minute read)
+The cost of saying yes has changed (1 minute read)
 
-(blurb not generated)
+The author argues that AI-generated patches have inverted the economics of small feature requests, since writing the first version of the code is often now cheaper than the meeting debating whether to write it. The advice is to treat the generated diff as a probe rather than a deliverable, using it to turn abstract scope arguments into concrete artifacts you can interrogate, while keeping the instinct to question who owns the behavior after it ships.
 
 GitHub is the wrong shape for this new world (5 minute read)
 
 (blurb not generated)
 
-Don't be a meat proxy (5 minute read)
+Don't be a meat proxy (1 minute read)
+
+The author argues that pasting an LLM's raw output into Slack, PR reviews, or group chats adds no value, since anyone can query the model themselves and control their own context. He contends the actual work is reading, understanding, and validating the output, then rewriting it in your own words, so acting as a "meat proxy" that relays verbose, jargon-dense, often plausibly wrong text just shifts the effort onto the reader.
+
+Prevent cognitive debt by manually retyping LLM-generated code (5 minute read)
 
 (blurb not generated)
 
-Prevent cognitive debt by manually retyping LLM-generated code (1 minute read)
+SwiftUI After 7 Years (1 minute read)
 
-The author uses LLMs to generate code in chat, then manually retypes every line into the editor rather than accepting diffs directly. The deliberate inefficiency rebuilds the mental model that autonomous agents erode, trading roughly 10x speedup for 2x while forcing the author to slow down enough to catch hallucinations and bad design choices.
-
-SwiftUI After 7 Years (5 minute read)
-
-(blurb not generated)
-
-I don't recommend Tailwind CSS (5 minute read)
-
-(blurb not generated)
+The author argues that seven years on, SwiftUI remains a perpetual beta that trades precise engineering for the illusion of convenience, citing unpredictable layout, ever-churning data flow, and broken backward compatibility that forces developers into endless shims. Evidence includes Apple's own Landmarks tutorial failing to run and UIKit still winning head-to-head performance comparisons, which the author reads as a broader Cupertino shift from Cocoa-era craftsmanship toward "good enough" products.
 
 The Session You Cannot Take With You (5 minute read)
 
 (blurb not generated)
 
-As Larry Ellison bets the farm, Oracle says it loves AI-written code, just not in OpenJDK (1 minute read)
+As Larry Ellison bets the farm, Oracle says it loves AI-written code, just not in OpenJDK (5 minute read)
 
-Oracle publicly endorses AI-assisted coding across its business while barring AI-generated contributions from OpenJDK, citing copyright and provenance risks in code destined for the Java platform. The split reflects a widening enterprise pattern where companies embrace AI internally but wall it off from projects with strict IP-cleanliness requirements, leaving contributors to prove their patches were human-written.
+(blurb not generated)
+
+Pair Programming Earned a Lighter Code Review. AI Hasn't. (3 minute read)
+
+The author argues that the lighter code review teams give to pair-programmed PRs is a risk decision earned by decades of research showing pairing buys back roughly 15% fewer defects, plus gains in design quality and knowledge spread. Extending that same discount to AI-generated code is unjustified, since agents have no comparable track record of catching defects at the keyboard and the trust was never a flat, one-size-fits-all deal.
 
 🚀
 Launches & Tools
 
-Qwen3.8-Max: A New Bar for Coding and Cowork (5 minute read)
+Qwen3.8-Max: A New Bar for Coding and Cowork (1 minute read)
+
+Alibaba's Qwen team released Qwen3.8-Max, a model positioned around coding and agentic "cowork" workflows where the model drives multi-step tasks rather than answering one-shot prompts. The launch post frames it as a step up on code generation and long-horizon tool use, though independent benchmark comparisons against GPT-5.5 and Claude on SWE-Bench aren't in yet.
+
+Octane – React’s programming model, compiled (5 minute read)
 
 (blurb not generated)
 
-Your agent needs a computer, not a container — introducing @cloudflare/computer (1 minute read)
-
-Cloudflare released an early preview of @cloudflare/computer, an agent runtime that hands each agent its own computer and decides whether the code runs in an isolate, a container sandbox, or a browser. The package leans on Cloudflare's isolate primitive rather than per-agent containers, betting that isolates hibernate when idle and scale horizontally in ways containerized compute cannot as concurrent agents grow into the millions.
-
-Workers RPC now works across Python and JavaScript (1 minute read)
-
-Cloudflare extended Workers RPC to work across Python and JavaScript, letting a JavaScript Worker call methods defined in a Python Worker and vice versa with no schemas, protobuf, or dependencies. The system translates Structured Cloneable types across languages automatically, propagates exceptions to the call site, and requires only a Service binding, so cross-language calls behave like ordinary promise- or future-returning function calls.
-
-Bonsai: Janestreet's UI Library (1 minute read)
-
-Jane Street open-sourced Bonsai, an OCaml UI library for building reactive web apps where components are purely functional state machines and every value is incrementally recomputed only when its inputs change. Unlike React-style frameworks that fuse state, incrementality, and rendering into the component, Bonsai composes those primitives separately and, being OCaml, lets you share the same types across frontend and backend.
-
-Flint: A Visualization Language for the AI Era (5 minute read)
+Your agent needs a computer, not a container — introducing @cloudflare/computer (5 minute read)
 
 (blurb not generated)
 
-Cloudflare Workers and Containers now support inbound TCP connections and gRPC (1 minute read)
-
-Cloudflare added inbound TCP support to Workers and Containers, introducing a `connect(socket)` handler that accepts sockets from its Spectrum ingress proxy and lets a Worker route them to another Worker, a Durable Object, or a container. The release enables full-duplex bi-directional gRPC from Containers and lets Workers serve unary and server-streaming gRPC APIs via gRPC-web, with Cloudflare converting requests automatically. Currently in private beta.
-
-Hashimoto’s Superlogical bets that agentic software development needs more than a better terminal (2 minute read)
-
-Mitchell Hashimoto's new startup Superlogical released a server-side multiplexer that stores authoritative session state on the server and streams raw terminal data to clients, which reconstruct the session locally via the libghostty rendering engine. Unlike tmux, which preserves one human's terminal across disconnects, it keeps long-running sessions alive across desktop, mobile, and web so developers and AI agents can share, resume, and monitor hours-long agent runs without losing execution context.
-
-Show HN: Syncular – offline-first SQL sync with TypeScript and Rust cores (5 minute read)
+Workers RPC now works across Python and JavaScript (5 minute read)
 
 (blurb not generated)
 
-Solid Queue 1.6.0 now supports fiber workers (5 minute read)
+Bonsai: Janestreet's UI Library (5 minute read)
 
 (blurb not generated)
 
-Octane – React's programming model, compiled (1 minute read)
+Flint: A Visualization Language for the AI Era (1 minute read)
 
-Octane is a compiled React-alternative framework that ports React's hooks, Suspense, and actions to an ahead-of-time compiler with no virtual DOM, dropping dependency arrays and the rules of hooks by tracking what effects, memos, and callbacks actually capture. Components stay plain functions and existing .tsx keeps working, so teams can migrate one .tsrx component at a time while gaining parallel use() calls, streaming SSR, and direct keyed DOM updates.
+Flint compiles a single compact chart spec into native output for Vega-Lite, ECharts, Chart.js, Plotly, and Excel, deriving scales, axes, and layout automatically from the data and 70+ semantic types like `Rank` or `Country` so agents skip manual configuration. Microsoft Research ships it as a JavaScript/TypeScript library plus a `flint-chart-mcp` server, letting LLM agents create, validate, and render charts inside chat environments from one human-editable input.
+
+Cloudflare Workers and Containers now support inbound TCP connections and gRPC (5 minute read)
+
+(blurb not generated)
+
+Hashimoto’s Superlogical bets that agentic software development needs more than a better terminal (5 minute read)
+
+(blurb not generated)
+
+Show HN: Syncular – offline-first SQL sync with TypeScript and Rust cores (1 minute read)
+
+Syncular is an offline-first SQL sync framework where each client keeps a real local SQLite database (OPFS in the browser, native elsewhere), optimistic writes flow through an outbox, and a single ordered commit log on the server stays authoritative. It ships parallel TypeScript and Rust cores held in lockstep by a spec-first conformance suite, with fault injection at the transport layer and banned test sleeps.
+
+Gap Decorations Are Now Available, Here’s What’s New (1 minute read)
+
+CSS gap decorations are now available in Chrome and Edge starting with version 149, extending the column-rule property to grid and flexbox layouts and adding a new row-rule property for styling gaps along both axes. The feature replaces the old border and pseudo-element hacks developers relied on, works as a progressive enhancement that degrades cleanly in unsupporting browsers, and has a polyfill in development for hard dependencies.
+
+Solid Queue 1.6.0 now supports fiber workers (1 minute read)
+
+Solid Queue 1.6.0 adds a fiber worker execution mode, letting Rails jobs run on a single Async reactor thread instead of a thread pool. You configure `fibers: 100` per worker instead of a thread count, which suits I/O-bound work like LLM calls at the cost of requiring the Async gem and fiber isolation (`config.active_support.isolation_level = :fiber`).
+
+AirLLM 70B inference with single 4GB GPU (1 minute read)
+
+AirLLM runs 70B models on a single 4GB GPU without quantization, distillation, or pruning by loading transformer layers sequentially during inference. Its latest release streams one MoE expert at a time to fit even larger models, running DeepSeek-V3 (671B) on ~12GB and Kimi K3 (2.8T) on 3.72GB of VRAM, with the trade-off being slower per-token inference from repeated weight loading.
 
 Meshdiff – visually compare two STL versions in the browser, client-side (5 minute read)
 
 (blurb not generated)
 
-Show HN: Fuse – statically typed functional programming language (5 minute read)
+Show HN: Fuse – statically typed functional programming language (1 minute read)
 
-(blurb not generated)
+Fuse is a statically typed, purely functional language with higher-kinded types and trait-based ad-hoc polymorphism, drawing syntax from Rust, Python, Scala, and Haskell. It compiles through the GRIN whole-program optimizer to LLVM-generated native code, and requires type signatures only on functions, inferring everything else via bidirectional type checking.
 
 CPU-Friendly Long-Context Encoders (5 minute read)
 
 (blurb not generated)
 
-Get a Remote Terminal With One Binary, One URL, and Zero Config (1 minute read)
+Get a Remote Terminal With One Binary, One URL, and Zero Config (5 minute read)
 
-BitBang is an open framework by Rich LeGrand that establishes encrypted peer-to-peer connections between two machines over WebRTC, with no VPN, port forwarding, or account setup required. Its bitbang-cli tool spins up a browser-based remote terminal, file transfer, and web-app access from a single static binary and a shared QR code or URL, relying on a trustless signaling server only to broker the initial connection.
+(blurb not generated)
 
 F*: A general-purpose proof-oriented programming language (5 minute read)
 
@@ -192,24 +200,24 @@ MCP gets its biggest architectural update yet (5 minute read)
 
 (blurb not generated)
 
-Show HN: Shitty – fast terminal. Memory-unsafe and faster than yours (5 minute read)
+Show HN: Shitty – fast terminal. Memory-unsafe and faster than yours (1 minute read)
 
-(blurb not generated)
+Shitty is a terminal emulator that keeps state on the CPU and renders cells through native GPU backends, Vulkan on Linux and Metal on macOS, aiming for low latency, fast startup, and predictable resource use. It ships as one self-contained binary with embedded fonts, a fuzzed total parser state machine, grapheme-cluster Unicode handling, and over 5,000 conformance tests harvested from kitty, xterm, alacritty, and ghostty suites.
 
 🎁
 Miscellaneous
 
-Ruby on Rails Patches Critical Vulnerability (5 minute read)
+SQLite Critical CVEs or LLM Slop? (1 minute read)
+
+JFrog security researchers debunked a batch of critical SQLite CVEs after finding the advisories were LLM-generated, with cited functions like exprComputeOperands() not existing in the flagged versions and PoC payloads that triggered no crash under AddressSanitizer. NVD and CISA's ADP had already flagged the reports as critical, and Red Hat initially scored one at 10.0 before downgrading it to 7.6, exposing how fabricated advisories can propagate through the CVE tracking system.
+
+KindaRails2Shell threatens Ruby on Rails apps (CVE-2026-66066) (5 minute read)
 
 (blurb not generated)
 
-KindaRails2Shell threatens Ruby on Rails apps (CVE-2026-66066) (1 minute read)
+Rails patches critical Active Storage flaw with RCE potential (1 minute read)
 
-Researchers disclosed KindaRails2Shell (CVE-2026-66066), a critical flaw in Rails Active Storage that lets an unauthenticated attacker upload a file disguised as an image and read arbitrary files off the server, including secret_key_base and credentials that can escalate to remote code execution. It stems from Active Storage passing uploads to libvips, which opens unsafe formats like MATLAB and SVG; patch to 7.2.3.2, 8.0.5.1, or 8.1.3.1.
-
-Rails patches critical Active Storage flaw with RCE potential (5 minute read)
-
-(blurb not generated)
+The Rails team patched CVE-2026-66066, a critical Active Storage flaw that lets an unauthenticated attacker upload a crafted image to read arbitrary server files and potentially reach RCE when libvips handles thumbnail generation. Maintainers released fixes for the 7.2, 8.0, and 8.1 branches and urge rotating secret_key_base and other exposed credentials, having disclosed full details early after public PoC exploits appeared.
 
 GitHub, PyPI add time-based defenses against supply chain attacks (5 minute read)
 

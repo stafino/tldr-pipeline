@@ -6,17 +6,21 @@ TLDR DevOps 2026-08-03
 📱
 News & Trends
 
-Cortex completes OSTIF security audit (1 minute read)
+Gateway API v1.6: TCPRoute and UDPRoute Graduate to Standard (2 minute read)
 
-Cortex, the multi-tenant long-term storage backend for Prometheus and OpenTelemetry, completed a Quarkslab security audit funded by OSTIF and the CNCF that focused on the tenant boundary and cluster operations. The whitebox review surfaced seven findings (six medium, one low), all now fixed in the latest release, alongside custom threat documentation and recommendations for future security work.
+Gateway API v1.6 promoted TCPRoute and UDPRoute to Standard on the v1 API, giving raw L4 TCP and UDP workloads like databases, DNS, and VoIP a portable way to route through a Gateway instead of falling back to plain Services or implementation-specific CRDs. The release also splits experimental resources into a separate gateway.networking.x-k8s.io API group, and deprecates the v1alpha2 route versions ahead of removal in a future release.
+
+Cortex completes OSTIF security audit (5 minute read)
+
+(blurb not generated)
 
 Post-quantum authentication to origins is now supported (5 minute read)
 
 (blurb not generated)
 
-Hashimoto’s Superlogical bets that agentic software development needs more than a better terminal (2 minute read)
+Hashimoto’s Superlogical bets that agentic software development needs more than a better terminal (5 minute read)
 
-Mitchell Hashimoto's new startup Superlogical launched a server-side multiplexer that stores authoritative session state on the server and streams raw terminal output to desktop, mobile, and web clients, letting developers and AI coding agents resume and share long-running sessions without losing context. Unlike tmux, which was built for one human watching one terminal, it tracks whether a background agent is blocked, waiting on approval, or still working, though analysts say the broader vision is unproven.
+(blurb not generated)
 
 OpenTelemetry has graduated… Now what? (5 minute read)
 
@@ -24,11 +28,11 @@ OpenTelemetry has graduated… Now what? (5 minute read)
 
 Your Azure DevOps pipelines have a 2027 deadline, and the clock has just started (5 minute read)
 
+Microsoft deprecated the Azure DevOps issuer for workload identity federation on July 1, 2026, giving teams until July 1, 2027 before Service Connections built on the old vstoken.dev.azure.com issuer stop authenticating to Azure. The portal migrates connections one at a time in a couple of minutes each, so orgs running hundreds will need the undocumented MigrateToEntraIssuer REST call, and only single-tenant Entra apps and Managed Identities in the public cloud are affected.
+
+KindaRails2Shell threatens Ruby on Rails apps (CVE-2026-66066) (5 minute read)
+
 (blurb not generated)
-
-KindaRails2Shell threatens Ruby on Rails apps (CVE-2026-66066) (1 minute read)
-
-Researchers disclosed KindaRails2Shell (CVE-2026-66066), a critical Active Storage flaw that lets an unauthenticated attacker upload a booby-trapped image and read arbitrary files off a Rails server, exposing secret_key_base and often a path to remote code execution. It hits default vips-processor setups since Rails 7, so patch to Active Storage 7.2.3.2, 8.0.5.1, or 8.1.3.1 wherever a feature serves back processed image variants.
 
 Critical OpenWrt DHCPv6 Flaw Could Let Unauthenticated Attackers Run Code as Root (5 minute read)
 
@@ -49,17 +53,21 @@ Federating clusters for zero-downtime Kubernetes (5 minute read)
 
 (blurb not generated)
 
+How to Run Isolated Tenant Kubernetes Clusters on Shared GPU Infrastructure (1 minute read)
+
+NVIDIA's developer blog documents a pattern for giving each team its own isolated Kubernetes control plane without splitting the underlying GPU hardware. The setup pairs vCluster, which provisions per-team API servers, CRDs, and RBAC indistinguishable from a dedicated cluster, with KAI Scheduler, which carves a shared GPU pool into per-team quotas. The tutorial runs three tenant clusters on a single NVIDIA L40S, and the authors note the same queue hierarchy and node pool scale to hundreds of GPU nodes and dozens of teams.
+
 Control Reliability Engineering (CRE): Applying SRE Principles to Cybersecurity Controls (5 minute read)
 
-(blurb not generated)
+Phil Venables argues that most breaches trace to security controls that were assumed operational but were actually broken or misconfigured when needed, and proposes Control Reliability Engineering (CRE) to fix it. The framework ports SRE discipline directly onto security controls: SLIs and SLOs to define a healthy control, error budgets to govern acceptable decay, and continuous control monitoring plus root-cause analysis to catch drift before an attacker does.
 
 Session revocations at scale (5 minute read)
 
 (blurb not generated)
 
-Smaller, faster, safer: running Kimi and GLM at scale (1 minute read)
+Smaller, faster, safer: running Kimi and GLM at scale (5 minute read)
 
-Cloudflare's Workers AI team detailed three techniques for serving Moonshot's Kimi K-series and Z.ai's GLM models efficiently on shared H200 GPUs: quantizing the KV cache to FP8, compressing model weights, and protecting the shared cache. FP8 KV caching doubles resident context on Kimi K2.6 from roughly 686,000 to 1.37 million tokens with no accuracy loss, packing more concurrent requests per GPU to cut per-customer cost. All benchmarks run on the open-source SGLang serving framework.
+(blurb not generated)
 
 Scaling StreamHub: Transitioning from Kinesis to Kafka for 145 Billion Daily Events (5 minute read)
 
@@ -73,13 +81,17 @@ The Economic Benefit of Refactoring (5 minute read)
 
 (blurb not generated)
 
-Secure every commit to production with Claude and GitLab (2 minute read)
+Secure every commit to production with Claude and GitLab (5 minute read)
 
-GitLab's engineering blog walks through the five handoffs in a Claude-to-GitLab security workflow, arguing that in-session vulnerability fixes cover only the moment of authoring while merges, dependency updates, and infra changes still need governance on the path to production. The piece connects Claude Security to GitLab via the MCP server, so scanning, policy enforcement, and audit-evidence collection for SOC 2, PCI DSS, and FedRAMP happen automatically. It also covers gating what code and business context leave your environment before any model sees it.
+(blurb not generated)
 
 Reality-based Network Operations (5 minute read)
 
 (blurb not generated)
+
+GEM Training: How Meta Doubled the Efficiency of Its LLM-Scale Ads Foundation Model (1 minute read)
+
+Meta detailed how it scaled GEM, the foundation model behind Instagram and Facebook ads recommendations, to LLM-scale training on several thousand latest-gen GPUs. The team doubled end-to-end efficiency to 20-25% Model FLOPs Utilization while growing training FLOPs 4x in 12 months, using custom recommendation kernels, MXFP8 precision, and topology-aware 5D parallelism. The writeup is a reminder that LLM training recipes do not transfer cleanly to trillion-parameter recommendation models.
 
 Finding bugs in Raft implementations (5 minute read)
 
@@ -97,29 +109,29 @@ Why Intune Devices Became Noncompliant After the July Windows Update (5 minute r
 
 (blurb not generated)
 
-Geography is the latency floor you can't move (3 minute read)
-
-The author measured round-trip times from Tokyo to AWS regions worldwide and found a hard latency floor set by physics: 5ms locally, 166ms to US East, 373ms to Cape Town, a 70x spread that no model optimization can touch. Because the US round trip alone consumed 55–92% of the translation deadline, the biggest win came from placement, not code. Moving the inference server from the US to Tokyo cut ~160ms, more than every quantization and GPU tweak combined.
-
 ⚒️
 Launches & Tools
 
-Your agent needs a computer, not a container — introducing @cloudflare/computer (1 minute read)
-
-Cloudflare released an early preview of @cloudflare/computer, an agent runtime that gives each agent its own computer while the platform decides whether the code runs in an isolate, a container sandbox, or a browser. The pitch is scale: Cloudflare argues there isn't enough compute anywhere to give hundreds of millions of concurrent agents their own container, so it leans on isolates that spin up fast, hibernate when idle, and store the agent's state.
-
-Cloudflare Workers and Containers now support inbound TCP connections and gRPC (1 minute read)
-
-Cloudflare added inbound TCP and gRPC support to Workers and Containers, introducing a `connect(socket)` handler that accepts sockets from Spectrum and can route them to other Workers, Durable Objects, or containerized gRPC servers. Workers can now serve unary and server-streaming gRPC APIs via gRPC-web with automatic conversion, and Containers get full-duplex bi-directional gRPC, all available in private beta.
-
-Introducing the Billable Usage API: programmatic cost visibility for Cloudflare (1 minute read)
-
-Cloudflare launched a Billable Usage API for self-serve accounts, exposing per-product usage and cost through a single endpoint covering Workers, R2, D1, Workers AI, Vectorize, Images, and Stream. Column names map to the FOCUS FinOps spec, so teams already ingesting cost data from other providers can pull Cloudflare spend into the same toolchain, though data currently refreshes only once daily.
-
-Workers RPC now works across Python and JavaScript (1 minute read)
-
-Cloudflare extended Workers RPC to work across Python and JavaScript, letting a Python Worker call methods on a TypeScript Worker (and vice versa) with no schemas, protobuf, or serialization glue. The system translates types across languages automatically, so teams can wire multi-language services together with a single Service binding and treat cross-language calls like ordinary promise- or future-returning function calls.
-
-Show HN: NixOS-DGX-Spark – Nix and NixOS on the DGX Spark (5 minute read)
+Your agent needs a computer, not a container — introducing @cloudflare/computer (5 minute read)
 
 (blurb not generated)
+
+Cloudflare Workers and Containers now support inbound TCP connections and gRPC (5 minute read)
+
+(blurb not generated)
+
+Introducing the Billable Usage API: programmatic cost visibility for Cloudflare (5 minute read)
+
+(blurb not generated)
+
+Workers RPC now works across Python and JavaScript (5 minute read)
+
+(blurb not generated)
+
+Show HN: NixOS-DGX-Spark – Nix and NixOS on the DGX Spark (1 minute read)
+
+A developer released NixOS-DGX-Spark, an open-source project that brings Nix and NixOS to NVIDIA's DGX Spark and the Asus Ascent GX10, shipping USB images and a NixOS hardware module with a custom NVIDIA-optimized kernel for full GPU and Ethernet support. Teams can run the Nix dev shells and playbooks directly on stock DGX OS via nix-gl-host, or install NixOS outright for reproducible CUDA environments after a required firmware update.
+
+Cortex Framework v7 is GA: Build agentic workflows without disrupting SAP operations (2 minute read)
+
+Google Cloud made Cortex Framework v7 generally available, adding purpose-built data product accelerators that turn raw SAP ERP tables into semantically rich, agent-ready data products deployed directly in BigQuery and Knowledge Catalog. Orchestration now runs on Dataform for version-controlled, modular workflows, letting data teams feed Gemini Enterprise agents accurate business context without slowing mission-critical SAP operations or standing up separate pipeline infrastructure.
