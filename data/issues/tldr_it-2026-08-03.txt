@@ -26,17 +26,21 @@ The majority of corporate IT is now off premises for the first time (5 minute re
 
 (blurb not generated)
 
-Four US states rolled back or paused data center tax incentives, and nine others are weighing repeal measures, potentially adding 7% or more to equipment costs (Ann Davis Vaughan/The Information) (1 minute read)
+As Larry Ellison bets the farm, Oracle says it loves AI-written code, just not in OpenJDK (1 minute read)
 
-Four US states rolled back or paused data center tax incentives, with nine more weighing repeal measures that could add 7% or more to equipment costs. Enterprises planning on-premise or colocation buildouts in affected states face higher effective TCO on server and networking hardware, making incentive stability a new variable in site-selection and capacity-expansion decisions.
+Oracle barred AI-generated code from OpenJDK contributions, even as CEO Larry Ellison pours capital into AI infrastructure, citing provenance and copyright risk in the Java platform's core codebase. The split policy shows that enterprises leaning on AI coding tools still face carve-outs where IP-liability exposure outweighs productivity gains, a signal for teams governing contributions to critical open-source stacks in their vendor supply chain.
 
-N-able Says Attackers Take Over N-central Servers After Initial Fix Proves Incomplete (1 minute read)
+N-able Says Attackers Take Over N-central Servers After Initial Fix Proves Incomplete (5 minute read)
 
-N-able confirmed attackers exploited an authentication bypass in its N-central RMM platform to gain remote administrative access, then pivoted through the built-in Take Control tool to install persistent Cloudflare tunnels on managed endpoints. The initial fix was incomplete, so every customer must move to build 2026.3.1.7, released August 2, and separately hunt for and remove the tunnel services, which survive the N-central upgrade.
+(blurb not generated)
 
-CISA Alert: Water Sector PLC Targeting (1 minute read)
+Water system cyberattacks spread to Georgia, Michigan amid US-Iran conflict (1 minute read)
 
-CISA warned on July 30 that threat actors are increasingly compromising internet-exposed PLCs in the water and wastewater sector, changing device passwords and IP addresses to lock out operators and force boil-water notices and manual operation. The alert names Rockwell Automation, Siemens, and Schneider Electric equipment and flags operator-installed cellular modems as an undocumented blind spot, and it directs utilities to pull OT off the internet and route remote access through VPNs or gateways.
+Georgia and Michigan reported cyberattacks on municipal water systems, extending a wave of intrusions tied to an Iran-linked crew amid escalating US-Iran tensions. IT and OT leaders at utilities running exposed SCADA and HMI systems face renewed pressure to segment networks, enforce MFA, and audit remote-access paths before the campaign spreads further.
+
+CISA Alert: Water Sector PLC Targeting (5 minute read)
+
+(blurb not generated)
 
 GitHub, PyPI add time-based defenses against supply chain attacks (5 minute read)
 
@@ -46,13 +50,13 @@ Russian spies take their half-click email attack from Zimbra to Outlook (5 minut
 
 (blurb not generated)
 
-Iran suspected of conducting cyberattacks on US water suppliers in 45 municipalities — small towns mostly targeted, with utilities switching to manual control (1 minute read)
+Iran suspected of conducting cyberattacks on US water suppliers in 45 municipalities — small towns mostly targeted, with utilities switching to manual control (5 minute read)
 
-Water utilities in 45 US municipalities across seven states, mostly small towns like Braham, Minnesota, reported cyberattacks on their control systems, with officials and the FBI suspecting Iranian state actors and no financial demands made. Several utilities have fallen back to manual control while they assess aging, internet-connected SCADA systems, exposing how thin the OT security budgets are at the small municipalities that run critical infrastructure.
+(blurb not generated)
 
-Microsoft brings a long awaited "game changer" Windows 11 tool for IT admins (1 minute read)
+Microsoft brings a long awaited "game changer" Windows 11 tool for IT admins (5 minute read)
 
-Microsoft introduced a long-requested Windows 11 management tool aimed at IT administrators, addressing a gap admins have flagged since the OS launched. For enterprise fleets standardized on Windows 11, the addition folds a previously manual or third-party task into native tooling, reducing reliance on separate utilities and simplifying the endpoint-management stack IT already runs through Intune and Configuration Manager.
+(blurb not generated)
 
 Tech sector pours $1T into AI and sends customers the bill (5 minute read)
 
@@ -62,9 +66,17 @@ Your AI agents can reach data no one approved (5 minute read)
 
 (blurb not generated)
 
-A deep dive into Nvidia's Vera CPU and the Olympus cores that power it (1 minute read)
+Recent SonicWall Vulnerabilities Exploited in Ransomware Attacks (1 minute read)
 
-Nvidia detailed its Vera CPU and the custom Arm-based Olympus cores behind it, packing 88 cores, 176 threads, up to 1.5 TB of memory, and 1.8 TB/s of NVLink bandwidth to feed its next-generation Rubin accelerators. The custom-core approach signals Nvidia moving further away from off-the-shelf Arm Neoverse designs, tightening its grip on the full rack and pressuring Intel and AMD in datacenter CPUs.
+The INC Ransomware group has emerged as the most active actor exploiting two SonicWall SMA1000 flaws, CVE-2026-15409 (CVSS 10) and CVE-2026-15410, which let unauthenticated attackers tunnel to restricted services and escalate to root. Patched July 14 and added to CISA's KEV catalog the same day, the bugs were exploited as zero-days since June 22, and INC has since listed US and government victims on its leak site.
+
+US Water Cyberattacks Extend Beyond Minnesota to at Least 6 Other States (1 minute read)
+
+A cyber campaign against US water and wastewater operators has spread beyond Minnesota to at least seven states, including Michigan, Georgia, and South Dakota, with federal investigators and a Minnesota Fusion Center report tying the activity to Iran-linked hacking groups. Most facilities reported no operational impact and safe drinking water, but the OT-focused breach at more than 30 Minnesota sites underscores exposure across enterprise SCADA and ICS deployments in critical infrastructure.
+
+A deep dive into Nvidia's Vera CPU and the Olympus cores that power it (5 minute read)
+
+(blurb not generated)
 
 LG to Ban Residential Proxies from Smart TV Apps (5 minute read)
 
@@ -74,17 +86,12 @@ UK AISI/CAISI Preliminary Assessment of Kimi K3's Cyber Capabilities (5 minute r
 
 (blurb not generated)
 
-Post-quantum authentication to origins is now supported (5 minute read)
+🧠
+Analysis & Opinions
 
-(blurb not generated)
+AI’s measurement crisis is over. The translation crisis is next (3 minute read)
 
-Google Chrome may soon block New Tab hijacker extensions by default (5 minute read)
-
-(blurb not generated)
-
-Your Azure DevOps pipelines have a 2027 deadline, and the clock has just started (5 minute read)
-
-Microsoft deprecated the Azure DevOps issuer for workload identity federation on July 1, 2026, with full retirement set for July 1, 2027, and every Azure Pipelines Service Connection built before late 2025 needs migrating to the Entra issuer or it stops authenticating to Azure. The portal converts connections one at a time, so shops with hundreds of single-tenant connections in the public cloud will need to script the undocumented MigrateToEntraIssuer REST call to finish before the deadline.
+The author argues the 2025 "AI ROI crisis" was a measurement failure, not an AI failure: MIT's GenAI Divide report counted a pilot as a loss unless it showed KPI impact within six months, so projects that were never instrumented registered as failures despite $30-40B in enterprise spend. The fix is problem selection, not better models, which explains 2026's pivot to employee-facing agents in support, sales, and IT help desks where trusted metrics already exist.
 
 🤝
 Launches & Partnerships
@@ -92,3 +99,7 @@ Launches & Partnerships
 Snowflake launches AI agent governance layer to track activity, control costs (5 minute read)
 
 (blurb not generated)
+
+Introducing the Billable Usage API: programmatic cost visibility for Cloudflare (1 minute read)
+
+Cloudflare launched a Billable Usage API for self-serve accounts, a single endpoint that returns usage and cost broken down by product and service period across Workers, R2, D1, Workers AI, Vectorize, Images, and Stream. Column names map to the FOCUS FinOps spec, so teams already ingesting cost data from other providers can pull Cloudflare spend into the same toolchain and give automated agents programmatic visibility into what they are spending.

@@ -1,9 +1,31 @@
 {
   "date": "2026-08-03",
   "newsletter": "tldr_ai",
-  "fetched_at": "2026-08-03T08:08:51.790217+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-08-03T14:27:12.762638+00:00",
+  "tldr_titles": [
+    "Qwen3.8-Max: A New Bar for Coding and Cowork",
+    "Ten advances in mathematics and theoretical computer science",
+    "Microsoft tests new MAI Realtime voice model",
+    "Ramp SWE-Bench",
+    "The Math Superstar Who's Terrified of AI\u2014and Just Took a Job at OpenAI",
+    "A new era of AI testing",
+    "APEX-Accounting: AI Productivity Benchmark for Accounting",
+    "When Genius Fails\u2014The Intellectual Arrogance of the AI Labs",
+    "Google is aiming to close feature gaps on Gemini desktop",
+    "Claude Cyber Evaluations"
+  ],
+  "tldr_matched": [
+    false,
+    true,
+    true,
+    false,
+    true,
+    false,
+    false,
+    false,
+    true,
+    true
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -34,11 +56,19 @@
       "score": 82.0,
       "title": "Investigating three real-world incidents in our cybersecurity evaluations",
       "url": "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals",
+      "matched_tldr_idx": 9,
+      "similarity": 1.0
+    },
+    {
+      "rank": 5,
+      "score": 82.0,
+      "title": "The OpenAI Hack Shows the Genie Is Out of the Bottle",
+      "url": "https://www.schneier.com/blog/archives/2026/08/the-openai-hack-shows-the-genie-is-out-of-the-bottle.html",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 5,
+      "rank": 6,
       "score": 78.0,
       "title": "Seedance 2.5",
       "url": "https://seed.bytedance.com/en/blog/one-take-creation-flexible-referencing-introducing-seedance-2-5",
@@ -46,7 +76,7 @@
       "similarity": null
     },
     {
-      "rank": 6,
+      "rank": 7,
       "score": 78.0,
       "title": "Anthropic Rejected Blanket Bans on Open-Weight Models",
       "url": "https://www.anthropic.com/news/position-open-weights-models",
@@ -54,7 +84,7 @@
       "similarity": null
     },
     {
-      "rank": 7,
+      "rank": 8,
       "score": 78.0,
       "title": "Our position on open-weights models",
       "url": "https://www.anthropic.com/news/position-open-weights-models",
@@ -62,7 +92,7 @@
       "similarity": null
     },
     {
-      "rank": 8,
+      "rank": 9,
       "score": 78.0,
       "title": "Why compute might get 10x+ more expensive in coming years",
       "url": "https://www.dwarkesh.com/p/why-compute-might-get-10x-more-expensive",
@@ -70,18 +100,10 @@
       "similarity": null
     },
     {
-      "rank": 9,
+      "rank": 10,
       "score": 78.0,
       "title": "Claude AI Just Cracked a Post-Quantum Test Scheme and Found a Faster 7-Round AES Attack",
       "url": "https://thehackernews.com/2026/07/claude-ai-just-cracked-post-quantum.html",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 10,
-      "score": 76.0,
-      "title": "Alibaba says its 2.4T-parameter Qwen3.8-Max tops Kimi K3 on some benchmarks, and says it plans to release the weights of Qwen3.8-Max and Qwen3.8-27B next week (Luz Ding/Bloomberg)",
-      "url": "https://www.techmeme.com/260802/p16#a260802p16",
       "matched_tldr_idx": null,
       "similarity": null
     },
@@ -130,8 +152,8 @@
       "score": 74.0,
       "title": "Ten advances in mathematics and theoretical computer science",
       "url": "https://openai.com/index/ten-advances-in-mathematics",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 1,
+      "similarity": 1.0
     },
     {
       "rank": 17,
@@ -143,6 +165,22 @@
     },
     {
       "rank": 18,
+      "score": 72.0,
+      "title": "Critical CVE issued for hallucinated SQLite vulnerability",
+      "url": "https://research.jfrog.com/post/sqlite-critical-cves-or-llm-slops/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 19,
+      "score": 71.0,
+      "title": "China&#8217;s Alibaba takes another swipe at America\u2019s AI supremacy",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/974342/alibaba-qwen-max-open-weight-ai",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 20,
       "score": 71.0,
       "title": "Thinking Machines launched open-weight Inkling-Small",
       "url": "https://www.testingcatalog.com/thinking-machines-launched-open-weight-inkling-small/",
@@ -150,7 +188,7 @@
       "similarity": null
     },
     {
-      "rank": 19,
+      "rank": 21,
       "score": 71.0,
       "title": "Opus 5 on Vending-Bench: Once Again the Best Capitalist, Once Again Misaligned",
       "url": "https://andonlabs.com/blog/opus-5-vending-bench",
@@ -158,7 +196,7 @@
       "similarity": null
     },
     {
-      "rank": 20,
+      "rank": 22,
       "score": 71.0,
       "title": "How ChatGPT Optimizes its Agent Loop: Harness, API, and Inference",
       "url": "https://blog.bytebytego.com/p/how-chatgpt-optimizes-its-agent-loop",
@@ -166,7 +204,23 @@
       "similarity": null
     },
     {
-      "rank": 21,
+      "rank": 23,
+      "score": 70.0,
+      "title": "Smaller, faster, safer: running Kimi and GLM at scale",
+      "url": "https://blog.cloudflare.com/smaller-faster-safer-models/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 24,
+      "score": 68.0,
+      "title": "London-based AI chip startup Olix raised $312M led by Fundomo, with participation from Arm, at a $3.3B valuation, up from $1B+ after raising $220M in February (Tim Bradshaw/Financial Times)",
+      "url": "https://www.techmeme.com/260803/p9#a260803p9",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 25,
       "score": 68.0,
       "title": "Alibaba\u2019s Qwen3.8-Max AI Model Claims Benchmark Scores Rivaling Anthropic",
       "url": "https://www.bloomberg.com/news/articles/2026-08-03/alibaba-drops-another-china-ai-model-with-breakthrough-performance",
@@ -174,7 +228,7 @@
       "similarity": null
     },
     {
-      "rank": 22,
+      "rank": 26,
       "score": 68.0,
       "title": "Report claims China is distilling U.S. frontier models to power military AI applications",
       "url": "https://siliconangle.com/2026/08/02/report-claims-china-distilling-u-s-frontier-models-power-military-ai-applications/",
@@ -182,7 +236,7 @@
       "similarity": null
     },
     {
-      "rank": 23,
+      "rank": 27,
       "score": 68.0,
       "title": "Alibaba releases Qwen3.8-Max, challenging GPT-5.6 Sol and Claude Fable 5 on AI benchmarks",
       "url": "https://www.neowin.net/news/alibaba-releases-qwen38-max-challenging-gpt-56-sol-and-claude-fable-5-on-ai-benchmarks/?utm_source=rss",
@@ -190,7 +244,7 @@
       "similarity": null
     },
     {
-      "rank": 24,
+      "rank": 28,
       "score": 68.0,
       "title": "How GPT-5.6 fuses frontier intelligence with frontier efficiency",
       "url": "https://openai.com/index/gpt-5-6-frontier-intelligence-efficiency/",
@@ -198,7 +252,7 @@
       "similarity": null
     },
     {
-      "rank": 25,
+      "rank": 29,
       "score": 68.0,
       "title": "Not just OpenAI: Now Anthropic says its internal models got online and cyberattacked 3 other organizations",
       "url": "https://venturebeat.com/security/not-just-openai-now-anthropic-says-its-internal-models-got-online-and-cyberattacked-3-other-organizations",
@@ -206,15 +260,7 @@
       "similarity": null
     },
     {
-      "rank": 26,
-      "score": 68.0,
-      "title": "Experts say US law is unprepared for rogue AI agents and models, as recent OpenAI and Anthropic incidents raise questions over legal liability and repercussions (Lily Hay Newman/Wired)",
-      "url": "https://www.techmeme.com/260802/p8#a260802p8",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 27,
+      "rank": 30,
       "score": 68.0,
       "title": "UK AISI/CAISI Preliminary Assessment of Kimi K3's Cyber Capabilities",
       "url": "https://www.nist.gov/news-events/news/2026/07/uk-aisi-caisi-preliminary-assessment-kimi-k3s-cyber-capabilities",
@@ -222,7 +268,15 @@
       "similarity": null
     },
     {
-      "rank": 28,
+      "rank": 31,
+      "score": 68.0,
+      "title": "AI migrated legacy COBOL programs to Java, bugs included",
+      "url": "https://arxiv.org/abs/2607.28271",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 32,
       "score": 68.0,
       "title": "CPU-Friendly Long-Context Encoders",
       "url": "https://huggingface.co/blog/LiquidAI/lfm2-5-encoders",
@@ -230,7 +284,7 @@
       "similarity": null
     },
     {
-      "rank": 29,
+      "rank": 33,
       "score": 68.0,
       "title": "\u201cStateful systems are incredibly hard to build\u201d: How Perplexity thinks about AI agent sandboxes",
       "url": "https://thenewstack.io/perplexity-space-agent-sandboxes/",
@@ -238,15 +292,39 @@
       "similarity": null
     },
     {
-      "rank": 30,
+      "rank": 34,
       "score": 66.0,
-      "title": "A detailed recap of the real-world target hacks by OpenAI's and Anthropic's models, exposing failures in AI alignment training and meaningful supervision (Zvi Mowshowitz/Don't Worry About the Vase)",
-      "url": "https://www.techmeme.com/260803/p3#a260803p3",
+      "title": "Alibaba takes aim at OpenAI and Anthropic with Qwen3.8-Max launch",
+      "url": "https://www.infoworld.com/article/4204415/alibaba-takes-aim-at-openai-and-anthropic-with-qwen3-8-max-launch.html",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 31,
+      "rank": 35,
+      "score": 66.0,
+      "title": "The EU's AI Act enforcement powers take effect, letting it evaluate AI models before regional release, restrict market access, fine model providers, and more (Kai Nicol-Schwarz/CNBC)",
+      "url": "https://www.techmeme.com/260803/p16#a260803p16",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 36,
+      "score": 66.0,
+      "title": "Artificial Analysis: DeepSeek's V4-Flash costs $0.14/1M input and $0.28/1M output tokens, or $0.03 per test, far below Kimi K3's $0.86 and GPT-5.6 Sol's $1.86 (Eduardo Baptista/Reuters)",
+      "url": "https://www.techmeme.com/260803/p12#a260803p12",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 37,
+      "score": 66.0,
+      "title": "Import AI 467: Self-sustaining AI viruses; pacing AI progress; confusion about AI and creativity",
+      "url": "https://importai.substack.com/p/import-ai-467-self-sustaining-ai",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 38,
       "score": 66.0,
       "title": "Securing Agents Across Perplexity's Client Endpoints with Numbat",
       "url": "https://research.perplexity.ai/articles/securing-agents-across-perplexity%E2%80%99s-client-endpoints-with-numbat",
@@ -254,7 +332,7 @@
       "similarity": null
     },
     {
-      "rank": 32,
+      "rank": 39,
       "score": 65.0,
       "title": "GPT 5.6 Sol Ran a Real Business",
       "url": "https://www.bottlenecklabs.com/blog/autonomously-run-businesses",
@@ -262,7 +340,7 @@
       "similarity": null
     },
     {
-      "rank": 33,
+      "rank": 40,
       "score": 65.0,
       "title": "The Orchestrator's Tax",
       "url": "https://martinfowler.com/articles/orchestrator-tax.html",
@@ -270,7 +348,7 @@
       "similarity": null
     },
     {
-      "rank": 34,
+      "rank": 41,
       "score": 65.0,
       "title": "Visual Prompts in Video Models",
       "url": "https://visual-prompt-engineering.github.io/",
@@ -278,7 +356,7 @@
       "similarity": null
     },
     {
-      "rank": 35,
+      "rank": 42,
       "score": 64.0,
       "title": "Black Forest Labs Launches FLUX 3 Capable of Generating Images and 20-second Video with Audio",
       "url": "https://venturebeat.com/technology/black-forest-labs-launches-flux-3-capable-of-generating-images-and-20-second-video-with-audio-but-in-limited-release-to-start",
@@ -286,7 +364,7 @@
       "similarity": null
     },
     {
-      "rank": 36,
+      "rank": 43,
       "score": 64.0,
       "title": "SharedRoot; Escaping the Claude Cowork sandbox",
       "url": "https://www.accomplish.ai/blog/sharedroot-escaping-claude-cowork-sandbox/",
@@ -294,15 +372,39 @@
       "similarity": null
     },
     {
-      "rank": 37,
+      "rank": 44,
       "score": 63.0,
-      "title": "SkillSpector: NVIDIA\u2019s open-source security scanner for AI agent skills",
-      "url": "https://www.helpnetsecurity.com/2026/08/03/skillspector-open-source-agent-skill-security-scanner/",
+      "title": "Visa plans to acquire Israeli company BioCatch, which uses AI to detect fraud and distinguish legitimate users from attackers in real time, for $2.4B in cash (Katherine Hamilton/Wall Street Journal)",
+      "url": "https://www.techmeme.com/260803/p20#a260803p20",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 38,
+      "rank": 45,
+      "score": 63.0,
+      "title": "Leopold\u2019s Fall",
+      "url": "https://www.netinterest.co/p/leopolds-fall",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 46,
+      "score": 63.0,
+      "title": "Meta Earnings, Meta\u2019s Timing Problems, The Financial Tail",
+      "url": "https://stratechery.com/2026/meta-earnings-metas-timing-problems-the-financial-tail/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 47,
+      "score": 63.0,
+      "title": "DeepSeek's Retrained V4 Flash Scores 50 on Independent Intelligence Index",
+      "url": "https://www.implicator.ai/deepseeks-retrained-v4-flash-scores-50-on-independent-intelligence-index/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 48,
       "score": 63.0,
       "title": "ModelExpress: Distributing Model Artifacts at the Speed of Light",
       "url": "https://developer.nvidia.com/blog/modelexpress-distributing-model-artifacts-at-the-speed-of-light/",
@@ -310,7 +412,7 @@
       "similarity": null
     },
     {
-      "rank": 39,
+      "rank": 49,
       "score": 63.0,
       "title": "Drone-Bench",
       "url": "https://andonlabs.com/evals/drone-bench",
@@ -318,39 +420,23 @@
       "similarity": null
     },
     {
-      "rank": 40,
+      "rank": 50,
       "score": 62.0,
       "title": "OpenAI teases Astra, its next major AI model, after it solves 10 long-standing math problems",
       "url": "https://www.bleepingcomputer.com/news/artificial-intelligence/openai-teases-astra-its-next-major-ai-model-after-it-solves-10-long-standing-math-problems/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 4,
+      "similarity": 0.6890096664428711
     },
     {
-      "rank": 41,
+      "rank": 51,
       "score": 62.0,
       "title": "Exclusive: Microsoft tests new MAI Realtime voice model",
       "url": "https://www.testingcatalog.com/exclusive-microsoft-tests-new-mai-realtime-voice-model/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 2,
+      "similarity": 1.0
     },
     {
-      "rank": 42,
-      "score": 62.0,
-      "title": "A look at the US open-weight AI model ecosystem, as VCs question the revenue potential of open-weight startups like Arcee, Reflection AI, and Poolside (Wall Street Journal)",
-      "url": "https://www.techmeme.com/260802/p14#a260802p14",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 43,
-      "score": 62.0,
-      "title": "LLMs are moving from generating artifacts to creating hyper-custom worlds on demand, but still lack the ability to natively perceive and audit what they create (Andrej Karpathy/@karpathy)",
-      "url": "https://www.techmeme.com/260802/p10#a260802p10",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 44,
+      "rank": 52,
       "score": 62.0,
       "title": "How OpenAI Lost Its AI Crown\u2014and the Fight to Win It Back",
       "url": "https://www.wsj.com/tech/ai/how-openai-lost-its-ai-crownand-the-fight-to-win-it-back-7d069695?mod=rss_Technology",
@@ -358,7 +444,7 @@
       "similarity": null
     },
     {
-      "rank": 45,
+      "rank": 53,
       "score": 62.0,
       "title": "Hugging Face Diffusers Flaws Could Let Model Repositories Execute Arbitrary Code",
       "url": "https://thehackernews.com/2026/08/hugging-face-diffusers-flaws-could-let.html",
@@ -366,7 +452,15 @@
       "similarity": null
     },
     {
-      "rank": 46,
+      "rank": 54,
+      "score": 62.0,
+      "title": "Your agent needs a computer, not a container \u2014 introducing @cloudflare/computer",
+      "url": "https://blog.cloudflare.com/cloudflare-computer/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 55,
       "score": 62.0,
       "title": "Explorative modeling: Train on the best of K guesses",
       "url": "https://alexiglad.github.io/blog/2026/explorative_modeling/",
@@ -374,7 +468,15 @@
       "similarity": null
     },
     {
-      "rank": 47,
+      "rank": 56,
+      "score": 62.0,
+      "title": "Chinese hacker used DeepSeek to launch autonomous cyberattacks on vulnerable servers",
+      "url": "https://www.helpnetsecurity.com/2026/08/03/deepseek-ai-autonomous-cyberattacks-hermes-agent/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 57,
       "score": 62.0,
       "title": "PSA: Your Claude shared chats and Artifacts may have ended up on Google",
       "url": "https://techcrunch.com/2026/07/27/psa-your-claude-shared-chats-and-artifacts-may-have-ended-up-on-google/",
@@ -382,7 +484,7 @@
       "similarity": null
     },
     {
-      "rank": 48,
+      "rank": 58,
       "score": 61.0,
       "title": "China's Moonshot AI Passes Funding Goal to Hit $35 Billion Value",
       "url": "https://finance.yahoo.com/technology/ai/articles/china-moonshot-ai-passes-funding-081902952.html",
@@ -390,7 +492,7 @@
       "similarity": null
     },
     {
-      "rank": 49,
+      "rank": 59,
       "score": 61.0,
       "title": "2x, not 10x: coding with LLMs in 2026",
       "url": "https://obryant.dev/p/2x-not-10x/",
@@ -398,23 +500,7 @@
       "similarity": null
     },
     {
-      "rank": 50,
-      "score": 61.0,
-      "title": "Eval-driven development: Lessons from evaluating GenAI at scale",
-      "url": "https://medium.com/airbnb-engineering/eval-driven-development-lessons-from-evaluating-genai-at-scale-e817e5ae5788",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 51,
-      "score": 61.0,
-      "title": "Flint: A Visualization Language for the AI Era",
-      "url": "https://microsoft.github.io/flint-chart/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 52,
+      "rank": 60,
       "score": 61.0,
       "title": "Europe starts enforcing AI Act rules",
       "url": "https://sifted.eu/articles/eu-ai-act-new-rules-transparency/",
@@ -422,15 +508,7 @@
       "similarity": null
     },
     {
-      "rank": 53,
-      "score": 60.0,
-      "title": "Two independent teams used GPT-5.6 Sol Ultra on the same quantum cryptography problem, filing papers 3 hours apart, raising questions about scientific credit (Peter Hall/Scientific American)",
-      "url": "https://www.techmeme.com/260802/p15#a260802p15",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 54,
+      "rank": 61,
       "score": 60.0,
       "title": "Don't be a meat proxy",
       "url": "https://gruhn.me/blog/2026-08-03/",
@@ -438,7 +516,7 @@
       "similarity": null
     },
     {
-      "rank": 55,
+      "rank": 62,
       "score": 60.0,
       "title": "The OpenAI/Huggingface Incident: How We Should Manage the Imminent Arrival of Autonomous Hacking too Cheap to Meter",
       "url": "https://joshuasaxe181906.substack.com/p/the-openaihuggingface-incident-how",
@@ -446,7 +524,7 @@
       "similarity": null
     },
     {
-      "rank": 56,
+      "rank": 63,
       "score": 59.0,
       "title": "AI is Oil, Not God",
       "url": "https://www.notboring.co/p/ai-is-oil-not-god",
@@ -454,55 +532,15 @@
       "similarity": null
     },
     {
-      "rank": 57,
-      "score": 59.0,
-      "title": "Anthropic AI Model Finds Flaws in Tough-to-Crack Encryption Algorithms",
-      "url": "https://www.nytimes.com/2026/07/28/us/politics/anthropic-ai-encryption-security-aes.html",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 58,
+      "rank": 64,
       "score": 58.0,
-      "title": "Snowflake launches AI agent governance layer to track activity, control costs",
-      "url": "https://www.cio.com/article/4202795/snowflake-launches-ai-agent-governance-layer-to-track-activity-control-costs.html",
+      "title": "The AI Domination Race is Adding to US-China Tensions",
+      "url": "https://www.bloomberg.com/news/newsletters/2026-08-03/the-ai-domination-race-is-adding-to-us-china-tensions",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 59,
-      "score": 58.0,
-      "title": "Prentis, new AI lab co-founded by Reid Hoffman, Mark Pincus in talks to raise $100M",
-      "url": "https://techcrunch.com/2026/07/24/prentis-new-ai-lab-co-founded-by-reid-hoffman-mark-pincus-in-talks-to-raise-100m/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 60,
-      "score": 58.0,
-      "title": "OpenAI CFO Sarah Friar tells employees that annualized revenue in July topped all of Q2",
-      "url": "https://www.cnbc.com/2026/07/29/openai-cfo-sarah-friar-tells-employees-arr-in-july-topped-all-of-q2.html",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 61,
-      "score": 58.0,
-      "title": "As AI content floods the internet, Pangram raises $9M to detect it",
-      "url": "https://techcrunch.com/2026/07/29/as-ai-content-floods-the-internet-pangram-raises-9m-to-detect-it/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 62,
-      "score": 58.0,
-      "title": "For a Day, Google Made It Easy to Spoof Satellite Imagery",
-      "url": "https://www.nytimes.com/2026/08/02/technology/google-earth-ai-satellite-images.html",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 63,
+      "rank": 65,
       "score": 58.0,
       "title": "Who Governs the AI Boom?",
       "url": "https://www.bloomberg.com/news/videos/2026-08-02/who-governs-the-ai-boom-video",
@@ -510,7 +548,15 @@
       "similarity": null
     },
     {
-      "rank": 64,
+      "rank": 66,
+      "score": 58.0,
+      "title": "U.S. lawmakers request information from DoorDash on use of Chinese AI models",
+      "url": "https://www.cnbc.com/2026/07/31/us-lawmakers-doordash-chinese-ai-models.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 67,
       "score": 58.0,
       "title": "The Race to Build an American Alternative to Cheap AI From China",
       "url": "https://www.wsj.com/tech/ai/the-race-to-build-an-american-alternative-to-cheap-ai-from-china-2e99a28a?mod=rss_Technology",
@@ -518,23 +564,23 @@
       "similarity": null
     },
     {
-      "rank": 65,
+      "rank": 68,
       "score": 58.0,
       "title": "The Math Superstar Who\u2019s Terrified of AI\u2014and Just Took a Job at OpenAI",
       "url": "https://www.wsj.com/tech/ai/openai-jacob-tsimerman-fields-medal-ai-safety-391d0f79?mod=rss_Technology",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 4,
+      "similarity": 1.0
     },
     {
-      "rank": 66,
+      "rank": 69,
       "score": 58.0,
-      "title": "OpenAI's super PAC is funding AI-generated news site attacking industry critics",
-      "url": "https://www.modelrepublic.org/articles/the-reporters-at-this-news-site-are-ai-bots.-openai%E2%80%99s-super-pac-appears-to-be-using-it-to-advance-its-political-agenda",
+      "title": "EU announces new rules on AI transparency",
+      "url": "https://www.engadget.com/2228894/eu-announces-new-rules-on-ai-transparency/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 67,
+      "rank": 70,
       "score": 58.0,
       "title": "AI Companies Are Recruiting Electricians and Carpenters by the Thousands",
       "url": "https://www.nytimes.com/2026/07/29/business/economy/data-center-electricians-training.html",
@@ -542,7 +588,7 @@
       "similarity": null
     },
     {
-      "rank": 68,
+      "rank": 71,
       "score": 58.0,
       "title": "Thinking Machines Cofounder Joined OpenAI",
       "url": "https://techcrunch.com/2026/07/29/thinking-machines-co-founder-lilian-weng-left-the-company-citing-health-reasons-then-joined-openai/",
@@ -550,7 +596,7 @@
       "similarity": null
     },
     {
-      "rank": 69,
+      "rank": 72,
       "score": 58.0,
       "title": "AI's top startups are barely publishing their research",
       "url": "https://www.science.org/content/article/ai-s-top-startups-are-barely-publishing-their-research",
@@ -558,7 +604,7 @@
       "similarity": null
     },
     {
-      "rank": 70,
+      "rank": 73,
       "score": 58.0,
       "title": "Cursor removed cost information from the usage page and CSV export",
       "url": "https://forum.cursor.com/t/usage-page-to-token-amount-what/167153",
@@ -566,15 +612,23 @@
       "similarity": null
     },
     {
-      "rank": 71,
+      "rank": 74,
       "score": 57.0,
-      "title": "Index Ventures doubles down on AI with fresh $2bn fundraise",
-      "url": "https://sifted.eu/articles/index-ventures-2bn-raise-ai/",
+      "title": "OpenAI reveals how criminals used ChatGPT to run scams",
+      "url": "https://www.helpnetsecurity.com/2026/08/03/openai-disrupts-chatgpt-scam-operation/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 72,
+      "rank": 75,
+      "score": 57.0,
+      "title": "Prevent cognitive debt by manually retyping LLM-generated code",
+      "url": "https://ankursethi.com/blog/prevent-cognitive-debt-by-manually-retyping-llm-generated-code/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 76,
       "score": 57.0,
       "title": "Judge denies xAI\u2019s request to block Minnesota ban on \u2018nudify\u2019 apps",
       "url": "https://techcrunch.com/2026/08/01/judge-denies-xais-request-to-block-minnesota-ban-on-nudify-apps/",
@@ -582,7 +636,7 @@
       "similarity": null
     },
     {
-      "rank": 73,
+      "rank": 77,
       "score": 57.0,
       "title": "Anthropic is paying $1.5 billion over pirated books, but it can still legally cut up purchased ones",
       "url": "https://www.digitaltrends.com/computing/anthropic-is-paying-1-5-billion-over-pirated-books-but-it-can-still-legally-cut-up-purchased-ones/",
@@ -590,15 +644,7 @@
       "similarity": null
     },
     {
-      "rank": 74,
-      "score": 56.0,
-      "title": "Four US states rolled back or paused data center tax incentives, and nine others are weighing repeal measures, potentially adding 7% or more to equipment costs (Ann Davis Vaughan/The Information)",
-      "url": "https://www.techmeme.com/260802/p12#a260802p12",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 75,
+      "rank": 78,
       "score": 56.0,
       "title": "Wall Street Thinks It Knows How Tech Giants Will Make AI Pay",
       "url": "https://www.wsj.com/tech/ai/wall-street-thinks-it-knows-how-tech-giants-will-make-ai-pay-96f76438?mod=rss_Technology",
@@ -606,7 +652,23 @@
       "similarity": null
     },
     {
-      "rank": 76,
+      "rank": 79,
+      "score": 56.0,
+      "title": "Google Earth Disables A.I. Feature After One Day",
+      "url": "https://www.nytimes.com/2026/08/02/technology/google-earth-ai-satellite-images.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 80,
+      "score": 56.0,
+      "title": "AI enthusiast unlocks and mods BIOS with Claude Code \u2014 AI defeats RSA-2048 signature checks and unlocks 55 hidden settings",
+      "url": "https://www.tomshardware.com/laptops/ai-enthusiast-mods-bios-with-claude-code-ai-defeats-rsa-2048-signature-checks-and-unlocks-55-hidden-settings",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 81,
       "score": 56.0,
       "title": "Tech sector pours $1T into AI and sends customers the bill",
       "url": "https://www.theregister.com/ai-and-ml/2026/07/27/tech-sector-pours-1t-into-ai-and-sends-customers-the-bill/5278845",
@@ -614,15 +676,7 @@
       "similarity": null
     },
     {
-      "rank": 77,
-      "score": 56.0,
-      "title": "Opinion | Does AI Have a Fiduciary Duty?",
-      "url": "https://www.wsj.com/opinion/does-ai-have-a-fiduciary-duty-4eaa49d1?mod=rss_Technology",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 78,
+      "rank": 82,
       "score": 56.0,
       "title": "My personal AI benchmark: \u201cGenerate an SVG of a frog with a Habsburg jaw\u201d",
       "url": "https://frogs.vaguespac.es/",
@@ -630,33 +684,51 @@
       "similarity": null
     },
     {
-      "rank": 79,
+      "rank": 83,
       "score": 56.0,
       "title": "Google is working on interactive Apps for Gemini Notebook",
       "url": "https://www.testingcatalog.com/google-is-working-on-interactive-apps-for-gemini-notebook/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 80,
-      "score": 55.0,
-      "title": "CrowdStrike finds AI systems under direct attack as exploit windows shrink",
-      "url": "https://siliconangle.com/2026/08/03/crowdstrike-finds-ai-systems-direct-attack-exploit-windows-shrink/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 81,
-      "score": 55.0,
-      "title": "A look at Central Asia's emerging data center race, led by Uzbekistan's 6MW TAS-1 due by year-end and Kazakhstan's 125MW facility with 100K Nvidia chips by 2027 (Yevgeniya Mikhailidi/Nikkei Asia)",
-      "url": "https://www.techmeme.com/260803/p1#a260803p1",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 8,
+      "similarity": 0.6510361433029175
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.1,
+    "25": 0.2,
+    "50": 0.3,
+    "100": 0.5,
+    "83": 0.5
+  },
+  "hits_at": {
+    "10": 1,
+    "25": 2,
+    "50": 3,
+    "100": 5,
+    "83": 5
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://qwen.ai/blog",
+    "https://openai.com/index/ten-advances-in-mathematics/",
+    "https://www.testingcatalog.com/exclusive-microsoft-tests-new-mai-realtime-voice-model/",
+    "https://labs.ramp.com/swebench",
+    "https://www.wsj.com/tech/ai/openai-jacob-tsimerman-fields-medal-ai-safety-391d0f79",
+    "https://threadreaderapp.com/thread/2083749667410727319.html",
+    "https://www.mercor.com/blog/introducing-the-ai-productivity-index-for-accounting/",
+    "https://weightythoughts.com/p/when-genius-failsthe-intellectual",
+    "https://www.testingcatalog.com/google-is-aiming-to-close-feature-gaps-on-gemini-desktop/",
+    "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals"
+  ],
+  "tldr_domains": [
+    "qwen.ai",
+    "openai.com",
+    "testingcatalog.com",
+    "labs.ramp.com",
+    "sj.com",
+    "threadreaderapp.com",
+    "mercor.com",
+    "eightythoughts.com",
+    "testingcatalog.com",
+    "anthropic.com"
+  ]
 }

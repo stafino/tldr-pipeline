@@ -1,9 +1,31 @@
 {
   "date": "2026-08-03",
   "newsletter": "tldr_it",
-  "fetched_at": "2026-08-03T08:08:57.254254+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-08-03T14:33:52.358212+00:00",
+  "tldr_titles": [
+    "Scanning 7.6 Petabytes of HuggingFace Training Data for Secrets",
+    "Scale AI hires former Google Cloud COO as CEO",
+    "EU plans seven AI gigafactories in $11.4B compute push",
+    "I'm (mostly) picking models on speed now, not intelligence",
+    "Most corporate IT now runs outside company-owned data centers",
+    "Meta sees an enterprise business beyond AI agents",
+    "Static Devirtualization of Tencent VM",
+    "Uber is building an autonomous vehicle empire, and here's every company it's using to do it",
+    "Europe Is Rewriting Its Quantum Roadmaps and Asking for Comments",
+    "Google Cloud expands storage and networking for AI clusters"
+  ],
+  "tldr_matched": [
+    false,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -50,14 +72,14 @@
       "score": 62.0,
       "title": "The majority of corporate IT is now off premises for the first time",
       "url": "https://www.theregister.com/off-prem/2026/07/30/the-majority-of-corporate-it-is-now-off-premises-for-the-first-time/5280554",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 4,
+      "similarity": 0.6678386330604553
     },
     {
       "rank": 7,
       "score": 60.0,
-      "title": "Four US states rolled back or paused data center tax incentives, and nine others are weighing repeal measures, potentially adding 7% or more to equipment costs (Ann Davis Vaughan/The Information)",
-      "url": "https://www.techmeme.com/260802/p12#a260802p12",
+      "title": "As Larry Ellison bets the farm, Oracle says it loves AI-written code, just not in OpenJDK",
+      "url": "https://www.theregister.com/ai-and-ml/2026/08/03/as-larry-ellison-bets-the-farm-oracle-says-it-loves-ai-written-code-just-not-in-openjdk/5281851",
       "matched_tldr_idx": null,
       "similarity": null
     },
@@ -72,13 +94,21 @@
     {
       "rank": 9,
       "score": 58.0,
+      "title": "Water system cyberattacks spread to Georgia, Michigan amid US-Iran conflict",
+      "url": "https://www.theregister.com/security/2026/08/03/georgia-michigan-say-water-systems-hacked-by-iran-tied-crew/5282262",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 10,
+      "score": 58.0,
       "title": "CISA Alert: Water Sector PLC Targeting",
       "url": "https://censys.com/blog/cisa-alert-water-tower-plc-targeting/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 10,
+      "rank": 11,
       "score": 58.0,
       "title": "GitHub, PyPI add time-based defenses against supply chain attacks",
       "url": "https://www.bleepingcomputer.com/news/security/github-pypi-add-time-absed-defenses-against-supply-chain-attacks/",
@@ -86,7 +116,7 @@
       "similarity": null
     },
     {
-      "rank": 11,
+      "rank": 12,
       "score": 58.0,
       "title": "Russian spies take their half-click email attack from Zimbra to Outlook",
       "url": "https://www.theregister.com/security/2026/07/30/russian-spies-take-their-half-click-email-attack-from-zimbra-to-outlook/5281033",
@@ -94,7 +124,7 @@
       "similarity": null
     },
     {
-      "rank": 12,
+      "rank": 13,
       "score": 58.0,
       "title": "Iran suspected of conducting cyberattacks on US water suppliers in 45 municipalities \u2014 small towns mostly targeted, with utilities switching to manual control",
       "url": "https://www.tomshardware.com/tech-industry/cyber-security/iran-suspected-of-conducting-cyberattacks-on-us-water-suppliers-in-45-municipalities-small-towns-mostly-targeted-with-utilities-switching-to-manual-control",
@@ -102,7 +132,7 @@
       "similarity": null
     },
     {
-      "rank": 13,
+      "rank": 14,
       "score": 58.0,
       "title": "Microsoft brings a long awaited \"game changer\" Windows 11 tool for IT admins",
       "url": "https://www.neowin.net/news/microsoft-brings-a-long-awaited-game-changer-windows-11-tool-for-it-admins/?utm_source=rss",
@@ -110,7 +140,7 @@
       "similarity": null
     },
     {
-      "rank": 14,
+      "rank": 15,
       "score": 58.0,
       "title": "Tech sector pours $1T into AI and sends customers the bill",
       "url": "https://www.theregister.com/ai-and-ml/2026/07/27/tech-sector-pours-1t-into-ai-and-sends-customers-the-bill/5278845",
@@ -118,7 +148,7 @@
       "similarity": null
     },
     {
-      "rank": 15,
+      "rank": 16,
       "score": 58.0,
       "title": "Your AI agents can reach data no one approved",
       "url": "https://www.helpnetsecurity.com/2026/07/29/1password-ai-agent-governance/",
@@ -126,7 +156,39 @@
       "similarity": null
     },
     {
-      "rank": 16,
+      "rank": 17,
+      "score": 58.0,
+      "title": "AI\u2019s measurement crisis is over. The translation crisis is next",
+      "url": "https://www.cio.com/article/4204035/ais-measurement-crisis-is-over-the-translation-crisis-is-next.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 18,
+      "score": 58.0,
+      "title": "Introducing the Billable Usage API: programmatic cost visibility for Cloudflare",
+      "url": "https://blog.cloudflare.com/billable-usage-api/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 19,
+      "score": 57.0,
+      "title": "Recent SonicWall Vulnerabilities Exploited in Ransomware Attacks",
+      "url": "https://www.securityweek.com/recent-sonicwall-vulnerabilities-exploited-in-ransomware-attacks/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 20,
+      "score": 57.0,
+      "title": "US Water Cyberattacks Extend Beyond Minnesota to at Least 6 Other States",
+      "url": "https://www.securityweek.com/us-water-cyberattacks-extend-beyond-minnesota-to-at-least-6-other-states/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 21,
       "score": 57.0,
       "title": "A deep dive into Nvidia's Vera CPU and the Olympus cores that power it",
       "url": "https://www.theregister.com/systems/2026/08/01/nvidias-vera-cpu-and-the-olympus-cores-that-power-it-deep-dive/5282056",
@@ -134,7 +196,7 @@
       "similarity": null
     },
     {
-      "rank": 17,
+      "rank": 22,
       "score": 56.0,
       "title": "LG to Ban Residential Proxies from Smart TV Apps",
       "url": "https://krebsonsecurity.com/2026/07/lg-to-ban-residential-proxies-from-smart-tv-apps/",
@@ -142,41 +204,51 @@
       "similarity": null
     },
     {
-      "rank": 18,
+      "rank": 23,
       "score": 56.0,
       "title": "UK AISI/CAISI Preliminary Assessment of Kimi K3's Cyber Capabilities",
       "url": "https://www.nist.gov/news-events/news/2026/07/uk-aisi-caisi-preliminary-assessment-kimi-k3s-cyber-capabilities",
       "matched_tldr_idx": null,
       "similarity": null
-    },
-    {
-      "rank": 19,
-      "score": 56.0,
-      "title": "Post-quantum authentication to origins is now supported",
-      "url": "https://blog.cloudflare.com/post-quantum-authentication-to-origins/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 20,
-      "score": 56.0,
-      "title": "Google Chrome may soon block New Tab hijacker extensions by default",
-      "url": "https://www.bleepingcomputer.com/news/google/google-chrome-may-soon-block-new-tab-hijacker-extensions-by-default/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 21,
-      "score": 56.0,
-      "title": "Your Azure DevOps pipelines have a 2027 deadline, and the clock has just started",
-      "url": "https://sysadmin-central.com/2026/07/01/migrate-azure-devops-service-connections-entra-issuer/",
-      "matched_tldr_idx": null,
-      "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.1,
+    "25": 0.1,
+    "50": 0.1,
+    "100": 0.1,
+    "23": 0.1
+  },
+  "hits_at": {
+    "10": 1,
+    "25": 1,
+    "50": 1,
+    "100": 1,
+    "23": 1
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://trufflesecurity.com/blog/scanning-7-6-petabytes-of-ai-training-data-for-secrets",
+    "https://www.axios.com/2026/07/30/scale-ai-google-cloud-coo-francis-desouza",
+    "https://apnews.com/article/88b83cd517a4d47c115605e636d0b3e4",
+    "https://martinalderson.com/posts/speed-vs-intelligence/",
+    "https://www.networkworld.com/article/4203054/most-corporate-it-is-off-premises-ai-is-reshaping-infrastructure-uptime-reports.html",
+    "https://techcrunch.com/2026/07/29/zuckerberg-says-metas-enterprise-ai-opportunity-extends-beyond-agents/",
+    "https://back.engineering/blog/31/07/2026/",
+    "https://techcrunch.com/2026/08/01/ubers-autonomous-vehicle-deal-tracker/",
+    "https://postquantum.com/quantum-policies/eu-quantum-flagship-roadmaps/",
+    "https://cloud.google.com/blog/topics/ai-infrastructure/whats-new-in-ai-infrastructure-this-month/"
+  ],
+  "tldr_domains": [
+    "trufflesecurity.com",
+    "axios.com",
+    "apnews.com",
+    "martinalderson.com",
+    "networkworld.com",
+    "techcrunch.com",
+    "back.engineering",
+    "techcrunch.com",
+    "postquantum.com",
+    "cloud.google.com"
+  ]
 }

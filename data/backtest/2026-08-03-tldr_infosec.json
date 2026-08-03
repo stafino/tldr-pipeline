@@ -1,12 +1,46 @@
 {
   "date": "2026-08-03",
   "newsletter": "tldr_infosec",
-  "fetched_at": "2026-08-03T08:08:56.227480+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-08-03T14:33:07.521144+00:00",
+  "tldr_titles": [
+    "Amgen Says Cloud Data Breach Exposed Patient Health, Proprietary Info",
+    "Rails Patches Critical Active Storage Flaw with RCE Potential",
+    "Hackers Steal Sensitive Data from UK Department for Education and Police",
+    "Fake Claude Install Guide Leads to MacSync Stealer and RAT: What We Pulled From the Attacker's Servers",
+    "Static Devirtualization of Tencent VM",
+    "From /init to Code Execution - Prompt Injection Experiments with Opus-5 in Claude Code",
+    "Impacket for Pentester: atexec",
+    "Scanning 7.6 Petabytes of HuggingFace Training Data for Secrets",
+    "87% of Organizations Are Pursuing PQC. Only 7% Have Deployed It",
+    "Inside the Falcon: How CrowdStrike Catches You",
+    "Arch Linux Suspends AUR Package Adoptions to Block Ongoing Malicious Commit Campaign",
+    "Singapore Launches AI Cyber Risk Taskforce to Bolster Financial Sector Resilience"
+  ],
+  "tldr_matched": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
   "predictions": [
     {
       "rank": 1,
+      "score": 87.0,
+      "title": "Critical CVE issued for hallucinated SQLite vulnerability",
+      "url": "https://research.jfrog.com/post/sqlite-critical-cves-or-llm-slops/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 2,
       "score": 86.0,
       "title": "Coldcard Hardware Wallet Flaw Linked to $70 Million Bitcoin Theft in 41 Minutes",
       "url": "https://thehackernews.com/2026/08/coldcard-hardware-wallet-flaw-linked-to.html",
@@ -14,7 +48,7 @@
       "similarity": null
     },
     {
-      "rank": 2,
+      "rank": 3,
       "score": 84.0,
       "title": "Investigating three real-world incidents in our cybersecurity evaluations",
       "url": "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals",
@@ -22,7 +56,15 @@
       "similarity": null
     },
     {
-      "rank": 3,
+      "rank": 4,
+      "score": 83.0,
+      "title": "Chinese hacker used DeepSeek to launch autonomous cyberattacks on vulnerable servers",
+      "url": "https://www.helpnetsecurity.com/2026/08/03/deepseek-ai-autonomous-cyberattacks-hermes-agent/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 5,
       "score": 82.0,
       "title": "Claude AI Just Cracked a Post-Quantum Test Scheme and Found a Faster 7-Round AES Attack",
       "url": "https://thehackernews.com/2026/07/claude-ai-just-cracked-post-quantum.html",
@@ -30,7 +72,7 @@
       "similarity": null
     },
     {
-      "rank": 4,
+      "rank": 6,
       "score": 80.0,
       "title": "Hugging Face Diffusers Flaws Could Let Model Repositories Execute Arbitrary Code",
       "url": "https://thehackernews.com/2026/08/hugging-face-diffusers-flaws-could-let.html",
@@ -38,15 +80,15 @@
       "similarity": null
     },
     {
-      "rank": 5,
-      "score": 80.0,
-      "title": "Researchers used AI-assisted code to undetectably tamper with data from computerized scans of physical DNA evidence produced by widely used crime-lab machines (Mariah Timms/Wall Street Journal)",
-      "url": "https://www.techmeme.com/260802/p9#a260802p9",
+      "rank": 7,
+      "score": 78.0,
+      "title": "The OpenAI Hack Shows the Genie Is Out of the Bottle",
+      "url": "https://www.schneier.com/blog/archives/2026/08/the-openai-hack-shows-the-genie-is-out-of-the-bottle.html",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 6,
+      "rank": 8,
       "score": 78.0,
       "title": "N-able Says Attackers Take Over N-central Servers After Initial Fix Proves Incomplete",
       "url": "https://thehackernews.com/2026/08/n-able-says-attackers-take-over-n.html",
@@ -54,7 +96,7 @@
       "similarity": null
     },
     {
-      "rank": 7,
+      "rank": 9,
       "score": 78.0,
       "title": "Adobe Campaign Classic CVSS 10.0 Flaw Could Run Code Without User Interaction",
       "url": "https://thehackernews.com/2026/08/adobe-campaign-classic-cvss-100-flaw.html",
@@ -62,7 +104,23 @@
       "similarity": null
     },
     {
-      "rank": 8,
+      "rank": 10,
+      "score": 78.0,
+      "title": "Water system cyberattacks spread to Georgia, Michigan amid US-Iran conflict",
+      "url": "https://www.theregister.com/security/2026/08/03/georgia-michigan-say-water-systems-hacked-by-iran-tied-crew/5282262",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 11,
+      "score": 78.0,
+      "title": "N\u2011able Patches Vulnerability Exploited to Hack N-central Servers",
+      "url": "https://www.securityweek.com/n-able-patches-vulnerability-exploited-to-hack-n-central-servers/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 12,
       "score": 78.0,
       "title": "Ruby on Rails Patches Critical Vulnerability",
       "url": "https://www.securityweek.com/ruby-on-rails-patches-critical-vulnerability/",
@@ -70,7 +128,15 @@
       "similarity": null
     },
     {
-      "rank": 9,
+      "rank": 13,
+      "score": 78.0,
+      "title": "KindaRails2Shell threatens Ruby on Rails apps (CVE-2026-66066)",
+      "url": "https://www.helpnetsecurity.com/2026/08/03/kindarails2shell-cve-2026-66066-vulnerability/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 14,
       "score": 78.0,
       "title": "CISA Alert: Water Sector PLC Targeting",
       "url": "https://censys.com/blog/cisa-alert-water-tower-plc-targeting/",
@@ -78,7 +144,7 @@
       "similarity": null
     },
     {
-      "rank": 10,
+      "rank": 15,
       "score": 78.0,
       "title": "Critical OpenWrt DHCPv6 Flaw Could Let Unauthenticated Attackers Run Code as Root",
       "url": "https://thehackernews.com/2026/07/critical-openwrt-dhcpv6-flaw-could-let.html",
@@ -86,7 +152,7 @@
       "similarity": null
     },
     {
-      "rank": 11,
+      "rank": 16,
       "score": 76.0,
       "title": "Anatomy of a Frontier Lab Agent Intrusion: A Technical Timeline of the July 2026 Incident",
       "url": "https://huggingface.co/blog/agent-intrusion-technical-timeline",
@@ -94,7 +160,7 @@
       "similarity": null
     },
     {
-      "rank": 12,
+      "rank": 17,
       "score": 76.0,
       "title": "Tengu Botnet Reboots Compromised Linux Devices When Defenders Kill Its Process",
       "url": "https://thehackernews.com/2026/07/tengu-botnet-reboots-compromised-linux.html",
@@ -102,15 +168,7 @@
       "similarity": null
     },
     {
-      "rank": 13,
-      "score": 76.0,
-      "title": "SkillSpector: NVIDIA\u2019s open-source security scanner for AI agent skills",
-      "url": "https://www.helpnetsecurity.com/2026/08/03/skillspector-open-source-agent-skill-security-scanner/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 14,
+      "rank": 18,
       "score": 74.0,
       "title": "Hijacked Hotel Wi-Fi Pushes Fake Updates to Deliver Surveillance Malware",
       "url": "https://thehackernews.com/2026/08/hijacked-hotel-wi-fi-pushes-fake.html",
@@ -118,7 +176,15 @@
       "similarity": null
     },
     {
-      "rank": 15,
+      "rank": 19,
+      "score": 74.0,
+      "title": "Russian State APT Linked to Recent Public Wi-Fi Gateway Hacking",
+      "url": "https://www.securityweek.com/russian-state-apt-linked-to-recent-public-wi-fi-gateway-hacking/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 20,
       "score": 74.0,
       "title": "LG to Ban Residential Proxies from Smart TV Apps",
       "url": "https://krebsonsecurity.com/2026/07/lg-to-ban-residential-proxies-from-smart-tv-apps/",
@@ -126,7 +192,7 @@
       "similarity": null
     },
     {
-      "rank": 16,
+      "rank": 21,
       "score": 74.0,
       "title": "GitHub, PyPI add time-based defenses against supply chain attacks",
       "url": "https://www.bleepingcomputer.com/news/security/github-pypi-add-time-absed-defenses-against-supply-chain-attacks/",
@@ -134,7 +200,7 @@
       "similarity": null
     },
     {
-      "rank": 17,
+      "rank": 22,
       "score": 74.0,
       "title": "Microsoft Introduced a Cybersecurity Model",
       "url": "https://microsoft.ai/news/introducing-mai-cyber-1-flash-inside-mdash/",
@@ -142,55 +208,7 @@
       "similarity": null
     },
     {
-      "rank": 18,
-      "score": 72.0,
-      "title": "Rails patches critical Active Storage flaw with RCE potential",
-      "url": "https://www.bleepingcomputer.com/news/security/rails-patches-critical-active-storage-flaw-with-rce-potential/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 19,
-      "score": 72.0,
-      "title": "Russian spies take their half-click email attack from Zimbra to Outlook",
-      "url": "https://www.theregister.com/security/2026/07/30/russian-spies-take-their-half-click-email-attack-from-zimbra-to-outlook/5281033",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 20,
-      "score": 68.0,
-      "title": "Anthropic's Claude hacked three real-life companies during security capabilities test \u2014 test environment with internet access and unwitting targets' lax cybersecurity practices led to bots running rampant",
-      "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropics-claude-hacked-three-real-life-companies-during-security-capabilities-test-test-environment-with-internet-access-and-unwitting-targets-lax-cybersecurity-practices-led-to-bots-running-rampant",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 21,
-      "score": 68.0,
-      "title": "Iran suspected of conducting cyberattacks on US water suppliers in 45 municipalities \u2014 small towns mostly targeted, with utilities switching to manual control",
-      "url": "https://www.tomshardware.com/tech-industry/cyber-security/iran-suspected-of-conducting-cyberattacks-on-us-water-suppliers-in-45-municipalities-small-towns-mostly-targeted-with-utilities-switching-to-manual-control",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 22,
-      "score": 68.0,
-      "title": "Rooting, firmware analysis and persistent credentials of TP-Link TL-841N",
-      "url": "https://blog.juni-mp4.com/posts/42/rooting-the-tplink-tl841n-pt1/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
       "rank": 23,
-      "score": 68.0,
-      "title": "An Inside Look at the Relay Market Powering Token Resellers and Fraud",
-      "url": "https://vectoral.com/blog/token-relay-market",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 24,
       "score": 68.0,
       "title": "Discovering cryptographic weaknesses with Claude",
       "url": "https://www.anthropic.com/research/discovering-cryptographic-weaknesses",
@@ -198,7 +216,7 @@
       "similarity": null
     },
     {
-      "rank": 25,
+      "rank": 24,
       "score": 63.0,
       "title": "Some thoughts about Anthropic's new cryptanalysis results",
       "url": "https://blog.cryptographyengineering.com/2026/07/29/some-notes-about-anthropics-new-results/",
@@ -206,7 +224,7 @@
       "similarity": null
     },
     {
-      "rank": 26,
+      "rank": 25,
       "score": 63.0,
       "title": "Post-quantum authentication to origins is now supported",
       "url": "https://blog.cloudflare.com/post-quantum-authentication-to-origins/",
@@ -214,7 +232,23 @@
       "similarity": null
     },
     {
+      "rank": 26,
+      "score": 62.0,
+      "title": "CISA lays out new guidance for using open-source software",
+      "url": "https://www.helpnetsecurity.com/2026/08/03/cisa-oss-security-guidance/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
       "rank": 27,
+      "score": 62.0,
+      "title": "Horizon3 hits $2 billion valuation with $250M Series E as AI threats escalate",
+      "url": "https://techcrunch.com/2026/08/03/horizon3-hits-2-billion-valuation-with-250m-series-e-as-ai-threats-escalate/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 28,
       "score": 60.0,
       "title": "Securing Agents Across Perplexity's Client Endpoints with Numbat",
       "url": "https://research.perplexity.ai/articles/securing-agents-across-perplexity%E2%80%99s-client-endpoints-with-numbat",
@@ -222,7 +256,7 @@
       "similarity": null
     },
     {
-      "rank": 28,
+      "rank": 29,
       "score": 60.0,
       "title": "Detection Engineering in the Era of Semantic Malware",
       "url": "https://detect.fyi/detection-engineering-in-the-era-of-semantic-malware-663cee8cda7b",
@@ -230,7 +264,7 @@
       "similarity": null
     },
     {
-      "rank": 29,
+      "rank": 30,
       "score": 59.0,
       "title": "We have proof automation now",
       "url": "https://www.imperialviolet.org/2026/07/26/zstd-lean.html",
@@ -238,7 +272,7 @@
       "similarity": null
     },
     {
-      "rank": 30,
+      "rank": 31,
       "score": 59.0,
       "title": "Session revocations at scale",
       "url": "https://www.canva.dev/blog/engineering/session-revocations-at-scale/",
@@ -246,7 +280,7 @@
       "similarity": null
     },
     {
-      "rank": 31,
+      "rank": 32,
       "score": 58.0,
       "title": "Google Chrome may soon block New Tab hijacker extensions by default",
       "url": "https://www.bleepingcomputer.com/news/google/google-chrome-may-soon-block-new-tab-hijacker-extensions-by-default/",
@@ -254,18 +288,10 @@
       "similarity": null
     },
     {
-      "rank": 32,
+      "rank": 33,
       "score": 58.0,
       "title": "AI is 'both the weapon and the target' in latest wave of cyberattacks",
       "url": "https://www.theregister.com/cyber-crime/2026/08/03/ai-is-both-the-weapon-and-the-target-in-latest-wave-of-cyberattacks/5281534",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 33,
-      "score": 58.0,
-      "title": "Mapping the malware blast radius a single alert won\u2019t show you",
-      "url": "https://www.helpnetsecurity.com/2026/08/03/mike-wiacek-stairwell-backstory-malware-blast-radius/",
       "matched_tldr_idx": null,
       "similarity": null
     },
@@ -288,13 +314,53 @@
     {
       "rank": 36,
       "score": 58.0,
-      "title": "An unsecured police dashboard exposed China's extensive tracking of foreigners, aggregating data from surveillance cameras, facial recognition tools, and more (New York Times)",
-      "url": "https://www.techmeme.com/260803/p2#a260803p2",
+      "title": "Exclusive: Terra Security\u2019s Prevention writes the firewall rules to block proven exploits",
+      "url": "https://siliconangle.com/2026/08/03/exclusive-terra-securitys-prevention-writes-firewall-rules-block-proven-exploits/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
       "rank": 37,
+      "score": 58.0,
+      "title": "Mimecast introduces AI agent governance and managed threat response",
+      "url": "https://www.helpnetsecurity.com/2026/08/03/mimecast-agent-risk-center/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 38,
+      "score": 58.0,
+      "title": "Qodana 2026.2 adds post-quantum crypto checks for JVM code",
+      "url": "https://www.helpnetsecurity.com/2026/08/03/qodana-2026-2-static-analysis-benchmarks/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 39,
+      "score": 58.0,
+      "title": "Elastic Defend now covers 800+ vulnerable drivers, with automated troubleshooting and ARM support",
+      "url": "https://www.helpnetsecurity.com/2026/08/03/elastic-defend-vulnerable-driver-detection/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 40,
+      "score": 58.0,
+      "title": "An analysis of US police and court records finds 50+ officers were charged or accused of misusing license-plate readers like Flock's, including for stalking (Washington Post)",
+      "url": "https://www.techmeme.com/260803/p7#a260803p7",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 41,
+      "score": 58.0,
+      "title": "Horizon3.ai raises $250M at $2B-plus valuation for autonomous pentesting",
+      "url": "https://siliconangle.com/2026/08/03/horizon3-ai-raises-250m-2b-plus-valuation-autonomous-pentesting/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 42,
       "score": 58.0,
       "title": "CrowdStrike finds AI systems under direct attack as exploit windows shrink",
       "url": "https://siliconangle.com/2026/08/03/crowdstrike-finds-ai-systems-direct-attack-exploit-windows-shrink/",
@@ -302,7 +368,23 @@
       "similarity": null
     },
     {
-      "rank": 38,
+      "rank": 43,
+      "score": 58.0,
+      "title": "One-in-five breaches are now AI-related, IBM warns",
+      "url": "https://www.itpro.com/security/data-breaches/one-in-five-breaches-are-now-ai-related-ibm-warns",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 44,
+      "score": 58.0,
+      "title": "Samsung bans smart TV apps that share users\u2019 internet connections with strangers",
+      "url": "https://techcrunch.com/2026/08/03/samsung-bans-smart-tv-apps-that-share-users-internet-connections-with-strangers/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 45,
       "score": 58.0,
       "title": "RFC 10015: Deprecating Obsolete Key Exchange Methods in TLS 1.2 and DTLS 1.2",
       "url": "https://www.rfc-editor.org/rfc/rfc10015.html",
@@ -310,15 +392,7 @@
       "similarity": null
     },
     {
-      "rank": 39,
-      "score": 57.0,
-      "title": "Experts say US law is unprepared for rogue AI agents and models, as recent OpenAI and Anthropic incidents raise questions over legal liability and repercussions (Lily Hay Newman/Wired)",
-      "url": "https://www.techmeme.com/260802/p8#a260802p8",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 40,
+      "rank": 46,
       "score": 56.0,
       "title": "Your AI agents can reach data no one approved",
       "url": "https://www.helpnetsecurity.com/2026/07/29/1password-ai-agent-governance/",
@@ -326,7 +400,31 @@
       "similarity": null
     },
     {
-      "rank": 41,
+      "rank": 47,
+      "score": 56.0,
+      "title": "The SOC\u2019s AI maturity model",
+      "url": "https://www.cio.com/article/4203577/the-socs-ai-maturity-model.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 48,
+      "score": 56.0,
+      "title": "Cato Networks launches Agentic Threat Prevention to counter AI-assisted attacks",
+      "url": "https://siliconangle.com/2026/08/03/cato-networks-launches-agentic-threat-prevention-counter-ai-assisted-attacks/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 49,
+      "score": 56.0,
+      "title": "Visa to buy cybersecurity firm BioCatch for $2.4 billion amid surge in AI-powered scams",
+      "url": "https://www.cnbc.com/2026/08/03/visa-buys-biocatch-fraud-detection.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 50,
       "score": 56.0,
       "title": "Report claims China is distilling U.S. frontier models to power military AI applications",
       "url": "https://siliconangle.com/2026/08/02/report-claims-china-distilling-u-s-frontier-models-power-military-ai-applications/",
@@ -334,7 +432,7 @@
       "similarity": null
     },
     {
-      "rank": 42,
+      "rank": 51,
       "score": 56.0,
       "title": "PSA: Your Claude shared chats and Artifacts may have ended up on Google",
       "url": "https://techcrunch.com/2026/07/27/psa-your-claude-shared-chats-and-artifacts-may-have-ended-up-on-google/",
@@ -342,7 +440,7 @@
       "similarity": null
     },
     {
-      "rank": 43,
+      "rank": 52,
       "score": 56.0,
       "title": "Californians' data deletion requests, DROP, become enforceable Aug. 1",
       "url": "https://www.nbcsandiego.com/nbc-7-responds-2/californians-data-deletion-requests-drop-become-enforceable-aug-1/4054771/",
@@ -350,7 +448,7 @@
       "similarity": null
     },
     {
-      "rank": 44,
+      "rank": 53,
       "score": 56.0,
       "title": "Defcon's new badge is a security key you can see inside",
       "url": "https://arstechnica.com/security/2026/08/defcons-new-badge-is-a-security-key-you-can-see-inside/",
@@ -358,17 +456,79 @@
       "similarity": null
     },
     {
-      "rank": 45,
+      "rank": 54,
+      "score": 56.0,
+      "title": "Apple takes action to limit spammy bug reports generated by AI",
+      "url": "https://www.neowin.net/news/apple-takes-action-to-limit-spammy-bug-reports-generated-by-ai/?utm_source=rss",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 55,
       "score": 55.0,
       "title": "Jailbreaker: LLM Jailbreak Testing You Can Actually Repeat",
       "url": "https://specterops.io/blog/2026/06/29/llm-jailbreak-testing-with-jailbreaker/",
       "matched_tldr_idx": null,
       "similarity": null
+    },
+    {
+      "rank": 56,
+      "score": 55.0,
+      "title": "Zenity, which develops a platform for securing AI agents, raised a $125M Series C led by Norwest Venture Partners, taking its total funding to ~$185M (Meir Orbach/CTech)",
+      "url": "https://www.techmeme.com/260803/p21#a260803p21",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 57,
+      "score": 55.0,
+      "title": "Gartner SASE 2026 rankings: Netskope leads, Cato Networks leaps, and Palo Alto Networks falls",
+      "url": "https://www.sdxcentral.com/news/gartner-sase-2026-rankings-netskope-leads-cato-networks-leaps-and-palo-alto-networks-falls/",
+      "matched_tldr_idx": null,
+      "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.0,
+    "25": 0.0,
+    "50": 0.0,
+    "100": 0.0,
+    "57": 0.0
+  },
+  "hits_at": {
+    "10": 0,
+    "25": 0,
+    "50": 0,
+    "100": 0,
+    "57": 0
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://www.bleepingcomputer.com/news/security/amgen-says-cloud-data-breach-exposed-patient-health-proprietary-info/",
+    "https://www.bleepingcomputer.com/news/security/rails-patches-critical-active-storage-flaw-with-rce-potential/",
+    "https://www.theguardian.com/technology/2026/jul/29/department-for-education-police-hackers-cybercrime",
+    "https://www.huntress.com/blog/macsync-stealer-rat-reverse-engineering",
+    "https://back.engineering/blog/31/07/2026/",
+    "https://veganmosfet.codeberg.page/posts/2026-07-27-opus5/",
+    "https://www.hackingarticles.in/impacket-for-pentester-atexec/",
+    "https://trufflesecurity.com/blog/scanning-7-6-petabytes-of-ai-training-data-for-secrets",
+    "https://postquantum.com/security-pqc/digicert-quantum-readiness-outlook-2026/",
+    "https://0xdbgman.github.io/posts/inside-the-falcon-how-crowdstrike-catches-you/",
+    "https://gbhackers.com/arch-linux-suspends-aur-package-adoptions/",
+    "https://www.crowdfundinsider.com/2026/08/294588-singapore-launches-ai-cyber-risk-taskforce-to-bolster-financial-sector-resilience/"
+  ],
+  "tldr_domains": [
+    "bleepingcomputer.com",
+    "bleepingcomputer.com",
+    "theguardian.com",
+    "huntress.com",
+    "back.engineering",
+    "veganmosfet.codeberg.page",
+    "hackingarticles.in",
+    "trufflesecurity.com",
+    "postquantum.com",
+    "0xdbgman.github.io",
+    "gbhackers.com",
+    "crowdfundinsider.com"
+  ]
 }
