@@ -1,0 +1,574 @@
+{
+  "date": "2026-08-04",
+  "newsletter": "tldr_dev",
+  "fetched_at": "2026-08-04T20:27:23.299744+00:00",
+  "tldr_titles": [
+    "Experiments with AI Code Review",
+    "What's the largest software project AI can complete on its own?",
+    "Massively parallel Postgres backups",
+    "LLMs reward expertise",
+    "Use Task Runners for Common Coding Tasks",
+    "Native Apps Should Be Avoided Whenever Possible",
+    "Next.js 16.3",
+    "Frame selection is the whole game: notes from making LLMs watch video",
+    "The Endgame Of Vertical Integration",
+    "The Build vs Buy Head Fake",
+    "You Cannot Own a Falling Floor",
+    "What the bliss taught us",
+    "The AI productivity gap",
+    "Don't be a meat proxy"
+  ],
+  "tldr_matched": [
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true
+  ],
+  "predictions": [
+    {
+      "rank": 1,
+      "score": 79.0,
+      "title": "The Economic Benefit of Refactoring",
+      "url": "https://martinfowler.com/articles/exploring-gen-ai/refactoring-economic-benefit.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 2,
+      "score": 76.0,
+      "title": "How we built a software factory to drive Astro\u2019s GitHub issue count to zero",
+      "url": "https://blog.cloudflare.com/astro-issue-triage/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 3,
+      "score": 76.0,
+      "title": "DeepSeek V4 Flash on a Single AMD MI300X",
+      "url": "https://github.com/ryanzhou/deepseek-v4-flash-mi300x",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 4,
+      "score": 75.0,
+      "title": "Qwen3.8-Max: A New Bar for Coding and Cowork",
+      "url": "https://qwen.ai/blog?id=qwen3.8",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 5,
+      "score": 74.0,
+      "title": "Octane \u2013 React\u2019s programming model, compiled",
+      "url": "https://octanejs.dev",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 6,
+      "score": 72.0,
+      "title": "Your agent needs a computer, not a container \u2014 introducing @cloudflare/computer",
+      "url": "https://blog.cloudflare.com/cloudflare-computer/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 7,
+      "score": 68.0,
+      "title": "Turn one giant AI-generated pull request to a reviewable stack",
+      "url": "https://github.blog/engineering/turn-one-giant-ai-generated-pull-request-to-a-reviewable-stack/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 8,
+      "score": 68.0,
+      "title": "Rust project goals: Immobile types and guaranteed destructors",
+      "url": "https://github.com/rust-lang/rust-project-goals/blob/main/src/2026/move-trait.md",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 9,
+      "score": 68.0,
+      "title": "\"Clean\" Code, Horrible Performance (2023)",
+      "url": "https://www.computerenhance.com/p/clean-code-horrible-performance",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 10,
+      "score": 68.0,
+      "title": "The Orchestrator's Tax",
+      "url": "https://martinfowler.com/articles/orchestrator-tax.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 11,
+      "score": 68.0,
+      "title": "Workers RPC now works across Python and JavaScript",
+      "url": "https://blog.cloudflare.com/python-workers-rpc/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 12,
+      "score": 68.0,
+      "title": "Researchers: ChainDrop, a Shai-Hulud-based worm, has compromised 1,300+ npm packages, like Keyv, Cacheable, and flat-cache, with a combined 2B monthly downloads (Bill Toulas/BleepingComputer)",
+      "url": "https://www.techmeme.com/260804/p29#a260804p29",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 13,
+      "score": 66.0,
+      "title": "Run CI/CD for millions of repos \u2014 on your platform, on Cloudflare",
+      "url": "https://blog.cloudflare.com/ci-workflows/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 14,
+      "score": 66.0,
+      "title": "FFmpeg 9.0",
+      "url": "https://github.com/FFmpeg/FFmpeg/blob/n9.0/RELEASE_NOTES",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 15,
+      "score": 66.0,
+      "title": "Keyv and friends compromised in active Shai-Hulud supply chain attack",
+      "url": "https://www.aikido.dev/blog/keyv-and-friends-compromised-in-npm-supply-chain-attack",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 16,
+      "score": 65.0,
+      "title": "Finding bugs in Raft implementations",
+      "url": "https://antithesis.com/blog/2026/finding-bugs-in-raft-implementations/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 17,
+      "score": 65.0,
+      "title": "Show HN: Run an 80B Qwen in 4.3 GB of RAM on a Mac, and a 35B on an iPhone",
+      "url": "https://github.com/leonickson1/Swiftlet",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 18,
+      "score": 63.0,
+      "title": "\u201cStateful systems are incredibly hard to build\u201d: How Perplexity thinks about AI agent sandboxes",
+      "url": "https://thenewstack.io/perplexity-space-agent-sandboxes/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 19,
+      "score": 63.0,
+      "title": "PostgreSQL's MVCC Is Bad: So Is Everyone Else's",
+      "url": "https://boringsql.com/posts/mvcc-bad-bad/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 20,
+      "score": 63.0,
+      "title": "New research: The Core Web Vitals thresholds you trust might be wrong for your site",
+      "url": "https://embrace.io/blog/research-core-web-vitals/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 21,
+      "score": 63.0,
+      "title": "GitHub is the wrong shape for this new world",
+      "url": "https://depot.dev/blog/github-is-the-wrong-shape-for-this-new-world",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 22,
+      "score": 63.0,
+      "title": "Bonsai: Janestreet's UI Library",
+      "url": "https://github.com/janestreet/bonsai",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 23,
+      "score": 62.0,
+      "title": "How we built a realtime system for responsive voice AI in six months",
+      "url": "https://openai.com/index/continuous-voice-interaction-with-gpt-live",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 24,
+      "score": 62.0,
+      "title": "How ChatGPT Optimizes its Agent Loop: Harness, API, and Inference",
+      "url": "https://blog.bytebytego.com/p/how-chatgpt-optimizes-its-agent-loop",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 25,
+      "score": 62.0,
+      "title": "AI migrated legacy COBOL programs to Java, bugs included",
+      "url": "https://arxiv.org/abs/2607.28271",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 26,
+      "score": 62.0,
+      "title": "How MVCC and Transactions Work in RocksDB",
+      "url": "https://artem.krylysov.com/blog/2026/07/23/how-mvcc-and-transactions-work-in-rocksdb/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 27,
+      "score": 62.0,
+      "title": "You don't need React: creating a minimal UI library in Vanilla JavaScript",
+      "url": "https://pedroth.github.io/?p=post/NoNeedReact",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 28,
+      "score": 62.0,
+      "title": "The true power of regular expressions (2012)",
+      "url": "https://www.npopov.com/2012/06/15/The-true-power-of-regular-expressions.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 29,
+      "score": 62.0,
+      "title": "Cloudflare Workers and Containers now support inbound TCP connections and gRPC",
+      "url": "https://blog.cloudflare.com/grpc-workers/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 30,
+      "score": 62.0,
+      "title": "GitHub pushes stacked pull requests into public preview",
+      "url": "https://www.infoworld.com/article/4204683/github-pushes-stacked-pull-requests-into-public-preview.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 31,
+      "score": 62.0,
+      "title": "Hashimoto\u2019s Superlogical bets that agentic software development needs more than a better terminal",
+      "url": "https://www.infoworld.com/article/4204427/hashimotos-superlogical-bets-that-agentic-software-development-needs-more-than-a-better-terminal.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 32,
+      "score": 62.0,
+      "title": "Massive ChainDrop npm supply-chain attack infects hundreds of packages",
+      "url": "https://www.bleepingcomputer.com/news/security/massive-chaindrop-npm-supply-chain-attack-infects-hundreds-of-packages/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 33,
+      "score": 61.0,
+      "title": "Harness engineering for self-improvement",
+      "url": "https://lilianweng.github.io/posts/2026-07-04-harness/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 34,
+      "score": 61.0,
+      "title": "Dogfooding at scale: migrating cdnjs to Cloudflare's Developer Platform",
+      "url": "https://blog.cloudflare.com/cdnjs-dev-platform-migration/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 35,
+      "score": 61.0,
+      "title": "Faster Floating-Point Math With Rust's New API",
+      "url": "https://pythonspeed.com/articles/faster-float-math-rust/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 36,
+      "score": 61.0,
+      "title": "Keyv-Linked npm Worm Poisons Hundreds of Packages, Plants Claude Code and VS Code Hooks",
+      "url": "https://thehackernews.com/2026/08/keyv-linked-npm-worm-poisons-hundreds.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 37,
+      "score": 60.0,
+      "title": "What's the largest software project AI can complete on its own?",
+      "url": "https://epoch.ai/MirrorCode",
+      "matched_tldr_idx": 1,
+      "similarity": 1.0
+    },
+    {
+      "rank": 38,
+      "score": 60.0,
+      "title": "Show HN: Simple algorithm and color space to generate diverse skin tones",
+      "url": "https://toneyalexander.github.io/inclusive-color-space/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 39,
+      "score": 60.0,
+      "title": "How Cloudflare enforces engineering standards using AI",
+      "url": "https://blog.cloudflare.com/engineering-standards-enforcement/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 40,
+      "score": 60.0,
+      "title": "AWS\u2019s Kiro Crew aims to turn AI coding agents into autonomous engineering teams",
+      "url": "https://www.infoworld.com/article/4204961/awss-kiro-crew-aims-to-turn-ai-coding-agents-into-autonomous-engineering-teams.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 41,
+      "score": 60.0,
+      "title": "Your agent can now debug Workers with local tracing",
+      "url": "https://blog.cloudflare.com/local-tracing/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 42,
+      "score": 60.0,
+      "title": "Gap Decorations Are Now Available, Here\u2019s What\u2019s New",
+      "url": "https://css-tricks.com/css-gap-decorations-now-available/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 43,
+      "score": 59.0,
+      "title": "Introducing: Cloudflare Agents",
+      "url": "https://blog.cloudflare.com/agents-on-cloudflare/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 44,
+      "score": 58.0,
+      "title": "Everyone is building LLM routers, we deprecated ours",
+      "url": "https://manifest.build/blog/why-we-deprecated-our-llm-router/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 45,
+      "score": 58.0,
+      "title": "Don't be a meat proxy",
+      "url": "https://gruhn.me/blog/2026-08-03/",
+      "matched_tldr_idx": 13,
+      "similarity": 1.0
+    },
+    {
+      "rank": 46,
+      "score": 58.0,
+      "title": "Prevent cognitive debt by manually retyping LLM-generated code",
+      "url": "https://ankursethi.com/blog/prevent-cognitive-debt-by-manually-retyping-llm-generated-code/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 47,
+      "score": 58.0,
+      "title": "The development pipeline is a production system",
+      "url": "https://sundry.jerryorr.com/2026/07/31/development-pipeline-is-a-production-system",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 48,
+      "score": 58.0,
+      "title": "Deploy local agents everywhere with LFM2.5-2.6B",
+      "url": "https://huggingface.co/blog/LiquidAI/lfm2-5-2-6b",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 49,
+      "score": 58.0,
+      "title": "The Agent Development Lifecycle has arrived on Cloudflare",
+      "url": "https://blog.cloudflare.com/agent-development-lifecycle/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 50,
+      "score": 58.0,
+      "title": "AirLLM 70B inference with single 4GB GPU",
+      "url": "https://github.com/lyogavin/airllm",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 51,
+      "score": 58.0,
+      "title": "Meshdiff \u2013 visually compare two STL versions in the browser, client-side",
+      "url": "https://meshdiff.com/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 52,
+      "score": 58.0,
+      "title": "SQLite Critical CVEs or LLM Slop?",
+      "url": "https://research.jfrog.com/post/sqlite-critical-cves-or-llm-slops/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 53,
+      "score": 58.0,
+      "title": "77 Open VSX extensions found harvesting developer info",
+      "url": "https://www.bleepingcomputer.com/news/security/77-open-vsx-extensions-found-harvesting-developer-info/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 54,
+      "score": 57.0,
+      "title": "The Session You Cannot Take With You",
+      "url": "https://earendil.com/posts/session-portability/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 55,
+      "score": 56.0,
+      "title": "As Larry Ellison bets the farm, Oracle says it loves AI-written code, just not in OpenJDK",
+      "url": "https://www.theregister.com/ai-and-ml/2026/08/03/as-larry-ellison-bets-the-farm-oracle-says-it-loves-ai-written-code-just-not-in-openjdk/5281851",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 56,
+      "score": 56.0,
+      "title": "Web security is too hard",
+      "url": "https://textslashplain.com/2026/08/04/security-is-hard-yall/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 57,
+      "score": 56.0,
+      "title": "GitHub, PyPI add time-based defenses against supply chain attacks",
+      "url": "https://www.bleepingcomputer.com/news/security/github-pypi-add-time-absed-defenses-against-supply-chain-attacks/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 58,
+      "score": 56.0,
+      "title": "New XCSSET variant targets macOS devs via compromised Xcode projects",
+      "url": "https://www.bleepingcomputer.com/news/security/new-xcsset-variant-targets-macos-devs-via-compromised-xcode-projects/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 59,
+      "score": 56.0,
+      "title": "Twenty Years of Pandoc",
+      "url": "https://pandoc.org/twenty-years-of-pandoc.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 60,
+      "score": 55.0,
+      "title": "ACEM: A Cost Estimation Model for Agentic Software Engineering",
+      "url": "http://arxiv.org/abs/2608.02582v1",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 61,
+      "score": 55.0,
+      "title": "Microsoft reduces NuGet API keys to just 30 days, here's why",
+      "url": "https://www.neowin.net/news/microsoft-reduces-nuget-api-keys-to-just-30-days-heres-why/?utm_source=rss",
+      "matched_tldr_idx": null,
+      "similarity": null
+    }
+  ],
+  "recall_at": {
+    "10": 0.0,
+    "25": 0.0,
+    "50": 0.14285714285714285,
+    "100": 0.14285714285714285,
+    "61": 0.14285714285714285
+  },
+  "hits_at": {
+    "10": 0,
+    "25": 0,
+    "50": 2,
+    "100": 2,
+    "61": 2
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://eng.wealthfront.com/2026/08/03/experiments-with-ai-code-review/",
+    "https://epoch.ai/MirrorCode",
+    "https://planetscale.com/blog/massively-parallel-postgres-backups",
+    "https://www.seangoedecke.com/llms-reward-expertise/",
+    "https://hamvocke.com/blog/task-runners/",
+    "https://nooneshappy.com/article/native-apps-should-be-avoided-whenever-possible/",
+    "https://nextjs.org/blog/next-16-3",
+    "https://leoaido.com/how-llms-watch-video/",
+    "https://www.akashbajwa.co/p/the-endgame-of-vertical-integration",
+    "https://fieldventures.substack.com/p/the-build-vs-buy-head-fake",
+    "https://future.lulzx.space/blog/falling-floor.html",
+    "https://daniel.haxx.se/blog/2026/08/03/what-the-bliss-taught-us/",
+    "https://bjorg.bjornroche.com/management/ai-productivity-gap/",
+    "https://gruhn.me/blog/2026-08-03/"
+  ],
+  "tldr_domains": [
+    "eng.wealthfront.com",
+    "epoch.ai",
+    "planetscale.com",
+    "seangoedecke.com",
+    "hamvocke.com",
+    "nooneshappy.com",
+    "nextjs.org",
+    "leoaido.com",
+    "akashbajwa.co",
+    "fieldventures.substack.com",
+    "future.lulzx.space",
+    "daniel.haxx.se",
+    "bjorg.bjornroche.com",
+    "gruhn.me"
+  ]
+}

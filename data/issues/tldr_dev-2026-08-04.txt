@@ -1,0 +1,263 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR Dev 2026-08-04
+
+🧑‍💻
+Articles & Tutorials
+
+The Economic Benefit of Refactoring (5 minute read)
+
+(blurb not generated)
+
+How we built a software factory to drive Astro’s GitHub issue count to zero (1 minute read)
+
+Cloudflare ran an automated triage pipeline on the Astro repository for several months, using isolated AI subagents inside GitHub Actions to reproduce bugs in sandboxes, diagnose root causes, and ship preview releases for reporters to verify. The system, built on an open framework called Flue, cut Astro's open issues from over 200 to about 30 and is on track to reach zero, a first in the repo's 5-year history.
+
+Turn one giant AI-generated pull request to a reviewable stack (1 minute read)
+
+GitHub's post shows how to prompt coding agents to decompose a single 1,000-line feature diff into an ordered stack of scoped pull requests, using the shopping-assistant search feature as a worked example spanning data model, API route, and client wiring. The stacked approach keeps each PR independently reviewable without the manual babysitting, rebasing, and conflict-untangling that traditional PR chains demand below the current change.
+
+Rust project goals: Immobile types and guaranteed destructors (5 minute read)
+
+(blurb not generated)
+
+Finding bugs in Raft implementations (5 minute read)
+
+(blurb not generated)
+
+“Stateful systems are incredibly hard to build”: How Perplexity thinks about AI agent sandboxes (5 minute read)
+
+(blurb not generated)
+
+PostgreSQL's MVCC Is Bad: So Is Everyone Else's (5 minute read)
+
+The author argues that PostgreSQL's much-criticized MVCC costs, including table bloat, write amplification, and VACUUM babysitting, all trace to four concrete design choices rather than a defect, and reproduces each one on a live PostgreSQL 19 beta2 instance. Every other engine answers the same four questions differently, shifting the bill to the writer, tempdb, the cache, or the compactor, and all of them break when a transaction stays open too long.
+
+New research: The Core Web Vitals thresholds you trust might be wrong for your site (5 minute read)
+
+(blurb not generated)
+
+How we built a realtime system for responsive voice AI in six months (1 minute read)
+
+OpenAI detailed how it built GPT-Live, its third-generation voice system that removes the turn detector from the audio path by using a full-duplex model that listens and speaks simultaneously, delegating to frontier models like GPT-5.5 on a separate async path when reasoning or tools are needed. The post covers the six-month rework of stateful inference, dynamic context management, and media transport that keeps latency low enough for natural turn-taking.
+
+How ChatGPT Optimizes its Agent Loop: Harness, API, and Inference (5 minute read)
+
+(blurb not generated)
+
+AI migrated legacy COBOL programs to Java, bugs included (5 minute read)
+
+(blurb not generated)
+
+How MVCC and Transactions Work in RocksDB (5 minute read)
+
+(blurb not generated)
+
+You don't need React: creating a minimal UI library in Vanilla JavaScript (1 minute read)
+
+The author builds a minimal UI library in vanilla JavaScript, implementing a virtual DOM, a diffing algorithm, and state-driven re-rendering from scratch to show what React abstracts away. The walkthrough covers the core render loop and reconciliation in a few hundred lines, with the trade-off being no ecosystem, no hooks, and manual wiring for anything beyond the basics.
+
+The true power of regular expressions (2012) (1 minute read)
+
+The author argues that the common "you can't parse HTML with regex because HTML isn't regular" advice conflates formal-language regularity with what modern regex engines actually do. Using recursive patterns and backreferences, PCRE and similar engines can match context-free and even context-sensitive grammars, so the real limit is practicality and maintainability rather than a hard theoretical boundary.
+
+Harness engineering for self-improvement (1 minute read)
+
+Lilian Weng's post frames recursive self-improvement around harness engineering, the runtime layer that orchestrates how a model plans, calls tools, manages context, stores artifacts, and evaluates its own results. She argues this deployment layer matters as much as raw model intelligence, and surveys auto-research, self-improving agents, and evolutionary program search as design patterns that push the AI-improves-AI feedback loop forward.
+
+Dogfooding at scale: migrating cdnjs to Cloudflare's Developer Platform (5 minute read)
+
+(blurb not generated)
+
+Faster Floating-Point Math With Rust's New API (5 minute read)
+
+Rust 1.98 adds a stable API for algebraic floating-point operations, letting you tell the compiler it can reorder and vectorize float math the way it already does for integers, while keeping precise operations where rounding errors matter. The post benchmarks a naive sum on an i7-12700K with SIMD codegen, showing the default float path forgoes the specialized instructions that let integer sums run at roughly 0.5 CPU instructions per value.
+
+What's the largest software project AI can complete on its own? (1 minute read)
+
+Epoch AI and METR built MirrorCode, a benchmark that tasks sandboxed models with reimplementing 25 full programs end-to-end, from Unix utilities to interpreters, matching the original's exact output on held-out tests with inference budgets large enough for multi-week runs. Claude Opus 4.7 reimplemented gotree, a 16,000-line Go bioinformatics toolkit, in 14 hours for $251, work the authors estimate would take an unassisted engineer 2 to 17 weeks.
+
+Show HN: Simple algorithm and color space to generate diverse skin tones (1 minute read)
+
+This project defines a color space and sampling algorithm for generating diverse skin tones, aimed at making character creators and digital art tools more inclusive than a fixed swatch palette. The author provides a JavaScript color picker plus Python and JavaScript implementations that uniformly sample points from a sphere and map them to RGB, with the full math available to reuse.
+
+How Cloudflare enforces engineering standards using AI (1 minute read)
+
+Cloudflare's AI code reviewer has flagged nearly 250,000 engineering-standard violations and blocked 16,000 merges over four months, while a companion spec reviewer agent has evaluated close to 600 technical designs before implementation. Both draw from the Cloudflare Codex, a governed set of RFC-formatted standards using RFC 2119 SHOULD and MUST keywords that agents retrieve and apply at code review, design review, and incident review.
+
+🧠
+Opinions & Advice
+
+"Clean" Code, Horrible Performance (2023) (1 minute read)
+
+Casey Muratori argues that several widely taught "clean" code rules, including preferring polymorphism over switch statements and keeping functions small and single-purpose, impose large, measurable runtime costs. Benchmarking the canonical shape-area example from clean code literature, he shows the object-oriented version runs roughly an order of magnitude slower than a switch-based rewrite, and contends the rules trade real performance for readability that is never objectively assessed.
+
+The Orchestrator's Tax (5 minute read)
+
+(blurb not generated)
+
+GitHub is the wrong shape for this new world (5 minute read)
+
+(blurb not generated)
+
+Everyone is building LLM routers, we deprecated ours (1 minute read)
+
+Manifest deprecated its LLM router in June after four months across 7,000 users, arguing that prompt complexity can't be inferred from the prompt alone since tool calls and context discovered later determine the real workload. The author also contends prefix caching cuts costs 75% to 90% and works better than routing, which ends up adding model stickiness and effectively undoing its own job.
+
+Don't be a meat proxy (1 minute read)
+
+The author argues that pasting an LLM's raw output into Slack, PR reviews, or group chats adds no value, since anyone can query the model themselves and control their own context. He contends the actual work is reading, understanding, and validating the output, then rewriting it in your own words, so acting as a "meat proxy" that relays verbose, jargon-dense, often plausibly wrong text just shifts the effort onto the reader.
+
+Prevent cognitive debt by manually retyping LLM-generated code (5 minute read)
+
+(blurb not generated)
+
+The development pipeline is a production system (1 minute read)
+
+The author argues that a broken development pipeline—failing builds, a downed QA server, red CI—is a production outage for the team building the software and deserves the same drop-everything urgency. The post reframes IDEs, build tools, package repositories, and CI/CD as production systems in their own right, since a team that can't compile or test can't ship value to customers.
+
+The Session You Cannot Take With You (5 minute read)
+
+(blurb not generated)
+
+As Larry Ellison bets the farm, Oracle says it loves AI-written code, just not in OpenJDK (5 minute read)
+
+(blurb not generated)
+
+Web security is too hard (1 minute read)
+
+The author argues that web security has become untenable when a security expert cannot distinguish a legitimate Cloudflare product launch from a consent-phishing attack. The post walks through the red flags in a real Cloudflare Wallet flow, including a payments feature entry point on an unvetted .pay domain, a spoofable green-checkmark badge, urgency-inducing handle claiming, and an AI agent requesting full account control by default.
+
+ACEM: A Cost Estimation Model for Agentic Software Engineering (1 minute read)
+
+This paper proposes ACEM, a cost estimation model for agentic software engineering that decomposes total cost into LLM tokens, human-in-the-loop oversight, and infrastructure, replacing the human-labor assumptions baked into COCOMO II and Function Points. It introduces a Revision Factor for retry overhead, a Context Factor for token growth as context accumulates, and a HITL Intensity Score, while mapping existing Story Points and Function Points to token estimates so teams can reuse current scoping data.
+
+🚀
+Launches & Tools
+
+DeepSeek V4 Flash on a Single AMD MI300X (1 minute read)
+
+DeepSeek V4 Flash on a Single AMD MI300X packages a production config for running the 304B-parameter DeepSeek-V4-Flash-0731 checkpoint unquantized on one MI300X, whose 192GB of HBM3 holds the full model plus a 20GB GPU KV pool and 96GiB CPU eviction tier. The repo pins a vLLM ROCm nightly and adds correctness overlays for the MI300X's fnuz FP8 variant, missing AITER gfx942 fast paths, and MoE routing bugs that upstream's NVIDIA-focused recipe never covered.
+
+Qwen3.8-Max: A New Bar for Coding and Cowork (1 minute read)
+
+Alibaba's Qwen team released Qwen3.8-Max, a model positioned around coding and agentic "cowork" workflows where the model drives multi-step tasks rather than answering one-shot prompts. The launch post frames it as a step up on code generation and long-horizon tool use, though independent benchmark comparisons against GPT-5.5 and Claude on SWE-Bench aren't in yet.
+
+Octane – React’s programming model, compiled (5 minute read)
+
+(blurb not generated)
+
+Your agent needs a computer, not a container — introducing @cloudflare/computer (5 minute read)
+
+(blurb not generated)
+
+Workers RPC now works across Python and JavaScript (5 minute read)
+
+(blurb not generated)
+
+Run CI/CD for millions of repos — on your platform, on Cloudflare (1 minute read)
+
+Cloudflare launched a CI SDK built on Workflows that runs continuous integration pipelines directly on its platform, triggered by artifact push events declared in a wrangler config's new events field. Jobs installed via @cloudflare/ci can build, lint, typecheck, cache dependencies, run tests, and conditionally deploy, with platforms able to run a shared managed pipeline and customers' custom Workflows against the same repos simultaneously.
+
+FFmpeg 9.0 (1 minute read)
+
+The FFmpeg project shipped 9.0, a major release of the command-line toolkit and libraries behind most video encoding, decoding, transcoding, and streaming pipelines. The bump to a new major version signals API and ABI breaks in libavcodec and the other libav* libraries, so downstream tools that link against them will need recompilation and possible code changes before adopting it.
+
+Show HN: Run an 80B Qwen in 4.3 GB of RAM on a Mac, and a 35B on an iPhone (1 minute read) [flag]
+
+Swiftlet is a Swift and Metal runtime that runs Qwen3-Next and Qwen3.5/3.6 MoE models on Apple Silicon by keeping the dense core resident and streaming routed expert weights from storage, fitting an 80B model in about 4.3 GB of RAM and a 35B on an iPhone 17 in about 2.5 GB. Output is validated end to end, though only ~3B parameters activate per token, so the models write like large models but recall facts like small ones.
+
+Bonsai: Janestreet's UI Library (5 minute read)
+
+(blurb not generated)
+
+Cloudflare Workers and Containers now support inbound TCP connections and gRPC (5 minute read)
+
+(blurb not generated)
+
+GitHub pushes stacked pull requests into public preview (1 minute read)
+
+GitHub moved stacked pull requests into public preview on July 30, letting teams break a large change into an ordered chain of smaller, dependent PRs that each layer on the previous one. The feature ships through a new gh stack CLI extension, and it aims to keep short, narrowly scoped reviews moving in parallel without the constant rebasing that manual branch stacks require.
+
+Hashimoto’s Superlogical bets that agentic software development needs more than a better terminal (5 minute read)
+
+(blurb not generated)
+
+AWS’s Kiro Crew aims to turn AI coding agents into autonomous engineering teams (2 minute read)
+
+AWS released Kiro Crew, an open-source orchestration platform that coordinates multiple AI coding agents across repositories and work sessions with persistent memory, scheduling, approval workflows, and sandboxed audit logs. Originally built internally as MeshClaw and now used by 39,000 Amazon builders, it ships with reference apps for worktree management, PR triage, and long-running tasks, and can run entirely in customer environments without an AWS account.
+
+Your agent can now debug Workers with local tracing (1 minute read)
+
+Wrangler's `dev` and `vite dev` now automatically capture OpenTelemetry traces for local Worker invocations and expose them to coding agents through a Local Explorer REST API that requires no SDK, config, or observability prompt. Agents discover the endpoint at runtime via an OpenAPI schema, then query traces, correlated logs, and bindings state in D1, KV, R2, Durable Objects, and Workflows to locate a failure and verify the fix before deploying.
+
+Gap Decorations Are Now Available, Here’s What’s New (1 minute read)
+
+CSS gap decorations are now available in Chrome and Edge starting with version 149, extending the column-rule property to grid and flexbox layouts and adding a new row-rule property for styling gaps along both axes. The feature replaces the old border and pseudo-element hacks developers relied on, works as a progressive enhancement that degrades cleanly in unsupporting browsers, and has a polyfill in development for hard dependencies.
+
+Introducing: Cloudflare Agents (1 minute read)
+
+Cloudflare launched Cloudflare Agents, a hosted platform for deploying and managing agents that leans on its existing Workers stack for model access, durable runtime, sandboxed execution, and storage. The first feature is agent tracing, which surfaces every model call, tool execution, and token per turn through OpenTelemetry-compatible harnesses including Think, Flue, and the AI SDK.
+
+Deploy local agents everywhere with LFM2.5-2.6B (5 minute read)
+
+Liquid AI released LFM2.5-2.6B, a 2.6B-parameter model tuned for on-device agents that runs in under 2.5GB of memory at 220 tok/s on an Apple M5 Max and 113 tok/s on an AMD Ryzen CPU. Trained on ~34T tokens with a 128K context window and multi-turn agentic RL inside real harnesses, it tops instruction-following and most tool-use benchmarks against models up to 4x its size, trailing only on coding.
+
+The Agent Development Lifecycle has arrived on Cloudflare (1 minute read)
+
+Cloudflare introduced a set of tools that push agents beyond code generation into the rest of the software development lifecycle, including @cloudflare/ci for self-healing CI/CD across millions of repos on Workers Workflows, OpenTelemetry traces in local dev via Wrangler, and Agent Traces for observing and maintaining agents. The framing is that agents should own testing, deployment, and maintenance rather than dumping unvalidated code on human maintainers, with observability built on OpenTelemetry traces spanning local dev and production.
+
+AirLLM 70B inference with single 4GB GPU (1 minute read)
+
+AirLLM runs 70B models on a single 4GB GPU without quantization, distillation, or pruning by loading transformer layers sequentially during inference. Its latest release streams one MoE expert at a time to fit even larger models, running DeepSeek-V3 (671B) on ~12GB and Kimi K3 (2.8T) on 3.72GB of VRAM, with the trade-off being slower per-token inference from repeated weight loading.
+
+Meshdiff – visually compare two STL versions in the browser, client-side (5 minute read)
+
+(blurb not generated)
+
+🎁
+Miscellaneous
+
+Researchers: ChainDrop, a Shai-Hulud-based worm, has compromised 1,300+ npm packages, like Keyv, Cacheable, and flat-cache, with a combined 2B monthly downloads (Bill Toulas/BleepingComputer) (1 minute read)
+
+Researchers found ChainDrop, a worm built on the Shai-Hulud codebase, has compromised more than 1,300 npm packages including Keyv, Cacheable, and flat-cache, which together see about 2B monthly downloads. The self-propagating malware harvests credentials from infected developer machines and republishes trojanized versions to npm, putting any project pulling in the affected dependencies at risk.
+
+Keyv and friends compromised in active Shai-Hulud supply chain attack (1 minute read)
+
+Attackers compromised the GitHub account of the keyv maintainer and used it to push a credential-stealing worm across the entire package family, including flat-cache and file-entry-cache, with poisoned releases published to npm carrying valid GitHub Actions provenance. The Shai-Hulud worm adds a preinstall hook that drops the Bun runtime to run an obfuscated secret stealer, and has now spread to at least 434 packages totaling over 2 billion monthly installs.
+
+Massive ChainDrop npm supply-chain attack infects hundreds of packages (1 minute read)
+
+Self-propagating malware named ChainDrop compromised at least 868 npm packages across 1,381 versions, including caching utilities like Keyv, Cacheable, and flat-cache that total 2 billion monthly downloads. The Shai-Hulud-based worm executes via a preinstall hook on npm install, deploys a Bun-run infostealer to exfiltrate developer and cloud credentials, and spreads to other maintainers' packages while carrying valid provenance from legitimate GitHub Actions workflows.
+
+Keyv-Linked npm Worm Poisons Hundreds of Packages, Plants Claude Code and VS Code Hooks (1 minute read)
+
+A self-replicating npm worm traced to keyv@6.0.0 spread beyond the Keyv and Cacheable namespaces into hundreds of packages, using a preinstall script to harvest GitHub, npm, cloud, and private-key credentials from developer and CI environments before republishing through stolen npm access. The Keyv repo also retained Claude Code and VS Code hooks that run the payload once a workspace is trusted, and responders should remove the malware's revocation watcher before rotating any exposed tokens.
+
+SQLite Critical CVEs or LLM Slop? (1 minute read)
+
+JFrog security researchers debunked a batch of critical SQLite CVEs after finding the advisories were LLM-generated, with cited functions like exprComputeOperands() not existing in the flagged versions and PoC payloads that triggered no crash under AddressSanitizer. NVD and CISA's ADP had already flagged the reports as critical, and Red Hat initially scored one at 10.0 before downgrading it to 7.6, exposing how fabricated advisories can propagate through the CVE tracking system.
+
+77 Open VSX extensions found harvesting developer info (1 minute read)
+
+Manifold Security identified 77 malicious Open VSX extensions that impersonated legitimate developer tools and exfiltrated system and development-environment data to a shared server at mangorbit[.]com. All were tied to one campaign through common infrastructure and behavior, with 19 collecting deeper reconnaissance including Git repository and CI metadata, though none accessed source code, credentials, or tokens.
+
+GitHub, PyPI add time-based defenses against supply chain attacks (5 minute read)
+
+(blurb not generated)
+
+New XCSSET variant targets macOS devs via compromised Xcode projects (1 minute read)
+
+A new variant of the XCSSET malware, version 40, is spreading through compromised Git repositories by injecting a downloader script into Xcode projects that infects developers when they build the code. Unit 42 found the update adds a Chrome hijacker that enables the DevTools Protocol to intercept credentials and MetaMask transactions, plus a Telegram trojanizer, and self-propagates to every other Xcode project on the system.
+
+Twenty Years of Pandoc (1 minute read)
+
+Pandoc, the universal document converter written in Haskell, turned twenty on August 3, and creator John MacFarlane marked it with a retrospective on the project's origin and growth. What began as 3,000 lines of Haskell to convert between Markdown, HTML, LaTeX, and reStructuredText now spans over 200 releases, supports more than 50 formats, and underpins academic tools like Quarto and Jupyter Notebook.
+
+⚡
+Quick Links
+
+Microsoft reduces NuGet API keys to just 30 days, here's why (1 minute read)
+
+Microsoft cut NuGet API key lifetimes to a 30-day maximum, with hints it may shorten the window further despite developer friction.

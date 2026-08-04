@@ -1,0 +1,137 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR IT 2026-08-04
+
+🚀
+News & Trends
+
+Microsoft Introduced a Cybersecurity Model (5 minute read)
+
+(blurb not generated)
+
+Retirement of Azure DevOps issuer in Workload identity federation service connections (5 minute read)
+
+Microsoft is deprecating the Azure DevOps issuer in workload identity federation service connections, with retirement set for July 1, 2027, as it standardizes on the Microsoft Entra issuer across Azure. Teams running secretless Azure Pipelines on single-tenant Entra apps or managed identities in the public cloud must migrate their federated credentials off the vstoken.dev.azure.com prefix, though multi-tenant apps and non-public clouds are excluded for now.
+
+Why Intune Devices Became Noncompliant After the July Windows Update (5 minute read)
+
+(blurb not generated)
+
+Future Mode Part 2: The foundation for securing agentic browsing (2 minute read)
+
+Google introduced the second part of its Chrome Enterprise "Future Mode" series, detailing security controls for agentic browsing that tie AI-agent actions to a signed-in employee's corporate identity and existing Chrome policies. The setup lets browser-based agents complete multi-step tasks like invoice reconciliation and candidate sourcing while enterprise data-protection rules apply to both the human and the agent acting on their behalf.
+
+AI agents get better at IT ops, but only with humans in the loop (3 minute read)
+
+A study by automation platform Fixify of nearly 147,000 real-world agent actions across 40 companies found AI agents now execute roughly one-third of enterprise IT tasks, concentrated in repeatable, low-risk software, security, and collaboration work. Human approval of AI-proposed actions climbed from 23% to 41% over three months as feedback loops improved, while analysts stay in the loop for identity, access provisioning, and other high-stakes changes.
+
+Cisco close to releasing more AI models, this time for deep networking ops (5 minute read)
+
+(blurb not generated)
+
+US government bans new foreign-made humanoids, robot dogs, and solar inverters, citing risks to national security (5 minute read)
+
+(blurb not generated)
+
+The majority of corporate IT is now off premises for the first time (5 minute read)
+
+(blurb not generated)
+
+Google Password Manager Attacks Could Let Malware Hijack Passkey-Protected Accounts (1 minute read)
+
+Palo Alto Networks' Unit 42 detailed three post-compromise techniques, dubbed Pass-ta-key, against Chrome's Google Password Manager on Windows, letting malware already on a device silently obtain valid authentication assertions or extract the Security Domain Secret that decrypts a victim's synced passkeys. None of the paths break the underlying cryptography or carry a CVE, but the strongest give attackers reusable access to passkey-protected accounts from their own environment after the initial endpoint compromise.
+
+As Larry Ellison bets the farm, Oracle says it loves AI-written code, just not in OpenJDK (5 minute read)
+
+(blurb not generated)
+
+US mulling ban on key Chinese networking tech in data center component crackdown — White House wants to impose restrictions in 2026, China says it will respond if necessary (1 minute read)
+
+The FCC is drafting a rule to ban imports of Chinese-made optical transceivers, the light-based data-center components where Innolight alone holds 27% of the global market, with the administration targeting an effective date before the end of the year. U.S. suppliers like Lumentum, Coherent, and Applied Optoelectronics can't yet match that scale, so enterprises building out data centers face supply-chain risk and likely higher networking costs.
+
+Massive ChainDrop npm supply-chain attack infects hundreds of packages (1 minute read)
+
+A self-propagating worm named ChainDrop compromised at least 868 npm packages across 1,381 versions, including widely used caching utilities like Keyv and Cacheable that total roughly 2 billion monthly downloads. Because the malicious releases were built through legitimate GitHub Actions workflows, they carried valid provenance, letting the infostealer harvest developer and cloud credentials from any environment that ran npm install against an affected version.
+
+TP-Link Omada ZTP Vulnerabilities Chain Into Full Network Takeover (1 minute read)
+
+Forescout disclosed 15 vulnerabilities in the zero-touch provisioning systems behind TP-Link's Omada networking line, 11 of which received CVEs, and chained several with two prior RCE flaws to demonstrate full takeover of the controllers that manage entire device fleets. The exposure is real for enterprise buyers, as Forescout found 1,800 Omada controllers reachable from the internet despite TP-Link's guidance to keep them off the public web.
+
+N-able Says Attackers Take Over N-central Servers After Initial Fix Proves Incomplete (1 minute read)
+
+N-able confirmed attackers exploited an authentication bypass in its N-central RMM platform to gain remote administrative access, then pivoted through the built-in Take Control tool to install persistent Cloudflare tunnels on managed endpoints. The initial fix was incomplete, so every customer must move to build 2026.3.1.7, released August 2, and separately hunt for and remove the tunnel services, which survive the N-central upgrade.
+
+N-able warns of N-central auth bypass flaw exploited in attacks (1 minute read)
+
+N-able warned that attackers are actively exploiting CVE-2026-18577, an authentication bypass in its N-central RMM platform that enables administrative account takeover across both hosted and on-premises servers. The flaw stems from an incomplete patch for an earlier bypass, and because N-central is the tool MSPs use to manage large multi-OS fleets, a compromise lets attackers pivot well beyond N-able's direct customers.
+
+New Pass-ta-key attacks let malware hijack Google-synced passkeys (1 minute read)
+
+Palo Alto Networks' Unit 42 disclosed "Pass-ta-key," three attacks that let malware already running on a compromised Windows device abuse Google Password Manager's synced passkeys to hijack accounts, bypass user verification, and extract private keys without admin rights or biometrics. The attacks don't break passkey cryptography but exploit how Chrome and Google's cloud authenticator handle device trust, and they succeed against services like eBay that fail to validate the User Verified flag.
+
+Feds get 3 days to patch N-able God mode flaw under active exploit (1 minute read)
+
+CISA added an actively exploited N-able N-central vulnerability to its Known Exploited Vulnerabilities catalog and gave federal agencies three days to patch, far shorter than the standard 21-day window. The flaw grants full administrative control over the RMM platform that MSPs use to manage client fleets, so a single compromise cascades downstream to every customer environment N-central touches.
+
+GitHub, PyPI add time-based defenses against supply chain attacks (5 minute read)
+
+(blurb not generated)
+
+Russian spies take their half-click email attack from Zimbra to Outlook (5 minute read)
+
+(blurb not generated)
+
+MSPs urged to patch immediately after N-able issues hotfix for N-central ‘god mode’ flaw (1 minute read)
+
+N-able released a hotfix for CVE-2026-18577, a critical authentication bypass in its N-central remote management platform that grants unauthenticated "god mode" access across every downstream endpoint an affected server manages. Huntress reports active exploitation in the wild, so on-prem MSPs should patch immediately or take N-central offline, while hosted instances were mitigated automatically by N-able.
+
+🧠
+Analysis & Opinions
+
+Lost in Permissions: Exploring the Microsoft 365 App Ecosystem (1 minute read)
+
+A new academic paper presents the first systematic security measurement of the Microsoft 365 third-party app ecosystem, crawling over 8,000 marketplace applications. The authors find that only 1,069 disclose both descriptions and permission sets, and that many request overly broad tenant-wide scopes like directory-wide read/write access in violation of least-privilege principles. For IT admins, the takeaway is that OAuth grants in the M365 marketplace are inconsistently disclosed and frequently over-privileged, expanding the tenant attack surface.
+
+Real-world mainframe modernization with AI: A safe, scalable path from mainframe to cloud (2 minute read)
+
+Google Cloud argues that enterprise mainframe modernization is not a COBOL-to-Java code conversion problem but a data and dependency problem, spanning non-relational formats like VSAM and IMS, CICS transaction monitors, and proprietary protocols that AI agents can't natively read. Its pitch pairs Gemini for code understanding with mainframe-specific tooling across four pillars, emphasizing iterative migration validated against production traffic over a high-risk "big bang" cutover.
+
+AI’s measurement crisis is over. The translation crisis is next (5 minute read)
+
+(blurb not generated)
+
+Cloudflare has mostly ditched third party security tools, suggests not trying that at home (1 minute read)
+
+Cloudflare disclosed that it now runs most of its own security stack in-house rather than buying third-party tools, then explicitly warned that most enterprises should not copy the approach. The caveat is the real signal for IT buyers: Cloudflare's build-over-buy economics depend on in-house security engineering depth most shops lack, so the vendor-consolidation lesson here is about capability, not just license spend.
+
+🤝
+Launches & Partnerships
+
+Snowflake launches AI agent governance layer to track activity, control costs (5 minute read)
+
+(blurb not generated)
+
+ServiceNow debuts six autonomous security products built on Armis and Veza (1 minute read)
+
+ServiceNow launched six autonomous security products and a set of AI agents that carry vulnerability and incident work to closure without an analyst driving each step, built on its $7.75B Armis and $1.3B Veza acquisitions. The lineup extends the Autonomous Security & Risk portfolio into exposure management, detection, cyber-physical coverage from Armis, and AI-agent access control from Veza, targeting enterprises that juggle 70-plus disconnected security tools.
+
+Visual screenshots now included in Google Meet meeting notes (1 minute read)
+
+Google added automatic screenshot capture of presented content to Google Meet's "Take notes for me" feature, embedding visuals of charts and slides directly into the AI-generated notes document alongside the transcript. Admins control the rollout through the Admin console, choosing to always allow screenshots or only when recording is enabled, with availability limited to Business Standard and Plus, Enterprise Standard and Plus, and Google AI Pro for Education tiers.
+
+Cortex Framework v7 is GA: Build agentic workflows without disrupting SAP operations (2 minute read)
+
+Google Cloud made Cortex Framework v7 generally available, adding purpose-built SAP data product accelerators that deploy in BigQuery and Knowledge Catalog to feed the Gemini Enterprise Agent Platform without disrupting core ERP operations. Enterprises running SAP can now expose transactional data as AI-ready, semantically labeled products orchestrated through Dataform, letting agents act on business context without a separate data-modeling project or added infrastructure overhead.
+
+Introducing the Billable Usage API: programmatic cost visibility for Cloudflare (5 minute read)
+
+(blurb not generated)
+
+Unifying public and private data: Scale knowledge graphs with Data Commons on Spanner (2 minute read)
+
+Google made Data Commons on Spanner Graph generally available and opened a preview of the new Data Commons Platform, letting enterprises join their private data with public knowledge graphs spanning 400B+ data points from over 100 sources including the UN, World Bank, and WHO. Moving off the old Bigtable caching layer to native Spanner Graph adds SQL-like graph queries, multi-region consistency, and MCP tool access for connecting internal records to normalized public reference data.
+
+Rubrik unveils Agent Identity to govern AI agents one tool call at a time (1 minute read)
+
+Rubrik released Agent Identity at Black Hat, a service that governs AI agents by granting scoped, short-lived access one tool call at a time through an MCP gateway rather than letting agents inherit humans' standing permissions. The service extends Rubrik Agent Cloud into the credential layer and enters the crowded agent-authorization market alongside Entra, Okta, and Auth0, targeting IT teams that report low visibility into the agents already running in their environments.

@@ -1,0 +1,219 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR DevOps 2026-08-04
+
+📱
+News & Trends
+
+Gateway API v1.6: TCPRoute and UDPRoute Graduate to Standard (2 minute read)
+
+Gateway API v1.6 promoted TCPRoute and UDPRoute to Standard on the v1 API, giving raw L4 TCP and UDP workloads like databases, DNS, and VoIP a portable way to route through a Gateway instead of falling back to plain Services or implementation-specific CRDs. The release also splits experimental resources into a separate gateway.networking.x-k8s.io API group, and deprecates the v1alpha2 route versions ahead of removal in a future release.
+
+Cortex completes OSTIF security audit (5 minute read)
+
+(blurb not generated)
+
+Keyv and friends compromised in active Shai-Hulud supply chain attack (1 minute read)
+
+Attackers compromised the maintainer's GitHub account behind keyv and its sibling caching libraries, then pushed a malicious preinstall dropper and cut fresh npm releases signed by GitHub Actions, spreading the Shai-Hulud worm across at least 434 packages with over 2 billion monthly installs. The payload harvests environment secrets and exfiltrates them to public GitHub repos, so any recent npm install pulling flat-cache, file-entry-cache, or cacheable is a potential credential leak.
+
+Decades-Old BMC Vulnerability Exposes Thousands of Data Centers to Attacks (1 minute read)
+
+Data center security firm Lava reported that CVE-2013-4786, a 22-year-old flaw in the IPMI 2.0 authentication protocol, exposes roughly 37,000 internet-facing BMCs by leaking password-derived hashes for offline cracking. Because IPMI, Redfish, and the web console often share one credential database, a cracked hash unlocks the data center's most privileged control plane, and Lava found thousands of hosts already accepting empty usernames or default passwords.
+
+AtumAI: A Principled Framework for Agentic Generation of Datacenter Control-Plane Policies (1 minute read)
+
+This paper introduces AtumAI, a framework that uses agentic AI to generate datacenter control-plane policies for workload placement, resource scaling, and power management from a plain-language goal. It compiles the request into a machine-checkable spec, then searches the design space with a diffusion model, evolutionary algorithm, and surrogate model, producing policies that outperform expert-engineered baselines while cutting new-task onboarding from months to a description.
+
+Post-quantum authentication to origins is now supported (5 minute read)
+
+(blurb not generated)
+
+Hashimoto’s Superlogical bets that agentic software development needs more than a better terminal (5 minute read)
+
+(blurb not generated)
+
+Introducing Database Operations Agents: The future of autonomous database management (2 minute read)
+
+Google Cloud released two AI-powered database agents at Cloud Next '26, splitting the lifecycle between a Database Onboarding Agent for Day 0 setup and configuration and a Database Observability Agent that lets SREs and DBAs diagnose and remediate issues through natural-language prompts. Both run across Chat, CLI, the Cloud console, and MCP servers, targeting the manual query-tuning and troubleshooting cycles that currently eat hours of on-call time.
+
+Your Azure DevOps pipelines have a 2027 deadline, and the clock has just started (5 minute read)
+
+Microsoft deprecated the Azure DevOps issuer for workload identity federation on July 1, 2026, giving teams until July 1, 2027 before Service Connections built on the old vstoken.dev.azure.com issuer stop authenticating to Azure. The portal migrates connections one at a time in a couple of minutes each, so orgs running hundreds will need the undocumented MigrateToEntraIssuer REST call, and only single-tenant Entra apps and Managed Identities in the public cloud are affected.
+
+Kubernetes v1.37 Sneak Peek (3 minute read)
+
+The Kubernetes v1.37 sneak peek flags kube-proxy's ipvs mode for deprecation, with a startup warning now, default-off by v1.40, and full removal targeted for v1.43. The same release removes the PreventStaticPodAPIReferences opt-out so static pods can no longer reference Secrets or ConfigMaps, and deprecates the kubectl run -f flag, giving platform teams concrete migration work ahead of the release.
+
+Critical OpenWrt DHCPv6 Flaw Could Let Unauthenticated Attackers Run Code as Root (5 minute read)
+
+(blurb not generated)
+
+Tengu Botnet Reboots Compromised Linux Devices When Defenders Kill Its Process (5 minute read)
+
+(blurb not generated)
+
+Cisco close to releasing more AI models, this time for deep networking ops (5 minute read)
+
+(blurb not generated)
+
+NVIDIA Vera Storage Benchmarks: Faster Encryption, Compression, Integrity Checking, and Recovery for AI-Native Storage (1 minute read)
+
+NVIDIA published benchmarks for its Vera BlueField-4 STX Storage Processor, showing the Vera CPU architecture outperforming x86 across encryption, integrity checking, compression, recovery, and a full multi-stage storage pipeline. The pitch is offloading CPU-side storage work in the agentic AI data path, where per-step operations across thousands of concurrent agents can bottleneck token generation, while cutting the core, power, and cooling overhead of scaling those functions on conventional CPUs.
+
+Future Mode Part 2: The foundation for securing agentic browsing (2 minute read)
+
+Google detailed how Chrome Enterprise will secure agentic browsing, extending corporate identity, access policies, and data-loss controls to AI agents that log into SaaS apps and complete multi-step tasks on an employee's behalf. The pitch is that anchoring agent workflows inside the signed-in browser gives IT teams real-time context on open tabs and applications, narrowing the blast radius when an autonomous agent acts on enterprise data.
+
+Oligo Security raises $60M as AI speeds up exploit development (1 minute read)
+
+Oligo Security raised $60M to scale its runtime security platform, which uses an eBPF sensor to track which library functions a workload actually calls and blocks in-progress exploits at the application layer without killing the container. The pitch lands as automated exploit development compresses patch windows, and Oligo reports 300% ARR growth alongside a Series B valuation that has more than doubled since January 2025.
+
+🚀
+Opinions & Tutorials
+
+How we built a software factory to drive Astro’s GitHub issue count to zero (1 minute read)
+
+Cloudflare ran an automated triage pipeline on the Astro repository for several months, using isolated AI subagents in GitHub Actions to reproduce bugs in sandboxes, diagnose root causes, and ship preview releases for reporters to verify. The engine became Flue, an open framework for building the same agent automation. Open issues dropped from over 200 to about 30 without auto-closing cold tickets, with zero expected within a month, which would be a first in the repo's five-year history.
+
+Federating clusters for zero-downtime Kubernetes (5 minute read)
+
+(blurb not generated)
+
+You can’t debug what you can’t see — Observability for AI Agents (1 minute read) [flag]
+
+The author argues that standard APM misses the failure modes that matter for AI agents, which loop, hallucinate, and burn tokens without ever throwing a stack trace. The post lays out three pillars for agent observability: nested Langfuse traces capturing every model call, tool invocation, and sub-agent delegation; per-session and per-agent cost tracking to catch geometric token burn early; and proactive budget guardrails, since a tight loop can drain spend in seconds. Trace delivery stays non-blocking via a batch exporter, so an unreachable backend costs telemetry, not availability.
+
+How to Run Isolated Tenant Kubernetes Clusters on Shared GPU Infrastructure (1 minute read)
+
+NVIDIA's developer blog documents a pattern for giving each team its own isolated Kubernetes control plane without splitting the underlying GPU hardware. The setup pairs vCluster, which provisions per-team API servers, CRDs, and RBAC indistinguishable from a dedicated cluster, with KAI Scheduler, which carves a shared GPU pool into per-team quotas. The tutorial runs three tenant clusters on a single NVIDIA L40S, and the authors note the same queue hierarchy and node pool scale to hundreds of GPU nodes and dozens of teams.
+
+Control Reliability Engineering (CRE): Applying SRE Principles to Cybersecurity Controls (5 minute read)
+
+Phil Venables argues that most breaches trace to security controls that were assumed operational but were actually broken or misconfigured when needed, and proposes Control Reliability Engineering (CRE) to fix it. The framework ports SRE discipline directly onto security controls: SLIs and SLOs to define a healthy control, error budgets to govern acceptable decay, and continuous control monitoring plus root-cause analysis to catch drift before an attacker does.
+
+How Cloudflare enforces engineering standards using AI (1 minute read)
+
+Cloudflare detailed how its AI code reviewer has flagged nearly 250,000 deviations from internal engineering standards and blocked 16,000 merges over four months, while a separate spec-reviewer agent has checked close to 600 technical designs before implementation. Both draw from the Cloudflare Codex, a governed set of RFC-formatted standards using RFC 2119 SHOULD/MUST keywords that both engineers and agents retrieve at the point of work. The trade-off is upfront governance overhead: each domain needs an owner accountable for content and consistency.
+
+Scaling Kubernetes pods with KEDA based on Amazon SQS queue depth (1 minute read)
+
+This tutorial walks through autoscaling event-driven workers on Amazon EKS with KEDA, using SQS queue depth as the scaling signal instead of CPU or memory. It covers wiring KEDA to SQS via IRSA or EKS Pod Identity, how the operator translates backlog into HPA replica counts, and tuning queueLength, activationQueueLength, and cooldowns to control burst response. The payoff is autoscaling tied to actual outstanding work: faster spike handling and lower idle cost when queues drain.
+
+Smaller, faster, safer: running Kimi and GLM at scale (5 minute read)
+
+(blurb not generated)
+
+Scaling StreamHub: Transitioning from Kinesis to Kafka for 145 Billion Daily Events (5 minute read)
+
+(blurb not generated)
+
+The Economic Benefit of Refactoring (5 minute read)
+
+(blurb not generated)
+
+“Stateful systems are incredibly hard to build”: How Perplexity thinks about AI agent sandboxes (5 minute read)
+
+(blurb not generated)
+
+Secure every commit to production with Claude and GitLab (5 minute read)
+
+(blurb not generated)
+
+Source-Bounded Exact Recovery over Docker's Logs API (1 minute read)
+
+This paper defines source-bounded exactness for Docker log collection and shows that a persisted read position alone does not guarantee recovery after container lifecycle changes. Across 120 collector runs, a fixed LogDeck was exact in 60/60 while Grafana Alloy 1.18.0 managed 20/60, missing retained history whenever recovery required rediscovering an exited or restarted source. The takeaway for platform teams is that lifecycle reacquisition, not a saved offset, determines whether logs survive restarts.
+
+Doc2CI: A Multi-Service Study of CI Configuration Generation Using Large Language Models (1 minute read)
+
+This paper introduces Doc2CI, a benchmark of 3,363 description-to-YAML pairs from four CI services, and evaluates 16 models across 53,000 generated configurations. Exact reference reproduction never tops 3.1%, and while 97% of outputs parse as YAML, only 71% satisfy service schemas, with larger models improving validity and code specialization offering no consistent edge. A training-free, schema-guided repair pass lifts schema validity to 94%, suggesting teams should treat structural validity as a distinct target from documentation similarity.
+
+Reality-based Network Operations (5 minute read)
+
+(blurb not generated)
+
+GEM Training: How Meta Doubled the Efficiency of Its LLM-Scale Ads Foundation Model (1 minute read)
+
+Meta detailed how it scaled GEM, the foundation model behind Instagram and Facebook ads recommendations, to LLM-scale training on several thousand latest-gen GPUs. The team doubled end-to-end efficiency to 20-25% Model FLOPs Utilization while growing training FLOPs 4x in 12 months, using custom recommendation kernels, MXFP8 precision, and topology-aware 5D parallelism. The writeup is a reminder that LLM training recipes do not transfer cleanly to trillion-parameter recommendation models.
+
+Finding bugs in Raft implementations (5 minute read)
+
+(blurb not generated)
+
+GitHub is the wrong shape for this new world (5 minute read)
+
+(blurb not generated)
+
+The development pipeline is a production system (1 minute read)
+
+The author argues that development pipelines deserve the same outage response as customer-facing production systems, since a broken build, failing test suite, or downed QA server stops the team from shipping just as surely as a service failure stops customers. The recommendation is to inventory every step from "customer wants something" to "delivered," from issue trackers and IDEs to CI/CD and package repositories, then treat any break in that chain as a top-priority incident rather than background toil.
+
+Why Intune Devices Became Noncompliant After the July Windows Update (5 minute read)
+
+(blurb not generated)
+
+⚒️
+Launches & Tools
+
+Run CI/CD for millions of repos — on your platform, on Cloudflare (1 minute read)
+
+Cloudflare launched a CI SDK built on Cloudflare Workflows, letting teams run build, lint, typecheck, test, and conditional-deploy steps directly on its platform, triggered by artifact push events wired through wrangler config. It pairs with Artifacts, Cloudflare's versioned code storage for millions of repos, and supports both platform-managed and customer-defined CI jobs running simultaneously, plus an optional AI review agent that self-heals broken build steps.
+
+Your agent needs a computer, not a container — introducing @cloudflare/computer (5 minute read)
+
+(blurb not generated)
+
+Introducing: Cloudflare Agents (1 minute read)
+
+Cloudflare launched Cloudflare Agents, a management layer for hosted agents on Workers, starting with agent tracing that measures every model call, tool execution, and token spent per turn. The tracing works with OpenTelemetry-compatible harnesses including Think, Flue, and the AI SDK, surfacing agent-level failures like wrong tool choices, stale subagent context, and retry loops that return HTTP 200 but still fail.
+
+Cloudflare Workers and Containers now support inbound TCP connections and gRPC (5 minute read)
+
+(blurb not generated)
+
+The Agent Development Lifecycle has arrived on Cloudflare (1 minute read)
+
+Cloudflare introduced a set of tools that let coding agents own more of the software development lifecycle beyond implementation, including @cloudflare/ci for self-healing CI/CD across millions of repos built on Workflows, OpenTelemetry traces in local dev via Wrangler, and Agent Traces for observing running agents. The pitch is that agents already overwhelm reviewers, mergers, and on-call engineers downstream, so Cloudflare is giving them the same production-grade observability and CI tooling their human counterparts rely on.
+
+Your agent can now debug Workers with local tracing (1 minute read)
+
+Cloudflare's Wrangler and Vite dev servers now automatically capture OpenTelemetry traces for local Worker invocations and expose them to coding agents through a new Local Explorer API, requiring no SDK, config, or observability prompt. When the tooling detects an agent session, it points the agent to a read-only endpoint where it can query traces, correlated console logs, and local state in D1, KV, R2, Durable Objects, and Queues to find and verify fixes before deploying.
+
+Introducing the Billable Usage API: programmatic cost visibility for Cloudflare (5 minute read)
+
+(blurb not generated)
+
+Workers RPC now works across Python and JavaScript (5 minute read)
+
+(blurb not generated)
+
+Show HN: NixOS-DGX-Spark – Nix and NixOS on the DGX Spark (1 minute read)
+
+A developer released NixOS-DGX-Spark, an open-source project that brings Nix and NixOS to NVIDIA's DGX Spark and the Asus Ascent GX10, shipping USB images and a NixOS hardware module with a custom NVIDIA-optimized kernel for full GPU and Ethernet support. Teams can run the Nix dev shells and playbooks directly on stock DGX OS via nix-gl-host, or install NixOS outright for reproducible CUDA environments after a required firmware update.
+
+AWS’s Kiro Crew aims to turn AI coding agents into autonomous engineering teams (2 minute read)
+
+AWS released Kiro Crew, an open-source orchestration platform that coordinates multiple AI coding agents across repositories and sessions to run long-running engineering work like incident investigation, PR monitoring, and ticket triage. It ships with persistent memory, approval workflows, scheduling, and security controls such as sandboxing and signed audit logs, and deploys entirely inside customer environments (laptops, containers, or VMs) with no AWS account required.
+
+Cortex Framework v7 is GA: Build agentic workflows without disrupting SAP operations (2 minute read)
+
+Google Cloud made Cortex Framework v7 generally available, adding purpose-built data product accelerators that turn raw SAP ERP tables into semantically rich, agent-ready data products deployed directly in BigQuery and Knowledge Catalog. Orchestration now runs on Dataform for version-controlled, modular workflows, letting data teams feed Gemini Enterprise agents accurate business context without slowing mission-critical SAP operations or standing up separate pipeline infrastructure.
+
+Multiple result sets: How Database Migration Service automates SQL server to PostgreSQL translation (2 minute read)
+
+Google Cloud detailed how its Database Migration Service automatically translates SQL Server stored procedures that return multiple result sets into PostgreSQL equivalents, mapping them to SETOF REFCURSOR outputs based on result-set count and whether the procedure uses a scalar return value. The post walks through the conversion logic, a healthcare reporting example that returns up to four result sets plus a status integer, and how to run and test the generated PostgreSQL code.
+
+🎁
+Miscellaneous
+
+Researchers: ChainDrop, a Shai-Hulud-based worm, has compromised 1,300+ npm packages, like Keyv, Cacheable, and flat-cache, with a combined 2B monthly downloads (Bill Toulas/BleepingComputer) (1 minute read)
+
+Researchers found that ChainDrop, a worm built on the Shai-Hulud codebase, has compromised more than 1,300 npm packages including Keyv, Cacheable, and flat-cache, which together see 2B monthly downloads. The scale means most Node.js build pipelines likely pulled a poisoned version, so teams should pin lockfiles, audit recent installs, and rotate any credentials exposed during CI runs.
+
+⚡
+Quick Links
+
+NVMe polishes its specs, brings virtualization to locally attached SSDs (1 minute read)
+
+The NVMe 2.2 spec adds live migration support, letting hypervisors move VMs across hosts without breaking locally attached SSD state.

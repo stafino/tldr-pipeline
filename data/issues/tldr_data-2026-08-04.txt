@@ -1,0 +1,148 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR Data 2026-08-04
+
+📊
+News & Trends
+
+Andy Pavlo joins ClickHouse to establish ClickHouse Labs (1 minute read)
+
+Andy Pavlo, the CMU professor behind the school's widely followed database courses, is joining ClickHouse to found and lead ClickHouse Labs, an industry research group focused on DBMS internals. The team will work directly with ClickHouse engineers rather than throw ideas over the wall, and will also back the company's managed PostgreSQL service as it pushes to compete on performance and reliability.
+
+Databricks Completes Acquisition of Panther: Accelerating the Security Lakehouse Era (1 minute read)
+
+Databricks completed its acquisition of Panther, an AI SOC platform, folding its mature detection workflows and 100+ out-of-the-box integrations onto Lakewatch, the agentic SIEM Databricks introduced earlier this year. The deal pushes Databricks' security lakehouse pitch, keeping security, IT, and business telemetry in one governed lakehouse so SOC teams run detection and response on the same data rather than paying legacy SIEM ingestion costs to move it.
+
+Unity AI Gateway is Generally Available (1 minute read)
+
+Databricks made Unity AI Gateway generally available, giving enterprises a single control plane to govern AI spend, security, and access across models, agents, MCPs, skills, and coding assistants. Customers like Rivian, Asana, and Edmunds already route through it, and Databricks says over a quadrillion tokens passed through the gateway in the past year, with granular cost attribution and runtime guardrails centralized in Unity Catalog.
+
+Ingest semi-structured data faster and more efficiently with Variant - Now Generally Available (5 minute read)
+
+(blurb not generated)
+
+Snowflake launches AI agent governance layer to track activity, control costs (5 minute read)
+
+(blurb not generated)
+
+Unifying public and private data: Scale knowledge graphs with Data Commons on Spanner (2 minute read)
+
+Google made Data Commons on Spanner Graph generally available and launched the Data Commons Platform in preview, letting teams join private knowledge graphs with over 400 billion public data points from sources like the UN, World Bank, and US Census. The migration off Bigtable caching to native Spanner Graph adds SQL-like graph queries, multi-region transactional consistency, and MCP tools for pulling normalized public reference data into internal models.
+
+Scullion replaced as CEO of UK unicorn Matillion (1 minute read)
+
+Matillion appointed Girish Pancha, a former Oracle and Informatica executive who scaled StreamSets to acquisition, as CEO, with founder Matthew Scullion moving to the board. The reshuffle, which also names Sanjay Krishnamurthi chief development officer, comes as the UK unicorn bets on Maia, its AI data automation product, to sell governed enterprise data pipelines against a $100M-plus recurring revenue base.
+
+Snowflake launches Cortex AI Gateway for enterprise agents (5 minute read)
+
+(blurb not generated)
+
+Introducing Database Operations Agents: The future of autonomous database management (2 minute read)
+
+Google announced two AI-powered database agents at Cloud Next '26, part of its Agentic Data Cloud: an Onboarding Agent for Day 0 setup and configuration, and an Observability Agent for Day 1 and 2 monitoring, troubleshooting, and query optimization. Both run across Chat, CLI, the Cloud console, MCP servers, and third-party IDEs, using natural-language prompts to diagnose issues and recommend fixes that previously took DBAs hours of manual investigation.
+
+How Target is enhancing retail discovery and cutting database maintenance by 50% with Spanner Graph (2 minute read)
+
+Target rebuilt its retail discovery platform on Google Spanner, consolidating what was previously separate Elasticsearch clusters and NoSQL datastores into a single system handling transactional workloads, graph relationships, vector similarity, and full-text search. The unified architecture cut database maintenance by 50% and powered the Gift Finder chat agent launched during the 2025 holiday season, replacing the fragile sync logic that kept the fragmented stores in step.
+
+🧠
+Deep Dives & Analysis
+
+Indexing the Data Lake for Online Point Queries (5 minute read)
+
+(blurb not generated)
+
+Scaling StreamHub: Transitioning from Kinesis to Kafka for 145 Billion Daily Events (5 minute read)
+
+(blurb not generated)
+
+Eval-driven development: Lessons from evaluating GenAI at scale (5 minute read)
+
+(blurb not generated)
+
+PostgreSQL's MVCC Is Bad: So Is Everyone Else's (5 minute read)
+
+PostgreSQL's MVCC gets blamed for table bloat, write amplification, the 32-bit transaction ID limit, and endless VACUUM babysitting, but this piece argues each cost traces to a deliberate design choice rather than a defect, reproduced live on a PostgreSQL 19 beta2 instance. The author reframes the critique around four questions every MVCC engine must answer, and shows that alternatives like MySQL, Oracle, and SQL Server just send the bill to a different place: the writer, tempdb, the cache, or the compactor.
+
+How MVCC and Transactions Work in RocksDB (5 minute read)
+
+(blurb not generated)
+
+GEM Training: How Meta Doubled the Efficiency of Its LLM-Scale Ads Foundation Model (1 minute read)
+
+Meta detailed how it scaled GEM, the foundation model behind Instagram and Facebook ads recommendations, to LLM-scale training on several thousand latest-generation GPUs, doubling end-to-end efficiency to 20-25% MFU while growing training FLOPs 4x in 12 months. The gains came from co-designing custom recommendation kernels like Jagged Flash Attention, MXFP8 ultra-low-precision training, and topology-aware 5D parallelism, since LLM-optimized infrastructure does not transfer cleanly to GEM's hybrid architecture of trillions of sparse and billions of dense parameters.
+
+Apache Polaris 1.7.0 and the Quiet Work of Making a Catalog Trustworthy (3 minute read)
+
+Apache Polaris 1.7.0 shipped on August 2, 2026, making Iceberg REST catalog writes idempotent so a network blip on commit no longer leads to data loss, where a retried request returns 409, the client reads it as failure, and deletes metadata files the catalog already committed. The release also adds a beta semantic-model API, stricter credential vending and location validation, and better orphan-file cleanup. Not every change saves you work: the tighter validation and cleanup passes create migration work for existing deployments.
+
+Oasis: Hiding the Cost of Querying Parquet Files in the Datapath (1 minute read)
+
+Oasis is a data-processing SmartNIC that offloads Parquet decoding into the network datapath as a custom hardware accelerator, integrated end-to-end with DuckDB. The authors target the fact that scans account for roughly half of query runtime in production warehouses, a cost that lakehouses worsen through per-query decoding of compressed formats. By overlapping decode with the rest of query execution, Oasis nearly doubles DuckDB throughput in the best case, a sign that decode cost is moving into specialized hardware as network bandwidth outpaces CPU.
+
+Brute intelligence (5 minute read)
+
+(blurb not generated)
+
+Composable canonicals: from tribal data knowledge to versioned artifact (5 minute read)
+
+(blurb not generated)
+
+Why Large Language Models Fail at Tabular Prediction (1 minute read)
+
+This paper studies why frontier LLMs still lose to decades-old baselines on tabular prediction, testing five hypotheses in a pure single-pass inference regime with no tools or fine-tuning. Controlled experiments falsify the usual suspects (noise, CSV formatting, numeric tokenization, batch size), leaving dimensionality as the decisive factor: across 31 benchmark datasets, the LLM is the only method of nine whose accuracy degrades as dimensions grow. In 2D it predicts like a local distance-based model, but in higher dimensions no classical learner reproduces its behavior.
+
+Six Dimensions of Benchmarking Time-Series Databases (1 minute read)
+
+This paper introduces SciTSv2, a benchmarking framework that evaluates time-series databases across six workload dimensions: connection parallelism, batch ingestion, series regularity, multi-variate series, mixed workloads, and system metrics. Running it against InfluxDB, TimescaleDB, ClickHouse, and DataLayerTS, the authors show that each dimension surfaces architectural behavior that single-axis benchmarks miss, including regularity-dependent trade-offs and contention between concurrent reads and writes. Paired with fine-grained system metrics, it traces performance back to CPU, I/O, and disk-bandwidth bottlenecks, grounding storage-engine selection in workload-specific evidence.
+
+Agentic Self-Healing for Data and AI Pipelines: An Affordable Vendor-Agnostic Architecture using Open-Source Software (1 minute read)
+
+This paper argues the gap in self-healing data and ML pipelines is architectural, not technological, and proposes a vendor-agnostic reference design built from open-source and low-cost tools. It stitches together monitoring, pipeline metadata, incident history, deterministic policy checks, AI-assisted diagnosis, approval workflows, and controlled remediation so teams can detect, diagnose, repair, verify, and learn from failures without a ZeroOps platform. The pitch is aimed at smaller data teams that can't justify per-seat AI observability pricing.
+
+RaG-Tree: Combining R-Tree and HNSW for Multi-Attribute Range Filtered Approximate Nearest Neighbor Search (1 minute read)
+
+RaG-Tree is a new index for multi-attribute range-filtered approximate nearest neighbor search, the operation behind vector queries that also filter on structured attributes like price or date. It pairs an R-tree for range pruning with partition-aware HNSW graphs whose density adapts to each partition's local vector distribution, plus a cost-based search that skips unnecessary graph traversal. On three real-world datasets the authors report faster queries than existing baselines alongside lighter indexing and fast incremental updates.
+
+A Unified Benchmark for Privacy-preserving Vector Search (1 minute read)
+
+Privacy-preserving vector search schemes have never been comparable, since each paper published its own corpus, threat model, and hardware. This benchmark runs a Plaintext baseline plus four cryptographic backends (SAP, EMVP, BNTM, Tiptoe) over one workload and metric set, and finds they land on a Pareto frontier rather than a flat penalty. SAP matches Plaintext throughput, EMVP costs 4x for cryptographic indistinguishability, BNTM adds malicious-server verifiability at 22x latency, and Tiptoe hides cluster choice at 190x per query.
+
+Join Indices for Search Engines: a Prunable Parallel Semijoin over Lucene Segments (1 minute read)
+
+This paper ports Valduriez's relational join-index technique to Lucene's LSM-style segment storage, materializing an append-only ordinal-to-ordinal join column for each parent-child segment pair to avoid query-time key translation. Its parallel semijoin runs per parent segment with no global barrier and prunes at three levels, so it composes with arbitrary engine queries. A Solr prototype joining 1M products against 10M skus cut average query latency 5.4x versus Solr's built-in join, widening to 8.3x at concurrency of eight.
+
+Pinner Progression: Better Use-Case Representation Driving Weekly Active User Growth at Pinterest (5 minute read)
+
+(blurb not generated)
+
+Wide Column Stores Explained: Cassandra, Bigtable, and ScyllaDB (5 minute read)
+
+(blurb not generated)
+
+How DoorDash Built a Centralized Gateway for AI Agent-Tool Access (5 minute read)
+
+DoorDash built a centralized gateway that sits between AI agents and the internal tools they call, standardizing authentication, access control, and observability instead of letting each agent wire up its own tool integrations. The design treats tool access as a shared platform concern, giving one place to enforce permissions and audit what agents actually do. It is the same consolidation pattern data teams already know from API gateways and semantic layers, now applied to agent-tool traffic.
+
+Token-Native Storage: Read and Write in your Agent's Language (1 minute read)
+
+This paper argues for token-native storage: keep text as the model's BPE token IDs instead of UTF-8, since embedders, rerankers, and LLM agents already read in token IDs and pay to translate on every access. Packing r50k IDs as uint16 beats UTF-8 by 2.25x uncompressed and 3.30x with an entropy coder, and serving IDs directly skips re-tokenization for ~10-600x faster reads. The catch is standardization: sharing token IDs requires a common tokenizer, which doesn't yet hold across model families.
+
+🚀
+Launches & Tools
+
+Multiple result sets: How Database Migration Service automates SQL server to PostgreSQL translation (2 minute read)
+
+Google Cloud's Database Migration Service now automates converting SQL Server stored procedures that return multiple result sets into PostgreSQL, mapping SQL Server's MARS protocol to PostgreSQL's SETOF REFCURSOR pattern based on result-set count and scalar return usage. The tool handles a migration blocker that previously forced teams to manually rewrite hundreds of procedures using explicit cursor logic, and it generates testable code for validation before cutover.
+
+Scikit-fingerprints: Python library for scikit-learn compatible molecular fingerprints and chemoinformatics (1 minute read)
+
+Scikit-fingerprints is a Python library that brings molecular fingerprints, similarity measures, and chemoinformatics workflows under a fully scikit-learn compatible interface, built on RDKit. Analytics teams working with chemical data can now assemble an entire pipeline from raw SMILES string to deployable model using composable, scikit-learn-native building blocks instead of stitching together incompatible frameworks.
+
+🎁
+Miscellaneous
+
+The missing role in every enterprise AI strategy: The analytics engineer (5 minute read)
+
+(blurb not generated)
