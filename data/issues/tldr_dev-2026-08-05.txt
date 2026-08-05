@@ -14,6 +14,10 @@ How we built a software factory to drive Astro’s GitHub issue count to zero (5
 
 (blurb not generated)
 
+Code review used to be the only way to catch these bugs (1 minute read)
+
+Palo Alto Networks' Unit 42 built NOVA, an automated system that read the source of 3,915 open-source projects over two months and returned 14,090 validated vulnerabilities, only 85 of which matched anything already documented. The notable finding is the mix: just 8% fell into the crash-driven categories fuzzers have handled since 2016, while the other 92% were logic bugs like broken access control, path traversal, and SSRF that require reasoning about intended behavior to catch.
+
 Turn one giant AI-generated pull request to a reviewable stack (5 minute read)
 
 (blurb not generated)
@@ -50,9 +54,9 @@ How MVCC and Transactions Work in RocksDB (5 minute read)
 
 (blurb not generated)
 
-EffiHolmes: Differential Profiling-Guided Repository Level Time Inefficiency Fix Localization (1 minute read)
+EffiHolmes: Differential Profiling-Guided Repository Level Time Inefficiency Fix Localization (5 minute read)
 
-EffiHolmes is an LLM framework that localizes the fix locations for time inefficiencies, the slow-but-correct code that produces no test failures or stack traces for traditional fault localizers to latch onto. It uses differential profiling across default and scaled workloads to separate real hotspots from noise, then LLM reasoning to map them to fix sites, improving file-level Acc@3 by 4.29 points with GPT-5.1 on the authors' new 140-issue RepoEffi-Bench.
+(blurb not generated)
 
 You don't need React: creating a minimal UI library in Vanilla JavaScript (5 minute read)
 
@@ -66,9 +70,9 @@ Harness engineering for self-improvement (5 minute read)
 
 (blurb not generated)
 
-Can LLMs Test Terminal User Interfaces? (1 minute read)
+Can LLMs Test Terminal User Interfaces? (5 minute read)
 
-This paper builds a headless benchmark for testing terminal user interfaces across ratatui, bubbletea, textual, and ink, after finding that only 12% of test code in 197 real-world TUI apps exercises the interface and 45% of those never send input. Under equal wall-clock budgets no frontier LLM beats random exploration outright, though LLM guidance is more efficient per interaction and uniquely reaches input-gated faults, and line coverage turns out to poorly predict crash discovery.
+(blurb not generated)
 
 Dogfooding at scale: migrating cdnjs to Cloudflare's Developer Platform (5 minute read)
 
@@ -79,10 +83,6 @@ Faster Floating-Point Math With Rust's New API (5 minute read)
 (blurb not generated)
 
 Show HN: Simple algorithm and color space to generate diverse skin tones (5 minute read)
-
-(blurb not generated)
-
-How Cloudflare enforces engineering standards using AI (5 minute read)
 
 (blurb not generated)
 
@@ -101,9 +101,9 @@ GitHub is the wrong shape for this new world (5 minute read)
 
 (blurb not generated)
 
-Eight Myths on Software Engineering and GenAI (1 minute read)
+Eight Myths on Software Engineering and GenAI (5 minute read)
 
-The ACM Queue article rebuts eight common claims about how generative AI changes software engineering, including the ideas that AI will make programmers obsolete, that code volume is the bottleneck, and that reviewing AI-generated code is easier than writing it. The authors argue that specification, comprehension, and long-term maintenance remain the hard parts, and that GenAI shifts effort toward verification rather than removing it.
+(blurb not generated)
 
 Everyone is building LLM routers, we deprecated ours (5 minute read)
 
@@ -129,9 +129,9 @@ As Larry Ellison bets the farm, Oracle says it loves AI-written code, just not i
 
 (blurb not generated)
 
-The Shape of Things to Come (1 minute read)
+The Shape of Things to Come (5 minute read)
 
-Steve Yegge argues that reusable agent harnesses are a dead end, and that as coding agents get powerful enough to run all night on large problems, harnesses must be bespoke and chemically bonded to the application they serve. He backs this with the collapse of his own reusable harness, Gas Town, which fell apart under Opus 4.7's tendency to endlessly fiddle with itself rather than converge on real work.
+(blurb not generated)
 
 🚀
 Launches & Tools
@@ -172,9 +172,9 @@ Cloudflare Workers and Containers now support inbound TCP connections and gRPC (
 
 (blurb not generated)
 
-Next.js 16.3 aims to reduce dreaded FATAL ERROR messages (1 minute read)
+Next.js 16.3 aims to reduce dreaded FATAL ERROR messages (5 minute read)
 
-Next.js 16.3 rewrites its build error handling to catch and surface Node's opaque FATAL ERROR crashes, most of which stem from V8 running out of heap during large compilations. The release adds clearer diagnostics that point to the offending module and memory ceiling instead of a bare stack trace, cutting the time spent guessing which import blew the build.
+(blurb not generated)
 
 GitHub pushes stacked pull requests into public preview (5 minute read)
 
@@ -196,15 +196,11 @@ Gap Decorations Are Now Available, Here’s What’s New (5 minute read)
 
 (blurb not generated)
 
-The Warp Agent CLI (1 minute read)
-
-Warp released the Warp Agent CLI, a standalone version of its multi-model coding agent that runs in any terminal, including Ghostty, iTerm 2, VS Code, and the built-in Windows and Mac terminals. Built on Warp's tmux-style multiplexing infrastructure, the agent manages pty connections directly, so it can switch directories mid-session, drive full-screen commands like sqlite and mysql, and run over SSH with no remote binary install.
-
-How OpenAI Built GPT-Live (5 minute read)
+The Warp Agent CLI (5 minute read)
 
 (blurb not generated)
 
-Introducing: Cloudflare Agents (5 minute read)
+How OpenAI Built GPT-Live (5 minute read)
 
 (blurb not generated)
 
@@ -213,6 +209,10 @@ Deploy local agents everywhere with LFM2.5-2.6B (5 minute read)
 (blurb not generated)
 
 The Agent Development Lifecycle has arrived on Cloudflare (5 minute read)
+
+(blurb not generated)
+
+AirLLM 70B inference with single 4GB GPU (5 minute read)
 
 (blurb not generated)
 
@@ -227,13 +227,17 @@ Massive ChainDrop npm supply-chain attack infects hundreds of packages (5 minute
 
 (blurb not generated)
 
+Rust-lang/rust is adopting an LLM policy (1 minute read)
+
+Five Rust project teams adopted an LLM policy governing how large language models can be used in contributions to the rust-lang/rust monorepo, covering PR authors, reviewers, and issue filers. The rules formalize existing moderation practices publicly, targeting three problems: polished output no longer signaling real understanding, easier code generation straining limited review bandwidth, and mechanical copy-pasting between contributors and models.
+
 Keyv-Linked npm Worm Poisons Hundreds of Packages, Plants Claude Code and VS Code Hooks (5 minute read)
 
 (blurb not generated)
 
-Ruby on Rails critical bug puts every image upload under scrutiny (2 minute read)
+Ruby on Rails critical bug puts every image upload under scrutiny (5 minute read)
 
-A critical Active Storage vulnerability in Ruby on Rails, CVE-2026-66066, lets unauthenticated attackers upload a malicious image that reaches libvips' unfuzzed image operations to read sensitive files or escalate to remote code execution. Scored 9.5 and disclosed July 30, the flaw is patched in Active Storage 7.2.3.2, 8.0.5.1, and 8.1.3.1, which teams handling user image uploads should install immediately.
+(blurb not generated)
 
 SQLite Critical CVEs or LLM Slop? (5 minute read)
 
@@ -243,17 +247,25 @@ SQLite Critical CVEs or LLM Slop? (5 minute read)
 
 (blurb not generated)
 
-Massive supply-chain attack compromises 440 packages under four hours (1 minute read)
+Open VSX Removes 77 Malicious Evil Twin Extensions Exfiltrating Developer Data (1 minute read)
 
-A self-replicating worm compromised a GitHub maintainer account and injected credential-stealing code into more than 440 npm packages in under four hours on Tuesday, starting with keyv and its 600M monthly downloads before spreading to over 860 packages totaling 2B monthly installs. Built on TeamPCP's open-source Mini Shai-Hulud repo, the payload harvests npm, GitHub, AWS, and CI credentials plus AI config files and crypto wallets, with affected packages present in 46% of all cloud environments.
+Security researchers at Manifold Security found 77 malicious "evil twin" extensions on the Open VSX marketplace that impersonated legitimate developer tools while exfiltrating system and dev-environment data to a shared domain. Nineteen of them harvested detailed reconnaissance including hostname, OS username, machine ID, open workspace paths, and the CI system running the editor, all framed in the listings as "anonymous usage metrics.
+
+Massive supply-chain attack compromises 440 packages under four hours (5 minute read)
+
+(blurb not generated)
 
 New XCSSET variant targets macOS devs via compromised Xcode projects (5 minute read)
 
 (blurb not generated)
 
-libexpat now funded by the City of Munich for up to 6 months (1 minute read)
+⚠️ Shai-Hulud opens your IDE: the npm worm that beats --ignore-scripts (2 minute read)
 
-The City of Munich is now paying libexpat maintainer Sebastian Pipping to work full-time on the widely used C99 XML parser for up to six months under its Open Source Sabbatical program. The funded work targets five known unfixed vulnerabilities, adds XML 1.0r5 support, and improves the library's robustness, marking the first time the decade-old project has had a paid maintainer.
+The Shai-Hulud worm compromised a maintainer's npm account on August 4 and spread through ESLint's dependency chain, hitting file-entry-cache, flat-cache, and keyv to reach 868 packages across 1,381 versions while npm audit flagged nothing. Beyond the usual preinstall hook, it plants persistence directly in VS Code and Cursor config that fires on IDE open, so a clean npm ci --ignore-scripts still leaves the credential-scraping payload live.
+
+libexpat now funded by the City of Munich for up to 6 months (5 minute read)
+
+(blurb not generated)
 
 Twenty Years of Pandoc (5 minute read)
 
@@ -262,9 +274,9 @@ Twenty Years of Pandoc (5 minute read)
 ⚡
 Quick Links
 
-Assessing Behavioral Validation in UI Component Test Suites Using Inferred Metamorphic Relations (1 minute read)
+Assessing Behavioral Validation in UI Component Test Suites Using Inferred Metamorphic Relations (5 minute read)
 
-A framework infers metamorphic relations to measure UI component test suites' behavioral validation, finding coverage between 42.5% and 47.6%.
+(blurb not generated)
 
 Microsoft reduces NuGet API keys to just 30 days, here's why (5 minute read)
 
