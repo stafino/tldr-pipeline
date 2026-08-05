@@ -1,0 +1,271 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR Dev 2026-08-05
+
+🧑‍💻
+Articles & Tutorials
+
+The Economic Benefit of Refactoring (5 minute read)
+
+(blurb not generated)
+
+How we built a software factory to drive Astro’s GitHub issue count to zero (5 minute read)
+
+(blurb not generated)
+
+Turn one giant AI-generated pull request to a reviewable stack (5 minute read)
+
+(blurb not generated)
+
+Rust project goals: Immobile types and guaranteed destructors (5 minute read)
+
+(blurb not generated)
+
+“Stateful systems are incredibly hard to build”: How Perplexity thinks about AI agent sandboxes (5 minute read)
+
+(blurb not generated)
+
+PostgreSQL's MVCC Is Bad: So Is Everyone Else's (5 minute read)
+
+(blurb not generated)
+
+New research: The Core Web Vitals thresholds you trust might be wrong for your site (5 minute read)
+
+(blurb not generated)
+
+How we built a realtime system for responsive voice AI in six months (5 minute read)
+
+(blurb not generated)
+
+How ChatGPT Optimizes its Agent Loop: Harness, API, and Inference (5 minute read)
+
+(blurb not generated)
+
+AI migrated legacy COBOL programs to Java, bugs included (5 minute read)
+
+(blurb not generated)
+
+How MVCC and Transactions Work in RocksDB (5 minute read)
+
+(blurb not generated)
+
+EffiHolmes: Differential Profiling-Guided Repository Level Time Inefficiency Fix Localization (1 minute read)
+
+EffiHolmes is an LLM framework that localizes the fix locations for time inefficiencies, the slow-but-correct code that produces no test failures or stack traces for traditional fault localizers to latch onto. It uses differential profiling across default and scaled workloads to separate real hotspots from noise, then LLM reasoning to map them to fix sites, improving file-level Acc@3 by 4.29 points with GPT-5.1 on the authors' new 140-issue RepoEffi-Bench.
+
+You don't need React: creating a minimal UI library in Vanilla JavaScript (5 minute read)
+
+(blurb not generated)
+
+The true power of regular expressions (2012) (5 minute read)
+
+(blurb not generated)
+
+Harness engineering for self-improvement (5 minute read)
+
+(blurb not generated)
+
+Can LLMs Test Terminal User Interfaces? (1 minute read)
+
+This paper builds a headless benchmark for testing terminal user interfaces across ratatui, bubbletea, textual, and ink, after finding that only 12% of test code in 197 real-world TUI apps exercises the interface and 45% of those never send input. Under equal wall-clock budgets no frontier LLM beats random exploration outright, though LLM guidance is more efficient per interaction and uniquely reaches input-gated faults, and line coverage turns out to poorly predict crash discovery.
+
+Dogfooding at scale: migrating cdnjs to Cloudflare's Developer Platform (5 minute read)
+
+(blurb not generated)
+
+Faster Floating-Point Math With Rust's New API (5 minute read)
+
+(blurb not generated)
+
+Show HN: Simple algorithm and color space to generate diverse skin tones (5 minute read)
+
+(blurb not generated)
+
+How Cloudflare enforces engineering standards using AI (5 minute read)
+
+(blurb not generated)
+
+🧠
+Opinions & Advice
+
+"Clean" Code, Horrible Performance (2023) (5 minute read)
+
+(blurb not generated)
+
+The Orchestrator's Tax (5 minute read)
+
+(blurb not generated)
+
+GitHub is the wrong shape for this new world (5 minute read)
+
+(blurb not generated)
+
+Eight Myths on Software Engineering and GenAI (1 minute read)
+
+The ACM Queue article rebuts eight common claims about how generative AI changes software engineering, including the ideas that AI will make programmers obsolete, that code volume is the bottleneck, and that reviewing AI-generated code is easier than writing it. The authors argue that specification, comprehension, and long-term maintenance remain the hard parts, and that GenAI shifts effort toward verification rather than removing it.
+
+Everyone is building LLM routers, we deprecated ours (5 minute read)
+
+(blurb not generated)
+
+Don't be a meat proxy (5 minute read)
+
+(blurb not generated)
+
+Prevent cognitive debt by manually retyping LLM-generated code (5 minute read)
+
+(blurb not generated)
+
+The development pipeline is a production system (5 minute read)
+
+(blurb not generated)
+
+The Session You Cannot Take With You (5 minute read)
+
+(blurb not generated)
+
+As Larry Ellison bets the farm, Oracle says it loves AI-written code, just not in OpenJDK (5 minute read)
+
+(blurb not generated)
+
+The Shape of Things to Come (1 minute read)
+
+Steve Yegge argues that reusable agent harnesses are a dead end, and that as coding agents get powerful enough to run all night on large problems, harnesses must be bespoke and chemically bonded to the application they serve. He backs this with the collapse of his own reusable harness, Gas Town, which fell apart under Opus 4.7's tendency to endlessly fiddle with itself rather than converge on real work.
+
+🚀
+Launches & Tools
+
+DeepSeek V4 Flash on a Single AMD MI300X (5 minute read)
+
+(blurb not generated)
+
+Qwen3.8-Max: A New Bar for Coding and Cowork (5 minute read)
+
+(blurb not generated)
+
+Octane – React’s programming model, compiled (5 minute read)
+
+(blurb not generated)
+
+Workers RPC now works across Python and JavaScript (5 minute read)
+
+(blurb not generated)
+
+Run CI/CD for millions of repos — on your platform, on Cloudflare (5 minute read)
+
+(blurb not generated)
+
+FFmpeg 9.0 (5 minute read)
+
+(blurb not generated)
+
+Show HN: Run an 80B Qwen in 4.3 GB of RAM on a Mac, and a 35B on an iPhone (5 minute read)
+
+(blurb not generated)
+
+Bonsai: Janestreet's UI Library (5 minute read)
+
+(blurb not generated)
+
+Cloudflare Workers and Containers now support inbound TCP connections and gRPC (5 minute read)
+
+(blurb not generated)
+
+Next.js 16.3 aims to reduce dreaded FATAL ERROR messages (1 minute read)
+
+Next.js 16.3 rewrites its build error handling to catch and surface Node's opaque FATAL ERROR crashes, most of which stem from V8 running out of heap during large compilations. The release adds clearer diagnostics that point to the offending module and memory ceiling instead of a bare stack trace, cutting the time spent guessing which import blew the build.
+
+GitHub pushes stacked pull requests into public preview (5 minute read)
+
+(blurb not generated)
+
+Hashimoto’s Superlogical bets that agentic software development needs more than a better terminal (5 minute read)
+
+(blurb not generated)
+
+AWS’s Kiro Crew aims to turn AI coding agents into autonomous engineering teams (5 minute read)
+
+(blurb not generated)
+
+Your agent can now debug Workers with local tracing (5 minute read)
+
+(blurb not generated)
+
+Gap Decorations Are Now Available, Here’s What’s New (5 minute read)
+
+(blurb not generated)
+
+The Warp Agent CLI (1 minute read)
+
+Warp released the Warp Agent CLI, a standalone version of its multi-model coding agent that runs in any terminal, including Ghostty, iTerm 2, VS Code, and the built-in Windows and Mac terminals. Built on Warp's tmux-style multiplexing infrastructure, the agent manages pty connections directly, so it can switch directories mid-session, drive full-screen commands like sqlite and mysql, and run over SSH with no remote binary install.
+
+How OpenAI Built GPT-Live (5 minute read)
+
+(blurb not generated)
+
+Introducing: Cloudflare Agents (5 minute read)
+
+(blurb not generated)
+
+Deploy local agents everywhere with LFM2.5-2.6B (5 minute read)
+
+(blurb not generated)
+
+The Agent Development Lifecycle has arrived on Cloudflare (5 minute read)
+
+(blurb not generated)
+
+🎁
+Miscellaneous
+
+Keyv and friends compromised in active Shai-Hulud supply chain attack (5 minute read)
+
+(blurb not generated)
+
+Massive ChainDrop npm supply-chain attack infects hundreds of packages (5 minute read)
+
+(blurb not generated)
+
+Keyv-Linked npm Worm Poisons Hundreds of Packages, Plants Claude Code and VS Code Hooks (5 minute read)
+
+(blurb not generated)
+
+Ruby on Rails critical bug puts every image upload under scrutiny (2 minute read)
+
+A critical Active Storage vulnerability in Ruby on Rails, CVE-2026-66066, lets unauthenticated attackers upload a malicious image that reaches libvips' unfuzzed image operations to read sensitive files or escalate to remote code execution. Scored 9.5 and disclosed July 30, the flaw is patched in Active Storage 7.2.3.2, 8.0.5.1, and 8.1.3.1, which teams handling user image uploads should install immediately.
+
+SQLite Critical CVEs or LLM Slop? (5 minute read)
+
+(blurb not generated)
+
+77 Open VSX extensions found harvesting developer info (5 minute read)
+
+(blurb not generated)
+
+Massive supply-chain attack compromises 440 packages under four hours (1 minute read)
+
+A self-replicating worm compromised a GitHub maintainer account and injected credential-stealing code into more than 440 npm packages in under four hours on Tuesday, starting with keyv and its 600M monthly downloads before spreading to over 860 packages totaling 2B monthly installs. Built on TeamPCP's open-source Mini Shai-Hulud repo, the payload harvests npm, GitHub, AWS, and CI credentials plus AI config files and crypto wallets, with affected packages present in 46% of all cloud environments.
+
+New XCSSET variant targets macOS devs via compromised Xcode projects (5 minute read)
+
+(blurb not generated)
+
+libexpat now funded by the City of Munich for up to 6 months (1 minute read)
+
+The City of Munich is now paying libexpat maintainer Sebastian Pipping to work full-time on the widely used C99 XML parser for up to six months under its Open Source Sabbatical program. The funded work targets five known unfixed vulnerabilities, adds XML 1.0r5 support, and improves the library's robustness, marking the first time the decade-old project has had a paid maintainer.
+
+Twenty Years of Pandoc (5 minute read)
+
+(blurb not generated)
+
+⚡
+Quick Links
+
+Assessing Behavioral Validation in UI Component Test Suites Using Inferred Metamorphic Relations (1 minute read)
+
+A framework infers metamorphic relations to measure UI component test suites' behavioral validation, finding coverage between 42.5% and 47.6%.
+
+Microsoft reduces NuGet API keys to just 30 days, here's why (5 minute read)
+
+(blurb not generated)
