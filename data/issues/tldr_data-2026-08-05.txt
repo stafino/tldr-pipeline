@@ -30,13 +30,13 @@ Unifying public and private data: Scale knowledge graphs with Data Commons on Sp
 
 (blurb not generated)
 
-Scullion replaced as CEO of UK unicorn Matillion (5 minute read)
-
-(blurb not generated)
-
 Snowflake launches Cortex AI Gateway for enterprise agents (5 minute read)
 
 (blurb not generated)
+
+AWS updates DynamoDB with native vector search to ease AI application development (2 minute read)
+
+AWS added native vector search to DynamoDB, letting teams store operational records and their vector embeddings in one table instead of syncing to a separate store like OpenSearch, Pinecone, or Weaviate. The consolidation cuts the two-database architecture and its synchronization pipelines, removing a standing cost of at least $700 a month per secondary database while keeping vector indexes fresh against the source record for agentic workloads.
 
 Introducing Database Operations Agents: The future of autonomous database management (5 minute read)
 
@@ -69,9 +69,9 @@ How MVCC and Transactions Work in RocksDB (5 minute read)
 
 (blurb not generated)
 
-SieveIVF: Threshold-Aware IVF Execution for Large-Scale Training Data Deduplication (5 minute read)
+SieveIVF: Threshold-Aware IVF Execution for Large-Scale Training Data Deduplication (1 minute read)
 
-(blurb not generated)
+SieveIVF is a threshold-aware IVF search executor that stops probing partitions once W consecutive searches turn up no candidate above the similarity threshold, exploiting the fact that qualifying duplicates surface early. Built into Lance, it runs 4.1-8.4x faster than fixed-probe IVF on 10M and 100M embedding dedup workloads, at a top-10 recall cost of 0.03-2.29 points. The takeaway is that an application predicate can steer IVF work allocation without touching the index.
 
 GEM Training: How Meta Doubled the Efficiency of Its LLM-Scale Ads Foundation Model (5 minute read)
 
@@ -85,21 +85,29 @@ Composable canonicals: from tribal data knowledge to versioned artifact (5 minut
 
 (blurb not generated)
 
-This is why we can't have nice things (5 minute read)
+From User Sequences to Scaling Laws: A Multi-Stage Architecture for Meta’s Ads Ranking (1 minute read)
 
-(blurb not generated)
+Meta detailed the multi-stage sequence architecture behind its Generative Ads Recommendation Model, splitting heavy offline user modeling from lightweight online ranking so the two stop interfering and can scale independently. The design swaps manual sparse-feature engineering for dense tokenization and target-aware attention that learns feature interactions directly from data, giving ads ranking predictable, LLM-style scaling laws. Meta credits the platform with cumulative lifts of 6% in Instagram conversions, 3% in Facebook conversions, and 3.5% in Facebook ad clicks.
 
-RAG-Stack: Co-Optimizing RAG Serving Performance and Quality (5 minute read)
+This is why we can't have nice things (1 minute read)
 
-(blurb not generated)
+The author revisits his 2023 prediction that AI would mirror cloud computing, with a handful of providers like OpenAI and Anthropic becoming invisible infrastructure that every product quietly calls through an API. The essay questions whether that clean analogy holds, noting that unlike AWS or Snowflake, model providers face commoditized outputs, thin switching costs, and no clear path to the durable margins cloud vendors enjoy. For data teams betting their stack on a single model API, the open question is whether any of these companies works as a business yet.
 
-Why Large Language Models Fail at Tabular Prediction (5 minute read)
+RAG-Stack: Co-Optimizing RAG Serving Performance and Quality (1 minute read)
 
-(blurb not generated)
+This paper introduces RAG-Stack, a framework for finding the quality-performance Pareto frontier across RAG configuration choices like retrieval indexes, model selection, and how models invoke retrieval. Rather than deploying every candidate, it uses a design-space exploration algorithm, a workload abstraction, and a performance model to predict optimal deployments and transfer a known frontier to new serving hardware. It covers 52.5% to 153.2% more of the normalized quality-performance space than existing configuration-search methods over the same iteration budget.
 
-Uplifting the Superpowers of Worst-Case-Optimal Join Algorithms (5 minute read)
+Why Large Language Models Fail at Tabular Prediction (1 minute read)
 
-(blurb not generated)
+This paper isolates why frontier LLMs keep losing to fifty-year-old baselines on tabular prediction, testing five hypotheses in a single inference pass with no tools or fine-tuning. Format, tokenization, noise, and batch size all get falsified. Dimensionality is the culprit: across 31 datasets, the LLM is the only method of nine whose accuracy drops as dimensions grow, behaving like a local distance-based classifier in 2D but degrading in a way no noise-corrupted classical model reproduces.
+
+Solving the "Noisy Neighbor": How Sharded Architecture Protects Multi-Tenant Platforms (2 minute read)
+
+Google Cloud engineers detail migrating a multi-tenant data platform from a monolithic pipeline to a sharded hub-and-spoke pattern, where a lightweight Dataflow "hub" routes events by tenant ID into per-tenant Pub/Sub buffers feeding isolated Dataflow "spokes." The design shrinks the blast radius so one tenant's data burst or failing database no longer stalls every pipeline, and it lets teams tier spokes by priority. Critical tenants get dedicated high-resource jobs while smaller tenants share pooled pipelines to hold down cost.
+
+Uplifting the Superpowers of Worst-Case-Optimal Join Algorithms (1 minute read)
+
+This paper extends worst-case-optimal join algorithms to handle filters natively, rather than applying selections before or after processing Basic Graph Patterns as most SPARQL and GQL engines do. The authors build the technique into Ring, a compact graph index that resolves patterns in almost no space beyond the graph itself, extend it to property graphs, and report that it beats baseline systems in experiments while staying compact.
 
 Agentic Self-Healing for Data and AI Pipelines: An Affordable Vendor-Agnostic Architecture using Open-Source Software (5 minute read)
 
@@ -117,17 +125,9 @@ How DoorDash Built a Centralized Gateway for AI Agent-Tool Access (5 minute read
 
 (blurb not generated)
 
-Evaluating LLMs in Database Scenarios: A Lifecycle Benchmark for Assessing Their Potential in Core Database Tasks (5 minute read)
+Evaluating LLMs in Database Scenarios: A Lifecycle Benchmark for Assessing Their Potential in Core Database Tasks (1 minute read)
 
-(blurb not generated)
-
-Stateful Governance for Concurrent Agentic Systems (5 minute read)
-
-(blurb not generated)
-
-Token-Native Storage: Read and Write in your Agent's Language (5 minute read)
-
-(blurb not generated)
+DBLifeBench is the first benchmark to test LLMs across the full database lifecycle: design, implementation, operation, debugging, and maintenance, rather than the usual Text-to-SQL slice. The headline finding is that specialized Text-to-SQL models hit "catastrophic forgetting" on non-coding phases like schema design and maintenance, while general-purpose models stay balanced across all five. The takeaway for teams eyeing LLM-driven DBA work is that a fine-tuned SQL model is not a full-stack replacement.
 
 🚀
 Launches & Tools
@@ -136,17 +136,17 @@ Multiple result sets: How Database Migration Service automates SQL server to Pos
 
 (blurb not generated)
 
-DuckDB – Data power tools for your laptop, now in Clojure (2023) (5 minute read)
+DuckDB – Data power tools for your laptop, now in Clojure (2023) (1 minute read)
+
+tech.ml.dataset (TMD) now wires Clojure into DuckDB through tmducken, using DuckDB's batched C interface to insert and query without forcing full result sets into memory. The payoff is out-of-memory relational processing on a single laptop, letting Clojure data teams run large joins over 50GB CSVs with DuckDB's vectorized SQL engine instead of standing up a Spark cluster or round-tripping through JDBC and Postgres.
+
+OpenCost 1.121.0: First-of-a-kind Kubernetes inference cost tracking (5 minute read)
 
 (blurb not generated)
 
-OpenCost 1.121.0: First-of-a-kind Kubernetes inference cost tracking (1 minute read)
-
-OpenCost 1.121.0 adds Kubernetes inference cost tracking, integrating the CNCF project with llm-d and vLLM to derive per-model and per-token costs from actual GPU, CPU, and RAM consumption. Platform teams can now attribute AI spend to specific models and workloads, making self-hosting-versus-SaaS comparisons and per-team budget accounting concrete rather than guesswork.
-
 Interview: Qdrant and TurboQuant compression (5 minute read)
 
-Qdrant added a TurboQuant-based compression scheme for embeddings, reshaping vectors before quantizing and layering in corrections that hold recall higher than existing options at the same footprint. At 8x compression it matches scalar quantization and beats binary quantization at every storage class, targeting the RAM-and-disk memory bottleneck that gates RAG, semantic search, and recommendation workloads before compute does.
+(blurb not generated)
 
 🎁
 Miscellaneous
