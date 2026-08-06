@@ -10,6 +10,10 @@ Gateway API v1.6: TCPRoute and UDPRoute Graduate to Standard (5 minute read)
 
 (blurb not generated)
 
+Datadog drops 15%+ after forecasting weaker full-year sales due to reduced usage from its largest client, a leading AI company; Q2 revenue rises 36% to $1.12B (Katherine Hamilton/Wall Street Journal) (1 minute read)
+
+Datadog fell more than 15% after warning that full-year sales would come in below prior forecasts, citing reduced usage from its largest customer, a leading AI company scaling back its observability spend. The pullback landed despite Q2 revenue rising 36% year over year to $1.12B, signaling that concentrated AI-customer demand can swing monitoring vendors' guidance as fast as it inflated it.
+
 Tailscale didn't stop the Hugging Face intrusion (5 minute read)
 
 (blurb not generated)
@@ -18,33 +22,45 @@ Veeam, Terraform MCP, Django Patch Critical Flaws, Led by CVSS 10.0 Cross-Tenant
 
 (blurb not generated)
 
+The next generation of MCP (1 minute read)
+
+The MCP 2026-07-28 specification, released last week with updated TypeScript, Python, Go, and C# SDKs, makes the protocol fully stateless, dropping the sticky sessions, held-open streams, and message replay that remote servers previously had to manage. Cloudflare notes MCP servers can now run in a single Worker with no stateful infrastructure, cutting operational overhead and cost by removing the Durable Objects layer that stateful connections once required.
+
 Keyv and friends compromised in active Shai-Hulud supply chain attack (5 minute read)
 
 (blurb not generated)
 
-CISA Flags TeamCity CVE-2026-63077 RCE Flaw Under Active Exploitation in the Wild (1 minute read)
-
-CISA added CVE-2026-63077 to its Known Exploited Vulnerabilities catalog after the CVSS 9.8 deserialization flaw in on-premise JetBrains TeamCity came under active exploitation, letting an unauthenticated attacker abuse the agent polling protocol to bypass auth and run arbitrary commands as the server process. A successful hit exposes stored credentials and build artifacts across downstream CI/CD pipelines, and FCEB agencies face an August 8 patch deadline under BOD 26-04.
-
-New OVSwrap Linux Kernel Flaw Lets Local Users Gain Root via Open vSwitch (5 minute read)
+CISA Flags TeamCity CVE-2026-63077 RCE Flaw Under Active Exploitation in the Wild (5 minute read)
 
 (blurb not generated)
 
-Critical Gitea Flaw Let Unauthenticated Attackers Read Server Files via Org-Mode Markup (5 minute read)
+New OVSwrap Linux Kernel Flaw Lets Local Users Gain Root via Open vSwitch (1 minute read)
 
-(blurb not generated)
+A memory-corruption flaw in the Linux kernel's Open vSwitch datapath, tracked as CVE-2026-64531 (CVSS 7.8) and codenamed OVSwrap, lets an unprivileged local user reach root on default-configured distros via unprivileged user namespaces, and a public exploit ships with records for roughly 800 kernel builds. Fixes landed upstream on July 24, but check your vendor tracker rather than upstream numbers, and unload the openvswitch module where OVS is not required.
+
+Critical Gitea Flaw Let Unauthenticated Attackers Read Server Files via Org-Mode Markup (1 minute read)
+
+Gitea patched CVE-2026-59774, a critical file-read flaw (CVSS 9.8) that let unauthenticated attackers read any file the service account can access on self-hosted instances running 1.22.1 through 1.27.0, using only crafted Org-mode markup against a public repository. Self-hosted admins should upgrade to 1.27.1 immediately, and if logs show the markup endpoint was hit, rotate the internal token, OAuth and JWT material, and database credentials.
+
+Building an open Agentic Internet: readable, discoverable, callable, and payable (1 minute read)
+
+Cloudflare laid out its vision for an "Agentic Internet" and argued the web needs new open standards so agents can read, discover, call, and pay for content rather than collide with sites built for humans. The company notes that billions of well-behaved bot requests currently re-fetch unchanged pages, wasting compute on machine traffic that renders no CSS, sees no ads, but still has a paying human behind every request.
 
 Post-quantum authentication to origins is now supported (5 minute read)
 
 (blurb not generated)
 
-Proxmox ports itself to Arm with help from Nvidia and Supermicro (1 minute read)
-
-Proxmox ported its Virtual Environment platform to 64-bit Arm with engineering help from Nvidia and Supermicro, extending the open-source hypervisor beyond its longtime x86 base. The port targets Arm server silicon like Nvidia's Grace and Supermicro's Ampere-based hardware, giving platform teams a KVM-based alternative to VMware on Arm without a per-socket licensing bill.
-
-Unlocking the future of shared storage: Filestore on Colossus (5 minute read)
+Proxmox ports itself to Arm with help from Nvidia and Supermicro (5 minute read)
 
 (blurb not generated)
+
+Unlocking the future of shared storage: Filestore on Colossus (2 minute read)
+
+Google rebuilt Filestore, its managed NFS service, on Colossus, the distributed storage layer behind YouTube and Gmail, decoupling IOPS from capacity so teams provision performance without over-provisioning storage. The GKE angle is the payoff: the CSI driver plus multishares carve one high-performance instance into 10 GiB shares across thousands of containers, cutting TCO for AI agent swarms sharing a persistent volume.
+
+Latest GitHub outage squeezes Actions, Pages to death (1 minute read)
+
+GitHub suffered another platform outage on August 6, degrading Actions and Pages alongside intermittent failures across the core service. The repeated incidents keep pressure on teams that gate deploys and CI on GitHub, reviving the case for fallback runners and status-aware pipeline retries to limit blast radius.
 
 Introducing Database Operations Agents: The future of autonomous database management (5 minute read)
 
@@ -54,6 +70,10 @@ K8gb becomes a CNCF incubating project (5 minute read)
 
 (blurb not generated)
 
+Proxmox VE now available for ARM64 (1 minute read)
+
+Proxmox released Proxmox VE 9.2 for 64-bit ARM (arm64), its first supported architecture beyond x86-64, built on Debian 13.5 with the same code base, package repos, QEMU 11.0, LXC 7.0, and ZFS 2.4 as the amd64 builds. The port is fully supported rather than a preview, with a separate enterprise repository and subscription tier, and was hardened in production on NVIDIA hardware ahead of launch.
+
 Your Azure DevOps pipelines have a 2027 deadline, and the clock has just started (5 minute read)
 
 (blurb not generated)
@@ -62,27 +82,7 @@ Kubernetes v1.37 Sneak Peek (5 minute read)
 
 (blurb not generated)
 
-AWS, Google, and Vercel Agent Flaws Let Attackers Trigger Tools Without Running the Model (1 minute read)
-
-AWS, Google, and Vercel patched flaws in their agent frameworks that let forged tool-call payloads reach an agent's dispatch path without a legitimate model turn, bypassing system prompts, content filters, and model-level guardrails entirely. The fixes landed in Bedrock AgentCore, Google ADK 2.5.0, and Vercel's @ai-sdk/harness-codex 1.0.29 and harness-opencode 1.0.28, with blast radius bounded by whatever sensitive tools each agent was already wired to.
-
-Hackers Start Exploiting Recent JetBrains TeamCity Vulnerability (1 minute read)
-
-CISA warned that threat actors are exploiting CVE-2026-63077, a critical (CVSS 9.8) deserialization flaw in JetBrains TeamCity On-Premises that lets unauthenticated attackers reach RCE via the agent polling protocol and run OS commands as the server process. JetBrains shipped fixes in versions 2025.11.7 and 2026.1.3 plus a patch plugin for 2017.1+, and CISA's KEV listing gives federal agencies three days to patch.
-
-Thousands of servers can be backdoored by exploiting buggy motherboard controllers (5 minute read)
-
-(blurb not generated)
-
-Leaked n8n API Tokens Exposed Live Instances to Credential Theft (5 minute read)
-
-(blurb not generated)
-
-CISA warns of hackers exploiting Langflow, N-central, Apache Tomcat flaws (5 minute read)
-
-(blurb not generated)
-
-Critical OpenWrt DHCPv6 Flaw Could Let Unauthenticated Attackers Run Code as Root (5 minute read)
+AWS, Google, and Vercel Agent Flaws Let Attackers Trigger Tools Without Running the Model (5 minute read)
 
 (blurb not generated)
 
@@ -97,9 +97,9 @@ You can’t debug what you can’t see — Observability for AI Agents (5 minute
 
 (blurb not generated)
 
-The Agent Access Model (5 minute read)
+The Agent Access Model (1 minute read)
 
-(blurb not generated)
+Cloudflare proposes the Agent Access Model, an access-control framework arguing that BeyondCorp-style Zero Trust breaks quietly when the principal is an AI agent rather than a human at a device. The authors note that human-shaped controls fail by granting too much, seeing too little, and trusting too long, so AAM shrinks each agent's capability ceiling instead of trying to make every access decision smarter. The post separates single-principal controls available today from the harder multiplayer access-control problem.
 
 Control Reliability Engineering (CRE): Applying SRE Principles to Cybersecurity Controls (5 minute read)
 
@@ -141,9 +141,9 @@ GitHub is the wrong shape for this new world (5 minute read)
 
 (blurb not generated)
 
-How GitHub gave every repository a durable owner (5 minute read)
+How GitHub gave every repository a durable owner (1 minute read)
 
-(blurb not generated)
+GitHub validated durable ownership for every active repository across its 11,000-plus non-archived internal repos in under 45 days, archiving roughly 8,000 dormant ones and making ownership mandatory at repository creation. The gap surfaced during secret scanning remediation, where rotating a secret without a known owner risked disruptive breakage and left no way to route the work. Ownership now anchors incident response, on-call routing, and compliance scoping.
 
 The development pipeline is a production system (5 minute read)
 
@@ -160,9 +160,9 @@ Run CI/CD for millions of repos — on your platform, on Cloudflare (5 minute re
 
 (blurb not generated)
 
-OpenCost 1.121.0: First-of-a-kind Kubernetes inference cost tracking (5 minute read)
+OpenCost 1.121.0: First-of-a-kind Kubernetes inference cost tracking (1 minute read)
 
-(blurb not generated)
+OpenCost 1.121.0 adds first-of-a-kind Kubernetes inference cost tracking, integrating the CNCF project with llm-d and vLLM to derive per-model and per-token costs from actual GPU, CPU, and RAM consumption. The release closes the gap between infrastructure spend and token throughput, letting platform teams attribute AI budget by team and workload and finally compare self-hosting economics against SaaS API pricing with real numbers.
 
 Celld: Self-hosted, distributed Durable Objects (5 minute read)
 
@@ -180,47 +180,59 @@ Your agent can now debug Workers with local tracing (5 minute read)
 
 (blurb not generated)
 
-WriteGuard: fine-grained controls for MCP Servers (5 minute read)
+Give any website a WebMCP interface (1 minute read)
 
-(blurb not generated)
+Cloudflare launched a developer preview of WebMCP, a toggle that uses edge HTMLRewriter injection to expose in-browser agent tools on any Cloudflare-hosted site with no code changes and nothing touched at the origin. The feature ships as opt-in tool packs that run entirely in the browser, letting agents call defined tools instead of scraping human-facing pages, and pairs with existing WebMCP support in Cloudflare's BrowserRun remote browser.
 
-Catching rogue AI behavior with identity-aware analytics (5 minute read)
+Introducing Kitesurf: The agent-first browser that runs in V8 isolates on Cloudflare Workers (1 minute read)
 
-(blurb not generated)
+Cloudflare released Kitesurf, an agent-first browser that runs inside V8 isolates on Workers rather than shipping full Chromium instances, cutting the memory and compute overhead that makes per-agent browsers expensive at scale. It strips human-oriented features like tabs, extensions, and device sync in favor of structured, machine-readable output and lower token counts, aiming to open browser automation to cheaper models beyond the top-tier ones.
+
+GitLab Secrets Manager adds ESO, Terraform, API support (2 minute read)
+
+GitLab Secrets Manager now supports the External Secrets Operator and Terraform, extending secret retrieval beyond CI/CD through a Vault-compatible KV v2 API backed by OpenBao. Teams can point ESO at GitLab via short-lived JWT auth and drop separate secret stores for Kubernetes, Terraform, and pipelines, collapsing three sync-and-audit surfaces into one source of truth.
+
+WriteGuard: fine-grained controls for MCP Servers (1 minute read)
+
+Cloudflare opened a private beta of WriteGuard, which adds fine-grained controls over write access on its MCP server portals so that an agent's tool calls can be scoped, attributed, and constrained rather than inheriting a user's full permissions. The controls target the blast radius of misconfigured agents, closing entire ticket queues or dropping database tables, where network logs cannot distinguish one agent session from a human operator.
+
+Catching rogue AI behavior with identity-aware analytics (1 minute read)
+
+Cloudflare launched Identity-aware AI Gateway in open beta, pairing Cloudflare Access with every request so each call carries a verified SAML identity (via Okta, Entra, or any provider) as `cf.user_id` instead of shared API keys. User Insights, now generally available to all AI Gateway customers at no cost, builds a behavioral baseline per user and agent to flag spend spikes and rogue agents routed through tools like Claude Code, Codex, and Copilot.
+
+Confidential AI for GitLab Self-Hosted (3 minute read)
+
+GitLab Duo Self-Hosted can now use Privatemode AI as a model provider, running frontier models inside confidential-computing hardware so prompts, source code, and completions stay encrypted end-to-end, including during inference. Teams point Duo's AI Gateway at the Privatemode proxy to get agentic features like MR review, cross-file refactoring, and test generation without source code leaving an encrypted boundary or standing up a GPU cluster.
+
+Cloudflare AI Search: give your agents a search engine for your data (1 minute read)
+
+Cloudflare added managed automation to AI Search, its retrieval layer for agents, so teams no longer stitch together Workers AI, Vectorize, R2, and AI Gateway by hand and can index a site without a sitemap using the new Discover parser. The preview pricing makes embedding and reranking free on default Workers AI models, and public /search and /mcp endpoints expose a namespace behind a custom domain or Cloudflare Access.
 
 AWS’s Kiro Crew aims to turn AI coding agents into autonomous engineering teams (5 minute read)
 
 (blurb not generated)
 
-Cloudflare launches Identity-Aware AI Gateway to track who is using AI (5 minute read)
+Cloudflare launches Identity-Aware AI Gateway to track who is using AI (1 minute read)
 
-(blurb not generated)
+Cloudflare launched Identity-Aware AI Gateway, which wires AI Gateway into its Access zero-trust product to attach a verified user or service identity to every AI request leaving the network, replacing the shared API keys that make attribution impossible. Teams get per-user and per-team spend limits, real-time visibility into what each request contained, and automatic filtering of names, passwords, and secrets before prompts reach the model provider.
 
 Multiple result sets: How Database Migration Service automates SQL server to PostgreSQL translation (5 minute read)
 
 (blurb not generated)
 
-Cloudflare OS goes open source with a record of everything its agents read (5 minute read)
-
-(blurb not generated)
-
 Mixture-of-Kittens: our open-source MoE megakernel for NVL72s (5 minute read)
 
-(blurb not generated)
+Cursor open-sourced Mixture-of-Kittens (MoK), a deterministic MoE training megakernel for GB300 NVL72 racks that fuses all expert communication and computation into a single kernel. The MoE layer had been eating more than half of end-to-end training time for Cursor's Composer model, and MoK's redesign lifted production tokens-per-second by 1.41x across several racks.
 
 🎁
 Miscellaneous
 
-Open VSX Removes 77 Malicious Evil Twin Extensions Exfiltrating Developer Data (5 minute read)
+Open VSX Removes 77 Malicious Evil Twin Extensions Exfiltrating Developer Data (1 minute read)
 
-(blurb not generated)
+Open VSX removed 77 malicious "evil twin" extensions that impersonated legitimate developer tools while exfiltrating system and environment data, uploaded between July 26 and August 1 and pulled by August 3. Manifold Security found 19 of them ran reconnaissance payloads that transmitted hostname, OS username, editor version, machine ID, CI system, and the open workspace's full file system path, all framed as "anonymous usage metrics.
 
 ⚡
 Quick Links
-
-DigitalOcean tops second quarter expectations amid surging AI demand (5 minute read)
-
-(blurb not generated)
 
 NVMe polishes its specs, brings virtualization to locally attached SSDs (5 minute read)
 

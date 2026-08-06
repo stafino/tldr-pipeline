@@ -1,9 +1,41 @@
 {
   "date": "2026-08-06",
   "newsletter": "tldr_ai",
-  "fetched_at": "2026-08-06T12:56:36.178830+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-08-06T19:13:33.922173+00:00",
+  "tldr_titles": [
+    "Meta Releases Muse Code",
+    "Google DeepMind Leadership Changes",
+    "Anthropic hiring an AI Chip Design Team",
+    "The Agent Access Model",
+    "The Three AI Pills",
+    "Introducing Flex: Let the Model Write the Code",
+    "ByteDance SeedRealtime",
+    "Prime Agent: A self-improving RLM agent",
+    "AI startup Hark unveils first product: an affordable, fast computer use agent Hark Handoff",
+    "RL Environments Are All You Need",
+    "DeepSeek Plans Significant API Price Increases",
+    "Xiaomi Open-Sources Embodied AI Foundation Model Xiaomi-Robotics-1",
+    "OpenAI agents rebuilt a secret message board after the company shut it down",
+    "Qwen-Image-3.0-Pro",
+    "Zero-Mem: Zero-Token Memory Operations for LLM Agents"
+  ],
+  "tldr_matched": [
+    true,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -82,8 +114,8 @@
       "score": 78.0,
       "title": "Prime Agent: A self-improving RLM agent",
       "url": "https://www.primeintellect.ai/blog/prime-agent",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 7,
+      "similarity": 1.0
     },
     {
       "rank": 11,
@@ -159,17 +191,17 @@
     },
     {
       "rank": 20,
-      "score": 74.0,
-      "title": "Anthropic\u2019s AI used fake identities, malware in rogue attack on GitHub project",
-      "url": "https://arstechnica.com/security/2026/08/anthropics-ai-used-fake-identities-malware-in-rogue-attack-on-github-project/",
+      "score": 75.0,
+      "title": "The next generation of MCP",
+      "url": "https://blog.cloudflare.com/mcp-v2/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
       "rank": 21,
       "score": 74.0,
-      "title": "OpenAI\u2019s AI models coordinated a months-long breakout to hack Hugging Face",
-      "url": "https://thenextweb.com/news/openai-agents-coordinated-hugging-face-hack-black-hat",
+      "title": "Anthropic\u2019s AI used fake identities, malware in rogue attack on GitHub project",
+      "url": "https://arstechnica.com/security/2026/08/anthropics-ai-used-fake-identities-malware-in-rogue-attack-on-github-project/",
       "matched_tldr_idx": null,
       "similarity": null
     },
@@ -194,8 +226,8 @@
       "score": 74.0,
       "title": "Zero-Mem: Zero-Token Memory Operations for LLM Agents",
       "url": "https://arxiv.org/abs/2607.29377",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 14,
+      "similarity": 1.0
     },
     {
       "rank": 25,
@@ -208,13 +240,21 @@
     {
       "rank": 26,
       "score": 72.0,
+      "title": "WeatherNext: AI model achieves breakthrough in forecasting cyclones",
+      "url": "https://deepmind.google/blog/weathernext-ai-model-achieves-breakthrough-in-forecasting-cyclones/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 27,
+      "score": 72.0,
       "title": "ByteDance Seed: One-take Creation, Flexible Referencing \u2014 Introducing Seedance 2.5",
       "url": "https://seed.bytedance.com/en/blog/one-take-creation-flexible-referencing-introducing-seedance-2-5",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 27,
+      "rank": 28,
       "score": 72.0,
       "title": "Reasoning Core: Designing Broad Procedural Data for Completion-Supervised Reasoning Training",
       "url": "http://arxiv.org/abs/2608.05148v1",
@@ -222,7 +262,15 @@
       "similarity": null
     },
     {
-      "rank": 28,
+      "rank": 29,
+      "score": 71.0,
+      "title": "Google DeepMind says its WeatherNext model can accurately predict a storm's track and intensity using lower-resolution weather data, and open sources the model (Victoria Turk/Wired)",
+      "url": "https://www.techmeme.com/260806/p32#a260806p32",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 30,
       "score": 71.0,
       "title": "Mistral introduces Shieldstral to provide lightweight policy-aware moderation for AI models",
       "url": "https://siliconangle.com/2026/08/05/mistral-introduces-shieldstral-provide-lightweight-policy-aware-moderation-ai-models/",
@@ -230,7 +278,15 @@
       "similarity": null
     },
     {
-      "rank": 29,
+      "rank": 31,
+      "score": 71.0,
+      "title": "Building an open Agentic Internet: readable, discoverable, callable, and payable",
+      "url": "https://blog.cloudflare.com/the-agentic-internet/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 32,
       "score": 71.0,
       "title": "Opus 5 on Vending-Bench: Once Again the Best Capitalist, Once Again Misaligned",
       "url": "https://andonlabs.com/blog/opus-5-vending-bench",
@@ -238,7 +294,15 @@
       "similarity": null
     },
     {
-      "rank": 30,
+      "rank": 33,
+      "score": 71.0,
+      "title": "Give any website a WebMCP interface",
+      "url": "https://blog.cloudflare.com/webmcp/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 34,
       "score": 71.0,
       "title": "Show HN: Maple-Preview \u2013 Ternary 20B MoE running at 120 tok/s on a iPhone",
       "url": "https://deepgrove.ai/maple-preview",
@@ -246,7 +310,7 @@
       "similarity": null
     },
     {
-      "rank": 31,
+      "rank": 35,
       "score": 71.0,
       "title": "How ChatGPT Optimizes its Agent Loop: Harness, API, and Inference",
       "url": "https://blog.bytebytego.com/p/how-chatgpt-optimizes-its-agent-loop",
@@ -254,7 +318,7 @@
       "similarity": null
     },
     {
-      "rank": 32,
+      "rank": 36,
       "score": 70.0,
       "title": "How we built a software factory to drive Astro\u2019s GitHub issue count to zero",
       "url": "https://blog.cloudflare.com/astro-issue-triage/",
@@ -262,7 +326,7 @@
       "similarity": null
     },
     {
-      "rank": 33,
+      "rank": 37,
       "score": 70.0,
       "title": "Smaller, faster, safer: running Kimi and GLM at scale",
       "url": "https://blog.cloudflare.com/smaller-faster-safer-models/",
@@ -270,39 +334,63 @@
       "similarity": null
     },
     {
-      "rank": 34,
+      "rank": 38,
+      "score": 69.0,
+      "title": "Humans missed 1 in 3 threats approving AI agent commands across 40k game runs",
+      "url": "https://scalex.dev/blog/ai-agent-permissions-stats/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 39,
       "score": 68.0,
       "title": "Google's AI reshuffle: Chief scientist Jeff Dean exits and Demis Hassabis steps down as DeepMind CEO",
       "url": "https://www.cnbc.com/2026/08/05/google-chief-scientist-jeff-dean-leaving-company-after-27-years.html",
+      "matched_tldr_idx": 1,
+      "similarity": 0.6997354030609131
+    },
+    {
+      "rank": 40,
+      "score": 68.0,
+      "title": "Sources: Stripe recently entered exclusive talks to buy OpenRouter in a cash-and-stock deal that would value the startup for close to $10B (The Information)",
+      "url": "https://www.techmeme.com/260806/p30#a260806p30",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 35,
+      "rank": 41,
       "score": 68.0,
       "title": "Google Overhauls AI Leadership as Longtime Chief Scientist Joins Wave of Exits",
       "url": "https://www.wsj.com/tech/ai/googles-chief-scientist-is-leaving-after-27-yearsto-start-his-own-ai-company-6abad73d?mod=rss_Technology",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 1,
+      "similarity": 0.65052330493927
     },
     {
-      "rank": 36,
+      "rank": 42,
       "score": 68.0,
       "title": "Meta launches Muse Code for complex software work with persistent AI agents",
       "url": "https://www.infoworld.com/article/4206084/meta-launches-muse-code-for-complex-software-work-with-persistent-ai-agents.html",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 0,
+      "similarity": 0.644728422164917
     },
     {
-      "rank": 37,
+      "rank": 43,
       "score": 68.0,
-      "title": "DeepSeek says it plans to implement substantial price increases across its services; V4 Flash currently costs $0.14/1M input and $0.28/1M output tokens (Bloomberg)",
-      "url": "https://www.techmeme.com/260806/p9#a260806p9",
+      "title": "OpenAI introduces Agent Plugins, an open standard for bundling skills and MCP servers, and says its steering committee includes Amazon, Microsoft, and Vercel (Zac Hall/9to5Mac)",
+      "url": "https://www.techmeme.com/260806/p34#a260806p34",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 38,
+      "rank": 44,
+      "score": 68.0,
+      "title": "UAE Fund Weighs $6.3 Billion for Japan AI Data Center",
+      "url": "https://www.bloomberg.com/news/articles/2026-08-06/uae-fund-weighs-6-3-billion-ai-data-center-investment-in-japan",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 45,
       "score": 68.0,
       "title": "Anthropic's Mythos created fake identities to fool humans in new cyber incident",
       "url": "https://www.cnbc.com/2026/08/05/anthropic-mythos-openai-security-breaches.html",
@@ -310,15 +398,15 @@
       "similarity": null
     },
     {
-      "rank": 39,
+      "rank": 46,
       "score": 68.0,
       "title": "Meta enters the AI coding wars with Muse Spark 1.2 and Muse Code with persistent async background agents",
       "url": "https://venturebeat.com/orchestration/meta-enters-the-ai-coding-wars-with-muse-spark-1-2-and-muse-code-with-persistent-async-background-agents",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 0,
+      "similarity": 0.7676806449890137
     },
     {
-      "rank": 40,
+      "rank": 47,
       "score": 68.0,
       "title": "Meta Cuts Coding Agent Prices 21x for Developers Who Give Up Their Data",
       "url": "https://www.implicator.ai/meta-muse-code-21x-discount-for-developer-data/",
@@ -326,7 +414,7 @@
       "similarity": null
     },
     {
-      "rank": 41,
+      "rank": 48,
       "score": 68.0,
       "title": "The startup idea that convinced a UW computer science legend to leave Google after 27 years",
       "url": "https://www.geekwire.com/2026/the-startup-idea-that-convinced-a-uw-computer-science-legend-to-leave-google-after-27-years/",
@@ -334,23 +422,7 @@
       "similarity": null
     },
     {
-      "rank": 42,
-      "score": 68.0,
-      "title": "How GPT-5.6 fuses frontier intelligence with frontier efficiency",
-      "url": "https://openai.com/index/gpt-5-6-frontier-intelligence-efficiency/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 43,
-      "score": 68.0,
-      "title": "Not just OpenAI: Now Anthropic says its internal models got online and cyberattacked 3 other organizations",
-      "url": "https://venturebeat.com/security/not-just-openai-now-anthropic-says-its-internal-models-got-online-and-cyberattacked-3-other-organizations",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 44,
+      "rank": 49,
       "score": 68.0,
       "title": "AI researchers let models off the leash \u2013 then watched as they tried to add malware to a FOSS project",
       "url": "https://www.theregister.com/ai-and-ml/2026/08/05/ai-researchers-let-models-off-the-leash-then-watched-as-they-tried-to-add-malware-to-a-foss-project/5283165",
@@ -358,7 +430,7 @@
       "similarity": null
     },
     {
-      "rank": 45,
+      "rank": 50,
       "score": 68.0,
       "title": "When AI Benchmarks Plateau: A Systematic Study of Benchmark Saturation",
       "url": "https://arxiv.org/abs/2602.16763",
@@ -366,7 +438,7 @@
       "similarity": null
     },
     {
-      "rank": 46,
+      "rank": 51,
       "score": 68.0,
       "title": "DeepInvert: Semi-Supervised Embedding Inversion Against Obfuscated Language Models",
       "url": "http://arxiv.org/abs/2608.04477v1",
@@ -374,7 +446,7 @@
       "similarity": null
     },
     {
-      "rank": 47,
+      "rank": 52,
       "score": 68.0,
       "title": "Chained Recursive Language Models for Multi-Iteration Reasoning",
       "url": "http://arxiv.org/abs/2608.05124v1",
@@ -382,7 +454,7 @@
       "similarity": null
     },
     {
-      "rank": 48,
+      "rank": 53,
       "score": 68.0,
       "title": "Provable Limits and Certified Deferral for Verbalized Uncertainty in Small Language Models",
       "url": "http://arxiv.org/abs/2608.05064v1",
@@ -390,7 +462,7 @@
       "similarity": null
     },
     {
-      "rank": 49,
+      "rank": 54,
       "score": 68.0,
       "title": "Short-term load forecasting under EU-AI Act Requirements in Safety-Critical Environments: Results from a 41-day live challenge on the aggregated German transmission-grid load",
       "url": "http://arxiv.org/abs/2608.05018v1",
@@ -398,7 +470,7 @@
       "similarity": null
     },
     {
-      "rank": 50,
+      "rank": 55,
       "score": 68.0,
       "title": "SciCode-Verified: How Benchmark Defects Underestimated the Scientific-Coding Ability of Language Models",
       "url": "http://arxiv.org/abs/2608.04975v1",
@@ -406,7 +478,7 @@
       "similarity": null
     },
     {
-      "rank": 51,
+      "rank": 56,
       "score": 68.0,
       "title": "WorldCycle: Self-Verifiable Reinforcement Learning for Long-Horizon Video World Models",
       "url": "http://arxiv.org/abs/2608.04964v1",
@@ -414,23 +486,7 @@
       "similarity": null
     },
     {
-      "rank": 52,
-      "score": 68.0,
-      "title": "The Loss Does Not See the Basis, but Adam Does",
-      "url": "http://arxiv.org/abs/2608.05136v1",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 53,
-      "score": 68.0,
-      "title": "Towards Physics of Multimodal Pretraining: Knowledge Flow, Modality Synergy, Early Unification, and Recipes",
-      "url": "http://arxiv.org/abs/2608.05000v1",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 54,
+      "rank": 57,
       "score": 67.0,
       "title": "Position: LLMs Can't Jump",
       "url": "https://openreview.net/challenge?redirect=%2Fforum%3Fid%3DklU4737opt",
@@ -438,15 +494,7 @@
       "similarity": null
     },
     {
-      "rank": 55,
-      "score": 66.0,
-      "title": "Jeff Dean and other top AI researchers are leaving Google to launch their own startup",
-      "url": "https://techcrunch.com/2026/08/05/jeff-dean-and-other-top-ai-researchers-are-leaving-google-to-launch-their-own-startup/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 56,
+      "rank": 58,
       "score": 66.0,
       "title": "AI Recommendation Poisoning: How \"Ask AI\" Buttons Silently Alter LLM Memory",
       "url": "https://thehackernews.com/2026/08/ai-recommendation-poisoning-how-ask-ai.html",
@@ -454,7 +502,7 @@
       "similarity": null
     },
     {
-      "rank": 57,
+      "rank": 59,
       "score": 66.0,
       "title": "Atlassian Rovo Exfiltrates Data, Bypassing Controls",
       "url": "https://www.promptarmor.com/resources/atlassian-rovo-exfiltrates-data",
@@ -462,7 +510,7 @@
       "similarity": null
     },
     {
-      "rank": 58,
+      "rank": 60,
       "score": 66.0,
       "title": "OpenAI reveals its rogue agent swarm went a little bit Borg ahead of Hugging Face hack",
       "url": "https://www.theregister.com/security/2026/08/06/openai-reveals-its-rogue-agent-swarm-went-a-little-bit-borg-ahead-of-hugging-face-hack/5283741",
@@ -470,23 +518,15 @@
       "similarity": null
     },
     {
-      "rank": 59,
-      "score": 66.0,
-      "title": "Third-party cyber evaluations involving OpenAI models",
-      "url": "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 60,
-      "score": 66.0,
-      "title": "Microsoft Earnings, Microsoft vs. Meta, The Efficiency Payoff",
-      "url": "https://stratechery.com/2026/microsoft-earnings-microsoft-vs-meta-the-efficiency-payoff/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
       "rank": 61,
+      "score": 66.0,
+      "title": "Zero-Click AI Browser Hacking: Claude and ChatGPT Atlas Hijacked via Emails, X Posts",
+      "url": "https://www.securityweek.com/zero-click-ai-browser-hacking-claude-and-chatgpt-atlas-hijacked-via-emails-x-posts/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 62,
       "score": 62.0,
       "title": "Some Claude Chats Are Searchable on Google",
       "url": "https://www.schneier.com/blog/archives/2026/08/some-claude-chats-are-searchable-on-google.html",
@@ -494,15 +534,15 @@
       "similarity": null
     },
     {
-      "rank": 62,
-      "score": 62.0,
-      "title": "SoftBank Secures $10 Billion Margin Loan Backed by OpenAI Stake",
-      "url": "https://www.bloomberg.com/news/articles/2026-08-06/softbank-secures-10-billion-margin-loan-backed-by-openai-stake",
+      "rank": 63,
+      "score": 60.0,
+      "title": "Meta AI model hacked a company during misconfigured cyber test",
+      "url": "https://www.bleepingcomputer.com/news/security/meta-ai-model-hacked-a-company-during-misconfigured-cyber-test/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 63,
+      "rank": 64,
       "score": 60.0,
       "title": "UK gov tests show AI agents creating fake GitHub accounts to push malicious code",
       "url": "https://www.neowin.net/news/uk-gov-tests-show-ai-agents-creating-fake-github-accounts-to-push-malicious-code/?utm_source=rss",
@@ -510,18 +550,10 @@
       "similarity": null
     },
     {
-      "rank": 64,
+      "rank": 65,
       "score": 60.0,
       "title": "Texas slams on the brakes for 1,800 data centers, power grid requirements are five times higher than peak record demand \u2014 474 gigawatts of power requests are now subject to new moratorium",
       "url": "https://www.tomshardware.com/tech-industry/data-centers/texas-slams-on-the-breaks-for-1-800-data-centers-power-grid-requirements-are-five-times-higher-than-peak-record-demand-474-gigawatts-of-power-requests-are-now-subject-to-new-moratorium",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 65,
-      "score": 60.0,
-      "title": "Texas halts data center connections to power grid amid overwhelming demand",
-      "url": "https://arstechnica.com/ai/2026/08/texas-halts-data-center-connections-to-power-grid-amid-overwhelming-demand/",
       "matched_tldr_idx": null,
       "similarity": null
     },
@@ -552,13 +584,21 @@
     {
       "rank": 69,
       "score": 58.0,
+      "title": "Sources: Nscale told potential backers it generated $100M+ in Q2 revenue, up from $37M in Q1, and has $51B in contracts, ahead of a possible September US IPO (Bailey Lipschultz/Bloomberg)",
+      "url": "https://www.techmeme.com/260806/p38#a260806p38",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 70,
+      "score": 58.0,
       "title": "Discounted Claude access bought on the gray market may expose every prompt you send",
       "url": "https://www.helpnetsecurity.com/2026/08/06/ai-model-access-fraud-gray-market/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 70,
+      "rank": 71,
       "score": 58.0,
       "title": "How Mechanize went from a $9M seed to $1.5B Google acquisition talks in just 100 days",
       "url": "https://techfundingnews.com/google-mechanize-1-5b-ai-deal/",
@@ -566,7 +606,7 @@
       "similarity": null
     },
     {
-      "rank": 71,
+      "rank": 72,
       "score": 58.0,
       "title": "Poison Claude Sells Discounted Claude Access While Its Operator Sees Every Customer Prompt",
       "url": "https://thehackernews.com/2026/08/poison-claude-sells-discounted-claude.html",
@@ -574,18 +614,10 @@
       "similarity": null
     },
     {
-      "rank": 72,
+      "rank": 73,
       "score": 58.0,
       "title": "AI Browsers Vulnerable to 'PleaseFix' Zero-Click Agent Hijacking",
       "url": "https://www.darkreading.com/cyber-risk/ai-browsers-zero-click-agent-hijacking",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 73,
-      "score": 58.0,
-      "title": "Sources: some Google researchers have grown frustrated over AI compute access for ambitious projects while Google Cloud sells TPUs to customers like Anthropic (MacKenzie Sigalos/CNBC)",
-      "url": "https://www.techmeme.com/260806/p11#a260806p11",
       "matched_tldr_idx": null,
       "similarity": null
     },
@@ -616,32 +648,32 @@
     {
       "rank": 77,
       "score": 58.0,
-      "title": "Google centralizes its AI leadership at Mountain View in a bid to catch its rivals; Sebastian Borgeaud, who led a major AI coding effort, moved from the UK (Bloomberg)",
-      "url": "https://www.techmeme.com/260806/p13#a260806p13",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "title": "Demis Hassabis stepping down as Google DeepMind CEO may weaken the UK tech scene, marking an end for Hassabis' effort to keep his native UK as an AI stronghold (Mark Bergen/Bloomberg)",
+      "url": "https://www.techmeme.com/260806/p29#a260806p29",
+      "matched_tldr_idx": 1,
+      "similarity": 0.649327278137207
     },
     {
       "rank": 78,
       "score": 58.0,
-      "title": "AMD Data Center Sales Jump 107% to $6.7 Billion as Shares Slide After Hours",
-      "url": "https://www.implicator.ai/amd-data-center-sales-jump-107-to-6-7-billion-as-shares-slide-after-hours/",
+      "title": "OpenAI Asks Judge to Toss Apple\u2019s Trade Secrets Lawsuit",
+      "url": "https://www.bloomberg.com/news/articles/2026-08-06/openai-asks-judge-to-toss-apple-suit-alleging-trade-secret-theft",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
       "rank": 79,
       "score": 58.0,
-      "title": "Fragments: August  4",
-      "url": "https://martinfowler.com/fragments/2026-08-04.html",
+      "title": "AI testing firm Irregular the source of \u2018misconfigurations\u2019 that led to Meta, OpenAI, and Anthropic AI incidents",
+      "url": "https://www.itpro.com/technology/artificial-intelligence/independent-testing-firm-irregular-the-source-of-misconfigurations-that-led-to-meta-openai-and-anthropic-ai-incidents",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
       "rank": 80,
       "score": 58.0,
-      "title": "Trump\u2019s DOJ gains oversight of OpenAI\u2019s green-card employee sponsorships",
-      "url": "https://techcrunch.com/2026/08/05/trumps-doj-gains-oversight-of-openais-green-card-employee-sponsorships/",
+      "title": "AMD Data Center Sales Jump 107% to $6.7 Billion as Shares Slide After Hours",
+      "url": "https://www.implicator.ai/amd-data-center-sales-jump-107-to-6-7-billion-as-shares-slide-after-hours/",
       "matched_tldr_idx": null,
       "similarity": null
     },
@@ -672,21 +704,13 @@
     {
       "rank": 84,
       "score": 56.0,
-      "title": "AMD\u2019s AI engine shifts into higher gear as data center revenue more than doubles and Helios ramps \u2013 but market is confused",
-      "url": "https://siliconangle.com/2026/08/04/amds-ai-engine-shifts-higher-gear-data-center-revenue-doubles-helios-ramps-market-confused/",
+      "title": "Suno plans to adopt new watermarking and fingerprinting tech, transparency tools, and a new download policy to limit the spread of spammy AI tracks (Terrence O'Brien/The Verge)",
+      "url": "https://www.techmeme.com/260806/p37#a260806p37",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
       "rank": 85,
-      "score": 56.0,
-      "title": "DeepSeek Plans AI Price Hike; Google Reshuffles AI Leadership | Bloomberg Brief 08/06/26",
-      "url": "https://www.bloomberg.com/news/videos/2026-08-06/bloomberg-brief-08-06-26-video",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 86,
       "score": 56.0,
       "title": "Microsoft AI exec tells developers to default to OpenAI's top model as part of efficiency push",
       "url": "https://www.cnbc.com/2026/08/05/microsoft-makes-openai-gpt-5point6-sol-default-in-github-copilot-for-staff.html",
@@ -694,7 +718,7 @@
       "similarity": null
     },
     {
-      "rank": 87,
+      "rank": 86,
       "score": 56.0,
       "title": "Elon Musk says SpaceX will exclusively use Nvidia GPUs 'because they are the best' \u2014 says optimized Vera Rubin NVL72 will be launched into space next year",
       "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/elon-musk-says-spacex-will-exclusively-use-nvidia-gpus-because-they-are-the-best-says-optimized-vera-rubin-nvl72-will-be-launched-into-space-next-year",
@@ -702,7 +726,7 @@
       "similarity": null
     },
     {
-      "rank": 88,
+      "rank": 87,
       "score": 56.0,
       "title": "Google is working on interactive Apps for Gemini Notebook",
       "url": "https://www.testingcatalog.com/google-is-working-on-interactive-apps-for-gemini-notebook/",
@@ -710,7 +734,7 @@
       "similarity": null
     },
     {
-      "rank": 89,
+      "rank": 88,
       "score": 55.0,
       "title": "Hardware Design and Security in the Era of Chiplets and LLMs",
       "url": "http://arxiv.org/abs/2608.05063v1",
@@ -718,7 +742,7 @@
       "similarity": null
     },
     {
-      "rank": 90,
+      "rank": 89,
       "score": 55.0,
       "title": "Old Reddit a threat to AI data scraping, says platform, with changes coming",
       "url": "https://9to5mac.com/2026/08/06/old-reddit-a-threat-to-ai-data-scraping-says-platform-with-changes-coming/",
@@ -726,9 +750,53 @@
       "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.06666666666666667,
+    "25": 0.13333333333333333,
+    "50": 0.26666666666666666,
+    "100": 0.26666666666666666,
+    "89": 0.26666666666666666
+  },
+  "hits_at": {
+    "10": 1,
+    "25": 2,
+    "50": 4,
+    "100": 4,
+    "89": 4
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://research.meta.ai/blog/introducing-muse-code-and-muse-spark-1-2",
+    "https://www.implicator.ai/google-deepmind-hassabis-steps-aside-jeff-dean-exit/",
+    "https://techcrunch.com/2026/08/05/anthropic-is-hiring-an-ai-chip-design-team/",
+    "https://blog.cloudflare.com/the-agent-access-model/",
+    "https://thezvi.wordpress.com/2026/08/05/the-three-ai-pills/",
+    "https://www.cmpnd.ai/blog/let-the-model-write-the-code.html",
+    "https://seed.bytedance.com/en/SeedRealtime",
+    "https://www.primeintellect.ai/blog/prime-agent",
+    "https://venturebeat.com/technology/ai-startup-hark-unveils-first-product-an-affordable-fast-computer-use-agent-hark-handoff",
+    "https://x.com/madiator/status/2084657077637746957",
+    "https://technode.com/2026/08/06/deepseek-plans-significant-api-price-increases/",
+    "https://insideai.news/news/robotics/xiaomi-open-sources-embodied-ai-foundation-model-xiaomi-robotics-1/7082/",
+    "https://runtimewire.com/article/exclusive-openai-agents-rebuilt-a-secret-message-board-after-the-company-shut-it",
+    "https://www.qwencloud.com/models/qwen-image-3.0-pro",
+    "https://arxiv.org/abs/2607.29377"
+  ],
+  "tldr_domains": [
+    "research.meta.ai",
+    "implicator.ai",
+    "techcrunch.com",
+    "blog.cloudflare.com",
+    "thezvi.wordpress.com",
+    "cmpnd.ai",
+    "seed.bytedance.com",
+    "primeintellect.ai",
+    "venturebeat.com",
+    "x.com",
+    "technode.com",
+    "insideai.news",
+    "runtimewire.com",
+    "qwencloud.com",
+    "arxiv.org"
+  ]
 }
