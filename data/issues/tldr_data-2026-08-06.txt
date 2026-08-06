@@ -37,13 +37,13 @@ Scaling StreamHub: Transitioning from Kinesis to Kafka for 145 Billion Daily Eve
 
 (blurb not generated)
 
-Pi's Minimalism Is Its Advantage (1 minute read)
+Pi's Minimalism Is Its Advantage (5 minute read)
 
-Pi is a coding harness built around deliberate minimalism, shipping with just four tools and a system prompt plus tool definitions under 1,000 tokens, on the theory that most work needs only the basics and teams can build the rest. Databricks benchmarked it on their multi-million-line codebase and found the harness, not just the model, drove cost and quality: paired with Opus 4.8 at xhigh, Pi hit the highest pass rate at well below Claude Code and Codex, sending roughly 3x less context per turn.
+(blurb not generated)
 
-Pi, Minimal and Performant (1 minute read)
+Pi, Minimal and Performant (5 minute read)
 
-Pi is a coding harness built around deliberate minimalism, shipping with just four tools and a system prompt plus tool definitions under 1,000 tokens, on the theory that most work needs only the basics and teams can build the rest. Databricks benchmarked it on their multi-million-line codebase and found the harness, not just the model, drove cost and quality: paired with Opus 4.8 at xhigh, Pi hit the highest pass rate at well below Claude Code and Codex, sending roughly 3x less context per turn.
+(blurb not generated)
 
 Eval-driven development: Lessons from evaluating GenAI at scale (5 minute read)
 
@@ -85,13 +85,17 @@ Solving the "Noisy Neighbor": How Sharded Architecture Protects Multi-Tenant Pla
 
 (blurb not generated)
 
-From Research Questions to Columns: Operationalization-Aware Data Discovery (1 minute read)
+Matching 90M+ music tracks across six platforms: ISRCs, fuzzy matching, and what breaks (3 minute read)
 
-This paper defines operationalization-aware data discovery (OADD), the problem of taking a broad research question and finding which columns can actually measure it, including complementary indicators that never resemble the query. The authors built OADD-Bench from 111 empirical papers, treating published measurements as ground truth for 4,682 question-column labels. The best method, an LLM OADD agent, hit just 0.465 recall, covering under half the target columns and leaving semantic data discovery an open problem.
+A solo developer building a music metadata API describes how joining 90M+ recordings across Spotify, Apple Music, Tidal, Beatport, Discogs, and MusicBrainz fell apart the moment real data arrived. The core lesson is that ISRC belongs in a junction table, not a column: labels mint a fresh code for every commercial variant, so one canonical recording legitimately carries many ISRCs and cross-source disagreement is expected, not a data-quality bug.
 
-EdgeLM: Edge Demonstrations for Language Models' Table Understanding (1 minute read)
+From Research Questions to Columns: Operationalization-Aware Data Discovery (5 minute read)
 
-EdgeLM proposes a demonstration-retrieval framework for table tasks that selects "edge evidence" instead of the most similar examples: nearby rows with different ground-truth labels, plus similar rows the model previously misclassified. The idea is that lookalike demonstrations reinforce the model's default guess, while boundary cases surface the distinctions needed for hard calls. Across five data-wrangling tasks, fifteen datasets, and five LLMs, it lands best or near-best with no retraining or task-specific tuning.
+(blurb not generated)
+
+EdgeLM: Edge Demonstrations for Language Models' Table Understanding (5 minute read)
+
+(blurb not generated)
 
 Uplifting the Superpowers of Worst-Case-Optimal Join Algorithms (5 minute read)
 
@@ -102,10 +106,6 @@ Pinner Progression: Better Use-Case Representation Driving Weekly Active User Gr
 (blurb not generated)
 
 Wide Column Stores Explained: Cassandra, Bigtable, and ScyllaDB (5 minute read)
-
-(blurb not generated)
-
-How DoorDash Built a Centralized Gateway for AI Agent-Tool Access (5 minute read)
 
 (blurb not generated)
 
@@ -120,10 +120,10 @@ DuckDB – Data power tools for your laptop, now in Clojure (2023) (5 minute rea
 
 (blurb not generated)
 
-OpenCost 1.121.0: First-of-a-kind Kubernetes inference cost tracking (1 minute read)
+OpenCost 1.121.0: First-of-a-kind Kubernetes inference cost tracking (5 minute read)
 
-OpenCost 1.121.0 adds Kubernetes inference cost tracking, integrating the CNCF project with llm-d and vLLM to derive per-model and per-token costs from actual GPU, CPU, and RAM consumption. Platform teams can now attribute AI spend to specific models and workloads, making self-hosting-versus-SaaS comparisons and per-team budget accounting concrete rather than guesswork.
+(blurb not generated)
 
 Interview: Qdrant and TurboQuant compression (5 minute read)
 
-Qdrant added a TurboQuant-based compression scheme for embeddings, reshaping vectors before quantizing and layering in corrections that hold recall higher than existing options at the same footprint. At 8x compression it matches scalar quantization and beats binary quantization at every storage class, targeting the RAM-and-disk memory bottleneck that gates RAG, semantic search, and recommendation workloads before compute does.
+(blurb not generated)

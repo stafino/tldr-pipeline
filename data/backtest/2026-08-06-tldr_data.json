@@ -1,9 +1,35 @@
 {
   "date": "2026-08-06",
   "newsletter": "tldr_data",
-  "fetched_at": "2026-08-06T06:34:55.017458+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-08-06T12:58:24.928805+00:00",
+  "tldr_titles": [
+    "TimeSeries Tiered Storage Journey: Kafka/Flink Streams to Native Cassandra Cold Reads",
+    "GEM Training: How Meta Doubled the Efficiency of Its LLM-Scale Ads Foundation Model",
+    "LLMs for Relevance: Automating High-Quality Product Relevance Labeling in Flipkart Search",
+    "Prototype on a laptop, scale to 16 billion rows: one Polars query",
+    "The Mean Means Nothing",
+    "Dispatches from O'Reilly: The Best Risk Mitigation Strategy in Data? A Single Source of Truth",
+    "Smevals - a Small Eval Suite for Evaluating Models, Prompts, and Harnesses",
+    "Bringing DuckLake to DataFusion",
+    "Everyone Records the MySQL Audit Log. Nobody Reads It",
+    "Encoding or Compression: Why not both?",
+    "Kafka App? There's a Skill for That",
+    "Stop graphing everything: when GraphRAG actually beats vector RAG"
+  ],
+  "tldr_matched": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -136,13 +162,21 @@
     {
       "rank": 17,
       "score": 58.0,
+      "title": "Matching 90M+ music tracks across six platforms: ISRCs, fuzzy matching, and what breaks",
+      "url": "https://dev.to/christiaanrc/matching-90m-music-tracks-across-six-platforms-isrcs-fuzzy-matching-and-what-breaks-1hn",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 18,
+      "score": 58.0,
       "title": "From Research Questions to Columns: Operationalization-Aware Data Discovery",
       "url": "http://arxiv.org/abs/2608.04536v1",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 18,
+      "rank": 19,
       "score": 58.0,
       "title": "EdgeLM: Edge Demonstrations for Language Models' Table Understanding",
       "url": "http://arxiv.org/abs/2608.04390v1",
@@ -150,7 +184,7 @@
       "similarity": null
     },
     {
-      "rank": 19,
+      "rank": 20,
       "score": 58.0,
       "title": "Uplifting the Superpowers of Worst-Case-Optimal Join Algorithms",
       "url": "http://arxiv.org/abs/2608.03840v1",
@@ -158,7 +192,7 @@
       "similarity": null
     },
     {
-      "rank": 20,
+      "rank": 21,
       "score": 58.0,
       "title": "Pinner Progression: Better Use-Case Representation Driving Weekly Active User Growth at Pinterest",
       "url": "https://medium.com/pinterest-engineering/pinner-progression-better-use-case-representation-driving-weekly-active-user-growth-at-pinterest-bd2131ab238a",
@@ -166,18 +200,10 @@
       "similarity": null
     },
     {
-      "rank": 21,
+      "rank": 22,
       "score": 58.0,
       "title": "Wide Column Stores Explained: Cassandra, Bigtable, and ScyllaDB",
       "url": "https://singhajit.com/wide-column-stores-explained/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 22,
-      "score": 58.0,
-      "title": "How DoorDash Built a Centralized Gateway for AI Agent-Tool Access",
-      "url": "https://careersatdoordash.com/blog/how-doordash-built-a-centralized-gateway-for-ai-agent-tool-access/",
       "matched_tldr_idx": null,
       "similarity": null
     },
@@ -238,9 +264,47 @@
       "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.0,
+    "25": 0.0,
+    "50": 0.0,
+    "100": 0.0,
+    "29": 0.0
+  },
+  "hits_at": {
+    "10": 0,
+    "25": 0,
+    "50": 0,
+    "100": 0,
+    "29": 0
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://netflixtechblog.medium.com/timeseries-tiered-storage-journey-kafka-flink-streams-to-native-cassandra-cold-reads-e59d597c9d60",
+    "https://engineering.fb.com/2026/08/03/ml-applications/training-gem-at-llm-scale-meta-ads-recommendation-foundation-model/",
+    "https://blog.flipkart.tech/llms-for-relevance-automating-high-quality-product-relevance-labeling-in-flipkart-search-ddd5ca50b584",
+    "https://pola.rs/posts/market-data-to-plotly-enterprise-dashboard/",
+    "https://fzakaria.com/2026/07/27/the-mean-means-nothing",
+    "https://stackoverflow.blog/2026/07/31/dispatches-from-o-reilly-the-best-risk-mitigation-strategy-in-data-a-single-source-of-truth/",
+    "https://primeradiant.com/blog/2026/smevals.html",
+    "https://ducklake.select/2026/07/29/bringing-ducklake-to-datafusion/",
+    "https://blog.dbtrail.com/everyone-records-the-mysql-audit-log/",
+    "https://cedardb.com/blog/encoding_vs_compression/",
+    "https://www.etsy.com/codeascraft/kafka-app-thereas-a-skill-for-that",
+    "https://venturebeat.com/orchestration/stop-graphing-everything-when-graphrag-actually-beats-vector-rag"
+  ],
+  "tldr_domains": [
+    "netflixtechblog.medium.com",
+    "engineering.fb.com",
+    "blog.flipkart.tech",
+    "pola.rs",
+    "fzakaria.com",
+    "stackoverflow.blog",
+    "primeradiant.com",
+    "ducklake.select",
+    "blog.dbtrail.com",
+    "cedardb.com",
+    "etsy.com",
+    "venturebeat.com"
+  ]
 }
