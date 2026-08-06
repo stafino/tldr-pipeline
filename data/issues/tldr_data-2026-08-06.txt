@@ -1,0 +1,129 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR Data 2026-08-06
+
+📊
+News & Trends
+
+Unity AI Gateway is Generally Available (5 minute read)
+
+(blurb not generated)
+
+Snowflake launches AI agent governance layer to track activity, control costs (5 minute read)
+
+(blurb not generated)
+
+AWS updates DynamoDB with native vector search to ease AI application development (5 minute read)
+
+(blurb not generated)
+
+Introducing Database Operations Agents: The future of autonomous database management (5 minute read)
+
+(blurb not generated)
+
+How Target is enhancing retail discovery and cutting database maintenance by 50% with Spanner Graph (5 minute read)
+
+(blurb not generated)
+
+🧠
+Deep Dives & Analysis
+
+Indexing the Data Lake for Online Point Queries (5 minute read)
+
+(blurb not generated)
+
+Scaling StreamHub: Transitioning from Kinesis to Kafka for 145 Billion Daily Events (5 minute read)
+
+(blurb not generated)
+
+Pi's Minimalism Is Its Advantage (1 minute read)
+
+Pi is a coding harness built around deliberate minimalism, shipping with just four tools and a system prompt plus tool definitions under 1,000 tokens, on the theory that most work needs only the basics and teams can build the rest. Databricks benchmarked it on their multi-million-line codebase and found the harness, not just the model, drove cost and quality: paired with Opus 4.8 at xhigh, Pi hit the highest pass rate at well below Claude Code and Codex, sending roughly 3x less context per turn.
+
+Pi, Minimal and Performant (1 minute read)
+
+Pi is a coding harness built around deliberate minimalism, shipping with just four tools and a system prompt plus tool definitions under 1,000 tokens, on the theory that most work needs only the basics and teams can build the rest. Databricks benchmarked it on their multi-million-line codebase and found the harness, not just the model, drove cost and quality: paired with Opus 4.8 at xhigh, Pi hit the highest pass rate at well below Claude Code and Codex, sending roughly 3x less context per turn.
+
+Eval-driven development: Lessons from evaluating GenAI at scale (5 minute read)
+
+(blurb not generated)
+
+PostgreSQL's MVCC Is Bad: So Is Everyone Else's (5 minute read)
+
+(blurb not generated)
+
+How MVCC and Transactions Work in RocksDB (5 minute read)
+
+(blurb not generated)
+
+SieveIVF: Threshold-Aware IVF Execution for Large-Scale Training Data Deduplication (5 minute read)
+
+(blurb not generated)
+
+Composable canonicals: from tribal data knowledge to versioned artifact (5 minute read)
+
+(blurb not generated)
+
+From User Sequences to Scaling Laws: A Multi-Stage Architecture for Meta’s Ads Ranking (5 minute read)
+
+(blurb not generated)
+
+This is why we can't have nice things (5 minute read)
+
+(blurb not generated)
+
+RAG-Stack: Co-Optimizing RAG Serving Performance and Quality (5 minute read)
+
+(blurb not generated)
+
+Why Large Language Models Fail at Tabular Prediction (5 minute read)
+
+(blurb not generated)
+
+Solving the "Noisy Neighbor": How Sharded Architecture Protects Multi-Tenant Platforms (5 minute read)
+
+(blurb not generated)
+
+From Research Questions to Columns: Operationalization-Aware Data Discovery (1 minute read)
+
+This paper defines operationalization-aware data discovery (OADD), the problem of taking a broad research question and finding which columns can actually measure it, including complementary indicators that never resemble the query. The authors built OADD-Bench from 111 empirical papers, treating published measurements as ground truth for 4,682 question-column labels. The best method, an LLM OADD agent, hit just 0.465 recall, covering under half the target columns and leaving semantic data discovery an open problem.
+
+EdgeLM: Edge Demonstrations for Language Models' Table Understanding (1 minute read)
+
+EdgeLM proposes a demonstration-retrieval framework for table tasks that selects "edge evidence" instead of the most similar examples: nearby rows with different ground-truth labels, plus similar rows the model previously misclassified. The idea is that lookalike demonstrations reinforce the model's default guess, while boundary cases surface the distinctions needed for hard calls. Across five data-wrangling tasks, fifteen datasets, and five LLMs, it lands best or near-best with no retraining or task-specific tuning.
+
+Uplifting the Superpowers of Worst-Case-Optimal Join Algorithms (5 minute read)
+
+(blurb not generated)
+
+Pinner Progression: Better Use-Case Representation Driving Weekly Active User Growth at Pinterest (5 minute read)
+
+(blurb not generated)
+
+Wide Column Stores Explained: Cassandra, Bigtable, and ScyllaDB (5 minute read)
+
+(blurb not generated)
+
+How DoorDash Built a Centralized Gateway for AI Agent-Tool Access (5 minute read)
+
+(blurb not generated)
+
+🚀
+Launches & Tools
+
+Multiple result sets: How Database Migration Service automates SQL server to PostgreSQL translation (5 minute read)
+
+(blurb not generated)
+
+DuckDB – Data power tools for your laptop, now in Clojure (2023) (5 minute read)
+
+(blurb not generated)
+
+OpenCost 1.121.0: First-of-a-kind Kubernetes inference cost tracking (1 minute read)
+
+OpenCost 1.121.0 adds Kubernetes inference cost tracking, integrating the CNCF project with llm-d and vLLM to derive per-model and per-token costs from actual GPU, CPU, and RAM consumption. Platform teams can now attribute AI spend to specific models and workloads, making self-hosting-versus-SaaS comparisons and per-team budget accounting concrete rather than guesswork.
+
+Interview: Qdrant and TurboQuant compression (5 minute read)
+
+Qdrant added a TurboQuant-based compression scheme for embeddings, reshaping vectors before quantizing and layering in corrections that hold recall higher than existing options at the same footprint. At 8x compression it matches scalar quantization and beats binary quantization at every storage class, targeting the RAM-and-disk memory bottleneck that gates RAG, semantic search, and recommendation workloads before compute does.

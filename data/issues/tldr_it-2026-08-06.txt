@@ -1,0 +1,151 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR IT 2026-08-06
+
+🚀
+News & Trends
+
+AWS updates DynamoDB with native vector search to ease AI application development (5 minute read)
+
+(blurb not generated)
+
+Retirement of Azure DevOps issuer in Workload identity federation service connections (5 minute read)
+
+(blurb not generated)
+
+With FCC ban on new Chinese-made optical transceivers for DCs likely, it may be time to stock up (5 minute read)
+
+(blurb not generated)
+
+Why Intune Devices Became Noncompliant After the July Windows Update (5 minute read)
+
+(blurb not generated)
+
+CISA warns of hackers exploiting Langflow, N-central, Apache Tomcat flaws (5 minute read)
+
+(blurb not generated)
+
+Future Mode Part 2: The foundation for securing agentic browsing (5 minute read)
+
+(blurb not generated)
+
+AI agents get better at IT ops, but only with humans in the loop (5 minute read)
+
+(blurb not generated)
+
+Microsoft shares Windows 10 LTSC end of support date, and extended security update details (1 minute read)
+
+Microsoft published the official end-of-support date for Windows 10 LTSC and laid out Extended Security Updates pricing for enterprises that need to run the OS past that cutoff. IT teams still standardized on LTSC now have a hard deadline and a per-device ESU cost to factor into migration and refresh budgets, rather than an open-ended runway on the current build.
+
+Cisco close to releasing more AI models, this time for deep networking ops (5 minute read)
+
+(blurb not generated)
+
+US government bans new foreign-made humanoids, robot dogs, and solar inverters, citing risks to national security (5 minute read)
+
+(blurb not generated)
+
+The majority of corporate IT is now off premises for the first time (5 minute read)
+
+(blurb not generated)
+
+Double trouble for Microsoft as pre-owned software license claims converge (1 minute read)
+
+Microsoft faces two converging legal claims over the resale of pre-owned software licenses, reviving a fight over whether customers can transfer perpetual licenses on the secondary market. For enterprise buyers, a ruling that strengthens resale rights would expand a cheaper procurement channel for Windows and Office licenses and pressure Microsoft's push to move those workloads onto subscription and cloud terms.
+
+Pre-auth RCE in enterprise Java hits Bonita and OFBiz servers (5 minute read)
+
+(blurb not generated)
+
+Ruby on Rails critical bug puts every image upload under scrutiny (5 minute read)
+
+(blurb not generated)
+
+CMMC phase 2 Is suspended. The liability it created for MSPs isn't (5 minute read)
+
+(blurb not generated)
+
+Nvidia moves to accelerate storage access, boost industry cooperation (5 minute read)
+
+(blurb not generated)
+
+US mulling ban on key Chinese networking tech in data center component crackdown — White House wants to impose restrictions in 2026, China says it will respond if necessary (5 minute read)
+
+(blurb not generated)
+
+Tailscale didn't stop the Hugging Face intrusion (5 minute read)
+
+(blurb not generated)
+
+Massive ChainDrop npm supply-chain attack infects hundreds of packages (5 minute read)
+
+(blurb not generated)
+
+New Attack Methods Enable Malware to Hijack Passkey-Protected Accounts (1 minute read)
+
+Palo Alto Networks researchers disclosed Pass-ta-key, a set of attack methods that let malware already running on a Windows machine hijack Google-synced Chrome passkeys without biometric prompts, privilege escalation, or user interaction. The most severe variant extracts a master secret from Chrome's memory that decrypts every synced passkey for the account, undercutting the phishing-resistance case enterprises use to justify passwordless rollouts on Google's stack.
+
+🧠
+Analysis & Opinions
+
+Five ways to evaluate AI agent orchestration platforms (2 minute read)
+
+The author argues that AI agent orchestration platforms have become the enterprise control plane for coordinating agents, tools, and people, and identifies more than 60 commercial and open source options built on MCP and A2A. For IT leaders, the practical evaluation criteria are governance depth, human-in-the-loop controls, observability, and clear accountability when autonomous decisions go wrong. The author expects enterprises to run multiple orchestration platforms rather than standardize on one, so procurement should weigh interoperability alongside per-platform capabilities.
+
+Cloudflare has mostly ditched third party security tools, suggests not trying that at home (5 minute read)
+
+(blurb not generated)
+
+Prompt injection isn't the bug, AI agent frameworks are (1 minute read)
+
+The author argues that prompt injection is an unsolvable symptom of how AI agent frameworks are built, not a patchable defect, since agents mix untrusted input and privileged actions in the same context by design. For enterprise buyers, the implication is that no vendor patch or guardrail add-on fully closes the hole, and agent deployments should be scoped with least-privilege access and human approval on consequential actions rather than trusted to sanitize inputs.
+
+Adding an API to networking hardware doesn’t solve management challenges (1 minute read)
+
+The author argues that bolting an API onto traditional networking gear doesn't fix management, because the underlying problem is feature inconsistency across devices, even within a single vendor's own operating systems. He points to NAPALM supporting five vendor OSes, three of them Cisco variants, as evidence. Cloud-inspired networks win because virtual switches are uniform, so automation targets one consistent behavior rather than a patchwork of hardware quirks.
+
+🤝
+Launches & Partnerships
+
+Snowflake launches AI agent governance layer to track activity, control costs (5 minute read)
+
+(blurb not generated)
+
+Unlocking the future of shared storage: Filestore on Colossus (2 minute read)
+
+Google Cloud rebuilt Filestore, its managed NFS file service, on Colossus, the same distributed storage backend behind YouTube, Gmail, and Gemini, decoupling capacity from performance so IOPS can be provisioned independently without over-provisioning storage. The upgrade extends to GKE through the Filestore CSI driver and multishares that carve a single instance into 10 GiB shares, letting AI teams support thousands of concurrent containers and agent swarms without raising TCO.
+
+Cloudflare launches Identity-Aware AI Gateway to track who is using AI (1 minute read)
+
+Cloudflare launched Identity-Aware AI Gateway, which attaches a verified identity to every AI request leaving a corporate network by wiring AI Gateway into its Cloudflare Access zero-trust product. IT teams can now attribute each prompt to a specific employee or bot, set per-user spending limits, and strip names, passwords, and confidential files from requests before they reach outside model providers.
+
+Red Hat launches new open source project to drive AI governance (1 minute read)
+
+Red Hat launched asago (AI Safety And Governance Orchestration), an open source project that translates corporate and regulatory AI governance policies into operational controls, with early backing from Microsoft, IBM Research, the Alan Turing Institute, and Brave Software. The framework maps requirements to standards like the NIST AI RMF and OWASP LLM Top 10 via the IBM AI Risk Atlas, targeting the policy-to-configuration bottleneck that slows enterprise AI deployments under regimes such as the EU AI Act.
+
+Gemini in Google Classroom is expanding to users of all ages, with contextualized Gemini starter prompts for students (5 minute read)
+
+(blurb not generated)
+
+Catching rogue AI behavior with identity-aware analytics (1 minute read)
+
+Cloudflare launched identity-aware AI Gateway in open beta with Cloudflare Access, letting enterprises front their gateway with a SAML provider like Okta or Entra so every AI request carries a verified user ID, alongside User Insights, now generally available at no extra cost. Together they build a per-user and per-agent behavioral baseline from existing gateway traffic, flagging anomalies like a runaway agent or a 10x usage spike for governance and cost investigation.
+
+SnapLogic introduces agentic assistant for data integration (5 minute read)
+
+(blurb not generated)
+
+🎁
+Miscellaneous
+
+Snowflake hacker pleads guilty, faces up to 32 years in prison (1 minute read)
+
+Connor Moucka, the Canadian behind the 2024 Snowflake breach spree that compromised more than 165 customer environments including AT&T, Ticketmaster, and Santander, pleaded guilty and faces up to 32 years in prison. The attacks used stolen credentials to exfiltrate billions of records on over 100 million people, saddling victim companies with more than $9.5M in losses and underscoring the enterprise cost of unmanaged credential and MFA gaps.
+
+⚡
+Quick Links
+
+DigitalOcean tops second quarter expectations amid surging AI demand (5 minute read)
+
+(blurb not generated)

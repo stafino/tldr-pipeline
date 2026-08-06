@@ -1,0 +1,260 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR Dev 2026-08-06
+
+🧑‍💻
+Articles & Tutorials
+
+The Economic Benefit of Refactoring (5 minute read)
+
+(blurb not generated)
+
+How we built a software factory to drive Astro’s GitHub issue count to zero (5 minute read)
+
+(blurb not generated)
+
+Turn one giant AI-generated pull request to a reviewable stack (5 minute read)
+
+(blurb not generated)
+
+“Stateful systems are incredibly hard to build”: How Perplexity thinks about AI agent sandboxes (5 minute read)
+
+(blurb not generated)
+
+PostgreSQL's MVCC Is Bad: So Is Everyone Else's (5 minute read)
+
+(blurb not generated)
+
+New research: The Core Web Vitals thresholds you trust might be wrong for your site (5 minute read)
+
+(blurb not generated)
+
+How GitHub gave every repository a durable owner (1 minute read)
+
+GitHub validated durable ownership for every active repository across its 14,000-repo internal org in under 45 days, archiving roughly 8,000 unused repos and making ownership mandatory at creation time. The post details how a service-to-repo mapping in their Service Catalog left team, docs, and one-off repos unowned, which blocked secret-scanning remediation because rotating a secret without a known owner risked disrupting unknown consumers.
+
+How ChatGPT Optimizes its Agent Loop: Harness, API, and Inference (5 minute read)
+
+(blurb not generated)
+
+How MVCC and Transactions Work in RocksDB (5 minute read)
+
+(blurb not generated)
+
+The Valley of Webhooks (5 minute read)
+
+(blurb not generated)
+
+You don't need React: creating a minimal UI library in Vanilla JavaScript (5 minute read)
+
+(blurb not generated)
+
+Harness engineering for self-improvement (5 minute read)
+
+(blurb not generated)
+
+Dogfooding at scale: migrating cdnjs to Cloudflare's Developer Platform (5 minute read)
+
+(blurb not generated)
+
+Faster Floating-Point Math With Rust's New API (5 minute read)
+
+(blurb not generated)
+
+MirrorCode (5 minute read)
+
+(blurb not generated)
+
+What's the largest software project AI can complete on its own? (5 minute read)
+
+(blurb not generated)
+
+Show HN: Simple algorithm and color space to generate diverse skin tones (5 minute read)
+
+(blurb not generated)
+
+How Cloudflare enforces engineering standards using AI (5 minute read)
+
+(blurb not generated)
+
+What We Observe as LLM Behavior Can Be a Side-effect of Inference Backend (1 minute read)
+
+This paper runs a fully-crossed study of three instruction-tuned models across five inference frameworks, six benchmarks, and four generation modes, finding that the backend alone accounts for roughly 39% of the out-of-the-box variance a practitioner sees, even under greedy decoding. The authors recommend disclosing backend, version, and full generation config, and using deterministic decoding for any cross-backend comparison, since divergences hit factual benchmarks harder than social-bias ones.
+
+Smaller, faster, safer: running Kimi and GLM at scale (5 minute read)
+
+(blurb not generated)
+
+🧠
+Opinions & Advice
+
+"Clean" Code, Horrible Performance (2023) (5 minute read)
+
+(blurb not generated)
+
+GitHub is the wrong shape for this new world (5 minute read)
+
+(blurb not generated)
+
+Eight Myths on Software Engineering and GenAI (5 minute read)
+
+(blurb not generated)
+
+Everyone is building LLM routers, we deprecated ours (5 minute read)
+
+(blurb not generated)
+
+Don't be a meat proxy (5 minute read)
+
+(blurb not generated)
+
+The development pipeline is a production system (5 minute read)
+
+(blurb not generated)
+
+The Session You Cannot Take With You (5 minute read)
+
+(blurb not generated)
+
+The Shape of Things to Come (5 minute read)
+
+(blurb not generated)
+
+🚀
+Launches & Tools
+
+Zed DeltaDB (5 minute read)
+
+(blurb not generated)
+
+DeepSeek V4 Flash on a Single AMD MI300X (5 minute read)
+
+(blurb not generated)
+
+Celld: Self-hosted, distributed Durable Objects (5 minute read)
+
+(blurb not generated)
+
+Run CI/CD for millions of repos — on your platform, on Cloudflare (5 minute read)
+
+(blurb not generated)
+
+FFmpeg 9.0 (5 minute read)
+
+(blurb not generated)
+
+Cloudflare Workers and Containers now support inbound TCP connections and gRPC (5 minute read)
+
+(blurb not generated)
+
+Next.js 16.3 aims to reduce dreaded FATAL ERROR messages (5 minute read)
+
+(blurb not generated)
+
+GitHub pushes stacked pull requests into public preview (5 minute read)
+
+(blurb not generated)
+
+Sandboxing (5 minute read)
+
+(blurb not generated)
+
+AWS’s Kiro Crew aims to turn AI coding agents into autonomous engineering teams (5 minute read)
+
+(blurb not generated)
+
+Your agent can now debug Workers with local tracing (5 minute read)
+
+(blurb not generated)
+
+A unified API for AI model routing (5 minute read)
+
+Google Cloud API Gateway added model routing in Public Preview, a serverless ingress layer that accepts OpenAI-compatible requests and dynamically routes them to Gemini, Claude, or OpenAI OSS-GPT backends. Routing logic lives in an OpenAPI spec via an x-google-api-management extension, so teams can swap models without hardcoding endpoints or running their own proxy, and use it standalone for rate limiting and token tracking.
+
+Deploy local agents everywhere with LFM2.5-2.6B (5 minute read)
+
+(blurb not generated)
+
+The Agent Development Lifecycle has arrived on Cloudflare (5 minute read)
+
+(blurb not generated)
+
+Meta wants to get inside your terminal with its new coding agent (1 minute read)
+
+Meta released a command-line coding agent that operates directly inside the terminal, running tasks, editing files, and executing commands from the shell rather than an IDE panel. The tool puts Meta in direct competition with terminal-native agents like Anthropic's Claude Code and OpenAI's Codex CLI, targeting engineers who already live in the shell and want an agent that fits that workflow.
+
+Java 28 starts to take shape (1 minute read)
+
+JDK 28, a non-LTS release due March 2027, is taking shape around three JVM features: a preview of value objects, a switch of the Shenandoah collector's default to generational mode, and a preview of strict field initialization. Value objects are immutable and lack identity so the == operator compares by field value, while strict fields must be written before they are read, eliminating observable 0 or null defaults.
+
+Google Workspace Directory Sync (1 minute read)
+
+Clerk added Google Workspace support to Directory Sync, connecting directly to a Workspace directory via a service account with domain-wide delegation to sync users, groups, and group memberships without waiting for sign-in events. Google groups map to Clerk Roles and custom attribute mapping covers the full directory record, including standard fields like organizations.title and Workspace custom schemas such as customSchemas.EmployeeInfo.costCenter.
+
+Show HN: Maple-Preview – Ternary 20B MoE running at 120 tok/s on a iPhone (5 minute read)
+
+(blurb not generated)
+
+Meta enters the AI coding wars with Muse Spark 1.2 and Muse Code with persistent async background agents (5 minute read)
+
+(blurb not generated)
+
+Meta Cuts Coding Agent Prices 21x for Developers Who Give Up Their Data (1 minute read)
+
+Meta released Muse Code in beta on August 5, a one-command terminal coding agent powered by Muse Spark 1.2 that runs on macOS or Linux with no IDE integration. A contributor tier prices output at $0.20 per million tokens versus $4.25 on the standard tier, roughly 21x cheaper, in exchange for permission to train future Meta models on developers' prompts and completions.
+
+🎁
+Miscellaneous
+
+Keyv and friends compromised in active Shai-Hulud supply chain attack (5 minute read)
+
+(blurb not generated)
+
+Massive ChainDrop npm supply-chain attack infects hundreds of packages (5 minute read)
+
+(blurb not generated)
+
+Keyv-Linked npm Worm Poisons Hundreds of Packages, Plants Claude Code and VS Code Hooks (5 minute read)
+
+(blurb not generated)
+
+Ruby on Rails critical bug puts every image upload under scrutiny (5 minute read)
+
+(blurb not generated)
+
+77 Open VSX extensions found harvesting developer info (5 minute read)
+
+(blurb not generated)
+
+Open VSX Removes 77 Malicious Evil Twin Extensions Exfiltrating Developer Data (1 minute read)
+
+Security researchers at Manifold Security found 77 malicious "evil twin" extensions on the Open VSX marketplace that impersonated legitimate developer tools while exfiltrating system and dev-environment data to a shared domain. Nineteen of them harvested detailed reconnaissance including hostname, OS username, machine ID, open workspace paths, and the CI system running the editor, all framed in the listings as "anonymous usage metrics.
+
+‘Shai-Hulud: Here We Go Again’: Thousands of npm packages compromised in ‘Chaindrop’ malware campaign where hackers taunt victims (5 minute read)
+
+(blurb not generated)
+
+Trojanized npm Packages Employ NullReceiver Tactic to Decode C2 IP from Blockchain (5 minute read)
+
+(blurb not generated)
+
+The Shai-Hulud npm worm didn't fake its security check — it earned a legitimate one (5 minute read)
+
+(blurb not generated)
+
+Massive supply-chain attack compromises 440 packages under four hours (5 minute read)
+
+(blurb not generated)
+
+New XCSSET variant targets macOS devs via compromised Xcode projects (5 minute read)
+
+(blurb not generated)
+
+Meta launches Muse Code, an AI agent for large code bases (5 minute read)
+
+(blurb not generated)
+
+libexpat now funded by the City of Munich for up to 6 months (5 minute read)
+
+(blurb not generated)
