@@ -1,0 +1,224 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR DevOps 2026-08-07
+
+📱
+News & Trends
+
+Gateway API v1.6: TCPRoute and UDPRoute Graduate to Standard (5 minute read)
+
+(blurb not generated)
+
+Cloudflare OS: an open platform for agents, apps, and work (1 minute read)
+
+Cloudflare open sourced Cloudflare OS, a platform that gives every employee an agent and workspace grounded in company-specific context, systems access, and a shared library of skills and procedures. Any organization can now deploy it, connect it to internal tools, and build live apps against internal systems, following the version Cloudflare rolled out to its entire workforce in May.
+
+Tailscale didn't stop the Hugging Face intrusion (5 minute read)
+
+(blurb not generated)
+
+Veeam, Terraform MCP, Django Patch Critical Flaws, Led by CVSS 10.0 Cross-Tenant Bug (5 minute read)
+
+(blurb not generated)
+
+The next generation of MCP (5 minute read)
+
+(blurb not generated)
+
+CISA Flags TeamCity CVE-2026-63077 RCE Flaw Under Active Exploitation in the Wild (1 minute read)
+
+CISA added CVE-2026-63077 to its Known Exploited Vulnerabilities catalog after the CVSS 9.8 deserialization flaw in on-premise JetBrains TeamCity came under active exploitation, letting an unauthenticated attacker abuse the agent polling protocol to bypass auth and run arbitrary commands as the server process. A successful hit exposes stored credentials and build artifacts across downstream CI/CD pipelines, and FCEB agencies face an August 8 patch deadline under BOD 26-04.
+
+New OVSwrap Linux Kernel Flaw Lets Local Users Gain Root via Open vSwitch (5 minute read)
+
+(blurb not generated)
+
+ChainDrop supply chain compromise: Anatomy of a self-propagating worm (5 minute read)
+
+Microsoft Threat Intelligence documented ChainDrop, an npm supply chain attack that pushed a self-propagating Shai-Hulud worm variant into more than 400 packages across unrelated publishers, including keyv, flat-cache, and cache-manager. The malware runs from a preinstall hook to harvest npm, GitHub, AWS, Kubernetes, and Vault credentials, then republishes packages under stolen publishing tokens, so any build runner that installed an affected release should be treated as compromised and its credentials rotated.
+
+18-Year-Old Linux SCTP Flaw Could Let Local Users Gain Root and Escape Containers (1 minute read)
+
+An 18-year-old use-after-free bug in Linux's SCTP networking code, tracked as CVE-2026-64564 and dubbed SCTPhantom, lets a local user with SCTP reachable gain root, and Tencent's Zhuque Lab says it used the flaw to escape a container to the host. Stable kernels 7.1.6, 6.18.42, 6.12.101, and 6.6.148 shipped the fix on August 3, so anyone running an older kernel with SCTP exposed should patch.
+
+Critical Gitea Flaw Let Unauthenticated Attackers Read Server Files via Org-Mode Markup (5 minute read)
+
+(blurb not generated)
+
+Building an open Agentic Internet: readable, discoverable, callable, and payable (5 minute read)
+
+(blurb not generated)
+
+Unveiling good and bad behaviors on the Agentic Internet (1 minute read)
+
+Cloudflare's Web Integrity & Trust team detailed how it scores web traffic by continuous behavior rather than static bot-versus-human checks, treating Risk as ephemeral and Trust as reputation built over time to handle sessions that shift between human and agent mid-flow. The post shares agentic-traffic findings since the Precursor launch and includes an interactive simulation that classifies your own cursor movements as human or bot.
+
+Post-quantum authentication to origins is now supported (5 minute read)
+
+(blurb not generated)
+
+Proxmox ports itself to Arm with help from Nvidia and Supermicro (1 minute read)
+
+Proxmox ported its Virtual Environment platform to 64-bit Arm with engineering help from Nvidia and Supermicro, extending the open-source hypervisor beyond its longtime x86 base. The port targets Arm server silicon like Nvidia's Grace and Supermicro's Ampere-based hardware, giving platform teams a KVM-based alternative to VMware on Arm without a per-socket licensing bill.
+
+Unlocking the future of shared storage: Filestore on Colossus (5 minute read)
+
+(blurb not generated)
+
+Latest GitHub outage squeezes Actions, Pages to death (5 minute read)
+
+(blurb not generated)
+
+K8gb becomes a CNCF incubating project (5 minute read)
+
+(blurb not generated)
+
+Proxmox VE now available for ARM64 (5 minute read)
+
+(blurb not generated)
+
+Your Azure DevOps pipelines have a 2027 deadline, and the clock has just started (5 minute read)
+
+(blurb not generated)
+
+Kubernetes v1.37 Sneak Peek (5 minute read)
+
+(blurb not generated)
+
+🚀
+Opinions & Tutorials
+
+Does Kubernetes DRA Replace HAMi? (1 minute read)
+
+DRA's consumable capacity feature, generally available in Kubernetes v1.34 and on by default since v1.35, lets a pod ask the scheduler directly for a slice of a GPU's memory, absorbing the encoding job HAMi built its mutating webhook and scheduler extender to do. The author argues DRA still doesn't replace HAMi, because in-container enforcement at CUDA-call granularity is a job DRA was never designed for. HAMi's response is to split the two: keep enforcement, and rebuild the encoding on top of DRA across three repositories.
+
+The Agent Access Model (5 minute read)
+
+(blurb not generated)
+
+Shadow AI in CI/CD: Threat-modeling the path from developer laptop to Kubernetes (1 minute read)
+
+This CNCF post threat-models Shadow AI across a cloud-native delivery path, from a developer laptop to a running Kubernetes pod, and argues the real risk is access, not chatbot usage. The author's key distinction: an assistant suggesting code leaks data, but an agent holding a Git token, cloud credentials, or a ServiceAccount becomes a non-human identity with real blast radius. Each stage maps to a least-privilege control you can implement today with CNCF and open source projects.
+
+Control Reliability Engineering (CRE): Applying SRE Principles to Cybersecurity Controls (5 minute read)
+
+(blurb not generated)
+
+How Cloudflare enforces engineering standards using AI (5 minute read)
+
+(blurb not generated)
+
+Solving the "Noisy Neighbor": How Sharded Architecture Protects Multi-Tenant Platforms (5 minute read)
+
+(blurb not generated)
+
+Scaling Kubernetes pods with KEDA based on Amazon SQS queue depth (5 minute read)
+
+(blurb not generated)
+
+Smaller, faster, safer: running Kimi and GLM at scale (5 minute read)
+
+(blurb not generated)
+
+The Economic Benefit of Refactoring (5 minute read)
+
+(blurb not generated)
+
+HCP Terraform is the control plane for AI-driven infrastructure (5 minute read)
+
+(blurb not generated)
+
+GEM Training: How Meta Doubled the Efficiency of Its LLM-Scale Ads Foundation Model (5 minute read)
+
+(blurb not generated)
+
+How GitHub gave every repository a durable owner (5 minute read)
+
+(blurb not generated)
+
+Automating cross-repo documentation with GitHub Agentic Workflows (1 minute read)
+
+The Aspire team documented how they use GitHub Agentic Workflows to turn merged product changes into SME-reviewed documentation pull requests across separate repos, without granting agents broad write-everywhere tokens. For Aspire 13.3 and 13.4, 82 feature-docs pull requests merged at a median of 44.8 hours after the product PR, each reviewed by the engineer who shipped the feature, with no added headcount. The writeup focuses on cross-repo automation, the sharp part most same-repo setups never hit.
+
+The development pipeline is a production system (5 minute read)
+
+(blurb not generated)
+
+eMicro: Real-Time Multi-Hop Access Control for Microservices with eBPF (1 minute read)
+
+This paper introduces eMicro, a path-aware access control system that stops multi-hop attacks in microservice meshes, where each individual service-to-service call looks legitimate but the full request path violates security intent. It encodes policies as deterministic finite automata for constant-time lookups and uses eBPF-based in-kernel request tracing to enforce them without code changes. On DeathStarBench and production traces from Uber, Alibaba, and ByteDance, the authors report 1-microsecond policy checks, 50M policies in 100MB, and 90% lower propagation overhead.
+
+⚒️
+Launches & Tools
+
+OpenCost 1.121.0: First-of-a-kind Kubernetes inference cost tracking (5 minute read)
+
+(blurb not generated)
+
+Celld: Self-hosted, distributed Durable Objects (5 minute read)
+
+(blurb not generated)
+
+Cloudflare Workers and Containers now support inbound TCP connections and gRPC (5 minute read)
+
+(blurb not generated)
+
+Your agent can now debug Workers with local tracing (5 minute read)
+
+(blurb not generated)
+
+Give any website a WebMCP interface (5 minute read)
+
+(blurb not generated)
+
+Introducing Kitesurf: The agent-first browser that runs in V8 isolates on Cloudflare Workers (5 minute read)
+
+(blurb not generated)
+
+GitLab Secrets Manager adds ESO, Terraform, API support (5 minute read)
+
+(blurb not generated)
+
+WriteGuard: fine-grained controls for MCP Servers (5 minute read)
+
+(blurb not generated)
+
+Unifying Workers AI and AI Gateway into a single AI control plane (1 minute read)
+
+Cloudflare is merging Workers AI and AI Gateway into a single control plane, so a single AI binding and unified /ai/ REST endpoint now route requests to any model provider, including Cloudflare's own GPU-hosted models. Teams get observability, logging, billing, and security from one path, with a built-in default gateway that applies without any manual setup.
+
+Catching rogue AI behavior with identity-aware analytics (5 minute read)
+
+(blurb not generated)
+
+Confidential AI for GitLab Self-Hosted (5 minute read)
+
+(blurb not generated)
+
+Introducing Radar Researcher: An AI tool for exploring Internet data in plain language (1 minute read)
+
+Cloudflare launched Radar Researcher in beta, an AI tool that answers questions about its global Internet traffic data through plain-language queries that return real, interactive charts. Built on Cloudflare's developer platform, it removes the need to find the right Radar page, set filters, or read API docs, opening the free open dataset to journalists and operators tracking outages in a hurry.
+
+Cloudflare AI Search: give your agents a search engine for your data (5 minute read)
+
+(blurb not generated)
+
+Runtime instances: persistent compute for production AI agents on Amazon Bedrock AgentCore (1 minute read)
+
+AWS announced runtime instances for Amazon Bedrock AgentCore, a managed EC2-backed compute option for production AI agents that need to run for days, access GPUs, or coordinate multiple agents on a shared host. Sessions persist up to 14 days with stop/restart to cut idle cost, and the service reuses existing AgentCore APIs, identity controls, and observability while pairing with EBS and AgentCore Memory for cross-session recall.
+
+Mixture-of-Kittens: our open-source MoE megakernel for NVL72s (5 minute read)
+
+(blurb not generated)
+
+🎁
+Miscellaneous
+
+Datadog shares plummet despite expectation-topping quarterly results (1 minute read)
+
+Datadog stock closed 19% lower despite second-quarter revenue rising 36% year-over-year to $1.12B, beating the $1.08B consensus. The selloff followed a disclosure that Datadog's largest customer, an unnamed AI provider on a newly renewed nine-figure contract, plans to cut user seats and reduce usage this year.
+
+Open VSX Removes 77 Malicious Evil Twin Extensions Exfiltrating Developer Data (5 minute read)
+
+(blurb not generated)

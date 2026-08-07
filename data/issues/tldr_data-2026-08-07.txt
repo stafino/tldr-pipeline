@@ -1,0 +1,113 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR Data 2026-08-07
+
+📊
+News & Trends
+
+Introducing OfficeQA Pro V2: A New Benchmark for Enterprise Grounded-Reasoning (5 minute read)
+
+(blurb not generated)
+
+Agentic Future Ready With BigQuery: Continually Improving Price-Performance, Zero Effort (5 minute read)
+
+(blurb not generated)
+
+AWS updates DynamoDB with native vector search to ease AI application development (5 minute read)
+
+(blurb not generated)
+
+🧠
+Deep Dives & Analysis
+
+Pi, Minimal and Performant (5 minute read)
+
+(blurb not generated)
+
+From analytics engineer to context engineer (5 minute read)
+
+(blurb not generated)
+
+Filtered Vector Search in a Disaggregated Lakehouse: Composing Table-Format Pruning with Per-File ANN (1 minute read)
+
+This paper embeds an IVF vector index directly in each Parquet file's footer inside an Apache Iceberg table, then answers filtered ANN queries by reusing the lakehouse's existing file-pruning stack rather than a new algorithm: the planner prunes data files by predicate first, then runs IVF only over survivors. On an 11.5M-row table, warm search hit ~32x faster than brute force at recall@10 >= 0.90. The catch is it needs file-level locality on the filter column.
+
+PostgreSQL's MVCC Is Bad: So Is Everyone Else's (5 minute read)
+
+(blurb not generated)
+
+GEM Training: How Meta Doubled the Efficiency of Its LLM-Scale Ads Foundation Model (5 minute read)
+
+(blurb not generated)
+
+Window Function Optimization: Co-Evaluation and Other Techniques (1 minute read)
+
+This paper introduces a reasoning framework for optimizing SQL window functions, filling a gap where existing techniques break the moment their ideal conditions are slightly violated. The core contribution is Co-Evaluation, an execution strategy that lets engines evaluate predicates early even when those predicates depend on the window function's own output, alongside Frame and Partition Analysis. Tested in an open-source engine, the optimizations never regressed performance and ran certain common queries up to 40.7x faster, with gains growing on larger tables.
+
+From User Sequences to Scaling Laws: A Multi-Stage Architecture for Meta’s Ads Ranking (5 minute read)
+
+(blurb not generated)
+
+This is why we can't have nice things (5 minute read)
+
+(blurb not generated)
+
+Beyond Top-K: Replacing Black-Box Retrieval with Interpretable Agentic Operations (1 minute read) [flag]
+
+This paper argues that top-k embedding retrieval is structurally unsound for dense financial documents, where table rows dominate and a figure's unit sits a median of 13 lines above it, so chunk boundaries routinely separate a number from whether it means lakh or crore. The authors propose READ, an embedding-free agent that reads raw documents through lexical search, structural navigation, and bounded span reads over MCP. It answered 58.8% of verified questions versus dense retrieval's 15.7%, with a replayable audit trail instead of an opaque similarity score.
+
+Solving the "Noisy Neighbor": How Sharded Architecture Protects Multi-Tenant Platforms (5 minute read)
+
+(blurb not generated)
+
+Tytan: Interactive Neurosymbolic Construction of Analytic Semantic Schemas from Relational Data (1 minute read)
+
+This paper introduces TYTAN, a system that builds an analytic semantic schema directly from a relational database, combining symbolic analysis with LLM-based inference to propose entities, assign measure/identifier roles, and connect tables into units of analysis. When the evidence is ambiguous, it asks the user a targeted natural-language question instead of guessing. Across seven reference domains it hit 100% entity coverage and executed all 1,678 retrieval instructions correctly, targeting the hand-written semantic layer as the main bottleneck in scaling text-to-analytics systems.
+
+BEGIN AI TRANSACTION: Semantic Isolation for Durable AI Workflows (1 minute read)
+
+This paper argues that durable AI workflows have an isolation problem: an execution can outlive its environment, so saved state gets combined with prompts, model aliases, or tools that changed mid-run, yielding inconsistent results even when every call succeeds. The authors define four detectable anomalies and a partial order of isolation levels borrowed from database theory. Their SemIso middleware prototype enforces these with microsecond-scale checks, blocking incompatible resources and branch merges.
+
+PLB: Priority-Aware Load Balancing for Replicated Databases under Constrained Resources (1 minute read)
+
+This paper introduces PLB, a priority-aware load balancer built as a JDBC driver that enforces premium-versus-freemium tiers by controlling how client sessions map to read replicas, rather than adding capacity. Under fixed OLAP clusters, PLB partitions replicas by user group but lets high-priority sessions borrow idle capacity, keeping cluster CPU utilization above 70% where static dedicated partitions drop it to 35%. Against round-robin, it cuts high-priority median latency by roughly 12% while holding low-priority overhead near 11%.
+
+From Research Questions to Columns: Operationalization-Aware Data Discovery (5 minute read)
+
+(blurb not generated)
+
+EdgeLM: Edge Demonstrations for Language Models' Table Understanding (5 minute read)
+
+(blurb not generated)
+
+How DoorDash Built a Centralized Gateway for AI Agent-Tool Access (5 minute read)
+
+(blurb not generated)
+
+Beating GPT-5.6 Sol on retrieval with 100x cheaper open models (5 minute read)
+
+(blurb not generated)
+
+Agents are coming for data (just slowly) (3 minute read)
+
+The author argues that agents have spread across software but skipped data mostly because of timing: LLMs only became reliably good at writing SQL in the past six to nine months. The near-term win is unglamorous maintenance, turning a data model's implicit assumptions into tests and auto-patching mechanical breakages like renamed tables or widened column types, while flagging the rest for a human. Automated analytics is the harder, slower half, gated on getting business logic into a form an LLM can actually use.
+
+ELT is moving back to best-of-breed and Orchestration is the missing piece (1 minute read)
+
+The author argues that ELT's swing back to best-of-breed has quietly turned it into ETL again, with orchestration as the piece nobody owns. AI now makes API connectors trivial to generate, leaving infrastructure and gnarly database replication as the real work, while all-in-one platforms like Fabric, Databricks, and Snowflake subsidize weaker orchestration and monitoring through pricier core licenses. The catch: stitching Fivetran, dbt Cloud, Airflow, and Monte Carlo back together is expensive and overlapping.
+
+🚀
+Launches & Tools
+
+OpenCost 1.121.0: First-of-a-kind Kubernetes inference cost tracking (5 minute read)
+
+(blurb not generated)
+
+Amazon DynamoDB now supports real-time vector search at any scale (1 minute read)
+
+Amazon DynamoDB now supports native vector search in general availability, letting teams store embeddings alongside operational data and run similarity queries with single-digit millisecond latency at 99%+ recall through the new SearchVectors API. For teams already on DynamoDB, this removes the separate vector database and its synchronization pipeline, folding vectors into the same serverless, pay-per-request pricing rather than adding another store to maintain.
+
+Interview: Qdrant and TurboQuant compression (5 minute read)
+
+(blurb not generated)

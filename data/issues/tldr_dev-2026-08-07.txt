@@ -1,0 +1,248 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR Dev 2026-08-07
+
+🧑‍💻
+Articles & Tutorials
+
+The Economic Benefit of Refactoring (5 minute read)
+
+(blurb not generated)
+
+Inside vLLM: Anatomy of a High-Throughput LLM Inference System (2025) (1 minute read)
+
+This post breaks down how vLLM's V1 engine achieves high-throughput LLM inference, walking through paged attention, continuous batching, and the scheduler before layering in chunked prefill, prefix caching, speculative decoding, and disaggregated prefill/decode. It follows an inverse-pyramid structure from a single-GPU offline example up to multi-GPU, multi-node distributed serving, with the analysis pinned to a specific August 2025 commit.
+
+Prototype on a laptop, scale to 16 billion rows: one Polars query (5 minute read)
+
+Polars runs the same LazyFrame at both scales, with a single method call deciding whether a query executes locally or distributed on Polars Cloud. The post prototypes an ETL pipeline on three hours of Polymarket orderbook data (97 million rows) on a laptop, then runs the identical queries against a full month (16 billion rows, 500 GB of compressed Parquet) to produce pre-aggregated artifacts that feed a Plotly Dash dashboard.
+
+Turn one giant AI-generated pull request to a reviewable stack (5 minute read)
+
+(blurb not generated)
+
+How Baseline Can Help You Ship Less JavaScript (1 minute read)
+
+This article shows how to use Baseline browser-support data to audit your package.json and delete dependencies the browser now handles natively, working in clusters like date formatting, HTTP requests, and modals rather than one library at a time. The author estimates a typical mid-sized app carries 60KB to 90KB of minified, gzipped dependencies the platform can replace, and offers a reusable decision framework that stays honest about where the browser still falls short.
+
+PostgreSQL's MVCC Is Bad: So Is Everyone Else's (5 minute read)
+
+(blurb not generated)
+
+How GitHub gave every repository a durable owner (5 minute read)
+
+(blurb not generated)
+
+Automating cross-repo documentation with GitHub Agentic Workflows (1 minute read)
+
+The Aspire team built cross-repo documentation automation using GitHub Agentic Workflows, turning merged product pull requests in microsoft/aspire into SME-reviewed docs pull requests in the separate microsoft/aspire.dev repo without granting agents broad write-everywhere tokens. For Aspire 13.3 and 13.4, the setup shipped 82 feature-docs pull requests at a median of 44.8 hours after the product pull request, each reviewed by the engineer who wrote the feature.
+
+The Valley of Webhooks (5 minute read)
+
+(blurb not generated)
+
+Dogfooding at scale: migrating cdnjs to Cloudflare's Developer Platform (5 minute read)
+
+(blurb not generated)
+
+Faster Floating-Point Math With Rust's New API (5 minute read)
+
+(blurb not generated)
+
+MirrorCode (5 minute read)
+
+(blurb not generated)
+
+What's the largest software project AI can complete on its own? (5 minute read)
+
+(blurb not generated)
+
+How Cloudflare enforces engineering standards using AI (5 minute read)
+
+(blurb not generated)
+
+The Bitter Lesson of Tool Calling (1 minute read)
+
+This paper benchmarks programmatic tool calling (PTC), where tools are exposed as typed Python stubs the model invokes through code, against native JSON tool calling across 14 models on BFCL v4. PTC matches or beats JSON calls in 11 of 14 models, with the GPT-5.6 family gaining 10.6%, and it holds steady under context-rot conditions where JSON calling degrades an average of 2.3%.
+
+Comparative Approaches to Agent Retrieval over Large Skill Libraries (1 minute read) [flag]
+
+Testing two retrieval systems over a 690-skill library, this paper finds a hybrid lexical plus dense-embedding ranker hits the correct skill in its top five 73.5% of the time, while a typed knowledge graph of workflow relations scores 11.2 points worse at matched token budget. The authors attribute the failure to a pre-filter topology bound, since 98.6% of typed edges connect skills the ranker already surfaced together, so structure enriches relations but cannot extend retrieval reach.
+
+Smaller, faster, safer: running Kimi and GLM at scale (5 minute read)
+
+(blurb not generated)
+
+How we took malware advisories beyond npm (5 minute read)
+
+(blurb not generated)
+
+Learning Context-Free Grammars for Grammar-Constrained Decoding via Declarative Agentic Programming with Guarantees (1 minute read)
+
+Autogrammar is an agent that automatically learns context-free grammars for third-party DSLs from documentation and execution data, then uses them for grammar-constrained decoding to stop LMs from emitting syntactically invalid programs. Across CloudWatch Logs Insights, Dynatrace Query Language, and Datadog Search Syntax, the learned grammars hit near-perfect precision on unseen data and match or beat a professionally maintained grammar, with execution data proving essential and documentation dispensable.
+
+Reasoning from Traces: Divergence-Guided Agentic Repair of WebAssembly Discrepancies (1 minute read)
+
+WasmMend is the first system to automatically repair functional discrepancies between native and WebAssembly builds of the same C/C++ source, using differential trace analysis to pinpoint where the two executions first diverge before LLM agents reason about the root cause and patch it. Localizing the divergence first lifts the fix rate to 70%, versus 50.2% for a plain agentic baseline and 54.5% for one augmented with repair-time instrumentation.
+
+🧠
+Opinions & Advice
+
+Everyone is building LLM routers, we deprecated ours (5 minute read)
+
+(blurb not generated)
+
+Don't be a meat proxy (5 minute read)
+
+(blurb not generated)
+
+How to keep thinking (3 minute read)
+
+The author argues that working alongside AI agents pushes engineers toward fast "skim and judge" cognition and away from the slow, reflective thinking that produces real creativity and depth. His prescription is to read and write more in your own words, since offloading the writing to an LLM defeats the purpose and forfeits the deliberate reasoning that writing forces.
+
+What I love about Django (1 minute read)
+
+The author argues that Django's real value is how it disappears into a well-structured codebase, blending so cleanly with plain Python and business logic that its contributions are hard to isolate. The strongest example is middleware: a simple request/response hook that Buttondown uses for subdomain routing, UTM attribution, CSP headers, and stamping every response with the deployed git SHA so stale tabs detect new builds.
+
+The development pipeline is a production system (5 minute read)
+
+(blurb not generated)
+
+Exploring Dependence, Overreliance, and Addiction Related Behaviors Associated with Large Language Model Use Among Software Engineers (1 minute read)
+
+A survey of 119 software engineers found that LLM use has settled into functional dependence, with developers routinely reaching for models over documentation or peers while still verifying the output. Addiction-related patterns were rare and mostly showed up as trouble moderating use rather than impaired control, leading the authors to argue the real task is calibrating trust and preserving professional judgment, not curbing the habit.
+
+The Session You Cannot Take With You (5 minute read)
+
+(blurb not generated)
+
+Humans in the loop miss a third of dangerous AI coding agent requests (5 minute read)
+
+(blurb not generated)
+
+The Shape of Things to Come (5 minute read)
+
+(blurb not generated)
+
+🚀
+Launches & Tools
+
+Zed DeltaDB (5 minute read)
+
+(blurb not generated)
+
+Celld: Self-hosted, distributed Durable Objects (5 minute read)
+
+(blurb not generated)
+
+The next generation of MCP (5 minute read)
+
+(blurb not generated)
+
+Meta launches Muse Code for complex software work with persistent AI agents (3 minute read)
+
+Meta released Muse Code, a beta terminal coding agent for macOS and Linux that runs persistent background agents which stay active across a session and report asynchronously instead of spawning per task. Powered by the co-trained Muse Spark 1.2 model, it scored 82.9% pass@1 on Terminal-Bench 2.1, ahead of GPT-5.6 Terra but behind Claude Opus 5, and logs every call for replay-exact, crash-safe restarts.
+
+Cloudflare Workers and Containers now support inbound TCP connections and gRPC (5 minute read)
+
+(blurb not generated)
+
+Microsoft releases open-source agent that generates unit tests (1 minute read)
+
+Microsoft released code-testing-generator, an open-source agent that writes unit tests in any language by searching a repo for untested code, then planning, writing, and validating the tests through a research-plan-implement pipeline. Before finishing, it checks its own output for weak assertions, missing scenarios, and mutation survival, and it ships in the dotnet-test plugin for GitHub Copilot CLI and VS Code.
+
+Sandboxing (5 minute read)
+
+(blurb not generated)
+
+CodeGrep: An RL-Trained Retrieval Agent for LLM Coding Agents (1 minute read)
+
+CodeGrep is a 14B retrieval agent, trained end-to-end with GRPO, that issues multi-turn parallel grep, glob, and read calls to hand candidate files to a frozen downstream coding agent. On all 500 SWE-Bench Verified instances it holds resolve rate while cutting cost, hitting 27.0% versus 25.8% for the no-retrieval baseline with 15% fewer rounds and 19% fewer tokens, and the authors will release the model, training pipeline, RL environment, and eval harnesses.
+
+Give any website a WebMCP interface (5 minute read)
+
+(blurb not generated)
+
+Introducing Kitesurf: The agent-first browser that runs in V8 isolates on Cloudflare Workers (5 minute read)
+
+(blurb not generated)
+
+Your agent can now debug Workers with local tracing (5 minute read)
+
+(blurb not generated)
+
+A unified API for AI model routing (5 minute read)
+
+(blurb not generated)
+
+Meta wants to get inside your terminal with its new coding agent (5 minute read)
+
+(blurb not generated)
+
+Meta launches Muse Code AI coding agent for macOS and Linux (5 minute read)
+
+(blurb not generated)
+
+Java 28 starts to take shape (5 minute read)
+
+(blurb not generated)
+
+I built a headless timeline/Gantt for React — would love some feedback (1 minute read)
+
+Roadline is a headless, virtualized timeline/Gantt component for React, shipping MIT-licensed with no runtime dependencies and 15 kB gzipped. It virtualizes both axes for large boards, supports FS/SS/FF/SF dependency arrows, nested roll-up bars, per-instance IANA time zones, and keyboard editing, while a controlled hook owns the viewport and leaves your data array as the source of truth.
+
+Connect OAuth clients with Client ID Metadata Documents (1 minute read)
+
+Clerk's OAuth provider added beta support for Client ID Metadata Documents (CIMD), which let MCP and other public OAuth clients use an HTTPS URL as their client_id instead of a pre-issued client secret or Dynamic Client Registration. Clerk fetches and validates the metadata at that URL, and a new CIMD Clients tab controls admission by scope, lets you allow or block clients, and can restrict flows to pre-registered clients only.
+
+Google Workspace Directory Sync (5 minute read)
+
+(blurb not generated)
+
+Meta enters the AI coding wars with Muse Spark 1.2 and Muse Code with persistent async background agents (5 minute read)
+
+(blurb not generated)
+
+Meta Cuts Coding Agent Prices 21x for Developers Who Give Up Their Data (5 minute read)
+
+(blurb not generated)
+
+🎁
+Miscellaneous
+
+Claude Code and Gemini CLI Flaws Let a GitHub Issue Reach CI Workflow Secrets (1 minute read)
+
+Novee Security showed at Black Hat USA that a GitHub issue from an account with no repository privileges could execute code on the CI runners behind Anthropic's, Google's, and OpenAI's own coding-agent repos, all in the vendors' default configurations. The two resulting CVEs are patched, so update Gemini CLI to 0.39.1, run-gemini-cli to 0.1.22, and Claude Code to 2.1.163, then audit any workflow an outside user can trigger.
+
+Ruby on Rails critical bug puts every image upload under scrutiny (5 minute read)
+
+(blurb not generated)
+
+77 Open VSX extensions found harvesting developer info (5 minute read)
+
+(blurb not generated)
+
+Open VSX Removes 77 Malicious Evil Twin Extensions Exfiltrating Developer Data (5 minute read)
+
+(blurb not generated)
+
+‘Shai-Hulud: Here We Go Again’: Thousands of npm packages compromised in ‘Chaindrop’ malware campaign where hackers taunt victims (5 minute read)
+
+(blurb not generated)
+
+New WordPress Pre-Auth XSS Could Lead to PHP Code Execution - Patch ASAP (1 minute read)
+
+WordPress patched CVE-2026-64638, a pre-auth reflected XSS on the login screen affecting every version, which pwn.ai chained into PHP code execution when a logged-in admin clicks an attacker-controlled page. Fixes landed August 6 in WordPress 7.0.3 and were backported through the 4.7 branch, with auto-updating sites receiving the release automatically and versions older than 4.7 left unpatched.
+
+Trojanized npm Packages Employ NullReceiver Tactic to Decode C2 IP from Blockchain (5 minute read)
+
+(blurb not generated)
+
+The Shai-Hulud npm worm didn't fake its security check — it earned a legitimate one (5 minute read)
+
+(blurb not generated)
+
+OpenAI and four rivals just agreed on one standard for AI agents (1 minute read)
+
+OpenAI, Amazon, Microsoft, Anysphere, and Vercel published Agent Plugins, an open standard that packages MCP servers and Agent Skills into a single folder with a plugin.json manifest so one extension runs across competing agent tools. The 1.0 spec deliberately covers only packaging and discovery, leaving installation, permissions, sandboxing, and trust to each client, which means safety review still falls on the tools that run the plugins.
