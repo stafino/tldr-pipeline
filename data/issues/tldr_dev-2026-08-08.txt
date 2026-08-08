@@ -1,0 +1,243 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR Dev 2026-08-08
+
+🧑‍💻
+Articles & Tutorials
+
+Making Postgres 300x faster for analytics: batching, operator fusion, and SIMD (1 minute read)
+
+pgrust 0.2 rewrote its query engine with batched execution, operator fusion, and SIMD, making it 300x faster than Postgres on the Clickbench analytical benchmark and 30% faster on OLTP. The post rebuilds a miniature Postgres query engine from scratch and adds each optimization in turn, tracing why Postgres's 80s-era, tuple-at-a-time design leaves CPU and memory bandwidth on the table now that datasets fit in RAM.
+
+Inside vLLM: Anatomy of a High-Throughput LLM Inference System (2025) (5 minute read)
+
+(blurb not generated)
+
+Prototype on a laptop, scale to 16 billion rows: one Polars query (5 minute read)
+
+(blurb not generated)
+
+Turn one giant AI-generated pull request to a reviewable stack (5 minute read)
+
+(blurb not generated)
+
+How Baseline Can Help You Ship Less JavaScript (5 minute read)
+
+(blurb not generated)
+
+Managing AI Coding Costs at Scale (1 minute read)
+
+Databricks engineers describe how they kept agentic coding costs inside a roughly fixed per-user envelope while keeping tool access broad, drawing on their own experience plus conversations with Stripe, Coinbase, Uber, and Ramp. The biggest lever is routing traffic toward the efficiency frontier rather than the intelligence frontier, backed by open-sourced infrastructure including a meta-harness (Omnigent) and the Unity AI Gateway.
+
+How GitHub gave every repository a durable owner (5 minute read)
+
+(blurb not generated)
+
+Automating cross-repo documentation with GitHub Agentic Workflows (5 minute read)
+
+(blurb not generated)
+
+Just One Function, 10x Faster? Reading a Rust Performance PR (5 minute read)
+
+A developer walks through Rust PR #8587 for GreptimeDB, which rewrites `recordbatches_to_timeseries`, the function that converts columnar RecordBatches into Prometheus's row-oriented TimeSeries. A CPU profile showed the memory-only step burning 36.2% of CPU at 300k series with dictionary materialization alone at 8.9%, and after reproducing the case with a criterion benchmark, the author measured the best cases running more than 10x faster.
+
+Faster Floating-Point Math With Rust's New API (5 minute read)
+
+(blurb not generated)
+
+MirrorCode (5 minute read)
+
+(blurb not generated)
+
+What's the largest software project AI can complete on its own? (5 minute read)
+
+(blurb not generated)
+
+How Cloudflare enforces engineering standards using AI (5 minute read)
+
+(blurb not generated)
+
+The Bitter Lesson of Tool Calling (5 minute read)
+
+(blurb not generated)
+
+Comparative Approaches to Agent Retrieval over Large Skill Libraries (5 minute read)
+
+(blurb not generated)
+
+Smaller, faster, safer: running Kimi and GLM at scale (5 minute read)
+
+(blurb not generated)
+
+How we took malware advisories beyond npm (5 minute read)
+
+(blurb not generated)
+
+Learning Context-Free Grammars for Grammar-Constrained Decoding via Declarative Agentic Programming with Guarantees (5 minute read)
+
+(blurb not generated)
+
+Reasoning from Traces: Divergence-Guided Agentic Repair of WebAssembly Discrepancies (5 minute read)
+
+(blurb not generated)
+
+AgentExecutor: Partial Code Execution via Agentic Context Generation (5 minute read)
+
+(blurb not generated)
+
+🧠
+Opinions & Advice
+
+Everyone is building LLM routers, we deprecated ours (5 minute read)
+
+(blurb not generated)
+
+Don't be a meat proxy (5 minute read)
+
+(blurb not generated)
+
+How to keep thinking (5 minute read)
+
+(blurb not generated)
+
+Oracle bans AI-generated code from OpenJDK (1 minute read)
+
+Oracle banned AI-generated code from OpenJDK contributions, citing safety, security, and IP risks, while still permitting developers to use LLMs privately for debugging and review. The policy directly contradicts co-founder Larry Ellison's claim that AI now writes Oracle's own code, exposing the gap between what the company ships internally and what it will accept into a project it stewards.
+
+The development pipeline is a production system (5 minute read)
+
+(blurb not generated)
+
+Exploring Dependence, Overreliance, and Addiction Related Behaviors Associated with Large Language Model Use Among Software Engineers (5 minute read)
+
+(blurb not generated)
+
+Humans in the loop miss a third of dangerous AI coding agent requests (5 minute read)
+
+(blurb not generated)
+
+After Shipping 8 Chrome Extensions, These Are the 5 Rules I Always Give AI Agents (3 minute read)
+
+The author gives AI coding agents five standing rules before any Chrome extension task, since the real risks come from what an agent quietly adds rather than whether the code compiles. The rules block permission creep, unrequested network calls and dependencies, edits to unrelated files, and silent changes to how user data is read or stored, keeping the extension's security, privacy, and Web Store review story intact.
+
+The Shape of Things to Come (5 minute read)
+
+(blurb not generated)
+
+🚀
+Launches & Tools
+
+The next generation of MCP (5 minute read)
+
+(blurb not generated)
+
+Meta Releases Muse Code (5 minute read)
+
+Meta released Muse Code, a beta terminal coding agent powered by its new Muse Spark 1.2 model, that plans changes, writes code, and validates results across large repositories using multiple persistent background subagents. Its runtime appends every model call, tool run, and edit to a local event log, making sessions replay-exact and restart-safe so the agent can resume long-running tasks precisely where a crash left off.
+
+Meta launches Muse Code for complex software work with persistent AI agents (5 minute read)
+
+(blurb not generated)
+
+Cloudflare Workers and Containers now support inbound TCP connections and gRPC (5 minute read)
+
+(blurb not generated)
+
+Microsoft releases open-source agent that generates unit tests (5 minute read)
+
+(blurb not generated)
+
+CodeGrep: An RL-Trained Retrieval Agent for LLM Coding Agents (5 minute read)
+
+(blurb not generated)
+
+Give any website a WebMCP interface (5 minute read)
+
+(blurb not generated)
+
+Introducing Kitesurf: The agent-first browser that runs in V8 isolates on Cloudflare Workers (5 minute read)
+
+(blurb not generated)
+
+Your agent can now debug Workers with local tracing (5 minute read)
+
+(blurb not generated)
+
+Rust preps improved borrow checker for stabilization (1 minute read)
+
+The Rust team enabled the Polonius Alpha borrow checker on nightly releases for testing, with full stabilization expected later this year. The new formulation re-architects the existing NLL implementation to accept more sound code that the current checker rejects, and developers can opt out by passing -Zpolonius=off to rustc.
+
+A unified API for AI model routing (5 minute read)
+
+(blurb not generated)
+
+Meta wants to get inside your terminal with its new coding agent (5 minute read)
+
+(blurb not generated)
+
+Claude Code now lets sessions talk to each other on macOS (1 minute read)
+
+Claude Code v2.1.224 adds cross-session messaging on macOS and Linux, letting one session send findings, answers, or breaking-change warnings to another without the user leaving either window. You describe the content and Claude drafts the message, but it can't approve permissions or run commands like /compact remotely, so anything requiring approval still prompts the receiving session.
+
+Cloudflare launches Kitesurf, a browser built for AI agents (1 minute read)
+
+Cloudflare launched Kitesurf, a cloud-hosted browser built for AI agents rather than humans, running entirely on its serverless Workers platform and skipping visual features like tabs and extensions in favor of managing context windows, token costs, and prompt-injection risk. The company claims Kitesurf uses significantly less CPU and memory than Chromium on agentic tasks like screenshots and HTML extraction, and it already passes over 215,000 web platform tests while available free in beta through Browser Rendering.
+
+Connect OAuth clients with Client ID Metadata Documents (5 minute read)
+
+(blurb not generated)
+
+Show HN: Wyzer Programming Language (1 minute read)
+
+Wyzer is a statically typed, compiled language that combines choreographic programming, where the compiler projects a single distributed program into deadlock-free per-node binaries, with a Perceus reference-counting memory model that skips both a garbage collector and a borrow checker. It uses one ownership model for memory, threads, and network resources, makes network transfers explicit through assignment, and ships C ABI compatibility for systems interop.
+
+Better Code, Fewer Tokens: The Benefits of Code Connect in MCP (5 minute read)
+
+Figma's Code Connect feeds coding agents production-relevant component code in the MCP server response, replacing the generic React representation of a design with the actual components from your codebase. In Figma's evals, agents using Code Connect cut median task duration by 19.6%, dropped token usage by 29.5%, and gained a full point in code quality on a 1-4 scale.
+
+Unifying Workers AI and AI Gateway into a single AI control plane (5 minute read)
+
+(blurb not generated)
+
+Anthropic announces a feature that allows different Claude Code sessions to message each other with updates and other information, available on macOS and Linux (Marcus Mendes/9to5Mac) (1 minute read)
+
+Anthropic added a feature that lets separate Claude Code sessions message each other with status updates and other information, available on macOS and Linux. The capability enables parallel agent workflows to coordinate without a manual relay, so one session can hand off context or signal completion to another running in a different terminal or worktree.
+
+Meta takes on Claude Code and Codex with its new Muse Code agent, with a privacy tradeoff (5 minute read)
+
+(blurb not generated)
+
+🎁
+Miscellaneous
+
+The Nixpkgs core team has disbanded (1 minute read)
+
+The Nixpkgs core team has disbanded after 10 months, citing burnout, failed recruiting, and chronic friction with the project's Steering Committee over delegation and communication. The team's tenure included onboarding 19 new committers, reforming the committer delegation process, and helping triage the GHSA-67f2-674w-6g63 security incident, but members concluded the role was unsustainable alongside active technical contribution.
+
+Claude Code and Gemini CLI Flaws Let a GitHub Issue Reach CI Workflow Secrets (5 minute read)
+
+(blurb not generated)
+
+77 Open VSX extensions found harvesting developer info (5 minute read)
+
+(blurb not generated)
+
+New WordPress Pre-Auth XSS Could Lead to PHP Code Execution - Patch ASAP (5 minute read)
+
+(blurb not generated)
+
+Nearly 800 Malicious npm Packages Deliver Cross-Platform RAT and Infostealer (1 minute read)
+
+Nearly 800 malicious npm packages using AI-generated typosquat names deliver WEL1DROPPER, a downloader that fingerprints the host OS and architecture before fetching a cross-platform RAT and infostealer targeting Windows, Mac, and Linux. The campaign skips the usual preinstall hooks, instead shipping READMEs that instruct developers to load the package with require(), then falls back to DNS TXT records from wel1[.]ru when its Cloudflare Workers downloads fail.
+
+PSA: Claude Code enabling auto mode as default next week, Anthropic says (1 minute read)
+
+Anthropic will make Claude Code's auto mode the default permission setting on August 14 for Pro, Max, and Team users, replacing per-call approval prompts with a classifier that blocks irreversible or out-of-bounds tool calls and falls back to manual approval after repeated blocks. In a 1,053-tester study the classifier caught 89% of dangerous commands versus 13.6% for humans, and Anthropic will stop charging for the extra tokens the classifier uses.
+
+⚡
+Quick Links
+
+A domain can now say it is for sale, in DNS (1 minute read)
+
+A `_for-sale` TXT DNS record, defined by RFC 10023, lets a live domain advertise that it is for sale to brokers without parking it.

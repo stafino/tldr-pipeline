@@ -1,0 +1,89 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR Data 2026-08-08
+
+📊
+News & Trends
+
+Introducing OfficeQA Pro V2: A New Benchmark for Enterprise Grounded-Reasoning (5 minute read)
+
+(blurb not generated)
+
+Unifying Structured and Unstructured Data Insights with BQ Search Innovations (2 minute read)
+
+BigQuery made Autonomous Embedding Generation and AI.SEARCH generally available, and pushed Hybrid Search into public preview, letting teams generate and refresh embeddings by defining a single schema column rather than running external orchestration. The move folds RAG-style retrieval over PDFs, images, and unstructured text into the warehouse itself, cutting out the standalone vector databases and stitched-together LLM pipelines most teams currently run alongside Snowflake or Databricks.
+
+Agentic Future Ready With BigQuery: Continually Improving Price-Performance, Zero Effort (5 minute read)
+
+(blurb not generated)
+
+Metabase Zero-Day Exploited in Wild Allows Admin Access Without Authentication (1 minute read)
+
+Metabase disclosed a maximum-severity zero-day (CVSS 10.0) in versions 1.58 and above that lets an unauthenticated remote attacker inject SQL into the application database and gain admin access, exposing stored credentials for every connected data warehouse. Metabase Cloud is already patched, but self-hosted teams must upgrade immediately, block the /api/session/reset_password endpoint as a stopgap, and rotate all connected-database credentials since instances have been compromised in the wild.
+
+Metabase SQLi zero-day exploited in customer data-theft attacks (1 minute read)
+
+Metabase disclosed a zero-day SQL injection flaw, rated CVSS 10.0 and actively exploited, that let unauthenticated attackers gain administrator access to instances running versions 1.58 and above, breaching Framework and Tally among others. Cloud customers are already patched, but self-hosted teams must upgrade to fixed releases immediately, then rotate connected-database credentials and revoke sessions since attackers could read and export any data reachable through those connections.
+
+🧠
+Deep Dives & Analysis
+
+Making Postgres 300x faster for analytics: batching, operator fusion, and SIMD (1 minute read)
+
+pgrust 0.2 rewrites the Postgres query engine and posts a 300x speedup on ClickBench, edging out ClickHouse while staying 30% faster than Postgres on OLTP. The gains come from batching, operator fusion, and SIMD, which cut the CPU and memory-bandwidth overhead that dominates now that datasets fit in RAM and NVMe has erased the disk bottleneck Postgres was designed around in the 1980s. The query engine alone drove roughly 10x of the total.
+
+Pi, Minimal and Performant (5 minute read)
+
+(blurb not generated)
+
+From analytics engineer to context engineer (5 minute read)
+
+(blurb not generated)
+
+GEM Training: How Meta Doubled the Efficiency of Its LLM-Scale Ads Foundation Model (5 minute read)
+
+(blurb not generated)
+
+Window Function Optimization: Co-Evaluation and Other Techniques (5 minute read)
+
+(blurb not generated)
+
+This is why we can't have nice things (5 minute read)
+
+(blurb not generated)
+
+Managing AI Coding Costs at Scale (1 minute read)
+
+Databricks published a breakdown of how it and peers including Stripe, Coinbase, Uber, and Ramp are containing runaway AI coding costs, where agentic spend was growing exponentially and threatening to outpace the efficiency gains it delivered. The authors argue the biggest lever is routing traffic to the "efficiency frontier" rather than the intelligence frontier, moving work to cheaper models that hold quality. To do it, Databricks open-sourced its meta-harness (Omnigent) and Unity AI Gateway for capping aggregate cost per user without gating access.
+
+Beyond Top-K: Replacing Black-Box Retrieval with Interpretable Agentic Operations (5 minute read)
+
+(blurb not generated)
+
+Tytan: Interactive Neurosymbolic Construction of Analytic Semantic Schemas from Relational Data (5 minute read)
+
+(blurb not generated)
+
+PLB: Priority-Aware Load Balancing for Replicated Databases under Constrained Resources (5 minute read)
+
+(blurb not generated)
+
+How DoorDash Built a Centralized Gateway for AI Agent-Tool Access (5 minute read)
+
+(blurb not generated)
+
+Agents are coming for data (just slowly) (5 minute read)
+
+(blurb not generated)
+
+ELT is moving back to best-of-breed and Orchestration is the missing piece (5 minute read)
+
+(blurb not generated)
+
+🚀
+Launches & Tools
+
+Amazon DynamoDB now supports real-time vector search at any scale (5 minute read)
+
+(blurb not generated)
