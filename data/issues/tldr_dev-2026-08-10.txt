@@ -1,0 +1,195 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR Dev 2026-08-10
+
+🧑‍💻
+Articles & Tutorials
+
+We replaced Redis with MySQL for inventory reservations and it scaled (1 minute read)
+
+Shopify rebuilt its checkout oversell-protection system on MySQL after years on Redis, using MySQL 8's SKIP LOCKED to model one row per inventory unit instead of a single contended quantity row. The design held throughput during Black Friday 2025, when merchants peaked at $5.1M in sales per minute, and the post's sharpest lesson was that the real bottleneck wasn't in the metrics the team had been measuring.
+
+Prototype on a laptop, scale to 16 billion rows: one Polars query (5 minute read)
+
+(blurb not generated)
+
+Turn one giant AI-generated pull request to a reviewable stack (5 minute read)
+
+(blurb not generated)
+
+CSS: The bomb inside your inbox (1 minute read)
+
+PortSwigger's Gareth Heyes details how webmail clients that render untrusted CSS in trusted UI can be broken through parser and sanitizer discrepancies, using techniques to exfiltrate tokens, compromise third-party sites, and steal passwords across Yahoo, AOL, Fastmail, ProtonMail, Gmail, and Outlook. One unpatched Outlook bug abuses allow-listed HTML label tags and their `for` attribute to inherit click actions, letting an email open Outlook's ribbon and pin an attacker's message in the victim's inbox.
+
+How GitHub gave every repository a durable owner (5 minute read)
+
+(blurb not generated)
+
+Automating cross-repo documentation with GitHub Agentic Workflows (5 minute read)
+
+(blurb not generated)
+
+Just One Function, 10x Faster? Reading a Rust Performance PR (5 minute read)
+
+(blurb not generated)
+
+Faster Floating-Point Math With Rust's New API (5 minute read)
+
+(blurb not generated)
+
+MirrorCode (5 minute read)
+
+(blurb not generated)
+
+What's the largest software project AI can complete on its own? (5 minute read)
+
+(blurb not generated)
+
+How Cloudflare enforces engineering standards using AI (5 minute read)
+
+(blurb not generated)
+
+Dithered QR Codes (1 minute read)
+
+This post explains how to embed a photo inside a QR code by shrinking each data module into the center of a three-by-three grid, freeing the surrounding cells to carry a low-res, one-bit image. It walks through the dithering techniques that make the embedded photo legible, from Bayer-matrix ordered dithering to Floyd-Steinberg error diffusion, while keeping the code scannable because scanners only sample each module's center.
+
+Smaller, faster, safer: running Kimi and GLM at scale (5 minute read)
+
+(blurb not generated)
+
+Contract Testing in 10 Lines: JSON Schema Validation in Postman (2 minute read)
+
+This tutorial replaces patchy field-by-field value assertions with JSON Schema validation in Postman, using the ajv validator built into the script sandbox to catch structural drift like renamed fields, vanished properties, or an integer id turning into a string. It shows how to define a schema in about ten lines, reuse it for array endpoints, and store it as a collection variable so every request validates against one shared contract.
+
+140 Bugs Were Hiding in One Function, and My Tests Couldn't See Any of Them (3 minute read)
+
+A developer porting Python's textdistance library to Rust ran differential fuzzing against the original 397-test suite and surfaced 140 behavioral divergences the tests never caught, ranging from a violated 35-year-old threshold to floating-point drift at the 15th decimal place. The writeup covers the architectural bet that a subprocess CLI speaking JSON over stdin/stdout beat PyO3 bindings, keeping the Rust crate buildable without tying it to Python's ABI.
+
+Asynchronous I/O in DuckDB: Work, Thread, Work (5 minute read)
+
+(blurb not generated)
+
+One agent, every surface: how we built the Kiro agent harness (5 minute read)
+
+(blurb not generated)
+
+Practical Memory Safety (5 minute read)
+
+(blurb not generated)
+
+Stateless MCP has recaptured my interest (and inspired mcp-explorer and datasette-mcp) (5 minute read)
+
+(blurb not generated)
+
+Building an Advanced Agentic Harness (5 minute read)
+
+(blurb not generated)
+
+🧠
+Opinions & Advice
+
+Everyone is building LLM routers, we deprecated ours (5 minute read)
+
+(blurb not generated)
+
+Don't be a meat proxy (5 minute read)
+
+(blurb not generated)
+
+The development pipeline is a production system (5 minute read)
+
+(blurb not generated)
+
+The Shape of Things to Come (5 minute read)
+
+(blurb not generated)
+
+🚀
+Launches & Tools
+
+Docker Sandboxes – Disposable, isolated sandboxes for AI agents (1 minute read)
+
+Docker released Sandboxes, a CLI tool (`brew install docker/tap/sbx`) that runs AI coding agents inside disposable microVMs with user-defined network and filesystem controls. The microVM boundary makes YOLO mode (`--dangerously-skip-permissions`) safe to run unattended, works with Claude Code, Gemini CLI, Copilot CLI, Codex, Kiro, and OpenCode, and lets agents spin up their own Docker containers without Docker Desktop.
+
+Meta Releases Muse Code (5 minute read)
+
+(blurb not generated)
+
+Cloudflare Workers and Containers now support inbound TCP connections and gRPC (5 minute read)
+
+(blurb not generated)
+
+Introducing Kitesurf: The agent-first browser that runs in V8 isolates on Cloudflare Workers (5 minute read)
+
+(blurb not generated)
+
+Your agent can now debug Workers with local tracing (5 minute read)
+
+(blurb not generated)
+
+Rust preps improved borrow checker for stabilization (5 minute read)
+
+(blurb not generated)
+
+A unified API for AI model routing (5 minute read)
+
+(blurb not generated)
+
+Anthropic to put AI in charge of reviewing Claude Code actions by default (1 minute read)
+
+Anthropic will make Claude Code's auto mode the default for new sessions on Pro, Max, and Team plans starting August 14, routing every tool call through a classifier that blocks irreversible or destructive actions before switching back to manual approvals after 20 blocks in a session. In a study of 1,053 paid testers, auto mode caught 89% of dangerous commands versus 13.6% for human review, and Anthropic will stop charging for the safety classifier's compute.
+
+Message your other Claude Code sessions (1 minute read)
+
+Claude Code v2.1.224 adds cross-session messaging, letting one session hand a finding, status, or decision to another through the new ListAgents and SendMessage tools without you copy-pasting between terminals. It works on macOS and Linux with no setup once sessions meet the version requirement, covers parallel worktrees and long-running jobs, and can reply to sessions on other machines though cross-machine exchanges must be started locally.
+
+OpenChamber: An Agentic Development Environment (1 minute read)
+
+OpenChamber is an agentic development environment that runs coding agents toward a set finish line across turns, with a Multi-run and Fusion mode that executes one task across up to five models and keeps or merges the best output. It works from GitHub issue to merged PR, runs prompts on a cron schedule, syncs across desktop, browser, phone, and VS Code, and keeps all code and session data local.
+
+Anthropic is turning Claude Code’s auto mode on by default (1 minute read)
+
+Anthropic is making Claude Code's auto mode the default for Pro, Max, and Team accounts starting August 14, so the agent will execute steps without per-action approval prompts unless it judges an action irreversible, destructive, or aimed outside your environment. In a 1,053-tester study, auto mode caught 89% of harmful actions versus 13.6% for manual review, and the rollout adds prompt injection screening and customizable hard deny rules.
+
+Better Code, Fewer Tokens: The Benefits of Code Connect in MCP (5 minute read)
+
+(blurb not generated)
+
+Triton: DirectX 11 Driver for QEMU (1 minute read)
+
+The UTM team released Triton, a Windows guest driver that pairs with their Neptune Direct3D forwarding layer to bring full DirectX 11 acceleration to QEMU virtual machines. Rather than swapping in Wine-style d3d11.dll and dxgi.dll replacements, Triton implements the DirectX device driver interfaces (DDIs), which avoids DWM's CPU blitting for a smooth desktop and sidesteps the anti-cheat detection that per-application DLL substitution triggers.
+
+Mixture-of-Kittens: our open-source MoE megakernel for NVL72s (5 minute read)
+
+(blurb not generated)
+
+🎁
+Miscellaneous
+
+The Nixpkgs core team has disbanded (5 minute read)
+
+(blurb not generated)
+
+77 Open VSX extensions found harvesting developer info (5 minute read)
+
+(blurb not generated)
+
+Linus Torvalds says AI has made 'huge' Linux kernel updates the new normal (1 minute read)
+
+Linus Torvalds says AI-assisted contributions have pushed the Linux kernel to consistently large release cycles, with big updates now the baseline rather than the exception. He noted the shift raises the maintainer review burden, since human reviewers still have to vet code that AI tools can generate far faster than it can be checked.
+
+⚡
+Quick Links
+
+_for-sale DNS records (5 minute read)
+
+(blurb not generated)
+
+GitHub Dependabot malware alerts now cover eight ecosystems (1 minute read)
+
+GitHub Dependabot malware alerts now span eight package ecosystems, pulling from OpenSSF's malicious-packages feed instead of npm data alone.
+
+My server is a phone now (1 minute read)
+
+A developer replaced their Hetzner VPS with a CMF Phone 1, running Surf, a finance tracker, and other web apps on its ARM SoC.

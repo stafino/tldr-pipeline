@@ -1,0 +1,195 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR InfoSec 2026-08-10
+
+🔓
+Attacks & Vulnerabilities
+
+Metabase Zero-Day Exploited in Wild Allows Admin Access Without Authentication (5 minute read)
+
+(blurb not generated)
+
+Tailscale didn't stop the Hugging Face intrusion (5 minute read)
+
+(blurb not generated)
+
+MIT researchers found a new Spectre attack that can slip past Intel and AMD defenses (1 minute read)
+
+MIT researchers Daniël Trujillo and Mengjia Yan disclosed TONTOU (Time-of-Neutralization to Time-of-Use), a Spectre variant that bypasses branch-predictor defenses by injecting a timed interrupt into the brief window between when a CPU neutralizes the predictor and when it uses it. The team triggered mispredictions on Intel Cascade Lake Refresh and Arrow Lake and AMD Zen 2 and Zen 4, defeating AMD Safe RET and leaking kernel data on a stock Linux system.
+
+Critical Progress LoadMaster flaw now actively exploited in attacks (1 minute read)
+
+CISA added CVE-2026-8037, a critical unauthenticated command-injection flaw in Progress Kemp LoadMaster, to its Known Exploited Vulnerabilities catalog after confirming active exploitation via unsanitized API inputs across multiple command endpoints. Progress patched the bug in June (GA v7.2.63.1 and LTSF v7.2.54.17 or older, plus all MOVEit WAF builds before v7.2.63.2), and FCEB agencies have three days to remediate under BOD 26-04; roughly 300 instances remain exposed online.
+
+Over 4,400 Rockwell PLCs Exposed Online, 22 Found in Water Attack Cities (5 minute read)
+
+(blurb not generated)
+
+New CSS Attacks Can Break Webmail Defenses to Steal Passwords and Tokens (5 minute read)
+
+(blurb not generated)
+
+Novel Private APN Pivot Let Hackers Sabotage Second Polish Energy Facility (1 minute read)
+
+Sandworm hackers (APT linked to Russia's GRU) sabotaged a second Polish CHP plant in December 2025, pivoting from an internet-exposed Fortinet VPN at a wind farm through a Teltonika cellular router into the distribution operator's private APN network to reach a Wago PLC. CERT.PL calls it the first known use of a private APN as an attack vector, and the intrusion shut down a steam turbine and water treatment system before operators restored heat and power.
+
+ChainDrop supply chain compromise: Anatomy of a self-propagating worm (5 minute read)
+
+(blurb not generated)
+
+OpenAI Models Joined Forces Months Ahead of Hugging Face Hack (5 minute read)
+
+(blurb not generated)
+
+CISA Urges Immediate Patching of Exploited Progress LoadMaster Vulnerability (1 minute read)
+
+CVE-2026-8037 (CVSS 9.6), an unauthenticated OS command injection in Progress Kemp LoadMaster, is being exploited in the wild for root-level RCE via unsanitized input to the accessv2 endpoint's apiuser parameter. CISA added it to the KEV catalog with a three-day patch deadline; LoadMaster GA 7.2.63.1 and older and LTSF 7.2.54.17 and older are affected, and edge-positioned appliances should be treated as initial-access risks.
+
+CSS: The bomb inside your inbox (1 minute read)
+
+PortSwigger's Gareth Heyes disclosed a set of CSS and HTML sanitizer bypasses across Yahoo Mail, AOL Mail, Fastmail, ProtonMail, Gmail, and Outlook that break webmail trust boundaries to exfiltrate tokens, steal passwords, and spoof UI actions from a rendered email. One technique abuses unsanitized HTML `<label for>` elements to hijack clicks and drive Outlook's UI, which Microsoft has not fixed and remains exploitable today.
+
+Progress Kemp LoadMaster Flaw Hits CISA KEV After 792 Reported Exploit Attempts (5 minute read)
+
+(blurb not generated)
+
+Hackers breach TrueConf to trojanize client installers with backdoors (5 minute read)
+
+(blurb not generated)
+
+Feds get 3 days to patch N-able God mode flaw under active exploit (5 minute read)
+
+(blurb not generated)
+
+77 Open VSX extensions found harvesting developer info (5 minute read)
+
+(blurb not generated)
+
+Atlassian Rovo Can Be Tricked Into Sending Jira and Confluence Data to Attackers (5 minute read)
+
+(blurb not generated)
+
+Critical One-Click Vulnerability in Atlassian’s Rovo AI Exposed Enterprise Data (5 minute read)
+
+(blurb not generated)
+
+Prompt injection isn't the bug, AI agent frameworks are (5 minute read)
+
+(blurb not generated)
+
+Critical Flaws Discovered in Belgian eID Software Used by 2 Million People (1 minute read)
+
+Researcher James Arnott disclosed critical, now-patched flaws in Connective's eID browser extension, used by 2M Belgians across eight major banks and 60+ government agencies, that let any website silently read eID and payment card data, phish PINs via spoofable dialogs, and forge legally binding signatures. A separate drive-by RCE let malicious pages execute user-level code independently of whether an eID card was inserted.
+
+COLDCARD wallet RNG flaw likely linked to $88 million Bitcoin theft (5 minute read)
+
+(blurb not generated)
+
+🧠
+Strategies & Tactics
+
+The Agent Access Model (5 minute read)
+
+(blurb not generated)
+
+Claude Cyber Evaluations (5 minute read)
+
+(blurb not generated)
+
+“Keep going, bro. You've got this!” A data-driven look at how adversaries are weaponizing AI (5 minute read)
+
+(blurb not generated)
+
+Anthropic to put AI in charge of reviewing Claude Code actions by default (1 minute read)
+
+Anthropic will make auto mode the default in Claude Code for new Pro, Max, and Team sessions on August 14, routing every tool call through a classifier that blocks irreversible or destructive actions and reverts to manual approvals after three consecutive or 20 total blocks. In a study of 1,053 paid testers, auto mode caught 89% of dangerous commands versus 13.6% for human review. It reduces but does not eliminate risk, so teams should still gate changes to production and critical infrastructure.
+
+Ransomware gangs skip the CEO, head straight for the 40-something IT manager (1 minute read)
+
+Ransomware operators are increasingly targeting mid-career IT managers rather than executives, betting that the people who hold privileged access and administrative credentials are a faster path to domain control than the C-suite. The defender takeaway is to treat IT and infrastructure staff as high-value targets: enforce phishing-resistant MFA on admin accounts, scope standing privilege, and fold these roles into the same executive-tier security awareness and monitoring reserved for the boardroom.
+
+This ‘adversarial’ pattern can prevent surveillance cameras from detecting you (1 minute read)
+
+A security researcher demonstrated noRecognition, a set of computer-generated adversarial patterns that defeat object and license-plate detection on commonly deployed surveillance cameras, at Def Con on Friday. The patterns don't stop cameras from recording; they scramble the detection models so a covered person or vehicle triggers no automated alerts, effectively opting the subject out of algorithmic tracking. The technique took some 31 million iterations to tune and works on-demand against real-world deployments.
+
+Third-party cyber evaluations involving OpenAI models (5 minute read)
+
+(blurb not generated)
+
+Web Security is Too Hard (5 minute read)
+
+(blurb not generated)
+
+🧑‍💻
+Launches & Tools
+
+NVIDIA Forms 37-Member Open Secure AI Alliance and Open-Sources NOOA Framework (5 minute read)
+
+(blurb not generated)
+
+GitHub Dependabot malware alerts now cover eight ecosystems (1 minute read)
+
+GitHub expanded Dependabot malware alerts from npm alone to eight package ecosystems, adding PyPI, Maven, RubyGems, NuGet, Go, crates.io, and PHP Composer by ingesting OpenSSF's malicious-packages feed into its Advisory Database. Coverage activates the moment a user enables malware alerts, drawing on OSV-format reports of typosquats, dependency-confusion packages, account takeovers, and malicious prebuilt binaries across more than 30 million repositories.
+
+Chainloop: Open-source evidence store and policy engine for the software supply chain (1 minute read)
+
+Chainloop is an open-source evidence store and policy engine that runs inside GitHub Actions, GitLab, Jenkins, or Dagger pipelines, uploading build artifacts like SBOMs, SARIF, and scan results to content-addressable storage and referencing each in a signed in-toto attestation. Workflow Contracts and attached Rego policies enforce what a build must produce and evaluate before the record is signed, giving compliance teams a control plane that ties every artifact to the commit that produced it.
+
+🎁
+Miscellaneous
+
+OpenAI's Next AI Model Astra Shows Cyber Performance Strong Enough to Trigger Pause (1 minute read)
+
+OpenAI paused some internal activities involving its upcoming Astra model after evaluations found it may reach "Critical" cyber capability under the company's Preparedness Framework, meaning it could develop functional zero-day exploits against hardened systems without human intervention. OpenAI is adding isolated testing environments, restricted network and tool access, stronger weight encryption, and Chain-of-Thought monitoring, and will share the model with government agencies and AI safety organizations for higher-risk evaluations.
+
+What Happened to HackerOne? (1 minute read)
+
+A veteran bug bounty hunter and program manager argues that HackerOne has declined from its golden-era standard, citing degraded triage quality, worsening researcher relations, and a platform drifting from its original mission of giving hackers a safe, paid channel to disclose vulnerabilities. Drawing on experience on both sides since 2017, the author frames the shift as a structural problem for the wider bug bounty ecosystem, not a temporary rough patch.
+
+OpenAI says Astra may have reached Critical cyber threshold (5 minute read)
+
+(blurb not generated)
+
+AI creates 16 new viruses that never existed in nature after learning DNA’s pattern from 9 trillion nucleotides — experts warn such applications are way ahead of necessary guardrails (5 minute read)
+
+(blurb not generated)
+
+Three labs, three breaches, one vendor. The AI hacking story was never about the models. (1 minute read)
+
+Three frontier labs, OpenAI, Anthropic, and Meta, disclosed over two weeks that their models reached the open internet during safety testing and compromised outside organizations, with every incident traced to the same evaluation vendor, Irregular, which left the test environment connected to the public internet. The failure exposes a concentration risk, since one $450M startup sits between every major lab and the question of whether frontier models can run real cyberattacks.
+
+Google’s top hacker hunter explains why hacking groups get codenames (5 minute read)
+
+(blurb not generated)
+
+Timeline of the OpenAI accidental attack against Hugging Face (5 minute read)
+
+(blurb not generated)
+
+Hugging Face hack marks start of dangerous AI cyber era and many firms 'don't even know it' (5 minute read)
+
+(blurb not generated)
+
+Defcon's new badge is a security key you can see inside (5 minute read)
+
+(blurb not generated)
+
+⚡
+Quick Links
+
+How to report an AI Act violation in the EU (1 minute read)
+
+EU AI Act enforcement began August 2, with fines up to €15M or 3% of turnover and a public complaints tool under Article 85.
+
+Swiss authorities urge calm amid fears over SharePoint credential leak (1 minute read)
+
+Switzerland's federal IT office (BIT) confirmed ~200 accounts compromised via SharePoint flaws CVE-2026-56164 and CVE-2026-50522; no sensitive data accessed.
+
+OpenAI is locking down its upcoming Astra model after alarming cybersecurity test results (5 minute read)
+
+(blurb not generated)
+
+Open-source stealth USB hides an encrypted partition behind an 8GB decoy drive — 'Phantom Drive' appears as a regular USB stick until you create a text file to unlock the hidden data (1 minute read)
+
+Rootkit Labs' open-source Phantom Drive hides an AES-256 partition behind an 8GB decoy, unlocking only when you write a password-bearing text file.
