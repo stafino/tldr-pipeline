@@ -1,9 +1,39 @@
 {
   "date": "2026-08-10",
   "newsletter": "tldr_data",
-  "fetched_at": "2026-08-10T10:17:44.154870+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-08-10T16:43:02.753235+00:00",
+  "tldr_titles": [
+    "The Training Infrastructure Behind AI-Powered Job Search: 8X Faster Multi-Teacher Distillation",
+    "How and Why Netflix Built a Real-Time Distributed Graph: Part 3 \u2014 Querying the graph with gRPC execution API",
+    "How Physical Intelligence unified its robotics data stack with Postgres managed by ClickHouse",
+    "Never mind clean data. Annotate as you collect it.",
+    "Data Ownership in Practice: Defining Decision Rights in Enterprise Data Governance",
+    "Your Next \"Access Database Problem\" Is an AI Agent",
+    "Validating Data With Pointblank in Python",
+    "Kestra 2.0 release candidates land with a new execution engine and UI overhaul",
+    "Semantic Layers in Apache Superset: SIP-182 and Apache Ossie",
+    "Tytan: Interactive Neurosymbolic Construction of Analytic Semantic Schemas from Relational Data",
+    "The Database at 550 Kilometers: What Orbital Computing Means for Distributed Databases",
+    "WeatherNext: AI model achieves breakthrough in forecasting cyclones",
+    "Database Animations: Why Big Columns May Not Affect Logical Reads",
+    "Before JSONB, there was hstore. Before hstore, there was an ugly sparse table"
+  ],
+  "tldr_matched": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -23,6 +53,14 @@
     },
     {
       "rank": 3,
+      "score": 68.0,
+      "title": "Introducing FILE type: a native column type for multimodal data",
+      "url": "https://www.databricks.com/blog/introducing-file-type-native-column-type-multimodal-data",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 4,
       "score": 62.0,
       "title": "GEM Training: How Meta Doubled the Efficiency of Its LLM-Scale Ads Foundation Model",
       "url": "https://engineering.fb.com/2026/08/03/ml-applications/training-gem-at-llm-scale-meta-ads-recommendation-foundation-model/",
@@ -30,7 +68,7 @@
       "similarity": null
     },
     {
-      "rank": 4,
+      "rank": 5,
       "score": 60.0,
       "title": "This is why we can't have nice things",
       "url": "https://benn.substack.com/p/this-is-why-we-cant-have-nice-things",
@@ -38,7 +76,15 @@
       "similarity": null
     },
     {
-      "rank": 5,
+      "rank": 6,
+      "score": 58.0,
+      "title": "dbt Semantic Layer vs Cube vs AtScale: Choosing an Enterprise Semantic Layer",
+      "url": "https://dev.to/harshit_colrows/dbt-semantic-layer-vs-cube-vs-atscale-choosing-an-enterprise-semantic-layer-452d",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 7,
       "score": 58.0,
       "title": "How DoorDash Built a Centralized Gateway for AI Agent-Tool Access",
       "url": "https://careersatdoordash.com/blog/how-doordash-built-a-centralized-gateway-for-ai-agent-tool-access/",
@@ -46,7 +92,7 @@
       "similarity": null
     },
     {
-      "rank": 6,
+      "rank": 8,
       "score": 56.0,
       "title": "Metabase Zero-Day Exploited in Wild Allows Admin Access Without Authentication",
       "url": "https://thehackernews.com/2026/08/metabase-zero-day-exploited-in-wild.html",
@@ -54,7 +100,7 @@
       "similarity": null
     },
     {
-      "rank": 7,
+      "rank": 9,
       "score": 56.0,
       "title": "ELT is moving back to best-of-breed and Orchestration is the missing piece",
       "url": "https://dataopsleadership.substack.com/p/elt-is-moving-back-to-best-of-breed",
@@ -62,7 +108,23 @@
       "similarity": null
     },
     {
-      "rank": 8,
+      "rank": 10,
+      "score": 55.0,
+      "title": "Metabase Patches Vulnerability Exploited as Zero-Day",
+      "url": "https://www.securityweek.com/metabase-patches-vulnerability-exploited-as-zero-day/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 11,
+      "score": 55.0,
+      "title": "Microsoft\u2019s PostgreSQL alternative, HorizonDB: Worth the wait?",
+      "url": "https://www.infoworld.com/article/4207403/microsofts-postgresql-alternative-horizondb-worth-the-wait.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 12,
       "score": 55.0,
       "title": "Amazon DynamoDB now supports real-time vector search at any scale",
       "url": "https://aws.amazon.com/blogs/aws/amazon-dynamodb-now-supports-real-time-vector-search-at-any-scale/",
@@ -70,9 +132,51 @@
       "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.0,
+    "25": 0.0,
+    "50": 0.0,
+    "100": 0.0,
+    "12": 0.0
+  },
+  "hits_at": {
+    "10": 0,
+    "25": 0,
+    "50": 0,
+    "100": 0,
+    "12": 0
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://www.linkedin.com/blog/engineering/infrastructure/the-training-infrastructure-behind-ai-powered-job-search-eight-x-faster-multi-teacher-distillation",
+    "https://netflixtechblog.com/how-and-why-netflix-built-a-real-time-distributed-graph-part-3-querying-the-graph-with-grpc-0f3468349607",
+    "https://clickhouse.com/blog/physical-intelligence-rds-to-clickhouse-managed-postgres",
+    "https://www.cio.com/article/4204899/never-mind-clean-data-annotate-as-you-collect-it.html",
+    "https://medium.com/@community_md101/data-ownership-in-practice-defining-decision-rights-in-enterprise-data-governance-c125e0635873",
+    "https://sjg.io/writing/your-next-access-database-problem-is-an-ai-agent/",
+    "https://realpython.com/python-pointblank/",
+    "https://kestra.io/blogs/kestra-2-0-almost-here/",
+    "https://preset.io/blog/semantic-layers-in-superset/",
+    "https://arxiv.org/abs/2608.06331",
+    "https://cockroachlabs.com/blog/orbital-computing-distributed-databases",
+    "https://deepmind.google/blog/weathernext-ai-model-achieves-breakthrough-in-forecasting-cyclones/",
+    "https://www.brentozar.com/archive/2026/08/database-animations-why-big-columns-may-not-affect-logical-reads/",
+    "https://www.linkedin.com/pulse/before-jsonb-hstore-ugly-sparse-table-oleg-bartunov-34saf/"
+  ],
+  "tldr_domains": [
+    "linkedin.com",
+    "netflixtechblog.com",
+    "clickhouse.com",
+    "cio.com",
+    "medium.com",
+    "sjg.io",
+    "realpython.com",
+    "kestra.io",
+    "preset.io",
+    "arxiv.org",
+    "cockroachlabs.com",
+    "deepmind.google",
+    "brentozar.com",
+    "linkedin.com"
+  ]
 }

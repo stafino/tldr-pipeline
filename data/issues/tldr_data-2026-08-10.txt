@@ -10,12 +10,20 @@ Metabase Zero-Day Exploited in Wild Allows Admin Access Without Authentication (
 
 (blurb not generated)
 
+Metabase Patches Vulnerability Exploited as Zero-Day (1 minute read)
+
+Metabase released urgent patches for a critical SQL injection vulnerability that was exploited in the wild as a zero-day against Metabase Cloud, letting remote, unauthenticated attackers inject arbitrary queries and gain admin access to stored database credentials and any connected data. Metabase Cloud instances are already patched, but self-hosted users on versions 63.5, 62.9, 61.11, 60.17, 59.21, and 58.24 should apply the fix immediately and rotate credentials for all connected databases.
+
+Microsoft’s PostgreSQL alternative, HorizonDB: Worth the wait? (2 minute read)
+
+Microsoft's HorizonDB, the cloud-native PostgreSQL alternative it pitched at Ignite in November 2025, remains in public preview nine months later with no announced GA date, even as AWS Aurora, Google AlloyDB, Databricks Lakebase, and Snowflake Postgres ship production-ready PostgreSQL services for the same AI workloads. Analysts say the undefined GA date, pricing, and SLAs give enterprises with urgent AI projects little reason to wait, though Azure-committed shops readying Foundry and Fabric integrations may still hold out.
+
 🧠
 Deep Dives & Analysis
 
-How We Pushed CDC into Postgres (1 minute read)
+How We Pushed CDC into Postgres (5 minute read)
 
-Snowflake engineers detailed how they rebuilt Postgres change data capture from the ground up for Snowflake Postgres, replacing the usual pull-based logical decoding pipeline with a push model. The new data mirroring feature, now in public preview, pushes committed changes directly from Postgres into Apache Iceberg tables in transactional batches, then applies them to Snowflake serverlessly with low lag and transactional consistency. The pitch is one button instead of the fragile, high-cost replication tooling most teams stitch together themselves.
+(blurb not generated)
 
 Pi, Minimal and Performant (5 minute read)
 
@@ -29,6 +37,10 @@ This is why we can't have nice things (5 minute read)
 
 (blurb not generated)
 
+dbt Semantic Layer vs Cube vs AtScale: Choosing an Enterprise Semantic Layer (1 minute read)
+
+The author compares dbt Semantic Layer, Cube, and AtScale and argues all three define metrics well but none answers whether an AI agent is entitled to run one. The shared gaps are that coverage stops at whatever someone modeled, so unmodeled intent has no answer, and entitlements get filtered around the query rather than inside it, meaning data moves before authorization applies. The piece proposes evaluating on agent-facing tests like per-user SQL and reproducing a six-month-old number, not feature matrices.
+
 How DoorDash Built a Centralized Gateway for AI Agent-Tool Access (5 minute read)
 
 (blurb not generated)
@@ -39,6 +51,10 @@ ELT is moving back to best-of-breed and Orchestration is the missing piece (5 mi
 
 🚀
 Launches & Tools
+
+Introducing FILE type: a native column type for multimodal data (1 minute read)
+
+Databricks announced the beta of FILE, a new column type that stores unstructured data like documents, images, and video as a native, governed column alongside structured tables. Databricks is building the format into open Parquet and Delta Lake, so multimodal data stays queryable and secured in the lakehouse without living in a separate system or locking teams to one vendor.
 
 Amazon DynamoDB now supports real-time vector search at any scale (5 minute read)
 

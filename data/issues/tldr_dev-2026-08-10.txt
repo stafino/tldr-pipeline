@@ -6,9 +6,13 @@ TLDR Dev 2026-08-10
 🧑‍💻
 Articles & Tutorials
 
-We replaced Redis with MySQL for inventory reservations and it scaled (1 minute read)
+We replaced Redis with MySQL for inventory reservations and it scaled (5 minute read)
 
-Shopify rebuilt its checkout oversell-protection system on MySQL after years on Redis, using MySQL 8's SKIP LOCKED to model one row per inventory unit instead of a single contended quantity row. The design held throughput during Black Friday 2025, when merchants peaked at $5.1M in sales per minute, and the post's sharpest lesson was that the real bottleneck wasn't in the metrics the team had been measuring.
+(blurb not generated)
+
+Tail-call optimization in C is relatively recent (1 minute read)
+
+This LWN comment explains why C compilers lacked tail-call optimization for decades: the C calling convention makes the caller, not the callee, clean up stack arguments, so a call followed by a return could not collapse into a jump. GCC and Clang now handle these tail calls (including the interpreter-dispatch pattern), which lets Copy-and-Patch style interpreters scale to 100,000 code snippets rather than the sub-2,000 practical under goto-based dispatch.
 
 Prototype on a laptop, scale to 16 billion rows: one Polars query (5 minute read)
 
@@ -18,9 +22,13 @@ Turn one giant AI-generated pull request to a reviewable stack (5 minute read)
 
 (blurb not generated)
 
-CSS: The bomb inside your inbox (1 minute read)
+CSS: The bomb inside your inbox (5 minute read)
 
-PortSwigger's Gareth Heyes details how webmail clients that render untrusted CSS in trusted UI can be broken through parser and sanitizer discrepancies, using techniques to exfiltrate tokens, compromise third-party sites, and steal passwords across Yahoo, AOL, Fastmail, ProtonMail, Gmail, and Outlook. One unpatched Outlook bug abuses allow-listed HTML label tags and their `for` attribute to inherit click actions, letting an email open Outlook's ribbon and pin an attacker's message in the victim's inbox.
+(blurb not generated)
+
+What a Claude Code subagent actually costs: measuring the ~436k-token fixed overhead (3 minute read)
+
+The author measured Claude Code subagent costs from session JSONL transcripts and found each spawned subagent carries roughly 436k tokens of fixed overhead, from initial context load plus the final-turn cache write, versus only about 46k tokens for the embedded content it actually reviews. The post shows how to reproduce the measurement and concludes that agent headcount, not payload size, is the real cost lever, making full-content embedding nearly free by comparison.
 
 How GitHub gave every repository a durable owner (5 minute read)
 
@@ -50,21 +58,17 @@ How Cloudflare enforces engineering standards using AI (5 minute read)
 
 (blurb not generated)
 
-Dithered QR Codes (1 minute read)
+Dithered QR Codes (5 minute read)
 
-This post explains how to embed a photo inside a QR code by shrinking each data module into the center of a three-by-three grid, freeing the surrounding cells to carry a low-res, one-bit image. It walks through the dithering techniques that make the embedded photo legible, from Bayer-matrix ordered dithering to Floyd-Steinberg error diffusion, while keeping the code scannable because scanners only sample each module's center.
+(blurb not generated)
 
 Smaller, faster, safer: running Kimi and GLM at scale (5 minute read)
 
 (blurb not generated)
 
-Contract Testing in 10 Lines: JSON Schema Validation in Postman (2 minute read)
+Controlling a treadmill from an iPhone over Bluetooth LE (2 minute read)
 
-This tutorial replaces patchy field-by-field value assertions with JSON Schema validation in Postman, using the ajv validator built into the script sandbox to catch structural drift like renamed fields, vanished properties, or an integer id turning into a string. It shows how to define a schema in about ten lines, reuse it for array endpoints, and store it as a collection variable so every request validates against one shared contract.
-
-140 Bugs Were Hiding in One Function, and My Tests Couldn't See Any of Them (3 minute read)
-
-A developer porting Python's textdistance library to Rust ran differential fuzzing against the original 397-test suite and surfaced 140 behavioral divergences the tests never caught, ranging from a violated 35-year-old threshold to floating-point drift at the 15th decimal place. The writeup covers the architectural bet that a subprocess CLI speaking JSON over stdin/stdout beat PyO3 bindings, keeping the Rust crate buildable without tying it to Python's ABI.
+The author built Treadmill Pro, a SwiftUI iOS app that drives a treadmill's speed, incline, and live stats directly over Bluetooth Low Energy with CoreBluetooth, bypassing the vendor's companion app. The post explains the FTMS fitness-machine profile, the connect-discover-subscribe-write lifecycle, and why a BLE controller is really a state machine that must handle a take-control handshake, exact byte decoding, and devices that vanish mid-run.
 
 Asynchronous I/O in DuckDB: Work, Thread, Work (5 minute read)
 
@@ -82,16 +86,16 @@ Stateless MCP has recaptured my interest (and inspired mcp-explorer and datasett
 
 (blurb not generated)
 
-Building an Advanced Agentic Harness (5 minute read)
-
-(blurb not generated)
-
 🧠
 Opinions & Advice
 
 Everyone is building LLM routers, we deprecated ours (5 minute read)
 
 (blurb not generated)
+
+Claude Code puts auto mode in the driver's seat (1 minute read)
+
+The author examines Claude Code's auto mode, which lets the agent plan and execute multi-step coding tasks without pausing for approval at each step. The piece weighs the productivity gain against the loss of human checkpoints, noting that autonomous agents still ship incomplete fixes and regressions when left to run unsupervised, so the reviewer's job shifts from writing code to auditing what the agent already merged.
 
 Don't be a meat proxy (5 minute read)
 
@@ -108,13 +112,17 @@ The Shape of Things to Come (5 minute read)
 🚀
 Launches & Tools
 
-Docker Sandboxes – Disposable, isolated sandboxes for AI agents (1 minute read)
-
-Docker released Sandboxes, a CLI tool (`brew install docker/tap/sbx`) that runs AI coding agents inside disposable microVMs with user-defined network and filesystem controls. The microVM boundary makes YOLO mode (`--dangerously-skip-permissions`) safe to run unattended, works with Claude Code, Gemini CLI, Copilot CLI, Codex, Kiro, and OpenCode, and lets agents spin up their own Docker containers without Docker Desktop.
-
 Meta Releases Muse Code (5 minute read)
 
 (blurb not generated)
+
+Python Now Has a Post-Quantum Encryption Library (1 minute read)
+
+pyca/cryptography now ships support for ML-KEM and ML-DSA, the NIST-standard post-quantum key-establishment and digital-signature primitives, making post-quantum crypto a single pip install for the Python ecosystem. The work was funded by the Sovereign Tech Agency, and the case for adopting it now is crypto agility rather than urgency, since no quantum threat is imminent.
+
+Meta Muse Glimmer – open weights 30B local coding model (1 minute read)
+
+Meta Superintelligence Labs released Muse Glimmer, a 30B-parameter agentic model under Apache 2.0 that runs locally on a single consumer GPU for coding, function calling, and LLM-as-a-judge evaluation. Trained by distilling agentic reasoning from the larger Muse Spark teacher, it ships with open weights on Hugging Face and gets llama.cpp, MLX, and ExecuTorch integrations in the coming days.
 
 Cloudflare Workers and Containers now support inbound TCP connections and gRPC (5 minute read)
 
@@ -136,33 +144,49 @@ A unified API for AI model routing (5 minute read)
 
 (blurb not generated)
 
-Anthropic to put AI in charge of reviewing Claude Code actions by default (1 minute read)
+Meta is back with Muse Glimmer: local, agentic, multimodal, and open source (5 minute read)
 
-Anthropic will make Claude Code's auto mode the default for new sessions on Pro, Max, and Team plans starting August 14, routing every tool call through a classifier that blocks irreversible or destructive actions before switching back to manual approvals after 20 blocks in a session. In a study of 1,053 paid testers, auto mode caught 89% of dangerous commands versus 13.6% for human review, and Anthropic will stop charging for the safety classifier's compute.
+Meta released Muse Glimmer, an open-source dense 30B multimodal model that pairs a 2B Perception Encoder for vision with a 28B text decoder, with day-0 support in transformers, llama.cpp, and vLLM. The decoder uses hybrid attention alternating three 2,048-token sliding-window layers with a full-attention NoPE layer, plus gated grouped-query attention that shares each KV head across 16 query heads to cut KV-cache memory 16x.
 
-Message your other Claude Code sessions (1 minute read)
+Meta returns to open source with Muse Glimmer, an Apache 2.0 licensed 30B parameter AI model optimized for agents — available now (3 minute read)
 
-Claude Code v2.1.224 adds cross-session messaging, letting one session hand a finding, status, or decision to another through the new ListAgents and SendMessage tools without you copy-pasting between terminals. It works on macOS and Linux with no setup once sessions meet the version requirement, covers parallel worktrees and long-running jobs, and can reply to sessions on other machines though cross-machine exchanges must be started locally.
+Meta released Muse Glimmer, a 30B-parameter dense open-weight model under Apache 2.0, its first fully open release since dropping the Llama family for the proprietary Muse Spark in April. The weights are on Hugging Face now, with Ollama, LM Studio, vLLM, and llama.cpp support rolling out this week, and the permissive license drops Llama's 700M-monthly-user cap for unrestricted commercial use.
 
-OpenChamber: An Agentic Development Environment (1 minute read)
+Meta releases Muse Glimmer for local AI agents (1 minute read)
 
-OpenChamber is an agentic development environment that runs coding agents toward a set finish line across turns, with a Multi-run and Fusion mode that executes one task across up to five models and keeps or merges the best output. It works from GitHub issue to merged PR, runs prompts on a cron schedule, syncs across desktop, browser, phone, and VS Code, and keeps all code and session data local.
+Meta released Muse Glimmer, a 30B-parameter open-weight model under Apache 2.0 built for always-on local agents running on a single consumer GPU across Mac or PC. Quantization drops the language model under 20 GB to fit a 24 GB or 32 GB envelope, and a DFlash speculative-decoding drafter reports decode-speed gains of 3.1x on an RTX 5090 and 1.8x on an M5 Max.
 
-Anthropic is turning Claude Code’s auto mode on by default (1 minute read)
+Anthropic to put AI in charge of reviewing Claude Code actions by default (5 minute read)
 
-Anthropic is making Claude Code's auto mode the default for Pro, Max, and Team accounts starting August 14, so the agent will execute steps without per-action approval prompts unless it judges an action irreversible, destructive, or aimed outside your environment. In a 1,053-tester study, auto mode caught 89% of harmful actions versus 13.6% for manual review, and the rollout adds prompt injection screening and customizable hard deny rules.
+(blurb not generated)
+
+Message your other Claude Code sessions (5 minute read)
+
+(blurb not generated)
+
+OpenChamber: An Agentic Development Environment (5 minute read)
+
+(blurb not generated)
+
+Anthropic is turning Claude Code’s auto mode on by default (5 minute read)
+
+(blurb not generated)
 
 Better Code, Fewer Tokens: The Benefits of Code Connect in MCP (5 minute read)
 
 (blurb not generated)
 
-Triton: DirectX 11 Driver for QEMU (1 minute read)
+Triton: DirectX 11 Driver for QEMU (5 minute read)
 
-The UTM team released Triton, a Windows guest driver that pairs with their Neptune Direct3D forwarding layer to bring full DirectX 11 acceleration to QEMU virtual machines. Rather than swapping in Wine-style d3d11.dll and dxgi.dll replacements, Triton implements the DirectX device driver interfaces (DDIs), which avoids DWM's CPU blitting for a smooth desktop and sidesteps the anti-cheat detection that per-application DLL substitution triggers.
+(blurb not generated)
 
 Mixture-of-Kittens: our open-source MoE megakernel for NVL72s (5 minute read)
 
 (blurb not generated)
+
+I got tired of heavyweight Markdown editors, so I built one in Rust + Tauri that doesn't ship a browser (3 minute read)
+
+Bokuchi is an open-source Markdown editor built with Tauri v2, Rust, and React that renders through the OS-native WebView instead of bundling a Chromium instance like Electron apps do. The result is a small footprint and near-instant startup, with the trade-off being reliance on platform WebViews (WebView2, WKWebView, WebKitGTK) whose rendering behavior varies across Windows, macOS, and Linux.
 
 🎁
 Miscellaneous
@@ -175,9 +199,9 @@ The Nixpkgs core team has disbanded (5 minute read)
 
 (blurb not generated)
 
-Linus Torvalds says AI has made 'huge' Linux kernel updates the new normal (1 minute read)
+Linus Torvalds says AI has made 'huge' Linux kernel updates the new normal (5 minute read)
 
-Linus Torvalds says AI-assisted contributions have pushed the Linux kernel to consistently large release cycles, with big updates now the baseline rather than the exception. He noted the shift raises the maintainer review burden, since human reviewers still have to vet code that AI tools can generate far faster than it can be checked.
+(blurb not generated)
 
 ⚡
 Quick Links
@@ -186,10 +210,14 @@ _for-sale DNS records (5 minute read)
 
 (blurb not generated)
 
-GitHub Dependabot malware alerts now cover eight ecosystems (1 minute read)
+GitHub Dependabot malware alerts now cover eight ecosystems (5 minute read)
 
-GitHub Dependabot malware alerts now span eight package ecosystems, pulling from OpenSSF's malicious-packages feed instead of npm data alone.
+(blurb not generated)
 
-My server is a phone now (1 minute read)
+My server is a phone now (5 minute read)
 
-A developer replaced their Hetzner VPS with a CMF Phone 1, running Surf, a finance tracker, and other web apps on its ARM SoC.
+(blurb not generated)
+
+Animating CSS border-image (1 minute read)
+
+Andy Clarke revisited CSS border-image, and this post extends it to animated border images and gradients, noting they can't curve to rounded corners.

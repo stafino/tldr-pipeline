@@ -14,6 +14,10 @@ Cloudflare OS: an open platform for agents, apps, and work (5 minute read)
 
 (blurb not generated)
 
+ClusterNetworkPolicy in GKE: Balancing control and autonomy for your microservices (2 minute read)
+
+Google added ClusterNetworkPolicy to GKE, a cluster-wide resource from the Kubernetes SIG-Policy Working Group that lets platform teams enforce non-bypassable network guardrails above standard namespace-scoped NetworkPolicy. Its three-tier hierarchy (admin, network policy, baseline) evaluates top-to-bottom and maps to RBAC roles, so admins can pin compliance rules and set a default deny-all posture while developers still write their own app policies without overriding core mandates.
+
 Tailscale didn't stop the Hugging Face intrusion (5 minute read)
 
 (blurb not generated)
@@ -38,6 +42,10 @@ Kubeflow unveils new cloud native innovations to supercharge AI (5 minute read)
 
 (blurb not generated)
 
+Metabase Patches Vulnerability Exploited as Zero-Day (1 minute read)
+
+Metabase released urgent patches for a critical SQL injection flaw that was exploited in the wild as a zero-day, letting remote, unauthenticated attackers gain admin access, steal connected-database credentials, and export data. Metabase Cloud instances are already patched, but self-hosters must update to versions 63.5, 62.9, 61.11, 60.17, 59.21, or 58.24, or block the /api/session/reset_password endpoint as a temporary workaround.
+
 The Nixpkgs core team has disbanded (5 minute read)
 
 (blurb not generated)
@@ -61,17 +69,17 @@ Scaling Kubernetes pods with KEDA based on Amazon SQS queue depth (5 minute read
 
 (blurb not generated)
 
-We replaced Redis with MySQL for inventory reservations and it scaled (1 minute read)
+We replaced Redis with MySQL for inventory reservations and it scaled (5 minute read)
 
-Shopify's engineering team rebuilt its checkout oversell-protection system on MySQL 8 after years on Redis, moving to one row per inventory unit and using SKIP LOCKED to handle concurrent reservation contention. The design held Shopify's high-throughput targets through Black Friday 2025, when merchants peaked at $5.1M in sales per minute. The post's sharpest lesson is operational: the real bottleneck wasn't in the metrics the team was already watching.
+(blurb not generated)
 
 Smaller, faster, safer: running Kimi and GLM at scale (5 minute read)
 
 (blurb not generated)
 
-Why observability doesn’t explain what happened (3 minute read)
+Why observability doesn’t explain what happened (5 minute read)
 
-The author argues that observability tells you what is happening inside a system but rarely why, leaving teams to burn two to three hours per incident correlating telemetry against deploys, change records, and support tickets that live outside the stack. The fix isn't better dashboards but connecting infrastructure signals to the context that explains them, since support often knows customers are affected before the first alert fires.
+(blurb not generated)
 
 GEM Training: How Meta Doubled the Efficiency of Its LLM-Scale Ads Foundation Model (5 minute read)
 
@@ -100,17 +108,13 @@ Your agent can now debug Workers with local tracing (5 minute read)
 
 (blurb not generated)
 
-Docker Sandboxes – Disposable, isolated sandboxes for AI agents (1 minute read)
-
-Docker released Docker Sandboxes, a CLI tool that runs coding agents like Claude Code, Codex, and Gemini CLI inside disposable microVMs with configurable network and filesystem controls, isolating the host from anything an agent does. The microVM boundary makes "YOLO mode" (`--dangerously-skip-permissions`) safe to run unattended, and paid Docker AI Governance layers on org-wide network, filesystem, and MCP policies enforced across every developer's machine.
-
 Introducing Kitesurf: The agent-first browser that runs in V8 isolates on Cloudflare Workers (5 minute read)
 
 (blurb not generated)
 
-Chainloop: Open-source evidence store and policy engine for the software supply chain (1 minute read)
+Chainloop: Open-source evidence store and policy engine for the software supply chain (5 minute read)
 
-Chainloop, an open-source evidence store and policy engine for the software supply chain, runs a CLI inside GitHub Actions, GitLab, Jenkins, or Dagger pipelines that collects build artifacts, stores them in content-addressable storage, and references each in a signed in-toto attestation. Workflow Contracts declare which materials a build must emit and attach Rego policies via Open Policy Agent, so the pass-or-fail verdict travels inside the signed record rather than a dashboard someone can edit later.
+(blurb not generated)
 
 Mixture-of-Kittens: our open-source MoE megakernel for NVL72s (5 minute read)
 
@@ -122,3 +126,10 @@ Miscellaneous
 Gentoo bugzilla closed due AI bot scraper overload (5 minute read)
 
 (blurb not generated)
+
+⚡
+Quick Links
+
+Serving the most critical missions: Cloudflare for Government achieves FedRAMP Class D (High) Certified status (1 minute read)
+
+Cloudflare for Government reached FedRAMP High authorization, sponsored by NIST, and is now pursuing DoD Impact Level 4 for controlled unclassified data.
