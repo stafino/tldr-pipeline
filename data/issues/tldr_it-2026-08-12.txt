@@ -6,92 +6,92 @@ TLDR IT 2026-08-12
 🚀
 News & Trends
 
-Nvidia’s $500B AI investment pool could impact enterprise chip pricing, availability (3 minute read)
+Nvidia’s $500B AI investment pool could impact enterprise chip pricing, availability (5 minute read)
 
-Nvidia and six finance partners including Apollo, BlackRock, Blackstone, and Goldman Sachs are creating a $500B-plus capital pool to let its customers, from frontier AI labs to enterprises, buy chips on credit at favorable rates. Analysts expect little of the money to reach enterprise buyers directly, and most warn the infusion will push GPU prices higher and deepen the data-center chip shortage rather than ease procurement.
-
-CISA: Microsoft SharePoint flaw now exploited in ransomware attacks (1 minute read)
-
-CISA added Microsoft SharePoint remote code execution flaw CVE-2026-45659 to its Known Exploited Vulnerabilities Catalog under a ransomware-abused tag, confirming gangs are now exploiting the deserialization bug against unpatched Enterprise Server 2016, 2019, and Subscription Edition servers. Shadowserver counts over 200 of roughly 8,500 exposed SharePoint servers still unpatched, and CISA gave federal agencies three days to apply Microsoft's fixes and enable AMSI and Defender detections.
+(blurb not generated)
 
 OpenAI Pauses Astra Over Cybersecurity Risks (5 minute read)
 
-OpenAI paused its Astra model release after internal evaluations flagged that its offensive cybersecurity capabilities crossed the risk threshold in the company's preparedness framework. The hold signals that frontier labs are now gating shipments on security-misuse potential, which gives enterprise buyers a clearer read on vendor guardrails but adds uncertainty to product roadmaps and integration timelines built around expected model availability.
+(blurb not generated)
 
-Researchers Disclose AI-Assisted SharePoint Exploit Chain Reaching Unauthenticated RCE (1 minute read)
+Researchers Disclose AI-Assisted SharePoint Exploit Chain Reaching Unauthenticated RCE (5 minute read)
 
-Rapid7 chained two SharePoint flaws, a JWT-validation bypass (CVE-2026-55040, CVSS 9.1) and a Business Connectivity Services RCE (CVE-2026-63520, CVSS 8.1), into unauthenticated code execution against on-premises SharePoint Server 2016, 2019, and Subscription Edition, with an AI agent driving much of the discovery. Admins should confirm the July update that breaks the chain is installed, since Microsoft has not yet shipped the August fix.
+(blurb not generated)
 
-Server prices to rise by up to 87% at OVHcloud (2 minute read)
+Cisco flags major firewall flaw (1 minute read)
 
-OVHcloud is raising prices on its bare metal and public cloud servers by up to 87%, effective September 1 for new orders and October 1 for renewals, blaming AI-driven demand that has pushed up RAM and storage costs. Enterprise buyers face 59% increases on the latest High Grade AMD Epyc servers plus steep hikes on add-on memory and disks, though existing customers can lock in current pricing for up to four years by prepaying before October 1.
+Cisco disclosed a maximum-severity flaw (CVE-2026-20349) in its Secure Firewall ASA and Threat Defense software that lets an attacker crash devices into a denial-of-service via a crafted HTTP request to Remote Access VPN services, and confirmed it is being actively exploited. Cisco issued hot fixes across ASA releases 9.16.1 through 9.24 and FTD releases 7.0 through 10.0, forcing IT teams running Cisco perimeter firewalls into emergency patching.
 
-Cisco pushes urgent patches for actively exploited zero-day flaw crashing firewalls (1 minute read)
+Server prices to rise by up to 87% at OVHcloud (5 minute read)
 
-Cisco released emergency patches for an actively exploited zero-day in its firewall software that lets unauthenticated attackers crash devices remotely, with no workarounds available. IT teams running affected Cisco firewalls should treat patching as immediate, since the flaw is already being used in the wild and offers no mitigation short of the update.
+(blurb not generated)
 
-Microsoft Patches 398 Flaws Including a Windows Driver Zero-Day Under Active Attack (1 minute read)
+Cisco pushes urgent patches for actively exploited zero-day flaw crashing firewalls (5 minute read)
 
-Microsoft's August Patch Tuesday closed 398 CVEs, including CVE-2026-68820, a use-after-free in the afd.sys kernel driver that is already under active attack to escalate local code to SYSTEM. IT teams should patch that zero-day first, then queue four unauthenticated RCE flaws rated CVSS 9.8 in Windows DNS Server, Deployment Services, QUIC, and HPC Pack, plus the SharePoint RCE fix pairing with July's auth-bypass patch.
+(blurb not generated)
 
-Microsoft August 2026 Patch Tuesday fixes 400 flaws, 3 zero-days (1 minute read)
+Microsoft Patches 398 Flaws Including a Windows Driver Zero-Day Under Active Attack (5 minute read)
 
-Microsoft's August 2026 Patch Tuesday fixed 400 vulnerabilities, including one actively exploited zero-day in the Windows Ancillary Function Driver for WinSock that grants SYSTEM privileges, plus 42 rated Critical. The volume reflects Microsoft's new AI-powered vulnerability discovery system, which it has warned will keep monthly patch counts elevated and raises the testing and deployment burden on enterprise IT teams already managing large Windows fleets.
+(blurb not generated)
 
-IBM, Together AI team to offer open-source AI inference in the cloud (2 minute read)
+Hackers leverage new Microsoft SharePoint exploit in attacks (1 minute read)
 
-IBM signed a $240M deal with neocloud provider Together AI to run a Nvidia HGX B300 cluster on IBM Cloud for large-capacity, open-source model inference. The arrangement gives IBM Cloud an enterprise-grade inference offering to compete with AWS, Azure, and CoreWeave, and positions Together AI's open-model platform, spanning DeepSeek, Nemotron, and Kimi, as a lower-cost alternative to single proprietary models for regulated enterprise workloads.
+Attackers are weaponizing a Rapid7 proof-of-concept exploit for CVE-2026-55040, a critical SharePoint JWT authentication-bypass flaw that lets unprivileged users impersonate site administrators and read or modify files. Microsoft patched it in July 2026 for SharePoint Server 2016 and 2019, but Shadowserver still tracks over 8,500 exposed servers, and CISA has urged IT teams to pull SharePoint off the open internet or place it behind a Layer 7 reverse proxy.
 
-OVHcloud chief issues customer price warning amid surging hardware costs (1 minute read)
+Microsoft patches 400+ vulnerabilities, one zero-day under attack (CVE-2026-68820) (1 minute read)
 
-OVHcloud CEO Octave Klaba warned customers that prices for some Public Cloud and bare metal products could rise as much as 87%, driven by surging DDR5 RAM and storage costs he attributes to AI demand. The increases hit new orders in September and in-production equipment in October, following similar hikes from Hetzner, Alibaba, Tencent, and AWS, and signaling broader compute-cost inflation across enterprise cloud contracts.
+Microsoft's August 2026 Patch Tuesday fixed more than 400 vulnerabilities, including CVE-2026-68820, an AFD.sys use-after-free that North Korean attackers exploited as a zero-day to escalate to SYSTEM and deploy a kernel-mode rootkit. Three other flaws were publicly disclosed before the patch, so IT teams should prioritize this rollout across Windows fleets rather than wait for the usual staged deployment window.
 
-Oracle set to bring quantum computing to OCI for hybrid AI (2 minute read)
+Microsoft August 2026 Patch Tuesday fixes 400 flaws, 3 zero-days (5 minute read)
 
-Oracle will deploy Quantinuum's Helios quantum computer inside a US-based OCI AI data center and offer enterprise access through a planned OCI quantum service for hybrid quantum-AI and HPC workloads, with a preview expected in the coming months. Customers get managed, governed access to quantum hardware under existing OCI identity and security controls, though Forrester notes the integration lowers access barriers without accelerating real adoption timelines.
+(blurb not generated)
 
-Microsoft reportedly raises Windows 11 license price significantly more than expected (1 minute read)
+After Microsoft threatened legal action, a security researcher publishes a new Windows zero-day bug (1 minute read)
 
-Microsoft has reportedly raised Windows 11 license prices sharply this year, an increase larger than industry observers anticipated, according to a new report. Enterprise buyers running volume licensing and OEM device fleets face higher per-seat costs at renewal, adding pressure to hardware refresh budgets already stretched by the Windows 10 end-of-support migration.
+Security researcher Nightmare Eclipse published a Windows zero-day dubbed ShieldBreak that escalates a low-level user to full system access by exploiting Windows Defender, weeks after Microsoft threatened legal action against researchers who disclose unpatched flaws. The exploit works on Windows 10, 11 (including 25H2), and Server 2025, bypasses Microsoft's earlier RoguePlanet patch, and has no fix yet, leaving enterprise Defender deployments exposed.
 
-Zoom Annotation Flaws Could Let a Meeting Participant Hijack Another Attendee's Client (1 minute read)
+IBM, Together AI team to offer open-source AI inference in the cloud (5 minute read)
 
-Zoom patched three annotation-tool flaws that let any meeting participant execute code on other attendees' clients, including a zero-click buffer overflow reachable by a single malformed drawing sent from the wrong channel. Client fixes shipped in June and July across Zoom Workplace, VDI, Rooms, and the Meeting SDK, with no exploitation reported and none of the CVEs listed in CISA's Known Exploited Vulnerabilities catalog.
+(blurb not generated)
 
-Researchers Turn USB Auto-Install Into a Full SYSTEM Takeover on Windows 11 (1 minute read)
+Oracle plans more layoffs weeks after spending most of its $2.1 billion restructuring budget, report claims — some teams face double-digit percentage reductions, 21,000 full-time positions already eliminated (1 minute read)
 
-Researchers Alejandro Hernando and Borja Martinez showed at DEF CON 34 that Windows 11 Plug and Play auto-install can be chained into full SYSTEM code execution by an unprivileged user emulating trusted USB devices like Sierra Wireless and Sony FeliCa hardware. Microsoft notes the remote-over-RDP variant depends on USB redirection that is disabled by default, so exposure hinges on enterprise configuration rather than a default Windows flaw.
+Oracle plans another round of layoffs this month, with some teams facing double-digit percentage cuts, after eliminating 21,000 positions, or 13% of its workforce, in the fiscal year ending May 31. The move squeezes the roughly $300M left in Oracle's $2.1B restructuring budget as the company borrows heavily to fund a $55.7B AI data center buildout, signaling that internal AI adoption will keep displacing staff.
 
-Metabase SQLi exploit grants attackers total access (2 minute read)
+OVHcloud chief issues customer price warning amid surging hardware costs (5 minute read)
 
-Metabase disclosed a critical zero-day SQL injection flaw (CVE-2026-72898, CVSS 10) in versions 1.58 and up, letting attackers gain raw SQL access to the BI platform's database and exfiltrate credentials, tokens, and API keys for connected systems like Snowflake, Databricks, and BigQuery. Metabase Cloud instances are already patched, but self-hosted deployments and OEM-embedded versions stay exposed until customers apply the fix, with Wiz finding Metabase in 13% of cloud environments.
+(blurb not generated)
 
-SAP Commerce Cloud Flaw Could Let Unauthenticated Attackers Execute Arbitrary Code (1 minute read)
+Oracle set to bring quantum computing to OCI for hybrid AI (5 minute read)
 
-SAP released patches for CVE-2026-58231, a maximum-severity 10.0 CVSS flaw in Commerce Cloud's Data Hub Adapter that lets an unauthenticated attacker abuse a default authentication client to execute arbitrary code. The August update also fixes three other critical bugs across Manufacturing Integration and Intelligence and NetWeaver ABAP, so enterprise SAP teams should patch affected releases now and apply Onapsis's IP Filter Set workaround where redeployment lags.
+(blurb not generated)
 
-Cisco warns of ASA and FTD VPN flaw exploited to crash devices (1 minute read)
+Zoom Annotation Flaws Could Let a Meeting Participant Hijack Another Attendee's Client (5 minute read)
 
-Cisco warned that CVE-2026-20349, a high-severity flaw in Secure Firewall ASA and FTD software, is being actively exploited to remotely crash devices via crafted HTTP requests to the SSL VPN service. The unauthenticated denial-of-service bug carries an 8.6 severity score and has no workarounds, so IT teams running affected ASA 9.16 through 9.24 or FTD 7.0 through 10.0 releases must apply Cisco's hot fixes to remediate.
+(blurb not generated)
 
-Malicious SIMs can shut down phones, steal files, and drag 5G back to 2G (1 minute read)
+Researchers Turn USB Auto-Install Into a Full SYSTEM Takeover on Windows 11 (5 minute read)
 
-Researchers demonstrated that malicious SIM cards can silently shut down handsets, exfiltrate on-device files, and force 5G connections to downgrade to insecure 2G, exploiting the SIM Application Toolkit and over-the-air provisioning channels that carriers control. Enterprises running managed device fleets and cellular IoT deployments now have to treat the SIM itself as an untrusted component, adding supply-chain vetting and baseband monitoring to an attack surface most MDM stacks never covered.
+(blurb not generated)
 
-Mozilla revokes Firefox signing key after unencrypted copy lands in GitHub (1 minute read)
+Metabase SQLi exploit grants attackers total access (5 minute read)
 
-Mozilla revoked a Firefox add-on signing key after discovering an unencrypted copy of it had been committed to a public GitHub repository. The exposure forced the organization to reissue signatures across its extension ecosystem, and enterprises that whitelist Firefox add-ons by signature should expect validation churn until the new key propagates through managed deployments.
+(blurb not generated)
 
-Cisco Patches Firewall Zero-Day Exploited for DoS Attacks (1 minute read)
+SAP Commerce Cloud Flaw Could Let Unauthenticated Attackers Execute Arbitrary Code (5 minute read)
 
-Cisco patched CVE-2026-20349, a zero-day in Secure Firewall ASA and FTD software that lets a remote, unauthenticated attacker crash appliances into a denial-of-service state via crafted HTTP requests to the Remote Access SSL VPN service. Cisco confirmed active exploitation in August, and CISA added the flaw to its Known Exploited Vulnerabilities catalog with a federal patch deadline of August 14.
+(blurb not generated)
+
+Cisco warns of ASA and FTD VPN flaw exploited to crash devices (5 minute read)
+
+(blurb not generated)
 
 🧠
 Analysis & Opinions
 
-Big Cloud is poised to corner the market for enterprise hardware (1 minute read)
+Big Cloud is poised to corner the market for enterprise hardware (5 minute read)
 
-The author argues that hyperscalers' massive AI-infrastructure spending is letting them corner the enterprise hardware supply chain, buying up GPUs, custom silicon, and server capacity at a scale that squeezes out traditional on-prem buyers. The consequence for IT leaders is thinner availability and worse pricing on the hardware they still run in their own data centers, accelerating the shift from owning infrastructure to renting it from AWS, Azure, and Google.
+(blurb not generated)
 
 Microsoft’s PostgreSQL alternative, HorizonDB: Worth the wait? (5 minute read)
 
@@ -101,36 +101,28 @@ Prompt injection isn't the bug, AI agent frameworks are (5 minute read)
 
 (blurb not generated)
 
-Federal vendor with $50M in contracts leaves portal broken for a month (1 minute read)
+Why observability doesn’t explain what happened (5 minute read)
 
-A ProPublica reporter documents how OPM's FOIA operation collapsed after DOGE cut more than 600 federal information specialists in 2025, leaving requests bouncing between three abandoned inboxes and two broken web portals. OPM's backlog hit over 1,600 requests at fiscal year-end, seven times the prior year, while average processing for a simple request doubled to 84 days. The piece is a case study in what happens when headcount cuts outpace the systems meant to absorb the work.
-
-Why observability doesn’t explain what happened (3 minute read)
-
-Observability tools answer what is happening inside a system, but not why. The author argues that root cause usually lives outside the telemetry entirely, in a deploy from two days ago, a spiking support queue, or an approved change record. That gap between seeing and explaining now costs teams two to three hours of investigation per major incident, even when alerting and dashboards are well-tuned.
+(blurb not generated)
 
 🤝
 Launches & Partnerships
 
-Ryanair signs a five-year AI deal with Google Cloud, and a second cloud to fall back on (1 minute read)
+Introducing the Developer Device Platform for agentic mobile app development (5 minute read)
 
-Ryanair signed a five-year data and AI partnership with Google Cloud, rolling out Google Workspace and Gemini Enterprise to 35,000 employees and adopting DeepMind's AlphaEvolve and WeatherNext models for fleet operations and maintenance scheduling. The airline framed the arrangement as a dual-cloud strategy, keeping a second provider on standby so critical services survive an outage as it scales toward 300 million passengers a year by 2034.
+(blurb not generated)
 
-Introducing the Developer Device Platform for agentic mobile app development (3 minute read)
+New usability features in Connected Sheets (5 minute read)
 
-Google Cloud launched Developer Device Platform (DDP) in public preview, a fully managed service giving developers on-demand access to real physical devices and high-concurrency virtual emulators for mobile app testing. Positioned as an evolution of Firebase Test Lab built for agentic development, DDP adds a Device Streaming API for interactive remote debugging and a Device Run API for parallel CI/CD tests across hundreds of devices.
+(blurb not generated)
 
-New usability features in Connected Sheets (1 minute read)
+Improved file importing in Google Sheets with tables and linked pivot tables (5 minute read)
 
-Google added two usability features to Connected Sheets: list parameters that let queries reference a grid range of cell values as multiple filter inputs, and column aliasing that swaps unwieldy BigQuery column names for presentation-ready labels without changing the underlying reference. Both let business users self-serve BigQuery analysis through drop-downs and readable labels instead of editing queries, and are rolling out to all Workspace customers and personal accounts.
+(blurb not generated)
 
-Improved file importing in Google Sheets with tables and linked pivot tables (1 minute read)
+Quantinuum and Oracle partner on quantum compute adoption (5 minute read)
 
-Google Sheets now imports Excel tables as native Sheets tables and fully supports Excel pivot tables backed by table ranges, preserving formatting and linked data on conversion. The change removes the manual reconstruction Workspace users previously faced when migrating Excel files, and it rolls out to all Workspace customers and personal accounts with no admin control, starting August 11 with pivot table support reaching full visibility within 15 days.
-
-Quantinuum and Oracle partner on quantum compute adoption (1 minute read)
-
-Quantinuum and Oracle signed a multi-year partnership that puts Quantinuum's Helios quantum computer inside Oracle Cloud Infrastructure, letting OCI customers access it directly alongside the platform's HPC and GPU compute. The deal gives Oracle a hybrid quantum-AI story to pitch against AWS Braket and Azure Quantum, and hands Quantinuum enterprise distribution for use cases in materials, drug discovery, logistics, and financial modeling.
+(blurb not generated)
 
 Red Hat launches new open source project to drive AI governance (5 minute read)
 
@@ -142,11 +134,15 @@ Amazon DynamoDB now supports real-time vector search at any scale (5 minute read
 
 Nutanix adding AI agent access bridge to its Cloud Platform (5 minute read)
 
-Nutanix added an open-source MCP server to its Cloud Platform, giving AI agents and assistants like GitHub Copilot, Claude Code, and Cursor a governed bridge to run infrastructure operations across hybrid multicloud environments. The server builds on the Prism V4 API Gateway, so connected tools inherit NCP's existing RBAC and access policies rather than requiring a separate control layer, with human-in-the-loop oversight for staged automation.
+(blurb not generated)
 
-Daybreak models are now available on AWS (1 minute read)
+Daybreak models are now available on AWS (5 minute read)
 
-OpenAI made its Daybreak cybersecurity models available through Amazon Bedrock, adding both Daybreak Blue general-purpose models (including GPT-5.6 Sol) and the purpose-trained Daybreak Red models for vulnerability research and exploit validation. Enterprises enrolled in Daybreak Access can now run these models inside their existing AWS security, governance, and procurement workflows via the Bedrock console or the bedrock-mantle Responses API endpoint.
+(blurb not generated)
+
+JFrog Artifactory Now Integrates Natively with Artifact Registry in Google Cloud (1 minute read)
+
+JFrog Artifactory now integrates natively with Google Cloud's Artifact Registry through Connector, a new passthrough repository mode that forwards every image pull to Artifactory in real time without storing a copy in Google Cloud. Enterprises running Cloud Run and GKE can now source container images directly from JFrog as their single source of truth, preserving immediate policy enforcement at pull time without a second registry operating outside that governance model.
 
 SnapLogic introduces agentic assistant for data integration (5 minute read)
 
@@ -159,6 +155,6 @@ AWS targets AI cost concerns with new Marketplace Insights tool (5 minute read)
 
 (blurb not generated)
 
-Ransomware gangs skip the CEO, head straight for the 40-something IT manager (1 minute read)
+Ransomware gangs skip the CEO, head straight for the 40-something IT manager (5 minute read)
 
-Ransomware crews increasingly target mid-level IT managers, not executives, since those admins hold the credentials and access that unlock networks.
+(blurb not generated)

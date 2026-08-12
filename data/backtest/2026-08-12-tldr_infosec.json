@@ -1,9 +1,37 @@
 {
   "date": "2026-08-12",
   "newsletter": "tldr_infosec",
-  "fetched_at": "2026-08-12T12:45:03.811811+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-08-12T20:26:28.382220+00:00",
+  "tldr_titles": [
+    "Locking your ssh-agent exposed local-only keys until OpenSSH 10.5",
+    "Metabase SQL Zero-Day Attacks Could Have Wide Blast Radius",
+    "Researchers Disclose AI-Assisted SharePoint Exploit Chain Reaching Unauthenticated RCE",
+    "Project CAV3RN continues: Google Apps Script as C2 relay and DNS-based C2 channel selection",
+    "A Security Analysis of Amazon S3 Vectors and Its Use in LLM Retrieval Pipelines",
+    "The Permanent Threat: Analyzing Aeternum's Blockchain-Based C2 Operations and Compromises",
+    "We're open-sourcing our privacy proxy CLI",
+    "Extension Banned for Stealing AI Chats Returns to Chrome Store, Resumes Malicious Activities",
+    "New Pass-ta-key attack reveals all the things we didn't know about passkeys",
+    "The multi-layered defenses that harden Chrome against abusive notifications",
+    "Portuguese Hacker to Face Trial for Malicious ChatGPT Clone",
+    "Zoom Patches \"Zoomsday\" Zero-Click Flaw Enabling Remote Code Execution",
+    "North Korean remote IT staffer worked for US government agency, says FBI"
+  ],
+  "tldr_matched": [
+    false,
+    true,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -16,21 +44,29 @@
     {
       "rank": 2,
       "score": 83.0,
-      "title": "Zoom Annotation Flaws Could Let a Meeting Participant Hijack Another Attendee's Client",
-      "url": "https://thehackernews.com/2026/08/zoom-annotation-flaws-could-let-meeting.html",
+      "title": "Lazarus Exploits Windows Zero-Day to Gain SYSTEM Access and Deploy Backdoor",
+      "url": "https://thehackernews.com/2026/08/lazarus-exploits-windows-zero-day-to.html",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
       "rank": 3,
       "score": 83.0,
-      "title": "CISA: Microsoft SharePoint flaw now exploited in ransomware attacks",
-      "url": "https://www.bleepingcomputer.com/news/security/cisa-microsoft-sharepoint-flaw-now-exploited-in-ransomware-attacks/",
+      "title": "Zoom Annotation Flaws Could Let a Meeting Participant Hijack Another Attendee's Client",
+      "url": "https://thehackernews.com/2026/08/zoom-annotation-flaws-could-let-meeting.html",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
       "rank": 4,
+      "score": 83.0,
+      "title": "Researchers observe first \u2018near-autonomous\u2019 AI attack on government target in Taiwan",
+      "url": "https://cyberscoop.com/near-autonomous-ai-attack-government-target-taiwan/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 5,
       "score": 83.0,
       "title": "Over 4,400 Rockwell PLCs Exposed Online, 22 Found in Water Attack Cities",
       "url": "https://thehackernews.com/2026/08/over-4400-rockwell-plcs-exposed-online.html",
@@ -38,15 +74,23 @@
       "similarity": null
     },
     {
-      "rank": 5,
+      "rank": 6,
       "score": 82.0,
       "title": "Researchers Disclose AI-Assisted SharePoint Exploit Chain Reaching Unauthenticated RCE",
       "url": "https://thehackernews.com/2026/08/researchers-disclose-ai-assisted.html",
+      "matched_tldr_idx": 2,
+      "similarity": 1.0
+    },
+    {
+      "rank": 7,
+      "score": 81.0,
+      "title": "Cisco flags major firewall flaw",
+      "url": "https://www.sdxcentral.com/news/cisco-flags-major-firewall-flaw/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 6,
+      "rank": 8,
       "score": 80.0,
       "title": "Cisco pushes urgent patches for actively exploited zero-day flaw crashing firewalls",
       "url": "https://www.neowin.net/news/cisco-pushes-urgent-patches-for-actively-exploited-zero-day-flaw-crashing-firewalls/?utm_source=rss",
@@ -54,7 +98,7 @@
       "similarity": null
     },
     {
-      "rank": 7,
+      "rank": 9,
       "score": 80.0,
       "title": "ChainDrop supply chain compromise: Anatomy of a self-propagating worm",
       "url": "https://www.microsoft.com/en-us/security/blog/2026/08/04/chaindrop-supply-chain-compromise-anatomy-self-propagating-worm/",
@@ -62,7 +106,7 @@
       "similarity": null
     },
     {
-      "rank": 8,
+      "rank": 10,
       "score": 79.0,
       "title": "Researchers Turn USB Auto-Install Into a Full SYSTEM Takeover on Windows 11",
       "url": "https://thehackernews.com/2026/08/researchers-turn-usb-auto-install-into.html",
@@ -70,7 +114,7 @@
       "similarity": null
     },
     {
-      "rank": 9,
+      "rank": 11,
       "score": 79.0,
       "title": "Metabase SQLi exploit grants attackers total access",
       "url": "https://www.infoworld.com/article/4208355/metabase-sqli-exploit-grants-attackers-total-access-2.html",
@@ -78,7 +122,7 @@
       "similarity": null
     },
     {
-      "rank": 10,
+      "rank": 12,
       "score": 79.0,
       "title": "Full-Key Recovery and Forgery from One MQOM v2.1 Signature",
       "url": "http://arxiv.org/abs/2608.09699v1",
@@ -86,7 +130,7 @@
       "similarity": null
     },
     {
-      "rank": 11,
+      "rank": 13,
       "score": 79.0,
       "title": "OpenAI Models Joined Forces Months Ahead of Hugging Face Hack",
       "url": "https://www.bloomberg.com/news/articles/2026-08-06/openai-models-joined-forces-months-ahead-of-hugging-face-hack",
@@ -94,7 +138,15 @@
       "similarity": null
     },
     {
-      "rank": 12,
+      "rank": 14,
+      "score": 78.0,
+      "title": "OpenAI, Anthropic, Google API Flaw Let Weaker AI Models Decode Stronger Models' Reasoning",
+      "url": "https://thehackernews.com/2026/08/openai-anthropic-google-api-flaw-let.html",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 15,
       "score": 78.0,
       "title": "Malicious LiteLLM Releases Tied to Trivy Hack May Have Exposed 2,100+ Organizations",
       "url": "https://thehackernews.com/2026/08/malicious-litellm-releases-tied-to.html",
@@ -102,7 +154,7 @@
       "similarity": null
     },
     {
-      "rank": 13,
+      "rank": 16,
       "score": 78.0,
       "title": "Cisco ASA and FTD Flaw Exploited in the Wild Can Trigger Remote DoS",
       "url": "https://thehackernews.com/2026/08/cisco-asa-and-ftd-flaw-exploited-in.html",
@@ -110,7 +162,7 @@
       "similarity": null
     },
     {
-      "rank": 14,
+      "rank": 17,
       "score": 78.0,
       "title": "Microsoft Patches 398 Flaws Including a Windows Driver Zero-Day Under Active Attack",
       "url": "https://thehackernews.com/2026/08/microsoft-patches-398-flaws-including.html",
@@ -118,7 +170,7 @@
       "similarity": null
     },
     {
-      "rank": 15,
+      "rank": 18,
       "score": 78.0,
       "title": "New Passkey Attacks Can Recover Synced Private Keys or Bypass Phishing-Resistant MFA",
       "url": "https://thehackernews.com/2026/08/new-passkey-attacks-can-recover-synced.html",
@@ -126,50 +178,26 @@
       "similarity": null
     },
     {
-      "rank": 16,
+      "rank": 19,
       "score": 78.0,
       "title": "Metabase SQL Zero-Day Attacks Could Have Wide Blast Radius",
       "url": "https://www.darkreading.com/vulnerabilities-threats/metabase-sql-zero-day-attacks-wide-blast-radius",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 17,
-      "score": 78.0,
-      "title": "New Microsoft Defender 'ShieldBreak' zero-day grants SYSTEM privileges",
-      "url": "https://www.bleepingcomputer.com/news/security/new-microsoft-defender-shieldbreak-zero-day-grants-system-privileges/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 18,
-      "score": 78.0,
-      "title": "Lazarus hackers pair fake job offers with Windows zero-day exploit",
-      "url": "https://www.helpnetsecurity.com/2026/08/12/north-korea-lazarus-fake-job-offers/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 19,
-      "score": 78.0,
-      "title": "Researchers Built a Fake Crypto Startup and Hired Three Suspected North Korean IT Workers",
-      "url": "https://thehackernews.com/2026/08/researchers-built-fake-crypto-startup.html",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 1,
+      "similarity": 1.0
     },
     {
       "rank": 20,
-      "score": 76.0,
-      "title": "Attackers Exploit VMware vCenter Vulnerability to Gain Persistent Remote Access",
-      "url": "https://thehackernews.com/2026/08/attackers-exploit-vmware-vcenter.html",
+      "score": 78.0,
+      "title": "Hackers leverage new Microsoft SharePoint exploit in attacks",
+      "url": "https://www.bleepingcomputer.com/news/microsoft/hackers-leverage-new-microsoft-sharepoint-exploit-in-attacks/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
       "rank": 21,
-      "score": 76.0,
-      "title": "SAP Commerce Cloud Flaw Could Let Unauthenticated Attackers Execute Arbitrary Code",
-      "url": "https://thehackernews.com/2026/08/sap-commerce-cloud-flaw-could-let.html",
+      "score": 78.0,
+      "title": "Researchers Built a Fake Crypto Startup and Hired Three Suspected North Korean IT Workers",
+      "url": "https://thehackernews.com/2026/08/researchers-built-fake-crypto-startup.html",
       "matched_tldr_idx": null,
       "similarity": null
     },
@@ -264,21 +292,13 @@
     {
       "rank": 33,
       "score": 66.0,
-      "title": "PentestGPT: Open-source automated penetration testing agentic framework",
-      "url": "https://www.helpnetsecurity.com/2026/08/12/pentestgpt-open-source/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 34,
-      "score": 66.0,
       "title": "OpenAI's Next AI Model Astra Shows Cyber Performance Strong Enough to Trigger Pause",
       "url": "https://thehackernews.com/2026/08/openais-next-ai-model-astra-shows-cyber.html",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 35,
+      "rank": 34,
       "score": 65.0,
       "title": "NVIDIA Forms 37-Member Open Secure AI Alliance and Open-Sources NOOA Framework",
       "url": "https://thehackernews.com/2026/07/nvidia-forms-37-member-open-secure-ai.html",
@@ -286,7 +306,7 @@
       "similarity": null
     },
     {
-      "rank": 36,
+      "rank": 35,
       "score": 63.0,
       "title": "PQC in Plaintext: Google Cloud\u2019s post-quantum cryptography roadmap",
       "url": "https://cloud.google.com/blog/products/identity-security/pqc-in-plaintext-google-clouds-post-quantum-cryptography-roadmap/",
@@ -294,10 +314,18 @@
       "similarity": null
     },
     {
-      "rank": 37,
+      "rank": 36,
       "score": 62.0,
       "title": "'GhostJacking' Exposes Identity Governance Gaps in AI Agents",
       "url": "https://www.darkreading.com/cyber-risk/ghostjacking-identity-governance-gaps-ai-agents",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 37,
+      "score": 62.0,
+      "title": "How We\u2019re Building Scam Alert on WhatsApp With End-to-End Encryption and Verifiability Guarantees",
+      "url": "https://engineering.fb.com/2026/08/12/security/how-were-building-scam-alert-whatsapp/",
       "matched_tldr_idx": null,
       "similarity": null
     },
@@ -343,6 +371,14 @@
     },
     {
       "rank": 43,
+      "score": 62.0,
+      "title": "Signal\u2019s new security feature checks if your encrypted chats were tampered with",
+      "url": "https://www.helpnetsecurity.com/2026/08/12/signal-automatic-key-verification-feature/",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 44,
       "score": 61.0,
       "title": "The Patch Gap: Why Defenders Need to Think in Chains, Not Checklists",
       "url": "https://www.darkreading.com/cybersecurity-operations/patch-gap-defenders-chains-not-checklists",
@@ -350,7 +386,7 @@
       "similarity": null
     },
     {
-      "rank": 44,
+      "rank": 45,
       "score": 61.0,
       "title": "DEF CON hackers add new muscle to water utility protection",
       "url": "https://www.theregister.com/security/2026/08/10/def-con-hackers-add-new-muscle-to-water-utility-protection/5285715",
@@ -358,7 +394,7 @@
       "similarity": null
     },
     {
-      "rank": 45,
+      "rank": 46,
       "score": 60.0,
       "title": "Innocent until combined: Blocking the lethal trifecta with Omnigent Contextual Policies",
       "url": "https://www.databricks.com/blog/innocent-until-combined-blocking-lethal-trifecta-omnigent-contextual-policies",
@@ -366,23 +402,7 @@
       "similarity": null
     },
     {
-      "rank": 46,
-      "score": 60.0,
-      "title": "Agentic security: Enterprises enforce agent permissions two-thirds of the time \u2014 and isolate high-risk agents less than one in five",
-      "url": "https://venturebeat.com/resources/agentic-security-enterprises-enforce-agent-permissions-two-thirds-of-the-time-and-isolate-high-risk-agents-less-than-one-in-five",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
       "rank": 47,
-      "score": 60.0,
-      "title": "OpenAI launches GPT-5.6-Cyber and expands Daybreak with Red and Blue access tiers",
-      "url": "https://www.neowin.net/news/openai-launches-gpt-56-cyber-and-expands-daybreak-with-red-and-blue-access-tiers/?utm_source=rss",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 48,
       "score": 60.0,
       "title": "NIST wants to overhaul its vulnerability database for the AI age",
       "url": "https://cyberscoop.com/nist-national-vulnerability-database-ai-overhaul/",
@@ -390,7 +410,7 @@
       "similarity": null
     },
     {
-      "rank": 49,
+      "rank": 48,
       "score": 60.0,
       "title": "What Happened to HackerOne?",
       "url": "https://blog.teknogeek.io/posts/what-happened-to-hackerone/",
@@ -398,7 +418,7 @@
       "similarity": null
     },
     {
-      "rank": 50,
+      "rank": 49,
       "score": 58.0,
       "title": "OpenAI Gives Vetted Defenders a Cyber Model That Answers 95% of Exploit Requests",
       "url": "https://www.implicator.ai/openai-gpt-5-6-cyber-vetted-defenders-daybreak/",
@@ -406,7 +426,7 @@
       "similarity": null
     },
     {
-      "rank": 51,
+      "rank": 50,
       "score": 58.0,
       "title": "Signal adds new security feature to thwart man-in-the-middle attacks",
       "url": "https://www.bleepingcomputer.com/news/security/signal-adds-new-security-feature-to-thwart-man-in-the-middle-attacks/",
@@ -414,7 +434,7 @@
       "similarity": null
     },
     {
-      "rank": 52,
+      "rank": 51,
       "score": 58.0,
       "title": "Blumira launches Hearth, an AI command center that spans rival security tools",
       "url": "https://siliconangle.com/2026/08/11/blumira-launches-hearth-ai-command-center-spans-rival-security-tools/",
@@ -422,7 +442,7 @@
       "similarity": null
     },
     {
-      "rank": 53,
+      "rank": 52,
       "score": 58.0,
       "title": "OpenAI says Astra may have reached Critical cyber threshold",
       "url": "https://www.testingcatalog.com/openai-says-astra-may-have-reached-critical-cyber-threshold/",
@@ -430,23 +450,7 @@
       "similarity": null
     },
     {
-      "rank": 54,
-      "score": 58.0,
-      "title": "OpenAI tightens controls on its new model over cybersecurity risks, as AI security debate intensifies",
-      "url": "https://www.cnbc.com/2026/08/10/openai-astra-cybersecurity-risks.html",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 55,
-      "score": 58.0,
-      "title": "AI agents are already breaking the rules in cyber tests. OpenAI\u2019s answer is a more capable one",
-      "url": "https://www.digitaltrends.com/computing/ai-agents-are-already-breaking-the-rules-in-cyber-tests-openais-answer-is-a-more-capable-one/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 56,
+      "rank": 53,
       "score": 58.0,
       "title": "Microsoft's Patch Tuesday Deluge Continues With August Updates",
       "url": "https://www.darkreading.com/application-security/microsofts-patch-tuesday-deluge-continues",
@@ -454,7 +458,7 @@
       "similarity": null
     },
     {
-      "rank": 57,
+      "rank": 54,
       "score": 58.0,
       "title": "Deepfake hiccup unmasks suspected digital certificate fraudster",
       "url": "https://www.theregister.com/security/2026/08/11/deepfake-hiccup-unmasks-suspected-digital-certificate-fraudster/5285934",
@@ -462,7 +466,7 @@
       "similarity": null
     },
     {
-      "rank": 58,
+      "rank": 55,
       "score": 58.0,
       "title": "DEF CON crowd suspected in fake-hotspot attack on Delta flight",
       "url": "https://arstechnica.com/information-technology/2026/08/def-con-crowd-suspected-in-fake-hotspot-attack-on-delta-flight/",
@@ -470,23 +474,15 @@
       "similarity": null
     },
     {
-      "rank": 59,
+      "rank": 56,
       "score": 58.0,
-      "title": "Corma launches with $60M in funding for defensive cybersecurity AI",
-      "url": "https://siliconangle.com/2026/08/10/corma-launches-60m-funding-defensive-cybersecurity-ai/",
+      "title": "Mindgard Raises $30 Million to Protect AI Systems",
+      "url": "https://www.securityweek.com/mindgard-raises-30-million-to-protect-ai-systems/",
       "matched_tldr_idx": null,
       "similarity": null
     },
     {
-      "rank": 60,
-      "score": 58.0,
-      "title": "Rapid7 beats estimates, raises profit outlook and cuts 12% of staff",
-      "url": "https://siliconangle.com/2026/08/10/rapid7-beats-estimates-raises-profit-outlook-cuts-12-staff/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 61,
+      "rank": 57,
       "score": 58.0,
       "title": "OpenAI says Daybreak will expand to offer specialized cyber services",
       "url": "https://cyberscoop.com/openai-daybreak-expansion-specialized-cyber-services/",
@@ -494,7 +490,7 @@
       "similarity": null
     },
     {
-      "rank": 62,
+      "rank": 58,
       "score": 58.0,
       "title": "NATO and an AI startup can now name and track software vulnerabilities",
       "url": "https://cyberscoop.com/nato-aisle-enisa-cve-vulnerability-tracking/",
@@ -502,7 +498,7 @@
       "similarity": null
     },
     {
-      "rank": 63,
+      "rank": 59,
       "score": 58.0,
       "title": "Tor still runs on altruism, but cheap hosting is pulling it off course",
       "url": "https://www.networkworld.com/article/4207439/tor-still-runs-on-altruism-but-cheap-hosting-is-pulling-it-off-course.html",
@@ -510,7 +506,7 @@
       "similarity": null
     },
     {
-      "rank": 64,
+      "rank": 60,
       "score": 58.0,
       "title": "Bugtraq is back",
       "url": "https://lists.securityfocus.com/hyperkitty/list/bugtraq@securityfocus.com/thread/CHKLXLA7SJEWLDFHWXB3QU57ADOXGL2E/",
@@ -518,15 +514,7 @@
       "similarity": null
     },
     {
-      "rank": 65,
-      "score": 58.0,
-      "title": "Delta investigating after someone set up fake Wi-Fi network mid-flight",
-      "url": "https://techcrunch.com/2026/08/11/delta-investigating-after-someone-set-up-fake-wi-fi-network-mid-flight/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 66,
+      "rank": 61,
       "score": 58.0,
       "title": "Swiss authorities urge calm amid fears over SharePoint credential leak",
       "url": "https://www.itpro.com/security/data-breaches/swiss-authorities-urge-calm-amid-fears-over-sharepoint-credential-leak",
@@ -534,7 +522,7 @@
       "similarity": null
     },
     {
-      "rank": 67,
+      "rank": 62,
       "score": 57.0,
       "title": "BTQ validates compute-in-memory accelerator for quantum-proof cryptography",
       "url": "https://www.sdxcentral.com/news/btq-validates-compute-in-memory-accelerator-for-quantum-proof-cryptography/",
@@ -542,7 +530,7 @@
       "similarity": null
     },
     {
-      "rank": 68,
+      "rank": 63,
       "score": 57.0,
       "title": "AI for Military Support",
       "url": "https://www.schneier.com/blog/archives/2026/08/ai-for-military-support.html",
@@ -550,7 +538,15 @@
       "similarity": null
     },
     {
-      "rank": 69,
+      "rank": 64,
+      "score": 57.0,
+      "title": "Sources: the UK government is planning to regulate the use of AI in gene synthesis to prevent terrorists and other bad actors from using AI for bioweapons (Ellen Milligan/Bloomberg)",
+      "url": "https://www.techmeme.com/260812/p42#a260812p42",
+      "matched_tldr_idx": null,
+      "similarity": null
+    },
+    {
+      "rank": 65,
       "score": 57.0,
       "title": "Putting frontier cyber models in more trusted hands",
       "url": "https://openai.com/index/putting-frontier-cyber-models-in-more-trusted-hands",
@@ -558,7 +554,7 @@
       "similarity": null
     },
     {
-      "rank": 70,
+      "rank": 66,
       "score": 56.0,
       "title": "Daybreak models are now available on AWS",
       "url": "https://openai.com/index/daybreak-models-are-now-available-on-aws",
@@ -566,7 +562,7 @@
       "similarity": null
     },
     {
-      "rank": 71,
+      "rank": 67,
       "score": 56.0,
       "title": "Brit rail cops bring live facial recognition to the London Underground",
       "url": "https://www.theregister.com/security/2026/08/12/brit-rail-cops-bring-live-facial-recognition-to-the-london-underground/5286697",
@@ -574,7 +570,7 @@
       "similarity": null
     },
     {
-      "rank": 72,
+      "rank": 68,
       "score": 56.0,
       "title": "Defcon's new badge is a security key you can see inside",
       "url": "https://arstechnica.com/security/2026/08/defcons-new-badge-is-a-security-key-you-can-see-inside/",
@@ -582,17 +578,65 @@
       "similarity": null
     },
     {
-      "rank": 73,
+      "rank": 69,
       "score": 55.0,
       "title": "OpenAI's cyber model answers 95% of exploit requests; Zuckerberg presses Washington",
       "url": "https://www.implicator.ai/openai-cyber-model-95-percent-meta-opens-muse-glimmer/",
       "matched_tldr_idx": null,
       "similarity": null
+    },
+    {
+      "rank": 70,
+      "score": 55.0,
+      "title": "London Underground begins scanning passengers' faces",
+      "url": "https://www.btp.police.uk/news/btp/news/england/btp-expands-live-facial-recognition-lfr-trial-into-london-underground-stations/",
+      "matched_tldr_idx": null,
+      "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.07692307692307693,
+    "25": 0.15384615384615385,
+    "50": 0.15384615384615385,
+    "100": 0.15384615384615385,
+    "70": 0.15384615384615385
+  },
+  "hits_at": {
+    "10": 1,
+    "25": 2,
+    "50": 2,
+    "100": 2,
+    "70": 2
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://www.helpnetsecurity.com/2026/08/11/openssh-10-5-ssh-agent-flaw/",
+    "https://www.darkreading.com/vulnerabilities-threats/metabase-sql-zero-day-attacks-wide-blast-radius",
+    "https://thehackernews.com/2026/08/researchers-disclose-ai-assisted.html",
+    "https://securelist.com/project-cav3rn-continues/120991/",
+    "https://www.offensai.com/blog/amazon-s3-vectors-security-llm-rag-poisoning",
+    "https://unit42.paloaltonetworks.com/aeternum-blockchain-c2-analysis/",
+    "https://blog.cloudflare.com/open-sourcing-our-privacy-proxy-cli/",
+    "https://www.securityweek.com/extension-banned-for-stealing-ai-chats-returns-to-chrome-store-resumes-malicious-activities/",
+    "https://arstechnica.com/security/2026/08/heres-why-the-new-pass-ta-key-attack-is-mostly-a-nothingburger/",
+    "https://blog.google/security/the-multi-layered-defenses-that-harden-chrome-against-abusive-notifications/",
+    "https://jorgebranco.substack.com/p/portuguese-hacker-to-face-trial-for",
+    "https://securityaffairs.com/197042/hacking/zoom-patches-zoomsday-zero-click-flaw-enabling-remote-code-execution.html",
+    "https://techcrunch.com/2026/08/11/north-korean-remote-it-staffer-worked-for-us-government-agency-says-fbi/"
+  ],
+  "tldr_domains": [
+    "helpnetsecurity.com",
+    "darkreading.com",
+    "thehackernews.com",
+    "securelist.com",
+    "offensai.com",
+    "unit42.paloaltonetworks.com",
+    "blog.cloudflare.com",
+    "securityweek.com",
+    "arstechnica.com",
+    "blog.google",
+    "jorgebranco.substack.com",
+    "securityaffairs.com",
+    "techcrunch.com"
+  ]
 }
