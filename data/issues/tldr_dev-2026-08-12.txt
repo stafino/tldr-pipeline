@@ -2,3 +2,254 @@ Sign Up | Advertise | View Online
 TLDR
 
 TLDR Dev 2026-08-12
+
+🧑‍💻
+Articles & Tutorials
+
+What I learned by putting GitHub Copilot behind a MitM proxy (1 minute read)
+
+Rafael routed GitHub Copilot's traffic through a MitM proxy to observe what VS Code actually sends at runtime, rather than reading through millions of lines of source. The post inspects Copilot's network calls, agent harness, and memory handling, arguing that the context assembled and shipped to the model, not the model itself, is becoming the real product.
+
+Prototype on a laptop, scale to 16 billion rows: one Polars query (5 minute read)
+
+(blurb not generated)
+
+Rust SIMD on the GPU (1 minute read)
+
+VectorWare got Rust's portable SIMD (core::simd) running on the GPU, mapping a `Simd<T, N>` vector directly onto a warp's 32 lanes since NVIDIA's SIMT model is SIMD with per-lane addressing. Because portable SIMD lives in core rather than std, developers can write architecture-agnostic vector arithmetic, reductions, and lane shuffles once and have the compiler lower them to GPU hardware, adding parallelism below the thread level the company's earlier warp-mapped threads left unused.
+
+Turn one giant AI-generated pull request to a reviewable stack (5 minute read)
+
+(blurb not generated)
+
+How GitHub gave every repository a durable owner (5 minute read)
+
+(blurb not generated)
+
+Automating cross-repo documentation with GitHub Agentic Workflows (5 minute read)
+
+(blurb not generated)
+
+Just One Function, 10x Faster? Reading a Rust Performance PR (5 minute read)
+
+(blurb not generated)
+
+How and Why Netflix Built a Real-Time Distributed Graph: Part 3 — Querying the graph with gRPC execution API (5 minute read)
+
+The third installment of Netflix's distributed graph series details the gRPC-based execution API that serves queries against the graph, covering how the engine plans traversals, batches subqueries, and streams results back to callers. The design favors a typed gRPC contract over GraphQL at the storage layer, trading schema flexibility for tighter control over execution cost and predictable latency under Netflix's real-time read load.
+
+Apple Silicon and macOS VMs: Faster LLM Inference with llama.cpp (1 minute read)
+
+Cua built a process-scoped compatibility layer that rewrites selected Metal capability answers for one guest process, letting llama.cpp pick newer GPU kernels inside a macOS VM running on Apple's Virtualization.framework. On an M1 Ultra the unlocked VM ran TinyLlama 1.1B prompt processing 11.08x faster and token generation 16.36x faster than the stock guest, reaching 98% to 99% of bare-metal speed, with build scripts and raw benchmark logs included for reproduction.
+
+How Cloudflare enforces engineering standards using AI (5 minute read)
+
+(blurb not generated)
+
+SWE-Bench ProMax: Benchmarking Agents on Large-Scale Multilingual Code Refactoring (1 minute read)
+
+SWE-Bench ProMax is an expert-curated, multilingual refactoring benchmark of 170 real-commit instances across seven languages, averaging 11.4 modified files and 261.6 changed lines per task. The authors rewrote every issue spec from scratch and manually pruned overly narrow and overly broad tests to fix problems flagged in prior benchmarks, and the best frontier model resolves only 41.2% of tasks.
+
+Smaller, faster, safer: running Kimi and GLM at scale (5 minute read)
+
+(blurb not generated)
+
+Security Tests as Executable Specifications for LLM Code Generation: Benefits, Trade-offs, and Coverage Limits (1 minute read)
+
+This paper tests security tests as executable specifications for LLM code generation, using a scaffold called SecTDD across 2,705 trajectories, 16 CWE categories, and two model families. Showing all visible tests upfront lifts hidden functional-and-security joint success by 19.3 points on average but helps only seven of nine benchmark-model conditions, and candidates that pass every visible test still fail hidden behavior families.
+
+Why you might want to build your WebApp in Canvas instead of HTML (5 minute read)
+
+The author explains why performance-critical web apps like Google Docs, Miro, and Canva render their core surfaces on Canvas rather than the DOM, trading the browser's built-in layout, event handling, and reflow for a bare drawing API. Canvas skips HTML parsing, style computation, and reflow to gain speed and full rendering control for infinite workspaces and zoomable grids, at the cost of reimplementing text, accessibility, and hit-testing yourself.
+
+Vertical slices, their ownership and external dependencies (5 minute read)
+
+The author argues that vertical slices, modules, and bounded contexts get conflated, and that treating every application area as a fully autonomous bounded context sets the separation bar so high that any dependency between slices looks like a violation. The fix is defining what a slice does when it needs something external, since "minimise coupling" means non-zero, not the myth that slices can never share code or read what another slice wrote.
+
+Stateless MCP has recaptured my interest (and inspired mcp-explorer and datasette-mcp) (5 minute read)
+
+(blurb not generated)
+
+SpecPath: Testing Coding Agents Across Contract-Equivalent Specification Histories (1 minute read)
+
+SpecPath is a diagnostic that tests whether coding agents produce the same behavior when a requirement is reached through different but contract-equivalent revision histories, holding the repository, final spec, verifier, agent, and budget fixed while varying only the path. Across five tasks and 14 agent configurations, aggregate accuracy barely moved, yet 35 of 100 blocks that passed on the direct spec failed on at least one equivalent history.
+
+One Recipe, Many Harnesses: What Self-Evolution Encodes Across Languages and Models (1 minute read)
+
+This paper studies self-evolving harnesses for coding agents, holding one evolution recipe fixed across eight programming languages and three base models to analyze what the evolved artifacts actually encode. The authors find that harnesses share an abstract playbook across languages but implement it with mostly disjoint ecosystem tooling, and that the shared core distills into one universal harness while a language-specific margin resists transfer and needs native re-evolution.
+
+GitSkills: A Dataset of Agent Skills on GitHub (1 minute read)
+
+GitSkills is a dataset of 3,797,117 SKILL.md files collected from 282,200 public GitHub repositories in July 2026, capturing how developers write, reuse, and maintain the agent-skill format Anthropic introduced in October 2025. The authors deduplicate to 1,877,981 distinct contents, enrich one representative per group with parsed front matter, folder contents, repo metadata, and partial commit history, and ship it as a single SQLite file for research on adoption, reuse, authorship, maintenance, and security.
+
+Understanding the Architecture of Coding Agents: An Exploratory Study Using a Research Prototype (1 minute read)
+
+This paper documents the internal architecture of coding agents and introduces Ark, a minimal open-source agent that preserves the essential components while stripping everything else for teaching and research. Running gpt-5.4-mini, Ark solved 8 of 10 tasks on the accompanying ArkBench suite with modest token consumption, and the authors compare its design against state-of-the-art agents using a recent architectural taxonomy.
+
+🧠
+Opinions & Advice
+
+TDD inside the agent loop - theater or actual value? (1 minute read)
+
+Martin Fowler's team ran an exploratory eval on whether forcing a coding agent to follow TDD fully inside its own loop actually improves output, generating small, medium, and large greenfield tasks with Sonnet 4.6 and grading them with Opus. The result was no discernible quality gain, with non-TDD solutions occasionally ranked slightly higher on design and test quality and no meaningful difference in mutation scores.
+
+Go is an ideal language for AI-assisted software engineering (1 minute read)
+
+Google argues that as AI generates most code, a language's value shifts from how fast it lets you write to how easily humans can review, verify, and maintain what the agent produced. The post makes the case that Go's opinionated simplicity, uniform formatting and tooling, and long-term compatibility guarantees make agent-written code cheaper to read and safer to keep in production over years.
+
+Agentic Code Quality (5 minute read)
+
+Addy Osmani argues that code review no longer scales as the primary quality check once agents generate hundreds of thousands of changes a day, so quality now depends on the constraints you wrap around them. He frames quality gates such as unit and property tests, mutation testing, and complexity metrics as the deterministic loop that decides whether an agent's proposal is safe, correct, and scoped enough to ship.
+
+Why Does CLAUDE.md Keep Growing? Catastrophic Remembering in Agentic Coding (1 minute read)
+
+This paper argues that agentic coding instruction files like CLAUDE.md grow without bound because appending is cheap while safely deleting an instruction whose rationale is gone costs exponential verification, a failure mode the authors call catastrophic remembering. Across 247,694 instruction lifetimes in 1,867 repos, prompts more than tripled over their lifetime and old instructions grew steadily harder to remove, with the proposed fix being prompt comments that encode latent reasoning.
+
+Claude Code puts auto mode in the driver's seat (5 minute read)
+
+(blurb not generated)
+
+Don't be a meat proxy (5 minute read)
+
+(blurb not generated)
+
+Can software factories actually work? (1 minute read)
+
+PostHog examines whether "software factories" — pipelines where agents pull tickets, build PRs, and ship via CI/CD with minimal human review — can scale, weighing HumanLayer CEO Dex Horthy's viral argument that they never will against real-world adoption at Ramp, Cursor, Uber, and PostHog itself. The post frames autonomy as a spectrum, noting PostHog's agents write roughly 70% of its PRs while humans still skim at least 80% of them.
+
+Relying on Go (5 minute read)
+
+Solod is a systems language for C and Go developers that is literally a subset of Go, reusing its syntax highlighting, LSP, linters, package management, and much of its standard library code verbatim rather than trying to fix Go's mistakes. The trade-off is that Go's tooling doesn't know Solod is a subset, so it won't flag full-Go features that Solod doesn't support, and the language adds manual memory management with explicit allocators.
+
+🚀
+Launches & Tools
+
+Mojo 1.0 (1 minute read)
+
+Modular released Mojo 1.0, marking the language stable and production-ready after building toward the milestone since its 2023 debut. The 26.5 release converges on single ways to express common patterns, with variables now always declared with var, unified closures, and a single Pointer type, and commits to primarily additive changes during the 1.x line while managing breaking changes like mature languages such as C++.
+
+H3-metal – Native MiniMax-H3 inference for Apple Silicon (1 minute read)
+
+h3.c is a native C implementation of MiniMax-H3 inference for Apple Silicon, running prompt-to-video and prompt-to-audio generation end to end through hand-written Metal blocks. It supports first/last-frame conditioning and ordered Ref2VA image references, plus an Iris-style interactive session that keeps BF16 prompt conditioning and the video decoder in memory so re-seeding a prompt skips reloading and re-encoding.
+
+Open-sourcing Metals v2: Databricks’ Java and Scala language server for multi‑million line codebases (1 minute read)
+
+Databricks open-sourced Metals v2, an extension of the Scala language server with first-class Java support and scaling for its 26M-line Bazel monorepo. Available now in Cursor, VS Code, and Neovim, it lets teams pair a coding agent with a lightweight editor instead of IntelliJ, which Databricks credits for pushing weekly active Cursor usage to 92% while it dropped most of its IntelliJ seats.
+
+Docker Sandboxes – Disposable, isolated sandboxes for AI agents (1 minute read)
+
+Docker released Sandboxes, a CLI tool (`brew install docker/tap/sbx`) that runs AI coding agents inside disposable microVMs with user-defined network and filesystem controls. The microVM boundary makes YOLO mode (`--dangerously-skip-permissions`) safe to run unattended, works with Claude Code, Gemini CLI, Copilot CLI, Codex, Kiro, and OpenCode, and lets agents spin up their own Docker containers without Docker Desktop.
+
+Meta Releases Muse Code (5 minute read)
+
+(blurb not generated)
+
+Python Now Has a Post-Quantum Encryption Library (5 minute read)
+
+(blurb not generated)
+
+Show HN: Woxi - Open-source Mathematica / Wolfram Language reimplementation (1 minute read)
+
+Woxi is an open-source reimplementation of the Wolfram Language and Mathematica that ships as a Jupyter kernel. Install it locally with `woxi install-kernel`, or run notebooks in the browser through the bundled JupyterLite instance with no local setup required.
+
+Cloudflare Workers and Containers now support inbound TCP connections and gRPC (5 minute read)
+
+(blurb not generated)
+
+Using the GitHub Copilot SDK for Java (1 minute read)
+
+GitHub released the Copilot SDK for Java, a client library that lets server-side Java code create Copilot agent sessions, register tools, send prompts, and receive structured responses using CompletableFuture, annotations, lambdas, and virtual threads. Unlike Langchain4j or Spring AI, it carries no framework dependency and its BYOK support keeps it AI-vendor neutral, running in Jakarta EE and Spring environments via a Maven dependency currently at 1.0.7-preview.1.
+
+Modular's Mojo programming language hits 1.0 milestone (1 minute read)
+
+Modular released version 1.0 of Mojo, its Python-superset language aimed at high-performance AI and systems code, marking the first stable release after years of preview. Developers are still waiting on the promised open source compiler to clear up uncertainty following Qualcomm's acquisition of Modular, which leaves the language's long-term governance and portability an open question.
+
+Give any website a WebMCP interface (5 minute read)
+
+(blurb not generated)
+
+Introducing Kitesurf: The agent-first browser that runs in V8 isolates on Cloudflare Workers (5 minute read)
+
+(blurb not generated)
+
+Your agent can now debug Workers with local tracing (5 minute read)
+
+(blurb not generated)
+
+A unified API for AI model routing (5 minute read)
+
+(blurb not generated)
+
+Meta is back with Muse Glimmer: local, agentic, multimodal, and open source (5 minute read)
+
+(blurb not generated)
+
+Meta releases Muse Glimmer for local AI agents (5 minute read)
+
+(blurb not generated)
+
+Anthropic makes Claude Code’s auto mode default for paid users (3 minute read)
+
+Anthropic is making Claude Code's auto mode the default for Pro, Max, and Team plans starting August 14, letting the agent run tool calls without per-action approval while a classifier blocks irreversible or destructive commands and falls back to manual approval after three consecutive blocks. In Anthropic's testing the classifier caught 89% of deliberately dangerous commands versus 13.6% for human reviewers, with analysts flagging added latency, oversight, and security tradeoffs.
+
+Message your other Claude Code sessions (1 minute read)
+
+Claude Code v2.1.224 adds cross-session messaging, letting one session hand a finding, status, or decision to another through the new ListAgents and SendMessage tools without you copy-pasting between terminals. It works on macOS and Linux with no setup once sessions meet the version requirement, covers parallel worktrees and long-running jobs, and can reply to sessions on other machines though cross-machine exchanges must be started locally.
+
+Show HN: Ante, a coding agent in a single binary that runs offline (1 minute read)
+
+Antigma Labs released Ante, a self-contained coding agent that ships as one ~15MB Rust binary with zero runtime dependencies and runs models locally via a pinned llama.cpp. It works like Claude Code or Codex without their model constraints, scores 82.7% on Terminal-Bench 2.1 with open-weight DeepSeek V4 Flash, and uses roughly 7x less peak memory and 9x less average CPU than Claude Code across 20 parallel Docker tasks.
+
+The best new features in Python 3.15 (3 minute read)
+
+Python 3.15 reached its first release candidate with lazy imports that defer a module's cost until its code actually runs, plus new frozendict and sentinel() built-ins, better error messages, and faster JIT compilation. It also adds profiling.sampling, a statistical sampling profiler that trades cProfile's per-call precision for far lower runtime overhead, with the old deterministic profiler renamed to profiling.tracing.
+
+🎁
+Miscellaneous
+
+Illinois just passed a law that puts Linux on the hook for age verification (1 minute read)
+
+Illinois signed HB5511 (Public Act 104-0664) on July 31, which defines an "operating system provider" broadly enough to cover anyone shipping an internet-connected OS and requires them to build an age-declaration step and hand an age-bracket signal to any app that asks by January 1, 2028. Unlike Colorado, Illinois added no open source exemption, so hobbyist and nonprofit OS projects fall under the same mandate as commercial vendors.
+
+77 Open VSX extensions found harvesting developer info (5 minute read)
+
+(blurb not generated)
+
+Malicious LiteLLM Releases Tied to Trivy Hack May Have Exposed 2,100+ Organizations (1 minute read)
+
+Two malicious LiteLLM releases sat on PyPI for about 40 minutes on March 24, carrying code that harvested cloud keys, SSH keys, Kubernetes tokens, and database passwords from any system that installed versions 1.82.7 or 1.82.8. CloudSEK has now published a searchable dataset mapping potential exposure to over 2,500 organizations, including NVIDIA, Cisco, and FedEx, and both it and the FBI advise rotating any secrets accessible that day.
+
+Over 2,500 Organizations Impacted by LiteLLM Supply Chain Attack (1 minute read)
+
+A supply chain attack on the LiteLLM Python library exposed an estimated 434,000 CI/CD pipelines and over 2,500 organizations, including Nvidia, AWS, and the London Stock Exchange Group, after two malicious versions reached PyPI. LiteLLM was compromised indirectly when its CI pipeline auto-installed a poisoned Trivy build, and although the tainted packages were live for only 40 minutes, the payload ran on every Python invocation and leaked cloud keys, SSH keys, and tokens.
+
+AI code-testing startup Blacksmith’s valuation jumps almost 10x in less than a year (1 minute read)
+
+Blacksmith raised a $45M Series B led by Peak XV Partners at a $550M valuation, up from $60M when it raised its Series A less than a year ago. The startup runs CI workloads and ships Codesmith, an agent that auto-fixes failed code checks, and now serves 5,000+ customers including Supabase and Clerk in a market crowded by GitHub Actions and the cloud providers.
+
+AI code-testing startup Blacksmith raised a $45M Series B led by Peak XV Partners at a $550M valuation, up from $60M after it raised a $10M Series A in 2025 (Jagmeet Singh/TechCrunch) (1 minute read)
+
+Blacksmith, an AI code-testing startup, raised a $45M Series B led by Peak XV Partners at a $550M valuation, up nearly 10x from the $60M valuation it held after its $10M Series A in 2025. The round signals continued investor appetite for tooling that speeds CI and automated testing, a workflow layer developers increasingly expect to be AI-assisted.
+
+Linus Torvalds says AI has made 'huge' Linux kernel updates the new normal (1 minute read)
+
+Linus Torvalds says AI-assisted contributions have pushed the Linux kernel to consistently large release cycles, with big updates now the baseline rather than the exception. He noted the shift raises the maintainer review burden, since human reviewers still have to vet code that AI tools can generate far faster than it can be checked.
+
+⚡
+Quick Links
+
+Java 28 adds simple JSON API to features list (5 minute read)
+
+(blurb not generated)
+
+CSS properties you should know for better text designs (1 minute read)
+
+Five CSS properties for standout web typography, including background-clip: text for image-filled letterforms and align-content for true vertical centering.
+
+Firma digital CAdES vs XAdES en Java: las diferencias que importan cuando tu CA te pide una y vos tenés la otra (3 minute read)
+
+CAdES vs XAdES in Java: why a cryptographically valid signature still fails validation when your CA expects the other format.
+
+Animating CSS border-image (5 minute read)
+
+(blurb not generated)

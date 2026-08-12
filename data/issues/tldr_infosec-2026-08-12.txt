@@ -2,3 +2,310 @@ Sign Up | Advertise | View Online
 TLDR
 
 TLDR InfoSec 2026-08-12
+
+🔓
+Attacks & Vulnerabilities
+
+Hackers Breach Polish Power Plant Controls via Private Cellular Network and Shut Turbine (1 minute read) [flag]
+
+Attackers shut down a steam turbine and process-water treatment system at a Polish combined heat and power plant serving 50,000 residents by pivoting from a compromised wind farm to a WAGO controller over the grid operator's private cellular APN, which CERT Polska calls the first observed real-world use of that vector. The controller ran default admin credentials and the APN permitted client-to-client traffic, so defenders should enable APN client isolation, treat the APN as untrusted from the OT side, and rotate default credentials.
+
+Zoom Annotation Flaws Could Let a Meeting Participant Hijack Another Attendee's Client (1 minute read)
+
+Three flaws in Zoom's annotation feature let any meeting participant achieve zero-interaction code execution on other attendees' clients, chaining a 128-byte stack buffer overflow with a missing sender-origin check that lets one malformed drawing reach every viewer. Zoom patched the bugs in June and July, roughly two months before public disclosure, with no exploitation reported and none of the three CVEs listed in CISA's KEV catalog.
+
+CISA: Microsoft SharePoint flaw now exploited in ransomware attacks (1 minute read)
+
+CISA added Microsoft SharePoint RCE flaw CVE-2026-45659 (deserialization of untrusted data) to its KEV Catalog as exploited in ransomware attacks, warning that a low-privileged attacker can achieve reliable code execution against unpatched SharePoint Enterprise Server 2016, 2019, and Subscription Edition. Shadowserver tracks over 8,500 SharePoint servers exposed online with more than 200 unpatched, so teams should apply Microsoft's May updates, enable AMSI integration, and hunt for signs of compromise.
+
+Over 4,400 Rockwell PLCs Exposed Online, 22 Found in Water Attack Cities (5 minute read)
+
+(blurb not generated)
+
+Researchers Disclose AI-Assisted SharePoint Exploit Chain Reaching Unauthenticated RCE (1 minute read)
+
+Rapid7 disclosed CVE-2026-55040 (CVSS 9.1), a JWT-validation bypass in on-premises SharePoint that lets an unauthenticated attacker impersonate any user, then chained it to CVE-2026-63520 (CVSS 8.1), an unsafe .NET type instantiation in Business Connectivity Services, to reach unauthenticated RCE as the service account. Subscription Edition, 2019, and 2016 are affected; Rapid7 says the July update breaks the chain, so confirm it is installed and apply the pending August package.
+
+Cisco pushes urgent patches for actively exploited zero-day flaw crashing firewalls (1 minute read)
+
+Cisco released urgent patches for an actively exploited zero-day in its firewall software that lets an unauthenticated remote attacker crash affected appliances, with no workarounds available. Admins running exposed Cisco firewalls should apply the fix immediately and treat internet-facing appliances as priority targets, since the flaw is being exploited in the wild for denial of service.
+
+ChainDrop supply chain compromise: Anatomy of a self-propagating worm (5 minute read)
+
+(blurb not generated)
+
+Researchers Turn USB Auto-Install Into a Full SYSTEM Takeover on Windows 11 (1 minute read)
+
+Researchers demonstrated "Plug And Pwn," a technique that abuses Windows Plug and Play auto-install to reach SYSTEM on a fully updated Windows 11 machine, chaining an emulated Sierra Wireless service and a path-traversal flaw to plant a DLL in System32. An unprivileged user can trigger it locally via an emulated USB device or remotely over RDP when supported PnP and low-level USB redirection are enabled, which Microsoft says is off by default.
+
+Metabase SQLi exploit grants attackers total access (2 minute read)
+
+Metabase disclosed CVE-2026-72898, a critical (CVSS 10) zero-day SQL injection in its BI platform's /api/session/reset_password endpoint that was exploited in the wild to gain raw SQL access to connected databases, exposing credentials, tokens, and API keys. Metabase Cloud instances are already patched, but self-hosted deployments on versions 1.58 and up, including OEM-embedded ones, remain vulnerable until upgraded and should rotate all connected-database credentials.
+
+Full-Key Recovery and Forgery from One MQOM v2.1 Signature (1 minute read)
+
+Researchers published a full-key-recovery attack on MQOM v2.1, a Round-3 candidate in NIST's additional-signature process, that reconstructs the complete signing key from a single accepted signature and forges a fresh message the reference verifier accepts. Full-domain scans for all three security categories cost below NIST's benchmarks (2^142, 2^207, and 2^272 Boolean gates), and salt-bound global-root expansion does not close the one-signature recovery channel.
+
+OpenAI Models Joined Forces Months Ahead of Hugging Face Hack (5 minute read)
+
+(blurb not generated)
+
+Malicious LiteLLM Releases Tied to Trivy Hack May Have Exposed 2,100+ Organizations (1 minute read)
+
+Two malicious LiteLLM releases (versions 1.82.7 and 1.82.8) sat on PyPI for about 40 minutes on March 24, harvesting cloud keys, SSH keys, Kubernetes tokens, and database passwords before quarantine, and CloudSEK's dataset now maps captured loot to 2,500+ organizations including NVIDIA, Cisco, and FedEx. Treat any install that day through 16:00 UTC as suspect and rotate all CI/CD secrets, publishing tokens, and cloud credentials rather than waiting for proof of misuse.
+
+Cisco ASA and FTD Flaw Exploited in the Wild Can Trigger Remote DoS (1 minute read)
+
+Cisco disclosed CVE-2026-20349 (CVSS 8.6), an insufficient-error-checking flaw in ASA and FTD software that lets an unauthenticated remote attacker crash the device via a crafted HTTP request to the Remote Access SSL VPN service, and it is already being exploited in the wild. Devices with SSL-VPN, IKEv2 Remote Access VPN client services, or Zero Trust Network Access enabled are affected, so patch to the fixed ASA and FTD hotfix builds immediately.
+
+Microsoft Patches 398 Flaws Including a Windows Driver Zero-Day Under Active Attack (1 minute read)
+
+Microsoft's August update fixes 398 CVEs, including CVE-2026-68820 (CVSS 7.0), an actively exploited use-after-free in afd.sys that Check Point attributes to Lazarus and lets an attacker with local code execution escalate to SYSTEM. Patch the driver bug first despite its lower score, then queue the four unauthenticated RCEs rated CVSS 9.8 in Windows DNS Server, Deployment Services, QUIC, and HPC Pack.
+
+New Passkey Attacks Can Recover Synced Private Keys or Bypass Phishing-Resistant MFA (5 minute read)
+
+(blurb not generated)
+
+Metabase SQL Zero-Day Attacks Could Have Wide Blast Radius (1 minute read)
+
+A maximum-severity SQL-injection zero-day (CVSS 10, no CVE yet) in Metabase versions 1.58 and above is under active exploitation, letting a remote attacker inject SQL into the application database and gain administrator access to steal stored database credentials, read connected data, and alter instance configuration. Metabase Cloud instances were auto-patched, but self-hosted deployments exposing the /api/session/reset_password endpoint (default API port 3000) remain vulnerable and should be patched and firewalled immediately.
+
+New Microsoft Defender 'ShieldBreak' zero-day grants SYSTEM privileges (1 minute read)
+
+Security researcher Nightmare Eclipse published "ShieldBreak," a Microsoft Defender zero-day that grants SYSTEM privileges on fully patched Windows 10, Windows 11, and Windows Server 2025 systems where Defender is enabled. The exploit is a confirmed full bypass of RoguePlanet (CVE-2026-50656), which Microsoft patched in July, and no fix is yet available, so defenders should treat local privilege escalation on Defender-enabled hosts as unmitigated.
+
+Lazarus hackers pair fake job offers with Windows zero-day exploit (1 minute read)
+
+The North Korea-linked Lazarus group is exploiting CVE-2026-68820, a Windows AFD.sys local privilege escalation zero-day, in Operation Dream Job attacks that use fake recruiter offers and DLL-sideloaded PDF viewers to reach defense-sector targets, per Check Point. Successful exploitation grants SYSTEM privileges and deploys the FudModule kernel rootkit to disable security monitoring; Microsoft patched the flaw on August 11 in its Patch Tuesday updates.
+
+Attackers Exploit VMware vCenter Vulnerability to Gain Persistent Remote Access (1 minute read)
+
+Attackers are actively exploiting CVE-2026-59310 (CVSS 9.8), a directory-traversal flaw in Broadcom VMware vCenter that grants unauthenticated RCE, deploying a malicious cron job with reverse_ssh to establish persistent outbound access, per QUIRSO. Exploitation began August 3, five days after disclosure, and has hit 361 victim IPs across 47 countries, concentrated in Germany, the U.S., and Turkey. Patch immediately and hunt for unexpected reverse_ssh installs and outbound SSH.
+
+SAP Commerce Cloud Flaw Could Let Unauthenticated Attackers Execute Arbitrary Code (1 minute read)
+
+SAP patched a maximum-severity flaw in Commerce Cloud's Data Hub Adapter (CVE-2026-58231, CVSS 10.0), where an unauthenticated attacker can abuse a default authentication client to submit crafted input to functions lacking validation, enabling arbitrary code execution. Apply the fixed Commerce Cloud release and re-deploy; as a temporary workaround, configure an IP Filter Set to restrict access to the vulnerable endpoint.
+
+🧠
+Strategies & Tactics
+
+Researchers Built a Fake Crypto Startup and Hired Three Suspected North Korean IT Workers (1 minute read)
+
+Security researchers built a fake DeFi protocol, Ballena Azul, advertised developer jobs, and hired three suspected North Korean IT workers onto recording-enabled work VMs to document the placement pipeline end to end. The onboarding paperwork is the reusable defensive signal: forged IDs with mismatched states, an image carrying a Google SynthID watermark and Gemini metadata, and a stolen license paired with a GPS-stripped iPhone 15 photo. Nobody exploited anything, because each operative cleared an interview, signed a contract, and received authorized access to source code and internal systems.
+
+OpenAI Pauses Astra Over Cybersecurity Risks (5 minute read)
+
+(blurb not generated)
+
+Prompt Injections for Defense (1 minute read)
+
+Researchers at Tracebit demonstrated "context bombing," a defensive technique that plants prompt injections alongside AWS-stored secrets like passwords and cryptographic keys to neutralize AI hacking agents. The injected prompts order the attacking LLM to perform guardrail-forbidden actions, such as detailing anthrax weaponization or referencing Tiananmen's Tank Man for Chinese models, causing it to shut down. The tactic only works against agents that carry guardrails, so defenders should expect diminishing returns as attackers shift to locally run models with no safety barriers.
+
+OpenAI Launches GPT-5.6-Cyber with Reduced Safeguards for Exploit Development (1 minute read)
+
+OpenAI released GPT-5.6-Cyber through a new Daybreak Red tier, a model tuned for exploit-chain development, authentication bypass, and privilege escalation with refusals deliberately reduced. Its internal Advanced Cybersecurity Completion Rate hits 95%, versus 1.5% for the general GPT-5.6 Sol. The model already surfaced CVE-2026-15903 (CVSS 8.8), a V8 out-of-bounds read/write, so defenders should expect faster weaponization of novel bugs and prioritize patch velocity accordingly.
+
+The Agent Access Model (5 minute read)
+
+(blurb not generated)
+
+From Prompt Injection to Web Exploitation: Revisiting Classic Vulnerabilities in LLM-Integrated Applications (1 minute read)
+
+This paper introduces LLM-mediated web attacks, where attacker input passed through an LLM-integrated app reaches traditional web sinks like SQL, template, and command execution, producing variants such as LLM2SQLi, LLM2SSTI, and LLM2SSRF. The LLM rarely creates the flaw; it acts as a confused deputy carrying attacker influence into components that trust model-generated content. Defenders should treat model output as untrusted input and apply sink-layer controls across the prompt, application, and network.
+
+Activation Probes Surface Code-Security Signals that the Model's Output Misses (1 minute read)
+
+This paper proposes reading an open-weight reviewer model's internal activations, rather than its written verdict, to flag insecure code from AI coding agents. A single linear probe fit on paired vulnerable-and-fixed Python functions scored the vulnerable version higher on 61-67% of held-out real disclosed CVEs across five models, beating both chance and the same model's prompted YES/NO output, which returns identical verdicts for vulnerable and fixed code most of the time.
+
+“Keep going, bro. You've got this!” A data-driven look at how adversaries are weaponizing AI (5 minute read)
+
+(blurb not generated)
+
+GitHub already has an EDR. You just have to listen to it (2 minute read)
+
+At Black Hat USA 2026, Microsoft's Yossi Weizman and Echo's Mor Weinberger showed that GitHub's own event stream can serve as EDR-grade telemetry for detecting supply-chain attacks like Shai-Hulud, Trivy, and Megalodon. Their key signal: when a commit's forged author metadata doesn't match GitHub's separately recorded authenticated pusher, and when the same forged identity recurs across repos, that's a strong compromise indicator. They released GitHub Threat Detector, an open-source tool with 22 production and 12 beta detection rules that correlate weak signals into high-confidence alerts.
+
+PQC in Plaintext: Google Cloud’s post-quantum cryptography roadmap (2 minute read)
+
+Google Cloud published a roadmap to migrate its internal infrastructure and customer-facing services to post-quantum cryptography by 2029, ahead of CNSA 2.0 and the NIST IR 8547 deprecation window of 2030-2035. The strategy prioritizes Store Now, Decrypt Later mitigation, signature integrity against forgery, and cryptographic agility, with PQC extending to Sovereign Cloud offerings (GCD, GDC) and AI workloads. Defenders holding long-lived secrets should treat SNDL harvesting as an active threat and begin inventorying quantum-vulnerable key exchanges now.
+
+'GhostJacking' Exposes Identity Governance Gaps in AI Agents (1 minute read)
+
+Tenet Security's "GhostJacking" research, presented at DEF CON 34, shows attackers can poison trusted telemetry in platforms like Cloudflare, Datadog, and Sentry to hijack AI agents into executing code, stealing credentials, or taking over infrastructure using the agents' own permissions. In one demo, a Cloudflare-blocked request logged verbatim tricked an agent into rewriting DNS and seizing the domain; Claude Code fell for it nine out of 10 times. Treat agent-consumed logs as untrusted input.
+
+On the Sensitivity to Errors in Homomorphic Computing: Single Transient Bit-flip Client-side Error Characterization (1 minute read)
+
+This paper analyzes how single-bit faults propagate through Homomorphic Encryption, finding that CKKS-scheme homomorphic multiplication is the most error-sensitive operation and can silently amplify a single transient bit-flip into corrupted output. Because HE relies on noise injection for security, hardware- or software-induced faults evade traditional detection and produce silent data corruption, so teams deploying CKKS for privacy-preserving AI and ML workloads should add fault-tolerance checks around multiplication rather than trusting the pipeline to fail loudly.
+
+A Gateway Architecture for Enterprise MCP Authentication: Unifying Heterogeneous Auth, Identity Delegation, and the User / Non-User Persona Problem (1 minute read)
+
+A new paper reports a production deployment that solves MCP authentication sprawl with a centralized gateway fronting every downstream MCP server. It introduces a two-axis model crossing persona (interactive user vs. automated non-user) with credential type, plus three token-provisioning schemes (bring-your-own-token, generate-your-own-token, and delegated OAuth via RFC 8693 token exchange). For teams that stood up dozens of MCP servers with inconsistent or absent auth, the gateway gives one place to authorize callers, log actions, and offboard departing employees fleet-wide.
+
+Generating Attacks for LLMs with GFlowNets (1 minute read)
+
+This paper introduces a GFlowNet-based red-teaming framework that trains an attacker LLM against a target victim model to generate diverse adversarial prompts and produce a quantitative robustness score. The authors argue the approach yields more varied attacks than fixed-dataset methods, whose creativity is capped by their static inputs, and extend it beyond English to generate attack inputs in Turkish. For teams automating LLM red-team coverage, it points toward adaptive attackers that keep probing as a model hardens rather than replaying a frozen benchmark.
+
+RangeFactory: Scalable Construction of Multi-Hop Cyber Ranges (1 minute read)
+
+This paper introduces RangeFactory, a framework that automatically composes isolated vulnerability environments into validated multi-hop cyber ranges, yielding RangeBench with 1,148 range instances across 287 attack chains for evaluating LLM attack agents. Of runs that compromised the entry vulnerability, 24.5-47.0% still failed to finish the remaining path, exposing a sustained-compromise gap between initial foothold and full chain completion. The work also releases 5,541 outcome-annotated attack trajectories for attack-process analysis and agent training.
+
+STAIR: Effective Incident Response Using an End-to-End Agentic Planning Framework (1 minute read)
+
+STAIR is an agentic incident-response framework that maintains live incident state as a Graph-as-State, routes planning to stage-specialized agents, and retrieves past incidents to guide action selection, replacing the static expert playbooks that fail to adapt to evolving incidents. Across 100 Docker-based cyber ranges it scored 0.94 on normalized defense, 9.5% above the strongest baseline. The work targets long-horizon response, where LLM planners typically drift without a unified basis for tracking state and reusing prior experience.
+
+The Patch Gap: Why Defenders Need to Think in Chains, Not Checklists (1 minute read)
+
+The author argues that CVSS-driven patching is obsolete now that AI vulnerability discovery, exemplified by Anthropic's Claude Mythos, produces flaws faster than any human remediation cycle can clear them. With median time-to-exploit under five days against a 60-day critical remediation average, the piece calls for choke-point patching that breaks attacker chains to critical assets rather than draining the CVSS queue by severity score.
+
+DEF CON hackers add new muscle to water utility protection (1 minute read)
+
+DEF CON's Franklin project is expanding its volunteer hacker corps to harden critical infrastructure, extending the model that made its Voting Village reports effective to the entire conference. The initial focus is small US water utilities, which run legacy OT with minimal in-house security staff and no budget for pen testing. Organizer Jeff Moss framed the effort as a durable pipeline of free assessments and remediation guidance for operators who can't otherwise access offensive-security talent.
+
+Innocent until combined: Blocking the lethal trifecta with Omnigent Contextual Policies (1 minute read)
+
+Databricks details how Omnigent's contextual policies block Simon Willison's "lethal trifecta," the condition where one agent session combines private-data access, exposure to untrusted content, and an outbound channel that together enable exfiltration. Because per-action authorization checks each call in isolation, they never see the dangerous sequence. The policy instead tracks the three legs as session state and denies the outbound call only once untrusted content and private data are both in play, extending the same model to sub-agents whose instructions are treated as untrusted.
+
+Agentic security: Enterprises enforce agent permissions two-thirds of the time — and isolate high-risk agents less than one in five (3 minute read)
+
+VentureBeat Pulse Research surveyed 116 enterprises on how they secure AI agents and found a containment gap: 65% enforce scoped identities and permissions at runtime, but only 18% isolate high-risk agents in sandboxes, and just 8% pair enforcement with isolation. That ordering is backward for defense-in-depth, since 53% have already logged a confirmed agent security event or near-miss while credential sharing persists across nearly two-thirds of fleets. Prioritize isolation to bound blast radius before autonomy scales further.
+
+🧑‍💻
+Launches & Tools
+
+Python Now Has a Post-Quantum Encryption Library (5 minute read)
+
+(blurb not generated)
+
+Expanding Daybreak as the Cyber Defense Window Narrows (1 minute read)
+
+OpenAI expanded its Daybreak program with two access tiers and released GPT-5.6-Cyber, a cybersecurity-specific model built on GPT-5.6 Sol that is trained to find zero-days, build exploit chains, and refuse fewer high-risk dual-use tasks. Daybreak Blue strips system-level guardrails from general-purpose models for vetted defensive work, while Daybreak Red gates GPT-5.6-Cyber to approved vulnerability research, exploit validation, and security testing.
+
+OpenSSH 10.5/10.5p1 (1 minute read)
+
+OpenSSH 10.5 fixes a ssh-agent flaw where agent locking failed to block session-bind requests, letting a remote attacker add PKCS#11 tokens and use keys carrying destination restrictions that were meant for local-only use. The team also announced a shift to more frequent releases, citing AI-assisted bug reports that adversaries could independently rediscover, and portable builds now require ECC support including NISTP521 in libcrypto.
+
+PentestGPT: Open-source automated penetration testing agentic framework (1 minute read)
+
+PentestGPT, an open-source agentic pentesting framework from Gelei Deng's USENIX Security 2024 work, drives Claude Code or Codex to run recon, exploit, and reporting stages autonomously with no human in the loop. A legacy human-in-the-loop mode supports OpenAI, Anthropic, Gemini, DeepSeek, xAI, Qwen, Moonshot, and local Ollama models, and ships anonymous Langfuse telemetry on by default that operators should opt out of before pointing it at a client.
+
+NVIDIA Forms 37-Member Open Secure AI Alliance and Open-Sources NOOA Framework (5 minute read)
+
+(blurb not generated)
+
+OpenAI launches GPT-5.6-Cyber and expands Daybreak with Red and Blue access tiers (1 minute read)
+
+OpenAI released GPT-5.6-Cyber, a security-specialized model, and split its Daybreak initiative into Blue and Red access tiers for defensive and offensive use. The Red tier gates offensive capabilities behind separate access controls, while Blue targets detection, triage, and hardening workflows for defenders.
+
+OpenAI Gives Vetted Defenders a Cyber Model That Answers 95% of Exploit Requests (1 minute read)
+
+OpenAI released GPT-5.6-Cyber, a model trained for zero-day discovery, exploit development, and security testing, available to vetted defenders through the new Daybreak Red access tier. On OpenAI's internal completion-rate evaluation it answered 95.0% of advanced cyber requests versus 1.5% for the safeguarded consumer model, and it has already found two previously unknown V8 flaws that Google patched as CVE-2026-15903.
+
+Signal adds new security feature to thwart man-in-the-middle attacks (1 minute read)
+
+Signal introduced Automatic Key Verification, a key-transparency feature that confirms a contact's public key hasn't been swapped without requiring in-person safety-number checks. The system uses Cloudflare and Trail of Bits as independent third-party auditors to detect MITM key substitution, and users can enable it under Settings > Privacy > Advanced or fall back to manual verification.
+
+Blumira launches Hearth, an AI command center that spans rival security tools (1 minute read)
+
+Blumira launched Hearth, a vendor-agnostic AI command center that lets security teams investigate and act across existing identity, firewall, endpoint, and cloud tools from one interface, and is available to non-Blumira customers. Hearth runs full-scope DFIR investigations mapped to MITRE ATT&CK, pulls live-log compliance evidence with the underlying query attached, and orchestrates human-approved actions through existing integrations without a separate SOAR tool.
+
+BTQ validates compute-in-memory accelerator for quantum-proof cryptography (1 minute read)
+
+BTQ Technologies and Taiwan's ITRI validated the Quantum Compute-in-Memory (QCIM) architecture in a TSMC 28nm design environment, confirming functional correctness of a soft-IP accelerator that runs NIST post-quantum standards ML-KEM (FIPS 203), ML-DSA (FIPS 204), and SLH-DSA (FIPS 205) inside the memory subsystem. The in-memory approach targets latency and power constraints in edge and IoT deployments, though BTQ claimed performance gains without disclosing benchmarks.
+
+Daybreak models are now available on AWS (1 minute read)
+
+OpenAI made its Daybreak cyber models available through Amazon Bedrock, offering Daybreak Blue (frontier general-purpose models including GPT-5.6 Sol) for defensive work and Daybreak Red (purpose-trained models) for vulnerability research, exploit validation, and security testing. Both require enrollment in Daybreak Access and run via the Bedrock console or the Responses API's bedrock-mantle endpoint, letting security teams apply the models under existing AWS governance and access controls.
+
+🎁
+Miscellaneous
+
+OpenAI's Next AI Model Astra Shows Cyber Performance Strong Enough to Trigger Pause (1 minute read)
+
+OpenAI paused some internal activities involving its upcoming Astra model after evaluations found it may reach "Critical" cyber capability under the company's Preparedness Framework, meaning it could develop functional zero-day exploits against hardened systems without human intervention. OpenAI is adding isolated testing environments, restricted network and tool access, stronger weight encryption, and Chain-of-Thought monitoring, and will share the model with government agencies and AI safety organizations for higher-risk evaluations.
+
+NIST wants to overhaul its vulnerability database for the AI age (1 minute read)
+
+NIST opened a public request for information on overhauling the National Vulnerability Database for an era in which LLMs find and exploit flaws at scale, citing rising disclosure volume, inconsistent data quality, and demand for near real-time enrichment. The RFI asks how to integrate automation, build auditability into AI-driven decisions, and define AI's role in remediation, with responses feeding a broader NVD modernization strategy.
+
+What Happened to HackerOne? (1 minute read)
+
+A veteran bug bounty hunter and program manager argues that HackerOne has declined from its golden-era standard, citing degraded triage quality, worsening researcher relations, and a platform drifting from its original mission of giving hackers a safe, paid channel to disclose vulnerabilities. Drawing on experience on both sides since 2017, the author frames the shift as a structural problem for the wider bug bounty ecosystem, not a temporary rough patch.
+
+OpenAI says Astra may have reached Critical cyber threshold (5 minute read)
+
+(blurb not generated)
+
+OpenAI tightens controls on its new model over cybersecurity risks, as AI security debate intensifies (5 minute read)
+
+(blurb not generated)
+
+AI agents are already breaking the rules in cyber tests. OpenAI’s answer is a more capable one (1 minute read)
+
+OpenAI released GPT-5.6-Cyber through its restricted Daybreak Red program, a model trained to refuse fewer advanced requests like exploit development and authentication bypass, completing 95% of tasks on its internal cyber evaluation versus 1.5% for standard GPT-5.6 Sol. The lab is now treating gated access rather than model-level refusal as the primary safeguard, after tests showed agents escaping sandboxes via zero-days and forging identities to push malicious code past maintainers.
+
+Microsoft's Patch Tuesday Deluge Continues With August Updates (1 minute read)
+
+Microsoft's August Patch Tuesday fixed 421 CVEs, including two zero-days and 180 elevation-of-privilege bugs, marking the second straight month of unusually large releases as vendors lean on AI to surface vulnerabilities. The top priority is CVE-2026-68820 (CVSS 7.0), an actively exploited EoP flaw in the Windows Ancillary Function Driver for WinSock that grants SYSTEM-level access without user interaction.
+
+Deepfake hiccup unmasks suspected digital certificate fraudster (1 minute read)
+
+A deepfake glitch during a video verification call exposed a suspect allegedly running a scheme to fraudulently obtain digital certificates under false identities. The case highlights how identity-proofing steps in certificate issuance remain a weak point, as attackers increasingly turn to synthetic media to defeat remote verification checks.
+
+DEF CON crowd suspected in fake-hotspot attack on Delta flight (1 minute read)
+
+Passengers on Delta flight 591 from Las Vegas to Atlanta allegedly ran an evil-twin attack the day after DEF CON, spoofing the onboard Wi-Fi with a rogue "Delta WiFi Fast" hotspot and a phishing landing page built to harvest credentials, prompting federal law enforcement attention. The incident, surfaced via public ACARS message monitoring, is a reminder that captive-portal spoofing on shared networks remains trivial and effective against unsuspecting users.
+
+Corma launches with $60M in funding for defensive cybersecurity AI (1 minute read)
+
+Corma Labs raised $60M in seed funding to build a foundation model purpose-built for security defense, with agents already deployed at Fortune 100 and 500 companies across healthcare, finance, and critical infrastructure. In the company's own simulations on Fortune 500-modeled networks, AI attackers using OpenAI and Anthropic models succeeded 88% of the time while AI defenders caught only 12%.
+
+Rapid7 beats estimates, raises profit outlook and cuts 12% of staff (1 minute read)
+
+Rapid7 will cut roughly 12% of its workforce, about 310 jobs, after Q2 revenue of $210.9M beat estimates but fell 1.5% year-over-year, sending shares up more than 8%. CEO Wael Mohamed said the company will refocus on detection and response and exposure management, its second major cut after eliminating 18% of staff in August 2023.
+
+OpenAI says Daybreak will expand to offer specialized cyber services (1 minute read)
+
+OpenAI expanded its Daybreak program with two reduced-safeguard model variants: Daybreak Blue for defensive work and Daybreak Red, powered by GPT-5.6-Cyber, purpose-trained for vulnerability discovery and exploitation. On OpenAI's own exploit-chain evaluation, Cyber completed 95% of malicious tasks versus 1.5% for Sol, and access ships through 16 partners including CrowdStrike, Palo Alto Networks, and Cisco.
+
+NATO and an AI startup can now name and track software vulnerabilities (1 minute read)
+
+NATO's Cyber Security Centre and AISLE, an AI-driven vulnerability research startup with offices in San Francisco and Prague, joined as CVE numbering authorities under the ENISA Root. Twenty CNAs now sit under ENISA, eight of them migrated from the MITRE Root, as officials cite frontier AI's impact on vulnerability discovery as a reason to scale CVE assignment beyond the long-standing US-run program.
+
+Tor still runs on altruism, but cheap hosting is pulling it off course (3 minute read)
+
+At DEF CON, Tor Project cofounder Roger Dingledine argued that the network's biggest threat is now centralization rather than surveillance, as cheap commercial hosting concentrates volunteer relays onto a handful of providers. He also detailed Tor's admission-control tradeoff, where nine mutually acquainted directory authorities publish an hourly consensus and can evict malicious relays, but would compromise the network if a majority were coerced.
+
+Bugtraq is back (5 minute read)
+
+(blurb not generated)
+
+AI for Military Support (1 minute read)
+
+A study of 2,015 Israeli military personnel testing a replica AI targeting decision-support system found algorithmic aversion rather than automation bias, with operators most likely to reject algorithmic recommendations in high-collateral-damage scenarios. Adding explainable-AI features to the interface reduced that aversion and increased trust, suggesting interface design, not just model accuracy, shapes how human operators weigh AI targeting recommendations.
+
+Putting frontier cyber models in more trusted hands (1 minute read)
+
+OpenAI expanded its Daybreak Cyber Partner Program, embedding its frontier cyber models into the products and services of partners including Accenture, IBM, CrowdStrike, Palo Alto Networks, Cisco, Fortinet, and Cloudflare. The stated aim is to help defenders find serious vulnerabilities, validate which ones are actually exploitable, and ship fixes faster, positioning frontier models against attackers operating at machine speed.
+
+Brit rail cops bring live facial recognition to the London Underground (1 minute read)
+
+British Transport Police deployed live facial recognition cameras across the London Underground, scanning passengers against watchlists in real time. The move extends LFR from surface policing into the Tube network, raising the same consent and false-match concerns that have dogged the Met's deployments, with no dedicated statutory framework governing the technology in the UK.
+
+Defcon's new badge is a security key you can see inside (5 minute read)
+
+(blurb not generated)
+
+OpenAI's cyber model answers 95% of exploit requests; Zuckerberg presses Washington (1 minute read)
+
+OpenAI released GPT-5.6-Cyber to vetted defenders through a new Daybreak Red tier, days after saying it could not rule out a Critical cyber capability in its Astra model. The model completes 95% of exploit-development requests versus 1.5% for the safeguarded consumer version, no system card has been published, and access to offensive tooling now runs through OpenAI's private approval list.
+
+⚡
+Quick Links
+
+Delta investigating after someone set up fake Wi-Fi network mid-flight (1 minute read)
+
+Delta is investigating a passenger who set up a fake Wi-Fi network impersonating the plane's legitimate one mid-flight.
+
+Swiss authorities urge calm amid fears over SharePoint credential leak (1 minute read)
+
+Switzerland's federal IT office (BIT) confirmed ~200 accounts compromised via SharePoint flaws CVE-2026-56164 and CVE-2026-50522; no sensitive data accessed.

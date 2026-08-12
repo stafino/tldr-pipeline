@@ -2,3 +2,116 @@ Sign Up | Advertise | View Online
 TLDR
 
 TLDR Data 2026-08-12
+
+📊
+News & Trends
+
+Looker’s semantic layer governs Gemini Enterprise data for user trust (2 minute read)
+
+Google integrated Looker's governed semantic layer into Gemini Enterprise, letting Looker analysts publish conversational agents natively via the Agent-to-Agent protocol so users query structured metrics and unstructured documents in one chat interface. The semantic layer supplies codified join logic and metric definitions to constrain NL2SQL, giving deterministic answers instead of the inconsistent numbers and hallucinations that raw schema-guessing produces.
+
+Electric joins Databricks to bring WASM Postgres to AI agent sandboxes (1 minute read)
+
+Databricks acquired Electric, maker of PGlite (a WASM Postgres that runs inside an agent sandbox, browser tab, or device) and a real-time sync engine that reconciles that local state back to a central Lakebase. The deal extends Databricks' Postgres reach from the lakehouse to the edge, giving each agent its own low-latency local database while keeping a governed source of truth in the cloud.
+
+Metabase SQL Zero-Day Attacks Could Have Wide Blast Radius (1 minute read)
+
+Metabase disclosed a maximum-severity SQL-injection zero-day (CVSS 10, still no CVE) that let attackers gain remote admin access to instances, alter configuration, and steal credentials for every connected database. Metabase Cloud customers were auto-patched, but self-hosted deployments running version 1.58 or later with the /api/session/reset_password endpoint exposed to the internet remain exploitable and should lock that endpoint down immediately.
+
+Accelerate PostgreSQL migrations using Gemini in Database Migration Service (2 minute read)
+
+Google added AI-assisted code conversion powered by Gemini to Database Migration Service, translating Oracle PL/SQL and SQL Server T-SQL stored procedures, triggers, and functions into PostgreSQL PL/pgSQL inside the Cloud console. The feature targets the "last mile" of migrations, where hundreds of proprietary routines usually demand months of manual dual-dialect rewriting before a move to open-source Postgres or AlloyDB can finish.
+
+BigQuery expands data transfers with direct Iceberg ingestion (5 minute read)
+
+BigQuery Data Transfer Service added direct ingestion from GCS, S3, and Azure Blob Storage into Apache Iceberg managed tables in preview, alongside new MCP server, SQL Server, Shopify, and Klaviyo connectors. The Iceberg piece matters most: it lets teams keep object storage as the source of truth for multi-cloud, multi-engine access while still using BigQuery's performance tuning, without hand-built ETL.
+
+Automate data monitoring and root-cause analysis with Looker Agentic Workflows (5 minute read)
+
+(blurb not generated)
+
+Metabase SQLi exploit grants attackers total access (2 minute read)
+
+Metabase disclosed a critical zero-day SQL injection flaw (CVE-2026-72898, CVSS 10) in versions 1.58 and up, giving attackers raw SQL access to the BI tool's database and the credentials, tokens, and API keys for connected warehouses like Snowflake, Databricks, and BigQuery. Metabase Cloud instances are already patched, but the roughly 2,500 self-hosted deployments Shodan tracks stay exposed until teams upgrade, and OEM-embedded users may not know they are running it.
+
+Microsoft’s PostgreSQL alternative, HorizonDB: Worth the wait? (5 minute read)
+
+(blurb not generated)
+
+🧠
+Deep Dives & Analysis
+
+Pi, Minimal and Performant (5 minute read)
+
+(blurb not generated)
+
+Taking AUTO CDC to the next level: Solving the hardest real-world use cases (1 minute read)
+
+Databricks extended AUTO CDC in Spark Declarative Pipelines to handle bitemporal change data capture, tracking business time and system time as two independent axes so teams can reconstruct both what a fact was and what their systems believed at any past date. Each target table gets four managed columns and rewrites affected history when late or out-of-order corrections arrive, no hand-written MERGE logic required. The capability targets audit regimes like SEC Rule 17a-4, and is landing in open-source Apache Spark 4.2.
+
+Carnot: Interpretable, Interactive, and Optimized Execution of Deep Research Queries (1 minute read)
+
+Carnot is an execution engine that compiles natural-language data-lake queries into physical execution graphs and exposes them in an interactive notebook, so analysts can critique the plan, run operators incrementally, inspect intermediate results, or edit the underlying code before a final answer lands. It targets the two failure modes of current AI analytics: deep research agents that hide their reasoning and cost, and semantic operators that get expensive at enterprise scale. The optimizer also lets users set explicit cost or latency constraints on a query.
+
+How We Pushed CDC into Postgres (1 minute read)
+
+Snowflake engineers detailed how they rebuilt Postgres change data capture from the ground up for Snowflake Postgres, replacing the usual pull-based logical decoding pipeline with a push model. The new data mirroring feature, now in public preview, pushes committed changes directly from Postgres into Apache Iceberg tables in transactional batches, then applies them to Snowflake serverlessly with low lag and transactional consistency. The pitch is one button instead of the fragile, high-cost replication tooling most teams stitch together themselves.
+
+How we pushed CDC into Postgres — and turned replication into clockwork (1 minute read)
+
+Snowflake engineers detailed how they rebuilt Postgres change data capture from the ground up for Snowflake Postgres, replacing the usual pull-based logical decoding pipeline with a push model. The new data mirroring feature, now in public preview, pushes committed changes directly from Postgres into Apache Iceberg tables in transactional batches, then applies them to Snowflake serverlessly with low lag and transactional consistency. The pitch is one button instead of the fragile, high-cost replication tooling most teams stitch together themselves.
+
+GEM Training: How Meta Doubled the Efficiency of Its LLM-Scale Ads Foundation Model (5 minute read)
+
+(blurb not generated)
+
+AI Query Compilation for Unified and Optimized Execution (1 minute read)
+
+This vision paper proposes compiling hybrid AI queries, both SQL relational operators and LLM inference, into a single unified tensor compute graph rather than shuttling data across execution boundaries. Fusing the two eliminates PCIe data movement between the query engine and the model and opens up global compiler optimizations and automatic sharding. On SemBench Reviews and Movies, the approach hit up to 5.3x lower latency and 9.8x higher throughput on TPUs, though it remains a research roadmap rather than a shipping engine.
+
+"Will This Data Break My Task?" - Interactive Synthesis of Task-Aware Data Unit Tests (1 minute read)
+
+This paper introduces PrismaDV, a compound AI system that generates data unit tests by analyzing both the data and the downstream code that consumes it, rather than profiling the data in isolation. It runs LLM-powered steps for data profiling, column-access detection, and data-flow analysis, then maintains a data-code assumption graph linking each generated constraint back to the task's source. The bet is that validation tied to how a column is actually used catches breakage that schema-only checks like Great Expectations miss.
+
+A Resource-centric Analysis and Optimization of NoSQL Workloads using Distressed Resource Volume Metric (1 minute read)
+
+Microsoft researchers released open-source NoSQL workload traces from real Cosmos DB clusters, along with a new reliability metric, Distressed Resource Volume, that captures user-experienced quality of service. The paper pairs this with LoadStar, a policy simulation framework, and Orbit, a forecast-driven placement algorithm that rebalances stressed replicas to cut tail errors. Orbit delivered higher load at lower error rates with up to 35% fewer resources, and is already in production with projected savings in the hundreds of millions per year.
+
+SiriusDeliver: Automating Data Warehouse Delivery at Tencent (1 minute read)
+
+This paper introduces SiriusDeliver, an LLM-based agent Tencent built to automate production data warehouse task delivery, handling context retrieval, workflow config, code generation, submission, and failure diagnosis end to end. Across a two-month deployment on Tencent Cloud WeData spanning 6 teams and 18,240 sessions, it hit an 87.2% success rate and 73.5% autonomous submission. The A/B test is the headline: median delivery time dropped from 228 to 23 minutes and engineer effort from 95 to 11 minutes.
+
+SafeQL: Search-based Refinement for Safe and Efficient LLM-based Text-to-SQL (1 minute read)
+
+SafeQL reframes the DBMS from a passive error reporter into an active guide for LLM text-to-SQL, repairing only the broken components of a query instead of regenerating the whole thing after each execution failure. Each refinement step is a guided search within a validated "safe query space," converging on an executable query without repeating past mistakes. On the Bird and Spider benchmarks, it beats regeneration-based methods on both execution accuracy and efficiency.
+
+How to ground Genie Agents in both structured data and documents without losing governance (1 minute read)
+
+Databricks Genie Agents can now ground a single agent in both structured sources (Managed, External, and Foreign Tables, Views, and Metric Views) and unstructured files in Unity Catalog Volumes, replacing the two-system split teams once bridged by hand. Governance lives in the catalog layer: agents run under the end user's identity, so Unity Catalog's object privileges, ABAC, row filters, and column masks filter every answer. The alternative, filtering at the model layer through prompt engineering, makes the LLM your security perimeter.
+
+Time to Move on: Querying without Nulls and Bags (1 minute read)
+
+This paper argues that SQL's tolerance of nulls and bags (duplicate-laden, non-normalized relations) is an avoidable mistake, not a necessary evil. Drawing on their work building Rel, a language for end-to-end relational programming, the authors show a query language can run on fully normalized relations with set semantics, dropping both the "billion dollar mistake" of nulls and Codd's corrupted relations. They contend the usual justifications for keeping them collapse under scrutiny, and outline what a null-free, set-based language enables.
+
+ELT is moving back to best-of-breed and Orchestration is the missing piece (5 minute read)
+
+(blurb not generated)
+
+🚀
+Launches & Tools
+
+Open-sourcing Metals v2: Databricks’ Java and Scala language server for multi‑million line codebases (1 minute read)
+
+Databricks open-sourced Metals v2, extending the Scala language server with first-class Java support and scaling it to handle its 26M-line Bazel monorepo, and shipped it for Cursor, VS Code, and Neovim. The work let the company pair lightweight editors with coding agents instead of IntelliJ, and by July 2026 92% of weekly active IDE users opened Cursor versus 12% for IntelliJ.
+
+Introducing FILE type: a native column type for multimodal data (5 minute read)
+
+(blurb not generated)
+
+AkasicDB: Demonstrating Omni RAG with a Unified Vector-Graph-Relational DBMS (1 minute read)
+
+AkasicDB is a research database system that natively executes vector similarity search, graph traversal, and relational filtering in a single framework, targeting RAG workflows that currently rely on out-of-DB pipelines or non-native integrations. The demo runs what the authors call Omni RAG, combining vector, graph, and relational retrieval in one engine to cut the overhead of stitching separate systems together for Graph RAG and filtered vector search.
+
+Amazon DynamoDB now supports real-time vector search at any scale (5 minute read)
+
+(blurb not generated)
