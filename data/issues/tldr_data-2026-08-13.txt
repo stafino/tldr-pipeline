@@ -1,0 +1,101 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR Data 2026-08-13
+
+📊
+News & Trends
+
+Databricks closed a $5B funding round at a $190B valuation, six months after raising $5B at a $134B valuation, and says it has crossed $7B in revenue run rate (Samantha Subin/CNBC) (1 minute read)
+
+Databricks raised $5B at a $190B valuation, six months after a $5B round valued it at $134B, and says it has crossed $7B in annualized revenue run rate. The 42% valuation jump in half a year signals investors are still betting on Databricks as the consolidation point for the lakehouse and AI-workload stack, ahead of a long-rumored IPO.
+
+Looker’s semantic layer governs Gemini Enterprise data for user trust (2 minute read)
+
+Google integrated Looker's governed semantic layer into Gemini Enterprise, letting Looker analysts publish conversational agents natively via the Agent-to-Agent protocol so users query structured metrics and unstructured documents in one chat interface. The semantic layer supplies codified join logic and metric definitions to constrain NL2SQL, giving deterministic answers instead of the inconsistent numbers and hallucinations that raw schema-guessing produces.
+
+Electric joins Databricks to bring WASM Postgres to AI agent sandboxes (1 minute read)
+
+Databricks acquired Electric, maker of PGlite (a WASM Postgres that runs inside an agent sandbox, browser tab, or device) and a real-time sync engine that reconciles that local state back to a central Lakebase. The deal extends Databricks' Postgres reach from the lakehouse to the edge, giving each agent its own low-latency local database while keeping a governed source of truth in the cloud.
+
+Metabase SQL Zero-Day Attacks Could Have Wide Blast Radius (1 minute read)
+
+Metabase disclosed a maximum-severity SQL-injection zero-day (CVSS 10, still no CVE) that let attackers gain remote admin access to instances, alter configuration, and steal credentials for every connected database. Metabase Cloud customers were auto-patched, but self-hosted deployments running version 1.58 or later with the /api/session/reset_password endpoint exposed to the internet remain exploitable and should lock that endpoint down immediately.
+
+Accelerate PostgreSQL migrations using Gemini in Database Migration Service (2 minute read)
+
+Google added AI-assisted code conversion powered by Gemini to Database Migration Service, translating Oracle PL/SQL and SQL Server T-SQL stored procedures, triggers, and functions into PostgreSQL PL/pgSQL inside the Cloud console. The feature targets the "last mile" of migrations, where hundreds of proprietary routines usually demand months of manual dual-dialect rewriting before a move to open-source Postgres or AlloyDB can finish.
+
+BigQuery expands data transfers with direct Iceberg ingestion (5 minute read)
+
+BigQuery Data Transfer Service added direct ingestion from GCS, S3, and Azure Blob Storage into Apache Iceberg managed tables in preview, alongside new MCP server, SQL Server, Shopify, and Klaviyo connectors. The Iceberg piece matters most: it lets teams keep object storage as the source of truth for multi-cloud, multi-engine access while still using BigQuery's performance tuning, without hand-built ETL.
+
+Automate data monitoring and root-cause analysis with Looker Agentic Workflows (2 minute read)
+
+Google added Looker Agentic Workflows in preview for version 26.08, using background agents to turn natural-language prompts like "notify me if average order value exceeds $1,000" into continuous metric monitors that run Key Driver Analysis and deliver root-cause summaries to Slack or email. The move pushes BI past threshold alerts into automated diagnosis, with admin-level oversight to review or disable workflows across the instance.
+
+How a major freight railroad scaled pipeline creation with Genie Code (5 minute read)
+
+(blurb not generated)
+
+🧠
+Deep Dives & Analysis
+
+Databricks Network Configuration delivery to Tens of Millions of Serverless VMs (5 minute read)
+
+(blurb not generated)
+
+Taking AUTO CDC to the next level: Solving the hardest real-world use cases (1 minute read)
+
+Databricks extended AUTO CDC in Spark Declarative Pipelines to handle bitemporal change data capture, tracking business time and system time as two independent axes so teams can reconstruct both what a fact was and what their systems believed at any past date. Each target table gets four managed columns and rewrites affected history when late or out-of-order corrections arrive, no hand-written MERGE logic required. The capability targets audit regimes like SEC Rule 17a-4, and is landing in open-source Apache Spark 4.2.
+
+How we pushed CDC into Postgres — and turned replication into clockwork (1 minute read)
+
+Snowflake engineers detailed how they rebuilt Postgres change data capture from the ground up for Snowflake Postgres, replacing the usual pull-based logical decoding pipeline with a push model. The new data mirroring feature, now in public preview, pushes committed changes directly from Postgres into Apache Iceberg tables in transactional batches, then applies them to Snowflake serverlessly with low lag and transactional consistency. The pitch is one button instead of the fragile, high-cost replication tooling most teams stitch together themselves.
+
+GEM Training: How Meta Doubled the Efficiency of Its LLM-Scale Ads Foundation Model (5 minute read)
+
+(blurb not generated)
+
+Guided Table Retrieval for Structured Data Search (1 minute read)
+
+This paper introduces guided table retrieval, a four-phase pipeline for answering natural language questions over structured databases by identifying relevant tables and inferring their joins. Instead of leaning on a single end-to-end LLM, it splits the work into deterministic hash-based grounding, join-graph exploration, LLM disambiguation, and algorithmic merging into minimal join trees. The authors report 94% precision on BIRD-DEV and 70% on the enterprise-scale BEAVER benchmark, outputting exact join trees that downstream query compilers can consume directly.
+
+Breaking the WAL (1 minute read)
+
+Antithesis reproduced SQLite's WAL-Reset bug in 15 minutes using a generic concurrent write-and-checkpoint workload and standard database assertions like "no lost committed writes" and "database not corrupt." The data race had gone undetected since 2010 because it never reproduced organically. The lesson for data teams: the simplest workloads often surface the hardest bugs, and deterministic simulation testing can catch races that manual reproduction never will.
+
+An Extended Tutorial and Vocabulary for Relational Language Design in an Era of AI-Assisted Query Generation (1 minute read)
+
+This 3-hour tutorial paper argues that as queries are increasingly written by machines and read by humans, the relevant question for relational language design is no longer expressive power but readability and revisability across SQL, dataframe, pipeline, graph, and functional notations. Using Abstract Relational Calculus and Relational Diagrams as reference representations, the authors build a vocabulary for comparing how languages express the same intent, extending it to recursive path queries, nested relations, and problems beyond PTIME.
+
+Plaintext Recovery Against Post-Filtering Access Control (1 minute read)
+
+This paper shows that post-filtering access control in databases leaks far more than prior work assumed. Row- and document-level security let untrusted queries run over all data before redacting private rows, and the authors turn that into full plaintext recovery. They exploit RLS timing side-channels in PostgreSQL and DLS scoring in Elasticsearch, using range, prefix, and conjunctive predicates to binary-search unknown values into complete records and approximate documents.
+
+Enabling Differentiated QoS Degradation for Replicated Databases under Failures (1 minute read)
+
+This paper tackles what happens to a replicated database when you can't just spin up replacement replicas after a failure. The authors present PLB, a PostgreSQL JDBC middleware load balancer that reassigns healthy replicas into Premium, Mixed, and Freemium roles under fail-stop failures, keeping the pool shared while preserving service-class differentiation. Against shared round-robin routing, it holds 26-28 more percentage points of median Premium goodput and cuts Premium p95 latency by 18.2%.
+
+Reverse Migration of Cloud Applications to On-premises (1 minute read)
+
+Diel, a reverse-migration tool from the Tursio team, automates moving cloud applications back to on-premises environments for regulated industries that can't deploy in the cloud. It combines simulate, replicate, and delegate strategies to transform managed cloud services into on-prem equivalents, resolving the develop-in-cloud, ship-on-prem paradox that stretches release cycles. The team reports keeping Tursio AI's cloud and on-prem builds in sync with stable releases every three weeks.
+
+Time to Move on: Querying without Nulls and Bags (1 minute read)
+
+This paper argues that SQL's tolerance of nulls and bags (duplicate-laden, non-normalized relations) is an avoidable mistake, not a necessary evil. Drawing on their work building Rel, a language for end-to-end relational programming, the authors show a query language can run on fully normalized relations with set semantics, dropping both the "billion dollar mistake" of nulls and Codd's corrupted relations. They contend the usual justifications for keeping them collapse under scrutiny, and outline what a null-free, set-based language enables.
+
+ELT is moving back to best-of-breed and Orchestration is the missing piece (5 minute read)
+
+(blurb not generated)
+
+🚀
+Launches & Tools
+
+Open-sourcing Metals v2: Databricks’ Java and Scala language server for multi‑million line codebases (1 minute read)
+
+Databricks open-sourced Metals v2, extending the Scala language server with first-class Java support and scaling it to handle its 26M-line Bazel monorepo, and shipped it for Cursor, VS Code, and Neovim. The work let the company pair lightweight editors with coding agents instead of IntelliJ, and by July 2026 92% of weekly active IDE users opened Cursor versus 12% for IntelliJ.
+
+Introducing FILE type: a native column type for multimodal data (5 minute read)
+
+(blurb not generated)

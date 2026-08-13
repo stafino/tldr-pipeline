@@ -1,0 +1,231 @@
+Sign Up | Advertise | View Online
+TLDR
+
+TLDR Dev 2026-08-13
+
+🧑‍💻
+Articles & Tutorials
+
+Tracking down the 16-year-old WAL-reset SQLite bug (5 minute read)
+
+(blurb not generated)
+
+How we improved APM Java startup by encoding a prefix trie as a JVM constant (5 minute read)
+
+Datadog's APM team cut Java class-matching overhead by 30% over four years, including a speculative win where they encode multiple class-name prefix matches ahead of time as a single JVM constant loaded with one bytecode instruction. The post explains why startup is hard to optimize, since the JIT compiler hasn't warmed up and profilers lack samples, forcing the team to lean on JVM internals knowledge and experiments rather than hot-spot data.
+
+Prototype on a laptop, scale to 16 billion rows: one Polars query (5 minute read)
+
+(blurb not generated)
+
+HTML over WebSockets: real-time SPAs with barely any JavaScript (1 minute read)
+
+The author builds real-time single-page apps by pushing server-rendered HTML fragments over WebSockets and swapping them into the DOM, keeping application state and rendering on the server. The approach cuts client-side JavaScript to a thin socket listener at the cost of a persistent connection per user and a server that must track view state for every session.
+
+Breaking the WAL (1 minute read)
+
+Antithesis reproduced SQLite's WAL-Reset bug, a data race that lurked in the Write-Ahead Logging subsystem since 2010 and that SQLite's own developers could never trigger organically. Using Claude to instrument version 3.51.2 with generic assertions like "no lost committed writes" and running concurrent writes and checkpoints, their deterministic simulator caught it in 15 minutes, then came back green against the patched 3.51.3.
+
+Automating cross-repo documentation with GitHub Agentic Workflows (5 minute read)
+
+(blurb not generated)
+
+Canva redesigns session revocation for 100M active sessions (5 minute read)
+
+Canva rebuilt its session revocation system to handle hundreds of millions of active sessions by storing revocations as compact 16-byte binary records in Amazon S3 rather than hammering MySQL, using immutable objects and conditional writes as coordination primitives. Gateways download 30-minute S3 chunks via conditional GETs into sorted in-memory indexes, cutting the revocation cache footprint by 87.5% while eliminating the coordinated database load that hit MySQL during deployments.
+
+Blocked aria-hidden: The Warning is Right, and Every Fix You’ve Found is Wrong (5 minute read)
+
+(blurb not generated)
+
+Deeply buried 16-year-old SQLite bug caused last year's Tailscale outages (1 minute read)
+
+A 16-year-old bug in SQLite's query planner was traced as the root cause of Tailscale's outages last year, surfacing only under a specific index-usage pattern that had gone unhit for over a decade. The write-up walks through how Tailscale's engineers narrowed an intermittent failure down to the buried SQLite path and coordinated the upstream fix.
+
+MergirafSemi: A Language-Agnostic Semistructured Merge Tool (1 minute read)
+
+MergirafSemi is a language-agnostic semistructured merge tool that uses lightweight Concrete Syntax Trees to guide merges while falling back to line-based merging inside regions like Java method bodies. In an empirical study across multiple languages, it cut spurious conflicts versus unstructured tools and matched a language-specific semistructured tool's accuracy, with lower runtime overhead and more robust execution in most common scenarios.
+
+How and Why Netflix Built a Real-Time Distributed Graph: Part 3 — Querying the graph with gRPC execution API (5 minute read)
+
+The third installment of Netflix's distributed graph series details the gRPC-based execution API that serves queries against the graph, covering how the engine plans traversals, batches subqueries, and streams results back to callers. The design favors a typed gRPC contract over GraphQL at the storage layer, trading schema flexibility for tighter control over execution cost and predictable latency under Netflix's real-time read load.
+
+Apple Silicon and macOS VMs: Faster LLM Inference with llama.cpp (1 minute read)
+
+Cua built a process-scoped compatibility layer that rewrites selected Metal capability answers for one guest process, letting llama.cpp pick newer GPU kernels inside a macOS VM running on Apple's Virtualization.framework. On an M1 Ultra the unlocked VM ran TinyLlama 1.1B prompt processing 11.08x faster and token generation 16.36x faster than the stock guest, reaching 98% to 99% of bare-metal speed, with build scripts and raw benchmark logs included for reproduction.
+
+Why tiny JPEGs look different in Chrome (5 minute read)
+
+(blurb not generated)
+
+Total Recall at What Cost? Benchmarking the Serving Cost of Agentic Memory Systems (1 minute read)
+
+This paper benchmarks the serving cost of three agentic memory systems (Mem0, Hindsight, and Mastra Observational Memory) against a rolling window and full-transcript resubmission across two backbones and conversations up to 400 turns. Cost can't be predicted from conversation length alone, break-even against full transcript ranges from tens of turns to never within 400, and no system wins on both cost and accuracy.
+
+Harnessing LLMs for Document-Guided Fuzzing of Python Libraries (1 minute read)
+
+VistaFuzz uses a locally served open-source LLM to extract per-parameter constraints and inter-parameter dependencies from API docs, then generates fuzzing inputs that satisfy both. Tested across 7,718 APIs in twelve Python libraries, it found that disabling dependency resolution drops the valid-input rate from above 95% to 31.6-52.8% on the 40% of APIs with inter-parameter relationships, and it surfaced 74 issues, 43 developer-confirmed and 29 fixed.
+
+Testing Deep Learning Library APIs via Cross-Framework Differential Fuzzing (1 minute read)
+
+Xamt applies cross-framework differential fuzzing to deep learning library APIs, testing groups of equivalent operations across seven libraries rather than relying on the CPU-GPU differential oracles that miss backend-consistent bugs. It built 676 execution-validated groups covering 2,563 matched APIs and surfaced 72 reproduced discrepancies, including 4 crashes; 25 have been confirmed by developers and 23 already fixed.
+
+Why you might want to build your WebApp in Canvas instead of HTML (5 minute read)
+
+The author explains why performance-critical web apps like Google Docs, Miro, and Canva render their core surfaces on Canvas rather than the DOM, trading the browser's built-in layout, event handling, and reflow for a bare drawing API. Canvas skips HTML parsing, style computation, and reflow to gain speed and full rendering control for infinite workspaces and zoomable grids, at the cost of reimplementing text, accessibility, and hit-testing yourself.
+
+Vertical slices, their ownership and external dependencies (5 minute read)
+
+The author argues that vertical slices, modules, and bounded contexts get conflated, and that treating every application area as a fully autonomous bounded context sets the separation bar so high that any dependency between slices looks like a violation. The fix is defining what a slice does when it needs something external, since "minimise coupling" means non-zero, not the myth that slices can never share code or read what another slice wrote.
+
+Scaling an Agentic Coding SDK: What Concurrency Actually Costs (5 minute read)
+
+Scaling a batch dependency fixer built on the GitHub Copilot SDK from a sequential loop to a five-worker pool cut a 30-repository run from roughly 46 minutes to about 12. The author's key reframe is that a Copilot session is a long-lived workload, not an HTTP request, so each concurrent agent needs an isolated workspace, reliable cleanup, resource and rate limits, durable job ownership, and safe retries before the parallelism pays off.
+
+An Agentic Workflow for Legacy HPC Modernization: Converting the Two-Electron-Integral Core of GAMESS (1 minute read)
+
+Three prompt-specialized Claude Code agents converted the two-electron-integral core of GAMESS, a 48-year-old quantum-chemistry package, from fixed-form Fortran 77 to free-form Fortran 2008 across 12 files, 56,448 lines, and 225 subroutines. The workflow used bit-for-bit reproduction of the suite's canonical energies as the merge criterion, and across 612 test runs it recorded zero chemistry-relevant differences down to the twelfth decimal place.
+
+🧠
+Opinions & Advice
+
+TDD inside the agent loop - theater or actual value? (1 minute read)
+
+Martin Fowler's team ran an exploratory eval on whether forcing a coding agent to follow TDD fully inside its own loop actually improves output, generating small, medium, and large greenfield tasks with Sonnet 4.6 and grading them with Opus. The result was no discernible quality gain, with non-TDD solutions occasionally ranked slightly higher on design and test quality and no meaningful difference in mutation scores.
+
+Agentic Code Quality (5 minute read)
+
+Addy Osmani argues that code review no longer scales as the primary quality check once agents generate hundreds of thousands of changes a day, so quality now depends on the constraints you wrap around them. He frames quality gates such as unit and property tests, mutation testing, and complexity metrics as the deterministic loop that decides whether an agent's proposal is safe, correct, and scoped enough to ship.
+
+Your contributors are AI-first now. Is your project? (5 minute read)
+
+(blurb not generated)
+
+Why Does CLAUDE.md Keep Growing? Catastrophic Remembering in Agentic Coding (1 minute read)
+
+This paper argues that agentic coding instruction files like CLAUDE.md grow without bound because appending is cheap while safely deleting an instruction whose rationale is gone costs exponential verification, a failure mode the authors call catastrophic remembering. Across 247,694 instruction lifetimes in 1,867 repos, prompts more than tripled over their lifetime and old instructions grew steadily harder to remove, with the proposed fix being prompt comments that encode latent reasoning.
+
+Can software factories actually work? (1 minute read)
+
+PostHog examines whether "software factories" — pipelines where agents pull tickets, build PRs, and ship via CI/CD with minimal human review — can scale, weighing HumanLayer CEO Dex Horthy's viral argument that they never will against real-world adoption at Ramp, Cursor, Uber, and PostHog itself. The post frames autonomy as a spectrum, noting PostHog's agents write roughly 70% of its PRs while humans still skim at least 80% of them.
+
+Relying on Go (5 minute read)
+
+Solod is a systems language for C and Go developers that is literally a subset of Go, reusing its syntax highlighting, LSP, linters, package management, and much of its standard library code verbatim rather than trying to fix Go's mistakes. The trade-off is that Go's tooling doesn't know Solod is a subset, so it won't flag full-Go features that Solod doesn't support, and the language adds manual memory management with explicit allocators.
+
+🚀
+Launches & Tools
+
+Introducing Delta (5 minute read)
+
+(blurb not generated)
+
+DeepSeek Harness (1 minute read)
+
+DeepSeek AI released DeepSeek Harness (dsh), an open-source agent harness with a plugin-everything architecture built on the Cordis framework, launched via `npx @deepseek-ai/dsh web` to start a local web UI on port 3080. It is in developer preview and iterating fast, so the team warns of compatibility-breaking changes and invites plugin authors to tag repos with the dsh-plugin topic for discoverability.
+
+Mojo 1.0 (1 minute read)
+
+Modular released Mojo 1.0, marking the language stable and production-ready after building toward the milestone since its 2023 debut. The 26.5 release converges on single ways to express common patterns, with variables now always declared with var, unified closures, and a single Pointer type, and commits to primarily additive changes during the 1.x line while managing breaking changes like mature languages such as C++.
+
+Modular 26.5: Mojo 1.0 is here! (1 minute read)
+
+Modular released Mojo 1.0, marking the language stable and production-ready after building toward the milestone since its 2023 debut. The 26.5 release converges on single ways to express common patterns, with variables now always declared with var, unified closures, and a single Pointer type, and commits to primarily additive changes during the 1.x line while managing breaking changes like mature languages such as C++.
+
+H3-metal – Native MiniMax-H3 inference for Apple Silicon (1 minute read)
+
+h3.c is a native C implementation of MiniMax-H3 inference for Apple Silicon, running prompt-to-video and prompt-to-audio generation end to end through hand-written Metal blocks. It supports first/last-frame conditioning and ordered Ref2VA image references, plus an Iris-style interactive session that keeps BF16 prompt conditioning and the video decoder in memory so re-seeding a prompt skips reloading and re-encoding.
+
+Open-sourcing Metals v2: Databricks’ Java and Scala language server for multi‑million line codebases (1 minute read)
+
+Databricks open-sourced Metals v2, an extension of the Scala language server with first-class Java support and scaling for its 26M-line Bazel monorepo. Available now in Cursor, VS Code, and Neovim, it lets teams pair a coding agent with a lightweight editor instead of IntelliJ, which Databricks credits for pushing weekly active Cursor usage to 92% while it dropped most of its IntelliJ seats.
+
+Flutter 3.47 (1 minute read)
+
+Flutter 3.47 splits Material and Cupertino into standalone material_ui and cupertino_ui packages, both hitting 1.0 on pub.dev, so design widgets can ship fixes weekly instead of waiting on quarterly SDK releases. The release also makes Impeller the default renderer on desktop, graduates Widget Previews to stable, and ships a `dart fix` migration to update imports automatically.
+
+Meta Releases Muse Code (5 minute read)
+
+(blurb not generated)
+
+ChatGPT Desktop (Codex Desktop) for Linux (1 minute read)
+
+OpenAI released a Linux build of its Codex desktop app, extending the agentic coding client that already runs in ChatGPT, an IDE extension, and a CLI. The desktop app pairs with built-in worktrees and cloud environments to run agents in parallel across projects, and adds Skills for encoding team standards and scheduled background tasks like issue triage, CI/CD, and PR review.
+
+We're open-sourcing our privacy proxy CLI (1 minute read)
+
+Cloudflare open sourced pvcli, a command-line tool for issuing and debugging Oblivious HTTP requests across the relay, gateway, and origin hops with a single command. Released under Apache-2.0, it packages the debugging knowledge from operating OHTTP at millions of requests per second behind products like Apple Private Relay and Microsoft Edge Secure Network VPN.
+
+Show HN: Woxi - Open-source Mathematica / Wolfram Language reimplementation (1 minute read)
+
+Woxi is an open-source reimplementation of the Wolfram Language and Mathematica that ships as a Jupyter kernel. Install it locally with `woxi install-kernel`, or run notebooks in the browser through the bundled JupyterLite instance with no local setup required.
+
+Modular's Mojo programming language hits 1.0 milestone (1 minute read)
+
+Modular released version 1.0 of Mojo, its Python-superset language aimed at high-performance AI and systems code, marking the first stable release after years of preview. Developers are still waiting on the promised open source compiler to clear up uncertainty following Qualcomm's acquisition of Modular, which leaves the language's long-term governance and portability an open question.
+
+Give any website a WebMCP interface (5 minute read)
+
+(blurb not generated)
+
+Introducing Kitesurf: The agent-first browser that runs in V8 isolates on Cloudflare Workers (5 minute read)
+
+(blurb not generated)
+
+MAI-Code-1.1-Flash: Better, faster, at a quarter of the cost (5 minute read)
+
+Microsoft released MAI-Code-1.1-Flash, its small coding model now serving in GitHub Copilot, at a quarter of the cost of the 1.0 version from June. The update posts a 22% gain on Terminal-Bench 2.1 in Copilot CLI and a 15% improvement on .NET tasks, while streaming tokens 25% faster and using 25% fewer tokens per task.
+
+Message your other Claude Code sessions (1 minute read)
+
+Claude Code v2.1.224 adds cross-session messaging, letting one session hand a finding, status, or decision to another through the new ListAgents and SendMessage tools without you copy-pasting between terminals. It works on macOS and Linux with no setup once sessions meet the version requirement, covers parallel worktrees and long-running jobs, and can reply to sessions on other machines though cross-machine exchanges must be started locally.
+
+Show HN: Git-knife – Edit commit messages, authors, and dates like a spreadsheet (1 minute read)
+
+git-knife is a desktop GUI for editing git commit metadata directly, including message, author name/email, and the author and committer dates that GUIs like GitKraken, Fork, and Sublime Merge treat as immutable. It shells out to the system git CLI and rebuilds commits with git commit-tree, reusing each commit's original tree so file contents never change, and supports bulk regex edits with an automatic backup ref before every rewrite.
+
+Better Code, Fewer Tokens: The Benefits of Code Connect in MCP (5 minute read)
+
+(blurb not generated)
+
+Unifying Workers AI and AI Gateway into a single AI control plane (5 minute read)
+
+(blurb not generated)
+
+OpenSSH 10.5/10.5p1 (1 minute read)
+
+OpenSSH 10.5 patches an ssh-agent flaw where a locked agent still honored session-bind@openssh.com requests, letting operations meant to stay local, including adding PKCS#11 tokens and using destination-restricted keys, run from a remote forwarded agent. The team also cited a rise in AI-assisted security reports and independent rediscovery of the same bugs, and will now ship more frequent releases rather than batching fixes.
+
+🎁
+Miscellaneous
+
+77 Open VSX extensions found harvesting developer info (5 minute read)
+
+(blurb not generated)
+
+Malicious LiteLLM Releases Tied to Trivy Hack May Have Exposed 2,100+ Organizations (1 minute read)
+
+Two malicious LiteLLM releases sat on PyPI for about 40 minutes on March 24, carrying code that harvested cloud keys, SSH keys, Kubernetes tokens, and database passwords from any system that installed versions 1.82.7 or 1.82.8. CloudSEK has now published a searchable dataset mapping potential exposure to over 2,500 organizations, including NVIDIA, Cisco, and FedEx, and both it and the FBI advise rotating any secrets accessible that day.
+
+CodeRabbit lands $143M at $1.5B valuation as AI-generated code surges (1 minute read)
+
+CodeRabbit raised $143M in Series C funding at a $1.5B valuation, co-led by Atomico and Smash Capital, less than a year after its $60M Series B. The AI code review startup now runs over two million reviews a week for 17,000+ customers including NVIDIA and BMW, and is expanding into change management with Triage, Change Stack, and CodeRabbit Security.
+
+Blacksmith raises $45M to aid AI code validation as agentic development grows (5 minute read)
+
+(blurb not generated)
+
+CodeRabbit bags $143M to help companies get a grip on the explosion of AI-generated code (5 minute read)
+
+(blurb not generated)
+
+⚡
+Quick Links
+
+Perry Mason in: The Case of the Drifting Timer (2 minute read)
+
+A four-iteration walkthrough of building a production-grade reactive clock in Vue 3, from setInterval memory leak to scope-safe cleanup.
+
+Locking your ssh-agent exposed local-only keys until OpenSSH 10.5 (5 minute read)
+
+OpenSSH 10.5 fixes a flaw where locking your ssh-agent disabled the local-vs-forwarded check, letting remote connections use local-only keys.
