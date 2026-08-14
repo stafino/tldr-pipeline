@@ -1,9 +1,35 @@
 {
   "date": "2026-08-14",
   "newsletter": "tldr_dev",
-  "fetched_at": "2026-08-14T06:53:40.458725+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-08-14T16:42:35.123040+00:00",
+  "tldr_titles": [
+    "Choosing an AI model: one prompt, 11 models, very different results",
+    "How Compaction Works in Pi",
+    "Understanding is the new bottleneck",
+    "Blog about things you don't understand yet",
+    "Introducing Gemini 3.7 Flash",
+    "Empty shelves or lost keys? Recall is the bottleneck for parametric factuality",
+    "Text AI watermarks will always be trivial to remove",
+    "Accelerating GPT-5.6 Sol Ultrafast with OpenAI",
+    "One Week of Building and Reviewing Code With LLM Agents",
+    "NP-overrated",
+    "Ordinary Abundance",
+    "How (some) Chinese AI Practitioners View Model Distillation"
+  ],
+  "tldr_matched": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -327,22 +353,6 @@
     },
     {
       "rank": 41,
-      "score": 56.0,
-      "title": "Over 2,500 Organizations Impacted by LiteLLM Supply Chain Attack",
-      "url": "https://www.securityweek.com/over-2500-organizations-impacted-by-litellm-supply-chain-attack/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 42,
-      "score": 56.0,
-      "title": "CodeRabbit lands $143M at $1.5B valuation as AI-generated code surges",
-      "url": "https://techfundingnews.com/coderabbit-lands-143m-at-1-5b-valuation-as-ai-generated-code-surges/",
-      "matched_tldr_idx": null,
-      "similarity": null
-    },
-    {
-      "rank": 43,
       "score": 55.0,
       "title": "How Cursor Router chooses the right model for the task",
       "url": "https://cursor.com/blog/how-cursor-router-works",
@@ -350,25 +360,55 @@
       "similarity": null
     },
     {
-      "rank": 44,
+      "rank": 42,
       "score": 55.0,
       "title": "Blacksmith raises $45M to aid AI code validation as agentic development grows",
       "url": "https://siliconangle.com/2026/08/12/blacksmith-raises-45m-aid-ai-code-validation-agentic-development-grows/",
       "matched_tldr_idx": null,
       "similarity": null
-    },
-    {
-      "rank": 45,
-      "score": 55.0,
-      "title": "CodeRabbit bags $143M to help companies get a grip on the explosion of AI-generated code",
-      "url": "https://siliconangle.com/2026/08/12/coderabbit-bags-143m-help-companies-get-grip-explosion-ai-generated-code/",
-      "matched_tldr_idx": null,
-      "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.0,
+    "25": 0.0,
+    "50": 0.0,
+    "100": 0.0,
+    "42": 0.0
+  },
+  "hits_at": {
+    "10": 0,
+    "25": 0,
+    "50": 0,
+    "100": 0,
+    "42": 0
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://www.netlify.com/blog/one-prompt-11-models-very-different-results/",
+    "https://earendil.com/posts/compaction-in-pi/",
+    "https://www.geoffreylitt.com/2026/07/02/understanding-is-the-new-bottleneck",
+    "https://www.seangoedecke.com/blog-about-things-you-dont-understand-yet/",
+    "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-3-7-flash/",
+    "https://research.google/blog/empty-shelves-or-lost-keys-recall-is-the-bottleneck-for-parametric-factuality/",
+    "https://www.seangoedecke.com/text-ai-watermarks/",
+    "https://www.cerebras.ai/blog/accelerating-gpt-5-6-sol-ultrafast-with-openai",
+    "https://allaboutcoding.ghinda.com/one-week-of-coding-and-reviewing-with-llm-agents/",
+    "https://gruhn.me/blog/2026-08-13/",
+    "https://ordinaryabundance.com/",
+    "https://www.geopolitechs.org/p/how-some-chinese-ai-practitioners"
+  ],
+  "tldr_domains": [
+    "netlify.com",
+    "earendil.com",
+    "geoffreylitt.com",
+    "seangoedecke.com",
+    "blog.google",
+    "research.google",
+    "seangoedecke.com",
+    "cerebras.ai",
+    "allaboutcoding.ghinda.com",
+    "gruhn.me",
+    "ordinaryabundance.com",
+    "geopolitechs.org"
+  ]
 }

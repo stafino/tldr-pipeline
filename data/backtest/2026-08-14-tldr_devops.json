@@ -1,9 +1,29 @@
 {
   "date": "2026-08-14",
   "newsletter": "tldr_devops",
-  "fetched_at": "2026-08-14T06:53:43.213754+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-08-14T16:43:46.734576+00:00",
+  "tldr_titles": [
+    "Announcing: Docker VMM Public Beta",
+    "Smart Routing in Unity AI Gateway: Match frontier quality with 30%+ lower cost per task",
+    "AI is removing the middle class of software engineering",
+    "Octopus Easy Mode - Progressive Rollout",
+    "How to Choose Digital Experience Monitoring Tools",
+    "Cloudflare Launches Persistent, Stateful, Computer-like Environments for Agents",
+    "How we tracked down a 16-year-old SQLite bug",
+    "Good apps aren't born, they're guided: Building observable policy as code",
+    "Keeping ChatGPT Fast as AI Development Accelerates"
+  ],
+  "tldr_matched": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    true,
+    true,
+    false,
+    false
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -18,8 +38,8 @@
       "score": 68.0,
       "title": "Cloudflare OS: an open platform for agents, apps, and work",
       "url": "https://blog.cloudflare.com/cloudflare-os/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 5,
+      "similarity": 0.7954223155975342
     },
     {
       "rank": 3,
@@ -34,16 +54,16 @@
       "score": 66.0,
       "title": "The Agent Access Model",
       "url": "https://blog.cloudflare.com/the-agent-access-model/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 5,
+      "similarity": 0.7046656012535095
     },
     {
       "rank": 5,
       "score": 66.0,
       "title": "Deeply buried 16-year-old SQLite bug caused last year's Tailscale outages",
       "url": "https://www.theregister.com/databases/2026/08/12/deeply-buried-16-year-old-sqlite-bug-caused-last-years-tailscale-outages/5287004",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 6,
+      "similarity": 0.8200880885124207
     },
     {
       "rank": 6,
@@ -74,8 +94,8 @@
       "score": 62.0,
       "title": "Introducing Kitesurf: The agent-first browser that runs in V8 isolates on Cloudflare Workers",
       "url": "https://blog.cloudflare.com/kitesurf/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 5,
+      "similarity": 0.6671294569969177
     },
     {
       "rank": 10,
@@ -90,16 +110,16 @@
       "score": 60.0,
       "title": "Tracking down the 16-year-old WAL-reset SQLite bug",
       "url": "https://tailscale.com/blog/sqlite-wal-reset-bug",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 6,
+      "similarity": 1.0
     },
     {
       "rank": 12,
       "score": 60.0,
       "title": "How Tailscale helped find the SQLite WAL-Reset bug",
       "url": "https://tailscale.com/blog/sqlite-wal-reset-bug",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 6,
+      "similarity": 1.0
     },
     {
       "rank": 13,
@@ -122,8 +142,8 @@
       "score": 60.0,
       "title": "Unifying Workers AI and AI Gateway into a single AI control plane",
       "url": "https://blog.cloudflare.com/workers-ai-gateway-unification/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 5,
+      "similarity": 0.6262785196304321
     },
     {
       "rank": 16,
@@ -218,8 +238,8 @@
       "score": 57.0,
       "title": "Runtime instances: persistent compute for production AI agents on Amazon Bedrock AgentCore",
       "url": "https://aws.amazon.com/blogs/aws/runtime-instances-persistent-compute-for-production-ai-agents-on-amazon-bedrock-agentcore/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 5,
+      "similarity": 0.6286612153053284
     },
     {
       "rank": 28,
@@ -270,9 +290,41 @@
       "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.2222222222222222,
+    "25": 0.2222222222222222,
+    "50": 0.2222222222222222,
+    "100": 0.2222222222222222,
+    "33": 0.2222222222222222
+  },
+  "hits_at": {
+    "10": 2,
+    "25": 2,
+    "50": 2,
+    "100": 2,
+    "33": 2
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://www.docker.com/blog/docker-vmm-public-beta/",
+    "https://www.databricks.com/blog/smart-routing-unity-ai-gateway-match-frontier-quality-30-lower-cost-task",
+    "https://blog.florianherrengt.com/ai-removing-middle-class-software-engineering.html",
+    "https://octopus.com/blog/octo-easy-mode-18-progressive-rollouts",
+    "https://newrelic.com/blog/observability/digital-experience-monitoring-tools",
+    "https://www.infoq.com/news/2026/08/cloudflare-computer-agents/",
+    "https://tailscale.com/blog/sqlite-wal-reset-bug",
+    "https://www.cncf.io/blog/2026/08/12/good-apps-arent-born-theyre-guided-building-observable-policy-as-code/",
+    "https://www.infoq.com/presentations/openai-performance-engineering-agentic-coding/"
+  ],
+  "tldr_domains": [
+    "docker.com",
+    "databricks.com",
+    "blog.florianherrengt.com",
+    "octopus.com",
+    "newrelic.com",
+    "infoq.com",
+    "tailscale.com",
+    "cncf.io",
+    "infoq.com"
+  ]
 }
