@@ -1,9 +1,37 @@
 {
   "date": "2026-08-17",
   "newsletter": "tldr_data",
-  "fetched_at": "2026-08-17T08:51:01.093134+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-08-17T18:37:34.494271+00:00",
+  "tldr_titles": [
+    "Scratch a simple data model, find a complex one",
+    "Point Lookups on the Lakehouse: How Hudi Indexes Accelerate Read-Heavy Workloads",
+    "Why AI Is a Storage Workload",
+    "Change-Data-Capture Doesn't Solve Dual-Writes",
+    "On Benchmarking",
+    "How Kenn is doing Agentic Engineering",
+    "How we tracked down a 16-year-old SQLite bug",
+    "Apache DataFusion Comet 1.0.0 Release",
+    "Introducing DataBench",
+    "What's new in OpenSearch 3.8",
+    "Snowflake says this 149 GB query scanned -1.5 GB",
+    "Fairly Ranking the Most Brilliant Birds",
+    "Querying 1 Thousand JSON Files From S3"
+  ],
+  "tldr_matched": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -62,9 +90,49 @@
       "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.0,
+    "25": 0.0,
+    "50": 0.0,
+    "100": 0.0,
+    "7": 0.0
+  },
+  "hits_at": {
+    "10": 0,
+    "25": 0,
+    "50": 0,
+    "100": 0,
+    "7": 0
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://codeblog.jonskeet.uk/2026/08/14/scratch-a-simple-data-model-find-a-complex-one/",
+    "https://hudi.apache.org/blog/2026/08/14/hudi-for-read-heavy-workloads-point-lookups-with-indexes",
+    "https://www.datagravity.dev/p/why-ai-is-a-storage-workload",
+    "https://aandreakis.com/posts/change-data-capture-doesnt-solve-dual-writes",
+    "https://www.dataengineeringweekly.com/p/on-benchmarking",
+    "https://wesmckinney.com/blog/agentic-engineering-aug-2026/",
+    "https://tailscale.com/blog/sqlite-wal-reset-bug",
+    "https://datafusion.apache.org/blog/2026/08/07/datafusion-comet-1.0.0",
+    "https://hex.tech/blog/databench-agentic-analytics-benchmark/",
+    "https://opensearch.org/blog/whats-new-in-opensearch-3-8/",
+    "https://espresso.ai/post/snowflake-bytes-scanned-considered-harmful",
+    "https://moultano.wordpress.com/2026/08/14/fairly-ranking-the-most-brilliant-birds/",
+    "https://performancede.substack.com/p/querying-1-thousand-json-files-from"
+  ],
+  "tldr_domains": [
+    "codeblog.jonskeet.uk",
+    "hudi.apache.org",
+    "datagravity.dev",
+    "aandreakis.com",
+    "dataengineeringweekly.com",
+    "esmckinney.com",
+    "tailscale.com",
+    "datafusion.apache.org",
+    "hex.tech",
+    "opensearch.org",
+    "espresso.ai",
+    "moultano.wordpress.com",
+    "performancede.substack.com"
+  ]
 }

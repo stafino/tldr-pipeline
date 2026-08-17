@@ -1,9 +1,35 @@
 {
   "date": "2026-08-17",
   "newsletter": "tldr_infosec",
-  "fetched_at": "2026-08-17T08:51:02.357164+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-08-17T18:37:54.601647+00:00",
+  "tldr_titles": [
+    "RingCentral Data Breach Exposed Info of 1.6M Accounts",
+    "New AmnesiaStealer macOS Malware Hijacks Browser Sessions via Remote Control",
+    "From a Schema Name to RCE in n8n",
+    "How Cloudflare Enforces Engineering Standards Using AI",
+    "How Well Can Open-Weight Models Evade SIEM Detection?",
+    "How AWS IAM Role Manager Rethinks the Starting Point for IAM Roles",
+    "How Cloudflare detects MCP traffic and helps secure it",
+    "The GPU Serial Number: How Brave Is Fighting the Next Generation of Web Tracking",
+    "Researchers observe first 'near-autonomous' AI attack on government target in Taiwan",
+    "Massive Azure Exfiltration Campaign Exposes Millions of Enterprise Records",
+    "Apple Spyware Threat Alerts: What Users Need To Know",
+    "ChatGPT Computer History Logs Every Click and Keystroke on Your Mac"
+  ],
+  "tldr_matched": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -222,9 +248,47 @@
       "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.0,
+    "25": 0.0,
+    "50": 0.0,
+    "100": 0.0,
+    "27": 0.0
+  },
+  "hits_at": {
+    "10": 0,
+    "25": 0,
+    "50": 0,
+    "100": 0,
+    "27": 0
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://www.bleepingcomputer.com/news/security/ringcentral-data-breach-exposed-info-of-16-million-accounts/",
+    "https://www.bleepingcomputer.com/news/security/new-amnesiastealer-macos-malware-hijacks-browser-sessions-via-remote-control/",
+    "https://simonkoeck.com/writeups/n8n-gsuiteadmin-prototype-pollution-rce",
+    "https://blog.cloudflare.com/engineering-standards-enforcement/",
+    "https://blog.vulnetic.ai/how-well-can-open-weight-models-evade-siem-detection-d1a512fed614",
+    "https://aws.amazon.com/blogs/security/how-aws-iam-role-manager-rethinks-the-starting-point-for-iam-roles/",
+    "https://blog.cloudflare.com/mcp-security-updates/",
+    "https://thecybersecguru.com/analysis/brave-1-93-gpu-fingerprinting/",
+    "https://cyberscoop.com/near-autonomous-ai-attack-government-target-taiwan/",
+    "https://www.infostealers.com/article/massive-azure-exfiltration-campaign-exposes-millions-of-enterprise-records-via-compromised-credentials-mcdonalds-vodafone-kyndryl-others/",
+    "https://www.analyticsinsight.net/news/apple-spyware-threat-alerts-what-users-need-to-know",
+    "https://hwbusters.com/news/chatgpt-computer-history-logs-every-click-and-keystroke-on-your-mac/"
+  ],
+  "tldr_domains": [
+    "bleepingcomputer.com",
+    "bleepingcomputer.com",
+    "simonkoeck.com",
+    "blog.cloudflare.com",
+    "blog.vulnetic.ai",
+    "aws.amazon.com",
+    "blog.cloudflare.com",
+    "thecybersecguru.com",
+    "cyberscoop.com",
+    "infostealers.com",
+    "analyticsinsight.net",
+    "hwbusters.com"
+  ]
 }

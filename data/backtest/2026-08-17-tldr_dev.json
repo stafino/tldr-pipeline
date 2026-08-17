@@ -1,9 +1,37 @@
 {
   "date": "2026-08-17",
   "newsletter": "tldr_dev",
-  "fetched_at": "2026-08-17T08:51:00.643442+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-08-17T18:37:28.723073+00:00",
+  "tldr_titles": [
+    "Auto-research with Codex: How I achieved a 232x Faster Kernel over baseline with Codex in GPU Mode's qr_v2 problem",
+    "Maximizing the value of your Claude Code sessions",
+    "Models Are Getting Dumber on Purpose",
+    "Why does Opus 5 feel worse to work with?",
+    "Software Engineering fundamentals matter more than ever",
+    "Don't be a meat proxy",
+    "GLM-5.3: Frontier Coding with Emergent Cyber Capabilities",
+    "Who Are the Token Brokers?",
+    "A fortuitous decade as an indie software developer",
+    "The TEMU-fication of Software, Digital Goods & Services",
+    "Protobuf finally has LSP support. You're welcome",
+    "Something Nobody Told You About The Image Element (It Can Overflow!)",
+    "Everything is about to \u201cgo dark\u201d"
+  ],
+  "tldr_matched": [
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -146,8 +174,8 @@
       "score": 58.0,
       "title": "Message your other Claude Code sessions",
       "url": "https://code.claude.com/docs/en/cross-session-messaging",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 1,
+      "similarity": 0.6797065734863281
     },
     {
       "rank": 19,
@@ -206,9 +234,47 @@
       "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.0,
+    "25": 0.07692307692307693,
+    "50": 0.07692307692307693,
+    "100": 0.07692307692307693
+  },
+  "hits_at": {
+    "10": 0,
+    "25": 1,
+    "50": 1,
+    "100": 1
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://sankalp.bearblog.dev/autoresearch/",
+    "https://claude.com/blog/maximizing-the-value-of-your-claude-code-sessions",
+    "https://w4g1.dev/blog/models-are-getting-dumber-on-purpose",
+    "https://mun-logadan.github.io/why-does-opus-5-feel-worse/",
+    "https://rhonabwy.com/2026/08/15/software-engineering-fundamentals-matter-more-than-ever/",
+    "https://gruhn.me/blog/2026-08-03/",
+    "https://z.ai/blog/glm-5.3",
+    "https://vectoral.com/blog/who-are-the-token-brokers",
+    "https://lapcatsoftware.com/articles/2026/8/3.html",
+    "https://xn--gckvb8fzb.com/the-temu-fication-of-software-digital-goods-services/",
+    "https://buf.build/blog/protobuf-lsp",
+    "https://master.dev/blog/something-nobody-told-you-about-the-image-element-it-can-overflow/",
+    "https://blog.cryptographyengineering.com/2026/08/14/everything-is-about-to-go-dark/"
+  ],
+  "tldr_domains": [
+    "sankalp.bearblog.dev",
+    "claude.com",
+    "4g1.dev",
+    "mun-logadan.github.io",
+    "rhonabwy.com",
+    "gruhn.me",
+    "z.ai",
+    "vectoral.com",
+    "lapcatsoftware.com",
+    "xn--gckvb8fzb.com",
+    "buf.build",
+    "master.dev",
+    "blog.cryptographyengineering.com"
+  ]
 }
