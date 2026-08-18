@@ -1,9 +1,43 @@
 {
   "date": "2026-08-18",
   "newsletter": "tldr_ai",
-  "fetched_at": "2026-08-18T12:20:33.692341+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-08-18T19:05:50.280712+00:00",
+  "tldr_titles": [
+    "Anthropic's Revenue to Exceed $65 Billion",
+    "Groq Raised $350 Million After Nvidia Deal",
+    "Cursor launches Origin code hosting platform as GitHub outage exposes opening in AI coding race",
+    "Testing Fable vs Sol in terms of taste (they are both bad)",
+    "When Models Learn",
+    "Qwen3.8 vs Qwen3.6 vs Gemma 4 on a 24GB GPU",
+    "The Deadline Dividend",
+    "Warp Agent Memory (Research Preview)",
+    "How Software Teams Use AI in 2026",
+    "Scaling Data Repetition for LLMs",
+    "Teaching Everyone to Fish for Tokens",
+    "Own Your Intelligence: A How-To Guide",
+    "One AI module faked 86% of a pipeline's accuracy gains by feeding another the answers",
+    "OpenAI's GPT-5.6 Sol is now half off on OpenRouter",
+    "SOTA Apple Silicon Inference",
+    "Qwen3.8-27B-Uncensored-MLX"
+  ],
+  "tldr_matched": [
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -122,8 +156,8 @@
       "score": 58.0,
       "title": "Cursor prepares to launch Origin platform for code reviews",
       "url": "https://www.testingcatalog.com/cursor-prepares-to-launch-origin-platform-for-code-reviews/",
-      "matched_tldr_idx": null,
-      "similarity": null
+      "matched_tldr_idx": 2,
+      "similarity": 0.7471810579299927
     },
     {
       "rank": 16,
@@ -190,9 +224,55 @@
       "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.0,
+    "25": 0.0625,
+    "50": 0.0625,
+    "100": 0.0625,
+    "23": 0.0625
+  },
+  "hits_at": {
+    "10": 0,
+    "25": 1,
+    "50": 1,
+    "100": 1,
+    "23": 1
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://x.com/business/status/2089438395764240791",
+    "https://www.implicator.ai/groq-350-million-3-5-billion-valuation-after-nvidia-deal/",
+    "https://venturebeat.com/infrastructure/cursor-launches-origin-code-hosting-platform-as-github-outage-exposes-opening-in-ai-coding-race",
+    "https://magichour.ai/blog/fable-vs-sol-taste-test",
+    "https://tomtunguz.com/test-time-training-impact/",
+    "https://kingy.ai/blog/qwen3-8-27b-vs-qwen3-6-27b-vs-gemma-4-31b/",
+    "https://deadline-dividend.onrender.com/",
+    "https://docs.warp.dev/agents/agent-memory/",
+    "https://linear.app/data",
+    "https://arxiv.org/abs/2608.14071",
+    "https://www.interconnects.ai/p/teaching-everyone-to-fish-for-tokens",
+    "https://x.com/sonyatweetybird/status/2089390902162895350",
+    "https://venturebeat.com/orchestration/one-ai-module-faked-86-of-a-pipelines-accuracy-gains-by-feeding-another-the-answers",
+    "https://x.com/OpenRouter/status/2089406144297214339",
+    "https://www.reddit.com/r/LocalLLaMA/comments/1vphr8u/sota_apple_silicon_inference_august_15_2026/",
+    "https://huggingface.co/orcarouter/Qwen3.8-27B-Uncensored-MLX"
+  ],
+  "tldr_domains": [
+    "x.com",
+    "implicator.ai",
+    "venturebeat.com",
+    "magichour.ai",
+    "tomtunguz.com",
+    "kingy.ai",
+    "deadline-dividend.onrender.com",
+    "docs.warp.dev",
+    "linear.app",
+    "arxiv.org",
+    "interconnects.ai",
+    "x.com",
+    "venturebeat.com",
+    "x.com",
+    "reddit.com",
+    "huggingface.co"
+  ]
 }
