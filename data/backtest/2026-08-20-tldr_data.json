@@ -1,9 +1,39 @@
 {
   "date": "2026-08-20",
   "newsletter": "tldr_data",
-  "fetched_at": "2026-08-20T08:44:20.110361+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-08-20T15:36:27.443415+00:00",
+  "tldr_titles": [
+    "Behind the Scenes: Evolving Netflix's Ads Event Pipeline for Live",
+    "Agentic Transaction: Towards ACID-Compliant Agent Systems",
+    "Simplifying data and product integrations with a data abstraction layer",
+    "Software engineering at a proprietary trading company: Optiver",
+    "Postgres 19: How Our Advice Has Changed Since We Wrote It",
+    "Spark Tips. Partition Tuning",
+    "I spent 10 hours vibe-coding a tool to visualize any Parquet file's internals",
+    "A Preview of DuckDB v2.0",
+    "Semi-Structured Data in Apache Iceberg: Meet the Variant Type",
+    "(Re)Building a FAQ System for DataTalks.Club",
+    "We turned off Pub/Sub and nobody noticed",
+    "We will ship the first Polars 2.0 release candidate next week",
+    "Massively parallel Postgres backups",
+    "DFlash 2: Keep Drafting Parallel"
+  ],
+  "tldr_matched": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -22,9 +52,51 @@
       "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.0,
+    "25": 0.0,
+    "50": 0.0,
+    "100": 0.0,
+    "2": 0.0
+  },
+  "hits_at": {
+    "10": 0,
+    "25": 0,
+    "50": 0,
+    "100": 0,
+    "2": 0
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://netflixtechblog.medium.com/behind-the-scenes-evolving-netflixs-ads-event-pipeline-for-live-part-ii-826ebf9ad9fb",
+    "https://arxiv.org/html/2608.13900v1",
+    "https://www.uber.com/us/en/blog/data-abstraction-layer/",
+    "https://newsletter.pragmaticengineer.com/p/optiver",
+    "https://www.crunchydata.com/blog/postgres-19-how-our-advice-has-changed-since-we-wrote-it",
+    "https://luminousmen.substack.com/p/spark-tips-partition-tuning",
+    "https://vutr.substack.com/p/i-spent-10-hours-vibe-coding-a-tool",
+    "https://duckdb.org/2026/08/17/duckdb-20-highlights",
+    "https://iceberg.apache.org/blog/variant-in-apache-iceberg/",
+    "https://alexeyondata.substack.com/p/rebuilding-a-faq-system-for-datatalksclub",
+    "https://incident.io/blog/we-turned-off-pub-sub-and-nobody-noticed",
+    "https://threadreaderapp.com/thread/2089338347286093851.html",
+    "https://planetscale.com/blog/massively-parallel-postgres-backups",
+    "https://inco.ai/blog/dflash2/"
+  ],
+  "tldr_domains": [
+    "netflixtechblog.medium.com",
+    "arxiv.org",
+    "uber.com",
+    "newsletter.pragmaticengineer.com",
+    "crunchydata.com",
+    "luminousmen.substack.com",
+    "vutr.substack.com",
+    "duckdb.org",
+    "iceberg.apache.org",
+    "alexeyondata.substack.com",
+    "incident.io",
+    "threadreaderapp.com",
+    "planetscale.com",
+    "inco.ai"
+  ]
 }
