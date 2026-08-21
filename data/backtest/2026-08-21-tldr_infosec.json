@@ -1,9 +1,33 @@
 {
   "date": "2026-08-21",
   "newsletter": "tldr_infosec",
-  "fetched_at": "2026-08-21T09:08:48.359333+00:00",
-  "tldr_titles": [],
-  "tldr_matched": [],
+  "fetched_at": "2026-08-21T16:06:26.862975+00:00",
+  "tldr_titles": [
+    "Cloudflare Workers Spectre Attack Leaks JWT From Co-Located Worker at 12 Bits/Second",
+    "Grok Exfiltrates User Data When Malicious Instructions are Encrypted",
+    "Supply Chain Attack on arrayref",
+    "Hunting Malware and Malicious MCPs in Memory on Kubernetes with FleetDM, Osquery, and YARA",
+    "The Agent Access Model",
+    "Table Flip: A wasm2c Guest Runs a Shell Command on the Host, Through One Unchecked calloc",
+    "GLM-5.3: Frontier Coding with Emergent Cyber Capabilities",
+    "No-Filter \u2018Kriminal' AI Platform Raises Cybercrime Concerns",
+    "The Defender's Window",
+    "Hacking SAML with Claude Code",
+    "ToxicPanda 2.0 and GoldDigger Expand Android Banking Attacks with On-Device Fraud"
+  ],
+  "tldr_matched": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
   "predictions": [
     {
       "rank": 1,
@@ -14,9 +38,45 @@
       "similarity": null
     }
   ],
-  "recall_at": {},
-  "hits_at": {},
-  "available": false,
-  "tldr_urls": [],
-  "tldr_domains": []
+  "recall_at": {
+    "10": 0.0,
+    "25": 0.0,
+    "50": 0.0,
+    "100": 0.0,
+    "1": 0.0
+  },
+  "hits_at": {
+    "10": 0,
+    "25": 0,
+    "50": 0,
+    "100": 0,
+    "1": 0
+  },
+  "available": true,
+  "tldr_urls": [
+    "https://thehackernews.com/2026/08/cloudflare-workers-spectre-attack-leaks.html",
+    "https://arstechnica.com/security/2026/08/grok-exfiltrates-user-data-when-malicious-instructions-are-encrypted/",
+    "https://blog.rust-lang.org/2026/08/20/supply-chain-attack-on-arrayref/",
+    "https://holdmybeersecurity.com/2026/07/14/hunting-malware-and-malicious-mcps-in-memory-on-kubernetes-with-fleetdm-osquery-yara/",
+    "https://blog.cloudflare.com/the-agent-access-model/",
+    "https://trustsig.eu/blog/wasm2c-tableflip-unchecked-calloc/",
+    "https://z.ai/blog/glm-5.3",
+    "https://www.darkreading.com/application-security/no-filter-kriminal-ai-platform-cybercrime-concerns",
+    "https://blog.gregbrockman.com/the-defenders-window",
+    "https://oblique.security/blog/hacking-saml/",
+    "https://thehackernews.com/2026/08/toxicpanda-20-and-golddigger-expand.html"
+  ],
+  "tldr_domains": [
+    "thehackernews.com",
+    "arstechnica.com",
+    "blog.rust-lang.org",
+    "holdmybeersecurity.com",
+    "blog.cloudflare.com",
+    "trustsig.eu",
+    "z.ai",
+    "darkreading.com",
+    "blog.gregbrockman.com",
+    "oblique.security",
+    "thehackernews.com"
+  ]
 }
